@@ -188,8 +188,14 @@ and edition-appropriate role choices. Real Community/Enterprise browser and HTTP
 checks verify new-admin login, persisted accounts and denied authority crossings.
 The UI suite passes 100 tests; 10 Open issues remain, all P2.
 
-Next, reconcile edition/role capabilities ([CG-53](issues/CG-53.md)), including
-governance-role console entry and role-aware navigation. Then address partial datasets,
+The [capability batch](../ui/audit/2026-09-11-capabilities/audit.md) resolves
+[CG-53](issues/CG-53.md): verified session introspection, edition/role-aware
+navigation and direct routes, scoped action controls and explicit anonymous
+development behavior. Both Rust CI-equivalent suites and 120 UI tests pass;
+release-binary HTTP and browser checks cover all nine roles in both editions.
+Nine Open issues remain, all P2.
+
+Next, address partial review/space datasets ([CG-54](issues/CG-54.md)), then
 execution/result state and accessibility, with real-browser regressions and
 CI coverage ([CG-60](issues/CG-60.md)). Keep Docker publication preparation
 separate from this pending UI remediation.

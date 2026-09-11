@@ -13,16 +13,15 @@ import {
   UsersThree,
 } from "@phosphor-icons/react";
 import { NavLink } from "react-router";
-import { canManageTenants } from "../lib/tenants.ts";
+import { routeAccess } from "../lib/access.ts";
 import type { HealthSnapshot } from "../types.ts";
+import { useAccess } from "./AccessBoundary.tsx";
 import { BrandMark } from "./BrandMark.tsx";
 
 interface SidebarProps {
   collapsed: boolean;
   health: HealthSnapshot;
   onToggle: () => void;
-  /// The session's role — gates the host-admin-only Tenants entry.
-  role?: string;
 }
 
 const navigation: Array<{ label: string; path: string; icon: typeof House }> = [
@@ -41,8 +40,11 @@ const navigation: Array<{ label: string; path: string; icon: typeof House }> = [
 // roles never see the entry — the server guard is the real enforcement.
 const tenantsEntry = { label: "Tenants", path: "/tenants", icon: Buildings };
 
-export function Sidebar({ collapsed, health, onToggle, role }: SidebarProps) {
-  const items = canManageTenants(role) ? [...navigation, tenantsEntry] : navigation;
+export function Sidebar({ collapsed, health, onToggle }: SidebarProps) {
+  const access = useAccess();
+  const items = [...navigation, tenantsEntry].filter(
+    ({ path }) => routeAccess(path, access).allowed,
+  );
   return (
     <aside className={collapsed ? "sidebar collapsed" : "sidebar"}>
       <div aria-label="CogniGraph" className="brand" role="img">

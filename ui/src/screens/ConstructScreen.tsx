@@ -11,6 +11,7 @@ import { Button, Checkbox, Input, InputNumber, Select } from "antd";
 import type { ReactNode } from "react";
 import { useCallback, useEffect, useState } from "react";
 import type { CogniGraphApi } from "../api/client.ts";
+import { useAccess } from "../components/AccessBoundary.tsx";
 import { ConstructIngest } from "../components/ConstructIngest.tsx";
 import { JsonResult } from "../components/JsonResult.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
@@ -28,6 +29,7 @@ interface ConstructScreenProps {
 /// and ask the gate advisor. Stages that need the server's completion
 /// provider fail with its actionable message when none is configured.
 export function ConstructScreen({ api, notify }: ConstructScreenProps) {
+  const { constructWrite } = useAccess();
   const [spaces, setSpaces] = useState<string[]>([]);
   const [space, setSpace] = useState<string>();
   const [result, setResult] = useState<unknown>();
@@ -57,6 +59,7 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
     action: ConstructAction,
     request: () => { path: string; body: JsonObject } | Promise<{ path: string; body: JsonObject }>,
   ) => {
+    if (!["evaluate", "advise"].includes(action) && !constructWrite) return;
     setRunning(stage);
     try {
       const call = await request();
@@ -81,7 +84,11 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
   return (
     <main className="page-workspace">
       <PageHeader
-        description="Draft an ontology, ground chunks into evidence-bound facts, measure recall and restraint, and run the governed repair loop."
+        description={
+          constructWrite
+            ? "Draft an ontology, ground chunks into evidence-bound facts, measure recall and restraint, and run the repair loop."
+            : "Read-only access: evaluate an existing space or run its gate advisor. Your role cannot draft, ingest, propose or run judge review."
+        }
         eyebrow="Knowledge / construction"
         title="Construct pipeline"
       />
@@ -119,7 +126,9 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
             <div className="actions-row-base">
               <RunButton
                 busy={running === "draft"}
-                disabled={Boolean(running) || !draftId.trim() || !draftChunks.trim()}
+                disabled={
+                  !constructWrite || Boolean(running) || !draftId.trim() || !draftChunks.trim()
+                }
                 label="Draft"
                 onClick={() =>
                   void run("draft", "draft", async () => ({
@@ -130,7 +139,7 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
               />
               <RunButton
                 busy={running === "accept"}
-                disabled={Boolean(running) || !draftId.trim()}
+                disabled={!constructWrite || Boolean(running) || !draftId.trim()}
                 label="Accept draft"
                 onClick={() =>
                   void run("accept", "accept", () => ({
@@ -149,7 +158,7 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
             <ConstructIngest
               api={api}
               space={space}
-              disabled={Boolean(running)}
+              disabled={!constructWrite || Boolean(running)}
               onBusy={(busy) => setRunning(busy ? "ingest" : undefined)}
               onComplete={(response) => {
                 setResult(response);
@@ -191,7 +200,7 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
             <div className="actions-row-base">
               <RunButton
                 busy={running === "propose"}
-                disabled={Boolean(running) || !space}
+                disabled={!constructWrite || Boolean(running) || !space}
                 label="Propose"
                 onClick={() =>
                   void run("propose", "propose", () => ({
@@ -224,7 +233,7 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
               </Checkbox>
               <RunButton
                 busy={running === "review"}
-                disabled={Boolean(running) || !space}
+                disabled={!constructWrite || Boolean(running) || !space}
                 label="Run judge"
                 onClick={() =>
                   void run("review", "review", () => ({

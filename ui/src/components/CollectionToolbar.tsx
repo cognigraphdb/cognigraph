@@ -1,6 +1,7 @@
 import { MagnifyingGlass, Plus } from "@phosphor-icons/react";
 import { Button, Input, Select } from "antd";
 import { Link } from "react-router";
+import { useAccess } from "./AccessBoundary.tsx";
 
 interface CollectionToolbarProps {
   collection: string;
@@ -17,6 +18,7 @@ interface CollectionToolbarProps {
 }
 
 export function CollectionToolbar(props: CollectionToolbarProps) {
+  const { dataWrite } = useAccess();
   return (
     <>
       <div className="workspace-header-base collection-heading">
@@ -33,6 +35,8 @@ export function CollectionToolbar(props: CollectionToolbarProps) {
         </div>
         <Button
           icon={<Plus aria-hidden="true" size={18} />}
+          disabled={!dataWrite}
+          title={!dataWrite ? "Your role has read-only access." : undefined}
           onClick={props.onCreate}
           type="primary"
         >

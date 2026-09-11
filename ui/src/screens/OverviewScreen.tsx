@@ -7,10 +7,11 @@ import {
   HardDrives,
   Pulse,
 } from "@phosphor-icons/react";
-import { Button, Table, type TableColumnsType, Tag, Tooltip } from "antd";
+import { Alert, Button, Table, type TableColumnsType, Tag, Tooltip } from "antd";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import type { CogniGraphApi } from "../api/client.ts";
+import { useAccess } from "../components/AccessBoundary.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
 import {
   COLLECTION_TYPE_META,
@@ -32,6 +33,7 @@ interface OverviewScreenProps {
 /// data at a glance. There are no connection settings — the server URL
 /// derives from the load origin and the session comes from the login.
 export function OverviewScreen({ api, health, session, onRefresh }: OverviewScreenProps) {
+  const { dataRead, dataWrite, operations, context } = useAccess();
   const navigate = useNavigate();
   const [cache, setCache] = useState<JsonObject>();
   const [collections, setCollections] = useState<CollectionInfo[]>([]);
@@ -39,21 +41,23 @@ export function OverviewScreen({ api, health, session, onRefresh }: OverviewScre
 
   useEffect(() => {
     if (health.status !== "online") return;
-    api
-      .get<JsonObject>("/cache/stats")
-      .then(setCache)
-      .catch(() => setCache(undefined));
-    api
-      .get<CollectionListResponse>("/collections")
-      .then((response) => {
-        setCollections(response.collections ?? []);
-        setCatalogError("");
-      })
-      .catch((reason: Error) => {
-        setCollections([]);
-        setCatalogError(reason.message);
-      });
-  }, [api, health.status]);
+    if (operations)
+      api
+        .get<JsonObject>("/cache/stats")
+        .then(setCache)
+        .catch(() => setCache(undefined));
+    if (dataRead)
+      api
+        .get<CollectionListResponse>("/collections")
+        .then((response) => {
+          setCollections(response.collections ?? []);
+          setCatalogError("");
+        })
+        .catch((reason: Error) => {
+          setCollections([]);
+          setCatalogError(reason.message);
+        });
+  }, [api, health.status, dataRead, operations]);
 
   const totals = cache?.totals as JsonObject | undefined;
   const documentCount = collections.reduce((sum, info) => sum + info.count, 0);
@@ -101,9 +105,9 @@ export function OverviewScreen({ api, health, session, onRefresh }: OverviewScre
           </Button>
         }
         description={
-          session
+          session && dataRead
             ? `Everything on this page is scoped to the ${session.tenant} tenant — the workspace your account belongs to.`
-            : "Live service, storage, and query-cache readiness from the running CogniGraph API."
+            : "Verified identity and live service readiness from the running CogniGraph API."
         }
         eyebrow="System / overview"
         title="Overview"
@@ -130,6 +134,30 @@ export function OverviewScreen({ api, health, session, onRefresh }: OverviewScre
         </dl>
       ) : null}
 
+      {!context.auth_enabled ? (
+        <Alert
+          type="warning"
+          showIcon
+          title="Authentication is disabled"
+          description="Development mode permits data reads and writes and read-only Lua. User and tenant administration, snapshots and signed governance require authenticated accounts."
+        />
+      ) : null}
+      {!dataRead ? (
+        <Alert
+          type="info"
+          showIcon
+          title="This account has no tenant data access"
+          description={
+            context.user?.role === "host-admin"
+              ? context.edition === "enterprise"
+                ? "Use Tenants to manage tenant lifecycle. Host administrators cannot read tenant data."
+                : "Tenant lifecycle requires an Enterprise server. This Community console can show your identity and service status."
+              : context.edition === "enterprise"
+                ? "Your governance role is verified. Signed governance workflows are available through the API; the console does not yet provide those workflows. Review and Construct operate on tenant data and require separate data scopes."
+                : "Governance workflows require an Enterprise server. This Community console can show your identity and service status."
+          }
+        />
+      ) : null}
       <section className="metric-grid" aria-label="System status">
         <Metric
           icon={Pulse}
@@ -143,56 +171,64 @@ export function OverviewScreen({ api, health, session, onRefresh }: OverviewScre
           value={health.database ?? "unknown"}
           detail="Backend ping"
         />
-        <Metric
-          icon={Files}
-          label="Tenant data"
-          value={documentCount.toLocaleString()}
-          detail={`${collections.length} ${collections.length === 1 ? "collection" : "collections"}`}
-        />
+        {dataRead ? (
+          <Metric
+            icon={Files}
+            label="Tenant data"
+            value={documentCount.toLocaleString()}
+            detail={`${collections.length} ${collections.length === 1 ? "collection" : "collections"}`}
+          />
+        ) : null}
         <Metric
           icon={Gauge}
           label="Latency"
           value={`${health.latencyMs ?? 0} ms`}
           detail="Two health checks"
         />
-        <Metric
-          icon={HardDrives}
-          label="Query cache"
-          value={cache?.enabled ? `${cache.entries ?? 0} entries` : "disabled"}
-          detail={
-            totals
-              ? `${Math.round(Number(totals.hit_rate ?? 0) * 100)}% hit rate`
-              : "Server setting"
-          }
-        />
+        {operations ? (
+          <Metric
+            icon={HardDrives}
+            label="Query cache"
+            value={cache?.enabled ? `${cache.entries ?? 0} entries` : "disabled"}
+            detail={
+              totals
+                ? `${Math.round(Number(totals.hit_rate ?? 0) * 100)}% hit rate`
+                : "Server setting"
+            }
+          />
+        ) : null}
       </section>
 
-      <section className="user-list" aria-label="Tenant collections">
-        <div className="workspace-controls">
-          <h2 className="overview-subheading">Collections in this tenant</h2>
-          <span className="workspace-count">
-            {catalogError ? catalogError : `${documentCount.toLocaleString()} entries total`}
-          </span>
-        </div>
-        <Table<CollectionInfo>
-          columns={columns}
-          dataSource={collections}
-          locale={{
-            emptyText: catalogError
-              ? "The collection catalog is unavailable for this role."
-              : "No collections yet — create a document to start one.",
-          }}
-          onRow={(info) => ({
-            onClick: () => {
-              if (isBrowsable(info)) navigate(`/collections/${encodeURIComponent(info.name)}`);
-            },
-          })}
-          pagination={false}
-          rowClassName={(info) => (isBrowsable(info) ? "clickable-row" : "")}
-          rowKey="name"
-          size="small"
-        />
-      </section>
+      {dataRead ? (
+        <section className="user-list" aria-label="Tenant collections">
+          <div className="workspace-controls">
+            <h2 className="overview-subheading">Collections in this tenant</h2>
+            <span className="workspace-count">
+              {catalogError ? catalogError : `${documentCount.toLocaleString()} entries total`}
+            </span>
+          </div>
+          <Table<CollectionInfo>
+            columns={columns}
+            dataSource={collections}
+            locale={{
+              emptyText: catalogError
+                ? "The collection catalog is unavailable for this role."
+                : dataWrite
+                  ? "No collections yet — create a document to start one."
+                  : "No collections in this tenant.",
+            }}
+            onRow={(info) => ({
+              onClick: () => {
+                if (isBrowsable(info)) navigate(`/collections/${encodeURIComponent(info.name)}`);
+              },
+            })}
+            pagination={false}
+            rowClassName={(info) => (isBrowsable(info) ? "clickable-row" : "")}
+            rowKey="name"
+            size="small"
+          />
+        </section>
+      ) : null}
     </main>
   );
 }

@@ -3829,6 +3829,39 @@ paths:
       security: []
       responses:
         '200': { description: OpenAPI 3.0 YAML }
+  /api/auth/session:
+    get:
+      summary: Inspect the verified caller, granted scopes and server edition
+      description: >-
+        Available to every valid identity without requiring a data or tenant-admin scope.
+        Uses the normal bearer validation and active-tenant admission rules. Returns
+        Cache-Control no-store. When authentication is disabled, user is null and scopes
+        is empty; this does not create an Admin identity or enable otherwise gated workflows.
+      responses:
+        '200':
+          description: Verified session context or explicit authentication-disabled mode
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [auth_enabled, user, scopes, edition]
+                properties:
+                  auth_enabled: { type: boolean }
+                  edition: { type: string, enum: [community, enterprise] }
+                  user:
+                    type: object
+                    nullable: true
+                    required: [key, username, role, tenant]
+                    properties:
+                      key: { type: string }
+                      username: { type: string }
+                      role: { type: string }
+                      tenant: { type: string }
+                  scopes:
+                    type: array
+                    items: { type: string }
+        '401': { description: 'Missing, invalid, expired, revoked or stale bearer identity' }
+        '403': { description: Tenant inactive or isolated storage unavailable }
   /api/auth/login:
     post:
       summary: Exchange username/password for a JWT session (requires COGNIGRAPH_JWT_SECRET)

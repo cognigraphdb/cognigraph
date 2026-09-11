@@ -1,0 +1,61 @@
+[
+  {
+    "path": "/health",
+    "status": 200,
+    "content_type": "application/json",
+    "bytes": 79,
+    "body": {
+      "edition": "enterprise",
+      "service": "cognigraph",
+      "status": "ok",
+      "version": "2.7.0"
+    }
+  },
+  {
+    "path": "/collections",
+    "status": 200,
+    "content_type": "text/html",
+    "bytes": 525
+  },
+  {
+    "path": "/overview",
+    "status": 200,
+    "content_type": "text/html",
+    "bytes": 525
+  },
+  {
+    "path": "/cognigraph-mark-b1k1wyxb.svg",
+    "status": 200,
+    "content_type": "image/svg+xml",
+    "bytes": 1595,
+    "sha256": "8c2488661ff2050eac9d8cd2a0773c7ae3511e609c4a96d763d08b6b54af5d8c"
+  },
+  {
+    "path": "/document-selected-76325wwg.svg",
+    "status": 200,
+    "content_type": "image/svg+xml",
+    "bytes": 464,
+    "sha256": "33ecc82ebbe6cc065dc530474c636db601e745d854518809bc2aa1c64eeebfca"
+  },
+  {
+    "path": "/document-t810r2m7.svg",
+    "status": 200,
+    "content_type": "image/svg+xml",
+    "bytes": 458,
+    "sha256": "488cef89ecb1723abab7c03ed3f5088e13e342764397763d7fd8309a6c9c82de"
+  },
+  {
+    "path": "/index-a0evxjb5.css",
+    "status": 200,
+    "content_type": "text/css",
+    "bytes": 35904,
+    "sha256": "2437eae8873501431cc0c4853bae0e18a901480494443760843224403b27fd62"
+  },
+  {
+    "path": "/index-a26eybm7.js",
+    "status": 200,
+    "content_type": "text/javascript",
+    "bytes": 3514554,
+    "sha256": "b8560d47483672764f82e630ba49240825872802bf8d2cdc20093efe84c74700"
+  }
+]

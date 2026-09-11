@@ -48,9 +48,9 @@ bun run build
 ## Visual Direction And Components
 
 - Use [BrandMark](src/components/BrandMark.tsx) for product branding. Its bundled
-  [SVG](src/assets/cognigraph-mark.svg) preserves the path from the
-  [product master](../../docs/graphics/cognigraph-mark.svg), with transparent
-  margins cropped in the UI copy. Color it through CSS for its surface; keep
+  [SVG](src/assets/cognigraph-mark.svg) is a copy of the cleaned
+  [product master](../../docs/graphics/cognigraph-mark.svg), preserving its geometry
+  and square viewBox. Color it through CSS for its surface; keep
   the mark centered when the sidebar wordmark is hidden. Builds must not depend
   on the sibling product-docs checkout.
 - Preserve the restrained database-console layout: dark sidebar, light document

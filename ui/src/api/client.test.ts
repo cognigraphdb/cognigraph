@@ -1,4 +1,5 @@
 import { afterEach, describe, expect, mock, test } from "bun:test";
+import type { SessionContext } from "../lib/access.ts";
 import { CogniGraphApi } from "./client.ts";
 
 const realFetch = globalThis.fetch;
@@ -28,72 +29,60 @@ test("health carries only recognized product editions for provisioning choices",
   }
 });
 
-describe("authentication probe", () => {
-  test("verifies host-admin through the tenant catalog after data access is denied", async () => {
-    const urls: string[] = [];
-    globalThis.fetch = mock(async (url: string) => {
-      urls.push(url);
-      return url.endsWith("/collections")
-        ? Response.json({ error: "Forbidden" }, { status: 403 })
-        : Response.json({ tenants: [], count: 0 });
-    }) as unknown as typeof fetch;
-    expect(await api("synthetic-host-token").authRequired()).toBe(false);
-    expect(urls).toEqual([
-      "http://127.0.0.1:38471/api/collections",
-      "http://127.0.0.1:38471/api/tenants",
-    ]);
+describe("verified session context", () => {
+  const context: SessionContext = {
+    auth_enabled: true,
+    edition: "enterprise",
+    scopes: ["promotion-read", "policy-author"],
+    user: { key: "qa", username: "qa-author", role: "policy-author", tenant: "qa-tenant" },
+  };
+  test("verifies governance identity without needing a tenant-data catalog", async () => {
+    const fetchMock = respond(200, context);
+    expect(await api("synthetic-token").sessionContext()).toEqual(context);
+    expect(fetchMock.mock.calls).toHaveLength(1);
+    expect(fetchMock.mock.calls[0]?.[0]).toBe("http://127.0.0.1:38471/api/auth/session");
   });
-  test("the tenant fallback must itself verify access and propagate expiry", async () => {
-    for (const fallback of [
-      () => Response.json({ tenants: "invalid" }),
-      () => Response.json({ error: "Unavailable" }, { status: 503 }),
-      () => Promise.reject(new TypeError("Failed to fetch")),
-    ]) {
-      globalThis.fetch = mock(async (url: string) =>
-        url.endsWith("/collections")
-          ? Response.json({ error: "Forbidden" }, { status: 403 })
-          : fallback(),
-      ) as unknown as typeof fetch;
-      await expect(api().authRequired()).rejects.toThrow();
-    }
-    globalThis.fetch = mock(async (url: string) =>
-      Response.json({ error: "Denied" }, { status: url.endsWith("/collections") ? 403 : 401 }),
-    ) as unknown as typeof fetch;
-    const client = api("synthetic-expired-token");
-    const expired = mock(() => {});
-    client.onUnauthorized = expired;
-    expect(await client.authRequired()).toBe(true);
-    expect(expired).toHaveBeenCalledTimes(1);
+  test("accepts explicit anonymous mode without inventing a role", async () => {
+    const anonymous: SessionContext = {
+      auth_enabled: false,
+      edition: "community",
+      scopes: [],
+      user: null,
+    };
+    respond(200, anonymous);
+    expect(await api().sessionContext()).toEqual(anonymous);
   });
-  test("accepts a verified empty collection list on the configured origin", async () => {
-    const fetchMock = respond(200, { collections: [] });
-    expect(await api().authRequired()).toBe(false);
-    expect(fetchMock.mock.calls[0]?.[0]).toBe("http://127.0.0.1:38471/api/collections");
-  });
-  test("401 requests login and invalidates an expired bearer session", async () => {
+  test("401 invalidates an expired bearer session", async () => {
     respond(401, { error: "Authentication required" });
     const client = api("synthetic-token");
     const expired = mock(() => {});
     client.onUnauthorized = expired;
-    expect(await client.authRequired()).toBe(true);
+    await expect(client.sessionContext()).rejects.toThrow("Authentication required");
     expect(expired).toHaveBeenCalledTimes(1);
   });
-  test("denied, missing, limited, and failing endpoints do not imply anonymous access", async () => {
+  test("denied, missing, limited, and failing endpoints never imply anonymous access", async () => {
     for (const status of [403, 404, 429, 500, 503]) {
       respond(status, { error: "Unavailable" });
-      await expect(api().authRequired()).rejects.toThrow("Unavailable");
+      await expect(api().sessionContext()).rejects.toThrow("Unavailable");
     }
   });
-  test("an HTML fallback or malformed JSON shape cannot open the console", async () => {
+  test("HTML, unverified identity and malformed scope/edition responses stay closed", async () => {
     for (const body of [
       "<!doctype html><title>UI</title>",
       null,
       [],
       {},
-      { collections: "wrong" },
+      { collections: [] },
+      { ...context, edition: "unknown" },
+      { ...context, user: null },
+      { ...context, user: { ...context.user, tenant: "" } },
+      { ...context, scopes: "admin" },
+      { ...context, scopes: [1] },
+      { ...context, auth_enabled: false },
+      { ...context, auth_enabled: false, user: null },
     ]) {
       respond(200, body);
-      await expect(api().authRequired()).rejects.toThrow("valid CogniGraph collections response");
+      await expect(api().sessionContext()).rejects.toThrow("valid CogniGraph session response");
     }
   });
   test("connection failure and timeout propagate, with a bounded probe signal", async () => {
@@ -102,11 +91,11 @@ describe("authentication probe", () => {
       signal = init?.signal ?? undefined;
       throw new TypeError("Failed to fetch");
     }) as unknown as typeof fetch;
-    await expect(api().authRequired()).rejects.toThrow("Failed to fetch");
+    await expect(api().sessionContext()).rejects.toThrow("Failed to fetch");
     expect(signal).toBeInstanceOf(AbortSignal);
     globalThis.fetch = mock(async () => {
       throw new DOMException("Probe timed out", "TimeoutError");
     }) as unknown as typeof fetch;
-    await expect(api().authRequired()).rejects.toThrow("Probe timed out");
+    await expect(api().sessionContext()).rejects.toThrow("Probe timed out");
   });
 });

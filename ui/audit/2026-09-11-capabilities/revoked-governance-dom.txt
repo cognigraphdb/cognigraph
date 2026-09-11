@@ -1,0 +1,15 @@
+- heading "CogniGraph Console" [level=1]
+- paragraph: Sign in to continue.
+- generic "Username"
+- textbox "Username" [active]:
+  - /placeholder: admin
+- generic "Password"
+- textbox "Password":
+  - /placeholder: Your password
+- button "Show":
+- button "Sign in":
+  - generic: Sign in
+- paragraph:
+  - text: Signing in to
+  - strong: 127.0.0.1:38477
+  - text: — your session token stays in this browser and expires automatically.

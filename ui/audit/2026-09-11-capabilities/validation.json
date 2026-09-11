@@ -1,0 +1,69 @@
+{
+  "captured_on": "2026-09-11",
+  "status": "passed",
+  "scope": "CG-53 local acceptance; no remote CI",
+  "ci": {
+    "command": "python3 scripts/verify.py --suite ci",
+    "status": "passed",
+    "commands": [
+      "cargo fmt --all -- --check",
+      "/opt/homebrew/opt/python@3.14/bin/python3.14 -m unittest discover -s scripts/tests",
+      "/opt/homebrew/opt/python@3.14/bin/python3.14 scripts/check-server-modularity.py",
+      "/opt/homebrew/opt/python@3.14/bin/python3.14 scripts/check-editions.py",
+      "/opt/homebrew/opt/python@3.14/bin/python3.14 scripts/check-docs.py",
+      "/opt/homebrew/opt/python@3.14/bin/python3.14 scripts/check-decision-index.py",
+      "/opt/homebrew/opt/python@3.14/bin/python3.14 scripts/issue.py check",
+      "cargo clippy --all-targets -- -D warnings",
+      "cargo test --all",
+      "cargo clippy --all-targets --features enterprise -- -D warnings",
+      "cargo test --all --features enterprise"
+    ],
+    "python_tests": 59,
+    "rust_reported_passes": {
+      "default": 779,
+      "enterprise": 970
+    },
+    "arango_integration": "Eight tests per edition returned early without credentials; not executed backend coverage",
+    "embedding_smoke_tests": "Existing OpenAI and Gemini tests loaded workspace credentials and executed successfully in both editions"
+  },
+  "ui": {
+    "check": "bun run check: passed (107 files; Biome and TypeScript)",
+    "tests": 120,
+    "test_files": 18,
+    "assertions": 622,
+    "build": "bun run build: passed (1723 modules)"
+  },
+  "runtime": {
+    "http_checks": 225,
+    "verified_role_edition_sessions": 18,
+    "anonymous_modes": 2,
+    "backend": "Native",
+    "build": "release",
+    "qa_provider": "none"
+  },
+  "browser": {
+    "role_edition_journeys": 18,
+    "direct_route_denials": 18,
+    "anonymous_modes": 2,
+    "warnings_and_errors": 0,
+    "native_windows_scaling": false,
+    "mobile": false
+  },
+  "cleanup": {
+    "owned_server_ports_closed": [
+      38476,
+      38477,
+      38478,
+      38479
+    ],
+    "owned_runtime_directory_removed": true,
+    "owned_browser_tab_closed": true
+  },
+  "limitations": [
+    "No Arango live coverage",
+    "No remote CI or Docker image build/publication",
+    "No provider-backed construction or holdout",
+    "No independent browser network trace",
+    "Zero-question evaluation fixture tests authorization, not quality"
+  ]
+}

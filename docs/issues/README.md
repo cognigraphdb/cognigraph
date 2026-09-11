@@ -110,8 +110,11 @@ resolves CG-49. That checkpoint had **50 Resolved, 1 Closed without change, and
 resolves CG-51 and adds Enterprise host-admin probe coverage to CG-49. That
 checkpoint had **51 Resolved, 1 Closed without change, and 11 Open issues (all P2)**.
 [Tenant onboarding and user provisioning](../../ui/audit/2026-09-11-provisioning/audit.md)
-resolves CG-52. Current registry: **52 Resolved, 1 Closed without change, and
+resolves CG-52. That checkpoint had **52 Resolved, 1 Closed without change, and
 10 Open issues (all P2)**.
+[Verified console capabilities](../../ui/audit/2026-09-11-capabilities/audit.md)
+resolves CG-53. Current registry: **53 Resolved, 1 Closed without change, and
+9 Open issues (all P2)**.
 
 ## Conventions
 
@@ -177,7 +180,7 @@ resolves CG-52. Current registry: **52 Resolved, 1 Closed without change, and
 | [CG-50](CG-50.md) | P1 | Resolved | Document inspector rewrites valid stored JSON through a lossy projection |
 | [CG-51](CG-51.md) | P1 | Resolved | Tenant deletion confirmation promises recovery that recreation does not provide |
 | [CG-52](CG-52.md) | P2 | Resolved | Tenant onboarding and user provisioning diverge from the authorization contract |
-| [CG-53](CG-53.md) | P2 | Open | Console actions ignore server edition and authenticated role capabilities |
+| [CG-53](CG-53.md) | P2 | Resolved | Console actions ignore server edition and authenticated role capabilities |
 | [CG-54](CG-54.md) | P2 | Open | Review queue and space selectors silently truncate their datasets |
 | [CG-55](CG-55.md) | P2 | Open | Console keyboard shortcuts bypass the running request guard |
 | [CG-56](CG-56.md) | P2 | Open | Console results remain attached to changed inputs and failed graph requests |

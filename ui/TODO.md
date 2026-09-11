@@ -16,14 +16,18 @@ The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
 recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
 explicit untested boundaries. The historical Done entries below describe
 implementation checkpoints; they do not establish current acceptance. The UI
-suite now passes 100 helper tests after CG-49/CG-50/CG-51/CG-52/CG-62 remediation,
+suite now passes 120 helper tests after CG-49–CG-53/CG-62 remediation,
 but CI omits it and no browser regression suite exists yet. Keep defect status
 in the linked registry rather than duplicating it.
 
+- [x] [Edition/role capabilities CG-53](../docs/issues/CG-53.md): verified session
+  context, scoped navigation/direct routes/actions, governance-role entry and
+  explicit anonymous development policy. [Browser/API evidence](audit/2026-09-11-capabilities/audit.md)
+  covers all nine roles in both editions. Nine P2s remain open.
 - [x] [Tenant/user provisioning CG-52](../docs/issues/CG-52.md): resumable
   first-admin setup, current-tenant requests and edition-appropriate roles.
   [Browser/API evidence](audit/2026-09-11-provisioning/audit.md) covers new-admin
-  login, persisted accounts and denied authority crossings. Ten P2s remain open.
+  login, persisted accounts and denied authority crossings. That checkpoint left ten P2s open.
 - [x] [Tenant deletion disclosure CG-51](../docs/issues/CG-51.md): explicit
   consequences, actual quarantine results, cancel/recreation and failure checks.
   [Browser/API evidence](audit/2026-09-11-tenant-deletion/audit.md), including the
@@ -36,8 +40,7 @@ in the linked registry rather than duplicating it.
   [construction import identity CG-62](../docs/issues/CG-62.md): raw JSON editing,
   changed-field PATCH, creation readback, stable import IDs and explicit replacement
   review. [Browser/API evidence](audit/2026-09-11-data-preservation/audit.md).
-- [ ] Reconcile [edition/role capabilities CG-53](../docs/issues/CG-53.md),
-  [review/space paging CG-54](../docs/issues/CG-54.md),
+- [ ] Reconcile [review/space paging CG-54](../docs/issues/CG-54.md),
   [empty/error guidance CG-58](../docs/issues/CG-58.md), and
   [collection search/filter scope CG-59](../docs/issues/CG-59.md).
 - [ ] Repair [execution guards CG-55](../docs/issues/CG-55.md),
@@ -65,7 +68,8 @@ defect remediation; these are planned features, not claims of broken endpoints.
 
 - [x] [Product logo](audit/2026-09-10-logo/audit.md): use the supplied CogniGraph
   mark in the expanded/compact sidebar and sign-in screen, with surface colors
-  and measured alignment.
+  and measured alignment. [Cleaned master refresh](audit/2026-09-11-logo-refresh/audit.md)
+  preserves the supplied geometry and existing console colors.
 - [x] [Collections QA and fixes](audit/2026-09-10-collections/audit.md): CG-41–CG-44
   cover draft preservation, API save errors, off-page links, scaled desktop
   controls and keyboard dialog focus. Scoped Native/admin verification only.

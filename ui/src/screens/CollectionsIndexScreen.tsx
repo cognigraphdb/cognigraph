@@ -22,6 +22,7 @@ import {
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import type { CogniGraphApi } from "../api/client.ts";
+import { useAccess } from "../components/AccessBoundary.tsx";
 import { ErrorAlert } from "../components/ErrorAlert.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
 import {
@@ -36,6 +37,7 @@ import type { Notify } from "../types.ts";
 /// /collections/{name}; edge collections are listed but not browsable
 /// (relationships live on the Graph page).
 export function CollectionsIndexScreen({ api, notify }: { api: CogniGraphApi; notify: Notify }) {
+  const { dataWrite } = useAccess();
   const navigate = useNavigate();
   const [collections, setCollections] = useState<CollectionInfo[]>([]);
   const [loading, setLoading] = useState(false);
@@ -60,6 +62,7 @@ export function CollectionsIndexScreen({ api, notify }: { api: CogniGraphApi; no
   useEffect(() => void load(), [load]);
 
   async function dropCollection(info: CollectionInfo) {
+    if (!dataWrite) return;
     setDroppingName(info.name);
     try {
       await api.delete(`/collections/${encodeURIComponent(info.name)}`);
@@ -97,35 +100,36 @@ export function CollectionsIndexScreen({ api, notify }: { api: CogniGraphApi; no
       title: "",
       key: "actions",
       width: 110,
-      render: (_, info) => (
-        <Popconfirm
-          cancelText="Cancel"
-          icon={<WarningCircle className="confirm-icon" size={17} weight="fill" />}
-          okButtonProps={{ danger: true }}
-          okText="Drop collection"
-          onConfirm={() => void dropCollection(info)}
-          placement="topLeft"
-          title={`Drop ${info.name} and its ${info.count.toLocaleString()} ${
-            info.count === 1 ? "entry" : "entries"
-          }? This cannot be undone.`}
-        >
-          <Button
-            danger
-            disabled={droppingName !== undefined}
-            icon={
-              droppingName === info.name ? (
-                <CircleNotch className="cg-spin" weight="bold" />
-              ) : (
-                <Trash size={14} />
-              )
-            }
-            size="small"
-            type="text"
+      render: (_, info) =>
+        dataWrite ? (
+          <Popconfirm
+            cancelText="Cancel"
+            icon={<WarningCircle className="confirm-icon" size={17} weight="fill" />}
+            okButtonProps={{ danger: true }}
+            okText="Drop collection"
+            onConfirm={() => void dropCollection(info)}
+            placement="topLeft"
+            title={`Drop ${info.name} and its ${info.count.toLocaleString()} ${
+              info.count === 1 ? "entry" : "entries"
+            }? This cannot be undone.`}
           >
-            Delete
-          </Button>
-        </Popconfirm>
-      ),
+            <Button
+              danger
+              disabled={droppingName !== undefined}
+              icon={
+                droppingName === info.name ? (
+                  <CircleNotch className="cg-spin" weight="bold" />
+                ) : (
+                  <Trash size={14} />
+                )
+              }
+              size="small"
+              type="text"
+            >
+              Delete
+            </Button>
+          </Popconfirm>
+        ) : null,
     },
   ];
 
@@ -135,7 +139,7 @@ export function CollectionsIndexScreen({ api, notify }: { api: CogniGraphApi; no
         actions={
           <>
             <Button
-              disabled={loading || !!error}
+              disabled={!dataWrite || loading || !!error}
               icon={<Plus size={17} />}
               onClick={() => setCreateOpen(true)}
               type="primary"
@@ -157,7 +161,11 @@ export function CollectionsIndexScreen({ api, notify }: { api: CogniGraphApi; no
             </Button>
           </>
         }
-        description="Every application collection on this server. Open one to browse and edit its documents; edge collections are explored on the Graph page."
+        description={
+          dataWrite
+            ? "Browse and edit application documents; explore edge collections on the Graph page."
+            : "Read-only access to application collections. Your role cannot create, edit or delete data."
+        }
         eyebrow="Data / collections"
         title="Collections"
       />
@@ -202,7 +210,7 @@ export function CollectionsIndexScreen({ api, notify }: { api: CogniGraphApi; no
         </Spin>
       </section>
 
-      {createOpen ? (
+      {createOpen && dataWrite ? (
         <CreateCollectionDialog
           api={api}
           notify={notify}

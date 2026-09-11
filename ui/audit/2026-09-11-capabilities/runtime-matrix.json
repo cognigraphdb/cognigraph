@@ -1,0 +1,2054 @@
+{
+  "sessions": [
+    {
+      "auth_enabled": true,
+      "edition": "community",
+      "scopes": [
+        "documents-read",
+        "documents-write",
+        "graph-read",
+        "graph-write",
+        "search",
+        "lua-execute",
+        "admin",
+        "promotion-read",
+        "governance-trust"
+      ],
+      "user": {
+        "key": "916d9ddf-2a11-4153-a0c7-35319e0d3371",
+        "role": "admin",
+        "tenant": "default",
+        "username": "admin"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "community",
+      "scopes": [
+        "documents-read",
+        "documents-write",
+        "graph-read",
+        "graph-write",
+        "search",
+        "lua-execute"
+      ],
+      "user": {
+        "key": "71ca9b59-adf4-461c-b1eb-5ff94f055702",
+        "role": "editor",
+        "tenant": "default",
+        "username": "qa-editor"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "community",
+      "scopes": [
+        "documents-read",
+        "graph-read",
+        "search"
+      ],
+      "user": {
+        "key": "8811b33b-fe31-497c-98ea-4c67f669aa04",
+        "role": "viewer",
+        "tenant": "default",
+        "username": "qa-viewer"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "community",
+      "scopes": [
+        "documents-read",
+        "graph-read",
+        "search",
+        "lua-execute"
+      ],
+      "user": {
+        "key": "b4b0b2e2-7d9b-4d0d-9cf9-2338d62d8cea",
+        "role": "script-runner",
+        "tenant": "default",
+        "username": "qa-script-runner"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "community",
+      "scopes": [
+        "tenant-admin"
+      ],
+      "user": {
+        "key": "bf0642cb-eb52-4a48-ad99-98e74e8906cc",
+        "role": "host-admin",
+        "tenant": "default",
+        "username": "host-admin"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "community",
+      "scopes": [
+        "promotion-read",
+        "policy-author"
+      ],
+      "user": {
+        "key": "eb7b79de-9888-484e-8425-21f8bdd3ec29",
+        "role": "policy-author",
+        "tenant": "default",
+        "username": "qa-policy-author"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "community",
+      "scopes": [
+        "promotion-read",
+        "policy-approve"
+      ],
+      "user": {
+        "key": "9fb35909-33c6-428a-b115-a7f93a808dab",
+        "role": "policy-approver",
+        "tenant": "default",
+        "username": "qa-policy-approver"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "community",
+      "scopes": [
+        "promotion-read",
+        "promotion-decide"
+      ],
+      "user": {
+        "key": "e707fbfe-f7ff-4a08-87b6-11f6ec590402",
+        "role": "promoter",
+        "tenant": "default",
+        "username": "qa-promoter"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "community",
+      "scopes": [
+        "promotion-read",
+        "artifact-attest"
+      ],
+      "user": {
+        "key": "03084d95-996e-4653-bef2-23c89b3fb7ad",
+        "role": "artifact-attestor",
+        "tenant": "default",
+        "username": "qa-artifact-attestor"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "enterprise",
+      "scopes": [
+        "documents-read",
+        "documents-write",
+        "graph-read",
+        "graph-write",
+        "search",
+        "lua-execute",
+        "admin",
+        "promotion-read",
+        "governance-trust"
+      ],
+      "user": {
+        "key": "b7206bb7-3eee-4dcd-8fac-34e3ac65efb0",
+        "role": "admin",
+        "tenant": "default",
+        "username": "admin"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "enterprise",
+      "scopes": [
+        "documents-read",
+        "documents-write",
+        "graph-read",
+        "graph-write",
+        "search",
+        "lua-execute"
+      ],
+      "user": {
+        "key": "ead94eec-4488-42ee-bd71-e0a7be2604b7",
+        "role": "editor",
+        "tenant": "default",
+        "username": "qa-editor"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "enterprise",
+      "scopes": [
+        "documents-read",
+        "graph-read",
+        "search"
+      ],
+      "user": {
+        "key": "fc3686cc-522f-49d7-bba0-8b24b7bf2cb6",
+        "role": "viewer",
+        "tenant": "default",
+        "username": "qa-viewer"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "enterprise",
+      "scopes": [
+        "documents-read",
+        "graph-read",
+        "search",
+        "lua-execute"
+      ],
+      "user": {
+        "key": "4991a5aa-4187-4455-9f35-7de685d6407f",
+        "role": "script-runner",
+        "tenant": "default",
+        "username": "qa-script-runner"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "enterprise",
+      "scopes": [
+        "tenant-admin"
+      ],
+      "user": {
+        "key": "7c056181-4cf1-40bb-b806-36ecae782c5a",
+        "role": "host-admin",
+        "tenant": "default",
+        "username": "host-admin"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "enterprise",
+      "scopes": [
+        "promotion-read",
+        "policy-author"
+      ],
+      "user": {
+        "key": "66fdfe63-8063-4145-b991-dfdb9914e99b",
+        "role": "policy-author",
+        "tenant": "default",
+        "username": "qa-policy-author"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "enterprise",
+      "scopes": [
+        "promotion-read",
+        "policy-approve"
+      ],
+      "user": {
+        "key": "f4c4597c-1a7a-4fcd-b699-2d29979027b9",
+        "role": "policy-approver",
+        "tenant": "default",
+        "username": "qa-policy-approver"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "enterprise",
+      "scopes": [
+        "promotion-read",
+        "promotion-decide"
+      ],
+      "user": {
+        "key": "0e24f8bf-9163-481c-af37-3ed91763de5c",
+        "role": "promoter",
+        "tenant": "default",
+        "username": "qa-promoter"
+      }
+    },
+    {
+      "auth_enabled": true,
+      "edition": "enterprise",
+      "scopes": [
+        "promotion-read",
+        "artifact-attest"
+      ],
+      "user": {
+        "key": "c216e9d1-79c7-43f1-9ed6-9db6442c202c",
+        "role": "artifact-attestor",
+        "tenant": "default",
+        "username": "qa-artifact-attestor"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "edition": "community",
+      "role": "admin",
+      "method": "GET",
+      "path": "/collections",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "admin",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "admin",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "admin",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "admin",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "admin",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "admin",
+      "method": "GET",
+      "path": "/users",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "admin",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "admin",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "admin",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `Admin` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "admin",
+      "method": "GET",
+      "path": "/neurons",
+      "status": 404,
+      "error": "Unknown API route"
+    },
+    {
+      "edition": "community",
+      "role": "editor",
+      "method": "GET",
+      "path": "/collections",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "editor",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "editor",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "editor",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "editor",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "editor",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "editor",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `Editor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "editor",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `Editor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "editor",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `Editor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "editor",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `Editor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "editor",
+      "method": "GET",
+      "path": "/neurons",
+      "status": 404,
+      "error": "Unknown API route"
+    },
+    {
+      "edition": "community",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/collections",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "viewer",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "viewer",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "viewer",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "viewer",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/neurons",
+      "status": 404,
+      "error": "Unknown API route"
+    },
+    {
+      "edition": "community",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/collections",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "script-runner",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "script-runner",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "script-runner",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "script-runner",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 200
+    },
+    {
+      "edition": "community",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/neurons",
+      "status": 404,
+      "error": "Unknown API route"
+    },
+    {
+      "edition": "community",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/collections",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "host-admin",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "host-admin",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "host-admin",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "host-admin",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "enterprise_feature_required: multi-tenancy"
+    },
+    {
+      "edition": "community",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/neurons",
+      "status": 404,
+      "error": "Unknown API route"
+    },
+    {
+      "edition": "community",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/collections",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-author",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-author",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-author",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-author",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/neurons",
+      "status": 404,
+      "error": "Unknown API route"
+    },
+    {
+      "edition": "community",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/collections",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-approver",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-approver",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-approver",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-approver",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/neurons",
+      "status": 404,
+      "error": "Unknown API route"
+    },
+    {
+      "edition": "community",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/collections",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "promoter",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "promoter",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "promoter",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "promoter",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/neurons",
+      "status": 404,
+      "error": "Unknown API route"
+    },
+    {
+      "edition": "community",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/collections",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "artifact-attestor",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "artifact-attestor",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "artifact-attestor",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "artifact-attestor",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "community",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/neurons",
+      "status": 404,
+      "error": "Unknown API route"
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "GET",
+      "path": "/collections",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "GET",
+      "path": "/users",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `Admin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "GET",
+      "path": "/neurons?space_type=qa_space",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "POST",
+      "path": "/construct/advise",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "POST",
+      "path": "/construct/evaluate",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "admin",
+      "method": "GET",
+      "path": "/promotions/evidence",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "GET",
+      "path": "/collections",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `Editor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `Editor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `Editor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `Editor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "GET",
+      "path": "/neurons?space_type=qa_space",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "POST",
+      "path": "/construct/advise",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "POST",
+      "path": "/construct/evaluate",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "editor",
+      "method": "GET",
+      "path": "/promotions/evidence",
+      "status": 403,
+      "error": "Forbidden: role `Editor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/collections",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/neurons?space_type=qa_space",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "POST",
+      "path": "/construct/advise",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "POST",
+      "path": "/construct/evaluate",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "viewer",
+      "method": "GET",
+      "path": "/promotions/evidence",
+      "status": 403,
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/collections",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/neurons?space_type=qa_space",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "POST",
+      "path": "/construct/advise",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "POST",
+      "path": "/construct/evaluate",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "script-runner",
+      "method": "GET",
+      "path": "/promotions/evidence",
+      "status": 403,
+      "error": "Forbidden: role `ScriptRunner` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/collections",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/neurons?space_type=qa_space",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "POST",
+      "path": "/construct/advise",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "POST",
+      "path": "/construct/evaluate",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "host-admin",
+      "method": "GET",
+      "path": "/promotions/evidence",
+      "status": 403,
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/collections",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/neurons?space_type=qa_space",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "POST",
+      "path": "/construct/advise",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "POST",
+      "path": "/construct/evaluate",
+      "status": 403,
+      "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-author",
+      "method": "GET",
+      "path": "/promotions/evidence",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/collections",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/neurons?space_type=qa_space",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "POST",
+      "path": "/construct/advise",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "POST",
+      "path": "/construct/evaluate",
+      "status": 403,
+      "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "policy-approver",
+      "method": "GET",
+      "path": "/promotions/evidence",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/collections",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/neurons?space_type=qa_space",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "POST",
+      "path": "/construct/advise",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "POST",
+      "path": "/construct/evaluate",
+      "status": 403,
+      "error": "Forbidden: role `Promoter` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "promoter",
+      "method": "GET",
+      "path": "/promotions/evidence",
+      "status": 200
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/collections",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/documents/qa_docs/one",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "PATCH",
+      "path": "/documents/qa_docs/two",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "POST",
+      "path": "/search/query",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "POST",
+      "path": "/graph/traverse",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "POST",
+      "path": "/lua/execute",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/users",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/cache/stats",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/admin/export",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/tenants",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/neurons?space_type=qa_space",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "POST",
+      "path": "/construct/advise",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "POST",
+      "path": "/construct/evaluate",
+      "status": 403,
+      "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+    },
+    {
+      "edition": "enterprise",
+      "role": "artifact-attestor",
+      "method": "GET",
+      "path": "/promotions/evidence",
+      "status": 200
+    }
+  ],
+  "anonymous": [
+    {
+      "edition": "community",
+      "context": {
+        "auth_enabled": false,
+        "edition": "community",
+        "scopes": [],
+        "user": null
+      },
+      "lua_mutation": {
+        "error": "Forbidden: graph.create_document requires documents:write\nstack traceback:\n\t[C]: in function 'graph.create_document'\n"
+      },
+      "export_denial": {
+        "error": "Forbidden: snapshot operations require authentication to be enabled and an Admin token"
+      }
+    },
+    {
+      "edition": "enterprise",
+      "context": {
+        "auth_enabled": false,
+        "edition": "enterprise",
+        "scopes": [],
+        "user": null
+      },
+      "lua_mutation": {
+        "error": "Forbidden: graph.create_document requires documents:write\nstack traceback:\n\t[C]: in function 'graph.create_document'\n"
+      },
+      "export_denial": {
+        "error": "Forbidden: snapshot operations require authentication to be enabled and an Admin token"
+      }
+    }
+  ]
+}

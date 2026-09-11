@@ -1,0 +1,52 @@
+{
+  "document": {
+    "_id": "qa_docs/one",
+    "_key": "one",
+    "created_at": "2026-09-11T12:41:57.540671+00:00",
+    "text": "Rigel connects Vega.",
+    "title": "Editor verified CG-53",
+    "updated_at": "2026-09-11T12:46:58.048077+00:00",
+    "value": 1
+  },
+  "neuron": {
+    "_id": "neurons/qa-hint",
+    "_key": "qa-hint",
+    "aliases": [],
+    "boost": 0.0,
+    "confidence": 0.9,
+    "created_at": "2026-09-11T12:42:09.258252+00:00",
+    "entity": "",
+    "evidence": [
+      "Rigel links to Vega."
+    ],
+    "id": "qa-hint",
+    "proposed_at": 1789130529,
+    "proposed_by": "admin",
+    "rationale": "Synthetic UI fixture",
+    "relation": "LINK",
+    "review_note": "Synthetic CG-53 editor authorization verification.",
+    "reviewed_at": 1789130845,
+    "reviewed_by": "qa-editor",
+    "source": "Rigel",
+    "space_type": "qa_space",
+    "status": "accepted",
+    "target": "Vega",
+    "triggers": [
+      "links to"
+    ],
+    "type": "relation_hint",
+    "updated_at": "2026-09-11T12:47:25.228435+00:00"
+  },
+  "deleted_user": {
+    "key": "66fdfe63-8063-4145-b991-dfdb9914e99b",
+    "role": "policy-author",
+    "tenant": "default",
+    "username": "qa-policy-author"
+  },
+  "revoked_session": {
+    "status": 401,
+    "body": {
+      "error": "Authentication error: JWT identity is no longer active"
+    }
+  }
+}

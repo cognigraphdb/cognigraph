@@ -301,3 +301,26 @@ The [auth runbook](../operations/authentication.md#console-tenant-onboarding)
 owns operator instructions. [CG-52](../issues/CG-52.md) and the
 [browser/HTTP report](../../ui/audit/2026-09-11-provisioning/audit.md) record
 verification; role-aware navigation and governance console entry remain CG-53.
+
+## Addendum (2026-09-11): verified edition and role capabilities
+
+The console now uses `GET /api/auth/session` as its connection/identity gate.
+The endpoint reuses bearer validation and tenant admission without a required
+data scope, returning the actual user, granted scopes, edition and auth mode.
+It replaces the catalog probes described above; a governance role need not read
+a data catalog to sign in. No existing backend route authorization is broadened.
+
+A shared UI policy governs sidebar entries, direct-route mounting and actions.
+An unavailable page explains edition or role restrictions before starting screen
+effects. Data readers retain browse/query access and Enterprise review/evaluation
+reads; mutations require their existing server scopes. Graph exploration follows
+the current POST traversal route's GraphWrite restriction. Governance identities
+receive an accurate overview/API handoff, not an empty data dashboard. Host-admin
+lands on Enterprise tenant administration. Periodic identity verification detects
+revocation even on the public-health-only overview.
+
+Auth-disabled development is explicit, with no invented Admin identity: current
+data operations and read-only Lua remain available, while user/tenant administration,
+snapshots and signed governance require identity. The
+[auth runbook](../operations/authentication.md#console-capability-policy) owns the
+policy and [CG-53](../issues/CG-53.md) records scoped runtime acceptance.

@@ -2,10 +2,12 @@ import { CheckCircle, Info, WarningCircle, XCircle } from "@phosphor-icons/react
 import { App as AntApp } from "antd";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router";
-import { CogniGraphApi } from "./api/client.ts";
+import { ApiError, CogniGraphApi } from "./api/client.ts";
+import { AccessBoundary, AccessContext } from "./components/AccessBoundary.tsx";
 import { ConnectionGate } from "./components/ConnectionGate.tsx";
 import { Sidebar } from "./components/Sidebar.tsx";
 import { TopBar } from "./components/TopBar.tsx";
+import { consoleAccess, landingRoute, type SessionContext } from "./lib/access.ts";
 import { defaultApiOrigin } from "./lib/api-origin.ts";
 import { CollectionsIndexScreen } from "./screens/CollectionsIndexScreen.tsx";
 import { CollectionsScreen } from "./screens/CollectionsScreen.tsx";
@@ -21,16 +23,6 @@ import { TenantsScreen } from "./screens/TenantsScreen.tsx";
 import { UserDetailScreen } from "./screens/UserDetailScreen.tsx";
 import { UsersScreen } from "./screens/UsersScreen.tsx";
 import type { ApiConfig, AuthSession, HealthSnapshot, Notify } from "./types.ts";
-
-const readSession = (): AuthSession | null => {
-  const raw = sessionStorage.getItem("cognigraph-session");
-  if (!raw) return null;
-  try {
-    return JSON.parse(raw) as AuthSession;
-  } catch {
-    return null;
-  }
-};
 
 type AuthGate = "checking" | "login" | "ready" | "unavailable";
 
@@ -48,12 +40,15 @@ const noticeIcons = {
 
 export function App() {
   const [config, setConfig] = useState(initialConfig);
-  const [session, setSession] = useState<AuthSession | null>(readSession);
+  const [verified, setVerified] = useState<{ api: CogniGraphApi; value: SessionContext }>();
   const [gateError, setGateError] = useState("");
   const [gate, setGate] = useState<AuthGate>("checking");
   const [health, setHealth] = useState<HealthSnapshot>({ status: "checking" });
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const api = useMemo(() => new CogniGraphApi(config), [config]);
+  const context = verified?.api === api ? verified.value : undefined;
+  const session = context?.user ?? null;
+  const access = context ? consoleAccess(context) : undefined;
   const { message: messageApi } = AntApp.useApp();
   const navigate = useNavigate();
   const location = useLocation();
@@ -83,7 +78,7 @@ export function App() {
     api.onUnauthorized = () => {
       sessionStorage.removeItem("cognigraph-api-token");
       sessionStorage.removeItem("cognigraph-session");
-      setSession(null);
+      setVerified(undefined);
       setConfig((current) => (current.token ? { ...current, token: "" } : current));
       notify("Session expired — please sign in again", "warning");
     };
@@ -111,19 +106,40 @@ export function App() {
     let cancelled = false;
     setGate("checking");
     setGateError("");
-    void api
-      .authRequired()
-      .then((needed) => {
-        if (!cancelled) setGate(needed ? "login" : "ready");
-      })
-      .catch((error) => {
-        if (!cancelled) {
-          setGateError(error instanceof Error ? error.message : "Server verification failed.");
-          setGate("unavailable");
-        }
-      });
+    let established = false;
+    const verify = () =>
+      api
+        .sessionContext()
+        .then((value) => {
+          if (!cancelled) {
+            established = true;
+            setVerified({ api, value });
+            if (value.user)
+              sessionStorage.setItem("cognigraph-session", JSON.stringify(value.user));
+            else {
+              sessionStorage.removeItem("cognigraph-session");
+              sessionStorage.removeItem("cognigraph-api-token");
+              setConfig((current) => (current.token ? { ...current, token: "" } : current));
+            }
+            setGate("ready");
+          }
+        })
+        .catch((error) => {
+          if (!cancelled) {
+            if (error instanceof ApiError && error.status === 401) {
+              setGate("login");
+              return;
+            }
+            if (established && (!(error instanceof ApiError) || error.status >= 500)) return;
+            setGateError(error instanceof Error ? error.message : "Server verification failed.");
+            setGate("unavailable");
+          }
+        });
+    void verify();
+    const timer = window.setInterval(() => void verify(), 15_000);
     return () => {
       cancelled = true;
+      window.clearInterval(timer);
     };
   }, [api]);
 
@@ -131,24 +147,24 @@ export function App() {
     sessionStorage.setItem("cognigraph-api-url", baseUrl);
     sessionStorage.setItem("cognigraph-api-token", token);
     sessionStorage.setItem("cognigraph-session", JSON.stringify(next));
-    setSession(next);
+    setVerified(undefined);
     setConfig({ baseUrl, token });
-    setGate("ready");
+    setGate("checking");
     notify(`Signed in as ${next.username}`);
   };
 
   const logout = () => {
     sessionStorage.removeItem("cognigraph-api-token");
     sessionStorage.removeItem("cognigraph-session");
-    setSession(null);
+    setVerified(undefined);
     setConfig((current) => ({ ...current, token: "" }));
   };
 
-  if (gate === "checking" || gate === "unavailable") {
+  if (gate === "checking" || gate === "unavailable" || (gate === "ready" && !access)) {
     return (
       <ConnectionGate
         server={config.baseUrl}
-        checking={gate === "checking"}
+        checking={gate !== "unavailable"}
         error={gateError}
         onRetry={() => {
           setGate("checking");
@@ -163,7 +179,7 @@ export function App() {
                 sessionStorage.removeItem("cognigraph-api-url");
                 sessionStorage.removeItem("cognigraph-api-token");
                 sessionStorage.removeItem("cognigraph-session");
-                setSession(null);
+                setVerified(undefined);
                 setConfig({ baseUrl: defaultApiOrigin(), token: "" });
               }
             : undefined
@@ -176,74 +192,93 @@ export function App() {
     return <LoginScreen defaultBaseUrl={config.baseUrl} onAuthenticated={onAuthenticated} />;
   }
 
+  if (!access) return null;
+
   return (
-    <div className={sidebarCollapsed ? "app-shell sidebar-collapsed" : "app-shell"}>
-      <Sidebar
-        collapsed={sidebarCollapsed}
-        health={health}
-        onToggle={() => setSidebarCollapsed((current) => !current)}
-        role={session?.role}
-      />
-      <TopBar
-        health={health}
-        server={config.baseUrl}
-        tenant={session?.tenant ?? "default"}
-        username={
-          session?.username ?? (config.token ? "Authenticated session" : "Authentication disabled")
-        }
-        onLogout={session ? logout : undefined}
-      />
-      <Routes>
-        <Route element={<Navigate replace to="/collections" />} path="/" />
-        <Route
-          element={
-            <OverviewScreen api={api} health={health} onRefresh={refreshHealth} session={session} />
+    <AccessContext.Provider value={access}>
+      <div className={sidebarCollapsed ? "app-shell sidebar-collapsed" : "app-shell"}>
+        <Sidebar
+          collapsed={sidebarCollapsed}
+          health={health}
+          onToggle={() => setSidebarCollapsed((current) => !current)}
+        />
+        <TopBar
+          health={health}
+          server={config.baseUrl}
+          tenant={session?.tenant ?? "default"}
+          username={
+            session?.username ??
+            (config.token ? "Authenticated session" : "Authentication disabled")
           }
-          path="/overview"
+          onLogout={session ? logout : undefined}
         />
-        <Route element={<CollectionsIndexScreen api={api} notify={notify} />} path="/collections" />
-        <Route
-          element={<CollectionsScreen api={api} connection={health.status} notify={notify} />}
-          path="/collections/:collection"
-        />
-        <Route element={<QueryScreen api={api} notify={notify} />} path="/query" />
-        <Route
-          element={
-            <GraphScreen
-              api={api}
-              notify={notify}
-              onOpenDocument={(id) => {
-                const [collection, key] = id.split("/");
-                navigate(
-                  `/collections/${encodeURIComponent(collection ?? "documents")}?doc=${encodeURIComponent(key ?? "")}`,
-                );
-              }}
+        <AccessBoundary>
+          <Routes>
+            <Route element={<Navigate replace to={landingRoute(access)} />} path="/" />
+            <Route
+              element={
+                <OverviewScreen
+                  api={api}
+                  health={health}
+                  onRefresh={refreshHealth}
+                  session={session}
+                />
+              }
+              path="/overview"
             />
-          }
-          path="/graph"
-        />
-        <Route element={<ReviewScreen api={api} notify={notify} />} path="/review" />
-        <Route element={<ConstructScreen api={api} notify={notify} />} path="/construct" />
-        <Route element={<LuaScreen api={api} notify={notify} />} path="/lua" />
-        <Route
-          element={
-            <UsersScreen api={api} notify={notify} session={session} edition={health.edition} />
-          }
-          path="/users"
-        />
-        <Route
-          element={
-            <UserDetailScreen api={api} currentUsername={session?.username} notify={notify} />
-          }
-          path="/users/:username"
-        />
-        <Route
-          element={<OperationsScreen api={api} baseUrl={config.baseUrl} notify={notify} />}
-          path="/operations"
-        />
-        <Route element={<TenantsScreen api={api} notify={notify} />} path="/tenants" />
-        <Route element={<Navigate replace to="/collections" />} path="*" />
-      </Routes>
-    </div>
+            <Route
+              element={<CollectionsIndexScreen api={api} notify={notify} />}
+              path="/collections"
+            />
+            <Route
+              element={<CollectionsScreen api={api} connection={health.status} notify={notify} />}
+              path="/collections/:collection"
+            />
+            <Route element={<QueryScreen api={api} notify={notify} />} path="/query" />
+            <Route
+              element={
+                <GraphScreen
+                  api={api}
+                  notify={notify}
+                  onOpenDocument={(id) => {
+                    const [collection, key] = id.split("/");
+                    navigate(
+                      `/collections/${encodeURIComponent(collection ?? "documents")}?doc=${encodeURIComponent(key ?? "")}`,
+                    );
+                  }}
+                />
+              }
+              path="/graph"
+            />
+            <Route element={<ReviewScreen api={api} notify={notify} />} path="/review" />
+            <Route element={<ConstructScreen api={api} notify={notify} />} path="/construct" />
+            <Route element={<LuaScreen api={api} notify={notify} />} path="/lua" />
+            <Route
+              element={
+                <UsersScreen
+                  api={api}
+                  notify={notify}
+                  session={session}
+                  edition={context?.edition}
+                />
+              }
+              path="/users"
+            />
+            <Route
+              element={
+                <UserDetailScreen api={api} currentUsername={session?.username} notify={notify} />
+              }
+              path="/users/:username"
+            />
+            <Route
+              element={<OperationsScreen api={api} baseUrl={config.baseUrl} notify={notify} />}
+              path="/operations"
+            />
+            <Route element={<TenantsScreen api={api} notify={notify} />} path="/tenants" />
+            <Route element={<Navigate replace to={landingRoute(access)} />} path="*" />
+          </Routes>
+        </AccessBoundary>
+      </div>
+    </AccessContext.Provider>
   );
 }

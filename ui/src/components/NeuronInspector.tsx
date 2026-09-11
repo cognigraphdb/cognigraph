@@ -18,6 +18,7 @@ import {
   triggersOf,
   verdictsFor,
 } from "../lib/neurons.ts";
+import { useAccess } from "./AccessBoundary.tsx";
 import { JsonCode } from "./JsonCode.tsx";
 
 export type NeuronVerdict = "accept" | "reject" | "retire";
@@ -56,10 +57,11 @@ const VERDICT_META: Record<
 // Rendered with key={neuron._key} by the caller: a new selection is a new
 // review context, so the draft note and tab reset by remounting.
 export function NeuronInspector({ neuron, busy, onVerdict, onClose }: NeuronInspectorProps) {
+  const { reviewWrite } = useAccess();
   const [note, setNote] = useState("");
   const [tab, setTab] = useState<"detail" | "json">("detail");
 
-  const verdicts = verdictsFor(neuron.status);
+  const verdicts = reviewWrite ? verdictsFor(neuron.status) : [];
   const triggers = triggersOf(neuron);
   const status = STATUS_META[neuron.status] ?? { label: neuron.status, color: "default" };
   const kind = KIND_META[neuron.type] ?? { label: neuron.type, hint: "" };

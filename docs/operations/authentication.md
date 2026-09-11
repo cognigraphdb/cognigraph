@@ -15,6 +15,14 @@ TOKEN=$(curl -s -X POST :3000/api/auth/login \
 curl -H "Authorization: Bearer $TOKEN" ':3000/api/documents?collection=docs'
 ```
 
+`GET /api/auth/session` reports the verified user, granted scopes (kebab-case
+wire names), server edition and `auth_enabled`. Every valid role can inspect
+its own identity without obtaining data or tenant-admin authority. The endpoint
+uses the normal bearer, active-tenant and isolated-store admission checks and
+returns `Cache-Control: no-store`. Revoked, expired or stale identities return
+401; inactive tenant access is refused. With auth disabled, it returns
+`user: null` and an empty scope list, not an Admin principal.
+
 Roles: `admin` (tenant data/operations, governance trust bootstrap and
 recovery, but no policy author/approve/promote/artifact-attest authority), `editor`
 (read/write data), `viewer` (read), `script-runner` (read-only Lua),
@@ -84,14 +92,39 @@ tenant or create a host-admin. Community offers Admin, Editor, Viewer and
 Script runner; Enterprise also offers Policy author, Policy approver, Promoter
 and Artifact attestor. These governance roles have their declared governance
 scopes and no tenant data access. Account roles cannot be edited through this
-console. Governance-role console entry is still tracked in [CG-53](../issues/CG-53.md);
-creating a governance account does not provide a complete governance UI.
+console. Governance accounts can sign in to an identity/service overview; signed
+governance workflows still use the API. Creating a governance account does not
+provide a complete governance UI.
 
 Onboarding leaves the host-admin session unchanged and does not retain the new
 password after completion. The tenant form uses server-default quotas;
 `max_active_jobs` is enforced. See the
 [tenant quota contract](../decisions/decision_multi_tenancy.md) for supported
 configuration and [CG-52](../issues/CG-52.md) for console verification.
+
+### Console capability policy
+
+The console verifies `/api/auth/session` before mounting pages and periodically
+rechecks the identity. Saved browser metadata does not grant capabilities.
+Navigation and direct URLs use the same policy: unsupported editions and roles
+receive an explanation before the page starts data requests. Revoked identities
+return to login; temporary background transport failures retain the last verified
+context while the normal health indicator reports availability. API authorization
+still governs every request.
+
+Readers can browse documents and run read queries. Enterprise readers can also
+inspect neurons and run construction evaluation/advice, while graph-writing
+roles can propose/review neurons and run mutation stages. The current Graph
+explorer calls POST `/api/graph/traverse`, which requires GraphWrite under the
+server's existing method-based route policy. Read-only users can use Query.
+Host-admin can manage Enterprise tenants without acquiring tenant data access.
+
+Authentication-disabled development permits existing direct data operations,
+read-only Lua, cache operations and Enterprise neuron/construction operations.
+The console labels this mode and hides user/tenant administration; snapshot
+export and signed governance require authenticated identities. It clears saved
+identity/token metadata when the server explicitly reports disabled auth.
+[CG-53 and verification](../issues/CG-53.md) record the current implementation.
 
 ### Token hygiene
 

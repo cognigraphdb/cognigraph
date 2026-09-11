@@ -15,6 +15,7 @@ import {
 import { App as AntApp, Button, Table, type TableColumnsType, Tag, Tooltip } from "antd";
 import { type ReactNode, useCallback, useEffect, useState } from "react";
 import { ApiError, type CogniGraphApi } from "../api/client.ts";
+import { useAccess } from "../components/AccessBoundary.tsx";
 import { JsonResult } from "../components/JsonResult.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
 import { formatUptime, parseMetrics, type ServerMetrics } from "../lib/metrics.ts";
@@ -35,6 +36,7 @@ export function OperationsScreen({
   baseUrl: string;
   notify: Notify;
 }) {
+  const { snapshots } = useAccess();
   const [result, setResult] = useState<unknown>();
   const [loading, setLoading] = useState<"cache" | "clear" | "export">();
   const [metrics, setMetrics] = useState<ServerMetrics>();
@@ -110,6 +112,7 @@ export function OperationsScreen({
   };
 
   const exportSnapshot = async () => {
+    if (!snapshots) return;
     setLoading("export");
     try {
       const snapshot = await api.get<JsonObject>("/admin/export");
@@ -216,7 +219,11 @@ export function OperationsScreen({
           <Operation
             icon={DownloadSimple}
             title="Snapshot export"
-            detail="Download a hot JSON backup from the active tenant."
+            detail={
+              snapshots
+                ? "Download a hot JSON backup from the active tenant."
+                : "Snapshot export requires authentication and an Admin account."
+            }
           >
             <Button
               icon={
@@ -226,7 +233,7 @@ export function OperationsScreen({
                   <DownloadSimple size={16} />
                 )
               }
-              disabled={Boolean(loading)}
+              disabled={!snapshots || Boolean(loading)}
               onClick={exportSnapshot}
             >
               {loading === "export" ? "Exporting…" : "Export"}

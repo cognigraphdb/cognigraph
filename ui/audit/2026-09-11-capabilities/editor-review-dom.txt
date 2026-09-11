@@ -1,0 +1,89 @@
+- complementary:
+  - img "CogniGraph":
+    - generic: CogniGraph
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38477
+  - generic: Healthy
+  - generic: Sep 11, 2026, 3:47 PM
+  - generic: qa-editor
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - generic: Governance / review
+  - heading "Review" [level=1]
+  - paragraph: Review proposed rules, accept or reject them with attribution, and retire neurons the graduation report flags as redundant.
+  - button "Propose neuron":
+    - generic: Propose neuron
+  - button "Refresh":
+    - generic: Refresh
+  - generic "qa_space":
+    - text: qa_space
+    - combobox "Space type"
+  - radiogroup "segmented control":
+    - radio "Proposed"
+    - generic "Proposed"
+    - radio "Accepted" [checked] [active]
+    - generic "Accepted"
+    - radio "Rejected"
+    - generic "Rejected"
+    - radio "Retired"
+    - generic "Retired"
+    - radio "All"
+    - generic "All"
+  - generic: 1 neuron
+  - heading "Graduation flags" [level=2]:
+    - text: Graduation flags
+  - generic: 1 candidate — advisory only
+  - list:
+    - button "qa-hint"
+    - generic: Rigel --LINK--> Vega
+    - generic: Covered by base rules — the space grounds this fact without the neuron.
+  - table:
+    - rowgroup:
+      - row "Fact Kind Status Confidence Proposed by Reviewed by":
+        - columnheader "Fact"
+        - columnheader "Kind"
+        - columnheader "Status"
+        - columnheader "Confidence"
+        - columnheader "Proposed by"
+        - columnheader "Reviewed by"
+    - rowgroup:
+      - row "Rigel —LINK→ Vega Relation hint Accepted 0.90 admin qa-editor":
+        - cell "Rigel —LINK→ Vega":
+          - strong: Rigel —LINK→ Vega
+        - cell "Relation hint":
+          - generic: Relation hint
+        - cell "Accepted":
+          - generic: Accepted
+        - cell "0.90"
+        - cell "admin"
+        - cell "qa-editor"

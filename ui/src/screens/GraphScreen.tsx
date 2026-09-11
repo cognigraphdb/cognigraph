@@ -2,6 +2,7 @@ import { BracketsCurly, CircleNotch, Graph, Play, Plus } from "@phosphor-icons/r
 import { Button, Form, Input, InputNumber, Segmented, Select } from "antd";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { CogniGraphApi } from "../api/client.ts";
+import { useAccess } from "../components/AccessBoundary.tsx";
 import { CreateEdgeDialog } from "../components/CreateEdgeDialog.tsx";
 import { ErrorAlert } from "../components/ErrorAlert.tsx";
 import { GraphCanvas } from "../components/GraphCanvas.tsx";
@@ -24,6 +25,7 @@ interface GraphScreenProps {
 }
 
 export function GraphScreen({ api, notify, onOpenDocument }: GraphScreenProps) {
+  const { graphWrite } = useAccess();
   // No mock defaults and no auto-run: the start vertex is the operator's,
   // and the edge collection comes from this tenant's actual catalog.
   const [startVertex, setStartVertex] = useState("");
@@ -142,6 +144,8 @@ export function GraphScreen({ api, notify, onOpenDocument }: GraphScreenProps) {
           <div className="actions-row-base">
             <Button
               icon={<Plus aria-hidden="true" size={17} />}
+              disabled={!graphWrite}
+              title={!graphWrite ? "Your role cannot create relationships." : undefined}
               onClick={() => setEdgeDialog(true)}
             >
               New relationship
@@ -249,7 +253,7 @@ export function GraphScreen({ api, notify, onOpenDocument }: GraphScreenProps) {
       {mode === "visual" && graph ? (
         <SelectedGraphPath edges={graph.edges} nodes={graph.nodes} path={selectedPath} />
       ) : null}
-      {edgeDialog ? (
+      {edgeDialog && graphWrite ? (
         <CreateEdgeDialog
           api={api}
           edgeCollections={edgeCollections}

@@ -26,6 +26,25 @@ pub struct ScopePolicy {
 
 pub async fn check(
     State((state, policy)): State<(AppState, ScopePolicy)>,
+    req: Request,
+    next: Next,
+) -> Result<Response, AppError> {
+    admit(state, Some(policy), req, next).await
+}
+
+/// Verify the caller for session introspection without requiring a data or
+/// control-plane scope. This middleware belongs only on the identity endpoint.
+pub async fn identify(
+    State(state): State<AppState>,
+    req: Request,
+    next: Next,
+) -> Result<Response, AppError> {
+    admit(state, None, req, next).await
+}
+
+async fn admit(
+    state: AppState,
+    policy: Option<ScopePolicy>,
     mut req: Request,
     next: Next,
 ) -> Result<Response, AppError> {
@@ -70,16 +89,18 @@ pub async fn check(
         )));
     };
     crate::edition::require_tenant(&user.tenant)?;
-    let required = if matches!(*req.method(), Method::GET | Method::HEAD) {
-        policy.read
-    } else {
-        policy.write
-    };
-    if !user.role.grants(required) {
-        return Err(AppError(CogniGraphError::Forbidden(format!(
-            "role `{:?}` lacks the required scope",
-            user.role
-        ))));
+    if let Some(policy) = policy {
+        let required = if matches!(*req.method(), Method::GET | Method::HEAD) {
+            policy.read
+        } else {
+            policy.write
+        };
+        if !user.role.grants(required) {
+            return Err(AppError(CogniGraphError::Forbidden(format!(
+                "role `{:?}` lacks the required scope",
+                user.role
+            ))));
+        }
     }
     // Tenant gate (decision_multi_tenancy.md, D2): resolved BEFORE any
     // route logic. The implicit default tenant passes unless a record

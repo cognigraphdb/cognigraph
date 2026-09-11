@@ -1,3 +1,4 @@
+import { parseSessionContext, type SessionContext } from "../lib/access.ts";
 import type { ApiConfig, HealthSnapshot, JsonObject } from "../types.ts";
 
 export class ApiError extends Error {
@@ -74,30 +75,14 @@ export class CogniGraphApi {
     return { token: res.token, role: res.role, tenant: res.tenant ?? "default" };
   }
 
-  // Only a recognizable successful read establishes access. Network failures,
-  // HTML fallbacks, permission errors and server failures leave auth unverified.
-  async authRequired(): Promise<boolean> {
-    try {
-      const signal = AbortSignal.timeout(10_000);
-      let payload: unknown;
-      let catalog = "collections";
-      try {
-        payload = await this.request<unknown>("/collections", { signal });
-      } catch (error) {
-        // Host administrators manage tenants but cannot read tenant data. Verify
-        // their protected control-plane catalog, never infer access from a 403.
-        if (!(error instanceof ApiError) || error.status !== 403) throw error;
-        catalog = "tenants";
-        payload = await this.request<unknown>("/tenants", { signal });
-      }
-      if (!isObject(payload) || !Array.isArray(payload[catalog])) {
-        throw new Error(`The server did not return a valid CogniGraph ${catalog} response.`);
-      }
-      return false;
-    } catch (error) {
-      if (error instanceof ApiError && error.status === 401) return true;
-      throw error;
-    }
+  // Verify identity independently of data scopes, including governance-only roles.
+  // No fallback to HTML, denied catalogs or saved session metadata.
+  async sessionContext(): Promise<SessionContext> {
+    return parseSessionContext(
+      await this.request<unknown>("/auth/session", {
+        signal: AbortSignal.timeout(10_000),
+      }),
+    );
   }
 
   // Prometheus exposition text from the root `/metrics` (not `/api`, not

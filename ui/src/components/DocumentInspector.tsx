@@ -14,6 +14,7 @@ import { embeddingSourceText } from "../lib/api-documents.ts";
 import { type DocumentEdit, editedDocument } from "../lib/document-edit.ts";
 import { documentJson } from "../lib/documents.ts";
 import type { GraphDocument, InspectorTab } from "../types.ts";
+import { useAccess } from "./AccessBoundary.tsx";
 import { ErrorAlert } from "./ErrorAlert.tsx";
 import { JsonCode } from "./JsonCode.tsx";
 
@@ -34,6 +35,7 @@ export function DocumentInspector({
   onUpdate,
   onEmbed,
 }: DocumentInspectorProps) {
+  const { dataWrite } = useAccess();
   const [tab, setTab] = useState<InspectorTab>("json");
   const [editing, setEditing] = useState(false);
   const [editBase, setEditBase] = useState(document);
@@ -45,6 +47,7 @@ export function DocumentInspector({
   const embeddable = embeddingSourceText(document).length > 0;
 
   const embed = async () => {
+    if (!dataWrite) return;
     setEmbedding(true);
     try {
       await onEmbed();
@@ -67,6 +70,7 @@ export function DocumentInspector({
   };
 
   const save = async () => {
+    if (!dataWrite) return;
     let updated: DocumentEdit;
     try {
       updated = editedDocument(editBase, draft);
@@ -132,18 +136,20 @@ export function DocumentInspector({
           {editing ? (
             <>
               <Button
-                disabled={saving}
+                disabled={!dataWrite || saving}
                 icon={<FloppyDisk aria-hidden="true" size={17} />}
                 onClick={() => void save()}
               >
                 {saving ? "Saving…" : "Save"}
               </Button>
-              <Button disabled={saving} onClick={() => setEditing(false)}>
+              <Button disabled={!dataWrite || saving} onClick={() => setEditing(false)}>
                 Cancel
               </Button>
             </>
           ) : (
             <Button
+              disabled={!dataWrite}
+              title={!dataWrite ? "Your role has read-only access." : undefined}
               icon={<PencilSimple aria-hidden="true" size={17} />}
               onClick={() => {
                 setEditBase(document);
@@ -156,7 +162,7 @@ export function DocumentInspector({
           )}
           <Button
             danger
-            disabled={saving}
+            disabled={!dataWrite || saving}
             icon={<Trash aria-hidden="true" size={17} />}
             onClick={onDelete}
           >
@@ -209,7 +215,7 @@ export function DocumentInspector({
         >
           <Button
             className="embed-button"
-            disabled={embedding || editing || !embeddable}
+            disabled={!dataWrite || embedding || editing || !embeddable}
             icon={
               embedding ? (
                 <CircleNotch className="cg-spin" weight="bold" />

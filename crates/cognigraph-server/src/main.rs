@@ -566,7 +566,7 @@ async fn main() {
     // convention — Prometheus scrapers and load balancers expect fixed paths,
     // and they are exact routes matched before any future SPA fallback.
     let mut api = Router::new()
-        .nest("/auth", routes::auth::router())
+        .nest("/auth", routes::auth::router(state.clone()))
         .nest(
             "/cache",
             routes::cache::router().route_layer(guard(Scope::Admin, Scope::Admin)),

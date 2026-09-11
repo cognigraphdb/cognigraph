@@ -139,7 +139,7 @@ async fn foreign_tenant_sessions_and_user_creation_are_refused() {
         assert_eq!(status, StatusCode::FORBIDDEN);
         assert_eq!(body["code"], "enterprise_feature_required");
     }
-    let login = crate::routes::auth::router().with_state(state);
+    let login = crate::routes::auth::router(state.clone()).with_state(state);
     let (status, body) = request(
         login,
         "POST",

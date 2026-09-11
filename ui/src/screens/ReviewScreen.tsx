@@ -12,6 +12,7 @@ import {
 } from "antd";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { CogniGraphApi } from "../api/client.ts";
+import { useAccess } from "../components/AccessBoundary.tsx";
 import { NeuronInspector, type NeuronVerdict } from "../components/NeuronInspector.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
 import { ProposeNeuronDialog } from "../components/ProposeNeuronDialog.tsx";
@@ -34,6 +35,7 @@ type StatusFilter = NeuronStatus | "all";
 const PAGE_LIMIT = 200;
 
 export function ReviewScreen({ api, notify }: { api: CogniGraphApi; notify: Notify }) {
+  const { reviewWrite } = useAccess();
   const [spaces, setSpaces] = useState<string[]>([]);
   const [space, setSpace] = useState<string>();
   const [status, setStatus] = useState<StatusFilter>("proposed");
@@ -112,6 +114,7 @@ export function ReviewScreen({ api, notify }: { api: CogniGraphApi; notify: Noti
   };
 
   async function applyVerdict(neuron: NeuronDoc, verdict: NeuronVerdict, note: string) {
+    if (!reviewWrite) return;
     setVerdictBusy(true);
     try {
       await api.post(
@@ -187,8 +190,13 @@ export function ReviewScreen({ api, notify }: { api: CogniGraphApi; notify: Noti
           actions={
             <>
               <Button
-                disabled={spaces.length === 0}
+                disabled={!reviewWrite || spaces.length === 0}
                 icon={<PlusCircle size={17} />}
+                title={
+                  !reviewWrite
+                    ? "Your role can read neurons but cannot propose or review them."
+                    : undefined
+                }
                 onClick={() => setProposeOpen(true)}
                 type="primary"
               >
@@ -209,7 +217,11 @@ export function ReviewScreen({ api, notify }: { api: CogniGraphApi; notify: Noti
               </Button>
             </>
           }
-          description="Review proposed rules, accept or reject them with attribution, and retire neurons the graduation report flags as redundant."
+          description={
+            reviewWrite
+              ? "Review proposed rules, accept or reject them with attribution, and retire neurons the graduation report flags as redundant."
+              : "Read-only access to neurons and graduation flags. Your role cannot propose, accept, reject or retire neurons."
+          }
           eyebrow="Governance / review"
           title="Review"
         />
@@ -329,7 +341,7 @@ export function ReviewScreen({ api, notify }: { api: CogniGraphApi; notify: Noti
         />
       ) : null}
 
-      {proposeOpen ? (
+      {proposeOpen && reviewWrite ? (
         <ProposeNeuronDialog
           api={api}
           defaultSpace={space}

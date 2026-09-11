@@ -2,6 +2,7 @@ import { Spin } from "antd";
 import { useEffect, useMemo, useState } from "react";
 import { useParams, useSearchParams } from "react-router";
 import type { CogniGraphApi } from "../api/client.ts";
+import { useAccess } from "../components/AccessBoundary.tsx";
 import { CollectionToolbar } from "../components/CollectionToolbar.tsx";
 import { DocumentDialog } from "../components/DocumentDialog.tsx";
 import { DocumentInspector } from "../components/DocumentInspector.tsx";
@@ -27,6 +28,7 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
   // The browsed collection comes from the URL (/collections/{collection});
   // An optional ?doc={key} enters whole-collection search, so off-page
   // documents are resolved by key instead of silently selecting the first row.
+  const { dataWrite } = useAccess();
   const { collection = "documents" } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const targetKey = searchParams.get("doc") ?? undefined;
@@ -348,7 +350,7 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
           onUpdate={updateDocument}
         />
       ) : null}
-      {dialog === "create" ? (
+      {dialog === "create" && dataWrite ? (
         <DocumentDialog
           collection={collection}
           mode="create"
@@ -356,7 +358,7 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
           onCreate={createDocument}
         />
       ) : null}
-      {dialog === "delete" && selected ? (
+      {dialog === "delete" && selected && dataWrite ? (
         <DocumentDialog
           collection={collection}
           mode="delete"

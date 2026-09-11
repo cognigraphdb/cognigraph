@@ -1,0 +1,192 @@
+[
+  {
+    "color": "rgb(8, 127, 124)",
+    "group": {
+      "clientWidth": 322,
+      "height": 53.6640625,
+      "scrollWidth": 322,
+      "width": 322,
+      "x": 639,
+      "y": 343.1640625
+    },
+    "mark": {
+      "clientWidth": 38,
+      "height": 38,
+      "scrollWidth": 38,
+      "width": 38,
+      "x": 639,
+      "y": 350.9921875
+    },
+    "maskImage": "url(\"http://127.0.0.1:38480/cognigraph-mark-b1k1wyxb.svg\")",
+    "maskSize": "contain",
+    "state": "login",
+    "viewport": {
+      "height": 1000,
+      "width": 1600
+    }
+  },
+  {
+    "color": "rgb(8, 127, 124)",
+    "group": {
+      "clientWidth": 322,
+      "height": 53.6640625,
+      "scrollWidth": 322,
+      "width": 322,
+      "x": 479,
+      "y": 243.1640625
+    },
+    "mark": {
+      "clientWidth": 38,
+      "height": 38,
+      "scrollWidth": 38,
+      "width": 38,
+      "x": 479,
+      "y": 250.9921875
+    },
+    "maskImage": "url(\"http://127.0.0.1:38480/cognigraph-mark-b1k1wyxb.svg\")",
+    "maskSize": "contain",
+    "state": "login",
+    "viewport": {
+      "height": 800,
+      "width": 1280
+    }
+  },
+  {
+    "color": "rgb(8, 127, 124)",
+    "group": {
+      "clientWidth": 322,
+      "height": 53.6640625,
+      "scrollWidth": 322,
+      "width": 322,
+      "x": 372.5,
+      "y": 176.6640625
+    },
+    "mark": {
+      "clientWidth": 38,
+      "height": 38,
+      "scrollWidth": 38,
+      "width": 38,
+      "x": 372.5,
+      "y": 184.4921875
+    },
+    "maskImage": "url(\"http://127.0.0.1:38480/cognigraph-mark-b1k1wyxb.svg\")",
+    "maskSize": "contain",
+    "state": "login",
+    "viewport": {
+      "height": 667,
+      "width": 1067
+    }
+  },
+  {
+    "brandLabel": "CogniGraph",
+    "color": "rgb(39, 185, 172)",
+    "group": {
+      "clientWidth": 194,
+      "height": 70,
+      "scrollWidth": 194,
+      "width": 194,
+      "x": 0,
+      "y": 0
+    },
+    "mark": {
+      "clientWidth": 32,
+      "height": 32,
+      "scrollWidth": 32,
+      "width": 32,
+      "x": 22,
+      "y": 19
+    },
+    "maskImage": "url(\"http://127.0.0.1:38480/cognigraph-mark-b1k1wyxb.svg\")",
+    "maskSize": "contain",
+    "state": "sidebar-responsive",
+    "viewport": {
+      "height": 1000,
+      "width": 1600
+    },
+    "wordmarkDisplay": "block"
+  },
+  {
+    "brandLabel": "CogniGraph",
+    "color": "rgb(39, 185, 172)",
+    "group": {
+      "clientWidth": 194,
+      "height": 70,
+      "scrollWidth": 194,
+      "width": 194,
+      "x": 0,
+      "y": 0
+    },
+    "mark": {
+      "clientWidth": 32,
+      "height": 32,
+      "scrollWidth": 32,
+      "width": 32,
+      "x": 22,
+      "y": 19
+    },
+    "maskImage": "url(\"http://127.0.0.1:38480/cognigraph-mark-b1k1wyxb.svg\")",
+    "maskSize": "contain",
+    "state": "sidebar-responsive",
+    "viewport": {
+      "height": 800,
+      "width": 1280
+    },
+    "wordmarkDisplay": "block"
+  },
+  {
+    "brandLabel": "CogniGraph",
+    "color": "rgb(39, 185, 172)",
+    "group": {
+      "clientWidth": 72,
+      "height": 61,
+      "scrollWidth": 72,
+      "width": 72,
+      "x": 0,
+      "y": 0
+    },
+    "mark": {
+      "clientWidth": 32,
+      "height": 32,
+      "scrollWidth": 32,
+      "width": 32,
+      "x": 20,
+      "y": 14.5
+    },
+    "maskImage": "url(\"http://127.0.0.1:38480/cognigraph-mark-b1k1wyxb.svg\")",
+    "maskSize": "contain",
+    "state": "sidebar-responsive",
+    "viewport": {
+      "height": 667,
+      "width": 1067
+    },
+    "wordmarkDisplay": "none"
+  },
+  {
+    "brandLabel": "CogniGraph",
+    "color": "rgb(39, 185, 172)",
+    "group": {
+      "clientWidth": 72,
+      "height": 70,
+      "scrollWidth": 72,
+      "width": 72,
+      "x": 0,
+      "y": 0
+    },
+    "mark": {
+      "clientWidth": 32,
+      "height": 32,
+      "scrollWidth": 32,
+      "width": 32,
+      "x": 20,
+      "y": 19
+    },
+    "maskImage": "url(\"http://127.0.0.1:38480/cognigraph-mark-b1k1wyxb.svg\")",
+    "maskSize": "contain",
+    "state": "sidebar-manually-collapsed",
+    "viewport": {
+      "height": 1000,
+      "width": 1600
+    },
+    "wordmarkDisplay": "none"
+  }
+]

@@ -2,6 +2,7 @@ import { CircleNotch, Play } from "@phosphor-icons/react";
 import { Button, Tag } from "antd";
 import { useState } from "react";
 import type { CogniGraphApi } from "../api/client.ts";
+import { useAccess } from "../components/AccessBoundary.tsx";
 import { JsonResult } from "../components/JsonResult.tsx";
 import { LuaEditor } from "../components/LuaEditor.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
@@ -44,6 +45,7 @@ return graph.traverse("documents/some-key", {
 ];
 
 export function LuaScreen({ api, notify }: LuaScreenProps) {
+  const { luaWrite } = useAccess();
   const [script, setScript] = useState(defaultScript);
   const [result, setResult] = useState<unknown>();
   const [running, setRunning] = useState(false);
@@ -69,7 +71,11 @@ export function LuaScreen({ api, notify }: LuaScreenProps) {
   return (
     <main className="page-workspace no-scroll">
       <PageHeader
-        description="Run sandboxed Lua against the graph API — no filesystem, network, or OS access; writes require a write-scoped session; execution is instruction-limited."
+        description={
+          luaWrite
+            ? "Run sandboxed Lua with read and write access to your tenant. Execution is instruction-limited; filesystem, network and OS access are unavailable."
+            : "Run read-only sandboxed Lua against your tenant. This session cannot mutate data through Lua. Execution is instruction-limited."
+        }
         eyebrow="Developer tools / scripting"
         title="Lua console"
       />

@@ -1,21 +1,49 @@
 //! Session login: exchanges credentials for a short-lived JWT.
 //! Unauthenticated by necessity; requires COGNIGRAPH_AUTH_ENABLED and COGNIGRAPH_JWT_SECRET.
 
-use axum::extract::State;
-use axum::routing::post;
+use axum::extract::{Extension, State};
+use axum::routing::{get, post};
 use axum::{Json, Router};
 use serde::Deserialize;
 
 #[cfg(any(test, feature = "enterprise"))]
 use cognigraph_auth::DEFAULT_TENANT;
-use cognigraph_auth::Role;
+use cognigraph_auth::{Role, Scope, User};
 use cognigraph_core::CogniGraphError;
 
 use crate::error::AppError;
 use crate::state::AppState;
 
-pub fn router() -> Router<AppState> {
-    Router::new().route("/login", post(login))
+pub fn router(state: AppState) -> Router<AppState> {
+    Router::new().route("/login", post(login)).route(
+        "/session",
+        get(session).route_layer(axum::middleware::from_fn_with_state(
+            state,
+            crate::auth_middleware::identify,
+        )),
+    )
+}
+
+async fn session(
+    State(state): State<AppState>,
+    user: Option<Extension<User>>,
+) -> Result<impl axum::response::IntoResponse, AppError> {
+    let user = user.map(|Extension(user)| user);
+    if state.auth.is_some() && user.is_none() {
+        return Err(CogniGraphError::AuthError("missing verified identity".into()).into());
+    }
+    // No invented Admin identity in development mode. An empty scope list
+    // describes the absence of an authenticated principal, not enabled guards.
+    let scopes: &[Scope] = user.as_ref().map_or(&[], |user| user.role.scopes());
+    Ok((
+        [(axum::http::header::CACHE_CONTROL, "no-store")],
+        Json(serde_json::json!({
+            "auth_enabled": state.auth.is_some(),
+            "user": user,
+            "scopes": scopes,
+            "edition": if cfg!(feature = "enterprise") { "enterprise" } else { "community" },
+        })),
+    ))
 }
 
 #[derive(Deserialize)]
@@ -68,6 +96,10 @@ async fn login(
         "tenant": user.tenant,
     })))
 }
+
+#[cfg(test)]
+#[path = "auth_session_tests.rs"]
+mod session_tests;
 
 #[cfg(test)]
 mod tests {
