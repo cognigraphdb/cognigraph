@@ -34,6 +34,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 - 2026-09-11: [Adopt the cleaned CogniGraph mark](2026-09-11-logo-refresh.md)
 - 2026-09-11: [Full UI code and backend-contract review](2026-09-11-full-ui-review.md)
 - 2026-09-11: [Opt-in Docker Hub publication](2026-09-11-docker-publishing.md)
+- 2026-09-11: [Guard console executions across buttons and shortcuts](2026-09-11-console-execution-guards.md)
 - 2026-09-10: [Shared CI runner and checked pre-push workflow](2026-09-10-workflow-hooks.md)
 - 2026-09-10: [Product logo in the console](2026-09-10-ui-logo.md)
 - 2026-09-10: [UI agent instructions and tracking](2026-09-10-ui-agent-instructions.md)

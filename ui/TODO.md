@@ -16,14 +16,19 @@ The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
 recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
 explicit untested boundaries. The historical Done entries below describe
 implementation checkpoints; they do not establish current acceptance. The UI
-suite now passes 132 helper tests after CG-49–CG-54/CG-62 remediation,
+suite now passes 137 helper tests after CG-49–CG-55/CG-62 remediation,
 but CI omits it and no browser regression suite exists yet. Keep defect status
 in the linked registry rather than duplicating it.
 
+- [x] [Execution guards CG-55](../docs/issues/CG-55.md): synchronous submission
+  ownership for Lua/CGQL buttons, shortcuts and form submit, with obsolete
+  completion suppression. [Browser/API evidence](audit/2026-09-11-execution-guards/audit.md)
+  verifies delayed real executions, persisted write counts, errors and recovery.
+  Seven P2s remain open.
 - [x] [Review/space paging CG-54](../docs/issues/CG-54.md): truthful queue ranges,
   complete searchable catalogs and off-page selection/graduation links.
   [Browser/API evidence](audit/2026-09-11-review-paging/audit.md) covers 101 spaces,
-  402 seeded neurons, persisted verdicts and catalog retry. Eight P2s remain open.
+  402 seeded neurons, persisted verdicts and catalog retry. That checkpoint left eight P2s open.
 - [x] [Edition/role capabilities CG-53](../docs/issues/CG-53.md): verified session
   context, scoped navigation/direct routes/actions, governance-role entry and
   explicit anonymous development policy. [Browser/API evidence](audit/2026-09-11-capabilities/audit.md)
@@ -46,8 +51,7 @@ in the linked registry rather than duplicating it.
   review. [Browser/API evidence](audit/2026-09-11-data-preservation/audit.md).
 - [ ] Reconcile [empty/error guidance CG-58](../docs/issues/CG-58.md) and
   [collection search/filter scope CG-59](../docs/issues/CG-59.md).
-- [ ] Repair [execution guards CG-55](../docs/issues/CG-55.md),
-  [result provenance CG-56](../docs/issues/CG-56.md),
+- [ ] Repair [result provenance CG-56](../docs/issues/CG-56.md),
   [table keyboard access CG-57](../docs/issues/CG-57.md), and
   [collapsed navigation names CG-63](../docs/issues/CG-63.md).
 - [ ] Establish [UI CI/browser coverage CG-60](../docs/issues/CG-60.md) and

@@ -1,0 +1,11 @@
+{
+  "at": 1789134476261,
+  "buttons": [
+    {
+      "disabled": true,
+      "text": "Running…"
+    }
+  ],
+  "notices": [],
+  "result": "Run the request to inspect its response."
+}

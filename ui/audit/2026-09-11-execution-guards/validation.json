@@ -1,0 +1,15 @@
+{
+  "ui_check": "PASS: Biome 114 files and TypeScript",
+  "ui_tests": {
+    "passed": 137,
+    "files": 20,
+    "assertions": 704
+  },
+  "ui_build": {
+    "modules": 1728,
+    "javascript": "index-3hmw8q6y.js"
+  },
+  "evidence_verifier": "PASS: 12 intended executions; no overlapping same-console requests; write counts, ownership and retry verified",
+  "scope": "UI only; Rust unchanged; no push/remote CI",
+  "cleanup": "Signed out, closed owned tab, stopped owned API/proxy, removed /tmp/cg55-qa/store.redb and directory"
+}

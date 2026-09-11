@@ -1,0 +1,10 @@
+{
+  "at": 1789134175908,
+  "buttons": [
+    {
+      "disabled": true,
+      "text": "Running…"
+    }
+  ],
+  "result": "Run a script to inspect its result."
+}

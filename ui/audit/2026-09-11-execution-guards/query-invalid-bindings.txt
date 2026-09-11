@@ -1,0 +1,78 @@
+- complementary:
+  - img "CogniGraph":
+    - generic: CogniGraph
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38484
+  - generic: Healthy
+  - generic: Sep 11, 2026, 4:45 PM
+  - generic: admin
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - generic: Developer tools / query
+  - heading "Query console" [level=1]
+  - paragraph: "Read-only CGQL plus the retrieval modes: semantic, hybrid, raw-vector, and graph-augmented search."
+  - tablist:
+    - tab "CGQL" [selected]
+    - tab "Semantic"
+    - tab "Hybrid"
+    - tab "Vector"
+    - tab "Graph-augmented"
+  - tabpanel "CGQL":
+    - heading "Query" [level=2]
+    - generic: 10010 ms
+    - generic: "1"
+    - textbox "CGQL query" [active]:
+      - generic: FOR d IN qa_execution FILTER d.trial == "absent" RETURN d
+    - generic: Validated against the active CGQL engine after you pause
+    - generic: ⌘ Enter or Ctrl Enter
+    - generic "Bind variables": "Bind variables :"
+    - textbox: "[]"
+    - generic: Bind variables must be a JSON object
+    - button "Run query":
+      - generic: Run query
+    - text: Recent
+    - 'button "FOR d IN qa_execution SORT d._key RETURN { key: d._key, trial: d.trial }"':
+      - generic: "FOR d IN qa_execution SORT d._key RETURN { key: d._key, trial: d.trial }"
+    - heading "Result" [level=2]
+    - list:
+      - code: "{"
+      - code: "\"error\": \"Validation error: parse error at line 1, column 9: expected read_query or unary_expr\""
+      - code: "}"
+- alert:
+  - generic: Bind variables must be a JSON object

@@ -6,6 +6,7 @@ import { useAccess } from "../components/AccessBoundary.tsx";
 import { JsonResult } from "../components/JsonResult.tsx";
 import { LuaEditor } from "../components/LuaEditor.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
+import { useExecution } from "../hooks/useExecution.ts";
 import type { Notify } from "../types.ts";
 
 interface LuaScreenProps {
@@ -48,25 +49,26 @@ export function LuaScreen({ api, notify }: LuaScreenProps) {
   const { luaWrite } = useAccess();
   const [script, setScript] = useState(defaultScript);
   const [result, setResult] = useState<unknown>();
-  const [running, setRunning] = useState(false);
+  const { running, execute } = useExecution(api);
   const [elapsed, setElapsed] = useState<number>();
 
-  const run = async () => {
-    setRunning(true);
-    const started = performance.now();
-    try {
-      const response = await api.post("/lua/execute", { script });
-      setResult(response);
-      notify("Script completed");
-    } catch (error) {
-      const message = error instanceof Error ? error.message : "Script failed";
-      setResult({ error: message });
-      notify(message, "error");
-    } finally {
-      setElapsed(Math.round(performance.now() - started));
-      setRunning(false);
-    }
-  };
+  const run = () =>
+    execute(async (isCurrent) => {
+      const started = performance.now();
+      try {
+        const response = await api.post("/lua/execute", { script });
+        if (!isCurrent()) return;
+        setResult(response);
+        notify("Script completed");
+      } catch (error) {
+        if (!isCurrent()) return;
+        const message = error instanceof Error ? error.message : "Script failed";
+        setResult({ error: message });
+        notify(message, "error");
+      } finally {
+        if (isCurrent()) setElapsed(Math.round(performance.now() - started));
+      }
+    });
 
   return (
     <main className="page-workspace no-scroll">

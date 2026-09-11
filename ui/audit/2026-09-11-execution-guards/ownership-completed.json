@@ -1,0 +1,20 @@
+{
+  "at": 1789134532009,
+  "buttons": [
+    {
+      "disabled": false,
+      "text": "Run query"
+    }
+  ],
+  "document": {
+    "clientWidth": 1280,
+    "scrollWidth": 1280
+  },
+  "notices": [],
+  "result": "{  \"count\": 1,  \"results\": [    \"CG55 retained owner\"  ]}",
+  "viewport": {
+    "devicePixelRatio": 2,
+    "height": 720,
+    "width": 1280
+  }
+}

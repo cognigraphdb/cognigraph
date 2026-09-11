@@ -6,6 +6,7 @@ import { CgqlEditor } from "../components/CgqlEditor.tsx";
 import { JsonResult } from "../components/JsonResult.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
 import { SearchPanel } from "../components/SearchPanel.tsx";
+import { useExecution } from "../hooks/useExecution.ts";
 import {
   diagnosticFromCgqlError,
   emptyQueryDiagnostic,
@@ -23,7 +24,7 @@ export function QueryScreen({ api, notify }: { api: CogniGraphApi; notify: Notif
   const [query, setQuery] = useState(defaultQuery);
   const [bindVars, setBindVars] = useState("{}");
   const [result, setResult] = useState<unknown>();
-  const [running, setRunning] = useState(false);
+  const { running, execute } = useExecution(api);
   const [elapsed, setElapsed] = useState<number>();
   const [history, setHistory] = useState<string[]>([]);
   const parsedBindVars = useMemo(() => parseBindVariables(bindVars), [bindVars]);
@@ -57,31 +58,32 @@ export function QueryScreen({ api, notify }: { api: CogniGraphApi; notify: Notif
     [api, parsedBindVars],
   );
 
-  const runQuery = async () => {
-    if ("error" in parsedBindVars) {
-      notify(parsedBindVars.error, "error");
-      return;
-    }
-    setRunning(true);
-    const started = performance.now();
-    try {
-      const response = await api.post("/search/query", {
-        query,
-        bind_vars: parsedBindVars.value,
-        language: "cgql",
-      });
-      setResult(response);
-      setHistory((current) => [query, ...current.filter((item) => item !== query)].slice(0, 5));
-      notify("CGQL query completed");
-    } catch (error) {
-      const message = error instanceof Error ? error.message : "Query failed";
-      setResult({ error: message });
-      notify(message, "error");
-    } finally {
-      setElapsed(Math.round(performance.now() - started));
-      setRunning(false);
-    }
-  };
+  const runQuery = () =>
+    execute(async (isCurrent) => {
+      if ("error" in parsedBindVars) {
+        notify(parsedBindVars.error, "error");
+        return;
+      }
+      const started = performance.now();
+      try {
+        const response = await api.post("/search/query", {
+          query,
+          bind_vars: parsedBindVars.value,
+          language: "cgql",
+        });
+        if (!isCurrent()) return;
+        setResult(response);
+        setHistory((current) => [query, ...current.filter((item) => item !== query)].slice(0, 5));
+        notify("CGQL query completed");
+      } catch (error) {
+        if (!isCurrent()) return;
+        const message = error instanceof Error ? error.message : "Query failed";
+        setResult({ error: message });
+        notify(message, "error");
+      } finally {
+        if (isCurrent()) setElapsed(Math.round(performance.now() - started));
+      }
+    });
 
   const searchTabs = (Object.keys(SEARCH_MODE_META) as SearchMode[]).map((mode) => ({
     key: mode,

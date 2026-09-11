@@ -339,3 +339,17 @@ persisted status even when it leaves the filter. Graduation links can therefore
 open accepted neurons outside the first page. Offset pages do not promise a
 stable snapshot across concurrent writes. [CG-54](../issues/CG-54.md) owns the
 acceptance record and links the 101-space/402-neuron runtime fixture.
+
+## Addendum (2026-09-11): console execution ownership
+
+Each Lua/CGQL console claims one synchronous submission slot shared by its Run
+button, editor shortcuts and query form. React's disabled-button rendering is
+feedback, while the slot prevents duplicate execution before the next render.
+The slot lasts until the request settles, including failures. Leaving a screen
+or connection invalidates its completion callbacks; it does not cancel work
+already sent to the server or promise idempotency across tabs/reloads.
+
+[CG-55](../issues/CG-55.md) records the delayed real-request and persisted-write
+regressions. Automatic non-executing EXPLAIN validation is separate from explicit
+CGQL execution. Submitted-input snapshots and stale-result presentation remain
+[CG-56](../issues/CG-56.md).
