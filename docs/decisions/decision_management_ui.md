@@ -1,6 +1,6 @@
 # Decision: Management UI Starts From Existing Operator APIs
 
-**Status:** Accepted (2026-07-13); extended by the 2026-07-15 addendum below.
+**Status:** Accepted (2026-07-13); amended by the dated addenda below.
 The original text describes the 2026-07-13 baseline — the addendum records
 the `/api` namespace, JWT login, URL routing, server-hosted console, and the
 Review/Users surfaces that supersede parts of it.
@@ -220,3 +220,30 @@ server hits merged with an exact-key lookup (a pasted key pins that
 document first), and clearing restores the paged listing. Hits are
 addressed by the document's own `_id`, never an application-level
 `document_id` field that could shadow the collection/key address.
+
+
+## Addendum (2026-09-11): preserve document and source identity
+
+The JSON inspector edits raw API fields, separate from display defaults and
+inferred embedding metadata. Save PATCHes only changed top-level fields from
+the edit-start snapshot. A full replacement reconstructed from API reads is
+unsafe because Native sidecar reads omit stored vectors. Creation receipts are
+also not stored documents: read the created record before opening its inspector.
+
+Identity, revision and server timestamps are read-only in this editor. Field
+removal is explicitly refused, including nested object removals, because Native
+and Arango differ in nested PATCH merging. Null is an explicit stored value;
+this UI does not equate it with deletion. This amendment governs console editing,
+not a new backend concurrency or replacement contract.
+
+Construction imports generate stable versioned content IDs for plain text and
+JSONL without IDs. They preserve supplied IDs and reject duplicates/collisions.
+Every import previews new/existing sources; rebuilding an existing source's
+facts and mentions requires explicit confirmation with current/incoming text.
+A pre-submit read detects changes while the preview was open. It does not add
+atomic compare-and-swap guarantees against concurrent external writers.
+
+[CG-50](../issues/CG-50.md), [CG-62](../issues/CG-62.md), and the
+[dated browser/HTTP report](../../ui/audit/2026-09-11-data-preservation/audit.md)
+record the rationale, implementation and verification boundaries. Earlier UI
+checkpoints above remain historical evidence, not current full-console acceptance.

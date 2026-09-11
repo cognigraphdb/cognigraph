@@ -1,4 +1,4 @@
-import type { GraphDocument } from "../types.ts";
+import { normalizeDocument } from "../lib/api-documents.ts";
 
 const makeContent = (objectives: string[], status = "active") => ({
   objectives,
@@ -6,7 +6,7 @@ const makeContent = (objectives: string[], status = "active") => ({
   priority: objectives.length > 2 ? "high" : "normal",
 });
 
-export const initialDocuments: GraphDocument[] = [
+const storedDocuments = [
   {
     _id: "documents/doc_7f3a9c1e8b2d",
     _key: "doc_7f3a9c1e8b2d",
@@ -201,3 +201,7 @@ export const initialDocuments: GraphDocument[] = [
     content: makeContent(["Create snapshot", "Verify restore", "Record evidence"]),
   },
 ];
+
+export const initialDocuments = storedDocuments.map(({ embedding, ...document }) =>
+  normalizeDocument({ ...document, embedding_status: embedding }),
+);

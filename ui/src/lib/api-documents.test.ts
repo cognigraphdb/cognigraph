@@ -1,10 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import {
-  documentPayload,
-  embedDocumentRequest,
-  embeddingSourceText,
-  normalizeDocument,
-} from "./api-documents.ts";
+import { embedDocumentRequest, embeddingSourceText, normalizeDocument } from "./api-documents.ts";
 
 describe("API document mapping", () => {
   test("normalizes a server document for the collection table", () => {
@@ -20,16 +15,6 @@ describe("API document mapping", () => {
     expect(document.embedding).toBe("ready");
     expect(document.tags).toEqual(["one", "2"]);
     expect(document.content).toEqual({ extra: true });
-  });
-
-  test("creates a writable API payload without server identifiers", () => {
-    const payload = documentPayload(
-      normalizeDocument({ _id: "documents/alpha", _key: "alpha", title: "Alpha" }),
-    );
-
-    expect(payload.title).toBe("Alpha");
-    expect(payload._id).toBeUndefined();
-    expect(payload._key).toBeUndefined();
   });
 });
 

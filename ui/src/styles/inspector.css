@@ -119,6 +119,13 @@
   gap: 8px;
 }
 
+.editor-guidance {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
 .editor-wrap textarea {
   width: 100%;
   min-height: 320px;

@@ -16,14 +16,17 @@ export interface ConstructChunk {
 /// - JSONL: every non-empty line is a `{id?, title?, text}` object
 ///   (detected by a leading `{`); a malformed line throws with its number.
 /// - Plain text: every non-empty line becomes one chunk, ids generated.
-export function parseChunks(input: string): ConstructChunk[] {
+export async function parseChunks(input: string): Promise<ConstructChunk[]> {
   const lines = input
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean);
-  if (lines.length === 0) return [];
-  if (lines[0]?.startsWith("{")) {
-    return lines.map((line, index) => {
+  const jsonl = lines[0]?.startsWith("{");
+  const chunks: ConstructChunk[] = [];
+  const identities = new Set<string>();
+  for (const [index, line] of lines.entries()) {
+    let record: JsonObject = { text: line };
+    if (jsonl) {
       let parsed: unknown;
       try {
         parsed = JSON.parse(line);
@@ -33,17 +36,49 @@ export function parseChunks(input: string): ConstructChunk[] {
       if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
         throw new Error(`Line ${index + 1} is not a JSON object.`);
       }
-      const record = parsed as JsonObject;
-      const text = typeof record.text === "string" ? record.text.trim() : "";
-      if (!text) throw new Error(`Line ${index + 1} has no non-empty "text".`);
-      return {
-        id: String(record.id ?? `chunk-${index + 1}`),
-        ...(typeof record.title === "string" && record.title ? { title: record.title } : {}),
-        text,
-      };
-    });
+      record = parsed as JsonObject;
+    }
+    const text = typeof record.text === "string" ? record.text.trim().normalize("NFC") : "";
+    if (!text) throw new Error(`Line ${index + 1} has no non-empty "text".`);
+    if (record.title !== undefined && typeof record.title !== "string") {
+      throw new Error(`Line ${index + 1}: title must be a string.`);
+    }
+    const title = typeof record.title === "string" ? record.title : undefined;
+    if (record.id !== undefined && (typeof record.id !== "string" || !chunkIdentity(record.id))) {
+      throw new Error(
+        `Line ${index + 1}: id must be a string containing an ASCII letter or digit.`,
+      );
+    }
+    // Versioned content identity survives retries, reordering, and browser reloads.
+    // Titles are part of source identity; missing and empty titles stay distinct.
+    const id = typeof record.id === "string" ? record.id : await generatedChunkId(text, title);
+    const identity = chunkIdentity(id);
+    if (identities.has(identity)) {
+      throw new Error(
+        `Line ${index + 1}: duplicate or colliding chunk id ${id}. Use distinct JSONL ids for repeated text.`,
+      );
+    }
+    identities.add(identity);
+    chunks.push({ id, ...(title === undefined ? {} : { title }), text });
   }
-  return lines.map((text, index) => ({ id: `chunk-${index + 1}`, text }));
+  return chunks;
+}
+
+async function generatedChunkId(text: string, title?: string): Promise<string> {
+  const bytes = new TextEncoder().encode(
+    JSON.stringify(["cognigraph-ui-chunk-v1", title ?? null, text]),
+  );
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return `ui-${Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("")}`;
+}
+
+/** Mirrors cognigraph-construct ingest::sanitize for direct chunk lookup.
+ * The server still validates the stored raw identities and rejects collisions. */
+export function chunkIdentity(id: string): string {
+  return id
+    .replace(/[^A-Za-z0-9]+/g, "-")
+    .toLowerCase()
+    .replace(/^-|-$/g, "");
 }
 
 /// Parse the propose gaps textarea: one `A --REL--> B` line each.

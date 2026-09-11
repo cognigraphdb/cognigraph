@@ -1,0 +1,71 @@
+{
+  "first_submission": "Browser plain-text Ground chunks",
+  "before": {
+    "count": 1,
+    "results": [
+      {
+        "_id": "chunks/audit-space-chunk-1",
+        "_key": "audit-space-chunk-1",
+        "chunk_id": "chunk-1",
+        "construction_schema": "occurrence-v1",
+        "content_hash": "sha256:65d81ff0384026fc6662cd856b6f60e75f197f859f1e443207b6d8003e249a31",
+        "created_at": "2026-09-11T09:55:55.724158004+00:00",
+        "space_id": "audit_space",
+        "text": "DataCloud runs on Nimbus.",
+        "title": "",
+        "updated_at": "2026-09-11T09:55:55.724158004+00:00"
+      }
+    ]
+  },
+  "before_facts": {
+    "count": 1,
+    "results": [
+      {
+        "_from": "entities/nimbus",
+        "_id": "facts/fact-a4b65e612e35d4a1fece15a994228baa9e07915f8b8c4260e4d222b18c9927f1",
+        "_key": "fact-a4b65e612e35d4a1fece15a994228baa9e07915f8b8c4260e4d222b18c9927f1",
+        "_to": "entities/datacloud",
+        "confidence": 1.0,
+        "construction_schema": "occurrence-v1",
+        "evidence_chunk_id": "chunk-1",
+        "neuron_id": null,
+        "provenance": "narrative",
+        "relation_type": "SUPPLIES",
+        "reviewed_by": null,
+        "space_id": "audit_space",
+        "trigger": "datacloud runs on nimbus",
+        "trigger_end": 24,
+        "trigger_start": 0
+      }
+    ]
+  },
+  "second_submission": "HTTP with the UI parser payload for another single plain-text line",
+  "status": 200,
+  "response": {
+    "accepted_neurons": 1,
+    "chunks": 1,
+    "facts_grounded": 0,
+    "space_type": "audit_space"
+  },
+  "after": {
+    "count": 1,
+    "results": [
+      {
+        "_id": "chunks/audit-space-chunk-1",
+        "_key": "audit-space-chunk-1",
+        "chunk_id": "chunk-1",
+        "construction_schema": "occurrence-v1",
+        "content_hash": "sha256:63be5ff40c8273d4f05af832c7d03c4f7f869b65f3bc406da6e2066a6c9c82f4",
+        "created_at": "2026-09-11T10:03:01.608379715+00:00",
+        "space_id": "audit_space",
+        "text": "A second unrelated audit document.",
+        "title": "",
+        "updated_at": "2026-09-11T10:03:01.608379715+00:00"
+      }
+    ]
+  },
+  "after_facts": {
+    "count": 0,
+    "results": []
+  }
+}

@@ -5,6 +5,8 @@ export type NoticeType = "success" | "error" | "info" | "warning";
 export type Notify = (message: string, type?: NoticeType) => void;
 
 export interface GraphDocument {
+  /** The API document, untouched by display defaults and coercions. */
+  raw: JsonObject;
   _id: string;
   _key: string;
   title: string;

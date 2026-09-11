@@ -393,3 +393,26 @@
   font-size: 13px;
   text-align: center;
 }
+
+/* The preview owns scrolling; long source IDs and text wrap inside the dialog. */
+.import-preview {
+  max-height: 40vh;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.import-preview-chunk {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  overflow-wrap: anywhere;
+}
+.import-preview-chunk + .import-preview-chunk {
+  border-top: 1px solid var(--border);
+}
+.import-preview-chunk pre {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}

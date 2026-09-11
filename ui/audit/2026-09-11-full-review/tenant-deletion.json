@@ -1,0 +1,43 @@
+{
+  "probes": [
+    {
+      "probe": "recreate",
+      "status": 200,
+      "response": {
+        "created_at": 1789120633,
+        "incarnation": "728a9011-7971-4c78-a5b7-273b4d5b2359",
+        "name": "audit-deletion",
+        "status": "active"
+      }
+    },
+    {
+      "probe": "old-login",
+      "status": 401,
+      "response": {
+        "error": "Authentication error: invalid credentials"
+      }
+    },
+    {
+      "probe": "old-session",
+      "status": 401,
+      "response": {
+        "error": "Authentication error: JWT identity is no longer active"
+      }
+    },
+    {
+      "probe": "bootstrap-again",
+      "status": 200,
+      "response": {
+        "key": "35eb5a8a-6920-439f-ad65-89aff847f8cd",
+        "role": "admin",
+        "tenant": "audit-deletion",
+        "username": "audit-tenant-admin-new"
+      }
+    }
+  ],
+  "data_files": [
+    "/data/tenants/default.redb",
+    "/data/tenants/_control.redb",
+    "/data/tenants/audit-deletion.redb.deleted-1789120622524"
+  ]
+}

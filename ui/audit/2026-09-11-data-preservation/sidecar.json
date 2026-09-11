@@ -1,0 +1,56 @@
+{
+  "mode": "Native Community sidecar; UI helpers plus real HTTP, no browser",
+  "before": {
+    "_id": "qa_vector/one",
+    "_key": "one",
+    "content": "Keep raw text",
+    "created_at": "2026-09-11T10:37:47.377908514+00:00",
+    "title": "Before",
+    "updated_at": "2026-09-11T10:37:47.377908514+00:00"
+  },
+  "patch": {
+    "title": "After"
+  },
+  "after": {
+    "_id": "qa_vector/one",
+    "_key": "one",
+    "content": "Keep raw text",
+    "created_at": "2026-09-11T10:37:47.377908514+00:00",
+    "title": "After",
+    "updated_at": "2026-09-11T10:37:47.385896305+00:00"
+  },
+  "vectorsBefore": {
+    "count": 1,
+    "results": [
+      {
+        "document": {
+          "_id": "qa_vector/one",
+          "_key": "one",
+          "content": "Keep raw text",
+          "created_at": "2026-09-11T10:37:47.377908514+00:00",
+          "title": "Before",
+          "updated_at": "2026-09-11T10:37:47.377908514+00:00"
+        },
+        "score": 1,
+        "source": "native"
+      }
+    ]
+  },
+  "vectorsAfter": {
+    "count": 1,
+    "results": [
+      {
+        "document": {
+          "_id": "qa_vector/one",
+          "_key": "one",
+          "content": "Keep raw text",
+          "created_at": "2026-09-11T10:37:47.377908514+00:00",
+          "title": "After",
+          "updated_at": "2026-09-11T10:37:47.385896305+00:00"
+        },
+        "score": 1,
+        "source": "native"
+      }
+    ]
+  }
+}

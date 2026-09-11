@@ -6,7 +6,8 @@ import { CollectionToolbar } from "../components/CollectionToolbar.tsx";
 import { DocumentDialog } from "../components/DocumentDialog.tsx";
 import { DocumentInspector } from "../components/DocumentInspector.tsx";
 import { DocumentTable } from "../components/DocumentTable.tsx";
-import { documentPayload, embedDocumentRequest, normalizeDocument } from "../lib/api-documents.ts";
+import { embedDocumentRequest, normalizeDocument } from "../lib/api-documents.ts";
+import type { DocumentEdit } from "../lib/document-edit.ts";
 import { filterDocuments } from "../lib/documents.ts";
 import type {
   ConnectionStatus,
@@ -218,22 +219,38 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
         content: { status: "draft" },
       };
       const created = await api.post<JsonObject>("/documents", payload);
-      const document = normalizeDocument({ ...payload, ...created }, collection);
-      setDocuments((current) => [document, ...current]);
+      // POST returns an identity receipt, not the stored JSON. Read it back
+      // before exposing the inspector; request metadata is not document data.
       setTotalCount((current) => (current ?? 0) + 1);
+      setDialog(null);
+      const key = String(created._key);
+      let stored: JsonObject;
+      try {
+        stored = await api.get<JsonObject>(
+          `/documents/${encodeURIComponent(collection)}/${encodeURIComponent(key)}`,
+        );
+      } catch (error) {
+        notify(
+          `Document ${key} was created, but could not be loaded. Refresh the collection: ${error instanceof Error ? error.message : "read failed"}`,
+          "warning",
+        );
+        return;
+      }
+      const document = normalizeDocument(stored, collection);
+      setDocuments((current) => [document, ...current]);
       setSelectedKey(document._key);
       setInspectorOpen(true);
-      setDialog(null);
       notify("Document created through the API");
     } catch (error) {
       notify(error instanceof Error ? error.message : "Document creation failed", "error");
     }
   };
 
-  const updateDocument = async (updated: GraphDocument) => {
+  const updateDocument = async (updated: DocumentEdit) => {
+    if (Object.keys(updated.patch).length === 0) return;
     const saved = await api.patch<JsonObject>(
-      `/documents/${encodeURIComponent(collection)}/${encodeURIComponent(updated._key)}`,
-      documentPayload(updated),
+      `/documents/${encodeURIComponent(collection)}/${encodeURIComponent(updated.key)}`,
+      updated.patch,
     );
     const normalized = normalizeDocument(saved, collection);
     const replace = (current: GraphDocument[]) =>

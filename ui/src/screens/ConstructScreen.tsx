@@ -11,6 +11,7 @@ import { Button, Checkbox, Input, InputNumber, Select } from "antd";
 import type { ReactNode } from "react";
 import { useCallback, useEffect, useState } from "react";
 import type { CogniGraphApi } from "../api/client.ts";
+import { ConstructIngest } from "../components/ConstructIngest.tsx";
 import { JsonResult } from "../components/JsonResult.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
 import { type ConstructAction, parseChunks, parseGaps, summarizeRun } from "../lib/construct.ts";
@@ -34,7 +35,6 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
 
   const [draftId, setDraftId] = useState("");
   const [draftChunks, setDraftChunks] = useState("");
-  const [ingestChunks, setIngestChunks] = useState("");
   const [gaps, setGaps] = useState("");
   const [reviewLimit, setReviewLimit] = useState<number>();
   const [rejudge, setRejudge] = useState(false);
@@ -55,17 +55,11 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
   const run = async (
     stage: string,
     action: ConstructAction,
-    request: () => { path: string; body: JsonObject },
+    request: () => { path: string; body: JsonObject } | Promise<{ path: string; body: JsonObject }>,
   ) => {
-    let call: { path: string; body: JsonObject };
-    try {
-      call = request();
-    } catch (error) {
-      notify(error instanceof Error ? error.message : "Invalid input", "error");
-      return;
-    }
     setRunning(stage);
     try {
+      const call = await request();
       const response = await api.post<JsonObject>(call.path, call.body);
       setResult(response);
       notify(summarizeRun(action, response));
@@ -95,7 +89,7 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
         <span>Space</span>
         <Select
           aria-label="Space type"
-          disabled={spaces.length === 0}
+          disabled={Boolean(running) || spaces.length === 0}
           onChange={setSpace}
           options={spaces.map((name) => ({ label: name, value: name }))}
           placeholder={spaces.length === 0 ? "None in this tenant — draft one" : "Select"}
@@ -128,9 +122,9 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
                 disabled={Boolean(running) || !draftId.trim() || !draftChunks.trim()}
                 label="Draft"
                 onClick={() =>
-                  void run("draft", "draft", () => ({
+                  void run("draft", "draft", async () => ({
                     path: "/construct/draft",
-                    body: { space_type: draftId.trim(), chunks: parseChunks(draftChunks) },
+                    body: { space_type: draftId.trim(), chunks: await parseChunks(draftChunks) },
                   }))
                 }
               />
@@ -152,26 +146,16 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
             title="Ingest"
             detail="Ground chunks into evidence-bound fact edges under the selected space's rules — deterministic, accepted neurons applied."
           >
-            <Input.TextArea
-              aria-label="Ingest corpus"
-              autoSize={{ minRows: 2, maxRows: 5 }}
-              onChange={(event) => setIngestChunks(event.target.value)}
-              placeholder={'Chunks: plain text lines, or JSONL {"id", "title", "text"}'}
-              value={ingestChunks}
+            <ConstructIngest
+              api={api}
+              space={space}
+              disabled={Boolean(running)}
+              onBusy={(busy) => setRunning(busy ? "ingest" : undefined)}
+              onComplete={(response) => {
+                setResult(response);
+                notify(summarizeRun("ingest", response));
+              }}
             />
-            <div className="actions-row-base">
-              <RunButton
-                busy={running === "ingest"}
-                disabled={Boolean(running) || !space || !ingestChunks.trim()}
-                label="Ground chunks"
-                onClick={() =>
-                  void run("ingest", "ingest", () => ({
-                    path: "/construct/ingest",
-                    body: { space_type: needsSpace(), chunks: parseChunks(ingestChunks) },
-                  }))
-                }
-              />
-            </div>
           </Stage>
           <Stage
             icon={ChartBar}

@@ -10,6 +10,47 @@ Keep planned UI work here. Record defects in the shared
 [CG issue registry](../docs/issues/README.md) and link the relevant tickets from
 this tracker. [UI instructions](AGENTS.md) define the current workflow.
 
+## Current review — 2026-09-11
+
+The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
+recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
+explicit untested boundaries. The historical Done entries below describe
+implementation checkpoints; they do not establish current acceptance. The UI
+suite now passes 85 helper tests after CG-50/CG-62 remediation, but CI omits it and no browser regression suite
+exists yet. Keep defect status in the linked registry rather than duplicating it.
+
+- [ ] Fix the remaining P1 defects: [production origin CG-49](../docs/issues/CG-49.md)
+  and [tenant deletion disclosure CG-51](../docs/issues/CG-51.md).
+- [x] [Document JSON fidelity CG-50](../docs/issues/CG-50.md) and
+  [construction import identity CG-62](../docs/issues/CG-62.md): raw JSON editing,
+  changed-field PATCH, creation readback, stable import IDs and explicit replacement
+  review. [Browser/API evidence](audit/2026-09-11-data-preservation/audit.md).
+- [ ] Reconcile [provisioning CG-52](../docs/issues/CG-52.md),
+  [edition/role capabilities CG-53](../docs/issues/CG-53.md),
+  [review/space paging CG-54](../docs/issues/CG-54.md),
+  [empty/error guidance CG-58](../docs/issues/CG-58.md), and
+  [collection search/filter scope CG-59](../docs/issues/CG-59.md).
+- [ ] Repair [execution guards CG-55](../docs/issues/CG-55.md),
+  [result provenance CG-56](../docs/issues/CG-56.md),
+  [table keyboard access CG-57](../docs/issues/CG-57.md), and
+  [collapsed navigation names CG-63](../docs/issues/CG-63.md).
+- [ ] Establish [UI CI/browser coverage CG-60](../docs/issues/CG-60.md) and
+  refresh the [advisory-affected dependency CG-61](../docs/issues/CG-61.md).
+
+## Backend workflows not yet covered by the console
+
+Use the audit's capability map to prioritize complete operator journeys after
+defect remediation; these are planned features, not claims of broken endpoints.
+
+- [ ] Durable jobs, asynchronous drafting, status/artifacts, cancellation and recovery.
+- [ ] Directed/governed construction, answer evaluation and reviewable deployment.
+- [ ] Signed governance keys/policies/approvals, artifact attestations and custody.
+- [ ] Promotions and materialized semantic repair/deployment workflows.
+- [ ] Dedicated side-view lifecycle and tenant quota management.
+- [ ] Complete provider-backed and role/edition browser qualification, including
+  actual downloaded snapshot verification. Use controlled disposable data;
+  research holdouts and model benchmarks remain separately authorized work.
+
 ## Done
 
 - [x] [Product logo](audit/2026-09-10-logo/audit.md): use the supplied CogniGraph

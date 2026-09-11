@@ -94,8 +94,15 @@ The [2026-09-10 Collections QA](../../ui/audit/2026-09-10-collections/audit.md)
 resolved CG-41–CG-44. That checkpoint had **43 Resolved, 1 Closed without change,
 and 0 Open issues**. Packaging review added CG-45–CG-48; the
 [Community/Enterprise build split](CG-45.md) closes the last of these.
-Current registry: **47 Resolved, 1 Closed without change, and 0 Open issues**.
-This count covers recorded defects, not complete UI or product acceptance.
+The [2026-09-11 full UI review](../../ui/audit/2026-09-11-full-review/audit.md)
+adds CG-49–CG-63: **15 Open issues (4 P1, 11 P2)** at that checkpoint.
+The review includes real Community/Enterprise browser and API evidence, and a
+separate map of backend capabilities not yet exposed by the console. No finding
+was fixed by the audit; this count is not complete UI or product acceptance.
+
+The [data-preservation fixes](../../ui/audit/2026-09-11-data-preservation/audit.md)
+resolve CG-50 and CG-62. Current registry: **49 Resolved, 1 Closed without change,
+and 13 Open issues (2 P1, 11 P2)**.
 
 ## Conventions
 
@@ -157,8 +164,23 @@ This count covers recorded defects, not complete UI or product acceptance.
 | [CG-46](CG-46.md) | P2 | Resolved | Helm backups need isolated selectors and safe snapshot handling |
 | [CG-47](CG-47.md) | P2 | Resolved | Issue identity checks must survive commits and concurrent allocation |
 | [CG-48](CG-48.md) | P2 | Resolved | Quick-start examples must match network and query contracts |
+| [CG-49](CG-49.md) | P1 | Open | Production console always targets API port 3001 |
+| [CG-50](CG-50.md) | P1 | Resolved | Document inspector rewrites valid stored JSON through a lossy projection |
+| [CG-51](CG-51.md) | P1 | Open | Tenant deletion confirmation promises recovery that recreation does not provide |
+| [CG-52](CG-52.md) | P2 | Open | Tenant onboarding and user provisioning diverge from the authorization contract |
+| [CG-53](CG-53.md) | P2 | Open | Console actions ignore server edition and authenticated role capabilities |
+| [CG-54](CG-54.md) | P2 | Open | Review queue and space selectors silently truncate their datasets |
+| [CG-55](CG-55.md) | P2 | Open | Console keyboard shortcuts bypass the running request guard |
+| [CG-56](CG-56.md) | P2 | Open | Console results remain attached to changed inputs and failed graph requests |
+| [CG-57](CG-57.md) | P2 | Open | Clickable table rows cannot be opened with the keyboard |
+| [CG-58](CG-58.md) | P2 | Open | Review empty-state guidance recommends a forbidden space creation path |
+| [CG-59](CG-59.md) | P2 | Open | Collection search and filters present partial matches as complete results |
+| [CG-60](CG-60.md) | P2 | Open | CI omits the UI checks and browser regression coverage |
+| [CG-61](CG-61.md) | P2 | Open | React Router lockfile retains an advisory-affected release |
+| [CG-62](CG-62.md) | P1 | Resolved | Plain-text construction imports reuse chunk IDs and replace earlier evidence |
+| [CG-63](CG-63.md) | P2 | Open | Collapsed sidebar removes the accessible names of navigation links |
 
-Next available identifier: **CG-49**.
+Next available identifier: **CG-64**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

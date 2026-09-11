@@ -1,0 +1,126 @@
+RUN [ui] bun install --frozen-lockfile
+bun install v1.4.2 (744846f84)
+
+Checked 189 installs across 216 packages (no changes) [76.00ms]
+RUN [ui] bun run check
+$ biome check . && tsc --noEmit
+Checked 98 files in 95ms. No fixes applied.
+RUN [ui] bun test
+bun test v1.4.2 (744846f84)
+
+src/lib/users.test.ts:
+(pass) isProtectedFromDeletion > the signed-in account cannot be deleted [0.05ms]
+(pass) isProtectedFromDeletion > other accounts can be deleted
+(pass) isProtectedFromDeletion > unknown session protects nothing
+(pass) ROLE_META > covers every role [1.12ms]
+
+src/lib/graph-explorer.test.ts:
+(pass) graph explorer data > maps traversal paths into deduplicated nodes and edges [3.82ms]
+(pass) graph explorer data > merges an expanded neighborhood without duplicating the anchor [0.20ms]
+
+src/lib/tenants.test.ts:
+(pass) canManageTenants > only host-admin sessions manage tenants [0.02ms]
+(pass) TENANT_STATUS_META > covers both lifecycle states
+
+src/lib/api-documents.test.ts:
+(pass) API document mapping > normalizes a server document for the collection table [0.73ms]
+(pass) API document mapping > creates a writable API payload without server identifiers [0.04ms]
+(pass) embedding state normalization > a stored vector reads as ready even without a status field [0.01ms]
+(pass) embedding state normalization > an explicit processing status wins over the vector
+(pass) embedding state normalization > the vector and its provenance text stay out of content
+(pass) embedDocumentRequest > derives text from title, summary, and string content fields [0.18ms]
+(pass) embedDocumentRequest > a document with no embeddable text yields an empty source
+
+src/lib/documents.test.ts:
+(pass) filterDocuments > combines search, category, and embedding filters [1.28ms]
+(pass) filterDocuments > finds documents by key [0.02ms]
+
+src/lib/cgql-validation.test.ts:
+(pass) CGQL editor validation > adds a non-executing EXPLAIN line while preserving source locations [2.10ms]
+(pass) CGQL editor validation > downgrades EXPLAIN ANALYZE to non-executing EXPLAIN [0.02ms]
+(pass) CGQL editor validation > maps server parse coordinates back into the original query [0.65ms]
+(pass) CGQL editor validation > marks unknown identifiers and missing bind variables [0.06ms]
+(pass) CGQL editor validation > accepts only JSON objects as bind variables [0.45ms]
+(pass) CGQL editor validation > reports missing bind variables outside strings and comments [0.40ms]
+
+src/lib/server-logs.test.ts:
+(pass) normalizeLogEvent > maps the server event shape [0.02ms]
+(pass) normalizeLogEvent > tolerates a missing tenant and defaults [0.01ms]
+(pass) statusClass > bands by severity [0.01ms]
+
+src/lib/metrics.test.ts:
+(pass) parseMetrics > reads counters, class labels, and derives mean latency [0.26ms]
+(pass) parseMetrics > avg latency is undefined with no requests, other fields zero [0.02ms]
+(pass) parseMetrics > a name is not matched by a longer name with the same prefix
+(pass) formatUptime > formats across scales [0.03ms]
+
+src/lib/document-edit.test.ts:
+(pass) document edits > preserves identity and omitted fields while using the current edit time [0.50ms]
+(pass) document edits > rejects invalid JSON and non-object documents before a write [0.27ms]
+
+src/lib/construct.test.ts:
+(pass) parseChunks > plain text lines become chunks with generated ids [0.36ms]
+(pass) parseChunks > JSONL lines keep ids and titles [0.03ms]
+(pass) parseChunks > malformed JSONL names the line [0.17ms]
+(pass) parseChunks > empty input yields no chunks
+(pass) parseGaps > accepts fact lines and rejects junk [0.17ms]
+(pass) summarizeRun > summarizes each action from its response fields [0.07ms]
+(pass) summarizeRun evaluate > reads recall and restraint counters
+
+src/lib/search.test.ts:
+(pass) buildSearchRequest > semantic sends query + collection + bounds [0.03ms]
+(pass) buildSearchRequest > hybrid feeds both leg targets from the one collection choice
+(pass) buildSearchRequest > vector parses the JSON array and rejects junk [0.42ms]
+(pass) buildSearchRequest > graph-augmented carries edge collection and depth
+(pass) extractHits > maps the standard hit shape [0.03ms]
+(pass) extractHits > falls back to document._id when the hit has no top-level id (vector mode) [0.03ms]
+(pass) extractHits > tolerates missing fields and non-array results [0.01ms]
+(pass) friendlySearchError > maps the no-provider message to actionable copy
+(pass) friendlySearchError > passes other messages through
+
+src/lib/neurons.test.ts:
+(pass) factOf > relation hint renders a directed triple [0.02ms]
+(pass) factOf > blocker renders the vetoed triple
+(pass) factOf > alias renders entity and aliases
+(pass) factOf > rank hint renders signed boost [0.16ms]
+(pass) factOf > missing fields render placeholders, not undefined
+(pass) triggersOf > hints and blockers expose triggers
+(pass) triggersOf > aliases and rank hints have none even if the field is set
+(pass) verdictsFor > proposed can be accepted or rejected
+(pass) verdictsFor > accepted can only be retired
+(pass) verdictsFor > rejected and retired are terminal
+(pass) formatUnixSeconds > zero and absent mean never [0.01ms]
+(pass) formatUnixSeconds > renders a real timestamp [5.21ms]
+
+src/lib/graph-edges.test.ts:
+(pass) vertexIdError > accepts collection/key [0.02ms]
+(pass) vertexIdError > rejects malformed addresses
+(pass) vertexIdError > refuses system collections
+(pass) buildRelationshipRequest > maps the draft to the server contract and trims text [0.01ms]
+
+src/lib/tokens.test.ts:
+(pass) ttlSecondsFor > server default omits the field [0.02ms]
+(pass) ttlSecondsFor > never maps to the explicit 0 sentinel
+(pass) ttlSecondsFor > finite presets map to seconds
+(pass) ttlSecondsFor > every preset resolves through the lookup [0.01ms]
+(pass) describeExpiry > null and zero mean never [0.01ms]
+(pass) describeExpiry > past timestamps read as expired
+(pass) describeExpiry > future timestamps carry the formatted instant [0.06ms]
+(pass) formatUnixSeconds > absent means em dash
+
+ 72 pass
+ 0 fail
+ 161 expect() calls
+Ran 72 tests across 14 files. [42.00ms]
+RUN [ui] bun run build
+$ rm -rf dist && bun build ./index.html --minify --outdir=dist --public-path=/
+Bundled 1715 modules in 115ms
+
+  index-956ykrwv.js               3.47 MB    (entry point)
+  index.html                      0.53 KB    (entry point)
+  index-85hrkams.css              35.1 KB    (asset)
+  cognigraph-mark-tqpzhxtm.svg    7.67 KB    (asset)
+  document-t810r2m7.svg           458 bytes  (asset)
+  document-selected-76325wwg.svg  464 bytes  (asset)
+
+PASS [ui]

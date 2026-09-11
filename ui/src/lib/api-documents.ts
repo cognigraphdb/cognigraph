@@ -35,6 +35,7 @@ export function normalizeDocument(value: JsonObject, collection = "documents"): 
   ]);
   const remainder = Object.fromEntries(Object.entries(value).filter(([name]) => !known.has(name)));
   return {
+    raw: structuredClone(value),
     _id: String(value._id ?? `${collection}/${key}`),
     _key: key,
     title: String(value.title ?? value.name ?? key),
@@ -57,6 +58,7 @@ export function normalizeDocument(value: JsonObject, collection = "documents"): 
 /// embeddable text.
 export function embeddingSourceText(document: GraphDocument): string {
   const parts = [document.title, document.summary];
+  if (typeof document.raw.content === "string") parts.push(document.raw.content);
   for (const value of Object.values(document.content)) {
     if (typeof value === "string") parts.push(value);
   }
@@ -82,22 +84,6 @@ export function embedDocumentRequest(collection: string, document: GraphDocument
     ],
     text_field: "embedding_text",
     upsert: true,
-  };
-}
-
-export function documentPayload(document: GraphDocument): JsonObject {
-  return {
-    title: document.title,
-    category: document.category,
-    summary: document.summary,
-    owner: document.owner,
-    tags: document.tags,
-    createdAt: document.createdAt,
-    updatedAt: document.updatedAt,
-    embedding_status: document.embedding,
-    ...(document.model ? { model: document.model } : {}),
-    ...(document.dimensions ? { dimensions: document.dimensions } : {}),
-    content: document.content,
   };
 }
 

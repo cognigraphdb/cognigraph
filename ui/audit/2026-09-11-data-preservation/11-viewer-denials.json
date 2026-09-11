@@ -1,0 +1,223 @@
+{
+  "qa_json": [
+    {
+      "_id": "qa_json/array",
+      "_key": "array",
+      "content": [
+        1,
+        null,
+        {
+          "ok": true
+        }
+      ],
+      "created_at": "2026-09-11T10:29:39.356319177+00:00",
+      "custom": {
+        "count": 3,
+        "flag": false
+      },
+      "embedding": [
+        0.1,
+        0.2
+      ],
+      "tags": [
+        "one",
+        2,
+        null
+      ],
+      "title": "After array",
+      "updated_at": "2026-09-11T10:30:15.582336138+00:00"
+    },
+    {
+      "_id": "qa_json/boolean",
+      "_key": "boolean",
+      "content": false,
+      "created_at": "2026-09-11T10:29:39.358793843+00:00",
+      "custom": {
+        "count": 3,
+        "flag": false
+      },
+      "embedding": [
+        0.1,
+        0.2
+      ],
+      "tags": [
+        "one",
+        2,
+        null
+      ],
+      "title": "After boolean",
+      "updated_at": "2026-09-11T10:30:19.114067459+00:00"
+    },
+    {
+      "_id": "qa_json/null",
+      "_key": "null",
+      "content": null,
+      "created_at": "2026-09-11T10:29:39.357131385+00:00",
+      "custom": {
+        "count": 3,
+        "flag": false
+      },
+      "embedding": [
+        0.1,
+        0.2
+      ],
+      "tags": [
+        "one",
+        2,
+        null
+      ],
+      "title": "After null",
+      "updated_at": "2026-09-11T10:30:17.347105722+00:00"
+    },
+    {
+      "_id": "qa_json/number",
+      "_key": "number",
+      "content": 42,
+      "created_at": "2026-09-11T10:29:39.357954135+00:00",
+      "custom": {
+        "count": 3,
+        "flag": false
+      },
+      "embedding": [
+        0.1,
+        0.2
+      ],
+      "tags": [
+        "one",
+        2,
+        null
+      ],
+      "title": "After number",
+      "updated_at": "2026-09-11T10:30:18.230969833+00:00"
+    },
+    {
+      "_id": "qa_json/object",
+      "_key": "object",
+      "content": {
+        "nested": [
+          1,
+          null
+        ],
+        "note": "keep"
+      },
+      "created_at": "2026-09-11T10:29:39.352060177+00:00",
+      "custom": {
+        "count": 3,
+        "flag": false
+      },
+      "embedding": [
+        0.1,
+        0.2
+      ],
+      "tags": [
+        "one",
+        2,
+        null
+      ],
+      "title": "After object",
+      "updated_at": "2026-09-11T10:30:16.464376555+00:00"
+    },
+    {
+      "_id": "qa_json/string",
+      "_key": "string",
+      "content": "Original raw content must survive",
+      "created_at": "2026-09-11T10:29:39.354711260+00:00",
+      "custom": {
+        "count": null,
+        "flag": false
+      },
+      "custom_new": [
+        1,
+        null,
+        false
+      ],
+      "embedding": [
+        0.1,
+        0.2
+      ],
+      "tags": [
+        "one",
+        2,
+        null
+      ],
+      "title": "After string",
+      "updated_at": "2026-09-11T10:30:36.647741634+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/qa-import-ui-15b8d3b35973b00284f53d1582d095a9c704bab262d443b0b8d98082d67b3136",
+      "_key": "qa-import-ui-15b8d3b35973b00284f53d1582d095a9c704bab262d443b0b8d98082d67b3136",
+      "chunk_id": "ui-15b8d3b35973b00284f53d1582d095a9c704bab262d443b0b8d98082d67b3136",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:01108e55e203f4cee75d4d2f8a7131802aa02b60d85541778652879893e330f7",
+      "created_at": "2026-09-11T10:31:34.794135091+00:00",
+      "space_id": "qa_import",
+      "text": "Nimbus hosts DataCloud.",
+      "title": "",
+      "updated_at": "2026-09-11T10:31:34.794135091+00:00"
+    },
+    {
+      "_id": "chunks/qa-import-ui-4ae737a39b4792f3c5616e91ab860a249c84e770b5cf166f56954820627939cd",
+      "_key": "qa-import-ui-4ae737a39b4792f3c5616e91ab860a249c84e770b5cf166f56954820627939cd",
+      "chunk_id": "ui-4ae737a39b4792f3c5616e91ab860a249c84e770b5cf166f56954820627939cd",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:71f073156a2d5186d1c8c30caf34f8c8b9b26d655834b9e7c4603fe7dd760c99",
+      "created_at": "2026-09-11T10:34:24.078040419+00:00",
+      "space_id": "qa_import",
+      "text": "Concurrent writer source.",
+      "title": "",
+      "updated_at": "2026-09-11T10:34:24.078040419+00:00"
+    }
+  ],
+  "facts": [
+    {
+      "_from": "entities/nimbus",
+      "_id": "facts/fact-dad52b53c32ecc1edebfca14e509be78fef87083ec6f293f60b3f08b82e4d2ce",
+      "_key": "fact-dad52b53c32ecc1edebfca14e509be78fef87083ec6f293f60b3f08b82e4d2ce",
+      "_to": "entities/datacloud",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "ui-15b8d3b35973b00284f53d1582d095a9c704bab262d443b0b8d98082d67b3136",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "HOSTS",
+      "reviewed_by": null,
+      "space_id": "qa_import",
+      "trigger": "nimbus hosts datacloud",
+      "trigger_end": 22,
+      "trigger_start": 0
+    }
+  ],
+  "mentions": [
+    {
+      "_from": "chunks/qa-import-ui-15b8d3b35973b00284f53d1582d095a9c704bab262d443b0b8d98082d67b3136",
+      "_id": "mentions/mention-077ba87af315894e694281538dffc47020f5f6def5bac6b805dee981fb1060f1",
+      "_key": "mention-077ba87af315894e694281538dffc47020f5f6def5bac6b805dee981fb1060f1",
+      "_to": "entities/nimbus",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "ui-15b8d3b35973b00284f53d1582d095a9c704bab262d443b0b8d98082d67b3136",
+      "relation_type": "MENTIONS",
+      "space_id": "qa_import"
+    },
+    {
+      "_from": "chunks/qa-import-ui-15b8d3b35973b00284f53d1582d095a9c704bab262d443b0b8d98082d67b3136",
+      "_id": "mentions/mention-c7dc6bf7ee1bc6835681c7617df99221869b51bcd1b0c62c8c220405a3147fa7",
+      "_key": "mention-c7dc6bf7ee1bc6835681c7617df99221869b51bcd1b0c62c8c220405a3147fa7",
+      "_to": "entities/datacloud",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "ui-15b8d3b35973b00284f53d1582d095a9c704bab262d443b0b8d98082d67b3136",
+      "relation_type": "MENTIONS",
+      "space_id": "qa_import"
+    }
+  ],
+  "environment": {
+    "origin": "http://127.0.0.1:3001",
+    "actor": "admin",
+    "tenant": "default",
+    "backend": "Native",
+    "label": "11-viewer-denials"
+  }
+}

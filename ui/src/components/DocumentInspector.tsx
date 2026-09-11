@@ -11,7 +11,7 @@ import {
 import { Button, Input, Tabs, Tooltip } from "antd";
 import { useEffect, useState } from "react";
 import { embeddingSourceText } from "../lib/api-documents.ts";
-import { editedDocument } from "../lib/document-edit.ts";
+import { type DocumentEdit, editedDocument } from "../lib/document-edit.ts";
 import { documentJson } from "../lib/documents.ts";
 import type { GraphDocument, InspectorTab } from "../types.ts";
 import { ErrorAlert } from "./ErrorAlert.tsx";
@@ -21,7 +21,7 @@ interface DocumentInspectorProps {
   document: GraphDocument;
   onClose: () => void;
   onDelete: () => void;
-  onUpdate: (document: GraphDocument) => Promise<void>;
+  onUpdate: (edit: DocumentEdit) => Promise<void>;
   /// Embeds the document server-side; resolves when the refreshed
   /// document has replaced this one.
   onEmbed: () => Promise<void>;
@@ -36,6 +36,7 @@ export function DocumentInspector({
 }: DocumentInspectorProps) {
   const [tab, setTab] = useState<InspectorTab>("json");
   const [editing, setEditing] = useState(false);
+  const [editBase, setEditBase] = useState(document);
   const [draft, setDraft] = useState(documentJson(document));
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
@@ -66,9 +67,9 @@ export function DocumentInspector({
   };
 
   const save = async () => {
-    let updated: GraphDocument;
+    let updated: DocumentEdit;
     try {
-      updated = editedDocument(document, draft);
+      updated = editedDocument(editBase, draft);
     } catch (cause) {
       setError(cause instanceof SyntaxError ? "The document is not valid JSON." : String(cause));
       return;
@@ -89,6 +90,10 @@ export function DocumentInspector({
     <JsonCode value={documentJson(document)} />
   ) : (
     <div className="editor-wrap">
+      <p className="editor-guidance">
+        Save updates changed fields. To clear a value, use null; field removal is unsupported. _id,
+        _key, _rev, created_at and updated_at are read-only.
+      </p>
       <Input.TextArea
         aria-label="Document JSON"
         onChange={(event) => setDraft(event.target.value)}
@@ -140,7 +145,11 @@ export function DocumentInspector({
           ) : (
             <Button
               icon={<PencilSimple aria-hidden="true" size={17} />}
-              onClick={() => setEditing(true)}
+              onClick={() => {
+                setEditBase(document);
+                setDraft(documentJson(document));
+                setEditing(true);
+              }}
             >
               Edit
             </Button>

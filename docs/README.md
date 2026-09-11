@@ -14,6 +14,7 @@ and next work. The [issue registry](issues/README.md) owns defect resolution;
 | [Research](research/README.md) | Reproducible experiments, dated measurements and unadopted ideas |
 | [Plans](plans/README.md) | Current plans and archived delivery history |
 | [Changelog](changelog/README.md) | Individual change and release records |
+| [Console review](../ui/audit/2026-09-11-full-review/audit.md) | Current UI defects, executed journeys and backend coverage gaps |
 
 ## Ownership and checkout layout
 

@@ -2,27 +2,48 @@ import { describe, expect, test } from "bun:test";
 import { parseChunks, parseGaps, summarizeRun } from "./construct.ts";
 
 describe("parseChunks", () => {
-  test("plain text lines become chunks with generated ids", () => {
-    expect(parseChunks("Aspirin treats pain.\n\n  Ibuprofen reduces fever.  \n")).toEqual([
-      { id: "chunk-1", text: "Aspirin treats pain." },
-      { id: "chunk-2", text: "Ibuprofen reduces fever." },
+  test("distinct corpora have distinct identities, stable across retries and reordering", async () => {
+    const first = await parseChunks("Aspirin treats pain.");
+    const second = await parseChunks("Ibuprofen reduces fever.");
+    expect(first[0]?.id).toMatch(/^ui-[a-f0-9]{64}$/);
+    expect(first[0]?.id).not.toBe(second[0]?.id);
+    expect(await parseChunks("  Aspirin treats pain.  \n")).toEqual(first);
+    expect(await parseChunks("Ibuprofen reduces fever.\n\nAspirin treats pain.")).toEqual([
+      ...second,
+      ...first,
     ]);
   });
 
-  test("JSONL lines keep ids and titles", () => {
-    expect(parseChunks('{"id": "c1", "title": "T", "text": "alpha"}\n{"text": "beta"}')).toEqual([
-      { id: "c1", title: "T", text: "alpha" },
-      { id: "chunk-2", text: "beta" },
-    ]);
+  test("JSONL preserves explicit ids and titles; absent ids use canonical content", async () => {
+    const chunks = await parseChunks('{"id":"c1","title":"T","text":"alpha"}\n{"text":"beta"}');
+    expect(chunks[0]).toEqual({ id: "c1", title: "T", text: "alpha" });
+    expect(chunks[1]).toEqual((await parseChunks("beta"))[0]);
+    expect(await parseChunks("café")).toEqual(await parseChunks("cafe\u0301"));
+    expect((await parseChunks('{"title":"T","text":"beta"}'))[0]?.id).not.toBe(chunks[1]?.id);
   });
 
-  test("malformed JSONL names the line", () => {
-    expect(() => parseChunks('{"text": "ok"}\n{nope')).toThrow("Line 2 is not valid JSON.");
-    expect(() => parseChunks('{"title": "no text"}')).toThrow('Line 1 has no non-empty "text".');
+  test("rejects duplicate text, invalid ids and backend key collisions before writes", async () => {
+    for (const input of ["same\nsame", '{"id":"A_b","text":"a"}\n{"id":"a-b","text":"b"}']) {
+      await expect(parseChunks(input)).rejects.toThrow("duplicate or colliding");
+    }
+    for (const id of ["", "!!!", "K", 123, null]) {
+      await expect(parseChunks(JSON.stringify({ id, text: "ok" }))).rejects.toThrow(
+        "id must be a string",
+      );
+    }
+    expect(await parseChunks('{"id":"a","text":"same"}\n{"id":"b","text":"same"}')).toHaveLength(2);
   });
 
-  test("empty input yields no chunks", () => {
-    expect(parseChunks("  \n ")).toEqual([]);
+  test("malformed JSONL names the line", async () => {
+    await expect(parseChunks('{"text":"ok"}\n{nope')).rejects.toThrow("Line 2 is not valid JSON.");
+    await expect(parseChunks('{"title":"no text"}')).rejects.toThrow(
+      'Line 1 has no non-empty "text".',
+    );
+    await expect(parseChunks('{"title":12,"text":"ok"}')).rejects.toThrow("title must be a string");
+  });
+
+  test("empty input yields no chunks", async () => {
+    expect(await parseChunks("  \n ")).toEqual([]);
   });
 });
 

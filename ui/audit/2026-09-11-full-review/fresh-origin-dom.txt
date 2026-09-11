@@ -1,0 +1,54 @@
+- complementary:
+  - img "CogniGraph":
+    - generic: CogniGraph
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+  - generic: System offline
+  - generic: Version —
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:3001
+  - generic: Offline
+  - generic: Sep 11, 2026, 1:04 PM
+  - generic: admin
+- main:
+  - generic: Data / collections
+  - heading "Collections" [level=1]
+  - paragraph: Every application collection on this server. Open one to browse and edit its documents; edge collections are explored on the Graph page.
+  - button "Create collection" [disabled]:
+    - generic: Create collection
+  - button "Refresh":
+    - generic: Refresh
+  - generic: 0 collections
+  - generic: The collection catalog is unavailable
+  - generic: Failed to fetch

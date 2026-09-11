@@ -1,0 +1,22 @@
+{
+  "_id": "qa_created/030f564c-bc1b-4b9f-8448-81f414f807bc",
+  "_key": "030f564c-bc1b-4b9f-8448-81f414f807bc",
+  "category": "documentation",
+  "content": null,
+  "createdAt": "2026-09-11T10:41:28.233Z",
+  "created_at": "2026-09-11T10:41:28.234247255+00:00",
+  "custom": {
+    "kept": [
+      1,
+      false,
+      null
+    ]
+  },
+  "embedding_status": "missing",
+  "owner": "admin@cognigraph.local",
+  "summary": "Synthetic create-to-inspector regression.",
+  "tags": [],
+  "title": "Created and edited",
+  "updatedAt": "2026-09-11T10:41:28.233Z",
+  "updated_at": "2026-09-11T10:41:28.819288755+00:00"
+}

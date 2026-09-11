@@ -15,7 +15,10 @@ to replace a different hook path or existing active hooks. Install it separately
 in each clone. The CI suite includes workflow regression tests, formatting, server
 modularity, documentation/index and issue-history checks, edition dependency checks, strict Clippy and all workspace tests for both Community
 and Enterprise feature sets.
-The Docker suite builds the same Community and Enterprise images as CI; the UI suite uses the frozen Bun
+The Docker suite builds the same Community and Enterprise images as CI and runs
+isolated packaged-server HTTP, authentication, edition and restart/persistence checks.
+CI image publication is a separate opt-in step described in
+[Docker image publication](docker-publishing.md). The UI suite uses the frozen Bun
 lockfile, Biome/TypeScript, tests and production build.
 
 ## What pre-push verifies

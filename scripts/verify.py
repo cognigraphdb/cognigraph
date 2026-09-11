@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 import subprocess
 import sys
+import docker_images
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,8 +25,8 @@ def commands(suite):
             (ROOT, ['cargo', 'test', '--all', '--features', 'enterprise']),
         ]
     if suite == 'docker':
-        return [(ROOT, ['docker', 'build', '-t', 'cognigraph:ci', '.']),
-                (ROOT, ['docker', 'build', '--build-arg', 'COGNIGRAPH_EDITION=enterprise', '-t', 'cognigraph:ci-enterprise', '.'])]
+        return [(ROOT, command) for command in docker_images.build_commands()] + [
+            (ROOT, [sys.executable, 'scripts/docker_images.py', 'check'])]
     if suite == 'ui':
         return [(ROOT / 'ui', ['bun', 'install', '--frozen-lockfile']),
                 (ROOT / 'ui', ['bun', 'run', 'check']),

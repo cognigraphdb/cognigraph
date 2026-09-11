@@ -1,6 +1,6 @@
 # CogniGraph implementation plan
 
-Current engineering status, reviewed 2026-09-10. Detailed historical delivery
+Current engineering status, reviewed 2026-09-11. Detailed historical delivery
 and test counts live in [change records](changelog/README.md), the
 [issue registry](issues/README.md) and [archived implementation history](plans/archive/implementation-history-through-2026-09-09.md).
 
@@ -16,8 +16,10 @@ and test counts live in [change records](changelog/README.md), the
   artifact consumption and derivation, custody recovery, and separately signed
   Native generation deployment. Operation remains a single-writer deployment;
   there is no HA, replication, automatic healing or autonomous activation.
-- The React console remains a prototype; its scoped work is tracked in
-  [UI TODO](../ui/TODO.md).
+- The React console remains a prototype. The
+  [full UI review](../ui/audit/2026-09-11-full-review/audit.md) records confirmed
+  defects, tested journeys and backend capabilities it does not yet expose;
+  scoped follow-up work is tracked in [UI TODO](../ui/TODO.md).
 
 ## Review checkpoint — 2026-09-09
 
@@ -89,8 +91,9 @@ a real dry-run push while the candidate was dirty.
 The [2.6.1 candidate](changelog/2026-09-10-v2-6-1.md) integrates dependency PRs
 #43–#52 locally and passes the Rust, optional ONNX build/test and Docker checks.
 The [Collections audit](../ui/audit/2026-09-10-collections/audit.md) resolved
-CG-41–CG-44 with browser/API and measured layout evidence. Current registry:
-47 Resolved, 1 Closed without change, 0 Open issues. Remote publication and CI remain
+CG-41–CG-44 with browser/API and measured layout evidence. After the subsequent
+packaging fixes, the registry reached 47 Resolved, 1 Closed without change and
+0 Open issues, before the full UI review below. Remote publication and CI remain
 separate from this local checkpoint.
 
 ## Packaging and licensing checkpoint — 2026-09-10
@@ -141,3 +144,42 @@ The [distribution guide](../fixtures/semantic-neurons/README.md) records that
 boundary; the push gate requires the reviewed visibility to remain unchanged.
 See the [publication record](changelog/2026-09-11-v2-7-0.md) and
 [first-publication procedure](operations/push.md#initial-publication-to-a-fresh-repository).
+
+## Docker distribution preparation — 2026-09-11
+
+The [manual publishing workflow](operations/docker-publishing.md) adds opt-in
+versioned Docker Hub distribution for Community and Enterprise on Linux amd64.
+Shared CI and packaged-container runtime checks precede publication; source
+identity and existing-tag guards protect the candidate. The dedicated Docker
+account credential is configured. Public target repositories and the first
+authorized remote publishing run remain pending; this is not evidence of
+available prebuilt images. ARM manifests, image signing and automated image
+vulnerability scanning are not part of this checkpoint.
+
+## UI review and next remediation — 2026-09-11
+
+The [full review](../ui/audit/2026-09-11-full-review/audit.md) adds CG-49–CG-63,
+with four P1 and eleven P2 findings. The local UI suite passes its 72 helper
+tests, type/lint checks and build, but current CI does not invoke that suite and
+there is no automated browser coverage. A dependency audit also reports an
+affected React Router release; the advisory's RSC mode is not used by this UI.
+The review does not establish full product or UI acceptance.
+
+The [data-preservation batch](../ui/audit/2026-09-11-data-preservation/audit.md)
+resolves document JSON loss ([CG-50](issues/CG-50.md)) and construction import
+identity ([CG-62](issues/CG-62.md)), with real browser/HTTP persistence evidence,
+85 passing UI helper tests, type/lint checks and a production build. The registry
+now has 13 Open issues (2 P1, 11 P2).
+
+Next, restore production-origin operation
+([CG-49](issues/CG-49.md)), and correct tenant deletion disclosure
+([CG-51](issues/CG-51.md)). Then address access/provisioning, partial datasets,
+execution/result state and accessibility, with real-browser regressions and
+CI coverage ([CG-60](issues/CG-60.md)). Keep Docker publication preparation
+separate from this pending UI remediation.
+
+The console does not yet provide complete durable-job, signed-governance,
+promotion/repair/deployment, side-view or tenant-bootstrap workflows. The
+[UI tracker](../ui/TODO.md) owns that planned scope. Provider qualification and
+the frozen holdout remain separate; the audit made no model calls or application
+fixes and preserved all previous work.
