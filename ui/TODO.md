@@ -16,15 +16,20 @@ The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
 recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
 explicit untested boundaries. The historical Done entries below describe
 implementation checkpoints; they do not establish current acceptance. The UI
-suite now passes 146 helper tests after CG-49–CG-57/CG-62 remediation,
+suite now passes 161 helper tests after CG-49–CG-59/CG-62 remediation,
 but CI omits it and no browser regression suite exists yet. Keep defect status
 in the linked registry rather than duplicating it.
 
+- [x] [Empty/error guidance CG-58](../docs/issues/CG-58.md): supported draft
+  review/acceptance, verified fresh-tenant emptiness and shared catalog notices
+  for loading, denial and retryable failure. [Browser/API evidence](audit/2026-09-11-space-guidance/audit.md)
+  covers persisted acceptance, mutation guards, denied roles/editions and retry.
+  That checkpoint left four P2s open.
 - [x] [Table keyboard access CG-57](../docs/issues/CG-57.md): native links for
   navigation and buttons for review selection, with visible focus and isolated
   pointer shortcuts. [Browser/API evidence](audit/2026-09-11-table-keyboard/audit.md)
   covers Tab/Enter/Space, direct reloads, scaled layouts and Viewer restrictions.
-  Five P2s remain open.
+  That checkpoint left five P2s open.
 - [x] [Result ownership CG-56](../docs/issues/CG-56.md): clear results/timing on
   input edits and reruns; ignore obsolete responses; share graph loading/error
   feedback across both views. [Browser/API evidence](audit/2026-09-11-result-ownership/audit.md)
@@ -59,8 +64,11 @@ in the linked registry rather than duplicating it.
   [construction import identity CG-62](../docs/issues/CG-62.md): raw JSON editing,
   changed-field PATCH, creation readback, stable import IDs and explicit replacement
   review. [Browser/API evidence](audit/2026-09-11-data-preservation/audit.md).
-- [ ] Reconcile [empty/error guidance CG-58](../docs/issues/CG-58.md) and
-  [collection search/filter scope CG-59](../docs/issues/CG-59.md).
+- [x] [Collection search/filter scope CG-59](../docs/issues/CG-59.md): explicit
+  search cap, retrieved counts, page-local filter labels and usable paging
+  through filtered-empty pages. [Browser/API evidence](audit/2026-09-11-collection-search-scope/audit.md)
+  covers 126 documents, off-page keys, reset, failure/retry and scaled layouts.
+  Three P2s remain open.
 - [ ] Repair [collapsed navigation names CG-63](../docs/issues/CG-63.md).
 - [ ] Establish [UI CI/browser coverage CG-60](../docs/issues/CG-60.md) and
   refresh the [advisory-affected dependency CG-61](../docs/issues/CG-61.md).

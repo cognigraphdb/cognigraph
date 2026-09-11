@@ -1,4 +1,4 @@
-import { ArrowsClockwise, CircleNotch, Flag, PlusCircle, Scales } from "@phosphor-icons/react";
+import { ArrowsClockwise, CircleNotch, Flag, PlusCircle } from "@phosphor-icons/react";
 import {
   Alert,
   Button,
@@ -18,6 +18,7 @@ import { useAccess } from "../components/AccessBoundary.tsx";
 import { NeuronInspector, type NeuronVerdict } from "../components/NeuronInspector.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
 import { ProposeNeuronDialog } from "../components/ProposeNeuronDialog.tsx";
+import { SpaceCatalogNotice } from "../components/SpaceCatalogNotice.tsx";
 import { useReviewData } from "../hooks/useReviewData.ts";
 import { useSpaceTypes } from "../hooks/useSpaceTypes.ts";
 import {
@@ -38,7 +39,7 @@ export function ReviewScreen({ api, notify }: { api: CogniGraphApi; notify: Noti
   const { spaces } = catalog;
   const [params, setParams] = useSearchParams();
   const location = reviewLocation(params);
-  const space = location.space ?? spaces[0];
+  const space = catalog.loading || catalog.error ? undefined : (location.space ?? spaces[0]);
   const { status, page, selectedKey } = location;
   const data = useReviewData(api, space, status, page, selectedKey);
   const { selected, flags, error } = data;
@@ -211,7 +212,9 @@ export function ReviewScreen({ api, notify }: { api: CogniGraphApi; notify: Noti
         <div className="workspace-controls">
           <Select
             aria-label="Space type"
-            disabled={catalog.loading || verdictBusy}
+            disabled={
+              catalog.loading || Boolean(catalog.error) || spaces.length === 0 || verdictBusy
+            }
             loading={catalog.loading}
             showSearch={{ optionFilterProp: "label" }}
             onChange={(value) => updateLocation({ space: value, page: "1", neuron: undefined })}
@@ -321,24 +324,10 @@ export function ReviewScreen({ api, notify }: { api: CogniGraphApi; notify: Noti
           ) : null}
         </div>
         <Spin indicator={<CircleNotch className="cg-spin" weight="bold" />} spinning={loading}>
-          {catalog.error ? (
-            <Result status="warning" title="Unable to load spaces" subTitle={catalog.error} />
-          ) : !loading && spaces.length === 0 ? (
-            <Result
-              icon={<Scales aria-hidden="true" size={34} />}
-              status="info"
-              subTitle={
-                <>
-                  Review is scoped to a space type, and this server has none yet.
-                  <br />
-                  <small>
-                    Create a document in the <code>space_types</code> collection (entities +
-                    relation rules) to open a review queue.
-                  </small>
-                </>
-              }
-              title="No spaces to review"
-            />
+          {catalog.loading || catalog.error || spaces.length === 0 ? (
+            <div className="review-notices">
+              <SpaceCatalogNotice catalog={catalog} screen="review" busy={verdictBusy} />
+            </div>
           ) : error ? (
             <Result status="warning" subTitle={error} title="Unable to load the queue" />
           ) : (

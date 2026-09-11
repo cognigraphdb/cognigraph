@@ -17,8 +17,10 @@ interface DocumentTableProps {
   onPageSize: (pageSize: number) => void;
   page: number;
   onPage: (page: number) => void;
-  /// True collection size (from the catalog); undefined while loading.
-  total?: number;
+  summary: string;
+  hasNextPage: boolean;
+  busy: boolean;
+  emptyDescription: string;
   onSelect: (document: GraphDocument) => void;
 }
 
@@ -52,7 +54,10 @@ export function DocumentTable({
   onPageSize,
   page,
   onPage,
-  total,
+  summary,
+  hasNextPage,
+  busy,
+  emptyDescription,
   onSelect,
 }: DocumentTableProps) {
   // Column order matches the CSS's positional th:nth-child width rules
@@ -126,10 +131,10 @@ export function DocumentTable({
             emptyText: (
               <Empty
                 className="empty-state-base empty-state"
-                description="Try a different key, title, category, or embedding status."
+                description={emptyDescription}
                 image={<MagnifyingGlass aria-hidden="true" size={30} />}
               >
-                <strong>No documents match these filters</strong>
+                <strong>No documents in this view</strong>
               </Empty>
             ),
           }}
@@ -149,16 +154,10 @@ export function DocumentTable({
           size="small"
           value={pageSize}
         />
-        <span className="pagination-summary">
-          {documents.length
-            ? `${(page - 1) * pageSize + 1}–${(page - 1) * pageSize + documents.length}${
-                total !== undefined ? ` of ${total.toLocaleString()}` : " loaded"
-              }`
-            : "0 documents"}
-        </span>
+        <span className="pagination-summary">{summary}</span>
         <Button
           aria-label="Previous page"
-          disabled={page <= 1}
+          disabled={busy || page <= 1}
           icon={<CaretLeft aria-hidden="true" size={16} />}
           onClick={() => onPage(page - 1)}
           size="small"
@@ -168,7 +167,7 @@ export function DocumentTable({
         </Button>
         <Button
           aria-label="Next page"
-          disabled={total !== undefined ? page * pageSize >= total : documents.length < pageSize}
+          disabled={busy || !hasNextPage}
           icon={<CaretRight aria-hidden="true" size={16} />}
           onClick={() => onPage(page + 1)}
           size="small"

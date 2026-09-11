@@ -1,0 +1,79 @@
+- complementary:
+  - img "CogniGraph":
+    - generic: CogniGraph
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38490
+  - generic: Healthy
+  - generic: Sep 11, 2026, 6:56 PM
+  - generic: admin
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - generic: Governance / review
+  - heading "Review" [level=1]
+  - paragraph: Review proposed rules, accept or reject them with attribution, and retire neurons the graduation report flags as redundant.
+  - button "Propose neuron" [disabled]:
+    - generic: Propose neuron
+  - button "Refresh":
+    - generic: Refresh
+  - generic: Space type
+  - combobox "Space type" [disabled]
+  - radiogroup "segmented control":
+    - radio "Proposed" [checked]
+    - generic "Proposed"
+    - radio "Accepted"
+    - generic "Accepted"
+    - radio "Rejected"
+    - generic "Rejected"
+    - radio "Retired"
+    - generic "Retired"
+    - radio "All"
+    - generic "All"
+  - generic: Space catalog unavailable
+  - button "Previous neuron page" [disabled]:
+    - generic: Previous
+  - generic: Page 1
+  - button "Next neuron page" [disabled]:
+    - generic: Next
+  - generic: Select a space
+  - alert:
+    - img "close-circle":
+    - generic: Unable to load spaces
+    - generic: Failed to fetch
+    - button "Retry spaces":
+      - generic: Retry spaces

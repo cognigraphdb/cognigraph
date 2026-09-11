@@ -7,15 +7,16 @@ import {
   Lightbulb,
   PencilRuler,
 } from "@phosphor-icons/react";
-import { Alert, Button, Checkbox, Input, InputNumber, Select } from "antd";
+import { Button, Checkbox, Input, InputNumber, Select } from "antd";
 import type { ReactNode } from "react";
 import { useState } from "react";
-import { useSearchParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import type { CogniGraphApi } from "../api/client.ts";
 import { useAccess } from "../components/AccessBoundary.tsx";
 import { ConstructIngest } from "../components/ConstructIngest.tsx";
 import { JsonResult } from "../components/JsonResult.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
+import { SpaceCatalogNotice } from "../components/SpaceCatalogNotice.tsx";
 import { useSpaceTypes } from "../hooks/useSpaceTypes.ts";
 import { type ConstructAction, parseChunks, parseGaps, summarizeRun } from "../lib/construct.ts";
 import type { JsonObject, Notify } from "../types.ts";
@@ -35,7 +36,11 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
   const catalog = useSpaceTypes(api);
   const { spaces } = catalog;
   const [params, setParams] = useSearchParams();
-  const space = params.get("space") || spaces[0];
+  const requestedSpace = params.get("space") || spaces[0];
+  const space =
+    !catalog.loading && !catalog.error && spaces.includes(requestedSpace ?? "")
+      ? requestedSpace
+      : undefined;
   const setSpace = (value: string) =>
     setParams((current) => {
       const next = new URLSearchParams(current);
@@ -108,7 +113,7 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
               : catalog.error
                 ? "Spaces unavailable"
                 : spaces.length === 0
-                  ? "None in this tenant — draft one"
+                  ? "No accepted spaces"
                   : "Select"
           }
           value={space}
@@ -124,20 +129,18 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
               : `${spaces.length} spaces`}
         </span>
       </div>
-      {catalog.error ? (
-        <Alert type="error" title={`Unable to load spaces: ${catalog.error}`} />
-      ) : null}
+      <SpaceCatalogNotice catalog={catalog} screen="construct" busy={Boolean(running)} />
       <div className="operations-grid construct-grid">
         <section className="console-card action-list">
           <Stage
             icon={PencilRuler}
-            title="Draft an ontology"
-            detail="An LLM proposes a NEW space from sample chunks — entities and naive rules, symbolically checked, inert until accepted."
+            title="Draft and accept a space"
+            detail='Draft uses a configured completion provider to propose a new space from sample chunks. You can also prepare a space_type_drafts document through the documents API with your chosen id and status: "draft". Review the stored draft before accepting it.'
           >
             <Input
-              aria-label="New space id"
+              aria-label="Draft space id"
               onChange={(event) => setDraftId(event.target.value)}
-              placeholder="new space id, e.g. demo_meds"
+              placeholder="new or existing draft id, e.g. demo_meds"
               value={draftId}
             />
             <Input.TextArea
@@ -148,6 +151,11 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
               value={draftChunks}
             />
             <div className="actions-row-base">
+              <Link
+                to={`/collections/space_type_drafts${draftId.trim() ? `?doc=${encodeURIComponent(draftId.trim())}` : ""}`}
+              >
+                Review stored draft
+              </Link>
               <RunButton
                 busy={running === "draft"}
                 disabled={

@@ -221,8 +221,22 @@ buttons expose the same actions as pointer rows. Tab/Enter/Space journeys,
 direct reloads, Delete isolation, scaled focus and Viewer restrictions pass on
 the Rust-served Native console; 146 UI tests pass. Five Open issues remain, all P2.
 
-Next, address empty/error guidance ([CG-58](issues/CG-58.md)), followed by the
-remaining guidance/search/accessibility defects and
+The [space guidance batch](../ui/audit/2026-09-11-space-guidance/audit.md) resolves
+[CG-58](issues/CG-58.md): supported draft/review/accept guidance, verified empty
+Native catalogs and explicit loading/denial/failure/retry states. Real draft
+acceptance and persisted readback, managed mutation guards, host-role denial,
+Community gating and transport-failure recovery pass; 151 UI tests pass.
+Four Open issues remain, all P2.
+
+The [collection search/filter batch](../ui/audit/2026-09-11-collection-search-scope/audit.md)
+resolves [CG-59](issues/CG-59.md): explicit text-search caps, retrieved-result
+counts, page-local filter scope and usable paging through filtered-empty pages.
+A 126-document Native fixture, exact-key lookup, filter/reset behavior,
+health-poll stability, failure/retry and scaled layouts pass; 161 UI tests pass.
+Three Open issues remain, all P2.
+
+Next, address collapsed navigation names ([CG-63](issues/CG-63.md)), the
+advisory-affected dependency ([CG-61](issues/CG-61.md)) and
 CI coverage ([CG-60](issues/CG-60.md)). Keep Docker publication preparation
 separate from this pending UI remediation.
 

@@ -9,7 +9,7 @@ interface CollectionToolbarProps {
   category: string;
   embedding: string;
   categories: string[];
-  documentCount: number;
+  documentCount?: number;
   onSearch: (value: string) => void;
   onCategory: (value: string) => void;
   onEmbedding: (value: string) => void;
@@ -30,7 +30,10 @@ export function CollectionToolbar(props: CollectionToolbarProps) {
             <h1>{props.collection}</h1>
           </div>
           <p>
-            JSON collection&nbsp;&nbsp;•&nbsp;&nbsp;{props.documentCount.toLocaleString()} documents
+            JSON collection&nbsp;&nbsp;•&nbsp;&nbsp;
+            {props.documentCount === undefined
+              ? "Document count unavailable"
+              : `${props.documentCount.toLocaleString()} documents`}
           </p>
         </div>
         <Button
@@ -49,7 +52,7 @@ export function CollectionToolbar(props: CollectionToolbarProps) {
           allowClear
           aria-label="Search documents"
           onChange={(event) => props.onSearch(event.target.value)}
-          placeholder="Search the whole collection, or paste a key..."
+          placeholder="Search text or paste an exact key..."
           prefix={<MagnifyingGlass aria-hidden="true" />}
           value={props.search}
         />

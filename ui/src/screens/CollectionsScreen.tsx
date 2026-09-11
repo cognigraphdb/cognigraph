@@ -1,5 +1,5 @@
-import { Spin } from "antd";
-import { useEffect, useMemo, useState } from "react";
+import { Button, Spin } from "antd";
+import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router";
 import type { CogniGraphApi } from "../api/client.ts";
 import { useAccess } from "../components/AccessBoundary.tsx";
@@ -7,9 +7,11 @@ import { CollectionToolbar } from "../components/CollectionToolbar.tsx";
 import { DocumentDialog } from "../components/DocumentDialog.tsx";
 import { DocumentInspector } from "../components/DocumentInspector.tsx";
 import { DocumentTable } from "../components/DocumentTable.tsx";
+import { ErrorAlert } from "../components/ErrorAlert.tsx";
+import { useCollectionSearch } from "../hooks/useCollectionSearch.ts";
 import { embedDocumentRequest, normalizeDocument } from "../lib/api-documents.ts";
+import { COLLECTION_TEXT_LIMIT, collectionView } from "../lib/collection-search.ts";
 import type { DocumentEdit } from "../lib/document-edit.ts";
-import { filterDocuments } from "../lib/documents.ts";
 import type {
   ConnectionStatus,
   DocumentDraft,
@@ -52,12 +54,13 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
   };
   const [dialog, setDialog] = useState<"create" | "delete" | null>(null);
   const [loading, setLoading] = useState(false);
-  // Server-side search: a non-empty query switches the table from the paged
-  // listing to /api/search/text hits (plus an exact-key lookup), so matches
-  // come from the whole collection, not just the loaded page.
-  const [searchResults, setSearchResults] = useState<GraphDocument[]>();
-  const [searching, setSearching] = useState(false);
   const serverQuery = search.trim();
+  const connected = connection !== "offline";
+  const searchState = useCollectionSearch(api, collection, serverQuery, connection);
+  const [loadedPage, setLoadedPage] = useState("");
+  const [listError, setListError] = useState("");
+  const [listRevision, setListRevision] = useState(0);
+  const listOwner = JSON.stringify([collection, page, pageSize, listRevision]);
 
   if (pagedCollection !== collection) {
     setPagedCollection(collection);
@@ -66,7 +69,6 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
     setCategory("all");
     setEmbedding("all");
     setDocuments([]);
-    setSearchResults(undefined);
     setTotalCount(undefined);
     setSelectedKey(undefined);
     setInspectorOpen(true);
@@ -89,61 +91,14 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
   }, [targetKey, setSearchParams]);
 
   useEffect(() => {
-    if (connection !== "online") return;
-    let active = true;
-    setSearching(false);
-    if (!serverQuery) {
-      setSearchResults(undefined);
-      return;
-    }
-    const timer = setTimeout(() => {
-      setSearching(true);
-      const byKey = api
-        .get<JsonObject>(
-          `/documents/${encodeURIComponent(collection)}/${encodeURIComponent(serverQuery)}`,
-        )
-        .then((doc) => normalizeDocument(doc, collection))
-        .catch(() => null);
-      const byText = api
-        .post<{ results: Array<{ document: JsonObject }> }>("/search/text", {
-          collection,
-          query: serverQuery,
-          fields: ["title", "content", "summary", "text"],
-          limit: 100,
-        })
-        .then(({ results }) => results.map((hit) => normalizeDocument(hit.document, collection)))
-        .catch((error: Error) => {
-          if (active) notify(`Search: ${error.message}`, "error");
-          return [] as GraphDocument[];
-        });
-      Promise.all([byKey, byText])
-        .then(([keyDoc, hits]) => {
-          if (!active) return;
-          const merged = keyDoc
-            ? [keyDoc, ...hits.filter((hit) => hit._key !== keyDoc._key)]
-            : hits;
-          setSearchResults(merged);
-          setSelectedKey((current) =>
-            current && merged.some((doc) => doc._key === current) ? current : merged[0]?._key,
-          );
-        })
-        .finally(() => {
-          if (active) setSearching(false);
-        });
-    }, 300);
-    return () => {
-      active = false;
-      clearTimeout(timer);
-    };
-  }, [api, collection, connection, notify, serverQuery]);
-
-  useEffect(() => {
-    if (connection !== "online" || serverQuery) {
+    if (!connected || serverQuery) {
       setLoading(false);
       return;
     }
     let active = true;
     setLoading(true);
+    setListError("");
+    setLoadedPage("");
     api
       .get<{ results: JsonObject[] }>(
         `/documents?collection=${encodeURIComponent(collection)}&limit=${pageSize}&offset=${
@@ -154,6 +109,7 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
         if (!active) return;
         const next = results.map((item) => normalizeDocument(item, collection));
         setDocuments(next);
+        setLoadedPage(listOwner);
         setSelectedKey((current) => {
           if (current && next.some((document) => document._key === current)) {
             return current;
@@ -162,7 +118,7 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
         });
       })
       .catch((error: Error) => {
-        if (active) notify(`Documents: ${error.message}`, "error");
+        if (active) setListError(`Documents: ${error.message}`);
       })
       .finally(() => {
         if (active) setLoading(false);
@@ -170,10 +126,10 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
     return () => {
       active = false;
     };
-  }, [api, collection, connection, notify, page, pageSize, serverQuery]);
+  }, [api, collection, connected, page, pageSize, serverQuery, listOwner]);
 
   useEffect(() => {
-    if (connection !== "online") return;
+    if (!connected) return;
     let active = true;
     api
       .get<{ collections: Array<{ name: string; count: number }> }>("/collections")
@@ -187,25 +143,31 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
     return () => {
       active = false;
     };
-  }, [api, collection, connection]);
+  }, [api, collection, connected]);
 
-  // Search mode shows server hits (text matching already done); the category
-  // and embedding filters still apply client-side on top of either source.
-  const activeDocs = searchResults ?? documents;
-  const filtered = useMemo(
-    () =>
-      filterDocuments(activeDocs, {
-        search: searchResults ? "" : search,
-        category,
-        embedding,
-      }),
-    [activeDocs, searchResults, search, category, embedding],
+  const activeDocs = serverQuery
+    ? (searchState.result?.documents ?? [])
+    : loadedPage === listOwner
+      ? documents
+      : [];
+  const view = collectionView(
+    activeDocs,
+    { category, embedding },
+    {
+      page,
+      pageSize,
+      search: Boolean(serverQuery),
+      total: totalCount,
+    },
   );
-  // Search hits span the whole collection, so the table pages them locally;
-  // the plain listing is already one server page.
-  const visible = searchResults ? filtered.slice((page - 1) * pageSize, page * pageSize) : filtered;
-  const selected = activeDocs.find((document) => document._key === selectedKey);
-  const categories = [...new Set(activeDocs.map((document) => document.category))].sort();
+  const busy = serverQuery ? searchState.searching : loading;
+  const errors = serverQuery ? (searchState.result?.errors ?? []) : listError ? [listError] : [];
+  const selected =
+    view.visible.find((document) => document._key === selectedKey) ?? view.visible[0];
+  const filterChanged = (set: (value: string) => void) => (value: string) => {
+    set(value);
+    if (serverQuery) setPage(1);
+  };
 
   const createDocument = async (draft: DocumentDraft) => {
     try {
@@ -223,7 +185,7 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
       const created = await api.post<JsonObject>("/documents", payload);
       // POST returns an identity receipt, not the stored JSON. Read it back
       // before exposing the inspector; request metadata is not document data.
-      setTotalCount((current) => (current ?? 0) + 1);
+      setTotalCount((current) => (current === undefined ? undefined : current + 1));
       setDialog(null);
       const key = String(created._key);
       let stored: JsonObject;
@@ -258,7 +220,7 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
     const replace = (current: GraphDocument[]) =>
       current.map((document) => (document._key === normalized._key ? normalized : document));
     setDocuments(replace);
-    setSearchResults((current) => (current ? replace(current) : current));
+    searchState.updateDocuments(replace);
     notify("Document saved through the API");
   };
 
@@ -277,7 +239,7 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
       const replace = (current: GraphDocument[]) =>
         current.map((document) => (document._key === normalized._key ? normalized : document));
       setDocuments(replace);
-      setSearchResults((current) => (current ? replace(current) : current));
+      searchState.updateDocuments(replace);
       notify(`Embedded through ${response.model ?? "the configured provider"}`);
     } catch (error) {
       notify(error instanceof Error ? error.message : "Embedding failed", "error");
@@ -293,7 +255,7 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
       const drop = (current: GraphDocument[]) =>
         current.filter((document) => document._key !== selected._key);
       setDocuments(drop);
-      setSearchResults((current) => (current ? drop(current) : current));
+      searchState.updateDocuments(drop);
       setTotalCount((current) => (current === undefined ? undefined : Math.max(0, current - 1)));
       setSelectedKey(undefined);
       setInspectorOpen(false);
@@ -308,14 +270,14 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
     <main className={inspectorOpen && selected ? "workspace with-inspector" : "workspace"}>
       <section className="collection-panel">
         <CollectionToolbar
-          categories={categories}
+          categories={view.categories}
           category={category}
           collection={collection}
-          documentCount={totalCount ?? documents.length}
+          documentCount={totalCount}
           embedding={embedding}
-          onCategory={setCategory}
+          onCategory={filterChanged(setCategory)}
           onCreate={() => setDialog("create")}
-          onEmbedding={setEmbedding}
+          onEmbedding={filterChanged(setEmbedding)}
           onReset={() => {
             setPage(1);
             setSearch("");
@@ -328,16 +290,65 @@ export function CollectionsScreen({ api, connection, notify }: CollectionsScreen
           }}
           search={search}
         />
-        {loading || searching ? <Spin className="panel-loading" size="small" /> : null}
+        <div className="collection-scope" aria-live="polite">
+          {serverQuery ? (
+            <>
+              <p>
+                Search retrieves up to {COLLECTION_TEXT_LIMIT} text matches plus an exact key.
+                Category choices and filters apply only to retrieved documents.
+              </p>
+              {searchState.result?.textLimitReached ? (
+                <p>
+                  <strong>Text limit reached; more matches may exist.</strong> Refine the search to
+                  narrow the results.
+                </p>
+              ) : null}
+            </>
+          ) : (
+            <p>
+              Category choices and filters apply only to the loaded collection page. Page controls
+              browse the full collection.
+            </p>
+          )}
+          {errors.length ? (
+            <ErrorAlert title={`Results may be incomplete. ${errors.join(" ")}`} />
+          ) : null}
+          {errors.length ? (
+            <Button
+              onClick={
+                serverQuery ? searchState.retry : () => setListRevision((current) => current + 1)
+              }
+              size="small"
+            >
+              {serverQuery ? "Retry search" : "Retry collection"}
+            </Button>
+          ) : null}
+        </div>
+        {busy ? <Spin className="panel-loading" size="small" /> : null}
         <DocumentTable
-          documents={visible}
+          documents={view.visible}
           onPage={setPage}
           onPageSize={changePageSize}
           onSelect={selectDocument}
-          page={page}
+          page={view.page}
           pageSize={pageSize}
-          selectedKey={selectedKey}
-          total={searchResults ? filtered.length : totalCount}
+          selectedKey={selected?._key}
+          summary={
+            busy
+              ? "Loading documents…"
+              : !serverQuery && listError
+                ? "Collection page unavailable"
+                : view.summary
+          }
+          hasNextPage={view.hasNext}
+          busy={busy}
+          emptyDescription={
+            busy
+              ? "Loading documents…"
+              : errors.length
+                ? "The request failed. Use Retry above to load this view."
+                : "Change or reset the filters, or browse another collection page."
+          }
         />
       </section>
       {inspectorOpen && selected ? (

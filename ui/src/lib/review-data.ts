@@ -1,5 +1,6 @@
-import type { CogniGraphApi } from "../api/client.ts";
+import { ApiError, type CogniGraphApi } from "../api/client.ts";
 import type { JsonObject } from "../types.ts";
+import type { CollectionListResponse } from "./collections.ts";
 import {
   NEURON_STATUSES,
   type NeuronDoc,
@@ -33,10 +34,27 @@ export async function loadSpaceTypes(api: CogniGraphApi, signal: AbortSignal): P
   const names = new Set<string>();
   for (let offset = 0; ; offset += SPACE_PAGE_SIZE) {
     signal.throwIfAborted();
-    const response = await api.request<{ results: JsonObject[] }>(
-      `/documents?collection=space_types&limit=${SPACE_PAGE_SIZE}&offset=${offset}`,
-      { signal },
-    );
+    let response: { results: JsonObject[] };
+    try {
+      response = await api.request(
+        `/documents?collection=space_types&limit=${SPACE_PAGE_SIZE}&offset=${offset}`,
+        { signal },
+      );
+    } catch (error) {
+      // A fresh Native tenant has no space_types collection yet. Confirm that
+      // absence through the catalog; a 404 alone is not proof of an empty set.
+      if (offset === 0 && error instanceof ApiError && error.status === 404) {
+        const catalog = await api.request<CollectionListResponse>("/collections", { signal });
+        if (
+          !Array.isArray(catalog.collections) ||
+          catalog.collections.some((entry) => !entry || typeof entry.name !== "string")
+        ) {
+          throw new Error("Invalid collection catalog response.");
+        }
+        if (!catalog.collections.some((entry) => entry.name === "space_types")) return [];
+      }
+      throw error;
+    }
     if (!Array.isArray(response.results)) throw new Error("Invalid space catalog response.");
     for (const doc of response.results) {
       if (typeof doc._key !== "string" || !doc._key || names.has(doc._key)) {

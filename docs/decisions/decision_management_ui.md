@@ -383,3 +383,35 @@ link, and incomplete search handles have no navigation target.
 and read-only-role checks against the Rust-served production console. This does
 not certify screen-reader narration or remove the separately tracked collapsed
 navigation naming issue.
+
+## Addendum (2026-09-11): space bootstrap and catalog states
+
+Review and Construct direct authors through editable `space_type_drafts`,
+review of the stored JSON and the dedicated draft-accept action. The console
+does not recommend generic writes to accepted `space_types`. Readers receive
+guidance to an authorized editor or administrator rather than a write action.
+
+A successful empty space list and a Native collection that has never existed
+are valid empty states. For an initial space-list 404, a successful collection
+catalog must confirm absence before the UI declares emptiness. Other failures,
+including failed continuation or fallback reads, remain failures. Shared notices
+distinguish loading, 403 denial, request failure and confirmed emptiness, with
+retry controls; dependent space actions wait for a usable catalog. Existing
+route gates own role and edition absence. [CG-58](../issues/CG-58.md) records the
+live draft acceptance, permission, failure-recovery and layout evidence.
+
+## Addendum (2026-09-11): bounded collection search and local filters
+
+The text-search API provides a limit but no continuation cursor or total-match
+count. Collections retrieves up to 100 text hits and a separate exact-key read,
+deduplicates them and labels pagination as retrieved results. Reaching the text
+limit displays a possible-truncation warning. Errors disclose partial results
+and offer Retry; normal key absence is distinct from a denied or failed lookup.
+
+Category choices and embedding/category filters operate on retrieved documents
+in search mode and on the loaded server page in browse mode. The UI states that
+scope and keeps browse-page navigation independent of filtered row counts.
+Unknown catalog totals are not replaced with the number of loaded documents.
+Search filter changes reset paging, and result-page bounds follow the filtered
+set. Routine health checks preserve the current data. [CG-59](../issues/CG-59.md)
+records the executed acceptance and the remaining backend coverage limits.

@@ -1,0 +1,381 @@
+- complementary:
+  - img "CogniGraph":
+    - generic: CogniGraph
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38493
+  - generic: Healthy
+  - generic: Sep 11, 2026, 7:34 PM
+  - generic: admin
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - link "Collections":
+    - /url: /collections
+  - text: / qa_search
+  - heading "qa_search" [level=1]
+  - paragraph: JSON collection • 126 documents
+  - button "Create document":
+    - generic: Create document
+  - textbox "Search documents":
+    - /placeholder: Search text or paste an exact key...
+  - 'generic "Category: All"':
+    - text: "Category: All"
+    - combobox "Filter by category"
+  - 'generic "Has embedding: All"':
+    - text: "Has embedding: All"
+    - combobox "Filter by embedding status"
+  - button "Reset" [active]:
+    - generic: Reset
+  - paragraph: Category choices and filters apply only to the loaded collection page. Page controls browse the full collection.
+  - table:
+    - rowgroup:
+      - row "Select Key Title Category Updated Embedding":
+        - columnheader "Select":
+          - generic: Select
+        - columnheader "Key"
+        - columnheader "Title"
+        - columnheader "Category"
+        - columnheader "Updated"
+        - columnheader "Embedding"
+    - rowgroup:
+      - row "Select Exact key outside text hits constellation Exact key outside text hits exact-key — Embedding missing":
+        - cell "Select Exact key outside text hits":
+          - button "Select Exact key outside text hits":
+        - cell "constellation":
+          - button "constellation":
+            - generic: constellation
+        - cell "Exact key outside text hits"
+        - cell "exact-key"
+        - cell "—"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 000 item-000 Constellation 000 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 000":
+          - button "Select Constellation 000":
+        - cell "item-000":
+          - button "item-000":
+            - generic: item-000
+        - cell "Constellation 000"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 001 item-001 Constellation 001 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 001":
+          - button "Select Constellation 001":
+        - cell "item-001":
+          - button "item-001":
+            - generic: item-001
+        - cell "Constellation 001"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 002 item-002 Constellation 002 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 002":
+          - button "Select Constellation 002":
+        - cell "item-002":
+          - button "item-002":
+            - generic: item-002
+        - cell "Constellation 002"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 003 item-003 Constellation 003 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 003":
+          - button "Select Constellation 003":
+        - cell "item-003":
+          - button "item-003":
+            - generic: item-003
+        - cell "Constellation 003"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 004 item-004 Constellation 004 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 004":
+          - button "Select Constellation 004":
+        - cell "item-004":
+          - button "item-004":
+            - generic: item-004
+        - cell "Constellation 004"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 005 item-005 Constellation 005 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 005":
+          - button "Select Constellation 005":
+        - cell "item-005":
+          - button "item-005":
+            - generic: item-005
+        - cell "Constellation 005"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 006 item-006 Constellation 006 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 006":
+          - button "Select Constellation 006":
+        - cell "item-006":
+          - button "item-006":
+            - generic: item-006
+        - cell "Constellation 006"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 007 item-007 Constellation 007 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 007":
+          - button "Select Constellation 007":
+        - cell "item-007":
+          - button "item-007":
+            - generic: item-007
+        - cell "Constellation 007"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 008 item-008 Constellation 008 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 008":
+          - button "Select Constellation 008":
+        - cell "item-008":
+          - button "item-008":
+            - generic: item-008
+        - cell "Constellation 008"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 009 item-009 Constellation 009 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 009":
+          - button "Select Constellation 009":
+        - cell "item-009":
+          - button "item-009":
+            - generic: item-009
+        - cell "Constellation 009"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 010 item-010 Constellation 010 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 010":
+          - button "Select Constellation 010":
+        - cell "item-010":
+          - button "item-010":
+            - generic: item-010
+        - cell "Constellation 010"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 011 item-011 Constellation 011 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 011":
+          - button "Select Constellation 011":
+        - cell "item-011":
+          - button "item-011":
+            - generic: item-011
+        - cell "Constellation 011"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 012 item-012 Constellation 012 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 012":
+          - button "Select Constellation 012":
+        - cell "item-012":
+          - button "item-012":
+            - generic: item-012
+        - cell "Constellation 012"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 013 item-013 Constellation 013 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 013":
+          - button "Select Constellation 013":
+        - cell "item-013":
+          - button "item-013":
+            - generic: item-013
+        - cell "Constellation 013"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 014 item-014 Constellation 014 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 014":
+          - button "Select Constellation 014":
+        - cell "item-014":
+          - button "item-014":
+            - generic: item-014
+        - cell "Constellation 014"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 015 item-015 Constellation 015 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 015":
+          - button "Select Constellation 015":
+        - cell "item-015":
+          - button "item-015":
+            - generic: item-015
+        - cell "Constellation 015"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 016 item-016 Constellation 016 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 016":
+          - button "Select Constellation 016":
+        - cell "item-016":
+          - button "item-016":
+            - generic: item-016
+        - cell "Constellation 016"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 017 item-017 Constellation 017 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 017":
+          - button "Select Constellation 017":
+        - cell "item-017":
+          - button "item-017":
+            - generic: item-017
+        - cell "Constellation 017"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 018 item-018 Constellation 018 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 018":
+          - button "Select Constellation 018":
+        - cell "item-018":
+          - button "item-018":
+            - generic: item-018
+        - cell "Constellation 018"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 019 item-019 Constellation 019 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 019":
+          - button "Select Constellation 019":
+        - cell "item-019":
+          - button "item-019":
+            - generic: item-019
+        - cell "Constellation 019"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 020 item-020 Constellation 020 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 020":
+          - button "Select Constellation 020":
+        - cell "item-020":
+          - button "item-020":
+            - generic: item-020
+        - cell "Constellation 020"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 021 item-021 Constellation 021 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 021":
+          - button "Select Constellation 021":
+        - cell "item-021":
+          - button "item-021":
+            - generic: item-021
+        - cell "Constellation 021"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 022 item-022 Constellation 022 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 022":
+          - button "Select Constellation 022":
+        - cell "item-022":
+          - button "item-022":
+            - generic: item-022
+        - cell "Constellation 022"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+      - row "Select Constellation 023 item-023 Constellation 023 first-page Sep 11, 2026, 3:00 PM Embedding missing":
+        - cell "Select Constellation 023":
+          - button "Select Constellation 023":
+        - cell "item-023":
+          - button "item-023":
+            - generic: item-023
+        - cell "Constellation 023"
+        - cell "first-page"
+        - cell "Sep 11, 2026, 3:00 PM"
+        - cell "Embedding missing":
+          - img "Embedding missing"
+  - generic: "Rows per page:"
+  - generic "25":
+    - text: "25"
+    - combobox "Rows per page"
+  - generic: 1–25 of 126 documents
+  - button "Previous page" [disabled]:
+  - button "1"
+  - button "Next page":
+  - complementary:
+    - text: KEY
+    - strong: constellation
+    - button "Copy document key":
+    - button "Edit":
+      - generic: Edit
+    - button "Delete":
+      - generic: Delete
+    - button "Close inspector":
+    - tablist:
+      - tab "JSON" [selected]
+      - tab "Metadata"
+    - tabpanel "JSON":
+      - list:
+        - code: "{"
+        - code: "\"_id\": \"qa_search/constellation\","
+        - code: "\"_key\": \"constellation\","
+        - code: "\"category\": \"exact-key\","
+        - code: "\"title\": \"Exact key outside text hits\""
+        - code: "}"
+    - text: "Embedding: missing"
+    - button "Generate embedding":
+      - generic: Generate embedding

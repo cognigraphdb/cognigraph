@@ -1,0 +1,190 @@
+[
+  {
+    "case": "Construct error 1067x667",
+    "geometry": {
+      "elements": [
+        {
+          "className": "page-workspace",
+          "clientHeight": 601,
+          "clientWidth": 995,
+          "height": 601,
+          "overflowY": "auto",
+          "scrollHeight": 1725,
+          "scrollWidth": 995,
+          "width": 995,
+          "x": 72,
+          "y": 66
+        },
+        {
+          "className": "construct-toolbar",
+          "clientHeight": 34,
+          "clientWidth": 939,
+          "height": 34,
+          "overflowY": "visible",
+          "scrollHeight": 34,
+          "scrollWidth": 939,
+          "width": 939,
+          "x": 100,
+          "y": 218
+        },
+        {
+          "className": "ant-alert ant-alert-error ant-alert-outlined ant-alert-with-description cognigraph css-dev-only-do-not-override-dspgc0",
+          "clientHeight": 79,
+          "clientWidth": 937,
+          "height": 81.328125,
+          "overflowY": "visible",
+          "scrollHeight": 79,
+          "scrollWidth": 937,
+          "text": "Unable to load spacesFailed to fetchRetry spaces",
+          "width": 939,
+          "x": 100,
+          "y": 252
+        }
+      ],
+      "page": {
+        "clientWidth": 1067,
+        "scrollWidth": 1067
+      },
+      "url": "/construct?space=qa-guidance",
+      "viewport": {
+        "height": 667,
+        "width": 1067
+      }
+    }
+  },
+  {
+    "case": "Construct error 1280x800",
+    "geometry": {
+      "elements": [
+        {
+          "className": "page-workspace",
+          "clientHeight": 734,
+          "clientWidth": 1086,
+          "height": 734,
+          "overflowY": "auto",
+          "scrollHeight": 1443,
+          "scrollWidth": 1086,
+          "width": 1086,
+          "x": 194,
+          "y": 66
+        },
+        {
+          "className": "construct-toolbar",
+          "clientHeight": 34,
+          "clientWidth": 1030,
+          "height": 34,
+          "overflowY": "visible",
+          "scrollHeight": 34,
+          "scrollWidth": 1030,
+          "width": 1030,
+          "x": 222,
+          "y": 218
+        },
+        {
+          "className": "ant-alert ant-alert-error ant-alert-outlined ant-alert-with-description cognigraph css-dev-only-do-not-override-dspgc0",
+          "clientHeight": 79,
+          "clientWidth": 1028,
+          "height": 81.328125,
+          "overflowY": "visible",
+          "scrollHeight": 79,
+          "scrollWidth": 1028,
+          "text": "Unable to load spacesFailed to fetchRetry spaces",
+          "width": 1030,
+          "x": 222,
+          "y": 252
+        }
+      ],
+      "page": {
+        "clientWidth": 1280,
+        "scrollWidth": 1280
+      },
+      "url": "/construct?space=qa-guidance",
+      "viewport": {
+        "height": 800,
+        "width": 1280
+      }
+    }
+  },
+  {
+    "case": "Review error 1280x800",
+    "geometry": {
+      "elements": [
+        {
+          "className": "workspace",
+          "clientHeight": 734,
+          "clientWidth": 1086,
+          "height": 734,
+          "overflowY": "hidden",
+          "scrollHeight": 734,
+          "scrollWidth": 1086,
+          "width": 1086,
+          "x": 194,
+          "y": 66
+        },
+        {
+          "className": "ant-alert ant-alert-error ant-alert-outlined ant-alert-with-description cognigraph css-dev-only-do-not-override-dspgc0",
+          "clientHeight": 79,
+          "clientWidth": 1028,
+          "height": 81.328125,
+          "overflowY": "visible",
+          "scrollHeight": 79,
+          "scrollWidth": 1028,
+          "text": "Unable to load spacesFailed to fetchRetry spaces",
+          "width": 1030,
+          "x": 222,
+          "y": 298
+        }
+      ],
+      "page": {
+        "clientWidth": 1280,
+        "scrollWidth": 1280
+      },
+      "url": "/review",
+      "viewport": {
+        "height": 800,
+        "width": 1280
+      }
+    }
+  },
+  {
+    "case": "Review error 1067x667",
+    "geometry": {
+      "elements": [
+        {
+          "className": "workspace",
+          "clientHeight": 601,
+          "clientWidth": 995,
+          "height": 601,
+          "overflowY": "hidden",
+          "scrollHeight": 601,
+          "scrollWidth": 995,
+          "width": 995,
+          "x": 72,
+          "y": 66
+        },
+        {
+          "className": "ant-alert ant-alert-error ant-alert-outlined ant-alert-with-description cognigraph css-dev-only-do-not-override-dspgc0",
+          "clientHeight": 79,
+          "clientWidth": 937,
+          "height": 81.328125,
+          "overflowY": "visible",
+          "scrollHeight": 79,
+          "scrollWidth": 937,
+          "text": "Unable to load spacesFailed to fetchRetry spaces",
+          "width": 939,
+          "x": 100,
+          "y": 298
+        }
+      ],
+      "page": {
+        "clientWidth": 1067,
+        "scrollWidth": 1067
+      },
+      "url": "/review",
+      "viewport": {
+        "height": 667,
+        "width": 1067
+      }
+    }
+  }
+]

@@ -123,8 +123,10 @@ resolves CG-55. That checkpoint had **55 Resolved, 1 Closed without change, and
 7 Open issues (all P2)**.
 [Input-scoped console results](../../ui/audit/2026-09-11-result-ownership/audit.md)
 resolves CG-56. The [table keyboard-access batch](../../ui/audit/2026-09-11-table-keyboard/audit.md)
-resolves CG-57. Current registry: **57 Resolved, 1 Closed without change, and
-5 Open issues (all P2)**.
+resolves CG-57. The [space guidance and catalog-state batch](../../ui/audit/2026-09-11-space-guidance/audit.md)
+resolves CG-58. The [collection search/filter scope batch](../../ui/audit/2026-09-11-collection-search-scope/audit.md)
+resolves CG-59. Current registry: **59 Resolved, 1 Closed without change, and
+3 Open issues (all P2)**.
 
 ## Conventions
 
@@ -195,8 +197,8 @@ resolves CG-57. Current registry: **57 Resolved, 1 Closed without change, and
 | [CG-55](CG-55.md) | P2 | Resolved | Console keyboard shortcuts bypass the running request guard |
 | [CG-56](CG-56.md) | P2 | Resolved | Console results remain attached to changed inputs and failed graph requests |
 | [CG-57](CG-57.md) | P2 | Resolved | Clickable table rows cannot be opened with the keyboard |
-| [CG-58](CG-58.md) | P2 | Open | Review empty-state guidance recommends a forbidden space creation path |
-| [CG-59](CG-59.md) | P2 | Open | Collection search and filters present partial matches as complete results |
+| [CG-58](CG-58.md) | P2 | Resolved | Review empty-state guidance recommends a forbidden space creation path |
+| [CG-59](CG-59.md) | P2 | Resolved | Collection search and filters present partial matches as complete results |
 | [CG-60](CG-60.md) | P2 | Open | CI omits the UI checks and browser regression coverage |
 | [CG-61](CG-61.md) | P2 | Open | React Router lockfile retains an advisory-affected release |
 | [CG-62](CG-62.md) | P1 | Resolved | Plain-text construction imports reuse chunk IDs and replace earlier evidence |

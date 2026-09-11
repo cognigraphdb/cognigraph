@@ -1,0 +1,1353 @@
+[
+  {
+    "method": "GET",
+    "path": "/review",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-rhypvyqh.css",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-vt4b3g5q.js",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 7
+  },
+  {
+    "method": "GET",
+    "path": "/cognigraph-mark-b1k1wyxb.svg",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 401,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 401,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/favicon.ico",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/login",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 14
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "pass",
+    "status": 404,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "pass",
+    "status": 404,
+    "elapsed_ms": 0
+  },
+  {
+    "method": "GET",
+    "path": "/api/collections",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 0
+  },
+  {
+    "method": "GET",
+    "path": "/construct",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-rhypvyqh.css",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-vt4b3g5q.js",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/cognigraph-mark-b1k1wyxb.svg",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/favicon.ico",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "pass",
+    "status": 404,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "pass",
+    "status": 404,
+    "elapsed_ms": 0
+  },
+  {
+    "method": "GET",
+    "path": "/api/collections",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 0
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 401,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/login",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 14
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 4
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/review",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-vt4b3g5q.js",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-rhypvyqh.css",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/cognigraph-mark-b1k1wyxb.svg",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/favicon.ico",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/construct",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 401,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/login",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 14
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 0
+  },
+  {
+    "method": "GET",
+    "path": "/review",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-vt4b3g5q.js",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-rhypvyqh.css",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/cognigraph-mark-b1k1wyxb.svg",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/favicon.ico",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "fail",
+    "status": "connection_closed",
+    "elapsed_ms": 0
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "fail",
+    "status": "connection_closed",
+    "elapsed_ms": 0
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "slow",
+    "status": 200,
+    "elapsed_ms": 8002
+  },
+  {
+    "method": "GET",
+    "path": "/api/neurons?space_type=qa-guidance&limit=51&status=proposed&offset=0",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/neurons/graduation?space_type=qa-guidance",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "denied",
+    "status": 403,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/construct?space=qa-guidance",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-rhypvyqh.css",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-vt4b3g5q.js",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 4
+  },
+  {
+    "method": "GET",
+    "path": "/cognigraph-mark-b1k1wyxb.svg",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 11
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 10
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 13
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 16
+  },
+  {
+    "method": "GET",
+    "path": "/favicon.ico",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 8
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "denied",
+    "status": 403,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "denied",
+    "status": 403,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "fail",
+    "status": "connection_closed",
+    "elapsed_ms": 0
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "slow",
+    "status": 200,
+    "elapsed_ms": 8009
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "fail",
+    "status": "connection_closed",
+    "elapsed_ms": 0
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 4
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/review",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-rhypvyqh.css",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/index-vt4b3g5q.js",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/cognigraph-mark-b1k1wyxb.svg",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/favicon.ico",
+    "mode": "pass",
+    "status": 304,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "fail",
+    "status": "connection_closed",
+    "elapsed_ms": 0
+  },
+  {
+    "method": "GET",
+    "path": "/api/documents?collection=space_types&limit=100&offset=0",
+    "mode": "fail",
+    "status": "connection_closed",
+    "elapsed_ms": 0
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 4
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 3
+  },
+  {
+    "method": "GET",
+    "path": "/health",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 1
+  },
+  {
+    "method": "GET",
+    "path": "/health/database",
+    "mode": "pass",
+    "status": 200,
+    "elapsed_ms": 2
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/session",
+    "mode": "pass",
+    "status": 401,
+    "elapsed_ms": 2
+  }
+]

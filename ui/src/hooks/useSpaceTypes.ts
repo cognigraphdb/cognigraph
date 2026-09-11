@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import type { CogniGraphApi } from "../api/client.ts";
+import { ApiError, type CogniGraphApi } from "../api/client.ts";
 import { loadSpaceTypes } from "../lib/review-data.ts";
 
 export function useSpaceTypes(api: CogniGraphApi) {
@@ -9,6 +9,7 @@ export function useSpaceTypes(api: CogniGraphApi) {
     revision: number;
     spaces: string[];
     error: string;
+    errorStatus?: number;
   }>();
   useEffect(() => {
     const controller = new AbortController();
@@ -23,6 +24,7 @@ export function useSpaceTypes(api: CogniGraphApi) {
             revision,
             spaces: [],
             error: error instanceof Error ? error.message : "Unable to load spaces",
+            errorStatus: error instanceof ApiError ? error.status : undefined,
           });
       },
     );
@@ -34,6 +36,7 @@ export function useSpaceTypes(api: CogniGraphApi) {
     spaces: result?.api === api ? result.spaces : [],
     loading: !current,
     error: current?.error ?? "",
+    errorStatus: current?.errorStatus,
     refresh,
   };
 }

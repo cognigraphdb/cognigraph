@@ -26,6 +26,58 @@ const rows = (count: number) =>
   );
 
 describe("complete space catalogs", () => {
+  test("a successful empty page is empty without a fallback request", async () => {
+    let calls = 0;
+    serve(() => {
+      calls += 1;
+      return { results: [] };
+    });
+    expect(await loadSpaceTypes(api, signal())).toEqual([]);
+    expect(calls).toBe(1);
+  });
+  test("a fresh tenant is empty only after the collection catalog confirms absence", async () => {
+    const paths: string[] = [];
+    globalThis.fetch = (async (url) => {
+      const path = new URL(String(url)).pathname;
+      paths.push(path);
+      return path === "/api/collections"
+        ? Response.json({ collections: [{ name: "documents" }] })
+        : Response.json({ error: "Collection not found: space_types" }, { status: 404 });
+    }) as typeof fetch;
+    expect(await loadSpaceTypes(api, signal())).toEqual([]);
+    expect(paths).toEqual(["/api/documents", "/api/collections"]);
+  });
+  test("a 404 for an existing collection remains a failure", async () => {
+    globalThis.fetch = (async (url) =>
+      new URL(String(url)).pathname === "/api/collections"
+        ? Response.json({ collections: [{ name: "space_types" }] })
+        : Response.json({ error: "Missing route" }, { status: 404 })) as typeof fetch;
+    await expect(loadSpaceTypes(api, signal())).rejects.toMatchObject({ status: 404 });
+  });
+  test("denials and service failures retain their status without becoming empty catalogs", async () => {
+    for (const status of [403, 503]) {
+      let calls = 0;
+      globalThis.fetch = (async (_url) => {
+        calls += 1;
+        return Response.json({ error: "Space catalog unavailable" }, { status });
+      }) as typeof fetch;
+      await expect(loadSpaceTypes(api, signal())).rejects.toMatchObject({ status });
+      expect(calls).toBe(1);
+    }
+  });
+  test("unverified or failed fallback catalogs cannot prove an empty tenant", async () => {
+    for (const fallback of [
+      Response.json({ error: "Catalog denied" }, { status: 403 }),
+      Response.json({ count: 0 }),
+      Response.json({ collections: [null] }),
+    ]) {
+      globalThis.fetch = (async (url) =>
+        new URL(String(url)).pathname === "/api/collections"
+          ? fallback
+          : Response.json({ error: "Missing" }, { status: 404 })) as typeof fetch;
+      await expect(loadSpaceTypes(api, signal())).rejects.toThrow();
+    }
+  });
   test("continues beyond 100 spaces and ignores the response's page count", async () => {
     const offsets: number[] = [];
     const spaces = Array.from({ length: 201 }, (_, i) => ({

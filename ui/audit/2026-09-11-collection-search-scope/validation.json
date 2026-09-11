@@ -1,0 +1,33 @@
+{
+  "ui_check": "PASS: Biome 122 files and TypeScript",
+  "tests": {
+    "pass": 161,
+    "fail": 0,
+    "files": 22,
+    "assertions": 783
+  },
+  "build": {
+    "modules": 1734,
+    "js": "index-0d54tqzv.js",
+    "css": "index-0pnq4bz5.css"
+  },
+  "rust_changed": false,
+  "prior_cg58_sealed_evidence_unchanged": 69,
+  "cleanup": {
+    "owned_pids_stopped": [
+      57443,
+      57968
+    ],
+    "owned_ports_closed": [
+      38493,
+      38494
+    ],
+    "qa_tab_closed": 35,
+    "signed_out_origins": [
+      38493,
+      38494
+    ],
+    "user_tab_retained": 13,
+    "temporary_directory_removed": "/tmp/cg59-qa"
+  }
+}
