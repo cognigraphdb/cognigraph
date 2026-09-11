@@ -89,7 +89,7 @@ follow the [recovery guide](../../../docs/operations/recovery.md).
 Server selectors exclude backup pods. Custom `podLabels` apply to the server pod
 and cannot replace chart identity labels. Set `image.repository` and `image.tag`
 to an image available to the cluster; this chart does not publish the local
-`cognigraph:2.7.0` image.
+`cognigraph:2.7.1` image.
 
 From the repository root, with Helm and Bun installed:
 

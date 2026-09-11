@@ -398,7 +398,7 @@ checksum = "0c9ea0ac24bc397ab3c98583a3c9ba74fa56b09a4449bbe172b9b1ddb016027a"
 
 [[package]]
 name = "cognigraph-arango"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "async-trait",
  "base64 0.23.1",
@@ -413,7 +413,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-artifacts"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "cognigraph-core",
  "cognigraph-governance",
@@ -429,7 +429,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-auth"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "argon2",
  "base64 0.23.1",
@@ -447,7 +447,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-cache"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "async-trait",
  "cognigraph-core",
@@ -462,7 +462,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-cli"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "cognigraph-artifacts",
  "reqwest",
@@ -475,7 +475,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-construct"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -498,7 +498,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-core"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "async-trait",
  "chrono",
@@ -510,7 +510,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-embeddings"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -526,7 +526,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-governance"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "base64 0.23.1",
  "ed25519-dalek",
@@ -540,7 +540,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-lua"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "cognigraph-core",
  "cognigraph-native",
@@ -553,7 +553,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-native"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "async-trait",
  "chrono",
@@ -572,7 +572,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-query"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "async-trait",
  "chrono",
@@ -590,7 +590,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-server"
-version = "2.7.0"
+version = "2.7.1"
 dependencies = [
  "anyhow",
  "async-trait",

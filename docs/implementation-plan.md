@@ -259,6 +259,10 @@ for the separately authorized commit/publication workflow, then prioritize
 operator journeys from the UI tracker. This checkpoint does not publish Docker
 images, run remote CI or qualify the research holdout.
 
+The outgoing [2.7.1 maintenance version](changelog/2026-09-11-v2-7-1.md) collects
+CG-49–CG-63 remediation and the shared browser/CI gate. Its code publication
+requires the current push checks; image publication and remote CI remain separate.
+
 The console does not yet provide complete durable-job, signed-governance,
 promotion/repair/deployment, side-view or tenant-quota management workflows. The
 [UI tracker](../ui/TODO.md) owns that planned scope. Provider qualification and

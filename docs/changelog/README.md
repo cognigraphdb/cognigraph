@@ -147,6 +147,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Releases
 
+- 2026-09-11: [Console remediation and verification — v2.7.1](2026-09-11-v2-7-1.md)
 - 2026-09-11: [2.7.0 — Community builds and a fresh repository](2026-09-11-v2-7-0.md)
 - 2026-09-11: [2.6.2 — Repository data removal](2026-09-11-v2-6-2.md)
 - 2026-09-10: [v2.6.1 — workflow gates, dependency maintenance and Collections fixes](2026-09-10-v2-6-1.md)
