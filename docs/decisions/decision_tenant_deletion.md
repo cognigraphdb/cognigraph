@@ -100,3 +100,15 @@ migration and current verification. CG-12's request pinning and control-store
 fence are verified by paused-provider and slow-body release HTTP regressions
 in resident/paged modes, including recreation and restart. See
 [request-isolation evidence](../issues/request-isolation-2026-09-08.md).
+
+## Console disclosure — 2026-09-11 (CG-51)
+
+The management console now describes this lifecycle before its destructive
+confirmation: remove credentials, retire work and quarantine data. It distinguishes
+Suspend from Delete and explains that recreating the name restores neither data
+nor credentials. The result retains the server's `deleted` flag and quarantined
+entry names; failed or malformed responses cannot become a success toast.
+
+The [CG-51 browser and HTTP verification](../../ui/audit/2026-09-11-tenant-deletion/audit.md)
+exercised cancellation, deletion, same-name recreation and credential rejection
+on disposable Native Enterprise data. The server contract above is unchanged.

@@ -1,0 +1,77 @@
+{
+  "created": {
+    "created_at": 1789125133,
+    "incarnation": "b64f3f81-3851-4a79-835a-d95c6d9df3bf",
+    "name": "qa-delete-credentials-and-data",
+    "status": "active"
+  },
+  "before": {
+    "_id": "qa_docs/proof",
+    "_key": "proof",
+    "content": "Synthetic tenant deletion evidence",
+    "created_at": "2026-09-11T11:12:13.964954803+00:00",
+    "updated_at": "2026-09-11T11:12:13.964954803+00:00"
+  },
+  "host_data_denied": {
+    "error": "Forbidden: role `HostAdmin` lacks the required scope"
+  },
+  "after_cancel": {
+    "_id": "qa_docs/proof",
+    "_key": "proof",
+    "content": "Synthetic tenant deletion evidence",
+    "created_at": "2026-09-11T11:12:13.964954803+00:00",
+    "updated_at": "2026-09-11T11:12:13.964954803+00:00"
+  },
+  "cancel_login_succeeded": true,
+  "after_delete_catalog": {
+    "count": 0,
+    "open_stores": 1,
+    "tenants": []
+  },
+  "after_delete_files": [
+    "_control.redb",
+    "default.redb",
+    "qa-delete-credentials-and-data.redb.deleted-1789125318578"
+  ],
+  "after_delete_session": {
+    "error": "Authentication error: JWT identity is no longer active"
+  },
+  "after_delete_api_token": {
+    "error": "Authentication error: invalid or revoked token"
+  },
+  "after_delete_login": {
+    "error": "Authentication error: invalid credentials"
+  },
+  "after_recreate_catalog": {
+    "count": 1,
+    "open_stores": 1,
+    "tenants": [
+      {
+        "created_at": 1789125392,
+        "incarnation": "226f3171-f073-4f50-b928-43507f0c37dd",
+        "name": "qa-delete-credentials-and-data",
+        "status": "active",
+        "store_open": false
+      }
+    ]
+  },
+  "after_recreate_session": {
+    "error": "Authentication error: JWT identity is no longer active"
+  },
+  "after_recreate_api_token": {
+    "error": "Authentication error: invalid or revoked token"
+  },
+  "after_recreate_login": {
+    "error": "Authentication error: invalid credentials"
+  },
+  "replacement_catalog": {
+    "collections": [],
+    "count": 0
+  },
+  "replacement_files": [
+    "_control.redb",
+    "default.redb",
+    "qa-delete-credentials-and-data.redb",
+    "qa-delete-credentials-and-data.redb.deleted-1789125318578"
+  ]
+}

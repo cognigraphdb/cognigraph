@@ -265,3 +265,16 @@ server clears both the old target and its authentication state first.
 [browser/HTTP evidence](../../ui/audit/2026-09-11-production-origin/audit.md)
 record production, development, recovery and anonymous-mode verification.
 The [running guide](../operations/running.md#management-console) owns the commands.
+
+### Enterprise probe and deletion follow-up — 2026-09-11
+
+The [CG-51 verification](../../ui/audit/2026-09-11-tenant-deletion/audit.md) exposed
+and corrected missing host-admin coverage in CG-49: collection-catalog denial
+now triggers a protected tenant-catalog probe. A successful, recognizable
+response is still required; the UI does not treat 403 itself as authorization.
+
+Tenant deletion now follows the existing [deletion contract](decision_tenant_deletion.md)
+in both its confirmation and result. The dialog names the tenant and consequences;
+the page retains the actual quarantine entries. It distinguishes suspension and
+same-name recreation, reports an unconfirmed outcome on errors, and restores
+keyboard focus after cancellation or completion.

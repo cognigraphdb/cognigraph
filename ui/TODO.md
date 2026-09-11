@@ -16,10 +16,14 @@ The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
 recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
 explicit untested boundaries. The historical Done entries below describe
 implementation checkpoints; they do not establish current acceptance. The UI
-suite now passes 92 helper tests after CG-49/CG-50/CG-62 remediation, but CI omits it and no browser regression suite
+suite now passes 96 helper tests after CG-49/CG-50/CG-51/CG-62 remediation, but CI omits it and no browser regression suite
 exists yet. Keep defect status in the linked registry rather than duplicating it.
 
-- [ ] Fix the remaining P1 defect: [tenant deletion disclosure CG-51](../docs/issues/CG-51.md).
+- [x] [Tenant deletion disclosure CG-51](../docs/issues/CG-51.md): explicit
+  consequences, actual quarantine results, cancel/recreation and failure checks.
+  [Browser/API evidence](audit/2026-09-11-tenant-deletion/audit.md), including the
+  CG-49 follow-up for host-admin catalog verification. All audited P1s are resolved;
+  11 P2s remain open.
 - [x] [Production origin CG-49](../docs/issues/CG-49.md): same-origin production,
   explicit dev port, verified authentication state and stale-target recovery.
   [Browser/API evidence](audit/2026-09-11-production-origin/audit.md).

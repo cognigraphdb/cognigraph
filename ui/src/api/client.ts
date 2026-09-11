@@ -78,11 +78,20 @@ export class CogniGraphApi {
   // HTML fallbacks, permission errors and server failures leave auth unverified.
   async authRequired(): Promise<boolean> {
     try {
-      const payload = await this.request<unknown>("/collections", {
-        signal: AbortSignal.timeout(10_000),
-      });
-      if (!isObject(payload) || !Array.isArray(payload.collections)) {
-        throw new Error("The server did not return a valid CogniGraph collections response.");
+      const signal = AbortSignal.timeout(10_000);
+      let payload: unknown;
+      let catalog = "collections";
+      try {
+        payload = await this.request<unknown>("/collections", { signal });
+      } catch (error) {
+        // Host administrators manage tenants but cannot read tenant data. Verify
+        // their protected control-plane catalog, never infer access from a 403.
+        if (!(error instanceof ApiError) || error.status !== 403) throw error;
+        catalog = "tenants";
+        payload = await this.request<unknown>("/tenants", { signal });
+      }
+      if (!isObject(payload) || !Array.isArray(payload[catalog])) {
+        throw new Error(`The server did not return a valid CogniGraph ${catalog} response.`);
       }
       return false;
     } catch (error) {

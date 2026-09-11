@@ -1,0 +1,10 @@
+{
+  "cancel": {
+    "focused": "Delete",
+    "tag": "BUTTON"
+  },
+  "success": {
+    "focused": "Refresh",
+    "tag": "BUTTON"
+  }
+}

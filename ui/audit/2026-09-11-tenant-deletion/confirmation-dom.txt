@@ -1,0 +1,96 @@
+- complementary:
+  - img "CogniGraph"
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+    - link "Tenants":
+      - /url: /tenants
+      - generic: Tenants
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38473
+  - generic: Healthy
+  - generic: Sep 11, 2026, 2:14 PM
+  - generic: host-admin
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - generic: Access / tenants
+  - heading "Tenants" [level=1]
+  - paragraph: Manage tenant lifecycle. Suspend preserves accounts and data; delete removes credentials and quarantines data. Host-admin cannot read tenant data.
+  - button "Create tenant":
+    - generic: Create tenant
+  - button "Refresh":
+    - generic: Refresh
+  - generic: 1 tenant · 2 open stores
+  - table:
+    - rowgroup:
+      - row "Tenant Status Store Created":
+        - columnheader "Tenant"
+        - columnheader "Status"
+        - columnheader "Store"
+        - columnheader "Created"
+        - columnheader
+    - rowgroup:
+      - row "qa-delete-credentials-and-data Active Open Sep 11, 2026, 2:12 PM Suspend Delete":
+        - cell "qa-delete-credentials-and-data":
+          - strong: qa-delete-credentials-and-data
+        - cell "Active":
+          - generic: Active
+        - cell "Open":
+          - generic: Open
+        - cell "Sep 11, 2026, 2:12 PM"
+        - cell "Suspend Delete":
+          - button "Suspend":
+            - generic: Suspend
+          - button "Delete":
+            - generic: Delete
+- dialog "Delete tenant?":
+  - button "Close" [active]:
+    - generic "Close":
+  - generic: Delete tenant?
+  - paragraph:
+    - text: Delete
+    - strong: qa-delete-credentials-and-data
+    - text: ":"
+  - list:
+    - listitem: Remove its user accounts and API tokens; existing sessions lose access.
+    - listitem: Retire its queued work and promotions.
+    - listitem: Quarantine its data files for operator-managed recovery or purge.
+  - paragraph: Recreating this name starts empty. It does not restore accounts, credentials or data. Data recovery requires a separate operator procedure.
+  - paragraph: For a temporary access pause that preserves accounts and data, use Suspend instead.
+  - button "Cancel":
+    - generic: Cancel
+  - button "Delete tenant":
+    - generic: Delete tenant

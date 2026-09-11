@@ -1,0 +1,56 @@
+[
+  {
+    "level": "info",
+    "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "timestamp": "2026-09-11T11:09:47.751Z",
+    "url": "http://127.0.0.1:38473/index-sg26dbbh.js"
+  },
+  {
+    "level": "info",
+    "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "timestamp": "2026-09-11T11:12:41.125Z",
+    "url": "http://127.0.0.1:38473/index-81qtcmjp.js"
+  },
+  {
+    "level": "info",
+    "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "timestamp": "2026-09-11T11:14:39.970Z",
+    "url": "http://127.0.0.1:38473/index-rzahkwjy.js"
+  },
+  {
+    "level": "error",
+    "message": "Warning: [antd: Modal] `maskClosable` is deprecated. Please use `mask.closable` instead.",
+    "timestamp": "2026-09-11T11:14:47.641Z",
+    "url": "http://127.0.0.1:38473/index-rzahkwjy.js"
+  },
+  {
+    "level": "info",
+    "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "timestamp": "2026-09-11T11:16:21.232Z",
+    "url": "http://127.0.0.1:38473/index-a3wrdp2n.js"
+  },
+  {
+    "level": "error",
+    "message": "Warning: [antd: Modal] `maskClosable` is deprecated. Please use `mask.closable` instead.",
+    "timestamp": "2026-09-11T11:16:51.092Z",
+    "url": "http://127.0.0.1:38473/index-a3wrdp2n.js"
+  },
+  {
+    "level": "info",
+    "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "timestamp": "2026-09-11T11:18:20.138Z",
+    "url": "http://127.0.0.1:38473/index-s2dj3y3q.js"
+  },
+  {
+    "level": "error",
+    "message": "Warning: [antd: Modal] `maskClosable` is deprecated. Please use `mask.closable` instead.",
+    "timestamp": "2026-09-11T11:18:24.841Z",
+    "url": "http://127.0.0.1:38473/index-s2dj3y3q.js"
+  },
+  {
+    "level": "info",
+    "message": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "timestamp": "2026-09-11T11:19:34.000Z",
+    "url": "http://127.0.0.1:38473/index-9dechgys.js"
+  }
+]

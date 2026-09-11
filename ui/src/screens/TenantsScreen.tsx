@@ -21,18 +21,22 @@ import {
   Tag,
   Tooltip,
 } from "antd";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { CogniGraphApi } from "../api/client.ts";
 import { ErrorAlert } from "../components/ErrorAlert.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
+import {
+  DeleteTenantDialog,
+  TenantDeletionNotice,
+  type TenantDeletionResult,
+} from "../components/TenantDeletion.tsx";
 import { TENANT_STATUS_META, type TenantListResponse, type TenantRecord } from "../lib/tenants.ts";
 import { formatUnixSeconds } from "../lib/tokens.ts";
 import type { Notify } from "../types.ts";
 
 /// /tenants — host-admin only (the sidebar hides it for other roles and the
-/// server's TenantAdmin guard enforces it). Manages tenant RECORDS: create,
-/// suspend/resume (suspension locks that tenant's users out at the auth
-/// gate), delete. Host-admin deliberately has no access to tenant data (D4).
+/// server's TenantAdmin guard enforces it). Deletion removes credentials and
+/// quarantines data; suspension preserves them. Host-admin has no data access.
 export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Notify }) {
   const [tenants, setTenants] = useState<TenantRecord[]>([]);
   const [openStores, setOpenStores] = useState(0);
@@ -40,6 +44,17 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
   const [error, setError] = useState("");
   const [busyName, setBusyName] = useState<string>();
   const [createOpen, setCreateOpen] = useState(false);
+  const [deleteName, setDeleteName] = useState<string>();
+  const [deletionResult, setDeletionResult] = useState<TenantDeletionResult>();
+  const deleteTrigger = useRef<HTMLElement | null>(null);
+  const refreshButton = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!deleteName && !loading && deleteTrigger.current) {
+      deleteTrigger.current.focus();
+      deleteTrigger.current = null;
+    }
+  }, [deleteName, loading]);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -70,19 +85,6 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
       void load();
     } catch (reason) {
       notify(reason instanceof Error ? reason.message : "Status change failed", "error");
-    } finally {
-      setBusyName(undefined);
-    }
-  }
-
-  async function remove(tenant: TenantRecord) {
-    setBusyName(tenant.name);
-    try {
-      await api.delete(`/tenants/${encodeURIComponent(tenant.name)}`);
-      notify(`Deleted tenant record ${tenant.name}`);
-      void load();
-    } catch (reason) {
-      notify(reason instanceof Error ? reason.message : "Delete failed", "error");
     } finally {
       setBusyName(undefined);
     }
@@ -174,19 +176,19 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
                 Resume
               </Button>
             )}
-            <Popconfirm
-              cancelText="Cancel"
-              icon={<WarningCircle className="confirm-icon" size={17} weight="fill" />}
-              okText="Delete"
-              okButtonProps={{ danger: true }}
-              onConfirm={() => void remove(tenant)}
-              placement="topLeft"
-              title={`Delete the ${tenant.name} record? Its users are refused until it is recreated.`}
+            <Button
+              danger
+              disabled={busy}
+              icon={<Trash size={14} />}
+              onClick={(event) => {
+                deleteTrigger.current = event.currentTarget;
+                setDeleteName(tenant.name);
+              }}
+              size="small"
+              type="text"
             >
-              <Button danger disabled={busy} icon={<Trash size={14} />} size="small" type="text">
-                Delete
-              </Button>
-            </Popconfirm>
+              Delete
+            </Button>
           </span>
         );
       },
@@ -207,6 +209,7 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
               Create tenant
             </Button>
             <Button
+              ref={refreshButton}
               disabled={loading}
               icon={
                 loading ? (
@@ -221,10 +224,11 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
             </Button>
           </>
         }
-        description="Tenant lifecycle only: create, suspend, resume, delete records. Host-admin has no access to any tenant's data."
+        description="Manage tenant lifecycle. Suspend preserves accounts and data; delete removes credentials and quarantines data. Host-admin cannot read tenant data."
         eyebrow="Access / tenants"
         title="Tenants"
       />
+      {deletionResult ? <TenantDeletionNotice result={deletionResult} /> : null}
       <section className="user-list">
         <div className="workspace-controls">
           <span className="workspace-count">
@@ -257,6 +261,19 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
         </Spin>
       </section>
 
+      {deleteName ? (
+        <DeleteTenantDialog
+          api={api}
+          name={deleteName}
+          onClose={() => setDeleteName(undefined)}
+          onDeleted={(result) => {
+            deleteTrigger.current = refreshButton.current;
+            setDeletionResult(result);
+            setDeleteName(undefined);
+            void load();
+          }}
+        />
+      ) : null}
       {createOpen ? (
         <CreateTenantDialog
           api={api}

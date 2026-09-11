@@ -176,8 +176,10 @@ COGNIGRAPH_UI_DEV_API_PORT=38471 bun --port=3020 ./index.html
 `COGNIGRAPH_UI_DEV_*` variables. Do not use this prefix for credentials or enable
 unrestricted environment inlining. See [Bun's HTML environment configuration](https://bun.com/docs/bundler/html-static#inline-environment-variables).
 
-The console verifies a protected collection-catalog read before opening its
-screens. A 401 requests login; unreachable servers, permission failures, server
+The console verifies a protected catalog read before opening its screens.
+It checks collections first; on 403 it checks the tenant catalog, which is the
+permitted surface for host administrators. Either path requires a recognizable
+successful response. A 401 requests login; unreachable servers, denied catalogs, server
 errors or invalid responses show an unverified connection screen with Retry.
 A saved session can retain an older API target. If verification fails,
 **Use default server** removes that target and its token/session together before

@@ -158,6 +158,20 @@
   margin-top: 16px;
 }
 
+.tenant-deletion-name,
+.tenant-deletion-notice {
+  overflow-wrap: anywhere;
+}
+
+.tenant-deletion-notice {
+  margin-top: 16px;
+}
+
+.tenant-quarantine-list {
+  max-height: 160px;
+  overflow: auto;
+}
+
 .user-list .ant-result {
   padding-top: 70px;
 }

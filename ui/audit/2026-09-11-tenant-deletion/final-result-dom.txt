@@ -1,0 +1,84 @@
+- complementary:
+  - img "CogniGraph"
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+    - link "Tenants":
+      - /url: /tenants
+      - generic: Tenants
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38473
+  - generic: Healthy
+  - generic: Sep 11, 2026, 2:19 PM
+  - generic: host-admin
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - generic: Access / tenants
+  - heading "Tenants" [level=1]
+  - paragraph: Manage tenant lifecycle. Suspend preserves accounts and data; delete removes credentials and quarantines data. Host-admin cannot read tenant data.
+  - button "Create tenant":
+    - generic: Create tenant
+  - button "Refresh" [active]:
+    - generic: Refresh
+  - alert:
+    - generic: Deleted tenant qa-delete-credentials-and-data
+    - paragraph: "Quarantined entries reported by the server:"
+    - list:
+      - code: qa-delete-credentials-and-data.redb.deleted-1789125541001
+    - paragraph: Recreating the name does not restore accounts, credentials or quarantined data.
+  - generic: 1 tenant · 1 open store
+  - table:
+    - rowgroup:
+      - row "Tenant Status Store Created":
+        - columnheader "Tenant"
+        - columnheader "Status"
+        - columnheader "Store"
+        - columnheader "Created"
+        - columnheader
+    - rowgroup:
+      - row "default Active Open Sep 11, 2026, 2:17 PM Suspend Delete":
+        - cell "default":
+          - strong: default
+        - cell "Active":
+          - generic: Active
+        - cell "Open":
+          - generic: Open
+        - cell "Sep 11, 2026, 2:17 PM"
+        - cell "Suspend Delete":
+          - button "Suspend":
+            - generic: Suspend
+          - button "Delete":
+            - generic: Delete

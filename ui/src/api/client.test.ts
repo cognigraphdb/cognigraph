@@ -20,6 +20,42 @@ function respond(status: number, body: unknown, contentType = "application/json"
 const api = (token = "") => new CogniGraphApi({ baseUrl: "http://127.0.0.1:38471", token });
 
 describe("authentication probe", () => {
+  test("verifies host-admin through the tenant catalog after data access is denied", async () => {
+    const urls: string[] = [];
+    globalThis.fetch = mock(async (url: string) => {
+      urls.push(url);
+      return url.endsWith("/collections")
+        ? Response.json({ error: "Forbidden" }, { status: 403 })
+        : Response.json({ tenants: [], count: 0 });
+    }) as unknown as typeof fetch;
+    expect(await api("synthetic-host-token").authRequired()).toBe(false);
+    expect(urls).toEqual([
+      "http://127.0.0.1:38471/api/collections",
+      "http://127.0.0.1:38471/api/tenants",
+    ]);
+  });
+  test("the tenant fallback must itself verify access and propagate expiry", async () => {
+    for (const fallback of [
+      () => Response.json({ tenants: "invalid" }),
+      () => Response.json({ error: "Unavailable" }, { status: 503 }),
+      () => Promise.reject(new TypeError("Failed to fetch")),
+    ]) {
+      globalThis.fetch = mock(async (url: string) =>
+        url.endsWith("/collections")
+          ? Response.json({ error: "Forbidden" }, { status: 403 })
+          : fallback(),
+      ) as unknown as typeof fetch;
+      await expect(api().authRequired()).rejects.toThrow();
+    }
+    globalThis.fetch = mock(async (url: string) =>
+      Response.json({ error: "Denied" }, { status: url.endsWith("/collections") ? 403 : 401 }),
+    ) as unknown as typeof fetch;
+    const client = api("synthetic-expired-token");
+    const expired = mock(() => {});
+    client.onUnauthorized = expired;
+    expect(await client.authRequired()).toBe(true);
+    expect(expired).toHaveBeenCalledTimes(1);
+  });
   test("accepts a verified empty collection list on the configured origin", async () => {
     const fetchMock = respond(200, { collections: [] });
     expect(await api().authRequired()).toBe(false);
