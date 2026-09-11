@@ -74,18 +74,20 @@ export class CogniGraphApi {
     return { token: res.token, role: res.role, tenant: res.tenant ?? "default" };
   }
 
-  // Does this server require a login the current token cannot satisfy? A
-  // protected route's guard returns 401 before its handler runs when the token
-  // is missing/invalid; with a valid token (or auth disabled) it returns
-  // something else (e.g. 404 for an unknown collection). Any non-401 — including
-  // a network error — is treated as "no login gate here", so we never trap the
-  // user on the login screen when the server is simply unreachable.
+  // Only a recognizable successful read establishes access. Network failures,
+  // HTML fallbacks, permission errors and server failures leave auth unverified.
   async authRequired(): Promise<boolean> {
     try {
-      await this.request("/documents?collection=__auth_probe__&limit=1");
+      const payload = await this.request<unknown>("/collections", {
+        signal: AbortSignal.timeout(10_000),
+      });
+      if (!isObject(payload) || !Array.isArray(payload.collections)) {
+        throw new Error("The server did not return a valid CogniGraph collections response.");
+      }
       return false;
     } catch (error) {
-      return error instanceof ApiError && error.status === 401;
+      if (error instanceof ApiError && error.status === 401) return true;
+      throw error;
     }
   }
 

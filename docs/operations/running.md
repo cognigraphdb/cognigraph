@@ -147,3 +147,39 @@ The operational routes stay at the **root** by convention: `GET /health`,
   disaster recovery composes tested backend recovery, an M24 artifact bundle,
   and separately retained configuration/trust/secrets. No one component is a
   complete disaster-recovery story.
+
+## Management console
+
+Build the optional React console from `ui/` with Bun:
+
+```sh
+bun install --frozen-lockfile
+bun run build
+```
+
+Set `COGNIGRAPH_UI_DIST` to the absolute path of `ui/dist` when starting the Rust
+server. The production console calls the origin it was loaded from, preserving
+the scheme, host and port. Direct page URLs and reloads use the server's SPA
+fallback. The build explicitly removes the development API-port override.
+
+For the split-port development setup, start the Rust API on port 3001, then run
+`bun run dev` from `ui/`. Bun serves the UI on its advertised localhost URL
+(normally port 3000); the dev command explicitly selects API port 3001 while
+keeping the browser's host and protocol. To select different ports:
+
+```sh
+# From ui/: UI on 3020, an already-running Rust API on 38471.
+COGNIGRAPH_UI_DEV_API_PORT=38471 bun --port=3020 ./index.html
+```
+
+`ui/bunfig.toml` allows Bun's HTML dev server to inline only the public
+`COGNIGRAPH_UI_DEV_*` variables. Do not use this prefix for credentials or enable
+unrestricted environment inlining. See [Bun's HTML environment configuration](https://bun.com/docs/bundler/html-static#inline-environment-variables).
+
+The console verifies a protected collection-catalog read before opening its
+screens. A 401 requests login; unreachable servers, permission failures, server
+errors or invalid responses show an unverified connection screen with Retry.
+A saved session can retain an older API target. If verification fails,
+**Use default server** removes that target and its token/session together before
+returning to the current production origin (or explicitly configured dev port).
+A fresh session on an authentication-disabled server is labelled accordingly.

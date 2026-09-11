@@ -16,12 +16,9 @@ interface Fields {
   password: string;
 }
 
-// The sign-in target is NOT user-editable: the API base derives from the
-// origin the console was loaded from, and this screen only appears when that
-// server is reachable and enforcing auth. Showing (rather than asking for)
-// the server keeps credentials from being redirected by a mistyped or
-// malicious URL; operators can still point at another server from Overview
-// after signing in.
+// The sign-in target comes from the page origin, explicit development port,
+// or the saved session target. The connection gate verifies access first and
+// can clear a stale target with its credentials before returning to the default.
 export function LoginScreen({ defaultBaseUrl, onAuthenticated }: LoginScreenProps) {
   const [form] = Form.useForm<Fields>();
   const [busy, setBusy] = useState(false);

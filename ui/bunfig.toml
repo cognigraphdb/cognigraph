@@ -1,0 +1,3 @@
+[serve.static]
+# Public development routing only. Never inline all server environment variables.
+env = "COGNIGRAPH_UI_DEV_*"

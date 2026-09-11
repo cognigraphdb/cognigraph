@@ -24,6 +24,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Unreleased
 
+- 2026-09-11: [Use the production origin and verify console access](2026-09-11-ui-production-origin.md)
 - 2026-09-11: [Preserve document JSON and construction import evidence](2026-09-11-ui-data-preservation.md)
 - 2026-09-11: [README: evidence links and public source onboarding](2026-09-11-readme-evidence-onboarding.md)
 - 2026-09-11: [Full UI code and backend-contract review](2026-09-11-full-ui-review.md)

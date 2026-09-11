@@ -71,3 +71,15 @@
   color: var(--danger, #b3261e);
   border-color: var(--danger, #b3261e);
 }
+
+.connection-card {
+  max-width: 480px;
+}
+.connection-server {
+  overflow-wrap: anywhere;
+  font-weight: 600;
+}
+.connection-actions {
+  margin-top: 16px;
+  flex-wrap: wrap;
+}

@@ -247,3 +247,21 @@ atomic compare-and-swap guarantees against concurrent external writers.
 [dated browser/HTTP report](../../ui/audit/2026-09-11-data-preservation/audit.md)
 record the rationale, implementation and verification boundaries. Earlier UI
 checkpoints above remain historical evidence, not current full-console acceptance.
+
+## Addendum (2026-09-11): production origin and verified connection state
+
+The production console uses the page origin for API calls. A separate, explicit
+Bun development configuration selects the split-port API; production builds
+remove that development override. A saved target remains bound to its saved
+credentials and can be cleared from the connection error screen.
+
+The application waits for a recognizable successful protected catalog response
+before rendering console routes. A 401 opens login. Transport, permission,
+server and response-format failures leave authentication unverified and expose
+Retry instead of an anonymous admin-labelled shell. Returning to the default
+server clears both the old target and its authentication state first.
+
+[CG-49](../issues/CG-49.md) and its
+[browser/HTTP evidence](../../ui/audit/2026-09-11-production-origin/audit.md)
+record production, development, recovery and anonymous-mode verification.
+The [running guide](../operations/running.md#management-console) owns the commands.

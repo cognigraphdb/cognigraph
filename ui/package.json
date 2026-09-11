@@ -5,8 +5,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun ./index.html",
-    "build": "rm -rf dist && bun build ./index.html --minify --outdir=dist --public-path=/",
+    "dev": "COGNIGRAPH_UI_DEV_API_PORT=${COGNIGRAPH_UI_DEV_API_PORT:-3001} bun ./index.html",
+    "build": "rm -rf dist && bun build ./index.html --minify --outdir=dist --public-path=/ --define process.env.COGNIGRAPH_UI_DEV_API_PORT:null",
     "check": "biome check . && tsc --noEmit",
     "check:fix": "biome check --write .",
     "test": "bun test"

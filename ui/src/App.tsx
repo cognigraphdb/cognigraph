@@ -3,8 +3,10 @@ import { App as AntApp } from "antd";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router";
 import { CogniGraphApi } from "./api/client.ts";
+import { ConnectionGate } from "./components/ConnectionGate.tsx";
 import { Sidebar } from "./components/Sidebar.tsx";
 import { TopBar } from "./components/TopBar.tsx";
+import { defaultApiOrigin } from "./lib/api-origin.ts";
 import { CollectionsIndexScreen } from "./screens/CollectionsIndexScreen.tsx";
 import { CollectionsScreen } from "./screens/CollectionsScreen.tsx";
 import { ConstructScreen } from "./screens/ConstructScreen.tsx";
@@ -30,18 +32,10 @@ const readSession = (): AuthSession | null => {
   }
 };
 
-type AuthGate = "checking" | "login" | "ready";
+type AuthGate = "checking" | "login" | "ready" | "unavailable";
 
 const initialConfig = (): ApiConfig => ({
-  // Default the API to the SAME host the UI was loaded from, port 3001. This
-  // makes a LAN demo work with no per-visitor config: opened at
-  // http://192.168.x.y:3000, the UI calls http://192.168.x.y:3001; opened at
-  // localhost it stays localhost. (When CogniGraph serves the built UI from its
-  // own origin, this becomes a same-origin relative base.) A saved override in
-  // sessionStorage still wins.
-  baseUrl:
-    sessionStorage.getItem("cognigraph-api-url") ??
-    `${window.location.protocol}//${window.location.hostname || "localhost"}:3001`,
+  baseUrl: sessionStorage.getItem("cognigraph-api-url") ?? defaultApiOrigin(),
   token: sessionStorage.getItem("cognigraph-api-token") ?? "",
 });
 
@@ -55,6 +49,7 @@ const noticeIcons = {
 export function App() {
   const [config, setConfig] = useState(initialConfig);
   const [session, setSession] = useState<AuthSession | null>(readSession);
+  const [gateError, setGateError] = useState("");
   const [gate, setGate] = useState<AuthGate>("checking");
   const [health, setHealth] = useState<HealthSnapshot>({ status: "checking" });
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -92,6 +87,9 @@ export function App() {
       setConfig((current) => (current.token ? { ...current, token: "" } : current));
       notify("Session expired — please sign in again", "warning");
     };
+    return () => {
+      api.onUnauthorized = undefined;
+    };
   }, [api, notify]);
 
   const refreshHealth = useCallback(async () => {
@@ -112,9 +110,18 @@ export function App() {
   useEffect(() => {
     let cancelled = false;
     setGate("checking");
-    void api.authRequired().then((needed) => {
-      if (!cancelled) setGate(needed ? "login" : "ready");
-    });
+    setGateError("");
+    void api
+      .authRequired()
+      .then((needed) => {
+        if (!cancelled) setGate(needed ? "login" : "ready");
+      })
+      .catch((error) => {
+        if (!cancelled) {
+          setGateError(error instanceof Error ? error.message : "Server verification failed.");
+          setGate("unavailable");
+        }
+      });
     return () => {
       cancelled = true;
     };
@@ -137,6 +144,34 @@ export function App() {
     setConfig((current) => ({ ...current, token: "" }));
   };
 
+  if (gate === "checking" || gate === "unavailable") {
+    return (
+      <ConnectionGate
+        server={config.baseUrl}
+        checking={gate === "checking"}
+        error={gateError}
+        onRetry={() => {
+          setGate("checking");
+          setConfig((current) => ({ ...current }));
+        }}
+        onReset={
+          config.baseUrl !== defaultApiOrigin() || config.token
+            ? () => {
+                // A saved override and its credentials belong together. Never forward
+                // the old bearer token when returning to the page's default server.
+                setGate("checking");
+                sessionStorage.removeItem("cognigraph-api-url");
+                sessionStorage.removeItem("cognigraph-api-token");
+                sessionStorage.removeItem("cognigraph-session");
+                setSession(null);
+                setConfig({ baseUrl: defaultApiOrigin(), token: "" });
+              }
+            : undefined
+        }
+      />
+    );
+  }
+
   if (gate === "login") {
     return <LoginScreen defaultBaseUrl={config.baseUrl} onAuthenticated={onAuthenticated} />;
   }
@@ -153,7 +188,9 @@ export function App() {
         health={health}
         server={config.baseUrl}
         tenant={session?.tenant ?? "default"}
-        username={session?.username ?? "admin"}
+        username={
+          session?.username ?? (config.token ? "Authenticated session" : "Authentication disabled")
+        }
         onLogout={session ? logout : undefined}
       />
       <Routes>

@@ -101,8 +101,11 @@ separate map of backend capabilities not yet exposed by the console. No finding
 was fixed by the audit; this count is not complete UI or product acceptance.
 
 The [data-preservation fixes](../../ui/audit/2026-09-11-data-preservation/audit.md)
-resolve CG-50 and CG-62. Current registry: **49 Resolved, 1 Closed without change,
+resolve CG-50 and CG-62. That checkpoint had **49 Resolved, 1 Closed without change,
 and 13 Open issues (2 P1, 11 P2)**.
+[Production origin and connection-state verification](../../ui/audit/2026-09-11-production-origin/audit.md)
+resolves CG-49. Current registry: **50 Resolved, 1 Closed without change, and
+12 Open issues (1 P1, 11 P2)**.
 
 ## Conventions
 
@@ -164,7 +167,7 @@ and 13 Open issues (2 P1, 11 P2)**.
 | [CG-46](CG-46.md) | P2 | Resolved | Helm backups need isolated selectors and safe snapshot handling |
 | [CG-47](CG-47.md) | P2 | Resolved | Issue identity checks must survive commits and concurrent allocation |
 | [CG-48](CG-48.md) | P2 | Resolved | Quick-start examples must match network and query contracts |
-| [CG-49](CG-49.md) | P1 | Open | Production console always targets API port 3001 |
+| [CG-49](CG-49.md) | P1 | Resolved | Production console always targets API port 3001 |
 | [CG-50](CG-50.md) | P1 | Resolved | Document inspector rewrites valid stored JSON through a lossy projection |
 | [CG-51](CG-51.md) | P1 | Open | Tenant deletion confirmation promises recovery that recreation does not provide |
 | [CG-52](CG-52.md) | P2 | Open | Tenant onboarding and user provisioning diverge from the authorization contract |

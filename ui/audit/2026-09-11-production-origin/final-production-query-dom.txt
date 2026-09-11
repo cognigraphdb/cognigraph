@@ -1,0 +1,83 @@
+- complementary:
+  - img "CogniGraph"
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: localhost:3000
+  - generic: Healthy
+  - generic: Sep 11, 2026, 2:06 PM
+  - generic: admin
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - generic: Developer tools / query
+  - heading "Query console" [level=1]
+  - paragraph: "Read-only CGQL plus the retrieval modes: semantic, hybrid, raw-vector, and graph-augmented search."
+  - tablist:
+    - tab "CGQL" [selected]
+    - tab "Semantic"
+    - tab "Hybrid"
+    - tab "Vector"
+    - tab "Graph-augmented"
+  - tabpanel "CGQL":
+    - heading "Query" [level=2]
+    - generic: 13 ms
+    - generic: "1"
+    - textbox "CGQL query":
+      - text: RETURN
+      - generic: "{"
+      - text: "origin: \"production-3000\", ok: true"
+      - generic: "}"
+    - generic: Validated against the active CGQL engine after you pause
+    - generic: ⌘ Enter or Ctrl Enter
+    - generic "Bind variables": "Bind variables :"
+    - textbox: "{}"
+    - button "Run query":
+      - generic: Run query
+    - text: Recent
+    - 'button "RETURN { origin: \"production-3000\", ok: true }"':
+      - generic: "RETURN { origin: \"production-3000\", ok: true }"
+    - heading "Result" [level=2]
+    - list:
+      - code: "{"
+      - code: "\"count\": 1,"
+      - code: "\"results\": ["
+      - code: "{"
+      - code: "\"ok\": true,"
+      - code: "\"origin\": \"production-3000\""
+      - code: "}"
+      - code: "]"
+      - code: "}"

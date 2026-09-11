@@ -16,11 +16,13 @@ The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
 recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
 explicit untested boundaries. The historical Done entries below describe
 implementation checkpoints; they do not establish current acceptance. The UI
-suite now passes 85 helper tests after CG-50/CG-62 remediation, but CI omits it and no browser regression suite
+suite now passes 92 helper tests after CG-49/CG-50/CG-62 remediation, but CI omits it and no browser regression suite
 exists yet. Keep defect status in the linked registry rather than duplicating it.
 
-- [ ] Fix the remaining P1 defects: [production origin CG-49](../docs/issues/CG-49.md)
-  and [tenant deletion disclosure CG-51](../docs/issues/CG-51.md).
+- [ ] Fix the remaining P1 defect: [tenant deletion disclosure CG-51](../docs/issues/CG-51.md).
+- [x] [Production origin CG-49](../docs/issues/CG-49.md): same-origin production,
+  explicit dev port, verified authentication state and stale-target recovery.
+  [Browser/API evidence](audit/2026-09-11-production-origin/audit.md).
 - [x] [Document JSON fidelity CG-50](../docs/issues/CG-50.md) and
   [construction import identity CG-62](../docs/issues/CG-62.md): raw JSON editing,
   changed-field PATCH, creation readback, stable import IDs and explicit replacement

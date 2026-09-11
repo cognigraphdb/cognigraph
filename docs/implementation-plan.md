@@ -171,8 +171,12 @@ identity ([CG-62](issues/CG-62.md)), with real browser/HTTP persistence evidence
 85 passing UI helper tests, type/lint checks and a production build. The registry
 now has 13 Open issues (2 P1, 11 P2).
 
-Next, restore production-origin operation
-([CG-49](issues/CG-49.md)), and correct tenant deletion disclosure
+The [production-origin batch](../ui/audit/2026-09-11-production-origin/audit.md)
+resolves [CG-49](issues/CG-49.md), with verified production/development origins,
+authentication gating and saved-target recovery. The UI suite now passes 92
+tests; 12 issues remain Open (1 P1, 11 P2).
+
+Next, correct tenant deletion disclosure
 ([CG-51](issues/CG-51.md)). Then address access/provisioning, partial datasets,
 execution/result state and accessibility, with real-browser regressions and
 CI coverage ([CG-60](issues/CG-60.md)). Keep Docker publication preparation

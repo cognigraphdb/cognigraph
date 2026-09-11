@@ -1,0 +1,8 @@
+- main:
+  - heading "Unable to verify server" [level=1]
+  - paragraph: http://localhost:3001
+  - status: Authentication has not been verified. Check that the server is available, then retry.
+  - alert:
+    - generic: Failed to fetch
+  - button "Retry connection":
+    - generic: Retry connection
