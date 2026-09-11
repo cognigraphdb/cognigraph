@@ -113,8 +113,11 @@ checkpoint had **51 Resolved, 1 Closed without change, and 11 Open issues (all P
 resolves CG-52. That checkpoint had **52 Resolved, 1 Closed without change, and
 10 Open issues (all P2)**.
 [Verified console capabilities](../../ui/audit/2026-09-11-capabilities/audit.md)
-resolves CG-53. Current registry: **53 Resolved, 1 Closed without change, and
+resolves CG-53. That checkpoint had **53 Resolved, 1 Closed without change, and
 9 Open issues (all P2)**.
+[Review paging and complete space catalogs](../../ui/audit/2026-09-11-review-paging/audit.md)
+resolves CG-54. Current registry: **54 Resolved, 1 Closed without change, and
+8 Open issues (all P2)**.
 
 ## Conventions
 
@@ -181,7 +184,7 @@ resolves CG-53. Current registry: **53 Resolved, 1 Closed without change, and
 | [CG-51](CG-51.md) | P1 | Resolved | Tenant deletion confirmation promises recovery that recreation does not provide |
 | [CG-52](CG-52.md) | P2 | Resolved | Tenant onboarding and user provisioning diverge from the authorization contract |
 | [CG-53](CG-53.md) | P2 | Resolved | Console actions ignore server edition and authenticated role capabilities |
-| [CG-54](CG-54.md) | P2 | Open | Review queue and space selectors silently truncate their datasets |
+| [CG-54](CG-54.md) | P2 | Resolved | Review queue and space selectors silently truncate their datasets |
 | [CG-55](CG-55.md) | P2 | Open | Console keyboard shortcuts bypass the running request guard |
 | [CG-56](CG-56.md) | P2 | Open | Console results remain attached to changed inputs and failed graph requests |
 | [CG-57](CG-57.md) | P2 | Open | Clickable table rows cannot be opened with the keyboard |

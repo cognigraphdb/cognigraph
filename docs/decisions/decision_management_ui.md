@@ -324,3 +324,18 @@ data operations and read-only Lua remain available, while user/tenant administra
 snapshots and signed governance require identity. The
 [auth runbook](../operations/authentication.md#console-capability-policy) owns the
 policy and [CG-53](../issues/CG-53.md) records scoped runtime acceptance.
+
+## Addendum (2026-09-11): review continuation and independent selection
+
+Review shows 50 rows and fetches one lookahead row to establish continuation.
+The visible range and end/more indicator describe the live page; the endpoint's
+`count` is not a full-queue total. Space choices load every catalog page before
+being published, with explicit failure/retry and searchable options.
+
+Review's space, status, page and selected neuron are URL state, as is Construct's
+selected space. The inspector resolves its identity directly, independently of
+queue membership. Paging and refresh retain selection; verdicts reload its
+persisted status even when it leaves the filter. Graduation links can therefore
+open accepted neurons outside the first page. Offset pages do not promise a
+stable snapshot across concurrent writes. [CG-54](../issues/CG-54.md) owns the
+acceptance record and links the 101-space/402-neuron runtime fixture.

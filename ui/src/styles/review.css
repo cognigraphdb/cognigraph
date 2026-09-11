@@ -4,6 +4,12 @@
   overflow-y: auto;
 }
 
+/* Keep all status choices visible: move the group to the next controls row
+   instead of allowing flex sizing to compress and clip its later options. */
+.review-panel .workspace-controls > .ant-segmented {
+  flex: 0 0 auto;
+}
+
 .review-panel .console-card.grad-card {
   margin: 0 var(--workspace-pad) 16px;
 }
@@ -207,4 +213,14 @@
   margin: 0 0 14px;
   font-size: 13px;
   color: var(--text-muted);
+}
+
+.review-notices {
+  display: grid;
+  gap: 8px;
+  margin: 0 var(--workspace-pad) 12px;
+}
+
+.review-notices:empty {
+  display: none;
 }

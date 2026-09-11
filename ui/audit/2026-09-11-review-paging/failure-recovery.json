@@ -1,0 +1,91 @@
+{
+  "failure": {
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": true,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "Space catalog unavailable",
+      "Select a space"
+    ],
+    "keys": [],
+    "notices": "",
+    "url": "http://127.0.0.1:38482/review"
+  },
+  "recovered": {
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": false,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "1–50 shown · More available"
+    ],
+    "keys": [
+      "qa-proposed-000",
+      "qa-proposed-001",
+      "qa-proposed-002",
+      "qa-proposed-003",
+      "qa-proposed-004",
+      "qa-proposed-005",
+      "qa-proposed-006",
+      "qa-proposed-007",
+      "qa-proposed-008",
+      "qa-proposed-009",
+      "qa-proposed-010",
+      "qa-proposed-011",
+      "qa-proposed-012",
+      "qa-proposed-013",
+      "qa-proposed-014",
+      "qa-proposed-015",
+      "qa-proposed-016",
+      "qa-proposed-017",
+      "qa-proposed-018",
+      "qa-proposed-019",
+      "qa-proposed-020",
+      "qa-proposed-021",
+      "qa-proposed-022",
+      "qa-proposed-023",
+      "qa-proposed-024",
+      "qa-proposed-025",
+      "qa-proposed-026",
+      "qa-proposed-027",
+      "qa-proposed-028",
+      "qa-proposed-029",
+      "qa-proposed-030",
+      "qa-proposed-031",
+      "qa-proposed-032",
+      "qa-proposed-033",
+      "qa-proposed-034",
+      "qa-proposed-035",
+      "qa-proposed-036",
+      "qa-proposed-037",
+      "qa-proposed-038",
+      "qa-proposed-039",
+      "qa-proposed-040",
+      "qa-proposed-041",
+      "qa-proposed-042",
+      "qa-proposed-043",
+      "qa-proposed-044",
+      "qa-proposed-045",
+      "qa-proposed-046",
+      "qa-proposed-047",
+      "qa-proposed-048",
+      "qa-proposed-049"
+    ],
+    "notices": "",
+    "url": "http://127.0.0.1:38482/review"
+  }
+}

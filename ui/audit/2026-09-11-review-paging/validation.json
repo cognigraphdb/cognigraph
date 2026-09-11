@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-11",
+  "scope": "CG-54 local UI acceptance",
+  "ui": {
+    "check": "passed: 111 Biome files and TypeScript",
+    "tests": 132,
+    "test_files": 19,
+    "assertions": 684,
+    "build": "passed: 1726 modules"
+  },
+  "runtime": {
+    "edition": "enterprise",
+    "backend": "Native",
+    "seeded_spaces": 101,
+    "seeded_proposed_neurons": 201,
+    "seeded_accepted_neurons": 201,
+    "distinct_proposals_reached_in_browser": 201,
+    "provider_calls": 0,
+    "catalog_failure": "Synthetic second-page 503 through local proxy; retry verified"
+  },
+  "rust": "Unchanged; suites not rerun for this UI-only batch",
+  "cleanup": "Owned browser closed, viewport reset, server/proxy stopped, temporary Native data removed",
+  "remote_publication": false
+}

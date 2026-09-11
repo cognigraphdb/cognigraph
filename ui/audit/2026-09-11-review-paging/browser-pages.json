@@ -1,0 +1,706 @@
+[
+  {
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": false,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "1–50 shown · More available"
+    ],
+    "keys": [
+      "qa-proposed-000",
+      "qa-proposed-001",
+      "qa-proposed-002",
+      "qa-proposed-003",
+      "qa-proposed-004",
+      "qa-proposed-005",
+      "qa-proposed-006",
+      "qa-proposed-007",
+      "qa-proposed-008",
+      "qa-proposed-009",
+      "qa-proposed-010",
+      "qa-proposed-011",
+      "qa-proposed-012",
+      "qa-proposed-013",
+      "qa-proposed-014",
+      "qa-proposed-015",
+      "qa-proposed-016",
+      "qa-proposed-017",
+      "qa-proposed-018",
+      "qa-proposed-019",
+      "qa-proposed-020",
+      "qa-proposed-021",
+      "qa-proposed-022",
+      "qa-proposed-023",
+      "qa-proposed-024",
+      "qa-proposed-025",
+      "qa-proposed-026",
+      "qa-proposed-027",
+      "qa-proposed-028",
+      "qa-proposed-029",
+      "qa-proposed-030",
+      "qa-proposed-031",
+      "qa-proposed-032",
+      "qa-proposed-033",
+      "qa-proposed-034",
+      "qa-proposed-035",
+      "qa-proposed-036",
+      "qa-proposed-037",
+      "qa-proposed-038",
+      "qa-proposed-039",
+      "qa-proposed-040",
+      "qa-proposed-041",
+      "qa-proposed-042",
+      "qa-proposed-043",
+      "qa-proposed-044",
+      "qa-proposed-045",
+      "qa-proposed-046",
+      "qa-proposed-047",
+      "qa-proposed-048",
+      "qa-proposed-049"
+    ],
+    "notices": "",
+    "url": "http://127.0.0.1:38481/review"
+  },
+  {
+    "buttons": [
+      {
+        "disabled": false,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": false,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "51–100 shown · More available"
+    ],
+    "keys": [
+      "qa-proposed-050",
+      "qa-proposed-051",
+      "qa-proposed-052",
+      "qa-proposed-053",
+      "qa-proposed-054",
+      "qa-proposed-055",
+      "qa-proposed-056",
+      "qa-proposed-057",
+      "qa-proposed-058",
+      "qa-proposed-059",
+      "qa-proposed-060",
+      "qa-proposed-061",
+      "qa-proposed-062",
+      "qa-proposed-063",
+      "qa-proposed-064",
+      "qa-proposed-065",
+      "qa-proposed-066",
+      "qa-proposed-067",
+      "qa-proposed-068",
+      "qa-proposed-069",
+      "qa-proposed-070",
+      "qa-proposed-071",
+      "qa-proposed-072",
+      "qa-proposed-073",
+      "qa-proposed-074",
+      "qa-proposed-075",
+      "qa-proposed-076",
+      "qa-proposed-077",
+      "qa-proposed-078",
+      "qa-proposed-079",
+      "qa-proposed-080",
+      "qa-proposed-081",
+      "qa-proposed-082",
+      "qa-proposed-083",
+      "qa-proposed-084",
+      "qa-proposed-085",
+      "qa-proposed-086",
+      "qa-proposed-087",
+      "qa-proposed-088",
+      "qa-proposed-089",
+      "qa-proposed-090",
+      "qa-proposed-091",
+      "qa-proposed-092",
+      "qa-proposed-093",
+      "qa-proposed-094",
+      "qa-proposed-095",
+      "qa-proposed-096",
+      "qa-proposed-097",
+      "qa-proposed-098",
+      "qa-proposed-099"
+    ],
+    "notices": "",
+    "url": "http://127.0.0.1:38481/review?space=qa-space-000&page=2"
+  },
+  {
+    "buttons": [
+      {
+        "disabled": false,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": false,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "101–150 shown · More available"
+    ],
+    "keys": [
+      "qa-proposed-100",
+      "qa-proposed-101",
+      "qa-proposed-102",
+      "qa-proposed-103",
+      "qa-proposed-104",
+      "qa-proposed-105",
+      "qa-proposed-106",
+      "qa-proposed-107",
+      "qa-proposed-108",
+      "qa-proposed-109",
+      "qa-proposed-110",
+      "qa-proposed-111",
+      "qa-proposed-112",
+      "qa-proposed-113",
+      "qa-proposed-114",
+      "qa-proposed-115",
+      "qa-proposed-116",
+      "qa-proposed-117",
+      "qa-proposed-118",
+      "qa-proposed-119",
+      "qa-proposed-120",
+      "qa-proposed-121",
+      "qa-proposed-122",
+      "qa-proposed-123",
+      "qa-proposed-124",
+      "qa-proposed-125",
+      "qa-proposed-126",
+      "qa-proposed-127",
+      "qa-proposed-128",
+      "qa-proposed-129",
+      "qa-proposed-130",
+      "qa-proposed-131",
+      "qa-proposed-132",
+      "qa-proposed-133",
+      "qa-proposed-134",
+      "qa-proposed-135",
+      "qa-proposed-136",
+      "qa-proposed-137",
+      "qa-proposed-138",
+      "qa-proposed-139",
+      "qa-proposed-140",
+      "qa-proposed-141",
+      "qa-proposed-142",
+      "qa-proposed-143",
+      "qa-proposed-144",
+      "qa-proposed-145",
+      "qa-proposed-146",
+      "qa-proposed-147",
+      "qa-proposed-148",
+      "qa-proposed-149"
+    ],
+    "notices": "",
+    "url": "http://127.0.0.1:38481/review?space=qa-space-000&page=3"
+  },
+  {
+    "buttons": [
+      {
+        "disabled": false,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": false,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "151–200 shown · More available"
+    ],
+    "keys": [
+      "qa-proposed-150",
+      "qa-proposed-151",
+      "qa-proposed-152",
+      "qa-proposed-153",
+      "qa-proposed-154",
+      "qa-proposed-155",
+      "qa-proposed-156",
+      "qa-proposed-157",
+      "qa-proposed-158",
+      "qa-proposed-159",
+      "qa-proposed-160",
+      "qa-proposed-161",
+      "qa-proposed-162",
+      "qa-proposed-163",
+      "qa-proposed-164",
+      "qa-proposed-165",
+      "qa-proposed-166",
+      "qa-proposed-167",
+      "qa-proposed-168",
+      "qa-proposed-169",
+      "qa-proposed-170",
+      "qa-proposed-171",
+      "qa-proposed-172",
+      "qa-proposed-173",
+      "qa-proposed-174",
+      "qa-proposed-175",
+      "qa-proposed-176",
+      "qa-proposed-177",
+      "qa-proposed-178",
+      "qa-proposed-179",
+      "qa-proposed-180",
+      "qa-proposed-181",
+      "qa-proposed-182",
+      "qa-proposed-183",
+      "qa-proposed-184",
+      "qa-proposed-185",
+      "qa-proposed-186",
+      "qa-proposed-187",
+      "qa-proposed-188",
+      "qa-proposed-189",
+      "qa-proposed-190",
+      "qa-proposed-191",
+      "qa-proposed-192",
+      "qa-proposed-193",
+      "qa-proposed-194",
+      "qa-proposed-195",
+      "qa-proposed-196",
+      "qa-proposed-197",
+      "qa-proposed-198",
+      "qa-proposed-199"
+    ],
+    "notices": "",
+    "url": "http://127.0.0.1:38481/review?space=qa-space-000&page=4"
+  },
+  {
+    "buttons": [
+      {
+        "disabled": false,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": true,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "201–201 shown · End of queue"
+    ],
+    "keys": [
+      "qa-proposed-200"
+    ],
+    "notices": "",
+    "url": "http://127.0.0.1:38481/review?space=qa-space-000&page=5"
+  },
+  {
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": false,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "1–50 shown · More available"
+    ],
+    "keys": [
+      "qa-proposed-000",
+      "qa-proposed-001",
+      "qa-proposed-002",
+      "qa-proposed-003",
+      "qa-proposed-004",
+      "qa-proposed-005",
+      "qa-proposed-006",
+      "qa-proposed-007",
+      "qa-proposed-008",
+      "qa-proposed-009",
+      "qa-proposed-010",
+      "qa-proposed-011",
+      "qa-proposed-012",
+      "qa-proposed-013",
+      "qa-proposed-014",
+      "qa-proposed-015",
+      "qa-proposed-016",
+      "qa-proposed-017",
+      "qa-proposed-018",
+      "qa-proposed-019",
+      "qa-proposed-020",
+      "qa-proposed-021",
+      "qa-proposed-022",
+      "qa-proposed-023",
+      "qa-proposed-024",
+      "qa-proposed-025",
+      "qa-proposed-026",
+      "qa-proposed-027",
+      "qa-proposed-028",
+      "qa-proposed-029",
+      "qa-proposed-030",
+      "qa-proposed-031",
+      "qa-proposed-032",
+      "qa-proposed-033",
+      "qa-proposed-034",
+      "qa-proposed-035",
+      "qa-proposed-036",
+      "qa-proposed-037",
+      "qa-proposed-038",
+      "qa-proposed-039",
+      "qa-proposed-040",
+      "qa-proposed-041",
+      "qa-proposed-042",
+      "qa-proposed-043",
+      "qa-proposed-044",
+      "qa-proposed-045",
+      "qa-proposed-046",
+      "qa-proposed-047",
+      "qa-proposed-048",
+      "qa-proposed-049"
+    ],
+    "notices": "The selected neuron is outside this page or filter. Its current state is shown in the inspector.",
+    "selected": "qa-proposed-200",
+    "url": "http://127.0.0.1:38481/review?space=qa-space-000&page=1&neuron=qa-proposed-200",
+    "stage": "accepted-final-page"
+  },
+  {
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": false,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "1–50 shown · More available"
+    ],
+    "keys": [
+      "qa-proposed-000",
+      "qa-proposed-001",
+      "qa-proposed-002",
+      "qa-proposed-003",
+      "qa-proposed-004",
+      "qa-proposed-005",
+      "qa-proposed-006",
+      "qa-proposed-007",
+      "qa-proposed-008",
+      "qa-proposed-009",
+      "qa-proposed-010",
+      "qa-proposed-011",
+      "qa-proposed-012",
+      "qa-proposed-013",
+      "qa-proposed-014",
+      "qa-proposed-015",
+      "qa-proposed-016",
+      "qa-proposed-017",
+      "qa-proposed-018",
+      "qa-proposed-019",
+      "qa-proposed-020",
+      "qa-proposed-021",
+      "qa-proposed-022",
+      "qa-proposed-023",
+      "qa-proposed-024",
+      "qa-proposed-025",
+      "qa-proposed-026",
+      "qa-proposed-027",
+      "qa-proposed-028",
+      "qa-proposed-029",
+      "qa-proposed-030",
+      "qa-proposed-031",
+      "qa-proposed-032",
+      "qa-proposed-033",
+      "qa-proposed-034",
+      "qa-proposed-035",
+      "qa-proposed-036",
+      "qa-proposed-037",
+      "qa-proposed-038",
+      "qa-proposed-039",
+      "qa-proposed-040",
+      "qa-proposed-041",
+      "qa-proposed-042",
+      "qa-proposed-043",
+      "qa-proposed-044",
+      "qa-proposed-045",
+      "qa-proposed-046",
+      "qa-proposed-047",
+      "qa-proposed-048",
+      "qa-proposed-049"
+    ],
+    "notices": "The selected neuron is outside this page or filter. Its current state is shown in the inspector.",
+    "selected": "qa-proposed-200",
+    "url": "http://127.0.0.1:38481/review?space=qa-space-000&page=1&neuron=qa-proposed-200",
+    "stage": "accepted-after-reload"
+  },
+  {
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": false,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "1–50 shown · More available"
+    ],
+    "keys": [
+      "qa-accepted-000",
+      "qa-accepted-001",
+      "qa-accepted-002",
+      "qa-accepted-003",
+      "qa-accepted-004",
+      "qa-accepted-005",
+      "qa-accepted-006",
+      "qa-accepted-007",
+      "qa-accepted-008",
+      "qa-accepted-009",
+      "qa-accepted-010",
+      "qa-accepted-011",
+      "qa-accepted-012",
+      "qa-accepted-013",
+      "qa-accepted-014",
+      "qa-accepted-015",
+      "qa-accepted-016",
+      "qa-accepted-017",
+      "qa-accepted-018",
+      "qa-accepted-019",
+      "qa-accepted-020",
+      "qa-accepted-021",
+      "qa-accepted-022",
+      "qa-accepted-023",
+      "qa-accepted-024",
+      "qa-accepted-025",
+      "qa-accepted-026",
+      "qa-accepted-027",
+      "qa-accepted-028",
+      "qa-accepted-029",
+      "qa-accepted-030",
+      "qa-accepted-031",
+      "qa-accepted-032",
+      "qa-accepted-033",
+      "qa-accepted-034",
+      "qa-accepted-035",
+      "qa-accepted-036",
+      "qa-accepted-037",
+      "qa-accepted-038",
+      "qa-accepted-039",
+      "qa-accepted-040",
+      "qa-accepted-041",
+      "qa-accepted-042",
+      "qa-accepted-043",
+      "qa-accepted-044",
+      "qa-accepted-045",
+      "qa-accepted-046",
+      "qa-accepted-047",
+      "qa-accepted-048",
+      "qa-accepted-049"
+    ],
+    "notices": "The selected neuron is outside this page or filter. Its current state is shown in the inspector.",
+    "selected": "qa-accepted-200",
+    "url": "http://127.0.0.1:38481/review?space=qa-space-000&page=1&neuron=qa-accepted-200&status=accepted",
+    "stage": "off-page-graduation"
+  },
+  {
+    "buttons": [
+      {
+        "disabled": false,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": false,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "51–100 shown · More available"
+    ],
+    "keys": [
+      "qa-accepted-050",
+      "qa-accepted-051",
+      "qa-accepted-052",
+      "qa-accepted-053",
+      "qa-accepted-054",
+      "qa-accepted-055",
+      "qa-accepted-056",
+      "qa-accepted-057",
+      "qa-accepted-058",
+      "qa-accepted-059",
+      "qa-accepted-060",
+      "qa-accepted-061",
+      "qa-accepted-062",
+      "qa-accepted-063",
+      "qa-accepted-064",
+      "qa-accepted-065",
+      "qa-accepted-066",
+      "qa-accepted-067",
+      "qa-accepted-068",
+      "qa-accepted-069",
+      "qa-accepted-070",
+      "qa-accepted-071",
+      "qa-accepted-072",
+      "qa-accepted-073",
+      "qa-accepted-074",
+      "qa-accepted-075",
+      "qa-accepted-076",
+      "qa-accepted-077",
+      "qa-accepted-078",
+      "qa-accepted-079",
+      "qa-accepted-080",
+      "qa-accepted-081",
+      "qa-accepted-082",
+      "qa-accepted-083",
+      "qa-accepted-084",
+      "qa-accepted-085",
+      "qa-accepted-086",
+      "qa-accepted-087",
+      "qa-accepted-088",
+      "qa-accepted-089",
+      "qa-accepted-090",
+      "qa-accepted-091",
+      "qa-accepted-092",
+      "qa-accepted-093",
+      "qa-accepted-094",
+      "qa-accepted-095",
+      "qa-accepted-096",
+      "qa-accepted-097",
+      "qa-accepted-098",
+      "qa-accepted-099"
+    ],
+    "notices": "The selected neuron is outside this page or filter. Its current state is shown in the inspector.",
+    "selected": "qa-accepted-200",
+    "url": "http://127.0.0.1:38481/review?space=qa-space-000&page=2&neuron=qa-accepted-200&status=accepted",
+    "stage": "selection-survives-page-and-refresh"
+  },
+  {
+    "buttons": [
+      {
+        "disabled": false,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": false,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "51–100 shown · More available"
+    ],
+    "keys": [
+      "qa-accepted-050",
+      "qa-accepted-051",
+      "qa-accepted-052",
+      "qa-accepted-053",
+      "qa-accepted-054",
+      "qa-accepted-055",
+      "qa-accepted-056",
+      "qa-accepted-057",
+      "qa-accepted-058",
+      "qa-accepted-059",
+      "qa-accepted-060",
+      "qa-accepted-061",
+      "qa-accepted-062",
+      "qa-accepted-063",
+      "qa-accepted-064",
+      "qa-accepted-065",
+      "qa-accepted-066",
+      "qa-accepted-067",
+      "qa-accepted-068",
+      "qa-accepted-069",
+      "qa-accepted-070",
+      "qa-accepted-071",
+      "qa-accepted-072",
+      "qa-accepted-073",
+      "qa-accepted-074",
+      "qa-accepted-075",
+      "qa-accepted-076",
+      "qa-accepted-077",
+      "qa-accepted-078",
+      "qa-accepted-079",
+      "qa-accepted-080",
+      "qa-accepted-081",
+      "qa-accepted-082",
+      "qa-accepted-083",
+      "qa-accepted-084",
+      "qa-accepted-085",
+      "qa-accepted-086",
+      "qa-accepted-087",
+      "qa-accepted-088",
+      "qa-accepted-089",
+      "qa-accepted-090",
+      "qa-accepted-091",
+      "qa-accepted-092",
+      "qa-accepted-093",
+      "qa-accepted-094",
+      "qa-accepted-095",
+      "qa-accepted-096",
+      "qa-accepted-097",
+      "qa-accepted-098",
+      "qa-accepted-099"
+    ],
+    "notices": "The selected neuron is outside this page or filter. Its current state is shown in the inspector.",
+    "selected": "qa-accepted-200",
+    "url": "http://127.0.0.1:38481/review?space=qa-space-000&page=2&neuron=qa-accepted-200&status=accepted",
+    "stage": "off-page-retired"
+  },
+  {
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": true,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "0 neurons"
+    ],
+    "keys": [],
+    "notices": "",
+    "url": "http://127.0.0.1:38481/review?space=qa-space-100&page=1&status=accepted",
+    "stage": "101st-space-selected"
+  },
+  {
+    "buttons": [
+      {
+        "disabled": true,
+        "name": "Previous neuron page"
+      },
+      {
+        "disabled": true,
+        "name": "Next neuron page"
+      }
+    ],
+    "counts": [
+      "101 spaces",
+      "1–1 shown · End of queue"
+    ],
+    "keys": [
+      "qa-new-space-100"
+    ],
+    "notices": "",
+    "selected": "qa-new-space-100",
+    "url": "http://127.0.0.1:38481/review?space=qa-space-100&page=1&status=proposed&neuron=qa-new-space-100",
+    "stage": "proposal-in-space-101"
+  }
+]

@@ -7,14 +7,16 @@ import {
   Lightbulb,
   PencilRuler,
 } from "@phosphor-icons/react";
-import { Button, Checkbox, Input, InputNumber, Select } from "antd";
+import { Alert, Button, Checkbox, Input, InputNumber, Select } from "antd";
 import type { ReactNode } from "react";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
+import { useSearchParams } from "react-router";
 import type { CogniGraphApi } from "../api/client.ts";
 import { useAccess } from "../components/AccessBoundary.tsx";
 import { ConstructIngest } from "../components/ConstructIngest.tsx";
 import { JsonResult } from "../components/JsonResult.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
+import { useSpaceTypes } from "../hooks/useSpaceTypes.ts";
 import { type ConstructAction, parseChunks, parseGaps, summarizeRun } from "../lib/construct.ts";
 import type { JsonObject, Notify } from "../types.ts";
 
@@ -30,8 +32,16 @@ interface ConstructScreenProps {
 /// provider fail with its actionable message when none is configured.
 export function ConstructScreen({ api, notify }: ConstructScreenProps) {
   const { constructWrite } = useAccess();
-  const [spaces, setSpaces] = useState<string[]>([]);
-  const [space, setSpace] = useState<string>();
+  const catalog = useSpaceTypes(api);
+  const { spaces } = catalog;
+  const [params, setParams] = useSearchParams();
+  const space = params.get("space") || spaces[0];
+  const setSpace = (value: string) =>
+    setParams((current) => {
+      const next = new URLSearchParams(current);
+      next.set("space", value);
+      return next;
+    });
   const [result, setResult] = useState<unknown>();
   const [running, setRunning] = useState<string>();
 
@@ -40,18 +50,6 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
   const [gaps, setGaps] = useState("");
   const [reviewLimit, setReviewLimit] = useState<number>();
   const [rejudge, setRejudge] = useState(false);
-
-  const loadSpaces = useCallback(() => {
-    api
-      .get<{ results: JsonObject[] }>("/documents?collection=space_types&limit=100")
-      .then(({ results }) => {
-        const names = results.map((doc) => String(doc._key)).sort();
-        setSpaces(names);
-        setSpace((current) => current ?? names[0]);
-      })
-      .catch(() => setSpaces([]));
-  }, [api]);
-  useEffect(loadSpaces, [loadSpaces]);
 
   /// Run one stage; the shared result panel always shows the raw response.
   const run = async (
@@ -66,7 +64,10 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
       const response = await api.post<JsonObject>(call.path, call.body);
       setResult(response);
       notify(summarizeRun(action, response));
-      if (action === "accept") loadSpaces();
+      if (action === "accept") {
+        setSpace(draftId.trim());
+        catalog.refresh();
+      }
     } catch (error) {
       const message = error instanceof Error ? error.message : "Run failed";
       setResult({ error: message });
@@ -96,13 +97,36 @@ export function ConstructScreen({ api, notify }: ConstructScreenProps) {
         <span>Space</span>
         <Select
           aria-label="Space type"
-          disabled={Boolean(running) || spaces.length === 0}
+          disabled={Boolean(running) || catalog.loading || spaces.length === 0}
+          loading={catalog.loading}
+          showSearch={{ optionFilterProp: "label" }}
           onChange={setSpace}
           options={spaces.map((name) => ({ label: name, value: name }))}
-          placeholder={spaces.length === 0 ? "None in this tenant — draft one" : "Select"}
+          placeholder={
+            catalog.loading
+              ? "Loading spaces…"
+              : catalog.error
+                ? "Spaces unavailable"
+                : spaces.length === 0
+                  ? "None in this tenant — draft one"
+                  : "Select"
+          }
           value={space}
         />
+        <Button disabled={Boolean(running) || catalog.loading} onClick={catalog.refresh}>
+          Refresh spaces
+        </Button>
+        <span>
+          {catalog.loading
+            ? "Loading spaces…"
+            : catalog.error
+              ? "Space catalog unavailable"
+              : `${spaces.length} spaces`}
+        </span>
       </div>
+      {catalog.error ? (
+        <Alert type="error" title={`Unable to load spaces: ${catalog.error}`} />
+      ) : null}
       <div className="operations-grid construct-grid">
         <section className="console-card action-list">
           <Stage

@@ -14,7 +14,7 @@ interface ProposeNeuronDialogProps {
   defaultSpace?: string;
   notify: Notify;
   onClose: () => void;
-  onProposed: () => void;
+  onProposed: (space: string, key: string) => void;
 }
 
 interface Fields {
@@ -84,7 +84,7 @@ export function ProposeNeuronDialog({
     try {
       await api.post("/neurons", payload);
       notify(`Proposed ${values.id.trim()}`);
-      onProposed();
+      onProposed(values.space_type, values.id.trim());
     } catch (reason) {
       // Ontology violations surface here (unknown entity, bad relation…) —
       // show the server's words, they name the offending field.
@@ -119,7 +119,10 @@ export function ProposeNeuronDialog({
         requiredMark={false}
       >
         <Form.Item label="Space type" name="space_type" rules={[{ required: true }]}>
-          <Select options={spaces.map((space) => ({ label: space, value: space }))} />
+          <Select
+            showSearch={{ optionFilterProp: "label" }}
+            options={spaces.map((space) => ({ label: space, value: space }))}
+          />
         </Form.Item>
         <Form.Item
           label="Neuron id"

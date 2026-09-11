@@ -195,8 +195,14 @@ development behavior. Both Rust CI-equivalent suites and 120 UI tests pass;
 release-binary HTTP and browser checks cover all nine roles in both editions.
 Nine Open issues remain, all P2.
 
-Next, address partial review/space datasets ([CG-54](issues/CG-54.md)), then
-execution/result state and accessibility, with real-browser regressions and
+The [review paging batch](../ui/audit/2026-09-11-review-paging/audit.md) resolves
+[CG-54](issues/CG-54.md): truthful queue ranges and continuation, complete searchable
+space catalogs, and selection independent of the visible page. A 101-space,
+402-neuron Native fixture verified paging, persisted verdicts and off-page
+graduation links; 132 UI tests pass. Eight Open issues remain, all P2.
+
+Next, address execution guards ([CG-55](issues/CG-55.md)), then result state and
+accessibility, with real-browser regressions and
 CI coverage ([CG-60](issues/CG-60.md)). Keep Docker publication preparation
 separate from this pending UI remediation.
 

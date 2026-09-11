@@ -1,0 +1,218 @@
+[
+  {
+    "panels": [
+      {
+        "class": "page-workspace",
+        "clientHeight": 934,
+        "clientWidth": 1406,
+        "right": 1600,
+        "scrollHeight": 1234,
+        "scrollWidth": 1406,
+        "x": 194
+      },
+      {
+        "class": "construct-toolbar",
+        "clientHeight": 34,
+        "clientWidth": 1350,
+        "right": 1572,
+        "scrollHeight": 34,
+        "scrollWidth": 1350,
+        "x": 222
+      }
+    ],
+    "surface": "construct",
+    "viewport": {
+      "height": 1000,
+      "width": 1600
+    }
+  },
+  {
+    "panels": [
+      {
+        "class": "page-workspace",
+        "clientHeight": 734,
+        "clientWidth": 1086,
+        "right": 1280,
+        "scrollHeight": 1344,
+        "scrollWidth": 1086,
+        "x": 194
+      },
+      {
+        "class": "construct-toolbar",
+        "clientHeight": 34,
+        "clientWidth": 1030,
+        "right": 1252,
+        "scrollHeight": 34,
+        "scrollWidth": 1030,
+        "x": 222
+      }
+    ],
+    "surface": "construct",
+    "viewport": {
+      "height": 800,
+      "width": 1280
+    }
+  },
+  {
+    "panels": [
+      {
+        "class": "page-workspace",
+        "clientHeight": 601,
+        "clientWidth": 995,
+        "right": 1067,
+        "scrollHeight": 1625,
+        "scrollWidth": 995,
+        "x": 72
+      },
+      {
+        "class": "construct-toolbar",
+        "clientHeight": 34,
+        "clientWidth": 939,
+        "right": 1039,
+        "scrollHeight": 34,
+        "scrollWidth": 939,
+        "x": 100
+      }
+    ],
+    "surface": "construct",
+    "viewport": {
+      "height": 667,
+      "width": 1067
+    }
+  },
+  {
+    "panels": [
+      {
+        "class": "workspace with-inspector",
+        "clientHeight": 934,
+        "clientWidth": 1406,
+        "right": 1600,
+        "scrollHeight": 934,
+        "scrollWidth": 1406,
+        "x": 194
+      },
+      {
+        "class": "collection-panel review-panel",
+        "clientHeight": 934,
+        "clientWidth": 832,
+        "right": 1026.1171875,
+        "scrollHeight": 2845,
+        "scrollWidth": 832,
+        "x": 194
+      },
+      {
+        "class": "workspace-controls review-paging",
+        "clientHeight": 48,
+        "clientWidth": 832,
+        "right": 1026.1171875,
+        "scrollHeight": 48,
+        "scrollWidth": 832,
+        "x": 194
+      },
+      {
+        "class": "inspector neuron-inspector",
+        "clientHeight": 934,
+        "clientWidth": 573,
+        "right": 1600,
+        "scrollHeight": 934,
+        "scrollWidth": 573,
+        "x": 1026.1171875
+      }
+    ],
+    "surface": "review",
+    "viewport": {
+      "height": 1000,
+      "width": 1600
+    }
+  },
+  {
+    "panels": [
+      {
+        "class": "workspace with-inspector",
+        "clientHeight": 734,
+        "clientWidth": 1086,
+        "right": 1280,
+        "scrollHeight": 734,
+        "scrollWidth": 1086,
+        "x": 194
+      },
+      {
+        "class": "collection-panel review-panel",
+        "clientHeight": 734,
+        "clientWidth": 643,
+        "right": 836.734375,
+        "scrollHeight": 2912,
+        "scrollWidth": 643,
+        "x": 194
+      },
+      {
+        "class": "workspace-controls review-paging",
+        "clientHeight": 48,
+        "clientWidth": 643,
+        "right": 836.734375,
+        "scrollHeight": 48,
+        "scrollWidth": 643,
+        "x": 194
+      },
+      {
+        "class": "inspector neuron-inspector",
+        "clientHeight": 734,
+        "clientWidth": 442,
+        "right": 1279.9921875,
+        "scrollHeight": 734,
+        "scrollWidth": 442,
+        "x": 836.734375
+      }
+    ],
+    "surface": "review",
+    "viewport": {
+      "height": 800,
+      "width": 1280
+    }
+  },
+  {
+    "panels": [
+      {
+        "class": "workspace with-inspector",
+        "clientHeight": 601,
+        "clientWidth": 995,
+        "right": 1067,
+        "scrollHeight": 601,
+        "scrollWidth": 995,
+        "x": 72
+      },
+      {
+        "class": "collection-panel review-panel",
+        "clientHeight": 601,
+        "clientWidth": 589,
+        "right": 660.875,
+        "scrollHeight": 2932,
+        "scrollWidth": 589,
+        "x": 72
+      },
+      {
+        "class": "workspace-controls review-paging",
+        "clientHeight": 48,
+        "clientWidth": 589,
+        "right": 660.875,
+        "scrollHeight": 48,
+        "scrollWidth": 589,
+        "x": 72
+      },
+      {
+        "class": "inspector neuron-inspector",
+        "clientHeight": 601,
+        "clientWidth": 405,
+        "right": 1067,
+        "scrollHeight": 601,
+        "scrollWidth": 405,
+        "x": 660.875
+      }
+    ],
+    "surface": "review",
+    "viewport": {
+      "height": 667,
+      "width": 1067
+    }
+  }
+]
