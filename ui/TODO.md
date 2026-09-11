@@ -16,7 +16,7 @@ The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
 recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
 explicit untested boundaries. The historical Done entries below describe
 implementation checkpoints; they do not establish current acceptance. The UI
-suite now passes 161 helper tests after CG-49–CG-59/CG-62 remediation,
+suite now passes 161 helper tests after CG-49–CG-59/CG-62/CG-63 remediation,
 but CI omits it and no browser regression suite exists yet. Keep defect status
 in the linked registry rather than duplicating it.
 
@@ -68,8 +68,12 @@ in the linked registry rather than duplicating it.
   search cap, retrieved counts, page-local filter labels and usable paging
   through filtered-empty pages. [Browser/API evidence](audit/2026-09-11-collection-search-scope/audit.md)
   covers 126 documents, off-page keys, reset, failure/retry and scaled layouts.
-  Three P2s remain open.
-- [ ] Repair [collapsed navigation names CG-63](../docs/issues/CG-63.md).
+  That checkpoint left three P2s open.
+- [x] [Collapsed navigation names CG-63](../docs/issues/CG-63.md): explicit
+  accessible names and hover/focus labels in every sidebar mode.
+  [Browser evidence](audit/2026-09-11-sidebar-names/audit.md) covers all Admin
+  links, host-only Tenants, keyboard/pointer interaction and scaled layouts.
+  Two P2s remain open.
 - [ ] Establish [UI CI/browser coverage CG-60](../docs/issues/CG-60.md) and
   refresh the [advisory-affected dependency CG-61](../docs/issues/CG-61.md).
 

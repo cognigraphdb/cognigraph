@@ -235,8 +235,13 @@ A 126-document Native fixture, exact-key lookup, filter/reset behavior,
 health-poll stability, failure/retry and scaled layouts pass; 161 UI tests pass.
 Three Open issues remain, all P2.
 
-Next, address collapsed navigation names ([CG-63](issues/CG-63.md)), the
-advisory-affected dependency ([CG-61](issues/CG-61.md)) and
+The [sidebar naming fix](../ui/audit/2026-09-11-sidebar-names/audit.md) resolves
+[CG-63](issues/CG-63.md): stable accessible names and pointer/focus tooltips
+across expanded, manual and responsive collapse. Real Admin/HostAdmin journeys,
+keyboard navigation, role boundaries and scaled layouts pass; 161 UI tests pass.
+Two Open issues remain, both P2.
+
+Next, address the advisory-affected dependency ([CG-61](issues/CG-61.md)) and
 CI coverage ([CG-60](issues/CG-60.md)). Keep Docker publication preparation
 separate from this pending UI remediation.
 

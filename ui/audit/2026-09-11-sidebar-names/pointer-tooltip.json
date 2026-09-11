@@ -1,0 +1,19 @@
+{
+  "method": "Pointer drag from noninteractive heading area to Query icon; focus remained on body",
+  "focus": {
+    "href": null,
+    "name": null,
+    "offset": "0px",
+    "outline": "rgb(29, 37, 36) none 3px",
+    "rect": {
+      "height": 800,
+      "width": 1280,
+      "x": 0,
+      "y": 0
+    },
+    "tag": "BODY",
+    "visibleTooltips": [
+      "Query"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+Browser tab: 36, Title: "CogniGraph — Tenants", URL: "http://127.0.0.1:38495/tenants".
+1 AXWebArea CogniGraph — Tenants, URL: 127.0.0.1:38495/tenants
+	2 container root
+		3 container
+			4 container CogniGraph
+			5 container Primary navigation
+				6 link Description: Overview, Value: 127.0.0.1:38495/overview
+				7 link Description: Tenants, Value: 127.0.0.1:38495/tenants
+			8 text System healthy Version  2.7.0
+			9 button Collapse sidebar
+		10 container
+			11 text Tenant default Server 127.0.0.1:38495 Healthy Sep 11, 2026, 7:56 PM host-admin
+			12 button Sign out
+		13 container
+			14 text Access / tenants
+			15 heading Tenants, Value: 1
+				16 text Tenants
+			17 text Manage tenant lifecycle. Suspend preserves accounts and data; delete removes credentials and quarantines data. Host-admin cannot read tenant data.
+			18 button Create tenant
+				19 image
+				20 text Create tenant
+			21 button Refresh
+				22 image
+				23 text Refresh
+			24 text 0 tenants  ·  0  open stores
+			25 table
+				26 row
+					27 cell
+						28 text Tenant
+					29 cell
+						30 text Status
+					31 cell
+						32 text Store
+					33 cell
+						34 text Created
+				35 row
+					36 cell
+						37 text No tenant records — the implicit default tenant needs none until you suspend it.
+
+The focused UI element is 1 AXWebArea CogniGraph — Tenants, URL: 127.0.0.1:38495/tenants

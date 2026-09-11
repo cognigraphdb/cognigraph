@@ -125,8 +125,9 @@ resolves CG-55. That checkpoint had **55 Resolved, 1 Closed without change, and
 resolves CG-56. The [table keyboard-access batch](../../ui/audit/2026-09-11-table-keyboard/audit.md)
 resolves CG-57. The [space guidance and catalog-state batch](../../ui/audit/2026-09-11-space-guidance/audit.md)
 resolves CG-58. The [collection search/filter scope batch](../../ui/audit/2026-09-11-collection-search-scope/audit.md)
-resolves CG-59. Current registry: **59 Resolved, 1 Closed without change, and
-3 Open issues (all P2)**.
+resolves CG-59. The [sidebar naming fix](../../ui/audit/2026-09-11-sidebar-names/audit.md)
+resolves CG-63. Current registry: **60 Resolved, 1 Closed without change, and
+2 Open issues (all P2)**.
 
 ## Conventions
 
@@ -202,7 +203,7 @@ resolves CG-59. Current registry: **59 Resolved, 1 Closed without change, and
 | [CG-60](CG-60.md) | P2 | Open | CI omits the UI checks and browser regression coverage |
 | [CG-61](CG-61.md) | P2 | Open | React Router lockfile retains an advisory-affected release |
 | [CG-62](CG-62.md) | P1 | Resolved | Plain-text construction imports reuse chunk IDs and replace earlier evidence |
-| [CG-63](CG-63.md) | P2 | Open | Collapsed sidebar removes the accessible names of navigation links |
+| [CG-63](CG-63.md) | P2 | Resolved | Collapsed sidebar removes the accessible names of navigation links |
 
 Next available identifier: **CG-64**.
 ## After the current ticket list

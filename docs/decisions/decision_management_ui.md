@@ -415,3 +415,13 @@ Unknown catalog totals are not replaced with the number of loaded documents.
 Search filter changes reset paging, and result-page bounds follow the filtered
 set. Routine health checks preserve the current data. [CG-59](../issues/CG-59.md)
 records the executed acceptance and the remaining backend coverage limits.
+
+## Addendum (2026-09-11): accessible sidebar names in every layout
+
+Every primary navigation link owns an explicit accessible name, independent of
+whether CSS hides its visible text. The same destination label appears in a
+shared Ant Design tooltip on hover or focus. Tooltip wrapping does not add a
+tab stop or replace the native link, its active-page semantics or the existing
+focus outline. Role filtering remains unchanged, including host-only Tenants.
+[CG-63](../issues/CG-63.md) records expanded, manually collapsed and responsive
+browser evidence.

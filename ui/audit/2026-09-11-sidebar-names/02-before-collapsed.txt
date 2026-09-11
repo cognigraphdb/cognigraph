@@ -1,0 +1,51 @@
+- complementary:
+  - img "CogniGraph"
+  - navigation "Primary navigation":
+    - link:
+      - /url: /overview
+    - link:
+      - /url: /collections
+    - link:
+      - /url: /query
+    - link:
+      - /url: /graph
+    - link:
+      - /url: /review
+    - link:
+      - /url: /construct
+    - link:
+      - /url: /lua
+    - link:
+      - /url: /users
+    - link:
+      - /url: /operations
+  - button "Expand sidebar" [active]:
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38495
+  - generic: Healthy
+  - generic: Sep 11, 2026, 7:52 PM
+  - generic: admin
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - generic: Data / collections
+  - heading "Collections" [level=1]
+  - paragraph: Browse and edit application documents; explore edge collections on the Graph page.
+  - button "Create collection":
+    - generic: Create collection
+  - button "Refresh":
+    - generic: Refresh
+  - generic: 0 collections
+  - table:
+    - rowgroup:
+      - row "Collection Type Entries":
+        - columnheader "Collection"
+        - columnheader "Type"
+        - columnheader "Entries"
+        - columnheader
+    - rowgroup:
+      - row "No collections yet — create a document to start one.":
+        - cell "No collections yet — create a document to start one."

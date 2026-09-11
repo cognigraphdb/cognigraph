@@ -1,0 +1,30 @@
+{
+  "ui_check": "PASS: Biome 122 files and TypeScript",
+  "tests": {
+    "pass": 161,
+    "fail": 0,
+    "files": 22,
+    "assertions": 783
+  },
+  "build": {
+    "modules": 1734,
+    "js": "index-38ghcf4g.js",
+    "css": "index-0pnq4bz5.css"
+  },
+  "changed_ui_files": [
+    "ui/src/components/Sidebar.tsx"
+  ],
+  "unchanged_prior_evidence": {
+    "2026-09-11-space-guidance": 69,
+    "2026-09-11-collection-search-scope": 85
+  },
+  "cleanup": {
+    "stopped_pid": 60159,
+    "closed_port": 38495,
+    "removed_directory": "/tmp/cg63-qa",
+    "signed_out": true,
+    "closed_qa_tab": 36,
+    "retained_user_tab": 13,
+    "viewport_reset": true
+  }
+}

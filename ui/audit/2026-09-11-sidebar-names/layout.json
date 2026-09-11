@@ -1,0 +1,706 @@
+[
+  {
+    "mode": "manual-1280",
+    "body": {
+      "clientHeight": 800,
+      "clientWidth": 1280,
+      "scrollHeight": 800,
+      "scrollWidth": 1280
+    },
+    "links": [
+      {
+        "bottom": 132,
+        "current": null,
+        "height": 46,
+        "href": "/overview",
+        "name": "Overview",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 86
+      },
+      {
+        "bottom": 183,
+        "current": "page",
+        "height": 46,
+        "href": "/collections",
+        "name": "Collections",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 137
+      },
+      {
+        "bottom": 234,
+        "current": null,
+        "height": 46,
+        "href": "/query",
+        "name": "Query",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 188
+      },
+      {
+        "bottom": 285,
+        "current": null,
+        "height": 46,
+        "href": "/graph",
+        "name": "Graph",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 239
+      },
+      {
+        "bottom": 336,
+        "current": null,
+        "height": 46,
+        "href": "/review",
+        "name": "Review",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 290
+      },
+      {
+        "bottom": 387,
+        "current": null,
+        "height": 46,
+        "href": "/construct",
+        "name": "Construct",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 341
+      },
+      {
+        "bottom": 438,
+        "current": null,
+        "height": 46,
+        "href": "/lua",
+        "name": "Lua",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 392
+      },
+      {
+        "bottom": 489,
+        "current": null,
+        "height": 46,
+        "href": "/users",
+        "name": "Users",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 443
+      },
+      {
+        "bottom": 540,
+        "current": null,
+        "height": 46,
+        "href": "/operations",
+        "name": "Operations",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 494
+      }
+    ],
+    "sidebar": {
+      "className": "sidebar collapsed",
+      "width": 72
+    },
+    "tooltips": [
+      {
+        "bottom": 177,
+        "height": 34,
+        "right": 143.140625,
+        "text": "Collections",
+        "width": 71.140625,
+        "x": 72,
+        "y": 143
+      }
+    ],
+    "viewport": {
+      "height": 800,
+      "width": 1280
+    }
+  },
+  {
+    "mode": "pointer-tooltip-1280",
+    "body": {
+      "clientHeight": 800,
+      "clientWidth": 1280,
+      "scrollHeight": 800,
+      "scrollWidth": 1280
+    },
+    "links": [
+      {
+        "bottom": 132,
+        "current": null,
+        "height": 46,
+        "href": "/overview",
+        "name": "Overview",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 86
+      },
+      {
+        "bottom": 183,
+        "current": "page",
+        "height": 46,
+        "href": "/collections",
+        "name": "Collections",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 137
+      },
+      {
+        "bottom": 234,
+        "current": null,
+        "height": 46,
+        "href": "/query",
+        "name": "Query",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 188
+      },
+      {
+        "bottom": 285,
+        "current": null,
+        "height": 46,
+        "href": "/graph",
+        "name": "Graph",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 239
+      },
+      {
+        "bottom": 336,
+        "current": null,
+        "height": 46,
+        "href": "/review",
+        "name": "Review",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 290
+      },
+      {
+        "bottom": 387,
+        "current": null,
+        "height": 46,
+        "href": "/construct",
+        "name": "Construct",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 341
+      },
+      {
+        "bottom": 438,
+        "current": null,
+        "height": 46,
+        "href": "/lua",
+        "name": "Lua",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 392
+      },
+      {
+        "bottom": 489,
+        "current": null,
+        "height": 46,
+        "href": "/users",
+        "name": "Users",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 443
+      },
+      {
+        "bottom": 540,
+        "current": null,
+        "height": 46,
+        "href": "/operations",
+        "name": "Operations",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 494
+      }
+    ],
+    "sidebar": {
+      "className": "sidebar collapsed",
+      "width": 72
+    },
+    "tooltips": [
+      {
+        "bottom": 228,
+        "height": 34,
+        "right": 114.265625,
+        "text": "Query",
+        "width": 42.265625,
+        "x": 72,
+        "y": 194
+      }
+    ],
+    "viewport": {
+      "height": 800,
+      "width": 1280
+    }
+  },
+  {
+    "mode": "expanded-1280",
+    "body": {
+      "clientHeight": 800,
+      "clientWidth": 1280,
+      "scrollHeight": 800,
+      "scrollWidth": 1280
+    },
+    "links": [
+      {
+        "bottom": 132,
+        "current": null,
+        "height": 46,
+        "href": "/overview",
+        "name": "Overview",
+        "spanDisplay": "block",
+        "spanFontSize": "14px",
+        "width": 170,
+        "x": 12,
+        "y": 86
+      },
+      {
+        "bottom": 183,
+        "current": "page",
+        "height": 46,
+        "href": "/collections",
+        "name": "Collections",
+        "spanDisplay": "block",
+        "spanFontSize": "14px",
+        "width": 170,
+        "x": 12,
+        "y": 137
+      },
+      {
+        "bottom": 234,
+        "current": null,
+        "height": 46,
+        "href": "/query",
+        "name": "Query",
+        "spanDisplay": "block",
+        "spanFontSize": "14px",
+        "width": 170,
+        "x": 12,
+        "y": 188
+      },
+      {
+        "bottom": 285,
+        "current": null,
+        "height": 46,
+        "href": "/graph",
+        "name": "Graph",
+        "spanDisplay": "block",
+        "spanFontSize": "14px",
+        "width": 170,
+        "x": 12,
+        "y": 239
+      },
+      {
+        "bottom": 336,
+        "current": null,
+        "height": 46,
+        "href": "/review",
+        "name": "Review",
+        "spanDisplay": "block",
+        "spanFontSize": "14px",
+        "width": 170,
+        "x": 12,
+        "y": 290
+      },
+      {
+        "bottom": 387,
+        "current": null,
+        "height": 46,
+        "href": "/construct",
+        "name": "Construct",
+        "spanDisplay": "block",
+        "spanFontSize": "14px",
+        "width": 170,
+        "x": 12,
+        "y": 341
+      },
+      {
+        "bottom": 438,
+        "current": null,
+        "height": 46,
+        "href": "/lua",
+        "name": "Lua",
+        "spanDisplay": "block",
+        "spanFontSize": "14px",
+        "width": 170,
+        "x": 12,
+        "y": 392
+      },
+      {
+        "bottom": 489,
+        "current": null,
+        "height": 46,
+        "href": "/users",
+        "name": "Users",
+        "spanDisplay": "block",
+        "spanFontSize": "14px",
+        "width": 170,
+        "x": 12,
+        "y": 443
+      },
+      {
+        "bottom": 540,
+        "current": null,
+        "height": 46,
+        "href": "/operations",
+        "name": "Operations",
+        "spanDisplay": "block",
+        "spanFontSize": "14px",
+        "width": 170,
+        "x": 12,
+        "y": 494
+      }
+    ],
+    "sidebar": {
+      "className": "sidebar",
+      "width": 194
+    },
+    "tooltips": [],
+    "viewport": {
+      "height": 800,
+      "width": 1280
+    }
+  },
+  {
+    "mode": "responsive-1067",
+    "body": {
+      "clientHeight": 667,
+      "clientWidth": 1067,
+      "scrollHeight": 667,
+      "scrollWidth": 1067
+    },
+    "links": [
+      {
+        "bottom": 123,
+        "current": null,
+        "height": 46,
+        "href": "/overview",
+        "name": "Overview",
+        "spanDisplay": "block",
+        "spanFontSize": "0px",
+        "width": 48,
+        "x": 12,
+        "y": 77
+      },
+      {
+        "bottom": 174,
+        "current": "page",
+        "height": 46,
+        "href": "/collections",
+        "name": "Collections",
+        "spanDisplay": "block",
+        "spanFontSize": "0px",
+        "width": 48,
+        "x": 12,
+        "y": 128
+      },
+      {
+        "bottom": 225,
+        "current": null,
+        "height": 46,
+        "href": "/query",
+        "name": "Query",
+        "spanDisplay": "block",
+        "spanFontSize": "0px",
+        "width": 48,
+        "x": 12,
+        "y": 179
+      },
+      {
+        "bottom": 276,
+        "current": null,
+        "height": 46,
+        "href": "/graph",
+        "name": "Graph",
+        "spanDisplay": "block",
+        "spanFontSize": "0px",
+        "width": 48,
+        "x": 12,
+        "y": 230
+      },
+      {
+        "bottom": 327,
+        "current": null,
+        "height": 46,
+        "href": "/review",
+        "name": "Review",
+        "spanDisplay": "block",
+        "spanFontSize": "0px",
+        "width": 48,
+        "x": 12,
+        "y": 281
+      },
+      {
+        "bottom": 378,
+        "current": null,
+        "height": 46,
+        "href": "/construct",
+        "name": "Construct",
+        "spanDisplay": "block",
+        "spanFontSize": "0px",
+        "width": 48,
+        "x": 12,
+        "y": 332
+      },
+      {
+        "bottom": 429,
+        "current": null,
+        "height": 46,
+        "href": "/lua",
+        "name": "Lua",
+        "spanDisplay": "block",
+        "spanFontSize": "0px",
+        "width": 48,
+        "x": 12,
+        "y": 383
+      },
+      {
+        "bottom": 480,
+        "current": null,
+        "height": 46,
+        "href": "/users",
+        "name": "Users",
+        "spanDisplay": "block",
+        "spanFontSize": "0px",
+        "width": 48,
+        "x": 12,
+        "y": 434
+      },
+      {
+        "bottom": 531,
+        "current": null,
+        "height": 46,
+        "href": "/operations",
+        "name": "Operations",
+        "spanDisplay": "block",
+        "spanFontSize": "0px",
+        "width": 48,
+        "x": 12,
+        "y": 485
+      }
+    ],
+    "sidebar": {
+      "className": "sidebar",
+      "width": 72
+    },
+    "tooltips": [
+      {
+        "bottom": 525,
+        "height": 34,
+        "right": 142.328125,
+        "text": "Operations",
+        "width": 70.328125,
+        "x": 72,
+        "y": 491
+      }
+    ],
+    "viewport": {
+      "height": 667,
+      "width": 1067
+    }
+  },
+  {
+    "mode": "host-responsive-1067",
+    "body": {
+      "clientHeight": 667,
+      "clientWidth": 1067,
+      "scrollHeight": 667,
+      "scrollWidth": 1067
+    },
+    "links": [
+      {
+        "bottom": 132,
+        "current": null,
+        "height": 46,
+        "href": "/overview",
+        "name": "Overview",
+        "spanDisplay": "block",
+        "spanFontSize": "0px",
+        "width": 48,
+        "x": 12,
+        "y": 86
+      },
+      {
+        "bottom": 183,
+        "current": "page",
+        "height": 46,
+        "href": "/tenants",
+        "name": "Tenants",
+        "spanDisplay": "block",
+        "spanFontSize": "0px",
+        "width": 48,
+        "x": 12,
+        "y": 137
+      }
+    ],
+    "sidebar": {
+      "className": "sidebar",
+      "width": 72
+    },
+    "tooltips": [
+      {
+        "bottom": 177,
+        "height": 34,
+        "right": 124.4375,
+        "text": "Tenants",
+        "width": 52.4375,
+        "x": 72,
+        "y": 143
+      }
+    ],
+    "viewport": {
+      "height": 667,
+      "width": 1067
+    }
+  },
+  {
+    "mode": "host-expanded-1280",
+    "body": {
+      "clientHeight": 800,
+      "clientWidth": 1280,
+      "scrollHeight": 800,
+      "scrollWidth": 1280
+    },
+    "links": [
+      {
+        "bottom": 132,
+        "current": null,
+        "height": 46,
+        "href": "/overview",
+        "name": "Overview",
+        "spanDisplay": "block",
+        "spanFontSize": "14px",
+        "width": 170,
+        "x": 12,
+        "y": 86
+      },
+      {
+        "bottom": 183,
+        "current": "page",
+        "height": 46,
+        "href": "/tenants",
+        "name": "Tenants",
+        "spanDisplay": "block",
+        "spanFontSize": "14px",
+        "width": 170,
+        "x": 12,
+        "y": 137
+      }
+    ],
+    "sidebar": {
+      "className": "sidebar",
+      "width": 194
+    },
+    "tooltips": [
+      {
+        "bottom": 177,
+        "height": 34,
+        "right": 246.4375,
+        "text": "Tenants",
+        "width": 52.4375,
+        "x": 194,
+        "y": 143
+      }
+    ],
+    "viewport": {
+      "height": 800,
+      "width": 1280
+    }
+  },
+  {
+    "mode": "host-manual-1280",
+    "body": {
+      "clientHeight": 800,
+      "clientWidth": 1280,
+      "scrollHeight": 800,
+      "scrollWidth": 1280
+    },
+    "links": [
+      {
+        "bottom": 132,
+        "current": null,
+        "height": 46,
+        "href": "/overview",
+        "name": "Overview",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 86
+      },
+      {
+        "bottom": 183,
+        "current": "page",
+        "height": 46,
+        "href": "/tenants",
+        "name": "Tenants",
+        "spanDisplay": "none",
+        "spanFontSize": "14px",
+        "width": 48,
+        "x": 12,
+        "y": 137
+      }
+    ],
+    "sidebar": {
+      "className": "sidebar collapsed",
+      "width": 72
+    },
+    "tooltips": [
+      {
+        "bottom": 177,
+        "height": 34,
+        "right": 124.4375,
+        "text": "Tenants",
+        "width": 52.4375,
+        "x": 72,
+        "y": 143
+      }
+    ],
+    "viewport": {
+      "height": 800,
+      "width": 1280
+    }
+  }
+]

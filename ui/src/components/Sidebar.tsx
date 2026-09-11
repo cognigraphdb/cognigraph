@@ -12,6 +12,7 @@ import {
   SidebarSimple,
   UsersThree,
 } from "@phosphor-icons/react";
+import { Tooltip } from "antd";
 import { NavLink } from "react-router";
 import { routeAccess } from "../lib/access.ts";
 import type { HealthSnapshot } from "../types.ts";
@@ -54,14 +55,16 @@ export function Sidebar({ collapsed, health, onToggle }: SidebarProps) {
 
       <nav className="primary-nav" aria-label="Primary navigation">
         {items.map(({ label, path, icon: Icon }) => (
-          <NavLink
-            className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}
-            key={path}
-            to={path}
-          >
-            <Icon aria-hidden="true" size={21} />
-            <span>{label}</span>
-          </NavLink>
+          <Tooltip key={path} placement="right" title={label} trigger={["hover", "focus"]}>
+            <NavLink
+              aria-label={label}
+              className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}
+              to={path}
+            >
+              <Icon aria-hidden="true" size={21} />
+              <span>{label}</span>
+            </NavLink>
+          </Tooltip>
         ))}
       </nav>
 
