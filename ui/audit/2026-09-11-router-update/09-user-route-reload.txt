@@ -1,0 +1,62 @@
+Browser tab: 37, Title: "CogniGraph — Users", URL: "http://127.0.0.1:38496/users/admin".
+1 AXWebArea CogniGraph — Users, URL: 127.0.0.1:38496/users/admin
+	2 container root
+		3 container
+			4 container CogniGraph
+			5 container Primary navigation
+				6 link Description: Overview, Value: 127.0.0.1:38496/overview
+				7 link Description: Collections, Value: 127.0.0.1:38496/collections
+				8 link Description: Query, Value: 127.0.0.1:38496/query
+				9 link Description: Graph, Value: 127.0.0.1:38496/graph
+				10 link Description: Review, Value: 127.0.0.1:38496/review
+				11 link Description: Construct, Value: 127.0.0.1:38496/construct
+				12 link Description: Lua, Value: 127.0.0.1:38496/lua
+				13 link Description: Users, Value: 127.0.0.1:38496/users
+				14 link Description: Operations, Value: 127.0.0.1:38496/operations
+			15 text System healthy Version  2.7.0
+			16 button Collapse sidebar
+		17 container
+			18 text Tenant default Server 127.0.0.1:38496 Healthy Sep 11, 2026, 8:28 PM admin
+			19 button Sign out
+		20 container
+			21 text Access / users / admin
+			22 heading admin, Value: 1
+				23 text admin
+			24 text Full data access plus user, cache, and snapshot administration.
+			25 button (disabled) Delete user
+				26 image
+				27 text Delete user
+			28 button Refresh
+				29 image
+				30 text Refresh
+			31 definition list
+				32 container Role
+					33 text Role
+				34 text Admin
+				35 container Tenant
+					36 text Tenant
+				37 text default
+				38 container Key
+					39 text Key
+				40 text c28a75b0-e198-4008-b505-eb1799d1e4c0
+			41 heading API tokens, Value: 2
+				42 text API tokens
+			43 button New token
+				44 image
+				45 text New token
+			46 text 0 tokens
+			47 table
+				48 row
+					49 cell
+						50 text Name
+					51 cell
+						52 text Key
+					53 cell
+						54 text Created
+					55 cell
+						56 text Expires
+				57 row
+					58 cell
+						59 text No API tokens issued for this account
+
+The focused UI element is 1 AXWebArea CogniGraph — Users, URL: 127.0.0.1:38496/users/admin

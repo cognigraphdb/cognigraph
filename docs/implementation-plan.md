@@ -241,9 +241,23 @@ across expanded, manual and responsive collapse. Real Admin/HostAdmin journeys,
 keyboard navigation, role boundaries and scaled layouts pass; 161 UI tests pass.
 Two Open issues remain, both P2.
 
-Next, address the advisory-affected dependency ([CG-61](issues/CG-61.md)) and
-CI coverage ([CG-60](issues/CG-60.md)). Keep Docker publication preparation
-separate from this pending UI remediation.
+The [React Router update](../ui/audit/2026-09-11-router-update/audit.md) resolves
+[CG-61](issues/CG-61.md): the scoped 8.3.1 upgrade clears the dependency audit.
+Frozen installation, UI lint/types, 161 tests and production build pass, along
+with live login/deep links, encoded keys, browser history, refresh, role landings
+and Rust-served asset checks. One Open issue remains, P2.
+
+The [shared CI and browser gate](../ui/audit/2026-09-11-ui-ci/audit.md) resolves
+[CG-60](issues/CG-60.md): CI and pre-push include the frozen UI install, checks,
+unit tests, build and nine Chromium cases against disposable Community/Enterprise
+Native APIs. Broken source/bundle candidates fail; provider qualification is
+explicitly excluded. The complete local CI gate passes. The registry now has
+62 Resolved, 1 Closed without change and 0 Open issues.
+
+The full UI review's defect list is closed. Next, prepare the pending changes
+for the separately authorized commit/publication workflow, then prioritize
+operator journeys from the UI tracker. This checkpoint does not publish Docker
+images, run remote CI or qualify the research holdout.
 
 The console does not yet provide complete durable-job, signed-governance,
 promotion/repair/deployment, side-view or tenant-quota management workflows. The

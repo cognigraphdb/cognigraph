@@ -126,8 +126,10 @@ resolves CG-56. The [table keyboard-access batch](../../ui/audit/2026-09-11-tabl
 resolves CG-57. The [space guidance and catalog-state batch](../../ui/audit/2026-09-11-space-guidance/audit.md)
 resolves CG-58. The [collection search/filter scope batch](../../ui/audit/2026-09-11-collection-search-scope/audit.md)
 resolves CG-59. The [sidebar naming fix](../../ui/audit/2026-09-11-sidebar-names/audit.md)
-resolves CG-63. Current registry: **60 Resolved, 1 Closed without change, and
-2 Open issues (all P2)**.
+resolves CG-63. The [React Router update](../../ui/audit/2026-09-11-router-update/audit.md)
+resolves CG-61. The [shared UI CI and browser gate](../../ui/audit/2026-09-11-ui-ci/audit.md)
+resolves CG-60. Current registry: **62 Resolved, 1 Closed without change, and
+0 Open issues**.
 
 ## Conventions
 
@@ -200,8 +202,8 @@ resolves CG-63. Current registry: **60 Resolved, 1 Closed without change, and
 | [CG-57](CG-57.md) | P2 | Resolved | Clickable table rows cannot be opened with the keyboard |
 | [CG-58](CG-58.md) | P2 | Resolved | Review empty-state guidance recommends a forbidden space creation path |
 | [CG-59](CG-59.md) | P2 | Resolved | Collection search and filters present partial matches as complete results |
-| [CG-60](CG-60.md) | P2 | Open | CI omits the UI checks and browser regression coverage |
-| [CG-61](CG-61.md) | P2 | Open | React Router lockfile retains an advisory-affected release |
+| [CG-60](CG-60.md) | P2 | Resolved | CI omits the UI checks and browser regression coverage |
+| [CG-61](CG-61.md) | P2 | Resolved | React Router lockfile retains an advisory-affected release |
 | [CG-62](CG-62.md) | P1 | Resolved | Plain-text construction imports reuse chunk IDs and replace earlier evidence |
 | [CG-63](CG-63.md) | P2 | Resolved | Collapsed sidebar removes the accessible names of navigation links |
 

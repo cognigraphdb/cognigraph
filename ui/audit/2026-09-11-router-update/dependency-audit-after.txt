@@ -1,0 +1,5 @@
+bun audit v1.4.2 (744846f84)
+
+No vulnerabilities found (checked 213 packages) [927.00ms]
+
+Exit code: 0

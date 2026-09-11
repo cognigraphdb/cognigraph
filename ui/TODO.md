@@ -16,9 +16,10 @@ The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
 recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
 explicit untested boundaries. The historical Done entries below describe
 implementation checkpoints; they do not establish current acceptance. The UI
-suite now passes 161 helper tests after CG-49–CG-59/CG-62/CG-63 remediation,
-but CI omits it and no browser regression suite exists yet. Keep defect status
-in the linked registry rather than duplicating it.
+suite now passes 161 unit tests after remediation of CG-49–CG-63. CI includes
+those checks and nine Chromium cases against real disposable Community/Enterprise
+APIs. The review's defect list is closed; broader backend workflows below remain
+planned scope. Keep defect status in the linked registry.
 
 - [x] [Empty/error guidance CG-58](../docs/issues/CG-58.md): supported draft
   review/acceptance, verified fresh-tenant emptiness and shared catalog notices
@@ -73,9 +74,16 @@ in the linked registry rather than duplicating it.
   accessible names and hover/focus labels in every sidebar mode.
   [Browser evidence](audit/2026-09-11-sidebar-names/audit.md) covers all Admin
   links, host-only Tenants, keyboard/pointer interaction and scaled layouts.
-  Two P2s remain open.
-- [ ] Establish [UI CI/browser coverage CG-60](../docs/issues/CG-60.md) and
-  refresh the [advisory-affected dependency CG-61](../docs/issues/CG-61.md).
+  That checkpoint left two P2s open.
+- [x] [Dependency advisory CG-61](../docs/issues/CG-61.md): React Router 8.3.1,
+  clean dependency audit and unchanged application source. [Routing evidence](audit/2026-09-11-router-update/audit.md)
+  covers production login/deep links, history, refresh, role landings and assets.
+  That checkpoint left one P2 open.
+- [x] [UI CI/browser coverage CG-60](../docs/issues/CG-60.md): shared CI and
+  pre-push run the UI suite and deterministic Community/Enterprise browser cases.
+  [Qualification evidence](audit/2026-09-11-ui-ci/audit.md) records nine browser
+  passes, the complete local CI gate, failed negative candidates and explicit
+  provider exclusions. All findings from the review are closed.
 
 ## Backend workflows not yet covered by the console
 

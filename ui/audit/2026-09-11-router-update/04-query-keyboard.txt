@@ -1,0 +1,65 @@
+Browser tab: 37, Title: "CogniGraph — Query", URL: "http://127.0.0.1:38496/query".
+0 AXWebArea CogniGraph — Query, URL: 127.0.0.1:38496/query
+	1 container
+		2 container root
+			3 container
+				4 container CogniGraph
+				5 container Primary navigation
+					6 link Description: Overview, Value: 127.0.0.1:38496/overview
+					7 link Description: Collections, Value: 127.0.0.1:38496/collections
+					8 link Description: Query, Value: 127.0.0.1:38496/query
+					9 link Description: Graph, Value: 127.0.0.1:38496/graph
+					10 link Description: Review, Value: 127.0.0.1:38496/review
+					11 link Description: Construct, Value: 127.0.0.1:38496/construct
+					12 link Description: Lua, Value: 127.0.0.1:38496/lua
+					13 link Description: Users, Value: 127.0.0.1:38496/users
+					14 link Description: Operations, Value: 127.0.0.1:38496/operations
+				15 text System healthy Version  2.7.0
+				16 button Collapse sidebar
+			17 container
+				18 text Tenant default Server 127.0.0.1:38496 Healthy Sep 11, 2026, 8:27 PM admin
+				19 button Sign out
+			20 container
+				21 text Developer tools / query
+				22 heading Query console, Value: 1
+					23 text Query console
+				24 text Read-only CGQL plus the retrieval modes: semantic, hybrid, raw-vector, and graph-augmented search.
+				25 tab group
+					26 container
+						27 tab (selected, settable, boolean) CGQL, Value: 1, ID: rc-tabs-3-tab-cgql
+						28 tab (selectable, settable, boolean) Semantic, Value: 0, ID: rc-tabs-3-tab-semantic
+						29 tab (selectable, settable, boolean) Hybrid, Value: 0, ID: rc-tabs-3-tab-hybrid
+						30 tab (selectable, settable, boolean) Vector, Value: 0, ID: rc-tabs-3-tab-vector
+						31 tab (selectable, settable, boolean) Graph-augmented, Value: 0, ID: rc-tabs-3-tab-graph-augmented
+				32 container Description: CGQL, ID: rc-tabs-3-panel-cgql
+					33 container
+						34 heading Query, Value: 2
+							35 text Query
+						36 container
+							37 text entry area (settable) Description: CGQL query, Value: FOR d IN documents
+  SORT d.updatedAt DESC
+  LIMIT 25
+  RETURN d
+								38 container
+									39 text FOR d IN documents
+								40 container
+									41 text SORT d . updatedAt DESC
+								42 container
+									43 text LIMIT 25
+								44 container
+									45 text RETURN d
+						46 text Validated against the active CGQL engine after you pause ⌘ Enter or Ctrl Enter
+						47 container
+							48 text Bind variables :
+						49 text entry area (settable) {}
+						50 button Run query
+						51 text Recent
+					52 container
+						53 heading Result, Value: 2
+							54 text Result
+						55 text Run the request to see results. Results clear when inputs change.
+		56 container
+			57 container Query
+				58 text Query
+
+The focused UI element is 8 link Description: Query, URL: 127.0.0.1:38496/query

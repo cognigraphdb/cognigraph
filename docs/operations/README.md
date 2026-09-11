@@ -4,6 +4,7 @@ Run, configure and recover CogniGraph. Commands run from the code repository roo
 
 - [Running, monitoring and capacity](running.md)
 - [Local verification and push gates](push.md)
+- [Console CI and browser regression tests](ui-testing.md)
 - [Docker image publication](docker-publishing.md)
 - [Configuration reference](configuration.md)
 - [Authentication, tokens and tenancy](authentication.md)

@@ -1,0 +1,12 @@
+Bundled 1735 modules in 121ms
+
+  index-vqzkrjph.js               3.53 MB    (entry point)
+  index.html                      0.53 KB    (entry point)
+  index-0pnq4bz5.css              36.54 KB   (asset)
+  cognigraph-mark-b1k1wyxb.svg    1.59 KB    (asset)
+  document-t810r2m7.svg           458 bytes  (asset)
+  document-selected-76325wwg.svg  464 bytes  (asset)
+
+$ rm -rf dist && bun build ./index.html --minify --outdir=dist --public-path=/ --define process.env.COGNIGRAPH_UI_DEV_API_PORT:null
+
+Exit code: 0

@@ -48,7 +48,7 @@ def run(gate, filename, remote, stdin, head):
     gate.require(packages and all(p['version'] == expected for p in packages), 'Refresh Cargo.lock versions')
     gate.require(any(f'- Status: v{expected}' in p.read_text()
                      for p in (gate.ROOT / 'docs/changelog').glob('*.md')), 'Missing initial release record')
-    for suite in ('ci', 'docker', 'ui'):
+    for suite in ('ci', 'docker'):
         gate.verify.run(suite)
     gate.clean()
     gate.require(gate.output('git', 'rev-parse', 'HEAD') == head, 'Candidate changed during verification')

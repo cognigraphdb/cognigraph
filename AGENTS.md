@@ -155,6 +155,8 @@ failing hook with `--no-verify` or disable it to publish an unchecked candidate.
    python3 scripts/check-editions.py
    cargo clippy --all-targets --features enterprise -- -D warnings
    cargo test --all --features enterprise
+   python3 scripts/verify.py --suite ui
+   python3 scripts/verify.py --suite ui-browser
    ```
 
    For a push to `main`, also run the CI Docker build:
@@ -163,6 +165,10 @@ failing hook with `--no-verify` or disable it to publish an unchecked candidate.
    regression checks for affected behavior. A failed or unavailable required check
    blocks the push; report intentional CI service skips separately from executed
    live coverage. Local success does not establish a remote CI result.
+
+   The shared CI suite includes both UI suites above on every run. Follow the
+   [UI testing guide](docs/operations/ui-testing.md) for Bun/Chromium setup and
+   the browser suite's disposable Community/Enterprise scope.
 4. Re-check incoming PRs and the target remote head immediately before pushing.
    If new incoming work changes the candidate, process it and repeat the checks
    affected by that change. Report the final version, commit, PR dispositions and

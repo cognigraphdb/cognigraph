@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Shared local/CI checks. No dependency updates or automatic fixes."""
 import argparse
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -11,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def commands(suite):
     if suite == 'ci':
-        return [
+        return commands('ui') + [
             (ROOT, ['cargo', 'fmt', '--all', '--', '--check']),
             (ROOT, [sys.executable, '-m', 'unittest', 'discover', '-s', 'scripts/tests']),
             (ROOT, [sys.executable, 'scripts/check-server-modularity.py']),
@@ -23,6 +24,7 @@ def commands(suite):
             (ROOT, ['cargo', 'test', '--all']),
             (ROOT, ['cargo', 'clippy', '--all-targets', '--features', 'enterprise', '--', '-D', 'warnings']),
             (ROOT, ['cargo', 'test', '--all', '--features', 'enterprise']),
+            *commands('ui-browser'),
         ]
     if suite == 'docker':
         return [(ROOT, command) for command in docker_images.build_commands()] + [
@@ -32,13 +34,19 @@ def commands(suite):
                 (ROOT / 'ui', ['bun', 'run', 'check']),
                 (ROOT / 'ui', ['bun', 'test']),
                 (ROOT / 'ui', ['bun', 'run', 'build'])]
+    if suite == 'ui-browser':
+        return [(ROOT, [sys.executable, 'scripts/ui_browser.py'])]
     raise ValueError(f'Unknown suite: {suite}')
 
 
 def run(suite):
+    environment = os.environ.copy()
+    if suite == 'ci':
+        environment['COGNIGRAPH_LIVE_LLM'] = '0'
+        print('CI excludes live LLM loops and opt-in embedding-provider qualification.', flush=True)
     for directory, command in commands(suite):
         print(f'RUN [{suite}] {" ".join(command)}', flush=True)
-        result = subprocess.run(command, cwd=directory, check=False)
+        result = subprocess.run(command, cwd=directory, env=environment, check=False)
         if result.returncode:
             raise RuntimeError(f'FAIL: {" ".join(command)} (exit {result.returncode})')
     print(f'PASS [{suite}]', flush=True)
@@ -46,7 +54,7 @@ def run(suite):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--suite', choices=('ci', 'docker', 'ui'), default='ci')
+    parser.add_argument('--suite', choices=('ci', 'docker', 'ui', 'ui-browser'), default='ci')
     args = parser.parse_args()
     try:
         run(args.suite)

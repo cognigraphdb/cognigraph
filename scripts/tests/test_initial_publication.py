@@ -73,7 +73,7 @@ class InitialPublication(unittest.TestCase):
 
     def test_single_root_runs_every_suite(self):
         self.run_gate()
-        self.assertEqual(self.verify.call_args_list, [call('ci'), call('docker'), call('ui')])
+        self.assertEqual(self.verify.call_args_list, [call('ci'), call('docker')])
         self.assertEqual(self.git('ls-remote', 'origin'), '')
 
     def test_existing_history_is_rejected(self):
@@ -140,7 +140,7 @@ class InitialPublication(unittest.TestCase):
 
     def test_manifest_ref_identity_and_pr_drift_are_rejected(self):
         def change_manifest(suite):
-            if suite == 'ui':
+            if suite == 'docker':
                 self.path.write_text('{}')
         self.verify.side_effect = change_manifest
         with self.assertRaisesRegex(RuntimeError, 'manifest changed'):

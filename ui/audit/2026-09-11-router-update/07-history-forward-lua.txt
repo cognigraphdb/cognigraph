@@ -1,0 +1,52 @@
+Browser tab: 37, Title: "CogniGraph — Lua", URL: "http://127.0.0.1:38496/lua".
+0 AXWebArea CogniGraph — Lua, URL: 127.0.0.1:38496/lua
+	1 container
+		2 container root
+			3 container
+				4 container CogniGraph
+				5 container Primary navigation
+					6 link Description: Overview, Value: 127.0.0.1:38496/overview
+					7 link Description: Collections, Value: 127.0.0.1:38496/collections
+					8 link Description: Query, Value: 127.0.0.1:38496/query
+					9 link Description: Graph, Value: 127.0.0.1:38496/graph
+					10 link Description: Review, Value: 127.0.0.1:38496/review
+					11 link Description: Construct, Value: 127.0.0.1:38496/construct
+					12 link Description: Lua, Value: 127.0.0.1:38496/lua
+					13 link Description: Users, Value: 127.0.0.1:38496/users
+					14 link Description: Operations, Value: 127.0.0.1:38496/operations
+				15 text System healthy Version  2.7.0
+				16 button Collapse sidebar
+			17 container
+				18 text Tenant default Server 127.0.0.1:38496 Healthy Sep 11, 2026, 8:28 PM admin
+				19 button Sign out
+			47 container
+				48 text Developer tools / scripting
+				49 heading Lua console, Value: 1
+					50 text Lua console
+				51 text Run sandboxed Lua with read and write access to your tenant. Execution is instruction-limited; filesystem, network and OS access are unavailable.
+				52 heading Script, Value: 2
+					53 text Script
+				54 container
+					55 text entry area (settable) Description: Lua script, Value: -- Sandboxed Lua with the graph API: no filesystem, network, or OS.
+-- graph.query() speaks the backend's language (CGQL on native).
+return { backend = graph.backend, language = graph.query_language }
+						56 text -- Sandboxed Lua with the graph API: no filesystem, network, or OS.
+						57 text -- graph.query() speaks the backend's language (CGQL on native).
+						58 container
+							59 text return  { backend = graph.backend, language = graph.query_language }
+				60 text graph API: query · find_documents · traverse · neighbors · …
+				61 text ⌘ Enter or Ctrl Enter
+				62 button Run script
+				63 text Snippets
+				64 button Backend info
+				65 button Find documents
+				66 button Run a query
+				67 button Traverse
+				68 heading Result, Value: 2
+					69 text Result
+				70 text Run the request to see results. Results clear when inputs change.
+		44 container
+			45 container Lua
+				46 text Lua
+
+The focused UI element is 12 link Description: Lua, URL: 127.0.0.1:38496/lua

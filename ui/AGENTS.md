@@ -44,6 +44,11 @@ bun run build
 - Instruction/documentation-only edits use the root documentation checks.
   They do not require starting servers or rerunning the UI/Rust suites unless
   runnable behavior changes. Changes to Rust also require the root Rust gates.
+- CI and every pre-push gate also execute the deterministic Chromium suite
+  against disposable Community/Enterprise APIs. Follow the
+  [UI testing guide](../docs/operations/ui-testing.md) for setup and commands.
+  Extend `e2e/` for relevant regressions; keep provider calls and research
+  holdouts outside routine browser coverage. Bun unit discovery stays in `src/`.
 
 ## Visual Direction And Components
 

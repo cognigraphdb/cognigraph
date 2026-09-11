@@ -1,0 +1,105 @@
+{
+  "count": 10,
+  "events": [
+    {
+      "at": 1789147727,
+      "latency_ms": 0,
+      "message": "Authentication error: missing bearer token",
+      "method": "GET",
+      "path": "/api/auth/session",
+      "seq": 9,
+      "status": 401,
+      "tenant": null
+    },
+    {
+      "at": 1789147615,
+      "latency_ms": 13,
+      "message": "Authentication error: invalid credentials",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "seq": 8,
+      "status": 401,
+      "tenant": null
+    },
+    {
+      "at": 1789147610,
+      "latency_ms": 0,
+      "message": "Authentication error: missing bearer token",
+      "method": "GET",
+      "path": "/api/auth/session",
+      "seq": 7,
+      "status": 401,
+      "tenant": null
+    },
+    {
+      "at": 1789147603,
+      "latency_ms": 0,
+      "message": "Authentication error: missing bearer token",
+      "method": "GET",
+      "path": "/api/collections",
+      "seq": 6,
+      "status": 401,
+      "tenant": null
+    },
+    {
+      "at": 1789147603,
+      "latency_ms": 0,
+      "message": "Forbidden: role `HostAdmin` lacks the required scope",
+      "method": "GET",
+      "path": "/api/collections",
+      "seq": 5,
+      "status": 403,
+      "tenant": null
+    },
+    {
+      "at": 1789147603,
+      "latency_ms": 0,
+      "message": "Forbidden: role `Admin` lacks the required scope",
+      "method": "GET",
+      "path": "/api/tenants",
+      "seq": 4,
+      "status": 403,
+      "tenant": null
+    },
+    {
+      "at": 1789147595,
+      "latency_ms": 0,
+      "message": "Authentication error: missing bearer token",
+      "method": "GET",
+      "path": "/api/auth/session",
+      "seq": 3,
+      "status": 401,
+      "tenant": null
+    },
+    {
+      "at": 1789147580,
+      "latency_ms": 0,
+      "message": "Authentication error: missing bearer token",
+      "method": "GET",
+      "path": "/api/auth/session",
+      "seq": 2,
+      "status": 401,
+      "tenant": null
+    },
+    {
+      "at": 1789147565,
+      "latency_ms": 0,
+      "message": "Authentication error: missing bearer token",
+      "method": "GET",
+      "path": "/api/auth/session",
+      "seq": 1,
+      "status": 401,
+      "tenant": null
+    },
+    {
+      "at": 1789147565,
+      "latency_ms": 0,
+      "message": "Authentication error: missing bearer token",
+      "method": "GET",
+      "path": "/api/auth/session",
+      "seq": 0,
+      "status": 401,
+      "tenant": null
+    }
+  ]
+}

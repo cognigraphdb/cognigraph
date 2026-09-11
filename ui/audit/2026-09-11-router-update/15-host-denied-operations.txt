@@ -1,0 +1,19 @@
+Browser tab: 37, Title: "CogniGraph — Operations", URL: "http://127.0.0.1:38496/operations".
+1 AXWebArea CogniGraph — Operations, URL: 127.0.0.1:38496/operations
+	2 container root
+		3 container
+			4 image CogniGraph
+			5 container Primary navigation
+				6 link Description: Overview, Value: 127.0.0.1:38496/overview
+				7 link Description: Tenants, Value: 127.0.0.1:38496/tenants
+			8 text System healthy Version  2.7.0
+			9 button Collapse sidebar
+		10 container
+			11 text Tenant default Server 127.0.0.1:38496 Healthy Sep 11, 2026, 8:28 PM host-admin
+			12 button Sign out
+		13 container
+			14 image Unauthorized
+			15 text Page unavailable This page is unavailable for your current role.
+			16 button Open your workspace
+
+The focused UI element is 1 AXWebArea CogniGraph — Operations, URL: 127.0.0.1:38496/operations

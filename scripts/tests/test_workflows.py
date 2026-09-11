@@ -45,6 +45,30 @@ class ProtectFiles(unittest.TestCase):
 
 
 class Verification(unittest.TestCase):
+    def test_ci_always_includes_ui_and_both_edition_browser_runner(self):
+        ui = verify.commands('ui')
+        ci = verify.commands('ci')
+        self.assertEqual(ci[:len(ui)], ui)
+        self.assertIn((ROOT / 'ui', ['bun', 'install', '--frozen-lockfile']), ci)
+        self.assertIn((ROOT / 'ui', ['bun', 'run', 'check']), ci)
+        self.assertIn((ROOT / 'ui', ['bun', 'test']), ci)
+        self.assertIn((ROOT / 'ui', ['bun', 'run', 'build']), ci)
+        self.assertEqual(ci[-1], (ROOT, [sys.executable, 'scripts/ui_browser.py']))
+
+    def test_ui_install_failure_blocks_ci_before_rust_or_browser_checks(self):
+        with patch.object(verify.subprocess, 'run', return_value=subprocess.CompletedProcess([], 9)) as run:
+            with self.assertRaisesRegex(RuntimeError, 'frozen-lockfile.*exit 9'):
+                verify.run('ci')
+        run.assert_called_once()
+
+    def test_ci_disables_inherited_live_llm_opt_in_without_changing_parent_environment(self):
+        with patch.dict(os.environ, {'COGNIGRAPH_LIVE_LLM': '1'}), \
+             patch.object(verify, 'commands', return_value=[(ROOT, ['synthetic-check'])]), \
+             patch.object(verify.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0)) as run:
+            verify.run('ci')
+            self.assertEqual(run.call_args.kwargs['env']['COGNIGRAPH_LIVE_LLM'], '0')
+            self.assertEqual(os.environ['COGNIGRAPH_LIVE_LLM'], '1')
+
     def test_failure_stops_later_commands(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

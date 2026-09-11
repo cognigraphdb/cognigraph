@@ -1,0 +1,203 @@
+{
+  "origin": "http://127.0.0.1:38496",
+  "backend": "Native",
+  "edition": "Enterprise",
+  "fixtures": {
+    "collection": "qa_routes",
+    "keys": [
+      "item-001",
+      "item-002",
+      "item-003",
+      "item-004",
+      "item-005",
+      "item-006",
+      "item-007",
+      "item-008",
+      "item-009",
+      "item-010",
+      "item-011",
+      "item-012",
+      "item-013",
+      "item-014",
+      "item-015",
+      "item-016",
+      "item-017",
+      "item-018",
+      "item-019",
+      "item-020",
+      "item-021",
+      "item-022",
+      "item-023",
+      "item-024",
+      "item-025",
+      "item-026",
+      "item-027",
+      "item-028",
+      "item-029",
+      "item-030",
+      "route+sample"
+    ]
+  },
+  "http_checks": [
+    {
+      "path": "/api/documents/qa_routes/item-030",
+      "actor": "Admin",
+      "status": 200,
+      "content_type": "application/json",
+      "body": {
+        "_id": "qa_routes/item-030",
+        "_key": "item-030",
+        "created_at": "2026-09-11T17:26:43.609601+00:00",
+        "label": "Synthetic routing fixture",
+        "ordinal": 30,
+        "updated_at": "2026-09-11T17:26:43.609601+00:00"
+      }
+    },
+    {
+      "path": "/api/documents/qa_routes/route%2Bsample",
+      "actor": "Admin",
+      "status": 200,
+      "content_type": "application/json",
+      "body": {
+        "_id": "qa_routes/route+sample",
+        "_key": "route+sample",
+        "created_at": "2026-09-11T17:26:43.613632+00:00",
+        "label": "Synthetic routing fixture",
+        "ordinal": 31,
+        "updated_at": "2026-09-11T17:26:43.613632+00:00"
+      }
+    },
+    {
+      "path": "/api/collections",
+      "actor": "Admin",
+      "status": 200,
+      "content_type": "application/json",
+      "body": {
+        "collections": [
+          {
+            "collection_type": "document",
+            "count": 31,
+            "name": "qa_routes"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "path": "/api/tenants",
+      "actor": "Admin",
+      "status": 403,
+      "content_type": "application/json",
+      "body": {
+        "error": "Forbidden: role `Admin` lacks the required scope"
+      }
+    },
+    {
+      "path": "/api/collections",
+      "actor": "HostAdmin",
+      "status": 403,
+      "content_type": "application/json",
+      "body": {
+        "error": "Forbidden: role `HostAdmin` lacks the required scope"
+      }
+    },
+    {
+      "path": "/api/tenants",
+      "actor": "HostAdmin",
+      "status": 200,
+      "content_type": "application/json",
+      "body": {
+        "count": 0,
+        "open_stores": 0,
+        "tenants": []
+      }
+    },
+    {
+      "path": "/api/collections",
+      "actor": "anonymous",
+      "status": 401,
+      "content_type": "application/json",
+      "body": {
+        "error": "Authentication error: missing bearer token"
+      }
+    },
+    {
+      "path": "/health",
+      "actor": "anonymous",
+      "status": 200,
+      "content_type": "application/json",
+      "body": {
+        "edition": "enterprise",
+        "service": "cognigraph",
+        "status": "ok",
+        "version": "2.7.0"
+      }
+    }
+  ],
+  "static_routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "content_type": "text/html",
+      "matches_production_html": true
+    },
+    {
+      "path": "/collections",
+      "status": 200,
+      "content_type": "text/html",
+      "matches_production_html": true
+    },
+    {
+      "path": "/collections/qa_routes?doc=item-030",
+      "status": 200,
+      "content_type": "text/html",
+      "matches_production_html": true
+    },
+    {
+      "path": "/collections/qa_routes?doc=route%2Bsample",
+      "status": 200,
+      "content_type": "text/html",
+      "matches_production_html": true
+    },
+    {
+      "path": "/query",
+      "status": 200,
+      "content_type": "text/html",
+      "matches_production_html": true
+    },
+    {
+      "path": "/review?status=all",
+      "status": 200,
+      "content_type": "text/html",
+      "matches_production_html": true
+    },
+    {
+      "path": "/users/admin",
+      "status": 200,
+      "content_type": "text/html",
+      "matches_production_html": true
+    },
+    {
+      "path": "/tenants",
+      "status": 200,
+      "content_type": "text/html",
+      "matches_production_html": true
+    }
+  ],
+  "assets": [
+    {
+      "path": "/index-0pnq4bz5.css",
+      "status": 200,
+      "content_type": "text/css",
+      "sha256": "081e4446ae09cdeffea1a57f4ff8ffc10fc77785c50170cf7347bb04f5734648",
+      "matches_dist": true
+    },
+    {
+      "path": "/index-vqzkrjph.js",
+      "status": 200,
+      "content_type": "text/javascript",
+      "sha256": "9080c316cc584d9a37f0c5b86e93e8df5a23f3c8cfc01498315620c63099f982",
+      "matches_dist": true
+    }
+  ]
+}

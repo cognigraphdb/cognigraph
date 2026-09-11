@@ -1,0 +1,53 @@
+Browser tab: 37, Title: "CogniGraph — Collections", URL: "http://127.0.0.1:38496/collections".
+1 AXWebArea CogniGraph — Collections, URL: 127.0.0.1:38496/collections
+	2 container root
+		3 container
+			4 container CogniGraph
+			5 container Primary navigation
+				6 link Description: Overview, Value: 127.0.0.1:38496/overview
+				7 link Description: Collections, Value: 127.0.0.1:38496/collections
+				8 link Description: Query, Value: 127.0.0.1:38496/query
+				9 link Description: Graph, Value: 127.0.0.1:38496/graph
+				10 link Description: Review, Value: 127.0.0.1:38496/review
+				11 link Description: Construct, Value: 127.0.0.1:38496/construct
+				12 link Description: Lua, Value: 127.0.0.1:38496/lua
+				13 link Description: Users, Value: 127.0.0.1:38496/users
+				14 link Description: Operations, Value: 127.0.0.1:38496/operations
+			15 text System healthy Version  2.7.0
+			16 button Collapse sidebar
+		17 container
+			18 text Tenant default Server 127.0.0.1:38496 Healthy Sep 11, 2026, 8:28 PM admin
+			19 button Sign out
+		20 container
+			21 text Data / collections
+			22 heading Collections, Value: 1
+				23 text Collections
+			24 text Browse and edit application documents; explore edge collections on the Graph page.
+			25 button Create collection
+				26 image
+				27 text Create collection
+			28 button Refresh
+				29 image
+				30 text Refresh
+			31 text 1 collection
+			32 table
+				33 row
+					34 cell
+						35 text Collection
+					36 cell
+						37 text Type
+					38 cell
+						39 text Entries
+				40 row
+					41 cell
+						42 link Description: Open collection qa_routes, Value: 127.0.0.1:38496/collections/qa_routes
+					43 cell
+						44 text Documents
+					45 cell
+						46 text 31
+					47 cell
+						48 button Delete
+							49 image
+							50 text Delete
+
+The focused UI element is 1 AXWebArea CogniGraph — Collections, URL: 127.0.0.1:38496/collections

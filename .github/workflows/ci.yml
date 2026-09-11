@@ -1,11 +1,8 @@
 name: CI
 
-# Manual-only during active development. The local commit gates (cargo fmt
-# --check, cargo clippy -D warnings, cargo test --all) are the contract on every
-# change, so running the whole workspace build on each push/PR spends Actions
-# minutes for a signal we already have. Trigger deliberately — from the Actions
-# tab or `gh workflow run ci.yml` — before a release or when CI-specific
-# verification is wanted.
+# Manual-only during active development. The shared local pre-push gate includes
+# Rust, UI and real Community/Enterprise browser regressions. Trigger deliberately
+# from Actions or `gh workflow run ci.yml` for remote verification/publication.
 on:
   workflow_dispatch:
     inputs:
@@ -28,9 +25,9 @@ env:
 
 jobs:
   gates:
-    name: fmt + Community and Enterprise checks
+    name: Rust + UI + Community and Enterprise browser checks
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     steps:
       - name: Refuse publication outside the official main branch
         if: inputs.publish_images
@@ -49,12 +46,31 @@ jobs:
       - name: Cache cargo
         uses: Swatinem/rust-cache@v2
 
-      # The exact local commit gates, exit-code checked. Environment-gated
-      # tests (live LLM loops need COGNIGRAPH_LIVE_LLM=1 + keys, Arango
-      # conformance needs ARANGO_PASSWORD, live embedding providers need
-      # API keys) self-skip here, so the suite is deterministic.
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install locked UI dependencies and Chromium system dependencies
+        working-directory: ui
+        run: |
+          bun install --frozen-lockfile
+          bun --bun x --no-install playwright install --with-deps chromium
+
+      # The exact shared local gates, exit-code checked. Environment-gated
+      # Arango tests require ARANGO_PASSWORD. The runner disables live LLM loops;
+      # embedding-provider tests require explicit --ignored qualification.
       - name: Shared local and CI checks
         run: python3 scripts/verify.py --suite ci
+
+      - name: Browser regression results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ui-browser-results
+          path: ui/test-results/
+          if-no-files-found: ignore
+          retention-days: 7
 
   docker:
     name: Docker builds, runtime checks and optional publication

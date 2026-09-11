@@ -7,6 +7,7 @@ product change set. CI and local checks use the same runner:
 python3 scripts/verify.py --suite ci
 python3 scripts/verify.py --suite docker
 python3 scripts/verify.py --suite ui
+python3 scripts/verify.py --suite ui-browser
 python3 scripts/install-hooks.py
 ```
 
@@ -19,7 +20,11 @@ The Docker suite builds the same Community and Enterprise images as CI and runs
 isolated packaged-server HTTP, authentication, edition and restart/persistence checks.
 CI image publication is a separate opt-in step described in
 [Docker image publication](docker-publishing.md). The UI suite uses the frozen Bun
-lockfile, Biome/TypeScript, tests and production build.
+lockfile, Biome/TypeScript, tests and production build. The CI suite always
+includes it, followed by deterministic Chromium regressions against separately
+built Community/Enterprise Native servers. Install Bun and the Playwright
+Chromium dependencies using the [UI testing guide](ui-testing.md) before the gate.
+No external API keys or existing databases are needed for browser coverage.
 
 ## What pre-push verifies
 
@@ -41,8 +46,9 @@ lockfile, Biome/TypeScript, tests and production build.
 
   Updating this file is not permission to invent a deferral. A changed PR head
   requires review again. Missing GitHub access blocks the gate.
-- The CI suite runs on every push; a branch push to `main` also runs the Docker
-  suite. Changes under `ui/` relative to the remote baseline add the UI suite.
+- The CI suite, including UI and browser regressions, runs on every push; a
+  branch push to `main` also runs the Docker suite. UI checks are not conditional
+  on the changed paths, and do not run a second time after the CI suite.
   Relevant real HTTP/browser tests are still required by the feature workflow;
   command success alone cannot prove those acceptance criteria.
 - After validation, the checkout, remote refs and open PR heads must remain

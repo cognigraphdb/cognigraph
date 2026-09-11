@@ -154,12 +154,10 @@ def main():
     updates = parse_updates(stdin, head)
     if not updates:
         return
-    repository, state, prs, baselines = preflight(remote, updates, head)
+    repository, state, prs, _ = preflight(remote, updates, head)
     verify.run('ci')
     if any(ref == 'refs/heads/main' for _, _, ref, _ in updates):
         verify.run('docker')
-    if any(output('git', 'diff', '--name-only', base, head, '--', 'ui') for base in baselines):
-        verify.run('ui')
     clean()
     require(output('git', 'rev-parse', 'HEAD') == head, 'HEAD changed during verification')
     require(remote_state(remote) == state, 'Remote refs changed during verification; review incoming work again')

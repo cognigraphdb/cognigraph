@@ -1,0 +1,49 @@
+{
+  "ci_exit_code": 0,
+  "ui_unit_tests": 161,
+  "workflow_tests": 64,
+  "arango_password_exported": false,
+  "live_llm_ci_override": "0",
+  "browser": {
+    "community": {
+      "tests": 4,
+      "skipped": 0,
+      "failures": 0,
+      "port_closed": true,
+      "runtime": {
+        "edition": "community",
+        "origin": "http://127.0.0.1:64415",
+        "backend": "native",
+        "binary_sha256": "33a8b21133f9fb4b2df9cb494ff6b61f5302c11741ae4b92d5cf1ced274d365d",
+        "html_sha256": "bbcad26f9843d317f0fb8d68a9f1acf90ddb5ee19fc6674ff48b946cdcf7bd22",
+        "server_stopped": true,
+        "temporary_store_removed_on_exit": true
+      }
+    },
+    "enterprise": {
+      "tests": 5,
+      "skipped": 0,
+      "failures": 0,
+      "port_closed": true,
+      "runtime": {
+        "edition": "enterprise",
+        "origin": "http://127.0.0.1:64454",
+        "backend": "native",
+        "binary_sha256": "67ba382a1d5f5f51a4543156f5bc1260f397cc23df4806f767402d12ac9bf212",
+        "html_sha256": "bbcad26f9843d317f0fb8d68a9f1acf90ddb5ee19fc6674ff48b946cdcf7bd22",
+        "server_stopped": true,
+        "temporary_store_removed_on_exit": true
+      }
+    }
+  },
+  "rust_default": {
+    "reported_passes": 777,
+    "reported_failures": 0,
+    "reported_ignored": 2
+  },
+  "rust_enterprise": {
+    "reported_passes": 968,
+    "reported_failures": 0,
+    "reported_ignored": 2
+  }
+}

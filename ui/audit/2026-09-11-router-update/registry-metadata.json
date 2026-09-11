@@ -1,0 +1,47 @@
+{
+  "name": "react-router",
+  "version": "8.3.1",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "peerDependencies": {
+    "react": ">=19.2.7",
+    "react-dom": ">=19.2.7"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "cookie-es": "^3.1.1"
+  },
+  "repository": {
+    "url": "https://github.com/remix-run/react-router",
+    "type": "git",
+    "directory": "packages/react-router"
+  },
+  "dist": {
+    "shasum": "d704ca5a564e2bc89ce05a537ab577578e947b7b",
+    "tarball": "https://registry.npmjs.org/react-router/-/react-router-8.3.1.tgz",
+    "fileCount": 320,
+    "integrity": "sha512-TEOpiO2g0TJHEOJeRVv4amUFun9v1npCKszvcquNvzETUtJ8udV86ah5eFoHT7g26bsBvT6EiIhqulR8eDF++A==",
+    "signatures": [
+      {
+        "sig": "MEUCIHkn8MiIXq5fKMWPQbBDd4yG5E28PV47LRDVeDB1OrCmAiEA+NuVBdRrb1/I9FRXvo5MhdhuLGOEKsHyQJ5iynzss40=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEUCIEiTcTcx2/iZJdHf/xxGCxffwk3vqAPYtBNbmuIlEnWfAiEAzjEwsvCVP/YLcxxN3XyA/HxxYfpW4oY5y3WkUzE8Mtw=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/react-router@8.3.1",
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      }
+    },
+    "unpackedSize": 2800441
+  }
+}

@@ -1,0 +1,4 @@
+Checked 122 files in 45ms. No fixes applied.
+$ biome check . && tsc --noEmit
+
+Exit code: 0

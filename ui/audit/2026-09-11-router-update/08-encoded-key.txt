@@ -1,0 +1,121 @@
+Browser tab: 37, Title: "CogniGraph — Collections", URL: "http://127.0.0.1:38496/collections/qa_routes".
+1 AXWebArea CogniGraph — Collections, URL: 127.0.0.1:38496/collections/qa_routes
+	2 container root
+		3 container
+			4 container CogniGraph
+			5 container Primary navigation
+				6 link Description: Overview, Value: 127.0.0.1:38496/overview
+				7 link Description: Collections, Value: 127.0.0.1:38496/collections
+				8 link Description: Query, Value: 127.0.0.1:38496/query
+				9 link Description: Graph, Value: 127.0.0.1:38496/graph
+				10 link Description: Review, Value: 127.0.0.1:38496/review
+				11 link Description: Construct, Value: 127.0.0.1:38496/construct
+				12 link Description: Lua, Value: 127.0.0.1:38496/lua
+				13 link Description: Users, Value: 127.0.0.1:38496/users
+				14 link Description: Operations, Value: 127.0.0.1:38496/operations
+			15 text System healthy Version  2.7.0
+			16 button Collapse sidebar
+		17 container
+			18 text Tenant default Server 127.0.0.1:38496 Healthy Sep 11, 2026, 8:28 PM admin
+			19 button Sign out
+		20 container
+			21 container
+				22 link Description: Collections, Value: 127.0.0.1:38496/collections
+				23 text   /   qa_routes
+			24 heading qa_routes, Value: 1
+				25 text qa_routes
+			26 container
+				27 text JSON collection  •   31 documents
+			28 button Create document
+			29 container
+				30 text field (settable) Description: Search documents, Value: route+sample
+				31 button
+					32 image
+			33 container
+				34 text Category: All
+				35 combo box (collapsed) Description: Filter by category, Secondary Actions: Expand
+				36 image
+			37 container
+				38 text Has embedding: All
+				39 combo box (collapsed) Description: Filter by embedding status, Secondary Actions: Expand
+				40 image
+			41 button Reset
+			42 container
+				43 text Search retrieves up to  100  text matches plus an exact key. Category choices and filters apply only to retrieved documents.
+			44 table
+				45 row
+					46 cell
+						47 text Select
+					48 cell
+						49 text Key
+					50 cell
+						51 text Title
+					52 cell
+						53 text Category
+					54 cell
+						55 text Updated
+					56 cell
+						57 text Embedding
+				58 row
+					59 cell
+						60 button Select route+sample
+					61 cell
+						62 button route+sample
+					63 cell
+						64 text route+sample
+					65 cell
+						66 text uncategorized
+					67 cell
+						68 text Sep 11, 2026, 8:26 PM
+					69 cell
+						70 image Embedding missing
+			71 container
+				72 text Rows per page:
+				73 container
+					74 text 25
+					75 combo box (collapsed) Description: Rows per page, Secondary Actions: Expand
+				76 text 1–1 of 1 retrieved
+				77 button (disabled) Previous page
+				78 button 1
+				79 button (disabled) Next page
+			80 container
+				81 text KEY route+sample
+				82 button Copy document key
+				83 button Edit
+				84 button Delete
+				85 button Close inspector
+			86 tab group
+				87 container
+					88 tab (selected, settable, boolean) JSON, Value: 1, ID: rc-tabs-1-tab-json
+					89 tab (selectable, settable, boolean) Metadata, Value: 0, ID: rc-tabs-1-tab-metadata
+			90 container Description: JSON, ID: rc-tabs-1-panel-json
+				91 content list
+					92 container
+						93 AXListMarker 1. 
+						94 text {
+					95 container
+						96 AXListMarker 2. 
+						97 text "_id" :  "qa_routes/route+sample" ,
+					98 container
+						99 AXListMarker 3. 
+						100 text "_key" :  "route+sample" ,
+					101 container
+						102 AXListMarker 4. 
+						103 text "created_at" :  "2026-09-11T17:26:43.613632+00:00" ,
+					104 container
+						105 AXListMarker 5. 
+						106 text "label" :  "Synthetic routing fixture" ,
+					107 container
+						108 AXListMarker 6. 
+						109 text "ordinal" :  31 ,
+					110 container
+						111 AXListMarker 7. 
+						112 text "updated_at" :  "2026-09-11T17:26:43.613632+00:00"
+					113 container
+						114 AXListMarker 8. 
+						115 text }
+			116 container
+				117 text Embedding:  missing
+				118 button Generate embedding
+
+The focused UI element is 1 AXWebArea CogniGraph — Collections, URL: 127.0.0.1:38496/collections/qa_routes

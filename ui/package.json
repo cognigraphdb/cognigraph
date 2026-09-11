@@ -9,7 +9,8 @@
     "build": "rm -rf dist && bun build ./index.html --minify --outdir=dist --public-path=/ --define process.env.COGNIGRAPH_UI_DEV_API_PORT:null",
     "check": "biome check . && tsc --noEmit",
     "check:fix": "biome check --write .",
-    "test": "bun test"
+    "test": "bun test",
+    "test:browser": "playwright test"
   },
   "dependencies": {
     "@antv/g6": "^5.1.1",
@@ -24,10 +25,11 @@
     "codemirror": "^6.0.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-router": "^8.2.0"
+    "react-router": "^8.3.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.4",
+    "@playwright/test": "^1.63.0",
     "@types/bun": "^1.3.14",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",

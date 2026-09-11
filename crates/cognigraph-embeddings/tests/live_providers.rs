@@ -1,5 +1,6 @@
 //! Live embedding-provider tests over the State of the Union corpus.
-//! Env-gated: skipped unless OPENAI_API_KEY / GEMINI_API_KEY are set.
+//! Explicit opt-in: `cargo test -p cognigraph-embeddings --test live_providers -- --ignored`.
+//! Ordinary tests never load provider keys or make these external requests.
 
 use cognigraph_embeddings::EmbeddingProvider;
 
@@ -41,12 +42,11 @@ async fn exercise(provider: &dyn EmbeddingProvider) {
 }
 
 #[tokio::test]
+#[ignore = "external OpenAI qualification; run explicitly with --ignored"]
 async fn openai_embeds_sotu() {
     dotenvy::from_path(concat!(env!("CARGO_MANIFEST_DIR"), "/../../.env")).ok();
-    let Ok(api_key) = std::env::var("OPENAI_API_KEY") else {
-        eprintln!("Skipping: OPENAI_API_KEY not set");
-        return;
-    };
+    let api_key = std::env::var("OPENAI_API_KEY")
+        .expect("OPENAI_API_KEY is required for opted-in provider qualification");
     let provider = cognigraph_embeddings::openai::OpenAiProvider::new(
         api_key,
         std::env::var("OPENAI_BASE_URL").ok(),
@@ -57,12 +57,11 @@ async fn openai_embeds_sotu() {
 }
 
 #[tokio::test]
+#[ignore = "external Gemini qualification; run explicitly with --ignored"]
 async fn gemini_embeds_sotu() {
     dotenvy::from_path(concat!(env!("CARGO_MANIFEST_DIR"), "/../../.env")).ok();
-    let Ok(api_key) = std::env::var("GEMINI_API_KEY") else {
-        eprintln!("Skipping: GEMINI_API_KEY not set");
-        return;
-    };
+    let api_key = std::env::var("GEMINI_API_KEY")
+        .expect("GEMINI_API_KEY is required for opted-in provider qualification");
     let provider = cognigraph_embeddings::gemini::GeminiProvider::new(
         api_key, None, None, // gemini-embedding-2 default
         None,

@@ -1,0 +1,17 @@
+CI excludes live LLM loops and opt-in embedding-provider qualification.
+RUN [ci] bun install --frozen-lockfile
+bun install v1.4.2 (744846f84)
+
+Checked 192 installs across 219 packages (no changes) [51.00ms]
+RUN [ci] bun run check
+$ biome check . && tsc --noEmit
+Checked 127 files in 56ms. No fixes applied.
+src/cg60-negative.ts(1,14): error TS2322: Type 'string' is not assignable to type 'boolean'.
+error: script "check" exited with code 1
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import sys; from pathlib import Path; sys.path.insert(0,sys.argv[1]); import verify; verify.ROOT=Path(sys.argv[2]); verify.run('ci')
+                                                                                                                        ~~~~~~~~~~^^^^^^
+  File "/Users/skitsanos/FTP/Products/CogniGraph/code/scripts/verify.py", line 51, in run
+    raise RuntimeError(f'FAIL: {" ".join(command)} (exit {result.returncode})')
+RuntimeError: FAIL: bun run check (exit 1)
