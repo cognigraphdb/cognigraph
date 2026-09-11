@@ -1,0 +1,78 @@
+- complementary:
+  - img "CogniGraph":
+    - generic: CogniGraph
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38475
+  - generic: Healthy
+  - generic: Sep 11, 2026, 3:13 PM
+  - generic: admin
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - generic: Access / users
+  - heading "Users" [level=1]
+  - paragraph: Tenant administrators create accounts in their own tenant and manage tokens and account deletion. A host administrator provisions a tenant's first admin from Tenants. Existing account roles cannot be edited here.
+  - button "Create user":
+    - generic: Create user
+  - button "Refresh":
+    - generic: Refresh
+  - generic: 2 users
+  - table:
+    - rowgroup:
+      - row "Username Role Tenant Key":
+        - columnheader "Username"
+        - columnheader "Role"
+        - columnheader "Tenant"
+        - columnheader "Key"
+    - rowgroup:
+      - row "admin Admin default 03832a8b-6069-4c6f-9d11-44561812e090":
+        - cell "admin":
+          - strong: admin
+        - cell "Admin":
+          - generic: Admin
+        - cell "default"
+        - cell "03832a8b-6069-4c6f-9d11-44561812e090":
+          - text: 03832a8b-6069-4c6f-9d11-44561812e090
+      - row "qa-community-viewer Viewer default b7be8fa3-f324-48da-bd39-fef1c0887782":
+        - cell "qa-community-viewer":
+          - strong: qa-community-viewer
+        - cell "Viewer":
+          - generic: Viewer
+        - cell "default"
+        - cell "b7be8fa3-f324-48da-bd39-fef1c0887782":
+          - text: b7be8fa3-f324-48da-bd39-fef1c0887782

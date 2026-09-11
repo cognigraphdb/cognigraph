@@ -10,7 +10,7 @@ export interface TenantRecord {
   name: string;
   status: TenantStatus;
   created_at: number;
-  /// Reserved quota schema (D5) — stored by the server, not yet enforced.
+  /// max_active_jobs is enforced; other quota keys remain reserved schema.
   quotas?: Record<string, unknown> | null;
   /// Whether this tenant's data store is currently open in memory.
   store_open: boolean;

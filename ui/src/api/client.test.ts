@@ -19,6 +19,15 @@ function respond(status: number, body: unknown, contentType = "application/json"
 }
 const api = (token = "") => new CogniGraphApi({ baseUrl: "http://127.0.0.1:38471", token });
 
+test("health carries only recognized product editions for provisioning choices", async () => {
+  for (const edition of ["community", "enterprise", "unknown", undefined]) {
+    respond(200, { status: "ok", database: "connected", edition });
+    expect((await api().health()).edition).toBe(
+      edition === "community" || edition === "enterprise" ? edition : undefined,
+    );
+  }
+});
+
 describe("authentication probe", () => {
   test("verifies host-admin through the tenant catalog after data access is denied", async () => {
     const urls: string[] = [];

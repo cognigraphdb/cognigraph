@@ -1,0 +1,57 @@
+- complementary:
+  - img "CogniGraph":
+    - generic: CogniGraph
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38475
+  - generic: Healthy
+  - generic: Sep 11, 2026, 3:13 PM
+  - generic: qa-community-viewer
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - generic: Access / users
+  - heading "Users" [level=1]
+  - paragraph: Tenant administrators create accounts in their own tenant and manage tokens and account deletion. A host administrator provisions a tenant's first admin from Tenants. Existing account roles cannot be edited here.
+  - button "Create user" [disabled]:
+    - generic: Create user
+  - button "Refresh":
+    - generic: Refresh
+  - generic: 0 users
+  - generic: User management is unavailable
+  - text: "Forbidden: role `Viewer` lacks the required scope"
+  - text: Enable COGNIGRAPH_AUTH_ENABLED and sign in as an admin.

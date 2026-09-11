@@ -182,14 +182,20 @@ actual quarantine results. Real Enterprise cancellation, credential invalidation
 recreation and failure checks passed. It also corrects CG-49's host-admin probe
 gap. The UI suite passes 96 tests; 11 Open issues remain, all P2.
 
-Next, reconcile tenant/user provisioning ([CG-52](issues/CG-52.md)) and
-edition/role capabilities ([CG-53](issues/CG-53.md)). Then address partial datasets,
+The [provisioning batch](../ui/audit/2026-09-11-provisioning/audit.md) resolves
+[CG-52](issues/CG-52.md): resumable first-admin setup, current-tenant user creation
+and edition-appropriate role choices. Real Community/Enterprise browser and HTTP
+checks verify new-admin login, persisted accounts and denied authority crossings.
+The UI suite passes 100 tests; 10 Open issues remain, all P2.
+
+Next, reconcile edition/role capabilities ([CG-53](issues/CG-53.md)), including
+governance-role console entry and role-aware navigation. Then address partial datasets,
 execution/result state and accessibility, with real-browser regressions and
 CI coverage ([CG-60](issues/CG-60.md)). Keep Docker publication preparation
 separate from this pending UI remediation.
 
 The console does not yet provide complete durable-job, signed-governance,
-promotion/repair/deployment, side-view or tenant-bootstrap workflows. The
+promotion/repair/deployment, side-view or tenant-quota management workflows. The
 [UI tracker](../ui/TODO.md) owns that planned scope. Provider qualification and
 the frozen holdout remain separate; the audit made no model calls or application
 fixes and preserved all previous work.

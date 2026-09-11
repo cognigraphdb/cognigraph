@@ -9,10 +9,8 @@ import {
   WarningCircle,
 } from "@phosphor-icons/react";
 import {
+  Alert,
   Button,
-  Form,
-  Input,
-  Modal,
   Popconfirm,
   Result,
   Spin,
@@ -23,15 +21,16 @@ import {
 } from "antd";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { CogniGraphApi } from "../api/client.ts";
-import { ErrorAlert } from "../components/ErrorAlert.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
 import {
   DeleteTenantDialog,
   TenantDeletionNotice,
   type TenantDeletionResult,
 } from "../components/TenantDeletion.tsx";
+import { BootstrapTenantAdminDialog, CreateTenantDialog } from "../components/TenantOnboarding.tsx";
 import { TENANT_STATUS_META, type TenantListResponse, type TenantRecord } from "../lib/tenants.ts";
 import { formatUnixSeconds } from "../lib/tokens.ts";
+import type { UserAccount } from "../lib/users.ts";
 import type { Notify } from "../types.ts";
 
 /// /tenants — host-admin only (the sidebar hides it for other roles and the
@@ -44,6 +43,9 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
   const [error, setError] = useState("");
   const [busyName, setBusyName] = useState<string>();
   const [createOpen, setCreateOpen] = useState(false);
+  const [bootstrapName, setBootstrapName] = useState<string>();
+  const [createdAdmin, setCreatedAdmin] = useState<UserAccount>();
+  const onboardingTrigger = useRef<HTMLElement | null>(null);
   const [deleteName, setDeleteName] = useState<string>();
   const [deletionResult, setDeletionResult] = useState<TenantDeletionResult>();
   const deleteTrigger = useRef<HTMLElement | null>(null);
@@ -55,6 +57,13 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
       deleteTrigger.current = null;
     }
   }, [deleteName, loading]);
+
+  useEffect(() => {
+    if (!createOpen && !bootstrapName && !loading && onboardingTrigger.current) {
+      onboardingTrigger.current.focus();
+      onboardingTrigger.current = null;
+    }
+  }, [createOpen, bootstrapName, loading]);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -99,7 +108,7 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
     {
       title: "Status",
       dataIndex: "status",
-      width: 130,
+      width: 100,
       render: (value: TenantRecord["status"]) => {
         const meta = TENANT_STATUS_META[value];
         return <Tag color={meta?.color}>{meta?.label ?? String(value)}</Tag>;
@@ -108,7 +117,7 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
     {
       title: "Store",
       dataIndex: "store_open",
-      width: 110,
+      width: 90,
       // Stores open lazily: creating a tenant writes only its record; the
       // data store (and its file) appears on the first data access and
       // stays open until the server restarts.
@@ -126,18 +135,31 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
     {
       title: "Created",
       dataIndex: "created_at",
-      width: 190,
+      width: 170,
       render: (value: number) => formatUnixSeconds(value),
     },
     {
       title: "",
       key: "actions",
-      width: 220,
+      width: 280,
       render: (_, tenant) => {
         const busy = busyName !== undefined;
         const spinning = busyName === tenant.name;
         return (
-          <span className="actions-row-base">
+          <span className="actions-row-base tenant-actions">
+            <Tooltip title="Available for active tenants without an Admin. Existing administrators manage further accounts from their own session.">
+              <Button
+                disabled={busy || tenant.status !== "active"}
+                size="small"
+                type="text"
+                onClick={(event) => {
+                  onboardingTrigger.current = event.currentTarget;
+                  setBootstrapName(tenant.name);
+                }}
+              >
+                Set up admin
+              </Button>
+            </Tooltip>
             {tenant.status === "active" ? (
               <Popconfirm
                 cancelText="Cancel"
@@ -203,7 +225,10 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
             <Button
               disabled={loading || !!error}
               icon={<Plus size={17} />}
-              onClick={() => setCreateOpen(true)}
+              onClick={(event) => {
+                onboardingTrigger.current = event.currentTarget;
+                setCreateOpen(true);
+              }}
               type="primary"
             >
               Create tenant
@@ -229,6 +254,14 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
         title="Tenants"
       />
       {deletionResult ? <TenantDeletionNotice result={deletionResult} /> : null}
+      {createdAdmin ? (
+        <Alert
+          className="tenant-onboarding-notice"
+          type="success"
+          title={`Administrator ${createdAdmin.username} created for ${createdAdmin.tenant}`}
+          description="Sign out and sign in as this tenant administrator to manage its users and data. The host-admin session remains unchanged."
+        />
+      ) : null}
       <section className="user-list">
         <div className="workspace-controls">
           <span className="workspace-count">
@@ -274,79 +307,31 @@ export function TenantsScreen({ api, notify }: { api: CogniGraphApi; notify: Not
           }}
         />
       ) : null}
+      {bootstrapName ? (
+        <BootstrapTenantAdminDialog
+          api={api}
+          name={bootstrapName}
+          onClose={() => setBootstrapName(undefined)}
+          onCreated={(user) => {
+            onboardingTrigger.current = refreshButton.current;
+            setCreatedAdmin(user);
+            setBootstrapName(undefined);
+            void load();
+          }}
+        />
+      ) : null}
       {createOpen ? (
         <CreateTenantDialog
           api={api}
-          notify={notify}
           onClose={() => setCreateOpen(false)}
-          onCreated={() => {
+          onCreated={(name) => {
             setCreateOpen(false);
+            setCreatedAdmin(undefined);
+            setBootstrapName(name);
             void load();
           }}
         />
       ) : null}
     </main>
-  );
-}
-
-// Rendered conditionally by the parent (mount = open, unmount = closed).
-function CreateTenantDialog({
-  api,
-  notify,
-  onClose,
-  onCreated,
-}: {
-  api: CogniGraphApi;
-  notify: Notify;
-  onClose: () => void;
-  onCreated: () => void;
-}) {
-  const [form] = Form.useForm<{ name: string }>();
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
-
-  async function submit(values: { name: string }) {
-    setBusy(true);
-    setError("");
-    try {
-      await api.post("/tenants", { name: values.name.trim() });
-      notify(`Created tenant ${values.name.trim()}`);
-      onCreated();
-    } catch (reason) {
-      setError(reason instanceof Error ? reason.message : "Tenant creation failed");
-    } finally {
-      setBusy(false);
-    }
-  }
-
-  return (
-    <Modal
-      confirmLoading={busy}
-      okText="Create tenant"
-      onCancel={onClose}
-      onOk={() => form.submit()}
-      open
-      title="Create a tenant"
-    >
-      <p className="dialog-hint">
-        Creates the tenant record; users are then filed under it via user management. Quota fields
-        are reserved schema and not yet enforced.
-      </p>
-      <Form
-        form={form}
-        layout="vertical"
-        onFinish={(values) => void submit(values)}
-        requiredMark={false}
-      >
-        <Form.Item
-          label="Tenant name"
-          name="name"
-          rules={[{ required: true, message: "Name the tenant." }]}
-        >
-          <Input autoFocus placeholder="acme" />
-        </Form.Item>
-      </Form>
-      {error ? <ErrorAlert title={error} /> : null}
-    </Modal>
   );
 }

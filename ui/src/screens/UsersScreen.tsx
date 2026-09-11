@@ -1,26 +1,36 @@
 import { ArrowsClockwise, CircleNotch, Key, UserPlus, UsersThree } from "@phosphor-icons/react";
 import { Button, Result, Spin, Table, type TableColumnsType, Tag, Tooltip } from "antd";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import type { CogniGraphApi } from "../api/client.ts";
 import { CreateUserDialog } from "../components/CreateUserDialog.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
 import { ROLE_META, type UserAccount } from "../lib/users.ts";
-import type { Notify } from "../types.ts";
+import type { AuthSession, Notify, ProductEdition } from "../types.ts";
 
 interface UsersScreenProps {
   api: CogniGraphApi;
   notify: Notify;
+  session: AuthSession | null;
+  edition?: ProductEdition;
 }
 
 /// The account list: rows link to /users/{username}, where roles, deletion,
 /// and the API-token lifecycle live.
-export function UsersScreen({ api, notify }: UsersScreenProps) {
+export function UsersScreen({ api, notify, session, edition }: UsersScreenProps) {
   const navigate = useNavigate();
   const [users, setUsers] = useState<UserAccount[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [createOpen, setCreateOpen] = useState(false);
+  const returnFocus = useRef<HTMLElement | null>(null);
+  const refreshButton = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (!createOpen && !loading && returnFocus.current) {
+      returnFocus.current.focus();
+      returnFocus.current = null;
+    }
+  }, [createOpen, loading]);
   const friendlyError = error.includes("auth is disabled")
     ? "Authentication is disabled on this server."
     : error;
@@ -85,14 +95,18 @@ export function UsersScreen({ api, notify }: UsersScreenProps) {
         actions={
           <>
             <Button
-              disabled={loading || !!error}
+              disabled={loading || !!error || session?.role !== "admin"}
               icon={<UserPlus size={17} />}
-              onClick={() => setCreateOpen(true)}
+              onClick={(event) => {
+                returnFocus.current = event.currentTarget;
+                setCreateOpen(true);
+              }}
               type="primary"
             >
               Create user
             </Button>
             <Button
+              ref={refreshButton}
               disabled={loading}
               icon={
                 loading ? (
@@ -107,7 +121,7 @@ export function UsersScreen({ api, notify }: UsersScreenProps) {
             </Button>
           </>
         }
-        description="Create accounts and open one to manage its role, tokens, and lifecycle. Each account belongs to one tenant, which scopes everything it sees; tenant workspaces themselves are managed by a host-admin session."
+        description="Tenant administrators create accounts in their own tenant and manage tokens and account deletion. A host administrator provisions a tenant's first admin from Tenants. Existing account roles cannot be edited here."
         eyebrow="Access / users"
         title="Users"
       />
@@ -153,12 +167,15 @@ export function UsersScreen({ api, notify }: UsersScreenProps) {
         </Spin>
       </section>
 
-      {createOpen ? (
+      {createOpen && session?.role === "admin" ? (
         <CreateUserDialog
           api={api}
           notify={notify}
+          session={session}
+          edition={edition}
           onClose={() => setCreateOpen(false)}
           onCreated={() => {
+            returnFocus.current = refreshButton.current;
             setCreateOpen(false);
             void load();
           }}

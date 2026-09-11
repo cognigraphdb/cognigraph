@@ -16,14 +16,19 @@ The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
 recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
 explicit untested boundaries. The historical Done entries below describe
 implementation checkpoints; they do not establish current acceptance. The UI
-suite now passes 96 helper tests after CG-49/CG-50/CG-51/CG-62 remediation, but CI omits it and no browser regression suite
-exists yet. Keep defect status in the linked registry rather than duplicating it.
+suite now passes 100 helper tests after CG-49/CG-50/CG-51/CG-52/CG-62 remediation,
+but CI omits it and no browser regression suite exists yet. Keep defect status
+in the linked registry rather than duplicating it.
 
+- [x] [Tenant/user provisioning CG-52](../docs/issues/CG-52.md): resumable
+  first-admin setup, current-tenant requests and edition-appropriate roles.
+  [Browser/API evidence](audit/2026-09-11-provisioning/audit.md) covers new-admin
+  login, persisted accounts and denied authority crossings. Ten P2s remain open.
 - [x] [Tenant deletion disclosure CG-51](../docs/issues/CG-51.md): explicit
   consequences, actual quarantine results, cancel/recreation and failure checks.
   [Browser/API evidence](audit/2026-09-11-tenant-deletion/audit.md), including the
   CG-49 follow-up for host-admin catalog verification. All audited P1s are resolved;
-  11 P2s remain open.
+  that checkpoint left 11 P2s open.
 - [x] [Production origin CG-49](../docs/issues/CG-49.md): same-origin production,
   explicit dev port, verified authentication state and stale-target recovery.
   [Browser/API evidence](audit/2026-09-11-production-origin/audit.md).
@@ -31,8 +36,7 @@ exists yet. Keep defect status in the linked registry rather than duplicating it
   [construction import identity CG-62](../docs/issues/CG-62.md): raw JSON editing,
   changed-field PATCH, creation readback, stable import IDs and explicit replacement
   review. [Browser/API evidence](audit/2026-09-11-data-preservation/audit.md).
-- [ ] Reconcile [provisioning CG-52](../docs/issues/CG-52.md),
-  [edition/role capabilities CG-53](../docs/issues/CG-53.md),
+- [ ] Reconcile [edition/role capabilities CG-53](../docs/issues/CG-53.md),
   [review/space paging CG-54](../docs/issues/CG-54.md),
   [empty/error guidance CG-58](../docs/issues/CG-58.md), and
   [collection search/filter scope CG-59](../docs/issues/CG-59.md).

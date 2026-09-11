@@ -158,6 +158,15 @@
   margin-top: 16px;
 }
 
+.tenant-actions {
+  flex-wrap: wrap;
+}
+
+.tenant-onboarding-notice {
+  margin-top: 16px;
+  overflow-wrap: anywhere;
+}
+
 .tenant-deletion-name,
 .tenant-deletion-notice {
   overflow-wrap: anywhere;

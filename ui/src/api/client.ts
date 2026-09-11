@@ -127,6 +127,10 @@ export class CogniGraphApi {
         status: service.status === "ok" ? "online" : "offline",
         service: String(service.service ?? "cognigraph"),
         version: String(service.version ?? "unknown"),
+        edition:
+          service.edition === "community" || service.edition === "enterprise"
+            ? service.edition
+            : undefined,
         database: String(database.database ?? database.status ?? "unknown"),
         latencyMs: Math.round(performance.now() - started),
       };

@@ -225,7 +225,12 @@ export function App() {
         <Route element={<ReviewScreen api={api} notify={notify} />} path="/review" />
         <Route element={<ConstructScreen api={api} notify={notify} />} path="/construct" />
         <Route element={<LuaScreen api={api} notify={notify} />} path="/lua" />
-        <Route element={<UsersScreen api={api} notify={notify} />} path="/users" />
+        <Route
+          element={
+            <UsersScreen api={api} notify={notify} session={session} edition={health.edition} />
+          }
+          path="/users"
+        />
         <Route
           element={
             <UserDetailScreen api={api} currentUsername={session?.username} notify={notify} />

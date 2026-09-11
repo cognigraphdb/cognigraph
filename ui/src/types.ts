@@ -1,5 +1,6 @@
 export type EmbeddingState = "ready" | "missing" | "processing";
 export type ConnectionStatus = "checking" | "online" | "offline";
+export type ProductEdition = "community" | "enterprise";
 export type JsonObject = Record<string, unknown>;
 export type NoticeType = "success" | "error" | "info" | "warning";
 export type Notify = (message: string, type?: NoticeType) => void;
@@ -45,6 +46,7 @@ export interface AuthSession {
 
 export interface HealthSnapshot {
   status: ConnectionStatus;
+  edition?: ProductEdition;
   service?: string;
   version?: string;
   database?: string;

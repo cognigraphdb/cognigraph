@@ -69,6 +69,30 @@ an older store to the occurrence model, legacy chunk rows without raw
 `chunk_id` must be rebuilt with their derived `mentions` and `facts` rather
 than overwritten ambiguously.
 
+### Console tenant onboarding
+
+On an Enterprise multi-tenant server, sign in as `host-admin` and open **Tenants**.
+Create a tenant, then complete **Set up first administrator** with a globally
+unique username and a password. If you close this step, the tenant remains;
+use **Set up admin** on its active tenant row to resume. The server refuses setup
+if any Admin already exists in that tenant. This is an initial bootstrap step,
+not a password-reset or additional-user endpoint.
+
+After success, sign out, sign in as the new tenant administrator and open
+**Users**. The form shows the authenticated tenant and cannot select another
+tenant or create a host-admin. Community offers Admin, Editor, Viewer and
+Script runner; Enterprise also offers Policy author, Policy approver, Promoter
+and Artifact attestor. These governance roles have their declared governance
+scopes and no tenant data access. Account roles cannot be edited through this
+console. Governance-role console entry is still tracked in [CG-53](../issues/CG-53.md);
+creating a governance account does not provide a complete governance UI.
+
+Onboarding leaves the host-admin session unchanged and does not retain the new
+password after completion. The tenant form uses server-default quotas;
+`max_active_jobs` is enforced. See the
+[tenant quota contract](../decisions/decision_multi_tenancy.md) for supported
+configuration and [CG-52](../issues/CG-52.md) for console verification.
+
 ### Token hygiene
 
 Tokens are non-expiring by default; set `COGNIGRAPH_TOKEN_TTL_SECS` (e.g.

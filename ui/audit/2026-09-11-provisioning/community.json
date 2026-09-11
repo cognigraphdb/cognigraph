@@ -1,0 +1,43 @@
+{
+  "health": {
+    "status": 200,
+    "body": {
+      "edition": "community",
+      "service": "cognigraph",
+      "status": "ok",
+      "version": "2.7.0"
+    }
+  },
+  "users": {
+    "status": 200,
+    "body": [
+      {
+        "key": "03832a8b-6069-4c6f-9d11-44561812e090",
+        "role": "admin",
+        "tenant": "default",
+        "username": "admin"
+      },
+      {
+        "key": "b7be8fa3-f324-48da-bd39-fef1c0887782",
+        "role": "viewer",
+        "tenant": "default",
+        "username": "qa-community-viewer"
+      }
+    ]
+  },
+  "viewer_role": "viewer",
+  "viewer_tenant": "default",
+  "viewer_data": {
+    "status": 200,
+    "body": {
+      "collections": [],
+      "count": 0
+    }
+  },
+  "viewer_user_admin_denied": {
+    "status": 403,
+    "body": {
+      "error": "Forbidden: role `Viewer` lacks the required scope"
+    }
+  }
+}

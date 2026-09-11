@@ -1,0 +1,125 @@
+[
+  {
+    "buttons": [
+      {
+        "bottom": 136,
+        "right": 898,
+        "text": ""
+      },
+      {
+        "bottom": 229.9453125,
+        "right": 876,
+        "text": ""
+      },
+      {
+        "bottom": 303.9453125,
+        "right": 860,
+        "text": ""
+      },
+      {
+        "bottom": 475.609375,
+        "right": 787.296875,
+        "text": "Cancel"
+      },
+      {
+        "bottom": 475.609375,
+        "right": 884,
+        "text": "Create user"
+      }
+    ],
+    "dialog": {
+      "bottom": 491.609375,
+      "clientHeight": 392,
+      "clientWidth": 520,
+      "left": 380,
+      "right": 900,
+      "scrollHeight": 392,
+      "scrollWidth": 520,
+      "top": 100
+    },
+    "height": 800,
+    "width": 1280
+  },
+  {
+    "buttons": [
+      {
+        "bottom": 136,
+        "right": 791.5,
+        "text": ""
+      },
+      {
+        "bottom": 229.9453125,
+        "right": 769.5,
+        "text": ""
+      },
+      {
+        "bottom": 303.9453125,
+        "right": 753.5,
+        "text": ""
+      },
+      {
+        "bottom": 475.609375,
+        "right": 680.796875,
+        "text": "Cancel"
+      },
+      {
+        "bottom": 475.609375,
+        "right": 777.5,
+        "text": "Create user"
+      }
+    ],
+    "dialog": {
+      "bottom": 491.609375,
+      "clientHeight": 392,
+      "clientWidth": 520,
+      "left": 273.5,
+      "right": 793.5,
+      "scrollHeight": 392,
+      "scrollWidth": 520,
+      "top": 100
+    },
+    "height": 667,
+    "width": 1067
+  },
+  {
+    "buttons": [
+      {
+        "bottom": 136,
+        "right": 1058,
+        "text": ""
+      },
+      {
+        "bottom": 229.9453125,
+        "right": 1036,
+        "text": ""
+      },
+      {
+        "bottom": 303.9453125,
+        "right": 1020,
+        "text": ""
+      },
+      {
+        "bottom": 475.609375,
+        "right": 947.296875,
+        "text": "Cancel"
+      },
+      {
+        "bottom": 475.609375,
+        "right": 1044,
+        "text": "Create user"
+      }
+    ],
+    "dialog": {
+      "bottom": 491.609375,
+      "clientHeight": 392,
+      "clientWidth": 520,
+      "left": 540,
+      "right": 1060,
+      "scrollHeight": 392,
+      "scrollWidth": 520,
+      "top": 100
+    },
+    "height": 1000,
+    "width": 1600
+  }
+]

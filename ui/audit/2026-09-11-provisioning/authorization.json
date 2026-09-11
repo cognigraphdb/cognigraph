@@ -1,0 +1,181 @@
+{
+  "persisted_users": {
+    "status": 200,
+    "body": [
+      {
+        "key": "309ec2ad-8668-406d-8c01-62e95da41f13",
+        "role": "policy-author",
+        "tenant": "qa-onboarding",
+        "username": "qa-policy-author"
+      },
+      {
+        "key": "30bb48d8-dd1f-4b81-8955-aa66c2d77162",
+        "role": "artifact-attestor",
+        "tenant": "qa-onboarding",
+        "username": "qa-artifact-attestor"
+      },
+      {
+        "key": "3e68d934-4f4b-4793-afa8-0b344d068ac9",
+        "role": "viewer",
+        "tenant": "qa-onboarding",
+        "username": "qa-viewer"
+      },
+      {
+        "key": "734cc87d-5768-499c-88fe-e9b0298aa0e5",
+        "role": "admin",
+        "tenant": "qa-onboarding",
+        "username": "qa-onboarding-admin"
+      },
+      {
+        "key": "c2a12e80-3501-4cc9-a970-77a9d91d01ee",
+        "role": "policy-approver",
+        "tenant": "qa-onboarding",
+        "username": "qa-policy-approver"
+      },
+      {
+        "key": "e11a2959-a551-4724-9655-8ddd01bfaea0",
+        "role": "promoter",
+        "tenant": "qa-onboarding",
+        "username": "qa-promoter"
+      }
+    ]
+  },
+  "tenant_catalog": {
+    "status": 200,
+    "body": {
+      "count": 1,
+      "open_stores": 2,
+      "tenants": [
+        {
+          "created_at": 1789128466,
+          "incarnation": "0cdd52c7-c864-4d56-acbd-5d855719dadd",
+          "name": "qa-onboarding",
+          "status": "active",
+          "store_open": true
+        }
+      ]
+    }
+  },
+  "host_data_denial": {
+    "status": 403,
+    "body": {
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    }
+  },
+  "host_user_admin_denial": {
+    "status": 403,
+    "body": {
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    }
+  },
+  "cross_tenant_denial": {
+    "status": 403,
+    "body": {
+      "error": "Forbidden: users can only be created in the authenticated Admin's tenant"
+    }
+  },
+  "host_role_creation_denial": {
+    "status": 403,
+    "body": {
+      "error": "Forbidden: host-admin users cannot be created through tenant user administration"
+    }
+  },
+  "host_user_creation_denial": {
+    "status": 403,
+    "body": {
+      "error": "Forbidden: role `HostAdmin` lacks the required scope"
+    }
+  },
+  "tenant_admin_bootstrap_denial": {
+    "status": 403,
+    "body": {
+      "error": "Forbidden: role `Admin` lacks the required scope"
+    }
+  },
+  "qa-viewer": {
+    "login_status": 200,
+    "role": "viewer",
+    "tenant": "qa-onboarding",
+    "data_access": {
+      "status": 200,
+      "body": {
+        "collections": [],
+        "count": 0
+      }
+    },
+    "user_creation_denial": {
+      "status": 403,
+      "body": {
+        "error": "Forbidden: role `Viewer` lacks the required scope"
+      }
+    }
+  },
+  "qa-policy-author": {
+    "login_status": 200,
+    "role": "policy-author",
+    "tenant": "qa-onboarding",
+    "data_access": {
+      "status": 403,
+      "body": {
+        "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+      }
+    },
+    "user_creation_denial": {
+      "status": 403,
+      "body": {
+        "error": "Forbidden: role `PolicyAuthor` lacks the required scope"
+      }
+    }
+  },
+  "qa-policy-approver": {
+    "login_status": 200,
+    "role": "policy-approver",
+    "tenant": "qa-onboarding",
+    "data_access": {
+      "status": 403,
+      "body": {
+        "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+      }
+    },
+    "user_creation_denial": {
+      "status": 403,
+      "body": {
+        "error": "Forbidden: role `PolicyApprover` lacks the required scope"
+      }
+    }
+  },
+  "qa-promoter": {
+    "login_status": 200,
+    "role": "promoter",
+    "tenant": "qa-onboarding",
+    "data_access": {
+      "status": 403,
+      "body": {
+        "error": "Forbidden: role `Promoter` lacks the required scope"
+      }
+    },
+    "user_creation_denial": {
+      "status": 403,
+      "body": {
+        "error": "Forbidden: role `Promoter` lacks the required scope"
+      }
+    }
+  },
+  "qa-artifact-attestor": {
+    "login_status": 200,
+    "role": "artifact-attestor",
+    "tenant": "qa-onboarding",
+    "data_access": {
+      "status": 403,
+      "body": {
+        "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+      }
+    },
+    "user_creation_denial": {
+      "status": 403,
+      "body": {
+        "error": "Forbidden: role `ArtifactAttestor` lacks the required scope"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "cancel": {
+    "tag": "BUTTON",
+    "text": "Create user"
+  },
+  "success": {
+    "tag": "BUTTON",
+    "text": "Refresh"
+  }
+}

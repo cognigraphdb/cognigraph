@@ -278,3 +278,26 @@ in both its confirmation and result. The dialog names the tenant and consequence
 the page retains the actual quarantine entries. It distinguishes suspension and
 same-name recreation, reports an unconfirmed outcome on errors, and restores
 keyboard focus after cancellation or completion.
+
+## Addendum (2026-09-11): tenant onboarding and user provisioning
+
+The console creates a tenant and then offers its first tenant-local Admin using
+`POST /api/tenants/{name}/admin`. Closing the second step preserves the tenant;
+Set up admin on an active tenant row resumes it. The server decides whether an
+Admin already exists and refuses repeat bootstrap. A host-admin does not gain
+user or data access through onboarding, and the console does not switch sessions
+automatically. Success instructs the operator to sign in as the new tenant Admin.
+
+User creation derives its tenant from the authenticated Admin on the server;
+the console displays that tenant and sends no tenant override. Host-admin is
+never offered. Community offers the four data roles; verified Enterprise edition
+metadata enables the four governance roles. Unknown edition metadata keeps the
+conservative Community choices. The API remains the authorization boundary.
+Role descriptions separate governance authority from tenant data access.
+
+Creation uses the server's default tenant quotas and correctly documents that
+`max_active_jobs` is enforced. Quota editing is still a separate planned workflow.
+The [auth runbook](../operations/authentication.md#console-tenant-onboarding)
+owns operator instructions. [CG-52](../issues/CG-52.md) and the
+[browser/HTTP report](../../ui/audit/2026-09-11-provisioning/audit.md) record
+verification; role-aware navigation and governance console entry remain CG-53.
