@@ -1,0 +1,1196 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 2,
+  "batch": 44,
+  "request": {
+    "space_type": "semeval-glm-flash-r2-b44",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10350",
+        "title": "Relation benchmark excerpt",
+        "text": "The fat and cholesterol cause heart disease; the animal protein causes cancer."
+      },
+      {
+        "id": "semeval-10564",
+        "title": "Relation benchmark excerpt",
+        "text": "The strong winds blew snow into the snowdrifts."
+      },
+      {
+        "id": "semeval-8837",
+        "title": "Relation benchmark excerpt",
+        "text": "They (the aquarium) were brushing the shark's teeth."
+      },
+      {
+        "id": "semeval-10359",
+        "title": "Relation benchmark excerpt",
+        "text": "You reassigned them after making a change in the registry through the administrative console or by using wsadmin scriptin."
+      },
+      {
+        "id": "semeval-10664",
+        "title": "Relation benchmark excerpt",
+        "text": "With Gary Versace on piano, Gary Hobbs on drums, and Chuck Bergeron on bass, the trio performs with a wide range of artists and ensembles."
+      },
+      {
+        "id": "semeval-8013",
+        "title": "Relation benchmark excerpt",
+        "text": "NASA Kepler mission sends names into space."
+      },
+      {
+        "id": "semeval-9978",
+        "title": "Relation benchmark excerpt",
+        "text": "The 400 V power supply (unstabilized) was derived from a conventional power-pack with n-filter."
+      },
+      {
+        "id": "semeval-10522",
+        "title": "Relation benchmark excerpt",
+        "text": "The guard did his job with a scowling look on his face."
+      },
+      {
+        "id": "semeval-9805",
+        "title": "Relation benchmark excerpt",
+        "text": "A stone was put inside a freshly made pot, then it was pressed against the metal."
+      },
+      {
+        "id": "semeval-10134",
+        "title": "Relation benchmark excerpt",
+        "text": "Acne is caused by hormonal imbalance within the body, but there are many other contributing factors to acne outbreaks."
+      },
+      {
+        "id": "semeval-8108",
+        "title": "Relation benchmark excerpt",
+        "text": "The pretexts offered were laughable, and the response caused scarcely a ripple on the flood of commentary on Washington's noble \"efforts to spread democracy\"."
+      },
+      {
+        "id": "semeval-8675",
+        "title": "Relation benchmark excerpt",
+        "text": "The order, issued Nov. 16 by Eric Landoll, the city's code administrator, states that the roof of the building is allowing rain to fall into the interior of the building and because of this the interior floors are structurally unsound and there is mold and mildew throughout the building causing health concerns for anyone entering the building."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:glm-5.3-flash@directed-policy-v1",
+    "facts_grounded": 9,
+    "proposed": 9,
+    "skips": [],
+    "space_type": "semeval-glm-flash-r2-b44"
+  },
+  "latency_seconds": 14.544069916009903,
+  "facts": [
+    {
+      "_from": "entities/power-supply",
+      "_id": "facts/fact-228f1e22c0e1164cb733a2814e7b30cbe92ce1f69b04d8b15e66ff3a834f4e9f",
+      "_key": "fact-228f1e22c0e1164cb733a2814e7b30cbe92ce1f69b04d8b15e66ff3a834f4e9f",
+      "_to": "entities/power-pack",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9978",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "trigger": "The 400 V power supply (unstabilized) was derived from a conventional power-pack with n-filter.",
+      "trigger_end": 95,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/snow",
+      "_id": "facts/fact-5911da1617a0372c3ff073efff9c37556267b8d88616feb5a5ad6920a0d860eb",
+      "_key": "fact-5911da1617a0372c3ff073efff9c37556267b8d88616feb5a5ad6920a0d860eb",
+      "_to": "entities/snowdrifts",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10564",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "trigger": "The strong winds blew snow into the snowdrifts.",
+      "trigger_end": 47,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/roof",
+      "_id": "facts/fact-69947b4c3e7e9d7586f7bb6ef01bf221d23258ab51605a803836582bea4f0d93",
+      "_key": "fact-69947b4c3e7e9d7586f7bb6ef01bf221d23258ab51605a803836582bea4f0d93",
+      "_to": "entities/building",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8675",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "trigger": "The order, issued Nov. 16 by Eric Landoll, the city's code administrator, states that the roof of the building is allowing rain to fall into the interior of the building and because of this the interior floors are structurally unsound and there is mold and mildew throughout the building causing health concerns for anyone entering the building.",
+      "trigger_end": 345,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/teeth",
+      "_id": "facts/fact-742e11b3cb3757ac79105e343adabfab39fc4da34df96586b228c9e397bd1fd6",
+      "_key": "fact-742e11b3cb3757ac79105e343adabfab39fc4da34df96586b228c9e397bd1fd6",
+      "_to": "entities/shark",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8837",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "trigger": "They (the aquarium) were brushing the shark's teeth.",
+      "trigger_end": 52,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/response",
+      "_id": "facts/fact-7eebc92de8e878d77a5b011697fc5b7401850bb6629e14a936df4cde7ec40672",
+      "_key": "fact-7eebc92de8e878d77a5b011697fc5b7401850bb6629e14a936df4cde7ec40672",
+      "_to": "entities/ripple",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8108",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "trigger": "The pretexts offered were laughable, and the response caused scarcely a ripple on the flood of commentary on Washington's noble \"efforts to spread democracy\".",
+      "trigger_end": 158,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/fat",
+      "_id": "facts/fact-9d30e1bea137d64216eb071341ff8afeeaaa1858bb2ddeab3599c131558689a7",
+      "_key": "fact-9d30e1bea137d64216eb071341ff8afeeaaa1858bb2ddeab3599c131558689a7",
+      "_to": "entities/disease",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10350",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "trigger": "The fat and cholesterol cause heart disease; the animal protein causes cancer.",
+      "trigger_end": 78,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/stone",
+      "_id": "facts/fact-a3c582b7e147c328abd50dc369eea95ccf4cc33c3882649e7533a4f62b9dc8f1",
+      "_key": "fact-a3c582b7e147c328abd50dc369eea95ccf4cc33c3882649e7533a4f62b9dc8f1",
+      "_to": "entities/pot",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9805",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "trigger": "A stone was put inside a freshly made pot, then it was pressed against the metal.",
+      "trigger_end": 81,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/hormonal-imbalance",
+      "_id": "facts/fact-b18f91696d5bf92ff774c86e6f8af7beb55230887f184fec90b49a31834bf8a5",
+      "_key": "fact-b18f91696d5bf92ff774c86e6f8af7beb55230887f184fec90b49a31834bf8a5",
+      "_to": "entities/acne",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10134",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "trigger": "Acne is caused by hormonal imbalance within the body, but there are many other contributing factors to acne outbreaks.",
+      "trigger_end": 118,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/names",
+      "_id": "facts/fact-dc882fed14e9f9d6198c1852b2ef36d6f0311c9ef1de518c083313320393be6f",
+      "_key": "fact-dc882fed14e9f9d6198c1852b2ef36d6f0311c9ef1de518c083313320393be6f",
+      "_to": "entities/space",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8013",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "trigger": "NASA Kepler mission sends names into space.",
+      "trigger_end": 43,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/acne",
+      "_key": "acne",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876230+00:00",
+      "entity_type": "Effect",
+      "name": "Acne",
+      "updated_at": "2026-09-09T12:55:14.876230+00:00"
+    },
+    {
+      "_id": "entities/building",
+      "_key": "building",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876234+00:00",
+      "entity_type": "Whole",
+      "name": "building",
+      "updated_at": "2026-09-09T12:55:14.876234+00:00"
+    },
+    {
+      "_id": "entities/disease",
+      "_key": "disease",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876235+00:00",
+      "entity_type": "Effect",
+      "name": "disease",
+      "updated_at": "2026-09-09T12:55:14.876235+00:00"
+    },
+    {
+      "_id": "entities/fat",
+      "_key": "fat",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876236+00:00",
+      "entity_type": "Cause",
+      "name": "fat",
+      "updated_at": "2026-09-09T12:55:14.876236+00:00"
+    },
+    {
+      "_id": "entities/hormonal-imbalance",
+      "_key": "hormonal-imbalance",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876237+00:00",
+      "entity_type": "Cause",
+      "name": "hormonal imbalance",
+      "updated_at": "2026-09-09T12:55:14.876237+00:00"
+    },
+    {
+      "_id": "entities/names",
+      "_key": "names",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876238+00:00",
+      "entity_type": "Entity",
+      "name": "names",
+      "updated_at": "2026-09-09T12:55:14.876238+00:00"
+    },
+    {
+      "_id": "entities/pot",
+      "_key": "pot",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876239+00:00",
+      "entity_type": "Destination",
+      "name": "pot",
+      "updated_at": "2026-09-09T12:55:14.876239+00:00"
+    },
+    {
+      "_id": "entities/power-pack",
+      "_key": "power-pack",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876239+00:00",
+      "entity_type": "Origin",
+      "name": "power-pack",
+      "updated_at": "2026-09-09T12:55:14.876239+00:00"
+    },
+    {
+      "_id": "entities/power-supply",
+      "_key": "power-supply",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876240+00:00",
+      "entity_type": "Entity",
+      "name": "power supply",
+      "updated_at": "2026-09-09T12:55:14.876240+00:00"
+    },
+    {
+      "_id": "entities/response",
+      "_key": "response",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876242+00:00",
+      "entity_type": "Cause",
+      "name": "response",
+      "updated_at": "2026-09-09T12:55:14.876242+00:00"
+    },
+    {
+      "_id": "entities/ripple",
+      "_key": "ripple",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876242+00:00",
+      "entity_type": "Effect",
+      "name": "ripple",
+      "updated_at": "2026-09-09T12:55:14.876242+00:00"
+    },
+    {
+      "_id": "entities/roof",
+      "_key": "roof",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876243+00:00",
+      "entity_type": "Component",
+      "name": "roof",
+      "updated_at": "2026-09-09T12:55:14.876243+00:00"
+    },
+    {
+      "_id": "entities/shark",
+      "_key": "shark",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876244+00:00",
+      "entity_type": "Whole",
+      "name": "shark",
+      "updated_at": "2026-09-09T12:55:14.876244+00:00"
+    },
+    {
+      "_id": "entities/snow",
+      "_key": "snow",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876245+00:00",
+      "entity_type": "Entity",
+      "name": "snow",
+      "updated_at": "2026-09-09T12:55:14.876245+00:00"
+    },
+    {
+      "_id": "entities/snowdrifts",
+      "_key": "snowdrifts",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876245+00:00",
+      "entity_type": "Destination",
+      "name": "snowdrifts",
+      "updated_at": "2026-09-09T12:55:14.876245+00:00"
+    },
+    {
+      "_id": "entities/space",
+      "_key": "space",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876246+00:00",
+      "entity_type": "Destination",
+      "name": "space",
+      "updated_at": "2026-09-09T12:55:14.876246+00:00"
+    },
+    {
+      "_id": "entities/stone",
+      "_key": "stone",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876247+00:00",
+      "entity_type": "Entity",
+      "name": "stone",
+      "updated_at": "2026-09-09T12:55:14.876247+00:00"
+    },
+    {
+      "_id": "entities/teeth",
+      "_key": "teeth",
+      "aliases": [],
+      "created_at": "2026-09-09T12:55:14.876248+00:00",
+      "entity_type": "Component",
+      "name": "teeth",
+      "updated_at": "2026-09-09T12:55:14.876248+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10134",
+      "_key": "semeval-glm-flash-r2-b44-semeval-10134",
+      "chunk_id": "semeval-10134",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8d4b2cf8695f53571858ce3bfa734c2570e566d797569301510e79a0b3a902d0",
+      "created_at": "2026-09-09T12:55:14.876252+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "Acne is caused by hormonal imbalance within the body, but there are many other contributing factors to acne outbreaks.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876252+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10350",
+      "_key": "semeval-glm-flash-r2-b44-semeval-10350",
+      "chunk_id": "semeval-10350",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:210c9906ceeaed930d9b7803a957b45cad088229fc681717953f4e982bfe434a",
+      "created_at": "2026-09-09T12:55:14.876262+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "The fat and cholesterol cause heart disease; the animal protein causes cancer.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876262+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10359",
+      "_key": "semeval-glm-flash-r2-b44-semeval-10359",
+      "chunk_id": "semeval-10359",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:64923923abfa3c8ac35b00cdd5ba1fe46fad0e495b1e2cb879c3dae37bd29e7a",
+      "created_at": "2026-09-09T12:55:14.876267+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "You reassigned them after making a change in the registry through the administrative console or by using wsadmin scriptin.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876267+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10522",
+      "_key": "semeval-glm-flash-r2-b44-semeval-10522",
+      "chunk_id": "semeval-10522",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:75f7705c0b1f8ef4fff16ccec395bcb8ddaa1ed4c524ce3ad2b175203373ea0c",
+      "created_at": "2026-09-09T12:55:14.876273+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "The guard did his job with a scowling look on his face.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876273+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10564",
+      "_key": "semeval-glm-flash-r2-b44-semeval-10564",
+      "chunk_id": "semeval-10564",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a7cfb5817a0ae5ea023da7d6b8c04fa6ef4001ddb815090f188e935a4fdb72cc",
+      "created_at": "2026-09-09T12:55:14.876274+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "The strong winds blew snow into the snowdrifts.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876274+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10664",
+      "_key": "semeval-glm-flash-r2-b44-semeval-10664",
+      "chunk_id": "semeval-10664",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d86917c95a466349d80917edf8b17846058bd185643e47ef7051474c750942f3",
+      "created_at": "2026-09-09T12:55:14.876280+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "With Gary Versace on piano, Gary Hobbs on drums, and Chuck Bergeron on bass, the trio performs with a wide range of artists and ensembles.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876280+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-8013",
+      "_key": "semeval-glm-flash-r2-b44-semeval-8013",
+      "chunk_id": "semeval-8013",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4ccbad15734fc71ea323fd68ef2095efe801583f195f195978534983f1f423e2",
+      "created_at": "2026-09-09T12:55:14.876281+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "NASA Kepler mission sends names into space.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876281+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-8108",
+      "_key": "semeval-glm-flash-r2-b44-semeval-8108",
+      "chunk_id": "semeval-8108",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:678416451fe0fc4bae5138dd9bff696f3800262568d4776175d5a76dc0a51eb1",
+      "created_at": "2026-09-09T12:55:14.876287+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "The pretexts offered were laughable, and the response caused scarcely a ripple on the flood of commentary on Washington's noble \"efforts to spread democracy\".",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876287+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-8675",
+      "_key": "semeval-glm-flash-r2-b44-semeval-8675",
+      "chunk_id": "semeval-8675",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:538b2be456e69b79ae246a5f77c704750b7500d4e581f89ab3a5d1ee3f8c6d55",
+      "created_at": "2026-09-09T12:55:14.876292+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "The order, issued Nov. 16 by Eric Landoll, the city's code administrator, states that the roof of the building is allowing rain to fall into the interior of the building and because of this the interior floors are structurally unsound and there is mold and mildew throughout the building causing health concerns for anyone entering the building.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876292+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-8837",
+      "_key": "semeval-glm-flash-r2-b44-semeval-8837",
+      "chunk_id": "semeval-8837",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:106a2243f80b33e54ed3c76657d9b70cc756a1dbb9ffbac33120da73400d6f2c",
+      "created_at": "2026-09-09T12:55:14.876297+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "They (the aquarium) were brushing the shark's teeth.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876297+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-9805",
+      "_key": "semeval-glm-flash-r2-b44-semeval-9805",
+      "chunk_id": "semeval-9805",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:0a45146b90fc411ff8dd68b63f76ece64cddcf86d45316a4dd6d51096324790b",
+      "created_at": "2026-09-09T12:55:14.876301+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "A stone was put inside a freshly made pot, then it was pressed against the metal.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876301+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b44-semeval-9978",
+      "_key": "semeval-glm-flash-r2-b44-semeval-9978",
+      "chunk_id": "semeval-9978",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:049d99ec8ed9f8b1d4feea32d3129a0f89a330cf58e0fbf5cd95e944065c7bfa",
+      "created_at": "2026-09-09T12:55:14.876305+00:00",
+      "space_id": "semeval-glm-flash-r2-b44",
+      "text": "The 400 V power supply (unstabilized) was derived from a conventional power-pack with n-filter.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:55:14.876305+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 9,
+        "results": [
+          {
+            "_from": "entities/power-supply",
+            "_id": "facts/fact-228f1e22c0e1164cb733a2814e7b30cbe92ce1f69b04d8b15e66ff3a834f4e9f",
+            "_key": "fact-228f1e22c0e1164cb733a2814e7b30cbe92ce1f69b04d8b15e66ff3a834f4e9f",
+            "_to": "entities/power-pack",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9978",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "trigger": "The 400 V power supply (unstabilized) was derived from a conventional power-pack with n-filter.",
+            "trigger_end": 95,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/snow",
+            "_id": "facts/fact-5911da1617a0372c3ff073efff9c37556267b8d88616feb5a5ad6920a0d860eb",
+            "_key": "fact-5911da1617a0372c3ff073efff9c37556267b8d88616feb5a5ad6920a0d860eb",
+            "_to": "entities/snowdrifts",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10564",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "trigger": "The strong winds blew snow into the snowdrifts.",
+            "trigger_end": 47,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/roof",
+            "_id": "facts/fact-69947b4c3e7e9d7586f7bb6ef01bf221d23258ab51605a803836582bea4f0d93",
+            "_key": "fact-69947b4c3e7e9d7586f7bb6ef01bf221d23258ab51605a803836582bea4f0d93",
+            "_to": "entities/building",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8675",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "trigger": "The order, issued Nov. 16 by Eric Landoll, the city's code administrator, states that the roof of the building is allowing rain to fall into the interior of the building and because of this the interior floors are structurally unsound and there is mold and mildew throughout the building causing health concerns for anyone entering the building.",
+            "trigger_end": 345,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/teeth",
+            "_id": "facts/fact-742e11b3cb3757ac79105e343adabfab39fc4da34df96586b228c9e397bd1fd6",
+            "_key": "fact-742e11b3cb3757ac79105e343adabfab39fc4da34df96586b228c9e397bd1fd6",
+            "_to": "entities/shark",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8837",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "trigger": "They (the aquarium) were brushing the shark's teeth.",
+            "trigger_end": 52,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/response",
+            "_id": "facts/fact-7eebc92de8e878d77a5b011697fc5b7401850bb6629e14a936df4cde7ec40672",
+            "_key": "fact-7eebc92de8e878d77a5b011697fc5b7401850bb6629e14a936df4cde7ec40672",
+            "_to": "entities/ripple",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8108",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "trigger": "The pretexts offered were laughable, and the response caused scarcely a ripple on the flood of commentary on Washington's noble \"efforts to spread democracy\".",
+            "trigger_end": 158,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/fat",
+            "_id": "facts/fact-9d30e1bea137d64216eb071341ff8afeeaaa1858bb2ddeab3599c131558689a7",
+            "_key": "fact-9d30e1bea137d64216eb071341ff8afeeaaa1858bb2ddeab3599c131558689a7",
+            "_to": "entities/disease",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10350",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "trigger": "The fat and cholesterol cause heart disease; the animal protein causes cancer.",
+            "trigger_end": 78,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/stone",
+            "_id": "facts/fact-a3c582b7e147c328abd50dc369eea95ccf4cc33c3882649e7533a4f62b9dc8f1",
+            "_key": "fact-a3c582b7e147c328abd50dc369eea95ccf4cc33c3882649e7533a4f62b9dc8f1",
+            "_to": "entities/pot",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9805",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "trigger": "A stone was put inside a freshly made pot, then it was pressed against the metal.",
+            "trigger_end": 81,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/hormonal-imbalance",
+            "_id": "facts/fact-b18f91696d5bf92ff774c86e6f8af7beb55230887f184fec90b49a31834bf8a5",
+            "_key": "fact-b18f91696d5bf92ff774c86e6f8af7beb55230887f184fec90b49a31834bf8a5",
+            "_to": "entities/acne",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10134",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "trigger": "Acne is caused by hormonal imbalance within the body, but there are many other contributing factors to acne outbreaks.",
+            "trigger_end": 118,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/names",
+            "_id": "facts/fact-dc882fed14e9f9d6198c1852b2ef36d6f0311c9ef1de518c083313320393be6f",
+            "_key": "fact-dc882fed14e9f9d6198c1852b2ef36d6f0311c9ef1de518c083313320393be6f",
+            "_to": "entities/space",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8013",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "trigger": "NASA Kepler mission sends names into space.",
+            "trigger_end": 43,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 18,
+        "results": [
+          {
+            "_id": "entities/acne",
+            "_key": "acne",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876230+00:00",
+            "entity_type": "Effect",
+            "name": "Acne",
+            "updated_at": "2026-09-09T12:55:14.876230+00:00"
+          },
+          {
+            "_id": "entities/building",
+            "_key": "building",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876234+00:00",
+            "entity_type": "Whole",
+            "name": "building",
+            "updated_at": "2026-09-09T12:55:14.876234+00:00"
+          },
+          {
+            "_id": "entities/disease",
+            "_key": "disease",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876235+00:00",
+            "entity_type": "Effect",
+            "name": "disease",
+            "updated_at": "2026-09-09T12:55:14.876235+00:00"
+          },
+          {
+            "_id": "entities/fat",
+            "_key": "fat",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876236+00:00",
+            "entity_type": "Cause",
+            "name": "fat",
+            "updated_at": "2026-09-09T12:55:14.876236+00:00"
+          },
+          {
+            "_id": "entities/hormonal-imbalance",
+            "_key": "hormonal-imbalance",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876237+00:00",
+            "entity_type": "Cause",
+            "name": "hormonal imbalance",
+            "updated_at": "2026-09-09T12:55:14.876237+00:00"
+          },
+          {
+            "_id": "entities/names",
+            "_key": "names",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876238+00:00",
+            "entity_type": "Entity",
+            "name": "names",
+            "updated_at": "2026-09-09T12:55:14.876238+00:00"
+          },
+          {
+            "_id": "entities/pot",
+            "_key": "pot",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876239+00:00",
+            "entity_type": "Destination",
+            "name": "pot",
+            "updated_at": "2026-09-09T12:55:14.876239+00:00"
+          },
+          {
+            "_id": "entities/power-pack",
+            "_key": "power-pack",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876239+00:00",
+            "entity_type": "Origin",
+            "name": "power-pack",
+            "updated_at": "2026-09-09T12:55:14.876239+00:00"
+          },
+          {
+            "_id": "entities/power-supply",
+            "_key": "power-supply",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876240+00:00",
+            "entity_type": "Entity",
+            "name": "power supply",
+            "updated_at": "2026-09-09T12:55:14.876240+00:00"
+          },
+          {
+            "_id": "entities/response",
+            "_key": "response",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876242+00:00",
+            "entity_type": "Cause",
+            "name": "response",
+            "updated_at": "2026-09-09T12:55:14.876242+00:00"
+          },
+          {
+            "_id": "entities/ripple",
+            "_key": "ripple",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876242+00:00",
+            "entity_type": "Effect",
+            "name": "ripple",
+            "updated_at": "2026-09-09T12:55:14.876242+00:00"
+          },
+          {
+            "_id": "entities/roof",
+            "_key": "roof",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876243+00:00",
+            "entity_type": "Component",
+            "name": "roof",
+            "updated_at": "2026-09-09T12:55:14.876243+00:00"
+          },
+          {
+            "_id": "entities/shark",
+            "_key": "shark",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876244+00:00",
+            "entity_type": "Whole",
+            "name": "shark",
+            "updated_at": "2026-09-09T12:55:14.876244+00:00"
+          },
+          {
+            "_id": "entities/snow",
+            "_key": "snow",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876245+00:00",
+            "entity_type": "Entity",
+            "name": "snow",
+            "updated_at": "2026-09-09T12:55:14.876245+00:00"
+          },
+          {
+            "_id": "entities/snowdrifts",
+            "_key": "snowdrifts",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876245+00:00",
+            "entity_type": "Destination",
+            "name": "snowdrifts",
+            "updated_at": "2026-09-09T12:55:14.876245+00:00"
+          },
+          {
+            "_id": "entities/space",
+            "_key": "space",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876246+00:00",
+            "entity_type": "Destination",
+            "name": "space",
+            "updated_at": "2026-09-09T12:55:14.876246+00:00"
+          },
+          {
+            "_id": "entities/stone",
+            "_key": "stone",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876247+00:00",
+            "entity_type": "Entity",
+            "name": "stone",
+            "updated_at": "2026-09-09T12:55:14.876247+00:00"
+          },
+          {
+            "_id": "entities/teeth",
+            "_key": "teeth",
+            "aliases": [],
+            "created_at": "2026-09-09T12:55:14.876248+00:00",
+            "entity_type": "Component",
+            "name": "teeth",
+            "updated_at": "2026-09-09T12:55:14.876248+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10134",
+            "_key": "semeval-glm-flash-r2-b44-semeval-10134",
+            "chunk_id": "semeval-10134",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8d4b2cf8695f53571858ce3bfa734c2570e566d797569301510e79a0b3a902d0",
+            "created_at": "2026-09-09T12:55:14.876252+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "Acne is caused by hormonal imbalance within the body, but there are many other contributing factors to acne outbreaks.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876252+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10350",
+            "_key": "semeval-glm-flash-r2-b44-semeval-10350",
+            "chunk_id": "semeval-10350",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:210c9906ceeaed930d9b7803a957b45cad088229fc681717953f4e982bfe434a",
+            "created_at": "2026-09-09T12:55:14.876262+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "The fat and cholesterol cause heart disease; the animal protein causes cancer.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876262+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10359",
+            "_key": "semeval-glm-flash-r2-b44-semeval-10359",
+            "chunk_id": "semeval-10359",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:64923923abfa3c8ac35b00cdd5ba1fe46fad0e495b1e2cb879c3dae37bd29e7a",
+            "created_at": "2026-09-09T12:55:14.876267+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "You reassigned them after making a change in the registry through the administrative console or by using wsadmin scriptin.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876267+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10522",
+            "_key": "semeval-glm-flash-r2-b44-semeval-10522",
+            "chunk_id": "semeval-10522",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:75f7705c0b1f8ef4fff16ccec395bcb8ddaa1ed4c524ce3ad2b175203373ea0c",
+            "created_at": "2026-09-09T12:55:14.876273+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "The guard did his job with a scowling look on his face.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876273+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10564",
+            "_key": "semeval-glm-flash-r2-b44-semeval-10564",
+            "chunk_id": "semeval-10564",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a7cfb5817a0ae5ea023da7d6b8c04fa6ef4001ddb815090f188e935a4fdb72cc",
+            "created_at": "2026-09-09T12:55:14.876274+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "The strong winds blew snow into the snowdrifts.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876274+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-10664",
+            "_key": "semeval-glm-flash-r2-b44-semeval-10664",
+            "chunk_id": "semeval-10664",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d86917c95a466349d80917edf8b17846058bd185643e47ef7051474c750942f3",
+            "created_at": "2026-09-09T12:55:14.876280+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "With Gary Versace on piano, Gary Hobbs on drums, and Chuck Bergeron on bass, the trio performs with a wide range of artists and ensembles.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876280+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-8013",
+            "_key": "semeval-glm-flash-r2-b44-semeval-8013",
+            "chunk_id": "semeval-8013",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4ccbad15734fc71ea323fd68ef2095efe801583f195f195978534983f1f423e2",
+            "created_at": "2026-09-09T12:55:14.876281+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "NASA Kepler mission sends names into space.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876281+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-8108",
+            "_key": "semeval-glm-flash-r2-b44-semeval-8108",
+            "chunk_id": "semeval-8108",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:678416451fe0fc4bae5138dd9bff696f3800262568d4776175d5a76dc0a51eb1",
+            "created_at": "2026-09-09T12:55:14.876287+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "The pretexts offered were laughable, and the response caused scarcely a ripple on the flood of commentary on Washington's noble \"efforts to spread democracy\".",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876287+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-8675",
+            "_key": "semeval-glm-flash-r2-b44-semeval-8675",
+            "chunk_id": "semeval-8675",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:538b2be456e69b79ae246a5f77c704750b7500d4e581f89ab3a5d1ee3f8c6d55",
+            "created_at": "2026-09-09T12:55:14.876292+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "The order, issued Nov. 16 by Eric Landoll, the city's code administrator, states that the roof of the building is allowing rain to fall into the interior of the building and because of this the interior floors are structurally unsound and there is mold and mildew throughout the building causing health concerns for anyone entering the building.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876292+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-8837",
+            "_key": "semeval-glm-flash-r2-b44-semeval-8837",
+            "chunk_id": "semeval-8837",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:106a2243f80b33e54ed3c76657d9b70cc756a1dbb9ffbac33120da73400d6f2c",
+            "created_at": "2026-09-09T12:55:14.876297+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "They (the aquarium) were brushing the shark's teeth.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876297+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-9805",
+            "_key": "semeval-glm-flash-r2-b44-semeval-9805",
+            "chunk_id": "semeval-9805",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:0a45146b90fc411ff8dd68b63f76ece64cddcf86d45316a4dd6d51096324790b",
+            "created_at": "2026-09-09T12:55:14.876301+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "A stone was put inside a freshly made pot, then it was pressed against the metal.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876301+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b44-semeval-9978",
+            "_key": "semeval-glm-flash-r2-b44-semeval-9978",
+            "chunk_id": "semeval-9978",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:049d99ec8ed9f8b1d4feea32d3129a0f89a330cf58e0fbf5cd95e944065c7bfa",
+            "created_at": "2026-09-09T12:55:14.876305+00:00",
+            "space_id": "semeval-glm-flash-r2-b44",
+            "text": "The 400 V power supply (unstabilized) was derived from a conventional power-pack with n-filter.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:55:14.876305+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

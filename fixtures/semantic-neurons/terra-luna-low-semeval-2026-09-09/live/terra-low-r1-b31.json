@@ -1,0 +1,919 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 1,
+  "batch": 31,
+  "request": {
+    "space_type": "semeval-terra-low-r1-b31",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9094",
+        "title": "Relation benchmark excerpt",
+        "text": "It is a common informal convention to reserve or declare full or partial ownership of a community resource."
+      },
+      {
+        "id": "semeval-9554",
+        "title": "Relation benchmark excerpt",
+        "text": "They opened the text file and dumped the text into the text box."
+      },
+      {
+        "id": "semeval-9623",
+        "title": "Relation benchmark excerpt",
+        "text": "The officers have been placed on administrative leave."
+      },
+      {
+        "id": "semeval-8601",
+        "title": "Relation benchmark excerpt",
+        "text": "American Firehouse Brewing Supply, located in Arlington/Pantego, Texas, is a company established by a fireman who has a love of home brewing quality beer."
+      },
+      {
+        "id": "semeval-8034",
+        "title": "Relation benchmark excerpt",
+        "text": "Essentially, the blisters that appear in the mouth are caused by the herpes simplex virus type 1, HSV-1 for short."
+      },
+      {
+        "id": "semeval-10666",
+        "title": "Relation benchmark excerpt",
+        "text": "In a further embodiment the polynucleotide is derived from an angiosperm species."
+      },
+      {
+        "id": "semeval-9513",
+        "title": "Relation benchmark excerpt",
+        "text": "The chief executive of Bottega Veneta, the Italian maker of the coveted and distinctive woven handbags, is planning for the worst while hoping for something better."
+      },
+      {
+        "id": "semeval-8396",
+        "title": "Relation benchmark excerpt",
+        "text": "The text handles all of this material well, integrating it into the flow of the argument."
+      },
+      {
+        "id": "semeval-8431",
+        "title": "Relation benchmark excerpt",
+        "text": "My shoe laces stay tied all the time."
+      },
+      {
+        "id": "semeval-8783",
+        "title": "Relation benchmark excerpt",
+        "text": "Chinese construction workers build the port at Hambantota that analysts believe will become a base for its navy."
+      },
+      {
+        "id": "semeval-8531",
+        "title": "Relation benchmark excerpt",
+        "text": "After sound waves enter the outer ear, they travel through the ear canal and make their way to the middle ear."
+      },
+      {
+        "id": "semeval-10539",
+        "title": "Relation benchmark excerpt",
+        "text": "The Postmodernism Generator was written by Andrew C. Bulhak using the Dada Engine, a system for generating random text from recursive grammars."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 5,
+    "proposed": 7,
+    "skips": [
+      "`laces --Component-Whole--> shoe`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+      "`text --Message-Topic--> grammars`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-terra-low-r1-b31"
+  },
+  "latency_seconds": 4.235924041946419,
+  "facts": [
+    {
+      "_from": "entities/workers",
+      "_id": "facts/fact-0892280c89cb1a73cd5568b176c9da164bb3513f1a0e859731f5058018099bc2",
+      "_key": "fact-0892280c89cb1a73cd5568b176c9da164bb3513f1a0e859731f5058018099bc2",
+      "_to": "entities/port",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8783",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b31",
+      "trigger": "Chinese construction workers build the port at Hambantota that analysts believe will become a base for its navy.",
+      "trigger_end": 112,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/blisters",
+      "_id": "facts/fact-16de0381ccf3ff803c08a36b63386b501303806a5aed4268f5cfd8ff3d5ce704",
+      "_key": "fact-16de0381ccf3ff803c08a36b63386b501303806a5aed4268f5cfd8ff3d5ce704",
+      "_to": "entities/herpes-simplex-virus",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8034",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b31",
+      "trigger": "Essentially, the blisters that appear in the mouth are caused by the herpes simplex virus type 1, HSV-1 for short.",
+      "trigger_end": 114,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/text",
+      "_id": "facts/fact-47cc259346f72d2317c63f2404f2dc23d84bf8c1f401ecf41010fe22292df29a",
+      "_key": "fact-47cc259346f72d2317c63f2404f2dc23d84bf8c1f401ecf41010fe22292df29a",
+      "_to": "entities/material",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8396",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b31",
+      "trigger": "The text handles all of this material well, integrating it into the flow of the argument.",
+      "trigger_end": 89,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/handbags",
+      "_id": "facts/fact-56795d5fd42392bd6e999430e41a47a94e6fb290fc8ef2f1a5cb0bc653317257",
+      "_key": "fact-56795d5fd42392bd6e999430e41a47a94e6fb290fc8ef2f1a5cb0bc653317257",
+      "_to": "entities/maker",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9513",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b31",
+      "trigger": "The chief executive of Bottega Veneta, the Italian maker of the coveted and distinctive woven handbags, is planning for the worst while hoping for something better.",
+      "trigger_end": 164,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/polynucleotide",
+      "_id": "facts/fact-a751dbb96ca3da8bb858d3a0ff613796b16cfb272e9075519b03db8845aeb744",
+      "_key": "fact-a751dbb96ca3da8bb858d3a0ff613796b16cfb272e9075519b03db8845aeb744",
+      "_to": "entities/species",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10666",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b31",
+      "trigger": "In a further embodiment the polynucleotide is derived from an angiosperm species.",
+      "trigger_end": 81,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/blisters",
+      "_key": "blisters",
+      "aliases": [],
+      "created_at": "2026-09-09T13:36:15.986356+00:00",
+      "entity_type": "object",
+      "name": "blisters",
+      "updated_at": "2026-09-09T13:36:15.986356+00:00"
+    },
+    {
+      "_id": "entities/handbags",
+      "_key": "handbags",
+      "aliases": [],
+      "created_at": "2026-09-09T13:36:15.986362+00:00",
+      "entity_type": "object",
+      "name": "handbags",
+      "updated_at": "2026-09-09T13:36:15.986362+00:00"
+    },
+    {
+      "_id": "entities/herpes-simplex-virus",
+      "_key": "herpes-simplex-virus",
+      "aliases": [],
+      "created_at": "2026-09-09T13:36:15.986363+00:00",
+      "entity_type": "object",
+      "name": "herpes simplex virus",
+      "updated_at": "2026-09-09T13:36:15.986363+00:00"
+    },
+    {
+      "_id": "entities/maker",
+      "_key": "maker",
+      "aliases": [],
+      "created_at": "2026-09-09T13:36:15.986367+00:00",
+      "entity_type": "agent",
+      "name": "maker",
+      "updated_at": "2026-09-09T13:36:15.986367+00:00"
+    },
+    {
+      "_id": "entities/material",
+      "_key": "material",
+      "aliases": [],
+      "created_at": "2026-09-09T13:36:15.986370+00:00",
+      "entity_type": "topic",
+      "name": "material",
+      "updated_at": "2026-09-09T13:36:15.986370+00:00"
+    },
+    {
+      "_id": "entities/polynucleotide",
+      "_key": "polynucleotide",
+      "aliases": [],
+      "created_at": "2026-09-09T13:36:15.986371+00:00",
+      "entity_type": "object",
+      "name": "polynucleotide",
+      "updated_at": "2026-09-09T13:36:15.986371+00:00"
+    },
+    {
+      "_id": "entities/port",
+      "_key": "port",
+      "aliases": [],
+      "created_at": "2026-09-09T13:36:15.986372+00:00",
+      "entity_type": "object",
+      "name": "port",
+      "updated_at": "2026-09-09T13:36:15.986372+00:00"
+    },
+    {
+      "_id": "entities/species",
+      "_key": "species",
+      "aliases": [],
+      "created_at": "2026-09-09T13:36:15.986373+00:00",
+      "entity_type": "object",
+      "name": "species",
+      "updated_at": "2026-09-09T13:36:15.986373+00:00"
+    },
+    {
+      "_id": "entities/text",
+      "_key": "text",
+      "aliases": [],
+      "created_at": "2026-09-09T13:36:15.986374+00:00",
+      "entity_type": "message",
+      "name": "text",
+      "updated_at": "2026-09-09T13:36:15.986374+00:00"
+    },
+    {
+      "_id": "entities/workers",
+      "_key": "workers",
+      "aliases": [],
+      "created_at": "2026-09-09T13:36:15.986375+00:00",
+      "entity_type": "agent",
+      "name": "workers",
+      "updated_at": "2026-09-09T13:36:15.986375+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-10539",
+      "_key": "semeval-terra-low-r1-b31-semeval-10539",
+      "chunk_id": "semeval-10539",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:cad72c85c323cbac161a37dff21bf3b92bba8032adf98dfc73791e87702a08f8",
+      "created_at": "2026-09-09T13:36:15.986377+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "The Postmodernism Generator was written by Andrew C. Bulhak using the Dada Engine, a system for generating random text from recursive grammars.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986377+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-10666",
+      "_key": "semeval-terra-low-r1-b31-semeval-10666",
+      "chunk_id": "semeval-10666",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c8f02666f62681708e7069912b72c033f7033f91b26c1e0e540b3c41cb5a6cac",
+      "created_at": "2026-09-09T13:36:15.986383+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "In a further embodiment the polynucleotide is derived from an angiosperm species.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986383+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-8034",
+      "_key": "semeval-terra-low-r1-b31-semeval-8034",
+      "chunk_id": "semeval-8034",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:115c93d60b3a0843ace3ebd6ca3ad471c93d2050a95dae3a71c07ee249200879",
+      "created_at": "2026-09-09T13:36:15.986398+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "Essentially, the blisters that appear in the mouth are caused by the herpes simplex virus type 1, HSV-1 for short.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986398+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-8396",
+      "_key": "semeval-terra-low-r1-b31-semeval-8396",
+      "chunk_id": "semeval-8396",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:cef89805d78a7a90fbbe2a52324e5b2a07f8c4887cd47e5869d138b4ec1616bf",
+      "created_at": "2026-09-09T13:36:15.986404+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "The text handles all of this material well, integrating it into the flow of the argument.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986404+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-8431",
+      "_key": "semeval-terra-low-r1-b31-semeval-8431",
+      "chunk_id": "semeval-8431",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f5641fedcb6dd0c7af0c1316a27479228124c9958ff36a7a010d9fa586bd40be",
+      "created_at": "2026-09-09T13:36:15.986411+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "My shoe laces stay tied all the time.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986411+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-8531",
+      "_key": "semeval-terra-low-r1-b31-semeval-8531",
+      "chunk_id": "semeval-8531",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9583a5be9cbe3ffba78001fc8480cff234f758dc6aefac5c9125f36c8fc7568b",
+      "created_at": "2026-09-09T13:36:15.986413+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "After sound waves enter the outer ear, they travel through the ear canal and make their way to the middle ear.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986413+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-8601",
+      "_key": "semeval-terra-low-r1-b31-semeval-8601",
+      "chunk_id": "semeval-8601",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:eb86719b59a6958094f76e166a049b3bc237a1ee85a28e237c457c850fabdb73",
+      "created_at": "2026-09-09T13:36:15.986414+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "American Firehouse Brewing Supply, located in Arlington/Pantego, Texas, is a company established by a fireman who has a love of home brewing quality beer.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986414+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-8783",
+      "_key": "semeval-terra-low-r1-b31-semeval-8783",
+      "chunk_id": "semeval-8783",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d13db2046754c6f5f46b9197bd274d70f3a63ee955fa26f5b61d3b04a22b90df",
+      "created_at": "2026-09-09T13:36:15.986415+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "Chinese construction workers build the port at Hambantota that analysts believe will become a base for its navy.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986415+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-9094",
+      "_key": "semeval-terra-low-r1-b31-semeval-9094",
+      "chunk_id": "semeval-9094",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3c3f708b962810bb63881061e8ea8d0bfb73dcd6408fa367262e1bdb53bf9d6b",
+      "created_at": "2026-09-09T13:36:15.986423+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "It is a common informal convention to reserve or declare full or partial ownership of a community resource.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986423+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-9513",
+      "_key": "semeval-terra-low-r1-b31-semeval-9513",
+      "chunk_id": "semeval-9513",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:33fb3d00a245553b4ad54ebc0460ea6193a55a3fea4c3871c7831c36f571a906",
+      "created_at": "2026-09-09T13:36:15.986424+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "The chief executive of Bottega Veneta, the Italian maker of the coveted and distinctive woven handbags, is planning for the worst while hoping for something better.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986424+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-9554",
+      "_key": "semeval-terra-low-r1-b31-semeval-9554",
+      "chunk_id": "semeval-9554",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a328ba20cc968f75fbd51d3c6b9bfad170fa148bc72fe3261b51f8c85fc1f843",
+      "created_at": "2026-09-09T13:36:15.986430+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "They opened the text file and dumped the text into the text box.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986430+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b31-semeval-9623",
+      "_key": "semeval-terra-low-r1-b31-semeval-9623",
+      "chunk_id": "semeval-9623",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:908923321ff6c2c72513ed1d8e972f3a86cce7194b6fc876046f3ee70c60a2b1",
+      "created_at": "2026-09-09T13:36:15.986432+00:00",
+      "space_id": "semeval-terra-low-r1-b31",
+      "text": "The officers have been placed on administrative leave.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:36:15.986432+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 5,
+        "results": [
+          {
+            "_from": "entities/workers",
+            "_id": "facts/fact-0892280c89cb1a73cd5568b176c9da164bb3513f1a0e859731f5058018099bc2",
+            "_key": "fact-0892280c89cb1a73cd5568b176c9da164bb3513f1a0e859731f5058018099bc2",
+            "_to": "entities/port",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8783",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b31",
+            "trigger": "Chinese construction workers build the port at Hambantota that analysts believe will become a base for its navy.",
+            "trigger_end": 112,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/blisters",
+            "_id": "facts/fact-16de0381ccf3ff803c08a36b63386b501303806a5aed4268f5cfd8ff3d5ce704",
+            "_key": "fact-16de0381ccf3ff803c08a36b63386b501303806a5aed4268f5cfd8ff3d5ce704",
+            "_to": "entities/herpes-simplex-virus",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8034",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b31",
+            "trigger": "Essentially, the blisters that appear in the mouth are caused by the herpes simplex virus type 1, HSV-1 for short.",
+            "trigger_end": 114,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/text",
+            "_id": "facts/fact-47cc259346f72d2317c63f2404f2dc23d84bf8c1f401ecf41010fe22292df29a",
+            "_key": "fact-47cc259346f72d2317c63f2404f2dc23d84bf8c1f401ecf41010fe22292df29a",
+            "_to": "entities/material",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8396",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b31",
+            "trigger": "The text handles all of this material well, integrating it into the flow of the argument.",
+            "trigger_end": 89,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/handbags",
+            "_id": "facts/fact-56795d5fd42392bd6e999430e41a47a94e6fb290fc8ef2f1a5cb0bc653317257",
+            "_key": "fact-56795d5fd42392bd6e999430e41a47a94e6fb290fc8ef2f1a5cb0bc653317257",
+            "_to": "entities/maker",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9513",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b31",
+            "trigger": "The chief executive of Bottega Veneta, the Italian maker of the coveted and distinctive woven handbags, is planning for the worst while hoping for something better.",
+            "trigger_end": 164,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/polynucleotide",
+            "_id": "facts/fact-a751dbb96ca3da8bb858d3a0ff613796b16cfb272e9075519b03db8845aeb744",
+            "_key": "fact-a751dbb96ca3da8bb858d3a0ff613796b16cfb272e9075519b03db8845aeb744",
+            "_to": "entities/species",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10666",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b31",
+            "trigger": "In a further embodiment the polynucleotide is derived from an angiosperm species.",
+            "trigger_end": 81,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 10,
+        "results": [
+          {
+            "_id": "entities/blisters",
+            "_key": "blisters",
+            "aliases": [],
+            "created_at": "2026-09-09T13:36:15.986356+00:00",
+            "entity_type": "object",
+            "name": "blisters",
+            "updated_at": "2026-09-09T13:36:15.986356+00:00"
+          },
+          {
+            "_id": "entities/handbags",
+            "_key": "handbags",
+            "aliases": [],
+            "created_at": "2026-09-09T13:36:15.986362+00:00",
+            "entity_type": "object",
+            "name": "handbags",
+            "updated_at": "2026-09-09T13:36:15.986362+00:00"
+          },
+          {
+            "_id": "entities/herpes-simplex-virus",
+            "_key": "herpes-simplex-virus",
+            "aliases": [],
+            "created_at": "2026-09-09T13:36:15.986363+00:00",
+            "entity_type": "object",
+            "name": "herpes simplex virus",
+            "updated_at": "2026-09-09T13:36:15.986363+00:00"
+          },
+          {
+            "_id": "entities/maker",
+            "_key": "maker",
+            "aliases": [],
+            "created_at": "2026-09-09T13:36:15.986367+00:00",
+            "entity_type": "agent",
+            "name": "maker",
+            "updated_at": "2026-09-09T13:36:15.986367+00:00"
+          },
+          {
+            "_id": "entities/material",
+            "_key": "material",
+            "aliases": [],
+            "created_at": "2026-09-09T13:36:15.986370+00:00",
+            "entity_type": "topic",
+            "name": "material",
+            "updated_at": "2026-09-09T13:36:15.986370+00:00"
+          },
+          {
+            "_id": "entities/polynucleotide",
+            "_key": "polynucleotide",
+            "aliases": [],
+            "created_at": "2026-09-09T13:36:15.986371+00:00",
+            "entity_type": "object",
+            "name": "polynucleotide",
+            "updated_at": "2026-09-09T13:36:15.986371+00:00"
+          },
+          {
+            "_id": "entities/port",
+            "_key": "port",
+            "aliases": [],
+            "created_at": "2026-09-09T13:36:15.986372+00:00",
+            "entity_type": "object",
+            "name": "port",
+            "updated_at": "2026-09-09T13:36:15.986372+00:00"
+          },
+          {
+            "_id": "entities/species",
+            "_key": "species",
+            "aliases": [],
+            "created_at": "2026-09-09T13:36:15.986373+00:00",
+            "entity_type": "object",
+            "name": "species",
+            "updated_at": "2026-09-09T13:36:15.986373+00:00"
+          },
+          {
+            "_id": "entities/text",
+            "_key": "text",
+            "aliases": [],
+            "created_at": "2026-09-09T13:36:15.986374+00:00",
+            "entity_type": "message",
+            "name": "text",
+            "updated_at": "2026-09-09T13:36:15.986374+00:00"
+          },
+          {
+            "_id": "entities/workers",
+            "_key": "workers",
+            "aliases": [],
+            "created_at": "2026-09-09T13:36:15.986375+00:00",
+            "entity_type": "agent",
+            "name": "workers",
+            "updated_at": "2026-09-09T13:36:15.986375+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-10539",
+            "_key": "semeval-terra-low-r1-b31-semeval-10539",
+            "chunk_id": "semeval-10539",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:cad72c85c323cbac161a37dff21bf3b92bba8032adf98dfc73791e87702a08f8",
+            "created_at": "2026-09-09T13:36:15.986377+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "The Postmodernism Generator was written by Andrew C. Bulhak using the Dada Engine, a system for generating random text from recursive grammars.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986377+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-10666",
+            "_key": "semeval-terra-low-r1-b31-semeval-10666",
+            "chunk_id": "semeval-10666",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c8f02666f62681708e7069912b72c033f7033f91b26c1e0e540b3c41cb5a6cac",
+            "created_at": "2026-09-09T13:36:15.986383+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "In a further embodiment the polynucleotide is derived from an angiosperm species.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986383+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-8034",
+            "_key": "semeval-terra-low-r1-b31-semeval-8034",
+            "chunk_id": "semeval-8034",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:115c93d60b3a0843ace3ebd6ca3ad471c93d2050a95dae3a71c07ee249200879",
+            "created_at": "2026-09-09T13:36:15.986398+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "Essentially, the blisters that appear in the mouth are caused by the herpes simplex virus type 1, HSV-1 for short.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986398+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-8396",
+            "_key": "semeval-terra-low-r1-b31-semeval-8396",
+            "chunk_id": "semeval-8396",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:cef89805d78a7a90fbbe2a52324e5b2a07f8c4887cd47e5869d138b4ec1616bf",
+            "created_at": "2026-09-09T13:36:15.986404+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "The text handles all of this material well, integrating it into the flow of the argument.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986404+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-8431",
+            "_key": "semeval-terra-low-r1-b31-semeval-8431",
+            "chunk_id": "semeval-8431",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f5641fedcb6dd0c7af0c1316a27479228124c9958ff36a7a010d9fa586bd40be",
+            "created_at": "2026-09-09T13:36:15.986411+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "My shoe laces stay tied all the time.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986411+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-8531",
+            "_key": "semeval-terra-low-r1-b31-semeval-8531",
+            "chunk_id": "semeval-8531",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:9583a5be9cbe3ffba78001fc8480cff234f758dc6aefac5c9125f36c8fc7568b",
+            "created_at": "2026-09-09T13:36:15.986413+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "After sound waves enter the outer ear, they travel through the ear canal and make their way to the middle ear.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986413+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-8601",
+            "_key": "semeval-terra-low-r1-b31-semeval-8601",
+            "chunk_id": "semeval-8601",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:eb86719b59a6958094f76e166a049b3bc237a1ee85a28e237c457c850fabdb73",
+            "created_at": "2026-09-09T13:36:15.986414+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "American Firehouse Brewing Supply, located in Arlington/Pantego, Texas, is a company established by a fireman who has a love of home brewing quality beer.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986414+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-8783",
+            "_key": "semeval-terra-low-r1-b31-semeval-8783",
+            "chunk_id": "semeval-8783",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d13db2046754c6f5f46b9197bd274d70f3a63ee955fa26f5b61d3b04a22b90df",
+            "created_at": "2026-09-09T13:36:15.986415+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "Chinese construction workers build the port at Hambantota that analysts believe will become a base for its navy.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986415+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-9094",
+            "_key": "semeval-terra-low-r1-b31-semeval-9094",
+            "chunk_id": "semeval-9094",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3c3f708b962810bb63881061e8ea8d0bfb73dcd6408fa367262e1bdb53bf9d6b",
+            "created_at": "2026-09-09T13:36:15.986423+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "It is a common informal convention to reserve or declare full or partial ownership of a community resource.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986423+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-9513",
+            "_key": "semeval-terra-low-r1-b31-semeval-9513",
+            "chunk_id": "semeval-9513",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:33fb3d00a245553b4ad54ebc0460ea6193a55a3fea4c3871c7831c36f571a906",
+            "created_at": "2026-09-09T13:36:15.986424+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "The chief executive of Bottega Veneta, the Italian maker of the coveted and distinctive woven handbags, is planning for the worst while hoping for something better.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986424+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-9554",
+            "_key": "semeval-terra-low-r1-b31-semeval-9554",
+            "chunk_id": "semeval-9554",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a328ba20cc968f75fbd51d3c6b9bfad170fa148bc72fe3261b51f8c85fc1f843",
+            "created_at": "2026-09-09T13:36:15.986430+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "They opened the text file and dumped the text into the text box.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986430+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b31-semeval-9623",
+            "_key": "semeval-terra-low-r1-b31-semeval-9623",
+            "chunk_id": "semeval-9623",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:908923321ff6c2c72513ed1d8e972f3a86cce7194b6fc876046f3ee70c60a2b1",
+            "created_at": "2026-09-09T13:36:15.986432+00:00",
+            "space_id": "semeval-terra-low-r1-b31",
+            "text": "The officers have been placed on administrative leave.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:36:15.986432+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

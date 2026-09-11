@@ -1,0 +1,2 @@
+// binds: {"cat": "research"}
+FOR d IN documents FILTER d.category == @cat AND (d.active == true OR d.score > 3) SORT d._key ASC RETURN d._key

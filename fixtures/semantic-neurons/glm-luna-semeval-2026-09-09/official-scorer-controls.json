@@ -1,0 +1,17 @@
+[
+  {
+    "control": "raw",
+    "official_macro_f1_percent": 100.0,
+    "local_macro_f1_percent": 100.0
+  },
+  {
+    "control": "accepted",
+    "official_macro_f1_percent": 95.79,
+    "local_macro_f1_percent": 95.79124064822321
+  },
+  {
+    "control": "failed-positive-and-other",
+    "official_macro_f1_percent": 99.9,
+    "local_macro_f1_percent": 99.90338164251207
+  }
+]

@@ -1,0 +1,15 @@
+target
+.git
+.env
+.env.*
+docs
+*.md
+.claude
+.agents
+.githooks
+.dev-data
+ui/node_modules
+ui/dist
+fixtures
+*.redb
+*.tantivy

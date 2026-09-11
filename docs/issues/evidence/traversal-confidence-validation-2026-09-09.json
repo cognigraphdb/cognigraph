@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-09",
+  "base_revision": "36a4a19",
+  "change_state": "CG-19 changes uncommitted",
+  "rust_source_sha256": {
+    "crates/cognigraph-arango/src/backend/graph_backend.rs": "ad9170f4392a0147de5903843aabdee55dc335015dc10c6c1ab3542f0dfe21c0",
+    "crates/cognigraph-arango/tests/integration.rs": "9ea1cb3b313423680daab1a7eb1fb6d9fb0b80cc0bf4353e694af202cec849c4",
+    "crates/cognigraph-core/src/contract.rs": "b3eeeff78cbcd5fe69cacbaefd22ace4302430a9a2db0306def02597f6a7e96a",
+    "crates/cognigraph-core/src/contract/traversal.rs": "d580de45cd7771a0dee512fdf15809f460ef44ced28c544a565a9d35b9fba6d6",
+    "crates/cognigraph-core/src/contract/traversal-confidence.json": "53cdf60718a96f874b62caedc220164d05528c60963d1a6eff76e1f3b5a5ccde",
+    "crates/cognigraph-core/src/traits.rs": "7c3fe2595f319d0c5fbd188d72d9dd63798e2eefef4a5b035303f231d589af9e",
+    "crates/cognigraph-core/src/types/graph.rs": "c0dfae5ee2e4fbe80e6b4692d2df833354c3b6de92cfcab974fcc7b38a46b025"
+  },
+  "binary_sha256": "b8c44a660874a718608e6ee11ef0fcad646a0562517eb4167fa5ca910f3eb964",
+  "arango": {
+    "version": "3.12.11",
+    "image": "arangodb:latest",
+    "architecture": "arm64",
+    "repository_digest": "sha256:39bbca489179ea03f2b24b7ea4e4c4cb5258f6474f8c1c4d9bd65f7cd6d211a5",
+    "disposable": true,
+    "bind": "loopback",
+    "vector_search_mode": "fallback"
+  },
+  "validation": [
+    {
+      "command": "cargo test -p cognigraph-arango --test integration -- --nocapture",
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "ignored": 0,
+      "summaries": 1,
+      "live_arango": true
+    },
+    {
+      "command": "cargo test -p cognigraph-core -p cognigraph-native -p cognigraph-server",
+      "exit_code": 0,
+      "passed": 376,
+      "failed": 0,
+      "ignored": 0,
+      "summaries": 15
+    },
+    {
+      "command": "cargo fmt --all -- --check",
+      "exit_code": 0
+    },
+    {
+      "command": "cargo clippy --all-targets -- -D warnings",
+      "exit_code": 0
+    },
+    {
+      "command": "cargo test --all",
+      "exit_code": 0,
+      "passed": 923,
+      "failed": 0,
+      "ignored": 0,
+      "summaries": 69,
+      "live_arango": true,
+      "live_embedding_smoke_tests": [
+        "openai_embeds_sotu",
+        "gemini_embeds_sotu"
+      ]
+    },
+    {
+      "command": "cargo build --release -p cognigraph-server",
+      "exit_code": 0
+    }
+  ],
+  "runtime": {
+    "fixture_cases": 15,
+    "surfaces": [
+      "http",
+      "lua"
+    ],
+    "configurations": [
+      "resident-embedded",
+      "resident-sidecar",
+      "paged-sidecar",
+      "arango"
+    ],
+    "checks": 240,
+    "failed": 0,
+    "cognigraph_server_restarts": 4,
+    "database_container_restarts": 0
+  },
+  "baseline": {
+    "new_live_contract_exit_code": 101,
+    "expected_arango_http_lua_mismatches": 48,
+    "checks": 240
+  },
+  "corrected_validation_failures": []
+}

@@ -1,0 +1,1198 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 1,
+  "batch": 25,
+  "request": {
+    "space_type": "semeval-terra-low-r1-b25",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-8496",
+        "title": "Relation benchmark excerpt",
+        "text": "Animations are exported to the new Adobe version."
+      },
+      {
+        "id": "semeval-10368",
+        "title": "Relation benchmark excerpt",
+        "text": "A student relaxes with a book in a Cambridge park."
+      },
+      {
+        "id": "semeval-8249",
+        "title": "Relation benchmark excerpt",
+        "text": "The article does a great job of tying the three procedural cases from last term with larger complex litigation issues."
+      },
+      {
+        "id": "semeval-10535",
+        "title": "Relation benchmark excerpt",
+        "text": "New York is a weekly magazine concerned with the life, culture, politics, and style of New York City."
+      },
+      {
+        "id": "semeval-8913",
+        "title": "Relation benchmark excerpt",
+        "text": "One soldier was brutally frank in a message posted on a website last week."
+      },
+      {
+        "id": "semeval-8912",
+        "title": "Relation benchmark excerpt",
+        "text": "The weather report informed me about the high wind storm conditions that was already in place."
+      },
+      {
+        "id": "semeval-8068",
+        "title": "Relation benchmark excerpt",
+        "text": "The complete statue, topped by an imposing head, was originally nearly five metres high."
+      },
+      {
+        "id": "semeval-9700",
+        "title": "Relation benchmark excerpt",
+        "text": "An ordinary day is thrown into chaos by an audacious crime."
+      },
+      {
+        "id": "semeval-9442",
+        "title": "Relation benchmark excerpt",
+        "text": "The sheets are concerned with aspects of speaking the language."
+      },
+      {
+        "id": "semeval-8515",
+        "title": "Relation benchmark excerpt",
+        "text": "The management of the firm needs information on condition in the market and price elasticity of demand."
+      },
+      {
+        "id": "semeval-9737",
+        "title": "Relation benchmark excerpt",
+        "text": "The artwork and artifacts that make-up this exhibit give students the opportunity to physically and personally experience some of the things (and weight of the things) that \"grunts\" carried in Vietnam."
+      },
+      {
+        "id": "semeval-8118",
+        "title": "Relation benchmark excerpt",
+        "text": "The receiver was outputting the same tone to my Deva 5."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 9,
+    "proposed": 10,
+    "skips": [
+      "`tone --Product-Producer--> receiver`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-terra-low-r1-b25"
+  },
+  "latency_seconds": 17.923155500087887,
+  "facts": [
+    {
+      "_from": "entities/magazine",
+      "_id": "facts/fact-4ec70d1a3f1bff35811a39365ee6152848fee1132b47011a2e853f065d71b8f7",
+      "_key": "fact-4ec70d1a3f1bff35811a39365ee6152848fee1132b47011a2e853f065d71b8f7",
+      "_to": "entities/life",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10535",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b25",
+      "trigger": "New York is a weekly magazine concerned with the life, culture, politics, and style of New York City.",
+      "trigger_end": 101,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/animations",
+      "_id": "facts/fact-681c17c5f59732f17f330dbbec53d4de035127e46ca20cf328595f5a6cf7a592",
+      "_key": "fact-681c17c5f59732f17f330dbbec53d4de035127e46ca20cf328595f5a6cf7a592",
+      "_to": "entities/version",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8496",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b25",
+      "trigger": "Animations are exported to the new Adobe version.",
+      "trigger_end": 49,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/weather-report",
+      "_id": "facts/fact-804ef24fd1ba23c744c999d7c7370f1d9f4d1473303cb1ced26fef99964b6ad3",
+      "_key": "fact-804ef24fd1ba23c744c999d7c7370f1d9f4d1473303cb1ced26fef99964b6ad3",
+      "_to": "entities/storm-conditions",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8912",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b25",
+      "trigger": "The weather report informed me about the high wind storm conditions that was already in place.",
+      "trigger_end": 94,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/management",
+      "_id": "facts/fact-80ad721cef15f85752df21fb5d372be0f49338cd607394002d8716d001878940",
+      "_key": "fact-80ad721cef15f85752df21fb5d372be0f49338cd607394002d8716d001878940",
+      "_to": "entities/firm",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8515",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b25",
+      "trigger": "The management of the firm needs information on condition in the market and price elasticity of demand.",
+      "trigger_end": 103,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/cases",
+      "_id": "facts/fact-a83b7457531e526c179b260048f8d39e02af42ba1c2925248af232078b876a94",
+      "_key": "fact-a83b7457531e526c179b260048f8d39e02af42ba1c2925248af232078b876a94",
+      "_to": "entities/term",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8249",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b25",
+      "trigger": "The article does a great job of tying the three procedural cases from last term with larger complex litigation issues.",
+      "trigger_end": 118,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/sheets",
+      "_id": "facts/fact-a9e6034099dfcb96fe5c27a9d8485465d66a4097877b9a0d8038150de9ea2246",
+      "_key": "fact-a9e6034099dfcb96fe5c27a9d8485465d66a4097877b9a0d8038150de9ea2246",
+      "_to": "entities/aspects",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9442",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b25",
+      "trigger": "The sheets are concerned with aspects of speaking the language.",
+      "trigger_end": 63,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/head",
+      "_id": "facts/fact-c4b1634b222439bcec97225f482b756ac677d66577bf870b96e437debc823b7d",
+      "_key": "fact-c4b1634b222439bcec97225f482b756ac677d66577bf870b96e437debc823b7d",
+      "_to": "entities/statue",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8068",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b25",
+      "trigger": "The complete statue, topped by an imposing head, was originally nearly five metres high.",
+      "trigger_end": 88,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/day",
+      "_id": "facts/fact-ea40a5fbf6e12bf3b90e39f2eb98b18fc9ca0e3ea461362be2c23313606decf4",
+      "_key": "fact-ea40a5fbf6e12bf3b90e39f2eb98b18fc9ca0e3ea461362be2c23313606decf4",
+      "_to": "entities/chaos",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9700",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b25",
+      "trigger": "An ordinary day is thrown into chaos by an audacious crime.",
+      "trigger_end": 59,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/artwork",
+      "_id": "facts/fact-ea8d323589898b0f7bfc482bfc261a0bfe9fe60f0e4e7fae2618649e7cd896f9",
+      "_key": "fact-ea8d323589898b0f7bfc482bfc261a0bfe9fe60f0e4e7fae2618649e7cd896f9",
+      "_to": "entities/exhibit",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9737",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b25",
+      "trigger": "The artwork and artifacts that make-up this exhibit give students the opportunity to physically and personally experience some of the things (and weight of the things) that \"grunts\" carried in Vietnam.",
+      "trigger_end": 201,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/animations",
+      "_key": "animations",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336089+00:00",
+      "entity_type": "object",
+      "name": "Animations",
+      "updated_at": "2026-09-09T13:33:24.336089+00:00"
+    },
+    {
+      "_id": "entities/artwork",
+      "_key": "artwork",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336093+00:00",
+      "entity_type": "object",
+      "name": "artwork",
+      "updated_at": "2026-09-09T13:33:24.336093+00:00"
+    },
+    {
+      "_id": "entities/aspects",
+      "_key": "aspects",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336094+00:00",
+      "entity_type": "topic",
+      "name": "aspects",
+      "updated_at": "2026-09-09T13:33:24.336094+00:00"
+    },
+    {
+      "_id": "entities/cases",
+      "_key": "cases",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336097+00:00",
+      "entity_type": "cases",
+      "name": "cases",
+      "updated_at": "2026-09-09T13:33:24.336097+00:00"
+    },
+    {
+      "_id": "entities/chaos",
+      "_key": "chaos",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336098+00:00",
+      "entity_type": "state",
+      "name": "chaos",
+      "updated_at": "2026-09-09T13:33:24.336098+00:00"
+    },
+    {
+      "_id": "entities/day",
+      "_key": "day",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336099+00:00",
+      "entity_type": "time period",
+      "name": "day",
+      "updated_at": "2026-09-09T13:33:24.336099+00:00"
+    },
+    {
+      "_id": "entities/exhibit",
+      "_key": "exhibit",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336100+00:00",
+      "entity_type": "collection",
+      "name": "exhibit",
+      "updated_at": "2026-09-09T13:33:24.336100+00:00"
+    },
+    {
+      "_id": "entities/firm",
+      "_key": "firm",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336101+00:00",
+      "entity_type": "organization",
+      "name": "firm",
+      "updated_at": "2026-09-09T13:33:24.336101+00:00"
+    },
+    {
+      "_id": "entities/head",
+      "_key": "head",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336102+00:00",
+      "entity_type": "object",
+      "name": "head",
+      "updated_at": "2026-09-09T13:33:24.336102+00:00"
+    },
+    {
+      "_id": "entities/life",
+      "_key": "life",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336103+00:00",
+      "entity_type": "topic",
+      "name": "life",
+      "updated_at": "2026-09-09T13:33:24.336103+00:00"
+    },
+    {
+      "_id": "entities/magazine",
+      "_key": "magazine",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336104+00:00",
+      "entity_type": "publication",
+      "name": "magazine",
+      "updated_at": "2026-09-09T13:33:24.336104+00:00"
+    },
+    {
+      "_id": "entities/management",
+      "_key": "management",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336105+00:00",
+      "entity_type": "group",
+      "name": "management",
+      "updated_at": "2026-09-09T13:33:24.336105+00:00"
+    },
+    {
+      "_id": "entities/sheets",
+      "_key": "sheets",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336106+00:00",
+      "entity_type": "documents",
+      "name": "sheets",
+      "updated_at": "2026-09-09T13:33:24.336106+00:00"
+    },
+    {
+      "_id": "entities/statue",
+      "_key": "statue",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336107+00:00",
+      "entity_type": "object",
+      "name": "statue",
+      "updated_at": "2026-09-09T13:33:24.336107+00:00"
+    },
+    {
+      "_id": "entities/storm-conditions",
+      "_key": "storm-conditions",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336108+00:00",
+      "entity_type": "topic",
+      "name": "storm conditions",
+      "updated_at": "2026-09-09T13:33:24.336108+00:00"
+    },
+    {
+      "_id": "entities/term",
+      "_key": "term",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336109+00:00",
+      "entity_type": "time period",
+      "name": "term",
+      "updated_at": "2026-09-09T13:33:24.336109+00:00"
+    },
+    {
+      "_id": "entities/version",
+      "_key": "version",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336110+00:00",
+      "entity_type": "software version",
+      "name": "version",
+      "updated_at": "2026-09-09T13:33:24.336110+00:00"
+    },
+    {
+      "_id": "entities/weather-report",
+      "_key": "weather-report",
+      "aliases": [],
+      "created_at": "2026-09-09T13:33:24.336112+00:00",
+      "entity_type": "report",
+      "name": "weather report",
+      "updated_at": "2026-09-09T13:33:24.336112+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-10368",
+      "_key": "semeval-terra-low-r1-b25-semeval-10368",
+      "chunk_id": "semeval-10368",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ec22e9a8c4c99406b19bda9c28397f0959fc6ed5291b47f54c0e1876d96cd33b",
+      "created_at": "2026-09-09T13:33:24.336113+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "A student relaxes with a book in a Cambridge park.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336113+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-10535",
+      "_key": "semeval-terra-low-r1-b25-semeval-10535",
+      "chunk_id": "semeval-10535",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c3fa023b6e46c3bade3524991facbf17fb7d2673105e80b2462c1abdbc9ab09b",
+      "created_at": "2026-09-09T13:33:24.336115+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "New York is a weekly magazine concerned with the life, culture, politics, and style of New York City.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336115+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-8068",
+      "_key": "semeval-terra-low-r1-b25-semeval-8068",
+      "chunk_id": "semeval-8068",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c9cf796b913504d9a6fc302abb53e014a002247b96c1b2bba0eedcf46ce3e6db",
+      "created_at": "2026-09-09T13:33:24.336127+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "The complete statue, topped by an imposing head, was originally nearly five metres high.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336127+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-8118",
+      "_key": "semeval-terra-low-r1-b25-semeval-8118",
+      "chunk_id": "semeval-8118",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7e1baf975cbd0ff611e0fe2847cddf57b93fd71069d815541d26b1fbe6c61620",
+      "created_at": "2026-09-09T13:33:24.336135+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "The receiver was outputting the same tone to my Deva 5.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336135+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-8249",
+      "_key": "semeval-terra-low-r1-b25-semeval-8249",
+      "chunk_id": "semeval-8249",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:24dabd11c5b362cc23937512cbdb533cb91295555dee1c0f272c03e550f60637",
+      "created_at": "2026-09-09T13:33:24.336137+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "The article does a great job of tying the three procedural cases from last term with larger complex litigation issues.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336137+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-8496",
+      "_key": "semeval-terra-low-r1-b25-semeval-8496",
+      "chunk_id": "semeval-8496",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d2290865ad4ef85cda3c7752617467d9f6f2c6ff06720597c3b631dccabce481",
+      "created_at": "2026-09-09T13:33:24.336144+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "Animations are exported to the new Adobe version.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336144+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-8515",
+      "_key": "semeval-terra-low-r1-b25-semeval-8515",
+      "chunk_id": "semeval-8515",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:87a394f506bc7201ea1d59993617199f775209392fd06ec830db18ac90abbd33",
+      "created_at": "2026-09-09T13:33:24.336150+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "The management of the firm needs information on condition in the market and price elasticity of demand.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336150+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-8912",
+      "_key": "semeval-terra-low-r1-b25-semeval-8912",
+      "chunk_id": "semeval-8912",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f6724c10b99a587e29d48fbb5565c518d084a8a8348c2a2688f3be095e2215cb",
+      "created_at": "2026-09-09T13:33:24.336156+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "The weather report informed me about the high wind storm conditions that was already in place.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336156+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-8913",
+      "_key": "semeval-terra-low-r1-b25-semeval-8913",
+      "chunk_id": "semeval-8913",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d79278bd8608d7c2adb0b9700d83e05365ff240d399ca952f715a72d01c99431",
+      "created_at": "2026-09-09T13:33:24.336163+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "One soldier was brutally frank in a message posted on a website last week.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336163+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-9442",
+      "_key": "semeval-terra-low-r1-b25-semeval-9442",
+      "chunk_id": "semeval-9442",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e673524cd6a5896c93ee3315bd05b0c512b1edaf06137faf9317618f97bb23cb",
+      "created_at": "2026-09-09T13:33:24.336164+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "The sheets are concerned with aspects of speaking the language.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336164+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-9700",
+      "_key": "semeval-terra-low-r1-b25-semeval-9700",
+      "chunk_id": "semeval-9700",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:cbe58494b8d98e4f6e2b086597720e2be7723407ca51c2d08abff9d0fa52f148",
+      "created_at": "2026-09-09T13:33:24.336170+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "An ordinary day is thrown into chaos by an audacious crime.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336170+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b25-semeval-9737",
+      "_key": "semeval-terra-low-r1-b25-semeval-9737",
+      "chunk_id": "semeval-9737",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:595c70c68d76e4f537bd4837176387f91ebe8380d8e65ebb90c2a4ed971c9c88",
+      "created_at": "2026-09-09T13:33:24.336176+00:00",
+      "space_id": "semeval-terra-low-r1-b25",
+      "text": "The artwork and artifacts that make-up this exhibit give students the opportunity to physically and personally experience some of the things (and weight of the things) that \"grunts\" carried in Vietnam.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:33:24.336176+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 9,
+        "results": [
+          {
+            "_from": "entities/magazine",
+            "_id": "facts/fact-4ec70d1a3f1bff35811a39365ee6152848fee1132b47011a2e853f065d71b8f7",
+            "_key": "fact-4ec70d1a3f1bff35811a39365ee6152848fee1132b47011a2e853f065d71b8f7",
+            "_to": "entities/life",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10535",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b25",
+            "trigger": "New York is a weekly magazine concerned with the life, culture, politics, and style of New York City.",
+            "trigger_end": 101,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/animations",
+            "_id": "facts/fact-681c17c5f59732f17f330dbbec53d4de035127e46ca20cf328595f5a6cf7a592",
+            "_key": "fact-681c17c5f59732f17f330dbbec53d4de035127e46ca20cf328595f5a6cf7a592",
+            "_to": "entities/version",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8496",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b25",
+            "trigger": "Animations are exported to the new Adobe version.",
+            "trigger_end": 49,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/weather-report",
+            "_id": "facts/fact-804ef24fd1ba23c744c999d7c7370f1d9f4d1473303cb1ced26fef99964b6ad3",
+            "_key": "fact-804ef24fd1ba23c744c999d7c7370f1d9f4d1473303cb1ced26fef99964b6ad3",
+            "_to": "entities/storm-conditions",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8912",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b25",
+            "trigger": "The weather report informed me about the high wind storm conditions that was already in place.",
+            "trigger_end": 94,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/management",
+            "_id": "facts/fact-80ad721cef15f85752df21fb5d372be0f49338cd607394002d8716d001878940",
+            "_key": "fact-80ad721cef15f85752df21fb5d372be0f49338cd607394002d8716d001878940",
+            "_to": "entities/firm",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8515",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b25",
+            "trigger": "The management of the firm needs information on condition in the market and price elasticity of demand.",
+            "trigger_end": 103,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/cases",
+            "_id": "facts/fact-a83b7457531e526c179b260048f8d39e02af42ba1c2925248af232078b876a94",
+            "_key": "fact-a83b7457531e526c179b260048f8d39e02af42ba1c2925248af232078b876a94",
+            "_to": "entities/term",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8249",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b25",
+            "trigger": "The article does a great job of tying the three procedural cases from last term with larger complex litigation issues.",
+            "trigger_end": 118,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/sheets",
+            "_id": "facts/fact-a9e6034099dfcb96fe5c27a9d8485465d66a4097877b9a0d8038150de9ea2246",
+            "_key": "fact-a9e6034099dfcb96fe5c27a9d8485465d66a4097877b9a0d8038150de9ea2246",
+            "_to": "entities/aspects",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9442",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b25",
+            "trigger": "The sheets are concerned with aspects of speaking the language.",
+            "trigger_end": 63,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/head",
+            "_id": "facts/fact-c4b1634b222439bcec97225f482b756ac677d66577bf870b96e437debc823b7d",
+            "_key": "fact-c4b1634b222439bcec97225f482b756ac677d66577bf870b96e437debc823b7d",
+            "_to": "entities/statue",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8068",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b25",
+            "trigger": "The complete statue, topped by an imposing head, was originally nearly five metres high.",
+            "trigger_end": 88,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/day",
+            "_id": "facts/fact-ea40a5fbf6e12bf3b90e39f2eb98b18fc9ca0e3ea461362be2c23313606decf4",
+            "_key": "fact-ea40a5fbf6e12bf3b90e39f2eb98b18fc9ca0e3ea461362be2c23313606decf4",
+            "_to": "entities/chaos",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9700",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b25",
+            "trigger": "An ordinary day is thrown into chaos by an audacious crime.",
+            "trigger_end": 59,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/artwork",
+            "_id": "facts/fact-ea8d323589898b0f7bfc482bfc261a0bfe9fe60f0e4e7fae2618649e7cd896f9",
+            "_key": "fact-ea8d323589898b0f7bfc482bfc261a0bfe9fe60f0e4e7fae2618649e7cd896f9",
+            "_to": "entities/exhibit",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9737",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b25",
+            "trigger": "The artwork and artifacts that make-up this exhibit give students the opportunity to physically and personally experience some of the things (and weight of the things) that \"grunts\" carried in Vietnam.",
+            "trigger_end": 201,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 18,
+        "results": [
+          {
+            "_id": "entities/animations",
+            "_key": "animations",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336089+00:00",
+            "entity_type": "object",
+            "name": "Animations",
+            "updated_at": "2026-09-09T13:33:24.336089+00:00"
+          },
+          {
+            "_id": "entities/artwork",
+            "_key": "artwork",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336093+00:00",
+            "entity_type": "object",
+            "name": "artwork",
+            "updated_at": "2026-09-09T13:33:24.336093+00:00"
+          },
+          {
+            "_id": "entities/aspects",
+            "_key": "aspects",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336094+00:00",
+            "entity_type": "topic",
+            "name": "aspects",
+            "updated_at": "2026-09-09T13:33:24.336094+00:00"
+          },
+          {
+            "_id": "entities/cases",
+            "_key": "cases",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336097+00:00",
+            "entity_type": "cases",
+            "name": "cases",
+            "updated_at": "2026-09-09T13:33:24.336097+00:00"
+          },
+          {
+            "_id": "entities/chaos",
+            "_key": "chaos",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336098+00:00",
+            "entity_type": "state",
+            "name": "chaos",
+            "updated_at": "2026-09-09T13:33:24.336098+00:00"
+          },
+          {
+            "_id": "entities/day",
+            "_key": "day",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336099+00:00",
+            "entity_type": "time period",
+            "name": "day",
+            "updated_at": "2026-09-09T13:33:24.336099+00:00"
+          },
+          {
+            "_id": "entities/exhibit",
+            "_key": "exhibit",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336100+00:00",
+            "entity_type": "collection",
+            "name": "exhibit",
+            "updated_at": "2026-09-09T13:33:24.336100+00:00"
+          },
+          {
+            "_id": "entities/firm",
+            "_key": "firm",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336101+00:00",
+            "entity_type": "organization",
+            "name": "firm",
+            "updated_at": "2026-09-09T13:33:24.336101+00:00"
+          },
+          {
+            "_id": "entities/head",
+            "_key": "head",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336102+00:00",
+            "entity_type": "object",
+            "name": "head",
+            "updated_at": "2026-09-09T13:33:24.336102+00:00"
+          },
+          {
+            "_id": "entities/life",
+            "_key": "life",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336103+00:00",
+            "entity_type": "topic",
+            "name": "life",
+            "updated_at": "2026-09-09T13:33:24.336103+00:00"
+          },
+          {
+            "_id": "entities/magazine",
+            "_key": "magazine",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336104+00:00",
+            "entity_type": "publication",
+            "name": "magazine",
+            "updated_at": "2026-09-09T13:33:24.336104+00:00"
+          },
+          {
+            "_id": "entities/management",
+            "_key": "management",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336105+00:00",
+            "entity_type": "group",
+            "name": "management",
+            "updated_at": "2026-09-09T13:33:24.336105+00:00"
+          },
+          {
+            "_id": "entities/sheets",
+            "_key": "sheets",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336106+00:00",
+            "entity_type": "documents",
+            "name": "sheets",
+            "updated_at": "2026-09-09T13:33:24.336106+00:00"
+          },
+          {
+            "_id": "entities/statue",
+            "_key": "statue",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336107+00:00",
+            "entity_type": "object",
+            "name": "statue",
+            "updated_at": "2026-09-09T13:33:24.336107+00:00"
+          },
+          {
+            "_id": "entities/storm-conditions",
+            "_key": "storm-conditions",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336108+00:00",
+            "entity_type": "topic",
+            "name": "storm conditions",
+            "updated_at": "2026-09-09T13:33:24.336108+00:00"
+          },
+          {
+            "_id": "entities/term",
+            "_key": "term",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336109+00:00",
+            "entity_type": "time period",
+            "name": "term",
+            "updated_at": "2026-09-09T13:33:24.336109+00:00"
+          },
+          {
+            "_id": "entities/version",
+            "_key": "version",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336110+00:00",
+            "entity_type": "software version",
+            "name": "version",
+            "updated_at": "2026-09-09T13:33:24.336110+00:00"
+          },
+          {
+            "_id": "entities/weather-report",
+            "_key": "weather-report",
+            "aliases": [],
+            "created_at": "2026-09-09T13:33:24.336112+00:00",
+            "entity_type": "report",
+            "name": "weather report",
+            "updated_at": "2026-09-09T13:33:24.336112+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-10368",
+            "_key": "semeval-terra-low-r1-b25-semeval-10368",
+            "chunk_id": "semeval-10368",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ec22e9a8c4c99406b19bda9c28397f0959fc6ed5291b47f54c0e1876d96cd33b",
+            "created_at": "2026-09-09T13:33:24.336113+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "A student relaxes with a book in a Cambridge park.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336113+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-10535",
+            "_key": "semeval-terra-low-r1-b25-semeval-10535",
+            "chunk_id": "semeval-10535",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c3fa023b6e46c3bade3524991facbf17fb7d2673105e80b2462c1abdbc9ab09b",
+            "created_at": "2026-09-09T13:33:24.336115+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "New York is a weekly magazine concerned with the life, culture, politics, and style of New York City.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336115+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-8068",
+            "_key": "semeval-terra-low-r1-b25-semeval-8068",
+            "chunk_id": "semeval-8068",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c9cf796b913504d9a6fc302abb53e014a002247b96c1b2bba0eedcf46ce3e6db",
+            "created_at": "2026-09-09T13:33:24.336127+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "The complete statue, topped by an imposing head, was originally nearly five metres high.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336127+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-8118",
+            "_key": "semeval-terra-low-r1-b25-semeval-8118",
+            "chunk_id": "semeval-8118",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7e1baf975cbd0ff611e0fe2847cddf57b93fd71069d815541d26b1fbe6c61620",
+            "created_at": "2026-09-09T13:33:24.336135+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "The receiver was outputting the same tone to my Deva 5.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336135+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-8249",
+            "_key": "semeval-terra-low-r1-b25-semeval-8249",
+            "chunk_id": "semeval-8249",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:24dabd11c5b362cc23937512cbdb533cb91295555dee1c0f272c03e550f60637",
+            "created_at": "2026-09-09T13:33:24.336137+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "The article does a great job of tying the three procedural cases from last term with larger complex litigation issues.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336137+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-8496",
+            "_key": "semeval-terra-low-r1-b25-semeval-8496",
+            "chunk_id": "semeval-8496",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d2290865ad4ef85cda3c7752617467d9f6f2c6ff06720597c3b631dccabce481",
+            "created_at": "2026-09-09T13:33:24.336144+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "Animations are exported to the new Adobe version.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336144+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-8515",
+            "_key": "semeval-terra-low-r1-b25-semeval-8515",
+            "chunk_id": "semeval-8515",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:87a394f506bc7201ea1d59993617199f775209392fd06ec830db18ac90abbd33",
+            "created_at": "2026-09-09T13:33:24.336150+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "The management of the firm needs information on condition in the market and price elasticity of demand.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336150+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-8912",
+            "_key": "semeval-terra-low-r1-b25-semeval-8912",
+            "chunk_id": "semeval-8912",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f6724c10b99a587e29d48fbb5565c518d084a8a8348c2a2688f3be095e2215cb",
+            "created_at": "2026-09-09T13:33:24.336156+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "The weather report informed me about the high wind storm conditions that was already in place.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336156+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-8913",
+            "_key": "semeval-terra-low-r1-b25-semeval-8913",
+            "chunk_id": "semeval-8913",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d79278bd8608d7c2adb0b9700d83e05365ff240d399ca952f715a72d01c99431",
+            "created_at": "2026-09-09T13:33:24.336163+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "One soldier was brutally frank in a message posted on a website last week.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336163+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-9442",
+            "_key": "semeval-terra-low-r1-b25-semeval-9442",
+            "chunk_id": "semeval-9442",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e673524cd6a5896c93ee3315bd05b0c512b1edaf06137faf9317618f97bb23cb",
+            "created_at": "2026-09-09T13:33:24.336164+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "The sheets are concerned with aspects of speaking the language.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336164+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-9700",
+            "_key": "semeval-terra-low-r1-b25-semeval-9700",
+            "chunk_id": "semeval-9700",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:cbe58494b8d98e4f6e2b086597720e2be7723407ca51c2d08abff9d0fa52f148",
+            "created_at": "2026-09-09T13:33:24.336170+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "An ordinary day is thrown into chaos by an audacious crime.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336170+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b25-semeval-9737",
+            "_key": "semeval-terra-low-r1-b25-semeval-9737",
+            "chunk_id": "semeval-9737",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:595c70c68d76e4f537bd4837176387f91ebe8380d8e65ebb90c2a4ed971c9c88",
+            "created_at": "2026-09-09T13:33:24.336176+00:00",
+            "space_id": "semeval-terra-low-r1-b25",
+            "text": "The artwork and artifacts that make-up this exhibit give students the opportunity to physically and personally experience some of the things (and weight of the things) that \"grunts\" carried in Vietnam.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:33:24.336176+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "openai:gpt-5.6-luna": {
+    "biography": [
+      {
+        "answer": "Marie Curie was a physicist and chemist.",
+        "question": "What were Marie Curie's professions?"
+      },
+      {
+        "answer": "She conducted pioneering research on radioactivity.",
+        "question": "What kind of research did Marie Curie conduct?"
+      },
+      {
+        "answer": "Marie Curie coined the term “radioactivity.”",
+        "question": "Who coined the term “radioactivity”?"
+      },
+      {
+        "answer": "She was born Maria Sklodowska in Warsaw in 1867.",
+        "question": "When and where was Marie Curie born, and what was her birth name?"
+      },
+      {
+        "answer": "She moved to Paris to study at the University of Paris.",
+        "question": "Where did Marie Curie move to study?"
+      },
+      {
+        "answer": "Marie Curie and Pierre Curie discovered polonium and radium.",
+        "question": "Which elements did Marie Curie and Pierre Curie discover?"
+      },
+      {
+        "answer": "She won the 1903 Nobel Prize in Physics, shared with Pierre Curie and Henri Becquerel.",
+        "question": "Who shared the 1903 Nobel Prize in Physics with Marie Curie?"
+      },
+      {
+        "answer": "She won the Nobel Prize in Chemistry in 1911.",
+        "question": "When did Marie Curie win the Nobel Prize in Chemistry?"
+      },
+      {
+        "answer": "She became the first person to win Nobel Prizes in two different scientific fields.",
+        "question": "What distinction did Marie Curie achieve with her Nobel Prizes?"
+      },
+      {
+        "answer": "During the First World War, she developed mobile X-ray units to help treat wounded soldiers.",
+        "question": "What did Marie Curie develop during the First World War?"
+      },
+      {
+        "answer": "She died in 1934 from aplastic anaemia, likely caused by long exposure to radiation.",
+        "question": "How and when did Marie Curie die?"
+      }
+    ],
+    "clinical": [
+      {
+        "answer": "Ibuprofen is a nonsteroidal anti-inflammatory drug.",
+        "question": "What type of drug is ibuprofen?"
+      },
+      {
+        "answer": "Ibuprofen is commonly used to reduce fever.",
+        "question": "What symptom can ibuprofen reduce?"
+      },
+      {
+        "answer": "It relieves mild to moderate pain from headaches, menstrual cramps, and arthritis.",
+        "question": "What conditions can ibuprofen help relieve pain from?"
+      },
+      {
+        "answer": "Ibuprofen works by inhibiting cyclooxygenase enzymes.",
+        "question": "How does ibuprofen work?"
+      },
+      {
+        "answer": "Inhibiting cyclooxygenases reduces the production of prostaglandins that cause inflammation and pain.",
+        "question": "Why does inhibiting cyclooxygenases reduce inflammation and pain?"
+      },
+      {
+        "answer": "Ibuprofen is available over the counter in many countries.",
+        "question": "Where is ibuprofen available without a prescription?"
+      },
+      {
+        "answer": "Ibuprofen was first marketed in 1969.",
+        "question": "When was ibuprofen first marketed?"
+      },
+      {
+        "answer": "A common side effect is stomach upset.",
+        "question": "What is a common side effect of ibuprofen?"
+      },
+      {
+        "answer": "Prolonged use increases the risk of gastrointestinal bleeding.",
+        "question": "What risk is associated with prolonged ibuprofen use?"
+      },
+      {
+        "answer": "Ibuprofen is generally advised to be taken with food.",
+        "question": "How should ibuprofen generally be taken to reduce stomach irritation?"
+      },
+      {
+        "answer": "Taking ibuprofen with food can reduce stomach irritation.",
+        "question": "Why should ibuprofen be taken with food?"
+      },
+      {
+        "answer": "Ibuprofen is not recommended during the later stages of pregnancy.",
+        "question": "When during pregnancy is ibuprofen not recommended?"
+      }
+    ],
+    "engineering": [
+      {
+        "answer": "The Airbus A320 is a family of narrow-body airliners developed and manufactured by Airbus.",
+        "question": "What is the Airbus A320?"
+      },
+      {
+        "answer": "Airbus developed and manufactures the A320 family.",
+        "question": "Who developed and manufactures the Airbus A320?"
+      },
+      {
+        "answer": "The A320 was the first commercial aircraft to feature a digital fly-by-wire flight control system.",
+        "question": "What flight-control innovation did the Airbus A320 introduce?"
+      },
+      {
+        "answer": "Pilot inputs are transmitted electronically rather than through mechanical linkages.",
+        "question": "How does the A320’s digital fly-by-wire system transmit pilot inputs?"
+      },
+      {
+        "answer": "The A320 entered service in 1988.",
+        "question": "When did the Airbus A320 enter service?"
+      },
+      {
+        "answer": "The A320 entered service with Air France.",
+        "question": "Which airline first operated the Airbus A320 in commercial service?"
+      },
+      {
+        "answer": "The aircraft typically seats between 140 and 170 passengers.",
+        "question": "How many passengers does the Airbus A320 typically seat?"
+      },
+      {
+        "answer": "The A320 has a range of about 6,100 kilometres.",
+        "question": "What is the approximate range of the Airbus A320?"
+      },
+      {
+        "answer": "The A320 family includes the shorter A318 and A319 and the longer A321 variants.",
+        "question": "Which variants belong to the Airbus A320 family?"
+      },
+      {
+        "answer": "The A318, A319, and A321 are shorter and longer variants of the A320.",
+        "question": "What are the shorter and longer Airbus A320 family variants?"
+      },
+      {
+        "answer": "The A320 is one of the best-selling airliner families in history.",
+        "question": "How successful is the Airbus A320 family commercially?"
+      },
+      {
+        "answer": "The A320 is a direct competitor to the Boeing 737.",
+        "question": "Which aircraft family directly competes with the Airbus A320?"
+      }
+    ],
+    "geography": [
+      {
+        "answer": "Lisbon is the capital and largest city of Portugal.",
+        "question": "What is the capital and largest city of Portugal?"
+      },
+      {
+        "answer": "Lisbon is situated on the Atlantic coast.",
+        "question": "Where is Lisbon situated?"
+      },
+      {
+        "answer": "Lisbon lies where the Tagus River meets the ocean.",
+        "question": "Where does the Tagus River meet the ocean in relation to Lisbon?"
+      },
+      {
+        "answer": "Lisbon is one of the oldest cities in Western Europe.",
+        "question": "How old is Lisbon compared with other Western European cities?"
+      },
+      {
+        "answer": "Lisbon predates modern capitals such as London and Paris by centuries.",
+        "question": "Which modern capitals does Lisbon predate by centuries?"
+      },
+      {
+        "answer": "Lisbon is built across seven hills.",
+        "question": "How many hills is Lisbon built across?"
+      },
+      {
+        "answer": "Its many hills make Lisbon's streets steep and winding.",
+        "question": "Why are many streets in Lisbon steep and winding?"
+      },
+      {
+        "answer": "Lisbon has a mild Mediterranean climate.",
+        "question": "What type of climate does Lisbon have?"
+      },
+      {
+        "answer": "Lisbon has warm, dry summers and cool, rainy winters.",
+        "question": "What are Lisbon's summers and winters like?"
+      },
+      {
+        "answer": "Lisbon is known for its historic tram network, especially the yellow Route 28 tram.",
+        "question": "What is a well-known feature of Lisbon's transportation network?"
+      },
+      {
+        "answer": "The 1755 Lisbon earthquake destroyed much of the city.",
+        "question": "What happened to Lisbon in the 1755 earthquake?"
+      },
+      {
+        "answer": "The earthquake led to major rebuilding of the downtown Baixa district in a grid pattern.",
+        "question": "How was Lisbon's downtown Baixa district rebuilt after the 1755 earthquake?"
+      }
+    ],
+    "software": [
+      {
+        "answer": "Redis is an open source, in-memory data structure store used as a database, cache, and message broker.",
+        "question": "What is Redis used for?"
+      },
+      {
+        "answer": "Salvatore Sanfilippo created Redis.",
+        "question": "Who created Redis?"
+      },
+      {
+        "answer": "Redis was first released in 2009.",
+        "question": "When was Redis first released?"
+      },
+      {
+        "answer": "Redis keeps the entire dataset in memory.",
+        "question": "How does Redis store its dataset?"
+      },
+      {
+        "answer": "Keeping the dataset in memory allows very low-latency reads and writes.",
+        "question": "Why can Redis perform reads and writes with very low latency?"
+      },
+      {
+        "answer": "Redis supports strings, hashes, lists, sets, and sorted sets.",
+        "question": "Which data structures does Redis support?"
+      },
+      {
+        "answer": "Redis provides optional persistence by periodically writing snapshots to disk.",
+        "question": "How can Redis provide persistence through snapshots?"
+      },
+      {
+        "answer": "Redis can provide persistence by appending each write operation to a log.",
+        "question": "What logging method does Redis offer for persistence?"
+      },
+      {
+        "answer": "Traditional databases store data primarily on disk, unlike Redis.",
+        "question": "How does Redis differ from traditional databases in data storage?"
+      },
+      {
+        "answer": "Redis is commonly used to cache the results of expensive database queries.",
+        "question": "What database-query results are commonly cached in Redis?"
+      },
+      {
+        "answer": "Redis is commonly used to store user session data in web applications.",
+        "question": "What kind of web application data can Redis store?"
+      },
+      {
+        "answer": "Redis can function as a database, cache, and message broker.",
+        "question": "Which three roles can Redis perform?"
+      }
+    ]
+  }
+}

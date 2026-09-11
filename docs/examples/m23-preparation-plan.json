@@ -1,0 +1,82 @@
+{
+  "schema_version": 3,
+  "resolver": "tenant-local-cas-v1",
+  "loader_id": "cognigraph.verified-artifact-loader",
+  "loader_version": "3",
+  "loader_semantics_digest": "sha256:c7b5271d7f4609a68ce1b6e9633be7cab19b8d66503279057d2fe0ea0bd975aa",
+  "scorer_abi_digest": "sha256:cec6656015755098318abdc50b6732f37f0901c00623ab8afbc1fa93a7420f76",
+  "verifier_abi_digest": "sha256:bc8e00aada805e6419eb816b4f32ba1c80dc79fb5c3ac6ec8a0c8a184d130793",
+  "corpus": {
+    "artifact_kind": "corpus",
+    "artifact_format": "cognigraph.reproducible-prepared-chunk-corpus.v1",
+    "entrypoint": "corpus.json",
+    "auxiliary_entrypoints": [
+      "documents.json"
+    ],
+    "mode": "reproducible_prepared_chunk_corpus_package"
+  },
+  "graph": {
+    "artifact_kind": "graph",
+    "artifact_format": "cognigraph.reproducible-evaluation-graph.v1",
+    "entrypoint": "graph.json",
+    "auxiliary_entrypoints": [
+      "candidate.json"
+    ],
+    "mode": "reproducible_evaluation_graph_package"
+  },
+  "oracle": {
+    "artifact_kind": "oracle",
+    "artifact_format": "cognigraph.promotion-oracle.v1",
+    "entrypoint": "oracle.json",
+    "mode": "promotion_oracle_json"
+  },
+  "scorer": {
+    "artifact_kind": "scorer",
+    "artifact_format": "cognigraph.server-executable.v1",
+    "entrypoint": "cognigraph-server",
+    "mode": "current_executable"
+  },
+  "verifier": {
+    "artifact_kind": "verifier",
+    "artifact_format": "cognigraph.server-executable.v1",
+    "entrypoint": "cognigraph-server",
+    "mode": "current_executable"
+  },
+  "derivation": {
+    "schema_version": 1,
+    "deriver_id": "cognigraph.prepared-corpus-grounder",
+    "deriver_version": "1",
+    "deriver_semantics_digest": "sha256:fbcea8184ff15f198cbc22c1ffbf166cc18fa382ce554ab1fdc53f648768e5ae",
+    "derivation_abi_digest": "sha256:f12bdec86c2368cb3018c07dcc98cd93b68ef336483c87ab1f3846b60d1d9666",
+    "corpus_retention_bytes": 67108864,
+    "candidate_retention_bytes": 8388608,
+    "graph_retention_bytes": 33554432,
+    "max_chunks": 100000,
+    "max_chunk_text_bytes": 1048576,
+    "max_config_items": 100000,
+    "max_grounding_work": 10000000,
+    "max_chunk_grounding_work": 250000,
+    "max_derived_facts": 100000,
+    "plan_digest": "sha256:22e20e4d05fe665976c5e3201756fd22cc372f6ae635623ffb87506ea91032de"
+  },
+  "preparation": {
+    "schema_version": 1,
+    "preparer_id": "cognigraph.utf8-document-preparer",
+    "preparer_version": "1",
+    "preparer_semantics_digest": "sha256:d7c3553b49df8313c339d82c3c2568ef50a56d6dcb0e9178c558d93851c4405c",
+    "preparation_abi_digest": "sha256:0be798c0584f4ed739283e91380485ecd537b8de91ca7117dddf6768349e90fe",
+    "documents_retention_bytes": 100663296,
+    "prepared_corpus_retention_bytes": 67108864,
+    "max_documents": 100000,
+    "max_raw_document_bytes": 4194304,
+    "max_total_raw_document_bytes": 67108864,
+    "max_normalized_document_bytes": 8388608,
+    "max_total_normalized_bytes": 67108864,
+    "max_chunk_bytes": 8192,
+    "max_chunks": 100000,
+    "max_total_prepared_text_bytes": 50331648,
+    "yield_every_documents": 16,
+    "plan_digest": "sha256:ef29c26eb3bb5700dd280a2b8421d2e421216ad593e0093512c2d3f822f4dd56"
+  },
+  "plan_digest": "sha256:8367079f692bd383b4789e69d319546b42d1b7dab794a5c142799fc2bec30a66"
+}

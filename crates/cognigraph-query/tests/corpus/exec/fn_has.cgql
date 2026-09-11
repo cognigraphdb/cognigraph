@@ -1,0 +1,1 @@
+FOR d IN documents FILTER HAS(d, "note") RETURN d._key

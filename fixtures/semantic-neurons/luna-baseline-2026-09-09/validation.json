@@ -1,0 +1,82 @@
+{
+  "date": "2026-09-09",
+  "source": "Post-capture local integrity verification; not an independent attestation",
+  "frozen_code_files_checked": 527,
+  "rust_files_identical_to_prior_CG26_validation": 241,
+  "rust_gates": "Prior CG-26 formatting, strict Clippy, 961 reported tests and release build passed; unchanged Rust/binary verified, not rerun",
+  "corpus_repreparation_exact": true,
+  "offline_scores_byte_identical": true,
+  "requests_with_same_prompt_schema_by_batch": 16,
+  "model_identity_and_explicit_settings_verified": true,
+  "synthetic_control_requests": 17,
+  "control_results_sha256": "1a104077df5d98166b30f088b329b8eb1e50f7e7c78e9dd0657a9d83d68edbc6",
+  "gate_control_sha256": "ac11949f7142fe760e37b7ef40ab258cd847288c80bb7e73bb550e1a90d2bb3b",
+  "negative_probes": [
+    {
+      "probe": "byte tamper",
+      "rejected": true
+    },
+    {
+      "probe": "incomplete run",
+      "rejected": true
+    },
+    {
+      "probe": "missing batch",
+      "rejected": true
+    },
+    {
+      "probe": "invalid byte span despite refreshed artifact hash",
+      "rejected": true
+    },
+    {
+      "probe": "wrong returned model despite refreshed artifact hash",
+      "rejected": true
+    }
+  ],
+  "files_checked_for_actual_credential": 33,
+  "user_file_preservation_sha256": {
+    "CLAUDE.md": null,
+    "README.draft.md": "782926268c16167bf4889417ccfe553062177c9a07e55c64c8e179aeb0736387",
+    "docs/architecture.draft.md": "47755d0717e8335cfe58dad74c1b3798d5aaf7fe6e46c770174b07158682ccf1",
+    "docs/product-overview.draft.md": "e0afe033569813752ae54f1c8b3b7ba3f14cdff5a2e694f051f398d0fb423748",
+    "docs/semantic-neurons/README.md": "3e1d1643565fd356729f6229d1b6e7049d36655300172f61af9c45007b1d0c64",
+    "docs/semantic-neurons/semantic-neurons-paper.md": "0827e2575b8c4a24cef9ea196fb64be78b67fa81854bb13ade22faa5c77aa3c1"
+  },
+  "documentation": {
+    "files": 12,
+    "local_links": 382,
+    "anchors": 22
+  },
+  "decision_index": {
+    "decisions": 54,
+    "inventory_rows": 54,
+    "categories": {
+      "Standing conventions": 6,
+      "Platform contracts": 18,
+      "Construction and review contracts": 8,
+      "Governed operations and authority generations": 12,
+      "Research evidence and historical priorities": 9,
+      "Superseded identity history": 1
+    },
+    "statuses": {
+      "Active": 23,
+      "Amended": 21,
+      "Research": 9,
+      "Historical": 1
+    },
+    "local_links_checked": 153,
+    "markdown_anchors_checked": 19,
+    "external_links_not_checked": 0,
+    "errors": []
+  },
+  "registry": {
+    "Resolved": 37,
+    "Closed without change": 1,
+    "Open": 0
+  },
+  "results_sha256": "8866f2044ca54ea29deb4d6e371c4ac7b178aa683feccc8cd6d90c948c3f98bc",
+  "live_manifest_sha256": "7504f09729cb561a3172e23bc05fd9fb278f048466992465c113164be337030d",
+  "live_provider_calls": 16,
+  "accepted_occurrences": 119,
+  "verification_script_sha256": "bf286166a45fd6c86ba021a97088ca8d5d186fa61109b0ffe21209fe5c5592fe"
+}

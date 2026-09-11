@@ -1,0 +1,64 @@
+{
+  "issue": "CG-24",
+  "revision": "57d65afb1e0950d820bd6b53d4ead52023f45df5",
+  "binary_sha256": "2af5c4fb6ee6d69e9c9adb990a8b7b15a3096cd277b618fdf08cd1703193a843",
+  "harness_sha256": "aeac24d89b28a83e72e7004887d3e1f117cb4c4617cd0bc1141751e44407fc50",
+  "kits": [
+    {
+      "kit": "qualitative-research-software-market-size",
+      "questions": 4,
+      "chunks": 44,
+      "expected_mentions": 17,
+      "forbidden_mentions": 10,
+      "legacy_expected_after_adjacent_dedup": 17,
+      "legacy_forbidden_after_adjacent_dedup": 10,
+      "distinct_expected": 15,
+      "distinct_forbidden": 10,
+      "cold": {
+        "exit_code": 0,
+        "expected_found": 15,
+        "expected_total": 15,
+        "forbidden_triggered": 0,
+        "forbidden_total": 10,
+        "legacy_adjacent_dedup_found": 17,
+        "legacy_adjacent_dedup_total": 17,
+        "stdout_sha256": "1ab4836a9a5a37855c664673a5996e9fe9ecfe2ed5708db3ff02e82423d166b7"
+      },
+      "lesion": {
+        "exit_code": 0,
+        "expected_found": 0,
+        "expected_total": 15,
+        "forbidden_triggered": 0,
+        "forbidden_total": 10,
+        "legacy_adjacent_dedup_found": 0,
+        "legacy_adjacent_dedup_total": 17,
+        "stdout_sha256": "3e0c7496ce82793e00d0ad52620a96536693aae53667dba6aee711194df22975"
+      },
+      "stored_proposals": {
+        "exit_code": 0,
+        "expected_found": 12,
+        "expected_total": 15,
+        "forbidden_triggered": 0,
+        "forbidden_total": 10,
+        "legacy_adjacent_dedup_found": 14,
+        "legacy_adjacent_dedup_total": 17,
+        "stdout_sha256": "903e84b26ec5750f5d757901a19506797c376f00151a433a7863f11aabd34587"
+      }
+    }
+  ],
+  "input_sha256": {
+    "fixtures/semantic-neurons/blind/qualitative-research-software-market-size/chunks.jsonl": "166bfba940ff8264390d98efd72635eb1cb7df5cb89e2c4b20790e8730976f86",
+    "fixtures/semantic-neurons/blind/qualitative-research-software-market-size/eval.json": "ac3c93ac9c5e1e6cdce0c8400a017841b16d91b864969fe0c8fc83b4bf596a69",
+    "fixtures/semantic-neurons/blind/qualitative-research-software-market-size/space_type.json": "8bb166aacd7db15370bc89cbd55f52f09b3ca636ffaa18e712f1f4249ecea1d1",
+    "fixtures/semantic-neurons/blind/qualitative-research-software-market-size-gap/chunks.jsonl": "166bfba940ff8264390d98efd72635eb1cb7df5cb89e2c4b20790e8730976f86",
+    "fixtures/semantic-neurons/blind/qualitative-research-software-market-size-gap/eval.json": "ac3c93ac9c5e1e6cdce0c8400a017841b16d91b864969fe0c8fc83b4bf596a69",
+    "fixtures/semantic-neurons/blind/qualitative-research-software-market-size-gap/proposed.neurons.json": "58b539967236a2ded6c367d9faaa7e2a0e7361f927751380a6d145e98e64592c",
+    "fixtures/semantic-neurons/blind/qualitative-research-software-market-size-gap/space_type.json": "b12a3adffebbe28637fdfaf8e21e01e19ad4a00d7bdc6f810df629adc1c32984"
+  },
+  "limits": [
+    "No LLM calls or new benchmark; stored proposals accepted only in disposable in-memory replay.",
+    "Historical answer scores are not rerun; their denominators count per-question fact mentions.",
+    "This verifies fixture counting and current symbolic replay, not independent corpus validity or model qualification."
+  ],
+  "status": "Partially withdrawn; retained per-kit rows are historical only"
+}

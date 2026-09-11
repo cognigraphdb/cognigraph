@@ -1,0 +1,1 @@
+FOR d IN documents RETURN VECTOR_SEARCH(d, [1.0])

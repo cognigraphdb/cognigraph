@@ -1,0 +1,24 @@
+{
+  "statement": {
+    "schema_version": 1,
+    "domain": "cognigraph.key-revocation.v1",
+    "tenant": "REPLACE_WITH_TENANT",
+    "tenant_incarnation": "REPLACE_WITH_TENANT_INCARNATION",
+    "payload": {
+      "revocation_id": "REPLACE_WITH_NATURAL_REVOCATION_ID",
+      "registration_id": "REPLACE_WITH_REGISTRATION_ID",
+      "key_id": "ed25519:sha256:REPLACE_WITH_REVOKED_KEY_ID_HEX",
+      "public_key_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+      "reason": "REPLACE_WITH_BOUNDED_REVOCATION_REASON",
+      "signed_at_ms": 1,
+      "effective_at_ms": 1
+    }
+  },
+  "root_signature": {
+    "schema_version": 1,
+    "algorithm": "ed25519",
+    "key_id": "ed25519:sha256:REPLACE_WITH_ROOT_KEY_ID_HEX",
+    "statement_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "signature": "REPLACE_WITH_UNPADDED_BASE64URL_64_BYTE_ROOT_SIGNATURE"
+  }
+}

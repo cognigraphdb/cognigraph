@@ -1,0 +1,19 @@
+{
+  "kind": "construct.evaluate",
+  "input": {
+    "space_type": "cg22-demo",
+    "eval": {
+      "space_id": "cg22-demo",
+      "questions": [
+        {
+          "id": "supply",
+          "question": "Who supplies Beta?",
+          "expected_facts": [
+            "Alpha --SUPPLIES--> Beta"
+          ],
+          "forbidden_facts": []
+        }
+      ]
+    }
+  }
+}

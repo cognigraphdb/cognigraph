@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d._key == "a" RETURN [COSINE_SIMILARITY([1.0, 0.0], [1.0, 0.0]), COSINE_SIMILARITY([1.0, 0.0], [0.0, 1.0]), COSINE_SIMILARITY(d.missing, [1.0]), COSINE_SIMILARITY([1.0], [1.0, 2.0])]

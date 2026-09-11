@@ -1,0 +1,2024 @@
+{
+  "rows": [
+    {
+      "_key": "a000",
+      "embedding": [
+        0.999,
+        0.04471017781221601
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a001",
+      "embedding": [
+        0.9989,
+        0.04689125718084349
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a002",
+      "embedding": [
+        0.9988,
+        0.048975095712003855
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a003",
+      "embedding": [
+        0.9987,
+        0.050973620628712274
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a004",
+      "embedding": [
+        0.9986,
+        0.05289650271993363
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a005",
+      "embedding": [
+        0.9985,
+        0.054751712301990246
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a006",
+      "embedding": [
+        0.9984,
+        0.05654591055063228
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a007",
+      "embedding": [
+        0.9983,
+        0.058284732134582996
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a008",
+      "embedding": [
+        0.9982,
+        0.05997299392226544
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a009",
+      "embedding": [
+        0.9981,
+        0.06161485210564075
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a010",
+      "embedding": [
+        0.998,
+        0.06321392251711642
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a011",
+      "embedding": [
+        0.9979,
+        0.06477337415944939
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a012",
+      "embedding": [
+        0.9978,
+        0.06629600289610192
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a013",
+      "embedding": [
+        0.9977,
+        0.06778429021535809
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a014",
+      "embedding": [
+        0.9976,
+        0.06924045060511919
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a015",
+      "embedding": [
+        0.9975,
+        0.07066647012551219
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a016",
+      "embedding": [
+        0.9974,
+        0.0720641380993355
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a017",
+      "embedding": [
+        0.9973,
+        0.07343507336416352
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a018",
+      "embedding": [
+        0.9972,
+        0.07478074618509813
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a019",
+      "embedding": [
+        0.9971,
+        0.07610249667389414
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a020",
+      "embedding": [
+        0.997,
+        0.07740155037206922
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a021",
+      "embedding": [
+        0.9969,
+        0.07867903151412065
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a022",
+      "embedding": [
+        0.9968,
+        0.07993597437949894
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a023",
+      "embedding": [
+        0.9967,
+        0.08117333305957046
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a024",
+      "embedding": [
+        0.9966,
+        0.08239198990193097
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a025",
+      "embedding": [
+        0.9965,
+        0.08359276284463774
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a026",
+      "embedding": [
+        0.9964,
+        0.08477641181366516
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a027",
+      "embedding": [
+        0.9963,
+        0.08594364432580293
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a028",
+      "embedding": [
+        0.9962,
+        0.08709512041440727
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a029",
+      "embedding": [
+        0.9961,
+        0.08823145697538937
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a030",
+      "embedding": [
+        0.996,
+        0.08935323161475466
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a031",
+      "embedding": [
+        0.9959,
+        0.09046098606581739
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a032",
+      "embedding": [
+        0.9958,
+        0.0915552292335065
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a033",
+      "embedding": [
+        0.9957,
+        0.09263643991432291
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a034",
+      "embedding": [
+        0.9956,
+        0.09370506923320582
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a035",
+      "embedding": [
+        0.9955,
+        0.09476154283252168
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a036",
+      "embedding": [
+        0.9954,
+        0.09580626284330337
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a037",
+      "embedding": [
+        0.9953,
+        0.09683960966464136
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a038",
+      "embedding": [
+        0.9952,
+        0.09786194357358778
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a039",
+      "embedding": [
+        0.9951,
+        0.09887360618486649
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a040",
+      "embedding": [
+        0.995,
+        0.09987492177719068
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a041",
+      "embedding": [
+        0.9949,
+        0.10086619850078601
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a042",
+      "embedding": [
+        0.9948,
+        0.10184772947886461
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a043",
+      "embedding": [
+        0.9947,
+        0.1028197938142258
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a044",
+      "embedding": [
+        0.9946,
+        0.10378265751078042
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a045",
+      "embedding": [
+        0.9945,
+        0.10473657431862038
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a046",
+      "embedding": [
+        0.9944,
+        0.10568178651025949
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a047",
+      "embedding": [
+        0.9943,
+        0.1066185255947578
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a048",
+      "embedding": [
+        0.9942,
+        0.10754701297572196
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a049",
+      "embedding": [
+        0.9941,
+        0.10846746055845495
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a050",
+      "embedding": [
+        0.994,
+        0.10938007131100241
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a051",
+      "embedding": [
+        0.9939,
+        0.11028503978328148
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a052",
+      "embedding": [
+        0.9938,
+        0.11118255258807469
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a053",
+      "embedding": [
+        0.9937,
+        0.11207278884724832
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a054",
+      "embedding": [
+        0.9936,
+        0.11295592060622561
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a055",
+      "embedding": [
+        0.9935,
+        0.1138321132194245
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a056",
+      "embedding": [
+        0.9934,
+        0.11470152570912057
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a057",
+      "embedding": [
+        0.9933,
+        0.11556431109992442
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a058",
+      "embedding": [
+        0.9932,
+        0.11642061673088698
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a059",
+      "embedding": [
+        0.9931,
+        0.11727058454702124
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a060",
+      "embedding": [
+        0.993,
+        0.11811435137188049
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a061",
+      "embedding": [
+        0.9929,
+        0.1189520491626775
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a062",
+      "embedding": [
+        0.9928,
+        0.11978380524929046
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a063",
+      "embedding": [
+        0.9927,
+        0.12060974255838523
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a064",
+      "embedding": [
+        0.9926,
+        0.12142997982376462
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a065",
+      "embedding": [
+        0.9925,
+        0.1222446317839762
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a066",
+      "embedding": [
+        0.9924,
+        0.12305380936809752
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a067",
+      "embedding": [
+        0.9923,
+        0.12385761987055958
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a068",
+      "embedding": [
+        0.9922,
+        0.12465616711579137
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a069",
+      "embedding": [
+        0.9921,
+        0.12544955161338792
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a070",
+      "embedding": [
+        0.992,
+        0.12623787070447623
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a071",
+      "embedding": [
+        0.9919,
+        0.12702121869986896
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a072",
+      "embedding": [
+        0.9918,
+        0.12779968701057115
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a073",
+      "embedding": [
+        0.9917,
+        0.12857336427114271
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a074",
+      "embedding": [
+        0.9916,
+        0.12934233645639726
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a075",
+      "embedding": [
+        0.9915,
+        0.13010668699186798
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a076",
+      "embedding": [
+        0.9914,
+        0.13086649685843993
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a077",
+      "embedding": [
+        0.9913,
+        0.13162184469152574
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a078",
+      "embedding": [
+        0.9912,
+        0.13237280687512853
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "a079",
+      "embedding": [
+        0.9911,
+        0.1331194576311068
+      ],
+      "model_name": "model-a"
+    },
+    {
+      "_key": "b0",
+      "embedding": [
+        0.8,
+        0.5999999999999999
+      ],
+      "model_name": "model-b"
+    },
+    {
+      "_key": "b1",
+      "embedding": [
+        0.6,
+        0.8
+      ],
+      "model_name": "model-b"
+    },
+    {
+      "_key": "b2",
+      "embedding": [
+        0.4,
+        0.916515138991168
+      ],
+      "model_name": "model-b"
+    },
+    {
+      "_key": "uppercase",
+      "embedding": [
+        0.9,
+        0.4358898943540673
+      ],
+      "model_name": "Model-B"
+    },
+    {
+      "_key": "empty",
+      "embedding": [
+        0.7,
+        0.714142842854285
+      ],
+      "model_name": ""
+    },
+    {
+      "_key": "missing",
+      "embedding": [
+        0.95,
+        0.31224989991991997
+      ]
+    },
+    {
+      "_key": "null",
+      "embedding": [
+        0.94,
+        0.3411744421846397
+      ],
+      "model_name": null
+    },
+    {
+      "_key": "numeric",
+      "embedding": [
+        0.93,
+        0.36755951898978195
+      ],
+      "model_name": 23
+    }
+  ],
+  "phases": [
+    {
+      "name": "base",
+      "actions": [],
+      "cases": [
+        {
+          "name": "outside_global_prefix",
+          "model_name": "model-b",
+          "limit": 1,
+          "threshold": -1,
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ]
+        },
+        {
+          "name": "all_model_candidates",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "b0",
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.8,
+            0.6,
+            0.4
+          ]
+        },
+        {
+          "name": "missing_model",
+          "model_name": "model-c",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [],
+          "scores": []
+        },
+        {
+          "name": "case_sensitive",
+          "model_name": "Model-B",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "uppercase"
+          ],
+          "scores": [
+            0.9
+          ]
+        },
+        {
+          "name": "wrong_case",
+          "model_name": "MODEL-B",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [],
+          "scores": []
+        },
+        {
+          "name": "empty_is_distinct",
+          "model_name": "",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "empty"
+          ],
+          "scores": [
+            0.7
+          ]
+        },
+        {
+          "name": "unfiltered",
+          "model_name": null,
+          "limit": 2,
+          "threshold": -1,
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ]
+        },
+        {
+          "name": "threshold",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": 0.7,
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ]
+        },
+        {
+          "name": "above_best",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": 0.81,
+          "keys": [],
+          "scores": []
+        },
+        {
+          "name": "zero_limit",
+          "model_name": "model-b",
+          "limit": 0,
+          "threshold": -1,
+          "keys": [],
+          "scores": []
+        },
+        {
+          "name": "no_threshold",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": null,
+          "keys": [
+            "b0",
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.8,
+            0.6,
+            0.4
+          ]
+        }
+      ]
+    },
+    {
+      "name": "model_only_out",
+      "actions": [
+        {
+          "op": "update",
+          "key": "b0",
+          "doc": {
+            "model_name": "model-a"
+          }
+        }
+      ],
+      "cases": [
+        {
+          "name": "b0_leaves_model",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.6,
+            0.4
+          ]
+        }
+      ]
+    },
+    {
+      "name": "model_only_in",
+      "actions": [
+        {
+          "op": "update",
+          "key": "a000",
+          "doc": {
+            "model_name": "model-b"
+          }
+        }
+      ],
+      "cases": [
+        {
+          "name": "a000_enters_model",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "a000",
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.999,
+            0.6,
+            0.4
+          ]
+        },
+        {
+          "name": "a000_leaves_old_model",
+          "model_name": "model-a",
+          "limit": 1,
+          "threshold": -1,
+          "keys": [
+            "a001"
+          ],
+          "scores": [
+            0.9989
+          ]
+        }
+      ]
+    },
+    {
+      "name": "delta_create",
+      "actions": [
+        {
+          "op": "create",
+          "key": "fresh",
+          "doc": {
+            "_key": "fresh",
+            "embedding": [
+              1,
+              0.0
+            ],
+            "model_name": "model-b"
+          }
+        }
+      ],
+      "cases": [
+        {
+          "name": "new_delta_wins",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "fresh",
+            "a000",
+            "b1"
+          ],
+          "scores": [
+            1,
+            0.999,
+            0.6
+          ]
+        }
+      ]
+    },
+    {
+      "name": "remove_model",
+      "actions": [
+        {
+          "op": "replace",
+          "key": "fresh",
+          "doc": {
+            "_key": "fresh",
+            "embedding": [
+              1,
+              0.0
+            ]
+          }
+        },
+        {
+          "op": "update",
+          "key": "a000",
+          "doc": {
+            "model_name": null
+          }
+        }
+      ],
+      "cases": [
+        {
+          "name": "removed_models_excluded",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.6,
+            0.4
+          ]
+        },
+        {
+          "name": "unannotated_stays_searchable",
+          "model_name": null,
+          "limit": 1,
+          "threshold": -1,
+          "keys": [
+            "fresh"
+          ],
+          "scores": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "delete_and_remove_embedding",
+      "actions": [
+        {
+          "op": "delete",
+          "key": "b1"
+        },
+        {
+          "op": "replace",
+          "key": "b2",
+          "doc": {
+            "model_name": "model-b"
+          }
+        }
+      ],
+      "cases": [
+        {
+          "name": "tombstones_exclude_base",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [],
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "batch_models",
+      "actions": [
+        {
+          "op": "batch",
+          "operations": [
+            {
+              "op": "update",
+              "key": "b0",
+              "doc": {
+                "model_name": "model-b"
+              }
+            },
+            {
+              "op": "create",
+              "key": "batch_empty",
+              "doc": {
+                "_key": "batch_empty",
+                "embedding": [
+                  0.85,
+                  0.526782687642637
+                ],
+                "model_name": ""
+              }
+            }
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "name": "batch_model_update",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ]
+        },
+        {
+          "name": "empty_delta",
+          "model_name": "",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "batch_empty",
+            "empty"
+          ],
+          "scores": [
+            0.85,
+            0.7
+          ]
+        }
+      ]
+    },
+    {
+      "name": "new_model_and_recreation",
+      "actions": [
+        {
+          "op": "create",
+          "key": "new_model",
+          "doc": {
+            "_key": "new_model",
+            "embedding": [
+              0.5,
+              0.8660254037844386
+            ],
+            "model_name": "new-model"
+          }
+        },
+        {
+          "op": "create",
+          "key": "b1",
+          "doc": {
+            "_key": "b1",
+            "embedding": [
+              0.6,
+              0.8
+            ],
+            "model_name": "model-b"
+          }
+        }
+      ],
+      "cases": [
+        {
+          "name": "new_model_in_delta",
+          "model_name": "new-model",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "new_model"
+          ],
+          "scores": [
+            0.5
+          ]
+        },
+        {
+          "name": "recreated_key",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "b0",
+            "b1"
+          ],
+          "scores": [
+            0.8,
+            0.6
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rebuild",
+      "actions": [
+        {
+          "op": "create",
+          "key": "rebuild000",
+          "doc": {
+            "_key": "rebuild000",
+            "embedding": [
+              -0.5,
+              0.8660254037844386
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild001",
+          "doc": {
+            "_key": "rebuild001",
+            "embedding": [
+              -0.501,
+              0.8654472832010046
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild002",
+          "doc": {
+            "_key": "rebuild002",
+            "embedding": [
+              -0.502,
+              0.8648676199280443
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild003",
+          "doc": {
+            "_key": "rebuild003",
+            "embedding": [
+              -0.503,
+              0.8642864108615846
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild004",
+          "doc": {
+            "_key": "rebuild004",
+            "embedding": [
+              -0.504,
+              0.8637036528810099
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild005",
+          "doc": {
+            "_key": "rebuild005",
+            "embedding": [
+              -0.505,
+              0.8631193428489481
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild006",
+          "doc": {
+            "_key": "rebuild006",
+            "embedding": [
+              -0.506,
+              0.8625334776111592
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild007",
+          "doc": {
+            "_key": "rebuild007",
+            "embedding": [
+              -0.507,
+              0.8619460539964203
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild008",
+          "doc": {
+            "_key": "rebuild008",
+            "embedding": [
+              -0.508,
+              0.8613570688164113
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild009",
+          "doc": {
+            "_key": "rebuild009",
+            "embedding": [
+              -0.509,
+              0.8607665188655981
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild010",
+          "doc": {
+            "_key": "rebuild010",
+            "embedding": [
+              -0.51,
+              0.8601744009211155
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild011",
+          "doc": {
+            "_key": "rebuild011",
+            "embedding": [
+              -0.511,
+              0.8595807117426496
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild012",
+          "doc": {
+            "_key": "rebuild012",
+            "embedding": [
+              -0.512,
+              0.8589854480723175
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild013",
+          "doc": {
+            "_key": "rebuild013",
+            "embedding": [
+              -0.513,
+              0.8583886066345475
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild014",
+          "doc": {
+            "_key": "rebuild014",
+            "embedding": [
+              -0.514,
+              0.8577901841359575
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild015",
+          "doc": {
+            "_key": "rebuild015",
+            "embedding": [
+              -0.515,
+              0.8571901772652321
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild016",
+          "doc": {
+            "_key": "rebuild016",
+            "embedding": [
+              -0.516,
+              0.8565885826929985
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild017",
+          "doc": {
+            "_key": "rebuild017",
+            "embedding": [
+              -0.517,
+              0.8559853970717024
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild018",
+          "doc": {
+            "_key": "rebuild018",
+            "embedding": [
+              -0.518,
+              0.8553806170354809
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild019",
+          "doc": {
+            "_key": "rebuild019",
+            "embedding": [
+              -0.519,
+              0.8547742392000358
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild020",
+          "doc": {
+            "_key": "rebuild020",
+            "embedding": [
+              -0.52,
+              0.854166260162505
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild021",
+          "doc": {
+            "_key": "rebuild021",
+            "embedding": [
+              -0.521,
+              0.8535566765013323
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild022",
+          "doc": {
+            "_key": "rebuild022",
+            "embedding": [
+              -0.522,
+              0.8529454847761374
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild023",
+          "doc": {
+            "_key": "rebuild023",
+            "embedding": [
+              -0.523,
+              0.8523326815275829
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild024",
+          "doc": {
+            "_key": "rebuild024",
+            "embedding": [
+              -0.524,
+              0.8517182632772412
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild025",
+          "doc": {
+            "_key": "rebuild025",
+            "embedding": [
+              -0.525,
+              0.85110222652746
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild026",
+          "doc": {
+            "_key": "rebuild026",
+            "embedding": [
+              -0.526,
+              0.8504845677612263
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild027",
+          "doc": {
+            "_key": "rebuild027",
+            "embedding": [
+              -0.527,
+              0.8498652834420288
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild028",
+          "doc": {
+            "_key": "rebuild028",
+            "embedding": [
+              -0.528,
+              0.8492443700137199
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild029",
+          "doc": {
+            "_key": "rebuild029",
+            "embedding": [
+              -0.529,
+              0.8486218239003755
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild030",
+          "doc": {
+            "_key": "rebuild030",
+            "embedding": [
+              -0.53,
+              0.8479976415061542
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild031",
+          "doc": {
+            "_key": "rebuild031",
+            "embedding": [
+              -0.531,
+              0.8473718192151543
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild032",
+          "doc": {
+            "_key": "rebuild032",
+            "embedding": [
+              -0.532,
+              0.84674435339127
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild033",
+          "doc": {
+            "_key": "rebuild033",
+            "embedding": [
+              -0.533,
+              0.8461152403780469
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild034",
+          "doc": {
+            "_key": "rebuild034",
+            "embedding": [
+              -0.534,
+              0.845484476498534
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild035",
+          "doc": {
+            "_key": "rebuild035",
+            "embedding": [
+              -0.535,
+              0.8448520580551366
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild036",
+          "doc": {
+            "_key": "rebuild036",
+            "embedding": [
+              -0.536,
+              0.8442179813294668
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild037",
+          "doc": {
+            "_key": "rebuild037",
+            "embedding": [
+              -0.537,
+              0.8435822425821918
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild038",
+          "doc": {
+            "_key": "rebuild038",
+            "embedding": [
+              -0.538,
+              0.8429448380528823
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild039",
+          "doc": {
+            "_key": "rebuild039",
+            "embedding": [
+              -0.539,
+              0.842305763959858
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild040",
+          "doc": {
+            "_key": "rebuild040",
+            "embedding": [
+              -0.54,
+              0.8416650165000324
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild041",
+          "doc": {
+            "_key": "rebuild041",
+            "embedding": [
+              -0.541,
+              0.8410225918487565
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild042",
+          "doc": {
+            "_key": "rebuild042",
+            "embedding": [
+              -0.542,
+              0.8403784861596589
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild043",
+          "doc": {
+            "_key": "rebuild043",
+            "embedding": [
+              -0.543,
+              0.8397326955644874
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild044",
+          "doc": {
+            "_key": "rebuild044",
+            "embedding": [
+              -0.544,
+              0.8390852161729463
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild045",
+          "doc": {
+            "_key": "rebuild045",
+            "embedding": [
+              -0.545,
+              0.8384360440725338
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild046",
+          "doc": {
+            "_key": "rebuild046",
+            "embedding": [
+              -0.546,
+              0.8377851753283774
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild047",
+          "doc": {
+            "_key": "rebuild047",
+            "embedding": [
+              -0.547,
+              0.8371326059830664
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild048",
+          "doc": {
+            "_key": "rebuild048",
+            "embedding": [
+              -0.548,
+              0.8364783320564854
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild049",
+          "doc": {
+            "_key": "rebuild049",
+            "embedding": [
+              -0.549,
+              0.8358223495456436
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild050",
+          "doc": {
+            "_key": "rebuild050",
+            "embedding": [
+              -0.55,
+              0.8351646544245033
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild051",
+          "doc": {
+            "_key": "rebuild051",
+            "embedding": [
+              -0.551,
+              0.8345052426438074
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild052",
+          "doc": {
+            "_key": "rebuild052",
+            "embedding": [
+              -0.552,
+              0.8338441101309044
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild053",
+          "doc": {
+            "_key": "rebuild053",
+            "embedding": [
+              -0.553,
+              0.8331812527895716
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild054",
+          "doc": {
+            "_key": "rebuild054",
+            "embedding": [
+              -0.554,
+              0.8325166664998365
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild055",
+          "doc": {
+            "_key": "rebuild055",
+            "embedding": [
+              -0.555,
+              0.8318503471177974
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild056",
+          "doc": {
+            "_key": "rebuild056",
+            "embedding": [
+              -0.556,
+              0.8311822904754407
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild057",
+          "doc": {
+            "_key": "rebuild057",
+            "embedding": [
+              -0.557,
+              0.8305124923804578
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild058",
+          "doc": {
+            "_key": "rebuild058",
+            "embedding": [
+              -0.558,
+              0.8298409486160585
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild059",
+          "doc": {
+            "_key": "rebuild059",
+            "embedding": [
+              -0.559,
+              0.8291676549407846
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild060",
+          "doc": {
+            "_key": "rebuild060",
+            "embedding": [
+              -0.56,
+              0.8284926070883191
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild061",
+          "doc": {
+            "_key": "rebuild061",
+            "embedding": [
+              -0.5609999999999999,
+              0.8278158007672963
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild062",
+          "doc": {
+            "_key": "rebuild062",
+            "embedding": [
+              -0.562,
+              0.8271372316611071
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild063",
+          "doc": {
+            "_key": "rebuild063",
+            "embedding": [
+              -0.563,
+              0.8264568954277047
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild064",
+          "doc": {
+            "_key": "rebuild064",
+            "embedding": [
+              -0.5640000000000001,
+              0.8257747876994066
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild065",
+          "doc": {
+            "_key": "rebuild065",
+            "embedding": [
+              -0.565,
+              0.8250909040826957
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild066",
+          "doc": {
+            "_key": "rebuild066",
+            "embedding": [
+              -0.5660000000000001,
+              0.8244052401580183
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild067",
+          "doc": {
+            "_key": "rebuild067",
+            "embedding": [
+              -0.567,
+              0.823717791479582
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild068",
+          "doc": {
+            "_key": "rebuild068",
+            "embedding": [
+              -0.5680000000000001,
+              0.8230285535751478
+            ],
+            "model_name": "model-a"
+          }
+        },
+        {
+          "op": "create",
+          "key": "rebuild069",
+          "doc": {
+            "_key": "rebuild069",
+            "embedding": [
+              -0.569,
+              0.8223375219458249
+            ],
+            "model_name": "model-a"
+          }
+        }
+      ],
+      "cases": [
+        {
+          "name": "rebuilt_model_population",
+          "model_name": "model-b",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "b0",
+            "b1"
+          ],
+          "scores": [
+            0.8,
+            0.6
+          ]
+        },
+        {
+          "name": "new_model_in_base",
+          "model_name": "new-model",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "new_model"
+          ],
+          "scores": [
+            0.5
+          ]
+        },
+        {
+          "name": "rebuilt_empty_population",
+          "model_name": "",
+          "limit": 3,
+          "threshold": -1,
+          "keys": [
+            "batch_empty",
+            "empty"
+          ],
+          "scores": [
+            0.85,
+            0.7
+          ]
+        }
+      ]
+    }
+  ]
+}

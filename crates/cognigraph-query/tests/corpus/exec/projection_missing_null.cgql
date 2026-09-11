@@ -1,0 +1,1 @@
+FOR d IN documents SORT d._key ASC RETURN { k: d._key, cat: d.category }

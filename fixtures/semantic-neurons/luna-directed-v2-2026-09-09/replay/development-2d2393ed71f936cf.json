@@ -1,0 +1,207 @@
+{
+  "document_id": "development-2d2393ed71f936cf",
+  "request": {
+    "space_type": "document-trial-development-2d2393ed71f936cf",
+    "taxonomy": [
+      {
+        "relation": "COUNTRY",
+        "description": "The source place, organization, event, or work belongs to or is located in the target country. Do not apply to a person; do not infer unstated geographic containment.",
+        "require_in_sentence": [
+          "country",
+          "in",
+          "of",
+          "located",
+          "based"
+        ]
+      },
+      {
+        "relation": "LOCATED_IN",
+        "description": "The source place is located in the target administrative territory. Require the document to state the containment; do not infer a transitive location chain.",
+        "require_in_sentence": [
+          "in",
+          "located",
+          "part of",
+          "region",
+          "district",
+          "province",
+          "county"
+        ]
+      },
+      {
+        "relation": "HEADQUARTERED_IN",
+        "description": "The source organization has its headquarters in the target location. A branch office or activity in a place is not headquarters.",
+        "require_in_sentence": [
+          "headquarters",
+          "headquartered",
+          "based",
+          "head office"
+        ]
+      },
+      {
+        "relation": "BORN_IN",
+        "description": "The source person was born in the target place. Residence, citizenship, death, or employment alone do not establish birthplace.",
+        "require_in_sentence": [
+          "born",
+          "birth",
+          "birthplace"
+        ]
+      },
+      {
+        "relation": "DIED_IN",
+        "description": "The source person died in the target place. Birthplace, residence, or burial alone do not establish place of death.",
+        "require_in_sentence": [
+          "died",
+          "death",
+          "killed"
+        ]
+      },
+      {
+        "relation": "HAS_FATHER",
+        "description": "The target person is the father of the source person. Do not reverse parent and child or infer from shared surnames.",
+        "require_in_sentence": [
+          "father",
+          "son",
+          "daughter",
+          "parent"
+        ]
+      },
+      {
+        "relation": "HAS_MOTHER",
+        "description": "The target person is the mother of the source person. Do not reverse parent and child or infer from shared surnames.",
+        "require_in_sentence": [
+          "mother",
+          "son",
+          "daughter",
+          "parent"
+        ]
+      },
+      {
+        "relation": "SPOUSE_OF",
+        "description": "The two people are or were married spouses, including explicitly stated former spouses. A proposed marriage or other association does not establish marriage. This relation is symmetric.",
+        "require_in_sentence": [
+          "married",
+          "wife",
+          "husband",
+          "spouse",
+          "marriage",
+          "divorced"
+        ]
+      },
+      {
+        "relation": "HAS_CHILD",
+        "description": "The target person is the child of the source person. Do not reverse the direction or infer from shared surnames.",
+        "require_in_sentence": [
+          "father",
+          "mother",
+          "son",
+          "daughter",
+          "child",
+          "children",
+          "parent"
+        ]
+      },
+      {
+        "relation": "FOUNDED_BY",
+        "description": "The target person or organization founded or co-founded the source organization. A later owner, executive, or employee is not necessarily a founder.",
+        "require_in_sentence": [
+          "founded",
+          "established",
+          "founder",
+          "co-founded"
+        ]
+      },
+      {
+        "relation": "OWNED_BY",
+        "description": "The source asset, organization, or work is or was owned by the target entity. Operation, creation, employment, or partnership alone does not establish ownership.",
+        "require_in_sentence": [
+          "owned",
+          "owner",
+          "ownership",
+          "acquired",
+          "subsidiary",
+          "purchased",
+          "bought"
+        ]
+      },
+      {
+        "relation": "PUBLISHED_BY",
+        "description": "The target organization or person publishes or published the source work. Creation, distribution, and publication are distinct.",
+        "require_in_sentence": [
+          "published",
+          "publisher",
+          "publishing"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "development-2d2393ed71f936cf",
+        "title": "Boltenhagen",
+        "text": "Boltenhagen is a German seaside resort in Mecklenburg - Vorpommern situated on the Baltic Sea coast 30   km east of Lübeck .\nIt offers a wide view of the Bay of Lübeck ; a 5   km stretch of a wide and sandy beach , a boardwalk , restaurants and health spas .\nBoltenhagen is considered to be part of the German Riviera .\nIt is close to the cities of Lübeck , Wismar and Schwerin and is part of the Hamburg Metropolitan Region .\nBecause of its location it is one of the most famous German seaside resorts at the Baltic Sea .\nA marina with fishing harbour connects to the resort at its easternmost end , offering hotels and private beaches overlooking the vast Wohlenberger Wiek , a shallow bay in between Boltenhagen and Wismar .\nWest of the town and close to the seaside lies the picturesque little castle of Gross - Schwansee , recently refurbished and converted into a luxury hotel .\nSouth of it , Bothmer Mansion , a remarkable Tudor - style manor house in the nearby village of Klütz can be visited .\nEven historically Boltenhagen has been a popular holiday resort in Eastern Germany as being the second town , where bathing wagons have been placed .\nToday the town offers nearly 10.000 beds , also because of health reasons , the town counts as a well known and highly recommended holiday resort ."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 1,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v2",
+    "facts_grounded": 1,
+    "proposed": 1,
+    "skips": [],
+    "space_type": "document-trial-development-2d2393ed71f936cf"
+  },
+  "latency_seconds": 0.03093908296432346,
+  "facts": [
+    {
+      "_from": "entities/boltenhagen",
+      "_id": "facts/fact-e8428155c6929a713933bb424db90cb8508b3aa25eec477c6a8a072a126345a7",
+      "_key": "fact-e8428155c6929a713933bb424db90cb8508b3aa25eec477c6a8a072a126345a7",
+      "_to": "entities/mecklenburg-vorpommern",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-2d2393ed71f936cf",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "LOCATED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v2",
+      "space_id": "document-trial-development-2d2393ed71f936cf",
+      "trigger": "Boltenhagen is a German seaside resort in Mecklenburg - Vorpommern situated on the Baltic Sea coast 30   km east of Lübeck .",
+      "trigger_end": 126,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/boltenhagen",
+      "_key": "boltenhagen",
+      "aliases": [],
+      "created_at": "2026-09-09T17:52:58.418028+00:00",
+      "entity_type": "place",
+      "name": "Boltenhagen",
+      "updated_at": "2026-09-09T17:52:58.418028+00:00"
+    },
+    {
+      "_id": "entities/mecklenburg-vorpommern",
+      "_key": "mecklenburg-vorpommern",
+      "aliases": [],
+      "created_at": "2026-09-09T17:52:58.418030+00:00",
+      "entity_type": "administrative territory",
+      "name": "Mecklenburg - Vorpommern",
+      "updated_at": "2026-09-09T17:52:58.418030+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/document-trial-development-2d2393ed71f936cf-development-2d2393ed71f936cf",
+      "_key": "document-trial-development-2d2393ed71f936cf-development-2d2393ed71f936cf",
+      "chunk_id": "development-2d2393ed71f936cf",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:290d9a67575d7e3e667a0ef723d4987f37f87516efbfd0a58ab60281e1667e92",
+      "created_at": "2026-09-09T17:52:58.418032+00:00",
+      "space_id": "document-trial-development-2d2393ed71f936cf",
+      "text": "Boltenhagen is a German seaside resort in Mecklenburg - Vorpommern situated on the Baltic Sea coast 30   km east of Lübeck .\nIt offers a wide view of the Bay of Lübeck ; a 5   km stretch of a wide and sandy beach , a boardwalk , restaurants and health spas .\nBoltenhagen is considered to be part of the German Riviera .\nIt is close to the cities of Lübeck , Wismar and Schwerin and is part of the Hamburg Metropolitan Region .\nBecause of its location it is one of the most famous German seaside resorts at the Baltic Sea .\nA marina with fishing harbour connects to the resort at its easternmost end , offering hotels and private beaches overlooking the vast Wohlenberger Wiek , a shallow bay in between Boltenhagen and Wismar .\nWest of the town and close to the seaside lies the picturesque little castle of Gross - Schwansee , recently refurbished and converted into a luxury hotel .\nSouth of it , Bothmer Mansion , a remarkable Tudor - style manor house in the nearby village of Klütz can be visited .\nEven historically Boltenhagen has been a popular holiday resort in Eastern Germany as being the second town , where bathing wagons have been placed .\nToday the town offers nearly 10.000 beds , also because of health reasons , the town counts as a well known and highly recommended holiday resort .",
+      "title": "Boltenhagen",
+      "updated_at": "2026-09-09T17:52:58.418032+00:00"
+    }
+  ]
+}

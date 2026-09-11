@@ -1,0 +1,1 @@
+RETURN (INSERT {_key: "cg28-forbidden"} INTO documents RETURN NEW)

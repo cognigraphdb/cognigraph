@@ -1,0 +1,37 @@
+{
+  "statement": {
+    "schema_version": 1,
+    "domain": "cognigraph.key-registration.v2",
+    "tenant": "REPLACE_WITH_TENANT",
+    "tenant_incarnation": "REPLACE_WITH_TENANT_INCARNATION",
+    "payload": {
+      "registration_id": "REPLACE_WITH_64_LOWERCASE_HEX_NATURAL_ID",
+      "principal_id": "REPLACE_WITH_STABLE_ARTIFACT_ATTESTOR_PRINCIPAL",
+      "subject_user_key": "REPLACE_WITH_ARTIFACT_ATTESTOR_USER_KEY",
+      "verification_key": {
+        "schema_version": 1,
+        "algorithm": "ed25519",
+        "key_id": "ed25519:sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+        "purpose": "artifact_attestor",
+        "public_key": "REPLACE_WITH_UNPADDED_BASE64URL_PUBLIC_KEY"
+      },
+      "not_before_ms": 1,
+      "not_after_ms": null,
+      "signed_at_ms": 1
+    }
+  },
+  "root_signature": {
+    "schema_version": 1,
+    "algorithm": "ed25519",
+    "key_id": "ed25519:sha256:REPLACE_WITH_ROOT_KEY_ID_HEX",
+    "statement_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "signature": "REPLACE_WITH_UNPADDED_BASE64URL_SIGNATURE"
+  },
+  "possession_signature": {
+    "schema_version": 1,
+    "algorithm": "ed25519",
+    "key_id": "ed25519:sha256:REPLACE_WITH_ATTESTOR_KEY_ID_HEX",
+    "statement_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "signature": "REPLACE_WITH_UNPADDED_BASE64URL_SIGNATURE"
+  }
+}

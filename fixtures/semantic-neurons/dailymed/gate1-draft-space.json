@@ -1,0 +1,459 @@
+{
+  "id": "dailymed-gate1",
+  "name": "dailymed-gate1",
+  "version": 1,
+  "description": "drafted by draft-policy-v1 — review before acceptance",
+  "entities": [
+    {
+      "name": "amitriptyline hydrochloride tablets",
+      "type": "product",
+      "aliases": [
+        "antidepressant drugs",
+        "antidepressants"
+      ]
+    },
+    {
+      "name": "probenecid",
+      "type": "drug",
+      "aliases": []
+    },
+    {
+      "name": "amoxicillin and clavulanate potassium for oral suspension",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "oral anticoagulants",
+      "type": "drug",
+      "aliases": []
+    },
+    {
+      "name": "allopurinol",
+      "type": "drug",
+      "aliases": []
+    },
+    {
+      "name": "oral contraceptives",
+      "type": "drug",
+      "aliases": []
+    },
+    {
+      "name": "Sertraline hydrochloride tablets",
+      "type": "product",
+      "aliases": [
+        "sertraline hydrochloride tablet"
+      ]
+    },
+    {
+      "name": "azathioprine tablets",
+      "type": "product",
+      "aliases": [
+        "Azathioprine Tablets"
+      ]
+    },
+    {
+      "name": "Aspirin",
+      "type": "drug",
+      "aliases": []
+    },
+    {
+      "name": "predniSONE Tablets, USP 5 mg",
+      "type": "product",
+      "aliases": [
+        "Prednisone Tablets, USP 5 mg"
+      ]
+    },
+    {
+      "name": "Naproxen Tablets, USP 250 mg",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "Naproxen Tablets, USP 375 mg",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "Naproxen Tablets, USP 500 mg",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "Naproxen Sodium Tablets, USP 275 mg",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "Naproxen Sodium Tablets, USP 550 mg",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "metoprolol tartrate injection",
+      "type": "product",
+      "aliases": [
+        "metoprolol tartrate"
+      ]
+    },
+    {
+      "name": "metoprolol",
+      "type": "drug",
+      "aliases": []
+    },
+    {
+      "name": "Hydroxyzine hydrochloride, USP",
+      "type": "drug",
+      "aliases": []
+    },
+    {
+      "name": "Ampicillin and Sulbactam for Injection, USP",
+      "type": "product",
+      "aliases": [
+        "ampicillin sodium/sulbactam sodium"
+      ]
+    },
+    {
+      "name": "Clinitest™",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "Clinistix™",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "Testape™",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "Pioglitazone tablets",
+      "type": "product",
+      "aliases": [
+        "pioglitazone"
+      ]
+    },
+    {
+      "name": "simvastatin tablets",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "Bupivacaine Hydrochloride Injection",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "acyclovir tablets",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "intravenous acyclovir",
+      "type": "drug",
+      "aliases": []
+    },
+    {
+      "name": "Albuterol Inhalation Solution 0.5% Carton",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "Hydrocodone Bitartrate and Acetaminophen Tablets",
+      "type": "product",
+      "aliases": [
+        "Hydrocodone Bitartrate"
+      ]
+    },
+    {
+      "name": "naloxone",
+      "type": "drug",
+      "aliases": []
+    },
+    {
+      "name": "dextroamphetamine saccharate, amphetamine aspartate, dextroamphetamine sulfate, and amphetamine sulfate tablets",
+      "type": "product",
+      "aliases": []
+    },
+    {
+      "name": "TUKYSA",
+      "type": "product",
+      "aliases": [
+        "trastuzumab",
+        "capecitabine"
+      ]
+    },
+    {
+      "name": "flucytosine capsules",
+      "type": "product",
+      "aliases": [
+        "flucytosine"
+      ]
+    },
+    {
+      "name": "TEVA USA",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "FDA",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "Safco Dental Supply LLC",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "Safco Dental Supply Canada Inc.",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "Mylan Pharmaceuticals Inc.",
+      "type": "organization",
+      "aliases": [
+        "Mylan.com"
+      ]
+    },
+    {
+      "name": "Onesource Specialty Pharma Limited",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "Miles, Inc.",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "Bayer Corporation",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "Eli Lilly Company",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "Henry Schein, Inc.",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "Camber Pharmaceuticals, Inc.",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "Aspiro Pharma Limited",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "Seagen",
+      "type": "organization",
+      "aliases": []
+    },
+    {
+      "name": "USP",
+      "type": "organization",
+      "aliases": [
+        "USP controlled Room Temperature",
+        "USP Controlled Room Temperature"
+      ]
+    }
+  ],
+  "relation_rules": [
+    {
+      "source": "amitriptyline hydrochloride tablets",
+      "relation": "INCREASES_RISK_OF",
+      "target": "oral contraceptives",
+      "when_any": [
+        "antidepressants increased the risk compared to placebo of suicidal thinking and behavior (suicidality)",
+        "anyone considering the use of amitriptyline hydrochloride tablets or any other antidepressant in a child, adolescent, or young adult must balance this risk with the clinical need"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "amoxicillin and clavulanate potassium for oral suspension",
+      "relation": "NOT_RECOMMENDED_WITH",
+      "target": "probenecid",
+      "when_any": [
+        "co-administration with probenecid is not recommended"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "amoxicillin and clavulanate potassium for oral suspension",
+      "relation": "INCREASES_RISK_OF",
+      "target": "oral anticoagulants",
+      "when_any": [
+        "concomitant use of amoxicillin and clavulanate potassium for oral suspension and oral anticoagulants may increase the prolongation of prothrombin time"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "amoxicillin and clavulanate potassium for oral suspension",
+      "relation": "INCREASES_RISK_OF",
+      "target": "allopurinol",
+      "when_any": [
+        "co-administration with allopurinol increases the risk of rash"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "amoxicillin and clavulanate potassium for oral suspension",
+      "relation": "REDUCES_EFFICACY_OF",
+      "target": "oral contraceptives",
+      "when_any": [
+        "amoxicillin and clavulanate potassium for oral suspension may reduce efficacy of oral contraceptives"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "Sertraline hydrochloride tablets",
+      "relation": "INDICATED_FOR",
+      "target": "oral contraceptives",
+      "when_any": [
+        "are indicated for the treatment of the following",
+        "indicated for the treatment of ( 1 ):"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "azathioprine tablets",
+      "relation": "INDICATED_FOR",
+      "target": "Aspirin",
+      "when_any": [
+        "azathioprine tablets are indicated as an adjunct for the prevention of rejection in renal homotransplantation",
+        "is also indicated for the management of active rheumatoid arthritis to reduce signs and symptoms"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "azathioprine tablets",
+      "relation": "CAN_BE_CONTINUED_WITH",
+      "target": "Aspirin",
+      "when_any": [
+        "aspirin, non-steroidal anti-inflammatory drugs and/or low dose glucocorticoids may be continued during treatment with azathioprine tablets"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "metoprolol tartrate injection",
+      "relation": "SHOULD_BE_MONITORED_WITH",
+      "target": "metoprolol",
+      "when_any": [
+        "during the intravenous administration of metoprolol tartrate injection, monitor blood pressure, heart rate, and electrocardiogram",
+        "following administration of metoprolol tartrate injection, transition patients to an oral formulation of metoprolol"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "predniSONE Tablets, USP 5 mg",
+      "relation": "STORE_AT",
+      "target": "USP",
+      "when_any": [
+        "store at 20° to 25°c (68° to 77°f)",
+        "[see usp controlled room temperature.]"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "simvastatin tablets",
+      "relation": "REDUCES_EVENTS_OF",
+      "target": "oral anticoagulants",
+      "when_any": [
+        "simvastatin tablets 40 mg/day significantly reduced",
+        "simvastatin tablets use led to significant relative risk reductions"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "Bupivacaine Hydrochloride Injection",
+      "relation": "MONITOR_FOR",
+      "target": "oral anticoagulants",
+      "when_any": [
+        "monitor cardiovascular and respiratory vital signs and patient's state of consciousness after injection of bupivacaine hydrochloride injection"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "acyclovir tablets",
+      "relation": "INDICATED_FOR",
+      "target": "intravenous acyclovir",
+      "when_any": [
+        "intravenous acyclovir is indicated for the treatment of varicella-zoster infections in immunocompromised patients"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "Hydrocodone Bitartrate and Acetaminophen Tablets",
+      "relation": "AVAILABLE_WITH",
+      "target": "naloxone",
+      "when_any": [
+        "an opioid antagonist, such as naloxone, must be available for reversal of opioid-induced respiratory depression in the neonate"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "dextroamphetamine saccharate, amphetamine aspartate, dextroamphetamine sulfate, and amphetamine sulfate tablets",
+      "relation": "WARNS_ABOUT",
+      "target": "oral contraceptives",
+      "when_any": [
+        "can elevate blood pressure and heart rate",
+        "can cause psychotic or manic symptoms"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "TUKYSA",
+      "relation": "ASSOCIATED_WITH",
+      "target": "Seagen",
+      "when_any": [
+        "to report suspected adverse reactions, contact seagen at 1-855-4seagen"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "Ampicillin and Sulbactam for Injection, USP",
+      "relation": "MANUFACTURED_BY",
+      "target": "Onesource Specialty Pharma Limited",
+      "when_any": [
+        "manufactured by: onesource specialty pharma limited"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "Clinitest™",
+      "relation": "TRADEMARK_OF",
+      "target": "Miles, Inc.",
+      "when_any": [
+        "clinitest™ is a registered trademark of miles, inc."
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "Clinistix™",
+      "relation": "TRADEMARK_OF",
+      "target": "Bayer Corporation",
+      "when_any": [
+        "clinistix™ is a registered trademark of bayer corporation"
+      ],
+      "require_in_sentence": []
+    },
+    {
+      "source": "Testape™",
+      "relation": "TRADEMARK_OF",
+      "target": "Eli Lilly Company",
+      "when_any": [
+        "testape™ is a registered trademark of eli lilly company"
+      ],
+      "require_in_sentence": []
+    }
+  ]
+}

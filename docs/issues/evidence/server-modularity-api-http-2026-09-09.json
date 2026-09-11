@@ -1,0 +1,380 @@
+{
+  "issue": "CG-22",
+  "base_revision": "f74f0aa + uncommitted CG-33/CG-22",
+  "root": "/var/folders/v2/x4zbz9nd10lf_kqzhpm4r84w0000gn/T/cognigraph-cg22-live-bz9c_vm3",
+  "binary_sha256": "4267ee99ffab295e55e1c56ebc74c5fe3ed4d1ba1158b789483857876c0f8cc7",
+  "cli_sha256": "e91cbeca12190f3cc938fa1619dfb3261bc3a13a93275517455c9f63984b0032",
+  "openapi_sha256": "b44e2ec8192cff410d7346de631d143beb1b2831ac79cdb30d298fd682bff50a",
+  "harness_sha256": "b81b4a127757ee0ef4a16acb6f1ef76501d4c8c305bc5091d00c2a83826d683c",
+  "fixtures": {
+    "directed.json": "9085973e0bf4ceb666e24a467bb25ca799c279de5297a5d33cfd91d80ebaa25c",
+    "draft-async.json": "6946877a6dc27129b564d38c6e3fa13fb1aaa4b81f8279d305ebad6f5cf5ad63",
+    "draft-job.json": "dbe49af278cbe9ad2f9caf2a4138aa4409b6e61093eeee42dd8ee5a20ee514dd",
+    "evaluate-job.json": "5559b1466fa23c3239634921c20a21aca4831a635e7fdafd32ce8a2c7b876a69",
+    "ingest-job.json": "53fb139a7fbb49e8f406019ff1792de9e511f2566c13b38345e097319a38ee6a",
+    "sideviews-job.json": "ddbf3f6671d6368d61b7246abcce050e7493329299cf1dbe37ed88d3ebf8a076",
+    "sideviews.json": "0c33fe796e7abbce6818cb7a99e5043535883cc68497a1ec17c372200469b5c6"
+  },
+  "checks": [
+    {
+      "case": "login",
+      "path": "/api/auth/login",
+      "status": 200
+    },
+    {
+      "case": "served OpenAPI",
+      "path": "/openapi.yaml",
+      "status": 200
+    },
+    {
+      "case": "served OpenAPI 3.0 validation",
+      "valid": true
+    },
+    {
+      "case": "mismatched kind/input",
+      "path": "/api/jobs",
+      "status": 400
+    },
+    {
+      "case": "unsupported kind",
+      "path": "/api/jobs",
+      "status": 422
+    },
+    {
+      "case": "missing bearer",
+      "path": "/api/jobs",
+      "status": 401
+    },
+    {
+      "case": "missing job key",
+      "path": "/api/jobs",
+      "status": 400
+    },
+    {
+      "case": "directed example",
+      "path": "/api/construct/directed",
+      "status": 200
+    },
+    {
+      "case": "directed peer",
+      "path": "/api/construct/directed",
+      "status": 200
+    },
+    {
+      "case": "before malformed",
+      "path": "/api/admin/export",
+      "status": 200
+    },
+    {
+      "case": "malformed completion preserves occurrences",
+      "path": "/api/construct/directed",
+      "status": 500
+    },
+    {
+      "case": "after malformed",
+      "path": "/api/admin/export",
+      "status": 200
+    },
+    {
+      "case": "empty replacement",
+      "path": "/api/construct/directed",
+      "status": 200
+    },
+    {
+      "case": "remaining independent occurrence",
+      "path": "/api/documents?collection=facts",
+      "status": 200
+    },
+    {
+      "case": "directed missing space_type",
+      "path": "/api/construct/directed",
+      "status": 422
+    },
+    {
+      "case": "directed missing taxonomy",
+      "path": "/api/construct/directed",
+      "status": 422
+    },
+    {
+      "case": "directed missing chunks",
+      "path": "/api/construct/directed",
+      "status": 422
+    },
+    {
+      "case": "directed chunk bound 0",
+      "path": "/api/construct/directed",
+      "status": 400
+    },
+    {
+      "case": "directed chunk bound 33",
+      "path": "/api/construct/directed",
+      "status": 400
+    },
+    {
+      "case": "invalid taxonomy",
+      "path": "/api/construct/directed",
+      "status": 400
+    },
+    {
+      "case": "invalid taxonomy",
+      "path": "/api/construct/directed",
+      "status": 400
+    },
+    {
+      "case": "invalid taxonomy",
+      "path": "/api/construct/directed",
+      "status": 400
+    },
+    {
+      "case": "directed unknown control",
+      "path": "/api/construct/directed",
+      "status": 422
+    },
+    {
+      "case": "directed body limit",
+      "path": "/api/construct/directed",
+      "status": 413
+    },
+    {
+      "case": "ingest-job.json",
+      "path": "/api/jobs",
+      "status": 202
+    },
+    {
+      "case": "ingest-job.json replay",
+      "path": "/api/jobs",
+      "status": 200
+    },
+    {
+      "case": "CLI job status 9c804207c23dc06bdf36499c555602937c99543f9055ed9bdda80554980e10da",
+      "exit_code": 0
+    },
+    {
+      "case": "evaluate-job.json",
+      "path": "/api/jobs",
+      "status": 202
+    },
+    {
+      "case": "evaluate-job.json replay",
+      "path": "/api/jobs",
+      "status": 200
+    },
+    {
+      "case": "CLI job status 197cb1ab6c8dfed4dd83d0c7d1c371bb1e5008a9b699a1f900eb64d9c12acd79",
+      "exit_code": 0
+    },
+    {
+      "case": "draft-job.json",
+      "path": "/api/jobs",
+      "status": 202
+    },
+    {
+      "case": "draft-job.json replay",
+      "path": "/api/jobs",
+      "status": 200
+    },
+    {
+      "case": "CLI job status e47ac67b2b4bab2d3913b27a7ae84cdef0d89a848ff7a66c70d36c534bb59f72",
+      "exit_code": 0
+    },
+    {
+      "case": "draft-async.json",
+      "path": "/api/construct/draft",
+      "status": 202
+    },
+    {
+      "case": "draft-async.json replay",
+      "path": "/api/construct/draft",
+      "status": 200
+    },
+    {
+      "case": "async draft requires key",
+      "path": "/api/construct/draft",
+      "status": 400
+    },
+    {
+      "case": "generic draft rejects wrapper controls",
+      "path": "/api/jobs",
+      "status": 400
+    },
+    {
+      "case": "draft document cap",
+      "path": "/api/jobs",
+      "status": 400
+    },
+    {
+      "case": "CLI doc put cg22-notes",
+      "exit_code": 0
+    },
+    {
+      "case": "sideviews-job.json",
+      "path": "/api/jobs",
+      "status": 202
+    },
+    {
+      "case": "sideviews-job.json replay",
+      "path": "/api/jobs",
+      "status": 200
+    },
+    {
+      "case": "sideviews.json",
+      "path": "/api/sideviews/generate",
+      "status": 202
+    },
+    {
+      "case": "sideviews.json replay",
+      "path": "/api/sideviews/generate",
+      "status": 200
+    },
+    {
+      "case": "side-view count 0",
+      "path": "/api/sideviews/generate",
+      "status": 202
+    },
+    {
+      "case": "frozen side-view options",
+      "path": "/api/admin/export",
+      "status": 200
+    },
+    {
+      "case": "side-view count 51",
+      "path": "/api/sideviews/generate",
+      "status": 202
+    },
+    {
+      "case": "frozen side-view options",
+      "path": "/api/admin/export",
+      "status": 200
+    },
+    {
+      "case": "side-view count None",
+      "path": "/api/sideviews/generate",
+      "status": 202
+    },
+    {
+      "case": "frozen side-view options",
+      "path": "/api/admin/export",
+      "status": 200
+    },
+    {
+      "case": "invalid count -1",
+      "path": "/api/sideviews/generate",
+      "status": 400
+    },
+    {
+      "case": "invalid count 1.5",
+      "path": "/api/sideviews/generate",
+      "status": 400
+    },
+    {
+      "case": "changed idempotent input",
+      "path": "/api/sideviews/generate",
+      "status": 409
+    },
+    {
+      "case": "ineligible source _system",
+      "path": "/api/sideviews/generate",
+      "status": 400
+    },
+    {
+      "case": "ineligible source facts",
+      "path": "/api/sideviews/generate",
+      "status": 400
+    },
+    {
+      "case": "ineligible source side_views",
+      "path": "/api/sideviews/generate",
+      "status": 400
+    },
+    {
+      "case": "ineligible source bad/name",
+      "path": "/api/sideviews/generate",
+      "status": 400
+    },
+    {
+      "case": "CLI job list --kind",
+      "exit_code": 0
+    }
+  ],
+  "provider_calls": [
+    {
+      "lane": "main",
+      "stage": "directed",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "none"
+    },
+    {
+      "lane": "main",
+      "stage": "directed",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "none"
+    },
+    {
+      "lane": "main",
+      "stage": "directed",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "none"
+    },
+    {
+      "lane": "main",
+      "stage": "directed",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "none"
+    },
+    {
+      "lane": "main",
+      "stage": "draft-entities",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "none"
+    },
+    {
+      "lane": "main",
+      "stage": "draft-rules",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "none"
+    },
+    {
+      "lane": "main",
+      "stage": "draft-entities",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "none"
+    },
+    {
+      "lane": "main",
+      "stage": "draft-rules",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "none"
+    },
+    {
+      "lane": "sideviews",
+      "model": "gemini-3.8-flash"
+    },
+    {
+      "lane": "embedding"
+    },
+    {
+      "lane": "sideviews",
+      "model": "gemini-3.8-flash"
+    },
+    {
+      "lane": "embedding"
+    },
+    {
+      "lane": "sideviews",
+      "model": "gemini-3.8-flash"
+    },
+    {
+      "lane": "embedding"
+    },
+    {
+      "lane": "sideviews",
+      "model": "gemini-3.8-flash"
+    },
+    {
+      "lane": "embedding"
+    }
+  ],
+  "providers": "synthetic loopback OpenAI main, Gemini sideviews, Ollama embeddings; no .env or external calls",
+  "cg26_replay_revision": "3fa7db7 + uncommitted CG-26",
+  "historical_harness_metadata_note": "Original issue/base_revision labels belong to the reused harness. This output is the CG-26 replay; binary_sha256 identifies the actual release tested."
+}

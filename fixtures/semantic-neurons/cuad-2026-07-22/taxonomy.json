@@ -1,0 +1,89 @@
+{
+  "taxonomy": [
+    {
+      "relation": "GRANTS_EXCLUSIVITY",
+      "description": "One party receives exclusive rights \u2014 an exclusive license, exclusive dealing, or a promise not to license/appoint others for the same scope. Source = the granting/bound party, target = the party receiving exclusivity or the exclusive scope.",
+      "require_in_sentence": [
+        "exclusiv",
+        "solely",
+        "sole "
+      ]
+    },
+    {
+      "relation": "NON_COMPETE",
+      "description": "A party is restricted from competing \u2014 operating, selling, or engaging in a competing business or products.",
+      "require_in_sentence": [
+        "compet"
+      ]
+    },
+    {
+      "relation": "TERMINATES_FOR_CONVENIENCE",
+      "description": "A party may terminate WITHOUT cause \u2014 for convenience, at will, or on notice alone. Not termination for breach.",
+      "require_in_sentence": [
+        "convenience",
+        "without cause",
+        "at any time",
+        "for any reason",
+        "with or without"
+      ]
+    },
+    {
+      "relation": "ANTI_ASSIGNMENT",
+      "description": "Assignment of the agreement or its rights requires consent or notice, or is prohibited.",
+      "require_in_sentence": [
+        "assign"
+      ]
+    },
+    {
+      "relation": "AUDIT_RIGHTS",
+      "description": "A party may audit or inspect the other's books, records, or compliance.",
+      "require_in_sentence": [
+        "audit",
+        "inspect",
+        "books and records",
+        "examine"
+      ]
+    },
+    {
+      "relation": "CAP_ON_LIABILITY",
+      "description": "Liability is capped or limited \u2014 to an amount, to fees paid, or by excluding damage categories.",
+      "require_in_sentence": [
+        "liab"
+      ]
+    },
+    {
+      "relation": "ASSIGNS_IP",
+      "description": "Intellectual property created under or covered by the agreement becomes the counterparty's property (assignment or work-made-for-hire), or ownership is expressly allocated.",
+      "require_in_sentence": [
+        "intellectual property",
+        "ownership",
+        "work product",
+        "work made for hire",
+        "title to",
+        "shall own",
+        "property of"
+      ]
+    },
+    {
+      "relation": "GOVERNED_BY",
+      "description": "The agreement names its governing law or jurisdiction.",
+      "require_in_sentence": [
+        "governed by",
+        "laws of",
+        "law of",
+        "construed"
+      ]
+    }
+  ],
+  "category_of": {
+    "GRANTS_EXCLUSIVITY": "Exclusivity",
+    "NON_COMPETE": "Non-Compete",
+    "TERMINATES_FOR_CONVENIENCE": "Termination For Convenience",
+    "ANTI_ASSIGNMENT": "Anti-Assignment",
+    "AUDIT_RIGHTS": "Audit Rights",
+    "CAP_ON_LIABILITY": "Cap On Liability",
+    "ASSIGNS_IP": "Ip Ownership Assignment",
+    "GOVERNED_BY": "Governing Law"
+  },
+  "request_chunk_limit": 28
+}

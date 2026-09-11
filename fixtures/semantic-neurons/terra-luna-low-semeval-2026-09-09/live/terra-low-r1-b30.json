@@ -1,0 +1,1338 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 1,
+  "batch": 30,
+  "request": {
+    "space_type": "semeval-terra-low-r1-b30",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10094",
+        "title": "Relation benchmark excerpt",
+        "text": "That brew was in a bottle and did not quite measure up to the Altbier, perhaps because it was served ice cold, but was still worth trying."
+      },
+      {
+        "id": "semeval-10148",
+        "title": "Relation benchmark excerpt",
+        "text": "The same stone mason who did the stonework of the first mill dam put up the walls."
+      },
+      {
+        "id": "semeval-10239",
+        "title": "Relation benchmark excerpt",
+        "text": "It serves only the self-serving purposes of the political parties; it provides them a faithful horde of believers."
+      },
+      {
+        "id": "semeval-9477",
+        "title": "Relation benchmark excerpt",
+        "text": "Marking birds with color bands and a U.S. Fish and Wildlife Service uniquely numbered metal band enables researchers to follow individuals from year to year."
+      },
+      {
+        "id": "semeval-10068",
+        "title": "Relation benchmark excerpt",
+        "text": "Their parental responsibilities are handed over into another's care."
+      },
+      {
+        "id": "semeval-8993",
+        "title": "Relation benchmark excerpt",
+        "text": "The icon is generally a flat panel painting depicting a holy being or object."
+      },
+      {
+        "id": "semeval-9758",
+        "title": "Relation benchmark excerpt",
+        "text": "All thirty of the patches sewn into the cloth in 1534 by the Poor Clare nuns to repair the devastation caused by the 1532 fire were removed."
+      },
+      {
+        "id": "semeval-9470",
+        "title": "Relation benchmark excerpt",
+        "text": "The history has recently (2008) been set out in a book by Arnie Gibbons."
+      },
+      {
+        "id": "semeval-8477",
+        "title": "Relation benchmark excerpt",
+        "text": "The hall has a 'vineyard-style' seating arrangement similar to that of Walt Disney Hall, in Los Angeles; here the audience will be arrayed on raised terraces surrounding an orchestra platform."
+      },
+      {
+        "id": "semeval-9167",
+        "title": "Relation benchmark excerpt",
+        "text": "He took a shower after using hair cream to avoid skin irritation from the chemicals in the product."
+      },
+      {
+        "id": "semeval-10601",
+        "title": "Relation benchmark excerpt",
+        "text": "The trio lit the blaze in a reserve behind Combine Street about 6.40pm and ran off."
+      },
+      {
+        "id": "semeval-9322",
+        "title": "Relation benchmark excerpt",
+        "text": "The bank has drawn up plans for the same and may start scouting for partners over next few months."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 11,
+    "proposed": 12,
+    "skips": [
+      "`plans --Product-Producer--> bank`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-terra-low-r1-b30"
+  },
+  "latency_seconds": 14.507457583094947,
+  "facts": [
+    {
+      "_from": "entities/painting",
+      "_id": "facts/fact-05a4a783d1555bd73fa1509a24b789b1b2ce8c196feb6d0a67cfb333dd8c5c9c",
+      "_key": "fact-05a4a783d1555bd73fa1509a24b789b1b2ce8c196feb6d0a67cfb333dd8c5c9c",
+      "_to": "entities/being",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8993",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b30",
+      "trigger": "The icon is generally a flat panel painting depicting a holy being or object.",
+      "trigger_end": 77,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/walls",
+      "_id": "facts/fact-22aa54a395a8d94179c5f7001aca94a7b13daa9bfde657f26ea9448a31d5ea7d",
+      "_key": "fact-22aa54a395a8d94179c5f7001aca94a7b13daa9bfde657f26ea9448a31d5ea7d",
+      "_to": "entities/mason",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10148",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b30",
+      "trigger": "The same stone mason who did the stonework of the first mill dam put up the walls.",
+      "trigger_end": 82,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/believers",
+      "_id": "facts/fact-4b9c7d66b256be028f1982e599dbaa990197843dfaf0ef22afa06b9348ab821c",
+      "_key": "fact-4b9c7d66b256be028f1982e599dbaa990197843dfaf0ef22afa06b9348ab821c",
+      "_to": "entities/horde",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10239",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b30",
+      "trigger": "It serves only the self-serving purposes of the political parties; it provides them a faithful horde of believers.",
+      "trigger_end": 114,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/responsibilities",
+      "_id": "facts/fact-6244fe1d1cea9fe608e5b5316c7813749f1a22c70da53b12a40efa3517ddfeaa",
+      "_key": "fact-6244fe1d1cea9fe608e5b5316c7813749f1a22c70da53b12a40efa3517ddfeaa",
+      "_to": "entities/care",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10068",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b30",
+      "trigger": "Their parental responsibilities are handed over into another's care.",
+      "trigger_end": 68,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/brew",
+      "_id": "facts/fact-8b0a45ebd025af2372d798e4392f07b1edfe1d01dc960a8013b62ea7190feaba",
+      "_key": "fact-8b0a45ebd025af2372d798e4392f07b1edfe1d01dc960a8013b62ea7190feaba",
+      "_to": "entities/bottle",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10094",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b30",
+      "trigger": "That brew was in a bottle and did not quite measure up to the Altbier, perhaps because it was served ice cold, but was still worth trying.",
+      "trigger_end": 138,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/arrangement",
+      "_id": "facts/fact-93d4e93b27b218f46102fb2b0cb9e24746b67929fe0b58758056d3093f8b5309",
+      "_key": "fact-93d4e93b27b218f46102fb2b0cb9e24746b67929fe0b58758056d3093f8b5309",
+      "_to": "entities/hall",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8477",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b30",
+      "trigger": "The hall has a 'vineyard-style' seating arrangement similar to that of Walt Disney Hall, in Los Angeles; here the audience will be arrayed on raised terraces surrounding an orchestra platform.",
+      "trigger_end": 192,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/chemicals",
+      "_id": "facts/fact-b33af20aebd9a0a7f90b91d95dcfd826ff53209e6abb46501fad96264a97c51d",
+      "_key": "fact-b33af20aebd9a0a7f90b91d95dcfd826ff53209e6abb46501fad96264a97c51d",
+      "_to": "entities/irritation",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9167",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b30",
+      "trigger": "He took a shower after using hair cream to avoid skin irritation from the chemicals in the product.",
+      "trigger_end": 99,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/fire",
+      "_id": "facts/fact-c0fbdeef88c6fc08f559cbffbdcbb23b6823df536bf1e5345b9f0520f183d8f1",
+      "_key": "fact-c0fbdeef88c6fc08f559cbffbdcbb23b6823df536bf1e5345b9f0520f183d8f1",
+      "_to": "entities/devastation",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9758",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b30",
+      "trigger": "All thirty of the patches sewn into the cloth in 1534 by the Poor Clare nuns to repair the devastation caused by the 1532 fire were removed.",
+      "trigger_end": 140,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/bands",
+      "_id": "facts/fact-cdc880e4efb80547046337e8625f3f266931fd656770bfedd5aa77b4b7afdca8",
+      "_key": "fact-cdc880e4efb80547046337e8625f3f266931fd656770bfedd5aa77b4b7afdca8",
+      "_to": "entities/researchers",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9477",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b30",
+      "trigger": "Marking birds with color bands and a U.S. Fish and Wildlife Service uniquely numbered metal band enables researchers to follow individuals from year to year.",
+      "trigger_end": 157,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/book",
+      "_id": "facts/fact-d1bb298d8eb37b53eef1b830273aa06e64bb071c3ddaee6549e62b249b40cf68",
+      "_key": "fact-d1bb298d8eb37b53eef1b830273aa06e64bb071c3ddaee6549e62b249b40cf68",
+      "_to": "entities/history",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9470",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b30",
+      "trigger": "The history has recently (2008) been set out in a book by Arnie Gibbons.",
+      "trigger_end": 72,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/blaze",
+      "_id": "facts/fact-edf8d3ccfae3d9efc326c76badccad0675975da70b83f9d009bbfba250d56ac3",
+      "_key": "fact-edf8d3ccfae3d9efc326c76badccad0675975da70b83f9d009bbfba250d56ac3",
+      "_to": "entities/trio",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10601",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b30",
+      "trigger": "The trio lit the blaze in a reserve behind Combine Street about 6.40pm and ran off.",
+      "trigger_end": 83,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/arrangement",
+      "_key": "arrangement",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317929+00:00",
+      "entity_type": "component",
+      "name": "arrangement",
+      "updated_at": "2026-09-09T13:35:46.317929+00:00"
+    },
+    {
+      "_id": "entities/bands",
+      "_key": "bands",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317936+00:00",
+      "entity_type": "instrument",
+      "name": "bands",
+      "updated_at": "2026-09-09T13:35:46.317936+00:00"
+    },
+    {
+      "_id": "entities/being",
+      "_key": "being",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317937+00:00",
+      "entity_type": "topic",
+      "name": "being",
+      "updated_at": "2026-09-09T13:35:46.317937+00:00"
+    },
+    {
+      "_id": "entities/believers",
+      "_key": "believers",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317939+00:00",
+      "entity_type": "people",
+      "name": "believers",
+      "updated_at": "2026-09-09T13:35:46.317939+00:00"
+    },
+    {
+      "_id": "entities/blaze",
+      "_key": "blaze",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317940+00:00",
+      "entity_type": "product",
+      "name": "blaze",
+      "updated_at": "2026-09-09T13:35:46.317940+00:00"
+    },
+    {
+      "_id": "entities/book",
+      "_key": "book",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317941+00:00",
+      "entity_type": "message",
+      "name": "book",
+      "updated_at": "2026-09-09T13:35:46.317941+00:00"
+    },
+    {
+      "_id": "entities/bottle",
+      "_key": "bottle",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317942+00:00",
+      "entity_type": "container",
+      "name": "bottle",
+      "updated_at": "2026-09-09T13:35:46.317942+00:00"
+    },
+    {
+      "_id": "entities/brew",
+      "_key": "brew",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317943+00:00",
+      "entity_type": "object",
+      "name": "brew",
+      "updated_at": "2026-09-09T13:35:46.317943+00:00"
+    },
+    {
+      "_id": "entities/care",
+      "_key": "care",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317944+00:00",
+      "entity_type": "destination",
+      "name": "care",
+      "updated_at": "2026-09-09T13:35:46.317944+00:00"
+    },
+    {
+      "_id": "entities/chemicals",
+      "_key": "chemicals",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317946+00:00",
+      "entity_type": "object",
+      "name": "chemicals",
+      "updated_at": "2026-09-09T13:35:46.317946+00:00"
+    },
+    {
+      "_id": "entities/devastation",
+      "_key": "devastation",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317947+00:00",
+      "entity_type": "event",
+      "name": "devastation",
+      "updated_at": "2026-09-09T13:35:46.317947+00:00"
+    },
+    {
+      "_id": "entities/fire",
+      "_key": "fire",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317948+00:00",
+      "entity_type": "event",
+      "name": "fire",
+      "updated_at": "2026-09-09T13:35:46.317948+00:00"
+    },
+    {
+      "_id": "entities/hall",
+      "_key": "hall",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317949+00:00",
+      "entity_type": "whole",
+      "name": "hall",
+      "updated_at": "2026-09-09T13:35:46.317949+00:00"
+    },
+    {
+      "_id": "entities/history",
+      "_key": "history",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317950+00:00",
+      "entity_type": "topic",
+      "name": "history",
+      "updated_at": "2026-09-09T13:35:46.317950+00:00"
+    },
+    {
+      "_id": "entities/horde",
+      "_key": "horde",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317951+00:00",
+      "entity_type": "collection",
+      "name": "horde",
+      "updated_at": "2026-09-09T13:35:46.317951+00:00"
+    },
+    {
+      "_id": "entities/irritation",
+      "_key": "irritation",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317952+00:00",
+      "entity_type": "effect",
+      "name": "irritation",
+      "updated_at": "2026-09-09T13:35:46.317952+00:00"
+    },
+    {
+      "_id": "entities/mason",
+      "_key": "mason",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317953+00:00",
+      "entity_type": "person",
+      "name": "mason",
+      "updated_at": "2026-09-09T13:35:46.317953+00:00"
+    },
+    {
+      "_id": "entities/painting",
+      "_key": "painting",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317954+00:00",
+      "entity_type": "message",
+      "name": "painting",
+      "updated_at": "2026-09-09T13:35:46.317954+00:00"
+    },
+    {
+      "_id": "entities/researchers",
+      "_key": "researchers",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317956+00:00",
+      "entity_type": "people",
+      "name": "researchers",
+      "updated_at": "2026-09-09T13:35:46.317956+00:00"
+    },
+    {
+      "_id": "entities/responsibilities",
+      "_key": "responsibilities",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317957+00:00",
+      "entity_type": "entity",
+      "name": "responsibilities",
+      "updated_at": "2026-09-09T13:35:46.317957+00:00"
+    },
+    {
+      "_id": "entities/trio",
+      "_key": "trio",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317958+00:00",
+      "entity_type": "producer",
+      "name": "trio",
+      "updated_at": "2026-09-09T13:35:46.317958+00:00"
+    },
+    {
+      "_id": "entities/walls",
+      "_key": "walls",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:46.317959+00:00",
+      "entity_type": "object",
+      "name": "walls",
+      "updated_at": "2026-09-09T13:35:46.317959+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-10068",
+      "_key": "semeval-terra-low-r1-b30-semeval-10068",
+      "chunk_id": "semeval-10068",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:fdb11ccfddfb1cb3e7761ac55db4509aa01a52434cbae2c08aa122d6b1520965",
+      "created_at": "2026-09-09T13:35:46.317961+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "Their parental responsibilities are handed over into another's care.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.317961+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-10094",
+      "_key": "semeval-terra-low-r1-b30-semeval-10094",
+      "chunk_id": "semeval-10094",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1d3a6bdc1ffebdea48654dae97aff769e4478439b830a3799492a9b02702de57",
+      "created_at": "2026-09-09T13:35:46.317976+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "That brew was in a bottle and did not quite measure up to the Altbier, perhaps because it was served ice cold, but was still worth trying.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.317976+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-10148",
+      "_key": "semeval-terra-low-r1-b30-semeval-10148",
+      "chunk_id": "semeval-10148",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:af7079c5d6e1d06d0d4fc119f7106941c4b9b2793f7093a6eb503e1564215ddb",
+      "created_at": "2026-09-09T13:35:46.317984+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "The same stone mason who did the stonework of the first mill dam put up the walls.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.317984+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-10239",
+      "_key": "semeval-terra-low-r1-b30-semeval-10239",
+      "chunk_id": "semeval-10239",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:85b10ce1bf4e36ecd93de6e94f1146698dd6a09a4a67e670b336985db16d617a",
+      "created_at": "2026-09-09T13:35:46.317991+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "It serves only the self-serving purposes of the political parties; it provides them a faithful horde of believers.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.317991+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-10601",
+      "_key": "semeval-terra-low-r1-b30-semeval-10601",
+      "chunk_id": "semeval-10601",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:961c8aca7330db238d57d2cd93b63eea643bd89eb009ef6fb451be422d1022db",
+      "created_at": "2026-09-09T13:35:46.317998+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "The trio lit the blaze in a reserve behind Combine Street about 6.40pm and ran off.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.317998+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-8477",
+      "_key": "semeval-terra-low-r1-b30-semeval-8477",
+      "chunk_id": "semeval-8477",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3a36a6605abfb715536f61c82fc91fbd2406eb6dc98a043baaa045f7a406d126",
+      "created_at": "2026-09-09T13:35:46.318005+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "The hall has a 'vineyard-style' seating arrangement similar to that of Walt Disney Hall, in Los Angeles; here the audience will be arrayed on raised terraces surrounding an orchestra platform.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.318005+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-8993",
+      "_key": "semeval-terra-low-r1-b30-semeval-8993",
+      "chunk_id": "semeval-8993",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:88ba9a042c65b1a3d7bdbb99107b83bf7293e8a17f3ff32d5f82766891211738",
+      "created_at": "2026-09-09T13:35:46.318012+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "The icon is generally a flat panel painting depicting a holy being or object.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.318012+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-9167",
+      "_key": "semeval-terra-low-r1-b30-semeval-9167",
+      "chunk_id": "semeval-9167",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:599958092cbfd7673ed975919478d74891a3f8456cdd71c8f34cf487c08671b2",
+      "created_at": "2026-09-09T13:35:46.318018+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "He took a shower after using hair cream to avoid skin irritation from the chemicals in the product.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.318018+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-9322",
+      "_key": "semeval-terra-low-r1-b30-semeval-9322",
+      "chunk_id": "semeval-9322",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:25da2b482d3b71d2e8841ba1c224d2bf952bda455dd8c42d83625b0beb0196db",
+      "created_at": "2026-09-09T13:35:46.318024+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "The bank has drawn up plans for the same and may start scouting for partners over next few months.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.318024+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-9470",
+      "_key": "semeval-terra-low-r1-b30-semeval-9470",
+      "chunk_id": "semeval-9470",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:bfde4dcafbbc64dbc9894b9a80d00ecf7baeea691c4480fb3c512377cfe66bd5",
+      "created_at": "2026-09-09T13:35:46.318025+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "The history has recently (2008) been set out in a book by Arnie Gibbons.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.318025+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-9477",
+      "_key": "semeval-terra-low-r1-b30-semeval-9477",
+      "chunk_id": "semeval-9477",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:733f5bc3967098c3becf78f636ec8c6d5f94b06cdeec5c2bfab7a085bf50b167",
+      "created_at": "2026-09-09T13:35:46.318035+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "Marking birds with color bands and a U.S. Fish and Wildlife Service uniquely numbered metal band enables researchers to follow individuals from year to year.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.318035+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b30-semeval-9758",
+      "_key": "semeval-terra-low-r1-b30-semeval-9758",
+      "chunk_id": "semeval-9758",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:0fe6c2100fa45885b398fbc4522cde23f8304d4a1a2af8ee7a1d23c4aa7702e2",
+      "created_at": "2026-09-09T13:35:46.318045+00:00",
+      "space_id": "semeval-terra-low-r1-b30",
+      "text": "All thirty of the patches sewn into the cloth in 1534 by the Poor Clare nuns to repair the devastation caused by the 1532 fire were removed.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:46.318045+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 11,
+        "results": [
+          {
+            "_from": "entities/painting",
+            "_id": "facts/fact-05a4a783d1555bd73fa1509a24b789b1b2ce8c196feb6d0a67cfb333dd8c5c9c",
+            "_key": "fact-05a4a783d1555bd73fa1509a24b789b1b2ce8c196feb6d0a67cfb333dd8c5c9c",
+            "_to": "entities/being",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8993",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b30",
+            "trigger": "The icon is generally a flat panel painting depicting a holy being or object.",
+            "trigger_end": 77,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/walls",
+            "_id": "facts/fact-22aa54a395a8d94179c5f7001aca94a7b13daa9bfde657f26ea9448a31d5ea7d",
+            "_key": "fact-22aa54a395a8d94179c5f7001aca94a7b13daa9bfde657f26ea9448a31d5ea7d",
+            "_to": "entities/mason",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10148",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b30",
+            "trigger": "The same stone mason who did the stonework of the first mill dam put up the walls.",
+            "trigger_end": 82,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/believers",
+            "_id": "facts/fact-4b9c7d66b256be028f1982e599dbaa990197843dfaf0ef22afa06b9348ab821c",
+            "_key": "fact-4b9c7d66b256be028f1982e599dbaa990197843dfaf0ef22afa06b9348ab821c",
+            "_to": "entities/horde",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10239",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b30",
+            "trigger": "It serves only the self-serving purposes of the political parties; it provides them a faithful horde of believers.",
+            "trigger_end": 114,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/responsibilities",
+            "_id": "facts/fact-6244fe1d1cea9fe608e5b5316c7813749f1a22c70da53b12a40efa3517ddfeaa",
+            "_key": "fact-6244fe1d1cea9fe608e5b5316c7813749f1a22c70da53b12a40efa3517ddfeaa",
+            "_to": "entities/care",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10068",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b30",
+            "trigger": "Their parental responsibilities are handed over into another's care.",
+            "trigger_end": 68,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/brew",
+            "_id": "facts/fact-8b0a45ebd025af2372d798e4392f07b1edfe1d01dc960a8013b62ea7190feaba",
+            "_key": "fact-8b0a45ebd025af2372d798e4392f07b1edfe1d01dc960a8013b62ea7190feaba",
+            "_to": "entities/bottle",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10094",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b30",
+            "trigger": "That brew was in a bottle and did not quite measure up to the Altbier, perhaps because it was served ice cold, but was still worth trying.",
+            "trigger_end": 138,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/arrangement",
+            "_id": "facts/fact-93d4e93b27b218f46102fb2b0cb9e24746b67929fe0b58758056d3093f8b5309",
+            "_key": "fact-93d4e93b27b218f46102fb2b0cb9e24746b67929fe0b58758056d3093f8b5309",
+            "_to": "entities/hall",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8477",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b30",
+            "trigger": "The hall has a 'vineyard-style' seating arrangement similar to that of Walt Disney Hall, in Los Angeles; here the audience will be arrayed on raised terraces surrounding an orchestra platform.",
+            "trigger_end": 192,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/chemicals",
+            "_id": "facts/fact-b33af20aebd9a0a7f90b91d95dcfd826ff53209e6abb46501fad96264a97c51d",
+            "_key": "fact-b33af20aebd9a0a7f90b91d95dcfd826ff53209e6abb46501fad96264a97c51d",
+            "_to": "entities/irritation",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9167",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b30",
+            "trigger": "He took a shower after using hair cream to avoid skin irritation from the chemicals in the product.",
+            "trigger_end": 99,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/fire",
+            "_id": "facts/fact-c0fbdeef88c6fc08f559cbffbdcbb23b6823df536bf1e5345b9f0520f183d8f1",
+            "_key": "fact-c0fbdeef88c6fc08f559cbffbdcbb23b6823df536bf1e5345b9f0520f183d8f1",
+            "_to": "entities/devastation",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9758",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b30",
+            "trigger": "All thirty of the patches sewn into the cloth in 1534 by the Poor Clare nuns to repair the devastation caused by the 1532 fire were removed.",
+            "trigger_end": 140,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/bands",
+            "_id": "facts/fact-cdc880e4efb80547046337e8625f3f266931fd656770bfedd5aa77b4b7afdca8",
+            "_key": "fact-cdc880e4efb80547046337e8625f3f266931fd656770bfedd5aa77b4b7afdca8",
+            "_to": "entities/researchers",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9477",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b30",
+            "trigger": "Marking birds with color bands and a U.S. Fish and Wildlife Service uniquely numbered metal band enables researchers to follow individuals from year to year.",
+            "trigger_end": 157,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/book",
+            "_id": "facts/fact-d1bb298d8eb37b53eef1b830273aa06e64bb071c3ddaee6549e62b249b40cf68",
+            "_key": "fact-d1bb298d8eb37b53eef1b830273aa06e64bb071c3ddaee6549e62b249b40cf68",
+            "_to": "entities/history",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9470",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b30",
+            "trigger": "The history has recently (2008) been set out in a book by Arnie Gibbons.",
+            "trigger_end": 72,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/blaze",
+            "_id": "facts/fact-edf8d3ccfae3d9efc326c76badccad0675975da70b83f9d009bbfba250d56ac3",
+            "_key": "fact-edf8d3ccfae3d9efc326c76badccad0675975da70b83f9d009bbfba250d56ac3",
+            "_to": "entities/trio",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10601",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b30",
+            "trigger": "The trio lit the blaze in a reserve behind Combine Street about 6.40pm and ran off.",
+            "trigger_end": 83,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 22,
+        "results": [
+          {
+            "_id": "entities/arrangement",
+            "_key": "arrangement",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317929+00:00",
+            "entity_type": "component",
+            "name": "arrangement",
+            "updated_at": "2026-09-09T13:35:46.317929+00:00"
+          },
+          {
+            "_id": "entities/bands",
+            "_key": "bands",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317936+00:00",
+            "entity_type": "instrument",
+            "name": "bands",
+            "updated_at": "2026-09-09T13:35:46.317936+00:00"
+          },
+          {
+            "_id": "entities/being",
+            "_key": "being",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317937+00:00",
+            "entity_type": "topic",
+            "name": "being",
+            "updated_at": "2026-09-09T13:35:46.317937+00:00"
+          },
+          {
+            "_id": "entities/believers",
+            "_key": "believers",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317939+00:00",
+            "entity_type": "people",
+            "name": "believers",
+            "updated_at": "2026-09-09T13:35:46.317939+00:00"
+          },
+          {
+            "_id": "entities/blaze",
+            "_key": "blaze",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317940+00:00",
+            "entity_type": "product",
+            "name": "blaze",
+            "updated_at": "2026-09-09T13:35:46.317940+00:00"
+          },
+          {
+            "_id": "entities/book",
+            "_key": "book",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317941+00:00",
+            "entity_type": "message",
+            "name": "book",
+            "updated_at": "2026-09-09T13:35:46.317941+00:00"
+          },
+          {
+            "_id": "entities/bottle",
+            "_key": "bottle",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317942+00:00",
+            "entity_type": "container",
+            "name": "bottle",
+            "updated_at": "2026-09-09T13:35:46.317942+00:00"
+          },
+          {
+            "_id": "entities/brew",
+            "_key": "brew",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317943+00:00",
+            "entity_type": "object",
+            "name": "brew",
+            "updated_at": "2026-09-09T13:35:46.317943+00:00"
+          },
+          {
+            "_id": "entities/care",
+            "_key": "care",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317944+00:00",
+            "entity_type": "destination",
+            "name": "care",
+            "updated_at": "2026-09-09T13:35:46.317944+00:00"
+          },
+          {
+            "_id": "entities/chemicals",
+            "_key": "chemicals",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317946+00:00",
+            "entity_type": "object",
+            "name": "chemicals",
+            "updated_at": "2026-09-09T13:35:46.317946+00:00"
+          },
+          {
+            "_id": "entities/devastation",
+            "_key": "devastation",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317947+00:00",
+            "entity_type": "event",
+            "name": "devastation",
+            "updated_at": "2026-09-09T13:35:46.317947+00:00"
+          },
+          {
+            "_id": "entities/fire",
+            "_key": "fire",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317948+00:00",
+            "entity_type": "event",
+            "name": "fire",
+            "updated_at": "2026-09-09T13:35:46.317948+00:00"
+          },
+          {
+            "_id": "entities/hall",
+            "_key": "hall",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317949+00:00",
+            "entity_type": "whole",
+            "name": "hall",
+            "updated_at": "2026-09-09T13:35:46.317949+00:00"
+          },
+          {
+            "_id": "entities/history",
+            "_key": "history",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317950+00:00",
+            "entity_type": "topic",
+            "name": "history",
+            "updated_at": "2026-09-09T13:35:46.317950+00:00"
+          },
+          {
+            "_id": "entities/horde",
+            "_key": "horde",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317951+00:00",
+            "entity_type": "collection",
+            "name": "horde",
+            "updated_at": "2026-09-09T13:35:46.317951+00:00"
+          },
+          {
+            "_id": "entities/irritation",
+            "_key": "irritation",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317952+00:00",
+            "entity_type": "effect",
+            "name": "irritation",
+            "updated_at": "2026-09-09T13:35:46.317952+00:00"
+          },
+          {
+            "_id": "entities/mason",
+            "_key": "mason",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317953+00:00",
+            "entity_type": "person",
+            "name": "mason",
+            "updated_at": "2026-09-09T13:35:46.317953+00:00"
+          },
+          {
+            "_id": "entities/painting",
+            "_key": "painting",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317954+00:00",
+            "entity_type": "message",
+            "name": "painting",
+            "updated_at": "2026-09-09T13:35:46.317954+00:00"
+          },
+          {
+            "_id": "entities/researchers",
+            "_key": "researchers",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317956+00:00",
+            "entity_type": "people",
+            "name": "researchers",
+            "updated_at": "2026-09-09T13:35:46.317956+00:00"
+          },
+          {
+            "_id": "entities/responsibilities",
+            "_key": "responsibilities",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317957+00:00",
+            "entity_type": "entity",
+            "name": "responsibilities",
+            "updated_at": "2026-09-09T13:35:46.317957+00:00"
+          },
+          {
+            "_id": "entities/trio",
+            "_key": "trio",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317958+00:00",
+            "entity_type": "producer",
+            "name": "trio",
+            "updated_at": "2026-09-09T13:35:46.317958+00:00"
+          },
+          {
+            "_id": "entities/walls",
+            "_key": "walls",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:46.317959+00:00",
+            "entity_type": "object",
+            "name": "walls",
+            "updated_at": "2026-09-09T13:35:46.317959+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-10068",
+            "_key": "semeval-terra-low-r1-b30-semeval-10068",
+            "chunk_id": "semeval-10068",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:fdb11ccfddfb1cb3e7761ac55db4509aa01a52434cbae2c08aa122d6b1520965",
+            "created_at": "2026-09-09T13:35:46.317961+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "Their parental responsibilities are handed over into another's care.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.317961+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-10094",
+            "_key": "semeval-terra-low-r1-b30-semeval-10094",
+            "chunk_id": "semeval-10094",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1d3a6bdc1ffebdea48654dae97aff769e4478439b830a3799492a9b02702de57",
+            "created_at": "2026-09-09T13:35:46.317976+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "That brew was in a bottle and did not quite measure up to the Altbier, perhaps because it was served ice cold, but was still worth trying.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.317976+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-10148",
+            "_key": "semeval-terra-low-r1-b30-semeval-10148",
+            "chunk_id": "semeval-10148",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:af7079c5d6e1d06d0d4fc119f7106941c4b9b2793f7093a6eb503e1564215ddb",
+            "created_at": "2026-09-09T13:35:46.317984+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "The same stone mason who did the stonework of the first mill dam put up the walls.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.317984+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-10239",
+            "_key": "semeval-terra-low-r1-b30-semeval-10239",
+            "chunk_id": "semeval-10239",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:85b10ce1bf4e36ecd93de6e94f1146698dd6a09a4a67e670b336985db16d617a",
+            "created_at": "2026-09-09T13:35:46.317991+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "It serves only the self-serving purposes of the political parties; it provides them a faithful horde of believers.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.317991+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-10601",
+            "_key": "semeval-terra-low-r1-b30-semeval-10601",
+            "chunk_id": "semeval-10601",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:961c8aca7330db238d57d2cd93b63eea643bd89eb009ef6fb451be422d1022db",
+            "created_at": "2026-09-09T13:35:46.317998+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "The trio lit the blaze in a reserve behind Combine Street about 6.40pm and ran off.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.317998+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-8477",
+            "_key": "semeval-terra-low-r1-b30-semeval-8477",
+            "chunk_id": "semeval-8477",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3a36a6605abfb715536f61c82fc91fbd2406eb6dc98a043baaa045f7a406d126",
+            "created_at": "2026-09-09T13:35:46.318005+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "The hall has a 'vineyard-style' seating arrangement similar to that of Walt Disney Hall, in Los Angeles; here the audience will be arrayed on raised terraces surrounding an orchestra platform.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.318005+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-8993",
+            "_key": "semeval-terra-low-r1-b30-semeval-8993",
+            "chunk_id": "semeval-8993",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:88ba9a042c65b1a3d7bdbb99107b83bf7293e8a17f3ff32d5f82766891211738",
+            "created_at": "2026-09-09T13:35:46.318012+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "The icon is generally a flat panel painting depicting a holy being or object.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.318012+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-9167",
+            "_key": "semeval-terra-low-r1-b30-semeval-9167",
+            "chunk_id": "semeval-9167",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:599958092cbfd7673ed975919478d74891a3f8456cdd71c8f34cf487c08671b2",
+            "created_at": "2026-09-09T13:35:46.318018+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "He took a shower after using hair cream to avoid skin irritation from the chemicals in the product.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.318018+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-9322",
+            "_key": "semeval-terra-low-r1-b30-semeval-9322",
+            "chunk_id": "semeval-9322",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:25da2b482d3b71d2e8841ba1c224d2bf952bda455dd8c42d83625b0beb0196db",
+            "created_at": "2026-09-09T13:35:46.318024+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "The bank has drawn up plans for the same and may start scouting for partners over next few months.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.318024+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-9470",
+            "_key": "semeval-terra-low-r1-b30-semeval-9470",
+            "chunk_id": "semeval-9470",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:bfde4dcafbbc64dbc9894b9a80d00ecf7baeea691c4480fb3c512377cfe66bd5",
+            "created_at": "2026-09-09T13:35:46.318025+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "The history has recently (2008) been set out in a book by Arnie Gibbons.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.318025+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-9477",
+            "_key": "semeval-terra-low-r1-b30-semeval-9477",
+            "chunk_id": "semeval-9477",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:733f5bc3967098c3becf78f636ec8c6d5f94b06cdeec5c2bfab7a085bf50b167",
+            "created_at": "2026-09-09T13:35:46.318035+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "Marking birds with color bands and a U.S. Fish and Wildlife Service uniquely numbered metal band enables researchers to follow individuals from year to year.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.318035+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b30-semeval-9758",
+            "_key": "semeval-terra-low-r1-b30-semeval-9758",
+            "chunk_id": "semeval-9758",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:0fe6c2100fa45885b398fbc4522cde23f8304d4a1a2af8ee7a1d23c4aa7702e2",
+            "created_at": "2026-09-09T13:35:46.318045+00:00",
+            "space_id": "semeval-terra-low-r1-b30",
+            "text": "All thirty of the patches sewn into the cloth in 1534 by the Poor Clare nuns to repair the devastation caused by the 1532 fire were removed.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:46.318045+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

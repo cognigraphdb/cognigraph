@@ -1,0 +1,1388 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 2,
+  "batch": 20,
+  "request": {
+    "space_type": "semeval-terra-low-r2-b20",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10337",
+        "title": "Relation benchmark excerpt",
+        "text": "The fluids are enclosed in a vertical cylinder of aspect ratio and heated from below."
+      },
+      {
+        "id": "semeval-9806",
+        "title": "Relation benchmark excerpt",
+        "text": "The cognac was in a bottle from which the label, if it ever had one, had long since vanished."
+      },
+      {
+        "id": "semeval-8782",
+        "title": "Relation benchmark excerpt",
+        "text": "Once the data is collected, an emissions inventory is completed by staff using calculation tools from the GHG Protocol."
+      },
+      {
+        "id": "semeval-10687",
+        "title": "Relation benchmark excerpt",
+        "text": "Demerol is in a group of drugs called narcotic pain relievers."
+      },
+      {
+        "id": "semeval-9371",
+        "title": "Relation benchmark excerpt",
+        "text": "These rules regulate human's behavior toward eachother and serve to maintain a sense of social unity."
+      },
+      {
+        "id": "semeval-9063",
+        "title": "Relation benchmark excerpt",
+        "text": "The best way to peel a chestnut has long been a topic of debate."
+      },
+      {
+        "id": "semeval-10673",
+        "title": "Relation benchmark excerpt",
+        "text": "It is a method discovered by a Japanese scholar, Mikao Usui, around 1890."
+      },
+      {
+        "id": "semeval-9597",
+        "title": "Relation benchmark excerpt",
+        "text": "Saosin shook himself off, coughing from inhaling the smoke, and then stood up in an awkward fashion."
+      },
+      {
+        "id": "semeval-8161",
+        "title": "Relation benchmark excerpt",
+        "text": "The document is about illegal drugs, which, it claims, are illegal because they are harmful."
+      },
+      {
+        "id": "semeval-8101",
+        "title": "Relation benchmark excerpt",
+        "text": "Additionally, the chapter points out the importance of new employee orientation and lists some of the important things to cover during that process."
+      },
+      {
+        "id": "semeval-8884",
+        "title": "Relation benchmark excerpt",
+        "text": "The magnetic mechanism is composed of a rotatably seated permanent magnet which can be swiveled or rotated into alignment with the actual throughput channel for the developer mix."
+      },
+      {
+        "id": "semeval-10113",
+        "title": "Relation benchmark excerpt",
+        "text": "The Italian manager has drawn up a list of potential targets to reinforce his depleted defensive options."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 12,
+    "proposed": 12,
+    "skips": [],
+    "space_type": "semeval-terra-low-r2-b20"
+  },
+  "latency_seconds": 14.4493933749618,
+  "facts": [
+    {
+      "_from": "entities/rules",
+      "_id": "facts/fact-0a1c668e26fc8f15639f9a84eeb6938c1bff0fc672906af96148a891a70f8587",
+      "_key": "fact-0a1c668e26fc8f15639f9a84eeb6938c1bff0fc672906af96148a891a70f8587",
+      "_to": "entities/behavior",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9371",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "These rules regulate human's behavior toward eachother and serve to maintain a sense of social unity.",
+      "trigger_end": 101,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/inhaling",
+      "_id": "facts/fact-207ec4c09bf67d58343680ee357495d646d601bf1967cd385063fbb1725cc1b3",
+      "_key": "fact-207ec4c09bf67d58343680ee357495d646d601bf1967cd385063fbb1725cc1b3",
+      "_to": "entities/coughing",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9597",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "Saosin shook himself off, coughing from inhaling the smoke, and then stood up in an awkward fashion.",
+      "trigger_end": 100,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/list",
+      "_id": "facts/fact-36fe2971a4434667918fa0c7e7b1caff5b451417d81fdc38d112a66e4b1f280b",
+      "_key": "fact-36fe2971a4434667918fa0c7e7b1caff5b451417d81fdc38d112a66e4b1f280b",
+      "_to": "entities/manager",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10113",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "The Italian manager has drawn up a list of potential targets to reinforce his depleted defensive options.",
+      "trigger_end": 105,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/demerol",
+      "_id": "facts/fact-771bae7033bbcef1c12c2f7a7e8116a4ce5561ea4a7c5c1852b46470c7c0a4c4",
+      "_key": "fact-771bae7033bbcef1c12c2f7a7e8116a4ce5561ea4a7c5c1852b46470c7c0a4c4",
+      "_to": "entities/drugs",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10687",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "Demerol is in a group of drugs called narcotic pain relievers.",
+      "trigger_end": 62,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/debate",
+      "_id": "facts/fact-7b97daef0b02102832d6bfb871fad491ce455cdbd8fe9f317d07bbe52f4279b9",
+      "_key": "fact-7b97daef0b02102832d6bfb871fad491ce455cdbd8fe9f317d07bbe52f4279b9",
+      "_to": "entities/way",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9063",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "The best way to peel a chestnut has long been a topic of debate.",
+      "trigger_end": 64,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/cognac",
+      "_id": "facts/fact-887699d987ce71b835d7657da5833fbc389437b73f59111253e7f6a1c784667e",
+      "_key": "fact-887699d987ce71b835d7657da5833fbc389437b73f59111253e7f6a1c784667e",
+      "_to": "entities/bottle",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9806",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "The cognac was in a bottle from which the label, if it ever had one, had long since vanished.",
+      "trigger_end": 93,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/chapter",
+      "_id": "facts/fact-b2fff57c88da9f57e4c6e894fa1b6a310b0e7a53bfba27468189dde58bc41d3f",
+      "_key": "fact-b2fff57c88da9f57e4c6e894fa1b6a310b0e7a53bfba27468189dde58bc41d3f",
+      "_to": "entities/importance",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8101",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "Additionally, the chapter points out the importance of new employee orientation and lists some of the important things to cover during that process.",
+      "trigger_end": 148,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/magnet",
+      "_id": "facts/fact-c150635af1a183af968750359abc961f61996eec7bfb7a6be9a0333505c7f98f",
+      "_key": "fact-c150635af1a183af968750359abc961f61996eec7bfb7a6be9a0333505c7f98f",
+      "_to": "entities/mechanism",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8884",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "The magnetic mechanism is composed of a rotatably seated permanent magnet which can be swiveled or rotated into alignment with the actual throughput channel for the developer mix.",
+      "trigger_end": 179,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/document",
+      "_id": "facts/fact-c40668902f68325137786422c2545d0960d68b92cab5061a067b145aa331381b",
+      "_key": "fact-c40668902f68325137786422c2545d0960d68b92cab5061a067b145aa331381b",
+      "_to": "entities/drugs",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8161",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "The document is about illegal drugs, which, it claims, are illegal because they are harmful.",
+      "trigger_end": 92,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/fluids",
+      "_id": "facts/fact-c947d23bcdf5d804015e4b074a1fc07510006f0e70a7f7315d546129d42db931",
+      "_key": "fact-c947d23bcdf5d804015e4b074a1fc07510006f0e70a7f7315d546129d42db931",
+      "_to": "entities/cylinder",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10337",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "The fluids are enclosed in a vertical cylinder of aspect ratio and heated from below.",
+      "trigger_end": 85,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/tools",
+      "_id": "facts/fact-ea58f5b8976a737f57bdba210f9d3687ef5d05d9eddf22dbce62e225ed9d191a",
+      "_key": "fact-ea58f5b8976a737f57bdba210f9d3687ef5d05d9eddf22dbce62e225ed9d191a",
+      "_to": "entities/staff",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8782",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "Once the data is collected, an emissions inventory is completed by staff using calculation tools from the GHG Protocol.",
+      "trigger_end": 119,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/method",
+      "_id": "facts/fact-f2c78740ca4456cdad32762f0986170c2c85769301bff0e539c6af75bc816b3f",
+      "_key": "fact-f2c78740ca4456cdad32762f0986170c2c85769301bff0e539c6af75bc816b3f",
+      "_to": "entities/scholar",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10673",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b20",
+      "trigger": "It is a method discovered by a Japanese scholar, Mikao Usui, around 1890.",
+      "trigger_end": 73,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/behavior",
+      "_key": "behavior",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757516+00:00",
+      "entity_type": "effect",
+      "name": "behavior",
+      "updated_at": "2026-09-09T13:54:57.757516+00:00"
+    },
+    {
+      "_id": "entities/bottle",
+      "_key": "bottle",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757521+00:00",
+      "entity_type": "container",
+      "name": "bottle",
+      "updated_at": "2026-09-09T13:54:57.757521+00:00"
+    },
+    {
+      "_id": "entities/chapter",
+      "_key": "chapter",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757523+00:00",
+      "entity_type": "message",
+      "name": "chapter",
+      "updated_at": "2026-09-09T13:54:57.757523+00:00"
+    },
+    {
+      "_id": "entities/cognac",
+      "_key": "cognac",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757524+00:00",
+      "entity_type": "content",
+      "name": "cognac",
+      "updated_at": "2026-09-09T13:54:57.757524+00:00"
+    },
+    {
+      "_id": "entities/coughing",
+      "_key": "coughing",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757524+00:00",
+      "entity_type": "effect",
+      "name": "coughing",
+      "updated_at": "2026-09-09T13:54:57.757524+00:00"
+    },
+    {
+      "_id": "entities/cylinder",
+      "_key": "cylinder",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757526+00:00",
+      "entity_type": "container",
+      "name": "cylinder",
+      "updated_at": "2026-09-09T13:54:57.757526+00:00"
+    },
+    {
+      "_id": "entities/debate",
+      "_key": "debate",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757527+00:00",
+      "entity_type": "message",
+      "name": "debate",
+      "updated_at": "2026-09-09T13:54:57.757527+00:00"
+    },
+    {
+      "_id": "entities/demerol",
+      "_key": "demerol",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757527+00:00",
+      "entity_type": "member",
+      "name": "Demerol",
+      "updated_at": "2026-09-09T13:54:57.757527+00:00"
+    },
+    {
+      "_id": "entities/document",
+      "_key": "document",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757528+00:00",
+      "entity_type": "message",
+      "name": "document",
+      "updated_at": "2026-09-09T13:54:57.757528+00:00"
+    },
+    {
+      "_id": "entities/drugs",
+      "_key": "drugs",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757529+00:00",
+      "entity_type": "collection",
+      "name": "drugs",
+      "updated_at": "2026-09-09T13:54:57.757529+00:00"
+    },
+    {
+      "_id": "entities/fluids",
+      "_key": "fluids",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757530+00:00",
+      "entity_type": "content",
+      "name": "fluids",
+      "updated_at": "2026-09-09T13:54:57.757530+00:00"
+    },
+    {
+      "_id": "entities/importance",
+      "_key": "importance",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757531+00:00",
+      "entity_type": "topic",
+      "name": "importance",
+      "updated_at": "2026-09-09T13:54:57.757531+00:00"
+    },
+    {
+      "_id": "entities/inhaling",
+      "_key": "inhaling",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757532+00:00",
+      "entity_type": "cause",
+      "name": "inhaling",
+      "updated_at": "2026-09-09T13:54:57.757532+00:00"
+    },
+    {
+      "_id": "entities/list",
+      "_key": "list",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757532+00:00",
+      "entity_type": "product",
+      "name": "list",
+      "updated_at": "2026-09-09T13:54:57.757532+00:00"
+    },
+    {
+      "_id": "entities/magnet",
+      "_key": "magnet",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757533+00:00",
+      "entity_type": "component",
+      "name": "magnet",
+      "updated_at": "2026-09-09T13:54:57.757533+00:00"
+    },
+    {
+      "_id": "entities/manager",
+      "_key": "manager",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757539+00:00",
+      "entity_type": "producer",
+      "name": "manager",
+      "updated_at": "2026-09-09T13:54:57.757539+00:00"
+    },
+    {
+      "_id": "entities/mechanism",
+      "_key": "mechanism",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757540+00:00",
+      "entity_type": "whole",
+      "name": "mechanism",
+      "updated_at": "2026-09-09T13:54:57.757540+00:00"
+    },
+    {
+      "_id": "entities/method",
+      "_key": "method",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757541+00:00",
+      "entity_type": "product",
+      "name": "method",
+      "updated_at": "2026-09-09T13:54:57.757541+00:00"
+    },
+    {
+      "_id": "entities/rules",
+      "_key": "rules",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757542+00:00",
+      "entity_type": "cause",
+      "name": "rules",
+      "updated_at": "2026-09-09T13:54:57.757542+00:00"
+    },
+    {
+      "_id": "entities/scholar",
+      "_key": "scholar",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757547+00:00",
+      "entity_type": "producer",
+      "name": "scholar",
+      "updated_at": "2026-09-09T13:54:57.757547+00:00"
+    },
+    {
+      "_id": "entities/staff",
+      "_key": "staff",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757547+00:00",
+      "entity_type": "agent",
+      "name": "staff",
+      "updated_at": "2026-09-09T13:54:57.757547+00:00"
+    },
+    {
+      "_id": "entities/tools",
+      "_key": "tools",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757548+00:00",
+      "entity_type": "instrument",
+      "name": "tools",
+      "updated_at": "2026-09-09T13:54:57.757548+00:00"
+    },
+    {
+      "_id": "entities/way",
+      "_key": "way",
+      "aliases": [],
+      "created_at": "2026-09-09T13:54:57.757549+00:00",
+      "entity_type": "topic",
+      "name": "way",
+      "updated_at": "2026-09-09T13:54:57.757549+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-10113",
+      "_key": "semeval-terra-low-r2-b20-semeval-10113",
+      "chunk_id": "semeval-10113",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d5f1e0934d68f3c13b2e2f29ea15e8bffe5b3396aa49ffda91dc9788267d2a3a",
+      "created_at": "2026-09-09T13:54:57.757550+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "The Italian manager has drawn up a list of potential targets to reinforce his depleted defensive options.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757550+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-10337",
+      "_key": "semeval-terra-low-r2-b20-semeval-10337",
+      "chunk_id": "semeval-10337",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:00e8a576e5eb668adc3e68caf4a7d20276e4fcf3c156804b2ab33080e9347f5b",
+      "created_at": "2026-09-09T13:54:57.757562+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "The fluids are enclosed in a vertical cylinder of aspect ratio and heated from below.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757562+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-10673",
+      "_key": "semeval-terra-low-r2-b20-semeval-10673",
+      "chunk_id": "semeval-10673",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:51d58629bd403edf2981522fcf12bfe3b0df15eefa8eb259e80b878a1dd16ac0",
+      "created_at": "2026-09-09T13:54:57.757569+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "It is a method discovered by a Japanese scholar, Mikao Usui, around 1890.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757569+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-10687",
+      "_key": "semeval-terra-low-r2-b20-semeval-10687",
+      "chunk_id": "semeval-10687",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9d973aea281d64cf363f8e87adf8bf87ce87f059492b74973fb9844593c14054",
+      "created_at": "2026-09-09T13:54:57.757574+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "Demerol is in a group of drugs called narcotic pain relievers.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757574+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-8101",
+      "_key": "semeval-terra-low-r2-b20-semeval-8101",
+      "chunk_id": "semeval-8101",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d6171e28bb282fe2b7c05816b7be1080f6f9420fbd16c1150d851c0f47d5f625",
+      "created_at": "2026-09-09T13:54:57.757580+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "Additionally, the chapter points out the importance of new employee orientation and lists some of the important things to cover during that process.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757580+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-8161",
+      "_key": "semeval-terra-low-r2-b20-semeval-8161",
+      "chunk_id": "semeval-8161",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6f70765aff44cc1d71776dc26ae2bc2e7a70cfa8454efa35b906221ddf242085",
+      "created_at": "2026-09-09T13:54:57.757586+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "The document is about illegal drugs, which, it claims, are illegal because they are harmful.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757586+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-8782",
+      "_key": "semeval-terra-low-r2-b20-semeval-8782",
+      "chunk_id": "semeval-8782",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8087ba67a0142c56c03bdacb2d5b5196b7d11180f8ab01877646b1dbc05a9b93",
+      "created_at": "2026-09-09T13:54:57.757591+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "Once the data is collected, an emissions inventory is completed by staff using calculation tools from the GHG Protocol.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757591+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-8884",
+      "_key": "semeval-terra-low-r2-b20-semeval-8884",
+      "chunk_id": "semeval-8884",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ac6a4893ffa49fba63de80f476c3fddb160f5737e6d52587679003d3c26f3504",
+      "created_at": "2026-09-09T13:54:57.757600+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "The magnetic mechanism is composed of a rotatably seated permanent magnet which can be swiveled or rotated into alignment with the actual throughput channel for the developer mix.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757600+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-9063",
+      "_key": "semeval-terra-low-r2-b20-semeval-9063",
+      "chunk_id": "semeval-9063",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:fd35bc4776c55cb11b368f298f84cee00fa4cf39cf430a9246b067dfdc337714",
+      "created_at": "2026-09-09T13:54:57.757606+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "The best way to peel a chestnut has long been a topic of debate.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757606+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-9371",
+      "_key": "semeval-terra-low-r2-b20-semeval-9371",
+      "chunk_id": "semeval-9371",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d83f89b475cc4242a6d402a97b9dcbbde127ffd6a394bc5b3dfa4d4957c1f66a",
+      "created_at": "2026-09-09T13:54:57.757612+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "These rules regulate human's behavior toward eachother and serve to maintain a sense of social unity.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757612+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-9597",
+      "_key": "semeval-terra-low-r2-b20-semeval-9597",
+      "chunk_id": "semeval-9597",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:0a5625ec4a6bc9ed2af4d2956d027e79de1877ca1af42ef021dad64f63f5d27c",
+      "created_at": "2026-09-09T13:54:57.757620+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "Saosin shook himself off, coughing from inhaling the smoke, and then stood up in an awkward fashion.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757620+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b20-semeval-9806",
+      "_key": "semeval-terra-low-r2-b20-semeval-9806",
+      "chunk_id": "semeval-9806",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:664c1e3f16f9bb8c7a6502e1bd0fa38438b499db9d916401fe02344bdd8e3ccb",
+      "created_at": "2026-09-09T13:54:57.757625+00:00",
+      "space_id": "semeval-terra-low-r2-b20",
+      "text": "The cognac was in a bottle from which the label, if it ever had one, had long since vanished.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:54:57.757625+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_from": "entities/rules",
+            "_id": "facts/fact-0a1c668e26fc8f15639f9a84eeb6938c1bff0fc672906af96148a891a70f8587",
+            "_key": "fact-0a1c668e26fc8f15639f9a84eeb6938c1bff0fc672906af96148a891a70f8587",
+            "_to": "entities/behavior",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9371",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "These rules regulate human's behavior toward eachother and serve to maintain a sense of social unity.",
+            "trigger_end": 101,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/inhaling",
+            "_id": "facts/fact-207ec4c09bf67d58343680ee357495d646d601bf1967cd385063fbb1725cc1b3",
+            "_key": "fact-207ec4c09bf67d58343680ee357495d646d601bf1967cd385063fbb1725cc1b3",
+            "_to": "entities/coughing",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9597",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "Saosin shook himself off, coughing from inhaling the smoke, and then stood up in an awkward fashion.",
+            "trigger_end": 100,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/list",
+            "_id": "facts/fact-36fe2971a4434667918fa0c7e7b1caff5b451417d81fdc38d112a66e4b1f280b",
+            "_key": "fact-36fe2971a4434667918fa0c7e7b1caff5b451417d81fdc38d112a66e4b1f280b",
+            "_to": "entities/manager",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10113",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "The Italian manager has drawn up a list of potential targets to reinforce his depleted defensive options.",
+            "trigger_end": 105,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/demerol",
+            "_id": "facts/fact-771bae7033bbcef1c12c2f7a7e8116a4ce5561ea4a7c5c1852b46470c7c0a4c4",
+            "_key": "fact-771bae7033bbcef1c12c2f7a7e8116a4ce5561ea4a7c5c1852b46470c7c0a4c4",
+            "_to": "entities/drugs",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10687",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "Demerol is in a group of drugs called narcotic pain relievers.",
+            "trigger_end": 62,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/debate",
+            "_id": "facts/fact-7b97daef0b02102832d6bfb871fad491ce455cdbd8fe9f317d07bbe52f4279b9",
+            "_key": "fact-7b97daef0b02102832d6bfb871fad491ce455cdbd8fe9f317d07bbe52f4279b9",
+            "_to": "entities/way",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9063",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "The best way to peel a chestnut has long been a topic of debate.",
+            "trigger_end": 64,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/cognac",
+            "_id": "facts/fact-887699d987ce71b835d7657da5833fbc389437b73f59111253e7f6a1c784667e",
+            "_key": "fact-887699d987ce71b835d7657da5833fbc389437b73f59111253e7f6a1c784667e",
+            "_to": "entities/bottle",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9806",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "The cognac was in a bottle from which the label, if it ever had one, had long since vanished.",
+            "trigger_end": 93,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/chapter",
+            "_id": "facts/fact-b2fff57c88da9f57e4c6e894fa1b6a310b0e7a53bfba27468189dde58bc41d3f",
+            "_key": "fact-b2fff57c88da9f57e4c6e894fa1b6a310b0e7a53bfba27468189dde58bc41d3f",
+            "_to": "entities/importance",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8101",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "Additionally, the chapter points out the importance of new employee orientation and lists some of the important things to cover during that process.",
+            "trigger_end": 148,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/magnet",
+            "_id": "facts/fact-c150635af1a183af968750359abc961f61996eec7bfb7a6be9a0333505c7f98f",
+            "_key": "fact-c150635af1a183af968750359abc961f61996eec7bfb7a6be9a0333505c7f98f",
+            "_to": "entities/mechanism",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8884",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "The magnetic mechanism is composed of a rotatably seated permanent magnet which can be swiveled or rotated into alignment with the actual throughput channel for the developer mix.",
+            "trigger_end": 179,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/document",
+            "_id": "facts/fact-c40668902f68325137786422c2545d0960d68b92cab5061a067b145aa331381b",
+            "_key": "fact-c40668902f68325137786422c2545d0960d68b92cab5061a067b145aa331381b",
+            "_to": "entities/drugs",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8161",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "The document is about illegal drugs, which, it claims, are illegal because they are harmful.",
+            "trigger_end": 92,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/fluids",
+            "_id": "facts/fact-c947d23bcdf5d804015e4b074a1fc07510006f0e70a7f7315d546129d42db931",
+            "_key": "fact-c947d23bcdf5d804015e4b074a1fc07510006f0e70a7f7315d546129d42db931",
+            "_to": "entities/cylinder",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10337",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "The fluids are enclosed in a vertical cylinder of aspect ratio and heated from below.",
+            "trigger_end": 85,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/tools",
+            "_id": "facts/fact-ea58f5b8976a737f57bdba210f9d3687ef5d05d9eddf22dbce62e225ed9d191a",
+            "_key": "fact-ea58f5b8976a737f57bdba210f9d3687ef5d05d9eddf22dbce62e225ed9d191a",
+            "_to": "entities/staff",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8782",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "Once the data is collected, an emissions inventory is completed by staff using calculation tools from the GHG Protocol.",
+            "trigger_end": 119,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/method",
+            "_id": "facts/fact-f2c78740ca4456cdad32762f0986170c2c85769301bff0e539c6af75bc816b3f",
+            "_key": "fact-f2c78740ca4456cdad32762f0986170c2c85769301bff0e539c6af75bc816b3f",
+            "_to": "entities/scholar",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10673",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b20",
+            "trigger": "It is a method discovered by a Japanese scholar, Mikao Usui, around 1890.",
+            "trigger_end": 73,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 23,
+        "results": [
+          {
+            "_id": "entities/behavior",
+            "_key": "behavior",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757516+00:00",
+            "entity_type": "effect",
+            "name": "behavior",
+            "updated_at": "2026-09-09T13:54:57.757516+00:00"
+          },
+          {
+            "_id": "entities/bottle",
+            "_key": "bottle",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757521+00:00",
+            "entity_type": "container",
+            "name": "bottle",
+            "updated_at": "2026-09-09T13:54:57.757521+00:00"
+          },
+          {
+            "_id": "entities/chapter",
+            "_key": "chapter",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757523+00:00",
+            "entity_type": "message",
+            "name": "chapter",
+            "updated_at": "2026-09-09T13:54:57.757523+00:00"
+          },
+          {
+            "_id": "entities/cognac",
+            "_key": "cognac",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757524+00:00",
+            "entity_type": "content",
+            "name": "cognac",
+            "updated_at": "2026-09-09T13:54:57.757524+00:00"
+          },
+          {
+            "_id": "entities/coughing",
+            "_key": "coughing",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757524+00:00",
+            "entity_type": "effect",
+            "name": "coughing",
+            "updated_at": "2026-09-09T13:54:57.757524+00:00"
+          },
+          {
+            "_id": "entities/cylinder",
+            "_key": "cylinder",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757526+00:00",
+            "entity_type": "container",
+            "name": "cylinder",
+            "updated_at": "2026-09-09T13:54:57.757526+00:00"
+          },
+          {
+            "_id": "entities/debate",
+            "_key": "debate",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757527+00:00",
+            "entity_type": "message",
+            "name": "debate",
+            "updated_at": "2026-09-09T13:54:57.757527+00:00"
+          },
+          {
+            "_id": "entities/demerol",
+            "_key": "demerol",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757527+00:00",
+            "entity_type": "member",
+            "name": "Demerol",
+            "updated_at": "2026-09-09T13:54:57.757527+00:00"
+          },
+          {
+            "_id": "entities/document",
+            "_key": "document",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757528+00:00",
+            "entity_type": "message",
+            "name": "document",
+            "updated_at": "2026-09-09T13:54:57.757528+00:00"
+          },
+          {
+            "_id": "entities/drugs",
+            "_key": "drugs",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757529+00:00",
+            "entity_type": "collection",
+            "name": "drugs",
+            "updated_at": "2026-09-09T13:54:57.757529+00:00"
+          },
+          {
+            "_id": "entities/fluids",
+            "_key": "fluids",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757530+00:00",
+            "entity_type": "content",
+            "name": "fluids",
+            "updated_at": "2026-09-09T13:54:57.757530+00:00"
+          },
+          {
+            "_id": "entities/importance",
+            "_key": "importance",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757531+00:00",
+            "entity_type": "topic",
+            "name": "importance",
+            "updated_at": "2026-09-09T13:54:57.757531+00:00"
+          },
+          {
+            "_id": "entities/inhaling",
+            "_key": "inhaling",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757532+00:00",
+            "entity_type": "cause",
+            "name": "inhaling",
+            "updated_at": "2026-09-09T13:54:57.757532+00:00"
+          },
+          {
+            "_id": "entities/list",
+            "_key": "list",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757532+00:00",
+            "entity_type": "product",
+            "name": "list",
+            "updated_at": "2026-09-09T13:54:57.757532+00:00"
+          },
+          {
+            "_id": "entities/magnet",
+            "_key": "magnet",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757533+00:00",
+            "entity_type": "component",
+            "name": "magnet",
+            "updated_at": "2026-09-09T13:54:57.757533+00:00"
+          },
+          {
+            "_id": "entities/manager",
+            "_key": "manager",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757539+00:00",
+            "entity_type": "producer",
+            "name": "manager",
+            "updated_at": "2026-09-09T13:54:57.757539+00:00"
+          },
+          {
+            "_id": "entities/mechanism",
+            "_key": "mechanism",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757540+00:00",
+            "entity_type": "whole",
+            "name": "mechanism",
+            "updated_at": "2026-09-09T13:54:57.757540+00:00"
+          },
+          {
+            "_id": "entities/method",
+            "_key": "method",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757541+00:00",
+            "entity_type": "product",
+            "name": "method",
+            "updated_at": "2026-09-09T13:54:57.757541+00:00"
+          },
+          {
+            "_id": "entities/rules",
+            "_key": "rules",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757542+00:00",
+            "entity_type": "cause",
+            "name": "rules",
+            "updated_at": "2026-09-09T13:54:57.757542+00:00"
+          },
+          {
+            "_id": "entities/scholar",
+            "_key": "scholar",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757547+00:00",
+            "entity_type": "producer",
+            "name": "scholar",
+            "updated_at": "2026-09-09T13:54:57.757547+00:00"
+          },
+          {
+            "_id": "entities/staff",
+            "_key": "staff",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757547+00:00",
+            "entity_type": "agent",
+            "name": "staff",
+            "updated_at": "2026-09-09T13:54:57.757547+00:00"
+          },
+          {
+            "_id": "entities/tools",
+            "_key": "tools",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757548+00:00",
+            "entity_type": "instrument",
+            "name": "tools",
+            "updated_at": "2026-09-09T13:54:57.757548+00:00"
+          },
+          {
+            "_id": "entities/way",
+            "_key": "way",
+            "aliases": [],
+            "created_at": "2026-09-09T13:54:57.757549+00:00",
+            "entity_type": "topic",
+            "name": "way",
+            "updated_at": "2026-09-09T13:54:57.757549+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-10113",
+            "_key": "semeval-terra-low-r2-b20-semeval-10113",
+            "chunk_id": "semeval-10113",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d5f1e0934d68f3c13b2e2f29ea15e8bffe5b3396aa49ffda91dc9788267d2a3a",
+            "created_at": "2026-09-09T13:54:57.757550+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "The Italian manager has drawn up a list of potential targets to reinforce his depleted defensive options.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757550+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-10337",
+            "_key": "semeval-terra-low-r2-b20-semeval-10337",
+            "chunk_id": "semeval-10337",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:00e8a576e5eb668adc3e68caf4a7d20276e4fcf3c156804b2ab33080e9347f5b",
+            "created_at": "2026-09-09T13:54:57.757562+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "The fluids are enclosed in a vertical cylinder of aspect ratio and heated from below.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757562+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-10673",
+            "_key": "semeval-terra-low-r2-b20-semeval-10673",
+            "chunk_id": "semeval-10673",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:51d58629bd403edf2981522fcf12bfe3b0df15eefa8eb259e80b878a1dd16ac0",
+            "created_at": "2026-09-09T13:54:57.757569+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "It is a method discovered by a Japanese scholar, Mikao Usui, around 1890.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757569+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-10687",
+            "_key": "semeval-terra-low-r2-b20-semeval-10687",
+            "chunk_id": "semeval-10687",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:9d973aea281d64cf363f8e87adf8bf87ce87f059492b74973fb9844593c14054",
+            "created_at": "2026-09-09T13:54:57.757574+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "Demerol is in a group of drugs called narcotic pain relievers.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757574+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-8101",
+            "_key": "semeval-terra-low-r2-b20-semeval-8101",
+            "chunk_id": "semeval-8101",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d6171e28bb282fe2b7c05816b7be1080f6f9420fbd16c1150d851c0f47d5f625",
+            "created_at": "2026-09-09T13:54:57.757580+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "Additionally, the chapter points out the importance of new employee orientation and lists some of the important things to cover during that process.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757580+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-8161",
+            "_key": "semeval-terra-low-r2-b20-semeval-8161",
+            "chunk_id": "semeval-8161",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6f70765aff44cc1d71776dc26ae2bc2e7a70cfa8454efa35b906221ddf242085",
+            "created_at": "2026-09-09T13:54:57.757586+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "The document is about illegal drugs, which, it claims, are illegal because they are harmful.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757586+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-8782",
+            "_key": "semeval-terra-low-r2-b20-semeval-8782",
+            "chunk_id": "semeval-8782",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8087ba67a0142c56c03bdacb2d5b5196b7d11180f8ab01877646b1dbc05a9b93",
+            "created_at": "2026-09-09T13:54:57.757591+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "Once the data is collected, an emissions inventory is completed by staff using calculation tools from the GHG Protocol.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757591+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-8884",
+            "_key": "semeval-terra-low-r2-b20-semeval-8884",
+            "chunk_id": "semeval-8884",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ac6a4893ffa49fba63de80f476c3fddb160f5737e6d52587679003d3c26f3504",
+            "created_at": "2026-09-09T13:54:57.757600+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "The magnetic mechanism is composed of a rotatably seated permanent magnet which can be swiveled or rotated into alignment with the actual throughput channel for the developer mix.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757600+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-9063",
+            "_key": "semeval-terra-low-r2-b20-semeval-9063",
+            "chunk_id": "semeval-9063",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:fd35bc4776c55cb11b368f298f84cee00fa4cf39cf430a9246b067dfdc337714",
+            "created_at": "2026-09-09T13:54:57.757606+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "The best way to peel a chestnut has long been a topic of debate.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757606+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-9371",
+            "_key": "semeval-terra-low-r2-b20-semeval-9371",
+            "chunk_id": "semeval-9371",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d83f89b475cc4242a6d402a97b9dcbbde127ffd6a394bc5b3dfa4d4957c1f66a",
+            "created_at": "2026-09-09T13:54:57.757612+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "These rules regulate human's behavior toward eachother and serve to maintain a sense of social unity.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757612+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-9597",
+            "_key": "semeval-terra-low-r2-b20-semeval-9597",
+            "chunk_id": "semeval-9597",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:0a5625ec4a6bc9ed2af4d2956d027e79de1877ca1af42ef021dad64f63f5d27c",
+            "created_at": "2026-09-09T13:54:57.757620+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "Saosin shook himself off, coughing from inhaling the smoke, and then stood up in an awkward fashion.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757620+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b20-semeval-9806",
+            "_key": "semeval-terra-low-r2-b20-semeval-9806",
+            "chunk_id": "semeval-9806",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:664c1e3f16f9bb8c7a6502e1bd0fa38438b499db9d916401fe02344bdd8e3ccb",
+            "created_at": "2026-09-09T13:54:57.757625+00:00",
+            "space_id": "semeval-terra-low-r2-b20",
+            "text": "The cognac was in a bottle from which the label, if it ever had one, had long since vanished.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:54:57.757625+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

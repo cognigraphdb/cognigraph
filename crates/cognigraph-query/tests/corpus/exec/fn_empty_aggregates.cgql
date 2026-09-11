@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d._key == "b" RETURN { s: SUM(d.tags), a: AVG(d.tags) }

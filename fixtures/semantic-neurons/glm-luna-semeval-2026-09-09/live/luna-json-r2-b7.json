@@ -1,0 +1,1198 @@
+{
+  "phase": "measurement",
+  "arm": "luna-json",
+  "repetition": 2,
+  "batch": 7,
+  "request": {
+    "space_type": "semeval-luna-json-r2-b7",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9855",
+        "title": "Relation benchmark excerpt",
+        "text": "They packed the sketch into a thick stiff cardboard sleeve so that it wouldn't get bent."
+      },
+      {
+        "id": "semeval-9031",
+        "title": "Relation benchmark excerpt",
+        "text": "Patterson and a half-dozen scientists from several institutions compiled the global map using images from NASA's historic Voyager and Galileo missions."
+      },
+      {
+        "id": "semeval-8749",
+        "title": "Relation benchmark excerpt",
+        "text": "The show was pulled from its original Christmas/New Year slot because of the Tsunami, and to be honest it really should have stayed pulled."
+      },
+      {
+        "id": "semeval-9443",
+        "title": "Relation benchmark excerpt",
+        "text": "The project uses art as an instrument to provide viewers different insights."
+      },
+      {
+        "id": "semeval-9976",
+        "title": "Relation benchmark excerpt",
+        "text": "I got scrambled eggs, a biscuit, bacon and a mess of grits."
+      },
+      {
+        "id": "semeval-10300",
+        "title": "Relation benchmark excerpt",
+        "text": "The lord continues to demonstrate his faithfulness through the generous giving of His people."
+      },
+      {
+        "id": "semeval-9548",
+        "title": "Relation benchmark excerpt",
+        "text": "The term is derived from a boxing metaphor - when boxers train on a heavy bag they can knock the bag \"off the hook\"."
+      },
+      {
+        "id": "semeval-8517",
+        "title": "Relation benchmark excerpt",
+        "text": "The plant grows from an underground storage unit called a corm."
+      },
+      {
+        "id": "semeval-8441",
+        "title": "Relation benchmark excerpt",
+        "text": "The outspoken cricket commentator's obscenity as South Africa lost their sixth wicket was heard by listeners."
+      },
+      {
+        "id": "semeval-9495",
+        "title": "Relation benchmark excerpt",
+        "text": "Quarterly magazine covers the latest political, economic, social, cultural and sporting developments in Africa."
+      },
+      {
+        "id": "semeval-9922",
+        "title": "Relation benchmark excerpt",
+        "text": "\"Lagrima Del Sol\" is a pineapple wine made from 100% fresh pineapple juice produced in the only pineapple production region in Japan."
+      },
+      {
+        "id": "semeval-10224",
+        "title": "Relation benchmark excerpt",
+        "text": "The work was such a popular success that the poet wrote a sequel."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 9,
+    "proposed": 10,
+    "skips": [
+      "`commentator --Message-Topic--> obscenity`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-luna-json-r2-b7"
+  },
+  "latency_seconds": 4.918083583004773,
+  "facts": [
+    {
+      "_from": "entities/poet",
+      "_id": "facts/fact-11b7535ed5ca9991b6c2e949f3c3451489b0130e14f610e074b3a358d8f02ed8",
+      "_key": "fact-11b7535ed5ca9991b6c2e949f3c3451489b0130e14f610e074b3a358d8f02ed8",
+      "_to": "entities/sequel",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10224",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b7",
+      "trigger": "The work was such a popular success that the poet wrote a sequel.",
+      "trigger_end": 65,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/term",
+      "_id": "facts/fact-1455cc895050796acd20c22fb17939586c24f99eb10889b291651f00e3a1de40",
+      "_key": "fact-1455cc895050796acd20c22fb17939586c24f99eb10889b291651f00e3a1de40",
+      "_to": "entities/metaphor",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9548",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b7",
+      "trigger": "The term is derived from a boxing metaphor - when boxers train on a heavy bag they can knock the bag \"off the hook\".",
+      "trigger_end": 116,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/sketch",
+      "_id": "facts/fact-299b9a4b224cd1dc58ba1cf8741350dfaf3c0124158e483b73524616a54cc052",
+      "_key": "fact-299b9a4b224cd1dc58ba1cf8741350dfaf3c0124158e483b73524616a54cc052",
+      "_to": "entities/sleeve",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9855",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b7",
+      "trigger": "They packed the sketch into a thick stiff cardboard sleeve so that it wouldn't get bent.",
+      "trigger_end": 88,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/show",
+      "_id": "facts/fact-30e25ec9792521fc7a1d4336ed5abf81b7b7e97fbf3279e99fa5f0e35c4c595f",
+      "_key": "fact-30e25ec9792521fc7a1d4336ed5abf81b7b7e97fbf3279e99fa5f0e35c4c595f",
+      "_to": "entities/slot",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8749",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b7",
+      "trigger": "The show was pulled from its original Christmas/New Year slot because of the Tsunami, and to be honest it really should have stayed pulled.",
+      "trigger_end": 139,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/scientists",
+      "_id": "facts/fact-3116434d1884df18290f58b5505e66de69e6488f7ada58db54d3fc5b79b9a035",
+      "_key": "fact-3116434d1884df18290f58b5505e66de69e6488f7ada58db54d3fc5b79b9a035",
+      "_to": "entities/map",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9031",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b7",
+      "trigger": "Patterson and a half-dozen scientists from several institutions compiled the global map using images from NASA's historic Voyager and Galileo missions.",
+      "trigger_end": 151,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/pineapple",
+      "_id": "facts/fact-32c6184ca693ca8b5083959a516b9eb5b71db477d61046b83de4bd0e5fdab609",
+      "_key": "fact-32c6184ca693ca8b5083959a516b9eb5b71db477d61046b83de4bd0e5fdab609",
+      "_to": "entities/wine",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9922",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b7",
+      "trigger": "\"Lagrima Del Sol\" is a pineapple wine made from 100% fresh pineapple juice produced in the only pineapple production region in Japan.",
+      "trigger_end": 133,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/magazine",
+      "_id": "facts/fact-4ec75e5ba24613e5c62d1054ff224fe02abe091acd46a79127d8506b6ff1ef58",
+      "_key": "fact-4ec75e5ba24613e5c62d1054ff224fe02abe091acd46a79127d8506b6ff1ef58",
+      "_to": "entities/developments",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9495",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b7",
+      "trigger": "Quarterly magazine covers the latest political, economic, social, cultural and sporting developments in Africa.",
+      "trigger_end": 111,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/plant",
+      "_id": "facts/fact-524c63e499d53f57b8ef636ee4b786c1580444bb1438f5741d533c9b226601f9",
+      "_key": "fact-524c63e499d53f57b8ef636ee4b786c1580444bb1438f5741d533c9b226601f9",
+      "_to": "entities/storage-unit",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8517",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b7",
+      "trigger": "The plant grows from an underground storage unit called a corm.",
+      "trigger_end": 63,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/art",
+      "_id": "facts/fact-b6030d9e23cf5f19a5e25d5b9866a97f70a28946229a93969b77239ae06e9d70",
+      "_key": "fact-b6030d9e23cf5f19a5e25d5b9866a97f70a28946229a93969b77239ae06e9d70",
+      "_to": "entities/project",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9443",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b7",
+      "trigger": "The project uses art as an instrument to provide viewers different insights.",
+      "trigger_end": 76,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/art",
+      "_key": "art",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069591+00:00",
+      "entity_type": "instrument",
+      "name": "art",
+      "updated_at": "2026-09-09T12:44:10.069591+00:00"
+    },
+    {
+      "_id": "entities/developments",
+      "_key": "developments",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069597+00:00",
+      "entity_type": "topic",
+      "name": "developments",
+      "updated_at": "2026-09-09T12:44:10.069597+00:00"
+    },
+    {
+      "_id": "entities/magazine",
+      "_key": "magazine",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069599+00:00",
+      "entity_type": "message",
+      "name": "magazine",
+      "updated_at": "2026-09-09T12:44:10.069599+00:00"
+    },
+    {
+      "_id": "entities/map",
+      "_key": "map",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069600+00:00",
+      "entity_type": "product",
+      "name": "map",
+      "updated_at": "2026-09-09T12:44:10.069600+00:00"
+    },
+    {
+      "_id": "entities/metaphor",
+      "_key": "metaphor",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069601+00:00",
+      "entity_type": "topic",
+      "name": "metaphor",
+      "updated_at": "2026-09-09T12:44:10.069601+00:00"
+    },
+    {
+      "_id": "entities/pineapple",
+      "_key": "pineapple",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069602+00:00",
+      "entity_type": "product",
+      "name": "pineapple",
+      "updated_at": "2026-09-09T12:44:10.069602+00:00"
+    },
+    {
+      "_id": "entities/plant",
+      "_key": "plant",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069603+00:00",
+      "entity_type": "entity",
+      "name": "plant",
+      "updated_at": "2026-09-09T12:44:10.069603+00:00"
+    },
+    {
+      "_id": "entities/poet",
+      "_key": "poet",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069604+00:00",
+      "entity_type": "producer",
+      "name": "poet",
+      "updated_at": "2026-09-09T12:44:10.069604+00:00"
+    },
+    {
+      "_id": "entities/project",
+      "_key": "project",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069605+00:00",
+      "entity_type": "agent",
+      "name": "project",
+      "updated_at": "2026-09-09T12:44:10.069605+00:00"
+    },
+    {
+      "_id": "entities/scientists",
+      "_key": "scientists",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069607+00:00",
+      "entity_type": "agent",
+      "name": "scientists",
+      "updated_at": "2026-09-09T12:44:10.069607+00:00"
+    },
+    {
+      "_id": "entities/sequel",
+      "_key": "sequel",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069608+00:00",
+      "entity_type": "product",
+      "name": "sequel",
+      "updated_at": "2026-09-09T12:44:10.069608+00:00"
+    },
+    {
+      "_id": "entities/show",
+      "_key": "show",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069609+00:00",
+      "entity_type": "entity",
+      "name": "show",
+      "updated_at": "2026-09-09T12:44:10.069609+00:00"
+    },
+    {
+      "_id": "entities/sketch",
+      "_key": "sketch",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069610+00:00",
+      "entity_type": "object",
+      "name": "sketch",
+      "updated_at": "2026-09-09T12:44:10.069610+00:00"
+    },
+    {
+      "_id": "entities/sleeve",
+      "_key": "sleeve",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069611+00:00",
+      "entity_type": "container",
+      "name": "sleeve",
+      "updated_at": "2026-09-09T12:44:10.069611+00:00"
+    },
+    {
+      "_id": "entities/slot",
+      "_key": "slot",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069611+00:00",
+      "entity_type": "destination",
+      "name": "slot",
+      "updated_at": "2026-09-09T12:44:10.069611+00:00"
+    },
+    {
+      "_id": "entities/storage-unit",
+      "_key": "storage-unit",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069612+00:00",
+      "entity_type": "origin",
+      "name": "storage unit",
+      "updated_at": "2026-09-09T12:44:10.069612+00:00"
+    },
+    {
+      "_id": "entities/term",
+      "_key": "term",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069613+00:00",
+      "entity_type": "message",
+      "name": "term",
+      "updated_at": "2026-09-09T12:44:10.069613+00:00"
+    },
+    {
+      "_id": "entities/wine",
+      "_key": "wine",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:10.069615+00:00",
+      "entity_type": "product",
+      "name": "wine",
+      "updated_at": "2026-09-09T12:44:10.069615+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-10224",
+      "_key": "semeval-luna-json-r2-b7-semeval-10224",
+      "chunk_id": "semeval-10224",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:84948e9ba8614901114ec7995a1b176249f69d96cd6385603a28acddbc6f9845",
+      "created_at": "2026-09-09T12:44:10.069616+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "The work was such a popular success that the poet wrote a sequel.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069616+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-10300",
+      "_key": "semeval-luna-json-r2-b7-semeval-10300",
+      "chunk_id": "semeval-10300",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7543b1838bbbfef8dbdefe9caeb909629f727527e6ab34feffcb00e6e14101b6",
+      "created_at": "2026-09-09T12:44:10.069629+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "The lord continues to demonstrate his faithfulness through the generous giving of His people.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069629+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-8441",
+      "_key": "semeval-luna-json-r2-b7-semeval-8441",
+      "chunk_id": "semeval-8441",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d9d0921a28c8ccaf25cb98281fb5964fcfc2b2b5d568111aeae612fec7519ba9",
+      "created_at": "2026-09-09T12:44:10.069631+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "The outspoken cricket commentator's obscenity as South Africa lost their sixth wicket was heard by listeners.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069631+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-8517",
+      "_key": "semeval-luna-json-r2-b7-semeval-8517",
+      "chunk_id": "semeval-8517",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:63f10d6b1572a099fdedb8ddc150dfbba2da14eeebda981e07e97bcb4670f218",
+      "created_at": "2026-09-09T12:44:10.069632+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "The plant grows from an underground storage unit called a corm.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069632+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-8749",
+      "_key": "semeval-luna-json-r2-b7-semeval-8749",
+      "chunk_id": "semeval-8749",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2f3606b1413c4e82424dd857f540519f41c94a0b5ad67a8b5c77555560e49db8",
+      "created_at": "2026-09-09T12:44:10.069638+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "The show was pulled from its original Christmas/New Year slot because of the Tsunami, and to be honest it really should have stayed pulled.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069638+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-9031",
+      "_key": "semeval-luna-json-r2-b7-semeval-9031",
+      "chunk_id": "semeval-9031",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5d544bf2cf889b79534e3986a5171d20448058a5f4525dd777735dfe426f3944",
+      "created_at": "2026-09-09T12:44:10.069645+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "Patterson and a half-dozen scientists from several institutions compiled the global map using images from NASA's historic Voyager and Galileo missions.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069645+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-9443",
+      "_key": "semeval-luna-json-r2-b7-semeval-9443",
+      "chunk_id": "semeval-9443",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b6a58002520ed767925a10c0ca85e5c9a2e403f49879019ee24736b140005cc2",
+      "created_at": "2026-09-09T12:44:10.069651+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "The project uses art as an instrument to provide viewers different insights.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069651+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-9495",
+      "_key": "semeval-luna-json-r2-b7-semeval-9495",
+      "chunk_id": "semeval-9495",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:02bcb603c1ed4254c7a50fab32253f816407b8d40dd97e9331e82ebd3f136fe8",
+      "created_at": "2026-09-09T12:44:10.069658+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "Quarterly magazine covers the latest political, economic, social, cultural and sporting developments in Africa.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069658+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-9548",
+      "_key": "semeval-luna-json-r2-b7-semeval-9548",
+      "chunk_id": "semeval-9548",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b73a335680300cf8c537f69bb5284d06ea71a28da913b74d23a38484b2173b2b",
+      "created_at": "2026-09-09T12:44:10.069664+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "The term is derived from a boxing metaphor - when boxers train on a heavy bag they can knock the bag \"off the hook\".",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069664+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-9855",
+      "_key": "semeval-luna-json-r2-b7-semeval-9855",
+      "chunk_id": "semeval-9855",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a67041475f8b06017a9914a62738d481cf9f4ec9b219c7f0c39d2102de4e5c9c",
+      "created_at": "2026-09-09T12:44:10.069672+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "They packed the sketch into a thick stiff cardboard sleeve so that it wouldn't get bent.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069672+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-9922",
+      "_key": "semeval-luna-json-r2-b7-semeval-9922",
+      "chunk_id": "semeval-9922",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:fbed3e041722016a7db3002d77f37f8e9eb1fd54fd0e4b92e9ca2e852ae05559",
+      "created_at": "2026-09-09T12:44:10.069678+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "\"Lagrima Del Sol\" is a pineapple wine made from 100% fresh pineapple juice produced in the only pineapple production region in Japan.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069678+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b7-semeval-9976",
+      "_key": "semeval-luna-json-r2-b7-semeval-9976",
+      "chunk_id": "semeval-9976",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:813556123d075591f9737994e068d1b0d21bdddf1bd4a5e92022ea5ffa7384f1",
+      "created_at": "2026-09-09T12:44:10.069687+00:00",
+      "space_id": "semeval-luna-json-r2-b7",
+      "text": "I got scrambled eggs, a biscuit, bacon and a mess of grits.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:10.069687+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 9,
+        "results": [
+          {
+            "_from": "entities/poet",
+            "_id": "facts/fact-11b7535ed5ca9991b6c2e949f3c3451489b0130e14f610e074b3a358d8f02ed8",
+            "_key": "fact-11b7535ed5ca9991b6c2e949f3c3451489b0130e14f610e074b3a358d8f02ed8",
+            "_to": "entities/sequel",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10224",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b7",
+            "trigger": "The work was such a popular success that the poet wrote a sequel.",
+            "trigger_end": 65,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/term",
+            "_id": "facts/fact-1455cc895050796acd20c22fb17939586c24f99eb10889b291651f00e3a1de40",
+            "_key": "fact-1455cc895050796acd20c22fb17939586c24f99eb10889b291651f00e3a1de40",
+            "_to": "entities/metaphor",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9548",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b7",
+            "trigger": "The term is derived from a boxing metaphor - when boxers train on a heavy bag they can knock the bag \"off the hook\".",
+            "trigger_end": 116,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/sketch",
+            "_id": "facts/fact-299b9a4b224cd1dc58ba1cf8741350dfaf3c0124158e483b73524616a54cc052",
+            "_key": "fact-299b9a4b224cd1dc58ba1cf8741350dfaf3c0124158e483b73524616a54cc052",
+            "_to": "entities/sleeve",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9855",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b7",
+            "trigger": "They packed the sketch into a thick stiff cardboard sleeve so that it wouldn't get bent.",
+            "trigger_end": 88,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/show",
+            "_id": "facts/fact-30e25ec9792521fc7a1d4336ed5abf81b7b7e97fbf3279e99fa5f0e35c4c595f",
+            "_key": "fact-30e25ec9792521fc7a1d4336ed5abf81b7b7e97fbf3279e99fa5f0e35c4c595f",
+            "_to": "entities/slot",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8749",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b7",
+            "trigger": "The show was pulled from its original Christmas/New Year slot because of the Tsunami, and to be honest it really should have stayed pulled.",
+            "trigger_end": 139,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/scientists",
+            "_id": "facts/fact-3116434d1884df18290f58b5505e66de69e6488f7ada58db54d3fc5b79b9a035",
+            "_key": "fact-3116434d1884df18290f58b5505e66de69e6488f7ada58db54d3fc5b79b9a035",
+            "_to": "entities/map",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9031",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b7",
+            "trigger": "Patterson and a half-dozen scientists from several institutions compiled the global map using images from NASA's historic Voyager and Galileo missions.",
+            "trigger_end": 151,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/pineapple",
+            "_id": "facts/fact-32c6184ca693ca8b5083959a516b9eb5b71db477d61046b83de4bd0e5fdab609",
+            "_key": "fact-32c6184ca693ca8b5083959a516b9eb5b71db477d61046b83de4bd0e5fdab609",
+            "_to": "entities/wine",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9922",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b7",
+            "trigger": "\"Lagrima Del Sol\" is a pineapple wine made from 100% fresh pineapple juice produced in the only pineapple production region in Japan.",
+            "trigger_end": 133,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/magazine",
+            "_id": "facts/fact-4ec75e5ba24613e5c62d1054ff224fe02abe091acd46a79127d8506b6ff1ef58",
+            "_key": "fact-4ec75e5ba24613e5c62d1054ff224fe02abe091acd46a79127d8506b6ff1ef58",
+            "_to": "entities/developments",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9495",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b7",
+            "trigger": "Quarterly magazine covers the latest political, economic, social, cultural and sporting developments in Africa.",
+            "trigger_end": 111,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/plant",
+            "_id": "facts/fact-524c63e499d53f57b8ef636ee4b786c1580444bb1438f5741d533c9b226601f9",
+            "_key": "fact-524c63e499d53f57b8ef636ee4b786c1580444bb1438f5741d533c9b226601f9",
+            "_to": "entities/storage-unit",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8517",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b7",
+            "trigger": "The plant grows from an underground storage unit called a corm.",
+            "trigger_end": 63,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/art",
+            "_id": "facts/fact-b6030d9e23cf5f19a5e25d5b9866a97f70a28946229a93969b77239ae06e9d70",
+            "_key": "fact-b6030d9e23cf5f19a5e25d5b9866a97f70a28946229a93969b77239ae06e9d70",
+            "_to": "entities/project",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9443",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b7",
+            "trigger": "The project uses art as an instrument to provide viewers different insights.",
+            "trigger_end": 76,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 18,
+        "results": [
+          {
+            "_id": "entities/art",
+            "_key": "art",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069591+00:00",
+            "entity_type": "instrument",
+            "name": "art",
+            "updated_at": "2026-09-09T12:44:10.069591+00:00"
+          },
+          {
+            "_id": "entities/developments",
+            "_key": "developments",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069597+00:00",
+            "entity_type": "topic",
+            "name": "developments",
+            "updated_at": "2026-09-09T12:44:10.069597+00:00"
+          },
+          {
+            "_id": "entities/magazine",
+            "_key": "magazine",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069599+00:00",
+            "entity_type": "message",
+            "name": "magazine",
+            "updated_at": "2026-09-09T12:44:10.069599+00:00"
+          },
+          {
+            "_id": "entities/map",
+            "_key": "map",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069600+00:00",
+            "entity_type": "product",
+            "name": "map",
+            "updated_at": "2026-09-09T12:44:10.069600+00:00"
+          },
+          {
+            "_id": "entities/metaphor",
+            "_key": "metaphor",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069601+00:00",
+            "entity_type": "topic",
+            "name": "metaphor",
+            "updated_at": "2026-09-09T12:44:10.069601+00:00"
+          },
+          {
+            "_id": "entities/pineapple",
+            "_key": "pineapple",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069602+00:00",
+            "entity_type": "product",
+            "name": "pineapple",
+            "updated_at": "2026-09-09T12:44:10.069602+00:00"
+          },
+          {
+            "_id": "entities/plant",
+            "_key": "plant",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069603+00:00",
+            "entity_type": "entity",
+            "name": "plant",
+            "updated_at": "2026-09-09T12:44:10.069603+00:00"
+          },
+          {
+            "_id": "entities/poet",
+            "_key": "poet",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069604+00:00",
+            "entity_type": "producer",
+            "name": "poet",
+            "updated_at": "2026-09-09T12:44:10.069604+00:00"
+          },
+          {
+            "_id": "entities/project",
+            "_key": "project",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069605+00:00",
+            "entity_type": "agent",
+            "name": "project",
+            "updated_at": "2026-09-09T12:44:10.069605+00:00"
+          },
+          {
+            "_id": "entities/scientists",
+            "_key": "scientists",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069607+00:00",
+            "entity_type": "agent",
+            "name": "scientists",
+            "updated_at": "2026-09-09T12:44:10.069607+00:00"
+          },
+          {
+            "_id": "entities/sequel",
+            "_key": "sequel",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069608+00:00",
+            "entity_type": "product",
+            "name": "sequel",
+            "updated_at": "2026-09-09T12:44:10.069608+00:00"
+          },
+          {
+            "_id": "entities/show",
+            "_key": "show",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069609+00:00",
+            "entity_type": "entity",
+            "name": "show",
+            "updated_at": "2026-09-09T12:44:10.069609+00:00"
+          },
+          {
+            "_id": "entities/sketch",
+            "_key": "sketch",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069610+00:00",
+            "entity_type": "object",
+            "name": "sketch",
+            "updated_at": "2026-09-09T12:44:10.069610+00:00"
+          },
+          {
+            "_id": "entities/sleeve",
+            "_key": "sleeve",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069611+00:00",
+            "entity_type": "container",
+            "name": "sleeve",
+            "updated_at": "2026-09-09T12:44:10.069611+00:00"
+          },
+          {
+            "_id": "entities/slot",
+            "_key": "slot",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069611+00:00",
+            "entity_type": "destination",
+            "name": "slot",
+            "updated_at": "2026-09-09T12:44:10.069611+00:00"
+          },
+          {
+            "_id": "entities/storage-unit",
+            "_key": "storage-unit",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069612+00:00",
+            "entity_type": "origin",
+            "name": "storage unit",
+            "updated_at": "2026-09-09T12:44:10.069612+00:00"
+          },
+          {
+            "_id": "entities/term",
+            "_key": "term",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069613+00:00",
+            "entity_type": "message",
+            "name": "term",
+            "updated_at": "2026-09-09T12:44:10.069613+00:00"
+          },
+          {
+            "_id": "entities/wine",
+            "_key": "wine",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:10.069615+00:00",
+            "entity_type": "product",
+            "name": "wine",
+            "updated_at": "2026-09-09T12:44:10.069615+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-10224",
+            "_key": "semeval-luna-json-r2-b7-semeval-10224",
+            "chunk_id": "semeval-10224",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:84948e9ba8614901114ec7995a1b176249f69d96cd6385603a28acddbc6f9845",
+            "created_at": "2026-09-09T12:44:10.069616+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "The work was such a popular success that the poet wrote a sequel.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069616+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-10300",
+            "_key": "semeval-luna-json-r2-b7-semeval-10300",
+            "chunk_id": "semeval-10300",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7543b1838bbbfef8dbdefe9caeb909629f727527e6ab34feffcb00e6e14101b6",
+            "created_at": "2026-09-09T12:44:10.069629+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "The lord continues to demonstrate his faithfulness through the generous giving of His people.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069629+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-8441",
+            "_key": "semeval-luna-json-r2-b7-semeval-8441",
+            "chunk_id": "semeval-8441",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d9d0921a28c8ccaf25cb98281fb5964fcfc2b2b5d568111aeae612fec7519ba9",
+            "created_at": "2026-09-09T12:44:10.069631+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "The outspoken cricket commentator's obscenity as South Africa lost their sixth wicket was heard by listeners.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069631+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-8517",
+            "_key": "semeval-luna-json-r2-b7-semeval-8517",
+            "chunk_id": "semeval-8517",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:63f10d6b1572a099fdedb8ddc150dfbba2da14eeebda981e07e97bcb4670f218",
+            "created_at": "2026-09-09T12:44:10.069632+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "The plant grows from an underground storage unit called a corm.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069632+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-8749",
+            "_key": "semeval-luna-json-r2-b7-semeval-8749",
+            "chunk_id": "semeval-8749",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2f3606b1413c4e82424dd857f540519f41c94a0b5ad67a8b5c77555560e49db8",
+            "created_at": "2026-09-09T12:44:10.069638+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "The show was pulled from its original Christmas/New Year slot because of the Tsunami, and to be honest it really should have stayed pulled.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069638+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-9031",
+            "_key": "semeval-luna-json-r2-b7-semeval-9031",
+            "chunk_id": "semeval-9031",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5d544bf2cf889b79534e3986a5171d20448058a5f4525dd777735dfe426f3944",
+            "created_at": "2026-09-09T12:44:10.069645+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "Patterson and a half-dozen scientists from several institutions compiled the global map using images from NASA's historic Voyager and Galileo missions.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069645+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-9443",
+            "_key": "semeval-luna-json-r2-b7-semeval-9443",
+            "chunk_id": "semeval-9443",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b6a58002520ed767925a10c0ca85e5c9a2e403f49879019ee24736b140005cc2",
+            "created_at": "2026-09-09T12:44:10.069651+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "The project uses art as an instrument to provide viewers different insights.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069651+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-9495",
+            "_key": "semeval-luna-json-r2-b7-semeval-9495",
+            "chunk_id": "semeval-9495",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:02bcb603c1ed4254c7a50fab32253f816407b8d40dd97e9331e82ebd3f136fe8",
+            "created_at": "2026-09-09T12:44:10.069658+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "Quarterly magazine covers the latest political, economic, social, cultural and sporting developments in Africa.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069658+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-9548",
+            "_key": "semeval-luna-json-r2-b7-semeval-9548",
+            "chunk_id": "semeval-9548",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b73a335680300cf8c537f69bb5284d06ea71a28da913b74d23a38484b2173b2b",
+            "created_at": "2026-09-09T12:44:10.069664+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "The term is derived from a boxing metaphor - when boxers train on a heavy bag they can knock the bag \"off the hook\".",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069664+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-9855",
+            "_key": "semeval-luna-json-r2-b7-semeval-9855",
+            "chunk_id": "semeval-9855",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a67041475f8b06017a9914a62738d481cf9f4ec9b219c7f0c39d2102de4e5c9c",
+            "created_at": "2026-09-09T12:44:10.069672+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "They packed the sketch into a thick stiff cardboard sleeve so that it wouldn't get bent.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069672+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-9922",
+            "_key": "semeval-luna-json-r2-b7-semeval-9922",
+            "chunk_id": "semeval-9922",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:fbed3e041722016a7db3002d77f37f8e9eb1fd54fd0e4b92e9ca2e852ae05559",
+            "created_at": "2026-09-09T12:44:10.069678+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "\"Lagrima Del Sol\" is a pineapple wine made from 100% fresh pineapple juice produced in the only pineapple production region in Japan.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069678+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b7-semeval-9976",
+            "_key": "semeval-luna-json-r2-b7-semeval-9976",
+            "chunk_id": "semeval-9976",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:813556123d075591f9737994e068d1b0d21bdddf1bd4a5e92022ea5ffa7384f1",
+            "created_at": "2026-09-09T12:44:10.069687+00:00",
+            "space_id": "semeval-luna-json-r2-b7",
+            "text": "I got scrambled eggs, a biscuit, bacon and a mess of grits.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:10.069687+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

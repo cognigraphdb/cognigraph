@@ -1,0 +1,53 @@
+{
+  "space_id": "demo:sotu-2024",
+  "chunks_path": "samples/state_of_the_union_2024.chunks.jsonl",
+  "questions": [
+    {
+      "id": "ukraine-nato",
+      "question": "What did the speech say about Ukraine and NATO?",
+      "expected_facts": [
+        "United States --SUPPORTS--> Ukraine",
+        "NATO --ADDS_MEMBER--> Sweden"
+      ]
+    },
+    {
+      "id": "medicare-drug-costs",
+      "question": "What did Medicare do about prescription drug costs?",
+      "expected_facts": [
+        "Medicare --NEGOTIATES--> Prescription drug costs"
+      ]
+    },
+    {
+      "id": "sweden-nato",
+      "question": "What happened with Sweden and NATO?",
+      "expected_facts": [
+        "NATO --ADDS_MEMBER--> Sweden"
+      ],
+      "forbidden_facts": [
+        "Sweden --ADDS_MEMBER--> NATO"
+      ]
+    },
+    {
+      "id": "ivf-alabama",
+      "question": "What was said about IVF in Alabama?",
+      "expected_facts": [
+        "Alabama --LOCATION--> IVF"
+      ]
+    },
+    {
+      "id": "billionaire-tax",
+      "question": "How does the billionaire minimum tax relate to the deficit?",
+      "expected_facts": [
+        "Administration --PROPOSES--> Billionaire minimum tax",
+        "Billionaire minimum tax --AFFECTS--> Federal deficit"
+      ]
+    },
+    {
+      "id": "roe-v-wade",
+      "question": "What did the administration propose about Roe v. Wade?",
+      "expected_facts": [
+        "Administration --PROPOSES--> Roe v. Wade"
+      ]
+    }
+  ]
+}

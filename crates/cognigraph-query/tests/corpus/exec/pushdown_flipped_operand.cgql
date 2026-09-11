@@ -1,0 +1,1 @@
+FOR d IN documents FILTER 3 < d.score RETURN d._key

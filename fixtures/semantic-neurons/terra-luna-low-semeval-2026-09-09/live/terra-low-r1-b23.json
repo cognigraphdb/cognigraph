@@ -1,0 +1,264 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 1,
+  "batch": 23,
+  "request": {
+    "space_type": "semeval-terra-low-r1-b23",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10448",
+        "title": "Relation benchmark excerpt",
+        "text": "Here are the amazing arrangements from this months demonstrator, fantastic, brilliant and stunning."
+      },
+      {
+        "id": "semeval-8082",
+        "title": "Relation benchmark excerpt",
+        "text": "By 1715 the cabriole leg was in general use, and the back of the chair had started to become square in shape: no longer was it the characteristic tall and narrow feature of the previous century."
+      },
+      {
+        "id": "semeval-8267",
+        "title": "Relation benchmark excerpt",
+        "text": "The song basically criticizes the hypocrisy and lack of care from politicians."
+      },
+      {
+        "id": "semeval-10597",
+        "title": "Relation benchmark excerpt",
+        "text": "The struggle with the door and the oiler caused a disturbance on the ship."
+      },
+      {
+        "id": "semeval-9453",
+        "title": "Relation benchmark excerpt",
+        "text": "As a geologically inactive remnant from accretionary epochs of solar system history, Callisto was expected to be a dead, cratered relict, useful only as a contrast to the other, more geologically active satellites."
+      },
+      {
+        "id": "semeval-9885",
+        "title": "Relation benchmark excerpt",
+        "text": "During her talk she related some of the tricks that Orville liked to play on people."
+      },
+      {
+        "id": "semeval-9047",
+        "title": "Relation benchmark excerpt",
+        "text": "Rogge conceded that perhaps the committee had been naive in accepting the promises made by Chinese leaders."
+      },
+      {
+        "id": "semeval-8525",
+        "title": "Relation benchmark excerpt",
+        "text": "The community was eluded from positions of power as a result of a deal made by the Sunni Arab minority and the British \"imperialists\" who had carved Iraq out of the moribund Ottoman Empire in the wake of World War I."
+      },
+      {
+        "id": "semeval-10614",
+        "title": "Relation benchmark excerpt",
+        "text": "The complication arose from the light irradiation."
+      },
+      {
+        "id": "semeval-9844",
+        "title": "Relation benchmark excerpt",
+        "text": "The motet grows from a short, sparse germinal idea in which the intervals of the tone, semitone and augmented fourth predominate."
+      },
+      {
+        "id": "semeval-10417",
+        "title": "Relation benchmark excerpt",
+        "text": "Almost suddenly, I was overcome with an uncontrollable fear which was triggered by the death of my friend."
+      },
+      {
+        "id": "semeval-8317",
+        "title": "Relation benchmark excerpt",
+        "text": "We bought this photo frame for the mother in law and after putting pics on it i was so pleased with it i went back and bought another for my mum."
+      }
+    ]
+  },
+  "status": 500,
+  "response": {
+    "error": "Backend error: directed completion failed: completion content is not valid JSON"
+  },
+  "latency_seconds": 9.52074425003957,
+  "facts": [],
+  "entities": [],
+  "chunks": [],
+  "store_queries": {
+    "facts": {
+      "status": 404,
+      "response": {
+        "error": "Collection not found: facts"
+      }
+    },
+    "entities": {
+      "status": 404,
+      "response": {
+        "error": "Collection not found: entities"
+      }
+    },
+    "chunks": {
+      "status": 404,
+      "response": {
+        "error": "Collection not found: chunks"
+      }
+    }
+  }
+}

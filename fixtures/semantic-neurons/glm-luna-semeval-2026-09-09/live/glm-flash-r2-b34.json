@@ -1,0 +1,1336 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 2,
+  "batch": 34,
+  "request": {
+    "space_type": "semeval-glm-flash-r2-b34",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9204",
+        "title": "Relation benchmark excerpt",
+        "text": "As soon as the guards had left the building to investigate, he scrambled through the window and looked around."
+      },
+      {
+        "id": "semeval-9717",
+        "title": "Relation benchmark excerpt",
+        "text": "The council hall stank like a congress of baboons."
+      },
+      {
+        "id": "semeval-8122",
+        "title": "Relation benchmark excerpt",
+        "text": "Carpenters build many things from wood and other materials, like buildings and boats."
+      },
+      {
+        "id": "semeval-8469",
+        "title": "Relation benchmark excerpt",
+        "text": "The criminal just got out of jail from a mutli-million dollar fraud involving his old company."
+      },
+      {
+        "id": "semeval-9719",
+        "title": "Relation benchmark excerpt",
+        "text": "Swine flu is one of the leading causes of respiratory disease in swine throughout the world."
+      },
+      {
+        "id": "semeval-8732",
+        "title": "Relation benchmark excerpt",
+        "text": "The punks carefully chose objects to be used in a nihilistic approach to style."
+      },
+      {
+        "id": "semeval-10647",
+        "title": "Relation benchmark excerpt",
+        "text": "The beginning of the BBC's wartime role is also explored through documents and photographs dating back to 1935."
+      },
+      {
+        "id": "semeval-9961",
+        "title": "Relation benchmark excerpt",
+        "text": "Annie's the inventor of the astoundingly clever Flip Knit, a low tech, portable alternative to knitting videos."
+      },
+      {
+        "id": "semeval-8613",
+        "title": "Relation benchmark excerpt",
+        "text": "A bottle full of water or fluids overloaded and stressed rods 218 when the bottle was grabbed by the neck with claw 224."
+      },
+      {
+        "id": "semeval-9613",
+        "title": "Relation benchmark excerpt",
+        "text": "Brownie girl scout vest is the best part of the uniform."
+      },
+      {
+        "id": "semeval-8534",
+        "title": "Relation benchmark excerpt",
+        "text": "The distraction caused by the students, coupled with limited vision down the track, caused the incident to occur."
+      },
+      {
+        "id": "semeval-8600",
+        "title": "Relation benchmark excerpt",
+        "text": "In the early years of the Monarchy there was only one legion of 3000 infantrymen (front soldiers) and 300 cavalry."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:glm-5.3-flash@directed-policy-v1",
+    "facts_grounded": 11,
+    "proposed": 11,
+    "skips": [],
+    "space_type": "semeval-glm-flash-r2-b34"
+  },
+  "latency_seconds": 7.945694457972422,
+  "facts": [
+    {
+      "_from": "entities/objects",
+      "_id": "facts/fact-137628bebeb1c20d02607c1cf24f95c3bc0b09f20803a28bf7cdd8bf293154c0",
+      "_key": "fact-137628bebeb1c20d02607c1cf24f95c3bc0b09f20803a28bf7cdd8bf293154c0",
+      "_to": "entities/punks",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8732",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "trigger": "The punks carefully chose objects to be used in a nihilistic approach to style.",
+      "trigger_end": 79,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/water",
+      "_id": "facts/fact-2df53459a217440f754cc302b9510ab684fd2afcc191af43fdd512523d94733f",
+      "_key": "fact-2df53459a217440f754cc302b9510ab684fd2afcc191af43fdd512523d94733f",
+      "_to": "entities/bottle",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8613",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "trigger": "A bottle full of water or fluids overloaded and stressed rods 218 when the bottle was grabbed by the neck with claw 224.",
+      "trigger_end": 120,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/distraction",
+      "_id": "facts/fact-534786a227203ec5ba841fef6f1b9f85bea8bb6d6dede42494ddbfae403201be",
+      "_key": "fact-534786a227203ec5ba841fef6f1b9f85bea8bb6d6dede42494ddbfae403201be",
+      "_to": "entities/incident",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8534",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "trigger": "The distraction caused by the students, coupled with limited vision down the track, caused the incident to occur.",
+      "trigger_end": 113,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/guards",
+      "_id": "facts/fact-75319851096646bb1c30175759e9b9e93ebf56af8ebe41d286bf7c6f6c42264a",
+      "_key": "fact-75319851096646bb1c30175759e9b9e93ebf56af8ebe41d286bf7c6f6c42264a",
+      "_to": "entities/building",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9204",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "trigger": "As soon as the guards had left the building to investigate, he scrambled through the window and looked around.",
+      "trigger_end": 110,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/jail",
+      "_id": "facts/fact-8fdd99a7596295169e8b4d4b32b17cd1a835b306bc34f7faf398b35115592e2e",
+      "_key": "fact-8fdd99a7596295169e8b4d4b32b17cd1a835b306bc34f7faf398b35115592e2e",
+      "_to": "entities/criminal",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8469",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "trigger": "The criminal just got out of jail from a mutli-million dollar fraud involving his old company.",
+      "trigger_end": 94,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/legion",
+      "_id": "facts/fact-c1a6f0752b8661b6f0fba2bdf4a61830fc0a0829044981578796b19d9cce431b",
+      "_key": "fact-c1a6f0752b8661b6f0fba2bdf4a61830fc0a0829044981578796b19d9cce431b",
+      "_to": "entities/infantrymen",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8600",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "trigger": "In the early years of the Monarchy there was only one legion of 3000 infantrymen (front soldiers) and 300 cavalry.",
+      "trigger_end": 114,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/alternative",
+      "_id": "facts/fact-c30973a5a6ed21fdfde7b60125e13a6bb902eb82aeb6606c61438deaf2f5f712",
+      "_key": "fact-c30973a5a6ed21fdfde7b60125e13a6bb902eb82aeb6606c61438deaf2f5f712",
+      "_to": "entities/inventor",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9961",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "trigger": "Annie's the inventor of the astoundingly clever Flip Knit, a low tech, portable alternative to knitting videos.",
+      "trigger_end": 111,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/documents",
+      "_id": "facts/fact-d4bd9053003cd2b65e3ebfa8f0849879b07ad1fe3a30dd941255e7ff2c26aa91",
+      "_key": "fact-d4bd9053003cd2b65e3ebfa8f0849879b07ad1fe3a30dd941255e7ff2c26aa91",
+      "_to": "entities/beginning",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10647",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "trigger": "The beginning of the BBC's wartime role is also explored through documents and photographs dating back to 1935.",
+      "trigger_end": 111,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/swine-flu",
+      "_id": "facts/fact-d60cee2560d0127ebfc361a7946aa11c2990b654f4013879297bb81ec26f747a",
+      "_key": "fact-d60cee2560d0127ebfc361a7946aa11c2990b654f4013879297bb81ec26f747a",
+      "_to": "entities/disease",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9719",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "trigger": "Swine flu is one of the leading causes of respiratory disease in swine throughout the world.",
+      "trigger_end": 92,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/wood",
+      "_id": "facts/fact-ed6aae82a5dbf8dd005ab26b128b8ee2d68fbd21fb618f1472fde955a344fd5a",
+      "_key": "fact-ed6aae82a5dbf8dd005ab26b128b8ee2d68fbd21fb618f1472fde955a344fd5a",
+      "_to": "entities/carpenters",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8122",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "trigger": "Carpenters build many things from wood and other materials, like buildings and boats.",
+      "trigger_end": 85,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/vest",
+      "_id": "facts/fact-f340f63669669038e75f79244126b46381d4f910ecb2d1bc580ff687886dd65b",
+      "_key": "fact-f340f63669669038e75f79244126b46381d4f910ecb2d1bc580ff687886dd65b",
+      "_to": "entities/uniform",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9613",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "trigger": "Brownie girl scout vest is the best part of the uniform.",
+      "trigger_end": 56,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/alternative",
+      "_key": "alternative",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647659+00:00",
+      "entity_type": "Product",
+      "name": "alternative",
+      "updated_at": "2026-09-09T12:52:32.647659+00:00"
+    },
+    {
+      "_id": "entities/beginning",
+      "_key": "beginning",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647664+00:00",
+      "entity_type": "Topic",
+      "name": "beginning",
+      "updated_at": "2026-09-09T12:52:32.647664+00:00"
+    },
+    {
+      "_id": "entities/bottle",
+      "_key": "bottle",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647665+00:00",
+      "entity_type": "Container",
+      "name": "bottle",
+      "updated_at": "2026-09-09T12:52:32.647665+00:00"
+    },
+    {
+      "_id": "entities/building",
+      "_key": "building",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647665+00:00",
+      "entity_type": "Destination",
+      "name": "building",
+      "updated_at": "2026-09-09T12:52:32.647665+00:00"
+    },
+    {
+      "_id": "entities/carpenters",
+      "_key": "carpenters",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647666+00:00",
+      "entity_type": "Entity",
+      "name": "Carpenters",
+      "updated_at": "2026-09-09T12:52:32.647666+00:00"
+    },
+    {
+      "_id": "entities/criminal",
+      "_key": "criminal",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647667+00:00",
+      "entity_type": "Entity",
+      "name": "criminal",
+      "updated_at": "2026-09-09T12:52:32.647667+00:00"
+    },
+    {
+      "_id": "entities/disease",
+      "_key": "disease",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647668+00:00",
+      "entity_type": "Effect",
+      "name": "disease",
+      "updated_at": "2026-09-09T12:52:32.647668+00:00"
+    },
+    {
+      "_id": "entities/distraction",
+      "_key": "distraction",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647669+00:00",
+      "entity_type": "Cause",
+      "name": "distraction",
+      "updated_at": "2026-09-09T12:52:32.647669+00:00"
+    },
+    {
+      "_id": "entities/documents",
+      "_key": "documents",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647670+00:00",
+      "entity_type": "Message",
+      "name": "documents",
+      "updated_at": "2026-09-09T12:52:32.647670+00:00"
+    },
+    {
+      "_id": "entities/guards",
+      "_key": "guards",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647671+00:00",
+      "entity_type": "Entity",
+      "name": "guards",
+      "updated_at": "2026-09-09T12:52:32.647671+00:00"
+    },
+    {
+      "_id": "entities/incident",
+      "_key": "incident",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647671+00:00",
+      "entity_type": "Effect",
+      "name": "incident",
+      "updated_at": "2026-09-09T12:52:32.647671+00:00"
+    },
+    {
+      "_id": "entities/infantrymen",
+      "_key": "infantrymen",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647672+00:00",
+      "entity_type": "Member",
+      "name": "infantrymen",
+      "updated_at": "2026-09-09T12:52:32.647672+00:00"
+    },
+    {
+      "_id": "entities/inventor",
+      "_key": "inventor",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647673+00:00",
+      "entity_type": "Producer",
+      "name": "inventor",
+      "updated_at": "2026-09-09T12:52:32.647673+00:00"
+    },
+    {
+      "_id": "entities/jail",
+      "_key": "jail",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647674+00:00",
+      "entity_type": "Origin",
+      "name": "jail",
+      "updated_at": "2026-09-09T12:52:32.647674+00:00"
+    },
+    {
+      "_id": "entities/legion",
+      "_key": "legion",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647674+00:00",
+      "entity_type": "Collection",
+      "name": "legion",
+      "updated_at": "2026-09-09T12:52:32.647674+00:00"
+    },
+    {
+      "_id": "entities/objects",
+      "_key": "objects",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647675+00:00",
+      "entity_type": "Instrument",
+      "name": "objects",
+      "updated_at": "2026-09-09T12:52:32.647675+00:00"
+    },
+    {
+      "_id": "entities/punks",
+      "_key": "punks",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647677+00:00",
+      "entity_type": "Agent",
+      "name": "punks",
+      "updated_at": "2026-09-09T12:52:32.647677+00:00"
+    },
+    {
+      "_id": "entities/swine-flu",
+      "_key": "swine-flu",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647679+00:00",
+      "entity_type": "Cause",
+      "name": "Swine flu",
+      "updated_at": "2026-09-09T12:52:32.647679+00:00"
+    },
+    {
+      "_id": "entities/uniform",
+      "_key": "uniform",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647680+00:00",
+      "entity_type": "Whole",
+      "name": "uniform",
+      "updated_at": "2026-09-09T12:52:32.647680+00:00"
+    },
+    {
+      "_id": "entities/vest",
+      "_key": "vest",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647681+00:00",
+      "entity_type": "Component",
+      "name": "vest",
+      "updated_at": "2026-09-09T12:52:32.647681+00:00"
+    },
+    {
+      "_id": "entities/water",
+      "_key": "water",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647684+00:00",
+      "entity_type": "Content",
+      "name": "water",
+      "updated_at": "2026-09-09T12:52:32.647684+00:00"
+    },
+    {
+      "_id": "entities/wood",
+      "_key": "wood",
+      "aliases": [],
+      "created_at": "2026-09-09T12:52:32.647684+00:00",
+      "entity_type": "Origin",
+      "name": "wood",
+      "updated_at": "2026-09-09T12:52:32.647684+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-10647",
+      "_key": "semeval-glm-flash-r2-b34-semeval-10647",
+      "chunk_id": "semeval-10647",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b7b38d3ea17073b0d33d5e446a68eb62d7ff7b02ebafe35d75e3668d70c996bd",
+      "created_at": "2026-09-09T12:52:32.647686+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "The beginning of the BBC's wartime role is also explored through documents and photographs dating back to 1935.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647686+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8122",
+      "_key": "semeval-glm-flash-r2-b34-semeval-8122",
+      "chunk_id": "semeval-8122",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a0e16fabeafa8055b1fbc3b892de7b5445126f289252e7947529bb7cc0d22a65",
+      "created_at": "2026-09-09T12:52:32.647694+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "Carpenters build many things from wood and other materials, like buildings and boats.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647694+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8469",
+      "_key": "semeval-glm-flash-r2-b34-semeval-8469",
+      "chunk_id": "semeval-8469",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d15150252c1224c153332fb6dfccb8af0a6684bfd3b4aea624cc05e004de79fd",
+      "created_at": "2026-09-09T12:52:32.647702+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "The criminal just got out of jail from a mutli-million dollar fraud involving his old company.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647702+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8534",
+      "_key": "semeval-glm-flash-r2-b34-semeval-8534",
+      "chunk_id": "semeval-8534",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3aad0f2f91d5417e8b80b9929b8786a9c56ff10065d749d6554f815d70557ebf",
+      "created_at": "2026-09-09T12:52:32.647708+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "The distraction caused by the students, coupled with limited vision down the track, caused the incident to occur.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647708+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8600",
+      "_key": "semeval-glm-flash-r2-b34-semeval-8600",
+      "chunk_id": "semeval-8600",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b67e0f7a45913de4ec31e2480bc0178415a8bd50f30ebe598e686104b8308334",
+      "created_at": "2026-09-09T12:52:32.647712+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "In the early years of the Monarchy there was only one legion of 3000 infantrymen (front soldiers) and 300 cavalry.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647712+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8613",
+      "_key": "semeval-glm-flash-r2-b34-semeval-8613",
+      "chunk_id": "semeval-8613",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:71ee8a18cff3e6a5b0e9ec0933c14f16eb44f496fc2f1b1ab4468139e1074b81",
+      "created_at": "2026-09-09T12:52:32.647716+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "A bottle full of water or fluids overloaded and stressed rods 218 when the bottle was grabbed by the neck with claw 224.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647716+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8732",
+      "_key": "semeval-glm-flash-r2-b34-semeval-8732",
+      "chunk_id": "semeval-8732",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5339034225a6c300f5f3349bc068cefd93b3f772a57589fd4aa9064fceed6ead",
+      "created_at": "2026-09-09T12:52:32.647721+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "The punks carefully chose objects to be used in a nihilistic approach to style.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647721+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-9204",
+      "_key": "semeval-glm-flash-r2-b34-semeval-9204",
+      "chunk_id": "semeval-9204",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3f3ec4164305d14816b30f6b9664985ef7266e91abc5124382db3dc8617a8bbc",
+      "created_at": "2026-09-09T12:52:32.647725+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "As soon as the guards had left the building to investigate, he scrambled through the window and looked around.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647725+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-9613",
+      "_key": "semeval-glm-flash-r2-b34-semeval-9613",
+      "chunk_id": "semeval-9613",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:574c83c982820b7c18b56ea455fccb9e90364c70931b77d1e84b38be2225f857",
+      "created_at": "2026-09-09T12:52:32.647731+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "Brownie girl scout vest is the best part of the uniform.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647731+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-9717",
+      "_key": "semeval-glm-flash-r2-b34-semeval-9717",
+      "chunk_id": "semeval-9717",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4836b78b1379ac90d7c9f58625b611cab35040e66ffd8debce3fedd424eadef4",
+      "created_at": "2026-09-09T12:52:32.647737+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "The council hall stank like a congress of baboons.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647737+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-9719",
+      "_key": "semeval-glm-flash-r2-b34-semeval-9719",
+      "chunk_id": "semeval-9719",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f62ebfa0997ef00c5defdebde31a50b3cce7d2c25f04702f084c08087dda4d21",
+      "created_at": "2026-09-09T12:52:32.647738+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "Swine flu is one of the leading causes of respiratory disease in swine throughout the world.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647738+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b34-semeval-9961",
+      "_key": "semeval-glm-flash-r2-b34-semeval-9961",
+      "chunk_id": "semeval-9961",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4a1aaea53ebb88a7daccf987f95ee933d8b8be012a5e040c7f9fda1c22f02a6a",
+      "created_at": "2026-09-09T12:52:32.647745+00:00",
+      "space_id": "semeval-glm-flash-r2-b34",
+      "text": "Annie's the inventor of the astoundingly clever Flip Knit, a low tech, portable alternative to knitting videos.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:52:32.647745+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 11,
+        "results": [
+          {
+            "_from": "entities/objects",
+            "_id": "facts/fact-137628bebeb1c20d02607c1cf24f95c3bc0b09f20803a28bf7cdd8bf293154c0",
+            "_key": "fact-137628bebeb1c20d02607c1cf24f95c3bc0b09f20803a28bf7cdd8bf293154c0",
+            "_to": "entities/punks",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8732",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "trigger": "The punks carefully chose objects to be used in a nihilistic approach to style.",
+            "trigger_end": 79,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/water",
+            "_id": "facts/fact-2df53459a217440f754cc302b9510ab684fd2afcc191af43fdd512523d94733f",
+            "_key": "fact-2df53459a217440f754cc302b9510ab684fd2afcc191af43fdd512523d94733f",
+            "_to": "entities/bottle",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8613",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "trigger": "A bottle full of water or fluids overloaded and stressed rods 218 when the bottle was grabbed by the neck with claw 224.",
+            "trigger_end": 120,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/distraction",
+            "_id": "facts/fact-534786a227203ec5ba841fef6f1b9f85bea8bb6d6dede42494ddbfae403201be",
+            "_key": "fact-534786a227203ec5ba841fef6f1b9f85bea8bb6d6dede42494ddbfae403201be",
+            "_to": "entities/incident",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8534",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "trigger": "The distraction caused by the students, coupled with limited vision down the track, caused the incident to occur.",
+            "trigger_end": 113,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/guards",
+            "_id": "facts/fact-75319851096646bb1c30175759e9b9e93ebf56af8ebe41d286bf7c6f6c42264a",
+            "_key": "fact-75319851096646bb1c30175759e9b9e93ebf56af8ebe41d286bf7c6f6c42264a",
+            "_to": "entities/building",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9204",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "trigger": "As soon as the guards had left the building to investigate, he scrambled through the window and looked around.",
+            "trigger_end": 110,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/jail",
+            "_id": "facts/fact-8fdd99a7596295169e8b4d4b32b17cd1a835b306bc34f7faf398b35115592e2e",
+            "_key": "fact-8fdd99a7596295169e8b4d4b32b17cd1a835b306bc34f7faf398b35115592e2e",
+            "_to": "entities/criminal",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8469",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "trigger": "The criminal just got out of jail from a mutli-million dollar fraud involving his old company.",
+            "trigger_end": 94,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/legion",
+            "_id": "facts/fact-c1a6f0752b8661b6f0fba2bdf4a61830fc0a0829044981578796b19d9cce431b",
+            "_key": "fact-c1a6f0752b8661b6f0fba2bdf4a61830fc0a0829044981578796b19d9cce431b",
+            "_to": "entities/infantrymen",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8600",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "trigger": "In the early years of the Monarchy there was only one legion of 3000 infantrymen (front soldiers) and 300 cavalry.",
+            "trigger_end": 114,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/alternative",
+            "_id": "facts/fact-c30973a5a6ed21fdfde7b60125e13a6bb902eb82aeb6606c61438deaf2f5f712",
+            "_key": "fact-c30973a5a6ed21fdfde7b60125e13a6bb902eb82aeb6606c61438deaf2f5f712",
+            "_to": "entities/inventor",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9961",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "trigger": "Annie's the inventor of the astoundingly clever Flip Knit, a low tech, portable alternative to knitting videos.",
+            "trigger_end": 111,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/documents",
+            "_id": "facts/fact-d4bd9053003cd2b65e3ebfa8f0849879b07ad1fe3a30dd941255e7ff2c26aa91",
+            "_key": "fact-d4bd9053003cd2b65e3ebfa8f0849879b07ad1fe3a30dd941255e7ff2c26aa91",
+            "_to": "entities/beginning",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10647",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "trigger": "The beginning of the BBC's wartime role is also explored through documents and photographs dating back to 1935.",
+            "trigger_end": 111,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/swine-flu",
+            "_id": "facts/fact-d60cee2560d0127ebfc361a7946aa11c2990b654f4013879297bb81ec26f747a",
+            "_key": "fact-d60cee2560d0127ebfc361a7946aa11c2990b654f4013879297bb81ec26f747a",
+            "_to": "entities/disease",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9719",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "trigger": "Swine flu is one of the leading causes of respiratory disease in swine throughout the world.",
+            "trigger_end": 92,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/wood",
+            "_id": "facts/fact-ed6aae82a5dbf8dd005ab26b128b8ee2d68fbd21fb618f1472fde955a344fd5a",
+            "_key": "fact-ed6aae82a5dbf8dd005ab26b128b8ee2d68fbd21fb618f1472fde955a344fd5a",
+            "_to": "entities/carpenters",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8122",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "trigger": "Carpenters build many things from wood and other materials, like buildings and boats.",
+            "trigger_end": 85,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/vest",
+            "_id": "facts/fact-f340f63669669038e75f79244126b46381d4f910ecb2d1bc580ff687886dd65b",
+            "_key": "fact-f340f63669669038e75f79244126b46381d4f910ecb2d1bc580ff687886dd65b",
+            "_to": "entities/uniform",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9613",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "trigger": "Brownie girl scout vest is the best part of the uniform.",
+            "trigger_end": 56,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 22,
+        "results": [
+          {
+            "_id": "entities/alternative",
+            "_key": "alternative",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647659+00:00",
+            "entity_type": "Product",
+            "name": "alternative",
+            "updated_at": "2026-09-09T12:52:32.647659+00:00"
+          },
+          {
+            "_id": "entities/beginning",
+            "_key": "beginning",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647664+00:00",
+            "entity_type": "Topic",
+            "name": "beginning",
+            "updated_at": "2026-09-09T12:52:32.647664+00:00"
+          },
+          {
+            "_id": "entities/bottle",
+            "_key": "bottle",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647665+00:00",
+            "entity_type": "Container",
+            "name": "bottle",
+            "updated_at": "2026-09-09T12:52:32.647665+00:00"
+          },
+          {
+            "_id": "entities/building",
+            "_key": "building",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647665+00:00",
+            "entity_type": "Destination",
+            "name": "building",
+            "updated_at": "2026-09-09T12:52:32.647665+00:00"
+          },
+          {
+            "_id": "entities/carpenters",
+            "_key": "carpenters",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647666+00:00",
+            "entity_type": "Entity",
+            "name": "Carpenters",
+            "updated_at": "2026-09-09T12:52:32.647666+00:00"
+          },
+          {
+            "_id": "entities/criminal",
+            "_key": "criminal",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647667+00:00",
+            "entity_type": "Entity",
+            "name": "criminal",
+            "updated_at": "2026-09-09T12:52:32.647667+00:00"
+          },
+          {
+            "_id": "entities/disease",
+            "_key": "disease",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647668+00:00",
+            "entity_type": "Effect",
+            "name": "disease",
+            "updated_at": "2026-09-09T12:52:32.647668+00:00"
+          },
+          {
+            "_id": "entities/distraction",
+            "_key": "distraction",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647669+00:00",
+            "entity_type": "Cause",
+            "name": "distraction",
+            "updated_at": "2026-09-09T12:52:32.647669+00:00"
+          },
+          {
+            "_id": "entities/documents",
+            "_key": "documents",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647670+00:00",
+            "entity_type": "Message",
+            "name": "documents",
+            "updated_at": "2026-09-09T12:52:32.647670+00:00"
+          },
+          {
+            "_id": "entities/guards",
+            "_key": "guards",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647671+00:00",
+            "entity_type": "Entity",
+            "name": "guards",
+            "updated_at": "2026-09-09T12:52:32.647671+00:00"
+          },
+          {
+            "_id": "entities/incident",
+            "_key": "incident",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647671+00:00",
+            "entity_type": "Effect",
+            "name": "incident",
+            "updated_at": "2026-09-09T12:52:32.647671+00:00"
+          },
+          {
+            "_id": "entities/infantrymen",
+            "_key": "infantrymen",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647672+00:00",
+            "entity_type": "Member",
+            "name": "infantrymen",
+            "updated_at": "2026-09-09T12:52:32.647672+00:00"
+          },
+          {
+            "_id": "entities/inventor",
+            "_key": "inventor",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647673+00:00",
+            "entity_type": "Producer",
+            "name": "inventor",
+            "updated_at": "2026-09-09T12:52:32.647673+00:00"
+          },
+          {
+            "_id": "entities/jail",
+            "_key": "jail",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647674+00:00",
+            "entity_type": "Origin",
+            "name": "jail",
+            "updated_at": "2026-09-09T12:52:32.647674+00:00"
+          },
+          {
+            "_id": "entities/legion",
+            "_key": "legion",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647674+00:00",
+            "entity_type": "Collection",
+            "name": "legion",
+            "updated_at": "2026-09-09T12:52:32.647674+00:00"
+          },
+          {
+            "_id": "entities/objects",
+            "_key": "objects",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647675+00:00",
+            "entity_type": "Instrument",
+            "name": "objects",
+            "updated_at": "2026-09-09T12:52:32.647675+00:00"
+          },
+          {
+            "_id": "entities/punks",
+            "_key": "punks",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647677+00:00",
+            "entity_type": "Agent",
+            "name": "punks",
+            "updated_at": "2026-09-09T12:52:32.647677+00:00"
+          },
+          {
+            "_id": "entities/swine-flu",
+            "_key": "swine-flu",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647679+00:00",
+            "entity_type": "Cause",
+            "name": "Swine flu",
+            "updated_at": "2026-09-09T12:52:32.647679+00:00"
+          },
+          {
+            "_id": "entities/uniform",
+            "_key": "uniform",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647680+00:00",
+            "entity_type": "Whole",
+            "name": "uniform",
+            "updated_at": "2026-09-09T12:52:32.647680+00:00"
+          },
+          {
+            "_id": "entities/vest",
+            "_key": "vest",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647681+00:00",
+            "entity_type": "Component",
+            "name": "vest",
+            "updated_at": "2026-09-09T12:52:32.647681+00:00"
+          },
+          {
+            "_id": "entities/water",
+            "_key": "water",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647684+00:00",
+            "entity_type": "Content",
+            "name": "water",
+            "updated_at": "2026-09-09T12:52:32.647684+00:00"
+          },
+          {
+            "_id": "entities/wood",
+            "_key": "wood",
+            "aliases": [],
+            "created_at": "2026-09-09T12:52:32.647684+00:00",
+            "entity_type": "Origin",
+            "name": "wood",
+            "updated_at": "2026-09-09T12:52:32.647684+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-10647",
+            "_key": "semeval-glm-flash-r2-b34-semeval-10647",
+            "chunk_id": "semeval-10647",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b7b38d3ea17073b0d33d5e446a68eb62d7ff7b02ebafe35d75e3668d70c996bd",
+            "created_at": "2026-09-09T12:52:32.647686+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "The beginning of the BBC's wartime role is also explored through documents and photographs dating back to 1935.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647686+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8122",
+            "_key": "semeval-glm-flash-r2-b34-semeval-8122",
+            "chunk_id": "semeval-8122",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a0e16fabeafa8055b1fbc3b892de7b5445126f289252e7947529bb7cc0d22a65",
+            "created_at": "2026-09-09T12:52:32.647694+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "Carpenters build many things from wood and other materials, like buildings and boats.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647694+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8469",
+            "_key": "semeval-glm-flash-r2-b34-semeval-8469",
+            "chunk_id": "semeval-8469",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d15150252c1224c153332fb6dfccb8af0a6684bfd3b4aea624cc05e004de79fd",
+            "created_at": "2026-09-09T12:52:32.647702+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "The criminal just got out of jail from a mutli-million dollar fraud involving his old company.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647702+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8534",
+            "_key": "semeval-glm-flash-r2-b34-semeval-8534",
+            "chunk_id": "semeval-8534",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3aad0f2f91d5417e8b80b9929b8786a9c56ff10065d749d6554f815d70557ebf",
+            "created_at": "2026-09-09T12:52:32.647708+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "The distraction caused by the students, coupled with limited vision down the track, caused the incident to occur.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647708+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8600",
+            "_key": "semeval-glm-flash-r2-b34-semeval-8600",
+            "chunk_id": "semeval-8600",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b67e0f7a45913de4ec31e2480bc0178415a8bd50f30ebe598e686104b8308334",
+            "created_at": "2026-09-09T12:52:32.647712+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "In the early years of the Monarchy there was only one legion of 3000 infantrymen (front soldiers) and 300 cavalry.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647712+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8613",
+            "_key": "semeval-glm-flash-r2-b34-semeval-8613",
+            "chunk_id": "semeval-8613",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:71ee8a18cff3e6a5b0e9ec0933c14f16eb44f496fc2f1b1ab4468139e1074b81",
+            "created_at": "2026-09-09T12:52:32.647716+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "A bottle full of water or fluids overloaded and stressed rods 218 when the bottle was grabbed by the neck with claw 224.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647716+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-8732",
+            "_key": "semeval-glm-flash-r2-b34-semeval-8732",
+            "chunk_id": "semeval-8732",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5339034225a6c300f5f3349bc068cefd93b3f772a57589fd4aa9064fceed6ead",
+            "created_at": "2026-09-09T12:52:32.647721+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "The punks carefully chose objects to be used in a nihilistic approach to style.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647721+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-9204",
+            "_key": "semeval-glm-flash-r2-b34-semeval-9204",
+            "chunk_id": "semeval-9204",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3f3ec4164305d14816b30f6b9664985ef7266e91abc5124382db3dc8617a8bbc",
+            "created_at": "2026-09-09T12:52:32.647725+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "As soon as the guards had left the building to investigate, he scrambled through the window and looked around.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647725+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-9613",
+            "_key": "semeval-glm-flash-r2-b34-semeval-9613",
+            "chunk_id": "semeval-9613",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:574c83c982820b7c18b56ea455fccb9e90364c70931b77d1e84b38be2225f857",
+            "created_at": "2026-09-09T12:52:32.647731+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "Brownie girl scout vest is the best part of the uniform.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647731+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-9717",
+            "_key": "semeval-glm-flash-r2-b34-semeval-9717",
+            "chunk_id": "semeval-9717",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4836b78b1379ac90d7c9f58625b611cab35040e66ffd8debce3fedd424eadef4",
+            "created_at": "2026-09-09T12:52:32.647737+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "The council hall stank like a congress of baboons.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647737+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-9719",
+            "_key": "semeval-glm-flash-r2-b34-semeval-9719",
+            "chunk_id": "semeval-9719",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f62ebfa0997ef00c5defdebde31a50b3cce7d2c25f04702f084c08087dda4d21",
+            "created_at": "2026-09-09T12:52:32.647738+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "Swine flu is one of the leading causes of respiratory disease in swine throughout the world.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647738+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b34-semeval-9961",
+            "_key": "semeval-glm-flash-r2-b34-semeval-9961",
+            "chunk_id": "semeval-9961",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4a1aaea53ebb88a7daccf987f95ee933d8b8be012a5e040c7f9fda1c22f02a6a",
+            "created_at": "2026-09-09T12:52:32.647745+00:00",
+            "space_id": "semeval-glm-flash-r2-b34",
+            "text": "Annie's the inventor of the astoundingly clever Flip Knit, a low tech, portable alternative to knitting videos.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:52:32.647745+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

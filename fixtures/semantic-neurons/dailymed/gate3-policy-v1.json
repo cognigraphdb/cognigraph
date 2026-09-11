@@ -1,0 +1,33 @@
+{
+  "decision": "decision_gate3_baseline.md",
+  "oracle": "two-tier: active + inactive ingredients, activeMoiety salt/base alias",
+  "policy_rev": "gate3-policy-v1",
+  "production_gate": "structured-agreement (D3); no confidence-threshold auto-accept (D4)",
+  "relations": {
+    "narrative": [
+      "CONTAINS_INGREDIENT",
+      "ADMINISTERED_VIA"
+    ],
+    "structured": [
+      "CONTAINS_INGREDIENT",
+      "ADMINISTERED_VIA",
+      "HAS_DOSAGE_FORM",
+      "MARKETED_BY"
+    ]
+  },
+  "snapshot": {
+    "human_otc": "Jul 10, 2026 08:06:22PM EST",
+    "human_prescription": "Jul 10, 2026 08:06:22PM EST"
+  },
+  "triggers": {
+    "ADMINISTERED_VIA": [
+      "for {target} use",
+      "{target} use only",
+      "{target} administration"
+    ],
+    "CONTAINS_INGREDIENT": [
+      "contains {target}",
+      "{target}, usp"
+    ]
+  }
+}

@@ -1,0 +1,1128 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 2,
+  "batch": 41,
+  "request": {
+    "space_type": "semeval-terra-low-r2-b41",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9070",
+        "title": "Relation benchmark excerpt",
+        "text": "A worker inserts the small spring in the device and then installs the buttons."
+      },
+      {
+        "id": "semeval-8197",
+        "title": "Relation benchmark excerpt",
+        "text": "I got started on this project by reading Jack Keller's recipes for cherry wine."
+      },
+      {
+        "id": "semeval-8679",
+        "title": "Relation benchmark excerpt",
+        "text": "In the days before the Democratic Reform, the manor had included twenty-two smallholdings, six lots of grassland and farmland covering some 8600 Mu (1414.45 acres)."
+      },
+      {
+        "id": "semeval-8370",
+        "title": "Relation benchmark excerpt",
+        "text": "A committee assists the commission with the implementation of the programme."
+      },
+      {
+        "id": "semeval-9281",
+        "title": "Relation benchmark excerpt",
+        "text": "This company has eluded from state budget fiscal obligations (VAT and profit tax) totalizing 2.183.351 lei."
+      },
+      {
+        "id": "semeval-8303",
+        "title": "Relation benchmark excerpt",
+        "text": "At the bottom of the church steps were three brown parishioners; two more were perched precariously on the railing of the deck."
+      },
+      {
+        "id": "semeval-8095",
+        "title": "Relation benchmark excerpt",
+        "text": "More and more English Premier League clubs are falling into foreign ownership."
+      },
+      {
+        "id": "semeval-8864",
+        "title": "Relation benchmark excerpt",
+        "text": "The kingdom comprises four topographical and climatic areas, which vary from 400 to 1800 metres above sea level."
+      },
+      {
+        "id": "semeval-9635",
+        "title": "Relation benchmark excerpt",
+        "text": "This is due to the amount of sand in the hourglass and the size of the hole the sand must pass through."
+      },
+      {
+        "id": "semeval-9798",
+        "title": "Relation benchmark excerpt",
+        "text": "The file is added to the directory."
+      },
+      {
+        "id": "semeval-9580",
+        "title": "Relation benchmark excerpt",
+        "text": "Because steam locomotives included one or more steam engines, they are sometimes referred to as \"steam engines\"."
+      },
+      {
+        "id": "semeval-9878",
+        "title": "Relation benchmark excerpt",
+        "text": "She frowned as she glanced around at the huddle of hens, now in a tight pact gathered near Azul."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 8,
+    "proposed": 9,
+    "skips": [
+      "`wine --Entity-Origin--> cherry`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-terra-low-r2-b41"
+  },
+  "latency_seconds": 25.805526084033772,
+  "facts": [
+    {
+      "_from": "entities/steps",
+      "_id": "facts/fact-0455043735a38a09bfe2ad84d6d3a10952cd4d2b1e6373f2e545a7eae9430df8",
+      "_key": "fact-0455043735a38a09bfe2ad84d6d3a10952cd4d2b1e6373f2e545a7eae9430df8",
+      "_to": "entities/church",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8303",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b41",
+      "trigger": "At the bottom of the church steps were three brown parishioners; two more were perched precariously on the railing of the deck.",
+      "trigger_end": 127,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/hens",
+      "_id": "facts/fact-13173dfea57f60450b06e331d4d7c692b2302e2c38bd57488d8d10c815897cd7",
+      "_key": "fact-13173dfea57f60450b06e331d4d7c692b2302e2c38bd57488d8d10c815897cd7",
+      "_to": "entities/huddle",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9878",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b41",
+      "trigger": "She frowned as she glanced around at the huddle of hens, now in a tight pact gathered near Azul.",
+      "trigger_end": 96,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/sand",
+      "_id": "facts/fact-220a49c82c3503409b559afdac71b27ece2d5bd02d411998ac0fc27c62c21239",
+      "_key": "fact-220a49c82c3503409b559afdac71b27ece2d5bd02d411998ac0fc27c62c21239",
+      "_to": "entities/hourglass",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9635",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b41",
+      "trigger": "This is due to the amount of sand in the hourglass and the size of the hole the sand must pass through.",
+      "trigger_end": 103,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/spring",
+      "_id": "facts/fact-34edb13d389734fa1ae4168ee5bf1acb4798cb84b41455f3bfb1de9f6cba2cb2",
+      "_key": "fact-34edb13d389734fa1ae4168ee5bf1acb4798cb84b41455f3bfb1de9f6cba2cb2",
+      "_to": "entities/device",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9070",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b41",
+      "trigger": "A worker inserts the small spring in the device and then installs the buttons.",
+      "trigger_end": 78,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/file",
+      "_id": "facts/fact-6fa2fae8f624f348022e96dd5989171f8372c7ebd25ea00b6ffde78079e908e0",
+      "_key": "fact-6fa2fae8f624f348022e96dd5989171f8372c7ebd25ea00b6ffde78079e908e0",
+      "_to": "entities/directory",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9798",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b41",
+      "trigger": "The file is added to the directory.",
+      "trigger_end": 35,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/smallholdings",
+      "_id": "facts/fact-8a55e43d6b73580f228ed6b83c04bec9d3fea4e9adad7827f1e94ce74f182930",
+      "_key": "fact-8a55e43d6b73580f228ed6b83c04bec9d3fea4e9adad7827f1e94ce74f182930",
+      "_to": "entities/manor",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8679",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b41",
+      "trigger": "In the days before the Democratic Reform, the manor had included twenty-two smallholdings, six lots of grassland and farmland covering some 8600 Mu (1414.45 acres).",
+      "trigger_end": 164,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/engines",
+      "_id": "facts/fact-9eef05eee22659fd9fdb7b4cdda3da2f104a6b00f408c5bbc5caa04e04809863",
+      "_key": "fact-9eef05eee22659fd9fdb7b4cdda3da2f104a6b00f408c5bbc5caa04e04809863",
+      "_to": "entities/locomotives",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9580",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b41",
+      "trigger": "Because steam locomotives included one or more steam engines, they are sometimes referred to as \"steam engines\".",
+      "trigger_end": 112,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/areas",
+      "_id": "facts/fact-db20ab8df30d1e82ed643e435eaa1c72743200d620ab08df31fa494b7ed0968a",
+      "_key": "fact-db20ab8df30d1e82ed643e435eaa1c72743200d620ab08df31fa494b7ed0968a",
+      "_to": "entities/kingdom",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8864",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b41",
+      "trigger": "The kingdom comprises four topographical and climatic areas, which vary from 400 to 1800 metres above sea level.",
+      "trigger_end": 112,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/areas",
+      "_key": "areas",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038790+00:00",
+      "entity_type": "Component",
+      "name": "areas",
+      "updated_at": "2026-09-09T14:05:59.038790+00:00"
+    },
+    {
+      "_id": "entities/church",
+      "_key": "church",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038794+00:00",
+      "entity_type": "Whole",
+      "name": "church",
+      "updated_at": "2026-09-09T14:05:59.038794+00:00"
+    },
+    {
+      "_id": "entities/device",
+      "_key": "device",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038795+00:00",
+      "entity_type": "Whole",
+      "name": "device",
+      "updated_at": "2026-09-09T14:05:59.038795+00:00"
+    },
+    {
+      "_id": "entities/directory",
+      "_key": "directory",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038796+00:00",
+      "entity_type": "Destination",
+      "name": "directory",
+      "updated_at": "2026-09-09T14:05:59.038796+00:00"
+    },
+    {
+      "_id": "entities/engines",
+      "_key": "engines",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038796+00:00",
+      "entity_type": "Component",
+      "name": "engines",
+      "updated_at": "2026-09-09T14:05:59.038796+00:00"
+    },
+    {
+      "_id": "entities/file",
+      "_key": "file",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038797+00:00",
+      "entity_type": "Entity",
+      "name": "file",
+      "updated_at": "2026-09-09T14:05:59.038797+00:00"
+    },
+    {
+      "_id": "entities/hens",
+      "_key": "hens",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038798+00:00",
+      "entity_type": "Member",
+      "name": "hens",
+      "updated_at": "2026-09-09T14:05:59.038798+00:00"
+    },
+    {
+      "_id": "entities/hourglass",
+      "_key": "hourglass",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038799+00:00",
+      "entity_type": "Container",
+      "name": "hourglass",
+      "updated_at": "2026-09-09T14:05:59.038799+00:00"
+    },
+    {
+      "_id": "entities/huddle",
+      "_key": "huddle",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038800+00:00",
+      "entity_type": "Collection",
+      "name": "huddle",
+      "updated_at": "2026-09-09T14:05:59.038800+00:00"
+    },
+    {
+      "_id": "entities/kingdom",
+      "_key": "kingdom",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038802+00:00",
+      "entity_type": "Whole",
+      "name": "kingdom",
+      "updated_at": "2026-09-09T14:05:59.038802+00:00"
+    },
+    {
+      "_id": "entities/locomotives",
+      "_key": "locomotives",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038803+00:00",
+      "entity_type": "Whole",
+      "name": "locomotives",
+      "updated_at": "2026-09-09T14:05:59.038803+00:00"
+    },
+    {
+      "_id": "entities/manor",
+      "_key": "manor",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038804+00:00",
+      "entity_type": "Whole",
+      "name": "manor",
+      "updated_at": "2026-09-09T14:05:59.038804+00:00"
+    },
+    {
+      "_id": "entities/sand",
+      "_key": "sand",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038804+00:00",
+      "entity_type": "Content",
+      "name": "sand",
+      "updated_at": "2026-09-09T14:05:59.038804+00:00"
+    },
+    {
+      "_id": "entities/smallholdings",
+      "_key": "smallholdings",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038805+00:00",
+      "entity_type": "Component",
+      "name": "smallholdings",
+      "updated_at": "2026-09-09T14:05:59.038805+00:00"
+    },
+    {
+      "_id": "entities/spring",
+      "_key": "spring",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038806+00:00",
+      "entity_type": "Component",
+      "name": "spring",
+      "updated_at": "2026-09-09T14:05:59.038806+00:00"
+    },
+    {
+      "_id": "entities/steps",
+      "_key": "steps",
+      "aliases": [],
+      "created_at": "2026-09-09T14:05:59.038807+00:00",
+      "entity_type": "Component",
+      "name": "steps",
+      "updated_at": "2026-09-09T14:05:59.038807+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-8095",
+      "_key": "semeval-terra-low-r2-b41-semeval-8095",
+      "chunk_id": "semeval-8095",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ebd4de3f444e7ed51226a18f63ff6153e288051b9e13ad68f9b5be4dac34344a",
+      "created_at": "2026-09-09T14:05:59.038808+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "More and more English Premier League clubs are falling into foreign ownership.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038808+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-8197",
+      "_key": "semeval-terra-low-r2-b41-semeval-8197",
+      "chunk_id": "semeval-8197",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:07dda3c1ca795f3abb1d37c2f7096e9dfcf5e2621a18f1f901f87b149995100d",
+      "created_at": "2026-09-09T14:05:59.038810+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "I got started on this project by reading Jack Keller's recipes for cherry wine.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038810+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-8303",
+      "_key": "semeval-terra-low-r2-b41-semeval-8303",
+      "chunk_id": "semeval-8303",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a63b97ace4f61fad0500aa6a65649f3a1ed4fc5a0f463fa69cd02bedd4281130",
+      "created_at": "2026-09-09T14:05:59.038811+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "At the bottom of the church steps were three brown parishioners; two more were perched precariously on the railing of the deck.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038811+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-8370",
+      "_key": "semeval-terra-low-r2-b41-semeval-8370",
+      "chunk_id": "semeval-8370",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ce70a53fd040551e958e438645269e5ee591eee5c13cfa30a9f8f0417cf698da",
+      "created_at": "2026-09-09T14:05:59.038820+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "A committee assists the commission with the implementation of the programme.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038820+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-8679",
+      "_key": "semeval-terra-low-r2-b41-semeval-8679",
+      "chunk_id": "semeval-8679",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8909834aeb98b8dd1ed0a02ecdde4df9e04bc0eb9cb5c81aadcfb192a69daecb",
+      "created_at": "2026-09-09T14:05:59.038821+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "In the days before the Democratic Reform, the manor had included twenty-two smallholdings, six lots of grassland and farmland covering some 8600 Mu (1414.45 acres).",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038821+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-8864",
+      "_key": "semeval-terra-low-r2-b41-semeval-8864",
+      "chunk_id": "semeval-8864",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:42fbfeae8f1e6537aa5239d3b48f0f279ef7804752993ebf9b25b65d1065836c",
+      "created_at": "2026-09-09T14:05:59.038827+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "The kingdom comprises four topographical and climatic areas, which vary from 400 to 1800 metres above sea level.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038827+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-9070",
+      "_key": "semeval-terra-low-r2-b41-semeval-9070",
+      "chunk_id": "semeval-9070",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b704572d31def444a502c38c72c35f7bd48d8adb8cf349cfecbbe7906f2f5767",
+      "created_at": "2026-09-09T14:05:59.038832+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "A worker inserts the small spring in the device and then installs the buttons.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038832+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-9281",
+      "_key": "semeval-terra-low-r2-b41-semeval-9281",
+      "chunk_id": "semeval-9281",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e75897bf82941bef1a5b5a02a5437637235e855694057378a75797d0f8ef59ef",
+      "created_at": "2026-09-09T14:05:59.038837+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "This company has eluded from state budget fiscal obligations (VAT and profit tax) totalizing 2.183.351 lei.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038837+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-9580",
+      "_key": "semeval-terra-low-r2-b41-semeval-9580",
+      "chunk_id": "semeval-9580",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4a623a243ddf7420b5b008151aa74bf92d8efe5ac29c412724ffb43343c81c43",
+      "created_at": "2026-09-09T14:05:59.038838+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "Because steam locomotives included one or more steam engines, they are sometimes referred to as \"steam engines\".",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038838+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-9635",
+      "_key": "semeval-terra-low-r2-b41-semeval-9635",
+      "chunk_id": "semeval-9635",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3234ad74d793f40c9ee896df2ed5d8ba61679f6ef4345b1074057e9173bf72bd",
+      "created_at": "2026-09-09T14:05:59.038843+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "This is due to the amount of sand in the hourglass and the size of the hole the sand must pass through.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038843+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-9798",
+      "_key": "semeval-terra-low-r2-b41-semeval-9798",
+      "chunk_id": "semeval-9798",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:36986fa1ad92a6d7e6082e25ac3d73d3acf03f3b26587cd896a412035475fef8",
+      "created_at": "2026-09-09T14:05:59.038848+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "The file is added to the directory.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038848+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b41-semeval-9878",
+      "_key": "semeval-terra-low-r2-b41-semeval-9878",
+      "chunk_id": "semeval-9878",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:89b78748814aa77017c058b33c265ceffcd5b2ca839b6117bdb2832ce9a37694",
+      "created_at": "2026-09-09T14:05:59.038852+00:00",
+      "space_id": "semeval-terra-low-r2-b41",
+      "text": "She frowned as she glanced around at the huddle of hens, now in a tight pact gathered near Azul.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:05:59.038852+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 8,
+        "results": [
+          {
+            "_from": "entities/steps",
+            "_id": "facts/fact-0455043735a38a09bfe2ad84d6d3a10952cd4d2b1e6373f2e545a7eae9430df8",
+            "_key": "fact-0455043735a38a09bfe2ad84d6d3a10952cd4d2b1e6373f2e545a7eae9430df8",
+            "_to": "entities/church",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8303",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b41",
+            "trigger": "At the bottom of the church steps were three brown parishioners; two more were perched precariously on the railing of the deck.",
+            "trigger_end": 127,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/hens",
+            "_id": "facts/fact-13173dfea57f60450b06e331d4d7c692b2302e2c38bd57488d8d10c815897cd7",
+            "_key": "fact-13173dfea57f60450b06e331d4d7c692b2302e2c38bd57488d8d10c815897cd7",
+            "_to": "entities/huddle",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9878",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b41",
+            "trigger": "She frowned as she glanced around at the huddle of hens, now in a tight pact gathered near Azul.",
+            "trigger_end": 96,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/sand",
+            "_id": "facts/fact-220a49c82c3503409b559afdac71b27ece2d5bd02d411998ac0fc27c62c21239",
+            "_key": "fact-220a49c82c3503409b559afdac71b27ece2d5bd02d411998ac0fc27c62c21239",
+            "_to": "entities/hourglass",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9635",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b41",
+            "trigger": "This is due to the amount of sand in the hourglass and the size of the hole the sand must pass through.",
+            "trigger_end": 103,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/spring",
+            "_id": "facts/fact-34edb13d389734fa1ae4168ee5bf1acb4798cb84b41455f3bfb1de9f6cba2cb2",
+            "_key": "fact-34edb13d389734fa1ae4168ee5bf1acb4798cb84b41455f3bfb1de9f6cba2cb2",
+            "_to": "entities/device",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9070",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b41",
+            "trigger": "A worker inserts the small spring in the device and then installs the buttons.",
+            "trigger_end": 78,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/file",
+            "_id": "facts/fact-6fa2fae8f624f348022e96dd5989171f8372c7ebd25ea00b6ffde78079e908e0",
+            "_key": "fact-6fa2fae8f624f348022e96dd5989171f8372c7ebd25ea00b6ffde78079e908e0",
+            "_to": "entities/directory",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9798",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b41",
+            "trigger": "The file is added to the directory.",
+            "trigger_end": 35,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/smallholdings",
+            "_id": "facts/fact-8a55e43d6b73580f228ed6b83c04bec9d3fea4e9adad7827f1e94ce74f182930",
+            "_key": "fact-8a55e43d6b73580f228ed6b83c04bec9d3fea4e9adad7827f1e94ce74f182930",
+            "_to": "entities/manor",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8679",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b41",
+            "trigger": "In the days before the Democratic Reform, the manor had included twenty-two smallholdings, six lots of grassland and farmland covering some 8600 Mu (1414.45 acres).",
+            "trigger_end": 164,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/engines",
+            "_id": "facts/fact-9eef05eee22659fd9fdb7b4cdda3da2f104a6b00f408c5bbc5caa04e04809863",
+            "_key": "fact-9eef05eee22659fd9fdb7b4cdda3da2f104a6b00f408c5bbc5caa04e04809863",
+            "_to": "entities/locomotives",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9580",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b41",
+            "trigger": "Because steam locomotives included one or more steam engines, they are sometimes referred to as \"steam engines\".",
+            "trigger_end": 112,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/areas",
+            "_id": "facts/fact-db20ab8df30d1e82ed643e435eaa1c72743200d620ab08df31fa494b7ed0968a",
+            "_key": "fact-db20ab8df30d1e82ed643e435eaa1c72743200d620ab08df31fa494b7ed0968a",
+            "_to": "entities/kingdom",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8864",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b41",
+            "trigger": "The kingdom comprises four topographical and climatic areas, which vary from 400 to 1800 metres above sea level.",
+            "trigger_end": 112,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 16,
+        "results": [
+          {
+            "_id": "entities/areas",
+            "_key": "areas",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038790+00:00",
+            "entity_type": "Component",
+            "name": "areas",
+            "updated_at": "2026-09-09T14:05:59.038790+00:00"
+          },
+          {
+            "_id": "entities/church",
+            "_key": "church",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038794+00:00",
+            "entity_type": "Whole",
+            "name": "church",
+            "updated_at": "2026-09-09T14:05:59.038794+00:00"
+          },
+          {
+            "_id": "entities/device",
+            "_key": "device",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038795+00:00",
+            "entity_type": "Whole",
+            "name": "device",
+            "updated_at": "2026-09-09T14:05:59.038795+00:00"
+          },
+          {
+            "_id": "entities/directory",
+            "_key": "directory",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038796+00:00",
+            "entity_type": "Destination",
+            "name": "directory",
+            "updated_at": "2026-09-09T14:05:59.038796+00:00"
+          },
+          {
+            "_id": "entities/engines",
+            "_key": "engines",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038796+00:00",
+            "entity_type": "Component",
+            "name": "engines",
+            "updated_at": "2026-09-09T14:05:59.038796+00:00"
+          },
+          {
+            "_id": "entities/file",
+            "_key": "file",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038797+00:00",
+            "entity_type": "Entity",
+            "name": "file",
+            "updated_at": "2026-09-09T14:05:59.038797+00:00"
+          },
+          {
+            "_id": "entities/hens",
+            "_key": "hens",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038798+00:00",
+            "entity_type": "Member",
+            "name": "hens",
+            "updated_at": "2026-09-09T14:05:59.038798+00:00"
+          },
+          {
+            "_id": "entities/hourglass",
+            "_key": "hourglass",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038799+00:00",
+            "entity_type": "Container",
+            "name": "hourglass",
+            "updated_at": "2026-09-09T14:05:59.038799+00:00"
+          },
+          {
+            "_id": "entities/huddle",
+            "_key": "huddle",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038800+00:00",
+            "entity_type": "Collection",
+            "name": "huddle",
+            "updated_at": "2026-09-09T14:05:59.038800+00:00"
+          },
+          {
+            "_id": "entities/kingdom",
+            "_key": "kingdom",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038802+00:00",
+            "entity_type": "Whole",
+            "name": "kingdom",
+            "updated_at": "2026-09-09T14:05:59.038802+00:00"
+          },
+          {
+            "_id": "entities/locomotives",
+            "_key": "locomotives",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038803+00:00",
+            "entity_type": "Whole",
+            "name": "locomotives",
+            "updated_at": "2026-09-09T14:05:59.038803+00:00"
+          },
+          {
+            "_id": "entities/manor",
+            "_key": "manor",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038804+00:00",
+            "entity_type": "Whole",
+            "name": "manor",
+            "updated_at": "2026-09-09T14:05:59.038804+00:00"
+          },
+          {
+            "_id": "entities/sand",
+            "_key": "sand",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038804+00:00",
+            "entity_type": "Content",
+            "name": "sand",
+            "updated_at": "2026-09-09T14:05:59.038804+00:00"
+          },
+          {
+            "_id": "entities/smallholdings",
+            "_key": "smallholdings",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038805+00:00",
+            "entity_type": "Component",
+            "name": "smallholdings",
+            "updated_at": "2026-09-09T14:05:59.038805+00:00"
+          },
+          {
+            "_id": "entities/spring",
+            "_key": "spring",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038806+00:00",
+            "entity_type": "Component",
+            "name": "spring",
+            "updated_at": "2026-09-09T14:05:59.038806+00:00"
+          },
+          {
+            "_id": "entities/steps",
+            "_key": "steps",
+            "aliases": [],
+            "created_at": "2026-09-09T14:05:59.038807+00:00",
+            "entity_type": "Component",
+            "name": "steps",
+            "updated_at": "2026-09-09T14:05:59.038807+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-8095",
+            "_key": "semeval-terra-low-r2-b41-semeval-8095",
+            "chunk_id": "semeval-8095",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ebd4de3f444e7ed51226a18f63ff6153e288051b9e13ad68f9b5be4dac34344a",
+            "created_at": "2026-09-09T14:05:59.038808+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "More and more English Premier League clubs are falling into foreign ownership.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038808+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-8197",
+            "_key": "semeval-terra-low-r2-b41-semeval-8197",
+            "chunk_id": "semeval-8197",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:07dda3c1ca795f3abb1d37c2f7096e9dfcf5e2621a18f1f901f87b149995100d",
+            "created_at": "2026-09-09T14:05:59.038810+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "I got started on this project by reading Jack Keller's recipes for cherry wine.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038810+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-8303",
+            "_key": "semeval-terra-low-r2-b41-semeval-8303",
+            "chunk_id": "semeval-8303",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a63b97ace4f61fad0500aa6a65649f3a1ed4fc5a0f463fa69cd02bedd4281130",
+            "created_at": "2026-09-09T14:05:59.038811+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "At the bottom of the church steps were three brown parishioners; two more were perched precariously on the railing of the deck.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038811+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-8370",
+            "_key": "semeval-terra-low-r2-b41-semeval-8370",
+            "chunk_id": "semeval-8370",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ce70a53fd040551e958e438645269e5ee591eee5c13cfa30a9f8f0417cf698da",
+            "created_at": "2026-09-09T14:05:59.038820+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "A committee assists the commission with the implementation of the programme.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038820+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-8679",
+            "_key": "semeval-terra-low-r2-b41-semeval-8679",
+            "chunk_id": "semeval-8679",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8909834aeb98b8dd1ed0a02ecdde4df9e04bc0eb9cb5c81aadcfb192a69daecb",
+            "created_at": "2026-09-09T14:05:59.038821+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "In the days before the Democratic Reform, the manor had included twenty-two smallholdings, six lots of grassland and farmland covering some 8600 Mu (1414.45 acres).",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038821+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-8864",
+            "_key": "semeval-terra-low-r2-b41-semeval-8864",
+            "chunk_id": "semeval-8864",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:42fbfeae8f1e6537aa5239d3b48f0f279ef7804752993ebf9b25b65d1065836c",
+            "created_at": "2026-09-09T14:05:59.038827+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "The kingdom comprises four topographical and climatic areas, which vary from 400 to 1800 metres above sea level.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038827+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-9070",
+            "_key": "semeval-terra-low-r2-b41-semeval-9070",
+            "chunk_id": "semeval-9070",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b704572d31def444a502c38c72c35f7bd48d8adb8cf349cfecbbe7906f2f5767",
+            "created_at": "2026-09-09T14:05:59.038832+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "A worker inserts the small spring in the device and then installs the buttons.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038832+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-9281",
+            "_key": "semeval-terra-low-r2-b41-semeval-9281",
+            "chunk_id": "semeval-9281",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e75897bf82941bef1a5b5a02a5437637235e855694057378a75797d0f8ef59ef",
+            "created_at": "2026-09-09T14:05:59.038837+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "This company has eluded from state budget fiscal obligations (VAT and profit tax) totalizing 2.183.351 lei.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038837+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-9580",
+            "_key": "semeval-terra-low-r2-b41-semeval-9580",
+            "chunk_id": "semeval-9580",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4a623a243ddf7420b5b008151aa74bf92d8efe5ac29c412724ffb43343c81c43",
+            "created_at": "2026-09-09T14:05:59.038838+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "Because steam locomotives included one or more steam engines, they are sometimes referred to as \"steam engines\".",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038838+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-9635",
+            "_key": "semeval-terra-low-r2-b41-semeval-9635",
+            "chunk_id": "semeval-9635",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3234ad74d793f40c9ee896df2ed5d8ba61679f6ef4345b1074057e9173bf72bd",
+            "created_at": "2026-09-09T14:05:59.038843+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "This is due to the amount of sand in the hourglass and the size of the hole the sand must pass through.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038843+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-9798",
+            "_key": "semeval-terra-low-r2-b41-semeval-9798",
+            "chunk_id": "semeval-9798",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:36986fa1ad92a6d7e6082e25ac3d73d3acf03f3b26587cd896a412035475fef8",
+            "created_at": "2026-09-09T14:05:59.038848+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "The file is added to the directory.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038848+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b41-semeval-9878",
+            "_key": "semeval-terra-low-r2-b41-semeval-9878",
+            "chunk_id": "semeval-9878",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:89b78748814aa77017c058b33c265ceffcd5b2ca839b6117bdb2832ce9a37694",
+            "created_at": "2026-09-09T14:05:59.038852+00:00",
+            "space_id": "semeval-terra-low-r2-b41",
+            "text": "She frowned as she glanced around at the huddle of hens, now in a tight pact gathered near Azul.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:05:59.038852+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

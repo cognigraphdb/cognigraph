@@ -1,0 +1,1248 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 1,
+  "batch": 48,
+  "request": {
+    "space_type": "semeval-glm-flash-r1-b48",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10689",
+        "title": "Relation benchmark excerpt",
+        "text": "The metro line begins at an underground station in St. Stephen's Green in the city centre."
+      },
+      {
+        "id": "semeval-10484",
+        "title": "Relation benchmark excerpt",
+        "text": "Finally, next to the handle is the knob of the bat, a wider piece that keeps the bat from sliding out of a batter's hands."
+      },
+      {
+        "id": "semeval-8879",
+        "title": "Relation benchmark excerpt",
+        "text": "Aware of the suffering caused by exploitation, social injustice, stealing, and oppression, I am committed to cultivate loving kindness and learn ways to work for the well-being of people, animals, plants, and minerals."
+      },
+      {
+        "id": "semeval-8163",
+        "title": "Relation benchmark excerpt",
+        "text": "The model is derived from an example used by Bertrand Meyer in his book, Object-Oriented Software Construction."
+      },
+      {
+        "id": "semeval-8283",
+        "title": "Relation benchmark excerpt",
+        "text": "These pages are intended to assist you in accessing Belgian library book catalogues over the internet."
+      },
+      {
+        "id": "semeval-10369",
+        "title": "Relation benchmark excerpt",
+        "text": "The engine revved a bit in the lower gears, but was adjusted immediately by the guy with a knob."
+      },
+      {
+        "id": "semeval-10087",
+        "title": "Relation benchmark excerpt",
+        "text": "Soon after, the ship departed to the next destination."
+      },
+      {
+        "id": "semeval-9677",
+        "title": "Relation benchmark excerpt",
+        "text": "In New England in the early to mid-19th century, many cotton and textile factories employed large numbers of female adolescent workers from the New England area."
+      },
+      {
+        "id": "semeval-8983",
+        "title": "Relation benchmark excerpt",
+        "text": "All your posts are imported into the standard Wordpress installation."
+      },
+      {
+        "id": "semeval-10175",
+        "title": "Relation benchmark excerpt",
+        "text": "The polluted water has been poured into a local river."
+      },
+      {
+        "id": "semeval-8211",
+        "title": "Relation benchmark excerpt",
+        "text": "Musicians used their real nails of the right hand to pluck the strings."
+      },
+      {
+        "id": "semeval-8086",
+        "title": "Relation benchmark excerpt",
+        "text": "Many professional cartomancers use a regular deck of playing cards for divination."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:glm-5.3-flash@directed-policy-v1",
+    "facts_grounded": 10,
+    "proposed": 10,
+    "skips": [],
+    "space_type": "semeval-glm-flash-r1-b48"
+  },
+  "latency_seconds": 8.744580292026512,
+  "facts": [
+    {
+      "_from": "entities/book",
+      "_id": "facts/fact-1e1fd0b3cfff32dda150a23783d2e1ebd8fb143673766fbd920a90eaa8d60fd7",
+      "_key": "fact-1e1fd0b3cfff32dda150a23783d2e1ebd8fb143673766fbd920a90eaa8d60fd7",
+      "_to": "entities/catalogues",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8283",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "trigger": "These pages are intended to assist you in accessing Belgian library book catalogues over the internet.",
+      "trigger_end": 102,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/model",
+      "_id": "facts/fact-3d5d59c266ea0aaaf5323f44d0fecb02edc0ea5cd6015b7429f67ee51ce63443",
+      "_key": "fact-3d5d59c266ea0aaaf5323f44d0fecb02edc0ea5cd6015b7429f67ee51ce63443",
+      "_to": "entities/example",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8163",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "trigger": "The model is derived from an example used by Bertrand Meyer in his book, Object-Oriented Software Construction.",
+      "trigger_end": 111,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/posts",
+      "_id": "facts/fact-52c1f63453013f0cb8b807bbdc19dacc89311c23a4561495fea00ee31571623e",
+      "_key": "fact-52c1f63453013f0cb8b807bbdc19dacc89311c23a4561495fea00ee31571623e",
+      "_to": "entities/installation",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8983",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "trigger": "All your posts are imported into the standard Wordpress installation.",
+      "trigger_end": 69,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/cards",
+      "_id": "facts/fact-5cf0d0ba02ecad3503d5cac739d5065e066df0e32c7825c1be65cc02a533eedd",
+      "_key": "fact-5cf0d0ba02ecad3503d5cac739d5065e066df0e32c7825c1be65cc02a533eedd",
+      "_to": "entities/cartomancers",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8086",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "trigger": "Many professional cartomancers use a regular deck of playing cards for divination.",
+      "trigger_end": 82,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/water",
+      "_id": "facts/fact-87213118d3320e5814f91293589c59559074f9559d2ec13bb03af928f7823764",
+      "_key": "fact-87213118d3320e5814f91293589c59559074f9559d2ec13bb03af928f7823764",
+      "_to": "entities/river",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10175",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "trigger": "The polluted water has been poured into a local river.",
+      "trigger_end": 54,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/ship",
+      "_id": "facts/fact-993653e5b100adec921af98804d538e40a94db14bb2d2cbefe1b79253f9aae94",
+      "_key": "fact-993653e5b100adec921af98804d538e40a94db14bb2d2cbefe1b79253f9aae94",
+      "_to": "entities/destination",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10087",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "trigger": "Soon after, the ship departed to the next destination.",
+      "trigger_end": 54,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/knob",
+      "_id": "facts/fact-a5f4d713c2c9446cfe8077c39cea1bf96b924455cb6318e3b4ba34a3828f5edc",
+      "_key": "fact-a5f4d713c2c9446cfe8077c39cea1bf96b924455cb6318e3b4ba34a3828f5edc",
+      "_to": "entities/bat",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10484",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "trigger": "Finally, next to the handle is the knob of the bat, a wider piece that keeps the bat from sliding out of a batter's hands.",
+      "trigger_end": 122,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/exploitation",
+      "_id": "facts/fact-b24ede47fc36b3e3c64b15913184e917f83852a20eb7102a7f0e2c3e6ec82a1f",
+      "_key": "fact-b24ede47fc36b3e3c64b15913184e917f83852a20eb7102a7f0e2c3e6ec82a1f",
+      "_to": "entities/suffering",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8879",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "trigger": "Aware of the suffering caused by exploitation, social injustice, stealing, and oppression, I am committed to cultivate loving kindness and learn ways to work for the well-being of people, animals, plants, and minerals.",
+      "trigger_end": 218,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/nails",
+      "_id": "facts/fact-c4629b397b3b6bc39f644039acf05ad2e52797f544c7211ec6b8768a28bf6cf2",
+      "_key": "fact-c4629b397b3b6bc39f644039acf05ad2e52797f544c7211ec6b8768a28bf6cf2",
+      "_to": "entities/hand",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8211",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "trigger": "Musicians used their real nails of the right hand to pluck the strings.",
+      "trigger_end": 71,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/knob",
+      "_id": "facts/fact-f21207c5e2e063feb7d6cfc7a7adc64173564b6f5563a06de18436e641e8ce0d",
+      "_key": "fact-f21207c5e2e063feb7d6cfc7a7adc64173564b6f5563a06de18436e641e8ce0d",
+      "_to": "entities/guy",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10369",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "trigger": "The engine revved a bit in the lower gears, but was adjusted immediately by the guy with a knob.",
+      "trigger_end": 96,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/bat",
+      "_key": "bat",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174401+00:00",
+      "entity_type": "Whole",
+      "name": "bat",
+      "updated_at": "2026-09-09T12:42:11.174401+00:00"
+    },
+    {
+      "_id": "entities/book",
+      "_key": "book",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174406+00:00",
+      "entity_type": "Member",
+      "name": "book",
+      "updated_at": "2026-09-09T12:42:11.174406+00:00"
+    },
+    {
+      "_id": "entities/cards",
+      "_key": "cards",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174407+00:00",
+      "entity_type": "Instrument",
+      "name": "cards",
+      "updated_at": "2026-09-09T12:42:11.174407+00:00"
+    },
+    {
+      "_id": "entities/cartomancers",
+      "_key": "cartomancers",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174407+00:00",
+      "entity_type": "Agent",
+      "name": "cartomancers",
+      "updated_at": "2026-09-09T12:42:11.174407+00:00"
+    },
+    {
+      "_id": "entities/catalogues",
+      "_key": "catalogues",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174408+00:00",
+      "entity_type": "Collection",
+      "name": "catalogues",
+      "updated_at": "2026-09-09T12:42:11.174408+00:00"
+    },
+    {
+      "_id": "entities/destination",
+      "_key": "destination",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174409+00:00",
+      "entity_type": "Destination",
+      "name": "destination",
+      "updated_at": "2026-09-09T12:42:11.174409+00:00"
+    },
+    {
+      "_id": "entities/example",
+      "_key": "example",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174409+00:00",
+      "entity_type": "Origin",
+      "name": "example",
+      "updated_at": "2026-09-09T12:42:11.174409+00:00"
+    },
+    {
+      "_id": "entities/exploitation",
+      "_key": "exploitation",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174410+00:00",
+      "entity_type": "Cause",
+      "name": "exploitation",
+      "updated_at": "2026-09-09T12:42:11.174410+00:00"
+    },
+    {
+      "_id": "entities/guy",
+      "_key": "guy",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174410+00:00",
+      "entity_type": "Agent",
+      "name": "guy",
+      "updated_at": "2026-09-09T12:42:11.174410+00:00"
+    },
+    {
+      "_id": "entities/hand",
+      "_key": "hand",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174411+00:00",
+      "entity_type": "Whole",
+      "name": "hand",
+      "updated_at": "2026-09-09T12:42:11.174411+00:00"
+    },
+    {
+      "_id": "entities/installation",
+      "_key": "installation",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174412+00:00",
+      "entity_type": "Destination",
+      "name": "installation",
+      "updated_at": "2026-09-09T12:42:11.174412+00:00"
+    },
+    {
+      "_id": "entities/knob",
+      "_key": "knob",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174412+00:00",
+      "entity_type": "Component",
+      "name": "knob",
+      "updated_at": "2026-09-09T12:42:11.174412+00:00"
+    },
+    {
+      "_id": "entities/model",
+      "_key": "model",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174413+00:00",
+      "entity_type": "Entity",
+      "name": "model",
+      "updated_at": "2026-09-09T12:42:11.174413+00:00"
+    },
+    {
+      "_id": "entities/nails",
+      "_key": "nails",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174413+00:00",
+      "entity_type": "Component",
+      "name": "nails",
+      "updated_at": "2026-09-09T12:42:11.174413+00:00"
+    },
+    {
+      "_id": "entities/posts",
+      "_key": "posts",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174414+00:00",
+      "entity_type": "Entity",
+      "name": "posts",
+      "updated_at": "2026-09-09T12:42:11.174414+00:00"
+    },
+    {
+      "_id": "entities/river",
+      "_key": "river",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174414+00:00",
+      "entity_type": "Destination",
+      "name": "river",
+      "updated_at": "2026-09-09T12:42:11.174414+00:00"
+    },
+    {
+      "_id": "entities/ship",
+      "_key": "ship",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174415+00:00",
+      "entity_type": "Entity",
+      "name": "ship",
+      "updated_at": "2026-09-09T12:42:11.174415+00:00"
+    },
+    {
+      "_id": "entities/suffering",
+      "_key": "suffering",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174417+00:00",
+      "entity_type": "Effect",
+      "name": "suffering",
+      "updated_at": "2026-09-09T12:42:11.174417+00:00"
+    },
+    {
+      "_id": "entities/water",
+      "_key": "water",
+      "aliases": [],
+      "created_at": "2026-09-09T12:42:11.174417+00:00",
+      "entity_type": "Entity",
+      "name": "water",
+      "updated_at": "2026-09-09T12:42:11.174417+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-10087",
+      "_key": "semeval-glm-flash-r1-b48-semeval-10087",
+      "chunk_id": "semeval-10087",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:872d06952bcbef9fea27749d88fc50104e1ad9239a6a65ad35a8def544b2aad4",
+      "created_at": "2026-09-09T12:42:11.174419+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "Soon after, the ship departed to the next destination.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174419+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-10175",
+      "_key": "semeval-glm-flash-r1-b48-semeval-10175",
+      "chunk_id": "semeval-10175",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:df210232a4449168462f82cdb582880976167bdcb16e40aa51527a3ec3c8ff83",
+      "created_at": "2026-09-09T12:42:11.174428+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "The polluted water has been poured into a local river.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174428+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-10369",
+      "_key": "semeval-glm-flash-r1-b48-semeval-10369",
+      "chunk_id": "semeval-10369",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:08577e24d18a2c373148637450c1df57d5afa7a8caa8d008b15d3669a5db14f7",
+      "created_at": "2026-09-09T12:42:11.174432+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "The engine revved a bit in the lower gears, but was adjusted immediately by the guy with a knob.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174432+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-10484",
+      "_key": "semeval-glm-flash-r1-b48-semeval-10484",
+      "chunk_id": "semeval-10484",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:32175ac21dc53739ce92a6cf1ac26192567998783a44800d6bdf2e9ee8cbec8f",
+      "created_at": "2026-09-09T12:42:11.174436+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "Finally, next to the handle is the knob of the bat, a wider piece that keeps the bat from sliding out of a batter's hands.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174436+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-10689",
+      "_key": "semeval-glm-flash-r1-b48-semeval-10689",
+      "chunk_id": "semeval-10689",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:578381936f04a383048f15ffa0e19d6d0cfca85c17acb7943782cd8d471ede69",
+      "created_at": "2026-09-09T12:42:11.174442+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "The metro line begins at an underground station in St. Stephen's Green in the city centre.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174442+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8086",
+      "_key": "semeval-glm-flash-r1-b48-semeval-8086",
+      "chunk_id": "semeval-8086",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d3a397b58691363129a0e2a068412aabbe741aa3222441d7eab7c5026b86c861",
+      "created_at": "2026-09-09T12:42:11.174443+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "Many professional cartomancers use a regular deck of playing cards for divination.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174443+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8163",
+      "_key": "semeval-glm-flash-r1-b48-semeval-8163",
+      "chunk_id": "semeval-8163",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:95bc12848faff2d34c342554997c46eaaa1994c373d0fdb6895e715513fbfee8",
+      "created_at": "2026-09-09T12:42:11.174446+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "The model is derived from an example used by Bertrand Meyer in his book, Object-Oriented Software Construction.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174446+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8211",
+      "_key": "semeval-glm-flash-r1-b48-semeval-8211",
+      "chunk_id": "semeval-8211",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:cdde316fbd4b085fd448825a055621c1d6ccd4bc624410ad094ae86448b1b1a0",
+      "created_at": "2026-09-09T12:42:11.174451+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "Musicians used their real nails of the right hand to pluck the strings.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174451+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8283",
+      "_key": "semeval-glm-flash-r1-b48-semeval-8283",
+      "chunk_id": "semeval-8283",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:662fb5c06b8d25d246c7feb8eee7630cc03fffee948f8c4c617ad4f4d541f3c0",
+      "created_at": "2026-09-09T12:42:11.174454+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "These pages are intended to assist you in accessing Belgian library book catalogues over the internet.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174454+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8879",
+      "_key": "semeval-glm-flash-r1-b48-semeval-8879",
+      "chunk_id": "semeval-8879",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:731d08023d55caf741d48639f7dc4cae5b1a1c13244ee369d03257d64eadd472",
+      "created_at": "2026-09-09T12:42:11.174459+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "Aware of the suffering caused by exploitation, social injustice, stealing, and oppression, I am committed to cultivate loving kindness and learn ways to work for the well-being of people, animals, plants, and minerals.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174459+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8983",
+      "_key": "semeval-glm-flash-r1-b48-semeval-8983",
+      "chunk_id": "semeval-8983",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b552fcf4597a3a4f9a5c53ff47783031ccfc6fbecba44aa84277b0c73a16ba80",
+      "created_at": "2026-09-09T12:42:11.174464+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "All your posts are imported into the standard Wordpress installation.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174464+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b48-semeval-9677",
+      "_key": "semeval-glm-flash-r1-b48-semeval-9677",
+      "chunk_id": "semeval-9677",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ab4f3db856d2696f42026044bf9de91fba2c57d70e74e1f7832a76c5c552a675",
+      "created_at": "2026-09-09T12:42:11.174470+00:00",
+      "space_id": "semeval-glm-flash-r1-b48",
+      "text": "In New England in the early to mid-19th century, many cotton and textile factories employed large numbers of female adolescent workers from the New England area.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:11.174470+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 10,
+        "results": [
+          {
+            "_from": "entities/book",
+            "_id": "facts/fact-1e1fd0b3cfff32dda150a23783d2e1ebd8fb143673766fbd920a90eaa8d60fd7",
+            "_key": "fact-1e1fd0b3cfff32dda150a23783d2e1ebd8fb143673766fbd920a90eaa8d60fd7",
+            "_to": "entities/catalogues",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8283",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "trigger": "These pages are intended to assist you in accessing Belgian library book catalogues over the internet.",
+            "trigger_end": 102,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/model",
+            "_id": "facts/fact-3d5d59c266ea0aaaf5323f44d0fecb02edc0ea5cd6015b7429f67ee51ce63443",
+            "_key": "fact-3d5d59c266ea0aaaf5323f44d0fecb02edc0ea5cd6015b7429f67ee51ce63443",
+            "_to": "entities/example",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8163",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "trigger": "The model is derived from an example used by Bertrand Meyer in his book, Object-Oriented Software Construction.",
+            "trigger_end": 111,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/posts",
+            "_id": "facts/fact-52c1f63453013f0cb8b807bbdc19dacc89311c23a4561495fea00ee31571623e",
+            "_key": "fact-52c1f63453013f0cb8b807bbdc19dacc89311c23a4561495fea00ee31571623e",
+            "_to": "entities/installation",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8983",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "trigger": "All your posts are imported into the standard Wordpress installation.",
+            "trigger_end": 69,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/cards",
+            "_id": "facts/fact-5cf0d0ba02ecad3503d5cac739d5065e066df0e32c7825c1be65cc02a533eedd",
+            "_key": "fact-5cf0d0ba02ecad3503d5cac739d5065e066df0e32c7825c1be65cc02a533eedd",
+            "_to": "entities/cartomancers",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8086",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "trigger": "Many professional cartomancers use a regular deck of playing cards for divination.",
+            "trigger_end": 82,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/water",
+            "_id": "facts/fact-87213118d3320e5814f91293589c59559074f9559d2ec13bb03af928f7823764",
+            "_key": "fact-87213118d3320e5814f91293589c59559074f9559d2ec13bb03af928f7823764",
+            "_to": "entities/river",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10175",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "trigger": "The polluted water has been poured into a local river.",
+            "trigger_end": 54,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/ship",
+            "_id": "facts/fact-993653e5b100adec921af98804d538e40a94db14bb2d2cbefe1b79253f9aae94",
+            "_key": "fact-993653e5b100adec921af98804d538e40a94db14bb2d2cbefe1b79253f9aae94",
+            "_to": "entities/destination",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10087",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "trigger": "Soon after, the ship departed to the next destination.",
+            "trigger_end": 54,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/knob",
+            "_id": "facts/fact-a5f4d713c2c9446cfe8077c39cea1bf96b924455cb6318e3b4ba34a3828f5edc",
+            "_key": "fact-a5f4d713c2c9446cfe8077c39cea1bf96b924455cb6318e3b4ba34a3828f5edc",
+            "_to": "entities/bat",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10484",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "trigger": "Finally, next to the handle is the knob of the bat, a wider piece that keeps the bat from sliding out of a batter's hands.",
+            "trigger_end": 122,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/exploitation",
+            "_id": "facts/fact-b24ede47fc36b3e3c64b15913184e917f83852a20eb7102a7f0e2c3e6ec82a1f",
+            "_key": "fact-b24ede47fc36b3e3c64b15913184e917f83852a20eb7102a7f0e2c3e6ec82a1f",
+            "_to": "entities/suffering",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8879",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "trigger": "Aware of the suffering caused by exploitation, social injustice, stealing, and oppression, I am committed to cultivate loving kindness and learn ways to work for the well-being of people, animals, plants, and minerals.",
+            "trigger_end": 218,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/nails",
+            "_id": "facts/fact-c4629b397b3b6bc39f644039acf05ad2e52797f544c7211ec6b8768a28bf6cf2",
+            "_key": "fact-c4629b397b3b6bc39f644039acf05ad2e52797f544c7211ec6b8768a28bf6cf2",
+            "_to": "entities/hand",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8211",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "trigger": "Musicians used their real nails of the right hand to pluck the strings.",
+            "trigger_end": 71,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/knob",
+            "_id": "facts/fact-f21207c5e2e063feb7d6cfc7a7adc64173564b6f5563a06de18436e641e8ce0d",
+            "_key": "fact-f21207c5e2e063feb7d6cfc7a7adc64173564b6f5563a06de18436e641e8ce0d",
+            "_to": "entities/guy",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10369",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "trigger": "The engine revved a bit in the lower gears, but was adjusted immediately by the guy with a knob.",
+            "trigger_end": 96,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 19,
+        "results": [
+          {
+            "_id": "entities/bat",
+            "_key": "bat",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174401+00:00",
+            "entity_type": "Whole",
+            "name": "bat",
+            "updated_at": "2026-09-09T12:42:11.174401+00:00"
+          },
+          {
+            "_id": "entities/book",
+            "_key": "book",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174406+00:00",
+            "entity_type": "Member",
+            "name": "book",
+            "updated_at": "2026-09-09T12:42:11.174406+00:00"
+          },
+          {
+            "_id": "entities/cards",
+            "_key": "cards",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174407+00:00",
+            "entity_type": "Instrument",
+            "name": "cards",
+            "updated_at": "2026-09-09T12:42:11.174407+00:00"
+          },
+          {
+            "_id": "entities/cartomancers",
+            "_key": "cartomancers",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174407+00:00",
+            "entity_type": "Agent",
+            "name": "cartomancers",
+            "updated_at": "2026-09-09T12:42:11.174407+00:00"
+          },
+          {
+            "_id": "entities/catalogues",
+            "_key": "catalogues",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174408+00:00",
+            "entity_type": "Collection",
+            "name": "catalogues",
+            "updated_at": "2026-09-09T12:42:11.174408+00:00"
+          },
+          {
+            "_id": "entities/destination",
+            "_key": "destination",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174409+00:00",
+            "entity_type": "Destination",
+            "name": "destination",
+            "updated_at": "2026-09-09T12:42:11.174409+00:00"
+          },
+          {
+            "_id": "entities/example",
+            "_key": "example",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174409+00:00",
+            "entity_type": "Origin",
+            "name": "example",
+            "updated_at": "2026-09-09T12:42:11.174409+00:00"
+          },
+          {
+            "_id": "entities/exploitation",
+            "_key": "exploitation",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174410+00:00",
+            "entity_type": "Cause",
+            "name": "exploitation",
+            "updated_at": "2026-09-09T12:42:11.174410+00:00"
+          },
+          {
+            "_id": "entities/guy",
+            "_key": "guy",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174410+00:00",
+            "entity_type": "Agent",
+            "name": "guy",
+            "updated_at": "2026-09-09T12:42:11.174410+00:00"
+          },
+          {
+            "_id": "entities/hand",
+            "_key": "hand",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174411+00:00",
+            "entity_type": "Whole",
+            "name": "hand",
+            "updated_at": "2026-09-09T12:42:11.174411+00:00"
+          },
+          {
+            "_id": "entities/installation",
+            "_key": "installation",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174412+00:00",
+            "entity_type": "Destination",
+            "name": "installation",
+            "updated_at": "2026-09-09T12:42:11.174412+00:00"
+          },
+          {
+            "_id": "entities/knob",
+            "_key": "knob",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174412+00:00",
+            "entity_type": "Component",
+            "name": "knob",
+            "updated_at": "2026-09-09T12:42:11.174412+00:00"
+          },
+          {
+            "_id": "entities/model",
+            "_key": "model",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174413+00:00",
+            "entity_type": "Entity",
+            "name": "model",
+            "updated_at": "2026-09-09T12:42:11.174413+00:00"
+          },
+          {
+            "_id": "entities/nails",
+            "_key": "nails",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174413+00:00",
+            "entity_type": "Component",
+            "name": "nails",
+            "updated_at": "2026-09-09T12:42:11.174413+00:00"
+          },
+          {
+            "_id": "entities/posts",
+            "_key": "posts",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174414+00:00",
+            "entity_type": "Entity",
+            "name": "posts",
+            "updated_at": "2026-09-09T12:42:11.174414+00:00"
+          },
+          {
+            "_id": "entities/river",
+            "_key": "river",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174414+00:00",
+            "entity_type": "Destination",
+            "name": "river",
+            "updated_at": "2026-09-09T12:42:11.174414+00:00"
+          },
+          {
+            "_id": "entities/ship",
+            "_key": "ship",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174415+00:00",
+            "entity_type": "Entity",
+            "name": "ship",
+            "updated_at": "2026-09-09T12:42:11.174415+00:00"
+          },
+          {
+            "_id": "entities/suffering",
+            "_key": "suffering",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174417+00:00",
+            "entity_type": "Effect",
+            "name": "suffering",
+            "updated_at": "2026-09-09T12:42:11.174417+00:00"
+          },
+          {
+            "_id": "entities/water",
+            "_key": "water",
+            "aliases": [],
+            "created_at": "2026-09-09T12:42:11.174417+00:00",
+            "entity_type": "Entity",
+            "name": "water",
+            "updated_at": "2026-09-09T12:42:11.174417+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-10087",
+            "_key": "semeval-glm-flash-r1-b48-semeval-10087",
+            "chunk_id": "semeval-10087",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:872d06952bcbef9fea27749d88fc50104e1ad9239a6a65ad35a8def544b2aad4",
+            "created_at": "2026-09-09T12:42:11.174419+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "Soon after, the ship departed to the next destination.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174419+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-10175",
+            "_key": "semeval-glm-flash-r1-b48-semeval-10175",
+            "chunk_id": "semeval-10175",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:df210232a4449168462f82cdb582880976167bdcb16e40aa51527a3ec3c8ff83",
+            "created_at": "2026-09-09T12:42:11.174428+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "The polluted water has been poured into a local river.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174428+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-10369",
+            "_key": "semeval-glm-flash-r1-b48-semeval-10369",
+            "chunk_id": "semeval-10369",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:08577e24d18a2c373148637450c1df57d5afa7a8caa8d008b15d3669a5db14f7",
+            "created_at": "2026-09-09T12:42:11.174432+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "The engine revved a bit in the lower gears, but was adjusted immediately by the guy with a knob.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174432+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-10484",
+            "_key": "semeval-glm-flash-r1-b48-semeval-10484",
+            "chunk_id": "semeval-10484",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:32175ac21dc53739ce92a6cf1ac26192567998783a44800d6bdf2e9ee8cbec8f",
+            "created_at": "2026-09-09T12:42:11.174436+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "Finally, next to the handle is the knob of the bat, a wider piece that keeps the bat from sliding out of a batter's hands.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174436+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-10689",
+            "_key": "semeval-glm-flash-r1-b48-semeval-10689",
+            "chunk_id": "semeval-10689",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:578381936f04a383048f15ffa0e19d6d0cfca85c17acb7943782cd8d471ede69",
+            "created_at": "2026-09-09T12:42:11.174442+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "The metro line begins at an underground station in St. Stephen's Green in the city centre.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174442+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8086",
+            "_key": "semeval-glm-flash-r1-b48-semeval-8086",
+            "chunk_id": "semeval-8086",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d3a397b58691363129a0e2a068412aabbe741aa3222441d7eab7c5026b86c861",
+            "created_at": "2026-09-09T12:42:11.174443+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "Many professional cartomancers use a regular deck of playing cards for divination.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174443+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8163",
+            "_key": "semeval-glm-flash-r1-b48-semeval-8163",
+            "chunk_id": "semeval-8163",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:95bc12848faff2d34c342554997c46eaaa1994c373d0fdb6895e715513fbfee8",
+            "created_at": "2026-09-09T12:42:11.174446+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "The model is derived from an example used by Bertrand Meyer in his book, Object-Oriented Software Construction.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174446+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8211",
+            "_key": "semeval-glm-flash-r1-b48-semeval-8211",
+            "chunk_id": "semeval-8211",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:cdde316fbd4b085fd448825a055621c1d6ccd4bc624410ad094ae86448b1b1a0",
+            "created_at": "2026-09-09T12:42:11.174451+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "Musicians used their real nails of the right hand to pluck the strings.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174451+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8283",
+            "_key": "semeval-glm-flash-r1-b48-semeval-8283",
+            "chunk_id": "semeval-8283",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:662fb5c06b8d25d246c7feb8eee7630cc03fffee948f8c4c617ad4f4d541f3c0",
+            "created_at": "2026-09-09T12:42:11.174454+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "These pages are intended to assist you in accessing Belgian library book catalogues over the internet.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174454+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8879",
+            "_key": "semeval-glm-flash-r1-b48-semeval-8879",
+            "chunk_id": "semeval-8879",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:731d08023d55caf741d48639f7dc4cae5b1a1c13244ee369d03257d64eadd472",
+            "created_at": "2026-09-09T12:42:11.174459+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "Aware of the suffering caused by exploitation, social injustice, stealing, and oppression, I am committed to cultivate loving kindness and learn ways to work for the well-being of people, animals, plants, and minerals.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174459+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-8983",
+            "_key": "semeval-glm-flash-r1-b48-semeval-8983",
+            "chunk_id": "semeval-8983",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b552fcf4597a3a4f9a5c53ff47783031ccfc6fbecba44aa84277b0c73a16ba80",
+            "created_at": "2026-09-09T12:42:11.174464+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "All your posts are imported into the standard Wordpress installation.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174464+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b48-semeval-9677",
+            "_key": "semeval-glm-flash-r1-b48-semeval-9677",
+            "chunk_id": "semeval-9677",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ab4f3db856d2696f42026044bf9de91fba2c57d70e74e1f7832a76c5c552a675",
+            "created_at": "2026-09-09T12:42:11.174470+00:00",
+            "space_id": "semeval-glm-flash-r1-b48",
+            "text": "In New England in the early to mid-19th century, many cotton and textile factories employed large numbers of female adolescent workers from the New England area.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:11.174470+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

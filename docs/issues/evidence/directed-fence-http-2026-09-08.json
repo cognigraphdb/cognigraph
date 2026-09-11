@@ -1,0 +1,56 @@
+{
+  "issue": "CG-3",
+  "binary_profile": "release",
+  "backend": "Native",
+  "provider": "counted loopback synthetic stub",
+  "fixture": "signed M26 lifecycle: activation A, activation B, control-plane rollback and deployment rollback to A",
+  "modes": {
+    "resident": {
+      "cold": {
+        "status": 409,
+        "error": "Document conflict: space `pharma` is governed by an active M26 materialized generation; use a signed M26 deployment",
+        "provider_calls": 0,
+        "retained_chunk_id": "m22-corpus-chunk",
+        "full_snapshot_unchanged": true,
+        "active_fact_count": 2
+      },
+      "undeployed": {
+        "status": 200,
+        "facts_grounded": 1,
+        "provider_calls": 1
+      },
+      "reopened": {
+        "status": 409,
+        "error": "Document conflict: space `pharma` is governed by an active M26 materialized generation; use a signed M26 deployment",
+        "provider_calls": 0,
+        "retained_chunk_id": "m22-corpus-chunk",
+        "full_snapshot_unchanged": true,
+        "active_fact_count": 2
+      }
+    },
+    "paged": {
+      "cold": {
+        "status": 409,
+        "error": "Document conflict: space `pharma` is governed by an active M26 materialized generation; use a signed M26 deployment",
+        "provider_calls": 0,
+        "retained_chunk_id": "m22-corpus-chunk",
+        "full_snapshot_unchanged": true,
+        "active_fact_count": 2
+      },
+      "undeployed": {
+        "status": 200,
+        "facts_grounded": 1,
+        "provider_calls": 1
+      },
+      "reopened": {
+        "status": 409,
+        "error": "Document conflict: space `pharma` is governed by an active M26 materialized generation; use a signed M26 deployment",
+        "provider_calls": 0,
+        "retained_chunk_id": "m22-corpus-chunk",
+        "full_snapshot_unchanged": true,
+        "active_fact_count": 2
+      }
+    }
+  },
+  "result": "PASS"
+}

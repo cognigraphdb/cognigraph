@@ -1,0 +1,77 @@
+{
+  "candidate_rules": 27300,
+  "cohort": {
+    "otc": 10,
+    "rx": 90
+  },
+  "decision": "decision_dailymed_ontology.md",
+  "grounding_events": 918,
+  "narrative_facts": 229,
+  "oracle_facts": 509,
+  "precision_by_relation": {
+    "ADMINISTERED_VIA": [
+      66,
+      8
+    ],
+    "CONTAINS_INGREDIENT": [
+      139,
+      13
+    ],
+    "HAS_DOSAGE_FORM": [
+      1,
+      0
+    ],
+    "MARKETED_BY": [
+      2,
+      0
+    ]
+  },
+  "recall_by_relation": {
+    "ADMINISTERED_VIA": [
+      66,
+      120
+    ],
+    "CONTAINS_INGREDIENT": [
+      139,
+      189
+    ],
+    "HAS_DOSAGE_FORM": [
+      1,
+      100
+    ],
+    "MARKETED_BY": [
+      2,
+      100
+    ]
+  },
+  "restraint_inspection": [
+    "lidocaine-hydrochloride-injection-solution --ADMINISTERED_VIA--> subcutaneous  [chunk fa7dedcd-d78b-45f2-9dd7-f273043167d0-s01-p0 trigger `SUBCUTANEOUS administration`]",
+    "lidocaine-hydrochloride-injection-solution --CONTAINS_INGREDIENT--> lidocaine-hydrochloride  [chunk fa7dedcd-d78b-45f2-9dd7-f273043167d0-s16-p1 trigger `of LIDOCAINE HYDROCHLORIDE`]",
+    "cupric-chloride-injection-solution --CONTAINS_INGREDIENT--> sodium-chloride  [chunk daaa6f3a-148e-4f1c-bd44-bb2242145b88-s01 trigger `SODIUM CHLORIDE, usp`]",
+    "vivelle-dot-estradiol-patch-extended-release --CONTAINS_INGREDIENT--> povidone  [chunk 5ccb77f9-d47b-4381-ad5c-5b92524e1c4a-s13-p6 trigger `POVIDONE, usp`]",
+    "amoxicillin-and-clavulanate-potassium-powder-for-suspension --CONTAINS_INGREDIENT--> ampicillin  [chunk 618953a3-0256-42ce-9155-d35325f017aa-s10 trigger `of AMPICILLIN`]",
+    "amitriptyline-hcl-tablet-film-coated --CONTAINS_INGREDIENT--> topiramate  [chunk f6c88d87-66bb-2962-e053-6294a90acfbe-s06-p2 trigger `of TOPIRAMATE`]",
+    "amitriptyline-hcl-tablet-film-coated --CONTAINS_INGREDIENT--> cimetidine  [chunk f6c88d87-66bb-2962-e053-6294a90acfbe-s06-p4 trigger `of CIMETIDINE`]",
+    "voriconazole-voriconazole-powder-for-suspension --ADMINISTERED_VIA--> intravenous  [chunk fceb92c5-5269-46e2-ac5f-547b2f77953d-s02 trigger `INTRAVENOUS administration`]",
+    "promethazine-promethazine-hydrochloride-injection --ADMINISTERED_VIA--> intravenous  [chunk 501b3b8f-dabb-47d9-bb09-09b4ffd0fb46-s02 trigger `INTRAVENOUS administration`]",
+    "triamterene-and-hydrochlorothiazide-tablet --ADMINISTERED_VIA--> intravenous  [chunk bdd4348d-928d-ef0b-e053-2a95a90aadb4-s03-p0 trigger `INTRAVENOUS administration`]",
+    "sertraline-tablet-film-coated --CONTAINS_INGREDIENT--> aspirin  [chunk 84aba223-04ae-479c-b5dd-e04fab45045d-s06 trigger `of ASPIRIN`]",
+    "metoprolol-tartrate-tablet --ADMINISTERED_VIA--> intravenous  [chunk 0882d731-719d-4484-b2c8-88b04a4af67f-s08 trigger `INTRAVENOUS administration`]",
+    "azathioprine-tablet --CONTAINS_INGREDIENT--> prednisone  [chunk 8429e025-b79d-dae7-e053-2a91aa0a7fe5-s12-p0 trigger `of PREDNISONE`]",
+    "phenylephrine-hydrochloride-solution-drops --ADMINISTERED_VIA--> topical  [chunk dcd09e27-93ec-463f-8062-a7dad96c4d0f-s09 trigger `TOPICAL administration`]",
+    "prednisone-tablet --CONTAINS_INGREDIENT--> hydrocortisone  [chunk 5961b1d4-6a4c-452f-b3f1-c99f3a9a6445-s04-p0 trigger `of HYDROCORTISONE`]",
+    "lidocaine-hydrochloride-lidocaine-hydrochloride-injection-solution --CONTAINS_INGREDIENT--> lidocaine-hydrochloride  [chunk 7f202319-effa-4dd8-b871-e720b75f4a83-s08 trigger `contains LIDOCAINE HYDROCHLORIDE`]",
+    "famotidine-tablet --CONTAINS_INGREDIENT--> tizanidine  [chunk 8fa0d2d3-79c8-358c-e053-2995a90a9435-s06 trigger `of TIZANIDINE`]",
+    "naproxen-tablet --CONTAINS_INGREDIENT--> aspirin  [chunk af9aa7a0-e287-5935-e053-2995a90a1d11-s13-p2 trigger `of ASPIRIN`]",
+    "flucytosine-capsule --ADMINISTERED_VIA--> intravenous  [chunk f4c63d98-f03f-43f5-8c1f-e9ac6087312b-s02-p0 trigger `INTRAVENOUS administration`]",
+    "voriconazole-voriconazole-powder-for-suspension --CONTAINS_INGREDIENT--> oxycodone  [chunk fceb92c5-5269-46e2-ac5f-547b2f77953d-s07-p5 trigger `of OXYCODONE`]",
+    "metoprolol-tartrate-injection-solution --ADMINISTERED_VIA--> oral  [chunk e93d7939-31ad-4fc5-a5f3-6d565cc6d0c1-s10 trigger `ORAL administration`]"
+  ],
+  "vocabulary": {
+    "forms": 24,
+    "ingredients": 157,
+    "labelers": 77,
+    "products": 100,
+    "routes": 15
+  }
+}

@@ -1,0 +1,1200 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 2,
+  "batch": 11,
+  "request": {
+    "space_type": "semeval-glm-flash-r2-b11",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10018",
+        "title": "Relation benchmark excerpt",
+        "text": "This is a collection of many of the best images from NASA's planetary exploration program."
+      },
+      {
+        "id": "semeval-9457",
+        "title": "Relation benchmark excerpt",
+        "text": "He proposed writing a teacher's guide to blackboard drawing."
+      },
+      {
+        "id": "semeval-8826",
+        "title": "Relation benchmark excerpt",
+        "text": "Our whole evening was centered on the topic of courage."
+      },
+      {
+        "id": "semeval-10503",
+        "title": "Relation benchmark excerpt",
+        "text": "Four people died after their vehicle crashed into the support pillar of an overhead bridge in Cheras."
+      },
+      {
+        "id": "semeval-8602",
+        "title": "Relation benchmark excerpt",
+        "text": "The two trains caught fire after the collision and were burned."
+      },
+      {
+        "id": "semeval-9696",
+        "title": "Relation benchmark excerpt",
+        "text": "The idea is the heatsink removes the heat from the CPU and the fan blasts the heatsink with the surrounding air cooling it down."
+      },
+      {
+        "id": "semeval-9035",
+        "title": "Relation benchmark excerpt",
+        "text": "Five seconds later the disguise was in a bin and he was just your average joe in the fluero singlet and workboots walkin down the path."
+      },
+      {
+        "id": "semeval-9582",
+        "title": "Relation benchmark excerpt",
+        "text": "As the compressor on the frig turned on caused a voltage spike on the electrical line, which caused a glitch in the \"room commander\" system."
+      },
+      {
+        "id": "semeval-10020",
+        "title": "Relation benchmark excerpt",
+        "text": "I entered text into several files one after the other."
+      },
+      {
+        "id": "semeval-9475",
+        "title": "Relation benchmark excerpt",
+        "text": "I grew up with milk in a sack."
+      },
+      {
+        "id": "semeval-9200",
+        "title": "Relation benchmark excerpt",
+        "text": "The shocking macro-economics numbers have postponed the recovery to next year."
+      },
+      {
+        "id": "semeval-10162",
+        "title": "Relation benchmark excerpt",
+        "text": "A student who fell from a seventh floor balcony in Mexico and had been in a coma for several weeks returns to the UK."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:glm-5.3-flash@directed-policy-v1",
+    "facts_grounded": 9,
+    "proposed": 12,
+    "skips": [
+      "`blackboard --Instrument-Agency--> teacher`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+      "`collision --Cause-Effect--> fire`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+      "`disguise --Entity-Destination--> bin`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-glm-flash-r2-b11"
+  },
+  "latency_seconds": 26.415525209042244,
+  "facts": [
+    {
+      "_from": "entities/pillar",
+      "_id": "facts/fact-03e0fc4ab922b645d307edcb555183d429aa848635af06ec5de0db8a95bf0b93",
+      "_key": "fact-03e0fc4ab922b645d307edcb555183d429aa848635af06ec5de0db8a95bf0b93",
+      "_to": "entities/bridge",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10503",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "trigger": "Four people died after their vehicle crashed into the support pillar of an overhead bridge in Cheras.",
+      "trigger_end": 101,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/evening",
+      "_id": "facts/fact-2487ae7f6a67696cb18d7bdce053e5557e3aa89ce115da5efdfc7692783b5005",
+      "_key": "fact-2487ae7f6a67696cb18d7bdce053e5557e3aa89ce115da5efdfc7692783b5005",
+      "_to": "entities/courage",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8826",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "trigger": "Our whole evening was centered on the topic of courage.",
+      "trigger_end": 55,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/recovery",
+      "_id": "facts/fact-362192f3990d16754acd6afc7df7e7347b14eaaf1dd19f3766203ae9de11d8dc",
+      "_key": "fact-362192f3990d16754acd6afc7df7e7347b14eaaf1dd19f3766203ae9de11d8dc",
+      "_to": "entities/next-year",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9200",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "trigger": "The shocking macro-economics numbers have postponed the recovery to next year.",
+      "trigger_end": 78,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/text",
+      "_id": "facts/fact-531272fc1122a8693ecc28de7281d18a0cf4836b94c0e4d7149dbb8b3ddd2698",
+      "_key": "fact-531272fc1122a8693ecc28de7281d18a0cf4836b94c0e4d7149dbb8b3ddd2698",
+      "_to": "entities/files",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10020",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "trigger": "I entered text into several files one after the other.",
+      "trigger_end": 54,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/spike",
+      "_id": "facts/fact-721ac781110303037d9dd68c1d75cf0821616101582a3c07d98670cde044eebd",
+      "_key": "fact-721ac781110303037d9dd68c1d75cf0821616101582a3c07d98670cde044eebd",
+      "_to": "entities/glitch",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9582",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "trigger": "As the compressor on the frig turned on caused a voltage spike on the electrical line, which caused a glitch in the \"room commander\" system.",
+      "trigger_end": 140,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/images",
+      "_id": "facts/fact-80edaf1f4522f94b9bef2ea14e8433468076e4d52790d790e33416639d99c23f",
+      "_key": "fact-80edaf1f4522f94b9bef2ea14e8433468076e4d52790d790e33416639d99c23f",
+      "_to": "entities/program",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10018",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "trigger": "This is a collection of many of the best images from NASA's planetary exploration program.",
+      "trigger_end": 90,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/air",
+      "_id": "facts/fact-ce9e996aa9579c7b93dea104bc168e629b3b60b0df0ba59d2923e8e8ec80c37a",
+      "_key": "fact-ce9e996aa9579c7b93dea104bc168e629b3b60b0df0ba59d2923e8e8ec80c37a",
+      "_to": "entities/fan",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9696",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "trigger": "The idea is the heatsink removes the heat from the CPU and the fan blasts the heatsink with the surrounding air cooling it down.",
+      "trigger_end": 128,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/milk",
+      "_id": "facts/fact-e461c9ea74cdc0aef358a266c16d1a163b78be03c7478a560be3b29ce0f4c7a5",
+      "_key": "fact-e461c9ea74cdc0aef358a266c16d1a163b78be03c7478a560be3b29ce0f4c7a5",
+      "_to": "entities/sack",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9475",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "trigger": "I grew up with milk in a sack.",
+      "trigger_end": 30,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/student",
+      "_id": "facts/fact-e77e18ef29465102b44297db1c8607a5962e8f35f6ae62a90d9fdaab19ee3637",
+      "_key": "fact-e77e18ef29465102b44297db1c8607a5962e8f35f6ae62a90d9fdaab19ee3637",
+      "_to": "entities/balcony",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10162",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "trigger": "A student who fell from a seventh floor balcony in Mexico and had been in a coma for several weeks returns to the UK.",
+      "trigger_end": 117,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/air",
+      "_key": "air",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425916+00:00",
+      "entity_type": "instrument",
+      "name": "air",
+      "updated_at": "2026-09-09T12:45:18.425916+00:00"
+    },
+    {
+      "_id": "entities/balcony",
+      "_key": "balcony",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425920+00:00",
+      "entity_type": "origin",
+      "name": "balcony",
+      "updated_at": "2026-09-09T12:45:18.425920+00:00"
+    },
+    {
+      "_id": "entities/bridge",
+      "_key": "bridge",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425921+00:00",
+      "entity_type": "whole",
+      "name": "bridge",
+      "updated_at": "2026-09-09T12:45:18.425921+00:00"
+    },
+    {
+      "_id": "entities/courage",
+      "_key": "courage",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425922+00:00",
+      "entity_type": "topic",
+      "name": "courage",
+      "updated_at": "2026-09-09T12:45:18.425922+00:00"
+    },
+    {
+      "_id": "entities/evening",
+      "_key": "evening",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425925+00:00",
+      "entity_type": "message",
+      "name": "evening",
+      "updated_at": "2026-09-09T12:45:18.425925+00:00"
+    },
+    {
+      "_id": "entities/fan",
+      "_key": "fan",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425926+00:00",
+      "entity_type": "agent",
+      "name": "fan",
+      "updated_at": "2026-09-09T12:45:18.425926+00:00"
+    },
+    {
+      "_id": "entities/files",
+      "_key": "files",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425927+00:00",
+      "entity_type": "destination",
+      "name": "files",
+      "updated_at": "2026-09-09T12:45:18.425927+00:00"
+    },
+    {
+      "_id": "entities/glitch",
+      "_key": "glitch",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425928+00:00",
+      "entity_type": "effect",
+      "name": "glitch",
+      "updated_at": "2026-09-09T12:45:18.425928+00:00"
+    },
+    {
+      "_id": "entities/images",
+      "_key": "images",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425928+00:00",
+      "entity_type": "entity",
+      "name": "images",
+      "updated_at": "2026-09-09T12:45:18.425928+00:00"
+    },
+    {
+      "_id": "entities/milk",
+      "_key": "milk",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425930+00:00",
+      "entity_type": "content",
+      "name": "milk",
+      "updated_at": "2026-09-09T12:45:18.425930+00:00"
+    },
+    {
+      "_id": "entities/next-year",
+      "_key": "next-year",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425930+00:00",
+      "entity_type": "destination",
+      "name": "next year",
+      "updated_at": "2026-09-09T12:45:18.425930+00:00"
+    },
+    {
+      "_id": "entities/pillar",
+      "_key": "pillar",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425931+00:00",
+      "entity_type": "component",
+      "name": "pillar",
+      "updated_at": "2026-09-09T12:45:18.425931+00:00"
+    },
+    {
+      "_id": "entities/program",
+      "_key": "program",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425932+00:00",
+      "entity_type": "entity",
+      "name": "program",
+      "updated_at": "2026-09-09T12:45:18.425932+00:00"
+    },
+    {
+      "_id": "entities/recovery",
+      "_key": "recovery",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425933+00:00",
+      "entity_type": "entity",
+      "name": "recovery",
+      "updated_at": "2026-09-09T12:45:18.425933+00:00"
+    },
+    {
+      "_id": "entities/sack",
+      "_key": "sack",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425934+00:00",
+      "entity_type": "container",
+      "name": "sack",
+      "updated_at": "2026-09-09T12:45:18.425934+00:00"
+    },
+    {
+      "_id": "entities/spike",
+      "_key": "spike",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425935+00:00",
+      "entity_type": "cause",
+      "name": "spike",
+      "updated_at": "2026-09-09T12:45:18.425935+00:00"
+    },
+    {
+      "_id": "entities/student",
+      "_key": "student",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425936+00:00",
+      "entity_type": "entity",
+      "name": "student",
+      "updated_at": "2026-09-09T12:45:18.425936+00:00"
+    },
+    {
+      "_id": "entities/text",
+      "_key": "text",
+      "aliases": [],
+      "created_at": "2026-09-09T12:45:18.425938+00:00",
+      "entity_type": "entity",
+      "name": "text",
+      "updated_at": "2026-09-09T12:45:18.425938+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-10018",
+      "_key": "semeval-glm-flash-r2-b11-semeval-10018",
+      "chunk_id": "semeval-10018",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c18bb0fedce6299b18f952534cab3dd70dcb03724bcb980a6fb99076f730ebd4",
+      "created_at": "2026-09-09T12:45:18.425939+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "This is a collection of many of the best images from NASA's planetary exploration program.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.425939+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-10020",
+      "_key": "semeval-glm-flash-r2-b11-semeval-10020",
+      "chunk_id": "semeval-10020",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e3f662e2bfea43260262650d3c37789c6162a0dc3f955905367ab4fb3b03226a",
+      "created_at": "2026-09-09T12:45:18.425961+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "I entered text into several files one after the other.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.425961+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-10162",
+      "_key": "semeval-glm-flash-r2-b11-semeval-10162",
+      "chunk_id": "semeval-10162",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f25f09e851572ad81e8eeabb3fec7d415d39aa3b5dc873412671aba24f1c430b",
+      "created_at": "2026-09-09T12:45:18.425969+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "A student who fell from a seventh floor balcony in Mexico and had been in a coma for several weeks returns to the UK.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.425969+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-10503",
+      "_key": "semeval-glm-flash-r2-b11-semeval-10503",
+      "chunk_id": "semeval-10503",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:fcfb30249ed40858e8e65a7b70ef1bd275cb7ab11b58c0b59500e682162526b6",
+      "created_at": "2026-09-09T12:45:18.425974+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "Four people died after their vehicle crashed into the support pillar of an overhead bridge in Cheras.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.425974+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-8602",
+      "_key": "semeval-glm-flash-r2-b11-semeval-8602",
+      "chunk_id": "semeval-8602",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f9f4054c57b17dad05f43e188259104950402bd50f6840a9217fae3db3fc9290",
+      "created_at": "2026-09-09T12:45:18.425980+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "The two trains caught fire after the collision and were burned.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.425980+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-8826",
+      "_key": "semeval-glm-flash-r2-b11-semeval-8826",
+      "chunk_id": "semeval-8826",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:79a0bee828160ad801018152cd24fd3ebac3c233f5b94241763c4f0770687507",
+      "created_at": "2026-09-09T12:45:18.425982+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "Our whole evening was centered on the topic of courage.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.425982+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9035",
+      "_key": "semeval-glm-flash-r2-b11-semeval-9035",
+      "chunk_id": "semeval-9035",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c2c1f8cfaa110a37828f239989dc3dc47ebc7b84e677bd976c2dd3b2790d1e26",
+      "created_at": "2026-09-09T12:45:18.425989+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "Five seconds later the disguise was in a bin and he was just your average joe in the fluero singlet and workboots walkin down the path.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.425989+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9200",
+      "_key": "semeval-glm-flash-r2-b11-semeval-9200",
+      "chunk_id": "semeval-9200",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:32056e322eccf57182439d1d7f3e04dd0b1e3623aa5d89a92065adedf575e793",
+      "created_at": "2026-09-09T12:45:18.425990+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "The shocking macro-economics numbers have postponed the recovery to next year.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.425990+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9457",
+      "_key": "semeval-glm-flash-r2-b11-semeval-9457",
+      "chunk_id": "semeval-9457",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:702862ec4712bc58761546fafe0db475aea7dcca307288bbaccf3c32572102c5",
+      "created_at": "2026-09-09T12:45:18.425997+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "He proposed writing a teacher's guide to blackboard drawing.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.425997+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9475",
+      "_key": "semeval-glm-flash-r2-b11-semeval-9475",
+      "chunk_id": "semeval-9475",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9411cd68580a27dff89543a67fd9f77a2a11ce21dba0f2896b2fc46aa7363c99",
+      "created_at": "2026-09-09T12:45:18.425998+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "I grew up with milk in a sack.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.425998+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9582",
+      "_key": "semeval-glm-flash-r2-b11-semeval-9582",
+      "chunk_id": "semeval-9582",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:fca508e4db87bc3fbed5c4a50bfe328d4ce21014976f5c849aa723c3aefefe15",
+      "created_at": "2026-09-09T12:45:18.426004+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "As the compressor on the frig turned on caused a voltage spike on the electrical line, which caused a glitch in the \"room commander\" system.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.426004+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9696",
+      "_key": "semeval-glm-flash-r2-b11-semeval-9696",
+      "chunk_id": "semeval-9696",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f1011b22572dca6f4efa3c55eb0f551d563b3d2ee3834537d793c3b31bf4bd83",
+      "created_at": "2026-09-09T12:45:18.426009+00:00",
+      "space_id": "semeval-glm-flash-r2-b11",
+      "text": "The idea is the heatsink removes the heat from the CPU and the fan blasts the heatsink with the surrounding air cooling it down.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:45:18.426009+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 9,
+        "results": [
+          {
+            "_from": "entities/pillar",
+            "_id": "facts/fact-03e0fc4ab922b645d307edcb555183d429aa848635af06ec5de0db8a95bf0b93",
+            "_key": "fact-03e0fc4ab922b645d307edcb555183d429aa848635af06ec5de0db8a95bf0b93",
+            "_to": "entities/bridge",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10503",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "trigger": "Four people died after their vehicle crashed into the support pillar of an overhead bridge in Cheras.",
+            "trigger_end": 101,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/evening",
+            "_id": "facts/fact-2487ae7f6a67696cb18d7bdce053e5557e3aa89ce115da5efdfc7692783b5005",
+            "_key": "fact-2487ae7f6a67696cb18d7bdce053e5557e3aa89ce115da5efdfc7692783b5005",
+            "_to": "entities/courage",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8826",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "trigger": "Our whole evening was centered on the topic of courage.",
+            "trigger_end": 55,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/recovery",
+            "_id": "facts/fact-362192f3990d16754acd6afc7df7e7347b14eaaf1dd19f3766203ae9de11d8dc",
+            "_key": "fact-362192f3990d16754acd6afc7df7e7347b14eaaf1dd19f3766203ae9de11d8dc",
+            "_to": "entities/next-year",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9200",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "trigger": "The shocking macro-economics numbers have postponed the recovery to next year.",
+            "trigger_end": 78,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/text",
+            "_id": "facts/fact-531272fc1122a8693ecc28de7281d18a0cf4836b94c0e4d7149dbb8b3ddd2698",
+            "_key": "fact-531272fc1122a8693ecc28de7281d18a0cf4836b94c0e4d7149dbb8b3ddd2698",
+            "_to": "entities/files",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10020",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "trigger": "I entered text into several files one after the other.",
+            "trigger_end": 54,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/spike",
+            "_id": "facts/fact-721ac781110303037d9dd68c1d75cf0821616101582a3c07d98670cde044eebd",
+            "_key": "fact-721ac781110303037d9dd68c1d75cf0821616101582a3c07d98670cde044eebd",
+            "_to": "entities/glitch",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9582",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "trigger": "As the compressor on the frig turned on caused a voltage spike on the electrical line, which caused a glitch in the \"room commander\" system.",
+            "trigger_end": 140,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/images",
+            "_id": "facts/fact-80edaf1f4522f94b9bef2ea14e8433468076e4d52790d790e33416639d99c23f",
+            "_key": "fact-80edaf1f4522f94b9bef2ea14e8433468076e4d52790d790e33416639d99c23f",
+            "_to": "entities/program",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10018",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "trigger": "This is a collection of many of the best images from NASA's planetary exploration program.",
+            "trigger_end": 90,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/air",
+            "_id": "facts/fact-ce9e996aa9579c7b93dea104bc168e629b3b60b0df0ba59d2923e8e8ec80c37a",
+            "_key": "fact-ce9e996aa9579c7b93dea104bc168e629b3b60b0df0ba59d2923e8e8ec80c37a",
+            "_to": "entities/fan",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9696",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "trigger": "The idea is the heatsink removes the heat from the CPU and the fan blasts the heatsink with the surrounding air cooling it down.",
+            "trigger_end": 128,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/milk",
+            "_id": "facts/fact-e461c9ea74cdc0aef358a266c16d1a163b78be03c7478a560be3b29ce0f4c7a5",
+            "_key": "fact-e461c9ea74cdc0aef358a266c16d1a163b78be03c7478a560be3b29ce0f4c7a5",
+            "_to": "entities/sack",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9475",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "trigger": "I grew up with milk in a sack.",
+            "trigger_end": 30,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/student",
+            "_id": "facts/fact-e77e18ef29465102b44297db1c8607a5962e8f35f6ae62a90d9fdaab19ee3637",
+            "_key": "fact-e77e18ef29465102b44297db1c8607a5962e8f35f6ae62a90d9fdaab19ee3637",
+            "_to": "entities/balcony",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10162",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "trigger": "A student who fell from a seventh floor balcony in Mexico and had been in a coma for several weeks returns to the UK.",
+            "trigger_end": 117,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 18,
+        "results": [
+          {
+            "_id": "entities/air",
+            "_key": "air",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425916+00:00",
+            "entity_type": "instrument",
+            "name": "air",
+            "updated_at": "2026-09-09T12:45:18.425916+00:00"
+          },
+          {
+            "_id": "entities/balcony",
+            "_key": "balcony",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425920+00:00",
+            "entity_type": "origin",
+            "name": "balcony",
+            "updated_at": "2026-09-09T12:45:18.425920+00:00"
+          },
+          {
+            "_id": "entities/bridge",
+            "_key": "bridge",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425921+00:00",
+            "entity_type": "whole",
+            "name": "bridge",
+            "updated_at": "2026-09-09T12:45:18.425921+00:00"
+          },
+          {
+            "_id": "entities/courage",
+            "_key": "courage",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425922+00:00",
+            "entity_type": "topic",
+            "name": "courage",
+            "updated_at": "2026-09-09T12:45:18.425922+00:00"
+          },
+          {
+            "_id": "entities/evening",
+            "_key": "evening",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425925+00:00",
+            "entity_type": "message",
+            "name": "evening",
+            "updated_at": "2026-09-09T12:45:18.425925+00:00"
+          },
+          {
+            "_id": "entities/fan",
+            "_key": "fan",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425926+00:00",
+            "entity_type": "agent",
+            "name": "fan",
+            "updated_at": "2026-09-09T12:45:18.425926+00:00"
+          },
+          {
+            "_id": "entities/files",
+            "_key": "files",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425927+00:00",
+            "entity_type": "destination",
+            "name": "files",
+            "updated_at": "2026-09-09T12:45:18.425927+00:00"
+          },
+          {
+            "_id": "entities/glitch",
+            "_key": "glitch",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425928+00:00",
+            "entity_type": "effect",
+            "name": "glitch",
+            "updated_at": "2026-09-09T12:45:18.425928+00:00"
+          },
+          {
+            "_id": "entities/images",
+            "_key": "images",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425928+00:00",
+            "entity_type": "entity",
+            "name": "images",
+            "updated_at": "2026-09-09T12:45:18.425928+00:00"
+          },
+          {
+            "_id": "entities/milk",
+            "_key": "milk",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425930+00:00",
+            "entity_type": "content",
+            "name": "milk",
+            "updated_at": "2026-09-09T12:45:18.425930+00:00"
+          },
+          {
+            "_id": "entities/next-year",
+            "_key": "next-year",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425930+00:00",
+            "entity_type": "destination",
+            "name": "next year",
+            "updated_at": "2026-09-09T12:45:18.425930+00:00"
+          },
+          {
+            "_id": "entities/pillar",
+            "_key": "pillar",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425931+00:00",
+            "entity_type": "component",
+            "name": "pillar",
+            "updated_at": "2026-09-09T12:45:18.425931+00:00"
+          },
+          {
+            "_id": "entities/program",
+            "_key": "program",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425932+00:00",
+            "entity_type": "entity",
+            "name": "program",
+            "updated_at": "2026-09-09T12:45:18.425932+00:00"
+          },
+          {
+            "_id": "entities/recovery",
+            "_key": "recovery",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425933+00:00",
+            "entity_type": "entity",
+            "name": "recovery",
+            "updated_at": "2026-09-09T12:45:18.425933+00:00"
+          },
+          {
+            "_id": "entities/sack",
+            "_key": "sack",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425934+00:00",
+            "entity_type": "container",
+            "name": "sack",
+            "updated_at": "2026-09-09T12:45:18.425934+00:00"
+          },
+          {
+            "_id": "entities/spike",
+            "_key": "spike",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425935+00:00",
+            "entity_type": "cause",
+            "name": "spike",
+            "updated_at": "2026-09-09T12:45:18.425935+00:00"
+          },
+          {
+            "_id": "entities/student",
+            "_key": "student",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425936+00:00",
+            "entity_type": "entity",
+            "name": "student",
+            "updated_at": "2026-09-09T12:45:18.425936+00:00"
+          },
+          {
+            "_id": "entities/text",
+            "_key": "text",
+            "aliases": [],
+            "created_at": "2026-09-09T12:45:18.425938+00:00",
+            "entity_type": "entity",
+            "name": "text",
+            "updated_at": "2026-09-09T12:45:18.425938+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-10018",
+            "_key": "semeval-glm-flash-r2-b11-semeval-10018",
+            "chunk_id": "semeval-10018",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c18bb0fedce6299b18f952534cab3dd70dcb03724bcb980a6fb99076f730ebd4",
+            "created_at": "2026-09-09T12:45:18.425939+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "This is a collection of many of the best images from NASA's planetary exploration program.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.425939+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-10020",
+            "_key": "semeval-glm-flash-r2-b11-semeval-10020",
+            "chunk_id": "semeval-10020",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e3f662e2bfea43260262650d3c37789c6162a0dc3f955905367ab4fb3b03226a",
+            "created_at": "2026-09-09T12:45:18.425961+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "I entered text into several files one after the other.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.425961+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-10162",
+            "_key": "semeval-glm-flash-r2-b11-semeval-10162",
+            "chunk_id": "semeval-10162",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f25f09e851572ad81e8eeabb3fec7d415d39aa3b5dc873412671aba24f1c430b",
+            "created_at": "2026-09-09T12:45:18.425969+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "A student who fell from a seventh floor balcony in Mexico and had been in a coma for several weeks returns to the UK.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.425969+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-10503",
+            "_key": "semeval-glm-flash-r2-b11-semeval-10503",
+            "chunk_id": "semeval-10503",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:fcfb30249ed40858e8e65a7b70ef1bd275cb7ab11b58c0b59500e682162526b6",
+            "created_at": "2026-09-09T12:45:18.425974+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "Four people died after their vehicle crashed into the support pillar of an overhead bridge in Cheras.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.425974+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-8602",
+            "_key": "semeval-glm-flash-r2-b11-semeval-8602",
+            "chunk_id": "semeval-8602",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f9f4054c57b17dad05f43e188259104950402bd50f6840a9217fae3db3fc9290",
+            "created_at": "2026-09-09T12:45:18.425980+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "The two trains caught fire after the collision and were burned.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.425980+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-8826",
+            "_key": "semeval-glm-flash-r2-b11-semeval-8826",
+            "chunk_id": "semeval-8826",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:79a0bee828160ad801018152cd24fd3ebac3c233f5b94241763c4f0770687507",
+            "created_at": "2026-09-09T12:45:18.425982+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "Our whole evening was centered on the topic of courage.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.425982+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9035",
+            "_key": "semeval-glm-flash-r2-b11-semeval-9035",
+            "chunk_id": "semeval-9035",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c2c1f8cfaa110a37828f239989dc3dc47ebc7b84e677bd976c2dd3b2790d1e26",
+            "created_at": "2026-09-09T12:45:18.425989+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "Five seconds later the disguise was in a bin and he was just your average joe in the fluero singlet and workboots walkin down the path.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.425989+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9200",
+            "_key": "semeval-glm-flash-r2-b11-semeval-9200",
+            "chunk_id": "semeval-9200",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:32056e322eccf57182439d1d7f3e04dd0b1e3623aa5d89a92065adedf575e793",
+            "created_at": "2026-09-09T12:45:18.425990+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "The shocking macro-economics numbers have postponed the recovery to next year.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.425990+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9457",
+            "_key": "semeval-glm-flash-r2-b11-semeval-9457",
+            "chunk_id": "semeval-9457",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:702862ec4712bc58761546fafe0db475aea7dcca307288bbaccf3c32572102c5",
+            "created_at": "2026-09-09T12:45:18.425997+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "He proposed writing a teacher's guide to blackboard drawing.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.425997+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9475",
+            "_key": "semeval-glm-flash-r2-b11-semeval-9475",
+            "chunk_id": "semeval-9475",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:9411cd68580a27dff89543a67fd9f77a2a11ce21dba0f2896b2fc46aa7363c99",
+            "created_at": "2026-09-09T12:45:18.425998+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "I grew up with milk in a sack.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.425998+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9582",
+            "_key": "semeval-glm-flash-r2-b11-semeval-9582",
+            "chunk_id": "semeval-9582",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:fca508e4db87bc3fbed5c4a50bfe328d4ce21014976f5c849aa723c3aefefe15",
+            "created_at": "2026-09-09T12:45:18.426004+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "As the compressor on the frig turned on caused a voltage spike on the electrical line, which caused a glitch in the \"room commander\" system.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.426004+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b11-semeval-9696",
+            "_key": "semeval-glm-flash-r2-b11-semeval-9696",
+            "chunk_id": "semeval-9696",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f1011b22572dca6f4efa3c55eb0f551d563b3d2ee3834537d793c3b31bf4bd83",
+            "created_at": "2026-09-09T12:45:18.426009+00:00",
+            "space_id": "semeval-glm-flash-r2-b11",
+            "text": "The idea is the heatsink removes the heat from the CPU and the fan blasts the heatsink with the surrounding air cooling it down.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:45:18.426009+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

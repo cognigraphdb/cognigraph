@@ -1,0 +1,11 @@
+{
+  "mock_http_calls": 202,
+  "raw_gold_accuracy": 1,
+  "post_gate_gold_accuracy": 0.9433333333333334,
+  "paired_null_delta_and_interval": true,
+  "cross_run_prompt_parity": true,
+  "historical_cost_recomputed_without_edits": true,
+  "max_schedule_reservation_usd": 13.587759399999998,
+  "protocol_sha256": "8fc592da93475e242262c569965daac9139e68319d211f0e4eec87e337fda0b0",
+  "mock_manifest_sha256": "e97d218ad5a18baa9c70ffc09edd1b696c9a2efc34a72dab4f140a132e9a0124"
+}

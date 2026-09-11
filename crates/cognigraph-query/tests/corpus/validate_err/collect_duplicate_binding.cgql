@@ -1,0 +1,1 @@
+FOR d IN documents COLLECT c = d.x, c = d.y RETURN c

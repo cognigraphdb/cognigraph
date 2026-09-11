@@ -1,0 +1,2 @@
+FOR key IN (FOR d IN documents SORT d._key RETURN d._key)
+RETURN key

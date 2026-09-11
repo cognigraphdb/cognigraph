@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d.score == 2.0 RETURN d._key

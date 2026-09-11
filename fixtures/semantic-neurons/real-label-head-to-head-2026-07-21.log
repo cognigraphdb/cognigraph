@@ -1,0 +1,18 @@
+    Finished `release` profile [optimized] target(s) in 0.25s
+     Running `target/release/examples/vector_rag_control /private/tmp/claude-501/-Users-skitsanos-FTP-Projects-rust-cognigraph/db3e3987-4c0c-404d-b29a-eccd32fc9abb/scratchpad/kit_clinical /private/tmp/claude-501/-Users-skitsanos-FTP-Projects-rust-cognigraph/db3e3987-4c0c-404d-b29a-eccd32fc9abb/scratchpad/kit_admin`
+answering model: gpt-5.4-mini | embeddings: text-embedding-3-small | vector top-8 vs graph 48-edge trace
+
+== kit_clinical  (21 questions, 140 expected, 68 forbidden)
+   vector: 1-pass 46/140 f0  2-pass 51/140 f2   |   graph: 1-pass 31/140 f1  2-pass 33/140 f2
+   FORBIDDEN ASSERTED  vector 2-pass [cattle-epithelium-inje-q2]: allergenic extracts --CONTRAINDICATED_IN--> asthma
+   FORBIDDEN ASSERTED  vector 2-pass [cattle-epithelium-inje-q2]: allergenic extracts --CONTRAINDICATED_IN--> pregnancy
+
+== kit_admin  (3 questions, 9 expected, 9 forbidden)
+   vector: 1-pass 2/9 f0  2-pass 3/9 f1   |   graph: 1-pass 0/9 f0  2-pass 0/9 f0
+   FORBIDDEN ASSERTED  vector 2-pass [hydrocodone-bitartrate-q2]: Hydrocodone Bitartrate and Homatropine Methylbromide Syrup --PRODUCED_BY--> Physicians Total Care, Inc.
+
+COMBINED (149 expected, 77 forbidden)
+vector arm: 1-pass 48/149 forbidden 0/77  |  2-pass 54/149 forbidden 3/77
+graph arm:  1-pass 31/149 forbidden 1/77  |  2-pass 33/149 forbidden 2/77
+
+vector recall is an upper bound (no fabrication guard is possible over raw passages); graph recall is trace-checked. Restraint is raw assertions on both arms.

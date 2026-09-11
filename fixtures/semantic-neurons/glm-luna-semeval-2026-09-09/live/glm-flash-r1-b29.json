@@ -1,0 +1,264 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 1,
+  "batch": 29,
+  "request": {
+    "space_type": "semeval-glm-flash-r1-b29",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9527",
+        "title": "Relation benchmark excerpt",
+        "text": "In 1974, the American sociologist David L. Phillips showed that publications of suicides on the frontpage of the news paper were followed by an increase in national suicide rates in the month after the publication."
+      },
+      {
+        "id": "semeval-8829",
+        "title": "Relation benchmark excerpt",
+        "text": "The life-like creatures caused a real scare on the set when a 44-foot spinosaurus malfunctioned and began slamming its head against a prop plane."
+      },
+      {
+        "id": "semeval-8030",
+        "title": "Relation benchmark excerpt",
+        "text": "Therefore, nowadays China is the complex mixture of different cultures from various epochs."
+      },
+      {
+        "id": "semeval-9021",
+        "title": "Relation benchmark excerpt",
+        "text": "As late as the 1950s, for example, only one Mexican served as a policeman in the entire Chicago police force."
+      },
+      {
+        "id": "semeval-9225",
+        "title": "Relation benchmark excerpt",
+        "text": "The US Department of Energy has developed a method for producing natural gas from algae."
+      },
+      {
+        "id": "semeval-9449",
+        "title": "Relation benchmark excerpt",
+        "text": "The best mode of the invention is to form the pillow of firm foam rather than using cotton or cloth or feather filers."
+      },
+      {
+        "id": "semeval-8023",
+        "title": "Relation benchmark excerpt",
+        "text": "I spent a year working for a software company to pay off my college loans."
+      },
+      {
+        "id": "semeval-10509",
+        "title": "Relation benchmark excerpt",
+        "text": "I have put these images into my web page."
+      },
+      {
+        "id": "semeval-8800",
+        "title": "Relation benchmark excerpt",
+        "text": "The users sent an array to the responder."
+      },
+      {
+        "id": "semeval-10328",
+        "title": "Relation benchmark excerpt",
+        "text": "It is unfortunate that the constitution was prepared by leaders of political parties and not legal experts."
+      },
+      {
+        "id": "semeval-10551",
+        "title": "Relation benchmark excerpt",
+        "text": "To alleviate the inconvenience caused by the fence, the Cabinet approved a plan to construct 11 passages through the barrier to facilitate movement in and out of the city."
+      },
+      {
+        "id": "semeval-9993",
+        "title": "Relation benchmark excerpt",
+        "text": "For more than five years after 9/11, a messenger bag coated with debris was sealed in a plastic trash bag."
+      }
+    ]
+  },
+  "status": 500,
+  "response": {
+    "error": "Backend error: directed completion returned invalid facts: missing field `target_type`"
+  },
+  "latency_seconds": 3.1900041250046343,
+  "facts": [],
+  "entities": [],
+  "chunks": [],
+  "store_queries": {
+    "facts": {
+      "status": 404,
+      "response": {
+        "error": "Collection not found: facts"
+      }
+    },
+    "entities": {
+      "status": 404,
+      "response": {
+        "error": "Collection not found: entities"
+      }
+    },
+    "chunks": {
+      "status": 404,
+      "response": {
+        "error": "Collection not found: chunks"
+      }
+    }
+  }
+}

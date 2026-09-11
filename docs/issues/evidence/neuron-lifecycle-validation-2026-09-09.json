@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-09",
+  "base_revision": "8164f4e413eb3db06e9ce86386fbc6d4cf058c21",
+  "change_state": "CG-21 uncommitted",
+  "source_sha256": {
+    "crates/cognigraph-server/src/main.rs": "f5984c541a1adf4d3845e4b1587e00e78c3e2fde4e7078109ceaf84eb0163ea2",
+    "crates/cognigraph-server/src/state.rs": "6cbcba7fb3f33a715c0dc0ecf408ccac6a084183d94146ab8ef2c3b333bb775a",
+    "crates/cognigraph-server/src/neuron_lifecycle.rs": "00c5fb15c0ae8333a88c1df8d74252c6cc0199fe170397bd561835d49f6a400f",
+    "crates/cognigraph-server/src/routes/admin.rs": "5ac87dd750c3bddd82eebff76c9e5350afffaac97cb71f1e18f13e8088d72f0b",
+    "crates/cognigraph-server/src/routes/construct.rs": "633835b57d186a2f86a2821b9161083b4aed1f67de27752fc2397f7e4af70529",
+    "crates/cognigraph-server/src/routes/neurons.rs": "9fc0073aa09c7a306e2ad9d0535ccb15d88b93f8913bb9e855213dffdb2d06ff",
+    "crates/cognigraph-server/src/routes/mod.rs": "eaaeafae79a99446a30b97429f353fa74ae8829792572232e3b7ba7cafdfc01f",
+    "crates/cognigraph-server/src/routes/neuron_lifecycle_tests.rs": "99b58b3376053050238e256e2571dc721453d38d3e4493a9afd176791371c380",
+    "crates/cognigraph-server/src/routes/neuron_lifecycle_tests/backend.rs": "ef13c5d9878729f243467043622efea2e653ecc82646a397c852b4587c5e0ff8",
+    "docs/issues/evidence/neuron-lifecycle-http.py": "a69d5338055a14fca6f9e8c26a0c383cab65033941a286c7a3abac1821d25fc4"
+  },
+  "binary_sha256": "f78fba7a8c397bd9fd09dd0d2ec8c84e5261e5e6819cb323ec717f0b0e5c2e3f",
+  "baseline_binary_sha256": "40a8d493180294eccd146a73151d15796d7f817173f007afc5bbd29f0205e3f3",
+  "validation": [
+    {
+      "command": "cargo test -p cognigraph-server neuron_lifecycle",
+      "exit_code": 0,
+      "passed": 9,
+      "failed": 0,
+      "ignored": 0,
+      "summaries": 1
+    },
+    {
+      "command": "cargo fmt --all -- --check",
+      "exit_code": 0
+    },
+    {
+      "command": "cargo clippy --all-targets -- -D warnings",
+      "exit_code": 0
+    },
+    {
+      "command": "cargo test --all",
+      "exit_code": 0,
+      "passed": 937,
+      "failed": 0,
+      "ignored": 0,
+      "summaries": 70
+    },
+    {
+      "command": "cargo build --release -p cognigraph-server",
+      "exit_code": 0
+    }
+  ],
+  "rust_scope": {
+    "arango_live_integration_configured": false,
+    "arango_early_return_entries": 8,
+    "live_embedding_smoke_tests": [
+      "openai_embeds_sotu",
+      "gemini_embeds_sotu"
+    ]
+  },
+  "runtime": {
+    "scenarios": 99,
+    "restart_documents": 162,
+    "server_restarts": 3,
+    "simultaneous_human_pairs": 60,
+    "simultaneous_human_conflicts": 0,
+    "local_provider_http_calls": 90,
+    "external_provider_calls": 0,
+    "dedicated_partner_release_tested": false,
+    "partner_route_tests_passed": true,
+    "endpoint_followup": "CG-36"
+  },
+  "baseline": {
+    "deterministic_stale_conflict_cases": 36,
+    "simultaneous_human_conflicts": 26
+  },
+  "corrected_attempts": [
+    {
+      "command": "initial baseline HTTP harness",
+      "exit_code": 1,
+      "reason": "Underscores in generated needs_human neuron IDs violated kebab-case; fixed IDs only."
+    },
+    {
+      "command": "initial corrected-release HTTP harness",
+      "exit_code": 0,
+      "scenarios": 90,
+      "restart_documents": 153,
+      "followup": "Final inspection corrected pending counts for stale-but-still-proposed sources; final gates and expanded 99-scenario harness rerun."
+    }
+  ]
+}

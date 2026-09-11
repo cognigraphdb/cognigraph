@@ -1,0 +1,96 @@
+{
+  "bounds": [
+    {
+      "bottom": 206.9921875,
+      "clientHeight": 140,
+      "clientWidth": 533,
+      "left": 100,
+      "name": "workspace-header-base collection-heading",
+      "right": 632.875,
+      "scrollHeight": 140,
+      "scrollWidth": 533
+    },
+    {
+      "bottom": 290.9921875,
+      "clientHeight": 84,
+      "clientWidth": 589,
+      "left": 72,
+      "name": "filters",
+      "right": 660.875,
+      "scrollHeight": 84,
+      "scrollWidth": 589
+    },
+    {
+      "bottom": 290.9921875,
+      "clientHeight": 36,
+      "clientWidth": 56,
+      "left": 577.34375,
+      "name": "ant-btn css-dev-only-do-not-override-dspgc0 cognigraph ant-btn-link ant-btn-color-link ant-btn-variant-link reset-button",
+      "right": 632.875,
+      "scrollHeight": 36,
+      "scrollWidth": 56
+    },
+    {
+      "bottom": 603,
+      "clientHeight": 311,
+      "clientWidth": 589,
+      "left": 72,
+      "name": "table-scroll",
+      "right": 660.875,
+      "scrollHeight": 1246,
+      "scrollWidth": 589
+    },
+    {
+      "bottom": 667,
+      "clientHeight": 63,
+      "clientWidth": 589,
+      "left": 72,
+      "name": "pagination",
+      "right": 660.875,
+      "scrollHeight": 63,
+      "scrollWidth": 589
+    },
+    {
+      "bottom": 667,
+      "clientHeight": 601,
+      "clientWidth": 405,
+      "left": 660.875,
+      "name": "inspector",
+      "right": 1067,
+      "scrollHeight": 601,
+      "scrollWidth": 405
+    },
+    {
+      "bottom": 197,
+      "clientHeight": 131,
+      "clientWidth": 405,
+      "left": 661.875,
+      "name": "inspector-header",
+      "right": 1067,
+      "scrollHeight": 131,
+      "scrollWidth": 405
+    },
+    {
+      "bottom": 181,
+      "clientHeight": 34,
+      "clientWidth": 279,
+      "left": 689.875,
+      "name": "inspector-actions",
+      "right": 968.8671875,
+      "scrollHeight": 34,
+      "scrollWidth": 279
+    },
+    {
+      "bottom": 599,
+      "clientHeight": 360,
+      "clientWidth": 349,
+      "left": 689.875,
+      "name": "inspector-content",
+      "right": 1039,
+      "scrollHeight": 360,
+      "scrollWidth": 349
+    }
+  ],
+  "page": [1067, 1067],
+  "viewport": [1067, 667]
+}

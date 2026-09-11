@@ -1,0 +1,1199 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 2,
+  "batch": 5,
+  "request": {
+    "space_type": "semeval-terra-low-r2-b5",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-8266",
+        "title": "Relation benchmark excerpt",
+        "text": "Last night, my friend ran into a legendary surfer at a bar."
+      },
+      {
+        "id": "semeval-9355",
+        "title": "Relation benchmark excerpt",
+        "text": "In this marvelous book Smuts draws from years of painstaking field research in which she followed around a flange of chacma baboons in the Mateti Game Park in Zimbabwe."
+      },
+      {
+        "id": "semeval-8527",
+        "title": "Relation benchmark excerpt",
+        "text": "The lead locomotive of the train had a video camera that recorded the view in front of the train."
+      },
+      {
+        "id": "semeval-9680",
+        "title": "Relation benchmark excerpt",
+        "text": "Rising as it does, 8260 feet straight from the fertile plains of the North Island's finest dairying country, the mountain is clothed with primeval forest."
+      },
+      {
+        "id": "semeval-10258",
+        "title": "Relation benchmark excerpt",
+        "text": "The video then shows the damage caused by the aircraft as it hit the north tower, follows the disintegrating plane through the interior, and then shows the airplane metal, ignited fuel, dust and smoke exiting the building on the opposite side."
+      },
+      {
+        "id": "semeval-9981",
+        "title": "Relation benchmark excerpt",
+        "text": "A skein of greylag geese came directly over me and I killed one that dropped far out in the field."
+      },
+      {
+        "id": "semeval-8553",
+        "title": "Relation benchmark excerpt",
+        "text": "Discussion took place on the function of this Committee."
+      },
+      {
+        "id": "semeval-8897",
+        "title": "Relation benchmark excerpt",
+        "text": "Insects that harm trees are often prey for a descent of woodpeckers, which, in turn benefits the birds that nest in the saved tree."
+      },
+      {
+        "id": "semeval-8225",
+        "title": "Relation benchmark excerpt",
+        "text": "The animals on this farm are contented, happy cattle."
+      },
+      {
+        "id": "semeval-9377",
+        "title": "Relation benchmark excerpt",
+        "text": "They chose a shop that oven bakes the paint in a down draft paint booth."
+      },
+      {
+        "id": "semeval-8530",
+        "title": "Relation benchmark excerpt",
+        "text": "A major product of the factory was decorative quarry glass which was mass-produced by moulding and printing, rather than hand-cutting and painting."
+      },
+      {
+        "id": "semeval-8413",
+        "title": "Relation benchmark excerpt",
+        "text": "Transport authorities in the Western Cape have warned of hefty fines for motorists who ignore dedicated lane for buses and minibus taxis on the road."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 9,
+    "proposed": 11,
+    "skips": [
+      "`animals --Content-Container--> farm`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+      "`booth --Instrument-Agency--> shop`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-terra-low-r2-b5"
+  },
+  "latency_seconds": 16.310750999953598,
+  "facts": [
+    {
+      "_from": "entities/baboons",
+      "_id": "facts/fact-0a078dd4ca8a113727b569994672f40a7e284ed6bb8f96bcc0e902abd4e5c825",
+      "_key": "fact-0a078dd4ca8a113727b569994672f40a7e284ed6bb8f96bcc0e902abd4e5c825",
+      "_to": "entities/flange",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9355",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b5",
+      "trigger": "In this marvelous book Smuts draws from years of painstaking field research in which she followed around a flange of chacma baboons in the Mateti Game Park in Zimbabwe.",
+      "trigger_end": 168,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/geese",
+      "_id": "facts/fact-15da26a84279f09d4375bcd0019bd68d0ef806066d3ec3ce5ca4083c7f3216eb",
+      "_key": "fact-15da26a84279f09d4375bcd0019bd68d0ef806066d3ec3ce5ca4083c7f3216eb",
+      "_to": "entities/skein",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9981",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b5",
+      "trigger": "A skein of greylag geese came directly over me and I killed one that dropped far out in the field.",
+      "trigger_end": 98,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/woodpeckers",
+      "_id": "facts/fact-193c06def72198ae38c01566b76c8b811216dd5a5ed39592eb25d5cd4cbe5207",
+      "_key": "fact-193c06def72198ae38c01566b76c8b811216dd5a5ed39592eb25d5cd4cbe5207",
+      "_to": "entities/descent",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8897",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b5",
+      "trigger": "Insects that harm trees are often prey for a descent of woodpeckers, which, in turn benefits the birds that nest in the saved tree.",
+      "trigger_end": 131,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/lane",
+      "_id": "facts/fact-937a19531f3ac98bbb8939d6986fe111547a01ea6c89b08b98211de43577685e",
+      "_key": "fact-937a19531f3ac98bbb8939d6986fe111547a01ea6c89b08b98211de43577685e",
+      "_to": "entities/road",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8413",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b5",
+      "trigger": "Transport authorities in the Western Cape have warned of hefty fines for motorists who ignore dedicated lane for buses and minibus taxis on the road.",
+      "trigger_end": 149,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/aircraft",
+      "_id": "facts/fact-944025fcb5e8ee952285808f0442f6570f0ad2d5b69eb10b698ff63a83be23d0",
+      "_key": "fact-944025fcb5e8ee952285808f0442f6570f0ad2d5b69eb10b698ff63a83be23d0",
+      "_to": "entities/damage",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10258",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b5",
+      "trigger": "The video then shows the damage caused by the aircraft as it hit the north tower, follows the disintegrating plane through the interior, and then shows the airplane metal, ignited fuel, dust and smoke exiting the building on the opposite side.",
+      "trigger_end": 243,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/discussion",
+      "_id": "facts/fact-9c0d4e7c0c71ea7fc031bd4f31983e44685d666457f97b807b077d459269902a",
+      "_key": "fact-9c0d4e7c0c71ea7fc031bd4f31983e44685d666457f97b807b077d459269902a",
+      "_to": "entities/function",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8553",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b5",
+      "trigger": "Discussion took place on the function of this Committee.",
+      "trigger_end": 56,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/glass",
+      "_id": "facts/fact-9fa876262ae78c999b1119e425ffbbfd886f7017ea97b1b8cd4a246aefd819d7",
+      "_key": "fact-9fa876262ae78c999b1119e425ffbbfd886f7017ea97b1b8cd4a246aefd819d7",
+      "_to": "entities/factory",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8530",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b5",
+      "trigger": "A major product of the factory was decorative quarry glass which was mass-produced by moulding and printing, rather than hand-cutting and painting.",
+      "trigger_end": 147,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/locomotive",
+      "_id": "facts/fact-a5dfeffcceefca78471ecf5a91a9c2113b184507935c629a4e0a2add5a856ec7",
+      "_key": "fact-a5dfeffcceefca78471ecf5a91a9c2113b184507935c629a4e0a2add5a856ec7",
+      "_to": "entities/train",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8527",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b5",
+      "trigger": "The lead locomotive of the train had a video camera that recorded the view in front of the train.",
+      "trigger_end": 97,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/mountain",
+      "_id": "facts/fact-fd88cf38cf61092d5866328e9508cf175653c06c909c3b8aef9ab1718051fd7d",
+      "_key": "fact-fd88cf38cf61092d5866328e9508cf175653c06c909c3b8aef9ab1718051fd7d",
+      "_to": "entities/plains",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9680",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b5",
+      "trigger": "Rising as it does, 8260 feet straight from the fertile plains of the North Island's finest dairying country, the mountain is clothed with primeval forest.",
+      "trigger_end": 154,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/aircraft",
+      "_key": "aircraft",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910358+00:00",
+      "entity_type": "vehicle",
+      "name": "aircraft",
+      "updated_at": "2026-09-09T13:47:32.910358+00:00"
+    },
+    {
+      "_id": "entities/baboons",
+      "_key": "baboons",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910362+00:00",
+      "entity_type": "animal",
+      "name": "baboons",
+      "updated_at": "2026-09-09T13:47:32.910362+00:00"
+    },
+    {
+      "_id": "entities/damage",
+      "_key": "damage",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910364+00:00",
+      "entity_type": "damage",
+      "name": "damage",
+      "updated_at": "2026-09-09T13:47:32.910364+00:00"
+    },
+    {
+      "_id": "entities/descent",
+      "_key": "descent",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910365+00:00",
+      "entity_type": "collection",
+      "name": "descent",
+      "updated_at": "2026-09-09T13:47:32.910365+00:00"
+    },
+    {
+      "_id": "entities/discussion",
+      "_key": "discussion",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910366+00:00",
+      "entity_type": "message",
+      "name": "Discussion",
+      "updated_at": "2026-09-09T13:47:32.910366+00:00"
+    },
+    {
+      "_id": "entities/factory",
+      "_key": "factory",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910367+00:00",
+      "entity_type": "producer",
+      "name": "factory",
+      "updated_at": "2026-09-09T13:47:32.910367+00:00"
+    },
+    {
+      "_id": "entities/flange",
+      "_key": "flange",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910368+00:00",
+      "entity_type": "collection",
+      "name": "flange",
+      "updated_at": "2026-09-09T13:47:32.910368+00:00"
+    },
+    {
+      "_id": "entities/function",
+      "_key": "function",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910369+00:00",
+      "entity_type": "topic",
+      "name": "function",
+      "updated_at": "2026-09-09T13:47:32.910369+00:00"
+    },
+    {
+      "_id": "entities/geese",
+      "_key": "geese",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910370+00:00",
+      "entity_type": "animal",
+      "name": "geese",
+      "updated_at": "2026-09-09T13:47:32.910370+00:00"
+    },
+    {
+      "_id": "entities/glass",
+      "_key": "glass",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910371+00:00",
+      "entity_type": "product",
+      "name": "glass",
+      "updated_at": "2026-09-09T13:47:32.910371+00:00"
+    },
+    {
+      "_id": "entities/lane",
+      "_key": "lane",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910372+00:00",
+      "entity_type": "component",
+      "name": "lane",
+      "updated_at": "2026-09-09T13:47:32.910372+00:00"
+    },
+    {
+      "_id": "entities/locomotive",
+      "_key": "locomotive",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910373+00:00",
+      "entity_type": "vehicle",
+      "name": "locomotive",
+      "updated_at": "2026-09-09T13:47:32.910373+00:00"
+    },
+    {
+      "_id": "entities/mountain",
+      "_key": "mountain",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910374+00:00",
+      "entity_type": "landform",
+      "name": "mountain",
+      "updated_at": "2026-09-09T13:47:32.910374+00:00"
+    },
+    {
+      "_id": "entities/plains",
+      "_key": "plains",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910375+00:00",
+      "entity_type": "landform",
+      "name": "plains",
+      "updated_at": "2026-09-09T13:47:32.910375+00:00"
+    },
+    {
+      "_id": "entities/road",
+      "_key": "road",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910376+00:00",
+      "entity_type": "whole",
+      "name": "road",
+      "updated_at": "2026-09-09T13:47:32.910376+00:00"
+    },
+    {
+      "_id": "entities/skein",
+      "_key": "skein",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910377+00:00",
+      "entity_type": "collection",
+      "name": "skein",
+      "updated_at": "2026-09-09T13:47:32.910377+00:00"
+    },
+    {
+      "_id": "entities/train",
+      "_key": "train",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910377+00:00",
+      "entity_type": "vehicle",
+      "name": "train",
+      "updated_at": "2026-09-09T13:47:32.910377+00:00"
+    },
+    {
+      "_id": "entities/woodpeckers",
+      "_key": "woodpeckers",
+      "aliases": [],
+      "created_at": "2026-09-09T13:47:32.910379+00:00",
+      "entity_type": "animal",
+      "name": "woodpeckers",
+      "updated_at": "2026-09-09T13:47:32.910379+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-10258",
+      "_key": "semeval-terra-low-r2-b5-semeval-10258",
+      "chunk_id": "semeval-10258",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:71df82e354bed4ab9649023fcdc42656b234a36b4d725269af5b966991a66bc9",
+      "created_at": "2026-09-09T13:47:32.910380+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "The video then shows the damage caused by the aircraft as it hit the north tower, follows the disintegrating plane through the interior, and then shows the airplane metal, ignited fuel, dust and smoke exiting the building on the opposite side.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910380+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-8225",
+      "_key": "semeval-terra-low-r2-b5-semeval-8225",
+      "chunk_id": "semeval-8225",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5bccac98712771d0680c721aac043427d9d999b2df715c4e22a451df5355a022",
+      "created_at": "2026-09-09T13:47:32.910393+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "The animals on this farm are contented, happy cattle.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910393+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-8266",
+      "_key": "semeval-terra-low-r2-b5-semeval-8266",
+      "chunk_id": "semeval-8266",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:487e13f485d17441c975bf950e58a5c7026a02f6a78f344726f570a450d88817",
+      "created_at": "2026-09-09T13:47:32.910395+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "Last night, my friend ran into a legendary surfer at a bar.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910395+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-8413",
+      "_key": "semeval-terra-low-r2-b5-semeval-8413",
+      "chunk_id": "semeval-8413",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:81f46543d69f9d71882866a09c9446292121f6cef3d6d6288662860e207ef434",
+      "created_at": "2026-09-09T13:47:32.910396+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "Transport authorities in the Western Cape have warned of hefty fines for motorists who ignore dedicated lane for buses and minibus taxis on the road.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910396+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-8527",
+      "_key": "semeval-terra-low-r2-b5-semeval-8527",
+      "chunk_id": "semeval-8527",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b9c3c7672e5fee551a9cf95c9a39aaefc2a728ffdddddf64e2fb926d1eefe8c3",
+      "created_at": "2026-09-09T13:47:32.910402+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "The lead locomotive of the train had a video camera that recorded the view in front of the train.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910402+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-8530",
+      "_key": "semeval-terra-low-r2-b5-semeval-8530",
+      "chunk_id": "semeval-8530",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9260787bd42fb2f741f407c8659a17b6f3e72719a4c3b392f6dda55a88a18a29",
+      "created_at": "2026-09-09T13:47:32.910410+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "A major product of the factory was decorative quarry glass which was mass-produced by moulding and printing, rather than hand-cutting and painting.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910410+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-8553",
+      "_key": "semeval-terra-low-r2-b5-semeval-8553",
+      "chunk_id": "semeval-8553",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:0f2eec4a1043b30e0dbacdd0d307f72c3ea246abbcb621f14a2988ec7bf2d659",
+      "created_at": "2026-09-09T13:47:32.910416+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "Discussion took place on the function of this Committee.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910416+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-8897",
+      "_key": "semeval-terra-low-r2-b5-semeval-8897",
+      "chunk_id": "semeval-8897",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:638a603588e84414f2b30dc38c5f055493f28ff4d7d23158f53267aa47ab5e45",
+      "created_at": "2026-09-09T13:47:32.910423+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "Insects that harm trees are often prey for a descent of woodpeckers, which, in turn benefits the birds that nest in the saved tree.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910423+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-9355",
+      "_key": "semeval-terra-low-r2-b5-semeval-9355",
+      "chunk_id": "semeval-9355",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:13bf33cf2098c56302e72663bc78cc3b91195ba5d32650dc92ddf185bf030315",
+      "created_at": "2026-09-09T13:47:32.910429+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "In this marvelous book Smuts draws from years of painstaking field research in which she followed around a flange of chacma baboons in the Mateti Game Park in Zimbabwe.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910429+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-9377",
+      "_key": "semeval-terra-low-r2-b5-semeval-9377",
+      "chunk_id": "semeval-9377",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:563a964c7634cfd246047d9bff09b21a973895bfbed97479c59249d46d2ac4e3",
+      "created_at": "2026-09-09T13:47:32.910434+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "They chose a shop that oven bakes the paint in a down draft paint booth.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910434+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-9680",
+      "_key": "semeval-terra-low-r2-b5-semeval-9680",
+      "chunk_id": "semeval-9680",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:adf2333f9ee8b757ef5e0cbf5d9059c0f0112643dd3e4e9713b9d64104fc305a",
+      "created_at": "2026-09-09T13:47:32.910435+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "Rising as it does, 8260 feet straight from the fertile plains of the North Island's finest dairying country, the mountain is clothed with primeval forest.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910435+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b5-semeval-9981",
+      "_key": "semeval-terra-low-r2-b5-semeval-9981",
+      "chunk_id": "semeval-9981",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:bb837bfb8063ee2bec35d3de5cf40d79fc58b50251cd8aa6cd11579a3dd1173e",
+      "created_at": "2026-09-09T13:47:32.910441+00:00",
+      "space_id": "semeval-terra-low-r2-b5",
+      "text": "A skein of greylag geese came directly over me and I killed one that dropped far out in the field.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:47:32.910441+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 9,
+        "results": [
+          {
+            "_from": "entities/baboons",
+            "_id": "facts/fact-0a078dd4ca8a113727b569994672f40a7e284ed6bb8f96bcc0e902abd4e5c825",
+            "_key": "fact-0a078dd4ca8a113727b569994672f40a7e284ed6bb8f96bcc0e902abd4e5c825",
+            "_to": "entities/flange",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9355",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b5",
+            "trigger": "In this marvelous book Smuts draws from years of painstaking field research in which she followed around a flange of chacma baboons in the Mateti Game Park in Zimbabwe.",
+            "trigger_end": 168,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/geese",
+            "_id": "facts/fact-15da26a84279f09d4375bcd0019bd68d0ef806066d3ec3ce5ca4083c7f3216eb",
+            "_key": "fact-15da26a84279f09d4375bcd0019bd68d0ef806066d3ec3ce5ca4083c7f3216eb",
+            "_to": "entities/skein",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9981",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b5",
+            "trigger": "A skein of greylag geese came directly over me and I killed one that dropped far out in the field.",
+            "trigger_end": 98,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/woodpeckers",
+            "_id": "facts/fact-193c06def72198ae38c01566b76c8b811216dd5a5ed39592eb25d5cd4cbe5207",
+            "_key": "fact-193c06def72198ae38c01566b76c8b811216dd5a5ed39592eb25d5cd4cbe5207",
+            "_to": "entities/descent",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8897",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b5",
+            "trigger": "Insects that harm trees are often prey for a descent of woodpeckers, which, in turn benefits the birds that nest in the saved tree.",
+            "trigger_end": 131,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/lane",
+            "_id": "facts/fact-937a19531f3ac98bbb8939d6986fe111547a01ea6c89b08b98211de43577685e",
+            "_key": "fact-937a19531f3ac98bbb8939d6986fe111547a01ea6c89b08b98211de43577685e",
+            "_to": "entities/road",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8413",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b5",
+            "trigger": "Transport authorities in the Western Cape have warned of hefty fines for motorists who ignore dedicated lane for buses and minibus taxis on the road.",
+            "trigger_end": 149,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/aircraft",
+            "_id": "facts/fact-944025fcb5e8ee952285808f0442f6570f0ad2d5b69eb10b698ff63a83be23d0",
+            "_key": "fact-944025fcb5e8ee952285808f0442f6570f0ad2d5b69eb10b698ff63a83be23d0",
+            "_to": "entities/damage",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10258",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b5",
+            "trigger": "The video then shows the damage caused by the aircraft as it hit the north tower, follows the disintegrating plane through the interior, and then shows the airplane metal, ignited fuel, dust and smoke exiting the building on the opposite side.",
+            "trigger_end": 243,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/discussion",
+            "_id": "facts/fact-9c0d4e7c0c71ea7fc031bd4f31983e44685d666457f97b807b077d459269902a",
+            "_key": "fact-9c0d4e7c0c71ea7fc031bd4f31983e44685d666457f97b807b077d459269902a",
+            "_to": "entities/function",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8553",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b5",
+            "trigger": "Discussion took place on the function of this Committee.",
+            "trigger_end": 56,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/glass",
+            "_id": "facts/fact-9fa876262ae78c999b1119e425ffbbfd886f7017ea97b1b8cd4a246aefd819d7",
+            "_key": "fact-9fa876262ae78c999b1119e425ffbbfd886f7017ea97b1b8cd4a246aefd819d7",
+            "_to": "entities/factory",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8530",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b5",
+            "trigger": "A major product of the factory was decorative quarry glass which was mass-produced by moulding and printing, rather than hand-cutting and painting.",
+            "trigger_end": 147,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/locomotive",
+            "_id": "facts/fact-a5dfeffcceefca78471ecf5a91a9c2113b184507935c629a4e0a2add5a856ec7",
+            "_key": "fact-a5dfeffcceefca78471ecf5a91a9c2113b184507935c629a4e0a2add5a856ec7",
+            "_to": "entities/train",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8527",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b5",
+            "trigger": "The lead locomotive of the train had a video camera that recorded the view in front of the train.",
+            "trigger_end": 97,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/mountain",
+            "_id": "facts/fact-fd88cf38cf61092d5866328e9508cf175653c06c909c3b8aef9ab1718051fd7d",
+            "_key": "fact-fd88cf38cf61092d5866328e9508cf175653c06c909c3b8aef9ab1718051fd7d",
+            "_to": "entities/plains",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9680",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b5",
+            "trigger": "Rising as it does, 8260 feet straight from the fertile plains of the North Island's finest dairying country, the mountain is clothed with primeval forest.",
+            "trigger_end": 154,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 18,
+        "results": [
+          {
+            "_id": "entities/aircraft",
+            "_key": "aircraft",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910358+00:00",
+            "entity_type": "vehicle",
+            "name": "aircraft",
+            "updated_at": "2026-09-09T13:47:32.910358+00:00"
+          },
+          {
+            "_id": "entities/baboons",
+            "_key": "baboons",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910362+00:00",
+            "entity_type": "animal",
+            "name": "baboons",
+            "updated_at": "2026-09-09T13:47:32.910362+00:00"
+          },
+          {
+            "_id": "entities/damage",
+            "_key": "damage",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910364+00:00",
+            "entity_type": "damage",
+            "name": "damage",
+            "updated_at": "2026-09-09T13:47:32.910364+00:00"
+          },
+          {
+            "_id": "entities/descent",
+            "_key": "descent",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910365+00:00",
+            "entity_type": "collection",
+            "name": "descent",
+            "updated_at": "2026-09-09T13:47:32.910365+00:00"
+          },
+          {
+            "_id": "entities/discussion",
+            "_key": "discussion",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910366+00:00",
+            "entity_type": "message",
+            "name": "Discussion",
+            "updated_at": "2026-09-09T13:47:32.910366+00:00"
+          },
+          {
+            "_id": "entities/factory",
+            "_key": "factory",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910367+00:00",
+            "entity_type": "producer",
+            "name": "factory",
+            "updated_at": "2026-09-09T13:47:32.910367+00:00"
+          },
+          {
+            "_id": "entities/flange",
+            "_key": "flange",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910368+00:00",
+            "entity_type": "collection",
+            "name": "flange",
+            "updated_at": "2026-09-09T13:47:32.910368+00:00"
+          },
+          {
+            "_id": "entities/function",
+            "_key": "function",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910369+00:00",
+            "entity_type": "topic",
+            "name": "function",
+            "updated_at": "2026-09-09T13:47:32.910369+00:00"
+          },
+          {
+            "_id": "entities/geese",
+            "_key": "geese",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910370+00:00",
+            "entity_type": "animal",
+            "name": "geese",
+            "updated_at": "2026-09-09T13:47:32.910370+00:00"
+          },
+          {
+            "_id": "entities/glass",
+            "_key": "glass",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910371+00:00",
+            "entity_type": "product",
+            "name": "glass",
+            "updated_at": "2026-09-09T13:47:32.910371+00:00"
+          },
+          {
+            "_id": "entities/lane",
+            "_key": "lane",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910372+00:00",
+            "entity_type": "component",
+            "name": "lane",
+            "updated_at": "2026-09-09T13:47:32.910372+00:00"
+          },
+          {
+            "_id": "entities/locomotive",
+            "_key": "locomotive",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910373+00:00",
+            "entity_type": "vehicle",
+            "name": "locomotive",
+            "updated_at": "2026-09-09T13:47:32.910373+00:00"
+          },
+          {
+            "_id": "entities/mountain",
+            "_key": "mountain",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910374+00:00",
+            "entity_type": "landform",
+            "name": "mountain",
+            "updated_at": "2026-09-09T13:47:32.910374+00:00"
+          },
+          {
+            "_id": "entities/plains",
+            "_key": "plains",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910375+00:00",
+            "entity_type": "landform",
+            "name": "plains",
+            "updated_at": "2026-09-09T13:47:32.910375+00:00"
+          },
+          {
+            "_id": "entities/road",
+            "_key": "road",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910376+00:00",
+            "entity_type": "whole",
+            "name": "road",
+            "updated_at": "2026-09-09T13:47:32.910376+00:00"
+          },
+          {
+            "_id": "entities/skein",
+            "_key": "skein",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910377+00:00",
+            "entity_type": "collection",
+            "name": "skein",
+            "updated_at": "2026-09-09T13:47:32.910377+00:00"
+          },
+          {
+            "_id": "entities/train",
+            "_key": "train",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910377+00:00",
+            "entity_type": "vehicle",
+            "name": "train",
+            "updated_at": "2026-09-09T13:47:32.910377+00:00"
+          },
+          {
+            "_id": "entities/woodpeckers",
+            "_key": "woodpeckers",
+            "aliases": [],
+            "created_at": "2026-09-09T13:47:32.910379+00:00",
+            "entity_type": "animal",
+            "name": "woodpeckers",
+            "updated_at": "2026-09-09T13:47:32.910379+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-10258",
+            "_key": "semeval-terra-low-r2-b5-semeval-10258",
+            "chunk_id": "semeval-10258",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:71df82e354bed4ab9649023fcdc42656b234a36b4d725269af5b966991a66bc9",
+            "created_at": "2026-09-09T13:47:32.910380+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "The video then shows the damage caused by the aircraft as it hit the north tower, follows the disintegrating plane through the interior, and then shows the airplane metal, ignited fuel, dust and smoke exiting the building on the opposite side.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910380+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-8225",
+            "_key": "semeval-terra-low-r2-b5-semeval-8225",
+            "chunk_id": "semeval-8225",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5bccac98712771d0680c721aac043427d9d999b2df715c4e22a451df5355a022",
+            "created_at": "2026-09-09T13:47:32.910393+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "The animals on this farm are contented, happy cattle.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910393+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-8266",
+            "_key": "semeval-terra-low-r2-b5-semeval-8266",
+            "chunk_id": "semeval-8266",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:487e13f485d17441c975bf950e58a5c7026a02f6a78f344726f570a450d88817",
+            "created_at": "2026-09-09T13:47:32.910395+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "Last night, my friend ran into a legendary surfer at a bar.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910395+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-8413",
+            "_key": "semeval-terra-low-r2-b5-semeval-8413",
+            "chunk_id": "semeval-8413",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:81f46543d69f9d71882866a09c9446292121f6cef3d6d6288662860e207ef434",
+            "created_at": "2026-09-09T13:47:32.910396+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "Transport authorities in the Western Cape have warned of hefty fines for motorists who ignore dedicated lane for buses and minibus taxis on the road.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910396+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-8527",
+            "_key": "semeval-terra-low-r2-b5-semeval-8527",
+            "chunk_id": "semeval-8527",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b9c3c7672e5fee551a9cf95c9a39aaefc2a728ffdddddf64e2fb926d1eefe8c3",
+            "created_at": "2026-09-09T13:47:32.910402+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "The lead locomotive of the train had a video camera that recorded the view in front of the train.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910402+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-8530",
+            "_key": "semeval-terra-low-r2-b5-semeval-8530",
+            "chunk_id": "semeval-8530",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:9260787bd42fb2f741f407c8659a17b6f3e72719a4c3b392f6dda55a88a18a29",
+            "created_at": "2026-09-09T13:47:32.910410+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "A major product of the factory was decorative quarry glass which was mass-produced by moulding and printing, rather than hand-cutting and painting.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910410+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-8553",
+            "_key": "semeval-terra-low-r2-b5-semeval-8553",
+            "chunk_id": "semeval-8553",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:0f2eec4a1043b30e0dbacdd0d307f72c3ea246abbcb621f14a2988ec7bf2d659",
+            "created_at": "2026-09-09T13:47:32.910416+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "Discussion took place on the function of this Committee.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910416+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-8897",
+            "_key": "semeval-terra-low-r2-b5-semeval-8897",
+            "chunk_id": "semeval-8897",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:638a603588e84414f2b30dc38c5f055493f28ff4d7d23158f53267aa47ab5e45",
+            "created_at": "2026-09-09T13:47:32.910423+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "Insects that harm trees are often prey for a descent of woodpeckers, which, in turn benefits the birds that nest in the saved tree.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910423+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-9355",
+            "_key": "semeval-terra-low-r2-b5-semeval-9355",
+            "chunk_id": "semeval-9355",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:13bf33cf2098c56302e72663bc78cc3b91195ba5d32650dc92ddf185bf030315",
+            "created_at": "2026-09-09T13:47:32.910429+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "In this marvelous book Smuts draws from years of painstaking field research in which she followed around a flange of chacma baboons in the Mateti Game Park in Zimbabwe.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910429+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-9377",
+            "_key": "semeval-terra-low-r2-b5-semeval-9377",
+            "chunk_id": "semeval-9377",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:563a964c7634cfd246047d9bff09b21a973895bfbed97479c59249d46d2ac4e3",
+            "created_at": "2026-09-09T13:47:32.910434+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "They chose a shop that oven bakes the paint in a down draft paint booth.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910434+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-9680",
+            "_key": "semeval-terra-low-r2-b5-semeval-9680",
+            "chunk_id": "semeval-9680",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:adf2333f9ee8b757ef5e0cbf5d9059c0f0112643dd3e4e9713b9d64104fc305a",
+            "created_at": "2026-09-09T13:47:32.910435+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "Rising as it does, 8260 feet straight from the fertile plains of the North Island's finest dairying country, the mountain is clothed with primeval forest.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910435+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b5-semeval-9981",
+            "_key": "semeval-terra-low-r2-b5-semeval-9981",
+            "chunk_id": "semeval-9981",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:bb837bfb8063ee2bec35d3de5cf40d79fc58b50251cd8aa6cd11579a3dd1173e",
+            "created_at": "2026-09-09T13:47:32.910441+00:00",
+            "space_id": "semeval-terra-low-r2-b5",
+            "text": "A skein of greylag geese came directly over me and I killed one that dropped far out in the field.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:47:32.910441+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

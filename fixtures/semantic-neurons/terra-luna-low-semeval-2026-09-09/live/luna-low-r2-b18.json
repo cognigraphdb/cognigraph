@@ -1,0 +1,1129 @@
+{
+  "phase": "measurement",
+  "arm": "luna-low",
+  "repetition": 2,
+  "batch": 18,
+  "request": {
+    "space_type": "semeval-luna-low-r2-b18",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9577",
+        "title": "Relation benchmark excerpt",
+        "text": "Both cocaine and crack cocaine cause constricted blood vessels, increased heart rate, body temperature and blood pressure."
+      },
+      {
+        "id": "semeval-8347",
+        "title": "Relation benchmark excerpt",
+        "text": "Active transport is a mechanism evolved to mediate traffic across cellular membranes."
+      },
+      {
+        "id": "semeval-10372",
+        "title": "Relation benchmark excerpt",
+        "text": "In this poem the poet personifies his city during the last years in which he was able to live there."
+      },
+      {
+        "id": "semeval-10408",
+        "title": "Relation benchmark excerpt",
+        "text": "In contrast, I first learned of Steve's existence through an observation by a clique of Bursley Dorm acquaintances I used to dine with that same year."
+      },
+      {
+        "id": "semeval-10432",
+        "title": "Relation benchmark excerpt",
+        "text": "We observed that a box was actually placed inside the cornerstone with a variety of artifacts and documents commemorating the event and the history of Savannah."
+      },
+      {
+        "id": "semeval-8762",
+        "title": "Relation benchmark excerpt",
+        "text": "In the past, insulin was extracted from the pancreases of cows or pigs, then used to treat diabetics."
+      },
+      {
+        "id": "semeval-8775",
+        "title": "Relation benchmark excerpt",
+        "text": "The thin F ring on the left of the image shows the perturbations caused by the moon Prometheus."
+      },
+      {
+        "id": "semeval-9550",
+        "title": "Relation benchmark excerpt",
+        "text": "Barbauld was also a literary critic, and her anthology of eighteenth-century British novels helped establish the canon as we know it today."
+      },
+      {
+        "id": "semeval-10425",
+        "title": "Relation benchmark excerpt",
+        "text": "Among the first to survey the devastation caused by the April earthquake, the team discusses what they observed and learned from the damaged buildings."
+      },
+      {
+        "id": "semeval-9034",
+        "title": "Relation benchmark excerpt",
+        "text": "Developed in 1979, depressed center wheels revolutionized angle grinding."
+      },
+      {
+        "id": "semeval-9240",
+        "title": "Relation benchmark excerpt",
+        "text": "The clinical evidence came from a cohort study."
+      },
+      {
+        "id": "semeval-8571",
+        "title": "Relation benchmark excerpt",
+        "text": "The two central areas of controversy have to do with composition and titles."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 8,
+    "proposed": 10,
+    "skips": [
+      "`wheels --Cause-Effect--> grinding`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+      "`poem --Product-Producer--> poet`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-luna-low-r2-b18"
+  },
+  "latency_seconds": 12.524464666028507,
+  "facts": [
+    {
+      "_from": "entities/cocaine",
+      "_id": "facts/fact-0cb55eef05f9a12fbfc25f50df49cff31c17cc600d5a192d5792b7f2c8fd3c39",
+      "_key": "fact-0cb55eef05f9a12fbfc25f50df49cff31c17cc600d5a192d5792b7f2c8fd3c39",
+      "_to": "entities/pressure",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9577",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b18",
+      "trigger": "Both cocaine and crack cocaine cause constricted blood vessels, increased heart rate, body temperature and blood pressure.",
+      "trigger_end": 122,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/novels",
+      "_id": "facts/fact-22692835ae729ae825c57473806a78c944489a37708187405f67e087ee19bb90",
+      "_key": "fact-22692835ae729ae825c57473806a78c944489a37708187405f67e087ee19bb90",
+      "_to": "entities/anthology",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9550",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b18",
+      "trigger": "Barbauld was also a literary critic, and her anthology of eighteenth-century British novels helped establish the canon as we know it today.",
+      "trigger_end": 139,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/box",
+      "_id": "facts/fact-3ce4177287d14a023b9ab7969904e8a796582676f084ef402ec33edffe6d2aad",
+      "_key": "fact-3ce4177287d14a023b9ab7969904e8a796582676f084ef402ec33edffe6d2aad",
+      "_to": "entities/cornerstone",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10432",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b18",
+      "trigger": "We observed that a box was actually placed inside the cornerstone with a variety of artifacts and documents commemorating the event and the history of Savannah.",
+      "trigger_end": 160,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/insulin",
+      "_id": "facts/fact-433947aff784432e6cc71bd62fefe5837bc2365bd6a9b7c6396293c72c5b0aa0",
+      "_key": "fact-433947aff784432e6cc71bd62fefe5837bc2365bd6a9b7c6396293c72c5b0aa0",
+      "_to": "entities/pancreases",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8762",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b18",
+      "trigger": "In the past, insulin was extracted from the pancreases of cows or pigs, then used to treat diabetics.",
+      "trigger_end": 101,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/earthquake",
+      "_id": "facts/fact-50c6b0f390222ca575d866686d7e209ff45f2e8e64d2eebc88efc37fef1f9a3b",
+      "_key": "fact-50c6b0f390222ca575d866686d7e209ff45f2e8e64d2eebc88efc37fef1f9a3b",
+      "_to": "entities/devastation",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10425",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b18",
+      "trigger": "Among the first to survey the devastation caused by the April earthquake, the team discusses what they observed and learned from the damaged buildings.",
+      "trigger_end": 151,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/acquaintances",
+      "_id": "facts/fact-6d87d5ba33c51d03a9eb7517fe93db8a775ba4ed1486e982493a28bfa6e383a2",
+      "_key": "fact-6d87d5ba33c51d03a9eb7517fe93db8a775ba4ed1486e982493a28bfa6e383a2",
+      "_to": "entities/clique",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10408",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b18",
+      "trigger": "In contrast, I first learned of Steve's existence through an observation by a clique of Bursley Dorm acquaintances I used to dine with that same year.",
+      "trigger_end": 150,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/evidence",
+      "_id": "facts/fact-7aae0b0d39cc3b4b0ea6e71916980ecf409205c0500e622c8feac5c1edc6579d",
+      "_key": "fact-7aae0b0d39cc3b4b0ea6e71916980ecf409205c0500e622c8feac5c1edc6579d",
+      "_to": "entities/study",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9240",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b18",
+      "trigger": "The clinical evidence came from a cohort study.",
+      "trigger_end": 47,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/moon",
+      "_id": "facts/fact-abf44eca94ce82f09ed44e310adea1ac84ea13db22bafab4864c5957cf0f532a",
+      "_key": "fact-abf44eca94ce82f09ed44e310adea1ac84ea13db22bafab4864c5957cf0f532a",
+      "_to": "entities/perturbations",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8775",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b18",
+      "trigger": "The thin F ring on the left of the image shows the perturbations caused by the moon Prometheus.",
+      "trigger_end": 95,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/acquaintances",
+      "_key": "acquaintances",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049535+00:00",
+      "entity_type": "people",
+      "name": "acquaintances",
+      "updated_at": "2026-09-09T13:53:54.049535+00:00"
+    },
+    {
+      "_id": "entities/anthology",
+      "_key": "anthology",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049539+00:00",
+      "entity_type": "collection",
+      "name": "anthology",
+      "updated_at": "2026-09-09T13:53:54.049539+00:00"
+    },
+    {
+      "_id": "entities/box",
+      "_key": "box",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049540+00:00",
+      "entity_type": "object",
+      "name": "box",
+      "updated_at": "2026-09-09T13:53:54.049540+00:00"
+    },
+    {
+      "_id": "entities/clique",
+      "_key": "clique",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049541+00:00",
+      "entity_type": "group",
+      "name": "clique",
+      "updated_at": "2026-09-09T13:53:54.049541+00:00"
+    },
+    {
+      "_id": "entities/cocaine",
+      "_key": "cocaine",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049542+00:00",
+      "entity_type": "substance",
+      "name": "cocaine",
+      "updated_at": "2026-09-09T13:53:54.049542+00:00"
+    },
+    {
+      "_id": "entities/cornerstone",
+      "_key": "cornerstone",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049543+00:00",
+      "entity_type": "object",
+      "name": "cornerstone",
+      "updated_at": "2026-09-09T13:53:54.049543+00:00"
+    },
+    {
+      "_id": "entities/devastation",
+      "_key": "devastation",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049544+00:00",
+      "entity_type": "damage",
+      "name": "devastation",
+      "updated_at": "2026-09-09T13:53:54.049544+00:00"
+    },
+    {
+      "_id": "entities/earthquake",
+      "_key": "earthquake",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049545+00:00",
+      "entity_type": "natural event",
+      "name": "earthquake",
+      "updated_at": "2026-09-09T13:53:54.049545+00:00"
+    },
+    {
+      "_id": "entities/evidence",
+      "_key": "evidence",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049546+00:00",
+      "entity_type": "information",
+      "name": "evidence",
+      "updated_at": "2026-09-09T13:53:54.049546+00:00"
+    },
+    {
+      "_id": "entities/insulin",
+      "_key": "insulin",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049547+00:00",
+      "entity_type": "substance",
+      "name": "insulin",
+      "updated_at": "2026-09-09T13:53:54.049547+00:00"
+    },
+    {
+      "_id": "entities/moon",
+      "_key": "moon",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049548+00:00",
+      "entity_type": "celestial body",
+      "name": "moon",
+      "updated_at": "2026-09-09T13:53:54.049548+00:00"
+    },
+    {
+      "_id": "entities/novels",
+      "_key": "novels",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049549+00:00",
+      "entity_type": "literary works",
+      "name": "novels",
+      "updated_at": "2026-09-09T13:53:54.049549+00:00"
+    },
+    {
+      "_id": "entities/pancreases",
+      "_key": "pancreases",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049550+00:00",
+      "entity_type": "organ",
+      "name": "pancreases",
+      "updated_at": "2026-09-09T13:53:54.049550+00:00"
+    },
+    {
+      "_id": "entities/perturbations",
+      "_key": "perturbations",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049551+00:00",
+      "entity_type": "phenomenon",
+      "name": "perturbations",
+      "updated_at": "2026-09-09T13:53:54.049551+00:00"
+    },
+    {
+      "_id": "entities/pressure",
+      "_key": "pressure",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049551+00:00",
+      "entity_type": "physiological measure",
+      "name": "pressure",
+      "updated_at": "2026-09-09T13:53:54.049551+00:00"
+    },
+    {
+      "_id": "entities/study",
+      "_key": "study",
+      "aliases": [],
+      "created_at": "2026-09-09T13:53:54.049552+00:00",
+      "entity_type": "research",
+      "name": "study",
+      "updated_at": "2026-09-09T13:53:54.049552+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-10372",
+      "_key": "semeval-luna-low-r2-b18-semeval-10372",
+      "chunk_id": "semeval-10372",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6a314626ab13d0829f11445c360e38f10d26e90d13fb4ca007b038db37fa0b2f",
+      "created_at": "2026-09-09T13:53:54.049554+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "In this poem the poet personifies his city during the last years in which he was able to live there.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049554+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-10408",
+      "_key": "semeval-luna-low-r2-b18-semeval-10408",
+      "chunk_id": "semeval-10408",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:462bdc0bf2f622504f72e729756547305e2c347fa407e459190a5d4b68f8d772",
+      "created_at": "2026-09-09T13:53:54.049557+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "In contrast, I first learned of Steve's existence through an observation by a clique of Bursley Dorm acquaintances I used to dine with that same year.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049557+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-10425",
+      "_key": "semeval-luna-low-r2-b18-semeval-10425",
+      "chunk_id": "semeval-10425",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:837e6cb337eb68747ea407a1e7e5d1f5a3b520f066cf4a42f37901e5b70b975b",
+      "created_at": "2026-09-09T13:53:54.049567+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "Among the first to survey the devastation caused by the April earthquake, the team discusses what they observed and learned from the damaged buildings.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049567+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-10432",
+      "_key": "semeval-luna-low-r2-b18-semeval-10432",
+      "chunk_id": "semeval-10432",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:0381f3562d3a59ad7478ad1c491d609a1c90ba994f56bdff2a9b44b3767b1298",
+      "created_at": "2026-09-09T13:53:54.049573+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "We observed that a box was actually placed inside the cornerstone with a variety of artifacts and documents commemorating the event and the history of Savannah.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049573+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-8347",
+      "_key": "semeval-luna-low-r2-b18-semeval-8347",
+      "chunk_id": "semeval-8347",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:baeb57fdf6832b57681afadd77eed0d6e224491d5b7601f848fee231e895206b",
+      "created_at": "2026-09-09T13:53:54.049578+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "Active transport is a mechanism evolved to mediate traffic across cellular membranes.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049578+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-8571",
+      "_key": "semeval-luna-low-r2-b18-semeval-8571",
+      "chunk_id": "semeval-8571",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e0571164b532f832ce49c39c12020ae7c7e009a82859866b018d98cade39af6a",
+      "created_at": "2026-09-09T13:53:54.049580+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "The two central areas of controversy have to do with composition and titles.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049580+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-8762",
+      "_key": "semeval-luna-low-r2-b18-semeval-8762",
+      "chunk_id": "semeval-8762",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d01bda96eab33b70de301a0c5fa19d7c6205bad405fd8d09009a379720daf594",
+      "created_at": "2026-09-09T13:53:54.049581+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "In the past, insulin was extracted from the pancreases of cows or pigs, then used to treat diabetics.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049581+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-8775",
+      "_key": "semeval-luna-low-r2-b18-semeval-8775",
+      "chunk_id": "semeval-8775",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2044fe31b64dfbbdf21480c36a861aeb98edd2f3e3229112e9654815bb6dd8cc",
+      "created_at": "2026-09-09T13:53:54.049586+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "The thin F ring on the left of the image shows the perturbations caused by the moon Prometheus.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049586+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-9034",
+      "_key": "semeval-luna-low-r2-b18-semeval-9034",
+      "chunk_id": "semeval-9034",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f15b70041b860df98d4bfe2326656e64955383b9c2ab71a2596d08e1381ff0af",
+      "created_at": "2026-09-09T13:53:54.049591+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "Developed in 1979, depressed center wheels revolutionized angle grinding.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049591+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-9240",
+      "_key": "semeval-luna-low-r2-b18-semeval-9240",
+      "chunk_id": "semeval-9240",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7df89e568cf53866d65a340e43407a0d5ec40a69ece8733b0f69aae9d4814307",
+      "created_at": "2026-09-09T13:53:54.049592+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "The clinical evidence came from a cohort study.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049592+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-9550",
+      "_key": "semeval-luna-low-r2-b18-semeval-9550",
+      "chunk_id": "semeval-9550",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b8203020efa8565a2de69ddc370fdffec28182677a027beeacdfabc7c9ca19c1",
+      "created_at": "2026-09-09T13:53:54.049597+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "Barbauld was also a literary critic, and her anthology of eighteenth-century British novels helped establish the canon as we know it today.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049597+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b18-semeval-9577",
+      "_key": "semeval-luna-low-r2-b18-semeval-9577",
+      "chunk_id": "semeval-9577",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1f5d5a42731c80e6a96ffb6eb307c6fe79fa3ce25fa79f4a214c616671b3497d",
+      "created_at": "2026-09-09T13:53:54.049602+00:00",
+      "space_id": "semeval-luna-low-r2-b18",
+      "text": "Both cocaine and crack cocaine cause constricted blood vessels, increased heart rate, body temperature and blood pressure.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:53:54.049602+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 8,
+        "results": [
+          {
+            "_from": "entities/cocaine",
+            "_id": "facts/fact-0cb55eef05f9a12fbfc25f50df49cff31c17cc600d5a192d5792b7f2c8fd3c39",
+            "_key": "fact-0cb55eef05f9a12fbfc25f50df49cff31c17cc600d5a192d5792b7f2c8fd3c39",
+            "_to": "entities/pressure",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9577",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b18",
+            "trigger": "Both cocaine and crack cocaine cause constricted blood vessels, increased heart rate, body temperature and blood pressure.",
+            "trigger_end": 122,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/novels",
+            "_id": "facts/fact-22692835ae729ae825c57473806a78c944489a37708187405f67e087ee19bb90",
+            "_key": "fact-22692835ae729ae825c57473806a78c944489a37708187405f67e087ee19bb90",
+            "_to": "entities/anthology",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9550",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b18",
+            "trigger": "Barbauld was also a literary critic, and her anthology of eighteenth-century British novels helped establish the canon as we know it today.",
+            "trigger_end": 139,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/box",
+            "_id": "facts/fact-3ce4177287d14a023b9ab7969904e8a796582676f084ef402ec33edffe6d2aad",
+            "_key": "fact-3ce4177287d14a023b9ab7969904e8a796582676f084ef402ec33edffe6d2aad",
+            "_to": "entities/cornerstone",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10432",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b18",
+            "trigger": "We observed that a box was actually placed inside the cornerstone with a variety of artifacts and documents commemorating the event and the history of Savannah.",
+            "trigger_end": 160,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/insulin",
+            "_id": "facts/fact-433947aff784432e6cc71bd62fefe5837bc2365bd6a9b7c6396293c72c5b0aa0",
+            "_key": "fact-433947aff784432e6cc71bd62fefe5837bc2365bd6a9b7c6396293c72c5b0aa0",
+            "_to": "entities/pancreases",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8762",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b18",
+            "trigger": "In the past, insulin was extracted from the pancreases of cows or pigs, then used to treat diabetics.",
+            "trigger_end": 101,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/earthquake",
+            "_id": "facts/fact-50c6b0f390222ca575d866686d7e209ff45f2e8e64d2eebc88efc37fef1f9a3b",
+            "_key": "fact-50c6b0f390222ca575d866686d7e209ff45f2e8e64d2eebc88efc37fef1f9a3b",
+            "_to": "entities/devastation",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10425",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b18",
+            "trigger": "Among the first to survey the devastation caused by the April earthquake, the team discusses what they observed and learned from the damaged buildings.",
+            "trigger_end": 151,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/acquaintances",
+            "_id": "facts/fact-6d87d5ba33c51d03a9eb7517fe93db8a775ba4ed1486e982493a28bfa6e383a2",
+            "_key": "fact-6d87d5ba33c51d03a9eb7517fe93db8a775ba4ed1486e982493a28bfa6e383a2",
+            "_to": "entities/clique",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10408",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b18",
+            "trigger": "In contrast, I first learned of Steve's existence through an observation by a clique of Bursley Dorm acquaintances I used to dine with that same year.",
+            "trigger_end": 150,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/evidence",
+            "_id": "facts/fact-7aae0b0d39cc3b4b0ea6e71916980ecf409205c0500e622c8feac5c1edc6579d",
+            "_key": "fact-7aae0b0d39cc3b4b0ea6e71916980ecf409205c0500e622c8feac5c1edc6579d",
+            "_to": "entities/study",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9240",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b18",
+            "trigger": "The clinical evidence came from a cohort study.",
+            "trigger_end": 47,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/moon",
+            "_id": "facts/fact-abf44eca94ce82f09ed44e310adea1ac84ea13db22bafab4864c5957cf0f532a",
+            "_key": "fact-abf44eca94ce82f09ed44e310adea1ac84ea13db22bafab4864c5957cf0f532a",
+            "_to": "entities/perturbations",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8775",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b18",
+            "trigger": "The thin F ring on the left of the image shows the perturbations caused by the moon Prometheus.",
+            "trigger_end": 95,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 16,
+        "results": [
+          {
+            "_id": "entities/acquaintances",
+            "_key": "acquaintances",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049535+00:00",
+            "entity_type": "people",
+            "name": "acquaintances",
+            "updated_at": "2026-09-09T13:53:54.049535+00:00"
+          },
+          {
+            "_id": "entities/anthology",
+            "_key": "anthology",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049539+00:00",
+            "entity_type": "collection",
+            "name": "anthology",
+            "updated_at": "2026-09-09T13:53:54.049539+00:00"
+          },
+          {
+            "_id": "entities/box",
+            "_key": "box",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049540+00:00",
+            "entity_type": "object",
+            "name": "box",
+            "updated_at": "2026-09-09T13:53:54.049540+00:00"
+          },
+          {
+            "_id": "entities/clique",
+            "_key": "clique",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049541+00:00",
+            "entity_type": "group",
+            "name": "clique",
+            "updated_at": "2026-09-09T13:53:54.049541+00:00"
+          },
+          {
+            "_id": "entities/cocaine",
+            "_key": "cocaine",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049542+00:00",
+            "entity_type": "substance",
+            "name": "cocaine",
+            "updated_at": "2026-09-09T13:53:54.049542+00:00"
+          },
+          {
+            "_id": "entities/cornerstone",
+            "_key": "cornerstone",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049543+00:00",
+            "entity_type": "object",
+            "name": "cornerstone",
+            "updated_at": "2026-09-09T13:53:54.049543+00:00"
+          },
+          {
+            "_id": "entities/devastation",
+            "_key": "devastation",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049544+00:00",
+            "entity_type": "damage",
+            "name": "devastation",
+            "updated_at": "2026-09-09T13:53:54.049544+00:00"
+          },
+          {
+            "_id": "entities/earthquake",
+            "_key": "earthquake",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049545+00:00",
+            "entity_type": "natural event",
+            "name": "earthquake",
+            "updated_at": "2026-09-09T13:53:54.049545+00:00"
+          },
+          {
+            "_id": "entities/evidence",
+            "_key": "evidence",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049546+00:00",
+            "entity_type": "information",
+            "name": "evidence",
+            "updated_at": "2026-09-09T13:53:54.049546+00:00"
+          },
+          {
+            "_id": "entities/insulin",
+            "_key": "insulin",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049547+00:00",
+            "entity_type": "substance",
+            "name": "insulin",
+            "updated_at": "2026-09-09T13:53:54.049547+00:00"
+          },
+          {
+            "_id": "entities/moon",
+            "_key": "moon",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049548+00:00",
+            "entity_type": "celestial body",
+            "name": "moon",
+            "updated_at": "2026-09-09T13:53:54.049548+00:00"
+          },
+          {
+            "_id": "entities/novels",
+            "_key": "novels",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049549+00:00",
+            "entity_type": "literary works",
+            "name": "novels",
+            "updated_at": "2026-09-09T13:53:54.049549+00:00"
+          },
+          {
+            "_id": "entities/pancreases",
+            "_key": "pancreases",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049550+00:00",
+            "entity_type": "organ",
+            "name": "pancreases",
+            "updated_at": "2026-09-09T13:53:54.049550+00:00"
+          },
+          {
+            "_id": "entities/perturbations",
+            "_key": "perturbations",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049551+00:00",
+            "entity_type": "phenomenon",
+            "name": "perturbations",
+            "updated_at": "2026-09-09T13:53:54.049551+00:00"
+          },
+          {
+            "_id": "entities/pressure",
+            "_key": "pressure",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049551+00:00",
+            "entity_type": "physiological measure",
+            "name": "pressure",
+            "updated_at": "2026-09-09T13:53:54.049551+00:00"
+          },
+          {
+            "_id": "entities/study",
+            "_key": "study",
+            "aliases": [],
+            "created_at": "2026-09-09T13:53:54.049552+00:00",
+            "entity_type": "research",
+            "name": "study",
+            "updated_at": "2026-09-09T13:53:54.049552+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-10372",
+            "_key": "semeval-luna-low-r2-b18-semeval-10372",
+            "chunk_id": "semeval-10372",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6a314626ab13d0829f11445c360e38f10d26e90d13fb4ca007b038db37fa0b2f",
+            "created_at": "2026-09-09T13:53:54.049554+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "In this poem the poet personifies his city during the last years in which he was able to live there.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049554+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-10408",
+            "_key": "semeval-luna-low-r2-b18-semeval-10408",
+            "chunk_id": "semeval-10408",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:462bdc0bf2f622504f72e729756547305e2c347fa407e459190a5d4b68f8d772",
+            "created_at": "2026-09-09T13:53:54.049557+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "In contrast, I first learned of Steve's existence through an observation by a clique of Bursley Dorm acquaintances I used to dine with that same year.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049557+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-10425",
+            "_key": "semeval-luna-low-r2-b18-semeval-10425",
+            "chunk_id": "semeval-10425",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:837e6cb337eb68747ea407a1e7e5d1f5a3b520f066cf4a42f37901e5b70b975b",
+            "created_at": "2026-09-09T13:53:54.049567+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "Among the first to survey the devastation caused by the April earthquake, the team discusses what they observed and learned from the damaged buildings.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049567+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-10432",
+            "_key": "semeval-luna-low-r2-b18-semeval-10432",
+            "chunk_id": "semeval-10432",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:0381f3562d3a59ad7478ad1c491d609a1c90ba994f56bdff2a9b44b3767b1298",
+            "created_at": "2026-09-09T13:53:54.049573+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "We observed that a box was actually placed inside the cornerstone with a variety of artifacts and documents commemorating the event and the history of Savannah.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049573+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-8347",
+            "_key": "semeval-luna-low-r2-b18-semeval-8347",
+            "chunk_id": "semeval-8347",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:baeb57fdf6832b57681afadd77eed0d6e224491d5b7601f848fee231e895206b",
+            "created_at": "2026-09-09T13:53:54.049578+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "Active transport is a mechanism evolved to mediate traffic across cellular membranes.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049578+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-8571",
+            "_key": "semeval-luna-low-r2-b18-semeval-8571",
+            "chunk_id": "semeval-8571",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e0571164b532f832ce49c39c12020ae7c7e009a82859866b018d98cade39af6a",
+            "created_at": "2026-09-09T13:53:54.049580+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "The two central areas of controversy have to do with composition and titles.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049580+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-8762",
+            "_key": "semeval-luna-low-r2-b18-semeval-8762",
+            "chunk_id": "semeval-8762",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d01bda96eab33b70de301a0c5fa19d7c6205bad405fd8d09009a379720daf594",
+            "created_at": "2026-09-09T13:53:54.049581+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "In the past, insulin was extracted from the pancreases of cows or pigs, then used to treat diabetics.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049581+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-8775",
+            "_key": "semeval-luna-low-r2-b18-semeval-8775",
+            "chunk_id": "semeval-8775",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2044fe31b64dfbbdf21480c36a861aeb98edd2f3e3229112e9654815bb6dd8cc",
+            "created_at": "2026-09-09T13:53:54.049586+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "The thin F ring on the left of the image shows the perturbations caused by the moon Prometheus.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049586+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-9034",
+            "_key": "semeval-luna-low-r2-b18-semeval-9034",
+            "chunk_id": "semeval-9034",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f15b70041b860df98d4bfe2326656e64955383b9c2ab71a2596d08e1381ff0af",
+            "created_at": "2026-09-09T13:53:54.049591+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "Developed in 1979, depressed center wheels revolutionized angle grinding.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049591+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-9240",
+            "_key": "semeval-luna-low-r2-b18-semeval-9240",
+            "chunk_id": "semeval-9240",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7df89e568cf53866d65a340e43407a0d5ec40a69ece8733b0f69aae9d4814307",
+            "created_at": "2026-09-09T13:53:54.049592+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "The clinical evidence came from a cohort study.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049592+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-9550",
+            "_key": "semeval-luna-low-r2-b18-semeval-9550",
+            "chunk_id": "semeval-9550",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b8203020efa8565a2de69ddc370fdffec28182677a027beeacdfabc7c9ca19c1",
+            "created_at": "2026-09-09T13:53:54.049597+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "Barbauld was also a literary critic, and her anthology of eighteenth-century British novels helped establish the canon as we know it today.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049597+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b18-semeval-9577",
+            "_key": "semeval-luna-low-r2-b18-semeval-9577",
+            "chunk_id": "semeval-9577",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1f5d5a42731c80e6a96ffb6eb307c6fe79fa3ce25fa79f4a214c616671b3497d",
+            "created_at": "2026-09-09T13:53:54.049602+00:00",
+            "space_id": "semeval-luna-low-r2-b18",
+            "text": "Both cocaine and crack cocaine cause constricted blood vessels, increased heart rate, body temperature and blood pressure.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:53:54.049602+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

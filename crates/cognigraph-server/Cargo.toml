@@ -1,0 +1,50 @@
+[package]
+name = "cognigraph-server"
+version.workspace = true
+edition.workspace = true
+license = "FSL-1.1-Apache-2.0"
+repository.workspace = true
+homepage.workspace = true
+
+[features]
+default = []
+enterprise = ["dep:cognigraph-artifacts", "dep:cognigraph-construct", "dep:cognigraph-governance"]
+
+[dependencies]
+cognigraph-artifacts = { path = "../cognigraph-artifacts", optional = true }
+cognigraph-core = { path = "../cognigraph-core" }
+cognigraph-arango = { path = "../cognigraph-arango" }
+cognigraph-embeddings = { path = "../cognigraph-embeddings" }
+cognigraph-construct = { path = "../cognigraph-construct", optional = true }
+cognigraph-governance = { path = "../cognigraph-governance", optional = true }
+cognigraph-cache = { path = "../cognigraph-cache" }
+cognigraph-auth = { path = "../cognigraph-auth" }
+cognigraph-lua = { path = "../cognigraph-lua" }
+cognigraph-query = { path = "../cognigraph-query" }
+cognigraph-native = { path = "../cognigraph-native" }
+axum = { version = "0.8", features = ["json"] }
+tower-http = { version = "0.7", features = ["cors", "trace", "timeout", "fs"] }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+dotenvy = "0.15"
+async-trait = "0.1"
+sha2 = { workspace = true }
+base64 = { workspace = true }
+unicode-normalization = "0.1.25"
+
+[dev-dependencies]
+serde-saphyr = { version = "1.2.0", default-features = false, features = ["deserialize"] }
+anyhow = "1"
+tower = { version = "0.5", features = ["util"] }
+reqwest = { workspace = true }
+
+[build-dependencies]
+serde_json = { workspace = true }
+serde-saphyr = { version = "1.2.0", default-features = false, features = ["deserialize"] }
+
+[[bench]]
+name = "load"
+harness = false

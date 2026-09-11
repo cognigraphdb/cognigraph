@@ -1,0 +1,93 @@
+{{- if .Values.backup.enabled }}
+{{- if not .Values.backup.persistence.existingClaim }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "cognigraph.fullname" . }}-backups
+  labels:
+    {{- include "cognigraph.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    {{- toYaml .Values.backup.persistence.accessModes | nindent 4 }}
+  {{- if .Values.backup.persistence.storageClass }}
+  {{- if eq "-" .Values.backup.persistence.storageClass }}
+  storageClassName: ""
+  {{- else }}
+  storageClassName: {{ .Values.backup.persistence.storageClass | quote }}
+  {{- end }}
+  {{- end }}
+  resources:
+    requests:
+      storage: {{ .Values.backup.persistence.size }}
+---
+{{- end }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "cognigraph.fullname" . }}-backup-script
+  labels:
+    {{- include "cognigraph.labels" . | nindent 4 }}
+data:
+  backup.py: |
+    {{- .Files.Get "files/backup.py" | nindent 4 }}
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "cognigraph.fullname" . }}-backup
+  labels:
+    {{- include "cognigraph.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.backup.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      template:
+        metadata:
+          labels:
+            {{- include "cognigraph.selectorLabels" . | nindent 12 }}
+            app.kubernetes.io/component: backup
+        spec:
+          restartPolicy: Never
+          serviceAccountName: {{ include "cognigraph.serviceAccountName" . }}
+          securityContext:
+            {{- toYaml .Values.podSecurityContext | nindent 12 }}
+          containers:
+            - name: backup
+              image: {{ .Values.backup.image.repository }}:{{ .Values.backup.image.tag }}
+              imagePullPolicy: IfNotPresent
+              command: ["python3", "/scripts/backup.py"]
+              securityContext:
+                {{- toYaml .Values.securityContext | nindent 16 }}
+              env:
+                - name: COGNIGRAPH_BACKUP_RETENTION_DAYS
+                  value: {{ .Values.backup.retentionDays | quote }}
+                - name: COGNIGRAPH_SERVICE
+                  value: {{ include "cognigraph.fullname" . }}
+                - name: COGNIGRAPH_PORT
+                  value: {{ .Values.service.port | quote }}
+                - name: COGNIGRAPH_ADMIN_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ include "cognigraph.authSecretName" . }}
+                      key: admin-password
+              resources:
+                {{- toYaml .Values.backup.resources | nindent 16 }}
+              volumeMounts:
+                - name: backups
+                  mountPath: /backups
+                - name: script
+                  mountPath: /scripts
+                  readOnly: true
+          volumes:
+            - name: backups
+              persistentVolumeClaim:
+                claimName: {{ .Values.backup.persistence.existingClaim | default (printf "%s-backups" (include "cognigraph.fullname" .)) }}
+            - name: script
+              configMap:
+                name: {{ include "cognigraph.fullname" . }}-backup-script
+                defaultMode: 0555
+{{- end }}

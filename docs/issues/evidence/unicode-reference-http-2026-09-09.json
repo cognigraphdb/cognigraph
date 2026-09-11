@@ -1,0 +1,16 @@
+{
+  "issue": "CG-33",
+  "date": "2026-09-09",
+  "source_key": "cafe\u0301",
+  "source_id": "unicode_refs/cafe\u0301",
+  "stored_job_keys": [
+    "b",
+    "caf\u00e9"
+  ],
+  "job_status": "succeeded",
+  "side_views_written": 0,
+  "provider_calls": 0,
+  "edge_from": "unicode_refs/caf\u00e9",
+  "binary_sha256": "4f7e63df8e95da7c48b98893c1e39092c72afcddd6645d052cde3faddbd7ce9d",
+  "provider": "synthetic loopback configured; zero calls"
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "arm": "luna-json",
+    "phase": "measurement",
+    "repetition": 1,
+    "batch": 23,
+    "server_http": 500,
+    "recorder_http": 200,
+    "finish_reason": "content_filter",
+    "server_response": {
+      "error": "Backend error: directed completion failed: completion content is not valid JSON"
+    },
+    "usage_available": true,
+    "committed_fact_count": 0
+  },
+  {
+    "arm": "glm-flash",
+    "phase": "measurement",
+    "repetition": 1,
+    "batch": 29,
+    "server_http": 500,
+    "recorder_http": 200,
+    "finish_reason": "stop",
+    "server_response": {
+      "error": "Backend error: directed completion returned invalid facts: missing field `target_type`"
+    },
+    "usage_available": true,
+    "committed_fact_count": 0
+  },
+  {
+    "arm": "luna-json",
+    "phase": "measurement",
+    "repetition": 1,
+    "batch": 42,
+    "server_http": 500,
+    "recorder_http": 200,
+    "finish_reason": "content_filter",
+    "server_response": {
+      "error": "Backend error: directed completion failed: completion content is not valid JSON"
+    },
+    "usage_available": true,
+    "committed_fact_count": 0
+  },
+  {
+    "arm": "glm-flash",
+    "phase": "measurement",
+    "repetition": 2,
+    "batch": 12,
+    "server_http": 500,
+    "recorder_http": 502,
+    "finish_reason": null,
+    "server_response": {
+      "error": "Backend error: directed completion failed: OpenAI completion error (502 Bad Gateway): {\"error\":{\"message\":\"Transport failure; no retry\"}}"
+    },
+    "usage_available": false,
+    "committed_fact_count": 0
+  },
+  {
+    "arm": "luna-json",
+    "phase": "measurement",
+    "repetition": 2,
+    "batch": 23,
+    "server_http": 500,
+    "recorder_http": 200,
+    "finish_reason": "content_filter",
+    "server_response": {
+      "error": "Backend error: directed completion failed: completion content is not valid JSON"
+    },
+    "usage_available": true,
+    "committed_fact_count": 0
+  },
+  {
+    "arm": "luna-json",
+    "phase": "measurement",
+    "repetition": 2,
+    "batch": 42,
+    "server_http": 500,
+    "recorder_http": 200,
+    "finish_reason": "content_filter",
+    "server_response": {
+      "error": "Backend error: directed completion failed: completion content is not valid JSON"
+    },
+    "usage_available": true,
+    "committed_fact_count": 0
+  }
+]

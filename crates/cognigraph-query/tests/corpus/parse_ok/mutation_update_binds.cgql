@@ -1,0 +1,1 @@
+UPDATE @key WITH { seen: true } IN documents RETURN { new: NEW, old: OLD }

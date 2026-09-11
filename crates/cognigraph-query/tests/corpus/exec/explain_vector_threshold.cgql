@@ -1,0 +1,1 @@
+EXPLAIN FOR d IN VECTOR_SEARCH(documents, [1.0, 0.0]) FILTER d._score >= 0.9 LIMIT 5 RETURN d._key

@@ -1,0 +1,254 @@
+{
+  "gemini:gemini-3.8-flash": {
+    "biography": [
+      {
+        "answer": "Marie Curie coined the term radioactivity.",
+        "question": "Who coined the term radioactivity?"
+      },
+      {
+        "answer": "Marie Curie was born Maria Sklodowska.",
+        "question": "What was Marie Curie's original birth name?"
+      },
+      {
+        "answer": "She was born in Warsaw in 1867.",
+        "question": "When and where was Marie Curie born?"
+      },
+      {
+        "answer": "She moved to Paris to study at the University of Paris.",
+        "question": "Where did Marie Curie pursue her studies after moving to Paris?"
+      },
+      {
+        "answer": "Marie Curie and Pierre Curie discovered polonium and radium.",
+        "question": "Which chemical elements were discovered by Marie and Pierre Curie?"
+      },
+      {
+        "answer": "The 1903 Nobel Prize in Physics was awarded to Marie Curie, Pierre Curie, and Henri Becquerel.",
+        "question": "Who shared the 1903 Nobel Prize in Physics with Marie Curie?"
+      },
+      {
+        "answer": "She won the Nobel Prize in Chemistry in 1911.",
+        "question": "In which field did Marie Curie win a Nobel Prize in 1911?"
+      },
+      {
+        "answer": "She was the first person to win Nobel Prizes in two different scientific fields.",
+        "question": "What distinction did Marie Curie achieve regarding her Nobel Prize wins?"
+      },
+      {
+        "answer": "She developed mobile X ray units to assist in treating wounded soldiers during the First World War.",
+        "question": "What did Marie Curie develop to help wounded soldiers during the First World War?"
+      },
+      {
+        "answer": "Marie Curie died in 1934.",
+        "question": "In what year did Marie Curie die?"
+      },
+      {
+        "answer": "She died from aplastic anaemia, likely caused by long exposure to radiation.",
+        "question": "What medical condition caused the death of Marie Curie?"
+      },
+      {
+        "answer": "Marie Curie was a physicist and chemist.",
+        "question": "What scientific professions did Marie Curie belong to?"
+      }
+    ],
+    "clinical": [
+      {
+        "answer": "Ibuprofen is a nonsteroidal anti inflammatory drug.",
+        "question": "What drug classification does ibuprofen belong to?"
+      },
+      {
+        "answer": "It is commonly used to reduce fever and relieve mild to moderate pain.",
+        "question": "What are the common medical uses for ibuprofen?"
+      },
+      {
+        "answer": "It relieves pain from conditions such as headaches, menstrual cramps, and arthritis.",
+        "question": "What specific types of pain can ibuprofen help manage?"
+      },
+      {
+        "answer": "Ibuprofen inhibits enzymes known as cyclooxygenases, which reduces the production of prostaglandins that cause inflammation and pain.",
+        "question": "How does ibuprofen work inside the body to reduce pain and inflammation?"
+      },
+      {
+        "answer": "Cyclooxygenases.",
+        "question": "Which enzymes does ibuprofen inhibit?"
+      },
+      {
+        "answer": "Prostaglandins cause inflammation and pain.",
+        "question": "What effect do prostaglandins have in the body?"
+      },
+      {
+        "answer": "Ibuprofen was first marketed in 1969.",
+        "question": "In what year was ibuprofen first marketed?"
+      },
+      {
+        "answer": "Ibuprofen is available over the counter in many countries.",
+        "question": "Is ibuprofen available over the counter?"
+      },
+      {
+        "answer": "Common side effects include stomach upset and an increased risk of gastrointestinal bleeding with prolonged use.",
+        "question": "What are the common side effects of ibuprofen?"
+      },
+      {
+        "answer": "Prolonged use carries an increased risk of gastrointestinal bleeding.",
+        "question": "What risk is linked to the long-term use of ibuprofen?"
+      },
+      {
+        "answer": "Taking ibuprofen with food is generally advised to reduce stomach irritation.",
+        "question": "Why is it recommended to consume food when taking ibuprofen?"
+      },
+      {
+        "answer": "It is not recommended during the later stages of pregnancy.",
+        "question": "When is the use of ibuprofen not recommended during pregnancy?"
+      }
+    ],
+    "engineering": [
+      {
+        "answer": "The Airbus A320 was developed and manufactured by Airbus.",
+        "question": "Who developed and manufactured the Airbus A320?"
+      },
+      {
+        "answer": "The Airbus A320 is a family of narrow body airliners.",
+        "question": "What type of aircraft is the Airbus A320?"
+      },
+      {
+        "answer": "The Airbus A320 was the first commercial airliner to feature a digital fly by wire flight control system.",
+        "question": "What was the first commercial aircraft to use a digital fly by wire flight control system?"
+      },
+      {
+        "answer": "Pilot inputs are transmitted electronically rather than through mechanical linkages.",
+        "question": "How does the digital fly by wire flight control system transmit pilot inputs on the A320?"
+      },
+      {
+        "answer": "The Airbus A320 entered service in 1988.",
+        "question": "When did the Airbus A320 enter commercial service?"
+      },
+      {
+        "answer": "Air France was the airline with which the A320 entered service.",
+        "question": "Which airline introduced the Airbus A320 into service in 1988?"
+      },
+      {
+        "answer": "It typically seats between 140 and 170 passengers.",
+        "question": "What is the typical passenger capacity of an Airbus A320?"
+      },
+      {
+        "answer": "The Airbus A320 has a range of about 6,100 kilometres.",
+        "question": "What is the flight range of the Airbus A320?"
+      },
+      {
+        "answer": "The family includes the A318, A319, and A321 variants.",
+        "question": "What shorter and longer variants are included in the Airbus A320 family?"
+      },
+      {
+        "answer": "The Boeing 737 is the direct competitor to the Airbus A320.",
+        "question": "Which Boeing aircraft is a direct competitor to the Airbus A320?"
+      },
+      {
+        "answer": "It is recognized as one of the best selling airliner families in history.",
+        "question": "How does the Airbus A320 family rank historically in terms of airliner sales?"
+      },
+      {
+        "answer": "Air France.",
+        "question": "Airbus A320 first operator airline"
+      }
+    ],
+    "geography": [
+      {
+        "answer": "Lisbon is the capital and largest city of Portugal.",
+        "question": "What is the capital and largest city of Portugal?"
+      },
+      {
+        "answer": "Lisbon is located on the Atlantic coast where the Tagus River meets the ocean.",
+        "question": "Where is Lisbon geographically situated?"
+      },
+      {
+        "answer": "The Tagus River meets the ocean at Lisbon.",
+        "question": "Which river meets the Atlantic ocean at Lisbon?"
+      },
+      {
+        "answer": "Lisbon is one of Western Europe's oldest cities and predates modern capitals such as London and Paris by centuries.",
+        "question": "How does Lisbon's age compare to capitals like London and Paris?"
+      },
+      {
+        "answer": "Lisbon is built across seven hills.",
+        "question": "How many hills is the city of Lisbon built across?"
+      },
+      {
+        "answer": "Many of Lisbon's streets are steep and winding because the city is built across seven hills.",
+        "question": "Why are many streets in Lisbon steep and winding?"
+      },
+      {
+        "answer": "Lisbon has a mild Mediterranean climate.",
+        "question": "What type of climate does Lisbon have?"
+      },
+      {
+        "answer": "Lisbon experiences warm, dry summers and cool, rainy winters.",
+        "question": "What weather patterns characterize Lisbon's summers and winters?"
+      },
+      {
+        "answer": "The yellow Route 28 tram is a well-known feature of Lisbon.",
+        "question": "Which specific yellow tram route is a famous feature of Lisbon's transit network?"
+      },
+      {
+        "answer": "An earthquake in 1755 destroyed much of Lisbon.",
+        "question": "What historical event in 1755 destroyed much of Lisbon?"
+      },
+      {
+        "answer": "The downtown Baixa district was rebuilt in a grid pattern after the 1755 earthquake.",
+        "question": "Which Lisbon district was reconstructed in a grid pattern following the 1755 earthquake?"
+      },
+      {
+        "answer": "The downtown Baixa district was rebuilt in a grid pattern.",
+        "question": "Lisbon Baixa district street layout"
+      }
+    ],
+    "software": [
+      {
+        "answer": "Redis is an open source, in memory data structure store used as a database, cache, and message broker.",
+        "question": "What is Redis?"
+      },
+      {
+        "answer": "Redis was created by Salvatore Sanfilippo.",
+        "question": "Who created Redis?"
+      },
+      {
+        "answer": "Redis was first released in 2009.",
+        "question": "In what year was Redis first released?"
+      },
+      {
+        "answer": "Redis achieves very low latency reads and writes by keeping the entire dataset in memory rather than primarily on disk.",
+        "question": "How does Redis achieve very low latency for reads and writes?"
+      },
+      {
+        "answer": "Traditional databases store data primarily on disk, whereas Redis keeps its entire dataset in memory.",
+        "question": "How does Redis differ from traditional databases in terms of data storage?"
+      },
+      {
+        "answer": "Redis supports strings, hashes, lists, sets, and sorted sets.",
+        "question": "Which data structures are supported by Redis?"
+      },
+      {
+        "answer": "Redis provides optional persistence by periodically writing snapshots to disk or by appending each write operation to a log.",
+        "question": "What methods does Redis use to provide optional persistence?"
+      },
+      {
+        "answer": "Redis is commonly used as a database, cache, and message broker.",
+        "question": "What three primary roles does Redis serve?"
+      },
+      {
+        "answer": "In web applications, Redis is commonly used to store user session data.",
+        "question": "What is a common use for Redis in web applications?"
+      },
+      {
+        "answer": "Redis is commonly used to cache the results of expensive database queries.",
+        "question": "Why is Redis commonly used in front of expensive database queries?"
+      },
+      {
+        "answer": "Redis offers persistence optionally either by writing snapshots periodically or appending each write operation to a log.",
+        "question": "Is persistence required or optional in Redis?"
+      },
+      {
+        "answer": "Redis keeps its entire dataset in memory.",
+        "question": "Where does Redis store its entire dataset during operation?"
+      }
+    ]
+  }
+}

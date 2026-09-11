@@ -1,0 +1,1266 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 1,
+  "batch": 24,
+  "request": {
+    "space_type": "semeval-terra-low-r1-b24",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-8625",
+        "title": "Relation benchmark excerpt",
+        "text": "At the seminar, we gave an account of the current education system and teacher education environment in Hong Kong."
+      },
+      {
+        "id": "semeval-9561",
+        "title": "Relation benchmark excerpt",
+        "text": "The speed indicator of the bus wasn't working and the driver was driving like mad."
+      },
+      {
+        "id": "semeval-8288",
+        "title": "Relation benchmark excerpt",
+        "text": "This is one of the more common causes of hair loss caused by stress and when you are losing hair because of this your hair stops growing and lies dormant."
+      },
+      {
+        "id": "semeval-8995",
+        "title": "Relation benchmark excerpt",
+        "text": "Their relationship is thrown into chaos."
+      },
+      {
+        "id": "semeval-8754",
+        "title": "Relation benchmark excerpt",
+        "text": "The bleeding was caused by an injury, such as a fall or something hitting your face."
+      },
+      {
+        "id": "semeval-9131",
+        "title": "Relation benchmark excerpt",
+        "text": "Accident causes delays on BW Parkway."
+      },
+      {
+        "id": "semeval-8498",
+        "title": "Relation benchmark excerpt",
+        "text": "The dust from the extinguishers set off the alarm."
+      },
+      {
+        "id": "semeval-10419",
+        "title": "Relation benchmark excerpt",
+        "text": "My view of how the brain works is rooted in an evolutionary perspective that moves from the fact that our mental life reflects the actions of many."
+      },
+      {
+        "id": "semeval-8563",
+        "title": "Relation benchmark excerpt",
+        "text": "It is a formal legal document that sets out the facts and legal reasons."
+      },
+      {
+        "id": "semeval-9763",
+        "title": "Relation benchmark excerpt",
+        "text": "The plasma processing apparatus produces a plasma in a vessel and processes samples using the plasma."
+      },
+      {
+        "id": "semeval-9519",
+        "title": "Relation benchmark excerpt",
+        "text": "The shifts are caused by gas flows going up one leg and returning down the other."
+      },
+      {
+        "id": "semeval-8980",
+        "title": "Relation benchmark excerpt",
+        "text": "Many times, journalists become the topic for discussion among political party supporters at press conferences."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 10,
+    "proposed": 10,
+    "skips": [],
+    "space_type": "semeval-terra-low-r1-b24"
+  },
+  "latency_seconds": 18.87632991699502,
+  "facts": [
+    {
+      "_from": "entities/indicator",
+      "_id": "facts/fact-34005c934949db2dd32b8e147584c76a317e75e3bf60ca18f4deaace7cbea206",
+      "_key": "fact-34005c934949db2dd32b8e147584c76a317e75e3bf60ca18f4deaace7cbea206",
+      "_to": "entities/bus",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9561",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b24",
+      "trigger": "The speed indicator of the bus wasn't working and the driver was driving like mad.",
+      "trigger_end": 82,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/seminar",
+      "_id": "facts/fact-44ad5285e8d0ce1b586e39bcf29f77ba8c09eaaa5b1d8635fda51ad3afb97114",
+      "_key": "fact-44ad5285e8d0ce1b586e39bcf29f77ba8c09eaaa5b1d8635fda51ad3afb97114",
+      "_to": "entities/system",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8625",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b24",
+      "trigger": "At the seminar, we gave an account of the current education system and teacher education environment in Hong Kong.",
+      "trigger_end": 114,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/accident",
+      "_id": "facts/fact-5c182869140c02991193d36f8a0b37a48dc90613a4a622e247c41611fde6b6dc",
+      "_key": "fact-5c182869140c02991193d36f8a0b37a48dc90613a4a622e247c41611fde6b6dc",
+      "_to": "entities/delays",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9131",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b24",
+      "trigger": "Accident causes delays on BW Parkway.",
+      "trigger_end": 37,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/injury",
+      "_id": "facts/fact-61b69e7452d62bcc041755db1aa3190a1a0a3d0752611e363cbb9e3df00d4e58",
+      "_key": "fact-61b69e7452d62bcc041755db1aa3190a1a0a3d0752611e363cbb9e3df00d4e58",
+      "_to": "entities/bleeding",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8754",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b24",
+      "trigger": "The bleeding was caused by an injury, such as a fall or something hitting your face.",
+      "trigger_end": 84,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/discussion",
+      "_id": "facts/fact-949cd018354714700eec25ac93a23b17675e77809d60fb961907fc4a0de490b6",
+      "_key": "fact-949cd018354714700eec25ac93a23b17675e77809d60fb961907fc4a0de490b6",
+      "_to": "entities/journalists",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8980",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b24",
+      "trigger": "Many times, journalists become the topic for discussion among political party supporters at press conferences.",
+      "trigger_end": 110,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/gas-flows",
+      "_id": "facts/fact-bed1f6bea19d2606cedf403b9c173290e99185c89d03a25bd61c715ace119d3d",
+      "_key": "fact-bed1f6bea19d2606cedf403b9c173290e99185c89d03a25bd61c715ace119d3d",
+      "_to": "entities/shifts",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9519",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b24",
+      "trigger": "The shifts are caused by gas flows going up one leg and returning down the other.",
+      "trigger_end": 81,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/dust",
+      "_id": "facts/fact-c9208e5a5554f383d3a4c0ae61b4c21fa0289c59257ab681bd0b52fc15a928dd",
+      "_key": "fact-c9208e5a5554f383d3a4c0ae61b4c21fa0289c59257ab681bd0b52fc15a928dd",
+      "_to": "entities/alarm",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8498",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b24",
+      "trigger": "The dust from the extinguishers set off the alarm.",
+      "trigger_end": 50,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/stress",
+      "_id": "facts/fact-ce1f0c6914064ad65ce7c40ccc1debd7d3a338eedad8687175a387e196ff9738",
+      "_key": "fact-ce1f0c6914064ad65ce7c40ccc1debd7d3a338eedad8687175a387e196ff9738",
+      "_to": "entities/hair-loss",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8288",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b24",
+      "trigger": "This is one of the more common causes of hair loss caused by stress and when you are losing hair because of this your hair stops growing and lies dormant.",
+      "trigger_end": 154,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/document",
+      "_id": "facts/fact-d3c3142c0756b06695fc2d2e80739d9fefe4af72d0bce41847145d1d21277da9",
+      "_key": "fact-d3c3142c0756b06695fc2d2e80739d9fefe4af72d0bce41847145d1d21277da9",
+      "_to": "entities/facts",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8563",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b24",
+      "trigger": "It is a formal legal document that sets out the facts and legal reasons.",
+      "trigger_end": 72,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/view",
+      "_id": "facts/fact-eca574a45abf5031fd1cb8681ed05a0d3d12fab07aeddc4299fdbe44426363be",
+      "_key": "fact-eca574a45abf5031fd1cb8681ed05a0d3d12fab07aeddc4299fdbe44426363be",
+      "_to": "entities/perspective",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10419",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b24",
+      "trigger": "My view of how the brain works is rooted in an evolutionary perspective that moves from the fact that our mental life reflects the actions of many.",
+      "trigger_end": 147,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/accident",
+      "_key": "accident",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932546+00:00",
+      "entity_type": "Cause",
+      "name": "Accident",
+      "updated_at": "2026-09-09T13:32:42.932546+00:00"
+    },
+    {
+      "_id": "entities/alarm",
+      "_key": "alarm",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932554+00:00",
+      "entity_type": "Effect",
+      "name": "alarm",
+      "updated_at": "2026-09-09T13:32:42.932554+00:00"
+    },
+    {
+      "_id": "entities/bleeding",
+      "_key": "bleeding",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932555+00:00",
+      "entity_type": "Effect",
+      "name": "bleeding",
+      "updated_at": "2026-09-09T13:32:42.932555+00:00"
+    },
+    {
+      "_id": "entities/bus",
+      "_key": "bus",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932557+00:00",
+      "entity_type": "Whole",
+      "name": "bus",
+      "updated_at": "2026-09-09T13:32:42.932557+00:00"
+    },
+    {
+      "_id": "entities/delays",
+      "_key": "delays",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932558+00:00",
+      "entity_type": "Effect",
+      "name": "delays",
+      "updated_at": "2026-09-09T13:32:42.932558+00:00"
+    },
+    {
+      "_id": "entities/discussion",
+      "_key": "discussion",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932559+00:00",
+      "entity_type": "Message",
+      "name": "discussion",
+      "updated_at": "2026-09-09T13:32:42.932559+00:00"
+    },
+    {
+      "_id": "entities/document",
+      "_key": "document",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932561+00:00",
+      "entity_type": "Message",
+      "name": "document",
+      "updated_at": "2026-09-09T13:32:42.932561+00:00"
+    },
+    {
+      "_id": "entities/dust",
+      "_key": "dust",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932562+00:00",
+      "entity_type": "Cause",
+      "name": "dust",
+      "updated_at": "2026-09-09T13:32:42.932562+00:00"
+    },
+    {
+      "_id": "entities/facts",
+      "_key": "facts",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932563+00:00",
+      "entity_type": "Topic",
+      "name": "facts",
+      "updated_at": "2026-09-09T13:32:42.932563+00:00"
+    },
+    {
+      "_id": "entities/gas-flows",
+      "_key": "gas-flows",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932565+00:00",
+      "entity_type": "Cause",
+      "name": "gas flows",
+      "updated_at": "2026-09-09T13:32:42.932565+00:00"
+    },
+    {
+      "_id": "entities/hair-loss",
+      "_key": "hair-loss",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932566+00:00",
+      "entity_type": "Effect",
+      "name": "hair loss",
+      "updated_at": "2026-09-09T13:32:42.932566+00:00"
+    },
+    {
+      "_id": "entities/indicator",
+      "_key": "indicator",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932567+00:00",
+      "entity_type": "Component",
+      "name": "indicator",
+      "updated_at": "2026-09-09T13:32:42.932567+00:00"
+    },
+    {
+      "_id": "entities/injury",
+      "_key": "injury",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932568+00:00",
+      "entity_type": "Cause",
+      "name": "injury",
+      "updated_at": "2026-09-09T13:32:42.932568+00:00"
+    },
+    {
+      "_id": "entities/journalists",
+      "_key": "journalists",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932570+00:00",
+      "entity_type": "Topic",
+      "name": "journalists",
+      "updated_at": "2026-09-09T13:32:42.932570+00:00"
+    },
+    {
+      "_id": "entities/perspective",
+      "_key": "perspective",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932571+00:00",
+      "entity_type": "Origin",
+      "name": "perspective",
+      "updated_at": "2026-09-09T13:32:42.932571+00:00"
+    },
+    {
+      "_id": "entities/seminar",
+      "_key": "seminar",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932572+00:00",
+      "entity_type": "Message",
+      "name": "seminar",
+      "updated_at": "2026-09-09T13:32:42.932572+00:00"
+    },
+    {
+      "_id": "entities/shifts",
+      "_key": "shifts",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932573+00:00",
+      "entity_type": "Effect",
+      "name": "shifts",
+      "updated_at": "2026-09-09T13:32:42.932573+00:00"
+    },
+    {
+      "_id": "entities/stress",
+      "_key": "stress",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932575+00:00",
+      "entity_type": "Cause",
+      "name": "stress",
+      "updated_at": "2026-09-09T13:32:42.932575+00:00"
+    },
+    {
+      "_id": "entities/system",
+      "_key": "system",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932576+00:00",
+      "entity_type": "Topic",
+      "name": "system",
+      "updated_at": "2026-09-09T13:32:42.932576+00:00"
+    },
+    {
+      "_id": "entities/view",
+      "_key": "view",
+      "aliases": [],
+      "created_at": "2026-09-09T13:32:42.932577+00:00",
+      "entity_type": "Entity",
+      "name": "view",
+      "updated_at": "2026-09-09T13:32:42.932577+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-10419",
+      "_key": "semeval-terra-low-r1-b24-semeval-10419",
+      "chunk_id": "semeval-10419",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:31e2b4879d6eacc2bef8c27fc8afd1454e2d92d4a0c249a8505229005c82028f",
+      "created_at": "2026-09-09T13:32:42.932580+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "My view of how the brain works is rooted in an evolutionary perspective that moves from the fact that our mental life reflects the actions of many.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932580+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-8288",
+      "_key": "semeval-terra-low-r1-b24-semeval-8288",
+      "chunk_id": "semeval-8288",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:65b0ca12793497737457ae0e14cfed3759baaae75d945ddef15135a7cab17a75",
+      "created_at": "2026-09-09T13:32:42.932596+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "This is one of the more common causes of hair loss caused by stress and when you are losing hair because of this your hair stops growing and lies dormant.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932596+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-8498",
+      "_key": "semeval-terra-low-r1-b24-semeval-8498",
+      "chunk_id": "semeval-8498",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f7f522c875501a4c01f6238eb0377a4e8acab09d7e414b4df866b39f13a4c80f",
+      "created_at": "2026-09-09T13:32:42.932605+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "The dust from the extinguishers set off the alarm.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932605+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-8563",
+      "_key": "semeval-terra-low-r1-b24-semeval-8563",
+      "chunk_id": "semeval-8563",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6c6fdd6307f4febae7517d4d6bebc5b5db330496ebda3532c52885a3b78753c0",
+      "created_at": "2026-09-09T13:32:42.932614+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "It is a formal legal document that sets out the facts and legal reasons.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932614+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-8625",
+      "_key": "semeval-terra-low-r1-b24-semeval-8625",
+      "chunk_id": "semeval-8625",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2ac111bb957ce789f3486cd17354d55faf342162fd87fbce75093f55f1dae264",
+      "created_at": "2026-09-09T13:32:42.932621+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "At the seminar, we gave an account of the current education system and teacher education environment in Hong Kong.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932621+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-8754",
+      "_key": "semeval-terra-low-r1-b24-semeval-8754",
+      "chunk_id": "semeval-8754",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:90d2f7c54093535d0fad6d9fa4003558c575478818c9d1dba66ea03e21f40df0",
+      "created_at": "2026-09-09T13:32:42.932630+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "The bleeding was caused by an injury, such as a fall or something hitting your face.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932630+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-8980",
+      "_key": "semeval-terra-low-r1-b24-semeval-8980",
+      "chunk_id": "semeval-8980",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:07ff2d395a5533593eb0767e9053a8189a01d6ca7c1cea8b2769f9922960d11b",
+      "created_at": "2026-09-09T13:32:42.932637+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "Many times, journalists become the topic for discussion among political party supporters at press conferences.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932637+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-8995",
+      "_key": "semeval-terra-low-r1-b24-semeval-8995",
+      "chunk_id": "semeval-8995",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:72c1609788a2002ea1e5b54367a03d83cc7bc8148312189178c68abed2f47112",
+      "created_at": "2026-09-09T13:32:42.932647+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "Their relationship is thrown into chaos.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932647+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-9131",
+      "_key": "semeval-terra-low-r1-b24-semeval-9131",
+      "chunk_id": "semeval-9131",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:96d54a6435245fa5a4f8416c8bc534ff956b6bf2005f2e8016c26ff38f4d790e",
+      "created_at": "2026-09-09T13:32:42.932648+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "Accident causes delays on BW Parkway.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932648+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-9519",
+      "_key": "semeval-terra-low-r1-b24-semeval-9519",
+      "chunk_id": "semeval-9519",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d04de4c663de9a518396f101f382c234d987143515138232efb541468b848d22",
+      "created_at": "2026-09-09T13:32:42.932655+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "The shifts are caused by gas flows going up one leg and returning down the other.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932655+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-9561",
+      "_key": "semeval-terra-low-r1-b24-semeval-9561",
+      "chunk_id": "semeval-9561",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:efca2f3ea87c7c2fea5ec0ffb98f5c58029514812ae84f9d00d85a9074009a63",
+      "created_at": "2026-09-09T13:32:42.932667+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "The speed indicator of the bus wasn't working and the driver was driving like mad.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932667+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b24-semeval-9763",
+      "_key": "semeval-terra-low-r1-b24-semeval-9763",
+      "chunk_id": "semeval-9763",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:62ba2fac397a4a52a62ea56039ef880a0d4160deb60ad1179426d7ca49158ac2",
+      "created_at": "2026-09-09T13:32:42.932675+00:00",
+      "space_id": "semeval-terra-low-r1-b24",
+      "text": "The plasma processing apparatus produces a plasma in a vessel and processes samples using the plasma.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:32:42.932675+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 10,
+        "results": [
+          {
+            "_from": "entities/indicator",
+            "_id": "facts/fact-34005c934949db2dd32b8e147584c76a317e75e3bf60ca18f4deaace7cbea206",
+            "_key": "fact-34005c934949db2dd32b8e147584c76a317e75e3bf60ca18f4deaace7cbea206",
+            "_to": "entities/bus",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9561",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b24",
+            "trigger": "The speed indicator of the bus wasn't working and the driver was driving like mad.",
+            "trigger_end": 82,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/seminar",
+            "_id": "facts/fact-44ad5285e8d0ce1b586e39bcf29f77ba8c09eaaa5b1d8635fda51ad3afb97114",
+            "_key": "fact-44ad5285e8d0ce1b586e39bcf29f77ba8c09eaaa5b1d8635fda51ad3afb97114",
+            "_to": "entities/system",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8625",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b24",
+            "trigger": "At the seminar, we gave an account of the current education system and teacher education environment in Hong Kong.",
+            "trigger_end": 114,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/accident",
+            "_id": "facts/fact-5c182869140c02991193d36f8a0b37a48dc90613a4a622e247c41611fde6b6dc",
+            "_key": "fact-5c182869140c02991193d36f8a0b37a48dc90613a4a622e247c41611fde6b6dc",
+            "_to": "entities/delays",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9131",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b24",
+            "trigger": "Accident causes delays on BW Parkway.",
+            "trigger_end": 37,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/injury",
+            "_id": "facts/fact-61b69e7452d62bcc041755db1aa3190a1a0a3d0752611e363cbb9e3df00d4e58",
+            "_key": "fact-61b69e7452d62bcc041755db1aa3190a1a0a3d0752611e363cbb9e3df00d4e58",
+            "_to": "entities/bleeding",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8754",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b24",
+            "trigger": "The bleeding was caused by an injury, such as a fall or something hitting your face.",
+            "trigger_end": 84,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/discussion",
+            "_id": "facts/fact-949cd018354714700eec25ac93a23b17675e77809d60fb961907fc4a0de490b6",
+            "_key": "fact-949cd018354714700eec25ac93a23b17675e77809d60fb961907fc4a0de490b6",
+            "_to": "entities/journalists",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8980",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b24",
+            "trigger": "Many times, journalists become the topic for discussion among political party supporters at press conferences.",
+            "trigger_end": 110,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/gas-flows",
+            "_id": "facts/fact-bed1f6bea19d2606cedf403b9c173290e99185c89d03a25bd61c715ace119d3d",
+            "_key": "fact-bed1f6bea19d2606cedf403b9c173290e99185c89d03a25bd61c715ace119d3d",
+            "_to": "entities/shifts",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9519",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b24",
+            "trigger": "The shifts are caused by gas flows going up one leg and returning down the other.",
+            "trigger_end": 81,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/dust",
+            "_id": "facts/fact-c9208e5a5554f383d3a4c0ae61b4c21fa0289c59257ab681bd0b52fc15a928dd",
+            "_key": "fact-c9208e5a5554f383d3a4c0ae61b4c21fa0289c59257ab681bd0b52fc15a928dd",
+            "_to": "entities/alarm",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8498",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b24",
+            "trigger": "The dust from the extinguishers set off the alarm.",
+            "trigger_end": 50,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/stress",
+            "_id": "facts/fact-ce1f0c6914064ad65ce7c40ccc1debd7d3a338eedad8687175a387e196ff9738",
+            "_key": "fact-ce1f0c6914064ad65ce7c40ccc1debd7d3a338eedad8687175a387e196ff9738",
+            "_to": "entities/hair-loss",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8288",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b24",
+            "trigger": "This is one of the more common causes of hair loss caused by stress and when you are losing hair because of this your hair stops growing and lies dormant.",
+            "trigger_end": 154,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/document",
+            "_id": "facts/fact-d3c3142c0756b06695fc2d2e80739d9fefe4af72d0bce41847145d1d21277da9",
+            "_key": "fact-d3c3142c0756b06695fc2d2e80739d9fefe4af72d0bce41847145d1d21277da9",
+            "_to": "entities/facts",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8563",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b24",
+            "trigger": "It is a formal legal document that sets out the facts and legal reasons.",
+            "trigger_end": 72,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/view",
+            "_id": "facts/fact-eca574a45abf5031fd1cb8681ed05a0d3d12fab07aeddc4299fdbe44426363be",
+            "_key": "fact-eca574a45abf5031fd1cb8681ed05a0d3d12fab07aeddc4299fdbe44426363be",
+            "_to": "entities/perspective",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10419",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b24",
+            "trigger": "My view of how the brain works is rooted in an evolutionary perspective that moves from the fact that our mental life reflects the actions of many.",
+            "trigger_end": 147,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 20,
+        "results": [
+          {
+            "_id": "entities/accident",
+            "_key": "accident",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932546+00:00",
+            "entity_type": "Cause",
+            "name": "Accident",
+            "updated_at": "2026-09-09T13:32:42.932546+00:00"
+          },
+          {
+            "_id": "entities/alarm",
+            "_key": "alarm",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932554+00:00",
+            "entity_type": "Effect",
+            "name": "alarm",
+            "updated_at": "2026-09-09T13:32:42.932554+00:00"
+          },
+          {
+            "_id": "entities/bleeding",
+            "_key": "bleeding",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932555+00:00",
+            "entity_type": "Effect",
+            "name": "bleeding",
+            "updated_at": "2026-09-09T13:32:42.932555+00:00"
+          },
+          {
+            "_id": "entities/bus",
+            "_key": "bus",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932557+00:00",
+            "entity_type": "Whole",
+            "name": "bus",
+            "updated_at": "2026-09-09T13:32:42.932557+00:00"
+          },
+          {
+            "_id": "entities/delays",
+            "_key": "delays",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932558+00:00",
+            "entity_type": "Effect",
+            "name": "delays",
+            "updated_at": "2026-09-09T13:32:42.932558+00:00"
+          },
+          {
+            "_id": "entities/discussion",
+            "_key": "discussion",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932559+00:00",
+            "entity_type": "Message",
+            "name": "discussion",
+            "updated_at": "2026-09-09T13:32:42.932559+00:00"
+          },
+          {
+            "_id": "entities/document",
+            "_key": "document",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932561+00:00",
+            "entity_type": "Message",
+            "name": "document",
+            "updated_at": "2026-09-09T13:32:42.932561+00:00"
+          },
+          {
+            "_id": "entities/dust",
+            "_key": "dust",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932562+00:00",
+            "entity_type": "Cause",
+            "name": "dust",
+            "updated_at": "2026-09-09T13:32:42.932562+00:00"
+          },
+          {
+            "_id": "entities/facts",
+            "_key": "facts",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932563+00:00",
+            "entity_type": "Topic",
+            "name": "facts",
+            "updated_at": "2026-09-09T13:32:42.932563+00:00"
+          },
+          {
+            "_id": "entities/gas-flows",
+            "_key": "gas-flows",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932565+00:00",
+            "entity_type": "Cause",
+            "name": "gas flows",
+            "updated_at": "2026-09-09T13:32:42.932565+00:00"
+          },
+          {
+            "_id": "entities/hair-loss",
+            "_key": "hair-loss",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932566+00:00",
+            "entity_type": "Effect",
+            "name": "hair loss",
+            "updated_at": "2026-09-09T13:32:42.932566+00:00"
+          },
+          {
+            "_id": "entities/indicator",
+            "_key": "indicator",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932567+00:00",
+            "entity_type": "Component",
+            "name": "indicator",
+            "updated_at": "2026-09-09T13:32:42.932567+00:00"
+          },
+          {
+            "_id": "entities/injury",
+            "_key": "injury",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932568+00:00",
+            "entity_type": "Cause",
+            "name": "injury",
+            "updated_at": "2026-09-09T13:32:42.932568+00:00"
+          },
+          {
+            "_id": "entities/journalists",
+            "_key": "journalists",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932570+00:00",
+            "entity_type": "Topic",
+            "name": "journalists",
+            "updated_at": "2026-09-09T13:32:42.932570+00:00"
+          },
+          {
+            "_id": "entities/perspective",
+            "_key": "perspective",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932571+00:00",
+            "entity_type": "Origin",
+            "name": "perspective",
+            "updated_at": "2026-09-09T13:32:42.932571+00:00"
+          },
+          {
+            "_id": "entities/seminar",
+            "_key": "seminar",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932572+00:00",
+            "entity_type": "Message",
+            "name": "seminar",
+            "updated_at": "2026-09-09T13:32:42.932572+00:00"
+          },
+          {
+            "_id": "entities/shifts",
+            "_key": "shifts",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932573+00:00",
+            "entity_type": "Effect",
+            "name": "shifts",
+            "updated_at": "2026-09-09T13:32:42.932573+00:00"
+          },
+          {
+            "_id": "entities/stress",
+            "_key": "stress",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932575+00:00",
+            "entity_type": "Cause",
+            "name": "stress",
+            "updated_at": "2026-09-09T13:32:42.932575+00:00"
+          },
+          {
+            "_id": "entities/system",
+            "_key": "system",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932576+00:00",
+            "entity_type": "Topic",
+            "name": "system",
+            "updated_at": "2026-09-09T13:32:42.932576+00:00"
+          },
+          {
+            "_id": "entities/view",
+            "_key": "view",
+            "aliases": [],
+            "created_at": "2026-09-09T13:32:42.932577+00:00",
+            "entity_type": "Entity",
+            "name": "view",
+            "updated_at": "2026-09-09T13:32:42.932577+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-10419",
+            "_key": "semeval-terra-low-r1-b24-semeval-10419",
+            "chunk_id": "semeval-10419",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:31e2b4879d6eacc2bef8c27fc8afd1454e2d92d4a0c249a8505229005c82028f",
+            "created_at": "2026-09-09T13:32:42.932580+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "My view of how the brain works is rooted in an evolutionary perspective that moves from the fact that our mental life reflects the actions of many.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932580+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-8288",
+            "_key": "semeval-terra-low-r1-b24-semeval-8288",
+            "chunk_id": "semeval-8288",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:65b0ca12793497737457ae0e14cfed3759baaae75d945ddef15135a7cab17a75",
+            "created_at": "2026-09-09T13:32:42.932596+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "This is one of the more common causes of hair loss caused by stress and when you are losing hair because of this your hair stops growing and lies dormant.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932596+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-8498",
+            "_key": "semeval-terra-low-r1-b24-semeval-8498",
+            "chunk_id": "semeval-8498",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f7f522c875501a4c01f6238eb0377a4e8acab09d7e414b4df866b39f13a4c80f",
+            "created_at": "2026-09-09T13:32:42.932605+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "The dust from the extinguishers set off the alarm.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932605+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-8563",
+            "_key": "semeval-terra-low-r1-b24-semeval-8563",
+            "chunk_id": "semeval-8563",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6c6fdd6307f4febae7517d4d6bebc5b5db330496ebda3532c52885a3b78753c0",
+            "created_at": "2026-09-09T13:32:42.932614+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "It is a formal legal document that sets out the facts and legal reasons.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932614+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-8625",
+            "_key": "semeval-terra-low-r1-b24-semeval-8625",
+            "chunk_id": "semeval-8625",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2ac111bb957ce789f3486cd17354d55faf342162fd87fbce75093f55f1dae264",
+            "created_at": "2026-09-09T13:32:42.932621+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "At the seminar, we gave an account of the current education system and teacher education environment in Hong Kong.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932621+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-8754",
+            "_key": "semeval-terra-low-r1-b24-semeval-8754",
+            "chunk_id": "semeval-8754",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:90d2f7c54093535d0fad6d9fa4003558c575478818c9d1dba66ea03e21f40df0",
+            "created_at": "2026-09-09T13:32:42.932630+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "The bleeding was caused by an injury, such as a fall or something hitting your face.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932630+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-8980",
+            "_key": "semeval-terra-low-r1-b24-semeval-8980",
+            "chunk_id": "semeval-8980",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:07ff2d395a5533593eb0767e9053a8189a01d6ca7c1cea8b2769f9922960d11b",
+            "created_at": "2026-09-09T13:32:42.932637+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "Many times, journalists become the topic for discussion among political party supporters at press conferences.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932637+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-8995",
+            "_key": "semeval-terra-low-r1-b24-semeval-8995",
+            "chunk_id": "semeval-8995",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:72c1609788a2002ea1e5b54367a03d83cc7bc8148312189178c68abed2f47112",
+            "created_at": "2026-09-09T13:32:42.932647+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "Their relationship is thrown into chaos.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932647+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-9131",
+            "_key": "semeval-terra-low-r1-b24-semeval-9131",
+            "chunk_id": "semeval-9131",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:96d54a6435245fa5a4f8416c8bc534ff956b6bf2005f2e8016c26ff38f4d790e",
+            "created_at": "2026-09-09T13:32:42.932648+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "Accident causes delays on BW Parkway.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932648+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-9519",
+            "_key": "semeval-terra-low-r1-b24-semeval-9519",
+            "chunk_id": "semeval-9519",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d04de4c663de9a518396f101f382c234d987143515138232efb541468b848d22",
+            "created_at": "2026-09-09T13:32:42.932655+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "The shifts are caused by gas flows going up one leg and returning down the other.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932655+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-9561",
+            "_key": "semeval-terra-low-r1-b24-semeval-9561",
+            "chunk_id": "semeval-9561",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:efca2f3ea87c7c2fea5ec0ffb98f5c58029514812ae84f9d00d85a9074009a63",
+            "created_at": "2026-09-09T13:32:42.932667+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "The speed indicator of the bus wasn't working and the driver was driving like mad.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932667+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b24-semeval-9763",
+            "_key": "semeval-terra-low-r1-b24-semeval-9763",
+            "chunk_id": "semeval-9763",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:62ba2fac397a4a52a62ea56039ef880a0d4160deb60ad1179426d7ca49158ac2",
+            "created_at": "2026-09-09T13:32:42.932675+00:00",
+            "space_id": "semeval-terra-low-r1-b24",
+            "text": "The plasma processing apparatus produces a plasma in a vessel and processes samples using the plasma.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:32:42.932675+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

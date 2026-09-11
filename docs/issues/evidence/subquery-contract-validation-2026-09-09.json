@@ -1,0 +1,147 @@
+{
+  "issue": "CG-28",
+  "date": "2026-09-09",
+  "revision": "9fb49337af2c7c391d0ac6199990408a1035843a",
+  "git_state": "CG-23 and CG-28 uncommitted; CG-37 and CG-38 open; no push",
+  "scope": "Documentation, corpus fixtures, and release evidence; no Rust implementation change",
+  "focused": {
+    "cargo test -p cognigraph-query": {
+      "exit_code": 0,
+      "passed": 144,
+      "failed": 0,
+      "ignored": 0,
+      "groups": 12,
+      "log_sha256": "981fc671d09c2d3569ac97cd066c4389994713d8faade62c6848f9edc25de583"
+    },
+    "cargo test -p cognigraph-native --test cgql_corpus": {
+      "exit_code": 0,
+      "passed": 1,
+      "failed": 0,
+      "ignored": 0,
+      "groups": 1,
+      "log_sha256": "a7b18b4fd0a039d3fc69c6a151bdf86e2cbdc711afd59fdcf79fe41a16537925"
+    }
+  },
+  "gates": {
+    "cargo fmt --all -- --check": {
+      "exit_code": 0
+    },
+    "cargo clippy --all-targets -- -D warnings": {
+      "exit_code": 0,
+      "log_sha256": "641fe5d2ad741df34d8903dd2597043918c03e6a9944f14a2f3a33a0eddbd6e6"
+    },
+    "cargo test --all": {
+      "exit_code": 0,
+      "passed": 950,
+      "failed": 0,
+      "ignored": 0,
+      "groups": 71,
+      "log_sha256": "63bdc34c84fcd242a01f25f34551907f9134320f6c09e6bea6c599f0f216987f"
+    }
+  },
+  "arango": {
+    "password_configured": false,
+    "early_return_entries": 8,
+    "live_verified": false
+  },
+  "corpus": {
+    "parse_ok": 2,
+    "parse_err": 3,
+    "validate_err": 4,
+    "exec": 9
+  },
+  "release_http": {
+    "exit_code": 0,
+    "checks": 148,
+    "events": {
+      "read": 54,
+      "analysis": 18,
+      "rejected": 28,
+      "unchanged": 28,
+      "mutation": 8,
+      "persisted": 8,
+      "known_status_defect": 4
+    },
+    "modes": [
+      "resident",
+      "paged"
+    ],
+    "known_failures": [
+      "CG-37: nested generated binding collision",
+      "CG-38: read-only query returns 500 for plan errors"
+    ],
+    "evidence_sha256": "29c29e5880b3f402499c06da036f32ea502743a0372c8ff84d6bec8f7e960c06",
+    "binary_sha256": "a7cb6d882c1f5b438d1b98e95747865c0d63182697e62025ccb26a02e94400cb",
+    "harness_sha256": "59eb7377d6d7b554d2de68e383c09a1e0c11e62b954da2b71b3d3ea8d4915e9c",
+    "provider": "none"
+  },
+  "documentation": {
+    "local_links_checked": 205,
+    "errors": [],
+    "obsolete_exclusions_removed": true,
+    "registry": {
+      "Open": 9,
+      "Open P2": 8,
+      "Resolved": 29,
+      "Open P3": 1
+    },
+    "git_diff_check_exit_code": 0
+  },
+  "preservation": {
+    "user_owned_paths_checked": 24,
+    "unexpected_changes": []
+  },
+  "files": {
+    "CHANGELOG.md": "973c6dc0da5cb80ccb1a5fedb91f7cbd55b947574c9bd1496462b70531a74fcd",
+    "docs/cgql-v1.md": "407f9d634c907f4e7892519b7bda59abfbf9a28f8f37ecac0dc96c48b14d139e",
+    "docs/decisions/decision_cgql_v2.md": "15230b75842f80ea30d2ed18c9847991842bcb68a38ca5c82733423d0e897f13",
+    "docs/implementation-plan.md": "489a3b857047134533702f783c38364ee027ae6442bb8a3acc742a930739476b",
+    "docs/roadmap-2026-h2.md": "ea9ae8dfea4e2154c2f9f17c5eb9db5b204fc4c0114c73da521501b23d6594b7",
+    "docs/issues/README.md": "f20177f6712f556e7d1cc31e0da08ed61f0339f3fc5eab303e2fb090559dc7ab",
+    "docs/issues/CG-28.md": "c69a884cc303782114d12b570836de96556050166377b14310ff4309b1c11e6b",
+    "docs/issues/CG-37.md": "b837a279a38ab6518a5302fe387aef5d995c862101bdb7f6be10e07faaa57d89",
+    "docs/issues/CG-38.md": "d77050706a27ec91ada3f17fb324f1b1567d44099d5557175d11ac32e49c7991",
+    "docs/issues/subquery-contract-2026-09-09.md": "651997bbdd181ed0f5f06440fb21946d3f12995e401e1a5d94006b104eb0aa38",
+    "crates/cognigraph-query/tests/corpus/README.md": "bf5addc23e21473690a6d423600bfee628ef2cad49c484f7d9be62c8e0bc1637"
+  },
+  "fixtures": {
+    "crates/cognigraph-query/tests/corpus/dataset.json": "3590d46844a1c75447ba3401642d8f1dfcfc4566ef32d18dce8189e74718899e",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_aggregate.cgql": "834ceb93e5d82594cb91908756b7c6b89c819a577150499dae59a0f4f53e9835",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_aggregate.json": "37421eb4dd4f0fed39e1941f859a16c6dc85eb6cee5648d598c171e2f35899a8",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_collect.cgql": "905b333ac6116f28d5c0c46ede64f857e32e1ea5617aac16bacd86b58e726377",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_collect.json": "aebe02a34a969fa43df5713464c540a445eaa1d7b3211d52b941863f431000bc",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_filter.cgql": "2b9da87609687b173051fea68b7c51e32e2fb595db2e8b6c15716d1f5a997795",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_filter.json": "92260ea0cbd70738c0bccba89c8dbf5881ec50d1a09891ea531aa254a783c9cd",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_for.cgql": "0bcd0c8a7270505c856817302136f4edd67666bb2c2bb7c46ba22bf94622938e",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_for.json": "d07b9d8316ee81e6179b991d327efe1d1c3c6a93d09bce8c3c2eb9a17c4a52ff",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_let_return.cgql": "b262d5991e068bb55ede5b6fa660ef39b6afa10c39d13b83ee10ed8cda8112dc",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_let_return.json": "1c493b696e4a6198872a7e1791668110d0bb9adf2a8ad6cffea05ed576cb2b54",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_nested.cgql": "0c0f69edf3f0d41879b6651f1d2c9a4137d0c4cff7f86f3fb41536c60d826be1",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_nested.json": "b4b0c657dd7e32c46250d8a32c0e1a515391552c0bf0cbf0c3f59269f2466bee",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_sort.cgql": "30a4c3b11d883598aaef743de0052ff83d3d064e309fea866e11d4e152e7df65",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_sort.json": "d07b9d8316ee81e6179b991d327efe1d1c3c6a93d09bce8c3c2eb9a17c4a52ff",
+    "crates/cognigraph-query/tests/corpus/exec/sq_postcollect_rewrite.cgql": "9ad8e5dc0a94b0c8643100b289b04d14da70a550164ccf526865b40feabfc6bf",
+    "crates/cognigraph-query/tests/corpus/exec/sq_postcollect_rewrite.json": "ad03765a9a655684794a889aacffc8f8e4bbeb92f739fc7d32917fb82911c834",
+    "crates/cognigraph-query/tests/corpus/exec/sq_precollect_into.cgql": "18a0bc7d2f0c1f0cb038aec456846a4aba62844172cdb5e40d7b4ee24718cadb",
+    "crates/cognigraph-query/tests/corpus/exec/sq_precollect_into.json": "ef847f3cd1bcd90872d58e5f0b302a1fd077630377253eff77c5b5e7708882bd",
+    "crates/cognigraph-query/tests/corpus/parse_err/sq_contains_mutation.cgql": "1d64ea8e0d995efbe26545ecdf8f318e33c6e1eb595d983c929672714a7b7053",
+    "crates/cognigraph-query/tests/corpus/parse_err/sq_postcollect_return.cgql": "8d0210abef5d4b04f3ef3dd63d960d3f0935b4dac614266fafa34c54b4777821",
+    "crates/cognigraph-query/tests/corpus/parse_err/sq_postcollect_sort.cgql": "7c72468db1cfd99eae91d4b953a0215dc975e35b7c85e6d5bc5971f06423547e",
+    "crates/cognigraph-query/tests/corpus/parse_ok/sq_mutation_for.cgql": "2a6fbc2c3924211a300cd48252b684fd63badb859c128c8b0b8dd571bd239b8f",
+    "crates/cognigraph-query/tests/corpus/parse_ok/sq_mutation_let.cgql": "eff66a063cc24453d6a8d36087bc98a560c9e25289377b1665391644122d6908",
+    "crates/cognigraph-query/tests/corpus/validate_err/sq_into_inline.cgql": "d99a9b13b5388009c460d36bdc870d3c0cc9232e59cbcd22454581d864f4d458",
+    "crates/cognigraph-query/tests/corpus/validate_err/sq_mutation_document.cgql": "047ba3801a133333b01c286141feccaea50d3a3419ada99f0bc697a233886965",
+    "crates/cognigraph-query/tests/corpus/validate_err/sq_mutation_operand.cgql": "1e4794439882f91cb6d567412947dc52f5523442b32312d742c8c56a42a835ce",
+    "crates/cognigraph-query/tests/corpus/validate_err/sq_nested_binding_collision.cgql": "5d018f1f5e760f837f6ff6c0d5dbd3a2228bd9cbabbf33130bff4e0a5359d8fc"
+  },
+  "corrected_attempts": [
+    "SUM golden result corrected from integer 4 to floating-point 4.0.",
+    "Combined lifted LET/nested query exposed CG-37; kept as known validation failure and separated supported controls.",
+    "Lua caught-error serialization caused HTTP 500; harness now converts error to string."
+  ],
+  "limits": [
+    "No new CRM, CUAD, model, or performance benchmark.",
+    "Production binary unchanged; new fixtures read from disk by tests/harness.",
+    "CG-37 and CG-38 deliberately remain open; known-failure assertions are not desired-behavior passes."
+  ]
+}

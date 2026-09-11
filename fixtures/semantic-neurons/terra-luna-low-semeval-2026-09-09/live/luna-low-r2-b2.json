@@ -1,0 +1,1056 @@
+{
+  "phase": "measurement",
+  "arm": "luna-low",
+  "repetition": 2,
+  "batch": 2,
+  "request": {
+    "space_type": "semeval-luna-low-r2-b2",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10621",
+        "title": "Relation benchmark excerpt",
+        "text": "Hiring in a down economy with the help of some beers proved successful."
+      },
+      {
+        "id": "semeval-10511",
+        "title": "Relation benchmark excerpt",
+        "text": "An investment firm co-founded by the head of the Obama administration's auto task force is under scrutiny in an investigation into what authorities allege was a pay-to-play scheme involving the New York state pension fund."
+      },
+      {
+        "id": "semeval-10114",
+        "title": "Relation benchmark excerpt",
+        "text": "This theme has been covered in science fiction like Star Trek."
+      },
+      {
+        "id": "semeval-8353",
+        "title": "Relation benchmark excerpt",
+        "text": "A question was raised in regard to the public announcement of the names of the three finalists."
+      },
+      {
+        "id": "semeval-9556",
+        "title": "Relation benchmark excerpt",
+        "text": "KHZZ experienced competition from former oldies station KHYL, but both stations ended up giving up the format, with KHZZ turning to oldies."
+      },
+      {
+        "id": "semeval-9795",
+        "title": "Relation benchmark excerpt",
+        "text": "A traveler wears a mask for protection against the swine flu."
+      },
+      {
+        "id": "semeval-8934",
+        "title": "Relation benchmark excerpt",
+        "text": "So they mate with boars every year and give birth to a litter, no, a farrow of piglets."
+      },
+      {
+        "id": "semeval-8207",
+        "title": "Relation benchmark excerpt",
+        "text": "The \"listening\" elephant catches the vibrations with its toes, behind which lie pads of acoustically sensitive fat."
+      },
+      {
+        "id": "semeval-10506",
+        "title": "Relation benchmark excerpt",
+        "text": "The glow from the blacksmith's forge led civilization from the dark ages and brought humankind to the standard of living enjoyed today."
+      },
+      {
+        "id": "semeval-8836",
+        "title": "Relation benchmark excerpt",
+        "text": "Line 3 (blue) completed part: from Egaleo to Doukissis Plakendias, where it connects with the new Suburban train from the airport."
+      },
+      {
+        "id": "semeval-10380",
+        "title": "Relation benchmark excerpt",
+        "text": "The bat moves its wings like we move our fingers."
+      },
+      {
+        "id": "semeval-10704",
+        "title": "Relation benchmark excerpt",
+        "text": "She was looking beautiful in the dim light that emanated from my broken table-lamp."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 7,
+    "proposed": 7,
+    "skips": [],
+    "space_type": "semeval-luna-low-r2-b2"
+  },
+  "latency_seconds": 11.600338625023142,
+  "facts": [
+    {
+      "_from": "entities/question",
+      "_id": "facts/fact-1307e8ef9e129a7ac37d98f476fae82cab72c19b907b9ff6c28740a8cf4b4e22",
+      "_key": "fact-1307e8ef9e129a7ac37d98f476fae82cab72c19b907b9ff6c28740a8cf4b4e22",
+      "_to": "entities/announcement",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8353",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b2",
+      "trigger": "A question was raised in regard to the public announcement of the names of the three finalists.",
+      "trigger_end": 95,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/wings",
+      "_id": "facts/fact-5fd3546be54859959e12e6649d4cf8443f6b3a05df5ae103aca0afb56b9cfe38",
+      "_key": "fact-5fd3546be54859959e12e6649d4cf8443f6b3a05df5ae103aca0afb56b9cfe38",
+      "_to": "entities/bat",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10380",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b2",
+      "trigger": "The bat moves its wings like we move our fingers.",
+      "trigger_end": 49,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/toes",
+      "_id": "facts/fact-658c697dd498e11e8592bf0dc5632c79fc430b1cf4a3f2082b68cedca3b94ecc",
+      "_key": "fact-658c697dd498e11e8592bf0dc5632c79fc430b1cf4a3f2082b68cedca3b94ecc",
+      "_to": "entities/elephant",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8207",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b2",
+      "trigger": "The \"listening\" elephant catches the vibrations with its toes, behind which lie pads of acoustically sensitive fat.",
+      "trigger_end": 115,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/beers",
+      "_id": "facts/fact-6bc77b87bd00d1108fbc4722b9527c4491bee15be31decbeddb4921269dace27",
+      "_key": "fact-6bc77b87bd00d1108fbc4722b9527c4491bee15be31decbeddb4921269dace27",
+      "_to": "entities/hiring",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10621",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b2",
+      "trigger": "Hiring in a down economy with the help of some beers proved successful.",
+      "trigger_end": 71,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/piglets",
+      "_id": "facts/fact-a9b1ecabb45e8fa8b771657bd547d1751989820e49530a956a27849024c5fd57",
+      "_key": "fact-a9b1ecabb45e8fa8b771657bd547d1751989820e49530a956a27849024c5fd57",
+      "_to": "entities/farrow",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8934",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b2",
+      "trigger": "So they mate with boars every year and give birth to a litter, no, a farrow of piglets.",
+      "trigger_end": 87,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/train",
+      "_id": "facts/fact-c1ea91072d92273cb5ea1037fb5e5c1f48d05103340fcfd71d5833ca999aa02d",
+      "_key": "fact-c1ea91072d92273cb5ea1037fb5e5c1f48d05103340fcfd71d5833ca999aa02d",
+      "_to": "entities/airport",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8836",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b2",
+      "trigger": "Line 3 (blue) completed part: from Egaleo to Doukissis Plakendias, where it connects with the new Suburban train from the airport.",
+      "trigger_end": 130,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/light",
+      "_id": "facts/fact-cc82c30a8116d8f04c1dc0694e8874af225c119f4867707e23bbb53a8709f669",
+      "_key": "fact-cc82c30a8116d8f04c1dc0694e8874af225c119f4867707e23bbb53a8709f669",
+      "_to": "entities/table-lamp",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10704",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r2-b2",
+      "trigger": "She was looking beautiful in the dim light that emanated from my broken table-lamp.",
+      "trigger_end": 83,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/airport",
+      "_key": "airport",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750074+00:00",
+      "entity_type": "origin",
+      "name": "airport",
+      "updated_at": "2026-09-09T13:45:53.750074+00:00"
+    },
+    {
+      "_id": "entities/announcement",
+      "_key": "announcement",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750079+00:00",
+      "entity_type": "message",
+      "name": "announcement",
+      "updated_at": "2026-09-09T13:45:53.750079+00:00"
+    },
+    {
+      "_id": "entities/bat",
+      "_key": "bat",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750081+00:00",
+      "entity_type": "whole",
+      "name": "bat",
+      "updated_at": "2026-09-09T13:45:53.750081+00:00"
+    },
+    {
+      "_id": "entities/beers",
+      "_key": "beers",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750082+00:00",
+      "entity_type": "object",
+      "name": "beers",
+      "updated_at": "2026-09-09T13:45:53.750082+00:00"
+    },
+    {
+      "_id": "entities/elephant",
+      "_key": "elephant",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750083+00:00",
+      "entity_type": "whole",
+      "name": "elephant",
+      "updated_at": "2026-09-09T13:45:53.750083+00:00"
+    },
+    {
+      "_id": "entities/farrow",
+      "_key": "farrow",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750084+00:00",
+      "entity_type": "collection",
+      "name": "farrow",
+      "updated_at": "2026-09-09T13:45:53.750084+00:00"
+    },
+    {
+      "_id": "entities/hiring",
+      "_key": "hiring",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750085+00:00",
+      "entity_type": "event",
+      "name": "Hiring",
+      "updated_at": "2026-09-09T13:45:53.750085+00:00"
+    },
+    {
+      "_id": "entities/light",
+      "_key": "light",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750086+00:00",
+      "entity_type": "entity",
+      "name": "light",
+      "updated_at": "2026-09-09T13:45:53.750086+00:00"
+    },
+    {
+      "_id": "entities/piglets",
+      "_key": "piglets",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750087+00:00",
+      "entity_type": "member",
+      "name": "piglets",
+      "updated_at": "2026-09-09T13:45:53.750087+00:00"
+    },
+    {
+      "_id": "entities/question",
+      "_key": "question",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750088+00:00",
+      "entity_type": "message",
+      "name": "question",
+      "updated_at": "2026-09-09T13:45:53.750088+00:00"
+    },
+    {
+      "_id": "entities/table-lamp",
+      "_key": "table-lamp",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750089+00:00",
+      "entity_type": "origin",
+      "name": "table-lamp",
+      "updated_at": "2026-09-09T13:45:53.750089+00:00"
+    },
+    {
+      "_id": "entities/toes",
+      "_key": "toes",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750090+00:00",
+      "entity_type": "component",
+      "name": "toes",
+      "updated_at": "2026-09-09T13:45:53.750090+00:00"
+    },
+    {
+      "_id": "entities/train",
+      "_key": "train",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750091+00:00",
+      "entity_type": "entity",
+      "name": "train",
+      "updated_at": "2026-09-09T13:45:53.750091+00:00"
+    },
+    {
+      "_id": "entities/wings",
+      "_key": "wings",
+      "aliases": [],
+      "created_at": "2026-09-09T13:45:53.750092+00:00",
+      "entity_type": "component",
+      "name": "wings",
+      "updated_at": "2026-09-09T13:45:53.750092+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-10114",
+      "_key": "semeval-luna-low-r2-b2-semeval-10114",
+      "chunk_id": "semeval-10114",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:853055a3304e85eb8df32d14453080c9ea719768dfe2d2089eb84d16fac03918",
+      "created_at": "2026-09-09T13:45:53.750093+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "This theme has been covered in science fiction like Star Trek.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750093+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-10380",
+      "_key": "semeval-luna-low-r2-b2-semeval-10380",
+      "chunk_id": "semeval-10380",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b009866fd281b8442deba204fe1f15a4f3e0a5d7b64a04bd6950c2a737bca358",
+      "created_at": "2026-09-09T13:45:53.750095+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "The bat moves its wings like we move our fingers.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750095+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-10506",
+      "_key": "semeval-luna-low-r2-b2-semeval-10506",
+      "chunk_id": "semeval-10506",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:61cd8175f4f91aa51aac7c05be429343772addb7e4546fceda38ad53b759fa10",
+      "created_at": "2026-09-09T13:45:53.750112+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "The glow from the blacksmith's forge led civilization from the dark ages and brought humankind to the standard of living enjoyed today.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750112+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-10511",
+      "_key": "semeval-luna-low-r2-b2-semeval-10511",
+      "chunk_id": "semeval-10511",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:daed11616ce50007e05192f554c69fe03fb680ac164d7e8bf29e4d2ca642f34a",
+      "created_at": "2026-09-09T13:45:53.750113+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "An investment firm co-founded by the head of the Obama administration's auto task force is under scrutiny in an investigation into what authorities allege was a pay-to-play scheme involving the New York state pension fund.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750113+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-10621",
+      "_key": "semeval-luna-low-r2-b2-semeval-10621",
+      "chunk_id": "semeval-10621",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:15ccf2a97a3bb256a28c7e58ed61d3af0257628ac51edc339f57bff66aa8a88c",
+      "created_at": "2026-09-09T13:45:53.750114+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "Hiring in a down economy with the help of some beers proved successful.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750114+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-10704",
+      "_key": "semeval-luna-low-r2-b2-semeval-10704",
+      "chunk_id": "semeval-10704",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:318838db3e84cdcc1b88ca9274211f9298b2ac7e5e7ad06df2110ca923a5fece",
+      "created_at": "2026-09-09T13:45:53.750122+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "She was looking beautiful in the dim light that emanated from my broken table-lamp.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750122+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-8207",
+      "_key": "semeval-luna-low-r2-b2-semeval-8207",
+      "chunk_id": "semeval-8207",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:599867c9b640f7eed4d80f4dbe86fcf14f2d81e3dc0d2cf79955dcd233a885c7",
+      "created_at": "2026-09-09T13:45:53.750127+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "The \"listening\" elephant catches the vibrations with its toes, behind which lie pads of acoustically sensitive fat.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750127+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-8353",
+      "_key": "semeval-luna-low-r2-b2-semeval-8353",
+      "chunk_id": "semeval-8353",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7ea742319bc709c33ab80b38a04b101a992a1943c31b517c248627443e2a86fa",
+      "created_at": "2026-09-09T13:45:53.750133+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "A question was raised in regard to the public announcement of the names of the three finalists.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750133+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-8836",
+      "_key": "semeval-luna-low-r2-b2-semeval-8836",
+      "chunk_id": "semeval-8836",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:62c4e7f2d0e975e3aa39bfb1be91339a078972c4da2e4e8590e5ce4595368096",
+      "created_at": "2026-09-09T13:45:53.750139+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "Line 3 (blue) completed part: from Egaleo to Doukissis Plakendias, where it connects with the new Suburban train from the airport.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750139+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-8934",
+      "_key": "semeval-luna-low-r2-b2-semeval-8934",
+      "chunk_id": "semeval-8934",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4314a33685210276adc7982992f3bf14d55d3324e9cfa3c865397484894925b6",
+      "created_at": "2026-09-09T13:45:53.750144+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "So they mate with boars every year and give birth to a litter, no, a farrow of piglets.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750144+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-9556",
+      "_key": "semeval-luna-low-r2-b2-semeval-9556",
+      "chunk_id": "semeval-9556",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:030869bda962304c2a34a66a80cbe39aabcfadfa5c77ddb3904961224051ad01",
+      "created_at": "2026-09-09T13:45:53.750148+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "KHZZ experienced competition from former oldies station KHYL, but both stations ended up giving up the format, with KHZZ turning to oldies.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750148+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r2-b2-semeval-9795",
+      "_key": "semeval-luna-low-r2-b2-semeval-9795",
+      "chunk_id": "semeval-9795",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d28c6f91ac5c51f6090a8e81619b09bebb9f6b63f27e46e5dcf5c2f6c72c9781",
+      "created_at": "2026-09-09T13:45:53.750149+00:00",
+      "space_id": "semeval-luna-low-r2-b2",
+      "text": "A traveler wears a mask for protection against the swine flu.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:45:53.750149+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 7,
+        "results": [
+          {
+            "_from": "entities/question",
+            "_id": "facts/fact-1307e8ef9e129a7ac37d98f476fae82cab72c19b907b9ff6c28740a8cf4b4e22",
+            "_key": "fact-1307e8ef9e129a7ac37d98f476fae82cab72c19b907b9ff6c28740a8cf4b4e22",
+            "_to": "entities/announcement",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8353",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b2",
+            "trigger": "A question was raised in regard to the public announcement of the names of the three finalists.",
+            "trigger_end": 95,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/wings",
+            "_id": "facts/fact-5fd3546be54859959e12e6649d4cf8443f6b3a05df5ae103aca0afb56b9cfe38",
+            "_key": "fact-5fd3546be54859959e12e6649d4cf8443f6b3a05df5ae103aca0afb56b9cfe38",
+            "_to": "entities/bat",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10380",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b2",
+            "trigger": "The bat moves its wings like we move our fingers.",
+            "trigger_end": 49,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/toes",
+            "_id": "facts/fact-658c697dd498e11e8592bf0dc5632c79fc430b1cf4a3f2082b68cedca3b94ecc",
+            "_key": "fact-658c697dd498e11e8592bf0dc5632c79fc430b1cf4a3f2082b68cedca3b94ecc",
+            "_to": "entities/elephant",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8207",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b2",
+            "trigger": "The \"listening\" elephant catches the vibrations with its toes, behind which lie pads of acoustically sensitive fat.",
+            "trigger_end": 115,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/beers",
+            "_id": "facts/fact-6bc77b87bd00d1108fbc4722b9527c4491bee15be31decbeddb4921269dace27",
+            "_key": "fact-6bc77b87bd00d1108fbc4722b9527c4491bee15be31decbeddb4921269dace27",
+            "_to": "entities/hiring",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10621",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b2",
+            "trigger": "Hiring in a down economy with the help of some beers proved successful.",
+            "trigger_end": 71,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/piglets",
+            "_id": "facts/fact-a9b1ecabb45e8fa8b771657bd547d1751989820e49530a956a27849024c5fd57",
+            "_key": "fact-a9b1ecabb45e8fa8b771657bd547d1751989820e49530a956a27849024c5fd57",
+            "_to": "entities/farrow",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8934",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b2",
+            "trigger": "So they mate with boars every year and give birth to a litter, no, a farrow of piglets.",
+            "trigger_end": 87,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/train",
+            "_id": "facts/fact-c1ea91072d92273cb5ea1037fb5e5c1f48d05103340fcfd71d5833ca999aa02d",
+            "_key": "fact-c1ea91072d92273cb5ea1037fb5e5c1f48d05103340fcfd71d5833ca999aa02d",
+            "_to": "entities/airport",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8836",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b2",
+            "trigger": "Line 3 (blue) completed part: from Egaleo to Doukissis Plakendias, where it connects with the new Suburban train from the airport.",
+            "trigger_end": 130,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/light",
+            "_id": "facts/fact-cc82c30a8116d8f04c1dc0694e8874af225c119f4867707e23bbb53a8709f669",
+            "_key": "fact-cc82c30a8116d8f04c1dc0694e8874af225c119f4867707e23bbb53a8709f669",
+            "_to": "entities/table-lamp",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10704",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r2-b2",
+            "trigger": "She was looking beautiful in the dim light that emanated from my broken table-lamp.",
+            "trigger_end": 83,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 14,
+        "results": [
+          {
+            "_id": "entities/airport",
+            "_key": "airport",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750074+00:00",
+            "entity_type": "origin",
+            "name": "airport",
+            "updated_at": "2026-09-09T13:45:53.750074+00:00"
+          },
+          {
+            "_id": "entities/announcement",
+            "_key": "announcement",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750079+00:00",
+            "entity_type": "message",
+            "name": "announcement",
+            "updated_at": "2026-09-09T13:45:53.750079+00:00"
+          },
+          {
+            "_id": "entities/bat",
+            "_key": "bat",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750081+00:00",
+            "entity_type": "whole",
+            "name": "bat",
+            "updated_at": "2026-09-09T13:45:53.750081+00:00"
+          },
+          {
+            "_id": "entities/beers",
+            "_key": "beers",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750082+00:00",
+            "entity_type": "object",
+            "name": "beers",
+            "updated_at": "2026-09-09T13:45:53.750082+00:00"
+          },
+          {
+            "_id": "entities/elephant",
+            "_key": "elephant",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750083+00:00",
+            "entity_type": "whole",
+            "name": "elephant",
+            "updated_at": "2026-09-09T13:45:53.750083+00:00"
+          },
+          {
+            "_id": "entities/farrow",
+            "_key": "farrow",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750084+00:00",
+            "entity_type": "collection",
+            "name": "farrow",
+            "updated_at": "2026-09-09T13:45:53.750084+00:00"
+          },
+          {
+            "_id": "entities/hiring",
+            "_key": "hiring",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750085+00:00",
+            "entity_type": "event",
+            "name": "Hiring",
+            "updated_at": "2026-09-09T13:45:53.750085+00:00"
+          },
+          {
+            "_id": "entities/light",
+            "_key": "light",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750086+00:00",
+            "entity_type": "entity",
+            "name": "light",
+            "updated_at": "2026-09-09T13:45:53.750086+00:00"
+          },
+          {
+            "_id": "entities/piglets",
+            "_key": "piglets",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750087+00:00",
+            "entity_type": "member",
+            "name": "piglets",
+            "updated_at": "2026-09-09T13:45:53.750087+00:00"
+          },
+          {
+            "_id": "entities/question",
+            "_key": "question",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750088+00:00",
+            "entity_type": "message",
+            "name": "question",
+            "updated_at": "2026-09-09T13:45:53.750088+00:00"
+          },
+          {
+            "_id": "entities/table-lamp",
+            "_key": "table-lamp",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750089+00:00",
+            "entity_type": "origin",
+            "name": "table-lamp",
+            "updated_at": "2026-09-09T13:45:53.750089+00:00"
+          },
+          {
+            "_id": "entities/toes",
+            "_key": "toes",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750090+00:00",
+            "entity_type": "component",
+            "name": "toes",
+            "updated_at": "2026-09-09T13:45:53.750090+00:00"
+          },
+          {
+            "_id": "entities/train",
+            "_key": "train",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750091+00:00",
+            "entity_type": "entity",
+            "name": "train",
+            "updated_at": "2026-09-09T13:45:53.750091+00:00"
+          },
+          {
+            "_id": "entities/wings",
+            "_key": "wings",
+            "aliases": [],
+            "created_at": "2026-09-09T13:45:53.750092+00:00",
+            "entity_type": "component",
+            "name": "wings",
+            "updated_at": "2026-09-09T13:45:53.750092+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-10114",
+            "_key": "semeval-luna-low-r2-b2-semeval-10114",
+            "chunk_id": "semeval-10114",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:853055a3304e85eb8df32d14453080c9ea719768dfe2d2089eb84d16fac03918",
+            "created_at": "2026-09-09T13:45:53.750093+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "This theme has been covered in science fiction like Star Trek.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750093+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-10380",
+            "_key": "semeval-luna-low-r2-b2-semeval-10380",
+            "chunk_id": "semeval-10380",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b009866fd281b8442deba204fe1f15a4f3e0a5d7b64a04bd6950c2a737bca358",
+            "created_at": "2026-09-09T13:45:53.750095+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "The bat moves its wings like we move our fingers.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750095+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-10506",
+            "_key": "semeval-luna-low-r2-b2-semeval-10506",
+            "chunk_id": "semeval-10506",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:61cd8175f4f91aa51aac7c05be429343772addb7e4546fceda38ad53b759fa10",
+            "created_at": "2026-09-09T13:45:53.750112+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "The glow from the blacksmith's forge led civilization from the dark ages and brought humankind to the standard of living enjoyed today.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750112+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-10511",
+            "_key": "semeval-luna-low-r2-b2-semeval-10511",
+            "chunk_id": "semeval-10511",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:daed11616ce50007e05192f554c69fe03fb680ac164d7e8bf29e4d2ca642f34a",
+            "created_at": "2026-09-09T13:45:53.750113+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "An investment firm co-founded by the head of the Obama administration's auto task force is under scrutiny in an investigation into what authorities allege was a pay-to-play scheme involving the New York state pension fund.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750113+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-10621",
+            "_key": "semeval-luna-low-r2-b2-semeval-10621",
+            "chunk_id": "semeval-10621",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:15ccf2a97a3bb256a28c7e58ed61d3af0257628ac51edc339f57bff66aa8a88c",
+            "created_at": "2026-09-09T13:45:53.750114+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "Hiring in a down economy with the help of some beers proved successful.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750114+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-10704",
+            "_key": "semeval-luna-low-r2-b2-semeval-10704",
+            "chunk_id": "semeval-10704",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:318838db3e84cdcc1b88ca9274211f9298b2ac7e5e7ad06df2110ca923a5fece",
+            "created_at": "2026-09-09T13:45:53.750122+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "She was looking beautiful in the dim light that emanated from my broken table-lamp.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750122+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-8207",
+            "_key": "semeval-luna-low-r2-b2-semeval-8207",
+            "chunk_id": "semeval-8207",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:599867c9b640f7eed4d80f4dbe86fcf14f2d81e3dc0d2cf79955dcd233a885c7",
+            "created_at": "2026-09-09T13:45:53.750127+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "The \"listening\" elephant catches the vibrations with its toes, behind which lie pads of acoustically sensitive fat.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750127+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-8353",
+            "_key": "semeval-luna-low-r2-b2-semeval-8353",
+            "chunk_id": "semeval-8353",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7ea742319bc709c33ab80b38a04b101a992a1943c31b517c248627443e2a86fa",
+            "created_at": "2026-09-09T13:45:53.750133+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "A question was raised in regard to the public announcement of the names of the three finalists.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750133+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-8836",
+            "_key": "semeval-luna-low-r2-b2-semeval-8836",
+            "chunk_id": "semeval-8836",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:62c4e7f2d0e975e3aa39bfb1be91339a078972c4da2e4e8590e5ce4595368096",
+            "created_at": "2026-09-09T13:45:53.750139+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "Line 3 (blue) completed part: from Egaleo to Doukissis Plakendias, where it connects with the new Suburban train from the airport.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750139+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-8934",
+            "_key": "semeval-luna-low-r2-b2-semeval-8934",
+            "chunk_id": "semeval-8934",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4314a33685210276adc7982992f3bf14d55d3324e9cfa3c865397484894925b6",
+            "created_at": "2026-09-09T13:45:53.750144+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "So they mate with boars every year and give birth to a litter, no, a farrow of piglets.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750144+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-9556",
+            "_key": "semeval-luna-low-r2-b2-semeval-9556",
+            "chunk_id": "semeval-9556",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:030869bda962304c2a34a66a80cbe39aabcfadfa5c77ddb3904961224051ad01",
+            "created_at": "2026-09-09T13:45:53.750148+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "KHZZ experienced competition from former oldies station KHYL, but both stations ended up giving up the format, with KHZZ turning to oldies.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750148+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r2-b2-semeval-9795",
+            "_key": "semeval-luna-low-r2-b2-semeval-9795",
+            "chunk_id": "semeval-9795",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d28c6f91ac5c51f6090a8e81619b09bebb9f6b63f27e46e5dcf5c2f6c72c9781",
+            "created_at": "2026-09-09T13:45:53.750149+00:00",
+            "space_id": "semeval-luna-low-r2-b2",
+            "text": "A traveler wears a mask for protection against the swine flu.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:45:53.750149+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

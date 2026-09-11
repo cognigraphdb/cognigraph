@@ -1,0 +1,237 @@
+{
+  "mode": "mock",
+  "purpose": "Capture rejected nominations and silent duplicate suppression, not measured model quality",
+  "request": {
+    "space_type": "recorder-control",
+    "taxonomy": [
+      {
+        "relation": "SUPPLIES",
+        "description": "Supplier to customer",
+        "require_in_sentence": [
+          "supplies"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "control",
+        "text": "Aster supplies Beryl."
+      }
+    ]
+  },
+  "response": {
+    "chunks": 1,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 1,
+    "proposed": 4,
+    "skips": [
+      "`Aster --UNKNOWN--> Beryl`: relation not in the taxonomy — dropped",
+      "`Absent --SUPPLIES--> Beryl`: source does not occur in the evidence sentence — dropped"
+    ],
+    "space_type": "recorder-control"
+  },
+  "facts": [
+    {
+      "_from": "entities/aster",
+      "_id": "facts/fact-9fecfed52fb3f177d35a48519e3bd2125458482e7ae33dabe642a841d0c0cf41",
+      "_key": "fact-9fecfed52fb3f177d35a48519e3bd2125458482e7ae33dabe642a841d0c0cf41",
+      "_to": "entities/beryl",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "control",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "SUPPLIES",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "recorder-control",
+      "trigger": "Aster supplies Beryl.",
+      "trigger_end": 21,
+      "trigger_start": 0
+    }
+  ],
+  "provider_calls": [
+    {
+      "index": 0,
+      "context": {
+        "arm": "luna",
+        "repetition": 0,
+        "batch": 0,
+        "cases": [
+          {
+            "id": "control",
+            "text": "Aster supplies Beryl.",
+            "gold": [
+              {
+                "source": "Aster",
+                "relation": "SUPPLIES",
+                "target": "Beryl"
+              },
+              {
+                "source": "Aster",
+                "relation": "UNKNOWN",
+                "target": "Beryl"
+              },
+              {
+                "source": "Absent",
+                "relation": "SUPPLIES",
+                "target": "Beryl"
+              },
+              {
+                "source": "Aster",
+                "relation": "SUPPLIES",
+                "target": "Beryl"
+              }
+            ]
+          }
+        ]
+      },
+      "request_from_server": {
+        "messages": [
+          {
+            "content": "You extract facts from document excerpts, under restraint.\nRules:\n- Assert ONLY relations from the taxonomy the user provides; never invent one.\n- `source` and `target` must be short entity names copied VERBATIM from the evidence sentence.\n- `evidence` must be an EXACT quote (one sentence, or a contiguous span) copied from one excerpt, and `chunk_id` must be that excerpt's id.\n- Only assert what the quoted sentence itself states. If the document does not clearly state a relation, do not report it. An empty facts list is a good answer for an excerpt with nothing to say.\nReturn JSON only.",
+            "role": "system"
+          },
+          {
+            "content": "Taxonomy (assert only these relations):\n- SUPPLIES: Supplier to customer\n\nDocument excerpts:\n[chunk control] Aster supplies Beryl.\n\nExtract the facts.",
+            "role": "user"
+          }
+        ],
+        "model": "gpt-5.6-luna",
+        "reasoning_effort": "none",
+        "response_format": {
+          "json_schema": {
+            "name": "response",
+            "schema": {
+              "additionalProperties": false,
+              "properties": {
+                "facts": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "chunk_id": {
+                        "type": "string"
+                      },
+                      "evidence": {
+                        "type": "string"
+                      },
+                      "relation": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "string"
+                      },
+                      "source_type": {
+                        "type": "string"
+                      },
+                      "target": {
+                        "type": "string"
+                      },
+                      "target_type": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "source_type",
+                      "target",
+                      "target_type",
+                      "relation",
+                      "evidence",
+                      "chunk_id"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "facts"
+              ],
+              "type": "object"
+            },
+            "strict": true
+          },
+          "type": "json_schema"
+        }
+      },
+      "request_to_provider": {
+        "messages": [
+          {
+            "content": "You extract facts from document excerpts, under restraint.\nRules:\n- Assert ONLY relations from the taxonomy the user provides; never invent one.\n- `source` and `target` must be short entity names copied VERBATIM from the evidence sentence.\n- `evidence` must be an EXACT quote (one sentence, or a contiguous span) copied from one excerpt, and `chunk_id` must be that excerpt's id.\n- Only assert what the quoted sentence itself states. If the document does not clearly state a relation, do not report it. An empty facts list is a good answer for an excerpt with nothing to say.\nReturn JSON only.",
+            "role": "system"
+          },
+          {
+            "content": "Taxonomy (assert only these relations):\n- SUPPLIES: Supplier to customer\n\nDocument excerpts:\n[chunk control] Aster supplies Beryl.\n\nExtract the facts.",
+            "role": "user"
+          }
+        ],
+        "model": "gpt-5.6-luna",
+        "reasoning_effort": "none",
+        "response_format": {
+          "json_schema": {
+            "name": "response",
+            "schema": {
+              "additionalProperties": false,
+              "properties": {
+                "facts": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "chunk_id": {
+                        "type": "string"
+                      },
+                      "evidence": {
+                        "type": "string"
+                      },
+                      "relation": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "string"
+                      },
+                      "source_type": {
+                        "type": "string"
+                      },
+                      "target": {
+                        "type": "string"
+                      },
+                      "target_type": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "source_type",
+                      "target",
+                      "target_type",
+                      "relation",
+                      "evidence",
+                      "chunk_id"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "facts"
+              ],
+              "type": "object"
+            },
+            "strict": true
+          },
+          "type": "json_schema"
+        },
+        "max_completion_tokens": 4096
+      },
+      "reserved_usd": 0.006044,
+      "started_utc": "2026-09-09T11:33:13Z",
+      "provider_url": "https://api.openai.com/v1/chat/completions",
+      "mode": "mock",
+      "sent_to_provider": false,
+      "latency_seconds": 2.274999860674143e-05,
+      "status": 200,
+      "raw_response": "{\"model\": \"gpt-5.6-luna\", \"choices\": [{\"finish_reason\": \"stop\", \"message\": {\"content\": \"{\\\"facts\\\": [{\\\"source\\\": \\\"Aster\\\", \\\"relation\\\": \\\"SUPPLIES\\\", \\\"target\\\": \\\"Beryl\\\", \\\"source_type\\\": \\\"entity\\\", \\\"target_type\\\": \\\"entity\\\", \\\"evidence\\\": \\\"Aster supplies Beryl.\\\", \\\"chunk_id\\\": \\\"control\\\"}, {\\\"source\\\": \\\"Aster\\\", \\\"relation\\\": \\\"UNKNOWN\\\", \\\"target\\\": \\\"Beryl\\\", \\\"source_type\\\": \\\"entity\\\", \\\"target_type\\\": \\\"entity\\\", \\\"evidence\\\": \\\"Aster supplies Beryl.\\\", \\\"chunk_id\\\": \\\"control\\\"}, {\\\"source\\\": \\\"Absent\\\", \\\"relation\\\": \\\"SUPPLIES\\\", \\\"target\\\": \\\"Beryl\\\", \\\"source_type\\\": \\\"entity\\\", \\\"target_type\\\": \\\"entity\\\", \\\"evidence\\\": \\\"Aster supplies Beryl.\\\", \\\"chunk_id\\\": \\\"control\\\"}, {\\\"source\\\": \\\"Aster\\\", \\\"relation\\\": \\\"SUPPLIES\\\", \\\"target\\\": \\\"Beryl\\\", \\\"source_type\\\": \\\"entity\\\", \\\"target_type\\\": \\\"entity\\\", \\\"evidence\\\": \\\"Aster supplies Beryl.\\\", \\\"chunk_id\\\": \\\"control\\\"}]}\"}}], \"usage\": {\"prompt_tokens\": 0, \"completion_tokens\": 0, \"total_tokens\": 0}}"
+    }
+  ]
+}

@@ -1,0 +1,500 @@
+{
+  "binary_profile": "release",
+  "binary_sha256": "9b231ab9aa6da3aaa162491895f3a0201dcf525088babd59307d89e2ef08cb14",
+  "expect_vulnerable": true,
+  "provider": "none",
+  "cases": [
+    {
+      "name": "filter",
+      "query": "FOR n IN notes FILTER DOCUMENT(n.ref).v == 2 RETURN n._key",
+      "expected": [
+        "a",
+        "b"
+      ],
+      "units": 5
+    },
+    {
+      "name": "deferred",
+      "query": "FOR n IN notes LET d=DOCUMENT(n.ref) LET v=d.v SORT n._key LIMIT 1 RETURN v",
+      "expected": [
+        2
+      ],
+      "units": 4
+    },
+    {
+      "name": "dependent",
+      "query": "FOR n IN notes FILTER n._key == \"a\" LET d=DOCUMENT(n.ref) LET next=DOCUMENT(d.next) RETURN next.v",
+      "expected": [
+        3
+      ],
+      "units": 3
+    },
+    {
+      "name": "traversal",
+      "query": "FOR n IN notes FILTER n._key == \"a\" FOR v IN 1..1 OUTBOUND n._id links RETURN v._key",
+      "expected": [
+        "b",
+        "c"
+      ],
+      "units": 5
+    },
+    {
+      "name": "mixed",
+      "query": "FOR n IN notes FILTER n._key == \"a\" FOR v IN 1..1 OUTBOUND n._id links LET d=DOCUMENT(v._id) RETURN d.v",
+      "expected": [
+        2,
+        3
+      ],
+      "units": 9
+    },
+    {
+      "name": "array",
+      "query": "FOR id IN [\"notes/b\",\"notes/c\"] FILTER DOCUMENT(id).v >= 2 RETURN id",
+      "expected": [
+        "notes/b",
+        "notes/c"
+      ],
+      "units": 6
+    },
+    {
+      "name": "subquery",
+      "query": "FOR n IN notes FILTER n._key == \"a\" LET xs=(FOR x IN [1,2] RETURN DOCUMENT(n.ref).v) SORT n._key LIMIT 1 RETURN xs",
+      "expected": [
+        [
+          2,
+          2
+        ]
+      ],
+      "units": 6
+    },
+    {
+      "name": "collect_into",
+      "query": "FOR n IN notes COLLECT group=1 INTO ids=DOCUMENT(n.ref)._key RETURN ids",
+      "expected": [
+        [
+          "b",
+          "b",
+          "a"
+        ]
+      ],
+      "units": 5
+    },
+    {
+      "name": "empty",
+      "query": "FOR n IN notes FILTER DOCUMENT(n.ref).v == 99 RETURN n._key",
+      "expected": [],
+      "units": 5
+    },
+    {
+      "name": "distinct",
+      "query": "FOR n IN notes RETURN DISTINCT DOCUMENT(n.ref).v",
+      "expected": [
+        2,
+        1
+      ],
+      "units": 5
+    }
+  ],
+  "modes": {
+    "resident": {
+      "parity": [
+        {
+          "surface": "/api/query",
+          "results": [
+            "a",
+            "b"
+          ],
+          "analysis": {
+            "analyze": true,
+            "bind_vars": [],
+            "sources": [
+              {
+                "collection": "notes",
+                "depth": 0,
+                "fetch_ms": 0.006,
+                "kind": "collection_scan",
+                "pushdown": {
+                  "all_filters_pushed": false,
+                  "fetch_limit": null,
+                  "predicates": [],
+                  "projection": [
+                    "_key",
+                    "ref"
+                  ]
+                },
+                "rows": 3,
+                "var": "n"
+              }
+            ],
+            "stages": [
+              {
+                "depth": 0,
+                "rows": 3,
+                "runs": 1,
+                "stage": "FOR n"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "FILTER"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "RETURN"
+              }
+            ],
+            "stats": {
+              "result_rows": 0,
+              "source_rows": 3,
+              "total_ms": 0.017
+            }
+          }
+        },
+        {
+          "surface": "/api/search/query",
+          "results": [
+            "a",
+            "b"
+          ],
+          "analysis": {
+            "analyze": true,
+            "bind_vars": [],
+            "sources": [
+              {
+                "collection": "notes",
+                "depth": 0,
+                "fetch_ms": 0.002,
+                "kind": "collection_scan",
+                "pushdown": {
+                  "all_filters_pushed": false,
+                  "fetch_limit": null,
+                  "predicates": [],
+                  "projection": [
+                    "_key",
+                    "ref"
+                  ]
+                },
+                "rows": 3,
+                "var": "n"
+              }
+            ],
+            "stages": [
+              {
+                "depth": 0,
+                "rows": 3,
+                "runs": 1,
+                "stage": "FOR n"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "FILTER"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "RETURN"
+              }
+            ],
+            "stats": {
+              "result_rows": 0,
+              "source_rows": 3,
+              "total_ms": 0.005
+            }
+          }
+        },
+        {
+          "surface": "/api/lua/execute",
+          "results": [
+            "a",
+            "b"
+          ],
+          "analysis": {
+            "analyze": true,
+            "bind_vars": [],
+            "sources": [
+              {
+                "collection": "notes",
+                "depth": 0,
+                "fetch_ms": 0.002,
+                "kind": "collection_scan",
+                "pushdown": {
+                  "all_filters_pushed": false,
+                  "fetch_limit": null,
+                  "predicates": [],
+                  "projection": [
+                    "_key",
+                    "ref"
+                  ]
+                },
+                "rows": 3,
+                "var": "n"
+              }
+            ],
+            "stages": [
+              {
+                "depth": 0,
+                "rows": 3,
+                "runs": 1,
+                "stage": "FOR n"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "FILTER"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "RETURN"
+              }
+            ],
+            "stats": {
+              "result_rows": 0,
+              "source_rows": 3,
+              "total_ms": 0.007
+            }
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "surface": "/api/query",
+          "cap": 3,
+          "accepted_results": [
+            "a",
+            "b"
+          ],
+          "correct_units": 5
+        },
+        {
+          "surface": "/api/search/query",
+          "cap": 3,
+          "accepted_results": [
+            "a",
+            "b"
+          ],
+          "correct_units": 5
+        },
+        {
+          "surface": "/api/lua/execute",
+          "cap": 3,
+          "accepted_results": [
+            "a",
+            "b"
+          ],
+          "correct_units": 5
+        }
+      ],
+      "restart_preserved": true
+    },
+    "paged": {
+      "parity": [
+        {
+          "surface": "/api/query",
+          "results": [
+            "a",
+            "b"
+          ],
+          "analysis": {
+            "analyze": true,
+            "bind_vars": [],
+            "sources": [
+              {
+                "collection": "notes",
+                "depth": 0,
+                "fetch_ms": 0.01,
+                "kind": "collection_scan",
+                "pushdown": {
+                  "all_filters_pushed": false,
+                  "fetch_limit": null,
+                  "predicates": [],
+                  "projection": [
+                    "_key",
+                    "ref"
+                  ]
+                },
+                "rows": 3,
+                "var": "n"
+              }
+            ],
+            "stages": [
+              {
+                "depth": 0,
+                "rows": 3,
+                "runs": 1,
+                "stage": "FOR n"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "FILTER"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "RETURN"
+              }
+            ],
+            "stats": {
+              "result_rows": 0,
+              "source_rows": 3,
+              "total_ms": 0.017
+            }
+          }
+        },
+        {
+          "surface": "/api/search/query",
+          "results": [
+            "a",
+            "b"
+          ],
+          "analysis": {
+            "analyze": true,
+            "bind_vars": [],
+            "sources": [
+              {
+                "collection": "notes",
+                "depth": 0,
+                "fetch_ms": 0.008,
+                "kind": "collection_scan",
+                "pushdown": {
+                  "all_filters_pushed": false,
+                  "fetch_limit": null,
+                  "predicates": [],
+                  "projection": [
+                    "_key",
+                    "ref"
+                  ]
+                },
+                "rows": 3,
+                "var": "n"
+              }
+            ],
+            "stages": [
+              {
+                "depth": 0,
+                "rows": 3,
+                "runs": 1,
+                "stage": "FOR n"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "FILTER"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "RETURN"
+              }
+            ],
+            "stats": {
+              "result_rows": 0,
+              "source_rows": 3,
+              "total_ms": 0.012
+            }
+          }
+        },
+        {
+          "surface": "/api/lua/execute",
+          "results": [
+            "a",
+            "b"
+          ],
+          "analysis": {
+            "analyze": true,
+            "bind_vars": [],
+            "sources": [
+              {
+                "collection": "notes",
+                "depth": 0,
+                "fetch_ms": 0.009,
+                "kind": "collection_scan",
+                "pushdown": {
+                  "all_filters_pushed": false,
+                  "fetch_limit": null,
+                  "predicates": [],
+                  "projection": [
+                    "_key",
+                    "ref"
+                  ]
+                },
+                "rows": 3,
+                "var": "n"
+              }
+            ],
+            "stages": [
+              {
+                "depth": 0,
+                "rows": 3,
+                "runs": 1,
+                "stage": "FOR n"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "FILTER"
+              },
+              {
+                "depth": 0,
+                "rows": 0,
+                "runs": 1,
+                "stage": "RETURN"
+              }
+            ],
+            "stats": {
+              "result_rows": 0,
+              "source_rows": 3,
+              "total_ms": 0.014
+            }
+          }
+        }
+      ],
+      "budgets": [
+        {
+          "surface": "/api/query",
+          "cap": 3,
+          "accepted_results": [
+            "a",
+            "b"
+          ],
+          "correct_units": 5
+        },
+        {
+          "surface": "/api/search/query",
+          "cap": 3,
+          "accepted_results": [
+            "a",
+            "b"
+          ],
+          "correct_units": 5
+        },
+        {
+          "surface": "/api/lua/execute",
+          "cap": 3,
+          "accepted_results": [
+            "a",
+            "b"
+          ],
+          "correct_units": 5
+        }
+      ],
+      "restart_preserved": true
+    }
+  },
+  "result": "passed",
+  "temporary_root": "/var/folders/v2/x4zbz9nd10lf_kqzhpm4r84w0000gn/T/cognigraph-cg8-live-w3s8aoeg"
+}

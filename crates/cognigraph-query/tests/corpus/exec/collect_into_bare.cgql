@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d._key == "d" COLLECT t = d.title INTO rows RETURN { t: t, first: FIRST(rows) }

@@ -1,0 +1,1128 @@
+{
+  "phase": "measurement",
+  "arm": "luna-low",
+  "repetition": 1,
+  "batch": 17,
+  "request": {
+    "space_type": "semeval-luna-low-r1-b17",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-8314",
+        "title": "Relation benchmark excerpt",
+        "text": "The phones announced by Vodafone yesterday continue the trend of putting the operator's brand ahead of the handset manufacturer's."
+      },
+      {
+        "id": "semeval-10025",
+        "title": "Relation benchmark excerpt",
+        "text": "Impressed by the strategic advantages of this fortress and its protection of the city on the slope beneath, King Vakhtang Gorgasali of Iberia decided to move his capital here from Mtskheta in 458."
+      },
+      {
+        "id": "semeval-10554",
+        "title": "Relation benchmark excerpt",
+        "text": "A chocolate maker, on the other hand, is the person who physically creates the couverture from cacao beans and other ingredients."
+      },
+      {
+        "id": "semeval-9610",
+        "title": "Relation benchmark excerpt",
+        "text": "His becomes Version 1 of the report and is the report that fulfills compliance with the ARRA Section 1512 reporting requirements."
+      },
+      {
+        "id": "semeval-10053",
+        "title": "Relation benchmark excerpt",
+        "text": "Although the sack is as fish friendly as possible, we took great care when we retained the carp in a sack for such a long period of time."
+      },
+      {
+        "id": "semeval-10165",
+        "title": "Relation benchmark excerpt",
+        "text": "Original mammography films are being delivered to viewers."
+      },
+      {
+        "id": "semeval-10530",
+        "title": "Relation benchmark excerpt",
+        "text": "The body was in a trunk of a vehicle."
+      },
+      {
+        "id": "semeval-9838",
+        "title": "Relation benchmark excerpt",
+        "text": "The prerogative of Reason lies very low, perpetually overpowered by the rabble of appetites, passions, and opinions."
+      },
+      {
+        "id": "semeval-10311",
+        "title": "Relation benchmark excerpt",
+        "text": "The children, seated on their mother's laps, played with toys on a table in front of a picture with holes in it."
+      },
+      {
+        "id": "semeval-10293",
+        "title": "Relation benchmark excerpt",
+        "text": "The singer arrived to the outdoor stage for rehearsal."
+      },
+      {
+        "id": "semeval-9784",
+        "title": "Relation benchmark excerpt",
+        "text": "The archives also publish historical and scientific studies."
+      },
+      {
+        "id": "semeval-9535",
+        "title": "Relation benchmark excerpt",
+        "text": "Optimizing a transformer driven active magnetic shield in induction heating."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 8,
+    "proposed": 9,
+    "skips": [
+      "`studies --Product-Producer--> archives`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-luna-low-r1-b17"
+  },
+  "latency_seconds": 9.665429959073663,
+  "facts": [
+    {
+      "_from": "entities/couverture",
+      "_id": "facts/fact-0b95b02ff7bb089c19741648a23053afef8c931efc48449c3ec53cb5e0e91100",
+      "_key": "fact-0b95b02ff7bb089c19741648a23053afef8c931efc48449c3ec53cb5e0e91100",
+      "_to": "entities/person",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10554",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b17",
+      "trigger": "A chocolate maker, on the other hand, is the person who physically creates the couverture from cacao beans and other ingredients.",
+      "trigger_end": 129,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/carp",
+      "_id": "facts/fact-1df3a13afc48347241cb87ddd43813fef6b8b1e2e32530017b89a1b742aa0d9f",
+      "_key": "fact-1df3a13afc48347241cb87ddd43813fef6b8b1e2e32530017b89a1b742aa0d9f",
+      "_to": "entities/sack",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10053",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b17",
+      "trigger": "Although the sack is as fish friendly as possible, we took great care when we retained the carp in a sack for such a long period of time.",
+      "trigger_end": 137,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/holes",
+      "_id": "facts/fact-4c163db3478ef3567dbd832804bba4eec654f2bf43dfa74eadba01d277aa9929",
+      "_key": "fact-4c163db3478ef3567dbd832804bba4eec654f2bf43dfa74eadba01d277aa9929",
+      "_to": "entities/picture",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10311",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b17",
+      "trigger": "The children, seated on their mother's laps, played with toys on a table in front of a picture with holes in it.",
+      "trigger_end": 112,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/appetites",
+      "_id": "facts/fact-5585c66a37c6f5988420ef4c5d293bf6df2b93179f9c0a0749392ff82c22e880",
+      "_key": "fact-5585c66a37c6f5988420ef4c5d293bf6df2b93179f9c0a0749392ff82c22e880",
+      "_to": "entities/rabble",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9838",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b17",
+      "trigger": "The prerogative of Reason lies very low, perpetually overpowered by the rabble of appetites, passions, and opinions.",
+      "trigger_end": 116,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/handset",
+      "_id": "facts/fact-56d34892cd30db21538a3c40af88d5e2f141637526b0f243d621674304bf97f0",
+      "_key": "fact-56d34892cd30db21538a3c40af88d5e2f141637526b0f243d621674304bf97f0",
+      "_to": "entities/manufacturer",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8314",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b17",
+      "trigger": "The phones announced by Vodafone yesterday continue the trend of putting the operator's brand ahead of the handset manufacturer's.",
+      "trigger_end": 130,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/films",
+      "_id": "facts/fact-d3f10f013fac02e48e681a23bf49528136a950d8f96befdb5ed9dd2bcc517982",
+      "_key": "fact-d3f10f013fac02e48e681a23bf49528136a950d8f96befdb5ed9dd2bcc517982",
+      "_to": "entities/viewers",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10165",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b17",
+      "trigger": "Original mammography films are being delivered to viewers.",
+      "trigger_end": 58,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/singer",
+      "_id": "facts/fact-edfd750f3054f817078be1e36129fd8dc4f38e397605a38c3eaab1631d14caa5",
+      "_key": "fact-edfd750f3054f817078be1e36129fd8dc4f38e397605a38c3eaab1631d14caa5",
+      "_to": "entities/outdoor-stage",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10293",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b17",
+      "trigger": "The singer arrived to the outdoor stage for rehearsal.",
+      "trigger_end": 54,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/body",
+      "_id": "facts/fact-f64e6d268460ea1308832398a15ad525a8db9ddb0aac8f964334befd663b5f9f",
+      "_key": "fact-f64e6d268460ea1308832398a15ad525a8db9ddb0aac8f964334befd663b5f9f",
+      "_to": "entities/trunk",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10530",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b17",
+      "trigger": "The body was in a trunk of a vehicle.",
+      "trigger_end": 37,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/appetites",
+      "_key": "appetites",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202003+00:00",
+      "entity_type": "abstract",
+      "name": "appetites",
+      "updated_at": "2026-09-09T13:29:24.202003+00:00"
+    },
+    {
+      "_id": "entities/body",
+      "_key": "body",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202011+00:00",
+      "entity_type": "object",
+      "name": "body",
+      "updated_at": "2026-09-09T13:29:24.202011+00:00"
+    },
+    {
+      "_id": "entities/carp",
+      "_key": "carp",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202012+00:00",
+      "entity_type": "animal",
+      "name": "carp",
+      "updated_at": "2026-09-09T13:29:24.202012+00:00"
+    },
+    {
+      "_id": "entities/couverture",
+      "_key": "couverture",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202014+00:00",
+      "entity_type": "object",
+      "name": "couverture",
+      "updated_at": "2026-09-09T13:29:24.202014+00:00"
+    },
+    {
+      "_id": "entities/films",
+      "_key": "films",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202016+00:00",
+      "entity_type": "object",
+      "name": "films",
+      "updated_at": "2026-09-09T13:29:24.202016+00:00"
+    },
+    {
+      "_id": "entities/handset",
+      "_key": "handset",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202017+00:00",
+      "entity_type": "object",
+      "name": "handset",
+      "updated_at": "2026-09-09T13:29:24.202017+00:00"
+    },
+    {
+      "_id": "entities/holes",
+      "_key": "holes",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202019+00:00",
+      "entity_type": "object",
+      "name": "holes",
+      "updated_at": "2026-09-09T13:29:24.202019+00:00"
+    },
+    {
+      "_id": "entities/manufacturer",
+      "_key": "manufacturer",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202020+00:00",
+      "entity_type": "person",
+      "name": "manufacturer",
+      "updated_at": "2026-09-09T13:29:24.202020+00:00"
+    },
+    {
+      "_id": "entities/outdoor-stage",
+      "_key": "outdoor-stage",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202021+00:00",
+      "entity_type": "location",
+      "name": "outdoor stage",
+      "updated_at": "2026-09-09T13:29:24.202021+00:00"
+    },
+    {
+      "_id": "entities/person",
+      "_key": "person",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202023+00:00",
+      "entity_type": "person",
+      "name": "person",
+      "updated_at": "2026-09-09T13:29:24.202023+00:00"
+    },
+    {
+      "_id": "entities/picture",
+      "_key": "picture",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202024+00:00",
+      "entity_type": "object",
+      "name": "picture",
+      "updated_at": "2026-09-09T13:29:24.202024+00:00"
+    },
+    {
+      "_id": "entities/rabble",
+      "_key": "rabble",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202025+00:00",
+      "entity_type": "collection",
+      "name": "rabble",
+      "updated_at": "2026-09-09T13:29:24.202025+00:00"
+    },
+    {
+      "_id": "entities/sack",
+      "_key": "sack",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202027+00:00",
+      "entity_type": "container",
+      "name": "sack",
+      "updated_at": "2026-09-09T13:29:24.202027+00:00"
+    },
+    {
+      "_id": "entities/singer",
+      "_key": "singer",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202028+00:00",
+      "entity_type": "person",
+      "name": "singer",
+      "updated_at": "2026-09-09T13:29:24.202028+00:00"
+    },
+    {
+      "_id": "entities/trunk",
+      "_key": "trunk",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202029+00:00",
+      "entity_type": "container",
+      "name": "trunk",
+      "updated_at": "2026-09-09T13:29:24.202029+00:00"
+    },
+    {
+      "_id": "entities/viewers",
+      "_key": "viewers",
+      "aliases": [],
+      "created_at": "2026-09-09T13:29:24.202034+00:00",
+      "entity_type": "person",
+      "name": "viewers",
+      "updated_at": "2026-09-09T13:29:24.202034+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-10025",
+      "_key": "semeval-luna-low-r1-b17-semeval-10025",
+      "chunk_id": "semeval-10025",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e88168ece2dc72e3639dda2fe3639f1b6b1d56c3a37b348ea544dc4afa43d1d3",
+      "created_at": "2026-09-09T13:29:24.202036+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "Impressed by the strategic advantages of this fortress and its protection of the city on the slope beneath, King Vakhtang Gorgasali of Iberia decided to move his capital here from Mtskheta in 458.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202036+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-10053",
+      "_key": "semeval-luna-low-r1-b17-semeval-10053",
+      "chunk_id": "semeval-10053",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9728203bf32c22d98f483c4fca2c171ad98df3f4c45fa5dcb176edd0bc44133d",
+      "created_at": "2026-09-09T13:29:24.202041+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "Although the sack is as fish friendly as possible, we took great care when we retained the carp in a sack for such a long period of time.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202041+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-10165",
+      "_key": "semeval-luna-low-r1-b17-semeval-10165",
+      "chunk_id": "semeval-10165",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:668fbeb7414de93eeaf8e72ab60f7fd9d7187c035f30575d70eea7334ef0833e",
+      "created_at": "2026-09-09T13:29:24.202061+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "Original mammography films are being delivered to viewers.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202061+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-10293",
+      "_key": "semeval-luna-low-r1-b17-semeval-10293",
+      "chunk_id": "semeval-10293",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:91893428af97b475092fdf4dad1c3f3ef3011569f8a5f80c971b87bb9fe224de",
+      "created_at": "2026-09-09T13:29:24.202071+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "The singer arrived to the outdoor stage for rehearsal.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202071+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-10311",
+      "_key": "semeval-luna-low-r1-b17-semeval-10311",
+      "chunk_id": "semeval-10311",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:91015f674d1e1ebc61cc7f39a788652bc34228fd6e9b87df4858b561c526dd8d",
+      "created_at": "2026-09-09T13:29:24.202080+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "The children, seated on their mother's laps, played with toys on a table in front of a picture with holes in it.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202080+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-10530",
+      "_key": "semeval-luna-low-r1-b17-semeval-10530",
+      "chunk_id": "semeval-10530",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7dc53ac8a8c1df620313361799aaf2c8e4b826267bdcd2402fc09e4751228b4a",
+      "created_at": "2026-09-09T13:29:24.202090+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "The body was in a trunk of a vehicle.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202090+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-10554",
+      "_key": "semeval-luna-low-r1-b17-semeval-10554",
+      "chunk_id": "semeval-10554",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:06820b0ccb6e5a09fcb6104457df26e8fa1ce7dd6505c768736a1a07de7eb07b",
+      "created_at": "2026-09-09T13:29:24.202100+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "A chocolate maker, on the other hand, is the person who physically creates the couverture from cacao beans and other ingredients.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202100+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-8314",
+      "_key": "semeval-luna-low-r1-b17-semeval-8314",
+      "chunk_id": "semeval-8314",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4fe2fc0094e3affa6dfeca0fe1944285fe16df732fe79e59f16b8197db7c737e",
+      "created_at": "2026-09-09T13:29:24.202111+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "The phones announced by Vodafone yesterday continue the trend of putting the operator's brand ahead of the handset manufacturer's.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202111+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-9535",
+      "_key": "semeval-luna-low-r1-b17-semeval-9535",
+      "chunk_id": "semeval-9535",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:631691429e0144d4e5409b1d6e7489a35e0824412dc646ff1330e8594cb5a855",
+      "created_at": "2026-09-09T13:29:24.202119+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "Optimizing a transformer driven active magnetic shield in induction heating.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202119+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-9610",
+      "_key": "semeval-luna-low-r1-b17-semeval-9610",
+      "chunk_id": "semeval-9610",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2a22cc4397c7215da39f43be8a3d699ed9825e05c339fb03ac9d43bb8cd50c9f",
+      "created_at": "2026-09-09T13:29:24.202120+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "His becomes Version 1 of the report and is the report that fulfills compliance with the ARRA Section 1512 reporting requirements.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202120+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-9784",
+      "_key": "semeval-luna-low-r1-b17-semeval-9784",
+      "chunk_id": "semeval-9784",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:75dc393bebef31309104aaf176d81000e6f77b1c7690fc90696e870d5bb2a2a6",
+      "created_at": "2026-09-09T13:29:24.202122+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "The archives also publish historical and scientific studies.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202122+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b17-semeval-9838",
+      "_key": "semeval-luna-low-r1-b17-semeval-9838",
+      "chunk_id": "semeval-9838",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7f6225eac20e3109826560365d8761c0abe1e7e84000de9494043de9838ee87d",
+      "created_at": "2026-09-09T13:29:24.202124+00:00",
+      "space_id": "semeval-luna-low-r1-b17",
+      "text": "The prerogative of Reason lies very low, perpetually overpowered by the rabble of appetites, passions, and opinions.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:29:24.202124+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 8,
+        "results": [
+          {
+            "_from": "entities/couverture",
+            "_id": "facts/fact-0b95b02ff7bb089c19741648a23053afef8c931efc48449c3ec53cb5e0e91100",
+            "_key": "fact-0b95b02ff7bb089c19741648a23053afef8c931efc48449c3ec53cb5e0e91100",
+            "_to": "entities/person",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10554",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b17",
+            "trigger": "A chocolate maker, on the other hand, is the person who physically creates the couverture from cacao beans and other ingredients.",
+            "trigger_end": 129,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/carp",
+            "_id": "facts/fact-1df3a13afc48347241cb87ddd43813fef6b8b1e2e32530017b89a1b742aa0d9f",
+            "_key": "fact-1df3a13afc48347241cb87ddd43813fef6b8b1e2e32530017b89a1b742aa0d9f",
+            "_to": "entities/sack",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10053",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b17",
+            "trigger": "Although the sack is as fish friendly as possible, we took great care when we retained the carp in a sack for such a long period of time.",
+            "trigger_end": 137,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/holes",
+            "_id": "facts/fact-4c163db3478ef3567dbd832804bba4eec654f2bf43dfa74eadba01d277aa9929",
+            "_key": "fact-4c163db3478ef3567dbd832804bba4eec654f2bf43dfa74eadba01d277aa9929",
+            "_to": "entities/picture",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10311",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b17",
+            "trigger": "The children, seated on their mother's laps, played with toys on a table in front of a picture with holes in it.",
+            "trigger_end": 112,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/appetites",
+            "_id": "facts/fact-5585c66a37c6f5988420ef4c5d293bf6df2b93179f9c0a0749392ff82c22e880",
+            "_key": "fact-5585c66a37c6f5988420ef4c5d293bf6df2b93179f9c0a0749392ff82c22e880",
+            "_to": "entities/rabble",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9838",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b17",
+            "trigger": "The prerogative of Reason lies very low, perpetually overpowered by the rabble of appetites, passions, and opinions.",
+            "trigger_end": 116,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/handset",
+            "_id": "facts/fact-56d34892cd30db21538a3c40af88d5e2f141637526b0f243d621674304bf97f0",
+            "_key": "fact-56d34892cd30db21538a3c40af88d5e2f141637526b0f243d621674304bf97f0",
+            "_to": "entities/manufacturer",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8314",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b17",
+            "trigger": "The phones announced by Vodafone yesterday continue the trend of putting the operator's brand ahead of the handset manufacturer's.",
+            "trigger_end": 130,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/films",
+            "_id": "facts/fact-d3f10f013fac02e48e681a23bf49528136a950d8f96befdb5ed9dd2bcc517982",
+            "_key": "fact-d3f10f013fac02e48e681a23bf49528136a950d8f96befdb5ed9dd2bcc517982",
+            "_to": "entities/viewers",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10165",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b17",
+            "trigger": "Original mammography films are being delivered to viewers.",
+            "trigger_end": 58,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/singer",
+            "_id": "facts/fact-edfd750f3054f817078be1e36129fd8dc4f38e397605a38c3eaab1631d14caa5",
+            "_key": "fact-edfd750f3054f817078be1e36129fd8dc4f38e397605a38c3eaab1631d14caa5",
+            "_to": "entities/outdoor-stage",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10293",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b17",
+            "trigger": "The singer arrived to the outdoor stage for rehearsal.",
+            "trigger_end": 54,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/body",
+            "_id": "facts/fact-f64e6d268460ea1308832398a15ad525a8db9ddb0aac8f964334befd663b5f9f",
+            "_key": "fact-f64e6d268460ea1308832398a15ad525a8db9ddb0aac8f964334befd663b5f9f",
+            "_to": "entities/trunk",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10530",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b17",
+            "trigger": "The body was in a trunk of a vehicle.",
+            "trigger_end": 37,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 16,
+        "results": [
+          {
+            "_id": "entities/appetites",
+            "_key": "appetites",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202003+00:00",
+            "entity_type": "abstract",
+            "name": "appetites",
+            "updated_at": "2026-09-09T13:29:24.202003+00:00"
+          },
+          {
+            "_id": "entities/body",
+            "_key": "body",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202011+00:00",
+            "entity_type": "object",
+            "name": "body",
+            "updated_at": "2026-09-09T13:29:24.202011+00:00"
+          },
+          {
+            "_id": "entities/carp",
+            "_key": "carp",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202012+00:00",
+            "entity_type": "animal",
+            "name": "carp",
+            "updated_at": "2026-09-09T13:29:24.202012+00:00"
+          },
+          {
+            "_id": "entities/couverture",
+            "_key": "couverture",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202014+00:00",
+            "entity_type": "object",
+            "name": "couverture",
+            "updated_at": "2026-09-09T13:29:24.202014+00:00"
+          },
+          {
+            "_id": "entities/films",
+            "_key": "films",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202016+00:00",
+            "entity_type": "object",
+            "name": "films",
+            "updated_at": "2026-09-09T13:29:24.202016+00:00"
+          },
+          {
+            "_id": "entities/handset",
+            "_key": "handset",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202017+00:00",
+            "entity_type": "object",
+            "name": "handset",
+            "updated_at": "2026-09-09T13:29:24.202017+00:00"
+          },
+          {
+            "_id": "entities/holes",
+            "_key": "holes",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202019+00:00",
+            "entity_type": "object",
+            "name": "holes",
+            "updated_at": "2026-09-09T13:29:24.202019+00:00"
+          },
+          {
+            "_id": "entities/manufacturer",
+            "_key": "manufacturer",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202020+00:00",
+            "entity_type": "person",
+            "name": "manufacturer",
+            "updated_at": "2026-09-09T13:29:24.202020+00:00"
+          },
+          {
+            "_id": "entities/outdoor-stage",
+            "_key": "outdoor-stage",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202021+00:00",
+            "entity_type": "location",
+            "name": "outdoor stage",
+            "updated_at": "2026-09-09T13:29:24.202021+00:00"
+          },
+          {
+            "_id": "entities/person",
+            "_key": "person",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202023+00:00",
+            "entity_type": "person",
+            "name": "person",
+            "updated_at": "2026-09-09T13:29:24.202023+00:00"
+          },
+          {
+            "_id": "entities/picture",
+            "_key": "picture",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202024+00:00",
+            "entity_type": "object",
+            "name": "picture",
+            "updated_at": "2026-09-09T13:29:24.202024+00:00"
+          },
+          {
+            "_id": "entities/rabble",
+            "_key": "rabble",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202025+00:00",
+            "entity_type": "collection",
+            "name": "rabble",
+            "updated_at": "2026-09-09T13:29:24.202025+00:00"
+          },
+          {
+            "_id": "entities/sack",
+            "_key": "sack",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202027+00:00",
+            "entity_type": "container",
+            "name": "sack",
+            "updated_at": "2026-09-09T13:29:24.202027+00:00"
+          },
+          {
+            "_id": "entities/singer",
+            "_key": "singer",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202028+00:00",
+            "entity_type": "person",
+            "name": "singer",
+            "updated_at": "2026-09-09T13:29:24.202028+00:00"
+          },
+          {
+            "_id": "entities/trunk",
+            "_key": "trunk",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202029+00:00",
+            "entity_type": "container",
+            "name": "trunk",
+            "updated_at": "2026-09-09T13:29:24.202029+00:00"
+          },
+          {
+            "_id": "entities/viewers",
+            "_key": "viewers",
+            "aliases": [],
+            "created_at": "2026-09-09T13:29:24.202034+00:00",
+            "entity_type": "person",
+            "name": "viewers",
+            "updated_at": "2026-09-09T13:29:24.202034+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-10025",
+            "_key": "semeval-luna-low-r1-b17-semeval-10025",
+            "chunk_id": "semeval-10025",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e88168ece2dc72e3639dda2fe3639f1b6b1d56c3a37b348ea544dc4afa43d1d3",
+            "created_at": "2026-09-09T13:29:24.202036+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "Impressed by the strategic advantages of this fortress and its protection of the city on the slope beneath, King Vakhtang Gorgasali of Iberia decided to move his capital here from Mtskheta in 458.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202036+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-10053",
+            "_key": "semeval-luna-low-r1-b17-semeval-10053",
+            "chunk_id": "semeval-10053",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:9728203bf32c22d98f483c4fca2c171ad98df3f4c45fa5dcb176edd0bc44133d",
+            "created_at": "2026-09-09T13:29:24.202041+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "Although the sack is as fish friendly as possible, we took great care when we retained the carp in a sack for such a long period of time.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202041+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-10165",
+            "_key": "semeval-luna-low-r1-b17-semeval-10165",
+            "chunk_id": "semeval-10165",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:668fbeb7414de93eeaf8e72ab60f7fd9d7187c035f30575d70eea7334ef0833e",
+            "created_at": "2026-09-09T13:29:24.202061+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "Original mammography films are being delivered to viewers.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202061+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-10293",
+            "_key": "semeval-luna-low-r1-b17-semeval-10293",
+            "chunk_id": "semeval-10293",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:91893428af97b475092fdf4dad1c3f3ef3011569f8a5f80c971b87bb9fe224de",
+            "created_at": "2026-09-09T13:29:24.202071+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "The singer arrived to the outdoor stage for rehearsal.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202071+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-10311",
+            "_key": "semeval-luna-low-r1-b17-semeval-10311",
+            "chunk_id": "semeval-10311",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:91015f674d1e1ebc61cc7f39a788652bc34228fd6e9b87df4858b561c526dd8d",
+            "created_at": "2026-09-09T13:29:24.202080+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "The children, seated on their mother's laps, played with toys on a table in front of a picture with holes in it.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202080+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-10530",
+            "_key": "semeval-luna-low-r1-b17-semeval-10530",
+            "chunk_id": "semeval-10530",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7dc53ac8a8c1df620313361799aaf2c8e4b826267bdcd2402fc09e4751228b4a",
+            "created_at": "2026-09-09T13:29:24.202090+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "The body was in a trunk of a vehicle.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202090+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-10554",
+            "_key": "semeval-luna-low-r1-b17-semeval-10554",
+            "chunk_id": "semeval-10554",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:06820b0ccb6e5a09fcb6104457df26e8fa1ce7dd6505c768736a1a07de7eb07b",
+            "created_at": "2026-09-09T13:29:24.202100+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "A chocolate maker, on the other hand, is the person who physically creates the couverture from cacao beans and other ingredients.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202100+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-8314",
+            "_key": "semeval-luna-low-r1-b17-semeval-8314",
+            "chunk_id": "semeval-8314",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4fe2fc0094e3affa6dfeca0fe1944285fe16df732fe79e59f16b8197db7c737e",
+            "created_at": "2026-09-09T13:29:24.202111+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "The phones announced by Vodafone yesterday continue the trend of putting the operator's brand ahead of the handset manufacturer's.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202111+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-9535",
+            "_key": "semeval-luna-low-r1-b17-semeval-9535",
+            "chunk_id": "semeval-9535",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:631691429e0144d4e5409b1d6e7489a35e0824412dc646ff1330e8594cb5a855",
+            "created_at": "2026-09-09T13:29:24.202119+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "Optimizing a transformer driven active magnetic shield in induction heating.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202119+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-9610",
+            "_key": "semeval-luna-low-r1-b17-semeval-9610",
+            "chunk_id": "semeval-9610",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2a22cc4397c7215da39f43be8a3d699ed9825e05c339fb03ac9d43bb8cd50c9f",
+            "created_at": "2026-09-09T13:29:24.202120+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "His becomes Version 1 of the report and is the report that fulfills compliance with the ARRA Section 1512 reporting requirements.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202120+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-9784",
+            "_key": "semeval-luna-low-r1-b17-semeval-9784",
+            "chunk_id": "semeval-9784",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:75dc393bebef31309104aaf176d81000e6f77b1c7690fc90696e870d5bb2a2a6",
+            "created_at": "2026-09-09T13:29:24.202122+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "The archives also publish historical and scientific studies.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202122+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b17-semeval-9838",
+            "_key": "semeval-luna-low-r1-b17-semeval-9838",
+            "chunk_id": "semeval-9838",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7f6225eac20e3109826560365d8761c0abe1e7e84000de9494043de9838ee87d",
+            "created_at": "2026-09-09T13:29:24.202124+00:00",
+            "space_id": "semeval-luna-low-r1-b17",
+            "text": "The prerogative of Reason lies very low, perpetually overpowered by the rabble of appetites, passions, and opinions.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:29:24.202124+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

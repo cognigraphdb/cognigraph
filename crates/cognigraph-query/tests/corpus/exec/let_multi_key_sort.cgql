@@ -1,0 +1,1 @@
+FOR d IN documents LET n = LENGTH(d.title) SORT n DESC, d._key ASC RETURN { k: d._key, n: n }

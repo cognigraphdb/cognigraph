@@ -1,0 +1,589 @@
+{
+  "addition": {
+    "correct": 30,
+    "total": 30
+  },
+  "administrative": {
+    "stable": 30,
+    "total": 30
+  },
+  "decision": "decision_dailymed_drift.md",
+  "documents": 90,
+  "method": "B (synthetic controlled drift; clean injected-delta oracle)",
+  "removal": {
+    "correct": 15,
+    "total": 15
+  },
+  "rows": [
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 1,
+      "set": 0,
+      "target": "AMITRIPTYLINE HYDROCHLORIDE",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 1,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 2,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 4,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 2,
+      "grounded_before": 2,
+      "set": 5,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 3,
+      "grounded_before": 2,
+      "set": 7,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 8,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 10,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 11,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 2,
+      "grounded_before": 1,
+      "set": 13,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 1,
+      "grounded_before": 1,
+      "set": 14,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 2,
+      "grounded_before": 1,
+      "set": 16,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 2,
+      "grounded_before": 2,
+      "set": 17,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 3,
+      "grounded_before": 2,
+      "set": 19,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 20,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 2,
+      "grounded_before": 1,
+      "set": 22,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 23,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 1,
+      "set": 24,
+      "target": "PREDNISONE",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 2,
+      "grounded_before": 1,
+      "set": 25,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 26,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 2,
+      "set": 27,
+      "target": "DILTIAZEM",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 28,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 29,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 1,
+      "set": 30,
+      "target": "NAPROXEN",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 2,
+      "grounded_before": 1,
+      "set": 31,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 32,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 3,
+      "grounded_before": 2,
+      "set": 34,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 35,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 1,
+      "set": 36,
+      "target": "HYDROXYZINE HYDROCHLORIDE",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 37,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 38,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 1,
+      "set": 39,
+      "target": "AMPICILLIN",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 40,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 2,
+      "grounded_before": 2,
+      "set": 41,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 1,
+      "set": 42,
+      "target": "ERGOCALCIFEROL",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 43,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 2,
+      "grounded_before": 2,
+      "set": 44,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 2,
+      "grounded_before": 1,
+      "set": 46,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 47,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 49,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 2,
+      "grounded_before": 2,
+      "set": 50,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 2,
+      "set": 51,
+      "target": "PAROXETINE",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 52,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 53,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 55,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 1,
+      "grounded_before": 1,
+      "set": 56,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 2,
+      "grounded_before": 1,
+      "set": 58,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 59,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 3,
+      "grounded_before": 5,
+      "set": 60,
+      "target": "BUPIVACAINE",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 61,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 62,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 2,
+      "grounded_before": 1,
+      "set": 64,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 1,
+      "grounded_before": 1,
+      "set": 65,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 2,
+      "set": 66,
+      "target": "ALBUTEROL",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 2,
+      "grounded_before": 1,
+      "set": 67,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 68,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 1,
+      "set": 69,
+      "target": "HYDROCODONE",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 70,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 1,
+      "grounded_before": 1,
+      "set": 71,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 1,
+      "set": 72,
+      "target": "HYDROCHLOROTHIAZIDE",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 3,
+      "grounded_before": 2,
+      "set": 73,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 74,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 2,
+      "grounded_before": 1,
+      "set": 76,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 2,
+      "grounded_before": 2,
+      "set": 77,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 1,
+      "set": 78,
+      "target": "RUFINAMIDE",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 79,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 80,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 4,
+      "grounded_before": 3,
+      "set": 82,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 83,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 1,
+      "set": 84,
+      "target": "OXYCODONE",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 85,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 1,
+      "grounded_before": 1,
+      "set": 86,
+      "stable": true,
+      "type": "administrative"
+    },
+    {
+      "correct": true,
+      "grounded_after": 0,
+      "grounded_before": 1,
+      "set": 87,
+      "target": "ETODOLAC",
+      "type": "removal"
+    },
+    {
+      "correct": true,
+      "grounded_after": 1,
+      "grounded_before": 0,
+      "set": 88,
+      "target": "ACETAMINOPHEN",
+      "type": "addition"
+    },
+    {
+      "grounded_after": 0,
+      "grounded_before": 0,
+      "set": 89,
+      "stable": true,
+      "type": "administrative"
+    }
+  ]
+}

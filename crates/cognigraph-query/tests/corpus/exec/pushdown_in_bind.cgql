@@ -1,0 +1,2 @@
+// binds: {"cats": ["notes"], "nums": [4.5, -1.5]}
+FOR d IN documents FILTER d.category IN @cats OR d.score IN @nums SORT d._key ASC RETURN d._key

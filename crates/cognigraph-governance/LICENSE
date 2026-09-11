@@ -1,0 +1,8 @@
+CogniGraph Enterprise License
+
+The `cognigraph-governance` crate is an Enterprise Component of CogniGraph and is licensed
+under the CogniGraph Enterprise License. The full text is in
+`LICENSE-COMMERCIAL` at the repository root; `LICENSING.md` explains the
+split between Community and Enterprise Components.
+
+Copyright 2026 Gedank Rayze, LDA. All rights reserved.

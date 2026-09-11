@@ -1,0 +1,1 @@
+FOR v, e, p IN 1..1 OUTBOUND "documents/a" relationships FILTER e.confidence >= 0.5 RETURN e._key

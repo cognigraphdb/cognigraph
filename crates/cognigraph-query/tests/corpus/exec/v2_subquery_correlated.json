@@ -1,0 +1,1 @@
+[{"k": "a", "related": ["documents/b", "documents/c"]}, {"k": "b", "related": ["documents/c"]}, {"k": "c", "related": ["documents/a"]}, {"k": "d", "related": []}]

@@ -1,0 +1,2 @@
+LET n = LENGTH((FOR d IN documents RETURN d._key))
+RETURN {n, nested: (FOR x IN [1] RETURN LENGTH((FOR d IN documents RETURN d._key)))}

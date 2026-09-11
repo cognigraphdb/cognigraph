@@ -1,0 +1,627 @@
+{
+  "issue": "CG-32",
+  "date": "2026-09-08",
+  "binary_profile": "release",
+  "binary_sha256": "9b9bd810da53bbf171633347162650e41973594b1d6ffb1bc854c963c646650d",
+  "provider": "synthetic loopback HTTP; needle/alias cosine 1.0, needle/related cosine 0.8",
+  "expected": "vulnerable baseline",
+  "configurations": {
+    "resident/memory": {
+      "semantic": [
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      ],
+      "graph": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "LEFT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "LEFT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/right",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "RIGHT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      ],
+      "restart": {
+        "result_cache_cold": true,
+        "provider_calls_for_warm_embedding": 1,
+        "semantic": {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        "graph": {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/right",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "RIGHT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      }
+    },
+    "resident/persistent": {
+      "semantic": [
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      ],
+      "graph": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "LEFT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "LEFT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/right",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "RIGHT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      ],
+      "restart": {
+        "result_cache_cold": true,
+        "provider_calls_for_warm_embedding": 0,
+        "semantic": {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        "graph": {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/right",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "RIGHT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      }
+    },
+    "paged/memory": {
+      "semantic": [
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      ],
+      "graph": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "LEFT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "LEFT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/right",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "RIGHT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      ],
+      "restart": {
+        "result_cache_cold": true,
+        "provider_calls_for_warm_embedding": 1,
+        "semantic": {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        "graph": {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/right",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "RIGHT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      }
+    },
+    "paged/persistent": {
+      "semantic": [
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "models/empty"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "from_filter": "empty",
+          "to_filter": "omitted",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      ],
+      "graph": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "LEFT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "LEFT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/right",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "RIGHT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      ],
+      "restart": {
+        "result_cache_cold": true,
+        "provider_calls_for_warm_embedding": 0,
+        "semantic": {
+          "from_filter": "omitted",
+          "to_filter": "empty",
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "models/empty",
+            "models/missing",
+            "models/named"
+          ],
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        },
+        "graph": {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "graphdocs/left",
+            "graphdocs/right",
+            "graphdocs/root"
+          ],
+          "graph_fact_relation": "RIGHT",
+          "exact_repeat": true,
+          "valid_strong_similarity": true,
+          "valid_assisted_checked": false
+        }
+      }
+    }
+  },
+  "result": "EXPECTED DEFECT REPRODUCED"
+}

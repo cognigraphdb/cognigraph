@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d.missing RETURN d._key

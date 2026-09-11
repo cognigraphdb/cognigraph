@@ -1,0 +1,986 @@
+{
+  "phase": "measurement",
+  "arm": "luna-json",
+  "repetition": 2,
+  "batch": 19,
+  "request": {
+    "space_type": "semeval-luna-json-r2-b19",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9933",
+        "title": "Relation benchmark excerpt",
+        "text": "The world's top golfer said in a statement on his website that he had let his family down and that he regretted those \"transgressions with all of my heart\"."
+      },
+      {
+        "id": "semeval-8967",
+        "title": "Relation benchmark excerpt",
+        "text": "Another 40 million people have been pushed into hunger this year."
+      },
+      {
+        "id": "semeval-8718",
+        "title": "Relation benchmark excerpt",
+        "text": "The estranged couple transferred funds into these accounts from their own personal accounts."
+      },
+      {
+        "id": "semeval-8304",
+        "title": "Relation benchmark excerpt",
+        "text": "The Meon activation was done with a light source by bouncing, splitting, and changing the color of the beams."
+      },
+      {
+        "id": "semeval-8841",
+        "title": "Relation benchmark excerpt",
+        "text": "The ban caused a widespread debate, largely on the Internet, in which rabbis and scholars from around the world participated."
+      },
+      {
+        "id": "semeval-10661",
+        "title": "Relation benchmark excerpt",
+        "text": "Fuller's is a brewer of distinguished, prize-winning British ales crafted with over 150 years of pride and tradition."
+      },
+      {
+        "id": "semeval-9859",
+        "title": "Relation benchmark excerpt",
+        "text": "The bag was full of electronic and game items, and fled the scene possibly in a black GMC Envoy."
+      },
+      {
+        "id": "semeval-10553",
+        "title": "Relation benchmark excerpt",
+        "text": "The sweetcorn produced a massive box of earwig filled sweet cobs."
+      },
+      {
+        "id": "semeval-9098",
+        "title": "Relation benchmark excerpt",
+        "text": "A mother was seen to have built a small raft out of birch bark for her and her children, but it promptly sank among the ice floes."
+      },
+      {
+        "id": "semeval-9444",
+        "title": "Relation benchmark excerpt",
+        "text": "Both squads battered the opposing goaltender with a continuous flurry of shots."
+      },
+      {
+        "id": "semeval-8281",
+        "title": "Relation benchmark excerpt",
+        "text": "The head of the political party that wins the most seats is responsible for forming the government and thereby becomes the prime minister."
+      },
+      {
+        "id": "semeval-9044",
+        "title": "Relation benchmark excerpt",
+        "text": "A bottle full of milk that has been left sitting out in a warm room quickly breeds more bacteria than a newborn can handle."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 6,
+    "proposed": 6,
+    "skips": [],
+    "space_type": "semeval-luna-json-r2-b19"
+  },
+  "latency_seconds": 5.92601670906879,
+  "facts": [
+    {
+      "_from": "entities/ban",
+      "_id": "facts/fact-0f639be437cba633f92d25615227ac7539cf20c146f343ba8ab69238f163a1b9",
+      "_key": "fact-0f639be437cba633f92d25615227ac7539cf20c146f343ba8ab69238f163a1b9",
+      "_to": "entities/debate",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8841",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b19",
+      "trigger": "The ban caused a widespread debate, largely on the Internet, in which rabbis and scholars from around the world participated.",
+      "trigger_end": 125,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/sweetcorn",
+      "_id": "facts/fact-16e625a1cad06ccc13db2add9affe68d688b6a843a25b516faddffde566dab8f",
+      "_key": "fact-16e625a1cad06ccc13db2add9affe68d688b6a843a25b516faddffde566dab8f",
+      "_to": "entities/cobs",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10553",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b19",
+      "trigger": "The sweetcorn produced a massive box of earwig filled sweet cobs.",
+      "trigger_end": 65,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/shots",
+      "_id": "facts/fact-9e7fd590758320b5695633ac317d4d5364ca2f2c58f88b4f451d7c5544918710",
+      "_key": "fact-9e7fd590758320b5695633ac317d4d5364ca2f2c58f88b4f451d7c5544918710",
+      "_to": "entities/squads",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9444",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b19",
+      "trigger": "Both squads battered the opposing goaltender with a continuous flurry of shots.",
+      "trigger_end": 79,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/statement",
+      "_id": "facts/fact-a0090713f6cb25215e0d834a70ec8fbc7cc532039f7c03c16d2b4c8dbc94174c",
+      "_key": "fact-a0090713f6cb25215e0d834a70ec8fbc7cc532039f7c03c16d2b4c8dbc94174c",
+      "_to": "entities/golfer",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9933",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b19",
+      "trigger": "The world's top golfer said in a statement on his website that he had let his family down and that he regretted those \"transgressions with all of my heart\".",
+      "trigger_end": 156,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/head",
+      "_id": "facts/fact-b39eaec7d2983912747e472b2ebc0f7663f8e0a4678e163537909541c8b273b9",
+      "_key": "fact-b39eaec7d2983912747e472b2ebc0f7663f8e0a4678e163537909541c8b273b9",
+      "_to": "entities/political-party",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8281",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b19",
+      "trigger": "The head of the political party that wins the most seats is responsible for forming the government and thereby becomes the prime minister.",
+      "trigger_end": 138,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/ales",
+      "_id": "facts/fact-d4f1565e6fab4fb0480afd84e1d92fef3009f4302ae5ed1f42e1554520459c79",
+      "_key": "fact-d4f1565e6fab4fb0480afd84e1d92fef3009f4302ae5ed1f42e1554520459c79",
+      "_to": "entities/brewer",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10661",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b19",
+      "trigger": "Fuller's is a brewer of distinguished, prize-winning British ales crafted with over 150 years of pride and tradition.",
+      "trigger_end": 117,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/ales",
+      "_key": "ales",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917445+00:00",
+      "entity_type": "product",
+      "name": "ales",
+      "updated_at": "2026-09-09T12:49:14.917445+00:00"
+    },
+    {
+      "_id": "entities/ban",
+      "_key": "ban",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917449+00:00",
+      "entity_type": "entity",
+      "name": "ban",
+      "updated_at": "2026-09-09T12:49:14.917449+00:00"
+    },
+    {
+      "_id": "entities/brewer",
+      "_key": "brewer",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917449+00:00",
+      "entity_type": "entity",
+      "name": "brewer",
+      "updated_at": "2026-09-09T12:49:14.917449+00:00"
+    },
+    {
+      "_id": "entities/cobs",
+      "_key": "cobs",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917450+00:00",
+      "entity_type": "entity",
+      "name": "cobs",
+      "updated_at": "2026-09-09T12:49:14.917450+00:00"
+    },
+    {
+      "_id": "entities/debate",
+      "_key": "debate",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917451+00:00",
+      "entity_type": "event",
+      "name": "debate",
+      "updated_at": "2026-09-09T12:49:14.917451+00:00"
+    },
+    {
+      "_id": "entities/golfer",
+      "_key": "golfer",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917452+00:00",
+      "entity_type": "entity",
+      "name": "golfer",
+      "updated_at": "2026-09-09T12:49:14.917452+00:00"
+    },
+    {
+      "_id": "entities/head",
+      "_key": "head",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917453+00:00",
+      "entity_type": "component",
+      "name": "head",
+      "updated_at": "2026-09-09T12:49:14.917453+00:00"
+    },
+    {
+      "_id": "entities/political-party",
+      "_key": "political-party",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917453+00:00",
+      "entity_type": "whole",
+      "name": "political party",
+      "updated_at": "2026-09-09T12:49:14.917453+00:00"
+    },
+    {
+      "_id": "entities/shots",
+      "_key": "shots",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917454+00:00",
+      "entity_type": "entity",
+      "name": "shots",
+      "updated_at": "2026-09-09T12:49:14.917454+00:00"
+    },
+    {
+      "_id": "entities/squads",
+      "_key": "squads",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917455+00:00",
+      "entity_type": "collection",
+      "name": "squads",
+      "updated_at": "2026-09-09T12:49:14.917455+00:00"
+    },
+    {
+      "_id": "entities/statement",
+      "_key": "statement",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917455+00:00",
+      "entity_type": "message",
+      "name": "statement",
+      "updated_at": "2026-09-09T12:49:14.917455+00:00"
+    },
+    {
+      "_id": "entities/sweetcorn",
+      "_key": "sweetcorn",
+      "aliases": [],
+      "created_at": "2026-09-09T12:49:14.917456+00:00",
+      "entity_type": "entity",
+      "name": "sweetcorn",
+      "updated_at": "2026-09-09T12:49:14.917456+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-10553",
+      "_key": "semeval-luna-json-r2-b19-semeval-10553",
+      "chunk_id": "semeval-10553",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:328b0bfe294d92a2b6045f58e838ff8d9e24655aef4c90e4e3f24977ddbd065d",
+      "created_at": "2026-09-09T12:49:14.917458+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "The sweetcorn produced a massive box of earwig filled sweet cobs.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917458+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-10661",
+      "_key": "semeval-luna-json-r2-b19-semeval-10661",
+      "chunk_id": "semeval-10661",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1d0f409e5c822966c9753925ddfc48608de4506ee8001355e711cc0e0eb9bdaf",
+      "created_at": "2026-09-09T12:49:14.917468+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "Fuller's is a brewer of distinguished, prize-winning British ales crafted with over 150 years of pride and tradition.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917468+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-8281",
+      "_key": "semeval-luna-json-r2-b19-semeval-8281",
+      "chunk_id": "semeval-8281",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e68a2d11c33f4eb833fb7a4eb5df66ca052d48a0c38cca120e5151f8011ba18c",
+      "created_at": "2026-09-09T12:49:14.917473+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "The head of the political party that wins the most seats is responsible for forming the government and thereby becomes the prime minister.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917473+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-8304",
+      "_key": "semeval-luna-json-r2-b19-semeval-8304",
+      "chunk_id": "semeval-8304",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3d98500f8ebdb0c5215509b28f7201dc713600cf5e3f8d9f1d785412298f33ac",
+      "created_at": "2026-09-09T12:49:14.917477+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "The Meon activation was done with a light source by bouncing, splitting, and changing the color of the beams.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917477+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-8718",
+      "_key": "semeval-luna-json-r2-b19-semeval-8718",
+      "chunk_id": "semeval-8718",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:599ef947574b6e4d8e4af3cd31aacea38adf7ea392eb21e1530ab56de0c469ce",
+      "created_at": "2026-09-09T12:49:14.917478+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "The estranged couple transferred funds into these accounts from their own personal accounts.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917478+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-8841",
+      "_key": "semeval-luna-json-r2-b19-semeval-8841",
+      "chunk_id": "semeval-8841",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e1efcc7ce9e60207f5ee5ddc6dadbb39eaa9dd07f7dee61bd8fb3064986f0802",
+      "created_at": "2026-09-09T12:49:14.917479+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "The ban caused a widespread debate, largely on the Internet, in which rabbis and scholars from around the world participated.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917479+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-8967",
+      "_key": "semeval-luna-json-r2-b19-semeval-8967",
+      "chunk_id": "semeval-8967",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5e73f95f27e5159b1d942a13d44da6e37fea6bccc244527b296fca6ce9b479e9",
+      "created_at": "2026-09-09T12:49:14.917483+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "Another 40 million people have been pushed into hunger this year.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917483+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-9044",
+      "_key": "semeval-luna-json-r2-b19-semeval-9044",
+      "chunk_id": "semeval-9044",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:39b558aebb9150af233d01dfc5fefae51ce8d8104835a171b38ea93cee6e3ad8",
+      "created_at": "2026-09-09T12:49:14.917484+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "A bottle full of milk that has been left sitting out in a warm room quickly breeds more bacteria than a newborn can handle.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917484+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-9098",
+      "_key": "semeval-luna-json-r2-b19-semeval-9098",
+      "chunk_id": "semeval-9098",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e642c43abc7c2162c2b900710b27a9ec980d7c89f95a184404a0f29d815e8ba6",
+      "created_at": "2026-09-09T12:49:14.917485+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "A mother was seen to have built a small raft out of birch bark for her and her children, but it promptly sank among the ice floes.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917485+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-9444",
+      "_key": "semeval-luna-json-r2-b19-semeval-9444",
+      "chunk_id": "semeval-9444",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:79e1e5f28e6ecfabebc7a35a57c3a6c87758a47aedda7b948f19a966f1d99bc3",
+      "created_at": "2026-09-09T12:49:14.917485+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "Both squads battered the opposing goaltender with a continuous flurry of shots.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917485+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-9859",
+      "_key": "semeval-luna-json-r2-b19-semeval-9859",
+      "chunk_id": "semeval-9859",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4e662a58d5e04aa49bda1b28544c4934887575ac8cc59e4fdc3a5223e4094ca5",
+      "created_at": "2026-09-09T12:49:14.917490+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "The bag was full of electronic and game items, and fled the scene possibly in a black GMC Envoy.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917490+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b19-semeval-9933",
+      "_key": "semeval-luna-json-r2-b19-semeval-9933",
+      "chunk_id": "semeval-9933",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2af17a42c3164a062d66965b84335a35ecfd76642b8abbf793da37064d250942",
+      "created_at": "2026-09-09T12:49:14.917491+00:00",
+      "space_id": "semeval-luna-json-r2-b19",
+      "text": "The world's top golfer said in a statement on his website that he had let his family down and that he regretted those \"transgressions with all of my heart\".",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:49:14.917491+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 6,
+        "results": [
+          {
+            "_from": "entities/ban",
+            "_id": "facts/fact-0f639be437cba633f92d25615227ac7539cf20c146f343ba8ab69238f163a1b9",
+            "_key": "fact-0f639be437cba633f92d25615227ac7539cf20c146f343ba8ab69238f163a1b9",
+            "_to": "entities/debate",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8841",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b19",
+            "trigger": "The ban caused a widespread debate, largely on the Internet, in which rabbis and scholars from around the world participated.",
+            "trigger_end": 125,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/sweetcorn",
+            "_id": "facts/fact-16e625a1cad06ccc13db2add9affe68d688b6a843a25b516faddffde566dab8f",
+            "_key": "fact-16e625a1cad06ccc13db2add9affe68d688b6a843a25b516faddffde566dab8f",
+            "_to": "entities/cobs",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10553",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b19",
+            "trigger": "The sweetcorn produced a massive box of earwig filled sweet cobs.",
+            "trigger_end": 65,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/shots",
+            "_id": "facts/fact-9e7fd590758320b5695633ac317d4d5364ca2f2c58f88b4f451d7c5544918710",
+            "_key": "fact-9e7fd590758320b5695633ac317d4d5364ca2f2c58f88b4f451d7c5544918710",
+            "_to": "entities/squads",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9444",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b19",
+            "trigger": "Both squads battered the opposing goaltender with a continuous flurry of shots.",
+            "trigger_end": 79,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/statement",
+            "_id": "facts/fact-a0090713f6cb25215e0d834a70ec8fbc7cc532039f7c03c16d2b4c8dbc94174c",
+            "_key": "fact-a0090713f6cb25215e0d834a70ec8fbc7cc532039f7c03c16d2b4c8dbc94174c",
+            "_to": "entities/golfer",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9933",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b19",
+            "trigger": "The world's top golfer said in a statement on his website that he had let his family down and that he regretted those \"transgressions with all of my heart\".",
+            "trigger_end": 156,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/head",
+            "_id": "facts/fact-b39eaec7d2983912747e472b2ebc0f7663f8e0a4678e163537909541c8b273b9",
+            "_key": "fact-b39eaec7d2983912747e472b2ebc0f7663f8e0a4678e163537909541c8b273b9",
+            "_to": "entities/political-party",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8281",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b19",
+            "trigger": "The head of the political party that wins the most seats is responsible for forming the government and thereby becomes the prime minister.",
+            "trigger_end": 138,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/ales",
+            "_id": "facts/fact-d4f1565e6fab4fb0480afd84e1d92fef3009f4302ae5ed1f42e1554520459c79",
+            "_key": "fact-d4f1565e6fab4fb0480afd84e1d92fef3009f4302ae5ed1f42e1554520459c79",
+            "_to": "entities/brewer",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10661",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b19",
+            "trigger": "Fuller's is a brewer of distinguished, prize-winning British ales crafted with over 150 years of pride and tradition.",
+            "trigger_end": 117,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "entities/ales",
+            "_key": "ales",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917445+00:00",
+            "entity_type": "product",
+            "name": "ales",
+            "updated_at": "2026-09-09T12:49:14.917445+00:00"
+          },
+          {
+            "_id": "entities/ban",
+            "_key": "ban",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917449+00:00",
+            "entity_type": "entity",
+            "name": "ban",
+            "updated_at": "2026-09-09T12:49:14.917449+00:00"
+          },
+          {
+            "_id": "entities/brewer",
+            "_key": "brewer",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917449+00:00",
+            "entity_type": "entity",
+            "name": "brewer",
+            "updated_at": "2026-09-09T12:49:14.917449+00:00"
+          },
+          {
+            "_id": "entities/cobs",
+            "_key": "cobs",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917450+00:00",
+            "entity_type": "entity",
+            "name": "cobs",
+            "updated_at": "2026-09-09T12:49:14.917450+00:00"
+          },
+          {
+            "_id": "entities/debate",
+            "_key": "debate",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917451+00:00",
+            "entity_type": "event",
+            "name": "debate",
+            "updated_at": "2026-09-09T12:49:14.917451+00:00"
+          },
+          {
+            "_id": "entities/golfer",
+            "_key": "golfer",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917452+00:00",
+            "entity_type": "entity",
+            "name": "golfer",
+            "updated_at": "2026-09-09T12:49:14.917452+00:00"
+          },
+          {
+            "_id": "entities/head",
+            "_key": "head",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917453+00:00",
+            "entity_type": "component",
+            "name": "head",
+            "updated_at": "2026-09-09T12:49:14.917453+00:00"
+          },
+          {
+            "_id": "entities/political-party",
+            "_key": "political-party",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917453+00:00",
+            "entity_type": "whole",
+            "name": "political party",
+            "updated_at": "2026-09-09T12:49:14.917453+00:00"
+          },
+          {
+            "_id": "entities/shots",
+            "_key": "shots",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917454+00:00",
+            "entity_type": "entity",
+            "name": "shots",
+            "updated_at": "2026-09-09T12:49:14.917454+00:00"
+          },
+          {
+            "_id": "entities/squads",
+            "_key": "squads",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917455+00:00",
+            "entity_type": "collection",
+            "name": "squads",
+            "updated_at": "2026-09-09T12:49:14.917455+00:00"
+          },
+          {
+            "_id": "entities/statement",
+            "_key": "statement",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917455+00:00",
+            "entity_type": "message",
+            "name": "statement",
+            "updated_at": "2026-09-09T12:49:14.917455+00:00"
+          },
+          {
+            "_id": "entities/sweetcorn",
+            "_key": "sweetcorn",
+            "aliases": [],
+            "created_at": "2026-09-09T12:49:14.917456+00:00",
+            "entity_type": "entity",
+            "name": "sweetcorn",
+            "updated_at": "2026-09-09T12:49:14.917456+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-10553",
+            "_key": "semeval-luna-json-r2-b19-semeval-10553",
+            "chunk_id": "semeval-10553",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:328b0bfe294d92a2b6045f58e838ff8d9e24655aef4c90e4e3f24977ddbd065d",
+            "created_at": "2026-09-09T12:49:14.917458+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "The sweetcorn produced a massive box of earwig filled sweet cobs.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917458+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-10661",
+            "_key": "semeval-luna-json-r2-b19-semeval-10661",
+            "chunk_id": "semeval-10661",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1d0f409e5c822966c9753925ddfc48608de4506ee8001355e711cc0e0eb9bdaf",
+            "created_at": "2026-09-09T12:49:14.917468+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "Fuller's is a brewer of distinguished, prize-winning British ales crafted with over 150 years of pride and tradition.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917468+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-8281",
+            "_key": "semeval-luna-json-r2-b19-semeval-8281",
+            "chunk_id": "semeval-8281",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e68a2d11c33f4eb833fb7a4eb5df66ca052d48a0c38cca120e5151f8011ba18c",
+            "created_at": "2026-09-09T12:49:14.917473+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "The head of the political party that wins the most seats is responsible for forming the government and thereby becomes the prime minister.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917473+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-8304",
+            "_key": "semeval-luna-json-r2-b19-semeval-8304",
+            "chunk_id": "semeval-8304",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3d98500f8ebdb0c5215509b28f7201dc713600cf5e3f8d9f1d785412298f33ac",
+            "created_at": "2026-09-09T12:49:14.917477+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "The Meon activation was done with a light source by bouncing, splitting, and changing the color of the beams.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917477+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-8718",
+            "_key": "semeval-luna-json-r2-b19-semeval-8718",
+            "chunk_id": "semeval-8718",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:599ef947574b6e4d8e4af3cd31aacea38adf7ea392eb21e1530ab56de0c469ce",
+            "created_at": "2026-09-09T12:49:14.917478+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "The estranged couple transferred funds into these accounts from their own personal accounts.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917478+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-8841",
+            "_key": "semeval-luna-json-r2-b19-semeval-8841",
+            "chunk_id": "semeval-8841",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e1efcc7ce9e60207f5ee5ddc6dadbb39eaa9dd07f7dee61bd8fb3064986f0802",
+            "created_at": "2026-09-09T12:49:14.917479+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "The ban caused a widespread debate, largely on the Internet, in which rabbis and scholars from around the world participated.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917479+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-8967",
+            "_key": "semeval-luna-json-r2-b19-semeval-8967",
+            "chunk_id": "semeval-8967",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5e73f95f27e5159b1d942a13d44da6e37fea6bccc244527b296fca6ce9b479e9",
+            "created_at": "2026-09-09T12:49:14.917483+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "Another 40 million people have been pushed into hunger this year.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917483+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-9044",
+            "_key": "semeval-luna-json-r2-b19-semeval-9044",
+            "chunk_id": "semeval-9044",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:39b558aebb9150af233d01dfc5fefae51ce8d8104835a171b38ea93cee6e3ad8",
+            "created_at": "2026-09-09T12:49:14.917484+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "A bottle full of milk that has been left sitting out in a warm room quickly breeds more bacteria than a newborn can handle.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917484+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-9098",
+            "_key": "semeval-luna-json-r2-b19-semeval-9098",
+            "chunk_id": "semeval-9098",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e642c43abc7c2162c2b900710b27a9ec980d7c89f95a184404a0f29d815e8ba6",
+            "created_at": "2026-09-09T12:49:14.917485+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "A mother was seen to have built a small raft out of birch bark for her and her children, but it promptly sank among the ice floes.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917485+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-9444",
+            "_key": "semeval-luna-json-r2-b19-semeval-9444",
+            "chunk_id": "semeval-9444",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:79e1e5f28e6ecfabebc7a35a57c3a6c87758a47aedda7b948f19a966f1d99bc3",
+            "created_at": "2026-09-09T12:49:14.917485+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "Both squads battered the opposing goaltender with a continuous flurry of shots.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917485+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-9859",
+            "_key": "semeval-luna-json-r2-b19-semeval-9859",
+            "chunk_id": "semeval-9859",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4e662a58d5e04aa49bda1b28544c4934887575ac8cc59e4fdc3a5223e4094ca5",
+            "created_at": "2026-09-09T12:49:14.917490+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "The bag was full of electronic and game items, and fled the scene possibly in a black GMC Envoy.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917490+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b19-semeval-9933",
+            "_key": "semeval-luna-json-r2-b19-semeval-9933",
+            "chunk_id": "semeval-9933",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2af17a42c3164a062d66965b84335a35ecfd76642b8abbf793da37064d250942",
+            "created_at": "2026-09-09T12:49:14.917491+00:00",
+            "space_id": "semeval-luna-json-r2-b19",
+            "text": "The world's top golfer said in a statement on his website that he had let his family down and that he regretted those \"transgressions with all of my heart\".",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:49:14.917491+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

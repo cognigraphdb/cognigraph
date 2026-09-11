@@ -1,0 +1,1 @@
+FOR d IN documents FOR d IN d.tags RETURN d

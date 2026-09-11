@@ -1,0 +1,264 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 2,
+  "batch": 12,
+  "request": {
+    "space_type": "semeval-glm-flash-r2-b12",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9857",
+        "title": "Relation benchmark excerpt",
+        "text": "We describe the design and synthesis of a ferroelectric liquid crystal composed of racemic molecules."
+      },
+      {
+        "id": "semeval-10460",
+        "title": "Relation benchmark excerpt",
+        "text": "The crocodile has a lump on his snout."
+      },
+      {
+        "id": "semeval-8060",
+        "title": "Relation benchmark excerpt",
+        "text": "A digital door lock is an electronic lock for residential applications such as front doors on apartments and single-family houses."
+      },
+      {
+        "id": "semeval-9028",
+        "title": "Relation benchmark excerpt",
+        "text": "Considerations have been concerned with cases where the forces between particles can be handled in a satisfactory manner."
+      },
+      {
+        "id": "semeval-9054",
+        "title": "Relation benchmark excerpt",
+        "text": "The convention of splitting tax bills is based on the construction of the first paragraph of s 55 that is rejected by the High Court in Permanent Trustee."
+      },
+      {
+        "id": "semeval-9078",
+        "title": "Relation benchmark excerpt",
+        "text": "More than 40 years have passed since the spacecraft departed into the outer-space with a fuel cell on-board."
+      },
+      {
+        "id": "semeval-9794",
+        "title": "Relation benchmark excerpt",
+        "text": "The nice thing about the title of the first book was that as soon as you saw the the cover, or even read the title, you knew immediately about the blog without having to read a review or a \"to get more info\" blurb."
+      },
+      {
+        "id": "semeval-8966",
+        "title": "Relation benchmark excerpt",
+        "text": "On the way in we saw a big raft of Eider ducks and there were some tiny babies with them."
+      },
+      {
+        "id": "semeval-10498",
+        "title": "Relation benchmark excerpt",
+        "text": "The first box that arrived at Shirley Shupp's door was filled with braces to help with her arthritis."
+      },
+      {
+        "id": "semeval-9354",
+        "title": "Relation benchmark excerpt",
+        "text": "The two chiefs quickly gather round them a phalanx of their comrades."
+      },
+      {
+        "id": "semeval-10600",
+        "title": "Relation benchmark excerpt",
+        "text": "Arriving home from this concert, I found an e-mail message from a musician friend."
+      },
+      {
+        "id": "semeval-9311",
+        "title": "Relation benchmark excerpt",
+        "text": "The light was radiating from the face of Jesus Christ."
+      }
+    ]
+  },
+  "status": 500,
+  "response": {
+    "error": "Backend error: directed completion failed: OpenAI completion error (502 Bad Gateway): {\"error\":{\"message\":\"Transport failure; no retry\"}}"
+  },
+  "latency_seconds": 110.1446986249648,
+  "facts": [],
+  "entities": [],
+  "chunks": [],
+  "store_queries": {
+    "facts": {
+      "status": 404,
+      "response": {
+        "error": "Collection not found: facts"
+      }
+    },
+    "entities": {
+      "status": 404,
+      "response": {
+        "error": "Collection not found: entities"
+      }
+    },
+    "chunks": {
+      "status": 404,
+      "response": {
+        "error": "Collection not found: chunks"
+      }
+    }
+  }
+}

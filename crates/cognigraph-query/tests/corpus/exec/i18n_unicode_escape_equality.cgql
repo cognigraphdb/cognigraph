@@ -1,0 +1,1 @@
+FOR d IN i18n FILTER d.title == "Москва" RETURN d._key

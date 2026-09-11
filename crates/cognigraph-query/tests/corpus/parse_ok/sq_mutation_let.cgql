@@ -1,0 +1,4 @@
+FOR seed IN [1]
+LET keys = (FOR d IN documents SORT d._key RETURN d._key)
+INSERT {_key: "cg28-copy", keys} INTO sq_results
+RETURN NEW.keys

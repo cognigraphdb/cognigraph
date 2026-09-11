@@ -1,0 +1,1107 @@
+{
+  "ticket": "CG-16",
+  "binary_profile": "release",
+  "binary_sha256": "2b0494b2a64dd193b446d29e10d890718a3f82615b18b29a06aa3912ab4cf18b",
+  "expect_vulnerable": false,
+  "provider": "none",
+  "modes": {
+    "resident": {
+      "errors": [
+        {
+          "case": "literal",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "literal",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "literal",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "literal",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "literal",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "literal",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        }
+      ],
+      "controls": [
+        {
+          "case": "present",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        }
+      ],
+      "plain_explain": 18,
+      "lua_caught": 6,
+      "restart_unchanged": true
+    },
+    "paged": {
+      "errors": [
+        {
+          "case": "literal",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "literal",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "literal",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "literal",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "literal",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "literal",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "bound",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "array",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "filter",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 403,
+          "result": {
+            "error": "Forbidden: graph.query: collection `_users` is system-reserved and not accessible through the API\nstack traceback:\n\t[C]: in function 'graph.query'\n"
+          }
+        }
+      ],
+      "controls": [
+        {
+          "case": "present",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        }
+      ],
+      "plain_explain": 18,
+      "lua_caught": 6,
+      "restart_unchanged": true
+    }
+  }
+}

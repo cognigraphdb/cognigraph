@@ -1,0 +1,14 @@
+{
+  "kind": "construct.draft",
+  "input": {
+    "space_type": "cg22-draft-job",
+    "chunks": [
+      {
+        "id": "cg22-chunk-1",
+        "title": "Synthetic supply note",
+        "text": "Alpha supplies Beta."
+      }
+    ],
+    "sample_cap": 40
+  }
+}

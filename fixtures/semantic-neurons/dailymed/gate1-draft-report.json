@@ -1,0 +1,544 @@
+{
+  "advisor": {
+    "rules": [
+      {
+        "both_gate": {
+          "blocked": 39,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "predniSONE Tablets, USP 5 mg --STORE_AT--> USP",
+        "grounds_ungated": 39,
+        "never_in_sentence": [
+          "source"
+        ],
+        "reason": "sentence gate on target keeps 37 grounding chunk(s) and refuses 2 whose licensing sentence lacks the endpoint",
+        "samples": [
+          {
+            "chunk_id": "e93d7939-31ad-4fc5-a5f3-6d565cc6d0c1-s11",
+            "sentence": "Storage Conditions Store at 20° to 25°C (68° to 77°F); excursions permitted to 15° to 30°C (59° to 86°F)."
+          },
+          {
+            "chunk_id": "35030c55-47e6-44cb-9d96-0c3cd5d0c238-s13",
+            "sentence": "Store at 20° to 25°C (68° to 77°F)."
+          }
+        ],
+        "source_gate": {
+          "blocked": 39,
+          "grounds": 0
+        },
+        "suggestion": [
+          "target"
+        ],
+        "target_gate": {
+          "blocked": 2,
+          "grounds": 37
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 2,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "Sertraline hydrochloride tablets --INDICATED_FOR--> oral contraceptives",
+        "grounds_ungated": 2,
+        "never_in_sentence": [
+          "target"
+        ],
+        "reason": "sentence gate on source keeps 1 grounding chunk(s) and refuses 1 whose licensing sentence lacks the endpoint",
+        "samples": [
+          {
+            "chunk_id": "decf91ad-f1fd-48f7-9d29-9a590548d5e6-s02",
+            "sentence": "Cephalexin capsules are indicated for the treatment of the following infections when caused by susceptible strains of the designated microorganisms: Respiratory tract infections caused by Streptococcus pneumoniae and Streptococcus pyogenes (Penicillin is the usual drug of choice in the treatment and prevention of streptococcal infections, including the prophylaxis of rheumatic fever."
+          }
+        ],
+        "source_gate": {
+          "blocked": 1,
+          "grounds": 1
+        },
+        "suggestion": [
+          "source"
+        ],
+        "target_gate": {
+          "blocked": 2,
+          "grounds": 0
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 2,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "amitriptyline hydrochloride tablets --INCREASES_RISK_OF--> oral contraceptives",
+        "grounds_ungated": 2,
+        "never_in_sentence": [
+          "target"
+        ],
+        "reason": "REVIEW: target appears in NO licensing sentence across 2 grounding chunk(s) — either the corpus never attributes this fact to it (cross-company leakage: gate it and the rule fires only on on-subject evidence) or the evidence is cross-sentence (a gate would silence the fact; consider {source}/{target} template triggers). Read the samples and decide.",
+        "samples": [
+          {
+            "chunk_id": "f6c88d87-66bb-2962-e053-6294a90acfbe-s00",
+            "sentence": "Suicidality and Antidepressant Drugs : Antidepressants increased the risk compared to placebo of suicidal thinking and behavior (suicidality) in children, adolescents, and young adults in short-term studies of major depressive disorder (MDD) and other psychiatric disorders."
+          },
+          {
+            "chunk_id": "5f95829b-4040-49a8-bac4-a845c227c81a-s00",
+            "sentence": "Antidepressants increased the risk compared to placebo of suicidal thinking and behavior (suicidality) in children, adolescents, and young adults in short-term studies of major depressive disorder (MDD) and other psychiatric disorders."
+          }
+        ],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 2
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 2,
+          "grounds": 0
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "amoxicillin and clavulanate potassium for oral suspension --NOT_RECOMMENDED_WITH--> probenecid",
+        "grounds_ungated": 1,
+        "never_in_sentence": [
+          "source"
+        ],
+        "reason": "REVIEW: source appears in NO licensing sentence across 1 grounding chunk(s) — either the corpus never attributes this fact to it (cross-company leakage: gate it and the rule fires only on on-subject evidence) or the evidence is cross-sentence (a gate would silence the fact; consider {source}/{target} template triggers). Read the samples and decide.",
+        "samples": [
+          {
+            "chunk_id": "618953a3-0256-42ce-9155-d35325f017aa-s07",
+            "sentence": "• Co-administration with probenecid is not recommended."
+          }
+        ],
+        "source_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "amoxicillin and clavulanate potassium for oral suspension --INCREASES_RISK_OF--> allopurinol",
+        "grounds_ungated": 1,
+        "never_in_sentence": [
+          "source"
+        ],
+        "reason": "REVIEW: source appears in NO licensing sentence across 1 grounding chunk(s) — either the corpus never attributes this fact to it (cross-company leakage: gate it and the rule fires only on on-subject evidence) or the evidence is cross-sentence (a gate would silence the fact; consider {source}/{target} template triggers). Read the samples and decide.",
+        "samples": [
+          {
+            "chunk_id": "618953a3-0256-42ce-9155-d35325f017aa-s07",
+            "sentence": "• Co-administration with allopurinol increases the risk of rash."
+          }
+        ],
+        "source_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "azathioprine tablets --INDICATED_FOR--> Aspirin",
+        "grounds_ungated": 1,
+        "never_in_sentence": [
+          "target"
+        ],
+        "reason": "REVIEW: target appears in NO licensing sentence across 1 grounding chunk(s) — either the corpus never attributes this fact to it (cross-company leakage: gate it and the rule fires only on on-subject evidence) or the evidence is cross-sentence (a gate would silence the fact; consider {source}/{target} template triggers). Read the samples and decide.",
+        "samples": [
+          {
+            "chunk_id": "8429e025-b79d-dae7-e053-2a91aa0a7fe5-s03",
+            "sentence": "INDICATIONS AND USAGE: Azathioprine Tablets are indicated as an adjunct for the prevention of rejection in renal homotransplantation."
+          }
+        ],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 1,
+          "grounds": 0
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "simvastatin tablets --REDUCES_EVENTS_OF--> oral anticoagulants",
+        "grounds_ungated": 1,
+        "never_in_sentence": [
+          "target"
+        ],
+        "reason": "REVIEW: target appears in NO licensing sentence across 1 grounding chunk(s) — either the corpus never attributes this fact to it (cross-company leakage: gate it and the rule fires only on on-subject evidence) or the evidence is cross-sentence (a gate would silence the fact; consider {source}/{target} template triggers). Read the samples and decide.",
+        "samples": [
+          {
+            "chunk_id": "c03ab80c-a3ae-4634-a76b-f53740db76f5-s12-p2",
+            "sentence": "The Study HPS results showed that simvastatin tablets 40 mg/day significantly reduced: total and CHD mortality; and non-fatal MI, stroke, and revascularization procedures (coronary and non-coronary) (see Table 5)."
+          }
+        ],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 1,
+          "grounds": 0
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "Bupivacaine Hydrochloride Injection --MONITOR_FOR--> oral anticoagulants",
+        "grounds_ungated": 1,
+        "never_in_sentence": [
+          "target"
+        ],
+        "reason": "REVIEW: target appears in NO licensing sentence across 1 grounding chunk(s) — either the corpus never attributes this fact to it (cross-company leakage: gate it and the rule fires only on on-subject evidence) or the evidence is cross-sentence (a gate would silence the fact; consider {source}/{target} template triggers). Read the samples and decide.",
+        "samples": [
+          {
+            "chunk_id": "829e3bd1-fb1c-4613-9db3-9a89ef8e2c0c-s05",
+            "sentence": "Dose-Related Toxicity : Monitor cardiovascular and respiratory vital signs and patient's state of consciousness after injection of Bupivacaine Hydrochloride Injection."
+          }
+        ],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 1,
+          "grounds": 0
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "acyclovir tablets --INDICATED_FOR--> intravenous acyclovir",
+        "grounds_ungated": 1,
+        "never_in_sentence": [
+          "source"
+        ],
+        "reason": "REVIEW: source appears in NO licensing sentence across 1 grounding chunk(s) — either the corpus never attributes this fact to it (cross-company leakage: gate it and the rule fires only on on-subject evidence) or the evidence is cross-sentence (a gate would silence the fact; consider {source}/{target} template triggers). Read the samples and decide.",
+        "samples": [
+          {
+            "chunk_id": "96fcc438-fc47-456c-bf31-6df278b12244-s08",
+            "sentence": "Intravenous acyclovir is indicated for the treatment of varicella-zoster infections in immunocompromised patients."
+          }
+        ],
+        "source_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "Hydrocodone Bitartrate and Acetaminophen Tablets --AVAILABLE_WITH--> naloxone",
+        "grounds_ungated": 1,
+        "never_in_sentence": [
+          "source"
+        ],
+        "reason": "REVIEW: source appears in NO licensing sentence across 1 grounding chunk(s) — either the corpus never attributes this fact to it (cross-company leakage: gate it and the rule fires only on on-subject evidence) or the evidence is cross-sentence (a gate would silence the fact; consider {source}/{target} template triggers). Read the samples and decide.",
+        "samples": [
+          {
+            "chunk_id": "8e48b57b-74fc-10f6-e053-2995a90a04ef-s06-p9",
+            "sentence": "An opioid antagonist, such as naloxone, must be available for reversal of opioid-induced respiratory depression in the neonate."
+          }
+        ],
+        "source_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "dextroamphetamine saccharate, amphetamine aspartate, dextroamphetamine sulfate, and amphetamine sulfate tablets --WARNS_ABOUT--> oral contraceptives",
+        "grounds_ungated": 1,
+        "never_in_sentence": [
+          "target"
+        ],
+        "reason": "REVIEW: target appears in NO licensing sentence across 1 grounding chunk(s) — either the corpus never attributes this fact to it (cross-company leakage: gate it and the rule fires only on on-subject evidence) or the evidence is cross-sentence (a gate would silence the fact; consider {source}/{target} template triggers). Read the samples and decide.",
+        "samples": [
+          {
+            "chunk_id": "430cccec-1679-4225-8c86-92d746153b38-s06-p0",
+            "sentence": "Increased Blood Pressure and Heart Rate Advise patients that dextroamphetamine saccharate, amphetamine aspartate, dextroamphetamine sulfate, and amphetamine sulfate tablets can elevate blood pressure and heart rate [see WARNINGS ]."
+          }
+        ],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 1,
+          "grounds": 0
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "TUKYSA --ASSOCIATED_WITH--> Seagen",
+        "grounds_ungated": 1,
+        "never_in_sentence": [
+          "source"
+        ],
+        "reason": "REVIEW: source appears in NO licensing sentence across 1 grounding chunk(s) — either the corpus never attributes this fact to it (cross-company leakage: gate it and the rule fires only on on-subject evidence) or the evidence is cross-sentence (a gate would silence the fact; consider {source}/{target} template triggers). Read the samples and decide.",
+        "samples": [
+          {
+            "chunk_id": "f27eb1b9-b7fc-424e-988f-84dd7bb195a3-s06",
+            "sentence": "To report SUSPECTED ADVERSE REACTIONS, contact Seagen at 1-855-4SEAGEN or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch ."
+          }
+        ],
+        "source_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "current_gate": [],
+        "fact": "Ampicillin and Sulbactam for Injection, USP --MANUFACTURED_BY--> Onesource Specialty Pharma Limited",
+        "grounds_ungated": 1,
+        "never_in_sentence": [
+          "source"
+        ],
+        "reason": "REVIEW: source appears in NO licensing sentence across 1 grounding chunk(s) — either the corpus never attributes this fact to it (cross-company leakage: gate it and the rule fires only on on-subject evidence) or the evidence is cross-sentence (a gate would silence the fact; consider {source}/{target} template triggers). Read the samples and decide.",
+        "samples": [
+          {
+            "chunk_id": "573aca0c-111e-4ed3-9bcd-18136cae12cc-s12",
+            "sentence": "Manufactured By: Onesource Specialty Pharma Limited, Beta Lactam Division, Bengaluru-560076, India November 2025"
+          }
+        ],
+        "source_gate": {
+          "blocked": 1,
+          "grounds": 0
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "current_gate": [],
+        "fact": "amoxicillin and clavulanate potassium for oral suspension --INCREASES_RISK_OF--> oral anticoagulants",
+        "grounds_ungated": 1,
+        "never_in_sentence": [],
+        "reason": "every grounding sentence already names both endpoints — a gate would change nothing",
+        "samples": [],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "current_gate": [],
+        "fact": "amoxicillin and clavulanate potassium for oral suspension --REDUCES_EFFICACY_OF--> oral contraceptives",
+        "grounds_ungated": 1,
+        "never_in_sentence": [],
+        "reason": "every grounding sentence already names both endpoints — a gate would change nothing",
+        "samples": [],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "current_gate": [],
+        "fact": "azathioprine tablets --CAN_BE_CONTINUED_WITH--> Aspirin",
+        "grounds_ungated": 1,
+        "never_in_sentence": [],
+        "reason": "every grounding sentence already names both endpoints — a gate would change nothing",
+        "samples": [],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "current_gate": [],
+        "fact": "metoprolol tartrate injection --SHOULD_BE_MONITORED_WITH--> metoprolol",
+        "grounds_ungated": 1,
+        "never_in_sentence": [],
+        "reason": "every grounding sentence already names both endpoints — a gate would change nothing",
+        "samples": [],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "current_gate": [],
+        "fact": "Clinitest™ --TRADEMARK_OF--> Miles, Inc.",
+        "grounds_ungated": 1,
+        "never_in_sentence": [],
+        "reason": "every grounding sentence already names both endpoints — a gate would change nothing",
+        "samples": [],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "current_gate": [],
+        "fact": "Clinistix™ --TRADEMARK_OF--> Bayer Corporation",
+        "grounds_ungated": 1,
+        "never_in_sentence": [],
+        "reason": "every grounding sentence already names both endpoints — a gate would change nothing",
+        "samples": [],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      },
+      {
+        "both_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "current_gate": [],
+        "fact": "Testape™ --TRADEMARK_OF--> Eli Lilly Company",
+        "grounds_ungated": 1,
+        "never_in_sentence": [],
+        "reason": "every grounding sentence already names both endpoints — a gate would change nothing",
+        "samples": [],
+        "source_gate": {
+          "blocked": 0,
+          "grounds": 1
+        },
+        "suggestion": null,
+        "target_gate": {
+          "blocked": 0,
+          "grounds": 1
+        }
+      }
+    ]
+  },
+  "by_relation": {
+    "?": 20
+  },
+  "chunks": 1674,
+  "cohort": {
+    "otc": 10,
+    "rx": 90
+  },
+  "draft_rev": "draft-policy-v1",
+  "grounded_edges": 60,
+  "rules_fired": 0,
+  "sampled_chunks": 24,
+  "skips": [
+    "rule `Pioglitazone tablets --CONTAINS--> pioglitazone`: endpoint not in the drafted entity catalogue — dropped (closure)"
+  ]
+}

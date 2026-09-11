@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d._key == "a" RETURN CONCAT(d._key, "-", d.score, "-", d.missing, true)

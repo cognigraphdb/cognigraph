@@ -1,0 +1,1056 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 1,
+  "batch": 16,
+  "request": {
+    "space_type": "semeval-glm-flash-r1-b16",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-8585",
+        "title": "Relation benchmark excerpt",
+        "text": "This range has also been illustrated in the appended diagram."
+      },
+      {
+        "id": "semeval-9877",
+        "title": "Relation benchmark excerpt",
+        "text": "The procession lasts all days and passes by all the places in the city that are linked to the saint's martyrdom."
+      },
+      {
+        "id": "semeval-10217",
+        "title": "Relation benchmark excerpt",
+        "text": "There is in fact a socialist party in America and there are real socialists."
+      },
+      {
+        "id": "semeval-8996",
+        "title": "Relation benchmark excerpt",
+        "text": "I wanted to breastfeed him when he was hungry and I noticed that he wasn't approving of my breast, so I gave him a bottle with formula in it."
+      },
+      {
+        "id": "semeval-8524",
+        "title": "Relation benchmark excerpt",
+        "text": "The playwright creates tension using many stage directions."
+      },
+      {
+        "id": "semeval-9602",
+        "title": "Relation benchmark excerpt",
+        "text": "The pyramid of champagne flutes is like the communion of local churches that comprise the Catholic Church."
+      },
+      {
+        "id": "semeval-10717",
+        "title": "Relation benchmark excerpt",
+        "text": "A few days before the service, Tom Burris had thrown into Karen's casket his wedding ring."
+      },
+      {
+        "id": "semeval-10412",
+        "title": "Relation benchmark excerpt",
+        "text": "Boston University biomedical engineers have devised a method for making future genome sequencing faster and cheaper."
+      },
+      {
+        "id": "semeval-9418",
+        "title": "Relation benchmark excerpt",
+        "text": "Other tree species in the Gabonese forest are much more liable to burn, particularly Burseraceae such as."
+      },
+      {
+        "id": "semeval-10485",
+        "title": "Relation benchmark excerpt",
+        "text": "The athlete starts in the three-point stance, and explodes out 5 yards to his right."
+      },
+      {
+        "id": "semeval-9023",
+        "title": "Relation benchmark excerpt",
+        "text": "The instrument was sealed in a polyethylene bag for 40 hours at room temperature."
+      },
+      {
+        "id": "semeval-9398",
+        "title": "Relation benchmark excerpt",
+        "text": "Pressure regulation using the valve and different amounts of fluid goes a long way in keeping your hydraulic log splitter in action."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:glm-5.3-flash@directed-policy-v1",
+    "facts_grounded": 7,
+    "proposed": 7,
+    "skips": [],
+    "space_type": "semeval-glm-flash-r1-b16"
+  },
+  "latency_seconds": 11.769053749972954,
+  "facts": [
+    {
+      "_from": "entities/formula",
+      "_id": "facts/fact-053a5b2fe45d8cbf3254208cd5f4815d48ff9015dbc0b6fc26edb0225eb1ff90",
+      "_key": "fact-053a5b2fe45d8cbf3254208cd5f4815d48ff9015dbc0b6fc26edb0225eb1ff90",
+      "_to": "entities/bottle",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8996",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "trigger": "I wanted to breastfeed him when he was hungry and I noticed that he wasn't approving of my breast, so I gave him a bottle with formula in it.",
+      "trigger_end": 141,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/species",
+      "_id": "facts/fact-34dffabbb6b6d84c1204475fd724b2fa5f2bbe9db45d6c4eeec96fcd4801b759",
+      "_key": "fact-34dffabbb6b6d84c1204475fd724b2fa5f2bbe9db45d6c4eeec96fcd4801b759",
+      "_to": "entities/forest",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9418",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "trigger": "Other tree species in the Gabonese forest are much more liable to burn, particularly Burseraceae such as.",
+      "trigger_end": 105,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/method",
+      "_id": "facts/fact-4af9d3fc0b8da4b2a15e3094e4c81fd32ae1566b0b9e06378914ed4df6332335",
+      "_key": "fact-4af9d3fc0b8da4b2a15e3094e4c81fd32ae1566b0b9e06378914ed4df6332335",
+      "_to": "entities/engineers",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10412",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "trigger": "Boston University biomedical engineers have devised a method for making future genome sequencing faster and cheaper.",
+      "trigger_end": 116,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/directions",
+      "_id": "facts/fact-b620ff30464daaa6b6307f21e03354848cb6a5d0e3b334fb1ab280d5abbd83c8",
+      "_key": "fact-b620ff30464daaa6b6307f21e03354848cb6a5d0e3b334fb1ab280d5abbd83c8",
+      "_to": "entities/playwright",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8524",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "trigger": "The playwright creates tension using many stage directions.",
+      "trigger_end": 59,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/instrument",
+      "_id": "facts/fact-b83a3fae1ec2a2b055f64f887ff126ccb3c31ca418c6622387f31335c7d7896f",
+      "_key": "fact-b83a3fae1ec2a2b055f64f887ff126ccb3c31ca418c6622387f31335c7d7896f",
+      "_to": "entities/polyethylene-bag",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9023",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "trigger": "The instrument was sealed in a polyethylene bag for 40 hours at room temperature.",
+      "trigger_end": 81,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/churches",
+      "_id": "facts/fact-bb719af568e82daa4efd15c3f52c0f49d52046e92172e8c636a2ce1cbd0d3145",
+      "_key": "fact-bb719af568e82daa4efd15c3f52c0f49d52046e92172e8c636a2ce1cbd0d3145",
+      "_to": "entities/communion",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9602",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "trigger": "The pyramid of champagne flutes is like the communion of local churches that comprise the Catholic Church.",
+      "trigger_end": 106,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/ring",
+      "_id": "facts/fact-cd03c6678297a0709132f2cf7db82f87eb63480c222ba72293a6bbdbea08908c",
+      "_key": "fact-cd03c6678297a0709132f2cf7db82f87eb63480c222ba72293a6bbdbea08908c",
+      "_to": "entities/casket",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10717",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "trigger": "A few days before the service, Tom Burris had thrown into Karen's casket his wedding ring.",
+      "trigger_end": 90,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/bottle",
+      "_key": "bottle",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291284+00:00",
+      "entity_type": "other",
+      "name": "bottle",
+      "updated_at": "2026-09-09T12:34:13.291284+00:00"
+    },
+    {
+      "_id": "entities/casket",
+      "_key": "casket",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291293+00:00",
+      "entity_type": "other",
+      "name": "casket",
+      "updated_at": "2026-09-09T12:34:13.291293+00:00"
+    },
+    {
+      "_id": "entities/churches",
+      "_key": "churches",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291297+00:00",
+      "entity_type": "other",
+      "name": "churches",
+      "updated_at": "2026-09-09T12:34:13.291297+00:00"
+    },
+    {
+      "_id": "entities/communion",
+      "_key": "communion",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291299+00:00",
+      "entity_type": "other",
+      "name": "communion",
+      "updated_at": "2026-09-09T12:34:13.291299+00:00"
+    },
+    {
+      "_id": "entities/directions",
+      "_key": "directions",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291302+00:00",
+      "entity_type": "other",
+      "name": "directions",
+      "updated_at": "2026-09-09T12:34:13.291302+00:00"
+    },
+    {
+      "_id": "entities/engineers",
+      "_key": "engineers",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291304+00:00",
+      "entity_type": "other",
+      "name": "engineers",
+      "updated_at": "2026-09-09T12:34:13.291304+00:00"
+    },
+    {
+      "_id": "entities/forest",
+      "_key": "forest",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291305+00:00",
+      "entity_type": "other",
+      "name": "forest",
+      "updated_at": "2026-09-09T12:34:13.291305+00:00"
+    },
+    {
+      "_id": "entities/formula",
+      "_key": "formula",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291306+00:00",
+      "entity_type": "other",
+      "name": "formula",
+      "updated_at": "2026-09-09T12:34:13.291306+00:00"
+    },
+    {
+      "_id": "entities/instrument",
+      "_key": "instrument",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291307+00:00",
+      "entity_type": "other",
+      "name": "instrument",
+      "updated_at": "2026-09-09T12:34:13.291307+00:00"
+    },
+    {
+      "_id": "entities/method",
+      "_key": "method",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291308+00:00",
+      "entity_type": "other",
+      "name": "method",
+      "updated_at": "2026-09-09T12:34:13.291308+00:00"
+    },
+    {
+      "_id": "entities/playwright",
+      "_key": "playwright",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291309+00:00",
+      "entity_type": "other",
+      "name": "playwright",
+      "updated_at": "2026-09-09T12:34:13.291309+00:00"
+    },
+    {
+      "_id": "entities/polyethylene-bag",
+      "_key": "polyethylene-bag",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291310+00:00",
+      "entity_type": "other",
+      "name": "polyethylene bag",
+      "updated_at": "2026-09-09T12:34:13.291310+00:00"
+    },
+    {
+      "_id": "entities/ring",
+      "_key": "ring",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291311+00:00",
+      "entity_type": "other",
+      "name": "ring",
+      "updated_at": "2026-09-09T12:34:13.291311+00:00"
+    },
+    {
+      "_id": "entities/species",
+      "_key": "species",
+      "aliases": [],
+      "created_at": "2026-09-09T12:34:13.291312+00:00",
+      "entity_type": "other",
+      "name": "species",
+      "updated_at": "2026-09-09T12:34:13.291312+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-10217",
+      "_key": "semeval-glm-flash-r1-b16-semeval-10217",
+      "chunk_id": "semeval-10217",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9649ed0bb650b84e777406cf20407057c33537f83441de33210b02e4e1dd6ab8",
+      "created_at": "2026-09-09T12:34:13.291314+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "There is in fact a socialist party in America and there are real socialists.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291314+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-10412",
+      "_key": "semeval-glm-flash-r1-b16-semeval-10412",
+      "chunk_id": "semeval-10412",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:923fa4ce15b0b7dc4731e06d7c0edae24034c7e6138d87e0222451e8bff2491d",
+      "created_at": "2026-09-09T12:34:13.291316+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "Boston University biomedical engineers have devised a method for making future genome sequencing faster and cheaper.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291316+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-10485",
+      "_key": "semeval-glm-flash-r1-b16-semeval-10485",
+      "chunk_id": "semeval-10485",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:876ae90f83241a2cd419c18a000342f569c72573dff1bc626257e08f455929f6",
+      "created_at": "2026-09-09T12:34:13.291331+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "The athlete starts in the three-point stance, and explodes out 5 yards to his right.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291331+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-10717",
+      "_key": "semeval-glm-flash-r1-b16-semeval-10717",
+      "chunk_id": "semeval-10717",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1eda5f8610016f658caaaa85111036f52cb321293ff1f50c3d96005807a554d8",
+      "created_at": "2026-09-09T12:34:13.291332+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "A few days before the service, Tom Burris had thrown into Karen's casket his wedding ring.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291332+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-8524",
+      "_key": "semeval-glm-flash-r1-b16-semeval-8524",
+      "chunk_id": "semeval-8524",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:60c7f774156fde5d1ce1beebe5fe8e7800f08a3770781812c6dc7738c1ff551c",
+      "created_at": "2026-09-09T12:34:13.291339+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "The playwright creates tension using many stage directions.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291339+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-8585",
+      "_key": "semeval-glm-flash-r1-b16-semeval-8585",
+      "chunk_id": "semeval-8585",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b477b771610237cf6c78274e0c46543c52b185864423f7ea00c12d50b8498d8f",
+      "created_at": "2026-09-09T12:34:13.291348+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "This range has also been illustrated in the appended diagram.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291348+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-8996",
+      "_key": "semeval-glm-flash-r1-b16-semeval-8996",
+      "chunk_id": "semeval-8996",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8e72bdd39f06be8ed3743f8980f52be6879dbbafada0c0628f61273c2fe5328e",
+      "created_at": "2026-09-09T12:34:13.291349+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "I wanted to breastfeed him when he was hungry and I noticed that he wasn't approving of my breast, so I gave him a bottle with formula in it.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291349+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-9023",
+      "_key": "semeval-glm-flash-r1-b16-semeval-9023",
+      "chunk_id": "semeval-9023",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:daebfdcdd27ea4aeb619e0c73502d385a1392e0908d737771d30ef955264dd07",
+      "created_at": "2026-09-09T12:34:13.291356+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "The instrument was sealed in a polyethylene bag for 40 hours at room temperature.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291356+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-9398",
+      "_key": "semeval-glm-flash-r1-b16-semeval-9398",
+      "chunk_id": "semeval-9398",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1a6ed8ca962b9bf2895f3da29e92470a7394a0b078b648617c58f24da35514f4",
+      "created_at": "2026-09-09T12:34:13.291361+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "Pressure regulation using the valve and different amounts of fluid goes a long way in keeping your hydraulic log splitter in action.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291361+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-9418",
+      "_key": "semeval-glm-flash-r1-b16-semeval-9418",
+      "chunk_id": "semeval-9418",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d67b1942ee5fa51f7f56c3196f8a332b5e1575b37e4c86c2b125d358be1f6c18",
+      "created_at": "2026-09-09T12:34:13.291363+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "Other tree species in the Gabonese forest are much more liable to burn, particularly Burseraceae such as.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291363+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-9602",
+      "_key": "semeval-glm-flash-r1-b16-semeval-9602",
+      "chunk_id": "semeval-9602",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8b63fe5553d9b34f325b77f9306d7b55210ce571dd56dbc31c13a094f0326031",
+      "created_at": "2026-09-09T12:34:13.291371+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "The pyramid of champagne flutes is like the communion of local churches that comprise the Catholic Church.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291371+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b16-semeval-9877",
+      "_key": "semeval-glm-flash-r1-b16-semeval-9877",
+      "chunk_id": "semeval-9877",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:83b993143593f5a62f60a1cb50afeec5d305e762a88f1c982e406e01d730bab7",
+      "created_at": "2026-09-09T12:34:13.291376+00:00",
+      "space_id": "semeval-glm-flash-r1-b16",
+      "text": "The procession lasts all days and passes by all the places in the city that are linked to the saint's martyrdom.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:34:13.291376+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 7,
+        "results": [
+          {
+            "_from": "entities/formula",
+            "_id": "facts/fact-053a5b2fe45d8cbf3254208cd5f4815d48ff9015dbc0b6fc26edb0225eb1ff90",
+            "_key": "fact-053a5b2fe45d8cbf3254208cd5f4815d48ff9015dbc0b6fc26edb0225eb1ff90",
+            "_to": "entities/bottle",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8996",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "trigger": "I wanted to breastfeed him when he was hungry and I noticed that he wasn't approving of my breast, so I gave him a bottle with formula in it.",
+            "trigger_end": 141,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/species",
+            "_id": "facts/fact-34dffabbb6b6d84c1204475fd724b2fa5f2bbe9db45d6c4eeec96fcd4801b759",
+            "_key": "fact-34dffabbb6b6d84c1204475fd724b2fa5f2bbe9db45d6c4eeec96fcd4801b759",
+            "_to": "entities/forest",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9418",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "trigger": "Other tree species in the Gabonese forest are much more liable to burn, particularly Burseraceae such as.",
+            "trigger_end": 105,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/method",
+            "_id": "facts/fact-4af9d3fc0b8da4b2a15e3094e4c81fd32ae1566b0b9e06378914ed4df6332335",
+            "_key": "fact-4af9d3fc0b8da4b2a15e3094e4c81fd32ae1566b0b9e06378914ed4df6332335",
+            "_to": "entities/engineers",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10412",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "trigger": "Boston University biomedical engineers have devised a method for making future genome sequencing faster and cheaper.",
+            "trigger_end": 116,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/directions",
+            "_id": "facts/fact-b620ff30464daaa6b6307f21e03354848cb6a5d0e3b334fb1ab280d5abbd83c8",
+            "_key": "fact-b620ff30464daaa6b6307f21e03354848cb6a5d0e3b334fb1ab280d5abbd83c8",
+            "_to": "entities/playwright",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8524",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "trigger": "The playwright creates tension using many stage directions.",
+            "trigger_end": 59,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/instrument",
+            "_id": "facts/fact-b83a3fae1ec2a2b055f64f887ff126ccb3c31ca418c6622387f31335c7d7896f",
+            "_key": "fact-b83a3fae1ec2a2b055f64f887ff126ccb3c31ca418c6622387f31335c7d7896f",
+            "_to": "entities/polyethylene-bag",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9023",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "trigger": "The instrument was sealed in a polyethylene bag for 40 hours at room temperature.",
+            "trigger_end": 81,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/churches",
+            "_id": "facts/fact-bb719af568e82daa4efd15c3f52c0f49d52046e92172e8c636a2ce1cbd0d3145",
+            "_key": "fact-bb719af568e82daa4efd15c3f52c0f49d52046e92172e8c636a2ce1cbd0d3145",
+            "_to": "entities/communion",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9602",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "trigger": "The pyramid of champagne flutes is like the communion of local churches that comprise the Catholic Church.",
+            "trigger_end": 106,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/ring",
+            "_id": "facts/fact-cd03c6678297a0709132f2cf7db82f87eb63480c222ba72293a6bbdbea08908c",
+            "_key": "fact-cd03c6678297a0709132f2cf7db82f87eb63480c222ba72293a6bbdbea08908c",
+            "_to": "entities/casket",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10717",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "trigger": "A few days before the service, Tom Burris had thrown into Karen's casket his wedding ring.",
+            "trigger_end": 90,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 14,
+        "results": [
+          {
+            "_id": "entities/bottle",
+            "_key": "bottle",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291284+00:00",
+            "entity_type": "other",
+            "name": "bottle",
+            "updated_at": "2026-09-09T12:34:13.291284+00:00"
+          },
+          {
+            "_id": "entities/casket",
+            "_key": "casket",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291293+00:00",
+            "entity_type": "other",
+            "name": "casket",
+            "updated_at": "2026-09-09T12:34:13.291293+00:00"
+          },
+          {
+            "_id": "entities/churches",
+            "_key": "churches",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291297+00:00",
+            "entity_type": "other",
+            "name": "churches",
+            "updated_at": "2026-09-09T12:34:13.291297+00:00"
+          },
+          {
+            "_id": "entities/communion",
+            "_key": "communion",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291299+00:00",
+            "entity_type": "other",
+            "name": "communion",
+            "updated_at": "2026-09-09T12:34:13.291299+00:00"
+          },
+          {
+            "_id": "entities/directions",
+            "_key": "directions",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291302+00:00",
+            "entity_type": "other",
+            "name": "directions",
+            "updated_at": "2026-09-09T12:34:13.291302+00:00"
+          },
+          {
+            "_id": "entities/engineers",
+            "_key": "engineers",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291304+00:00",
+            "entity_type": "other",
+            "name": "engineers",
+            "updated_at": "2026-09-09T12:34:13.291304+00:00"
+          },
+          {
+            "_id": "entities/forest",
+            "_key": "forest",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291305+00:00",
+            "entity_type": "other",
+            "name": "forest",
+            "updated_at": "2026-09-09T12:34:13.291305+00:00"
+          },
+          {
+            "_id": "entities/formula",
+            "_key": "formula",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291306+00:00",
+            "entity_type": "other",
+            "name": "formula",
+            "updated_at": "2026-09-09T12:34:13.291306+00:00"
+          },
+          {
+            "_id": "entities/instrument",
+            "_key": "instrument",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291307+00:00",
+            "entity_type": "other",
+            "name": "instrument",
+            "updated_at": "2026-09-09T12:34:13.291307+00:00"
+          },
+          {
+            "_id": "entities/method",
+            "_key": "method",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291308+00:00",
+            "entity_type": "other",
+            "name": "method",
+            "updated_at": "2026-09-09T12:34:13.291308+00:00"
+          },
+          {
+            "_id": "entities/playwright",
+            "_key": "playwright",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291309+00:00",
+            "entity_type": "other",
+            "name": "playwright",
+            "updated_at": "2026-09-09T12:34:13.291309+00:00"
+          },
+          {
+            "_id": "entities/polyethylene-bag",
+            "_key": "polyethylene-bag",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291310+00:00",
+            "entity_type": "other",
+            "name": "polyethylene bag",
+            "updated_at": "2026-09-09T12:34:13.291310+00:00"
+          },
+          {
+            "_id": "entities/ring",
+            "_key": "ring",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291311+00:00",
+            "entity_type": "other",
+            "name": "ring",
+            "updated_at": "2026-09-09T12:34:13.291311+00:00"
+          },
+          {
+            "_id": "entities/species",
+            "_key": "species",
+            "aliases": [],
+            "created_at": "2026-09-09T12:34:13.291312+00:00",
+            "entity_type": "other",
+            "name": "species",
+            "updated_at": "2026-09-09T12:34:13.291312+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-10217",
+            "_key": "semeval-glm-flash-r1-b16-semeval-10217",
+            "chunk_id": "semeval-10217",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:9649ed0bb650b84e777406cf20407057c33537f83441de33210b02e4e1dd6ab8",
+            "created_at": "2026-09-09T12:34:13.291314+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "There is in fact a socialist party in America and there are real socialists.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291314+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-10412",
+            "_key": "semeval-glm-flash-r1-b16-semeval-10412",
+            "chunk_id": "semeval-10412",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:923fa4ce15b0b7dc4731e06d7c0edae24034c7e6138d87e0222451e8bff2491d",
+            "created_at": "2026-09-09T12:34:13.291316+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "Boston University biomedical engineers have devised a method for making future genome sequencing faster and cheaper.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291316+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-10485",
+            "_key": "semeval-glm-flash-r1-b16-semeval-10485",
+            "chunk_id": "semeval-10485",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:876ae90f83241a2cd419c18a000342f569c72573dff1bc626257e08f455929f6",
+            "created_at": "2026-09-09T12:34:13.291331+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "The athlete starts in the three-point stance, and explodes out 5 yards to his right.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291331+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-10717",
+            "_key": "semeval-glm-flash-r1-b16-semeval-10717",
+            "chunk_id": "semeval-10717",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1eda5f8610016f658caaaa85111036f52cb321293ff1f50c3d96005807a554d8",
+            "created_at": "2026-09-09T12:34:13.291332+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "A few days before the service, Tom Burris had thrown into Karen's casket his wedding ring.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291332+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-8524",
+            "_key": "semeval-glm-flash-r1-b16-semeval-8524",
+            "chunk_id": "semeval-8524",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:60c7f774156fde5d1ce1beebe5fe8e7800f08a3770781812c6dc7738c1ff551c",
+            "created_at": "2026-09-09T12:34:13.291339+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "The playwright creates tension using many stage directions.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291339+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-8585",
+            "_key": "semeval-glm-flash-r1-b16-semeval-8585",
+            "chunk_id": "semeval-8585",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b477b771610237cf6c78274e0c46543c52b185864423f7ea00c12d50b8498d8f",
+            "created_at": "2026-09-09T12:34:13.291348+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "This range has also been illustrated in the appended diagram.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291348+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-8996",
+            "_key": "semeval-glm-flash-r1-b16-semeval-8996",
+            "chunk_id": "semeval-8996",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8e72bdd39f06be8ed3743f8980f52be6879dbbafada0c0628f61273c2fe5328e",
+            "created_at": "2026-09-09T12:34:13.291349+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "I wanted to breastfeed him when he was hungry and I noticed that he wasn't approving of my breast, so I gave him a bottle with formula in it.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291349+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-9023",
+            "_key": "semeval-glm-flash-r1-b16-semeval-9023",
+            "chunk_id": "semeval-9023",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:daebfdcdd27ea4aeb619e0c73502d385a1392e0908d737771d30ef955264dd07",
+            "created_at": "2026-09-09T12:34:13.291356+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "The instrument was sealed in a polyethylene bag for 40 hours at room temperature.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291356+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-9398",
+            "_key": "semeval-glm-flash-r1-b16-semeval-9398",
+            "chunk_id": "semeval-9398",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1a6ed8ca962b9bf2895f3da29e92470a7394a0b078b648617c58f24da35514f4",
+            "created_at": "2026-09-09T12:34:13.291361+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "Pressure regulation using the valve and different amounts of fluid goes a long way in keeping your hydraulic log splitter in action.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291361+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-9418",
+            "_key": "semeval-glm-flash-r1-b16-semeval-9418",
+            "chunk_id": "semeval-9418",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d67b1942ee5fa51f7f56c3196f8a332b5e1575b37e4c86c2b125d358be1f6c18",
+            "created_at": "2026-09-09T12:34:13.291363+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "Other tree species in the Gabonese forest are much more liable to burn, particularly Burseraceae such as.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291363+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-9602",
+            "_key": "semeval-glm-flash-r1-b16-semeval-9602",
+            "chunk_id": "semeval-9602",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8b63fe5553d9b34f325b77f9306d7b55210ce571dd56dbc31c13a094f0326031",
+            "created_at": "2026-09-09T12:34:13.291371+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "The pyramid of champagne flutes is like the communion of local churches that comprise the Catholic Church.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291371+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b16-semeval-9877",
+            "_key": "semeval-glm-flash-r1-b16-semeval-9877",
+            "chunk_id": "semeval-9877",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:83b993143593f5a62f60a1cb50afeec5d305e762a88f1c982e406e01d730bab7",
+            "created_at": "2026-09-09T12:34:13.291376+00:00",
+            "space_id": "semeval-glm-flash-r1-b16",
+            "text": "The procession lasts all days and passes by all the places in the city that are linked to the saint's martyrdom.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:34:13.291376+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

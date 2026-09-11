@@ -1,0 +1,362 @@
+{
+  "document_id": "development-895d605cf04656c1",
+  "request": {
+    "space_type": "document-trial-development-895d605cf04656c1",
+    "taxonomy": [
+      {
+        "relation": "COUNTRY",
+        "description": "The source place, organization, event, or work belongs to or is located in the target country. Do not apply to a person; do not infer unstated geographic containment.",
+        "require_in_sentence": [
+          "country",
+          "in",
+          "of",
+          "located",
+          "based"
+        ]
+      },
+      {
+        "relation": "LOCATED_IN",
+        "description": "The source place is located in the target administrative territory. Require the document to state the containment; do not infer a transitive location chain.",
+        "require_in_sentence": [
+          "in",
+          "located",
+          "part of",
+          "region",
+          "district",
+          "province",
+          "county"
+        ]
+      },
+      {
+        "relation": "HEADQUARTERED_IN",
+        "description": "The source organization has its headquarters in the target location. A branch office or activity in a place is not headquarters.",
+        "require_in_sentence": [
+          "headquarters",
+          "headquartered",
+          "based",
+          "head office"
+        ]
+      },
+      {
+        "relation": "BORN_IN",
+        "description": "The source person was born in the target place. Residence, citizenship, death, or employment alone do not establish birthplace.",
+        "require_in_sentence": [
+          "born",
+          "birth",
+          "birthplace"
+        ]
+      },
+      {
+        "relation": "DIED_IN",
+        "description": "The source person died in the target place. Birthplace, residence, or burial alone do not establish place of death.",
+        "require_in_sentence": [
+          "died",
+          "death",
+          "killed"
+        ]
+      },
+      {
+        "relation": "HAS_FATHER",
+        "description": "The target person is the father of the source person. Do not reverse parent and child or infer from shared surnames.",
+        "require_in_sentence": [
+          "father",
+          "son",
+          "daughter",
+          "parent"
+        ]
+      },
+      {
+        "relation": "HAS_MOTHER",
+        "description": "The target person is the mother of the source person. Do not reverse parent and child or infer from shared surnames.",
+        "require_in_sentence": [
+          "mother",
+          "son",
+          "daughter",
+          "parent"
+        ]
+      },
+      {
+        "relation": "SPOUSE_OF",
+        "description": "The two people are or were married spouses, including explicitly stated former spouses. A proposed marriage or other association does not establish marriage. This relation is symmetric.",
+        "require_in_sentence": [
+          "married",
+          "wife",
+          "husband",
+          "spouse",
+          "marriage",
+          "divorced"
+        ]
+      },
+      {
+        "relation": "HAS_CHILD",
+        "description": "The target person is the child of the source person. Do not reverse the direction or infer from shared surnames.",
+        "require_in_sentence": [
+          "father",
+          "mother",
+          "son",
+          "daughter",
+          "child",
+          "children",
+          "parent"
+        ]
+      },
+      {
+        "relation": "FOUNDED_BY",
+        "description": "The target person or organization founded or co-founded the source organization. A later owner, executive, or employee is not necessarily a founder.",
+        "require_in_sentence": [
+          "founded",
+          "established",
+          "founder",
+          "co-founded"
+        ]
+      },
+      {
+        "relation": "OWNED_BY",
+        "description": "The source asset, organization, or work is or was owned by the target entity. Operation, creation, employment, or partnership alone does not establish ownership.",
+        "require_in_sentence": [
+          "owned",
+          "owner",
+          "ownership",
+          "acquired",
+          "subsidiary",
+          "purchased",
+          "bought"
+        ]
+      },
+      {
+        "relation": "PUBLISHED_BY",
+        "description": "The target organization or person publishes or published the source work. Creation, distribution, and publication are distinct.",
+        "require_in_sentence": [
+          "published",
+          "publisher",
+          "publishing"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "development-895d605cf04656c1",
+        "title": "Zakhary Lyapunov",
+        "text": "Zakhary Petrovich Lyapunov ( ) ( ?\n- after 1612 ) was a Russian political figure of the early 17th century , brother of Prokopy Lyapunov .\nIn 1605 , Zakhary Lyapunov took the side of False Dmitri I.\nUpon the latter 's death in 1606 , he took part in the Bolotnikov Uprising in 1606 – 1607 .\nIn 1607 , he joined the ranks of Vasily Shuisky and became a commander of a unit of the Ryazan dvoryane during the struggle against the rebellious peasants and supporters of False Dmitri II .\nIn July 1610 , Zachary Lyapunov took an active part in deposing Vasily Shuisky .\nIn September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .\nThen he returned to Moscow and remained in the city until its liberation from the Polish invaders by the army of Kuzma Minin and Dmitry Pozharsky ."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 1,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 8,
+    "proposed": 8,
+    "skips": [],
+    "space_type": "document-trial-development-895d605cf04656c1"
+  },
+  "latency_seconds": 0.03575041692238301,
+  "facts": [
+    {
+      "_from": "entities/moscow",
+      "_id": "facts/fact-0568a38d6559a88549ab9aa397015fbb248128acd8a160b15402f7b8d3773df4",
+      "_key": "fact-0568a38d6559a88549ab9aa397015fbb248128acd8a160b15402f7b8d3773df4",
+      "_to": "entities/russian",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-895d605cf04656c1",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "COUNTRY",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-895d605cf04656c1",
+      "trigger": "Zakhary Petrovich Lyapunov ( ) ( ?\n- after 1612 ) was a Russian political figure of the early 17th century , brother of Prokopy Lyapunov .\nIn 1605 , Zakhary Lyapunov took the side of False Dmitri I.\nUpon the latter 's death in 1606 , he took part in the Bolotnikov Uprising in 1606 – 1607 .\nIn 1607 , he joined the ranks of Vasily Shuisky and became a commander of a unit of the Ryazan dvoryane during the struggle against the rebellious peasants and supporters of False Dmitri II .\nIn July 1610 , Zachary Lyapunov took an active part in deposing Vasily Shuisky .\nIn September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .\nThen he returned to Moscow and remained in the city until its liberation from the Polish invaders by the army of Kuzma Minin and Dmitry Pozharsky .",
+      "trigger_end": 936,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/ryazan",
+      "_id": "facts/fact-0a8beadc05418b137f0ffbc1a5af3cdf79aa78a08f1d4391125308887c1a3fc2",
+      "_key": "fact-0a8beadc05418b137f0ffbc1a5af3cdf79aa78a08f1d4391125308887c1a3fc2",
+      "_to": "entities/russian",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-895d605cf04656c1",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "COUNTRY",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-895d605cf04656c1",
+      "trigger": "Zakhary Petrovich Lyapunov ( ) ( ?\n- after 1612 ) was a Russian political figure of the early 17th century , brother of Prokopy Lyapunov .\nIn 1605 , Zakhary Lyapunov took the side of False Dmitri I.\nUpon the latter 's death in 1606 , he took part in the Bolotnikov Uprising in 1606 – 1607 .\nIn 1607 , he joined the ranks of Vasily Shuisky and became a commander of a unit of the Ryazan dvoryane during the struggle against the rebellious peasants and supporters of False Dmitri II .\nIn July 1610 , Zachary Lyapunov took an active part in deposing Vasily Shuisky .\nIn September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .\nThen he returned to Moscow and remained in the city until its liberation from the Polish invaders by the army of Kuzma Minin and Dmitry Pozharsky .",
+      "trigger_end": 936,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/wladislaus",
+      "_id": "facts/fact-0fc2c5a15eed51066a27526036903ce692f8ef60c9356df27d1dcd418d1cfd64",
+      "_key": "fact-0fc2c5a15eed51066a27526036903ce692f8ef60c9356df27d1dcd418d1cfd64",
+      "_to": "entities/sigismund-iii-vasa",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-895d605cf04656c1",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "HAS_FATHER",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-895d605cf04656c1",
+      "trigger": "Zakhary Petrovich Lyapunov ( ) ( ?\n- after 1612 ) was a Russian political figure of the early 17th century , brother of Prokopy Lyapunov .\nIn 1605 , Zakhary Lyapunov took the side of False Dmitri I.\nUpon the latter 's death in 1606 , he took part in the Bolotnikov Uprising in 1606 – 1607 .\nIn 1607 , he joined the ranks of Vasily Shuisky and became a commander of a unit of the Ryazan dvoryane during the struggle against the rebellious peasants and supporters of False Dmitri II .\nIn July 1610 , Zachary Lyapunov took an active part in deposing Vasily Shuisky .\nIn September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .\nThen he returned to Moscow and remained in the city until its liberation from the Polish invaders by the army of Kuzma Minin and Dmitry Pozharsky .",
+      "trigger_end": 936,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/smolensk",
+      "_id": "facts/fact-796647823286f73fb86b13589ec15eb37b7e6116c87dc9274b7c94269074298c",
+      "_key": "fact-796647823286f73fb86b13589ec15eb37b7e6116c87dc9274b7c94269074298c",
+      "_to": "entities/russian",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-895d605cf04656c1",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "LOCATED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-895d605cf04656c1",
+      "trigger": "Zakhary Petrovich Lyapunov ( ) ( ?\n- after 1612 ) was a Russian political figure of the early 17th century , brother of Prokopy Lyapunov .\nIn 1605 , Zakhary Lyapunov took the side of False Dmitri I.\nUpon the latter 's death in 1606 , he took part in the Bolotnikov Uprising in 1606 – 1607 .\nIn 1607 , he joined the ranks of Vasily Shuisky and became a commander of a unit of the Ryazan dvoryane during the struggle against the rebellious peasants and supporters of False Dmitri II .\nIn July 1610 , Zachary Lyapunov took an active part in deposing Vasily Shuisky .\nIn September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .\nThen he returned to Moscow and remained in the city until its liberation from the Polish invaders by the army of Kuzma Minin and Dmitry Pozharsky .",
+      "trigger_end": 936,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/smolensk",
+      "_id": "facts/fact-8de19ef2fc0de6f6c4a0c739cbdf00169b59c6555962710ae15d73806b5d4f27",
+      "_key": "fact-8de19ef2fc0de6f6c4a0c739cbdf00169b59c6555962710ae15d73806b5d4f27",
+      "_to": "entities/russian",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-895d605cf04656c1",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "COUNTRY",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-895d605cf04656c1",
+      "trigger": "Zakhary Petrovich Lyapunov ( ) ( ?\n- after 1612 ) was a Russian political figure of the early 17th century , brother of Prokopy Lyapunov .\nIn 1605 , Zakhary Lyapunov took the side of False Dmitri I.\nUpon the latter 's death in 1606 , he took part in the Bolotnikov Uprising in 1606 – 1607 .\nIn 1607 , he joined the ranks of Vasily Shuisky and became a commander of a unit of the Ryazan dvoryane during the struggle against the rebellious peasants and supporters of False Dmitri II .\nIn July 1610 , Zachary Lyapunov took an active part in deposing Vasily Shuisky .\nIn September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .\nThen he returned to Moscow and remained in the city until its liberation from the Polish invaders by the army of Kuzma Minin and Dmitry Pozharsky .",
+      "trigger_end": 936,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/sigismund-iii-vasa",
+      "_id": "facts/fact-8eb5f801373a352128dac2d6a39de1d014591aabfbf78d93ffb2d46386cf920b",
+      "_key": "fact-8eb5f801373a352128dac2d6a39de1d014591aabfbf78d93ffb2d46386cf920b",
+      "_to": "entities/wladislaus",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-895d605cf04656c1",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "HAS_CHILD",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-895d605cf04656c1",
+      "trigger": "Zakhary Petrovich Lyapunov ( ) ( ?\n- after 1612 ) was a Russian political figure of the early 17th century , brother of Prokopy Lyapunov .\nIn 1605 , Zakhary Lyapunov took the side of False Dmitri I.\nUpon the latter 's death in 1606 , he took part in the Bolotnikov Uprising in 1606 – 1607 .\nIn 1607 , he joined the ranks of Vasily Shuisky and became a commander of a unit of the Ryazan dvoryane during the struggle against the rebellious peasants and supporters of False Dmitri II .\nIn July 1610 , Zachary Lyapunov took an active part in deposing Vasily Shuisky .\nIn September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .\nThen he returned to Moscow and remained in the city until its liberation from the Polish invaders by the army of Kuzma Minin and Dmitry Pozharsky .",
+      "trigger_end": 936,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/moscow",
+      "_id": "facts/fact-984513deb7288e978d55a4ddbf2e6f0e27a34796732ab4356ead19fe2887fac8",
+      "_key": "fact-984513deb7288e978d55a4ddbf2e6f0e27a34796732ab4356ead19fe2887fac8",
+      "_to": "entities/russian",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-895d605cf04656c1",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "LOCATED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-895d605cf04656c1",
+      "trigger": "Zakhary Petrovich Lyapunov ( ) ( ?\n- after 1612 ) was a Russian political figure of the early 17th century , brother of Prokopy Lyapunov .\nIn 1605 , Zakhary Lyapunov took the side of False Dmitri I.\nUpon the latter 's death in 1606 , he took part in the Bolotnikov Uprising in 1606 – 1607 .\nIn 1607 , he joined the ranks of Vasily Shuisky and became a commander of a unit of the Ryazan dvoryane during the struggle against the rebellious peasants and supporters of False Dmitri II .\nIn July 1610 , Zachary Lyapunov took an active part in deposing Vasily Shuisky .\nIn September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .\nThen he returned to Moscow and remained in the city until its liberation from the Polish invaders by the army of Kuzma Minin and Dmitry Pozharsky .",
+      "trigger_end": 936,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/ryazan",
+      "_id": "facts/fact-f27a09b207735b6a39e31d5c3ffda1777abc236afa5d2670fffed9b738697477",
+      "_key": "fact-f27a09b207735b6a39e31d5c3ffda1777abc236afa5d2670fffed9b738697477",
+      "_to": "entities/russian",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-895d605cf04656c1",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "LOCATED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-895d605cf04656c1",
+      "trigger": "Zakhary Petrovich Lyapunov ( ) ( ?\n- after 1612 ) was a Russian political figure of the early 17th century , brother of Prokopy Lyapunov .\nIn 1605 , Zakhary Lyapunov took the side of False Dmitri I.\nUpon the latter 's death in 1606 , he took part in the Bolotnikov Uprising in 1606 – 1607 .\nIn 1607 , he joined the ranks of Vasily Shuisky and became a commander of a unit of the Ryazan dvoryane during the struggle against the rebellious peasants and supporters of False Dmitri II .\nIn July 1610 , Zachary Lyapunov took an active part in deposing Vasily Shuisky .\nIn September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .\nThen he returned to Moscow and remained in the city until its liberation from the Polish invaders by the army of Kuzma Minin and Dmitry Pozharsky .",
+      "trigger_end": 936,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/moscow",
+      "_key": "moscow",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:29.526437+00:00",
+      "entity_type": "entity",
+      "name": "Moscow",
+      "updated_at": "2026-09-09T15:07:29.526437+00:00"
+    },
+    {
+      "_id": "entities/russian",
+      "_key": "russian",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:29.526441+00:00",
+      "entity_type": "entity",
+      "name": "Russian",
+      "updated_at": "2026-09-09T15:07:29.526441+00:00"
+    },
+    {
+      "_id": "entities/ryazan",
+      "_key": "ryazan",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:29.526442+00:00",
+      "entity_type": "entity",
+      "name": "Ryazan",
+      "updated_at": "2026-09-09T15:07:29.526442+00:00"
+    },
+    {
+      "_id": "entities/sigismund-iii-vasa",
+      "_key": "sigismund-iii-vasa",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:29.526442+00:00",
+      "entity_type": "entity",
+      "name": "Sigismund III Vasa",
+      "updated_at": "2026-09-09T15:07:29.526442+00:00"
+    },
+    {
+      "_id": "entities/smolensk",
+      "_key": "smolensk",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:29.526443+00:00",
+      "entity_type": "entity",
+      "name": "Smolensk",
+      "updated_at": "2026-09-09T15:07:29.526443+00:00"
+    },
+    {
+      "_id": "entities/wladislaus",
+      "_key": "wladislaus",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:29.526444+00:00",
+      "entity_type": "entity",
+      "name": "Wladislaus",
+      "updated_at": "2026-09-09T15:07:29.526444+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/document-trial-development-895d605cf04656c1-development-895d605cf04656c1",
+      "_key": "document-trial-development-895d605cf04656c1-development-895d605cf04656c1",
+      "chunk_id": "development-895d605cf04656c1",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7f36dd309a82a44e72b019f3c4c95b7aa5d1d47d08698f57feacd5a225a45b7c",
+      "created_at": "2026-09-09T15:07:29.526445+00:00",
+      "space_id": "document-trial-development-895d605cf04656c1",
+      "text": "Zakhary Petrovich Lyapunov ( ) ( ?\n- after 1612 ) was a Russian political figure of the early 17th century , brother of Prokopy Lyapunov .\nIn 1605 , Zakhary Lyapunov took the side of False Dmitri I.\nUpon the latter 's death in 1606 , he took part in the Bolotnikov Uprising in 1606 – 1607 .\nIn 1607 , he joined the ranks of Vasily Shuisky and became a commander of a unit of the Ryazan dvoryane during the struggle against the rebellious peasants and supporters of False Dmitri II .\nIn July 1610 , Zachary Lyapunov took an active part in deposing Vasily Shuisky .\nIn September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .\nThen he returned to Moscow and remained in the city until its liberation from the Polish invaders by the army of Kuzma Minin and Dmitry Pozharsky .",
+      "title": "Zakhary Lyapunov",
+      "updated_at": "2026-09-09T15:07:29.526445+00:00"
+    }
+  ]
+}

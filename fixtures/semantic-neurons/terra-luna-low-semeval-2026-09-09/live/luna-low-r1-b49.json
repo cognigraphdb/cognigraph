@@ -1,0 +1,1266 @@
+{
+  "phase": "measurement",
+  "arm": "luna-low",
+  "repetition": 1,
+  "batch": 49,
+  "request": {
+    "space_type": "semeval-luna-low-r1-b49",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9393",
+        "title": "Relation benchmark excerpt",
+        "text": "This page carries a list of some of these conventions."
+      },
+      {
+        "id": "semeval-9011",
+        "title": "Relation benchmark excerpt",
+        "text": "The Polish Competition Authority condemns a producer of paid TV programs for abusing of its dominant position in the licensing agreement with the cable TV operator."
+      },
+      {
+        "id": "semeval-9683",
+        "title": "Relation benchmark excerpt",
+        "text": "A Grade I certificate was awarded to the product."
+      },
+      {
+        "id": "semeval-8305",
+        "title": "Relation benchmark excerpt",
+        "text": "The county commissioners had deeded the district an acre of land, and volunteer labor had put up a building."
+      },
+      {
+        "id": "semeval-9927",
+        "title": "Relation benchmark excerpt",
+        "text": "The job of the four heart valves is to make sure blood flows in one direction through the heart."
+      },
+      {
+        "id": "semeval-8878",
+        "title": "Relation benchmark excerpt",
+        "text": "The X-Men battle Sentinels in this new clip from the animated series."
+      },
+      {
+        "id": "semeval-8529",
+        "title": "Relation benchmark excerpt",
+        "text": "Paul Bunyan's parents took the boy and put him in a cradle out in the ocean."
+      },
+      {
+        "id": "semeval-8482",
+        "title": "Relation benchmark excerpt",
+        "text": "An artificial coral reef sunk off Phuket's Karon Beach two years ago is thought to be responsible for a bumper haul of fish caught by local fishermen earlier this month."
+      },
+      {
+        "id": "semeval-9349",
+        "title": "Relation benchmark excerpt",
+        "text": "As a strategic move, the researcher started the school with a third-year programme with mature students."
+      },
+      {
+        "id": "semeval-10191",
+        "title": "Relation benchmark excerpt",
+        "text": "By now, our early radio wave is travelling into outer space."
+      },
+      {
+        "id": "semeval-9773",
+        "title": "Relation benchmark excerpt",
+        "text": "It is soon asleep, however, on the pillow of mother's breast."
+      },
+      {
+        "id": "semeval-8663",
+        "title": "Relation benchmark excerpt",
+        "text": "After the fox, the hunter ran into a small cave."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 10,
+    "proposed": 10,
+    "skips": [],
+    "space_type": "semeval-luna-low-r1-b49"
+  },
+  "latency_seconds": 10.33603216696065,
+  "facts": [
+    {
+      "_from": "entities/labor",
+      "_id": "facts/fact-13b16aefeca7aaff590a0520b86d9a5bbde1032081e866c27e31e944b343a7a3",
+      "_key": "fact-13b16aefeca7aaff590a0520b86d9a5bbde1032081e866c27e31e944b343a7a3",
+      "_to": "entities/building",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8305",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b49",
+      "trigger": "The county commissioners had deeded the district an acre of land, and volunteer labor had put up a building.",
+      "trigger_end": 108,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/clip",
+      "_id": "facts/fact-49b580be72378d014985f4b60537123d2a017f944a0086d81d72cf8de104bc42",
+      "_key": "fact-49b580be72378d014985f4b60537123d2a017f944a0086d81d72cf8de104bc42",
+      "_to": "entities/series",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8878",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b49",
+      "trigger": "The X-Men battle Sentinels in this new clip from the animated series.",
+      "trigger_end": 69,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/radio-wave",
+      "_id": "facts/fact-5e88942aafb85ac71fabe26f962d1626ee0c7614aa22eb53bd02f6644765c39e",
+      "_key": "fact-5e88942aafb85ac71fabe26f962d1626ee0c7614aa22eb53bd02f6644765c39e",
+      "_to": "entities/outer-space",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10191",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b49",
+      "trigger": "By now, our early radio wave is travelling into outer space.",
+      "trigger_end": 60,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/programs",
+      "_id": "facts/fact-66ed60a97d7eef20b0a24830592389145c5ff9fc5cb74aba0647fc1dbddc7210",
+      "_key": "fact-66ed60a97d7eef20b0a24830592389145c5ff9fc5cb74aba0647fc1dbddc7210",
+      "_to": "entities/producer",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9011",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b49",
+      "trigger": "The Polish Competition Authority condemns a producer of paid TV programs for abusing of its dominant position in the licensing agreement with the cable TV operator.",
+      "trigger_end": 164,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/breast",
+      "_id": "facts/fact-6c9ee4bbc88c1b42e78855aa220f897cd017baddbb4b93f9bbf56c801fa35028",
+      "_key": "fact-6c9ee4bbc88c1b42e78855aa220f897cd017baddbb4b93f9bbf56c801fa35028",
+      "_to": "entities/mother",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9773",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b49",
+      "trigger": "It is soon asleep, however, on the pillow of mother's breast.",
+      "trigger_end": 61,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/fish",
+      "_id": "facts/fact-6da1dce39876668ee8bebf349f3aa35b55f3a41b043129b373b7a28a54a49817",
+      "_key": "fact-6da1dce39876668ee8bebf349f3aa35b55f3a41b043129b373b7a28a54a49817",
+      "_to": "entities/haul",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8482",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b49",
+      "trigger": "An artificial coral reef sunk off Phuket's Karon Beach two years ago is thought to be responsible for a bumper haul of fish caught by local fishermen earlier this month.",
+      "trigger_end": 169,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/hunter",
+      "_id": "facts/fact-7749a8338327cb39c590d31d43bf42d3166e17b242102ab745ae2677d456f313",
+      "_key": "fact-7749a8338327cb39c590d31d43bf42d3166e17b242102ab745ae2677d456f313",
+      "_to": "entities/cave",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8663",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b49",
+      "trigger": "After the fox, the hunter ran into a small cave.",
+      "trigger_end": 48,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/boy",
+      "_id": "facts/fact-8f30867cac4032186a6b456aa5031df2cadd8d6e710218012140dce1d4c89128",
+      "_key": "fact-8f30867cac4032186a6b456aa5031df2cadd8d6e710218012140dce1d4c89128",
+      "_to": "entities/cradle",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8529",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b49",
+      "trigger": "Paul Bunyan's parents took the boy and put him in a cradle out in the ocean.",
+      "trigger_end": 76,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/valves",
+      "_id": "facts/fact-ce91b1b1b87466fdaaae693e1d9ab8464452b028c4cc04ee96d96081a4b476a1",
+      "_key": "fact-ce91b1b1b87466fdaaae693e1d9ab8464452b028c4cc04ee96d96081a4b476a1",
+      "_to": "entities/heart",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9927",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b49",
+      "trigger": "The job of the four heart valves is to make sure blood flows in one direction through the heart.",
+      "trigger_end": 96,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/page",
+      "_id": "facts/fact-e4856cc2bec37336ceba819702c3dbb65428aea6c079140aa30c20e0173d3fe2",
+      "_key": "fact-e4856cc2bec37336ceba819702c3dbb65428aea6c079140aa30c20e0173d3fe2",
+      "_to": "entities/conventions",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9393",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b49",
+      "trigger": "This page carries a list of some of these conventions.",
+      "trigger_end": 54,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/boy",
+      "_key": "boy",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789061+00:00",
+      "entity_type": "entity",
+      "name": "boy",
+      "updated_at": "2026-09-09T13:44:30.789061+00:00"
+    },
+    {
+      "_id": "entities/breast",
+      "_key": "breast",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789065+00:00",
+      "entity_type": "entity",
+      "name": "breast",
+      "updated_at": "2026-09-09T13:44:30.789065+00:00"
+    },
+    {
+      "_id": "entities/building",
+      "_key": "building",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789065+00:00",
+      "entity_type": "entity",
+      "name": "building",
+      "updated_at": "2026-09-09T13:44:30.789065+00:00"
+    },
+    {
+      "_id": "entities/cave",
+      "_key": "cave",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789066+00:00",
+      "entity_type": "entity",
+      "name": "cave",
+      "updated_at": "2026-09-09T13:44:30.789066+00:00"
+    },
+    {
+      "_id": "entities/clip",
+      "_key": "clip",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789067+00:00",
+      "entity_type": "entity",
+      "name": "clip",
+      "updated_at": "2026-09-09T13:44:30.789067+00:00"
+    },
+    {
+      "_id": "entities/conventions",
+      "_key": "conventions",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789068+00:00",
+      "entity_type": "entity",
+      "name": "conventions",
+      "updated_at": "2026-09-09T13:44:30.789068+00:00"
+    },
+    {
+      "_id": "entities/cradle",
+      "_key": "cradle",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789068+00:00",
+      "entity_type": "entity",
+      "name": "cradle",
+      "updated_at": "2026-09-09T13:44:30.789068+00:00"
+    },
+    {
+      "_id": "entities/fish",
+      "_key": "fish",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789069+00:00",
+      "entity_type": "entity",
+      "name": "fish",
+      "updated_at": "2026-09-09T13:44:30.789069+00:00"
+    },
+    {
+      "_id": "entities/haul",
+      "_key": "haul",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789069+00:00",
+      "entity_type": "entity",
+      "name": "haul",
+      "updated_at": "2026-09-09T13:44:30.789069+00:00"
+    },
+    {
+      "_id": "entities/heart",
+      "_key": "heart",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789070+00:00",
+      "entity_type": "entity",
+      "name": "heart",
+      "updated_at": "2026-09-09T13:44:30.789070+00:00"
+    },
+    {
+      "_id": "entities/hunter",
+      "_key": "hunter",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789071+00:00",
+      "entity_type": "entity",
+      "name": "hunter",
+      "updated_at": "2026-09-09T13:44:30.789071+00:00"
+    },
+    {
+      "_id": "entities/labor",
+      "_key": "labor",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789071+00:00",
+      "entity_type": "entity",
+      "name": "labor",
+      "updated_at": "2026-09-09T13:44:30.789071+00:00"
+    },
+    {
+      "_id": "entities/mother",
+      "_key": "mother",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789072+00:00",
+      "entity_type": "entity",
+      "name": "mother",
+      "updated_at": "2026-09-09T13:44:30.789072+00:00"
+    },
+    {
+      "_id": "entities/outer-space",
+      "_key": "outer-space",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789073+00:00",
+      "entity_type": "entity",
+      "name": "outer space",
+      "updated_at": "2026-09-09T13:44:30.789073+00:00"
+    },
+    {
+      "_id": "entities/page",
+      "_key": "page",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789073+00:00",
+      "entity_type": "entity",
+      "name": "page",
+      "updated_at": "2026-09-09T13:44:30.789073+00:00"
+    },
+    {
+      "_id": "entities/producer",
+      "_key": "producer",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789074+00:00",
+      "entity_type": "entity",
+      "name": "producer",
+      "updated_at": "2026-09-09T13:44:30.789074+00:00"
+    },
+    {
+      "_id": "entities/programs",
+      "_key": "programs",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789074+00:00",
+      "entity_type": "entity",
+      "name": "programs",
+      "updated_at": "2026-09-09T13:44:30.789074+00:00"
+    },
+    {
+      "_id": "entities/radio-wave",
+      "_key": "radio-wave",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789075+00:00",
+      "entity_type": "entity",
+      "name": "radio wave",
+      "updated_at": "2026-09-09T13:44:30.789075+00:00"
+    },
+    {
+      "_id": "entities/series",
+      "_key": "series",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789076+00:00",
+      "entity_type": "entity",
+      "name": "series",
+      "updated_at": "2026-09-09T13:44:30.789076+00:00"
+    },
+    {
+      "_id": "entities/valves",
+      "_key": "valves",
+      "aliases": [],
+      "created_at": "2026-09-09T13:44:30.789076+00:00",
+      "entity_type": "entity",
+      "name": "valves",
+      "updated_at": "2026-09-09T13:44:30.789076+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-10191",
+      "_key": "semeval-luna-low-r1-b49-semeval-10191",
+      "chunk_id": "semeval-10191",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:aa8c8dcb8e1dd7ff55ccb4a619210817b4d2db78d8a3f8909d857bbf7f97023d",
+      "created_at": "2026-09-09T13:44:30.789077+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "By now, our early radio wave is travelling into outer space.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789077+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-8305",
+      "_key": "semeval-luna-low-r1-b49-semeval-8305",
+      "chunk_id": "semeval-8305",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:148317245a9c8a1b559153f0cebe76aabb98a2a7e54f55f82debbcd85fc32e6c",
+      "created_at": "2026-09-09T13:44:30.789086+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "The county commissioners had deeded the district an acre of land, and volunteer labor had put up a building.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789086+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-8482",
+      "_key": "semeval-luna-low-r1-b49-semeval-8482",
+      "chunk_id": "semeval-8482",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c7099f80e9fde3038293d69fc5ebd6d4146039541ea902751612bf32eec1c1fa",
+      "created_at": "2026-09-09T13:44:30.789092+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "An artificial coral reef sunk off Phuket's Karon Beach two years ago is thought to be responsible for a bumper haul of fish caught by local fishermen earlier this month.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789092+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-8529",
+      "_key": "semeval-luna-low-r1-b49-semeval-8529",
+      "chunk_id": "semeval-8529",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:99a9d69cdbfa0b8c02fad3ee6b49016d6d7f35b06bb35eba22a7a5a8cb3b5e89",
+      "created_at": "2026-09-09T13:44:30.789096+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "Paul Bunyan's parents took the boy and put him in a cradle out in the ocean.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789096+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-8663",
+      "_key": "semeval-luna-low-r1-b49-semeval-8663",
+      "chunk_id": "semeval-8663",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:eb95a71038e09755556f80605514746aca081cc9879f249b77c901032d4081c5",
+      "created_at": "2026-09-09T13:44:30.789100+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "After the fox, the hunter ran into a small cave.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789100+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-8878",
+      "_key": "semeval-luna-low-r1-b49-semeval-8878",
+      "chunk_id": "semeval-8878",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3477f0e985ca03ebcc830514ca49c16daf74826302d0b1866b8fbbceb265952e",
+      "created_at": "2026-09-09T13:44:30.789103+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "The X-Men battle Sentinels in this new clip from the animated series.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789103+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-9011",
+      "_key": "semeval-luna-low-r1-b49-semeval-9011",
+      "chunk_id": "semeval-9011",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5afd357598a9ff7415a1c2cd18d318d6ed6871d04160b508b13842aaa7880283",
+      "created_at": "2026-09-09T13:44:30.789109+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "The Polish Competition Authority condemns a producer of paid TV programs for abusing of its dominant position in the licensing agreement with the cable TV operator.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789109+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-9349",
+      "_key": "semeval-luna-low-r1-b49-semeval-9349",
+      "chunk_id": "semeval-9349",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ab3261747c74d6b3a86ad133de320e40e6e8368856dd3f8310a6b389201f6cfd",
+      "created_at": "2026-09-09T13:44:30.789113+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "As a strategic move, the researcher started the school with a third-year programme with mature students.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789113+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-9393",
+      "_key": "semeval-luna-low-r1-b49-semeval-9393",
+      "chunk_id": "semeval-9393",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:27f34c17dd93ca5e3e51c1ba9928ffa28ab53a2ab7a81a420120a8c1a59d1c24",
+      "created_at": "2026-09-09T13:44:30.789114+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "This page carries a list of some of these conventions.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789114+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-9683",
+      "_key": "semeval-luna-low-r1-b49-semeval-9683",
+      "chunk_id": "semeval-9683",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:04e7a643080e15b0b271307c20bb7ca36d4ea1f39b1d2c91e342a937dd36cb8b",
+      "created_at": "2026-09-09T13:44:30.789117+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "A Grade I certificate was awarded to the product.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789117+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-9773",
+      "_key": "semeval-luna-low-r1-b49-semeval-9773",
+      "chunk_id": "semeval-9773",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a9d3aef4031e2cc44ed216bab8a0728d8f7460bd639953fb0be4161566dcf857",
+      "created_at": "2026-09-09T13:44:30.789118+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "It is soon asleep, however, on the pillow of mother's breast.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789118+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b49-semeval-9927",
+      "_key": "semeval-luna-low-r1-b49-semeval-9927",
+      "chunk_id": "semeval-9927",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:30363612e60faa0f3231146c36cf1b8dcf0a3f964ef2953a92c91d344df81b09",
+      "created_at": "2026-09-09T13:44:30.789124+00:00",
+      "space_id": "semeval-luna-low-r1-b49",
+      "text": "The job of the four heart valves is to make sure blood flows in one direction through the heart.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:44:30.789124+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 10,
+        "results": [
+          {
+            "_from": "entities/labor",
+            "_id": "facts/fact-13b16aefeca7aaff590a0520b86d9a5bbde1032081e866c27e31e944b343a7a3",
+            "_key": "fact-13b16aefeca7aaff590a0520b86d9a5bbde1032081e866c27e31e944b343a7a3",
+            "_to": "entities/building",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8305",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b49",
+            "trigger": "The county commissioners had deeded the district an acre of land, and volunteer labor had put up a building.",
+            "trigger_end": 108,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/clip",
+            "_id": "facts/fact-49b580be72378d014985f4b60537123d2a017f944a0086d81d72cf8de104bc42",
+            "_key": "fact-49b580be72378d014985f4b60537123d2a017f944a0086d81d72cf8de104bc42",
+            "_to": "entities/series",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8878",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b49",
+            "trigger": "The X-Men battle Sentinels in this new clip from the animated series.",
+            "trigger_end": 69,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/radio-wave",
+            "_id": "facts/fact-5e88942aafb85ac71fabe26f962d1626ee0c7614aa22eb53bd02f6644765c39e",
+            "_key": "fact-5e88942aafb85ac71fabe26f962d1626ee0c7614aa22eb53bd02f6644765c39e",
+            "_to": "entities/outer-space",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10191",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b49",
+            "trigger": "By now, our early radio wave is travelling into outer space.",
+            "trigger_end": 60,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/programs",
+            "_id": "facts/fact-66ed60a97d7eef20b0a24830592389145c5ff9fc5cb74aba0647fc1dbddc7210",
+            "_key": "fact-66ed60a97d7eef20b0a24830592389145c5ff9fc5cb74aba0647fc1dbddc7210",
+            "_to": "entities/producer",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9011",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b49",
+            "trigger": "The Polish Competition Authority condemns a producer of paid TV programs for abusing of its dominant position in the licensing agreement with the cable TV operator.",
+            "trigger_end": 164,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/breast",
+            "_id": "facts/fact-6c9ee4bbc88c1b42e78855aa220f897cd017baddbb4b93f9bbf56c801fa35028",
+            "_key": "fact-6c9ee4bbc88c1b42e78855aa220f897cd017baddbb4b93f9bbf56c801fa35028",
+            "_to": "entities/mother",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9773",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b49",
+            "trigger": "It is soon asleep, however, on the pillow of mother's breast.",
+            "trigger_end": 61,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/fish",
+            "_id": "facts/fact-6da1dce39876668ee8bebf349f3aa35b55f3a41b043129b373b7a28a54a49817",
+            "_key": "fact-6da1dce39876668ee8bebf349f3aa35b55f3a41b043129b373b7a28a54a49817",
+            "_to": "entities/haul",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8482",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b49",
+            "trigger": "An artificial coral reef sunk off Phuket's Karon Beach two years ago is thought to be responsible for a bumper haul of fish caught by local fishermen earlier this month.",
+            "trigger_end": 169,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/hunter",
+            "_id": "facts/fact-7749a8338327cb39c590d31d43bf42d3166e17b242102ab745ae2677d456f313",
+            "_key": "fact-7749a8338327cb39c590d31d43bf42d3166e17b242102ab745ae2677d456f313",
+            "_to": "entities/cave",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8663",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b49",
+            "trigger": "After the fox, the hunter ran into a small cave.",
+            "trigger_end": 48,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/boy",
+            "_id": "facts/fact-8f30867cac4032186a6b456aa5031df2cadd8d6e710218012140dce1d4c89128",
+            "_key": "fact-8f30867cac4032186a6b456aa5031df2cadd8d6e710218012140dce1d4c89128",
+            "_to": "entities/cradle",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8529",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b49",
+            "trigger": "Paul Bunyan's parents took the boy and put him in a cradle out in the ocean.",
+            "trigger_end": 76,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/valves",
+            "_id": "facts/fact-ce91b1b1b87466fdaaae693e1d9ab8464452b028c4cc04ee96d96081a4b476a1",
+            "_key": "fact-ce91b1b1b87466fdaaae693e1d9ab8464452b028c4cc04ee96d96081a4b476a1",
+            "_to": "entities/heart",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9927",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b49",
+            "trigger": "The job of the four heart valves is to make sure blood flows in one direction through the heart.",
+            "trigger_end": 96,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/page",
+            "_id": "facts/fact-e4856cc2bec37336ceba819702c3dbb65428aea6c079140aa30c20e0173d3fe2",
+            "_key": "fact-e4856cc2bec37336ceba819702c3dbb65428aea6c079140aa30c20e0173d3fe2",
+            "_to": "entities/conventions",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9393",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b49",
+            "trigger": "This page carries a list of some of these conventions.",
+            "trigger_end": 54,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 20,
+        "results": [
+          {
+            "_id": "entities/boy",
+            "_key": "boy",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789061+00:00",
+            "entity_type": "entity",
+            "name": "boy",
+            "updated_at": "2026-09-09T13:44:30.789061+00:00"
+          },
+          {
+            "_id": "entities/breast",
+            "_key": "breast",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789065+00:00",
+            "entity_type": "entity",
+            "name": "breast",
+            "updated_at": "2026-09-09T13:44:30.789065+00:00"
+          },
+          {
+            "_id": "entities/building",
+            "_key": "building",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789065+00:00",
+            "entity_type": "entity",
+            "name": "building",
+            "updated_at": "2026-09-09T13:44:30.789065+00:00"
+          },
+          {
+            "_id": "entities/cave",
+            "_key": "cave",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789066+00:00",
+            "entity_type": "entity",
+            "name": "cave",
+            "updated_at": "2026-09-09T13:44:30.789066+00:00"
+          },
+          {
+            "_id": "entities/clip",
+            "_key": "clip",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789067+00:00",
+            "entity_type": "entity",
+            "name": "clip",
+            "updated_at": "2026-09-09T13:44:30.789067+00:00"
+          },
+          {
+            "_id": "entities/conventions",
+            "_key": "conventions",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789068+00:00",
+            "entity_type": "entity",
+            "name": "conventions",
+            "updated_at": "2026-09-09T13:44:30.789068+00:00"
+          },
+          {
+            "_id": "entities/cradle",
+            "_key": "cradle",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789068+00:00",
+            "entity_type": "entity",
+            "name": "cradle",
+            "updated_at": "2026-09-09T13:44:30.789068+00:00"
+          },
+          {
+            "_id": "entities/fish",
+            "_key": "fish",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789069+00:00",
+            "entity_type": "entity",
+            "name": "fish",
+            "updated_at": "2026-09-09T13:44:30.789069+00:00"
+          },
+          {
+            "_id": "entities/haul",
+            "_key": "haul",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789069+00:00",
+            "entity_type": "entity",
+            "name": "haul",
+            "updated_at": "2026-09-09T13:44:30.789069+00:00"
+          },
+          {
+            "_id": "entities/heart",
+            "_key": "heart",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789070+00:00",
+            "entity_type": "entity",
+            "name": "heart",
+            "updated_at": "2026-09-09T13:44:30.789070+00:00"
+          },
+          {
+            "_id": "entities/hunter",
+            "_key": "hunter",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789071+00:00",
+            "entity_type": "entity",
+            "name": "hunter",
+            "updated_at": "2026-09-09T13:44:30.789071+00:00"
+          },
+          {
+            "_id": "entities/labor",
+            "_key": "labor",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789071+00:00",
+            "entity_type": "entity",
+            "name": "labor",
+            "updated_at": "2026-09-09T13:44:30.789071+00:00"
+          },
+          {
+            "_id": "entities/mother",
+            "_key": "mother",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789072+00:00",
+            "entity_type": "entity",
+            "name": "mother",
+            "updated_at": "2026-09-09T13:44:30.789072+00:00"
+          },
+          {
+            "_id": "entities/outer-space",
+            "_key": "outer-space",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789073+00:00",
+            "entity_type": "entity",
+            "name": "outer space",
+            "updated_at": "2026-09-09T13:44:30.789073+00:00"
+          },
+          {
+            "_id": "entities/page",
+            "_key": "page",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789073+00:00",
+            "entity_type": "entity",
+            "name": "page",
+            "updated_at": "2026-09-09T13:44:30.789073+00:00"
+          },
+          {
+            "_id": "entities/producer",
+            "_key": "producer",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789074+00:00",
+            "entity_type": "entity",
+            "name": "producer",
+            "updated_at": "2026-09-09T13:44:30.789074+00:00"
+          },
+          {
+            "_id": "entities/programs",
+            "_key": "programs",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789074+00:00",
+            "entity_type": "entity",
+            "name": "programs",
+            "updated_at": "2026-09-09T13:44:30.789074+00:00"
+          },
+          {
+            "_id": "entities/radio-wave",
+            "_key": "radio-wave",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789075+00:00",
+            "entity_type": "entity",
+            "name": "radio wave",
+            "updated_at": "2026-09-09T13:44:30.789075+00:00"
+          },
+          {
+            "_id": "entities/series",
+            "_key": "series",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789076+00:00",
+            "entity_type": "entity",
+            "name": "series",
+            "updated_at": "2026-09-09T13:44:30.789076+00:00"
+          },
+          {
+            "_id": "entities/valves",
+            "_key": "valves",
+            "aliases": [],
+            "created_at": "2026-09-09T13:44:30.789076+00:00",
+            "entity_type": "entity",
+            "name": "valves",
+            "updated_at": "2026-09-09T13:44:30.789076+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-10191",
+            "_key": "semeval-luna-low-r1-b49-semeval-10191",
+            "chunk_id": "semeval-10191",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:aa8c8dcb8e1dd7ff55ccb4a619210817b4d2db78d8a3f8909d857bbf7f97023d",
+            "created_at": "2026-09-09T13:44:30.789077+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "By now, our early radio wave is travelling into outer space.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789077+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-8305",
+            "_key": "semeval-luna-low-r1-b49-semeval-8305",
+            "chunk_id": "semeval-8305",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:148317245a9c8a1b559153f0cebe76aabb98a2a7e54f55f82debbcd85fc32e6c",
+            "created_at": "2026-09-09T13:44:30.789086+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "The county commissioners had deeded the district an acre of land, and volunteer labor had put up a building.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789086+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-8482",
+            "_key": "semeval-luna-low-r1-b49-semeval-8482",
+            "chunk_id": "semeval-8482",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c7099f80e9fde3038293d69fc5ebd6d4146039541ea902751612bf32eec1c1fa",
+            "created_at": "2026-09-09T13:44:30.789092+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "An artificial coral reef sunk off Phuket's Karon Beach two years ago is thought to be responsible for a bumper haul of fish caught by local fishermen earlier this month.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789092+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-8529",
+            "_key": "semeval-luna-low-r1-b49-semeval-8529",
+            "chunk_id": "semeval-8529",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:99a9d69cdbfa0b8c02fad3ee6b49016d6d7f35b06bb35eba22a7a5a8cb3b5e89",
+            "created_at": "2026-09-09T13:44:30.789096+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "Paul Bunyan's parents took the boy and put him in a cradle out in the ocean.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789096+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-8663",
+            "_key": "semeval-luna-low-r1-b49-semeval-8663",
+            "chunk_id": "semeval-8663",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:eb95a71038e09755556f80605514746aca081cc9879f249b77c901032d4081c5",
+            "created_at": "2026-09-09T13:44:30.789100+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "After the fox, the hunter ran into a small cave.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789100+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-8878",
+            "_key": "semeval-luna-low-r1-b49-semeval-8878",
+            "chunk_id": "semeval-8878",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3477f0e985ca03ebcc830514ca49c16daf74826302d0b1866b8fbbceb265952e",
+            "created_at": "2026-09-09T13:44:30.789103+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "The X-Men battle Sentinels in this new clip from the animated series.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789103+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-9011",
+            "_key": "semeval-luna-low-r1-b49-semeval-9011",
+            "chunk_id": "semeval-9011",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5afd357598a9ff7415a1c2cd18d318d6ed6871d04160b508b13842aaa7880283",
+            "created_at": "2026-09-09T13:44:30.789109+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "The Polish Competition Authority condemns a producer of paid TV programs for abusing of its dominant position in the licensing agreement with the cable TV operator.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789109+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-9349",
+            "_key": "semeval-luna-low-r1-b49-semeval-9349",
+            "chunk_id": "semeval-9349",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ab3261747c74d6b3a86ad133de320e40e6e8368856dd3f8310a6b389201f6cfd",
+            "created_at": "2026-09-09T13:44:30.789113+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "As a strategic move, the researcher started the school with a third-year programme with mature students.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789113+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-9393",
+            "_key": "semeval-luna-low-r1-b49-semeval-9393",
+            "chunk_id": "semeval-9393",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:27f34c17dd93ca5e3e51c1ba9928ffa28ab53a2ab7a81a420120a8c1a59d1c24",
+            "created_at": "2026-09-09T13:44:30.789114+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "This page carries a list of some of these conventions.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789114+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-9683",
+            "_key": "semeval-luna-low-r1-b49-semeval-9683",
+            "chunk_id": "semeval-9683",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:04e7a643080e15b0b271307c20bb7ca36d4ea1f39b1d2c91e342a937dd36cb8b",
+            "created_at": "2026-09-09T13:44:30.789117+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "A Grade I certificate was awarded to the product.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789117+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-9773",
+            "_key": "semeval-luna-low-r1-b49-semeval-9773",
+            "chunk_id": "semeval-9773",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a9d3aef4031e2cc44ed216bab8a0728d8f7460bd639953fb0be4161566dcf857",
+            "created_at": "2026-09-09T13:44:30.789118+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "It is soon asleep, however, on the pillow of mother's breast.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789118+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b49-semeval-9927",
+            "_key": "semeval-luna-low-r1-b49-semeval-9927",
+            "chunk_id": "semeval-9927",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:30363612e60faa0f3231146c36cf1b8dcf0a3f964ef2953a92c91d344df81b09",
+            "created_at": "2026-09-09T13:44:30.789124+00:00",
+            "space_id": "semeval-luna-low-r1-b49",
+            "text": "The job of the four heart valves is to make sure blood flows in one direction through the heart.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:44:30.789124+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

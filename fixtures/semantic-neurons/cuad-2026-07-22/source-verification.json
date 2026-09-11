@@ -1,0 +1,19 @@
+{
+  "archive_sha256": "88b694d99007d39777fa44cd72daf8297773d285dc3eab0091ba32078888d18e",
+  "source_members": 511,
+  "byte_identical_prepared_files": {
+    "sample.json": "175a233f83aeca976b5786d1048153e1d70dc80bd126976a999ba3e5992a5ad9",
+    "gold.json": "750369d5c236508ad6eaad9f6b3640181d4ab395daf2526ffd83cd6933474d6a",
+    "design_chunks.jsonl": "60e3eabff22201556c996701edf5ca2b74eef8663a4c358a6f4f0b0185b0cf24",
+    "holdout_chunks.jsonl": "ab69ef5e4a874978fc7e3c11e48effaecce000996f267fa7fca8cb1133982b6c"
+  },
+  "preparation_stdout": "design: 10 contracts -> 702 chunks\nholdout: 40 contracts -> 1705 chunks\ncategory coverage in sample: {'Exclusivity': 30, 'Non-Compete': 16, 'Termination For Convenience': 18, 'Anti-Assignment': 41, 'Audit Rights': 28, 'Cap On Liability': 35, 'Ip Ownership Assignment': 14, 'Governing Law': 43}\n",
+  "python_version": "3.14.7",
+  "model_calls": 0,
+  "data_removal_status": {
+    "date": "2026-09-11",
+    "status": "Partially withdrawn",
+    "notice": "Historical aggregate results and source hashes affected by repository data removal are withdrawn. Retained records are a subset, not a rerun or a qualified benchmark. See the repository data-removal record for the current boundary.",
+    "original_reproduction_available": false
+  }
+}

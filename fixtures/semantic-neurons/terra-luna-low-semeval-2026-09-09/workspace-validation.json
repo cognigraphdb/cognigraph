@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "pre_existing_paths_preserved": 1895,
+  "allowed_document_edit_paths": [
+    "CHANGELOG.md",
+    "docs/decisions/README.md",
+    "docs/decisions/decision_luna_baseline.md",
+    "docs/decisions/decision_sideviews_provider_and_benchmark.md",
+    "docs/implementation-plan.md",
+    "docs/issues/README.md"
+  ],
+  "python_sources_parsed": 13,
+  "artifact_files_scanned": 235,
+  "credential_values_checked": 3,
+  "credential_matches": 0,
+  "local_markdown_links_checked": 378,
+  "git_diff_check": "passed",
+  "staging_empty": true,
+  "validator_sha256": "0e87808b8a11384a5237282b555508a1226e14c21d4fb3c407f87c66876e2698"
+}

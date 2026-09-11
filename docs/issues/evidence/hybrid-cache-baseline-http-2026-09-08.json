@@ -1,0 +1,555 @@
+{
+  "issue": "CG-31",
+  "date": "2026-09-08",
+  "binary_profile": "release",
+  "binary_sha256": "762f29b717e8e77b4c3240ea9003a8c6149c9120ca19752fd500a25b903dd364",
+  "provider": "synthetic loopback HTTP; needle/alias cosine 1.0, needle/related cosine 0.8",
+  "expected": "vulnerable baseline",
+  "configurations": {
+    "resident/memory": {
+      "field_array": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-fields/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-fields/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-fields/left",
+            "cg31-fields/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "escaped_field_array": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-escaped/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-escaped/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-escaped/left",
+            "cg31-escaped/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "collection_view": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-collections/right",
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "view_field": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-views/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-views/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-views/left",
+            "cg31-views/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "restart": {
+        "result_cache_cold": true,
+        "provider_calls_for_warm_embedding": 1,
+        "collision_regression": {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-fields/left",
+            "cg31-fields/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      }
+    },
+    "resident/persistent": {
+      "field_array": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-fields/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-fields/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-fields/left",
+            "cg31-fields/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "escaped_field_array": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-escaped/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-escaped/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-escaped/left",
+            "cg31-escaped/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "collection_view": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-collections/right",
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "view_field": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-views/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-views/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-views/left",
+            "cg31-views/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "restart": {
+        "result_cache_cold": true,
+        "provider_calls_for_warm_embedding": 0,
+        "collision_regression": {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-fields/left",
+            "cg31-fields/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      }
+    },
+    "paged/memory": {
+      "field_array": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-fields/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-fields/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-fields/left",
+            "cg31-fields/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "escaped_field_array": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-escaped/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-escaped/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-escaped/left",
+            "cg31-escaped/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "collection_view": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-collections/right",
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "view_field": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-views/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-views/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-views/left",
+            "cg31-views/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "restart": {
+        "result_cache_cold": true,
+        "provider_calls_for_warm_embedding": 1,
+        "collision_regression": {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-fields/left",
+            "cg31-fields/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      }
+    },
+    "paged/persistent": {
+      "field_array": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-fields/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-fields/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-fields/left",
+            "cg31-fields/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "escaped_field_array": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-escaped/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-escaped/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-escaped/left",
+            "cg31-escaped/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "collection_view": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-collections/right",
+            "cg31-collections;view=west/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "view_field": [
+        {
+          "query": "needle",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-views/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "alias",
+          "changed_request_cached": true,
+          "returned_ids": [
+            "cg31-views/left"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        },
+        {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-views/left",
+            "cg31-views/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      ],
+      "restart": {
+        "result_cache_cold": true,
+        "provider_calls_for_warm_embedding": 0,
+        "collision_regression": {
+          "query": "related",
+          "changed_request_cached": "assisted",
+          "returned_ids": [
+            "cg31-fields/left",
+            "cg31-fields/right"
+          ],
+          "repeat_exact_hit": true,
+          "same_parameters_assisted_hit": false
+        }
+      }
+    }
+  },
+  "result": "EXPECTED DEFECT REPRODUCED"
+}

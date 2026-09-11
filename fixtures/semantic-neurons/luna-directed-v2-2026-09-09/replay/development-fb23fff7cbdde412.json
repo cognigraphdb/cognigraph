@@ -1,0 +1,170 @@
+{
+  "document_id": "development-fb23fff7cbdde412",
+  "request": {
+    "space_type": "document-trial-development-fb23fff7cbdde412",
+    "taxonomy": [
+      {
+        "relation": "COUNTRY",
+        "description": "The source place, organization, event, or work belongs to or is located in the target country. Do not apply to a person; do not infer unstated geographic containment.",
+        "require_in_sentence": [
+          "country",
+          "in",
+          "of",
+          "located",
+          "based"
+        ]
+      },
+      {
+        "relation": "LOCATED_IN",
+        "description": "The source place is located in the target administrative territory. Require the document to state the containment; do not infer a transitive location chain.",
+        "require_in_sentence": [
+          "in",
+          "located",
+          "part of",
+          "region",
+          "district",
+          "province",
+          "county"
+        ]
+      },
+      {
+        "relation": "HEADQUARTERED_IN",
+        "description": "The source organization has its headquarters in the target location. A branch office or activity in a place is not headquarters.",
+        "require_in_sentence": [
+          "headquarters",
+          "headquartered",
+          "based",
+          "head office"
+        ]
+      },
+      {
+        "relation": "BORN_IN",
+        "description": "The source person was born in the target place. Residence, citizenship, death, or employment alone do not establish birthplace.",
+        "require_in_sentence": [
+          "born",
+          "birth",
+          "birthplace"
+        ]
+      },
+      {
+        "relation": "DIED_IN",
+        "description": "The source person died in the target place. Birthplace, residence, or burial alone do not establish place of death.",
+        "require_in_sentence": [
+          "died",
+          "death",
+          "killed"
+        ]
+      },
+      {
+        "relation": "HAS_FATHER",
+        "description": "The target person is the father of the source person. Do not reverse parent and child or infer from shared surnames.",
+        "require_in_sentence": [
+          "father",
+          "son",
+          "daughter",
+          "parent"
+        ]
+      },
+      {
+        "relation": "HAS_MOTHER",
+        "description": "The target person is the mother of the source person. Do not reverse parent and child or infer from shared surnames.",
+        "require_in_sentence": [
+          "mother",
+          "son",
+          "daughter",
+          "parent"
+        ]
+      },
+      {
+        "relation": "SPOUSE_OF",
+        "description": "The two people are or were married spouses, including explicitly stated former spouses. A proposed marriage or other association does not establish marriage. This relation is symmetric.",
+        "require_in_sentence": [
+          "married",
+          "wife",
+          "husband",
+          "spouse",
+          "marriage",
+          "divorced"
+        ]
+      },
+      {
+        "relation": "HAS_CHILD",
+        "description": "The target person is the child of the source person. Do not reverse the direction or infer from shared surnames.",
+        "require_in_sentence": [
+          "father",
+          "mother",
+          "son",
+          "daughter",
+          "child",
+          "children",
+          "parent"
+        ]
+      },
+      {
+        "relation": "FOUNDED_BY",
+        "description": "The target person or organization founded or co-founded the source organization. A later owner, executive, or employee is not necessarily a founder.",
+        "require_in_sentence": [
+          "founded",
+          "established",
+          "founder",
+          "co-founded"
+        ]
+      },
+      {
+        "relation": "OWNED_BY",
+        "description": "The source asset, organization, or work is or was owned by the target entity. Operation, creation, employment, or partnership alone does not establish ownership.",
+        "require_in_sentence": [
+          "owned",
+          "owner",
+          "ownership",
+          "acquired",
+          "subsidiary",
+          "purchased",
+          "bought"
+        ]
+      },
+      {
+        "relation": "PUBLISHED_BY",
+        "description": "The target organization or person publishes or published the source work. Creation, distribution, and publication are distinct.",
+        "require_in_sentence": [
+          "published",
+          "publisher",
+          "publishing"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "development-fb23fff7cbdde412",
+        "title": "Rock n Roll (Avril Lavigne song)",
+        "text": "\" Rock n Roll \" is a song by Canadian recording artist Avril Lavigne .\nIt was released as the second single from her self - titled fifth studio album by Sony Music Entertainment on August 23 , 2013 .\nThe song was written by Lavigne , David Hodges , Chad Kroeger , Jacob Kasher Hindlin , Rickard B. Göransson and Peter Svensson and was produced by Peter Svensson .\n\" Rock n Roll \" is an upbeat pop punk song , and lyrically it is a declaration of rebellion on which the singer puts up her \" middle finger to the sky \" to \" let 'em know that she 's still rock and roll , \" refusing to behave like an adult .\nThe song received a critical praise from music critics , and was highlighted as one of the standout tracks on the album .\n\" Rock n Roll \" performed moderately on the charts , reaching number one in South Korea and Taiwan , and number five in Japan , respectively .\nThe song failed to make impact elsewhere , peaking at number 37 in Canada and number 91 on the US Billboard Hot 100 chart .\nThe music video directed by Chris Marrs Piliero shows Lavigne in full combat mode , conspiring with Danica McKellar ( playing a character called Winnie Cooperre ) in an attempt to \" save rock and roll \" ."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 1,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v2",
+    "facts_grounded": 0,
+    "proposed": 0,
+    "skips": [],
+    "space_type": "document-trial-development-fb23fff7cbdde412"
+  },
+  "latency_seconds": 0.03234366700053215,
+  "facts": [],
+  "entities": [],
+  "chunks": [
+    {
+      "_id": "chunks/document-trial-development-fb23fff7cbdde412-development-fb23fff7cbdde412",
+      "_key": "document-trial-development-fb23fff7cbdde412-development-fb23fff7cbdde412",
+      "chunk_id": "development-fb23fff7cbdde412",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7a27774c3dae4b090654b098d00da7c683378d8ff2acbcf64937889f87a94f1a",
+      "created_at": "2026-09-09T17:53:04.349001+00:00",
+      "space_id": "document-trial-development-fb23fff7cbdde412",
+      "text": "\" Rock n Roll \" is a song by Canadian recording artist Avril Lavigne .\nIt was released as the second single from her self - titled fifth studio album by Sony Music Entertainment on August 23 , 2013 .\nThe song was written by Lavigne , David Hodges , Chad Kroeger , Jacob Kasher Hindlin , Rickard B. Göransson and Peter Svensson and was produced by Peter Svensson .\n\" Rock n Roll \" is an upbeat pop punk song , and lyrically it is a declaration of rebellion on which the singer puts up her \" middle finger to the sky \" to \" let 'em know that she 's still rock and roll , \" refusing to behave like an adult .\nThe song received a critical praise from music critics , and was highlighted as one of the standout tracks on the album .\n\" Rock n Roll \" performed moderately on the charts , reaching number one in South Korea and Taiwan , and number five in Japan , respectively .\nThe song failed to make impact elsewhere , peaking at number 37 in Canada and number 91 on the US Billboard Hot 100 chart .\nThe music video directed by Chris Marrs Piliero shows Lavigne in full combat mode , conspiring with Danica McKellar ( playing a character called Winnie Cooperre ) in an attempt to \" save rock and roll \" .",
+      "title": "Rock n Roll (Avril Lavigne song)",
+      "updated_at": "2026-09-09T17:53:04.349001+00:00"
+    }
+  ]
+}

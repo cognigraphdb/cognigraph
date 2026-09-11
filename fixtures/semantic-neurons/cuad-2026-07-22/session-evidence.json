@@ -1,0 +1,32 @@
+{
+  "source_session": "f8165cef-d142-49c1-bfa8-733e996c5201",
+  "source_file_sha256": "6e52482eeeb820bc893904691ee6acc7b7911f5ab6a3450af37a77ad6ceb8e6c",
+  "recovery_date": "2026-09-09",
+  "scope": "Selected non-secret tool outputs only; excludes prompts, credentials, private context, and model reasoning. Historical local logs corroborate chronology, not an independent attestation.",
+  "events": [
+    {
+      "event": "initial_holdout_failed",
+      "timestamp": "2026-07-22T10:09:38.417Z",
+      "source_line": 44238,
+      "verbatim_excerpt": "taxonomy v1 restored and FROZEN\n=== HOLDOUT RUN \u2014 40 contracts, single pass ===\nurllib.error.HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "event": "completed_holdout",
+      "timestamp": "2026-07-22T10:27:40.020Z",
+      "source_line": 44268,
+      "verbatim_excerpt": "=== HOLDOUT \u2014 40 contracts, frozen taxonomy, single scored pass ===\nfacts: 164 (67 semantics-flagged)"
+    },
+    {
+      "event": "legacy_counts",
+      "timestamp": "2026-07-22T10:27:45.671Z",
+      "source_line": 44272,
+      "verbatim_excerpt": "=== holdout set: 40 contracts ===\nAnti-Assignment              tp= 15 fp=  2 fn= 18  P=0.88  R=0.45\nAudit Rights                 tp= 26 fp=  6 fn=  3  P=0.81  R=0.90\nCap On Liability             tp= 19 fp=  3 fn= 10  P=0.86  R=0.66\nExclusivity                  tp= 23 fp= 19 fn=  8  P=0.55  R=0.74\nGoverning Law                tp= 27 fp=  3 fn=  7  P=0.90  R=0.79\nIp Ownership Assignment      tp=  2 fp=  7 fn=  6  P=0.22  R=0.25\nNon-Compete                  tp=  5 fp=  1 fn=  8  P=0.83  R=0.38\nTermination For Convenience  tp=  5 fp=  1 fn= 10  P=0.83  R=0.33\n\nOVERALL  P=0.744  R=0.635  F1=0.685   (tp=122 fp=42 fn=70)"
+    },
+    {
+      "event": "semantics_comparison",
+      "timestamp": "2026-07-22T10:28:08.456Z",
+      "source_line": 44279,
+      "verbatim_excerpt": "all facts          : P=0.744 R=0.635  {'tp': 122, 'fp': 42, 'fn': 70}\nsuspect-filtered   : P=0.742 R=0.389  {'tp': 72, 'fp': 25, 'fn': 113}"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "issue": "CG-24",
+  "date": "2026-09-09",
+  "revision": "57d65afb1e0950d820bd6b53d4ead52023f45df5",
+  "git_state": "CG-36 committed as 57d65af; CG-24 uncommitted; no push or publication",
+  "rust_source_changed": false,
+  "full_rust_gates": "Not rerun for documentation-only changes; CG-36 remains the last passing full workspace gates with 961 reported passes, eight Arango early returns and two live embedding tests",
+  "replay": {
+    "build_exit_code": 0,
+    "build_log": "/tmp/cognigraph-cg24-replay-build.log",
+    "build_log_sha256": "c4fd6ed37ce1bfa2edeb5c620754989f4f810310bee675c3f00c3b3b0f5f4bd3",
+    "runs": 12,
+    "totals": {
+      "questions": 16,
+      "chunks": 181,
+      "expected_mentions": 68,
+      "forbidden_mentions": 36,
+      "legacy_expected_after_adjacent_dedup": 67,
+      "legacy_forbidden_after_adjacent_dedup": 36,
+      "distinct_expected": 59,
+      "distinct_forbidden": 32,
+      "cold_found": 59,
+      "lesion_found": 0,
+      "repaired_found": 54,
+      "legacy_repaired_found": 62
+    },
+    "input_files_unchanged": 28,
+    "evidence_sha256": "f61c3badfac9b858fa578b0c7a548879ee965bf9a0c73d268858827e10276ce7",
+    "binary_sha256": "2af5c4fb6ee6d69e9c9adb990a8b7b15a3096cd277b618fdf08cd1703193a843",
+    "harness_sha256": "aeac24d89b28a83e72e7004887d3e1f117cb4c4617cd0bc1141751e44407fc50",
+    "model_calls": 0
+  },
+  "publication": {
+    "build_exit_code": 0,
+    "build_log_sha256": "74794dbc770644e5dc86735f76d3d2fa4d155a3ef6a3d84277d56a1ef776d891",
+    "html_sha256": "9747d28ab57b8220b4b26a52fca6ce747908107779cb6f4aa4f26f17a54f9dcc",
+    "pdf_sha256": "13648da2855bfc98e254fce320bf55154f4f4737e756306ee38e172bb191056a",
+    "pdf_pages": 23,
+    "format": "A4, searchable, tagged",
+    "changed_paragraphs_match_html_and_pdf": true,
+    "abstract_and_unrelated_paper_content_preserved": true,
+    "visual_inspection": "All page overviews; full-size affected pages 13, 15, 16, 17 and final page 23; desktop and mobile section captures; no clipped or overlapping content observed",
+    "browser_evidence_sha256": "44e94f6f1b8124aef2d2a4532f831e71600b45ae01943c3642849da8ba94b36e",
+    "browser_checks": [
+      {
+        "viewport_width": 1440,
+        "status": 200,
+        "scroll_width": 1440,
+        "font_status": "loaded",
+        "broken_anchors": [],
+        "page_errors": [],
+        "external_requests": [],
+        "pdf_status": 200,
+        "construction_checks": true,
+        "answer_unit_checks": true
+      },
+      {
+        "viewport_width": 390,
+        "status": 200,
+        "scroll_width": 390,
+        "font_status": "loaded",
+        "broken_anchors": [],
+        "page_errors": [],
+        "external_requests": [],
+        "pdf_status": 200,
+        "construction_checks": true,
+        "answer_unit_checks": true
+      }
+    ]
+  },
+  "documentation": {
+    "local_links_checked": 208,
+    "errors": [],
+    "registry": {
+      "Resolved": 34,
+      "Open": 4,
+      "Open P2": 3,
+      "Open P3": 1
+    },
+    "rows_match_tickets": true,
+    "git_diff_check_exit_code": 0
+  },
+  "preservation": {
+    "pre_existing_paths": 24,
+    "required_edited_or_regenerated_paths": [
+      "docs/semantic-neurons/README.md",
+      "docs/semantic-neurons/semantic-neurons-paper-rev2.md",
+      "docs/semantic-neurons/publish/PUBLISHING.md",
+      "docs/semantic-neurons/publish/index.html",
+      "docs/semantic-neurons/publish/semantic-neurons-rev2.pdf"
+    ],
+    "unchanged_user_owned_paths": 19,
+    "other_paper_paragraphs_and_readme_runbook_content_preserved": true,
+    "historical_ledger_content_preserved": true,
+    "staging_empty": true
+  },
+  "files": {
+    "CHANGELOG.md": "e74792ae5e34da2fce88ce2feeac95cfa755cf9c6f0b4fb7763f8b7e0d0db274",
+    "docs/implementation-plan.md": "697323e8040793d746426912266e3b9cf11fef06d620f0eb2ead74e1f713cedc",
+    "docs/roadmap-2026-h2.md": "68793f9bc9b931ef6a3cd5eb56f596325c126e84a6ffab49382664e31859b059",
+    "docs/issues/README.md": "c421e298310ca0a356cde16a26dd4b5e73d68854f5278d0a4d8cc8fd5a0646c0",
+    "docs/issues/CG-24.md": "3d0503c9d35ccb5468fde94fd8fa069da77a89609b14f3705318f6731fdcb662",
+    "docs/issues/CG-36.md": "0a52aefed1378b074d04cec7e7c6b80104595c7932f740bf9ff45767aa44505f",
+    "docs/issues/judge-endpoint-2026-09-09.md": "e81a4e755c71dcb5d6568ce23fcc4c3c183c3b4aa8fe234b4037f750b7e17f02",
+    "docs/issues/paper-counting-units-2026-09-09.md": "a55d9f2a8d464756773bddecebd40f48184b2e12e643afdb9be2d287fc90655a",
+    "docs/semantic-neurons/README.md": "3e1d1643565fd356729f6229d1b6e7049d36655300172f61af9c45007b1d0c64",
+    "docs/semantic-neurons/positioning.md": "da9f6ba39fc6f50fdd3965c7e756dd2cbd971b526214274509d5cc65b4ca95e5",
+    "docs/semantic-neurons/semantic-neurons-paper-rev2.md": "ab4e675fbc7d336e6839e2a477ec08f54040f97185413463f3d4b980a452463a",
+    "docs/semantic-neurons/publish/PUBLISHING.md": "6de139aa40690f0d6a49ef7470ff02f3255d8d819f96cd09d0e709b4e316171e",
+    "fixtures/semantic-neurons/blind/blind_eval-results-2026-07-06.md": "0d395c9b0eac7731f290cf3a4545ff10ccbacdf19e949ec9991633ac7bd62029"
+  },
+  "verification_attempts": [
+    "All twelve symbolic replays and both publication builds passed.",
+    "Initial browser check expected per question while source said each question; assertion corrected, final two viewport checks passed.",
+    "Preservation check initially compared paragraph-separator newlines at the appended version note; comparison now strips only boundary whitespace and passes."
+  ],
+  "limits": [
+    "Historical answer responses not rerun; no model benchmark, new judge qualification or publication.",
+    "Distinct facts are counted within each kit then summed, not globally deduplicated across spaces.",
+    "CUAD reproduction-package CG-25 and WebNLG reporting CG-27 remain open.",
+    "PDF images and original-file snapshots are local temporary artifacts, not publication outputs."
+  ]
+}

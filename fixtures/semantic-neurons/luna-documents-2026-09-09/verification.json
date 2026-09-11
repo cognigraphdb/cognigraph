@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "data": {
+    "source_documents_verified": 1000,
+    "selected_documents_reproduced": 120,
+    "negative_review_candidates_unlabelled": 80,
+    "published_reference_relations": 2034
+  },
+  "control": {
+    "status": "PASS",
+    "protocol_sha256": "9242acc6635c7464679ed3aa6a735456341d5bd0f01e93666b3148167d00ab7c",
+    "provider_calls_sha256": "67ba9996f489441233d387ddf7f4909b1193ee50eba9858b9d30349627a41007",
+    "documents": 40,
+    "reference_relations_with_unique_aliases": 673,
+    "ambiguous_reference_relations_retained_in_denominator": 10,
+    "accepted_occurrences_verified": 647,
+    "raw_control": {
+      "matched": 673,
+      "unmatched": 0,
+      "missed": 10,
+      "reference_precision": 1.0,
+      "reference_recall": 0.9853587115666179,
+      "reference_f1": 0.9926253687315634
+    },
+    "accepted_control": {
+      "matched": 647,
+      "unmatched": 0,
+      "missed": 36,
+      "reference_precision": 1.0,
+      "reference_recall": 0.9472913616398243,
+      "reference_f1": 0.9729323308270676
+    }
+  },
+  "source_files_verified": 525,
+  "package_files_verified": 18,
+  "live_requests_verified": 40,
+  "gold_control_prompt_parity": true,
+  "live_occurrences_verified": 32,
+  "scores_and_costs_replayed": true,
+  "holdout_inference_calls": 0
+}

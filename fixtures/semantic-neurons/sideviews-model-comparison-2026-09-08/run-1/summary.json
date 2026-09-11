@@ -1,0 +1,272 @@
+{
+  "rates_per_million_tokens_usd": {
+    "openai": {
+      "input": 0.2,
+      "cached_input": 0.02,
+      "cache_write": 0.25,
+      "output": 1.2
+    },
+    "gemini": {
+      "input": 0.75,
+      "cached_input": 0.075,
+      "output": 3.75
+    }
+  },
+  "pricing_checked": "2026-09-08",
+  "pricing_sources": [
+    "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "https://ai.google.dev/gemini-api/docs/pricing#gemini-3.8-flash"
+  ],
+  "pricing_note": "Standard short-context text rates. Gemini introductory rates through 2026-12-31. Account discounts, free-tier allowances, tax, and invoices are not observed.",
+  "design": "Five public passages x three repetitions x two configured models; preflights excluded; fixed prompts and schemas; provider order alternates and passage order uses recorded seeded permutations.",
+  "limitations": "Small fixture; lexical overlap is not entailment, semantic coverage, or retrieval recall; repeated calls are not independent documents; Gemini default thinking and Luna none compare configured defaults, not equal reasoning budgets.",
+  "models": {
+    "openai": {
+      "calls": 15,
+      "http_successes": 15,
+      "valid_schema": 15,
+      "total_pairs": 178,
+      "exact_target_calls": 13,
+      "distinct_question_pct": 100.0,
+      "self_contained_lexical_pct": 100.0,
+      "answer_source_word_overlap_pct": 95.90065988942396,
+      "mean_answer_words": 9.646067415730338,
+      "latency_ms": {
+        "mean": 3679.4,
+        "median": 3577,
+        "p95_nearest_rank": 4638,
+        "min": 3043,
+        "max": 4638
+      },
+      "tokens": {
+        "input": 5790,
+        "cached_input": 0,
+        "cache_write": 0,
+        "output_including_reasoning": 5090,
+        "reasoning": 0
+      },
+      "estimated_cost_usd": 0.007266,
+      "estimated_cost_per_1000_passages_usd": 0.4844,
+      "returned_models": [
+        "gpt-5.6-luna"
+      ]
+    },
+    "gemini": {
+      "calls": 15,
+      "http_successes": 15,
+      "valid_schema": 15,
+      "total_pairs": 180,
+      "exact_target_calls": 15,
+      "distinct_question_pct": 100.0,
+      "self_contained_lexical_pct": 100.0,
+      "answer_source_word_overlap_pct": 95.5503601336935,
+      "mean_answer_words": 10,
+      "latency_ms": {
+        "mean": 5141.333333333333,
+        "median": 4653,
+        "p95_nearest_rank": 9602,
+        "min": 3620,
+        "max": 9602
+      },
+      "tokens": {
+        "input": 5106,
+        "cached_input": 0,
+        "cache_write": 0,
+        "output_including_reasoning": 18976,
+        "reasoning": 11780
+      },
+      "estimated_cost_usd": 0.0749895,
+      "estimated_cost_per_1000_passages_usd": 4.9993,
+      "returned_models": [
+        "gemini-3.8-flash"
+      ]
+    }
+  },
+  "per_round": {
+    "openai": {
+      "1": {
+        "calls": 5,
+        "http_successes": 5,
+        "valid_schema": 5,
+        "total_pairs": 60,
+        "exact_target_calls": 5,
+        "distinct_question_pct": 100.0,
+        "self_contained_lexical_pct": 100.0,
+        "answer_source_word_overlap_pct": 95.96825396825398,
+        "mean_answer_words": 9.7,
+        "latency_ms": {
+          "mean": 3977,
+          "median": 4162,
+          "p95_nearest_rank": 4447,
+          "min": 3093,
+          "max": 4447
+        },
+        "tokens": {
+          "input": 1930,
+          "cached_input": 0,
+          "cache_write": 0,
+          "output_including_reasoning": 1716,
+          "reasoning": 0
+        },
+        "estimated_cost_usd": 0.0024452,
+        "estimated_cost_per_1000_passages_usd": 0.48904000000000003,
+        "returned_models": [
+          "gpt-5.6-luna"
+        ]
+      },
+      "2": {
+        "calls": 5,
+        "http_successes": 5,
+        "valid_schema": 5,
+        "total_pairs": 59,
+        "exact_target_calls": 4,
+        "distinct_question_pct": 100.0,
+        "self_contained_lexical_pct": 100.0,
+        "answer_source_word_overlap_pct": 96.02232983588912,
+        "mean_answer_words": 9.525423728813559,
+        "latency_ms": {
+          "mean": 3712.6,
+          "median": 3577,
+          "p95_nearest_rank": 4638,
+          "min": 3073,
+          "max": 4638
+        },
+        "tokens": {
+          "input": 1930,
+          "cached_input": 0,
+          "cache_write": 0,
+          "output_including_reasoning": 1669,
+          "reasoning": 0
+        },
+        "estimated_cost_usd": 0.0023888,
+        "estimated_cost_per_1000_passages_usd": 0.47775999999999996,
+        "returned_models": [
+          "gpt-5.6-luna"
+        ]
+      },
+      "3": {
+        "calls": 5,
+        "http_successes": 5,
+        "valid_schema": 5,
+        "total_pairs": 59,
+        "exact_target_calls": 4,
+        "distinct_question_pct": 100.0,
+        "self_contained_lexical_pct": 100.0,
+        "answer_source_word_overlap_pct": 95.71025020177564,
+        "mean_answer_words": 9.711864406779661,
+        "latency_ms": {
+          "mean": 3348.6,
+          "median": 3324,
+          "p95_nearest_rank": 3758,
+          "min": 3043,
+          "max": 3758
+        },
+        "tokens": {
+          "input": 1930,
+          "cached_input": 0,
+          "cache_write": 0,
+          "output_including_reasoning": 1705,
+          "reasoning": 0
+        },
+        "estimated_cost_usd": 0.002432,
+        "estimated_cost_per_1000_passages_usd": 0.4864,
+        "returned_models": [
+          "gpt-5.6-luna"
+        ]
+      }
+    },
+    "gemini": {
+      "1": {
+        "calls": 5,
+        "http_successes": 5,
+        "valid_schema": 5,
+        "total_pairs": 60,
+        "exact_target_calls": 5,
+        "distinct_question_pct": 100.0,
+        "self_contained_lexical_pct": 100.0,
+        "answer_source_word_overlap_pct": 96.00822325822327,
+        "mean_answer_words": 10.583333333333334,
+        "latency_ms": {
+          "mean": 5705.6,
+          "median": 4153,
+          "p95_nearest_rank": 9602,
+          "min": 3620,
+          "max": 9602
+        },
+        "tokens": {
+          "input": 1702,
+          "cached_input": 0,
+          "cache_write": 0,
+          "output_including_reasoning": 6083,
+          "reasoning": 3583
+        },
+        "estimated_cost_usd": 0.02408775,
+        "estimated_cost_per_1000_passages_usd": 4.817550000000001,
+        "returned_models": [
+          "gemini-3.8-flash"
+        ]
+      },
+      "2": {
+        "calls": 5,
+        "http_successes": 5,
+        "valid_schema": 5,
+        "total_pairs": 60,
+        "exact_target_calls": 5,
+        "distinct_question_pct": 100.0,
+        "self_contained_lexical_pct": 100.0,
+        "answer_source_word_overlap_pct": 94.51455026455027,
+        "mean_answer_words": 10.583333333333334,
+        "latency_ms": {
+          "mean": 4814,
+          "median": 4384,
+          "p95_nearest_rank": 6136,
+          "min": 3857,
+          "max": 6136
+        },
+        "tokens": {
+          "input": 1702,
+          "cached_input": 0,
+          "cache_write": 0,
+          "output_including_reasoning": 6200,
+          "reasoning": 3884
+        },
+        "estimated_cost_usd": 0.0245265,
+        "estimated_cost_per_1000_passages_usd": 4.9052999999999995,
+        "returned_models": [
+          "gemini-3.8-flash"
+        ]
+      },
+      "3": {
+        "calls": 5,
+        "http_successes": 5,
+        "valid_schema": 5,
+        "total_pairs": 60,
+        "exact_target_calls": 5,
+        "distinct_question_pct": 100.0,
+        "self_contained_lexical_pct": 100.0,
+        "answer_source_word_overlap_pct": 96.12830687830686,
+        "mean_answer_words": 8.833333333333334,
+        "latency_ms": {
+          "mean": 4904.4,
+          "median": 4921,
+          "p95_nearest_rank": 5377,
+          "min": 4350,
+          "max": 5377
+        },
+        "tokens": {
+          "input": 1702,
+          "cached_input": 0,
+          "cache_write": 0,
+          "output_including_reasoning": 6693,
+          "reasoning": 4313
+        },
+        "estimated_cost_usd": 0.02637525,
+        "estimated_cost_per_1000_passages_usd": 5.27505,
+        "returned_models": [
+          "gemini-3.8-flash"
+        ]
+      }
+    }
+  },
+  "all_calls_estimated_cost_usd": 0.08832945
+}

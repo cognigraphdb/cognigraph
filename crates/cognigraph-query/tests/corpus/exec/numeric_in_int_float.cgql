@@ -1,0 +1,1 @@
+FOR d IN documents FILTER 2 IN d.nested.list RETURN d._key

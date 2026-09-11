@@ -1,0 +1,322 @@
+{
+  "N2KINC_10_16_1997-EX-10.16-SPONSORSHIP AGREEMENT": {
+    "Exclusivity": [
+      {
+        "evidence": "Sponsor will be the exclusive retail music store sponsor of                   the Excite Site and the Excite Broadcast Pages.",
+        "suspect": false
+      },
+      {
+        "evidence": "Excite will                   negotiate exclusively with Sponsor for the next [****] in good                   faith effort to negotiate and execute a written sponsorship                   renewal agreement.",
+        "suspect": false
+      },
+      {
+        "evidence": "Sponsor wishes to be the exclusive retail store music sponsor of the Excite      Site and the Excite Broadcast Pages, to distribute its music-related      content through the Excite Site and the Excite Broadcast Pages and to      promote its online retail music merchandise business to Excite.com users.",
+        "suspect": false
+      }
+    ],
+    "Anti-Assignment": [
+      {
+        "evidence": "a)       Assignment. Neither party may assign this Agreement, in whole                   or in part, without the other party's written consent (which                   will not be unreasonably withheld), except that no such                   consent will be required in connection with (i) a merger,                   reorganization or sale of all, or substantially all, of such                   party's assets or (ii) either party's assignment and/or                   delegation of its rights and responsibilities hereunder to a                   wholly-owned subsidiary or joint venture in which such party                   holds a controlling interest.",
+        "suspect": true
+      }
+    ],
+    "Cap On Liability": [
+      {
+        "evidence": "THE                   LIABILITY OF EXCITE FOR DAMAGES OR ALLEGED DAMAGES HEREUNDER,                   WHETHER IN CONTRACT, TORT OR ANY OTHER LEGAL THEORY, IS                   LIMITED TO, AND WILL NOT EXCEED, THE AMOUNTS ACTUALLY PAID BY                   SPONSOR TO EXCITE HEREUNDER.",
+        "suspect": true
+      }
+    ],
+    "Governing Law": [
+      {
+        "evidence": "b)       Governing Law. This Agreement will be governed by and                   construed in accordance with the laws of the State of New York",
+        "suspect": true
+      }
+    ],
+    "Audit Rights": [
+      {
+        "evidence": "Excite                   may, upon no less than thirty (30) days prior written notice                   to Sponsor, cause an independent Certified Public Accountant                   to inspect the records of Sponsor reasonably related to the                   calculation of such payments during Sponsor's normal business                   hours.",
+        "suspect": true
+      }
+    ],
+    "Ip Ownership Assignment": [
+      {
+        "evidence": "Sponsor will retain all right, title and interest in and to                   the Content worldwide (including, but not limited to,                   ownership of all copyrights and other intellectual property                   rights therein).",
+        "suspect": false
+      }
+    ],
+    "Termination For Convenience": [
+      {
+        "evidence": "Either party may terminate this Agreement if the other party                   materially breaches its obligations hereunder and such breach                   remains uncured for thirty (30) days following the notice to                   the breaching party of the breach, with the following                   exceptions:",
+        "suspect": false
+      }
+    ]
+  },
+  "LOYALTYPOINTINC_11_16_2004-EX-10.2-RESELLER AGREEMENT": {
+    "Exclusivity": [
+      {
+        "evidence": "Schoolpop shall have the exclusive right to resell Cards in                   the NPO Marketplace.",
+        "suspect": true
+      }
+    ],
+    "Termination For Convenience": [
+      {
+        "evidence": "This Agreement shall remain in force until terminated by either party          by notice given in accordance with paragraph 8, below and in accordance          with Section 14(h) of the Agreement.",
+        "suspect": false
+      },
+      {
+        "evidence": "Upon termination of this Agreement, Schoolpop shall have the                   right to continue to sell any Cards in its possession for a                   period of three (3) months following the effective date of                   termination, subject to compliance with the applicable terms                   and conditions set forth herein, provided however, that                   termination of the Agreement is not due to a breach of                   representation or warranty of the Agreement by Schoolpop in                   which case Schoolpop shall discontinue selling Cards                   immediately upon termination.",
+        "suspect": true
+      }
+    ],
+    "Anti-Assignment": [
+      {
+        "evidence": "This Agreement may be assigned by AEIS to any          parent, subsidiary, affiliated or associate corporation without          Seller's consent and shall, whether or not so assigned, inure to the          benefit of any AEIS parent, subsidiary, associate or affiliate thereof          which pays or becomes liable upon any Cards delivered to Seller under          this Agreement.",
+        "suspect": true
+      }
+    ],
+    "Audit Rights": [
+      {
+        "evidence": "AEIS and/or their appointed representatives of AEIS or                   American Express Travel Related Services Inc. as solely                   determined by AEIS, shall be entitled to inspect and approve                   Seller's safekeeping facilities at any time during normal                   business hours.",
+        "suspect": true
+      }
+    ],
+    "Cap On Liability": [
+      {
+        "evidence": "Notwithstanding anything contained herein to the contrary, the                   cumulative liability of the parties to one another for any                   claims, liabilities, losses, damages or expenses, direct or                   indirect, arising out of or related to this Agreement shall                   not exceed the lesser of $50,000 or (not including other                   funding amounts such as the Point value of Cards) or the                   amount paid by Schoolpop to AEIS for the immediately preceding                   twelve (12) months provided, however, that in no event shall                   this limitation of liability apply to any claims, liabilities,                   losses, damages, or expenses, direct or indirect, arising out                   of or related to this Agreement brought by the actions of                   Schoolpop pursuant to paragraphs 4(e), 4(i), 4(k), 4(p), 5(a),                   5(b), 6(b), 7(a), 7(d), 14(d.iii), 9(f) and Sections 2, 3 11,                   12, and 13, and Exhibit 1 of this Agreement.",
+        "suspect": false
+      }
+    ],
+    "Governing Law": [
+      {
+        "evidence": "This Agreement shall be subject to and governed by the laws of the          State of Missouri, USA.",
+        "suspect": true
+      },
+      {
+        "evidence": "This Agreement shall be deemed to have been made and executed                   in the State of Missouri and any dispute arising thereunder                   shall be resolved in accordance with the laws of the State of                   Missouri, without reference to its rules governing conflicts                   of law.",
+        "suspect": false
+      }
+    ]
+  },
+  "ZogenixInc_20190509_10-Q_EX-10.2_11663313_EX-10.2_Distributor Agreement": {
+    "Audit Rights": [
+      {
+        "evidence": "Zogenix will have the right, upon reasonable prior written notice and during Distributor's regular business hours, to audit Distributor's and its Affiliates' books and records by an independent certified public accounting firm of recognized international standing, and Distributor shall ensure that Zogenix has the right to audit its Sub-distributors' and subcontractors' books and records, to investigation potential violations of any of the representations, warranties or covenants in this Section 10.2, the FCPA or other Applicable Laws or Distributor's compliance policies.",
+        "suspect": false
+      },
+      {
+        "evidence": "The Supply Agreement shall also include terms permitting Distributor to audit Zogenix's Fully-Burdened Manufacturing Costs that are similar to Zogenix's audit rights in Section 7.5 of the Agreement.",
+        "suspect": false
+      },
+      {
+        "evidence": "Net Sales shall be calculated in accordance with Japan GAAP or IFRS, consistently applied in the Territory and shall be consistent with net sales reported in Distributor's audited financial statements.",
+        "suspect": false
+      },
+      {
+        "evidence": "Each Party shall notify the other Party within [***] of receipt of any notice of a MHLW audit of any of such Party or its Affiliate or subcontractor with respect to the Product in the Territory.",
+        "suspect": false
+      },
+      {
+        "evidence": "To the extent permitted by Applicable Law, the audited Party shall provide the other Party with the copies of any resulting document or",
+        "suspect": false
+      },
+      {
+        "evidence": "Such other Party shall have the right to have its or its Affiliates' or its subcontractors' employees or consultants participate in any audits or other inspections to the extent permitted by Applicable Law.",
+        "suspect": false
+      }
+    ],
+    "Exclusivity": [
+      {
+        "evidence": "Distributor hereby grants Zogenix an irrevocable, perpetual, royalty-free, fully paid-up, exclusive license with the right to grant sublicenses to use such Data solely generated and co-owned by Distributor outside of the Territory and a co-exclusive license in the Territory upon expiration or termination of the Agreement.",
+        "suspect": false
+      },
+      {
+        "evidence": "Distributor shall have the exclusive right to market, promote, sell, offer for sale, import, package and otherwise Commercialize the Product in the Field in the Territory, at its sole cost and expense, in accordance with Applicable Laws and the Commercialization Plan and subject to the terms and conditions of this Agreement.",
+        "suspect": false
+      },
+      {
+        "evidence": "Distributor has the ability to promote, market, sell and distribute such product within the Territory for the treatment of Dravet syndrome and Lennox-Gastaut syndrome and any additional indications approved in the Territory, and wishes to be Zogenix's exclusive distributor of such product for such indications within the Territory, and Zogenix is willing to grant to Distributor such exclusive distribution rights on the terms and conditions set forth in this Agreement;",
+        "suspect": false
+      },
+      {
+        "evidence": "Zogenix shall supply (or have supplied) to Distributor, in accordance with the terms set forth on Exhibit 2.3, and Distributor shall purchase exclusively from Zogenix, Distributor's and its Affiliates' and Sub- distributors' Unlabeled Drug Product requirements of the Product for sale by Distributor or its Affiliates or Sub-distributors in the Territory in the Field, subject to and under the provisions of Section 5.2 and the Supply Agreement.",
+        "suspect": false
+      },
+      {
+        "evidence": "Zogenix hereby grants to Distributor a non-exclusive, royalty-free, limited right under the Zogenix Trademarks solely to promote, market, sell, offer for sale, import, package and distribute the Product in Field in the Territory in accordance with the terms of this Agreement.",
+        "suspect": false
+      },
+      {
+        "evidence": "Zogenix hereby appoints Distributor, and Distributor accepts appointment, as the exclusive distributor (even as to Zogenix) of the Product in the Field in the Territory during the Term, and grants to Distributor the exclusive rights to maintain Regulatory Approval of (while Distributor is the MAH Party), package, promote, market, offer for sale, sell, import and distribute the Product in the Field in the Territory during the Term.",
+        "suspect": false
+      }
+    ],
+    "Ip Ownership Assignment": [
+      {
+        "evidence": "Zogenix or its Affiliates shall own all right, title, and interest in and to all Zogenix Trademarks, all corresponding trademark applications and registrations thereof, and all common law rights thereto.",
+        "suspect": true
+      }
+    ],
+    "Governing Law": [
+      {
+        "evidence": "14.1 Governing Law. This Agreement and all questions regarding its existence, validity, interpretation, breach or performance and any dispute or claim arising out of or in connection with it (whether contractual or non-contractual in nature such as claims in tort, from breach of statute or regulation or otherwise) shall be governed by, and construed and enforced in accordance with, the laws of the State of New York, United States, without reference to its conflicts of law principles to the extent those principles would require applying another jurisdiction's laws.",
+        "suspect": true
+      }
+    ],
+    "Termination For Convenience": [
+      {
+        "evidence": "At any time following the expiration of the Distribution Term, Zogenix may terminate this Agreement at will upon [***] prior written notice to Distributor.",
+        "suspect": false
+      }
+    ],
+    "Non-Compete": [
+      {
+        "evidence": "2.5 Non-Compete Covenant. During the Term, without the prior written approval of Zogenix, Distributor shall not, and shall cause its Affiliates not to, either directly or indirectly, file for Regulatory Approval of, promote, market, offer for sale, sell, import or distribute in the Territory any product containing fenfluramine or any salt, enantiomer, or polymorph of fenfluramine, or any product for [***].",
+        "suspect": true
+      }
+    ],
+    "Anti-Assignment": [
+      {
+        "evidence": "14.3 Assignment. Except as expressly provided in this Section 14.3, neither this Agreement nor any rights or obligations hereunder may be assigned or otherwise transferred by either Party without the prior written consent of the other Party, which consent shall not be unreasonably withheld;",
+        "suspect": true
+      }
+    ]
+  },
+  "MRSFIELDSORIGINALCOOKIESINC_01_29_1998-EX-10-FRANCHISE AGREEMENT": {
+    "Governing Law": [
+      {
+        "evidence": "This  agreement,  although  drawn by Pretzel Time,  shall be construed  fairly and reasonable,  and not more strictly against one party than against the other party hereto.",
+        "suspect": true
+      }
+    ],
+    "Cap On Liability": [
+      {
+        "evidence": "neither Pretzel Time nor Franchisee shall  make  any  express  or  implied  agreements,  warranties,  guarantees  or representations  or  incur  any  debt in the  name or on  behalf  of the  other, represent that their relationship is other than Pretzel Time and franchisee,  or be obligated by or have any liability  under any  agreements or  representations made by the other that are not  expressly  authorized  in writing.",
+        "suspect": false
+      },
+      {
+        "evidence": "Pretzel Time shall not be liable to Franchisee,  the contractor, or any other person,  and Franchisee  waives all claims for liability or damages of any type  whatsoever  (whether  direct,  indirect,  incidental,   consequential,  or exemplary),  on account of the  rendition  of any  services  by Pretzel  Time in accordance  with  this  Section,  except  to the  extent  caused  by  the  gross negligence  or  intentional  misconduct  of  Pretzel  Time,  and  then  any such liability  or damages  shall be limited to five  thousand  dollars  ($5,000.00).",
+        "suspect": false
+      }
+    ],
+    "Audit Rights": [
+      {
+        "evidence": "Pretzel  Time or its  designee  shall have the right at any time during business  hours and without prior notice to  Franchisee,  to inspect,  audit and copy or the right to cause to be  inspected,  audited and copied,  the  business records,  bookkeeping and accounting  records,  sales and income tax records and returns and other records of the Franchised Business,  including but not limited to,  daily  cash  reports,  cash  receipts  journal  and  general  ledger,  cash disbursements  journal and weekly payroll register,  monthly bank statements and daily deposit slips and cancelled checks; tax returns,  supplier invoices, dated cash register tapes, weekly inventories, sales reports, financial statements and tax returns and the books and records of any  corporation or  partnership  which holds the Franchise  including the personal financial records and tax returns of the Franchisee during and after the term of the Franchise Agreement.",
+        "suspect": false
+      }
+    ],
+    "Anti-Assignment": [
+      {
+        "evidence": "That if Franchisee or a successor,  is a corporation,  the                   majority of the capital stock thereof shall not at any time or                   in the  aggregate  be sold,  assigned,  pledged,  mortgaged or                   transferred without the prior written consent of Pretzel Time.",
+        "suspect": true
+      },
+      {
+        "evidence": "Franchisee shall                   furnish  Pretzel  Time at the  time of the  execution  of this                   Agreement or of assignment to the  corporation  or partners of                   Franchisee, a written agreement stating that no stockholder or                   partner  will  sell,  assign  or  transfer  voluntarily  or by                   operation  of law  any  securities  of  Franchisee,  or  other                   ownership  interest  in  Franchisee,  to any  person or entity                   other than existing shareholders or partnership, to the extent                   permitted  hereunder,  without  the prior  written  consent of                   Pretzel Time.",
+        "suspect": true
+      }
+    ],
+    "Exclusivity": [
+      {
+        "evidence": "Pretzel Time (on behalf of itself,  its Affiliates and its designees)  retains all rights,  in its sole and exclusive discretion,  to offer to sell the Products and services authorized for Pretzel Time Units under the Marks  hereinafter  described in Section 6 or other trade names, trademarks, service marks and commercial symbols through similar or dissimilar  channels of distribution and national  accounts and pursuant to such terms and  conditions  as Pretzel Time deems  appropriate.",
+        "suspect": false
+      }
+    ],
+    "Non-Compete": [
+      {
+        "evidence": "Upon  termination of this  Agreement,  in accordance with its terms and conditions or by Franchisee  without cause, or upon expiration of this Agreement (unless the Franchise is renewed as provided for in this Agreement),  Franchisee and its Owners agree that for a period of TWELVE (12) months  commencing  on the effective  date of  termination  or expiration  or the date on which  Franchisee complies  with this Section,  whichever is later,  neither  Franchisee,  nor its Owners,  nor any person or entity  affiliated  with  Franchisee or  Franchisee's shareholders or partners shall have any direct or indirect  interest",
+        "suspect": false
+      }
+    ]
+  },
+  "INTRICONCORP_03_10_2009-EX-10.22-Strategic Alliance Agreement": {
+    "Audit Rights": [
+      {
+        "evidence": "6.2 IntriCon must make all such records available for inspection, copying and audit by an independent auditor appointed by Dynamic  Hearing (and to which IntriCon has no reasonable objection) during ordinary business hours at any time during the Term and for a period of one  year following the expiration or earlier termination of this Agreement, provided that:",
+        "suspect": true
+      }
+    ],
+    "Governing Law": [
+      {
+        "evidence": "12.8 This Agreement is governed by the laws of Victoria, Australia and the parties submit to the jurisdiction of the courts of Victoria,  Australia.",
+        "suspect": false
+      }
+    ],
+    "Cap On Liability": [
+      {
+        "evidence": "(d)    Dynamic Hearing's aggregate liability to IntriCon for direct loss and damages and all other liability not described herein  arising in connection with this Agreement whether in negligence, tort, equity, contract or otherwise, is limited to  payment of damages recoverable at law or equity up to a maximum of (and, for the sake of clarity must not exceed) $5m;  and",
+        "suspect": false
+      }
+    ]
+  },
+  "BUFFALOWILDWINGSINC_06_05_1998-EX-10.3-FRANCHISE AGREEMENT": {
+    "Anti-Assignment": [
+      {
+        "evidence": "Lessee shall have the right to assign all of its right, title and interest in the Lease to bw-3 or any affiliate of bw-3 at any time during the term of the Lease, including any extensions or renewals thereof, without first obtaining Lessor's consent.",
+        "suspect": true
+      }
+    ],
+    "Cap On Liability": [
+      {
+        "evidence": "Lessor further acknowledges that Lessee is not an agent or        employee of bw-3 and the Lessee has no authority or power to act for, or        to create any liability on behalf of, or to in any way bind bw-3 or any        affiliate of bw-3, and that Lessor has entered into this Addendum to        Lease with full understanding that it creates no duties, obligations or        liabilities of or against bw-3 or any affiliate of bw-3.",
+        "suspect": false
+      }
+    ],
+    "Audit Rights": [
+      {
+        "evidence": "We or our designated agents have the right at all reasonable times to examine and copy, at our expense, your books, records, and tax returns.",
+        "suspect": false
+      }
+    ]
+  },
+  "WARNINGMANAGEMENTSERVICESINC_12_10_1999-EX-10-ENDORSEMENT AGREEMENT": {
+    "Exclusivity": [
+      {
+        "evidence": "Pey Dirt grants to Company the exclusive right and license to use Manning Identification within the Contract Territory during the Contract Period in connection with the advertisement and promotion by Company of Products in television, radio, print and point of purchase.",
+        "suspect": false
+      }
+    ],
+    "Governing Law": [
+      {
+        "evidence": "23.   Governing Law.  This Agreement shall be governed and construed according to the law of Tennessee.",
+        "suspect": true
+      }
+    ],
+    "Ip Ownership Assignment": [
+      {
+        "evidence": "All costs related to any such trademarks shall be borne by Company, and ownership of any such trademarks shall rest solely in the name of Pey Dirt or its designee.",
+        "suspect": false
+      }
+    ]
+  },
+  "IVILLAGEINC_03_17_1999-EX-10.16-SPONSORSHIP AGREEMENT": {
+    "Governing Law": [
+      {
+        "evidence": "H.       Governing Law. Agreement shall be governed by, and construed in accordance with the laws of the State of New York without regard to the conflicts of laws principles thereof.",
+        "suspect": true
+      }
+    ],
+    "Ip Ownership Assignment": [
+      {
+        "evidence": "Upon execution and delivery of this Agreement, iVillage assigns to FMC all right, title and interest in and to the content, design and intellectual property, rights created specifically for and unique to the Bridge Site, advertising units, and other promotional elements set forth in this Agreement (collectively, the \"Materials\").",
+        "suspect": false
+      }
+    ],
+    "Exclusivity": [
+      {
+        "evidence": "For the Initial Term of this Agreement, iVillage agrees that Ford shall be the exclusive automobile manufacturer sponsor and advertiser throughout the Network, with respect to entities whose primary business is that of an automotive manufacturer and/or retailer.",
+        "suspect": false
+      }
+    ],
+    "Audit Rights": [
+      {
+        "evidence": "During the Promotion Period, iVillage traffic shall be          audited by a third party traffic auditor listed on Exhibit A and          iVillage shall provide FMM with relevant reports on a biweekly basis.",
+        "suspect": false
+      }
+    ],
+    "Anti-Assignment": [
+      {
+        "evidence": "I.       Assignment. Neither Party shall sell, transfer or assign this Agreement or the rights or obligations hereunder, without the prior written consent of the other Party, such consent not to be unreasonably withheld or delayed.",
+        "suspect": true
+      }
+    ]
+  }
+}

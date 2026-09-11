@@ -1,0 +1,1406 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 1,
+  "batch": 21,
+  "request": {
+    "space_type": "semeval-glm-flash-r1-b21",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10022",
+        "title": "Relation benchmark excerpt",
+        "text": "A man was hidden in the body of the turk itself."
+      },
+      {
+        "id": "semeval-8865",
+        "title": "Relation benchmark excerpt",
+        "text": "First we measured from the railing of the bridge to the surface of the stream."
+      },
+      {
+        "id": "semeval-9345",
+        "title": "Relation benchmark excerpt",
+        "text": "On the floor of the passenger side, they found a plastic bag with marijuana inside."
+      },
+      {
+        "id": "semeval-10445",
+        "title": "Relation benchmark excerpt",
+        "text": "El Salvador prison officials have detained a woman who was caught trying to smuggle a military grenade hidden inside a canister in her vagina during a jail visit."
+      },
+      {
+        "id": "semeval-9363",
+        "title": "Relation benchmark excerpt",
+        "text": "The conference's final statement was a summary of all the topics the speakers had touched on during two days of meetings in Cordoba."
+      },
+      {
+        "id": "semeval-9753",
+        "title": "Relation benchmark excerpt",
+        "text": "In the hands of an evil cabal of sadistic murderers who feast on the flesh of their victims, a young woman lashes out in one, last, desperate act of defiance."
+      },
+      {
+        "id": "semeval-8257",
+        "title": "Relation benchmark excerpt",
+        "text": "The third conflict has been caused by the highly polluted wastewater from the industrial park around the town of Kemalpasha."
+      },
+      {
+        "id": "semeval-10480",
+        "title": "Relation benchmark excerpt",
+        "text": "The pipeline that the gas leaked from belongs to Puyang company, and was constructed by Nanjing Sanye utility installment company."
+      },
+      {
+        "id": "semeval-8359",
+        "title": "Relation benchmark excerpt",
+        "text": "From the city the red warriors were rushing toward us, and from the jungle the savage horde of green men were coming to meet them."
+      },
+      {
+        "id": "semeval-10527",
+        "title": "Relation benchmark excerpt",
+        "text": "Orion, a giant stellar nursery which has spawned roughly 20,000 low-mass stars like the sun in the last 10 million years, also harbors a handful of massive type O and B stars that emit blowtorch-like radiation."
+      },
+      {
+        "id": "semeval-9352",
+        "title": "Relation benchmark excerpt",
+        "text": "The heat and pressure cause metamorphism to occur."
+      },
+      {
+        "id": "semeval-9778",
+        "title": "Relation benchmark excerpt",
+        "text": "The marketing research firm reeased a recent report saying the number of Americans watching online video has more than tripled in the last 5 years."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:glm-5.3-flash@directed-policy-v1",
+    "facts_grounded": 12,
+    "proposed": 12,
+    "skips": [],
+    "space_type": "semeval-glm-flash-r1-b21"
+  },
+  "latency_seconds": 10.767287291004322,
+  "facts": [
+    {
+      "_from": "entities/murderers",
+      "_id": "facts/fact-1f8314457c3a4e1d57e1d2d65d4614f91b042d14c8ba17522d7a0f2549794de2",
+      "_key": "fact-1f8314457c3a4e1d57e1d2d65d4614f91b042d14c8ba17522d7a0f2549794de2",
+      "_to": "entities/cabal",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9753",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "In the hands of an evil cabal of sadistic murderers who feast on the flesh of their victims, a young woman lashes out in one, last, desperate act of defiance.",
+      "trigger_end": 158,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/heat",
+      "_id": "facts/fact-332918bcdac64e87cbca2a4666fe2a275f0790021878baee8f995b4e7571a3a7",
+      "_key": "fact-332918bcdac64e87cbca2a4666fe2a275f0790021878baee8f995b4e7571a3a7",
+      "_to": "entities/metamorphism",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9352",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "The heat and pressure cause metamorphism to occur.",
+      "trigger_end": 50,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/stars",
+      "_id": "facts/fact-3a6439403f0c91223e8b66331d8838b0e9f88b78fc5b3f1839fcc501cb513ce2",
+      "_key": "fact-3a6439403f0c91223e8b66331d8838b0e9f88b78fc5b3f1839fcc501cb513ce2",
+      "_to": "entities/nursery",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10527",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "Orion, a giant stellar nursery which has spawned roughly 20,000 low-mass stars like the sun in the last 10 million years, also harbors a handful of massive type O and B stars that emit blowtorch-like radiation.",
+      "trigger_end": 210,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/men",
+      "_id": "facts/fact-985e86f87884d414e8be338dcddbd4568d248abbc06bb4e568c2f038ff325133",
+      "_key": "fact-985e86f87884d414e8be338dcddbd4568d248abbc06bb4e568c2f038ff325133",
+      "_to": "entities/horde",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8359",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "From the city the red warriors were rushing toward us, and from the jungle the savage horde of green men were coming to meet them.",
+      "trigger_end": 130,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/statement",
+      "_id": "facts/fact-a37843eb5fecff1a8b10cf070584677c0be7c801946a61a95a6effb0ef7c0dd3",
+      "_key": "fact-a37843eb5fecff1a8b10cf070584677c0be7c801946a61a95a6effb0ef7c0dd3",
+      "_to": "entities/topics",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9363",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "The conference's final statement was a summary of all the topics the speakers had touched on during two days of meetings in Cordoba.",
+      "trigger_end": 132,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/gas",
+      "_id": "facts/fact-af467c61f707b78e3cbced0afb5e871e3b12834d6f6eac6f9511cfd951c7fc1b",
+      "_key": "fact-af467c61f707b78e3cbced0afb5e871e3b12834d6f6eac6f9511cfd951c7fc1b",
+      "_to": "entities/pipeline",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10480",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "The pipeline that the gas leaked from belongs to Puyang company, and was constructed by Nanjing Sanye utility installment company.",
+      "trigger_end": 130,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/grenade",
+      "_id": "facts/fact-b74041ecf47371e6eaae0c70f29948bb6faea158be278bfa8758f1e6aab8636a",
+      "_key": "fact-b74041ecf47371e6eaae0c70f29948bb6faea158be278bfa8758f1e6aab8636a",
+      "_to": "entities/canister",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10445",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "El Salvador prison officials have detained a woman who was caught trying to smuggle a military grenade hidden inside a canister in her vagina during a jail visit.",
+      "trigger_end": 162,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/railing",
+      "_id": "facts/fact-d6148039fbc6153af9fb63b6d13f69df0a7655361a921c3a0050173be7be0dba",
+      "_key": "fact-d6148039fbc6153af9fb63b6d13f69df0a7655361a921c3a0050173be7be0dba",
+      "_to": "entities/bridge",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8865",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "First we measured from the railing of the bridge to the surface of the stream.",
+      "trigger_end": 78,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/man",
+      "_id": "facts/fact-dd3863c992f73a3b2916e4d8b3842a387817d746eb02aaf536be2cb96134d452",
+      "_key": "fact-dd3863c992f73a3b2916e4d8b3842a387817d746eb02aaf536be2cb96134d452",
+      "_to": "entities/body",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10022",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "A man was hidden in the body of the turk itself.",
+      "trigger_end": 48,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/wastewater",
+      "_id": "facts/fact-dffb7526384a5e1e70a0e8ef6a25bc3f41b7296e3800cf14e969d9b9b3368ee3",
+      "_key": "fact-dffb7526384a5e1e70a0e8ef6a25bc3f41b7296e3800cf14e969d9b9b3368ee3",
+      "_to": "entities/conflict",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8257",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "The third conflict has been caused by the highly polluted wastewater from the industrial park around the town of Kemalpasha.",
+      "trigger_end": 124,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/report",
+      "_id": "facts/fact-ebb095789fd8f67182c6af7ad7ab7698424ba16f78912dab0434c757d8039da5",
+      "_key": "fact-ebb095789fd8f67182c6af7ad7ab7698424ba16f78912dab0434c757d8039da5",
+      "_to": "entities/firm",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9778",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "The marketing research firm reeased a recent report saying the number of Americans watching online video has more than tripled in the last 5 years.",
+      "trigger_end": 147,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/marijuana",
+      "_id": "facts/fact-ffd5ba8d710264fe412247f13194c2c31522098d935c467ac5c14beb0c4da45c",
+      "_key": "fact-ffd5ba8d710264fe412247f13194c2c31522098d935c467ac5c14beb0c4da45c",
+      "_to": "entities/plastic-bag",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9345",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "trigger": "On the floor of the passenger side, they found a plastic bag with marijuana inside.",
+      "trigger_end": 83,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/body",
+      "_key": "body",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865032+00:00",
+      "entity_type": "Container",
+      "name": "body",
+      "updated_at": "2026-09-09T12:36:06.865032+00:00"
+    },
+    {
+      "_id": "entities/bridge",
+      "_key": "bridge",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865036+00:00",
+      "entity_type": "Whole",
+      "name": "bridge",
+      "updated_at": "2026-09-09T12:36:06.865036+00:00"
+    },
+    {
+      "_id": "entities/cabal",
+      "_key": "cabal",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865038+00:00",
+      "entity_type": "Collection",
+      "name": "cabal",
+      "updated_at": "2026-09-09T12:36:06.865038+00:00"
+    },
+    {
+      "_id": "entities/canister",
+      "_key": "canister",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865039+00:00",
+      "entity_type": "Container",
+      "name": "canister",
+      "updated_at": "2026-09-09T12:36:06.865039+00:00"
+    },
+    {
+      "_id": "entities/conflict",
+      "_key": "conflict",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865042+00:00",
+      "entity_type": "Effect",
+      "name": "conflict",
+      "updated_at": "2026-09-09T12:36:06.865042+00:00"
+    },
+    {
+      "_id": "entities/firm",
+      "_key": "firm",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865043+00:00",
+      "entity_type": "Producer",
+      "name": "firm",
+      "updated_at": "2026-09-09T12:36:06.865043+00:00"
+    },
+    {
+      "_id": "entities/gas",
+      "_key": "gas",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865044+00:00",
+      "entity_type": "Entity",
+      "name": "gas",
+      "updated_at": "2026-09-09T12:36:06.865044+00:00"
+    },
+    {
+      "_id": "entities/grenade",
+      "_key": "grenade",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865045+00:00",
+      "entity_type": "Content",
+      "name": "grenade",
+      "updated_at": "2026-09-09T12:36:06.865045+00:00"
+    },
+    {
+      "_id": "entities/heat",
+      "_key": "heat",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865046+00:00",
+      "entity_type": "Cause",
+      "name": "heat",
+      "updated_at": "2026-09-09T12:36:06.865046+00:00"
+    },
+    {
+      "_id": "entities/horde",
+      "_key": "horde",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865047+00:00",
+      "entity_type": "Collection",
+      "name": "horde",
+      "updated_at": "2026-09-09T12:36:06.865047+00:00"
+    },
+    {
+      "_id": "entities/man",
+      "_key": "man",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865048+00:00",
+      "entity_type": "Entity",
+      "name": "man",
+      "updated_at": "2026-09-09T12:36:06.865048+00:00"
+    },
+    {
+      "_id": "entities/marijuana",
+      "_key": "marijuana",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865049+00:00",
+      "entity_type": "Content",
+      "name": "marijuana",
+      "updated_at": "2026-09-09T12:36:06.865049+00:00"
+    },
+    {
+      "_id": "entities/men",
+      "_key": "men",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865050+00:00",
+      "entity_type": "Member",
+      "name": "men",
+      "updated_at": "2026-09-09T12:36:06.865050+00:00"
+    },
+    {
+      "_id": "entities/metamorphism",
+      "_key": "metamorphism",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865051+00:00",
+      "entity_type": "Effect",
+      "name": "metamorphism",
+      "updated_at": "2026-09-09T12:36:06.865051+00:00"
+    },
+    {
+      "_id": "entities/murderers",
+      "_key": "murderers",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865052+00:00",
+      "entity_type": "Member",
+      "name": "murderers",
+      "updated_at": "2026-09-09T12:36:06.865052+00:00"
+    },
+    {
+      "_id": "entities/nursery",
+      "_key": "nursery",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865053+00:00",
+      "entity_type": "Producer",
+      "name": "nursery",
+      "updated_at": "2026-09-09T12:36:06.865053+00:00"
+    },
+    {
+      "_id": "entities/pipeline",
+      "_key": "pipeline",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865054+00:00",
+      "entity_type": "Origin",
+      "name": "pipeline",
+      "updated_at": "2026-09-09T12:36:06.865054+00:00"
+    },
+    {
+      "_id": "entities/plastic-bag",
+      "_key": "plastic-bag",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865055+00:00",
+      "entity_type": "Container",
+      "name": "plastic bag",
+      "updated_at": "2026-09-09T12:36:06.865055+00:00"
+    },
+    {
+      "_id": "entities/railing",
+      "_key": "railing",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865056+00:00",
+      "entity_type": "Component",
+      "name": "railing",
+      "updated_at": "2026-09-09T12:36:06.865056+00:00"
+    },
+    {
+      "_id": "entities/report",
+      "_key": "report",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865057+00:00",
+      "entity_type": "Product",
+      "name": "report",
+      "updated_at": "2026-09-09T12:36:06.865057+00:00"
+    },
+    {
+      "_id": "entities/stars",
+      "_key": "stars",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865058+00:00",
+      "entity_type": "Product",
+      "name": "stars",
+      "updated_at": "2026-09-09T12:36:06.865058+00:00"
+    },
+    {
+      "_id": "entities/statement",
+      "_key": "statement",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865059+00:00",
+      "entity_type": "Message",
+      "name": "statement",
+      "updated_at": "2026-09-09T12:36:06.865059+00:00"
+    },
+    {
+      "_id": "entities/topics",
+      "_key": "topics",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865060+00:00",
+      "entity_type": "Topic",
+      "name": "topics",
+      "updated_at": "2026-09-09T12:36:06.865060+00:00"
+    },
+    {
+      "_id": "entities/wastewater",
+      "_key": "wastewater",
+      "aliases": [],
+      "created_at": "2026-09-09T12:36:06.865061+00:00",
+      "entity_type": "Cause",
+      "name": "wastewater",
+      "updated_at": "2026-09-09T12:36:06.865061+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-10022",
+      "_key": "semeval-glm-flash-r1-b21-semeval-10022",
+      "chunk_id": "semeval-10022",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:def8e2b6b033eac0e7a17ec54af04d679fa738750b44be9f1fe8ea80e9951b46",
+      "created_at": "2026-09-09T12:36:06.865063+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "A man was hidden in the body of the turk itself.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865063+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-10445",
+      "_key": "semeval-glm-flash-r1-b21-semeval-10445",
+      "chunk_id": "semeval-10445",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7ed383845bf3c9c0336afe3e57d52cbaac732451580c66dbcc5a39dfc28bf7bf",
+      "created_at": "2026-09-09T12:36:06.865076+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "El Salvador prison officials have detained a woman who was caught trying to smuggle a military grenade hidden inside a canister in her vagina during a jail visit.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865076+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-10480",
+      "_key": "semeval-glm-flash-r1-b21-semeval-10480",
+      "chunk_id": "semeval-10480",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6773c915120ed9038179878eba328fb7dae2d3947b21b9207d03f3f8fcf87a9c",
+      "created_at": "2026-09-09T12:36:06.865085+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "The pipeline that the gas leaked from belongs to Puyang company, and was constructed by Nanjing Sanye utility installment company.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865085+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-10527",
+      "_key": "semeval-glm-flash-r1-b21-semeval-10527",
+      "chunk_id": "semeval-10527",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:27897e8a982c543e0831960c0dff8656ce45889fe5f8658a97374785e0652193",
+      "created_at": "2026-09-09T12:36:06.865092+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "Orion, a giant stellar nursery which has spawned roughly 20,000 low-mass stars like the sun in the last 10 million years, also harbors a handful of massive type O and B stars that emit blowtorch-like radiation.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865092+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-8257",
+      "_key": "semeval-glm-flash-r1-b21-semeval-8257",
+      "chunk_id": "semeval-8257",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:0ae666cf3f8bd76a4b61fc7c52a43d5dca089d2c98b8e577970a634eac6ee6d8",
+      "created_at": "2026-09-09T12:36:06.865098+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "The third conflict has been caused by the highly polluted wastewater from the industrial park around the town of Kemalpasha.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865098+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-8359",
+      "_key": "semeval-glm-flash-r1-b21-semeval-8359",
+      "chunk_id": "semeval-8359",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1eb82662b632d6ac2d9ea396f89dc28bb34afde5d7b6ad93a7cd6438024930bc",
+      "created_at": "2026-09-09T12:36:06.865107+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "From the city the red warriors were rushing toward us, and from the jungle the savage horde of green men were coming to meet them.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865107+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-8865",
+      "_key": "semeval-glm-flash-r1-b21-semeval-8865",
+      "chunk_id": "semeval-8865",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:79f9f1f0e7ba3bbbef1f64996ba6a8f462e00cf77e6d31ce05061dfdca489a18",
+      "created_at": "2026-09-09T12:36:06.865113+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "First we measured from the railing of the bridge to the surface of the stream.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865113+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-9345",
+      "_key": "semeval-glm-flash-r1-b21-semeval-9345",
+      "chunk_id": "semeval-9345",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:851433590cb6f54d249163164a6eab80fd68556a6e0f471478e43e924062be24",
+      "created_at": "2026-09-09T12:36:06.865122+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "On the floor of the passenger side, they found a plastic bag with marijuana inside.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865122+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-9352",
+      "_key": "semeval-glm-flash-r1-b21-semeval-9352",
+      "chunk_id": "semeval-9352",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8cd4976311b65ffc1b4c4dcc1fbb014c87749640f821eb4c592ad9789d588448",
+      "created_at": "2026-09-09T12:36:06.865131+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "The heat and pressure cause metamorphism to occur.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865131+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-9363",
+      "_key": "semeval-glm-flash-r1-b21-semeval-9363",
+      "chunk_id": "semeval-9363",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:444772bb6477c6c11dae5552ba6cc8cc1cb65b4163505d28736edb0f4330ec9e",
+      "created_at": "2026-09-09T12:36:06.865138+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "The conference's final statement was a summary of all the topics the speakers had touched on during two days of meetings in Cordoba.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865138+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-9753",
+      "_key": "semeval-glm-flash-r1-b21-semeval-9753",
+      "chunk_id": "semeval-9753",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:448c0424a2c0aa598143e41cf557db7212f7bfff326ccaa0782360974126823a",
+      "created_at": "2026-09-09T12:36:06.865146+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "In the hands of an evil cabal of sadistic murderers who feast on the flesh of their victims, a young woman lashes out in one, last, desperate act of defiance.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865146+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b21-semeval-9778",
+      "_key": "semeval-glm-flash-r1-b21-semeval-9778",
+      "chunk_id": "semeval-9778",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:583cdbd0c402f813a024ba624757bb5fab33a75400593fc8742053a099bdc0df",
+      "created_at": "2026-09-09T12:36:06.865153+00:00",
+      "space_id": "semeval-glm-flash-r1-b21",
+      "text": "The marketing research firm reeased a recent report saying the number of Americans watching online video has more than tripled in the last 5 years.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:36:06.865153+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_from": "entities/murderers",
+            "_id": "facts/fact-1f8314457c3a4e1d57e1d2d65d4614f91b042d14c8ba17522d7a0f2549794de2",
+            "_key": "fact-1f8314457c3a4e1d57e1d2d65d4614f91b042d14c8ba17522d7a0f2549794de2",
+            "_to": "entities/cabal",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9753",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "In the hands of an evil cabal of sadistic murderers who feast on the flesh of their victims, a young woman lashes out in one, last, desperate act of defiance.",
+            "trigger_end": 158,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/heat",
+            "_id": "facts/fact-332918bcdac64e87cbca2a4666fe2a275f0790021878baee8f995b4e7571a3a7",
+            "_key": "fact-332918bcdac64e87cbca2a4666fe2a275f0790021878baee8f995b4e7571a3a7",
+            "_to": "entities/metamorphism",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9352",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "The heat and pressure cause metamorphism to occur.",
+            "trigger_end": 50,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/stars",
+            "_id": "facts/fact-3a6439403f0c91223e8b66331d8838b0e9f88b78fc5b3f1839fcc501cb513ce2",
+            "_key": "fact-3a6439403f0c91223e8b66331d8838b0e9f88b78fc5b3f1839fcc501cb513ce2",
+            "_to": "entities/nursery",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10527",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "Orion, a giant stellar nursery which has spawned roughly 20,000 low-mass stars like the sun in the last 10 million years, also harbors a handful of massive type O and B stars that emit blowtorch-like radiation.",
+            "trigger_end": 210,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/men",
+            "_id": "facts/fact-985e86f87884d414e8be338dcddbd4568d248abbc06bb4e568c2f038ff325133",
+            "_key": "fact-985e86f87884d414e8be338dcddbd4568d248abbc06bb4e568c2f038ff325133",
+            "_to": "entities/horde",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8359",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "From the city the red warriors were rushing toward us, and from the jungle the savage horde of green men were coming to meet them.",
+            "trigger_end": 130,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/statement",
+            "_id": "facts/fact-a37843eb5fecff1a8b10cf070584677c0be7c801946a61a95a6effb0ef7c0dd3",
+            "_key": "fact-a37843eb5fecff1a8b10cf070584677c0be7c801946a61a95a6effb0ef7c0dd3",
+            "_to": "entities/topics",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9363",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "The conference's final statement was a summary of all the topics the speakers had touched on during two days of meetings in Cordoba.",
+            "trigger_end": 132,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/gas",
+            "_id": "facts/fact-af467c61f707b78e3cbced0afb5e871e3b12834d6f6eac6f9511cfd951c7fc1b",
+            "_key": "fact-af467c61f707b78e3cbced0afb5e871e3b12834d6f6eac6f9511cfd951c7fc1b",
+            "_to": "entities/pipeline",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10480",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "The pipeline that the gas leaked from belongs to Puyang company, and was constructed by Nanjing Sanye utility installment company.",
+            "trigger_end": 130,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/grenade",
+            "_id": "facts/fact-b74041ecf47371e6eaae0c70f29948bb6faea158be278bfa8758f1e6aab8636a",
+            "_key": "fact-b74041ecf47371e6eaae0c70f29948bb6faea158be278bfa8758f1e6aab8636a",
+            "_to": "entities/canister",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10445",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "El Salvador prison officials have detained a woman who was caught trying to smuggle a military grenade hidden inside a canister in her vagina during a jail visit.",
+            "trigger_end": 162,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/railing",
+            "_id": "facts/fact-d6148039fbc6153af9fb63b6d13f69df0a7655361a921c3a0050173be7be0dba",
+            "_key": "fact-d6148039fbc6153af9fb63b6d13f69df0a7655361a921c3a0050173be7be0dba",
+            "_to": "entities/bridge",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8865",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "First we measured from the railing of the bridge to the surface of the stream.",
+            "trigger_end": 78,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/man",
+            "_id": "facts/fact-dd3863c992f73a3b2916e4d8b3842a387817d746eb02aaf536be2cb96134d452",
+            "_key": "fact-dd3863c992f73a3b2916e4d8b3842a387817d746eb02aaf536be2cb96134d452",
+            "_to": "entities/body",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10022",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "A man was hidden in the body of the turk itself.",
+            "trigger_end": 48,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/wastewater",
+            "_id": "facts/fact-dffb7526384a5e1e70a0e8ef6a25bc3f41b7296e3800cf14e969d9b9b3368ee3",
+            "_key": "fact-dffb7526384a5e1e70a0e8ef6a25bc3f41b7296e3800cf14e969d9b9b3368ee3",
+            "_to": "entities/conflict",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8257",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "The third conflict has been caused by the highly polluted wastewater from the industrial park around the town of Kemalpasha.",
+            "trigger_end": 124,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/report",
+            "_id": "facts/fact-ebb095789fd8f67182c6af7ad7ab7698424ba16f78912dab0434c757d8039da5",
+            "_key": "fact-ebb095789fd8f67182c6af7ad7ab7698424ba16f78912dab0434c757d8039da5",
+            "_to": "entities/firm",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9778",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "The marketing research firm reeased a recent report saying the number of Americans watching online video has more than tripled in the last 5 years.",
+            "trigger_end": 147,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/marijuana",
+            "_id": "facts/fact-ffd5ba8d710264fe412247f13194c2c31522098d935c467ac5c14beb0c4da45c",
+            "_key": "fact-ffd5ba8d710264fe412247f13194c2c31522098d935c467ac5c14beb0c4da45c",
+            "_to": "entities/plastic-bag",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9345",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "trigger": "On the floor of the passenger side, they found a plastic bag with marijuana inside.",
+            "trigger_end": 83,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 24,
+        "results": [
+          {
+            "_id": "entities/body",
+            "_key": "body",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865032+00:00",
+            "entity_type": "Container",
+            "name": "body",
+            "updated_at": "2026-09-09T12:36:06.865032+00:00"
+          },
+          {
+            "_id": "entities/bridge",
+            "_key": "bridge",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865036+00:00",
+            "entity_type": "Whole",
+            "name": "bridge",
+            "updated_at": "2026-09-09T12:36:06.865036+00:00"
+          },
+          {
+            "_id": "entities/cabal",
+            "_key": "cabal",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865038+00:00",
+            "entity_type": "Collection",
+            "name": "cabal",
+            "updated_at": "2026-09-09T12:36:06.865038+00:00"
+          },
+          {
+            "_id": "entities/canister",
+            "_key": "canister",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865039+00:00",
+            "entity_type": "Container",
+            "name": "canister",
+            "updated_at": "2026-09-09T12:36:06.865039+00:00"
+          },
+          {
+            "_id": "entities/conflict",
+            "_key": "conflict",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865042+00:00",
+            "entity_type": "Effect",
+            "name": "conflict",
+            "updated_at": "2026-09-09T12:36:06.865042+00:00"
+          },
+          {
+            "_id": "entities/firm",
+            "_key": "firm",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865043+00:00",
+            "entity_type": "Producer",
+            "name": "firm",
+            "updated_at": "2026-09-09T12:36:06.865043+00:00"
+          },
+          {
+            "_id": "entities/gas",
+            "_key": "gas",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865044+00:00",
+            "entity_type": "Entity",
+            "name": "gas",
+            "updated_at": "2026-09-09T12:36:06.865044+00:00"
+          },
+          {
+            "_id": "entities/grenade",
+            "_key": "grenade",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865045+00:00",
+            "entity_type": "Content",
+            "name": "grenade",
+            "updated_at": "2026-09-09T12:36:06.865045+00:00"
+          },
+          {
+            "_id": "entities/heat",
+            "_key": "heat",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865046+00:00",
+            "entity_type": "Cause",
+            "name": "heat",
+            "updated_at": "2026-09-09T12:36:06.865046+00:00"
+          },
+          {
+            "_id": "entities/horde",
+            "_key": "horde",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865047+00:00",
+            "entity_type": "Collection",
+            "name": "horde",
+            "updated_at": "2026-09-09T12:36:06.865047+00:00"
+          },
+          {
+            "_id": "entities/man",
+            "_key": "man",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865048+00:00",
+            "entity_type": "Entity",
+            "name": "man",
+            "updated_at": "2026-09-09T12:36:06.865048+00:00"
+          },
+          {
+            "_id": "entities/marijuana",
+            "_key": "marijuana",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865049+00:00",
+            "entity_type": "Content",
+            "name": "marijuana",
+            "updated_at": "2026-09-09T12:36:06.865049+00:00"
+          },
+          {
+            "_id": "entities/men",
+            "_key": "men",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865050+00:00",
+            "entity_type": "Member",
+            "name": "men",
+            "updated_at": "2026-09-09T12:36:06.865050+00:00"
+          },
+          {
+            "_id": "entities/metamorphism",
+            "_key": "metamorphism",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865051+00:00",
+            "entity_type": "Effect",
+            "name": "metamorphism",
+            "updated_at": "2026-09-09T12:36:06.865051+00:00"
+          },
+          {
+            "_id": "entities/murderers",
+            "_key": "murderers",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865052+00:00",
+            "entity_type": "Member",
+            "name": "murderers",
+            "updated_at": "2026-09-09T12:36:06.865052+00:00"
+          },
+          {
+            "_id": "entities/nursery",
+            "_key": "nursery",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865053+00:00",
+            "entity_type": "Producer",
+            "name": "nursery",
+            "updated_at": "2026-09-09T12:36:06.865053+00:00"
+          },
+          {
+            "_id": "entities/pipeline",
+            "_key": "pipeline",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865054+00:00",
+            "entity_type": "Origin",
+            "name": "pipeline",
+            "updated_at": "2026-09-09T12:36:06.865054+00:00"
+          },
+          {
+            "_id": "entities/plastic-bag",
+            "_key": "plastic-bag",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865055+00:00",
+            "entity_type": "Container",
+            "name": "plastic bag",
+            "updated_at": "2026-09-09T12:36:06.865055+00:00"
+          },
+          {
+            "_id": "entities/railing",
+            "_key": "railing",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865056+00:00",
+            "entity_type": "Component",
+            "name": "railing",
+            "updated_at": "2026-09-09T12:36:06.865056+00:00"
+          },
+          {
+            "_id": "entities/report",
+            "_key": "report",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865057+00:00",
+            "entity_type": "Product",
+            "name": "report",
+            "updated_at": "2026-09-09T12:36:06.865057+00:00"
+          },
+          {
+            "_id": "entities/stars",
+            "_key": "stars",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865058+00:00",
+            "entity_type": "Product",
+            "name": "stars",
+            "updated_at": "2026-09-09T12:36:06.865058+00:00"
+          },
+          {
+            "_id": "entities/statement",
+            "_key": "statement",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865059+00:00",
+            "entity_type": "Message",
+            "name": "statement",
+            "updated_at": "2026-09-09T12:36:06.865059+00:00"
+          },
+          {
+            "_id": "entities/topics",
+            "_key": "topics",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865060+00:00",
+            "entity_type": "Topic",
+            "name": "topics",
+            "updated_at": "2026-09-09T12:36:06.865060+00:00"
+          },
+          {
+            "_id": "entities/wastewater",
+            "_key": "wastewater",
+            "aliases": [],
+            "created_at": "2026-09-09T12:36:06.865061+00:00",
+            "entity_type": "Cause",
+            "name": "wastewater",
+            "updated_at": "2026-09-09T12:36:06.865061+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-10022",
+            "_key": "semeval-glm-flash-r1-b21-semeval-10022",
+            "chunk_id": "semeval-10022",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:def8e2b6b033eac0e7a17ec54af04d679fa738750b44be9f1fe8ea80e9951b46",
+            "created_at": "2026-09-09T12:36:06.865063+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "A man was hidden in the body of the turk itself.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865063+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-10445",
+            "_key": "semeval-glm-flash-r1-b21-semeval-10445",
+            "chunk_id": "semeval-10445",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7ed383845bf3c9c0336afe3e57d52cbaac732451580c66dbcc5a39dfc28bf7bf",
+            "created_at": "2026-09-09T12:36:06.865076+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "El Salvador prison officials have detained a woman who was caught trying to smuggle a military grenade hidden inside a canister in her vagina during a jail visit.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865076+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-10480",
+            "_key": "semeval-glm-flash-r1-b21-semeval-10480",
+            "chunk_id": "semeval-10480",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6773c915120ed9038179878eba328fb7dae2d3947b21b9207d03f3f8fcf87a9c",
+            "created_at": "2026-09-09T12:36:06.865085+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "The pipeline that the gas leaked from belongs to Puyang company, and was constructed by Nanjing Sanye utility installment company.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865085+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-10527",
+            "_key": "semeval-glm-flash-r1-b21-semeval-10527",
+            "chunk_id": "semeval-10527",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:27897e8a982c543e0831960c0dff8656ce45889fe5f8658a97374785e0652193",
+            "created_at": "2026-09-09T12:36:06.865092+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "Orion, a giant stellar nursery which has spawned roughly 20,000 low-mass stars like the sun in the last 10 million years, also harbors a handful of massive type O and B stars that emit blowtorch-like radiation.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865092+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-8257",
+            "_key": "semeval-glm-flash-r1-b21-semeval-8257",
+            "chunk_id": "semeval-8257",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:0ae666cf3f8bd76a4b61fc7c52a43d5dca089d2c98b8e577970a634eac6ee6d8",
+            "created_at": "2026-09-09T12:36:06.865098+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "The third conflict has been caused by the highly polluted wastewater from the industrial park around the town of Kemalpasha.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865098+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-8359",
+            "_key": "semeval-glm-flash-r1-b21-semeval-8359",
+            "chunk_id": "semeval-8359",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1eb82662b632d6ac2d9ea396f89dc28bb34afde5d7b6ad93a7cd6438024930bc",
+            "created_at": "2026-09-09T12:36:06.865107+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "From the city the red warriors were rushing toward us, and from the jungle the savage horde of green men were coming to meet them.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865107+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-8865",
+            "_key": "semeval-glm-flash-r1-b21-semeval-8865",
+            "chunk_id": "semeval-8865",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:79f9f1f0e7ba3bbbef1f64996ba6a8f462e00cf77e6d31ce05061dfdca489a18",
+            "created_at": "2026-09-09T12:36:06.865113+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "First we measured from the railing of the bridge to the surface of the stream.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865113+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-9345",
+            "_key": "semeval-glm-flash-r1-b21-semeval-9345",
+            "chunk_id": "semeval-9345",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:851433590cb6f54d249163164a6eab80fd68556a6e0f471478e43e924062be24",
+            "created_at": "2026-09-09T12:36:06.865122+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "On the floor of the passenger side, they found a plastic bag with marijuana inside.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865122+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-9352",
+            "_key": "semeval-glm-flash-r1-b21-semeval-9352",
+            "chunk_id": "semeval-9352",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8cd4976311b65ffc1b4c4dcc1fbb014c87749640f821eb4c592ad9789d588448",
+            "created_at": "2026-09-09T12:36:06.865131+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "The heat and pressure cause metamorphism to occur.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865131+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-9363",
+            "_key": "semeval-glm-flash-r1-b21-semeval-9363",
+            "chunk_id": "semeval-9363",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:444772bb6477c6c11dae5552ba6cc8cc1cb65b4163505d28736edb0f4330ec9e",
+            "created_at": "2026-09-09T12:36:06.865138+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "The conference's final statement was a summary of all the topics the speakers had touched on during two days of meetings in Cordoba.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865138+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-9753",
+            "_key": "semeval-glm-flash-r1-b21-semeval-9753",
+            "chunk_id": "semeval-9753",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:448c0424a2c0aa598143e41cf557db7212f7bfff326ccaa0782360974126823a",
+            "created_at": "2026-09-09T12:36:06.865146+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "In the hands of an evil cabal of sadistic murderers who feast on the flesh of their victims, a young woman lashes out in one, last, desperate act of defiance.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865146+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b21-semeval-9778",
+            "_key": "semeval-glm-flash-r1-b21-semeval-9778",
+            "chunk_id": "semeval-9778",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:583cdbd0c402f813a024ba624757bb5fab33a75400593fc8742053a099bdc0df",
+            "created_at": "2026-09-09T12:36:06.865153+00:00",
+            "space_id": "semeval-glm-flash-r1-b21",
+            "text": "The marketing research firm reeased a recent report saying the number of Americans watching online video has more than tripled in the last 5 years.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:36:06.865153+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

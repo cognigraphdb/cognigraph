@@ -1,0 +1,126 @@
+WHITESPACE = _{ " " | "\t" | NEWLINE }
+COMMENT = _{ "//" ~ (!NEWLINE ~ ANY)* }
+
+query = { SOI ~ (kw_explain ~ kw_analyze?)? ~ (mutation_query | read_query) ~ EOI }
+read_query = { (for_clause | let_clause | filter_clause)* ~ collect_clause? ~ sort_clause? ~ limit_clause? ~ return_clause }
+mutation_query = { (for_clause ~ (let_clause | filter_clause)*)? ~ mutation_clause ~ return_clause? }
+mutation_clause = { upsert_clause | insert_clause | update_clause | replace_clause | remove_clause }
+// Mutation operands are additive expressions: a bare IN would be ambiguous
+// with the collection separator. Parenthesize to use comparisons.
+insert_clause = { kw_insert ~ add_expr ~ kw_into ~ ident }
+update_clause = { kw_update ~ add_expr ~ kw_with ~ add_expr ~ kw_in ~ ident }
+replace_clause = { kw_replace ~ add_expr ~ kw_with ~ add_expr ~ kw_in ~ ident }
+remove_clause = { kw_remove ~ add_expr ~ kw_in ~ ident }
+upsert_clause = { kw_upsert ~ add_expr ~ kw_insert ~ add_expr ~ kw_update ~ add_expr ~ kw_in ~ ident }
+
+for_clause = { kw_for ~ (traversal_for | vector_for | expr_for) }
+// The source is any expression evaluating to an array: a collection name,
+// an in-scope variable, a document field, an array literal, a function.
+expr_for = { ident ~ kw_in ~ expr }
+vector_for = { ident ~ kw_in ~ vector_source }
+vector_source = { kw_vector_search ~ "(" ~ ident ~ "," ~ expr ~ ")" }
+// AQL binds one, two or three variables; only the vertex is ever required.
+// Requiring all three turned `FOR v IN 1..1 OUTBOUND x edges` into a parse
+// error, which reads as "traversal is unsupported" rather than "name the edge".
+traversal_for = {
+    ident ~ ("," ~ ident ~ ("," ~ ident)?)? ~ kw_in ~ depth_range ~ direction ~ expr ~ ident
+}
+
+depth_range = { uint ~ ".." ~ uint }
+direction = { kw_outbound | kw_inbound | kw_any }
+
+let_clause = { kw_let ~ ident ~ "=" ~ (subquery | expr) }
+// A parenthesized full read query; tried before expr so `(FOR ...)` is a
+// subquery while `(1 + 2)` remains a parenthesized expression.
+subquery = { "(" ~ read_query ~ ")" }
+filter_clause = { kw_filter ~ expr }
+collect_clause = { kw_collect ~ (collect_binding ~ ("," ~ collect_binding)*)? ~ collect_aggregate? ~ collect_into? ~ collect_count? }
+collect_aggregate = { kw_aggregate ~ aggregate_binding ~ ("," ~ aggregate_binding)* }
+aggregate_binding = { ident ~ "=" ~ ident ~ "(" ~ expr ~ ")" }
+collect_binding = { ident ~ "=" ~ expr }
+collect_into = { kw_into ~ ident ~ ("=" ~ expr)? }
+collect_count = { kw_with ~ kw_count ~ kw_into ~ ident }
+sort_clause = { kw_sort ~ sort_key ~ ("," ~ sort_key)* ~ (kw_collate ~ string)? }
+sort_key = { expr ~ sort_direction? }
+sort_direction = { kw_asc | kw_desc }
+limit_clause = { kw_limit ~ uint ~ ("," ~ uint)? }
+return_clause = { kw_return ~ kw_distinct? ~ expr }
+
+expr = { ternary_expr }
+// D3: `cond ? then : else`. Right-associative via `expr` in both branches.
+ternary_expr = { or_expr ~ ("?" ~ expr ~ ":" ~ expr)? }
+or_expr = { and_expr ~ (or_op ~ and_expr)* }
+and_expr = { comparison_expr ~ (and_op ~ comparison_expr)* }
+comparison_expr = { add_expr ~ (comparison_op ~ add_expr)? }
+add_expr = { mul_expr ~ (add_op ~ mul_expr)* }
+mul_expr = { unary_expr ~ (mul_op ~ unary_expr)* }
+unary_expr = { unary_operation | postfix_expr }
+// Postfix field access, so a function result can be projected:
+// `DOCUMENT(e._to).name`, `FIRST(xs).year`. A bare `e._to` still parses
+// as `path`, which primary tries first.
+postfix_expr = { primary ~ field_access* }
+field_access = { "." ~ ident }
+
+unary_operation = { unary_op ~ unary_expr }
+unary_op = { kw_not | "-" }
+or_op = { kw_or }
+and_op = { kw_and }
+comparison_op = { "==" | "!=" | "<=" | ">=" | "<" | ">" | kw_in }
+add_op = { "+" | "-" }
+mul_op = { "*" | "/" }
+
+// `subquery` precedes the parenthesized-expr alternative so `(FOR ...)` is a
+// subquery while `(1 + 2)` stays an expression. Outside LET it is desugared
+// into a synthetic LET by the parser (decision_cgql_v2.md, amended).
+primary = { function_call | object | array | bind_var | string | number | boolean | null | subquery | path | "(" ~ expr ~ ")" }
+function_call = { ident ~ "(" ~ (expr ~ ("," ~ expr)*)? ~ ")" }
+object = { "{" ~ (object_field ~ ("," ~ object_field)*)? ~ "}" }
+object_field = { ident ~ (":" ~ expr)? }
+array = { "[" ~ (expr ~ ("," ~ expr)*)? ~ "]" }
+path = { ident ~ ("." ~ ident)* }
+bind_var = { "@" ~ ident }
+
+ident = @{ (ASCII_ALPHA | "_") ~ (ASCII_ALPHANUMERIC | "_")* }
+uint = @{ ASCII_DIGIT+ }
+number = @{ "-"? ~ ASCII_DIGIT+ ~ ("." ~ ASCII_DIGIT+)? }
+boolean = { kw_true | kw_false }
+null = { kw_null }
+string = @{ "\"" ~ ( "\\\"" | "\\\\" | "\\/" | "\\b" | "\\f" | "\\n" | "\\r" | "\\t" | "\\u" ~ ASCII_HEX_DIGIT{4} | !("\"" | "\\") ~ ANY )* ~ "\"" }
+
+// Keywords are atomic with a word-boundary guard so they never prefix-match
+// into identifiers (e.g. `FORd`, `INitems`).
+kw_analyze = @{ ^"ANALYZE" ~ !ident_char }
+kw_and = @{ ^"AND" ~ !ident_char }
+kw_aggregate = @{ ^"AGGREGATE" ~ !ident_char }
+kw_any = @{ ^"ANY" ~ !ident_char }
+kw_asc = @{ ^"ASC" ~ !ident_char }
+kw_collate = @{ ^"COLLATE" ~ !ident_char }
+kw_collect = @{ ^"COLLECT" ~ !ident_char }
+kw_count = @{ ^"COUNT" ~ !ident_char }
+kw_desc = @{ ^"DESC" ~ !ident_char }
+kw_insert = @{ ^"INSERT" ~ !ident_char }
+kw_into = @{ ^"INTO" ~ !ident_char }
+kw_remove = @{ ^"REMOVE" ~ !ident_char }
+kw_replace = @{ ^"REPLACE" ~ !ident_char }
+kw_update = @{ ^"UPDATE" ~ !ident_char }
+kw_upsert = @{ ^"UPSERT" ~ !ident_char }
+kw_with = @{ ^"WITH" ~ !ident_char }
+kw_explain = @{ ^"EXPLAIN" ~ !ident_char }
+kw_false = @{ ^"FALSE" ~ !ident_char }
+kw_filter = @{ ^"FILTER" ~ !ident_char }
+kw_for = @{ ^"FOR" ~ !ident_char }
+kw_in = @{ ^"IN" ~ !ident_char }
+kw_inbound = @{ ^"INBOUND" ~ !ident_char }
+kw_let = @{ ^"LET" ~ !ident_char }
+kw_distinct = @{ ^"DISTINCT" ~ !ident_char }
+kw_limit = @{ ^"LIMIT" ~ !ident_char }
+kw_not = @{ ^"NOT" ~ !ident_char }
+kw_null = @{ ^"NULL" ~ !ident_char }
+kw_or = @{ ^"OR" ~ !ident_char }
+kw_outbound = @{ ^"OUTBOUND" ~ !ident_char }
+kw_return = @{ ^"RETURN" ~ !ident_char }
+kw_sort = @{ ^"SORT" ~ !ident_char }
+kw_true = @{ ^"TRUE" ~ !ident_char }
+kw_vector_search = @{ ^"VECTOR_SEARCH" ~ !ident_char }
+
+ident_char = _{ ASCII_ALPHANUMERIC | "_" }

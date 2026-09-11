@@ -1,0 +1,126 @@
+{
+  "id": "pharma_research",
+  "name": "Pharmaceutical Research",
+  "version": 1,
+  "description": "Synthetic ontology for market research and transcript intelligence.",
+  "entities": [
+    {
+      "name": "Study PX-101",
+      "type": "MarketResearchStudy"
+    },
+    {
+      "name": "Dr. Rivera",
+      "type": "HCP"
+    },
+    {
+      "name": "Patient Persona A",
+      "type": "PatientPersona"
+    },
+    {
+      "name": "Caregiver Segment B",
+      "type": "CaregiverSegment"
+    },
+    {
+      "name": "TheraX",
+      "type": "Product"
+    },
+    {
+      "name": "Standard of Care",
+      "type": "Treatment"
+    },
+    {
+      "name": "Fatigue",
+      "type": "Symptom"
+    },
+    {
+      "name": "Injection Anxiety",
+      "type": "Barrier"
+    },
+    {
+      "name": "Adherence",
+      "type": "Outcome"
+    },
+    {
+      "name": "Patient Support Program",
+      "type": "Service"
+    },
+    {
+      "name": "Oncology Clinic Network",
+      "type": "Organization"
+    }
+  ],
+  "relation_rules": [
+    {
+      "source": "Study PX-101",
+      "relation": "INTERVIEWS",
+      "target": "Dr. Rivera",
+      "when_any": [
+        "Study PX-101 interviewed Dr. Rivera"
+      ]
+    },
+    {
+      "source": "Dr. Rivera",
+      "relation": "MENTIONS_PRODUCT",
+      "target": "TheraX",
+      "when_any": [
+        "Dr. Rivera mentioned TheraX"
+      ]
+    },
+    {
+      "source": "TheraX",
+      "relation": "COMPARES_WITH",
+      "target": "Standard of Care",
+      "when_any": [
+        "Dr. Rivera compared TheraX with Standard of Care"
+      ]
+    },
+    {
+      "source": "Patient Persona A",
+      "relation": "REPORTS_SYMPTOM",
+      "target": "Fatigue",
+      "when_any": [
+        "Patient Persona A reported Fatigue"
+      ]
+    },
+    {
+      "source": "Patient Persona A",
+      "relation": "EXPERIENCES_BARRIER",
+      "target": "Injection Anxiety",
+      "when_any": [
+        "Patient Persona A experienced Injection Anxiety"
+      ]
+    },
+    {
+      "source": "Injection Anxiety",
+      "relation": "AFFECTS",
+      "target": "Adherence",
+      "when_any": [
+        "Injection Anxiety reduced Adherence"
+      ]
+    },
+    {
+      "source": "Caregiver Segment B",
+      "relation": "SUPPORTS",
+      "target": "Patient Persona A",
+      "when_any": [
+        "Caregiver Segment B supported Patient Persona A"
+      ]
+    },
+    {
+      "source": "Patient Support Program",
+      "relation": "IMPROVES",
+      "target": "Adherence",
+      "when_any": [
+        "Patient Support Program improved Adherence"
+      ]
+    },
+    {
+      "source": "Oncology Clinic Network",
+      "relation": "RUNS_STUDY",
+      "target": "Study PX-101",
+      "when_any": [
+        "Oncology Clinic Network ran Study PX-101"
+      ]
+    }
+  ]
+}

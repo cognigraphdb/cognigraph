@@ -1,0 +1,1 @@
+FOR d IN documents LET d = 1 RETURN d

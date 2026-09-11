@@ -1,0 +1,28 @@
+{
+  "space_id": "gen:crowdstrike-2024",
+  "questions": [
+    { "id": "root-cause", "question": "Who caused the outage and how?",
+      "expected_facts": [
+        "CrowdStrike --CAUSED--> Global IT outage",
+        "Faulty update --AFFECTS--> Falcon Sensor"
+      ],
+      "forbidden_facts": [
+        "Microsoft --CAUSED--> Global IT outage",
+        "Microsoft Windows --CAUSED--> Global IT outage"
+      ]
+    },
+    { "id": "platform", "question": "What did the faulty software run on?",
+      "expected_facts": [ "Falcon Sensor --RUNS_ON--> Microsoft Windows" ]
+    },
+    { "id": "impact", "question": "Which airline was hit hardest?",
+      "expected_facts": [ "Global IT outage --AFFECTS--> Delta Air Lines" ],
+      "forbidden_facts": [ "Delta Air Lines --CAUSED--> Global IT outage" ]
+    },
+    { "id": "response", "question": "Who leads CrowdStrike and how did it respond?",
+      "expected_facts": [
+        "George Kurtz --LEADS--> CrowdStrike",
+        "CrowdStrike --RESPONDED_WITH--> Faulty update"
+      ]
+    }
+  ]
+}

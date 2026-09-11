@@ -1,0 +1,246 @@
+{
+  "id": "demo_policy_speech",
+  "name": "Demo Policy Speech",
+  "version": 1,
+  "description": "Entity intelligence config for the 2024 State of the Union demo corpus.",
+  "entities": [
+    {
+      "name": "Administration",
+      "type": "Actor",
+      "aliases": [
+        "my administration",
+        "my plan",
+        "The President"
+      ]
+    },
+    {
+      "name": "Alabama",
+      "type": "Location"
+    },
+    {
+      "name": "America",
+      "type": "Country",
+      "aliases": [
+        "Americans"
+      ]
+    },
+    {
+      "name": "Bipartisan Infrastructure Law",
+      "type": "Legislation"
+    },
+    {
+      "name": "Billionaire minimum tax",
+      "type": "Policy",
+      "aliases": [
+        "minimum tax for billionaires",
+        "25 percent"
+      ]
+    },
+    {
+      "name": "CHIPS and Science Act",
+      "type": "Legislation"
+    },
+    {
+      "name": "Congress",
+      "type": "Organization"
+    },
+    {
+      "name": "Democracy",
+      "type": "Concept"
+    },
+    {
+      "name": "Federal deficit",
+      "type": "EconomicMetric",
+      "aliases": [
+        "deficit"
+      ]
+    },
+    {
+      "name": "Franklin Roosevelt",
+      "type": "Person"
+    },
+    {
+      "name": "Gaza",
+      "type": "Location"
+    },
+    {
+      "name": "Hamas",
+      "type": "Organization"
+    },
+    {
+      "name": "IVF",
+      "type": "Healthcare"
+    },
+    {
+      "name": "Inflation",
+      "type": "EconomicMetric"
+    },
+    {
+      "name": "Israel",
+      "type": "Country"
+    },
+    {
+      "name": "January 6",
+      "type": "Event"
+    },
+    {
+      "name": "Medicare",
+      "type": "Program"
+    },
+    {
+      "name": "NATO",
+      "type": "Organization"
+    },
+    {
+      "name": "Prescription drug costs",
+      "type": "Policy",
+      "aliases": [
+        "prescription drugs",
+        "prescription drug costs",
+        "insulin",
+        "drug price negotiation",
+        "prescription drug cost cap",
+        "prescription drug price negotiation"
+      ]
+    },
+    {
+      "name": "Putin",
+      "type": "Person",
+      "aliases": [
+        "Vladimir Putin",
+        "President Putin"
+      ]
+    },
+    {
+      "name": "Roe v. Wade",
+      "type": "LegalPrecedent"
+    },
+    {
+      "name": "Russia",
+      "type": "Country"
+    },
+    {
+      "name": "Selma",
+      "type": "Location"
+    },
+    {
+      "name": "Social Security",
+      "type": "Program"
+    },
+    {
+      "name": "Sweden",
+      "type": "Country"
+    },
+    {
+      "name": "Tax Code",
+      "type": "Policy",
+      "aliases": [
+        "tax code",
+        "taxes",
+        "tax break",
+        "child tax credit"
+      ]
+    },
+    {
+      "name": "Ukraine",
+      "type": "Country"
+    },
+    {
+      "name": "United States",
+      "type": "Country"
+    }
+  ],
+  "relation_rules": [
+    {
+      "source": "United States",
+      "relation": "SUPPORTS",
+      "target": "Ukraine",
+      "when_any": [
+        "stand with Ukraine",
+        "provide the weapons",
+        "Ukraine can stop Putin if we stand with Ukraine"
+      ]
+    },
+    {
+      "source": "NATO",
+      "relation": "ADDS_MEMBER",
+      "target": "Sweden",
+      "when_any": [
+        "Sweden officially joined",
+        "welcomed Finland to the alliance"
+      ]
+    },
+    {
+      "source": "Administration",
+      "relation": "PROPOSES",
+      "target": "Prescription drug costs",
+      "when_any": [
+        "cap prescription drug costs",
+        "cap the cost of insulin",
+        "Medicare is negotiating lower prices"
+      ]
+    },
+    {
+      "source": "Medicare",
+      "relation": "NEGOTIATES",
+      "target": "Prescription drug costs",
+      "when_any": [
+        "Medicare is negotiating lower prices",
+        "give Medicare the power to negotiate lower prices"
+      ]
+    },
+    {
+      "source": "Administration",
+      "relation": "PROPOSES",
+      "target": "Billionaire minimum tax",
+      "when_any": [
+        "I proposed a minimum tax for billionaires",
+        "minimum tax for billionaires of 25 percent"
+      ]
+    },
+    {
+      "source": "Billionaire minimum tax",
+      "relation": "AFFECTS",
+      "target": "Federal deficit",
+      "when_any": [
+        "cut the Federal deficit another $3 trillion",
+        "would raise $500 billion"
+      ]
+    },
+    {
+      "source": "Alabama",
+      "relation": "LOCATION",
+      "target": "IVF",
+      "when_any": [
+        "Alabama Supreme Court shut down IVF",
+        "Birmingham, Alabama"
+      ]
+    },
+    {
+      "source": "Administration",
+      "relation": "PROPOSES",
+      "target": "Roe v. Wade",
+      "when_any": [
+        "restore Roe v. Wade",
+        "Roe v. Wade as the law of the land"
+      ]
+    },
+    {
+      "source": "Israel",
+      "relation": "OPPOSES",
+      "target": "Hamas",
+      "when_any": [
+        "Israel has a right to go after Hamas",
+        "Hamas ended this conflict"
+      ]
+    },
+    {
+      "source": "Selma",
+      "relation": "LOCATION",
+      "target": "Alabama",
+      "when_any": [
+        "Selma, Alabama"
+      ]
+    }
+  ]
+}

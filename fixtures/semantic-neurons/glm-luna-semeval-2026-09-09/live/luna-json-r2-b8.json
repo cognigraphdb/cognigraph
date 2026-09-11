@@ -1,0 +1,1338 @@
+{
+  "phase": "measurement",
+  "arm": "luna-json",
+  "repetition": 2,
+  "batch": 8,
+  "request": {
+    "space_type": "semeval-luna-json-r2-b8",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-8838",
+        "title": "Relation benchmark excerpt",
+        "text": "The girls drank the vodka out of plastic water bottles."
+      },
+      {
+        "id": "semeval-10260",
+        "title": "Relation benchmark excerpt",
+        "text": "The sound came from a wooden structure two hundred yards away."
+      },
+      {
+        "id": "semeval-9085",
+        "title": "Relation benchmark excerpt",
+        "text": "It's a long, polyphonic novel bookended by a virtuoso first-person discourse from Madero, a cocky, seventeen-year-old student poet."
+      },
+      {
+        "id": "semeval-9902",
+        "title": "Relation benchmark excerpt",
+        "text": "These old power plants produce pollution that causes smog, acid rain and global warming, and they generate radioactive wastes and other toxic pollutants."
+      },
+      {
+        "id": "semeval-8863",
+        "title": "Relation benchmark excerpt",
+        "text": "As a result, the brain is depleted of dopamine, which causes the severe depression after the cocaine has dissipated."
+      },
+      {
+        "id": "semeval-9973",
+        "title": "Relation benchmark excerpt",
+        "text": "The main theme of the play is ambition and how it can destroy a courageous, trustworthy, noble man."
+      },
+      {
+        "id": "semeval-9899",
+        "title": "Relation benchmark excerpt",
+        "text": "The paper reported a 'palpable sense of disappointment' from the audience."
+      },
+      {
+        "id": "semeval-9097",
+        "title": "Relation benchmark excerpt",
+        "text": "We were forced to get off the bus and find accommodation for the night, while the police officers took the bus to the scene of the incident; apparently they were lacking their own transportation."
+      },
+      {
+        "id": "semeval-8728",
+        "title": "Relation benchmark excerpt",
+        "text": "Patty the Milkmaid was going to market carrying her milk in a pail on her head."
+      },
+      {
+        "id": "semeval-9629",
+        "title": "Relation benchmark excerpt",
+        "text": "He published important works on epistemology, as well as works relevant to religion, law, and history."
+      },
+      {
+        "id": "semeval-8186",
+        "title": "Relation benchmark excerpt",
+        "text": "One win and we've suddenly got a squad of world beaters."
+      },
+      {
+        "id": "semeval-10377",
+        "title": "Relation benchmark excerpt",
+        "text": "The gist of his message was that the religious social structure was in crisis and should be saved."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 11,
+    "proposed": 12,
+    "skips": [
+      "`girls --Entity-Destination--> bottles`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-luna-json-r2-b8"
+  },
+  "latency_seconds": 4.707049916964024,
+  "facts": [
+    {
+      "_from": "entities/sound",
+      "_id": "facts/fact-0bfd601bc7d813bb7f06c5e6935088a048293557986cf1fc449db05b263f98a0",
+      "_key": "fact-0bfd601bc7d813bb7f06c5e6935088a048293557986cf1fc449db05b263f98a0",
+      "_to": "entities/structure",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10260",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b8",
+      "trigger": "The sound came from a wooden structure two hundred yards away.",
+      "trigger_end": 62,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/play",
+      "_id": "facts/fact-0d562492beaa9cdd07082342065d757cc2f8cdee311a8dfcee0ef6cb95a7e658",
+      "_key": "fact-0d562492beaa9cdd07082342065d757cc2f8cdee311a8dfcee0ef6cb95a7e658",
+      "_to": "entities/ambition",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9973",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b8",
+      "trigger": "The main theme of the play is ambition and how it can destroy a courageous, trustworthy, noble man.",
+      "trigger_end": 99,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/squad",
+      "_id": "facts/fact-37da69422b81a1f740770180a388142b6dd81db9ad48634145e383441d6827cf",
+      "_key": "fact-37da69422b81a1f740770180a388142b6dd81db9ad48634145e383441d6827cf",
+      "_to": "entities/beaters",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8186",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b8",
+      "trigger": "One win and we've suddenly got a squad of world beaters.",
+      "trigger_end": 56,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/message",
+      "_id": "facts/fact-9a278662a4722f5e783d1be1d10d4cf60c836ae2b9a3fb5fc8d0fc13d6bbd6a8",
+      "_key": "fact-9a278662a4722f5e783d1be1d10d4cf60c836ae2b9a3fb5fc8d0fc13d6bbd6a8",
+      "_to": "entities/social-structure",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10377",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b8",
+      "trigger": "The gist of his message was that the religious social structure was in crisis and should be saved.",
+      "trigger_end": 98,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/discourse",
+      "_id": "facts/fact-ab952812bfe4d84ce19a56fbe9dd7986d7835dce610c406df6ec1efce38b43cb",
+      "_key": "fact-ab952812bfe4d84ce19a56fbe9dd7986d7835dce610c406df6ec1efce38b43cb",
+      "_to": "entities/poet",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9085",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b8",
+      "trigger": "It's a long, polyphonic novel bookended by a virtuoso first-person discourse from Madero, a cocky, seventeen-year-old student poet.",
+      "trigger_end": 131,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/pollution",
+      "_id": "facts/fact-b588d797bda186aeb3173b9bb0115d08c5742a45ff28cd9d2d264e15d158bcfd",
+      "_key": "fact-b588d797bda186aeb3173b9bb0115d08c5742a45ff28cd9d2d264e15d158bcfd",
+      "_to": "entities/warming",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9902",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b8",
+      "trigger": "These old power plants produce pollution that causes smog, acid rain and global warming, and they generate radioactive wastes and other toxic pollutants.",
+      "trigger_end": 153,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/officers",
+      "_id": "facts/fact-b92264d783b37cfe7cdd48dfb428bbfb38efb5fc6f5c527ef751e89c682575b7",
+      "_key": "fact-b92264d783b37cfe7cdd48dfb428bbfb38efb5fc6f5c527ef751e89c682575b7",
+      "_to": "entities/bus",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9097",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b8",
+      "trigger": "We were forced to get off the bus and find accommodation for the night, while the police officers took the bus to the scene of the incident; apparently they were lacking their own transportation.",
+      "trigger_end": 195,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/dopamine",
+      "_id": "facts/fact-c03cd567554c067ed65d66a39bdd3bcd8684bbb14f05fec910e837771ba06858",
+      "_key": "fact-c03cd567554c067ed65d66a39bdd3bcd8684bbb14f05fec910e837771ba06858",
+      "_to": "entities/depression",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8863",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b8",
+      "trigger": "As a result, the brain is depleted of dopamine, which causes the severe depression after the cocaine has dissipated.",
+      "trigger_end": 116,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/milk",
+      "_id": "facts/fact-c1d91eeb4d0a3acd93111c0fab637d05c931d45d58d4e404427768adaee4e808",
+      "_key": "fact-c1d91eeb4d0a3acd93111c0fab637d05c931d45d58d4e404427768adaee4e808",
+      "_to": "entities/pail",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8728",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b8",
+      "trigger": "Patty the Milkmaid was going to market carrying her milk in a pail on her head.",
+      "trigger_end": 79,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/works",
+      "_id": "facts/fact-cc8fe2a58fc68d25e1ff3dcee033d4a0ef766ab5dde2f7685801ef46bf1a49ad",
+      "_key": "fact-cc8fe2a58fc68d25e1ff3dcee033d4a0ef766ab5dde2f7685801ef46bf1a49ad",
+      "_to": "entities/epistemology",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9629",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b8",
+      "trigger": "He published important works on epistemology, as well as works relevant to religion, law, and history.",
+      "trigger_end": 102,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/disappointment",
+      "_id": "facts/fact-d59a73bfc9c5d54c15be9953e7895271343ca2b9817357931eba52447fe3488d",
+      "_key": "fact-d59a73bfc9c5d54c15be9953e7895271343ca2b9817357931eba52447fe3488d",
+      "_to": "entities/audience",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9899",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b8",
+      "trigger": "The paper reported a 'palpable sense of disappointment' from the audience.",
+      "trigger_end": 74,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/ambition",
+      "_key": "ambition",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989035+00:00",
+      "entity_type": "Topic",
+      "name": "ambition",
+      "updated_at": "2026-09-09T12:44:14.989035+00:00"
+    },
+    {
+      "_id": "entities/audience",
+      "_key": "audience",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989040+00:00",
+      "entity_type": "Entity",
+      "name": "audience",
+      "updated_at": "2026-09-09T12:44:14.989040+00:00"
+    },
+    {
+      "_id": "entities/beaters",
+      "_key": "beaters",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989041+00:00",
+      "entity_type": "Member",
+      "name": "beaters",
+      "updated_at": "2026-09-09T12:44:14.989041+00:00"
+    },
+    {
+      "_id": "entities/bus",
+      "_key": "bus",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989042+00:00",
+      "entity_type": "Whole",
+      "name": "bus",
+      "updated_at": "2026-09-09T12:44:14.989042+00:00"
+    },
+    {
+      "_id": "entities/depression",
+      "_key": "depression",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989043+00:00",
+      "entity_type": "Effect",
+      "name": "depression",
+      "updated_at": "2026-09-09T12:44:14.989043+00:00"
+    },
+    {
+      "_id": "entities/disappointment",
+      "_key": "disappointment",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989044+00:00",
+      "entity_type": "Entity",
+      "name": "disappointment",
+      "updated_at": "2026-09-09T12:44:14.989044+00:00"
+    },
+    {
+      "_id": "entities/discourse",
+      "_key": "discourse",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989045+00:00",
+      "entity_type": "Message",
+      "name": "discourse",
+      "updated_at": "2026-09-09T12:44:14.989045+00:00"
+    },
+    {
+      "_id": "entities/dopamine",
+      "_key": "dopamine",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989046+00:00",
+      "entity_type": "Cause",
+      "name": "dopamine",
+      "updated_at": "2026-09-09T12:44:14.989046+00:00"
+    },
+    {
+      "_id": "entities/epistemology",
+      "_key": "epistemology",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989047+00:00",
+      "entity_type": "Topic",
+      "name": "epistemology",
+      "updated_at": "2026-09-09T12:44:14.989047+00:00"
+    },
+    {
+      "_id": "entities/message",
+      "_key": "message",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989048+00:00",
+      "entity_type": "Message",
+      "name": "message",
+      "updated_at": "2026-09-09T12:44:14.989048+00:00"
+    },
+    {
+      "_id": "entities/milk",
+      "_key": "milk",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989049+00:00",
+      "entity_type": "Content",
+      "name": "milk",
+      "updated_at": "2026-09-09T12:44:14.989049+00:00"
+    },
+    {
+      "_id": "entities/officers",
+      "_key": "officers",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989049+00:00",
+      "entity_type": "Member",
+      "name": "officers",
+      "updated_at": "2026-09-09T12:44:14.989049+00:00"
+    },
+    {
+      "_id": "entities/pail",
+      "_key": "pail",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989050+00:00",
+      "entity_type": "Container",
+      "name": "pail",
+      "updated_at": "2026-09-09T12:44:14.989050+00:00"
+    },
+    {
+      "_id": "entities/play",
+      "_key": "play",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989051+00:00",
+      "entity_type": "Message",
+      "name": "play",
+      "updated_at": "2026-09-09T12:44:14.989051+00:00"
+    },
+    {
+      "_id": "entities/poet",
+      "_key": "poet",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989052+00:00",
+      "entity_type": "Entity",
+      "name": "poet",
+      "updated_at": "2026-09-09T12:44:14.989052+00:00"
+    },
+    {
+      "_id": "entities/pollution",
+      "_key": "pollution",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989053+00:00",
+      "entity_type": "Cause",
+      "name": "pollution",
+      "updated_at": "2026-09-09T12:44:14.989053+00:00"
+    },
+    {
+      "_id": "entities/social-structure",
+      "_key": "social-structure",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989054+00:00",
+      "entity_type": "Topic",
+      "name": "social structure",
+      "updated_at": "2026-09-09T12:44:14.989054+00:00"
+    },
+    {
+      "_id": "entities/sound",
+      "_key": "sound",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989056+00:00",
+      "entity_type": "Entity",
+      "name": "sound",
+      "updated_at": "2026-09-09T12:44:14.989056+00:00"
+    },
+    {
+      "_id": "entities/squad",
+      "_key": "squad",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989058+00:00",
+      "entity_type": "Collection",
+      "name": "squad",
+      "updated_at": "2026-09-09T12:44:14.989058+00:00"
+    },
+    {
+      "_id": "entities/structure",
+      "_key": "structure",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989059+00:00",
+      "entity_type": "Origin",
+      "name": "structure",
+      "updated_at": "2026-09-09T12:44:14.989059+00:00"
+    },
+    {
+      "_id": "entities/warming",
+      "_key": "warming",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989060+00:00",
+      "entity_type": "Effect",
+      "name": "warming",
+      "updated_at": "2026-09-09T12:44:14.989060+00:00"
+    },
+    {
+      "_id": "entities/works",
+      "_key": "works",
+      "aliases": [],
+      "created_at": "2026-09-09T12:44:14.989061+00:00",
+      "entity_type": "Message",
+      "name": "works",
+      "updated_at": "2026-09-09T12:44:14.989061+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-10260",
+      "_key": "semeval-luna-json-r2-b8-semeval-10260",
+      "chunk_id": "semeval-10260",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7106f7085cf30ddf00c3bf6fc36cc5182243a52a8a69f773ec05ff8b3c538d7f",
+      "created_at": "2026-09-09T12:44:14.989062+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "The sound came from a wooden structure two hundred yards away.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989062+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-10377",
+      "_key": "semeval-luna-json-r2-b8-semeval-10377",
+      "chunk_id": "semeval-10377",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5f4be769e9823d782712b35642e551f8b4446794eb893a3f78ded9fe42bb6af8",
+      "created_at": "2026-09-09T12:44:14.989073+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "The gist of his message was that the religious social structure was in crisis and should be saved.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989073+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-8186",
+      "_key": "semeval-luna-json-r2-b8-semeval-8186",
+      "chunk_id": "semeval-8186",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d5402d8bb2995e58ee14db4e5f0835c018307780b42ce3fd3d3a2b7a3d1bc02f",
+      "created_at": "2026-09-09T12:44:14.989083+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "One win and we've suddenly got a squad of world beaters.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989083+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-8728",
+      "_key": "semeval-luna-json-r2-b8-semeval-8728",
+      "chunk_id": "semeval-8728",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:46309af74ee981ab0154432b1e178b31ae5d4ffec4a81c930772677b9742bc09",
+      "created_at": "2026-09-09T12:44:14.989090+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "Patty the Milkmaid was going to market carrying her milk in a pail on her head.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989090+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-8838",
+      "_key": "semeval-luna-json-r2-b8-semeval-8838",
+      "chunk_id": "semeval-8838",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8c5442633fd4b7e2983829861237f3f2624c973195df7e94b45c8224b55f49bc",
+      "created_at": "2026-09-09T12:44:14.989096+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "The girls drank the vodka out of plastic water bottles.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989096+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-8863",
+      "_key": "semeval-luna-json-r2-b8-semeval-8863",
+      "chunk_id": "semeval-8863",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ff9c6b2b322c0e39addeb67cf6fd7f384d6eeec8101adfa68ee2b51a5ee01802",
+      "created_at": "2026-09-09T12:44:14.989099+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "As a result, the brain is depleted of dopamine, which causes the severe depression after the cocaine has dissipated.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989099+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-9085",
+      "_key": "semeval-luna-json-r2-b8-semeval-9085",
+      "chunk_id": "semeval-9085",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1ae89e385a464d65c1a495d906bf6014199aa98abe07d260ca6352b9e4140198",
+      "created_at": "2026-09-09T12:44:14.989105+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "It's a long, polyphonic novel bookended by a virtuoso first-person discourse from Madero, a cocky, seventeen-year-old student poet.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989105+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-9097",
+      "_key": "semeval-luna-json-r2-b8-semeval-9097",
+      "chunk_id": "semeval-9097",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:439659014604b8eab50e7b3157ba10ee9a0671d5ae9aae9c2b42c2585915739d",
+      "created_at": "2026-09-09T12:44:14.989110+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "We were forced to get off the bus and find accommodation for the night, while the police officers took the bus to the scene of the incident; apparently they were lacking their own transportation.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989110+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-9629",
+      "_key": "semeval-luna-json-r2-b8-semeval-9629",
+      "chunk_id": "semeval-9629",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:92873e1cafbcc87f0b0fcfc797edf35a34d22185bddd157fec875bd2e7c69ded",
+      "created_at": "2026-09-09T12:44:14.989115+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "He published important works on epistemology, as well as works relevant to religion, law, and history.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989115+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-9899",
+      "_key": "semeval-luna-json-r2-b8-semeval-9899",
+      "chunk_id": "semeval-9899",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2a46111354d82c4f47d9fad752f3e6ff79ba3e64eda13d2de7f11e3f53183c7f",
+      "created_at": "2026-09-09T12:44:14.989122+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "The paper reported a 'palpable sense of disappointment' from the audience.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989122+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-9902",
+      "_key": "semeval-luna-json-r2-b8-semeval-9902",
+      "chunk_id": "semeval-9902",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ea6e3f2727c3f4c8730aeec747b64c0a7942f8d3d4c971eb149e1a91a531379b",
+      "created_at": "2026-09-09T12:44:14.989129+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "These old power plants produce pollution that causes smog, acid rain and global warming, and they generate radioactive wastes and other toxic pollutants.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989129+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b8-semeval-9973",
+      "_key": "semeval-luna-json-r2-b8-semeval-9973",
+      "chunk_id": "semeval-9973",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d7c02e0e29553022a34fe1e9c5ead0b6ece9911b86bdeef9e8e6a1bd89e40ea4",
+      "created_at": "2026-09-09T12:44:14.989138+00:00",
+      "space_id": "semeval-luna-json-r2-b8",
+      "text": "The main theme of the play is ambition and how it can destroy a courageous, trustworthy, noble man.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:44:14.989138+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 11,
+        "results": [
+          {
+            "_from": "entities/sound",
+            "_id": "facts/fact-0bfd601bc7d813bb7f06c5e6935088a048293557986cf1fc449db05b263f98a0",
+            "_key": "fact-0bfd601bc7d813bb7f06c5e6935088a048293557986cf1fc449db05b263f98a0",
+            "_to": "entities/structure",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10260",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b8",
+            "trigger": "The sound came from a wooden structure two hundred yards away.",
+            "trigger_end": 62,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/play",
+            "_id": "facts/fact-0d562492beaa9cdd07082342065d757cc2f8cdee311a8dfcee0ef6cb95a7e658",
+            "_key": "fact-0d562492beaa9cdd07082342065d757cc2f8cdee311a8dfcee0ef6cb95a7e658",
+            "_to": "entities/ambition",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9973",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b8",
+            "trigger": "The main theme of the play is ambition and how it can destroy a courageous, trustworthy, noble man.",
+            "trigger_end": 99,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/squad",
+            "_id": "facts/fact-37da69422b81a1f740770180a388142b6dd81db9ad48634145e383441d6827cf",
+            "_key": "fact-37da69422b81a1f740770180a388142b6dd81db9ad48634145e383441d6827cf",
+            "_to": "entities/beaters",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8186",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b8",
+            "trigger": "One win and we've suddenly got a squad of world beaters.",
+            "trigger_end": 56,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/message",
+            "_id": "facts/fact-9a278662a4722f5e783d1be1d10d4cf60c836ae2b9a3fb5fc8d0fc13d6bbd6a8",
+            "_key": "fact-9a278662a4722f5e783d1be1d10d4cf60c836ae2b9a3fb5fc8d0fc13d6bbd6a8",
+            "_to": "entities/social-structure",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10377",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b8",
+            "trigger": "The gist of his message was that the religious social structure was in crisis and should be saved.",
+            "trigger_end": 98,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/discourse",
+            "_id": "facts/fact-ab952812bfe4d84ce19a56fbe9dd7986d7835dce610c406df6ec1efce38b43cb",
+            "_key": "fact-ab952812bfe4d84ce19a56fbe9dd7986d7835dce610c406df6ec1efce38b43cb",
+            "_to": "entities/poet",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9085",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b8",
+            "trigger": "It's a long, polyphonic novel bookended by a virtuoso first-person discourse from Madero, a cocky, seventeen-year-old student poet.",
+            "trigger_end": 131,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/pollution",
+            "_id": "facts/fact-b588d797bda186aeb3173b9bb0115d08c5742a45ff28cd9d2d264e15d158bcfd",
+            "_key": "fact-b588d797bda186aeb3173b9bb0115d08c5742a45ff28cd9d2d264e15d158bcfd",
+            "_to": "entities/warming",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9902",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b8",
+            "trigger": "These old power plants produce pollution that causes smog, acid rain and global warming, and they generate radioactive wastes and other toxic pollutants.",
+            "trigger_end": 153,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/officers",
+            "_id": "facts/fact-b92264d783b37cfe7cdd48dfb428bbfb38efb5fc6f5c527ef751e89c682575b7",
+            "_key": "fact-b92264d783b37cfe7cdd48dfb428bbfb38efb5fc6f5c527ef751e89c682575b7",
+            "_to": "entities/bus",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9097",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b8",
+            "trigger": "We were forced to get off the bus and find accommodation for the night, while the police officers took the bus to the scene of the incident; apparently they were lacking their own transportation.",
+            "trigger_end": 195,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/dopamine",
+            "_id": "facts/fact-c03cd567554c067ed65d66a39bdd3bcd8684bbb14f05fec910e837771ba06858",
+            "_key": "fact-c03cd567554c067ed65d66a39bdd3bcd8684bbb14f05fec910e837771ba06858",
+            "_to": "entities/depression",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8863",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b8",
+            "trigger": "As a result, the brain is depleted of dopamine, which causes the severe depression after the cocaine has dissipated.",
+            "trigger_end": 116,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/milk",
+            "_id": "facts/fact-c1d91eeb4d0a3acd93111c0fab637d05c931d45d58d4e404427768adaee4e808",
+            "_key": "fact-c1d91eeb4d0a3acd93111c0fab637d05c931d45d58d4e404427768adaee4e808",
+            "_to": "entities/pail",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8728",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b8",
+            "trigger": "Patty the Milkmaid was going to market carrying her milk in a pail on her head.",
+            "trigger_end": 79,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/works",
+            "_id": "facts/fact-cc8fe2a58fc68d25e1ff3dcee033d4a0ef766ab5dde2f7685801ef46bf1a49ad",
+            "_key": "fact-cc8fe2a58fc68d25e1ff3dcee033d4a0ef766ab5dde2f7685801ef46bf1a49ad",
+            "_to": "entities/epistemology",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9629",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b8",
+            "trigger": "He published important works on epistemology, as well as works relevant to religion, law, and history.",
+            "trigger_end": 102,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/disappointment",
+            "_id": "facts/fact-d59a73bfc9c5d54c15be9953e7895271343ca2b9817357931eba52447fe3488d",
+            "_key": "fact-d59a73bfc9c5d54c15be9953e7895271343ca2b9817357931eba52447fe3488d",
+            "_to": "entities/audience",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9899",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b8",
+            "trigger": "The paper reported a 'palpable sense of disappointment' from the audience.",
+            "trigger_end": 74,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 22,
+        "results": [
+          {
+            "_id": "entities/ambition",
+            "_key": "ambition",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989035+00:00",
+            "entity_type": "Topic",
+            "name": "ambition",
+            "updated_at": "2026-09-09T12:44:14.989035+00:00"
+          },
+          {
+            "_id": "entities/audience",
+            "_key": "audience",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989040+00:00",
+            "entity_type": "Entity",
+            "name": "audience",
+            "updated_at": "2026-09-09T12:44:14.989040+00:00"
+          },
+          {
+            "_id": "entities/beaters",
+            "_key": "beaters",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989041+00:00",
+            "entity_type": "Member",
+            "name": "beaters",
+            "updated_at": "2026-09-09T12:44:14.989041+00:00"
+          },
+          {
+            "_id": "entities/bus",
+            "_key": "bus",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989042+00:00",
+            "entity_type": "Whole",
+            "name": "bus",
+            "updated_at": "2026-09-09T12:44:14.989042+00:00"
+          },
+          {
+            "_id": "entities/depression",
+            "_key": "depression",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989043+00:00",
+            "entity_type": "Effect",
+            "name": "depression",
+            "updated_at": "2026-09-09T12:44:14.989043+00:00"
+          },
+          {
+            "_id": "entities/disappointment",
+            "_key": "disappointment",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989044+00:00",
+            "entity_type": "Entity",
+            "name": "disappointment",
+            "updated_at": "2026-09-09T12:44:14.989044+00:00"
+          },
+          {
+            "_id": "entities/discourse",
+            "_key": "discourse",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989045+00:00",
+            "entity_type": "Message",
+            "name": "discourse",
+            "updated_at": "2026-09-09T12:44:14.989045+00:00"
+          },
+          {
+            "_id": "entities/dopamine",
+            "_key": "dopamine",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989046+00:00",
+            "entity_type": "Cause",
+            "name": "dopamine",
+            "updated_at": "2026-09-09T12:44:14.989046+00:00"
+          },
+          {
+            "_id": "entities/epistemology",
+            "_key": "epistemology",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989047+00:00",
+            "entity_type": "Topic",
+            "name": "epistemology",
+            "updated_at": "2026-09-09T12:44:14.989047+00:00"
+          },
+          {
+            "_id": "entities/message",
+            "_key": "message",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989048+00:00",
+            "entity_type": "Message",
+            "name": "message",
+            "updated_at": "2026-09-09T12:44:14.989048+00:00"
+          },
+          {
+            "_id": "entities/milk",
+            "_key": "milk",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989049+00:00",
+            "entity_type": "Content",
+            "name": "milk",
+            "updated_at": "2026-09-09T12:44:14.989049+00:00"
+          },
+          {
+            "_id": "entities/officers",
+            "_key": "officers",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989049+00:00",
+            "entity_type": "Member",
+            "name": "officers",
+            "updated_at": "2026-09-09T12:44:14.989049+00:00"
+          },
+          {
+            "_id": "entities/pail",
+            "_key": "pail",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989050+00:00",
+            "entity_type": "Container",
+            "name": "pail",
+            "updated_at": "2026-09-09T12:44:14.989050+00:00"
+          },
+          {
+            "_id": "entities/play",
+            "_key": "play",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989051+00:00",
+            "entity_type": "Message",
+            "name": "play",
+            "updated_at": "2026-09-09T12:44:14.989051+00:00"
+          },
+          {
+            "_id": "entities/poet",
+            "_key": "poet",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989052+00:00",
+            "entity_type": "Entity",
+            "name": "poet",
+            "updated_at": "2026-09-09T12:44:14.989052+00:00"
+          },
+          {
+            "_id": "entities/pollution",
+            "_key": "pollution",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989053+00:00",
+            "entity_type": "Cause",
+            "name": "pollution",
+            "updated_at": "2026-09-09T12:44:14.989053+00:00"
+          },
+          {
+            "_id": "entities/social-structure",
+            "_key": "social-structure",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989054+00:00",
+            "entity_type": "Topic",
+            "name": "social structure",
+            "updated_at": "2026-09-09T12:44:14.989054+00:00"
+          },
+          {
+            "_id": "entities/sound",
+            "_key": "sound",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989056+00:00",
+            "entity_type": "Entity",
+            "name": "sound",
+            "updated_at": "2026-09-09T12:44:14.989056+00:00"
+          },
+          {
+            "_id": "entities/squad",
+            "_key": "squad",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989058+00:00",
+            "entity_type": "Collection",
+            "name": "squad",
+            "updated_at": "2026-09-09T12:44:14.989058+00:00"
+          },
+          {
+            "_id": "entities/structure",
+            "_key": "structure",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989059+00:00",
+            "entity_type": "Origin",
+            "name": "structure",
+            "updated_at": "2026-09-09T12:44:14.989059+00:00"
+          },
+          {
+            "_id": "entities/warming",
+            "_key": "warming",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989060+00:00",
+            "entity_type": "Effect",
+            "name": "warming",
+            "updated_at": "2026-09-09T12:44:14.989060+00:00"
+          },
+          {
+            "_id": "entities/works",
+            "_key": "works",
+            "aliases": [],
+            "created_at": "2026-09-09T12:44:14.989061+00:00",
+            "entity_type": "Message",
+            "name": "works",
+            "updated_at": "2026-09-09T12:44:14.989061+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-10260",
+            "_key": "semeval-luna-json-r2-b8-semeval-10260",
+            "chunk_id": "semeval-10260",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7106f7085cf30ddf00c3bf6fc36cc5182243a52a8a69f773ec05ff8b3c538d7f",
+            "created_at": "2026-09-09T12:44:14.989062+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "The sound came from a wooden structure two hundred yards away.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989062+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-10377",
+            "_key": "semeval-luna-json-r2-b8-semeval-10377",
+            "chunk_id": "semeval-10377",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5f4be769e9823d782712b35642e551f8b4446794eb893a3f78ded9fe42bb6af8",
+            "created_at": "2026-09-09T12:44:14.989073+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "The gist of his message was that the religious social structure was in crisis and should be saved.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989073+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-8186",
+            "_key": "semeval-luna-json-r2-b8-semeval-8186",
+            "chunk_id": "semeval-8186",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d5402d8bb2995e58ee14db4e5f0835c018307780b42ce3fd3d3a2b7a3d1bc02f",
+            "created_at": "2026-09-09T12:44:14.989083+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "One win and we've suddenly got a squad of world beaters.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989083+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-8728",
+            "_key": "semeval-luna-json-r2-b8-semeval-8728",
+            "chunk_id": "semeval-8728",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:46309af74ee981ab0154432b1e178b31ae5d4ffec4a81c930772677b9742bc09",
+            "created_at": "2026-09-09T12:44:14.989090+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "Patty the Milkmaid was going to market carrying her milk in a pail on her head.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989090+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-8838",
+            "_key": "semeval-luna-json-r2-b8-semeval-8838",
+            "chunk_id": "semeval-8838",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8c5442633fd4b7e2983829861237f3f2624c973195df7e94b45c8224b55f49bc",
+            "created_at": "2026-09-09T12:44:14.989096+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "The girls drank the vodka out of plastic water bottles.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989096+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-8863",
+            "_key": "semeval-luna-json-r2-b8-semeval-8863",
+            "chunk_id": "semeval-8863",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ff9c6b2b322c0e39addeb67cf6fd7f384d6eeec8101adfa68ee2b51a5ee01802",
+            "created_at": "2026-09-09T12:44:14.989099+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "As a result, the brain is depleted of dopamine, which causes the severe depression after the cocaine has dissipated.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989099+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-9085",
+            "_key": "semeval-luna-json-r2-b8-semeval-9085",
+            "chunk_id": "semeval-9085",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1ae89e385a464d65c1a495d906bf6014199aa98abe07d260ca6352b9e4140198",
+            "created_at": "2026-09-09T12:44:14.989105+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "It's a long, polyphonic novel bookended by a virtuoso first-person discourse from Madero, a cocky, seventeen-year-old student poet.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989105+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-9097",
+            "_key": "semeval-luna-json-r2-b8-semeval-9097",
+            "chunk_id": "semeval-9097",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:439659014604b8eab50e7b3157ba10ee9a0671d5ae9aae9c2b42c2585915739d",
+            "created_at": "2026-09-09T12:44:14.989110+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "We were forced to get off the bus and find accommodation for the night, while the police officers took the bus to the scene of the incident; apparently they were lacking their own transportation.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989110+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-9629",
+            "_key": "semeval-luna-json-r2-b8-semeval-9629",
+            "chunk_id": "semeval-9629",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:92873e1cafbcc87f0b0fcfc797edf35a34d22185bddd157fec875bd2e7c69ded",
+            "created_at": "2026-09-09T12:44:14.989115+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "He published important works on epistemology, as well as works relevant to religion, law, and history.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989115+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-9899",
+            "_key": "semeval-luna-json-r2-b8-semeval-9899",
+            "chunk_id": "semeval-9899",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2a46111354d82c4f47d9fad752f3e6ff79ba3e64eda13d2de7f11e3f53183c7f",
+            "created_at": "2026-09-09T12:44:14.989122+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "The paper reported a 'palpable sense of disappointment' from the audience.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989122+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-9902",
+            "_key": "semeval-luna-json-r2-b8-semeval-9902",
+            "chunk_id": "semeval-9902",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ea6e3f2727c3f4c8730aeec747b64c0a7942f8d3d4c971eb149e1a91a531379b",
+            "created_at": "2026-09-09T12:44:14.989129+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "These old power plants produce pollution that causes smog, acid rain and global warming, and they generate radioactive wastes and other toxic pollutants.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989129+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b8-semeval-9973",
+            "_key": "semeval-luna-json-r2-b8-semeval-9973",
+            "chunk_id": "semeval-9973",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d7c02e0e29553022a34fe1e9c5ead0b6ece9911b86bdeef9e8e6a1bd89e40ea4",
+            "created_at": "2026-09-09T12:44:14.989138+00:00",
+            "space_id": "semeval-luna-json-r2-b8",
+            "text": "The main theme of the play is ambition and how it can destroy a courageous, trustworthy, noble man.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:44:14.989138+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "issue": "CG-37",
+  "date": "2026-09-09",
+  "revision": "b9084e6ee14648fe2a083cfe7d33c748469e91a4",
+  "git_state": "CG-23 and CG-28 committed as b9084e6; CG-37 uncommitted; no push",
+  "scope": "Share one per-parse counter across recursive subquery desugaring; no grammar, validation, execution, backend, dependency, or storage-format change",
+  "baseline_corpus": {
+    "exit_code": 101,
+    "passed": 3,
+    "failed": 1,
+    "ignored": 0,
+    "groups": 1,
+    "log": "/tmp/cognigraph-cg37-baseline-corpus.log",
+    "log_sha256": "139bd83d1b10ec24bfcfdb1f59ef1db95b9e12749778e712fdab444a96b04850"
+  },
+  "focused": {
+    "cargo test -p cognigraph-query": {
+      "exit_code": 0,
+      "passed": 147,
+      "failed": 0,
+      "ignored": 0,
+      "groups": 13,
+      "log": "/tmp/cognigraph-cg37-query.log",
+      "log_sha256": "bf2972a13408180cf8cb74677e5f50e6cd46eb4ed25c6cf208db2644c860bc2b"
+    },
+    "cargo test -p cognigraph-native --test cgql_corpus": {
+      "exit_code": 0,
+      "passed": 1,
+      "failed": 0,
+      "ignored": 0,
+      "groups": 1,
+      "log": "/tmp/cognigraph-cg37-native-corpus.log",
+      "log_sha256": "4acc2b80e11d02bd619a52265b22e7170e8a2533f45700870fb0083f66075e9a"
+    }
+  },
+  "gates": {
+    "cargo fmt --all -- --check": {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "cargo clippy --all-targets -- -D warnings": {
+      "exit_code": 0,
+      "log_sha256": "bb995ec04dd3ec97f91a26cf7779b1c957006b41d0d3855c1ca9f2894eadea11"
+    },
+    "cargo test --all": {
+      "exit_code": 0,
+      "passed": 953,
+      "failed": 0,
+      "ignored": 0,
+      "groups": 72,
+      "log": "/tmp/cognigraph-cg37-tests.log",
+      "log_sha256": "563ef0720b0a048c22a83e31e5debb81016b494fd5abe01523cfa46e70ba8b1a"
+    }
+  },
+  "release_build": {
+    "command": "cargo build --release -p cognigraph-server -p cognigraph-cli",
+    "exit_code": 0,
+    "log_sha256": "b7e5a6ccf9d22b12960aa859afed62a72a11cb0ee19da6ffd88175590508c912"
+  },
+  "binaries": {
+    "target/release/cognigraph-server": "434c926c5ac4a0c455d25d4192197c126c997e3789af03ed3660ca1fcd429909",
+    "target/release/cognigraph": "e91cbeca12190f3cc938fa1619dfb3261bc3a13a93275517455c9f63984b0032"
+  },
+  "arango": {
+    "password_configured": false,
+    "early_return_entries": 8,
+    "live_verified": false
+  },
+  "corpus": {
+    "parse_ok": 2,
+    "parse_err": 3,
+    "validate_err": 3,
+    "exec": 14
+  },
+  "release_http": {
+    "baseline": {
+      "exit_code": 0,
+      "checks": 180,
+      "events": {
+        "read": 54,
+        "analysis": 18,
+        "baseline_collision": 30,
+        "baseline_analysis_collision": 10,
+        "rejected": 24,
+        "unchanged": 24,
+        "mutation": 8,
+        "persisted": 8,
+        "known_status_defect": 4
+      },
+      "modes": [
+        "resident",
+        "paged"
+      ],
+      "evidence": "docs/issues/evidence/subquery-bindings-baseline-http-2026-09-09.json",
+      "evidence_sha256": "878058cde10550db04c8a9c2657888c0b3481178c2717f9e8ca45f390f881716",
+      "binary": "/tmp/cognigraph-pre-cg37-server",
+      "binary_sha256": "a7cb6d882c1f5b438d1b98e95747865c0d63182697e62025ccb26a02e94400cb",
+      "provider": "none",
+      "vector_mode": "sidecar",
+      "known_status_mismatches": 4
+    },
+    "fixed": {
+      "exit_code": 0,
+      "checks": 180,
+      "events": {
+        "read": 84,
+        "analysis": 28,
+        "rejected": 24,
+        "unchanged": 24,
+        "mutation": 8,
+        "persisted": 8,
+        "known_status_defect": 4
+      },
+      "modes": [
+        "resident",
+        "paged"
+      ],
+      "evidence": "docs/issues/evidence/subquery-bindings-fixed-http-2026-09-09.json",
+      "evidence_sha256": "52a7dbdf666001530ff69f5e8e1c7fda13b0e196f47a3754620087b2b6ff10a7",
+      "binary": "target/release/cognigraph-server",
+      "binary_sha256": "434c926c5ac4a0c455d25d4192197c126c997e3789af03ed3660ca1fcd429909",
+      "provider": "none",
+      "vector_mode": "sidecar",
+      "known_status_mismatches": 4
+    }
+  },
+  "harness_sha256": "da2e8162c99d19ec2b47e4625956f3499edba456600e19952b251f7d1b0a215e",
+  "documentation": {
+    "local_links_checked": 256,
+    "errors": [],
+    "registry": {
+      "Open": 8,
+      "Open P2": 7,
+      "Resolved": 30,
+      "Open P3": 1
+    },
+    "registry_rows_match_tickets": true,
+    "git_diff_check_exit_code": 0
+  },
+  "preservation": {
+    "user_owned_paths_checked": 24,
+    "unexpected_changes": []
+  },
+  "files": {
+    "CHANGELOG.md": "d3d5cd62f7168192a892890c2eddfc21dfcd12c8de0247f0aef2ddec4d2029c0",
+    "docs/cgql-v1.md": "76f44ddf0a9f2ca86fce385c7f9c405f7a667cbaf44e27c138682cd703604f0d",
+    "docs/decisions/decision_cgql_v2.md": "00318aa92c9928c4b01e9a1c24b9105a4fb0d25c7a645a60f14156548b980176",
+    "docs/implementation-plan.md": "75a2485bc31638d051c55250c2e30f369d49a05c9d62270ac58f87c8f7da7d03",
+    "docs/roadmap-2026-h2.md": "bddc848036352b2e87c9a9b3f80f42901fae45af4da65dfee632ff5e76bce6de",
+    "docs/issues/README.md": "2ac7cb7ebb13ee64b96ac0a039b4004803261f6f1c0e19a7d5b834f3bfba2fe0",
+    "docs/issues/CG-23.md": "ffc3fae2e1def8916a5174c54d263354947574bbc2e370229cc3cd6970e2a62a",
+    "docs/issues/CG-28.md": "74c4a46de6d6659ded6c20491a50fc1b9bf14be08770b4db8522fee8f4600217",
+    "docs/issues/CG-37.md": "e47e30d8baf53e0b73eb910c1c6809f80513c9625a3f84d66281257f5050bdb0",
+    "docs/issues/roadmap-parity-2026-09-09.md": "8a4ecf12796e9b44128539d1ce05cadf3e633b23898c88ea848fd7bed1362bc1",
+    "docs/issues/subquery-contract-2026-09-09.md": "078de0432553a80af97e2a92afae32c0737512013972f219557ddfa2d4604bab",
+    "docs/issues/subquery-bindings-2026-09-09.md": "de463d4547f7789f254d092bb8882de18ee83dc327429d348ae08705472e7d2d",
+    "crates/cognigraph-query/tests/corpus/README.md": "5ef8b722246a5c38da83cf17e3750f20b280ed1563eb69d3696304dfaaec8ad8",
+    "crates/cognigraph-query/src/parser/mod.rs": "007df349fb491fc4c5dc041250d1dedc09327dbad1fb994a3e2de5573f21cab4",
+    "crates/cognigraph-query/tests/subquery_bindings.rs": "a6bfc8b4fe16efbd97853d52d0ec4c3bd487900b87fc7049eff2c064c999148a",
+    "crates/cognigraph-query/tests/backend_executor/dynamic_analysis.rs": "38846fcab6675c2b5ccfa6689942ccefb5bd81b645349b10cf67c613c25c1ca5"
+  },
+  "fixtures": {
+    "crates/cognigraph-query/tests/corpus/dataset.json": "3590d46844a1c75447ba3401642d8f1dfcfc4566ef32d18dce8189e74718899e",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_aggregate.cgql": "834ceb93e5d82594cb91908756b7c6b89c819a577150499dae59a0f4f53e9835",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_aggregate.json": "37421eb4dd4f0fed39e1941f859a16c6dc85eb6cee5648d598c171e2f35899a8",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_collect.cgql": "905b333ac6116f28d5c0c46ede64f857e32e1ea5617aac16bacd86b58e726377",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_collect.json": "aebe02a34a969fa43df5713464c540a445eaa1d7b3211d52b941863f431000bc",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_filter.cgql": "2b9da87609687b173051fea68b7c51e32e2fb595db2e8b6c15716d1f5a997795",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_filter.json": "92260ea0cbd70738c0bccba89c8dbf5881ec50d1a09891ea531aa254a783c9cd",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_for.cgql": "0bcd0c8a7270505c856817302136f4edd67666bb2c2bb7c46ba22bf94622938e",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_for.json": "d07b9d8316ee81e6179b991d327efe1d1c3c6a93d09bce8c3c2eb9a17c4a52ff",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_let_return.cgql": "b262d5991e068bb55ede5b6fa660ef39b6afa10c39d13b83ee10ed8cda8112dc",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_let_return.json": "1c493b696e4a6198872a7e1791668110d0bb9adf2a8ad6cffea05ed576cb2b54",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_nested.cgql": "0c0f69edf3f0d41879b6651f1d2c9a4137d0c4cff7f86f3fb41536c60d826be1",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_nested.json": "b4b0c657dd7e32c46250d8a32c0e1a515391552c0bf0cbf0c3f59269f2466bee",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_sort.cgql": "30a4c3b11d883598aaef743de0052ff83d3d064e309fea866e11d4e152e7df65",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_sort.json": "d07b9d8316ee81e6179b991d327efe1d1c3c6a93d09bce8c3c2eb9a17c4a52ff",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_binding_collision.cgql": "45fa565d6edafc26f105145482bc7ac5a7e93517abf61fbebe188b4b1611ab2f",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_binding_collision.json": "6f8aa42112219c8e4769c9812536090c07d6fde5b0bde0d4fdf177a2ae6e72ff",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_binds.cgql": "fe93626c4ba5e9760b0dd51ad3bbd82f6fd76bd3fcc5c98afd7c1ac65bd07637",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_binds.json": "e014b0a1610779b732a252ed88da658716c95b41b781440a5dc7853779f94c0a",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_correlated.cgql": "de24d68855c64b946d991433b9805806b306a943e0e2e6142e92addea33e917e",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_correlated.json": "ba9a9900b6c99f767b8c99d1636aeaa3885fada88cd74730585e551943ad91d2",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_document.cgql": "2944c7c14d9575c693d2433505a36e0a50df9df9cd60ea6eeeb9f4badb545035",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_document.json": "1a647f917364f6a0b522319d0704319d6d1b386bb2b2dcbff8aca6f4092ae7e7",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_siblings.cgql": "4da90cfeaa65e7406bf7d90a265c46807e22f25d1df727b1f406be660f601d95",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_siblings.json": "0e07dd018c8035cab15acbdf0e189f468da730703df618701e3a5c3bc0c1f5a7",
+    "crates/cognigraph-query/tests/corpus/exec/sq_postcollect_rewrite.cgql": "9ad8e5dc0a94b0c8643100b289b04d14da70a550164ccf526865b40feabfc6bf",
+    "crates/cognigraph-query/tests/corpus/exec/sq_postcollect_rewrite.json": "ad03765a9a655684794a889aacffc8f8e4bbeb92f739fc7d32917fb82911c834",
+    "crates/cognigraph-query/tests/corpus/exec/sq_precollect_into.cgql": "18a0bc7d2f0c1f0cb038aec456846a4aba62844172cdb5e40d7b4ee24718cadb",
+    "crates/cognigraph-query/tests/corpus/exec/sq_precollect_into.json": "ef847f3cd1bcd90872d58e5f0b302a1fd077630377253eff77c5b5e7708882bd",
+    "crates/cognigraph-query/tests/corpus/parse_err/sq_contains_mutation.cgql": "1d64ea8e0d995efbe26545ecdf8f318e33c6e1eb595d983c929672714a7b7053",
+    "crates/cognigraph-query/tests/corpus/parse_err/sq_postcollect_return.cgql": "8d0210abef5d4b04f3ef3dd63d960d3f0935b4dac614266fafa34c54b4777821",
+    "crates/cognigraph-query/tests/corpus/parse_err/sq_postcollect_sort.cgql": "7c72468db1cfd99eae91d4b953a0215dc975e35b7c85e6d5bc5971f06423547e",
+    "crates/cognigraph-query/tests/corpus/parse_ok/sq_mutation_for.cgql": "2a6fbc2c3924211a300cd48252b684fd63badb859c128c8b0b8dd571bd239b8f",
+    "crates/cognigraph-query/tests/corpus/parse_ok/sq_mutation_let.cgql": "eff66a063cc24453d6a8d36087bc98a560c9e25289377b1665391644122d6908",
+    "crates/cognigraph-query/tests/corpus/validate_err/sq_into_inline.cgql": "d99a9b13b5388009c460d36bdc870d3c0cc9232e59cbcd22454581d864f4d458",
+    "crates/cognigraph-query/tests/corpus/validate_err/sq_mutation_document.cgql": "047ba3801a133333b01c286141feccaea50d3a3419ada99f0bc697a233886965",
+    "crates/cognigraph-query/tests/corpus/validate_err/sq_mutation_operand.cgql": "1e4794439882f91cb6d567412947dc52f5523442b32312d742c8c56a42a835ce"
+  },
+  "corrected_attempts": [
+    "Initial regression test converted u64 row counts to usize; compiler rejected the budget type. Retaining u64 corrected the test.",
+    "Initial extended live harness prepended EXPLAIN ANALYZE on the bind-header line and lost fixture bindings. Prefix now uses its own line. Both baseline and fixed matrices re-ran successfully."
+  ],
+  "limits": [
+    "Eight Arango integration entries early-returned; no new live Arango coverage.",
+    "Four CG-38 known-status assertions per release run are not desired-behavior passes.",
+    "No restart, performance, CRM, CUAD, or model benchmark; no provider calls.",
+    "Whole-query generated binding identity can renumber internal names in EXPLAIN output.",
+    "CG-37 remains local and uncommitted; unrelated user changes preserved."
+  ]
+}

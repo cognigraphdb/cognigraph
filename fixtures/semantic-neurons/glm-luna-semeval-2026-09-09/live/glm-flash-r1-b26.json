@@ -1,0 +1,1126 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 1,
+  "batch": 26,
+  "request": {
+    "space_type": "semeval-glm-flash-r1-b26",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10054",
+        "title": "Relation benchmark excerpt",
+        "text": "I'm close to taking a writing break myself - to mention the frustration from rejection, but I got the Rosetta Stone Spanish CD;s a couple of years ago, and they've taken a back-seat in the priority list - not much time with work and the hubby and kids."
+      },
+      {
+        "id": "semeval-8456",
+        "title": "Relation benchmark excerpt",
+        "text": "One young pilot placed the medallion in a small leather pouch that he wore about his neck."
+      },
+      {
+        "id": "semeval-10201",
+        "title": "Relation benchmark excerpt",
+        "text": "A little girl finds a lost shoe with the help of her imaginary dinosaur companion."
+      },
+      {
+        "id": "semeval-10642",
+        "title": "Relation benchmark excerpt",
+        "text": "Endometriosis is the cause of pelvic pain (dysmenorrhea, dyspareunia) and infertility in more than 35% of women of reproductive age."
+      },
+      {
+        "id": "semeval-8757",
+        "title": "Relation benchmark excerpt",
+        "text": "We poured flour into a large mixing bowl, adding slightly more than the recipe calls for."
+      },
+      {
+        "id": "semeval-10542",
+        "title": "Relation benchmark excerpt",
+        "text": "He places the bolt in the receiver so that it fits under the retaining rail as the bolt handle engages the groove in the bolt."
+      },
+      {
+        "id": "semeval-9040",
+        "title": "Relation benchmark excerpt",
+        "text": "We propose a rule driven approach for adaptive business collaboration development in which rules drive and govern the development process."
+      },
+      {
+        "id": "semeval-9312",
+        "title": "Relation benchmark excerpt",
+        "text": "The Dallas wide receiver reacts after coming up with a big catch."
+      },
+      {
+        "id": "semeval-8270",
+        "title": "Relation benchmark excerpt",
+        "text": "The prosecution seeks to enter motives into Gibbs trial."
+      },
+      {
+        "id": "semeval-10213",
+        "title": "Relation benchmark excerpt",
+        "text": "Shampoos work by using acid to remove hard water scale."
+      },
+      {
+        "id": "semeval-10674",
+        "title": "Relation benchmark excerpt",
+        "text": "References to the hearing transcript are denoted by volume and page numbers."
+      },
+      {
+        "id": "semeval-9113",
+        "title": "Relation benchmark excerpt",
+        "text": "The bees made their entry through a small hole in the lid of the bin, and they created a wonderful honeycomb on the underside of the lid, hanging downward in the bin, in a beautiful arrangement."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:glm-5.3-flash@directed-policy-v1",
+    "facts_grounded": 8,
+    "proposed": 8,
+    "skips": [],
+    "space_type": "semeval-glm-flash-r1-b26"
+  },
+  "latency_seconds": 9.301479666028172,
+  "facts": [
+    {
+      "_from": "entities/rejection",
+      "_id": "facts/fact-17bca73384648ceeadde6c72e077d078ac953fd301baa3bde747e28ff15883b4",
+      "_key": "fact-17bca73384648ceeadde6c72e077d078ac953fd301baa3bde747e28ff15883b4",
+      "_to": "entities/frustration",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10054",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "trigger": "to mention the frustration from rejection",
+      "trigger_end": 86,
+      "trigger_start": 45
+    },
+    {
+      "_from": "entities/medallion",
+      "_id": "facts/fact-2d6e551df37577688a9b3fcc98421161a851025de2d4cd38e0706f3a1746fcc3",
+      "_key": "fact-2d6e551df37577688a9b3fcc98421161a851025de2d4cd38e0706f3a1746fcc3",
+      "_to": "entities/pouch",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8456",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "trigger": "One young pilot placed the medallion in a small leather pouch that he wore about his neck.",
+      "trigger_end": 90,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/motives",
+      "_id": "facts/fact-37f92e5103265521c537569711205ef7d875f5aefd47e52b8e6f1e7bffa25d30",
+      "_key": "fact-37f92e5103265521c537569711205ef7d875f5aefd47e52b8e6f1e7bffa25d30",
+      "_to": "entities/trial",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8270",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "trigger": "The prosecution seeks to enter motives into Gibbs trial.",
+      "trigger_end": 56,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/acid",
+      "_id": "facts/fact-403b563394a1a8c6b270f2a07f0c8410d947272d6b2a67e9668d3b64dfe2d57b",
+      "_key": "fact-403b563394a1a8c6b270f2a07f0c8410d947272d6b2a67e9668d3b64dfe2d57b",
+      "_to": "entities/shampoos",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10213",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "trigger": "Shampoos work by using acid to remove hard water scale.",
+      "trigger_end": 55,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/endometriosis",
+      "_id": "facts/fact-4a513dfbdc4d4c75d8cdc9954db9974d1c16cbe1cd3f05ab0eb6bf4287449079",
+      "_key": "fact-4a513dfbdc4d4c75d8cdc9954db9974d1c16cbe1cd3f05ab0eb6bf4287449079",
+      "_to": "entities/infertility",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10642",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "trigger": "Endometriosis is the cause of pelvic pain (dysmenorrhea, dyspareunia) and infertility in more than 35% of women of reproductive age.",
+      "trigger_end": 132,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/lid",
+      "_id": "facts/fact-a2fd92251e4a3052525a92a988faefafcff1e9753af244d6fec24506bce1caf9",
+      "_key": "fact-a2fd92251e4a3052525a92a988faefafcff1e9753af244d6fec24506bce1caf9",
+      "_to": "entities/bin",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9113",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "trigger": "The bees made their entry through a small hole in the lid of the bin, and they created a wonderful honeycomb on the underside of the lid, hanging downward in the bin, in a beautiful arrangement.",
+      "trigger_end": 194,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/flour",
+      "_id": "facts/fact-c55453fd0b4c35cb697c268ca84345f345861d39ca07add469200791a5ca9d45",
+      "_key": "fact-c55453fd0b4c35cb697c268ca84345f345861d39ca07add469200791a5ca9d45",
+      "_to": "entities/bowl",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8757",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "trigger": "We poured flour into a large mixing bowl, adding slightly more than the recipe calls for.",
+      "trigger_end": 89,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/handle",
+      "_id": "facts/fact-ed6fa17d9a1f0eb0509c3bfb408eba3bdf0431fb93caef66d86b687f5f2504f7",
+      "_key": "fact-ed6fa17d9a1f0eb0509c3bfb408eba3bdf0431fb93caef66d86b687f5f2504f7",
+      "_to": "entities/bolt",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10542",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "trigger": "He places the bolt in the receiver so that it fits under the retaining rail as the bolt handle engages the groove in the bolt.",
+      "trigger_end": 126,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/acid",
+      "_key": "acid",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400670+00:00",
+      "entity_type": "instrument",
+      "name": "acid",
+      "updated_at": "2026-09-09T12:37:13.400670+00:00"
+    },
+    {
+      "_id": "entities/bin",
+      "_key": "bin",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400678+00:00",
+      "entity_type": "whole",
+      "name": "bin",
+      "updated_at": "2026-09-09T12:37:13.400678+00:00"
+    },
+    {
+      "_id": "entities/bolt",
+      "_key": "bolt",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400680+00:00",
+      "entity_type": "whole",
+      "name": "bolt",
+      "updated_at": "2026-09-09T12:37:13.400680+00:00"
+    },
+    {
+      "_id": "entities/bowl",
+      "_key": "bowl",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400681+00:00",
+      "entity_type": "container",
+      "name": "bowl",
+      "updated_at": "2026-09-09T12:37:13.400681+00:00"
+    },
+    {
+      "_id": "entities/endometriosis",
+      "_key": "endometriosis",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400682+00:00",
+      "entity_type": "disease",
+      "name": "Endometriosis",
+      "updated_at": "2026-09-09T12:37:13.400682+00:00"
+    },
+    {
+      "_id": "entities/flour",
+      "_key": "flour",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400684+00:00",
+      "entity_type": "substance",
+      "name": "flour",
+      "updated_at": "2026-09-09T12:37:13.400684+00:00"
+    },
+    {
+      "_id": "entities/frustration",
+      "_key": "frustration",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400685+00:00",
+      "entity_type": "event",
+      "name": "frustration",
+      "updated_at": "2026-09-09T12:37:13.400685+00:00"
+    },
+    {
+      "_id": "entities/handle",
+      "_key": "handle",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400687+00:00",
+      "entity_type": "component",
+      "name": "handle",
+      "updated_at": "2026-09-09T12:37:13.400687+00:00"
+    },
+    {
+      "_id": "entities/infertility",
+      "_key": "infertility",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400688+00:00",
+      "entity_type": "condition",
+      "name": "infertility",
+      "updated_at": "2026-09-09T12:37:13.400688+00:00"
+    },
+    {
+      "_id": "entities/lid",
+      "_key": "lid",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400690+00:00",
+      "entity_type": "component",
+      "name": "lid",
+      "updated_at": "2026-09-09T12:37:13.400690+00:00"
+    },
+    {
+      "_id": "entities/medallion",
+      "_key": "medallion",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400691+00:00",
+      "entity_type": "object",
+      "name": "medallion",
+      "updated_at": "2026-09-09T12:37:13.400691+00:00"
+    },
+    {
+      "_id": "entities/motives",
+      "_key": "motives",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400693+00:00",
+      "entity_type": "entity",
+      "name": "motives",
+      "updated_at": "2026-09-09T12:37:13.400693+00:00"
+    },
+    {
+      "_id": "entities/pouch",
+      "_key": "pouch",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400694+00:00",
+      "entity_type": "container",
+      "name": "pouch",
+      "updated_at": "2026-09-09T12:37:13.400694+00:00"
+    },
+    {
+      "_id": "entities/rejection",
+      "_key": "rejection",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400695+00:00",
+      "entity_type": "event",
+      "name": "rejection",
+      "updated_at": "2026-09-09T12:37:13.400695+00:00"
+    },
+    {
+      "_id": "entities/shampoos",
+      "_key": "shampoos",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400696+00:00",
+      "entity_type": "agent",
+      "name": "Shampoos",
+      "updated_at": "2026-09-09T12:37:13.400696+00:00"
+    },
+    {
+      "_id": "entities/trial",
+      "_key": "trial",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:13.400697+00:00",
+      "entity_type": "destination",
+      "name": "trial",
+      "updated_at": "2026-09-09T12:37:13.400697+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10054",
+      "_key": "semeval-glm-flash-r1-b26-semeval-10054",
+      "chunk_id": "semeval-10054",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1579068407bb3d2e4743555245c83c895bb81fac810cedc75f3ed819c08be508",
+      "created_at": "2026-09-09T12:37:13.400699+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "I'm close to taking a writing break myself - to mention the frustration from rejection, but I got the Rosetta Stone Spanish CD;s a couple of years ago, and they've taken a back-seat in the priority list - not much time with work and the hubby and kids.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400699+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10201",
+      "_key": "semeval-glm-flash-r1-b26-semeval-10201",
+      "chunk_id": "semeval-10201",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c24ccca640b95279a6b37b4f56d8f692b204c4468f7c7054a8f15991a261dd8f",
+      "created_at": "2026-09-09T12:37:13.400717+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "A little girl finds a lost shoe with the help of her imaginary dinosaur companion.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400717+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10213",
+      "_key": "semeval-glm-flash-r1-b26-semeval-10213",
+      "chunk_id": "semeval-10213",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:efea51ae2ce50bd6ac3ff87ead023cea6801845565874e7ceefaab3fc9f8f875",
+      "created_at": "2026-09-09T12:37:13.400719+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "Shampoos work by using acid to remove hard water scale.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400719+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10542",
+      "_key": "semeval-glm-flash-r1-b26-semeval-10542",
+      "chunk_id": "semeval-10542",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b854d8b7e0a605c5c144df7d4722f8e37bd8f280683a6c454ad566024b7b80e5",
+      "created_at": "2026-09-09T12:37:13.400731+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "He places the bolt in the receiver so that it fits under the retaining rail as the bolt handle engages the groove in the bolt.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400731+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10642",
+      "_key": "semeval-glm-flash-r1-b26-semeval-10642",
+      "chunk_id": "semeval-10642",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7edd020491ded4ae74b4816405ae4160aa18c08426f9eb4c3854abc188d2c474",
+      "created_at": "2026-09-09T12:37:13.400740+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "Endometriosis is the cause of pelvic pain (dysmenorrhea, dyspareunia) and infertility in more than 35% of women of reproductive age.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400740+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10674",
+      "_key": "semeval-glm-flash-r1-b26-semeval-10674",
+      "chunk_id": "semeval-10674",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b2b273e468cfb81c07d24788ddcac1c246481feda94e3aa29297fb62c6c87fd2",
+      "created_at": "2026-09-09T12:37:13.400748+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "References to the hearing transcript are denoted by volume and page numbers.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400748+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-8270",
+      "_key": "semeval-glm-flash-r1-b26-semeval-8270",
+      "chunk_id": "semeval-8270",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:be7de6342f6ab48987018dd026c9c9dd2eed3f4293ced47beeefc15784c149a1",
+      "created_at": "2026-09-09T12:37:13.400749+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "The prosecution seeks to enter motives into Gibbs trial.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400749+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-8456",
+      "_key": "semeval-glm-flash-r1-b26-semeval-8456",
+      "chunk_id": "semeval-8456",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:654a701bef2f76043658cee25630037cbfca048eb1337bd500bae6691ffd008d",
+      "created_at": "2026-09-09T12:37:13.400756+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "One young pilot placed the medallion in a small leather pouch that he wore about his neck.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400756+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-8757",
+      "_key": "semeval-glm-flash-r1-b26-semeval-8757",
+      "chunk_id": "semeval-8757",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3fd082c6b013b3a6e3571c4c700b68edec2b81d0637a1c1e33348b740470d098",
+      "created_at": "2026-09-09T12:37:13.400765+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "We poured flour into a large mixing bowl, adding slightly more than the recipe calls for.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400765+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-9040",
+      "_key": "semeval-glm-flash-r1-b26-semeval-9040",
+      "chunk_id": "semeval-9040",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d22f7d325afc9a21823bfbce5ee0d0808c958f548be8b861037ead2c11b72aab",
+      "created_at": "2026-09-09T12:37:13.400772+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "We propose a rule driven approach for adaptive business collaboration development in which rules drive and govern the development process.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400772+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-9113",
+      "_key": "semeval-glm-flash-r1-b26-semeval-9113",
+      "chunk_id": "semeval-9113",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6e1ae6012b66121b7cbfd79516e9997338ce1971a5567e597e9267f38a8dd33c",
+      "created_at": "2026-09-09T12:37:13.400774+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "The bees made their entry through a small hole in the lid of the bin, and they created a wonderful honeycomb on the underside of the lid, hanging downward in the bin, in a beautiful arrangement.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400774+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b26-semeval-9312",
+      "_key": "semeval-glm-flash-r1-b26-semeval-9312",
+      "chunk_id": "semeval-9312",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7c1d4ea3b70e55fa725ee1848f8fbe0e5bc788388a40e87a672e620d62e321dc",
+      "created_at": "2026-09-09T12:37:13.400784+00:00",
+      "space_id": "semeval-glm-flash-r1-b26",
+      "text": "The Dallas wide receiver reacts after coming up with a big catch.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:13.400784+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 8,
+        "results": [
+          {
+            "_from": "entities/rejection",
+            "_id": "facts/fact-17bca73384648ceeadde6c72e077d078ac953fd301baa3bde747e28ff15883b4",
+            "_key": "fact-17bca73384648ceeadde6c72e077d078ac953fd301baa3bde747e28ff15883b4",
+            "_to": "entities/frustration",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10054",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "trigger": "to mention the frustration from rejection",
+            "trigger_end": 86,
+            "trigger_start": 45
+          },
+          {
+            "_from": "entities/medallion",
+            "_id": "facts/fact-2d6e551df37577688a9b3fcc98421161a851025de2d4cd38e0706f3a1746fcc3",
+            "_key": "fact-2d6e551df37577688a9b3fcc98421161a851025de2d4cd38e0706f3a1746fcc3",
+            "_to": "entities/pouch",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8456",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "trigger": "One young pilot placed the medallion in a small leather pouch that he wore about his neck.",
+            "trigger_end": 90,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/motives",
+            "_id": "facts/fact-37f92e5103265521c537569711205ef7d875f5aefd47e52b8e6f1e7bffa25d30",
+            "_key": "fact-37f92e5103265521c537569711205ef7d875f5aefd47e52b8e6f1e7bffa25d30",
+            "_to": "entities/trial",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8270",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "trigger": "The prosecution seeks to enter motives into Gibbs trial.",
+            "trigger_end": 56,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/acid",
+            "_id": "facts/fact-403b563394a1a8c6b270f2a07f0c8410d947272d6b2a67e9668d3b64dfe2d57b",
+            "_key": "fact-403b563394a1a8c6b270f2a07f0c8410d947272d6b2a67e9668d3b64dfe2d57b",
+            "_to": "entities/shampoos",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10213",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "trigger": "Shampoos work by using acid to remove hard water scale.",
+            "trigger_end": 55,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/endometriosis",
+            "_id": "facts/fact-4a513dfbdc4d4c75d8cdc9954db9974d1c16cbe1cd3f05ab0eb6bf4287449079",
+            "_key": "fact-4a513dfbdc4d4c75d8cdc9954db9974d1c16cbe1cd3f05ab0eb6bf4287449079",
+            "_to": "entities/infertility",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10642",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "trigger": "Endometriosis is the cause of pelvic pain (dysmenorrhea, dyspareunia) and infertility in more than 35% of women of reproductive age.",
+            "trigger_end": 132,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/lid",
+            "_id": "facts/fact-a2fd92251e4a3052525a92a988faefafcff1e9753af244d6fec24506bce1caf9",
+            "_key": "fact-a2fd92251e4a3052525a92a988faefafcff1e9753af244d6fec24506bce1caf9",
+            "_to": "entities/bin",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9113",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "trigger": "The bees made their entry through a small hole in the lid of the bin, and they created a wonderful honeycomb on the underside of the lid, hanging downward in the bin, in a beautiful arrangement.",
+            "trigger_end": 194,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/flour",
+            "_id": "facts/fact-c55453fd0b4c35cb697c268ca84345f345861d39ca07add469200791a5ca9d45",
+            "_key": "fact-c55453fd0b4c35cb697c268ca84345f345861d39ca07add469200791a5ca9d45",
+            "_to": "entities/bowl",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8757",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "trigger": "We poured flour into a large mixing bowl, adding slightly more than the recipe calls for.",
+            "trigger_end": 89,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/handle",
+            "_id": "facts/fact-ed6fa17d9a1f0eb0509c3bfb408eba3bdf0431fb93caef66d86b687f5f2504f7",
+            "_key": "fact-ed6fa17d9a1f0eb0509c3bfb408eba3bdf0431fb93caef66d86b687f5f2504f7",
+            "_to": "entities/bolt",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10542",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "trigger": "He places the bolt in the receiver so that it fits under the retaining rail as the bolt handle engages the groove in the bolt.",
+            "trigger_end": 126,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 16,
+        "results": [
+          {
+            "_id": "entities/acid",
+            "_key": "acid",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400670+00:00",
+            "entity_type": "instrument",
+            "name": "acid",
+            "updated_at": "2026-09-09T12:37:13.400670+00:00"
+          },
+          {
+            "_id": "entities/bin",
+            "_key": "bin",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400678+00:00",
+            "entity_type": "whole",
+            "name": "bin",
+            "updated_at": "2026-09-09T12:37:13.400678+00:00"
+          },
+          {
+            "_id": "entities/bolt",
+            "_key": "bolt",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400680+00:00",
+            "entity_type": "whole",
+            "name": "bolt",
+            "updated_at": "2026-09-09T12:37:13.400680+00:00"
+          },
+          {
+            "_id": "entities/bowl",
+            "_key": "bowl",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400681+00:00",
+            "entity_type": "container",
+            "name": "bowl",
+            "updated_at": "2026-09-09T12:37:13.400681+00:00"
+          },
+          {
+            "_id": "entities/endometriosis",
+            "_key": "endometriosis",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400682+00:00",
+            "entity_type": "disease",
+            "name": "Endometriosis",
+            "updated_at": "2026-09-09T12:37:13.400682+00:00"
+          },
+          {
+            "_id": "entities/flour",
+            "_key": "flour",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400684+00:00",
+            "entity_type": "substance",
+            "name": "flour",
+            "updated_at": "2026-09-09T12:37:13.400684+00:00"
+          },
+          {
+            "_id": "entities/frustration",
+            "_key": "frustration",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400685+00:00",
+            "entity_type": "event",
+            "name": "frustration",
+            "updated_at": "2026-09-09T12:37:13.400685+00:00"
+          },
+          {
+            "_id": "entities/handle",
+            "_key": "handle",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400687+00:00",
+            "entity_type": "component",
+            "name": "handle",
+            "updated_at": "2026-09-09T12:37:13.400687+00:00"
+          },
+          {
+            "_id": "entities/infertility",
+            "_key": "infertility",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400688+00:00",
+            "entity_type": "condition",
+            "name": "infertility",
+            "updated_at": "2026-09-09T12:37:13.400688+00:00"
+          },
+          {
+            "_id": "entities/lid",
+            "_key": "lid",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400690+00:00",
+            "entity_type": "component",
+            "name": "lid",
+            "updated_at": "2026-09-09T12:37:13.400690+00:00"
+          },
+          {
+            "_id": "entities/medallion",
+            "_key": "medallion",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400691+00:00",
+            "entity_type": "object",
+            "name": "medallion",
+            "updated_at": "2026-09-09T12:37:13.400691+00:00"
+          },
+          {
+            "_id": "entities/motives",
+            "_key": "motives",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400693+00:00",
+            "entity_type": "entity",
+            "name": "motives",
+            "updated_at": "2026-09-09T12:37:13.400693+00:00"
+          },
+          {
+            "_id": "entities/pouch",
+            "_key": "pouch",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400694+00:00",
+            "entity_type": "container",
+            "name": "pouch",
+            "updated_at": "2026-09-09T12:37:13.400694+00:00"
+          },
+          {
+            "_id": "entities/rejection",
+            "_key": "rejection",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400695+00:00",
+            "entity_type": "event",
+            "name": "rejection",
+            "updated_at": "2026-09-09T12:37:13.400695+00:00"
+          },
+          {
+            "_id": "entities/shampoos",
+            "_key": "shampoos",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400696+00:00",
+            "entity_type": "agent",
+            "name": "Shampoos",
+            "updated_at": "2026-09-09T12:37:13.400696+00:00"
+          },
+          {
+            "_id": "entities/trial",
+            "_key": "trial",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:13.400697+00:00",
+            "entity_type": "destination",
+            "name": "trial",
+            "updated_at": "2026-09-09T12:37:13.400697+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10054",
+            "_key": "semeval-glm-flash-r1-b26-semeval-10054",
+            "chunk_id": "semeval-10054",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1579068407bb3d2e4743555245c83c895bb81fac810cedc75f3ed819c08be508",
+            "created_at": "2026-09-09T12:37:13.400699+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "I'm close to taking a writing break myself - to mention the frustration from rejection, but I got the Rosetta Stone Spanish CD;s a couple of years ago, and they've taken a back-seat in the priority list - not much time with work and the hubby and kids.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400699+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10201",
+            "_key": "semeval-glm-flash-r1-b26-semeval-10201",
+            "chunk_id": "semeval-10201",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c24ccca640b95279a6b37b4f56d8f692b204c4468f7c7054a8f15991a261dd8f",
+            "created_at": "2026-09-09T12:37:13.400717+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "A little girl finds a lost shoe with the help of her imaginary dinosaur companion.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400717+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10213",
+            "_key": "semeval-glm-flash-r1-b26-semeval-10213",
+            "chunk_id": "semeval-10213",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:efea51ae2ce50bd6ac3ff87ead023cea6801845565874e7ceefaab3fc9f8f875",
+            "created_at": "2026-09-09T12:37:13.400719+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "Shampoos work by using acid to remove hard water scale.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400719+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10542",
+            "_key": "semeval-glm-flash-r1-b26-semeval-10542",
+            "chunk_id": "semeval-10542",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b854d8b7e0a605c5c144df7d4722f8e37bd8f280683a6c454ad566024b7b80e5",
+            "created_at": "2026-09-09T12:37:13.400731+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "He places the bolt in the receiver so that it fits under the retaining rail as the bolt handle engages the groove in the bolt.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400731+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10642",
+            "_key": "semeval-glm-flash-r1-b26-semeval-10642",
+            "chunk_id": "semeval-10642",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7edd020491ded4ae74b4816405ae4160aa18c08426f9eb4c3854abc188d2c474",
+            "created_at": "2026-09-09T12:37:13.400740+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "Endometriosis is the cause of pelvic pain (dysmenorrhea, dyspareunia) and infertility in more than 35% of women of reproductive age.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400740+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-10674",
+            "_key": "semeval-glm-flash-r1-b26-semeval-10674",
+            "chunk_id": "semeval-10674",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b2b273e468cfb81c07d24788ddcac1c246481feda94e3aa29297fb62c6c87fd2",
+            "created_at": "2026-09-09T12:37:13.400748+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "References to the hearing transcript are denoted by volume and page numbers.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400748+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-8270",
+            "_key": "semeval-glm-flash-r1-b26-semeval-8270",
+            "chunk_id": "semeval-8270",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:be7de6342f6ab48987018dd026c9c9dd2eed3f4293ced47beeefc15784c149a1",
+            "created_at": "2026-09-09T12:37:13.400749+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "The prosecution seeks to enter motives into Gibbs trial.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400749+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-8456",
+            "_key": "semeval-glm-flash-r1-b26-semeval-8456",
+            "chunk_id": "semeval-8456",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:654a701bef2f76043658cee25630037cbfca048eb1337bd500bae6691ffd008d",
+            "created_at": "2026-09-09T12:37:13.400756+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "One young pilot placed the medallion in a small leather pouch that he wore about his neck.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400756+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-8757",
+            "_key": "semeval-glm-flash-r1-b26-semeval-8757",
+            "chunk_id": "semeval-8757",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3fd082c6b013b3a6e3571c4c700b68edec2b81d0637a1c1e33348b740470d098",
+            "created_at": "2026-09-09T12:37:13.400765+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "We poured flour into a large mixing bowl, adding slightly more than the recipe calls for.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400765+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-9040",
+            "_key": "semeval-glm-flash-r1-b26-semeval-9040",
+            "chunk_id": "semeval-9040",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d22f7d325afc9a21823bfbce5ee0d0808c958f548be8b861037ead2c11b72aab",
+            "created_at": "2026-09-09T12:37:13.400772+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "We propose a rule driven approach for adaptive business collaboration development in which rules drive and govern the development process.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400772+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-9113",
+            "_key": "semeval-glm-flash-r1-b26-semeval-9113",
+            "chunk_id": "semeval-9113",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6e1ae6012b66121b7cbfd79516e9997338ce1971a5567e597e9267f38a8dd33c",
+            "created_at": "2026-09-09T12:37:13.400774+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "The bees made their entry through a small hole in the lid of the bin, and they created a wonderful honeycomb on the underside of the lid, hanging downward in the bin, in a beautiful arrangement.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400774+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b26-semeval-9312",
+            "_key": "semeval-glm-flash-r1-b26-semeval-9312",
+            "chunk_id": "semeval-9312",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7c1d4ea3b70e55fa725ee1848f8fbe0e5bc788388a40e87a672e620d62e321dc",
+            "created_at": "2026-09-09T12:37:13.400784+00:00",
+            "space_id": "semeval-glm-flash-r1-b26",
+            "text": "The Dallas wide receiver reacts after coming up with a big catch.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:13.400784+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

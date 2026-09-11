@@ -1,0 +1,205 @@
+{
+  "issue": "CG-27",
+  "date": "2026-09-09",
+  "revision": "b90a28a9033c8f3edc44ada5e1ffeeeb8875e31b",
+  "git_state": "CG-24 committed as b90a28a; CG-27 uncommitted; no push or publication",
+  "rust_source_changed": false,
+  "full_rust_gates": "Not rerun for documentation-only work; CG-36 remains latest passing full gates with 961 reported passes, eight Arango early returns and two live embedding tests",
+  "release_build": {
+    "exit_code": 0,
+    "log": "/tmp/cognigraph-cg27-build.log",
+    "log_sha256": "783decc8322799d502c1baea5f6a594bb55e1fc8db5911af7f90f9cfdb5b8b28"
+  },
+  "replay": {
+    "successful_commands": 5,
+    "lane_observations": 14,
+    "prepared_files_unchanged": 401,
+    "artifact_files_unchanged": 3,
+    "mined_artifact_byte_identical": true,
+    "model_calls": 0,
+    "test_scoring_runs": 0,
+    "test_files_in_scoring_root": false,
+    "evidence_sha256": "88ef238c19ce6bcf680a47628dd885287b01ac423af1fb127f687cd67493c1a6",
+    "harness_sha256": "2bedf4d69ab336c503ed68cc6fc04a6589a4f3890431c1f007569b185fd63819",
+    "artifact_counts": {
+      "mined_predicates": 303,
+      "mined_templates": 1842,
+      "proposal_predicates": 25,
+      "raw_entries": 248,
+      "raw_unique_within_predicate": 247,
+      "pruned_entries": 202,
+      "removed_entries": 46
+    },
+    "scorer_observations": [
+      {
+        "label": "generic",
+        "documents": 1667,
+        "oracle": 4841,
+        "constructed": 88,
+        "correct": 51,
+        "recall_percent": "1.1",
+        "precision_percent": "58.0"
+      },
+      {
+        "label": "neuron-authored (exact, baseline)",
+        "documents": 1667,
+        "oracle": 4841,
+        "constructed": 785,
+        "correct": 601,
+        "recall_percent": "12.4",
+        "precision_percent": "76.6"
+      },
+      {
+        "label": "neuron-authored (exact, CorpusProposer)",
+        "documents": 1667,
+        "oracle": 4841,
+        "constructed": 756,
+        "correct": 591,
+        "recall_percent": "12.2",
+        "precision_percent": "78.2"
+      },
+      {
+        "label": "oracle-diagnostic (exact, CorpusProposer)",
+        "documents": 1667,
+        "oracle": 4841,
+        "constructed": 645,
+        "correct": 591,
+        "recall_percent": "12.2",
+        "precision_percent": "91.6"
+      },
+      {
+        "label": "neuron-authored (FUZZY, max_gap=0)",
+        "documents": 1667,
+        "oracle": 4841,
+        "constructed": 1720,
+        "correct": 703,
+        "recall_percent": "14.5",
+        "precision_percent": "40.9"
+      },
+      {
+        "label": "neuron-authored (FUZZY, max_gap=1)",
+        "documents": 1667,
+        "oracle": 4841,
+        "constructed": 3054,
+        "correct": 881,
+        "recall_percent": "18.2",
+        "precision_percent": "28.8"
+      },
+      {
+        "label": "neuron-authored (FUZZY, max_gap=2)",
+        "documents": 1667,
+        "oracle": 4841,
+        "constructed": 6093,
+        "correct": 936,
+        "recall_percent": "19.3",
+        "precision_percent": "15.4"
+      },
+      {
+        "label": "neuron-authored (FUZZY, max_gap=3)",
+        "documents": 1667,
+        "oracle": 4841,
+        "constructed": 7431,
+        "correct": 975,
+        "recall_percent": "20.1",
+        "precision_percent": "13.1"
+      }
+    ],
+    "proposal_observations": {
+      "raw": [
+        {
+          "label": "baseline",
+          "correct": 601,
+          "constructed": 785,
+          "recall_percent": "12.4",
+          "precision_percent": "76.6"
+        },
+        {
+          "label": "+ LLM proposals (raw)",
+          "correct": 630,
+          "constructed": 1185,
+          "recall_percent": "13.0",
+          "precision_percent": "53.2"
+        },
+        {
+          "label": "+ LLM proposals (disambiguated)",
+          "correct": 612,
+          "constructed": 854,
+          "recall_percent": "12.6",
+          "precision_percent": "71.7"
+        }
+      ],
+      "pruned": [
+        {
+          "label": "baseline",
+          "correct": 601,
+          "constructed": 785,
+          "recall_percent": "12.4",
+          "precision_percent": "76.6"
+        },
+        {
+          "label": "+ LLM proposals (raw)",
+          "correct": 609,
+          "constructed": 800,
+          "recall_percent": "12.6",
+          "precision_percent": "76.1"
+        },
+        {
+          "label": "+ LLM proposals (disambiguated)",
+          "correct": 609,
+          "constructed": 798,
+          "recall_percent": "12.6",
+          "precision_percent": "76.3"
+        }
+      ]
+    }
+  },
+  "documentation": {
+    "local_links_checked": 218,
+    "errors": [],
+    "registry": {
+      "Resolved": 35,
+      "Open": 3,
+      "Open P2": 2,
+      "Open P3": 1
+    },
+    "rows_match_tickets": true,
+    "historical_decision_body_preserved_except_two_corrected_links": true,
+    "original_decision_tables_unchanged": true,
+    "git_diff_check_exit_code": 0
+  },
+  "preservation": {
+    "user_owned_paths_checked": 6,
+    "unexpected_changes": [],
+    "cg24_paper_and_publication_files_unchanged": 18,
+    "staging_empty": true
+  },
+  "files": {
+    "CHANGELOG.md": "9592a1e5845250a31eb12e8726794f77d08647a8da3a5778d49cd617113407d2",
+    "docs/webnlg-pilot.md": "af775ad862a1b5e794225d5bb0c636616d201ff3e7fc1bba3d621dc37c3b586b",
+    "docs/decisions/decision_webnlg_scoring.md": "caad26caa70b0fe8c5ab4e5a5a772c8c115911fc484aa70ce67a27d1202c34fa",
+    "docs/semantic-neurons/positioning.md": "d9244ed60dc49c545320b510d2e151e6b6cefa5316cb8eaac0b4119020be1577",
+    "docs/implementation-plan.md": "927cc254747bf4a87574a3ea3455e5d31970fa31f3d5fe87c16da706f9882ef6",
+    "docs/roadmap-2026-h2.md": "d800f731592ea128675a378797c4caa751c52d16e6a1c402ab171015e79f0bf4",
+    "docs/issues/README.md": "88226b6be1ec092a9ee47d2bee5700223e0d441ddde8e3628feb440147d7e46c",
+    "docs/issues/CG-24.md": "c8425379f5e04fbc4fc7633ce166591ffbc63b5424aae098efc59492997aeefe",
+    "docs/issues/CG-27.md": "9f1428256ce40bad3f56955ea72216d1b0cc12bf9e9dffa4be88721ae4124e51",
+    "docs/issues/paper-counting-units-2026-09-09.md": "b50708eebfc7b61cf9d73a3b56d5eb24f1739cbe2eb241f298bdf20573a04e52",
+    "docs/issues/webnlg-status-2026-09-09.md": "ae2e0e7df827ad4758331d0a56000051f4be3815d517d9bc5ffd0ba022d4a63f",
+    "crates/cognigraph-construct/src/bin/webnlg-pilot/main.rs": "096989a21d95940c2e6f07fe0e0470935190a79c44ae8ff73fc5a573bb7123c8",
+    "crates/cognigraph-construct/src/bin/webnlg-mine-rules/main.rs": "4caeca4bc5b4137b72ea34c2ef6bc80f5f9f688d9aa35c474c35c3347a156ec8",
+    "crates/cognigraph-construct/src/bin/webnlg-score/main.rs": "04db58a7f39ff98e56f00f5b182b8c93554dc07d15c35b2af6d3aa68c2171eff",
+    "crates/cognigraph-construct/src/bin/webnlg-llm-run/main.rs": "80652b228e5c95585db9a7a3a5d2eee37ffafd4632c106ad7cfd728ddacd2ffa",
+    "crates/cognigraph-construct/src/webnlg/mod.rs": "f5d38bf9df9fd4ceab74723003e631fac252b42f12cc141348fcfbefd6986823",
+    "crates/cognigraph-construct/src/webnlg/mining.rs": "68b413dfd593b338cb34adb0ae0aa195088e7f3340b348c07228487c5ee77fe0",
+    "crates/cognigraph-construct/src/webnlg/propose.rs": "38354741344b69e7ffd63c01d45926b2657e0130dada697843883fe994e7fa74"
+  },
+  "verification_attempts": [
+    "Release build, all five offline commands and all fourteen scoring observations passed on their first attempts."
+  ],
+  "limits": [
+    "Frozen test scores and unbounded fuzzy scores are historical ledger evidence, not new replays.",
+    "Validation informed tuning and LLM predicate selection; these results are not an untouched holdout estimate.",
+    "Candidate JSON has no signed reviewer identity or runtime neuron-review events.",
+    "No new model, judge qualification, benchmark selection, publication or push."
+  ]
+}

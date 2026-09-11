@@ -1,0 +1,1196 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 1,
+  "batch": 10,
+  "request": {
+    "space_type": "semeval-terra-low-r1-b10",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9367",
+        "title": "Relation benchmark excerpt",
+        "text": "In its last 12 meetings this year the committee has made about 30-35 recommendations."
+      },
+      {
+        "id": "semeval-9198",
+        "title": "Relation benchmark excerpt",
+        "text": "Yes, I have a mutation of thrushes eating me out of bird food."
+      },
+      {
+        "id": "semeval-10047",
+        "title": "Relation benchmark excerpt",
+        "text": "War and rural poverty cause mass migration of people and often simultaneous growth of informal development."
+      },
+      {
+        "id": "semeval-9323",
+        "title": "Relation benchmark excerpt",
+        "text": "The only light was from two turrets of bulletproof glass."
+      },
+      {
+        "id": "semeval-9491",
+        "title": "Relation benchmark excerpt",
+        "text": "The folks at the Lilly Endowment were interested in the study of philanthropy through a biographical lens."
+      },
+      {
+        "id": "semeval-8420",
+        "title": "Relation benchmark excerpt",
+        "text": "His paper narrated the discovery chronologically."
+      },
+      {
+        "id": "semeval-10244",
+        "title": "Relation benchmark excerpt",
+        "text": "By the time of the inquest of 1106 the dignity of the canons and their enjoyment of 'all... free honourable customs' in their lands and houses is clear."
+      },
+      {
+        "id": "semeval-9396",
+        "title": "Relation benchmark excerpt",
+        "text": "Since Sally Industries' inception, John Wood has been a key member of the company's management team and a founding member of the board of directors."
+      },
+      {
+        "id": "semeval-8049",
+        "title": "Relation benchmark excerpt",
+        "text": "News programs commented on the violence from the game and expressed worries on how it would affect the players' personalities."
+      },
+      {
+        "id": "semeval-9485",
+        "title": "Relation benchmark excerpt",
+        "text": "The water rushing off that safe platform started to wash the seal back into the sea, but then the humpback gave the seal a gentle nudge with its flipper."
+      },
+      {
+        "id": "semeval-9082",
+        "title": "Relation benchmark excerpt",
+        "text": "They were not issued guns at the time, but the office did have one handgun that was locked in a safe; however, there was no ammunition."
+      },
+      {
+        "id": "semeval-9133",
+        "title": "Relation benchmark excerpt",
+        "text": "A user activates the device with the power-on button."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 9,
+    "proposed": 9,
+    "skips": [],
+    "space_type": "semeval-terra-low-r1-b10"
+  },
+  "latency_seconds": 13.123492124956101,
+  "facts": [
+    {
+      "_from": "entities/button",
+      "_id": "facts/fact-5140c8d1d072d256bcf8d0b7eceb480f4116d41a08913fec5d63bb465ee18ce8",
+      "_key": "fact-5140c8d1d072d256bcf8d0b7eceb480f4116d41a08913fec5d63bb465ee18ce8",
+      "_to": "entities/user",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9133",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b10",
+      "trigger": "A user activates the device with the power-on button.",
+      "trigger_end": 53,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/paper",
+      "_id": "facts/fact-64cff593dd1216ecddfa701dbabec790b756705ec1c14f9120d7a6d82dbe02c9",
+      "_key": "fact-64cff593dd1216ecddfa701dbabec790b756705ec1c14f9120d7a6d82dbe02c9",
+      "_to": "entities/discovery",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8420",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b10",
+      "trigger": "His paper narrated the discovery chronologically.",
+      "trigger_end": 49,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/recommendations",
+      "_id": "facts/fact-8fdccdc3f1a4f50ad2539443ea024ace58dfd93cb3c3779cd8c2ecdad3df0a61",
+      "_key": "fact-8fdccdc3f1a4f50ad2539443ea024ace58dfd93cb3c3779cd8c2ecdad3df0a61",
+      "_to": "entities/committee",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9367",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b10",
+      "trigger": "In its last 12 meetings this year the committee has made about 30-35 recommendations.",
+      "trigger_end": 85,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/flipper",
+      "_id": "facts/fact-93e778998adc0f7daeda2b4804aa5a2c138265269ba4dae3bf695cf2dbb79428",
+      "_key": "fact-93e778998adc0f7daeda2b4804aa5a2c138265269ba4dae3bf695cf2dbb79428",
+      "_to": "entities/humpback",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9485",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b10",
+      "trigger": "The water rushing off that safe platform started to wash the seal back into the sea, but then the humpback gave the seal a gentle nudge with its flipper.",
+      "trigger_end": 153,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/poverty",
+      "_id": "facts/fact-a3a86f3d5978946157bb33af01dd2676ed4492a6aa2b4d8ab4cd010b392a0ee9",
+      "_key": "fact-a3a86f3d5978946157bb33af01dd2676ed4492a6aa2b4d8ab4cd010b392a0ee9",
+      "_to": "entities/migration",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10047",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b10",
+      "trigger": "War and rural poverty cause mass migration of people and often simultaneous growth of informal development.",
+      "trigger_end": 107,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/thrushes",
+      "_id": "facts/fact-a4774ea9ffe78e84e0e511d569034c4709b85f1b511e2ddb9ab3b8f842fc1d6e",
+      "_key": "fact-a4774ea9ffe78e84e0e511d569034c4709b85f1b511e2ddb9ab3b8f842fc1d6e",
+      "_to": "entities/mutation",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9198",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b10",
+      "trigger": "Yes, I have a mutation of thrushes eating me out of bird food.",
+      "trigger_end": 62,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/light",
+      "_id": "facts/fact-c251f87b338aa6fa0acc522bec00c9b19576fc19a20de4a357dfc4ec0291f0c7",
+      "_key": "fact-c251f87b338aa6fa0acc522bec00c9b19576fc19a20de4a357dfc4ec0291f0c7",
+      "_to": "entities/turrets",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9323",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b10",
+      "trigger": "The only light was from two turrets of bulletproof glass.",
+      "trigger_end": 57,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/handgun",
+      "_id": "facts/fact-d3120ceeee5817e0a39fc455fb65fcfc5b831f180af4fb73c4e4c7ac54422395",
+      "_key": "fact-d3120ceeee5817e0a39fc455fb65fcfc5b831f180af4fb73c4e4c7ac54422395",
+      "_to": "entities/safe",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9082",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b10",
+      "trigger": "They were not issued guns at the time, but the office did have one handgun that was locked in a safe; however, there was no ammunition.",
+      "trigger_end": 135,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/news-programs",
+      "_id": "facts/fact-d6b3420db1ca9b27ede1704d8b925e051c369f28c6d81bafb062affdb46fdd61",
+      "_key": "fact-d6b3420db1ca9b27ede1704d8b925e051c369f28c6d81bafb062affdb46fdd61",
+      "_to": "entities/violence",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8049",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b10",
+      "trigger": "News programs commented on the violence from the game and expressed worries on how it would affect the players' personalities.",
+      "trigger_end": 126,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/button",
+      "_key": "button",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950907+00:00",
+      "entity_type": "Instrument",
+      "name": "button",
+      "updated_at": "2026-09-09T13:25:37.950907+00:00"
+    },
+    {
+      "_id": "entities/committee",
+      "_key": "committee",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950912+00:00",
+      "entity_type": "Producer",
+      "name": "committee",
+      "updated_at": "2026-09-09T13:25:37.950912+00:00"
+    },
+    {
+      "_id": "entities/discovery",
+      "_key": "discovery",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950914+00:00",
+      "entity_type": "Topic",
+      "name": "discovery",
+      "updated_at": "2026-09-09T13:25:37.950914+00:00"
+    },
+    {
+      "_id": "entities/flipper",
+      "_key": "flipper",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950915+00:00",
+      "entity_type": "Instrument",
+      "name": "flipper",
+      "updated_at": "2026-09-09T13:25:37.950915+00:00"
+    },
+    {
+      "_id": "entities/handgun",
+      "_key": "handgun",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950917+00:00",
+      "entity_type": "Content",
+      "name": "handgun",
+      "updated_at": "2026-09-09T13:25:37.950917+00:00"
+    },
+    {
+      "_id": "entities/humpback",
+      "_key": "humpback",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950919+00:00",
+      "entity_type": "Agency",
+      "name": "humpback",
+      "updated_at": "2026-09-09T13:25:37.950919+00:00"
+    },
+    {
+      "_id": "entities/light",
+      "_key": "light",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950920+00:00",
+      "entity_type": "Entity",
+      "name": "light",
+      "updated_at": "2026-09-09T13:25:37.950920+00:00"
+    },
+    {
+      "_id": "entities/migration",
+      "_key": "migration",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950921+00:00",
+      "entity_type": "Effect",
+      "name": "migration",
+      "updated_at": "2026-09-09T13:25:37.950921+00:00"
+    },
+    {
+      "_id": "entities/mutation",
+      "_key": "mutation",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950922+00:00",
+      "entity_type": "Collection",
+      "name": "mutation",
+      "updated_at": "2026-09-09T13:25:37.950922+00:00"
+    },
+    {
+      "_id": "entities/news-programs",
+      "_key": "news-programs",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950924+00:00",
+      "entity_type": "Message",
+      "name": "News programs",
+      "updated_at": "2026-09-09T13:25:37.950924+00:00"
+    },
+    {
+      "_id": "entities/paper",
+      "_key": "paper",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950925+00:00",
+      "entity_type": "Message",
+      "name": "paper",
+      "updated_at": "2026-09-09T13:25:37.950925+00:00"
+    },
+    {
+      "_id": "entities/poverty",
+      "_key": "poverty",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950926+00:00",
+      "entity_type": "Cause",
+      "name": "poverty",
+      "updated_at": "2026-09-09T13:25:37.950926+00:00"
+    },
+    {
+      "_id": "entities/recommendations",
+      "_key": "recommendations",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950927+00:00",
+      "entity_type": "Product",
+      "name": "recommendations",
+      "updated_at": "2026-09-09T13:25:37.950927+00:00"
+    },
+    {
+      "_id": "entities/safe",
+      "_key": "safe",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950928+00:00",
+      "entity_type": "Container",
+      "name": "safe",
+      "updated_at": "2026-09-09T13:25:37.950928+00:00"
+    },
+    {
+      "_id": "entities/thrushes",
+      "_key": "thrushes",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950929+00:00",
+      "entity_type": "Member",
+      "name": "thrushes",
+      "updated_at": "2026-09-09T13:25:37.950929+00:00"
+    },
+    {
+      "_id": "entities/turrets",
+      "_key": "turrets",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950930+00:00",
+      "entity_type": "Origin",
+      "name": "turrets",
+      "updated_at": "2026-09-09T13:25:37.950930+00:00"
+    },
+    {
+      "_id": "entities/user",
+      "_key": "user",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950931+00:00",
+      "entity_type": "Agency",
+      "name": "user",
+      "updated_at": "2026-09-09T13:25:37.950931+00:00"
+    },
+    {
+      "_id": "entities/violence",
+      "_key": "violence",
+      "aliases": [],
+      "created_at": "2026-09-09T13:25:37.950933+00:00",
+      "entity_type": "Topic",
+      "name": "violence",
+      "updated_at": "2026-09-09T13:25:37.950933+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-10047",
+      "_key": "semeval-terra-low-r1-b10-semeval-10047",
+      "chunk_id": "semeval-10047",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d17cf0321199e18c0d3ef9614039ffa128d0b6272d0a7291c62756bb7528c8df",
+      "created_at": "2026-09-09T13:25:37.950935+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "War and rural poverty cause mass migration of people and often simultaneous growth of informal development.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.950935+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-10244",
+      "_key": "semeval-terra-low-r1-b10-semeval-10244",
+      "chunk_id": "semeval-10244",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ef331d27fcd0ad4d3f247073f0312a471a33c71b09679351028004dcee31d5b0",
+      "created_at": "2026-09-09T13:25:37.950949+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "By the time of the inquest of 1106 the dignity of the canons and their enjoyment of 'all... free honourable customs' in their lands and houses is clear.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.950949+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-8049",
+      "_key": "semeval-terra-low-r1-b10-semeval-8049",
+      "chunk_id": "semeval-8049",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d2694e9df4f44c0f1ac4f834bc6c1a0ebee2fdb2146ce30aaf524676fcb09cc4",
+      "created_at": "2026-09-09T13:25:37.950951+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "News programs commented on the violence from the game and expressed worries on how it would affect the players' personalities.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.950951+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-8420",
+      "_key": "semeval-terra-low-r1-b10-semeval-8420",
+      "chunk_id": "semeval-8420",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b11aebaa05d49508199409c75c12ae90fa22a1d7a03b29df053c263ccbf5bccf",
+      "created_at": "2026-09-09T13:25:37.950960+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "His paper narrated the discovery chronologically.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.950960+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-9082",
+      "_key": "semeval-terra-low-r1-b10-semeval-9082",
+      "chunk_id": "semeval-9082",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8a611ee21d4187b71cd488f4150c94747ee02bca3a5ee55e279b1fb248f634ee",
+      "created_at": "2026-09-09T13:25:37.950968+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "They were not issued guns at the time, but the office did have one handgun that was locked in a safe; however, there was no ammunition.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.950968+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-9133",
+      "_key": "semeval-terra-low-r1-b10-semeval-9133",
+      "chunk_id": "semeval-9133",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a8e4b12955f330b611dcea1e915321d5688efa26ca15853ccca6773dc6aa3874",
+      "created_at": "2026-09-09T13:25:37.950977+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "A user activates the device with the power-on button.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.950977+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-9198",
+      "_key": "semeval-terra-low-r1-b10-semeval-9198",
+      "chunk_id": "semeval-9198",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ad4664506f23fac6c62fc270fc50e14d4c6ac4ddb1a8113cdb7f774e5083d5e9",
+      "created_at": "2026-09-09T13:25:37.950984+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "Yes, I have a mutation of thrushes eating me out of bird food.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.950984+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-9323",
+      "_key": "semeval-terra-low-r1-b10-semeval-9323",
+      "chunk_id": "semeval-9323",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9223fd53d396f1a967221fe8a93f6add51d571629fdf74e0412ebe402a67b70f",
+      "created_at": "2026-09-09T13:25:37.950992+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "The only light was from two turrets of bulletproof glass.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.950992+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-9367",
+      "_key": "semeval-terra-low-r1-b10-semeval-9367",
+      "chunk_id": "semeval-9367",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:62d31da8254a719944c5489e275b3f8776343f60dc84470dd34b0bf784b3c5f1",
+      "created_at": "2026-09-09T13:25:37.950998+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "In its last 12 meetings this year the committee has made about 30-35 recommendations.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.950998+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-9396",
+      "_key": "semeval-terra-low-r1-b10-semeval-9396",
+      "chunk_id": "semeval-9396",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5be1ccf4fadff1ec59d8ae6fd11eb68c69a7404b4ec07d4970742181a3ed2ac4",
+      "created_at": "2026-09-09T13:25:37.951005+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "Since Sally Industries' inception, John Wood has been a key member of the company's management team and a founding member of the board of directors.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.951005+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-9485",
+      "_key": "semeval-terra-low-r1-b10-semeval-9485",
+      "chunk_id": "semeval-9485",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:25a666016b863e7f5172001c7059b33884d946300e7ae53a3726af34be9f7b7f",
+      "created_at": "2026-09-09T13:25:37.951007+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "The water rushing off that safe platform started to wash the seal back into the sea, but then the humpback gave the seal a gentle nudge with its flipper.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.951007+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b10-semeval-9491",
+      "_key": "semeval-terra-low-r1-b10-semeval-9491",
+      "chunk_id": "semeval-9491",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d0242067dc64f64f16d7d42c909a9ed995c5a04c61ccf2a6b3322a8651f40e7e",
+      "created_at": "2026-09-09T13:25:37.951017+00:00",
+      "space_id": "semeval-terra-low-r1-b10",
+      "text": "The folks at the Lilly Endowment were interested in the study of philanthropy through a biographical lens.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:25:37.951017+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 9,
+        "results": [
+          {
+            "_from": "entities/button",
+            "_id": "facts/fact-5140c8d1d072d256bcf8d0b7eceb480f4116d41a08913fec5d63bb465ee18ce8",
+            "_key": "fact-5140c8d1d072d256bcf8d0b7eceb480f4116d41a08913fec5d63bb465ee18ce8",
+            "_to": "entities/user",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9133",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b10",
+            "trigger": "A user activates the device with the power-on button.",
+            "trigger_end": 53,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/paper",
+            "_id": "facts/fact-64cff593dd1216ecddfa701dbabec790b756705ec1c14f9120d7a6d82dbe02c9",
+            "_key": "fact-64cff593dd1216ecddfa701dbabec790b756705ec1c14f9120d7a6d82dbe02c9",
+            "_to": "entities/discovery",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8420",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b10",
+            "trigger": "His paper narrated the discovery chronologically.",
+            "trigger_end": 49,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/recommendations",
+            "_id": "facts/fact-8fdccdc3f1a4f50ad2539443ea024ace58dfd93cb3c3779cd8c2ecdad3df0a61",
+            "_key": "fact-8fdccdc3f1a4f50ad2539443ea024ace58dfd93cb3c3779cd8c2ecdad3df0a61",
+            "_to": "entities/committee",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9367",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b10",
+            "trigger": "In its last 12 meetings this year the committee has made about 30-35 recommendations.",
+            "trigger_end": 85,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/flipper",
+            "_id": "facts/fact-93e778998adc0f7daeda2b4804aa5a2c138265269ba4dae3bf695cf2dbb79428",
+            "_key": "fact-93e778998adc0f7daeda2b4804aa5a2c138265269ba4dae3bf695cf2dbb79428",
+            "_to": "entities/humpback",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9485",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b10",
+            "trigger": "The water rushing off that safe platform started to wash the seal back into the sea, but then the humpback gave the seal a gentle nudge with its flipper.",
+            "trigger_end": 153,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/poverty",
+            "_id": "facts/fact-a3a86f3d5978946157bb33af01dd2676ed4492a6aa2b4d8ab4cd010b392a0ee9",
+            "_key": "fact-a3a86f3d5978946157bb33af01dd2676ed4492a6aa2b4d8ab4cd010b392a0ee9",
+            "_to": "entities/migration",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10047",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b10",
+            "trigger": "War and rural poverty cause mass migration of people and often simultaneous growth of informal development.",
+            "trigger_end": 107,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/thrushes",
+            "_id": "facts/fact-a4774ea9ffe78e84e0e511d569034c4709b85f1b511e2ddb9ab3b8f842fc1d6e",
+            "_key": "fact-a4774ea9ffe78e84e0e511d569034c4709b85f1b511e2ddb9ab3b8f842fc1d6e",
+            "_to": "entities/mutation",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9198",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b10",
+            "trigger": "Yes, I have a mutation of thrushes eating me out of bird food.",
+            "trigger_end": 62,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/light",
+            "_id": "facts/fact-c251f87b338aa6fa0acc522bec00c9b19576fc19a20de4a357dfc4ec0291f0c7",
+            "_key": "fact-c251f87b338aa6fa0acc522bec00c9b19576fc19a20de4a357dfc4ec0291f0c7",
+            "_to": "entities/turrets",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9323",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b10",
+            "trigger": "The only light was from two turrets of bulletproof glass.",
+            "trigger_end": 57,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/handgun",
+            "_id": "facts/fact-d3120ceeee5817e0a39fc455fb65fcfc5b831f180af4fb73c4e4c7ac54422395",
+            "_key": "fact-d3120ceeee5817e0a39fc455fb65fcfc5b831f180af4fb73c4e4c7ac54422395",
+            "_to": "entities/safe",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9082",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b10",
+            "trigger": "They were not issued guns at the time, but the office did have one handgun that was locked in a safe; however, there was no ammunition.",
+            "trigger_end": 135,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/news-programs",
+            "_id": "facts/fact-d6b3420db1ca9b27ede1704d8b925e051c369f28c6d81bafb062affdb46fdd61",
+            "_key": "fact-d6b3420db1ca9b27ede1704d8b925e051c369f28c6d81bafb062affdb46fdd61",
+            "_to": "entities/violence",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8049",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b10",
+            "trigger": "News programs commented on the violence from the game and expressed worries on how it would affect the players' personalities.",
+            "trigger_end": 126,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 18,
+        "results": [
+          {
+            "_id": "entities/button",
+            "_key": "button",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950907+00:00",
+            "entity_type": "Instrument",
+            "name": "button",
+            "updated_at": "2026-09-09T13:25:37.950907+00:00"
+          },
+          {
+            "_id": "entities/committee",
+            "_key": "committee",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950912+00:00",
+            "entity_type": "Producer",
+            "name": "committee",
+            "updated_at": "2026-09-09T13:25:37.950912+00:00"
+          },
+          {
+            "_id": "entities/discovery",
+            "_key": "discovery",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950914+00:00",
+            "entity_type": "Topic",
+            "name": "discovery",
+            "updated_at": "2026-09-09T13:25:37.950914+00:00"
+          },
+          {
+            "_id": "entities/flipper",
+            "_key": "flipper",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950915+00:00",
+            "entity_type": "Instrument",
+            "name": "flipper",
+            "updated_at": "2026-09-09T13:25:37.950915+00:00"
+          },
+          {
+            "_id": "entities/handgun",
+            "_key": "handgun",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950917+00:00",
+            "entity_type": "Content",
+            "name": "handgun",
+            "updated_at": "2026-09-09T13:25:37.950917+00:00"
+          },
+          {
+            "_id": "entities/humpback",
+            "_key": "humpback",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950919+00:00",
+            "entity_type": "Agency",
+            "name": "humpback",
+            "updated_at": "2026-09-09T13:25:37.950919+00:00"
+          },
+          {
+            "_id": "entities/light",
+            "_key": "light",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950920+00:00",
+            "entity_type": "Entity",
+            "name": "light",
+            "updated_at": "2026-09-09T13:25:37.950920+00:00"
+          },
+          {
+            "_id": "entities/migration",
+            "_key": "migration",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950921+00:00",
+            "entity_type": "Effect",
+            "name": "migration",
+            "updated_at": "2026-09-09T13:25:37.950921+00:00"
+          },
+          {
+            "_id": "entities/mutation",
+            "_key": "mutation",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950922+00:00",
+            "entity_type": "Collection",
+            "name": "mutation",
+            "updated_at": "2026-09-09T13:25:37.950922+00:00"
+          },
+          {
+            "_id": "entities/news-programs",
+            "_key": "news-programs",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950924+00:00",
+            "entity_type": "Message",
+            "name": "News programs",
+            "updated_at": "2026-09-09T13:25:37.950924+00:00"
+          },
+          {
+            "_id": "entities/paper",
+            "_key": "paper",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950925+00:00",
+            "entity_type": "Message",
+            "name": "paper",
+            "updated_at": "2026-09-09T13:25:37.950925+00:00"
+          },
+          {
+            "_id": "entities/poverty",
+            "_key": "poverty",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950926+00:00",
+            "entity_type": "Cause",
+            "name": "poverty",
+            "updated_at": "2026-09-09T13:25:37.950926+00:00"
+          },
+          {
+            "_id": "entities/recommendations",
+            "_key": "recommendations",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950927+00:00",
+            "entity_type": "Product",
+            "name": "recommendations",
+            "updated_at": "2026-09-09T13:25:37.950927+00:00"
+          },
+          {
+            "_id": "entities/safe",
+            "_key": "safe",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950928+00:00",
+            "entity_type": "Container",
+            "name": "safe",
+            "updated_at": "2026-09-09T13:25:37.950928+00:00"
+          },
+          {
+            "_id": "entities/thrushes",
+            "_key": "thrushes",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950929+00:00",
+            "entity_type": "Member",
+            "name": "thrushes",
+            "updated_at": "2026-09-09T13:25:37.950929+00:00"
+          },
+          {
+            "_id": "entities/turrets",
+            "_key": "turrets",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950930+00:00",
+            "entity_type": "Origin",
+            "name": "turrets",
+            "updated_at": "2026-09-09T13:25:37.950930+00:00"
+          },
+          {
+            "_id": "entities/user",
+            "_key": "user",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950931+00:00",
+            "entity_type": "Agency",
+            "name": "user",
+            "updated_at": "2026-09-09T13:25:37.950931+00:00"
+          },
+          {
+            "_id": "entities/violence",
+            "_key": "violence",
+            "aliases": [],
+            "created_at": "2026-09-09T13:25:37.950933+00:00",
+            "entity_type": "Topic",
+            "name": "violence",
+            "updated_at": "2026-09-09T13:25:37.950933+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-10047",
+            "_key": "semeval-terra-low-r1-b10-semeval-10047",
+            "chunk_id": "semeval-10047",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d17cf0321199e18c0d3ef9614039ffa128d0b6272d0a7291c62756bb7528c8df",
+            "created_at": "2026-09-09T13:25:37.950935+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "War and rural poverty cause mass migration of people and often simultaneous growth of informal development.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.950935+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-10244",
+            "_key": "semeval-terra-low-r1-b10-semeval-10244",
+            "chunk_id": "semeval-10244",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ef331d27fcd0ad4d3f247073f0312a471a33c71b09679351028004dcee31d5b0",
+            "created_at": "2026-09-09T13:25:37.950949+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "By the time of the inquest of 1106 the dignity of the canons and their enjoyment of 'all... free honourable customs' in their lands and houses is clear.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.950949+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-8049",
+            "_key": "semeval-terra-low-r1-b10-semeval-8049",
+            "chunk_id": "semeval-8049",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d2694e9df4f44c0f1ac4f834bc6c1a0ebee2fdb2146ce30aaf524676fcb09cc4",
+            "created_at": "2026-09-09T13:25:37.950951+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "News programs commented on the violence from the game and expressed worries on how it would affect the players' personalities.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.950951+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-8420",
+            "_key": "semeval-terra-low-r1-b10-semeval-8420",
+            "chunk_id": "semeval-8420",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b11aebaa05d49508199409c75c12ae90fa22a1d7a03b29df053c263ccbf5bccf",
+            "created_at": "2026-09-09T13:25:37.950960+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "His paper narrated the discovery chronologically.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.950960+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-9082",
+            "_key": "semeval-terra-low-r1-b10-semeval-9082",
+            "chunk_id": "semeval-9082",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8a611ee21d4187b71cd488f4150c94747ee02bca3a5ee55e279b1fb248f634ee",
+            "created_at": "2026-09-09T13:25:37.950968+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "They were not issued guns at the time, but the office did have one handgun that was locked in a safe; however, there was no ammunition.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.950968+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-9133",
+            "_key": "semeval-terra-low-r1-b10-semeval-9133",
+            "chunk_id": "semeval-9133",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a8e4b12955f330b611dcea1e915321d5688efa26ca15853ccca6773dc6aa3874",
+            "created_at": "2026-09-09T13:25:37.950977+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "A user activates the device with the power-on button.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.950977+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-9198",
+            "_key": "semeval-terra-low-r1-b10-semeval-9198",
+            "chunk_id": "semeval-9198",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ad4664506f23fac6c62fc270fc50e14d4c6ac4ddb1a8113cdb7f774e5083d5e9",
+            "created_at": "2026-09-09T13:25:37.950984+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "Yes, I have a mutation of thrushes eating me out of bird food.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.950984+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-9323",
+            "_key": "semeval-terra-low-r1-b10-semeval-9323",
+            "chunk_id": "semeval-9323",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:9223fd53d396f1a967221fe8a93f6add51d571629fdf74e0412ebe402a67b70f",
+            "created_at": "2026-09-09T13:25:37.950992+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "The only light was from two turrets of bulletproof glass.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.950992+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-9367",
+            "_key": "semeval-terra-low-r1-b10-semeval-9367",
+            "chunk_id": "semeval-9367",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:62d31da8254a719944c5489e275b3f8776343f60dc84470dd34b0bf784b3c5f1",
+            "created_at": "2026-09-09T13:25:37.950998+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "In its last 12 meetings this year the committee has made about 30-35 recommendations.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.950998+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-9396",
+            "_key": "semeval-terra-low-r1-b10-semeval-9396",
+            "chunk_id": "semeval-9396",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5be1ccf4fadff1ec59d8ae6fd11eb68c69a7404b4ec07d4970742181a3ed2ac4",
+            "created_at": "2026-09-09T13:25:37.951005+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "Since Sally Industries' inception, John Wood has been a key member of the company's management team and a founding member of the board of directors.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.951005+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-9485",
+            "_key": "semeval-terra-low-r1-b10-semeval-9485",
+            "chunk_id": "semeval-9485",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:25a666016b863e7f5172001c7059b33884d946300e7ae53a3726af34be9f7b7f",
+            "created_at": "2026-09-09T13:25:37.951007+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "The water rushing off that safe platform started to wash the seal back into the sea, but then the humpback gave the seal a gentle nudge with its flipper.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.951007+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b10-semeval-9491",
+            "_key": "semeval-terra-low-r1-b10-semeval-9491",
+            "chunk_id": "semeval-9491",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d0242067dc64f64f16d7d42c909a9ed995c5a04c61ccf2a6b3322a8651f40e7e",
+            "created_at": "2026-09-09T13:25:37.951017+00:00",
+            "space_id": "semeval-terra-low-r1-b10",
+            "text": "The folks at the Lilly Endowment were interested in the study of philanthropy through a biographical lens.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:25:37.951017+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

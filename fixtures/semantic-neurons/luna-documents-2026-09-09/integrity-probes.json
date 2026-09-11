@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "probes": [
+    {
+      "probe": "capture_digest",
+      "rejected": true
+    },
+    {
+      "probe": "missing_attempt",
+      "rejected": true
+    },
+    {
+      "probe": "effort_override",
+      "rejected": true
+    },
+    {
+      "probe": "stored_evidence",
+      "rejected": true
+    },
+    {
+      "probe": "document_attribution",
+      "rejected": true
+    }
+  ],
+  "harness_sha256": "73bf49417830ed8c1159a5f4dfaa9bf8515668d52cfdfb806f650b6f8868bcd1"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "REPLACE_ME_space_id",
+  "name": "REPLACE ME — human-readable name",
+  "version": 1,
+  "description": "Blind eval: authored before any pipeline run. Triggers are naive first-draft phrases, NOT copied from the document.",
+  "entities": [
+    { "name": "Entity A", "type": "SomeType", "aliases": ["A", "the thing"] },
+    { "name": "Entity B", "type": "SomeType" }
+  ],
+  "relation_rules": [
+    { "source": "Entity A", "relation": "RELATES_TO", "target": "Entity B",
+      "when_any": ["a phrase you EXPECT to see", "another expected phrasing"] }
+  ]
+}

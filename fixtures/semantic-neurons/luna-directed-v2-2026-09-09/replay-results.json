@@ -1,0 +1,8410 @@
+{
+  "mode": "replay",
+  "split": "development",
+  "documents": 40,
+  "metric_interpretation": "Agreement with published annotations; unmatched predictions require human review.",
+  "per_document": [
+    {
+      "document_id": "development-921bce669adc12f5",
+      "title": "Irish experiment",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 12,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 12,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-0954205d2e7642ca",
+      "title": "ABBA Live",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 9,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 9,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:0",
+          "PUBLISHED_BY",
+          "e:3"
+        ]
+      ],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:24"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:24"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:24"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:24"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:10"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:24"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:24"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:24"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:24"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:10"
+        ]
+      ],
+      "skips": [
+        "`ABBA Live --PUBLISHED_BY--> Polar Music`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-2d2393ed71f936cf",
+      "title": "Boltenhagen",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 39,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 39,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "unmapped:mecklenburg - vorpommern"
+        ]
+      ],
+      "unmatched_accepted_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "unmapped:mecklenburg - vorpommern"
+        ]
+      ],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:11"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:11"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:12",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:0"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:11"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:0"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:11"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:16"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:1"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:11"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:11"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:12",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:0"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:11"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:0"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:11"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:16"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:1"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-0001217dd29c73f7",
+      "title": "Truth in Music Advertising",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 7,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 7,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:1"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:1"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-6069bc7af833fc96",
+      "title": "Sunol Valley",
+      "status": 200,
+      "raw": {
+        "matched": 3,
+        "unmatched": 0,
+        "missed": 41,
+        "reference_precision": 1.0,
+        "reference_recall": 0.06818181818181818,
+        "reference_f1": 0.1276595744680851
+      },
+      "accepted": {
+        "matched": 3,
+        "unmatched": 0,
+        "missed": 41,
+        "reference_precision": 1.0,
+        "reference_recall": 0.06818181818181818,
+        "reference_f1": 0.1276595744680851
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:12",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:12",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-b55e9da60c4698ee",
+      "title": "Roald",
+      "status": 200,
+      "raw": {
+        "matched": 2,
+        "unmatched": 1,
+        "missed": 33,
+        "reference_precision": 0.6666666666666666,
+        "reference_recall": 0.05714285714285714,
+        "reference_f1": 0.10526315789473684
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 35,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "unmapped:møre and romsdal county"
+        ]
+      ],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:0"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:0"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "skips": [
+        "`Roald --COUNTRY--> Norway`: evidence is not a verbatim quote of chunk `development-b55e9da60c4698ee` — dropped",
+        "`Roald --LOCATED_IN--> Giske Municipality`: evidence is not a verbatim quote of chunk `development-b55e9da60c4698ee` — dropped",
+        "`Roald --LOCATED_IN--> Møre and Romsdal county`: evidence is not a verbatim quote of chunk `development-b55e9da60c4698ee` — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-a189841ce1a8a6f6",
+      "title": "Fyllingen Fotball",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 33,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 33,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "HEADQUARTERED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "HEADQUARTERED_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:12",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:18",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:22",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:24",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:24",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:24",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:24",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:24",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:25",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:25",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:25",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:25",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:25",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:1"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "HEADQUARTERED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "HEADQUARTERED_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:12",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:18",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:22",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:24",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:24",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:24",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:24",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:24",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:25",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:25",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:25",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:25",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:25",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:1"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-979c6808daf9f18d",
+      "title": "Joyce Godenzi",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 1,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 1,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:10",
+          "SPOUSE_OF",
+          "unmapped:she"
+        ]
+      ],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "SPOUSE_OF",
+          "e:10"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "SPOUSE_OF",
+          "e:10"
+        ]
+      ],
+      "skips": [
+        "`She --SPOUSE_OF--> Sammo Hung`: evidence is not a verbatim quote of chunk `development-979c6808daf9f18d` — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-d581ecd86d3ca6b7",
+      "title": "National Executive Committee of the African National Congress",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 8,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 8,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:1",
+          "COUNTRY",
+          "unmapped:south africa"
+        ]
+      ],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ]
+      ],
+      "skips": [
+        "`African National Congress --COUNTRY--> South Africa`: target does not occur in the evidence sentence — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-217ba42d0ba2572a",
+      "title": "The Colts (vocal group)",
+      "status": 200,
+      "raw": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 26,
+        "reference_precision": 1.0,
+        "reference_recall": 0.037037037037037035,
+        "reference_f1": 0.07142857142857142
+      },
+      "accepted": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 26,
+        "reference_precision": 1.0,
+        "reference_recall": 0.037037037037037035,
+        "reference_f1": 0.07142857142857142
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:18"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:10"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:18"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:10"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-0f98e8503fb83a96",
+      "title": "Fyns Hoved",
+      "status": 200,
+      "raw": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 23,
+        "reference_precision": 1.0,
+        "reference_recall": 0.041666666666666664,
+        "reference_f1": 0.08
+      },
+      "accepted": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 23,
+        "reference_precision": 1.0,
+        "reference_recall": 0.041666666666666664,
+        "reference_f1": 0.08
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:2"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:2"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-4054bbaaf77be04e",
+      "title": "Ronald Leonard",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 2,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 2,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:26",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:26",
+          "LOCATED_IN",
+          "e:1"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:26",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:26",
+          "LOCATED_IN",
+          "e:1"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-2e4fe62077dc78b2",
+      "title": "List of songs recorded by Rage Against the Machine",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 7,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 7,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-8bacb64876769351",
+      "title": "Lake Hiawatha",
+      "status": 200,
+      "raw": {
+        "matched": 1,
+        "unmatched": 1,
+        "missed": 10,
+        "reference_precision": 0.5,
+        "reference_recall": 0.09090909090909091,
+        "reference_f1": 0.15384615384615385
+      },
+      "accepted": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 10,
+        "reference_precision": 1.0,
+        "reference_recall": 0.09090909090909091,
+        "reference_f1": 0.16666666666666666
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:0",
+          "OWNED_BY",
+          "e:4"
+        ]
+      ],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "skips": [
+        "`Lake Hiawatha --OWNED_BY--> Minneapolis Park and Recreation Board`: source does not occur in the evidence sentence — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-7cacf44ff7f4231e",
+      "title": "Joseph R. Anderson",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 13,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 13,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:5",
+          "OWNED_BY",
+          "e:0"
+        ]
+      ],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:10",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:10",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "skips": [
+        "`Tredegar Iron Company --OWNED_BY--> Joseph Reid Anderson`: target does not occur in the evidence sentence — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-1e7f7cf08479cc2b",
+      "title": "Muir Beach, California",
+      "status": 200,
+      "raw": {
+        "matched": 3,
+        "unmatched": 0,
+        "missed": 23,
+        "reference_precision": 1.0,
+        "reference_recall": 0.11538461538461539,
+        "reference_f1": 0.20689655172413793
+      },
+      "accepted": {
+        "matched": 3,
+        "unmatched": 0,
+        "missed": 23,
+        "reference_precision": 1.0,
+        "reference_recall": 0.11538461538461539,
+        "reference_f1": 0.20689655172413793
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-bd343468b89bf2fb",
+      "title": "Ici Paris",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 3,
+        "missed": 8,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 8,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "invalid_chunk:chunk development-bd343468b89bf2fb:ici paris",
+          "COUNTRY",
+          "invalid_chunk:chunk development-bd343468b89bf2fb:france"
+        ],
+        [
+          "invalid_chunk:chunk development-bd343468b89bf2fb:ici paris",
+          "OWNED_BY",
+          "invalid_chunk:chunk development-bd343468b89bf2fb:lagardère"
+        ],
+        [
+          "invalid_chunk:chunk development-bd343468b89bf2fb:ici paris",
+          "PUBLISHED_BY",
+          "invalid_chunk:chunk development-bd343468b89bf2fb:hachette filipacchi associes , snc"
+        ]
+      ],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "OWNED_BY",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "PUBLISHED_BY",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:5",
+          "HEADQUARTERED_IN",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "HEADQUARTERED_IN",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:4"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "OWNED_BY",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "PUBLISHED_BY",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:5",
+          "HEADQUARTERED_IN",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "HEADQUARTERED_IN",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:4"
+        ]
+      ],
+      "skips": [
+        "`Ici Paris --COUNTRY--> France`: cites chunk `chunk development-bd343468b89bf2fb` which is not in this request — dropped",
+        "`Ici Paris --OWNED_BY--> Lagardère`: cites chunk `chunk development-bd343468b89bf2fb` which is not in this request — dropped",
+        "`Ici Paris --PUBLISHED_BY--> Hachette Filipacchi Associes , SNC`: cites chunk `chunk development-bd343468b89bf2fb` which is not in this request — dropped"
+      ],
+      "invalid_chunk_citations": 3
+    },
+    {
+      "document_id": "development-c1ddee323157a82d",
+      "title": "Brigden, Ontario",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 6,
+        "missed": 51,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 5,
+        "missed": 51,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "ambiguous:brigden",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "ambiguous:brigden",
+          "DIED_IN",
+          "e:15"
+        ],
+        [
+          "ambiguous:brigden",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "ambiguous:brigden",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "ambiguous:brigden",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:20",
+          "BORN_IN",
+          "ambiguous:brigden"
+        ]
+      ],
+      "unmatched_accepted_keys": [
+        [
+          "ambiguous:brigden",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "ambiguous:brigden",
+          "DIED_IN",
+          "e:15"
+        ],
+        [
+          "ambiguous:brigden",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "ambiguous:brigden",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "ambiguous:brigden",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:16"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:12",
+          "DIED_IN",
+          "e:15"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:16"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:18",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:19",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:19",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:19",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:20",
+          "BORN_IN",
+          "e:0"
+        ],
+        [
+          "e:20",
+          "BORN_IN",
+          "e:1"
+        ],
+        [
+          "e:21",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:21",
+          "FOUNDED_BY",
+          "e:20"
+        ],
+        [
+          "e:21",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:4"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:16"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:12",
+          "DIED_IN",
+          "e:15"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:16"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:18",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:19",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:19",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:19",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:20",
+          "BORN_IN",
+          "e:0"
+        ],
+        [
+          "e:20",
+          "BORN_IN",
+          "e:1"
+        ],
+        [
+          "e:21",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:21",
+          "FOUNDED_BY",
+          "e:20"
+        ],
+        [
+          "e:21",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:4"
+        ]
+      ],
+      "skips": [
+        "`JR Shaw --BORN_IN--> Brigden`: target does not occur in the evidence sentence — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-8bd85bc8aeed131a",
+      "title": "Ali Akbar Moradi",
+      "status": 200,
+      "raw": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 11,
+        "reference_precision": 1.0,
+        "reference_recall": 0.08333333333333333,
+        "reference_f1": 0.15384615384615385
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 12,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "BORN_IN",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:6"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:6"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:6"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:6"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:6"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:6"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:6"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:6"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "BORN_IN",
+          "e:4"
+        ],
+        [
+          "e:0",
+          "BORN_IN",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:6"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:6"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:6"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:6"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:6"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:6"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:6"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:6"
+        ]
+      ],
+      "skips": [
+        "`Ali Akbar Moradi --BORN_IN--> Gahwareh`: source does not occur in the evidence sentence — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-5b3e0345285410d0",
+      "title": "James P. Maher",
+      "status": 200,
+      "raw": {
+        "matched": 1,
+        "unmatched": 1,
+        "missed": 37,
+        "reference_precision": 0.5,
+        "reference_recall": 0.02631578947368421,
+        "reference_f1": 0.05
+      },
+      "accepted": {
+        "matched": 1,
+        "unmatched": 1,
+        "missed": 37,
+        "reference_precision": 0.5,
+        "reference_recall": 0.02631578947368421,
+        "reference_f1": 0.05
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:0",
+          "BORN_IN",
+          "unmapped:brooklyn , new york"
+        ]
+      ],
+      "unmatched_accepted_keys": [
+        [
+          "e:0",
+          "BORN_IN",
+          "unmapped:brooklyn , new york"
+        ]
+      ],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "BORN_IN",
+          "e:4"
+        ],
+        [
+          "e:0",
+          "BORN_IN",
+          "e:5"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:20",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:20",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:21",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:21",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:22",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:23",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:25",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:25",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:26",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:26",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:29",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:29",
+          "LOCATED_IN",
+          "e:26"
+        ],
+        [
+          "e:29",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:30",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:30",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "BORN_IN",
+          "e:4"
+        ],
+        [
+          "e:0",
+          "BORN_IN",
+          "e:5"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:20",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:20",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:21",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:21",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:22",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:23",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:25",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:25",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:26",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:26",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:29",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:29",
+          "LOCATED_IN",
+          "e:26"
+        ],
+        [
+          "e:29",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:30",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:30",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-d880885b5f52ca9d",
+      "title": "Penn Line",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 20,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 20,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:0",
+          "OWNED_BY",
+          "e:10"
+        ],
+        [
+          "e:0",
+          "OWNED_BY",
+          "e:8"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "OWNED_BY",
+          "e:10"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:15",
+          "OWNED_BY",
+          "e:8"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "OWNED_BY",
+          "e:10"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:6"
+        ],
+        [
+          "e:7",
+          "OWNED_BY",
+          "e:10"
+        ],
+        [
+          "e:7",
+          "OWNED_BY",
+          "e:11"
+        ],
+        [
+          "e:7",
+          "OWNED_BY",
+          "e:8"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:9",
+          "OWNED_BY",
+          "e:8"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:0",
+          "OWNED_BY",
+          "e:10"
+        ],
+        [
+          "e:0",
+          "OWNED_BY",
+          "e:8"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "OWNED_BY",
+          "e:10"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:15",
+          "OWNED_BY",
+          "e:8"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "OWNED_BY",
+          "e:10"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:6"
+        ],
+        [
+          "e:7",
+          "OWNED_BY",
+          "e:10"
+        ],
+        [
+          "e:7",
+          "OWNED_BY",
+          "e:11"
+        ],
+        [
+          "e:7",
+          "OWNED_BY",
+          "e:8"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:9",
+          "OWNED_BY",
+          "e:8"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-cfc5f8dae199266e",
+      "title": "Peadar Bracken",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 16,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 16,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "unmapped:gpo garrison outpost",
+          "LOCATED_IN",
+          "e:15"
+        ]
+      ],
+      "unmatched_accepted_keys": [
+        [
+          "unmapped:gpo garrison outpost",
+          "LOCATED_IN",
+          "e:15"
+        ]
+      ],
+      "missed_raw_keys": [
+        [
+          "e:12",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:15"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:12",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:15"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-ca253ca6cdb5fb00",
+      "title": "List of Square Enix video games",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 2,
+        "missed": 18,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 18,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "invalid_chunk:chunk development-ca253ca6cdb5fb00:square enix",
+          "COUNTRY",
+          "invalid_chunk:chunk development-ca253ca6cdb5fb00:japan"
+        ],
+        [
+          "invalid_chunk:chunk development-ca253ca6cdb5fb00:taito corporation",
+          "OWNED_BY",
+          "invalid_chunk:chunk development-ca253ca6cdb5fb00:square enix"
+        ]
+      ],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:11",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:13",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:13",
+          "OWNED_BY",
+          "e:11"
+        ],
+        [
+          "e:16",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:20",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:5",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:5",
+          "PUBLISHED_BY",
+          "e:0"
+        ],
+        [
+          "e:5",
+          "PUBLISHED_BY",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "PUBLISHED_BY",
+          "e:0"
+        ],
+        [
+          "e:6",
+          "PUBLISHED_BY",
+          "e:4"
+        ],
+        [
+          "e:7",
+          "PUBLISHED_BY",
+          "e:0"
+        ],
+        [
+          "e:7",
+          "PUBLISHED_BY",
+          "e:4"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:11",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:13",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:13",
+          "OWNED_BY",
+          "e:11"
+        ],
+        [
+          "e:16",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:20",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:5",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:5",
+          "PUBLISHED_BY",
+          "e:0"
+        ],
+        [
+          "e:5",
+          "PUBLISHED_BY",
+          "e:4"
+        ],
+        [
+          "e:6",
+          "PUBLISHED_BY",
+          "e:0"
+        ],
+        [
+          "e:6",
+          "PUBLISHED_BY",
+          "e:4"
+        ],
+        [
+          "e:7",
+          "PUBLISHED_BY",
+          "e:0"
+        ],
+        [
+          "e:7",
+          "PUBLISHED_BY",
+          "e:4"
+        ]
+      ],
+      "skips": [
+        "`Square Enix --COUNTRY--> Japan`: cites chunk `chunk development-ca253ca6cdb5fb00` which is not in this request — dropped",
+        "`Taito Corporation --OWNED_BY--> Square Enix`: cites chunk `chunk development-ca253ca6cdb5fb00` which is not in this request — dropped"
+      ],
+      "invalid_chunk_citations": 2
+    },
+    {
+      "document_id": "development-ffba17911572350e",
+      "title": "Louis Lombardi",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 2,
+        "missed": 7,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 2,
+        "missed": 7,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:0",
+          "BORN_IN",
+          "unmapped:the bronx , new york city"
+        ],
+        [
+          "e:0",
+          "HAS_FATHER",
+          "unmapped:louis lombardi , sr ."
+        ]
+      ],
+      "unmatched_accepted_keys": [
+        [
+          "e:0",
+          "BORN_IN",
+          "unmapped:the bronx , new york city"
+        ],
+        [
+          "e:0",
+          "HAS_FATHER",
+          "unmapped:louis lombardi , sr ."
+        ]
+      ],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "BORN_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "BORN_IN",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "BORN_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "BORN_IN",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-895d605cf04656c1",
+      "title": "Zakhary Lyapunov",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 8,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 8,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:10",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:15",
+          "HAS_CHILD",
+          "e:16"
+        ],
+        [
+          "e:16",
+          "HAS_FATHER",
+          "e:15"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:2"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:10",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:15",
+          "HAS_CHILD",
+          "e:16"
+        ],
+        [
+          "e:16",
+          "HAS_FATHER",
+          "e:15"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:2"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-e1ff0cc06da8ae7a",
+      "title": "Yi Seok",
+      "status": 200,
+      "raw": {
+        "matched": 2,
+        "unmatched": 2,
+        "missed": 34,
+        "reference_precision": 0.5,
+        "reference_recall": 0.05555555555555555,
+        "reference_f1": 0.1
+      },
+      "accepted": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 35,
+        "reference_precision": 1.0,
+        "reference_recall": 0.027777777777777776,
+        "reference_f1": 0.05405405405405406
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:0",
+          "HAS_MOTHER",
+          "unmapped:lady hong chŏng - sun"
+        ],
+        [
+          "e:19",
+          "FOUNDED_BY",
+          "e:0"
+        ]
+      ],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "HAS_MOTHER",
+          "e:14"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:9"
+        ],
+        [
+          "e:11",
+          "HAS_CHILD",
+          "e:0"
+        ],
+        [
+          "e:11",
+          "HAS_FATHER",
+          "e:12"
+        ],
+        [
+          "e:11",
+          "SPOUSE_OF",
+          "e:14"
+        ],
+        [
+          "e:12",
+          "HAS_CHILD",
+          "e:11"
+        ],
+        [
+          "e:14",
+          "HAS_CHILD",
+          "e:0"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:9"
+        ],
+        [
+          "e:20",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:4"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "HAS_FATHER",
+          "e:11"
+        ],
+        [
+          "e:0",
+          "HAS_MOTHER",
+          "e:14"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:9"
+        ],
+        [
+          "e:11",
+          "HAS_CHILD",
+          "e:0"
+        ],
+        [
+          "e:11",
+          "HAS_FATHER",
+          "e:12"
+        ],
+        [
+          "e:11",
+          "SPOUSE_OF",
+          "e:14"
+        ],
+        [
+          "e:12",
+          "HAS_CHILD",
+          "e:11"
+        ],
+        [
+          "e:14",
+          "HAS_CHILD",
+          "e:0"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:9"
+        ],
+        [
+          "e:20",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:13"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:4"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:4"
+        ]
+      ],
+      "skips": [
+        "`Yi Seok --HAS_FATHER--> Prince Yi Kang`: source does not occur in the evidence sentence — dropped",
+        "`Yi Seok --HAS_MOTHER--> Lady Hong Chŏng - sun`: source does not occur in the evidence sentence — dropped",
+        "`The Imperial Grandson Association --FOUNDED_BY--> Yi Seok`: evidence is not a verbatim quote of chunk `development-e1ff0cc06da8ae7a` — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-5aaba442d1495046",
+      "title": "Angleton High School",
+      "status": 200,
+      "raw": {
+        "matched": 4,
+        "unmatched": 0,
+        "missed": 50,
+        "reference_precision": 1.0,
+        "reference_recall": 0.07407407407407407,
+        "reference_f1": 0.13793103448275862
+      },
+      "accepted": {
+        "matched": 4,
+        "unmatched": 0,
+        "missed": 50,
+        "reference_precision": 1.0,
+        "reference_recall": 0.07407407407407407,
+        "reference_f1": 0.13793103448275862
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:18",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:19",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:19",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:19",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:19",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:10",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:15",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:16",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:16",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:18",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:19",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:19",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:19",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:19",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:6",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-817130ca0722959c",
+      "title": "Sonic the Hedgehog",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 4,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 4,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "PUBLISHED_BY",
+          "e:1"
+        ],
+        [
+          "e:11",
+          "PUBLISHED_BY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "PUBLISHED_BY",
+          "e:1"
+        ],
+        [
+          "e:8",
+          "OWNED_BY",
+          "e:1"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "PUBLISHED_BY",
+          "e:1"
+        ],
+        [
+          "e:11",
+          "PUBLISHED_BY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "PUBLISHED_BY",
+          "e:1"
+        ],
+        [
+          "e:8",
+          "OWNED_BY",
+          "e:1"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-ff690eaeaa758eac",
+      "title": "Fingerpori",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 5,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 5,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:20",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:20",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:20",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:20",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-7bc37301d2ec2e45",
+      "title": "Cranford Agreement",
+      "status": 200,
+      "raw": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 9,
+        "reference_precision": 1.0,
+        "reference_recall": 0.1,
+        "reference_f1": 0.18181818181818182
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 10,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:13",
+          "OWNED_BY",
+          "e:18"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:4"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:13",
+          "OWNED_BY",
+          "e:18"
+        ],
+        [
+          "e:15",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:13"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:18",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:5",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:5",
+          "OWNED_BY",
+          "e:18"
+        ]
+      ],
+      "skips": [
+        "`Heathrow Airport --OWNED_BY--> Heathrow Airport Holdings`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-fc2290335639f26c",
+      "title": "Kokumin Dōmei",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 3,
+        "missed": 1,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 1,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:8",
+          "FOUNDED_BY",
+          "e:1"
+        ],
+        [
+          "e:8",
+          "FOUNDED_BY",
+          "e:6"
+        ],
+        [
+          "e:8",
+          "FOUNDED_BY",
+          "e:7"
+        ]
+      ],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:22",
+          "FOUNDED_BY",
+          "e:21"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:22",
+          "FOUNDED_BY",
+          "e:21"
+        ]
+      ],
+      "skips": [
+        "`Kokumin Dōmei --FOUNDED_BY--> Adachi`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+        "`Kokumin Dōmei --FOUNDED_BY--> Nakano Seigō`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+        "`Kokumin Dōmei --FOUNDED_BY--> Akira Kazami`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-fb23fff7cbdde412",
+      "title": "Rock n Roll (Avril Lavigne song)",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 0,
+        "reference_precision": null,
+        "reference_recall": null,
+        "reference_f1": null
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 0,
+        "reference_precision": null,
+        "reference_recall": null,
+        "reference_f1": null
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [],
+      "missed_accepted_keys": [],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-0292ff09e5c47cf4",
+      "title": "Load (album)",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 2,
+        "missed": 13,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 13,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:0",
+          "PUBLISHED_BY",
+          "e:4"
+        ],
+        [
+          "e:0",
+          "PUBLISHED_BY",
+          "e:6"
+        ]
+      ],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:17",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "FOUNDED_BY",
+          "e:11"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:17",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:17",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "FOUNDED_BY",
+          "e:11"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "skips": [
+        "`Load --PUBLISHED_BY--> Elektra Records`: evidence is not a verbatim quote of chunk `development-0292ff09e5c47cf4` — dropped",
+        "`Load --PUBLISHED_BY--> Vertigo Records`: evidence is not a verbatim quote of chunk `development-0292ff09e5c47cf4` — dropped"
+      ],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-0559865ed61c73a1",
+      "title": "Osmund Ueland",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 8,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 8,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:10",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:2"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:10",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:10",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:13",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:2"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-d3ca9ace0ab23df5",
+      "title": "Tropic of Cancer (film)",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 10,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 10,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:2"
+        ]
+      ],
+      "unmatched_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:2"
+        ]
+      ],
+      "missed_raw_keys": [
+        [
+          "e:12",
+          "COUNTRY",
+          "e:18"
+        ],
+        [
+          "e:12",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:18"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:14",
+          "SPOUSE_OF",
+          "e:6"
+        ],
+        [
+          "e:19",
+          "COUNTRY",
+          "e:18"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:18"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:18"
+        ],
+        [
+          "e:21",
+          "COUNTRY",
+          "e:20"
+        ],
+        [
+          "e:21",
+          "LOCATED_IN",
+          "e:20"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:12",
+          "COUNTRY",
+          "e:18"
+        ],
+        [
+          "e:12",
+          "COUNTRY",
+          "e:2"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:18"
+        ],
+        [
+          "e:12",
+          "LOCATED_IN",
+          "e:2"
+        ],
+        [
+          "e:14",
+          "SPOUSE_OF",
+          "e:6"
+        ],
+        [
+          "e:19",
+          "COUNTRY",
+          "e:18"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:18"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:18"
+        ],
+        [
+          "e:21",
+          "COUNTRY",
+          "e:20"
+        ],
+        [
+          "e:21",
+          "LOCATED_IN",
+          "e:20"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-aaa11554c327cbf8",
+      "title": "Statue of Jan Smuts, Parliament Square",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 3,
+        "missed": 21,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 3,
+        "missed": 21,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "unmapped:statue",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "unmapped:statue",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "unmapped:statue",
+          "LOCATED_IN",
+          "e:4"
+        ]
+      ],
+      "unmatched_accepted_keys": [
+        [
+          "unmapped:statue",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "unmapped:statue",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "unmapped:statue",
+          "LOCATED_IN",
+          "e:4"
+        ]
+      ],
+      "missed_raw_keys": [
+        [
+          "e:21",
+          "COUNTRY",
+          "e:17"
+        ],
+        [
+          "e:21",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:21",
+          "LOCATED_IN",
+          "e:17"
+        ],
+        [
+          "e:21",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:17"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:17"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:17"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:17"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:17"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:17"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:21",
+          "COUNTRY",
+          "e:17"
+        ],
+        [
+          "e:21",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:21",
+          "LOCATED_IN",
+          "e:17"
+        ],
+        [
+          "e:21",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:17"
+        ],
+        [
+          "e:3",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:17"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:4"
+        ],
+        [
+          "e:3",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:17"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:17"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:17"
+        ],
+        [
+          "e:8",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:17"
+        ],
+        [
+          "e:8",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-7731557f810b3b18",
+      "title": "Signaling of the New York City Subway",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 7,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 7,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:1",
+          "HEADQUARTERED_IN",
+          "e:0"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:0"
+        ],
+        [
+          "e:11",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:12",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:0"
+        ],
+        [
+          "e:8",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:9",
+          "OWNED_BY",
+          "e:0"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:1",
+          "HEADQUARTERED_IN",
+          "e:0"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:0"
+        ],
+        [
+          "e:11",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:12",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:0"
+        ],
+        [
+          "e:8",
+          "OWNED_BY",
+          "e:0"
+        ],
+        [
+          "e:9",
+          "OWNED_BY",
+          "e:0"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-64764209a3442088",
+      "title": "Joseph in Islam",
+      "status": 200,
+      "raw": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 2,
+        "reference_precision": 1.0,
+        "reference_recall": 0.3333333333333333,
+        "reference_f1": 0.5
+      },
+      "accepted": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 2,
+        "reference_precision": 1.0,
+        "reference_recall": 0.3333333333333333,
+        "reference_f1": 0.5
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:16",
+          "SPOUSE_OF",
+          "e:17"
+        ],
+        [
+          "e:4",
+          "HAS_CHILD",
+          "e:0"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:16",
+          "SPOUSE_OF",
+          "e:17"
+        ],
+        [
+          "e:4",
+          "HAS_CHILD",
+          "e:0"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-cc17840e0004a25f",
+      "title": "Il regalo più grande",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 2,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 2,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [],
+      "unmatched_accepted_keys": [],
+      "missed_raw_keys": [
+        [
+          "e:11",
+          "COUNTRY",
+          "e:10"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:10"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:11",
+          "COUNTRY",
+          "e:10"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:10"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    },
+    {
+      "document_id": "development-05fbe21cf860490d",
+      "title": "Oberliga Rheinland-Pfalz/Saar",
+      "status": 200,
+      "raw": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 33,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 33,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "unmatched_raw_keys": [
+        [
+          "unmapped:the oberliga rheinland - pfalz / saar",
+          "COUNTRY",
+          "e:3"
+        ]
+      ],
+      "unmatched_accepted_keys": [
+        [
+          "unmapped:the oberliga rheinland - pfalz / saar",
+          "COUNTRY",
+          "e:3"
+        ]
+      ],
+      "missed_raw_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "missed_accepted_keys": [
+        [
+          "e:0",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:1"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:0",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:1",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:11",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:14",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:2",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:4",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:7",
+          "LOCATED_IN",
+          "e:5"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "COUNTRY",
+          "e:5"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:3"
+        ],
+        [
+          "e:9",
+          "LOCATED_IN",
+          "e:5"
+        ]
+      ],
+      "skips": [],
+      "invalid_chunk_citations": 0
+    }
+  ],
+  "provider_failures": [],
+  "unknown_usage_calls": [],
+  "evidence_occurrences_checked": 31,
+  "holdout_inference_calls": 0,
+  "raw": {
+    "matched": 21,
+    "unmatched": 34,
+    "missed": 662,
+    "reference_precision": 0.38181818181818183,
+    "reference_recall": 0.03074670571010249,
+    "reference_f1": 0.056910569105691054
+  },
+  "accepted": {
+    "matched": 16,
+    "unmatched": 15,
+    "missed": 667,
+    "reference_precision": 0.5161290322580645,
+    "reference_recall": 0.02342606149341142,
+    "reference_f1": 0.04481792717086835
+  },
+  "relation_endpoint_discovery": {
+    "scope": "Entities participating in in-scope relation predictions, not standalone NER.",
+    "raw": {
+      "matched": 54,
+      "unmatched": 29,
+      "missed": 266,
+      "reference_precision": 0.6506024096385542,
+      "reference_recall": 0.16875,
+      "reference_f1": 0.2679900744416873
+    },
+    "accepted": {
+      "matched": 38,
+      "unmatched": 9,
+      "missed": 282,
+      "reference_precision": 0.8085106382978723,
+      "reference_recall": 0.11875,
+      "reference_f1": 0.20708446866485014
+    }
+  },
+  "per_relation": {
+    "COUNTRY": {
+      "reference_count": 229,
+      "raw": {
+        "matched": 5,
+        "unmatched": 7,
+        "missed": 224,
+        "reference_precision": 0.4166666666666667,
+        "reference_recall": 0.021834061135371178,
+        "reference_f1": 0.04149377593360996
+      },
+      "accepted": {
+        "matched": 4,
+        "unmatched": 4,
+        "missed": 225,
+        "reference_precision": 0.5,
+        "reference_recall": 0.017467248908296942,
+        "reference_f1": 0.03375527426160337
+      }
+    },
+    "LOCATED_IN": {
+      "reference_count": 387,
+      "raw": {
+        "matched": 9,
+        "unmatched": 8,
+        "missed": 378,
+        "reference_precision": 0.5294117647058824,
+        "reference_recall": 0.023255813953488372,
+        "reference_f1": 0.04455445544554455
+      },
+      "accepted": {
+        "matched": 8,
+        "unmatched": 7,
+        "missed": 379,
+        "reference_precision": 0.5333333333333333,
+        "reference_recall": 0.020671834625323,
+        "reference_f1": 0.03980099502487562
+      }
+    },
+    "HEADQUARTERED_IN": {
+      "reference_count": 5,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 5,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 5,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      }
+    },
+    "BORN_IN": {
+      "reference_count": 8,
+      "raw": {
+        "matched": 1,
+        "unmatched": 3,
+        "missed": 7,
+        "reference_precision": 0.25,
+        "reference_recall": 0.125,
+        "reference_f1": 0.16666666666666666
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 2,
+        "missed": 8,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      }
+    },
+    "DIED_IN": {
+      "reference_count": 2,
+      "raw": {
+        "matched": 1,
+        "unmatched": 1,
+        "missed": 1,
+        "reference_precision": 0.5,
+        "reference_recall": 0.5,
+        "reference_f1": 0.5
+      },
+      "accepted": {
+        "matched": 1,
+        "unmatched": 1,
+        "missed": 1,
+        "reference_precision": 0.5,
+        "reference_recall": 0.5,
+        "reference_f1": 0.5
+      }
+    },
+    "HAS_FATHER": {
+      "reference_count": 4,
+      "raw": {
+        "matched": 2,
+        "unmatched": 1,
+        "missed": 2,
+        "reference_precision": 0.6666666666666666,
+        "reference_recall": 0.5,
+        "reference_f1": 0.5714285714285714
+      },
+      "accepted": {
+        "matched": 1,
+        "unmatched": 1,
+        "missed": 3,
+        "reference_precision": 0.5,
+        "reference_recall": 0.25,
+        "reference_f1": 0.3333333333333333
+      }
+    },
+    "HAS_MOTHER": {
+      "reference_count": 1,
+      "raw": {
+        "matched": 0,
+        "unmatched": 1,
+        "missed": 1,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 1,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      }
+    },
+    "SPOUSE_OF": {
+      "reference_count": 5,
+      "raw": {
+        "matched": 1,
+        "unmatched": 1,
+        "missed": 4,
+        "reference_precision": 0.5,
+        "reference_recall": 0.2,
+        "reference_f1": 0.2857142857142857
+      },
+      "accepted": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 4,
+        "reference_precision": 1.0,
+        "reference_recall": 0.2,
+        "reference_f1": 0.3333333333333333
+      }
+    },
+    "HAS_CHILD": {
+      "reference_count": 5,
+      "raw": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 5,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 5,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      }
+    },
+    "FOUNDED_BY": {
+      "reference_count": 3,
+      "raw": {
+        "matched": 0,
+        "unmatched": 4,
+        "missed": 3,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 3,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      }
+    },
+    "OWNED_BY": {
+      "reference_count": 24,
+      "raw": {
+        "matched": 2,
+        "unmatched": 4,
+        "missed": 22,
+        "reference_precision": 0.3333333333333333,
+        "reference_recall": 0.08333333333333333,
+        "reference_f1": 0.13333333333333333
+      },
+      "accepted": {
+        "matched": 1,
+        "unmatched": 0,
+        "missed": 23,
+        "reference_precision": 1.0,
+        "reference_recall": 0.041666666666666664,
+        "reference_f1": 0.08
+      }
+    },
+    "PUBLISHED_BY": {
+      "reference_count": 10,
+      "raw": {
+        "matched": 0,
+        "unmatched": 4,
+        "missed": 10,
+        "reference_precision": 0.0,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      },
+      "accepted": {
+        "matched": 0,
+        "unmatched": 0,
+        "missed": 10,
+        "reference_precision": null,
+        "reference_recall": 0.0,
+        "reference_f1": 0.0
+      }
+    }
+  },
+  "macro_reference_f1": {
+    "raw": 0.14526592404350097,
+    "accepted": 0.11001857799609546
+  },
+  "latency_seconds": {
+    "mean": 0.031335696860332975,
+    "median": 0.03099868749268353,
+    "maximum": 0.04033054201863706
+  },
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0
+  },
+  "token_cost_usd": {
+    "lower": 0.0,
+    "upper": 0.0,
+    "unknown_usage_calls": 0,
+    "note": "Standard frozen token tariff estimate; not an invoice."
+  }
+}

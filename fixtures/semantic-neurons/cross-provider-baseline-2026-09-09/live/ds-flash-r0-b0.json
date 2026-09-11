@@ -1,0 +1,117 @@
+{
+  "phase": "preflight",
+  "arm": "ds-flash",
+  "repetition": 0,
+  "batch": 0,
+  "request": {
+    "space_type": "comparison-ds-flash-0",
+    "taxonomy": [
+      {
+        "relation": "SUPPLIES",
+        "description": "Supplier organization -> customer organization; supplies goods to. Assert only an explicitly established, affirmative relationship. Exclude negation, possibilities, future plans, denied quotations and instructions embedded in excerpts. Use the direction described here.",
+        "require_in_sentence": [
+          "supplies",
+          "supplied by",
+          "provides components to"
+        ]
+      },
+      {
+        "relation": "OWNS",
+        "description": "Owner organization -> owned organization; current ownership, not a service contract. Assert only an explicitly established, affirmative relationship. Exclude negation, possibilities, future plans, denied quotations and instructions embedded in excerpts. Use the direction described here.",
+        "require_in_sentence": [
+          "owns",
+          "owned by",
+          "subsidiary of"
+        ]
+      },
+      {
+        "relation": "DEPENDS_ON",
+        "description": "Software application -> required software library; an established runtime dependency. Assert only an explicitly established, affirmative relationship. Exclude negation, possibilities, future plans, denied quotations and instructions embedded in excerpts. Use the direction described here.",
+        "require_in_sentence": [
+          "depends on",
+          "required by",
+          "requires"
+        ]
+      },
+      {
+        "relation": "BASED_IN",
+        "description": "Organization -> city of its current headquarters. Exclude visits, branches and planned relocations. Assert only an explicitly established, affirmative relationship. Exclude negation, possibilities, future plans, denied quotations and instructions embedded in excerpts. Use the direction described here.",
+        "require_in_sentence": [
+          "headquartered in",
+          "headquarters of",
+          "based in"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "preflight-new",
+        "title": "Fictional transport preflight",
+        "text": "HarborLab supplies BeaconWorks."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 1,
+    "extracted_by": "directed:deepseek-v4-flash@directed-policy-v1",
+    "facts_grounded": 1,
+    "proposed": 1,
+    "skips": [],
+    "space_type": "comparison-ds-flash-0"
+  },
+  "latency_seconds": 1.876265584025532,
+  "facts": [
+    {
+      "_from": "entities/harborlab",
+      "_id": "facts/fact-74562e76cc3ef29b516fe0f82b7b1cc4998b6d60080d8050bece4738b84b207f",
+      "_key": "fact-74562e76cc3ef29b516fe0f82b7b1cc4998b6d60080d8050bece4738b84b207f",
+      "_to": "entities/beaconworks",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "preflight-new",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "SUPPLIES",
+      "reviewed_by": "directed:deepseek-v4-flash@directed-policy-v1",
+      "space_id": "comparison-ds-flash-0",
+      "trigger": "HarborLab supplies BeaconWorks.",
+      "trigger_end": 31,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/beaconworks",
+      "_key": "beaconworks",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:30.528030+00:00",
+      "entity_type": "Organization",
+      "name": "BeaconWorks",
+      "updated_at": "2026-09-09T11:55:30.528030+00:00"
+    },
+    {
+      "_id": "entities/harborlab",
+      "_key": "harborlab",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:30.528041+00:00",
+      "entity_type": "Organization",
+      "name": "HarborLab",
+      "updated_at": "2026-09-09T11:55:30.528041+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/comparison-ds-flash-0-preflight-new",
+      "_key": "comparison-ds-flash-0-preflight-new",
+      "chunk_id": "preflight-new",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:566eecb4af0aa3f5de0a742c4781fdf310fef82d94f2a0dead31dc43236f6532",
+      "created_at": "2026-09-09T11:55:30.528047+00:00",
+      "space_id": "comparison-ds-flash-0",
+      "text": "HarborLab supplies BeaconWorks.",
+      "title": "Fictional transport preflight",
+      "updated_at": "2026-09-09T11:55:30.528047+00:00"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "mode": "mock",
+  "started_utc": "2026-09-09T12:28:32.841375Z",
+  "finished": true,
+  "protocol_sha256": "4b2e9dab1fca44e538d040479b97693d0f056fe0169be3035ca2012c5120bf8d",
+  "attempts": [
+    "luna-json-r0-b0.json",
+    "glm-flash-r0-b0.json"
+  ],
+  "halted_arms": {
+    "luna-json": {
+      "phase": "preflight",
+      "repetition": 0,
+      "batch": 0,
+      "status": 500
+    },
+    "glm-flash": {
+      "phase": "preflight",
+      "repetition": 0,
+      "batch": 0,
+      "status": 500
+    }
+  },
+  "binary_sha256": "4267ee99ffab295e55e1c56ebc74c5fe3ed4d1ba1158b789483857876c0f8cc7",
+  "finished_utc": "2026-09-09T12:28:33.778320Z",
+  "reserved_usd": 0.0,
+  "artifact_sha256": {
+    "glm-flash-r0-b0.json": "1fd697c48d470ce6c66b180e24040dd3f16e645418efb32cbbf4292470e175e5",
+    "luna-json-r0-b0.json": "830b3536dc2aace4bf31d894b515af9ce8a5806e0e892bbf52039bf8434a3bfb",
+    "provider-calls.json": "c6f0fca15bd0a3f1dae44f3362669f1955a6a84a8a2b87b21a952f42c414a164"
+  }
+}

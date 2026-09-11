@@ -1,0 +1,1 @@
+FOR v, e, p IN 1...3 OUTBOUND "documents/a" relationships RETURN v

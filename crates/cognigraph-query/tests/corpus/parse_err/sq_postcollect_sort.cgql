@@ -1,0 +1,4 @@
+FOR d IN documents
+COLLECT category = d.category
+SORT LENGTH((FOR x IN documents RETURN 1))
+RETURN category

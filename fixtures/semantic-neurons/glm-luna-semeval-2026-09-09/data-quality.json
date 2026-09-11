@@ -1,0 +1,161 @@
+{
+  "test_population": 2717,
+  "train_population": 8000,
+  "eligible_test_population": 2694,
+  "excluded_before_sampling": [
+    {
+      "id": "semeval-8141",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-8242",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-8301",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-8407",
+      "reason": "identical_nominals"
+    },
+    {
+      "id": "semeval-8684",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9029",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9052",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9274",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9279",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9409",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9417",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9445",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9471",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9496",
+      "reason": "identical_nominals"
+    },
+    {
+      "id": "semeval-9515",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9522",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9704",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9723",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-9914",
+      "reason": "train_text_overlap"
+    },
+    {
+      "id": "semeval-10065",
+      "reason": "identical_nominals"
+    },
+    {
+      "id": "semeval-10072",
+      "reason": "duplicate_test_text"
+    },
+    {
+      "id": "semeval-10505",
+      "reason": "duplicate_test_text"
+    },
+    {
+      "id": "semeval-10662",
+      "reason": "identical_nominals"
+    }
+  ],
+  "sample_cases": 600,
+  "sample_unique_texts": 600,
+  "sample_duplicate_text_ids": [],
+  "sample_train_text_overlap": 0,
+  "preflight_overlap": 0,
+  "test_population_categories": {
+    "Message-Topic": 261,
+    "Product-Producer": 231,
+    "Instrument-Agency": 156,
+    "Entity-Destination": 292,
+    "Cause-Effect": 328,
+    "Component-Whole": 312,
+    "Member-Collection": 233,
+    "Other": 454,
+    "Entity-Origin": 258,
+    "Content-Container": 192
+  },
+  "sample_categories": {
+    "Other": 110,
+    "Message-Topic": 58,
+    "Cause-Effect": 69,
+    "Content-Container": 45,
+    "Instrument-Agency": 40,
+    "Entity-Destination": 62,
+    "Member-Collection": 47,
+    "Product-Producer": 53,
+    "Component-Whole": 75,
+    "Entity-Origin": 41
+  },
+  "sample_directed_labels": {
+    "Other": 110,
+    "Message-Topic(e1,e2)": 49,
+    "Cause-Effect(e2,e1)": 41,
+    "Content-Container(e1,e2)": 36,
+    "Instrument-Agency(e2,e1)": 34,
+    "Entity-Destination(e1,e2)": 61,
+    "Member-Collection(e2,e1)": 41,
+    "Product-Producer(e1,e2)": 22,
+    "Message-Topic(e2,e1)": 9,
+    "Component-Whole(e2,e1)": 39,
+    "Entity-Origin(e1,e2)": 34,
+    "Cause-Effect(e1,e2)": 28,
+    "Component-Whole(e1,e2)": 36,
+    "Product-Producer(e2,e1)": 31,
+    "Entity-Origin(e2,e1)": 7,
+    "Instrument-Agency(e1,e2)": 6,
+    "Content-Container(e2,e1)": 9,
+    "Entity-Destination(e2,e1)": 1,
+    "Member-Collection(e1,e2)": 6
+  },
+  "sample_text_characters": {
+    "min": 30,
+    "max": 345
+  },
+  "missing_ids_pairs_text_labels": 0,
+  "gold_provenance": "Published human annotations; no relabelling or LLM judge",
+  "limitations": [
+    "Public 2010 benchmark: unknown model training overlap.",
+    "Nominal pairs are supplied; not entity discovery or exhaustive extraction.",
+    "No new domain-expert labels and no customer-document evidence.",
+    "Repeated calls are paired stability observations, not additional independent examples."
+  ]
+}

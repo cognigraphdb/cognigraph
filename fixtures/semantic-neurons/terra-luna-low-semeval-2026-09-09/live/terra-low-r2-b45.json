@@ -1,0 +1,1268 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 2,
+  "batch": 45,
+  "request": {
+    "space_type": "semeval-terra-low-r2-b45",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-8146",
+        "title": "Relation benchmark excerpt",
+        "text": "Hospitals today use a \"blowby\" apparatus for this purpose."
+      },
+      {
+        "id": "semeval-8436",
+        "title": "Relation benchmark excerpt",
+        "text": "In 2006 we reported on a robotic hand that formed rock, paper, scissors gestures by reading a human subject's mind via an MRI scanner."
+      },
+      {
+        "id": "semeval-8191",
+        "title": "Relation benchmark excerpt",
+        "text": "Rain caused cancellation of the event in 1877, so enforcement of the new law had to wait until 1878."
+      },
+      {
+        "id": "semeval-8948",
+        "title": "Relation benchmark excerpt",
+        "text": "It has been asserted in the literature that the recognition of speech takes place not because of phonemic distinctions only."
+      },
+      {
+        "id": "semeval-9270",
+        "title": "Relation benchmark excerpt",
+        "text": "In the sequence, the raven looks on as the witch stirs the cauldron with a huge bone."
+      },
+      {
+        "id": "semeval-10618",
+        "title": "Relation benchmark excerpt",
+        "text": "Along the way the women developed a distinctive style, noted for its lively improvisations and geometric simplicity."
+      },
+      {
+        "id": "semeval-9599",
+        "title": "Relation benchmark excerpt",
+        "text": "Finally, there are the compeers, I mean the character-compeers of all these profligates, whose appearance is truly somewhat different, namely, rags and drunkenness."
+      },
+      {
+        "id": "semeval-8306",
+        "title": "Relation benchmark excerpt",
+        "text": "I read the report from Somalia on the agreement reached by faction leaders on the form of a future government that has been warmly welcomed."
+      },
+      {
+        "id": "semeval-10693",
+        "title": "Relation benchmark excerpt",
+        "text": "An unidentified substance was found in a letter."
+      },
+      {
+        "id": "semeval-9713",
+        "title": "Relation benchmark excerpt",
+        "text": "Flapping with his wings the duckling quacked for joy."
+      },
+      {
+        "id": "semeval-10659",
+        "title": "Relation benchmark excerpt",
+        "text": "And they learned that Lenin was the leader of that organization."
+      },
+      {
+        "id": "semeval-9586",
+        "title": "Relation benchmark excerpt",
+        "text": "All LibriVox recordings have been released into the public domain."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 10,
+    "proposed": 11,
+    "skips": [
+      "`style --Product-Producer--> women`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-terra-low-r2-b45"
+  },
+  "latency_seconds": 12.893954584025778,
+  "facts": [
+    {
+      "_from": "entities/character-compeers",
+      "_id": "facts/fact-04e65e5e85ff0aee83e3487840ea3d8cdb0107926b48a0f507e97273d6c03cd1",
+      "_key": "fact-04e65e5e85ff0aee83e3487840ea3d8cdb0107926b48a0f507e97273d6c03cd1",
+      "_to": "entities/profligates",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9599",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b45",
+      "trigger": "Finally, there are the compeers, I mean the character-compeers of all these profligates, whose appearance is truly somewhat different, namely, rags and drunkenness.",
+      "trigger_end": 164,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/report",
+      "_id": "facts/fact-1886bdd2fcfd0bf21359d260f79c073d669f02bd56ebf8a5e2be6e73ffcffad5",
+      "_key": "fact-1886bdd2fcfd0bf21359d260f79c073d669f02bd56ebf8a5e2be6e73ffcffad5",
+      "_to": "entities/agreement",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8306",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b45",
+      "trigger": "I read the report from Somalia on the agreement reached by faction leaders on the form of a future government that has been warmly welcomed.",
+      "trigger_end": 140,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/substance",
+      "_id": "facts/fact-30ca3d396cb38ff9b16fe48b0ed5c0feee9104abaeffcaa9d17a5c4ecf946c51",
+      "_key": "fact-30ca3d396cb38ff9b16fe48b0ed5c0feee9104abaeffcaa9d17a5c4ecf946c51",
+      "_to": "entities/letter",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10693",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b45",
+      "trigger": "An unidentified substance was found in a letter.",
+      "trigger_end": 48,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/apparatus",
+      "_id": "facts/fact-7493df43367850272c18096ab8f913a3a948c6761eea572cf22bc2053131bbd8",
+      "_key": "fact-7493df43367850272c18096ab8f913a3a948c6761eea572cf22bc2053131bbd8",
+      "_to": "entities/hospitals",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8146",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b45",
+      "trigger": "Hospitals today use a \"blowby\" apparatus for this purpose.",
+      "trigger_end": 58,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/leader",
+      "_id": "facts/fact-85223ea167eb4f2b7dee0a086604cad309aa04707b62fbdaf0ea7deb7e0aeb28",
+      "_key": "fact-85223ea167eb4f2b7dee0a086604cad309aa04707b62fbdaf0ea7deb7e0aeb28",
+      "_to": "entities/organization",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10659",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b45",
+      "trigger": "And they learned that Lenin was the leader of that organization.",
+      "trigger_end": 64,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/bone",
+      "_id": "facts/fact-b820b6a9499f88533ddbd062ae800e1d9855432365005a933b6b1b031fefb408",
+      "_key": "fact-b820b6a9499f88533ddbd062ae800e1d9855432365005a933b6b1b031fefb408",
+      "_to": "entities/witch",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9270",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b45",
+      "trigger": "In the sequence, the raven looks on as the witch stirs the cauldron with a huge bone.",
+      "trigger_end": 85,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/wings",
+      "_id": "facts/fact-ba05d1872abbb54522c74876efefbb264d667dd12d699a01822678e7a1802786",
+      "_key": "fact-ba05d1872abbb54522c74876efefbb264d667dd12d699a01822678e7a1802786",
+      "_to": "entities/duckling",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9713",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b45",
+      "trigger": "Flapping with his wings the duckling quacked for joy.",
+      "trigger_end": 53,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/recordings",
+      "_id": "facts/fact-c3179fb9958ec05009d77a4f4e520a852c79fbfa2988c280f79e384c63cb0c35",
+      "_key": "fact-c3179fb9958ec05009d77a4f4e520a852c79fbfa2988c280f79e384c63cb0c35",
+      "_to": "entities/public-domain",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9586",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b45",
+      "trigger": "All LibriVox recordings have been released into the public domain.",
+      "trigger_end": 66,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/rain",
+      "_id": "facts/fact-cd98416debbeb31977538e67e79c7f92680d997145897005212f53a2786a1601",
+      "_key": "fact-cd98416debbeb31977538e67e79c7f92680d997145897005212f53a2786a1601",
+      "_to": "entities/cancellation",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8191",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b45",
+      "trigger": "Rain caused cancellation of the event in 1877, so enforcement of the new law had to wait until 1878.",
+      "trigger_end": 100,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/literature",
+      "_id": "facts/fact-d6d04c2f455623a2e4693745d759d8bc228e3d2e834ce603a3b6ef4d45cbcd6e",
+      "_key": "fact-d6d04c2f455623a2e4693745d759d8bc228e3d2e834ce603a3b6ef4d45cbcd6e",
+      "_to": "entities/recognition",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8948",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b45",
+      "trigger": "It has been asserted in the literature that the recognition of speech takes place not because of phonemic distinctions only.",
+      "trigger_end": 124,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/agreement",
+      "_key": "agreement",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648114+00:00",
+      "entity_type": "topic",
+      "name": "agreement",
+      "updated_at": "2026-09-09T14:07:46.648114+00:00"
+    },
+    {
+      "_id": "entities/apparatus",
+      "_key": "apparatus",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648118+00:00",
+      "entity_type": "instrument",
+      "name": "apparatus",
+      "updated_at": "2026-09-09T14:07:46.648118+00:00"
+    },
+    {
+      "_id": "entities/bone",
+      "_key": "bone",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648119+00:00",
+      "entity_type": "instrument",
+      "name": "bone",
+      "updated_at": "2026-09-09T14:07:46.648119+00:00"
+    },
+    {
+      "_id": "entities/cancellation",
+      "_key": "cancellation",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648120+00:00",
+      "entity_type": "effect",
+      "name": "cancellation",
+      "updated_at": "2026-09-09T14:07:46.648120+00:00"
+    },
+    {
+      "_id": "entities/character-compeers",
+      "_key": "character-compeers",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648121+00:00",
+      "entity_type": "member",
+      "name": "character-compeers",
+      "updated_at": "2026-09-09T14:07:46.648121+00:00"
+    },
+    {
+      "_id": "entities/duckling",
+      "_key": "duckling",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648122+00:00",
+      "entity_type": "whole",
+      "name": "duckling",
+      "updated_at": "2026-09-09T14:07:46.648122+00:00"
+    },
+    {
+      "_id": "entities/hospitals",
+      "_key": "hospitals",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648122+00:00",
+      "entity_type": "agent",
+      "name": "Hospitals",
+      "updated_at": "2026-09-09T14:07:46.648122+00:00"
+    },
+    {
+      "_id": "entities/leader",
+      "_key": "leader",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648123+00:00",
+      "entity_type": "member",
+      "name": "leader",
+      "updated_at": "2026-09-09T14:07:46.648123+00:00"
+    },
+    {
+      "_id": "entities/letter",
+      "_key": "letter",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648124+00:00",
+      "entity_type": "container",
+      "name": "letter",
+      "updated_at": "2026-09-09T14:07:46.648124+00:00"
+    },
+    {
+      "_id": "entities/literature",
+      "_key": "literature",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648125+00:00",
+      "entity_type": "message",
+      "name": "literature",
+      "updated_at": "2026-09-09T14:07:46.648125+00:00"
+    },
+    {
+      "_id": "entities/organization",
+      "_key": "organization",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648126+00:00",
+      "entity_type": "collection",
+      "name": "organization",
+      "updated_at": "2026-09-09T14:07:46.648126+00:00"
+    },
+    {
+      "_id": "entities/profligates",
+      "_key": "profligates",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648126+00:00",
+      "entity_type": "collection",
+      "name": "profligates",
+      "updated_at": "2026-09-09T14:07:46.648126+00:00"
+    },
+    {
+      "_id": "entities/public-domain",
+      "_key": "public-domain",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648127+00:00",
+      "entity_type": "destination",
+      "name": "public domain",
+      "updated_at": "2026-09-09T14:07:46.648127+00:00"
+    },
+    {
+      "_id": "entities/rain",
+      "_key": "rain",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648128+00:00",
+      "entity_type": "cause",
+      "name": "Rain",
+      "updated_at": "2026-09-09T14:07:46.648128+00:00"
+    },
+    {
+      "_id": "entities/recognition",
+      "_key": "recognition",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648128+00:00",
+      "entity_type": "topic",
+      "name": "recognition",
+      "updated_at": "2026-09-09T14:07:46.648128+00:00"
+    },
+    {
+      "_id": "entities/recordings",
+      "_key": "recordings",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648129+00:00",
+      "entity_type": "entity",
+      "name": "recordings",
+      "updated_at": "2026-09-09T14:07:46.648129+00:00"
+    },
+    {
+      "_id": "entities/report",
+      "_key": "report",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648130+00:00",
+      "entity_type": "message",
+      "name": "report",
+      "updated_at": "2026-09-09T14:07:46.648130+00:00"
+    },
+    {
+      "_id": "entities/substance",
+      "_key": "substance",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648131+00:00",
+      "entity_type": "content",
+      "name": "substance",
+      "updated_at": "2026-09-09T14:07:46.648131+00:00"
+    },
+    {
+      "_id": "entities/wings",
+      "_key": "wings",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648132+00:00",
+      "entity_type": "component",
+      "name": "wings",
+      "updated_at": "2026-09-09T14:07:46.648132+00:00"
+    },
+    {
+      "_id": "entities/witch",
+      "_key": "witch",
+      "aliases": [],
+      "created_at": "2026-09-09T14:07:46.648133+00:00",
+      "entity_type": "agent",
+      "name": "witch",
+      "updated_at": "2026-09-09T14:07:46.648133+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-10618",
+      "_key": "semeval-terra-low-r2-b45-semeval-10618",
+      "chunk_id": "semeval-10618",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:bf42c990d3ad9a4df6b8ddbb68363c6e0441a22ccb837a240b2f33cea0c4c62a",
+      "created_at": "2026-09-09T14:07:46.648134+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "Along the way the women developed a distinctive style, noted for its lively improvisations and geometric simplicity.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648134+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-10659",
+      "_key": "semeval-terra-low-r2-b45-semeval-10659",
+      "chunk_id": "semeval-10659",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:50a1537b253e366d59adc06204e24fd721bc0f87119cf14aa9bf9336990304f8",
+      "created_at": "2026-09-09T14:07:46.648135+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "And they learned that Lenin was the leader of that organization.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648135+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-10693",
+      "_key": "semeval-terra-low-r2-b45-semeval-10693",
+      "chunk_id": "semeval-10693",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4229cb157691150d07d46b29c622f98893e4b2b59e079c6a03fe869dfb39a5c2",
+      "created_at": "2026-09-09T14:07:46.648145+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "An unidentified substance was found in a letter.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648145+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-8146",
+      "_key": "semeval-terra-low-r2-b45-semeval-8146",
+      "chunk_id": "semeval-8146",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ceb15f0198353553e2629953320c52a9bb99d954d927bba46a6b21827f1e0c6b",
+      "created_at": "2026-09-09T14:07:46.648150+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "Hospitals today use a \"blowby\" apparatus for this purpose.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648150+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-8191",
+      "_key": "semeval-terra-low-r2-b45-semeval-8191",
+      "chunk_id": "semeval-8191",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b140dcf4ab61a79dd3b1429e39d31c13374c91a4e3c51fe1b0536a47eab8ed6a",
+      "created_at": "2026-09-09T14:07:46.648156+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "Rain caused cancellation of the event in 1877, so enforcement of the new law had to wait until 1878.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648156+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-8306",
+      "_key": "semeval-terra-low-r2-b45-semeval-8306",
+      "chunk_id": "semeval-8306",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:60f8e05c264fe3f37362facd851bf099f00a6e3c70f1e33aa57f9632441b1255",
+      "created_at": "2026-09-09T14:07:46.648160+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "I read the report from Somalia on the agreement reached by faction leaders on the form of a future government that has been warmly welcomed.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648160+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-8436",
+      "_key": "semeval-terra-low-r2-b45-semeval-8436",
+      "chunk_id": "semeval-8436",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:93accac942fda8944e8b20d4a4ee6a81c3ddc1d1ee0eeff8468190008425f296",
+      "created_at": "2026-09-09T14:07:46.648167+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "In 2006 we reported on a robotic hand that formed rock, paper, scissors gestures by reading a human subject's mind via an MRI scanner.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648167+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-8948",
+      "_key": "semeval-terra-low-r2-b45-semeval-8948",
+      "chunk_id": "semeval-8948",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:cdde806ce00ee1207fe9406c22f0293b5d2011e66d860fbb178f7fa737d77648",
+      "created_at": "2026-09-09T14:07:46.648168+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "It has been asserted in the literature that the recognition of speech takes place not because of phonemic distinctions only.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648168+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-9270",
+      "_key": "semeval-terra-low-r2-b45-semeval-9270",
+      "chunk_id": "semeval-9270",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:61c957251aa1b8522704d868c76cd5e90f97da551a4c743a82bc100888c54a2d",
+      "created_at": "2026-09-09T14:07:46.648173+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "In the sequence, the raven looks on as the witch stirs the cauldron with a huge bone.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648173+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-9586",
+      "_key": "semeval-terra-low-r2-b45-semeval-9586",
+      "chunk_id": "semeval-9586",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5135d7cc6e863bd474de18854cf2a155bfb51dac5ff0b8f06ea169115be1a453",
+      "created_at": "2026-09-09T14:07:46.648177+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "All LibriVox recordings have been released into the public domain.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648177+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-9599",
+      "_key": "semeval-terra-low-r2-b45-semeval-9599",
+      "chunk_id": "semeval-9599",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f4639f7e1b1e5f7629eabe262e68da60f958e3257ec5de8782acb10b9999b58d",
+      "created_at": "2026-09-09T14:07:46.648183+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "Finally, there are the compeers, I mean the character-compeers of all these profligates, whose appearance is truly somewhat different, namely, rags and drunkenness.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648183+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b45-semeval-9713",
+      "_key": "semeval-terra-low-r2-b45-semeval-9713",
+      "chunk_id": "semeval-9713",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e0adde7f292e71fa1266c80ba7888bced06d3dca39266c8d3e3612d035fea66c",
+      "created_at": "2026-09-09T14:07:46.648189+00:00",
+      "space_id": "semeval-terra-low-r2-b45",
+      "text": "Flapping with his wings the duckling quacked for joy.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:07:46.648189+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 10,
+        "results": [
+          {
+            "_from": "entities/character-compeers",
+            "_id": "facts/fact-04e65e5e85ff0aee83e3487840ea3d8cdb0107926b48a0f507e97273d6c03cd1",
+            "_key": "fact-04e65e5e85ff0aee83e3487840ea3d8cdb0107926b48a0f507e97273d6c03cd1",
+            "_to": "entities/profligates",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9599",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b45",
+            "trigger": "Finally, there are the compeers, I mean the character-compeers of all these profligates, whose appearance is truly somewhat different, namely, rags and drunkenness.",
+            "trigger_end": 164,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/report",
+            "_id": "facts/fact-1886bdd2fcfd0bf21359d260f79c073d669f02bd56ebf8a5e2be6e73ffcffad5",
+            "_key": "fact-1886bdd2fcfd0bf21359d260f79c073d669f02bd56ebf8a5e2be6e73ffcffad5",
+            "_to": "entities/agreement",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8306",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b45",
+            "trigger": "I read the report from Somalia on the agreement reached by faction leaders on the form of a future government that has been warmly welcomed.",
+            "trigger_end": 140,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/substance",
+            "_id": "facts/fact-30ca3d396cb38ff9b16fe48b0ed5c0feee9104abaeffcaa9d17a5c4ecf946c51",
+            "_key": "fact-30ca3d396cb38ff9b16fe48b0ed5c0feee9104abaeffcaa9d17a5c4ecf946c51",
+            "_to": "entities/letter",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10693",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b45",
+            "trigger": "An unidentified substance was found in a letter.",
+            "trigger_end": 48,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/apparatus",
+            "_id": "facts/fact-7493df43367850272c18096ab8f913a3a948c6761eea572cf22bc2053131bbd8",
+            "_key": "fact-7493df43367850272c18096ab8f913a3a948c6761eea572cf22bc2053131bbd8",
+            "_to": "entities/hospitals",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8146",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b45",
+            "trigger": "Hospitals today use a \"blowby\" apparatus for this purpose.",
+            "trigger_end": 58,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/leader",
+            "_id": "facts/fact-85223ea167eb4f2b7dee0a086604cad309aa04707b62fbdaf0ea7deb7e0aeb28",
+            "_key": "fact-85223ea167eb4f2b7dee0a086604cad309aa04707b62fbdaf0ea7deb7e0aeb28",
+            "_to": "entities/organization",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10659",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b45",
+            "trigger": "And they learned that Lenin was the leader of that organization.",
+            "trigger_end": 64,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/bone",
+            "_id": "facts/fact-b820b6a9499f88533ddbd062ae800e1d9855432365005a933b6b1b031fefb408",
+            "_key": "fact-b820b6a9499f88533ddbd062ae800e1d9855432365005a933b6b1b031fefb408",
+            "_to": "entities/witch",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9270",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b45",
+            "trigger": "In the sequence, the raven looks on as the witch stirs the cauldron with a huge bone.",
+            "trigger_end": 85,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/wings",
+            "_id": "facts/fact-ba05d1872abbb54522c74876efefbb264d667dd12d699a01822678e7a1802786",
+            "_key": "fact-ba05d1872abbb54522c74876efefbb264d667dd12d699a01822678e7a1802786",
+            "_to": "entities/duckling",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9713",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b45",
+            "trigger": "Flapping with his wings the duckling quacked for joy.",
+            "trigger_end": 53,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/recordings",
+            "_id": "facts/fact-c3179fb9958ec05009d77a4f4e520a852c79fbfa2988c280f79e384c63cb0c35",
+            "_key": "fact-c3179fb9958ec05009d77a4f4e520a852c79fbfa2988c280f79e384c63cb0c35",
+            "_to": "entities/public-domain",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9586",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b45",
+            "trigger": "All LibriVox recordings have been released into the public domain.",
+            "trigger_end": 66,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/rain",
+            "_id": "facts/fact-cd98416debbeb31977538e67e79c7f92680d997145897005212f53a2786a1601",
+            "_key": "fact-cd98416debbeb31977538e67e79c7f92680d997145897005212f53a2786a1601",
+            "_to": "entities/cancellation",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8191",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b45",
+            "trigger": "Rain caused cancellation of the event in 1877, so enforcement of the new law had to wait until 1878.",
+            "trigger_end": 100,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/literature",
+            "_id": "facts/fact-d6d04c2f455623a2e4693745d759d8bc228e3d2e834ce603a3b6ef4d45cbcd6e",
+            "_key": "fact-d6d04c2f455623a2e4693745d759d8bc228e3d2e834ce603a3b6ef4d45cbcd6e",
+            "_to": "entities/recognition",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8948",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b45",
+            "trigger": "It has been asserted in the literature that the recognition of speech takes place not because of phonemic distinctions only.",
+            "trigger_end": 124,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 20,
+        "results": [
+          {
+            "_id": "entities/agreement",
+            "_key": "agreement",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648114+00:00",
+            "entity_type": "topic",
+            "name": "agreement",
+            "updated_at": "2026-09-09T14:07:46.648114+00:00"
+          },
+          {
+            "_id": "entities/apparatus",
+            "_key": "apparatus",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648118+00:00",
+            "entity_type": "instrument",
+            "name": "apparatus",
+            "updated_at": "2026-09-09T14:07:46.648118+00:00"
+          },
+          {
+            "_id": "entities/bone",
+            "_key": "bone",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648119+00:00",
+            "entity_type": "instrument",
+            "name": "bone",
+            "updated_at": "2026-09-09T14:07:46.648119+00:00"
+          },
+          {
+            "_id": "entities/cancellation",
+            "_key": "cancellation",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648120+00:00",
+            "entity_type": "effect",
+            "name": "cancellation",
+            "updated_at": "2026-09-09T14:07:46.648120+00:00"
+          },
+          {
+            "_id": "entities/character-compeers",
+            "_key": "character-compeers",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648121+00:00",
+            "entity_type": "member",
+            "name": "character-compeers",
+            "updated_at": "2026-09-09T14:07:46.648121+00:00"
+          },
+          {
+            "_id": "entities/duckling",
+            "_key": "duckling",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648122+00:00",
+            "entity_type": "whole",
+            "name": "duckling",
+            "updated_at": "2026-09-09T14:07:46.648122+00:00"
+          },
+          {
+            "_id": "entities/hospitals",
+            "_key": "hospitals",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648122+00:00",
+            "entity_type": "agent",
+            "name": "Hospitals",
+            "updated_at": "2026-09-09T14:07:46.648122+00:00"
+          },
+          {
+            "_id": "entities/leader",
+            "_key": "leader",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648123+00:00",
+            "entity_type": "member",
+            "name": "leader",
+            "updated_at": "2026-09-09T14:07:46.648123+00:00"
+          },
+          {
+            "_id": "entities/letter",
+            "_key": "letter",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648124+00:00",
+            "entity_type": "container",
+            "name": "letter",
+            "updated_at": "2026-09-09T14:07:46.648124+00:00"
+          },
+          {
+            "_id": "entities/literature",
+            "_key": "literature",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648125+00:00",
+            "entity_type": "message",
+            "name": "literature",
+            "updated_at": "2026-09-09T14:07:46.648125+00:00"
+          },
+          {
+            "_id": "entities/organization",
+            "_key": "organization",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648126+00:00",
+            "entity_type": "collection",
+            "name": "organization",
+            "updated_at": "2026-09-09T14:07:46.648126+00:00"
+          },
+          {
+            "_id": "entities/profligates",
+            "_key": "profligates",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648126+00:00",
+            "entity_type": "collection",
+            "name": "profligates",
+            "updated_at": "2026-09-09T14:07:46.648126+00:00"
+          },
+          {
+            "_id": "entities/public-domain",
+            "_key": "public-domain",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648127+00:00",
+            "entity_type": "destination",
+            "name": "public domain",
+            "updated_at": "2026-09-09T14:07:46.648127+00:00"
+          },
+          {
+            "_id": "entities/rain",
+            "_key": "rain",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648128+00:00",
+            "entity_type": "cause",
+            "name": "Rain",
+            "updated_at": "2026-09-09T14:07:46.648128+00:00"
+          },
+          {
+            "_id": "entities/recognition",
+            "_key": "recognition",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648128+00:00",
+            "entity_type": "topic",
+            "name": "recognition",
+            "updated_at": "2026-09-09T14:07:46.648128+00:00"
+          },
+          {
+            "_id": "entities/recordings",
+            "_key": "recordings",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648129+00:00",
+            "entity_type": "entity",
+            "name": "recordings",
+            "updated_at": "2026-09-09T14:07:46.648129+00:00"
+          },
+          {
+            "_id": "entities/report",
+            "_key": "report",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648130+00:00",
+            "entity_type": "message",
+            "name": "report",
+            "updated_at": "2026-09-09T14:07:46.648130+00:00"
+          },
+          {
+            "_id": "entities/substance",
+            "_key": "substance",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648131+00:00",
+            "entity_type": "content",
+            "name": "substance",
+            "updated_at": "2026-09-09T14:07:46.648131+00:00"
+          },
+          {
+            "_id": "entities/wings",
+            "_key": "wings",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648132+00:00",
+            "entity_type": "component",
+            "name": "wings",
+            "updated_at": "2026-09-09T14:07:46.648132+00:00"
+          },
+          {
+            "_id": "entities/witch",
+            "_key": "witch",
+            "aliases": [],
+            "created_at": "2026-09-09T14:07:46.648133+00:00",
+            "entity_type": "agent",
+            "name": "witch",
+            "updated_at": "2026-09-09T14:07:46.648133+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-10618",
+            "_key": "semeval-terra-low-r2-b45-semeval-10618",
+            "chunk_id": "semeval-10618",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:bf42c990d3ad9a4df6b8ddbb68363c6e0441a22ccb837a240b2f33cea0c4c62a",
+            "created_at": "2026-09-09T14:07:46.648134+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "Along the way the women developed a distinctive style, noted for its lively improvisations and geometric simplicity.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648134+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-10659",
+            "_key": "semeval-terra-low-r2-b45-semeval-10659",
+            "chunk_id": "semeval-10659",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:50a1537b253e366d59adc06204e24fd721bc0f87119cf14aa9bf9336990304f8",
+            "created_at": "2026-09-09T14:07:46.648135+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "And they learned that Lenin was the leader of that organization.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648135+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-10693",
+            "_key": "semeval-terra-low-r2-b45-semeval-10693",
+            "chunk_id": "semeval-10693",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4229cb157691150d07d46b29c622f98893e4b2b59e079c6a03fe869dfb39a5c2",
+            "created_at": "2026-09-09T14:07:46.648145+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "An unidentified substance was found in a letter.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648145+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-8146",
+            "_key": "semeval-terra-low-r2-b45-semeval-8146",
+            "chunk_id": "semeval-8146",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ceb15f0198353553e2629953320c52a9bb99d954d927bba46a6b21827f1e0c6b",
+            "created_at": "2026-09-09T14:07:46.648150+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "Hospitals today use a \"blowby\" apparatus for this purpose.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648150+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-8191",
+            "_key": "semeval-terra-low-r2-b45-semeval-8191",
+            "chunk_id": "semeval-8191",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b140dcf4ab61a79dd3b1429e39d31c13374c91a4e3c51fe1b0536a47eab8ed6a",
+            "created_at": "2026-09-09T14:07:46.648156+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "Rain caused cancellation of the event in 1877, so enforcement of the new law had to wait until 1878.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648156+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-8306",
+            "_key": "semeval-terra-low-r2-b45-semeval-8306",
+            "chunk_id": "semeval-8306",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:60f8e05c264fe3f37362facd851bf099f00a6e3c70f1e33aa57f9632441b1255",
+            "created_at": "2026-09-09T14:07:46.648160+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "I read the report from Somalia on the agreement reached by faction leaders on the form of a future government that has been warmly welcomed.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648160+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-8436",
+            "_key": "semeval-terra-low-r2-b45-semeval-8436",
+            "chunk_id": "semeval-8436",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:93accac942fda8944e8b20d4a4ee6a81c3ddc1d1ee0eeff8468190008425f296",
+            "created_at": "2026-09-09T14:07:46.648167+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "In 2006 we reported on a robotic hand that formed rock, paper, scissors gestures by reading a human subject's mind via an MRI scanner.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648167+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-8948",
+            "_key": "semeval-terra-low-r2-b45-semeval-8948",
+            "chunk_id": "semeval-8948",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:cdde806ce00ee1207fe9406c22f0293b5d2011e66d860fbb178f7fa737d77648",
+            "created_at": "2026-09-09T14:07:46.648168+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "It has been asserted in the literature that the recognition of speech takes place not because of phonemic distinctions only.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648168+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-9270",
+            "_key": "semeval-terra-low-r2-b45-semeval-9270",
+            "chunk_id": "semeval-9270",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:61c957251aa1b8522704d868c76cd5e90f97da551a4c743a82bc100888c54a2d",
+            "created_at": "2026-09-09T14:07:46.648173+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "In the sequence, the raven looks on as the witch stirs the cauldron with a huge bone.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648173+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-9586",
+            "_key": "semeval-terra-low-r2-b45-semeval-9586",
+            "chunk_id": "semeval-9586",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5135d7cc6e863bd474de18854cf2a155bfb51dac5ff0b8f06ea169115be1a453",
+            "created_at": "2026-09-09T14:07:46.648177+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "All LibriVox recordings have been released into the public domain.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648177+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-9599",
+            "_key": "semeval-terra-low-r2-b45-semeval-9599",
+            "chunk_id": "semeval-9599",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f4639f7e1b1e5f7629eabe262e68da60f958e3257ec5de8782acb10b9999b58d",
+            "created_at": "2026-09-09T14:07:46.648183+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "Finally, there are the compeers, I mean the character-compeers of all these profligates, whose appearance is truly somewhat different, namely, rags and drunkenness.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648183+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b45-semeval-9713",
+            "_key": "semeval-terra-low-r2-b45-semeval-9713",
+            "chunk_id": "semeval-9713",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e0adde7f292e71fa1266c80ba7888bced06d3dca39266c8d3e3612d035fea66c",
+            "created_at": "2026-09-09T14:07:46.648189+00:00",
+            "space_id": "semeval-terra-low-r2-b45",
+            "text": "Flapping with his wings the duckling quacked for joy.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:07:46.648189+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

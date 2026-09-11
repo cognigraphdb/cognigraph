@@ -1,0 +1,20 @@
+{
+  "schema": "cognigraph-document-scoring-amendment-v2",
+  "date_utc": "2026-09-09T15:16:06.715180+00:00",
+  "original_protocol_sha256": "9242acc6635c7464679ed3aa6a735456341d5bd0f01e93666b3148167d00ab7c",
+  "original_failure": "Scorer asserted that every raw proposal cited the requested chunk; five proposals in two successful HTTP responses cited a prefixed chunk ID. Production gates rejected those proposals.",
+  "correction": "Keep valid citations under the original scorer. Invalid citations become distinct unmatched predictions with both endpoints marked invalid; no citation repair, gold credit, or dropped denominator. Duplicate invalid proposals still deduplicate.",
+  "scope": "Offline scoring only. Original scorer, protocol, inputs, gold, controls and all 40 live captures preserved. No new provider calls.",
+  "code_sha256": {
+    "score_v2.py": "067a8b64742dfa0e1a389845db2173dd8d8a4a2f4c5b92f453932cf30cef4461",
+    "verify_v2.py": "0c9d7cbacca73b6b8cb6513b46d3a13e4d3040e2f1a816111643ec219d01a311",
+    "test_score_v2.py": "bb231323d736f080f84e0aa84e276adfe56a2cb71a9f143038443cc9e3c361e9"
+  },
+  "original_failure_sha256": "70dfc5f1a189523bd26ac7910a7d7e29d8d2e55345e3a8ff89de49f69c9199d5",
+  "tests": {
+    "passed": 10,
+    "failed": 0,
+    "log_sha256": "9f2f6a72cc8c80db5ba426d058cbf7bafc257f6fff834fba42d489845881a063"
+  },
+  "verification_note": "The initial V2 verifier compared Python tuples with JSON arrays and failed equality despite identical serialized scores. Verification now compares the JSON representations; score bytes are unchanged."
+}

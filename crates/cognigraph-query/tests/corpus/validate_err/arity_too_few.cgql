@@ -1,0 +1,1 @@
+FOR d IN documents RETURN SUBSTRING(d.title)

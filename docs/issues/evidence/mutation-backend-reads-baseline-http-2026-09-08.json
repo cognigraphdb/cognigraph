@@ -1,0 +1,47 @@
+{
+  "binary_profile": "release",
+  "binary_sha256": "13351e5f38d45645f1b79cc889e85a7f0e05d76fde7afce11b012fb3817a819f",
+  "fixture_sha256": "ec1124eb0df7fe3a30d6ad5fc8a3ec3d744de796325e582b95659fd64f340ef2",
+  "expect_vulnerable": true,
+  "provider": "none",
+  "modes": {
+    "resident": {
+      "before_sha256": "a8c0d0a878435c114c249db9a690b6ec6e25836d66aeed2dbf039352ac25c6a0",
+      "returned": [
+        null
+      ],
+      "committed_document": {
+        "_id": "notes/a",
+        "_key": "a",
+        "copied": null,
+        "created_at": "2026-09-08T17:57:07.272191+00:00",
+        "updated_at": "2026-09-08T17:57:07.284539+00:00",
+        "v": 1
+      },
+      "valid_read": [
+        2
+      ],
+      "restart_preserved": true
+    },
+    "paged": {
+      "before_sha256": "a82c2bbefdf365ff9c91b7e85e7151927c34e01b494d2b0e94a0bd05439aa2d3",
+      "returned": [
+        null
+      ],
+      "committed_document": {
+        "_id": "notes/a",
+        "_key": "a",
+        "copied": null,
+        "created_at": "2026-09-08T17:57:07.801279+00:00",
+        "updated_at": "2026-09-08T17:57:07.811499+00:00",
+        "v": 1
+      },
+      "valid_read": [
+        2
+      ],
+      "restart_preserved": true
+    }
+  },
+  "result": "passed",
+  "temporary_root": "/var/folders/v2/x4zbz9nd10lf_kqzhpm4r84w0000gn/T/cognigraph-cg7-live-z5rpnjbz"
+}

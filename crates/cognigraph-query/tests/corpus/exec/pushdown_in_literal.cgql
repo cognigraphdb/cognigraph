@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d.category IN ["research", "notes"] SORT d._key ASC RETURN d._key

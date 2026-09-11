@@ -1,0 +1,253 @@
+{
+  "lua_globals": [
+    200,
+    {
+      "result": {
+        "jit": "table",
+        "loadstring": "function"
+      }
+    }
+  ],
+  "lua_plain_limit": [
+    500,
+    {
+      "error": "Lua script error: Script exceeded instruction limit"
+    }
+  ],
+  "lua_jit_limit": [
+    200,
+    {
+      "result": 2000001000000
+    }
+  ],
+  "http_budget": [
+    500,
+    {
+      "error": "Query execution error: query exceeded the source row budget (3 rows)"
+    }
+  ],
+  "lua_budget": [
+    200,
+    {
+      "result": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "document_read": [
+    200,
+    {
+      "count": 2,
+      "results": [
+        "a",
+        "b"
+      ]
+    }
+  ],
+  "document_analyze": [
+    200,
+    {
+      "count": 1,
+      "results": [
+        {
+          "analyze": true,
+          "bind_vars": [],
+          "sources": [
+            {
+              "collection": "notes",
+              "depth": 0,
+              "fetch_ms": 0.007,
+              "kind": "collection_scan",
+              "pushdown": {
+                "all_filters_pushed": false,
+                "fetch_limit": null,
+                "predicates": [],
+                "projection": [
+                  "_key",
+                  "ref"
+                ]
+              },
+              "rows": 2,
+              "var": "n"
+            }
+          ],
+          "stages": [
+            {
+              "depth": 0,
+              "rows": 2,
+              "runs": 1,
+              "stage": "FOR n"
+            },
+            {
+              "depth": 0,
+              "rows": 0,
+              "runs": 1,
+              "stage": "FILTER"
+            },
+            {
+              "depth": 0,
+              "rows": 0,
+              "runs": 1,
+              "stage": "RETURN"
+            }
+          ],
+          "stats": {
+            "result_rows": 0,
+            "source_rows": 2,
+            "total_ms": 0.02
+          }
+        }
+      ]
+    }
+  ],
+  "document_mutation": [
+    200,
+    {
+      "count": 1,
+      "results": [
+        null
+      ]
+    }
+  ],
+  "upsert_predicates": [
+    200,
+    {
+      "count": 1,
+      "results": [
+        "a"
+      ]
+    }
+  ],
+  "upsert_missing_collection": [
+    500,
+    {
+      "error": "Query execution error: backend execution error: Collection not found: brand_new"
+    }
+  ],
+  "invalid_eval": [
+    200,
+    {
+      "missing": [],
+      "recall": {
+        "found": 0,
+        "total": 0
+      },
+      "recall_ok": true,
+      "restraint": {
+        "total": 0,
+        "violations": 0
+      },
+      "restraint_ok": true,
+      "space_type": "nonexistent",
+      "violations": []
+    }
+  ],
+  "bad_collection_create": [
+    200,
+    {
+      "_id": "probe/../../escaped/a",
+      "_key": "a",
+      "collection": "probe/../../escaped"
+    }
+  ],
+  "bad_collection_search": [
+    200,
+    {
+      "count": 1,
+      "results": [
+        {
+          "document": {
+            "_id": "probe/../../escaped/a",
+            "_key": "a",
+            "content": "uniqueprobe",
+            "created_at": "2026-09-08T12:48:36.627115+00:00",
+            "updated_at": "2026-09-08T12:48:36.627115+00:00"
+          },
+          "document_id": "probe/../../escaped/a",
+          "score": 0.28768211603164673
+        }
+      ]
+    }
+  ],
+  "escaped_indexes": [
+    "escaped.420c75b526b35282.tantivy"
+  ],
+  "directed_first": [
+    200,
+    {
+      "chunks": 1,
+      "extracted_by": "directed:review-stub@directed-policy-v1",
+      "facts_grounded": 1,
+      "proposed": 1,
+      "skips": [],
+      "space_type": "reviewdirected"
+    }
+  ],
+  "directed_chunks": [
+    200,
+    {
+      "count": 1,
+      "results": [
+        {
+          "_id": "chunks/reviewdirected-c1",
+          "_key": "reviewdirected-c1",
+          "chunk_id": "c1",
+          "construction_schema": "occurrence-v1",
+          "content_hash": "sha256:66515f8fe35da06a46da5820b276cd5c4aade2cb137fef66616f72079e61b37e",
+          "created_at": "2026-09-08T12:48:36.749365+00:00",
+          "space_id": "reviewdirected",
+          "text": "Caf\u00e9. Alpha supplies Beta.",
+          "title": "",
+          "updated_at": "2026-09-08T12:48:36.749365+00:00"
+        }
+      ]
+    }
+  ],
+  "directed_facts": [
+    200,
+    {
+      "count": 1,
+      "results": [
+        {
+          "_from": "entities/alpha",
+          "_id": "facts/fact-900e289f0ad67b6d94f2c11ab77f2e182e55a973359937c5d443fa9b06fcc456",
+          "_key": "fact-900e289f0ad67b6d94f2c11ab77f2e182e55a973359937c5d443fa9b06fcc456",
+          "_to": "entities/beta",
+          "confidence": 1.0,
+          "construction_schema": "occurrence-v1",
+          "evidence_chunk_id": "c1",
+          "neuron_id": null,
+          "provenance": "narrative",
+          "relation_type": "SUPPLIES",
+          "reviewed_by": "directed:review-stub@directed-policy-v1",
+          "space_id": "reviewdirected",
+          "trigger": "Alpha supplies Beta.",
+          "trigger_end": 28,
+          "trigger_start": 8
+        }
+      ]
+    }
+  ],
+  "directed_malformed": [
+    200,
+    {
+      "chunks": 1,
+      "extracted_by": "directed:review-stub@directed-policy-v1",
+      "facts_grounded": 0,
+      "proposed": 0,
+      "skips": [],
+      "space_type": "reviewdirected"
+    }
+  ],
+  "directed_after_malformed": [
+    200,
+    {
+      "count": 0,
+      "results": []
+    }
+  ]
+}

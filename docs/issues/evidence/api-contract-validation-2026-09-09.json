@@ -1,0 +1,93 @@
+{
+  "issue": "CG-22",
+  "date": "2026-09-09",
+  "base_revision": "f74f0aa36d53107fa06013fca965fb9db82367c1",
+  "git_state": "CG-22 and CG-33 uncommitted; no push; pre-existing user changes preserved",
+  "gates": {
+    "cargo fmt --all -- --check": {
+      "exit_code": 0
+    },
+    "cargo clippy --all-targets -- -D warnings": {
+      "exit_code": 0,
+      "log_sha256": "618984cfff78e212ca1938ed495979fc46b02b434767e71490be7cdc548fb4b8"
+    },
+    "cargo test --all": {
+      "exit_code": 0,
+      "passed": 950,
+      "failed": 0,
+      "ignored": 0,
+      "result_groups": 71,
+      "log_sha256": "bd0e8e73ef0a691ab6b102482bc29196da8fa267d638efd2e3b6dfa20205f0a7"
+    },
+    "cargo build --release -p cognigraph-server -p cognigraph-cli": {
+      "exit_code": 0,
+      "log_sha256": "a84276f80ca62bf4fc36f4ee7f02622445afd878184df2b10369bd04917f28c7"
+    }
+  },
+  "focused": {
+    "command": "cargo test -p cognigraph-server openapi_drift",
+    "exit_code": 0,
+    "passed": 15,
+    "failed": 0,
+    "ignored": 0,
+    "result_groups": 1,
+    "log_sha256": "ae142349ca4466b5a9288e3e7f58dc657d68e79644bfe70b089fa25d5ac28864"
+  },
+  "limits": [
+    "Eight Arango integration entries early-returned because ARANGO_PASSWORD was not configured; no live Arango in this batch.",
+    "Existing provider embedding smoke entries reported success; feature harness used synthetic loopback providers only.",
+    "Stateful governance and all persistence permutations were not repeated in this documentation batch; retain prior issue evidence."
+  ],
+  "release_http": {
+    "command": "uv run docs/issues/evidence/api-contract-http.py --output docs/issues/evidence/api-contract-http-2026-09-09.json",
+    "exit_code": 0,
+    "checks": 57,
+    "provider_calls": 16,
+    "evidence_sha256": "7dfc5d1e387265022000e658902c6ed140b29f3834ad550c1a53ea96fc45e016",
+    "harness_sha256": "b81b4a127757ee0ef4a16acb6f1ef76501d4c8c305bc5091d00c2a83826d683c",
+    "served_openapi_valid": true,
+    "served_openapi_equals_source": true,
+    "validated_job_request_and_response_schemas": true
+  },
+  "validation_libraries": {
+    "pyyaml": "6.0.3",
+    "openapi-spec-validator": "0.9.0",
+    "openapi-schema-validator": "0.9.0",
+    "jsonschema": "4.26.0",
+    "referencing": "0.37.0"
+  },
+  "files": {
+    "Cargo.lock": "32898b96b5e261b174ef076352da14430a54228392b77d3333ba9a488efc803b",
+    "crates/cognigraph-server/Cargo.toml": "70fdf5badc33eb3063d88ab709c6cf8c668d259f9eda4bb982633def77623a9b",
+    "crates/cognigraph-server/openapi.yaml": "b44e2ec8192cff410d7346de631d143beb1b2831ac79cdb30d298fd682bff50a",
+    "crates/cognigraph-server/src/openapi_drift.rs": "9805d9c2fb50f27e9321e64d3d661876f28f4229923c8fbef5a5a61407132b05",
+    "crates/cognigraph-server/src/openapi_drift/contracts.rs": "8caa5a5c23fca5af632bcb17692127bf8e93b1ccc70fd99456187f4a616c6fa7",
+    "docs/operations.md": "40cf2f729335dbb9b9697e6a12a7f095d24b7d9bccbfa6a60f18c511b5df3684",
+    "docs/architecture.md": "e1f381917551f417ba9884be9df3247a0b1ac2a41a51ba70b0842bb2d1d1dc58",
+    "docs/examples/api-usage.md": "02fa6a72b553c18c9c12344eae015bb4fd973e28fcee8cf8430fd79fb91f4c31",
+    "docs/examples/construction/README.md": "7f1ef9805e5314a5cd8f047ed614235cfc02fa70b68a31ae39db444586fa33b4",
+    "docs/examples/construction/directed.json": "9085973e0bf4ceb666e24a467bb25ca799c279de5297a5d33cfd91d80ebaa25c",
+    "docs/examples/construction/draft-async.json": "6946877a6dc27129b564d38c6e3fa13fb1aaa4b81f8279d305ebad6f5cf5ad63",
+    "docs/examples/construction/draft-job.json": "dbe49af278cbe9ad2f9caf2a4138aa4409b6e61093eeee42dd8ee5a20ee514dd",
+    "docs/examples/construction/evaluate-job.json": "5559b1466fa23c3239634921c20a21aca4831a635e7fdafd32ce8a2c7b876a69",
+    "docs/examples/construction/ingest-job.json": "53fb139a7fbb49e8f406019ff1792de9e511f2566c13b38345e097319a38ee6a",
+    "docs/examples/construction/sideviews-job.json": "ddbf3f6671d6368d61b7246abcce050e7493329299cf1dbe37ed88d3ebf8a076",
+    "docs/examples/construction/sideviews.json": "0c33fe796e7abbce6818cb7a99e5043535883cc68497a1ec17c372200469b5c6"
+  },
+  "binaries": {
+    "target/release/cognigraph-server": "a7cb6d882c1f5b438d1b98e95747865c0d63182697e62025ccb26a02e94400cb",
+    "target/release/cognigraph": "e91cbeca12190f3cc938fa1619dfb3261bc3a13a93275517455c9f63984b0032"
+  },
+  "preservation": {
+    "baseline_file_hashes_checked": true,
+    "unexpected_existing_file_changes": [],
+    "unrelated_response_content_header_link_structures_preserved": 79
+  },
+  "corrected_attempts": [
+    "Initial unquoted YAML flow descriptions rejected; broad quoting edits corrected to preserve nested fields.",
+    "Standard validator exposed pre-existing ambiguous descriptions and missing inherited collection path parameter; fixed.",
+    "First HTTP harness used case-sensitive Location lookup; corrected.",
+    "Unused Rust import and deprecated Python resolver removed before final gates."
+  ],
+  "build_limits": "No disk-space or Docker build failure. Docker not required for Native release verification."
+}

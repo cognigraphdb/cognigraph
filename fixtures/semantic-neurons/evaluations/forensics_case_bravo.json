@@ -1,0 +1,74 @@
+{
+  "space_id": "case:bravo",
+  "chunks_path": "samples/digital_forensics_case_bravo.chunks.jsonl",
+  "questions": [
+    {
+      "id": "case-suspect",
+      "question": "Whom does Case Alpha investigate?",
+      "expected_facts": [
+        "Case Alpha --INVESTIGATES--> Alex Morgan"
+      ]
+    },
+    {
+      "id": "alex-device",
+      "question": "Which device did Alex Morgan use, and did Riley Stone use it?",
+      "expected_facts": [
+        "Alex Morgan --USES_DEVICE--> iPhone 14"
+      ],
+      "forbidden_facts": [
+        "Riley Stone --USES_DEVICE--> iPhone 14"
+      ]
+    },
+    {
+      "id": "iphone-apps",
+      "question": "Which applications were found on the iPhone 14?",
+      "expected_facts": [],
+      "forbidden_facts": [
+        "iPhone 14 --RUNS_APPLICATION--> Signal"
+      ]
+    },
+    {
+      "id": "s21-apps",
+      "question": "Which application did the Samsung Galaxy S21 contain?",
+      "expected_facts": [
+        "Samsung Galaxy S21 --RUNS_APPLICATION--> WhatsApp"
+      ]
+    },
+    {
+      "id": "cloud-backup",
+      "question": "What did the Cloud Backup contain?",
+      "expected_facts": [
+        "Cloud Backup --CONTAINS_APPLICATION--> Telegram"
+      ],
+      "forbidden_facts": [
+        "Cloud Backup --CONTAINS_APPLICATION--> Signal"
+      ]
+    },
+    {
+      "id": "persona-account",
+      "question": "Which account did Persona A control?",
+      "expected_facts": [
+        "Persona A --CONTROLS_ACCOUNT--> Signal"
+      ]
+    },
+    {
+      "id": "thread",
+      "question": "Who participated in Conversation Thread 17 and what location did it mention?",
+      "expected_facts": [
+        "Alex Morgan --PARTICIPATES_IN--> Conversation Thread 17",
+        "Riley Stone --PARTICIPATES_IN--> Conversation Thread 17",
+        "Conversation Thread 17 --MENTIONS_LOCATION--> Harbor Cafe"
+      ],
+      "forbidden_facts": [
+        "Alex Morgan --OBSERVED_AT--> Harbor Cafe"
+      ]
+    },
+    {
+      "id": "sedan",
+      "question": "Where was the Blue Sedan observed?",
+      "expected_facts": [
+        "Blue Sedan --OBSERVED_AT--> Harbor Cafe"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "selection": "glm_only",
+    "id": "semeval-8521",
+    "text": "The worst pain of all was caused by the torment to her head which was like the pain of thorns pressing into her.",
+    "nominals": [
+      "pain",
+      "torment"
+    ],
+    "human_gold": "Cause-Effect(e2,e1)",
+    "luna": "Other",
+    "glm": "Cause-Effect(e2,e1)"
+  },
+  {
+    "selection": "both_wrong",
+    "id": "semeval-10211",
+    "text": "These documents survey the literature and recommend limits for worker exposure to hazards.",
+    "nominals": [
+      "documents",
+      "literature"
+    ],
+    "human_gold": "Message-Topic(e1,e2)",
+    "luna": "Other",
+    "glm": "Other"
+  },
+  {
+    "selection": "other_false_positive",
+    "id": "semeval-10621",
+    "text": "Hiring in a down economy with the help of some beers proved successful.",
+    "nominals": [
+      "Hiring",
+      "beers"
+    ],
+    "human_gold": "Other",
+    "luna": "Other",
+    "glm": "Cause-Effect(e2,e1)"
+  }
+]

@@ -1,0 +1,3 @@
+FOR key IN (FOR d IN documents SORT d._key RETURN d._key)
+INSERT {_key: key} INTO sq_results
+RETURN NEW._key

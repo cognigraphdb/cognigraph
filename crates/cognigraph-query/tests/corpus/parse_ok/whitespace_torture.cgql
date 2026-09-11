@@ -1,0 +1,8 @@
+FOR	d
+	IN	documents
+
+
+		FILTER
+d.x	==	1
+RETURN
+	d

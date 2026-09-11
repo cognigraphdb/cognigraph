@@ -1,0 +1,379 @@
+{
+  "document_id": "development-0954205d2e7642ca",
+  "request": {
+    "space_type": "document-trial-development-0954205d2e7642ca",
+    "taxonomy": [
+      {
+        "relation": "COUNTRY",
+        "description": "The source place, organization, event, or work belongs to or is located in the target country. Do not apply to a person; do not infer unstated geographic containment.",
+        "require_in_sentence": [
+          "country",
+          "in",
+          "of",
+          "located",
+          "based"
+        ]
+      },
+      {
+        "relation": "LOCATED_IN",
+        "description": "The source place is located in the target administrative territory. Require the document to state the containment; do not infer a transitive location chain.",
+        "require_in_sentence": [
+          "in",
+          "located",
+          "part of",
+          "region",
+          "district",
+          "province",
+          "county"
+        ]
+      },
+      {
+        "relation": "HEADQUARTERED_IN",
+        "description": "The source organization has its headquarters in the target location. A branch office or activity in a place is not headquarters.",
+        "require_in_sentence": [
+          "headquarters",
+          "headquartered",
+          "based",
+          "head office"
+        ]
+      },
+      {
+        "relation": "BORN_IN",
+        "description": "The source person was born in the target place. Residence, citizenship, death, or employment alone do not establish birthplace.",
+        "require_in_sentence": [
+          "born",
+          "birth",
+          "birthplace"
+        ]
+      },
+      {
+        "relation": "DIED_IN",
+        "description": "The source person died in the target place. Birthplace, residence, or burial alone do not establish place of death.",
+        "require_in_sentence": [
+          "died",
+          "death",
+          "killed"
+        ]
+      },
+      {
+        "relation": "HAS_FATHER",
+        "description": "The target person is the father of the source person. Do not reverse parent and child or infer from shared surnames.",
+        "require_in_sentence": [
+          "father",
+          "son",
+          "daughter",
+          "parent"
+        ]
+      },
+      {
+        "relation": "HAS_MOTHER",
+        "description": "The target person is the mother of the source person. Do not reverse parent and child or infer from shared surnames.",
+        "require_in_sentence": [
+          "mother",
+          "son",
+          "daughter",
+          "parent"
+        ]
+      },
+      {
+        "relation": "SPOUSE_OF",
+        "description": "The two people are or were married spouses, including explicitly stated former spouses. A proposed marriage or other association does not establish marriage. This relation is symmetric.",
+        "require_in_sentence": [
+          "married",
+          "wife",
+          "husband",
+          "spouse",
+          "marriage",
+          "divorced"
+        ]
+      },
+      {
+        "relation": "HAS_CHILD",
+        "description": "The target person is the child of the source person. Do not reverse the direction or infer from shared surnames.",
+        "require_in_sentence": [
+          "father",
+          "mother",
+          "son",
+          "daughter",
+          "child",
+          "children",
+          "parent"
+        ]
+      },
+      {
+        "relation": "FOUNDED_BY",
+        "description": "The target person or organization founded or co-founded the source organization. A later owner, executive, or employee is not necessarily a founder.",
+        "require_in_sentence": [
+          "founded",
+          "established",
+          "founder",
+          "co-founded"
+        ]
+      },
+      {
+        "relation": "OWNED_BY",
+        "description": "The source asset, organization, or work is or was owned by the target entity. Operation, creation, employment, or partnership alone does not establish ownership.",
+        "require_in_sentence": [
+          "owned",
+          "owner",
+          "ownership",
+          "acquired",
+          "subsidiary",
+          "purchased",
+          "bought"
+        ]
+      },
+      {
+        "relation": "PUBLISHED_BY",
+        "description": "The target organization or person publishes or published the source work. Creation, distribution, and publication are distinct.",
+        "require_in_sentence": [
+          "published",
+          "publisher",
+          "publishing"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "development-0954205d2e7642ca",
+        "title": "ABBA Live",
+        "text": "ABBA Live is an album of live recordings by Swedish pop group ABBA , released by Polar Music in 1986 .\nA live album was something that many ABBA fans had demanded for several years .\nABBA themselves had toyed with the idea on a couple of occasions , but always decided against it .\nFinally , four years after the members went their separate ways , a live collection was released after all .\nThe resultant album , ABBA Live , contained recordings from 1977 , 1979 and 1981 .\nThe tracks were mostly taken from ABBA ’s concerts at Wembley Arena in London in November 1979 , with a few additional songs taken from the tour of Australia in March 1977 and the Dick Cavett Meets ABBA television special , taped in April 1981 .\nWhen this LP / CD was released , the band 's popularity was at an all - time low and none of the members themselves were involved in the production of the album .\nMuch to the dismay of both music critics and ABBA fans it also had 80 's synth drums overdubbed on most tracks , taking away the true live feeling of the performances .\nNeither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .\nSeveral tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .\nABBA Live was the first ABBA album to be simultaneously released on LP and CD , the CD having three \" extra tracks \" .\nThe album did not perform very well , internationally or domestically , peaking at # 49 in Sweden and only staying in the charts for two weeks .\nIt was remastered and rereleased by Polydor / Polar in 1997 , but is currently out of print ."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 1,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 9,
+    "proposed": 9,
+    "skips": [],
+    "space_type": "document-trial-development-0954205d2e7642ca"
+  },
+  "latency_seconds": 0.032952249981462955,
+  "facts": [
+    {
+      "_from": "entities/polar-music",
+      "_id": "facts/fact-0906a023a4995e30193bb131917037543d780055c030909077117afe59a2ccaf",
+      "_key": "fact-0906a023a4995e30193bb131917037543d780055c030909077117afe59a2ccaf",
+      "_to": "entities/swedish",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-0954205d2e7642ca",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "COUNTRY",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-0954205d2e7642ca",
+      "trigger": "ABBA Live is an album of live recordings by Swedish pop group ABBA , released by Polar Music in 1986 .\nA live album was something that many ABBA fans had demanded for several years .\nABBA themselves had toyed with the idea on a couple of occasions , but always decided against it .\nFinally , four years after the members went their separate ways , a live collection was released after all .\nThe resultant album , ABBA Live , contained recordings from 1977 , 1979 and 1981 .\nThe tracks were mostly taken from ABBA ’s concerts at Wembley Arena in London in November 1979 , with a few additional songs taken from the tour of Australia in March 1977 and the Dick Cavett Meets ABBA television special , taped in April 1981 .\nWhen this LP / CD was released , the band 's popularity was at an all - time low and none of the members themselves were involved in the production of the album .\nMuch to the dismay of both music critics and ABBA fans it also had 80 's synth drums overdubbed on most tracks , taking away the true live feeling of the performances .\nNeither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .\nSeveral tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .\nABBA Live was the first ABBA album to be simultaneously released on LP and CD , the CD having three \" extra tracks \" .\nThe album did not perform very well , internationally or domestically , peaking at # 49 in Sweden and only staying in the charts for two weeks .\nIt was remastered and rereleased by Polydor / Polar in 1997 , but is currently out of print .",
+      "trigger_end": 2163,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/abba",
+      "_id": "facts/fact-47ab0ffed29451a715bed70c05701839d25e0b0ddf13c8772cff4c0a34fdc896",
+      "_key": "fact-47ab0ffed29451a715bed70c05701839d25e0b0ddf13c8772cff4c0a34fdc896",
+      "_to": "entities/sweden",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-0954205d2e7642ca",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "COUNTRY",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-0954205d2e7642ca",
+      "trigger": "ABBA Live is an album of live recordings by Swedish pop group ABBA , released by Polar Music in 1986 .\nA live album was something that many ABBA fans had demanded for several years .\nABBA themselves had toyed with the idea on a couple of occasions , but always decided against it .\nFinally , four years after the members went their separate ways , a live collection was released after all .\nThe resultant album , ABBA Live , contained recordings from 1977 , 1979 and 1981 .\nThe tracks were mostly taken from ABBA ’s concerts at Wembley Arena in London in November 1979 , with a few additional songs taken from the tour of Australia in March 1977 and the Dick Cavett Meets ABBA television special , taped in April 1981 .\nWhen this LP / CD was released , the band 's popularity was at an all - time low and none of the members themselves were involved in the production of the album .\nMuch to the dismay of both music critics and ABBA fans it also had 80 's synth drums overdubbed on most tracks , taking away the true live feeling of the performances .\nNeither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .\nSeveral tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .\nABBA Live was the first ABBA album to be simultaneously released on LP and CD , the CD having three \" extra tracks \" .\nThe album did not perform very well , internationally or domestically , peaking at # 49 in Sweden and only staying in the charts for two weeks .\nIt was remastered and rereleased by Polydor / Polar in 1997 , but is currently out of print .",
+      "trigger_end": 2163,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/wembley-arena",
+      "_id": "facts/fact-484b7a352b6a4f652a930d455bd33fe297cfaa98641c2030fabfbb329a0b9f89",
+      "_key": "fact-484b7a352b6a4f652a930d455bd33fe297cfaa98641c2030fabfbb329a0b9f89",
+      "_to": "entities/london",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-0954205d2e7642ca",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "LOCATED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-0954205d2e7642ca",
+      "trigger": "ABBA Live is an album of live recordings by Swedish pop group ABBA , released by Polar Music in 1986 .\nA live album was something that many ABBA fans had demanded for several years .\nABBA themselves had toyed with the idea on a couple of occasions , but always decided against it .\nFinally , four years after the members went their separate ways , a live collection was released after all .\nThe resultant album , ABBA Live , contained recordings from 1977 , 1979 and 1981 .\nThe tracks were mostly taken from ABBA ’s concerts at Wembley Arena in London in November 1979 , with a few additional songs taken from the tour of Australia in March 1977 and the Dick Cavett Meets ABBA television special , taped in April 1981 .\nWhen this LP / CD was released , the band 's popularity was at an all - time low and none of the members themselves were involved in the production of the album .\nMuch to the dismay of both music critics and ABBA fans it also had 80 's synth drums overdubbed on most tracks , taking away the true live feeling of the performances .\nNeither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .\nSeveral tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .\nABBA Live was the first ABBA album to be simultaneously released on LP and CD , the CD having three \" extra tracks \" .\nThe album did not perform very well , internationally or domestically , peaking at # 49 in Sweden and only staying in the charts for two weeks .\nIt was remastered and rereleased by Polydor / Polar in 1997 , but is currently out of print .",
+      "trigger_end": 2163,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/polar-music",
+      "_id": "facts/fact-5183d654c458218a3e72f5ea995400a2e507cfbeed8d8e932a9bd283e2a8dfb9",
+      "_key": "fact-5183d654c458218a3e72f5ea995400a2e507cfbeed8d8e932a9bd283e2a8dfb9",
+      "_to": "entities/sweden",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-0954205d2e7642ca",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "LOCATED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-0954205d2e7642ca",
+      "trigger": "ABBA Live is an album of live recordings by Swedish pop group ABBA , released by Polar Music in 1986 .\nA live album was something that many ABBA fans had demanded for several years .\nABBA themselves had toyed with the idea on a couple of occasions , but always decided against it .\nFinally , four years after the members went their separate ways , a live collection was released after all .\nThe resultant album , ABBA Live , contained recordings from 1977 , 1979 and 1981 .\nThe tracks were mostly taken from ABBA ’s concerts at Wembley Arena in London in November 1979 , with a few additional songs taken from the tour of Australia in March 1977 and the Dick Cavett Meets ABBA television special , taped in April 1981 .\nWhen this LP / CD was released , the band 's popularity was at an all - time low and none of the members themselves were involved in the production of the album .\nMuch to the dismay of both music critics and ABBA fans it also had 80 's synth drums overdubbed on most tracks , taking away the true live feeling of the performances .\nNeither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .\nSeveral tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .\nABBA Live was the first ABBA album to be simultaneously released on LP and CD , the CD having three \" extra tracks \" .\nThe album did not perform very well , internationally or domestically , peaking at # 49 in Sweden and only staying in the charts for two weeks .\nIt was remastered and rereleased by Polydor / Polar in 1997 , but is currently out of print .",
+      "trigger_end": 2163,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/abba",
+      "_id": "facts/fact-6edde0fbecde40f7bb25a579dcce9cc76edae97ffa189af497a92d5942922c27",
+      "_key": "fact-6edde0fbecde40f7bb25a579dcce9cc76edae97ffa189af497a92d5942922c27",
+      "_to": "entities/swedish",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-0954205d2e7642ca",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "LOCATED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-0954205d2e7642ca",
+      "trigger": "ABBA Live is an album of live recordings by Swedish pop group ABBA , released by Polar Music in 1986 .\nA live album was something that many ABBA fans had demanded for several years .\nABBA themselves had toyed with the idea on a couple of occasions , but always decided against it .\nFinally , four years after the members went their separate ways , a live collection was released after all .\nThe resultant album , ABBA Live , contained recordings from 1977 , 1979 and 1981 .\nThe tracks were mostly taken from ABBA ’s concerts at Wembley Arena in London in November 1979 , with a few additional songs taken from the tour of Australia in March 1977 and the Dick Cavett Meets ABBA television special , taped in April 1981 .\nWhen this LP / CD was released , the band 's popularity was at an all - time low and none of the members themselves were involved in the production of the album .\nMuch to the dismay of both music critics and ABBA fans it also had 80 's synth drums overdubbed on most tracks , taking away the true live feeling of the performances .\nNeither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .\nSeveral tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .\nABBA Live was the first ABBA album to be simultaneously released on LP and CD , the CD having three \" extra tracks \" .\nThe album did not perform very well , internationally or domestically , peaking at # 49 in Sweden and only staying in the charts for two weeks .\nIt was remastered and rereleased by Polydor / Polar in 1997 , but is currently out of print .",
+      "trigger_end": 2163,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/abba",
+      "_id": "facts/fact-72b876a6a13a5d4ba7dbb1810b08222d94a6fc3defdf60e7616f0487e25ab134",
+      "_key": "fact-72b876a6a13a5d4ba7dbb1810b08222d94a6fc3defdf60e7616f0487e25ab134",
+      "_to": "entities/swedish",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-0954205d2e7642ca",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "COUNTRY",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-0954205d2e7642ca",
+      "trigger": "ABBA Live is an album of live recordings by Swedish pop group ABBA , released by Polar Music in 1986 .\nA live album was something that many ABBA fans had demanded for several years .\nABBA themselves had toyed with the idea on a couple of occasions , but always decided against it .\nFinally , four years after the members went their separate ways , a live collection was released after all .\nThe resultant album , ABBA Live , contained recordings from 1977 , 1979 and 1981 .\nThe tracks were mostly taken from ABBA ’s concerts at Wembley Arena in London in November 1979 , with a few additional songs taken from the tour of Australia in March 1977 and the Dick Cavett Meets ABBA television special , taped in April 1981 .\nWhen this LP / CD was released , the band 's popularity was at an all - time low and none of the members themselves were involved in the production of the album .\nMuch to the dismay of both music critics and ABBA fans it also had 80 's synth drums overdubbed on most tracks , taking away the true live feeling of the performances .\nNeither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .\nSeveral tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .\nABBA Live was the first ABBA album to be simultaneously released on LP and CD , the CD having three \" extra tracks \" .\nThe album did not perform very well , internationally or domestically , peaking at # 49 in Sweden and only staying in the charts for two weeks .\nIt was remastered and rereleased by Polydor / Polar in 1997 , but is currently out of print .",
+      "trigger_end": 2163,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/polar-music",
+      "_id": "facts/fact-81a95695dc2f6ce7783f009da0dc0c174e2855b69e09d774d85ee5832deb7a87",
+      "_key": "fact-81a95695dc2f6ce7783f009da0dc0c174e2855b69e09d774d85ee5832deb7a87",
+      "_to": "entities/swedish",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-0954205d2e7642ca",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "LOCATED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-0954205d2e7642ca",
+      "trigger": "ABBA Live is an album of live recordings by Swedish pop group ABBA , released by Polar Music in 1986 .\nA live album was something that many ABBA fans had demanded for several years .\nABBA themselves had toyed with the idea on a couple of occasions , but always decided against it .\nFinally , four years after the members went their separate ways , a live collection was released after all .\nThe resultant album , ABBA Live , contained recordings from 1977 , 1979 and 1981 .\nThe tracks were mostly taken from ABBA ’s concerts at Wembley Arena in London in November 1979 , with a few additional songs taken from the tour of Australia in March 1977 and the Dick Cavett Meets ABBA television special , taped in April 1981 .\nWhen this LP / CD was released , the band 's popularity was at an all - time low and none of the members themselves were involved in the production of the album .\nMuch to the dismay of both music critics and ABBA fans it also had 80 's synth drums overdubbed on most tracks , taking away the true live feeling of the performances .\nNeither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .\nSeveral tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .\nABBA Live was the first ABBA album to be simultaneously released on LP and CD , the CD having three \" extra tracks \" .\nThe album did not perform very well , internationally or domestically , peaking at # 49 in Sweden and only staying in the charts for two weeks .\nIt was remastered and rereleased by Polydor / Polar in 1997 , but is currently out of print .",
+      "trigger_end": 2163,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/abba",
+      "_id": "facts/fact-8469ad94df316262868b65d56f36d7cdea517fc1878748997cd23a931503dd9f",
+      "_key": "fact-8469ad94df316262868b65d56f36d7cdea517fc1878748997cd23a931503dd9f",
+      "_to": "entities/sweden",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-0954205d2e7642ca",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "LOCATED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-0954205d2e7642ca",
+      "trigger": "ABBA Live is an album of live recordings by Swedish pop group ABBA , released by Polar Music in 1986 .\nA live album was something that many ABBA fans had demanded for several years .\nABBA themselves had toyed with the idea on a couple of occasions , but always decided against it .\nFinally , four years after the members went their separate ways , a live collection was released after all .\nThe resultant album , ABBA Live , contained recordings from 1977 , 1979 and 1981 .\nThe tracks were mostly taken from ABBA ’s concerts at Wembley Arena in London in November 1979 , with a few additional songs taken from the tour of Australia in March 1977 and the Dick Cavett Meets ABBA television special , taped in April 1981 .\nWhen this LP / CD was released , the band 's popularity was at an all - time low and none of the members themselves were involved in the production of the album .\nMuch to the dismay of both music critics and ABBA fans it also had 80 's synth drums overdubbed on most tracks , taking away the true live feeling of the performances .\nNeither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .\nSeveral tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .\nABBA Live was the first ABBA album to be simultaneously released on LP and CD , the CD having three \" extra tracks \" .\nThe album did not perform very well , internationally or domestically , peaking at # 49 in Sweden and only staying in the charts for two weeks .\nIt was remastered and rereleased by Polydor / Polar in 1997 , but is currently out of print .",
+      "trigger_end": 2163,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/polar-music",
+      "_id": "facts/fact-e140055983a8829770985bdd7418d46df9ea7a2480f6c18c41e3ad00905e2899",
+      "_key": "fact-e140055983a8829770985bdd7418d46df9ea7a2480f6c18c41e3ad00905e2899",
+      "_to": "entities/sweden",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "development-0954205d2e7642ca",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "COUNTRY",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "document-trial-development-0954205d2e7642ca",
+      "trigger": "ABBA Live is an album of live recordings by Swedish pop group ABBA , released by Polar Music in 1986 .\nA live album was something that many ABBA fans had demanded for several years .\nABBA themselves had toyed with the idea on a couple of occasions , but always decided against it .\nFinally , four years after the members went their separate ways , a live collection was released after all .\nThe resultant album , ABBA Live , contained recordings from 1977 , 1979 and 1981 .\nThe tracks were mostly taken from ABBA ’s concerts at Wembley Arena in London in November 1979 , with a few additional songs taken from the tour of Australia in March 1977 and the Dick Cavett Meets ABBA television special , taped in April 1981 .\nWhen this LP / CD was released , the band 's popularity was at an all - time low and none of the members themselves were involved in the production of the album .\nMuch to the dismay of both music critics and ABBA fans it also had 80 's synth drums overdubbed on most tracks , taking away the true live feeling of the performances .\nNeither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .\nSeveral tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .\nABBA Live was the first ABBA album to be simultaneously released on LP and CD , the CD having three \" extra tracks \" .\nThe album did not perform very well , internationally or domestically , peaking at # 49 in Sweden and only staying in the charts for two weeks .\nIt was remastered and rereleased by Polydor / Polar in 1997 , but is currently out of print .",
+      "trigger_end": 2163,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/abba",
+      "_key": "abba",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:24.313972+00:00",
+      "entity_type": "entity",
+      "name": "ABBA",
+      "updated_at": "2026-09-09T15:07:24.313972+00:00"
+    },
+    {
+      "_id": "entities/london",
+      "_key": "london",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:24.313974+00:00",
+      "entity_type": "entity",
+      "name": "London",
+      "updated_at": "2026-09-09T15:07:24.313974+00:00"
+    },
+    {
+      "_id": "entities/polar-music",
+      "_key": "polar-music",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:24.313976+00:00",
+      "entity_type": "entity",
+      "name": "Polar Music",
+      "updated_at": "2026-09-09T15:07:24.313976+00:00"
+    },
+    {
+      "_id": "entities/sweden",
+      "_key": "sweden",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:24.313977+00:00",
+      "entity_type": "entity",
+      "name": "Sweden",
+      "updated_at": "2026-09-09T15:07:24.313977+00:00"
+    },
+    {
+      "_id": "entities/swedish",
+      "_key": "swedish",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:24.313978+00:00",
+      "entity_type": "entity",
+      "name": "Swedish",
+      "updated_at": "2026-09-09T15:07:24.313978+00:00"
+    },
+    {
+      "_id": "entities/wembley-arena",
+      "_key": "wembley-arena",
+      "aliases": [],
+      "created_at": "2026-09-09T15:07:24.313979+00:00",
+      "entity_type": "entity",
+      "name": "Wembley Arena",
+      "updated_at": "2026-09-09T15:07:24.313979+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/document-trial-development-0954205d2e7642ca-development-0954205d2e7642ca",
+      "_key": "document-trial-development-0954205d2e7642ca-development-0954205d2e7642ca",
+      "chunk_id": "development-0954205d2e7642ca",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:86a05dbe7bf2fd264d66e87973d200d0cc3c8111bd44047e96a3791443f6cd3c",
+      "created_at": "2026-09-09T15:07:24.313981+00:00",
+      "space_id": "document-trial-development-0954205d2e7642ca",
+      "text": "ABBA Live is an album of live recordings by Swedish pop group ABBA , released by Polar Music in 1986 .\nA live album was something that many ABBA fans had demanded for several years .\nABBA themselves had toyed with the idea on a couple of occasions , but always decided against it .\nFinally , four years after the members went their separate ways , a live collection was released after all .\nThe resultant album , ABBA Live , contained recordings from 1977 , 1979 and 1981 .\nThe tracks were mostly taken from ABBA ’s concerts at Wembley Arena in London in November 1979 , with a few additional songs taken from the tour of Australia in March 1977 and the Dick Cavett Meets ABBA television special , taped in April 1981 .\nWhen this LP / CD was released , the band 's popularity was at an all - time low and none of the members themselves were involved in the production of the album .\nMuch to the dismay of both music critics and ABBA fans it also had 80 's synth drums overdubbed on most tracks , taking away the true live feeling of the performances .\nNeither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .\nSeveral tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .\nABBA Live was the first ABBA album to be simultaneously released on LP and CD , the CD having three \" extra tracks \" .\nThe album did not perform very well , internationally or domestically , peaking at # 49 in Sweden and only staying in the charts for two weeks .\nIt was remastered and rereleased by Polydor / Polar in 1997 , but is currently out of print .",
+      "title": "ABBA Live",
+      "updated_at": "2026-09-09T15:07:24.313981+00:00"
+    }
+  ]
+}

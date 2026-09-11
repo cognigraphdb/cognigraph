@@ -1,0 +1,2547 @@
+{
+  "ticket": "CG-16",
+  "binary_profile": "release",
+  "binary_sha256": "66cc19ecc4527666f5d338a36f7c09f8ce6b38d3688136b60ba68af48378d218",
+  "expect_vulnerable": true,
+  "provider": "none",
+  "modes": {
+    "resident": {
+      "errors": [
+        {
+          "case": "literal",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "literal",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.003
+              }
+            }
+          ]
+        },
+        {
+          "case": "literal",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "literal",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.003
+              }
+            }
+          ]
+        },
+        {
+          "case": "literal",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "literal",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.005
+              }
+            }
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.003
+              }
+            }
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.003
+              }
+            }
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.003
+              }
+            }
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            [
+              {
+                "_id": "notes/a",
+                "_key": "a",
+                "created_at": "2026-09-08T18:54:31.205305+00:00",
+                "ref": "_users/cg16-missing",
+                "updated_at": "2026-09-08T18:54:31.205305+00:00",
+                "v": 7
+              },
+              null
+            ]
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.004
+              }
+            }
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            [
+              {
+                "_id": "notes/a",
+                "_key": "a",
+                "created_at": "2026-09-08T18:54:31.205305+00:00",
+                "ref": "_users/cg16-missing",
+                "updated_at": "2026-09-08T18:54:31.205305+00:00",
+                "v": 7
+              },
+              null
+            ]
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.006
+              }
+            }
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            [
+              {
+                "_id": "notes/a",
+                "_key": "a",
+                "created_at": "2026-09-08T18:54:31.205305+00:00",
+                "ref": "_users/cg16-missing",
+                "updated_at": "2026-09-08T18:54:31.205305+00:00",
+                "v": 7
+              },
+              null
+            ]
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.005
+              }
+            }
+          ]
+        },
+        {
+          "case": "filter",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": []
+        },
+        {
+          "case": "filter",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.001,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": false,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "FILTER"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 0,
+                "source_rows": 2,
+                "total_ms": 0.006
+              }
+            }
+          ]
+        },
+        {
+          "case": "filter",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": []
+        },
+        {
+          "case": "filter",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.001,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": false,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "FILTER"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 0,
+                "source_rows": 2,
+                "total_ms": 0.005
+              }
+            }
+          ]
+        },
+        {
+          "case": "filter",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": []
+        },
+        {
+          "case": "filter",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.001,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": false,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "FILTER"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0,
+                "document_fetches": 1,
+                "result_rows": 0,
+                "source_rows": 2,
+                "total_ms": 0.006
+              }
+            }
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.005
+              }
+            }
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.005
+              }
+            }
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.006
+              }
+            }
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.001,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": true,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET v"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "SORT"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LIMIT 1"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.005
+              }
+            }
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.001,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": true,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET v"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "SORT"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LIMIT 1"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.004
+              }
+            }
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.001,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": true,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET v"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "SORT"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LIMIT 1"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.006
+              }
+            }
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "case": "present",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        }
+      ],
+      "plain_explain": 18,
+      "lua_caught": 6,
+      "restart_unchanged": true
+    },
+    "paged": {
+      "errors": [
+        {
+          "case": "literal",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "literal",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.006
+              }
+            }
+          ]
+        },
+        {
+          "case": "literal",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "literal",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.006
+              }
+            }
+          ]
+        },
+        {
+          "case": "literal",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "literal",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.004
+              }
+            }
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.003
+              }
+            }
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.003
+              }
+            }
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "bound",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 1,
+                "total_ms": 0.003
+              }
+            }
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            [
+              {
+                "_id": "notes/a",
+                "_key": "a",
+                "created_at": "2026-09-08T18:54:31.799796+00:00",
+                "ref": "_users/cg16-missing",
+                "updated_at": "2026-09-08T18:54:31.799796+00:00",
+                "v": 7
+              },
+              null
+            ]
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.005
+              }
+            }
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            [
+              {
+                "_id": "notes/a",
+                "_key": "a",
+                "created_at": "2026-09-08T18:54:31.799796+00:00",
+                "ref": "_users/cg16-missing",
+                "updated_at": "2026-09-08T18:54:31.799796+00:00",
+                "v": 7
+              },
+              null
+            ]
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.004
+              }
+            }
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            [
+              {
+                "_id": "notes/a",
+                "_key": "a",
+                "created_at": "2026-09-08T18:54:31.799796+00:00",
+                "ref": "_users/cg16-missing",
+                "updated_at": "2026-09-08T18:54:31.799796+00:00",
+                "v": 7
+              },
+              null
+            ]
+          ]
+        },
+        {
+          "case": "array",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [
+                "id"
+              ],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.004
+              }
+            }
+          ]
+        },
+        {
+          "case": "filter",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": []
+        },
+        {
+          "case": "filter",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.004,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": false,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "FILTER"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 0,
+                "source_rows": 2,
+                "total_ms": 0.009
+              }
+            }
+          ]
+        },
+        {
+          "case": "filter",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": []
+        },
+        {
+          "case": "filter",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.003,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": false,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "FILTER"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 0,
+                "source_rows": 2,
+                "total_ms": 0.009
+              }
+            }
+          ]
+        },
+        {
+          "case": "filter",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": []
+        },
+        {
+          "case": "filter",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.005,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": false,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "FILTER"
+                },
+                {
+                  "attempted_rows": 0,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 0,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0,
+                "document_fetches": 1,
+                "result_rows": 0,
+                "source_rows": 2,
+                "total_ms": 0.01
+              }
+            }
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.006
+              }
+            }
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.006
+              }
+            }
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "dependent",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [],
+              "stages": [
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.001,
+                "document_fetches": 2,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.007
+              }
+            }
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.003,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": true,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET v"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "SORT"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LIMIT 1"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.008
+              }
+            }
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.003,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": true,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET v"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "SORT"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LIMIT 1"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0.0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.007
+              }
+            }
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200,
+          "result": [
+            null
+          ]
+        },
+        {
+          "case": "deferred",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200,
+          "result": [
+            {
+              "analyze": true,
+              "bind_vars": [],
+              "sources": [
+                {
+                  "collection": "notes",
+                  "depth": 0,
+                  "fetch_ms": 0.003,
+                  "fetches": 1,
+                  "kind": "collection_scan",
+                  "pushdown": {
+                    "all_filters_pushed": true,
+                    "fetch_limit": null,
+                    "predicates": [],
+                    "projection": [
+                      "_key",
+                      "ref"
+                    ]
+                  },
+                  "rows": 1,
+                  "var": "n"
+                }
+              ],
+              "stages": [
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "FOR n"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET d"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LET v"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "SORT"
+                },
+                {
+                  "attempted_rows": 1,
+                  "attempted_runs": 1,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "LIMIT 1"
+                },
+                {
+                  "attempted_rows": 2,
+                  "attempted_runs": 2,
+                  "depth": 0,
+                  "rows": 1,
+                  "runs": 1,
+                  "stage": "RETURN"
+                }
+              ],
+              "stats": {
+                "document_fetch_ms": 0,
+                "document_fetches": 1,
+                "result_rows": 1,
+                "source_rows": 2,
+                "total_ms": 0.009
+              }
+            }
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "case": "present",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "present",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "missing_collection",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "malformed",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "non_string",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/search/query",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/search/query",
+          "analyzed": true,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/lua/execute",
+          "analyzed": false,
+          "status": 200
+        },
+        {
+          "case": "array_positions",
+          "surface": "/api/lua/execute",
+          "analyzed": true,
+          "status": 200
+        }
+      ],
+      "plain_explain": 18,
+      "lua_caught": 6,
+      "restart_unchanged": true
+    }
+  }
+}

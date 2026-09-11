@@ -1,0 +1,1266 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 2,
+  "batch": 35,
+  "request": {
+    "space_type": "semeval-terra-low-r2-b35",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9395",
+        "title": "Relation benchmark excerpt",
+        "text": "The EMC of the common bean flour was determined at 10, 25, and 40 C."
+      },
+      {
+        "id": "semeval-8459",
+        "title": "Relation benchmark excerpt",
+        "text": "She had struggled violently with her attacker, who killed her with a blunt instrument."
+      },
+      {
+        "id": "semeval-10447",
+        "title": "Relation benchmark excerpt",
+        "text": "The thick slab of spiced ham was the best part of this year's new breakfast sandwich; the salty meat was griddled to a crisp, nut-brown sear, and it outshone the surrounding egg, cheese, and bun."
+      },
+      {
+        "id": "semeval-9048",
+        "title": "Relation benchmark excerpt",
+        "text": "$600 billion dollars have been put into the US economy."
+      },
+      {
+        "id": "semeval-9514",
+        "title": "Relation benchmark excerpt",
+        "text": "Here is a reliable and tasty cookie recipe from my grandmother."
+      },
+      {
+        "id": "semeval-10457",
+        "title": "Relation benchmark excerpt",
+        "text": "The show offers a constructive discussion of a hot-button topic with leading M&A experts."
+      },
+      {
+        "id": "semeval-8697",
+        "title": "Relation benchmark excerpt",
+        "text": "Construction worker carrying a wooden plank on his shoulder."
+      },
+      {
+        "id": "semeval-9775",
+        "title": "Relation benchmark excerpt",
+        "text": "To reheat the turkey without drying it out, we placed the slices in a steamer basket set in a pot of simmering water."
+      },
+      {
+        "id": "semeval-10225",
+        "title": "Relation benchmark excerpt",
+        "text": "The annual residence league of various sport codes, the Mini Olympics held during the September break has proven very popular amongst our students."
+      },
+      {
+        "id": "semeval-9108",
+        "title": "Relation benchmark excerpt",
+        "text": "The second hypothesis asserting economic domination is rejected, and the third largely accepted."
+      },
+      {
+        "id": "semeval-9484",
+        "title": "Relation benchmark excerpt",
+        "text": "The burner of the dryer is lined with more than 3 cm thick castable refractory material."
+      },
+      {
+        "id": "semeval-8313",
+        "title": "Relation benchmark excerpt",
+        "text": "A panel discussion focusing on issues such as domestic violence and fearful relationships was held at the University of Rio Grande."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 10,
+    "proposed": 10,
+    "skips": [],
+    "space_type": "semeval-terra-low-r2-b35"
+  },
+  "latency_seconds": 18.580930790980347,
+  "facts": [
+    {
+      "_from": "entities/recipe",
+      "_id": "facts/fact-02a654506a35547cd2eb9c49623cddec940e96668f2d1216f98ac1728bb39a2f",
+      "_key": "fact-02a654506a35547cd2eb9c49623cddec940e96668f2d1216f98ac1728bb39a2f",
+      "_to": "entities/grandmother",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9514",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b35",
+      "trigger": "Here is a reliable and tasty cookie recipe from my grandmother.",
+      "trigger_end": 63,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/hypothesis",
+      "_id": "facts/fact-0491b8709c9bba3d046f07dddaf27669d761b642c6fef8d9b934c6037bffbd5f",
+      "_key": "fact-0491b8709c9bba3d046f07dddaf27669d761b642c6fef8d9b934c6037bffbd5f",
+      "_to": "entities/domination",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9108",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b35",
+      "trigger": "The second hypothesis asserting economic domination is rejected, and the third largely accepted.",
+      "trigger_end": 96,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/burner",
+      "_id": "facts/fact-32f25dab3091b603d9709b11c6e58a7e94e1511f0eb08d50dcfaf7f3eb5d7919",
+      "_key": "fact-32f25dab3091b603d9709b11c6e58a7e94e1511f0eb08d50dcfaf7f3eb5d7919",
+      "_to": "entities/dryer",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9484",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b35",
+      "trigger": "The burner of the dryer is lined with more than 3 cm thick castable refractory material.",
+      "trigger_end": 88,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/codes",
+      "_id": "facts/fact-67c57e318ab44d7eb6f2efc15214f18d95c8d1b76d2fef17ca910ec3773c0ed1",
+      "_key": "fact-67c57e318ab44d7eb6f2efc15214f18d95c8d1b76d2fef17ca910ec3773c0ed1",
+      "_to": "entities/league",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10225",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b35",
+      "trigger": "The annual residence league of various sport codes, the Mini Olympics held during the September break has proven very popular amongst our students.",
+      "trigger_end": 147,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/slices",
+      "_id": "facts/fact-6f786662cab9db010748e035a9b419b723fa577a86eafade104fc7378afd00b1",
+      "_key": "fact-6f786662cab9db010748e035a9b419b723fa577a86eafade104fc7378afd00b1",
+      "_to": "entities/basket",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9775",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b35",
+      "trigger": "To reheat the turkey without drying it out, we placed the slices in a steamer basket set in a pot of simmering water.",
+      "trigger_end": 117,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/dollars",
+      "_id": "facts/fact-7ff202cbe8938292338045458273d8ef4a8b209abc0332c0f5abb5cd0fc364f5",
+      "_key": "fact-7ff202cbe8938292338045458273d8ef4a8b209abc0332c0f5abb5cd0fc364f5",
+      "_to": "entities/economy",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9048",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b35",
+      "trigger": "$600 billion dollars have been put into the US economy.",
+      "trigger_end": 55,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/discussion",
+      "_id": "facts/fact-92cd76a8f9d644980c4aa17c718c7e50465c287a0647cbefb1594e65e73057d2",
+      "_key": "fact-92cd76a8f9d644980c4aa17c718c7e50465c287a0647cbefb1594e65e73057d2",
+      "_to": "entities/violence",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8313",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b35",
+      "trigger": "A panel discussion focusing on issues such as domestic violence and fearful relationships was held at the University of Rio Grande.",
+      "trigger_end": 131,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/ham",
+      "_id": "facts/fact-b5eec6940b9f11e2e32662203c9ab5b3e8fed5056c855e87bd14426ed49b74d3",
+      "_key": "fact-b5eec6940b9f11e2e32662203c9ab5b3e8fed5056c855e87bd14426ed49b74d3",
+      "_to": "entities/sandwich",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10447",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b35",
+      "trigger": "The thick slab of spiced ham was the best part of this year's new breakfast sandwich; the salty meat was griddled to a crisp, nut-brown sear, and it outshone the surrounding egg, cheese, and bun.",
+      "trigger_end": 195,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/flour",
+      "_id": "facts/fact-be363ed88768674156191128033f6e0e17efdf897a82bfc8ca7ed8fd2469b861",
+      "_key": "fact-be363ed88768674156191128033f6e0e17efdf897a82bfc8ca7ed8fd2469b861",
+      "_to": "entities/bean",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9395",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b35",
+      "trigger": "The EMC of the common bean flour was determined at 10, 25, and 40 C.",
+      "trigger_end": 68,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/instrument",
+      "_id": "facts/fact-f87addad7fc718004519b248d4d1d124208ae06b581c43cd071776003d30da10",
+      "_key": "fact-f87addad7fc718004519b248d4d1d124208ae06b581c43cd071776003d30da10",
+      "_to": "entities/attacker",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8459",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b35",
+      "trigger": "She had struggled violently with her attacker, who killed her with a blunt instrument.",
+      "trigger_end": 86,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/attacker",
+      "_key": "attacker",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203324+00:00",
+      "entity_type": "Agent",
+      "name": "attacker",
+      "updated_at": "2026-09-09T14:02:23.203324+00:00"
+    },
+    {
+      "_id": "entities/basket",
+      "_key": "basket",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203328+00:00",
+      "entity_type": "Container",
+      "name": "basket",
+      "updated_at": "2026-09-09T14:02:23.203328+00:00"
+    },
+    {
+      "_id": "entities/bean",
+      "_key": "bean",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203329+00:00",
+      "entity_type": "Origin",
+      "name": "bean",
+      "updated_at": "2026-09-09T14:02:23.203329+00:00"
+    },
+    {
+      "_id": "entities/burner",
+      "_key": "burner",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203330+00:00",
+      "entity_type": "Component",
+      "name": "burner",
+      "updated_at": "2026-09-09T14:02:23.203330+00:00"
+    },
+    {
+      "_id": "entities/codes",
+      "_key": "codes",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203332+00:00",
+      "entity_type": "Member",
+      "name": "codes",
+      "updated_at": "2026-09-09T14:02:23.203332+00:00"
+    },
+    {
+      "_id": "entities/discussion",
+      "_key": "discussion",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203333+00:00",
+      "entity_type": "Message",
+      "name": "discussion",
+      "updated_at": "2026-09-09T14:02:23.203333+00:00"
+    },
+    {
+      "_id": "entities/dollars",
+      "_key": "dollars",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203334+00:00",
+      "entity_type": "Entity",
+      "name": "dollars",
+      "updated_at": "2026-09-09T14:02:23.203334+00:00"
+    },
+    {
+      "_id": "entities/domination",
+      "_key": "domination",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203335+00:00",
+      "entity_type": "Topic",
+      "name": "domination",
+      "updated_at": "2026-09-09T14:02:23.203335+00:00"
+    },
+    {
+      "_id": "entities/dryer",
+      "_key": "dryer",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203336+00:00",
+      "entity_type": "Whole",
+      "name": "dryer",
+      "updated_at": "2026-09-09T14:02:23.203336+00:00"
+    },
+    {
+      "_id": "entities/economy",
+      "_key": "economy",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203337+00:00",
+      "entity_type": "Destination",
+      "name": "economy",
+      "updated_at": "2026-09-09T14:02:23.203337+00:00"
+    },
+    {
+      "_id": "entities/flour",
+      "_key": "flour",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203338+00:00",
+      "entity_type": "Entity",
+      "name": "flour",
+      "updated_at": "2026-09-09T14:02:23.203338+00:00"
+    },
+    {
+      "_id": "entities/grandmother",
+      "_key": "grandmother",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203339+00:00",
+      "entity_type": "Producer",
+      "name": "grandmother",
+      "updated_at": "2026-09-09T14:02:23.203339+00:00"
+    },
+    {
+      "_id": "entities/ham",
+      "_key": "ham",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203339+00:00",
+      "entity_type": "Component",
+      "name": "ham",
+      "updated_at": "2026-09-09T14:02:23.203339+00:00"
+    },
+    {
+      "_id": "entities/hypothesis",
+      "_key": "hypothesis",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203340+00:00",
+      "entity_type": "Message",
+      "name": "hypothesis",
+      "updated_at": "2026-09-09T14:02:23.203340+00:00"
+    },
+    {
+      "_id": "entities/instrument",
+      "_key": "instrument",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203341+00:00",
+      "entity_type": "Instrument",
+      "name": "instrument",
+      "updated_at": "2026-09-09T14:02:23.203341+00:00"
+    },
+    {
+      "_id": "entities/league",
+      "_key": "league",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203342+00:00",
+      "entity_type": "Collection",
+      "name": "league",
+      "updated_at": "2026-09-09T14:02:23.203342+00:00"
+    },
+    {
+      "_id": "entities/recipe",
+      "_key": "recipe",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203343+00:00",
+      "entity_type": "Product",
+      "name": "recipe",
+      "updated_at": "2026-09-09T14:02:23.203343+00:00"
+    },
+    {
+      "_id": "entities/sandwich",
+      "_key": "sandwich",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203345+00:00",
+      "entity_type": "Whole",
+      "name": "sandwich",
+      "updated_at": "2026-09-09T14:02:23.203345+00:00"
+    },
+    {
+      "_id": "entities/slices",
+      "_key": "slices",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203346+00:00",
+      "entity_type": "Content",
+      "name": "slices",
+      "updated_at": "2026-09-09T14:02:23.203346+00:00"
+    },
+    {
+      "_id": "entities/violence",
+      "_key": "violence",
+      "aliases": [],
+      "created_at": "2026-09-09T14:02:23.203347+00:00",
+      "entity_type": "Topic",
+      "name": "violence",
+      "updated_at": "2026-09-09T14:02:23.203347+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-10225",
+      "_key": "semeval-terra-low-r2-b35-semeval-10225",
+      "chunk_id": "semeval-10225",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b276266ef92eff65c216b68f316cc2293a5169a2cb04620d9dbcd5f9f9684fed",
+      "created_at": "2026-09-09T14:02:23.203348+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "The annual residence league of various sport codes, the Mini Olympics held during the September break has proven very popular amongst our students.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203348+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-10447",
+      "_key": "semeval-terra-low-r2-b35-semeval-10447",
+      "chunk_id": "semeval-10447",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:469ae2e467e28cd96800a72fda90e9599a072e52d818088687d0477730ec5277",
+      "created_at": "2026-09-09T14:02:23.203360+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "The thick slab of spiced ham was the best part of this year's new breakfast sandwich; the salty meat was griddled to a crisp, nut-brown sear, and it outshone the surrounding egg, cheese, and bun.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203360+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-10457",
+      "_key": "semeval-terra-low-r2-b35-semeval-10457",
+      "chunk_id": "semeval-10457",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:62fae9c7c337829981fbc749bcb98d21498cf9c9f16457693037192edf42c850",
+      "created_at": "2026-09-09T14:02:23.203368+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "The show offers a constructive discussion of a hot-button topic with leading M&A experts.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203368+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-8313",
+      "_key": "semeval-terra-low-r2-b35-semeval-8313",
+      "chunk_id": "semeval-8313",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b5526216312c9a4a9fe7c70fa215eb1ab6fff2c7d76d3c1d6d5b0d7a9ed100a4",
+      "created_at": "2026-09-09T14:02:23.203370+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "A panel discussion focusing on issues such as domestic violence and fearful relationships was held at the University of Rio Grande.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203370+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-8459",
+      "_key": "semeval-terra-low-r2-b35-semeval-8459",
+      "chunk_id": "semeval-8459",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b962efbd1fa5e8ade2f7c5639f9111e76a462ce06141806c63984140c5518b2b",
+      "created_at": "2026-09-09T14:02:23.203375+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "She had struggled violently with her attacker, who killed her with a blunt instrument.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203375+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-8697",
+      "_key": "semeval-terra-low-r2-b35-semeval-8697",
+      "chunk_id": "semeval-8697",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:fde702503d08e459dc01c84446bf9919070dffe22170f603675ad91174aafedd",
+      "created_at": "2026-09-09T14:02:23.203380+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "Construction worker carrying a wooden plank on his shoulder.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203380+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-9048",
+      "_key": "semeval-terra-low-r2-b35-semeval-9048",
+      "chunk_id": "semeval-9048",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f9db5fb3ef3bba6a7420bd8739d183004257eb015a7cc84896eefdb4015537ff",
+      "created_at": "2026-09-09T14:02:23.203381+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "$600 billion dollars have been put into the US economy.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203381+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-9108",
+      "_key": "semeval-terra-low-r2-b35-semeval-9108",
+      "chunk_id": "semeval-9108",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:20d7879eec6995ac13f5e3d858f9f88a6ce35d20c6921b81db66de799e5f5914",
+      "created_at": "2026-09-09T14:02:23.203387+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "The second hypothesis asserting economic domination is rejected, and the third largely accepted.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203387+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-9395",
+      "_key": "semeval-terra-low-r2-b35-semeval-9395",
+      "chunk_id": "semeval-9395",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e92dd05589e6c8abd2c7d4519434d85f91407128a66a55ec0d578e01c038424f",
+      "created_at": "2026-09-09T14:02:23.203393+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "The EMC of the common bean flour was determined at 10, 25, and 40 C.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203393+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-9484",
+      "_key": "semeval-terra-low-r2-b35-semeval-9484",
+      "chunk_id": "semeval-9484",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3c8382eea755195f2f5c9de5d3584c525b8f2d39fd57bffdfcbe9644071647e2",
+      "created_at": "2026-09-09T14:02:23.203397+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "The burner of the dryer is lined with more than 3 cm thick castable refractory material.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203397+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-9514",
+      "_key": "semeval-terra-low-r2-b35-semeval-9514",
+      "chunk_id": "semeval-9514",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b12eee022d2b31845062c0d8569f5649159a544042b7e6dbf54014d9868ccbdb",
+      "created_at": "2026-09-09T14:02:23.203402+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "Here is a reliable and tasty cookie recipe from my grandmother.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203402+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b35-semeval-9775",
+      "_key": "semeval-terra-low-r2-b35-semeval-9775",
+      "chunk_id": "semeval-9775",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1b4f7e68fd5cf63830853a11da2f37f802622cb227c242fa25d917d38b1d13f0",
+      "created_at": "2026-09-09T14:02:23.203408+00:00",
+      "space_id": "semeval-terra-low-r2-b35",
+      "text": "To reheat the turkey without drying it out, we placed the slices in a steamer basket set in a pot of simmering water.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T14:02:23.203408+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 10,
+        "results": [
+          {
+            "_from": "entities/recipe",
+            "_id": "facts/fact-02a654506a35547cd2eb9c49623cddec940e96668f2d1216f98ac1728bb39a2f",
+            "_key": "fact-02a654506a35547cd2eb9c49623cddec940e96668f2d1216f98ac1728bb39a2f",
+            "_to": "entities/grandmother",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9514",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b35",
+            "trigger": "Here is a reliable and tasty cookie recipe from my grandmother.",
+            "trigger_end": 63,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/hypothesis",
+            "_id": "facts/fact-0491b8709c9bba3d046f07dddaf27669d761b642c6fef8d9b934c6037bffbd5f",
+            "_key": "fact-0491b8709c9bba3d046f07dddaf27669d761b642c6fef8d9b934c6037bffbd5f",
+            "_to": "entities/domination",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9108",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b35",
+            "trigger": "The second hypothesis asserting economic domination is rejected, and the third largely accepted.",
+            "trigger_end": 96,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/burner",
+            "_id": "facts/fact-32f25dab3091b603d9709b11c6e58a7e94e1511f0eb08d50dcfaf7f3eb5d7919",
+            "_key": "fact-32f25dab3091b603d9709b11c6e58a7e94e1511f0eb08d50dcfaf7f3eb5d7919",
+            "_to": "entities/dryer",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9484",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b35",
+            "trigger": "The burner of the dryer is lined with more than 3 cm thick castable refractory material.",
+            "trigger_end": 88,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/codes",
+            "_id": "facts/fact-67c57e318ab44d7eb6f2efc15214f18d95c8d1b76d2fef17ca910ec3773c0ed1",
+            "_key": "fact-67c57e318ab44d7eb6f2efc15214f18d95c8d1b76d2fef17ca910ec3773c0ed1",
+            "_to": "entities/league",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10225",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b35",
+            "trigger": "The annual residence league of various sport codes, the Mini Olympics held during the September break has proven very popular amongst our students.",
+            "trigger_end": 147,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/slices",
+            "_id": "facts/fact-6f786662cab9db010748e035a9b419b723fa577a86eafade104fc7378afd00b1",
+            "_key": "fact-6f786662cab9db010748e035a9b419b723fa577a86eafade104fc7378afd00b1",
+            "_to": "entities/basket",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9775",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b35",
+            "trigger": "To reheat the turkey without drying it out, we placed the slices in a steamer basket set in a pot of simmering water.",
+            "trigger_end": 117,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/dollars",
+            "_id": "facts/fact-7ff202cbe8938292338045458273d8ef4a8b209abc0332c0f5abb5cd0fc364f5",
+            "_key": "fact-7ff202cbe8938292338045458273d8ef4a8b209abc0332c0f5abb5cd0fc364f5",
+            "_to": "entities/economy",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9048",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b35",
+            "trigger": "$600 billion dollars have been put into the US economy.",
+            "trigger_end": 55,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/discussion",
+            "_id": "facts/fact-92cd76a8f9d644980c4aa17c718c7e50465c287a0647cbefb1594e65e73057d2",
+            "_key": "fact-92cd76a8f9d644980c4aa17c718c7e50465c287a0647cbefb1594e65e73057d2",
+            "_to": "entities/violence",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8313",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b35",
+            "trigger": "A panel discussion focusing on issues such as domestic violence and fearful relationships was held at the University of Rio Grande.",
+            "trigger_end": 131,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/ham",
+            "_id": "facts/fact-b5eec6940b9f11e2e32662203c9ab5b3e8fed5056c855e87bd14426ed49b74d3",
+            "_key": "fact-b5eec6940b9f11e2e32662203c9ab5b3e8fed5056c855e87bd14426ed49b74d3",
+            "_to": "entities/sandwich",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10447",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b35",
+            "trigger": "The thick slab of spiced ham was the best part of this year's new breakfast sandwich; the salty meat was griddled to a crisp, nut-brown sear, and it outshone the surrounding egg, cheese, and bun.",
+            "trigger_end": 195,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/flour",
+            "_id": "facts/fact-be363ed88768674156191128033f6e0e17efdf897a82bfc8ca7ed8fd2469b861",
+            "_key": "fact-be363ed88768674156191128033f6e0e17efdf897a82bfc8ca7ed8fd2469b861",
+            "_to": "entities/bean",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9395",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b35",
+            "trigger": "The EMC of the common bean flour was determined at 10, 25, and 40 C.",
+            "trigger_end": 68,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/instrument",
+            "_id": "facts/fact-f87addad7fc718004519b248d4d1d124208ae06b581c43cd071776003d30da10",
+            "_key": "fact-f87addad7fc718004519b248d4d1d124208ae06b581c43cd071776003d30da10",
+            "_to": "entities/attacker",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8459",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b35",
+            "trigger": "She had struggled violently with her attacker, who killed her with a blunt instrument.",
+            "trigger_end": 86,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 20,
+        "results": [
+          {
+            "_id": "entities/attacker",
+            "_key": "attacker",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203324+00:00",
+            "entity_type": "Agent",
+            "name": "attacker",
+            "updated_at": "2026-09-09T14:02:23.203324+00:00"
+          },
+          {
+            "_id": "entities/basket",
+            "_key": "basket",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203328+00:00",
+            "entity_type": "Container",
+            "name": "basket",
+            "updated_at": "2026-09-09T14:02:23.203328+00:00"
+          },
+          {
+            "_id": "entities/bean",
+            "_key": "bean",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203329+00:00",
+            "entity_type": "Origin",
+            "name": "bean",
+            "updated_at": "2026-09-09T14:02:23.203329+00:00"
+          },
+          {
+            "_id": "entities/burner",
+            "_key": "burner",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203330+00:00",
+            "entity_type": "Component",
+            "name": "burner",
+            "updated_at": "2026-09-09T14:02:23.203330+00:00"
+          },
+          {
+            "_id": "entities/codes",
+            "_key": "codes",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203332+00:00",
+            "entity_type": "Member",
+            "name": "codes",
+            "updated_at": "2026-09-09T14:02:23.203332+00:00"
+          },
+          {
+            "_id": "entities/discussion",
+            "_key": "discussion",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203333+00:00",
+            "entity_type": "Message",
+            "name": "discussion",
+            "updated_at": "2026-09-09T14:02:23.203333+00:00"
+          },
+          {
+            "_id": "entities/dollars",
+            "_key": "dollars",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203334+00:00",
+            "entity_type": "Entity",
+            "name": "dollars",
+            "updated_at": "2026-09-09T14:02:23.203334+00:00"
+          },
+          {
+            "_id": "entities/domination",
+            "_key": "domination",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203335+00:00",
+            "entity_type": "Topic",
+            "name": "domination",
+            "updated_at": "2026-09-09T14:02:23.203335+00:00"
+          },
+          {
+            "_id": "entities/dryer",
+            "_key": "dryer",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203336+00:00",
+            "entity_type": "Whole",
+            "name": "dryer",
+            "updated_at": "2026-09-09T14:02:23.203336+00:00"
+          },
+          {
+            "_id": "entities/economy",
+            "_key": "economy",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203337+00:00",
+            "entity_type": "Destination",
+            "name": "economy",
+            "updated_at": "2026-09-09T14:02:23.203337+00:00"
+          },
+          {
+            "_id": "entities/flour",
+            "_key": "flour",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203338+00:00",
+            "entity_type": "Entity",
+            "name": "flour",
+            "updated_at": "2026-09-09T14:02:23.203338+00:00"
+          },
+          {
+            "_id": "entities/grandmother",
+            "_key": "grandmother",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203339+00:00",
+            "entity_type": "Producer",
+            "name": "grandmother",
+            "updated_at": "2026-09-09T14:02:23.203339+00:00"
+          },
+          {
+            "_id": "entities/ham",
+            "_key": "ham",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203339+00:00",
+            "entity_type": "Component",
+            "name": "ham",
+            "updated_at": "2026-09-09T14:02:23.203339+00:00"
+          },
+          {
+            "_id": "entities/hypothesis",
+            "_key": "hypothesis",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203340+00:00",
+            "entity_type": "Message",
+            "name": "hypothesis",
+            "updated_at": "2026-09-09T14:02:23.203340+00:00"
+          },
+          {
+            "_id": "entities/instrument",
+            "_key": "instrument",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203341+00:00",
+            "entity_type": "Instrument",
+            "name": "instrument",
+            "updated_at": "2026-09-09T14:02:23.203341+00:00"
+          },
+          {
+            "_id": "entities/league",
+            "_key": "league",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203342+00:00",
+            "entity_type": "Collection",
+            "name": "league",
+            "updated_at": "2026-09-09T14:02:23.203342+00:00"
+          },
+          {
+            "_id": "entities/recipe",
+            "_key": "recipe",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203343+00:00",
+            "entity_type": "Product",
+            "name": "recipe",
+            "updated_at": "2026-09-09T14:02:23.203343+00:00"
+          },
+          {
+            "_id": "entities/sandwich",
+            "_key": "sandwich",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203345+00:00",
+            "entity_type": "Whole",
+            "name": "sandwich",
+            "updated_at": "2026-09-09T14:02:23.203345+00:00"
+          },
+          {
+            "_id": "entities/slices",
+            "_key": "slices",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203346+00:00",
+            "entity_type": "Content",
+            "name": "slices",
+            "updated_at": "2026-09-09T14:02:23.203346+00:00"
+          },
+          {
+            "_id": "entities/violence",
+            "_key": "violence",
+            "aliases": [],
+            "created_at": "2026-09-09T14:02:23.203347+00:00",
+            "entity_type": "Topic",
+            "name": "violence",
+            "updated_at": "2026-09-09T14:02:23.203347+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-10225",
+            "_key": "semeval-terra-low-r2-b35-semeval-10225",
+            "chunk_id": "semeval-10225",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b276266ef92eff65c216b68f316cc2293a5169a2cb04620d9dbcd5f9f9684fed",
+            "created_at": "2026-09-09T14:02:23.203348+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "The annual residence league of various sport codes, the Mini Olympics held during the September break has proven very popular amongst our students.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203348+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-10447",
+            "_key": "semeval-terra-low-r2-b35-semeval-10447",
+            "chunk_id": "semeval-10447",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:469ae2e467e28cd96800a72fda90e9599a072e52d818088687d0477730ec5277",
+            "created_at": "2026-09-09T14:02:23.203360+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "The thick slab of spiced ham was the best part of this year's new breakfast sandwich; the salty meat was griddled to a crisp, nut-brown sear, and it outshone the surrounding egg, cheese, and bun.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203360+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-10457",
+            "_key": "semeval-terra-low-r2-b35-semeval-10457",
+            "chunk_id": "semeval-10457",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:62fae9c7c337829981fbc749bcb98d21498cf9c9f16457693037192edf42c850",
+            "created_at": "2026-09-09T14:02:23.203368+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "The show offers a constructive discussion of a hot-button topic with leading M&A experts.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203368+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-8313",
+            "_key": "semeval-terra-low-r2-b35-semeval-8313",
+            "chunk_id": "semeval-8313",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b5526216312c9a4a9fe7c70fa215eb1ab6fff2c7d76d3c1d6d5b0d7a9ed100a4",
+            "created_at": "2026-09-09T14:02:23.203370+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "A panel discussion focusing on issues such as domestic violence and fearful relationships was held at the University of Rio Grande.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203370+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-8459",
+            "_key": "semeval-terra-low-r2-b35-semeval-8459",
+            "chunk_id": "semeval-8459",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b962efbd1fa5e8ade2f7c5639f9111e76a462ce06141806c63984140c5518b2b",
+            "created_at": "2026-09-09T14:02:23.203375+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "She had struggled violently with her attacker, who killed her with a blunt instrument.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203375+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-8697",
+            "_key": "semeval-terra-low-r2-b35-semeval-8697",
+            "chunk_id": "semeval-8697",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:fde702503d08e459dc01c84446bf9919070dffe22170f603675ad91174aafedd",
+            "created_at": "2026-09-09T14:02:23.203380+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "Construction worker carrying a wooden plank on his shoulder.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203380+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-9048",
+            "_key": "semeval-terra-low-r2-b35-semeval-9048",
+            "chunk_id": "semeval-9048",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f9db5fb3ef3bba6a7420bd8739d183004257eb015a7cc84896eefdb4015537ff",
+            "created_at": "2026-09-09T14:02:23.203381+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "$600 billion dollars have been put into the US economy.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203381+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-9108",
+            "_key": "semeval-terra-low-r2-b35-semeval-9108",
+            "chunk_id": "semeval-9108",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:20d7879eec6995ac13f5e3d858f9f88a6ce35d20c6921b81db66de799e5f5914",
+            "created_at": "2026-09-09T14:02:23.203387+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "The second hypothesis asserting economic domination is rejected, and the third largely accepted.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203387+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-9395",
+            "_key": "semeval-terra-low-r2-b35-semeval-9395",
+            "chunk_id": "semeval-9395",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e92dd05589e6c8abd2c7d4519434d85f91407128a66a55ec0d578e01c038424f",
+            "created_at": "2026-09-09T14:02:23.203393+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "The EMC of the common bean flour was determined at 10, 25, and 40 C.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203393+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-9484",
+            "_key": "semeval-terra-low-r2-b35-semeval-9484",
+            "chunk_id": "semeval-9484",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3c8382eea755195f2f5c9de5d3584c525b8f2d39fd57bffdfcbe9644071647e2",
+            "created_at": "2026-09-09T14:02:23.203397+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "The burner of the dryer is lined with more than 3 cm thick castable refractory material.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203397+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-9514",
+            "_key": "semeval-terra-low-r2-b35-semeval-9514",
+            "chunk_id": "semeval-9514",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b12eee022d2b31845062c0d8569f5649159a544042b7e6dbf54014d9868ccbdb",
+            "created_at": "2026-09-09T14:02:23.203402+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "Here is a reliable and tasty cookie recipe from my grandmother.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203402+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b35-semeval-9775",
+            "_key": "semeval-terra-low-r2-b35-semeval-9775",
+            "chunk_id": "semeval-9775",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1b4f7e68fd5cf63830853a11da2f37f802622cb227c242fa25d917d38b1d13f0",
+            "created_at": "2026-09-09T14:02:23.203408+00:00",
+            "space_id": "semeval-terra-low-r2-b35",
+            "text": "To reheat the turkey without drying it out, we placed the slices in a steamer basket set in a pot of simmering water.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T14:02:23.203408+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+// leading comment
+FOR d IN documents // trailing
+FILTER d._key == "a" // why not
+RETURN d._key

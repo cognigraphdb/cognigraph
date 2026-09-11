@@ -1,0 +1,1 @@
+FOR d IN documents LET a = 1 FILTER d.x == a LET b = a + 1 FILTER d.y == b RETURN DISTINCT [a, b]

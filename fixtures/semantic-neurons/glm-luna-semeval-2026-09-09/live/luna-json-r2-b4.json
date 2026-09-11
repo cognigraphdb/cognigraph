@@ -1,0 +1,1200 @@
+{
+  "phase": "measurement",
+  "arm": "luna-json",
+  "repetition": 2,
+  "batch": 4,
+  "request": {
+    "space_type": "semeval-luna-json-r2-b4",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-8096",
+        "title": "Relation benchmark excerpt",
+        "text": "The man was carried into a waiting police car from Coleraine Times."
+      },
+      {
+        "id": "semeval-8788",
+        "title": "Relation benchmark excerpt",
+        "text": "He is the author of eight books which have charted the transformation of Europe over the last quarter-century."
+      },
+      {
+        "id": "semeval-10374",
+        "title": "Relation benchmark excerpt",
+        "text": "That first batch of forgeries was in a suitcase and the two gentlemen that disappeared in the night were both Japanese."
+      },
+      {
+        "id": "semeval-9222",
+        "title": "Relation benchmark excerpt",
+        "text": "The Braidwood Generating Station, owned by the Exelon Corporation, has leaked tritium into underground water."
+      },
+      {
+        "id": "semeval-8194",
+        "title": "Relation benchmark excerpt",
+        "text": "The website publishes analytical articles as well as advanced statistics and projections for individuals and teams."
+      },
+      {
+        "id": "semeval-9702",
+        "title": "Relation benchmark excerpt",
+        "text": "The house is set in a large garden or plantation of bananas, coconuts, limes, and other fruit trees, and a short distance off are the teachers' and students' houses."
+      },
+      {
+        "id": "semeval-9459",
+        "title": "Relation benchmark excerpt",
+        "text": "They break down into different categories, including tourism, financial services (such as banks, insurance companies), shipping, telecommunications, labour money remitted by nationals working abroad), public services (such as health care, sanitation and education), and public utilities like water, electricity and gas."
+      },
+      {
+        "id": "semeval-9516",
+        "title": "Relation benchmark excerpt",
+        "text": "Recall that in the Blink application, the timers were started from the booted event."
+      },
+      {
+        "id": "semeval-10284",
+        "title": "Relation benchmark excerpt",
+        "text": "Figures show that the crisis is spreading into Israel's economy."
+      },
+      {
+        "id": "semeval-8592",
+        "title": "Relation benchmark excerpt",
+        "text": "Noise regulations have come into force."
+      },
+      {
+        "id": "semeval-9505",
+        "title": "Relation benchmark excerpt",
+        "text": "Rumors have been leaked to the public."
+      },
+      {
+        "id": "semeval-9661",
+        "title": "Relation benchmark excerpt",
+        "text": "The discussion around content shifts to a curation model."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 9,
+    "proposed": 12,
+    "skips": [
+      "`crisis --Cause-Effect--> economy`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+      "`Noise regulations --Cause-Effect--> force`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+      "`Rumors --Message-Topic--> public`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-luna-json-r2-b4"
+  },
+  "latency_seconds": 6.403956291032955,
+  "facts": [
+    {
+      "_from": "entities/bananas",
+      "_id": "facts/fact-2642674f06a2abdc11e542d45b409e222c55653b7bc0c5e32666c0d1bce99215",
+      "_key": "fact-2642674f06a2abdc11e542d45b409e222c55653b7bc0c5e32666c0d1bce99215",
+      "_to": "entities/plantation",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9702",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b4",
+      "trigger": "The house is set in a large garden or plantation of bananas, coconuts, limes, and other fruit trees, and a short distance off are the teachers' and students' houses.",
+      "trigger_end": 165,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/tritium",
+      "_id": "facts/fact-3d36c092c2b1002e231f0004b1514f1c546918047c43c1090eedb0bece293725",
+      "_key": "fact-3d36c092c2b1002e231f0004b1514f1c546918047c43c1090eedb0bece293725",
+      "_to": "entities/water",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9222",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b4",
+      "trigger": "The Braidwood Generating Station, owned by the Exelon Corporation, has leaked tritium into underground water.",
+      "trigger_end": 109,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/tourism",
+      "_id": "facts/fact-46a23a1309a0750d89bbd4e380f785c914cc9f0f794df6802c0289c58a6ceefd",
+      "_key": "fact-46a23a1309a0750d89bbd4e380f785c914cc9f0f794df6802c0289c58a6ceefd",
+      "_to": "entities/categories",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9459",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b4",
+      "trigger": "They break down into different categories, including tourism, financial services (such as banks, insurance companies), shipping, telecommunications, labour money remitted by nationals working abroad), public services (such as health care, sanitation and education), and public utilities like water, electricity and gas.",
+      "trigger_end": 319,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/articles",
+      "_id": "facts/fact-47977fd7a0fd3384a1d98f8824b06da0354d5de1997d2969585ed26cfd2b1592",
+      "_key": "fact-47977fd7a0fd3384a1d98f8824b06da0354d5de1997d2969585ed26cfd2b1592",
+      "_to": "entities/website",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8194",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b4",
+      "trigger": "The website publishes analytical articles as well as advanced statistics and projections for individuals and teams.",
+      "trigger_end": 115,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/books",
+      "_id": "facts/fact-651707aa72eecca6698f9ffb7b81803a2d03f557accf2000823781427b22cb24",
+      "_key": "fact-651707aa72eecca6698f9ffb7b81803a2d03f557accf2000823781427b22cb24",
+      "_to": "entities/transformation",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8788",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b4",
+      "trigger": "He is the author of eight books which have charted the transformation of Europe over the last quarter-century.",
+      "trigger_end": 110,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/discussion",
+      "_id": "facts/fact-a177d771775243e9649cab3d78a56262f3ed61944ce1ef34c03d6b5f4c308163",
+      "_key": "fact-a177d771775243e9649cab3d78a56262f3ed61944ce1ef34c03d6b5f4c308163",
+      "_to": "entities/content",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9661",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b4",
+      "trigger": "The discussion around content shifts to a curation model.",
+      "trigger_end": 57,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/timers",
+      "_id": "facts/fact-c2dea30f68307c7cf005d96287f15558c36c7e8889beb50b91dceb5289250b7f",
+      "_key": "fact-c2dea30f68307c7cf005d96287f15558c36c7e8889beb50b91dceb5289250b7f",
+      "_to": "entities/event",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9516",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b4",
+      "trigger": "Recall that in the Blink application, the timers were started from the booted event.",
+      "trigger_end": 84,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/man",
+      "_id": "facts/fact-e05bb53fc5572f860aa3c65e021893a6be6d103e6dbb494079db36018e64a3a9",
+      "_key": "fact-e05bb53fc5572f860aa3c65e021893a6be6d103e6dbb494079db36018e64a3a9",
+      "_to": "entities/car",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8096",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b4",
+      "trigger": "The man was carried into a waiting police car from Coleraine Times.",
+      "trigger_end": 67,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/batch",
+      "_id": "facts/fact-f9f50cb37a9494adcc40553fea016a21b09b806169de782c88872c1ff6401051",
+      "_key": "fact-f9f50cb37a9494adcc40553fea016a21b09b806169de782c88872c1ff6401051",
+      "_to": "entities/suitcase",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10374",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b4",
+      "trigger": "That first batch of forgeries was in a suitcase and the two gentlemen that disappeared in the night were both Japanese.",
+      "trigger_end": 119,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/articles",
+      "_key": "articles",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749718+00:00",
+      "entity_type": "Content",
+      "name": "articles",
+      "updated_at": "2026-09-09T12:43:17.749718+00:00"
+    },
+    {
+      "_id": "entities/bananas",
+      "_key": "bananas",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749723+00:00",
+      "entity_type": "Member",
+      "name": "bananas",
+      "updated_at": "2026-09-09T12:43:17.749723+00:00"
+    },
+    {
+      "_id": "entities/batch",
+      "_key": "batch",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749724+00:00",
+      "entity_type": "Content",
+      "name": "batch",
+      "updated_at": "2026-09-09T12:43:17.749724+00:00"
+    },
+    {
+      "_id": "entities/books",
+      "_key": "books",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749725+00:00",
+      "entity_type": "Product",
+      "name": "books",
+      "updated_at": "2026-09-09T12:43:17.749725+00:00"
+    },
+    {
+      "_id": "entities/car",
+      "_key": "car",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749726+00:00",
+      "entity_type": "Entity",
+      "name": "car",
+      "updated_at": "2026-09-09T12:43:17.749726+00:00"
+    },
+    {
+      "_id": "entities/categories",
+      "_key": "categories",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749727+00:00",
+      "entity_type": "Collection",
+      "name": "categories",
+      "updated_at": "2026-09-09T12:43:17.749727+00:00"
+    },
+    {
+      "_id": "entities/content",
+      "_key": "content",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749734+00:00",
+      "entity_type": "Topic",
+      "name": "content",
+      "updated_at": "2026-09-09T12:43:17.749734+00:00"
+    },
+    {
+      "_id": "entities/discussion",
+      "_key": "discussion",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749735+00:00",
+      "entity_type": "Message",
+      "name": "discussion",
+      "updated_at": "2026-09-09T12:43:17.749735+00:00"
+    },
+    {
+      "_id": "entities/event",
+      "_key": "event",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749736+00:00",
+      "entity_type": "Entity",
+      "name": "event",
+      "updated_at": "2026-09-09T12:43:17.749736+00:00"
+    },
+    {
+      "_id": "entities/man",
+      "_key": "man",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749737+00:00",
+      "entity_type": "Entity",
+      "name": "man",
+      "updated_at": "2026-09-09T12:43:17.749737+00:00"
+    },
+    {
+      "_id": "entities/plantation",
+      "_key": "plantation",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749738+00:00",
+      "entity_type": "Collection",
+      "name": "plantation",
+      "updated_at": "2026-09-09T12:43:17.749738+00:00"
+    },
+    {
+      "_id": "entities/suitcase",
+      "_key": "suitcase",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749739+00:00",
+      "entity_type": "Container",
+      "name": "suitcase",
+      "updated_at": "2026-09-09T12:43:17.749739+00:00"
+    },
+    {
+      "_id": "entities/timers",
+      "_key": "timers",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749740+00:00",
+      "entity_type": "Entity",
+      "name": "timers",
+      "updated_at": "2026-09-09T12:43:17.749740+00:00"
+    },
+    {
+      "_id": "entities/tourism",
+      "_key": "tourism",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749740+00:00",
+      "entity_type": "Member",
+      "name": "tourism",
+      "updated_at": "2026-09-09T12:43:17.749740+00:00"
+    },
+    {
+      "_id": "entities/transformation",
+      "_key": "transformation",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749741+00:00",
+      "entity_type": "Entity",
+      "name": "transformation",
+      "updated_at": "2026-09-09T12:43:17.749741+00:00"
+    },
+    {
+      "_id": "entities/tritium",
+      "_key": "tritium",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749742+00:00",
+      "entity_type": "Entity",
+      "name": "tritium",
+      "updated_at": "2026-09-09T12:43:17.749742+00:00"
+    },
+    {
+      "_id": "entities/water",
+      "_key": "water",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749743+00:00",
+      "entity_type": "Entity",
+      "name": "water",
+      "updated_at": "2026-09-09T12:43:17.749743+00:00"
+    },
+    {
+      "_id": "entities/website",
+      "_key": "website",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:17.749745+00:00",
+      "entity_type": "Container",
+      "name": "website",
+      "updated_at": "2026-09-09T12:43:17.749745+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-10284",
+      "_key": "semeval-luna-json-r2-b4-semeval-10284",
+      "chunk_id": "semeval-10284",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1d5d05e119b47229221216f8dbe8ce6f4a7d606e514b244ee789e70f0e037aa6",
+      "created_at": "2026-09-09T12:43:17.749747+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "Figures show that the crisis is spreading into Israel's economy.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749747+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-10374",
+      "_key": "semeval-luna-json-r2-b4-semeval-10374",
+      "chunk_id": "semeval-10374",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6188133e61d7a8066bde39498b01bc0810112eed22a820cd2670418d41aa0539",
+      "created_at": "2026-09-09T12:43:17.749748+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "That first batch of forgeries was in a suitcase and the two gentlemen that disappeared in the night were both Japanese.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749748+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-8096",
+      "_key": "semeval-luna-json-r2-b4-semeval-8096",
+      "chunk_id": "semeval-8096",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d4dacb12e3188fa0c95158e6ecf34d5e2e1d5a9f8547fc72673aef029c5a011e",
+      "created_at": "2026-09-09T12:43:17.749759+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "The man was carried into a waiting police car from Coleraine Times.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749759+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-8194",
+      "_key": "semeval-luna-json-r2-b4-semeval-8194",
+      "chunk_id": "semeval-8194",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ff1b84fb369c3c407d6f5f18f299102cc253aa3fb8000e700d0827dcd66b8d7f",
+      "created_at": "2026-09-09T12:43:17.749765+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "The website publishes analytical articles as well as advanced statistics and projections for individuals and teams.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749765+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-8592",
+      "_key": "semeval-luna-json-r2-b4-semeval-8592",
+      "chunk_id": "semeval-8592",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:fe34a1d40e116b597dc1a8a7fec33b3fd3cdf5b77a04d77caa07e7b62a1ce09d",
+      "created_at": "2026-09-09T12:43:17.749771+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "Noise regulations have come into force.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749771+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-8788",
+      "_key": "semeval-luna-json-r2-b4-semeval-8788",
+      "chunk_id": "semeval-8788",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:745a87c08edbad28205ac805a4063b460f235c37dc35b9fe473622646c6a68ad",
+      "created_at": "2026-09-09T12:43:17.749772+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "He is the author of eight books which have charted the transformation of Europe over the last quarter-century.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749772+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-9222",
+      "_key": "semeval-luna-json-r2-b4-semeval-9222",
+      "chunk_id": "semeval-9222",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ba728feacb2b036f5e14d77ea96e79a4e9fe0011c278afd936171824c9001531",
+      "created_at": "2026-09-09T12:43:17.749778+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "The Braidwood Generating Station, owned by the Exelon Corporation, has leaked tritium into underground water.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749778+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-9459",
+      "_key": "semeval-luna-json-r2-b4-semeval-9459",
+      "chunk_id": "semeval-9459",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:928708a663eff0ea9e89e3c2d701e61e8959e9b20288e834d4e8f97b5c039e7a",
+      "created_at": "2026-09-09T12:43:17.749784+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "They break down into different categories, including tourism, financial services (such as banks, insurance companies), shipping, telecommunications, labour money remitted by nationals working abroad), public services (such as health care, sanitation and education), and public utilities like water, electricity and gas.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749784+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-9505",
+      "_key": "semeval-luna-json-r2-b4-semeval-9505",
+      "chunk_id": "semeval-9505",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:57bb9a39f0db7c8a083e325cc3c4de1ed642e52284b92aa0593d35e7a7c3b945",
+      "created_at": "2026-09-09T12:43:17.749791+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "Rumors have been leaked to the public.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749791+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-9516",
+      "_key": "semeval-luna-json-r2-b4-semeval-9516",
+      "chunk_id": "semeval-9516",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:246224e6bf6200a9d2526c98c53c781346de91caaf9a779574dd31687441f643",
+      "created_at": "2026-09-09T12:43:17.749792+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "Recall that in the Blink application, the timers were started from the booted event.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749792+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-9661",
+      "_key": "semeval-luna-json-r2-b4-semeval-9661",
+      "chunk_id": "semeval-9661",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a3bc2eb35ed3cee45188bafe1ee2fe289f3868e4ffa423312009238022b300f2",
+      "created_at": "2026-09-09T12:43:17.749797+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "The discussion around content shifts to a curation model.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749797+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b4-semeval-9702",
+      "_key": "semeval-luna-json-r2-b4-semeval-9702",
+      "chunk_id": "semeval-9702",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3520b2761025096186bb5cc30ec0b1d47dd9277e085a54740c7e21df8cd6faf2",
+      "created_at": "2026-09-09T12:43:17.749803+00:00",
+      "space_id": "semeval-luna-json-r2-b4",
+      "text": "The house is set in a large garden or plantation of bananas, coconuts, limes, and other fruit trees, and a short distance off are the teachers' and students' houses.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:17.749803+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 9,
+        "results": [
+          {
+            "_from": "entities/bananas",
+            "_id": "facts/fact-2642674f06a2abdc11e542d45b409e222c55653b7bc0c5e32666c0d1bce99215",
+            "_key": "fact-2642674f06a2abdc11e542d45b409e222c55653b7bc0c5e32666c0d1bce99215",
+            "_to": "entities/plantation",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9702",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b4",
+            "trigger": "The house is set in a large garden or plantation of bananas, coconuts, limes, and other fruit trees, and a short distance off are the teachers' and students' houses.",
+            "trigger_end": 165,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/tritium",
+            "_id": "facts/fact-3d36c092c2b1002e231f0004b1514f1c546918047c43c1090eedb0bece293725",
+            "_key": "fact-3d36c092c2b1002e231f0004b1514f1c546918047c43c1090eedb0bece293725",
+            "_to": "entities/water",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9222",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b4",
+            "trigger": "The Braidwood Generating Station, owned by the Exelon Corporation, has leaked tritium into underground water.",
+            "trigger_end": 109,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/tourism",
+            "_id": "facts/fact-46a23a1309a0750d89bbd4e380f785c914cc9f0f794df6802c0289c58a6ceefd",
+            "_key": "fact-46a23a1309a0750d89bbd4e380f785c914cc9f0f794df6802c0289c58a6ceefd",
+            "_to": "entities/categories",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9459",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b4",
+            "trigger": "They break down into different categories, including tourism, financial services (such as banks, insurance companies), shipping, telecommunications, labour money remitted by nationals working abroad), public services (such as health care, sanitation and education), and public utilities like water, electricity and gas.",
+            "trigger_end": 319,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/articles",
+            "_id": "facts/fact-47977fd7a0fd3384a1d98f8824b06da0354d5de1997d2969585ed26cfd2b1592",
+            "_key": "fact-47977fd7a0fd3384a1d98f8824b06da0354d5de1997d2969585ed26cfd2b1592",
+            "_to": "entities/website",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8194",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b4",
+            "trigger": "The website publishes analytical articles as well as advanced statistics and projections for individuals and teams.",
+            "trigger_end": 115,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/books",
+            "_id": "facts/fact-651707aa72eecca6698f9ffb7b81803a2d03f557accf2000823781427b22cb24",
+            "_key": "fact-651707aa72eecca6698f9ffb7b81803a2d03f557accf2000823781427b22cb24",
+            "_to": "entities/transformation",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8788",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b4",
+            "trigger": "He is the author of eight books which have charted the transformation of Europe over the last quarter-century.",
+            "trigger_end": 110,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/discussion",
+            "_id": "facts/fact-a177d771775243e9649cab3d78a56262f3ed61944ce1ef34c03d6b5f4c308163",
+            "_key": "fact-a177d771775243e9649cab3d78a56262f3ed61944ce1ef34c03d6b5f4c308163",
+            "_to": "entities/content",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9661",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b4",
+            "trigger": "The discussion around content shifts to a curation model.",
+            "trigger_end": 57,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/timers",
+            "_id": "facts/fact-c2dea30f68307c7cf005d96287f15558c36c7e8889beb50b91dceb5289250b7f",
+            "_key": "fact-c2dea30f68307c7cf005d96287f15558c36c7e8889beb50b91dceb5289250b7f",
+            "_to": "entities/event",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9516",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b4",
+            "trigger": "Recall that in the Blink application, the timers were started from the booted event.",
+            "trigger_end": 84,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/man",
+            "_id": "facts/fact-e05bb53fc5572f860aa3c65e021893a6be6d103e6dbb494079db36018e64a3a9",
+            "_key": "fact-e05bb53fc5572f860aa3c65e021893a6be6d103e6dbb494079db36018e64a3a9",
+            "_to": "entities/car",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8096",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b4",
+            "trigger": "The man was carried into a waiting police car from Coleraine Times.",
+            "trigger_end": 67,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/batch",
+            "_id": "facts/fact-f9f50cb37a9494adcc40553fea016a21b09b806169de782c88872c1ff6401051",
+            "_key": "fact-f9f50cb37a9494adcc40553fea016a21b09b806169de782c88872c1ff6401051",
+            "_to": "entities/suitcase",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10374",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b4",
+            "trigger": "That first batch of forgeries was in a suitcase and the two gentlemen that disappeared in the night were both Japanese.",
+            "trigger_end": 119,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 18,
+        "results": [
+          {
+            "_id": "entities/articles",
+            "_key": "articles",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749718+00:00",
+            "entity_type": "Content",
+            "name": "articles",
+            "updated_at": "2026-09-09T12:43:17.749718+00:00"
+          },
+          {
+            "_id": "entities/bananas",
+            "_key": "bananas",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749723+00:00",
+            "entity_type": "Member",
+            "name": "bananas",
+            "updated_at": "2026-09-09T12:43:17.749723+00:00"
+          },
+          {
+            "_id": "entities/batch",
+            "_key": "batch",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749724+00:00",
+            "entity_type": "Content",
+            "name": "batch",
+            "updated_at": "2026-09-09T12:43:17.749724+00:00"
+          },
+          {
+            "_id": "entities/books",
+            "_key": "books",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749725+00:00",
+            "entity_type": "Product",
+            "name": "books",
+            "updated_at": "2026-09-09T12:43:17.749725+00:00"
+          },
+          {
+            "_id": "entities/car",
+            "_key": "car",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749726+00:00",
+            "entity_type": "Entity",
+            "name": "car",
+            "updated_at": "2026-09-09T12:43:17.749726+00:00"
+          },
+          {
+            "_id": "entities/categories",
+            "_key": "categories",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749727+00:00",
+            "entity_type": "Collection",
+            "name": "categories",
+            "updated_at": "2026-09-09T12:43:17.749727+00:00"
+          },
+          {
+            "_id": "entities/content",
+            "_key": "content",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749734+00:00",
+            "entity_type": "Topic",
+            "name": "content",
+            "updated_at": "2026-09-09T12:43:17.749734+00:00"
+          },
+          {
+            "_id": "entities/discussion",
+            "_key": "discussion",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749735+00:00",
+            "entity_type": "Message",
+            "name": "discussion",
+            "updated_at": "2026-09-09T12:43:17.749735+00:00"
+          },
+          {
+            "_id": "entities/event",
+            "_key": "event",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749736+00:00",
+            "entity_type": "Entity",
+            "name": "event",
+            "updated_at": "2026-09-09T12:43:17.749736+00:00"
+          },
+          {
+            "_id": "entities/man",
+            "_key": "man",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749737+00:00",
+            "entity_type": "Entity",
+            "name": "man",
+            "updated_at": "2026-09-09T12:43:17.749737+00:00"
+          },
+          {
+            "_id": "entities/plantation",
+            "_key": "plantation",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749738+00:00",
+            "entity_type": "Collection",
+            "name": "plantation",
+            "updated_at": "2026-09-09T12:43:17.749738+00:00"
+          },
+          {
+            "_id": "entities/suitcase",
+            "_key": "suitcase",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749739+00:00",
+            "entity_type": "Container",
+            "name": "suitcase",
+            "updated_at": "2026-09-09T12:43:17.749739+00:00"
+          },
+          {
+            "_id": "entities/timers",
+            "_key": "timers",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749740+00:00",
+            "entity_type": "Entity",
+            "name": "timers",
+            "updated_at": "2026-09-09T12:43:17.749740+00:00"
+          },
+          {
+            "_id": "entities/tourism",
+            "_key": "tourism",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749740+00:00",
+            "entity_type": "Member",
+            "name": "tourism",
+            "updated_at": "2026-09-09T12:43:17.749740+00:00"
+          },
+          {
+            "_id": "entities/transformation",
+            "_key": "transformation",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749741+00:00",
+            "entity_type": "Entity",
+            "name": "transformation",
+            "updated_at": "2026-09-09T12:43:17.749741+00:00"
+          },
+          {
+            "_id": "entities/tritium",
+            "_key": "tritium",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749742+00:00",
+            "entity_type": "Entity",
+            "name": "tritium",
+            "updated_at": "2026-09-09T12:43:17.749742+00:00"
+          },
+          {
+            "_id": "entities/water",
+            "_key": "water",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749743+00:00",
+            "entity_type": "Entity",
+            "name": "water",
+            "updated_at": "2026-09-09T12:43:17.749743+00:00"
+          },
+          {
+            "_id": "entities/website",
+            "_key": "website",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:17.749745+00:00",
+            "entity_type": "Container",
+            "name": "website",
+            "updated_at": "2026-09-09T12:43:17.749745+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-10284",
+            "_key": "semeval-luna-json-r2-b4-semeval-10284",
+            "chunk_id": "semeval-10284",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1d5d05e119b47229221216f8dbe8ce6f4a7d606e514b244ee789e70f0e037aa6",
+            "created_at": "2026-09-09T12:43:17.749747+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "Figures show that the crisis is spreading into Israel's economy.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749747+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-10374",
+            "_key": "semeval-luna-json-r2-b4-semeval-10374",
+            "chunk_id": "semeval-10374",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6188133e61d7a8066bde39498b01bc0810112eed22a820cd2670418d41aa0539",
+            "created_at": "2026-09-09T12:43:17.749748+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "That first batch of forgeries was in a suitcase and the two gentlemen that disappeared in the night were both Japanese.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749748+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-8096",
+            "_key": "semeval-luna-json-r2-b4-semeval-8096",
+            "chunk_id": "semeval-8096",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d4dacb12e3188fa0c95158e6ecf34d5e2e1d5a9f8547fc72673aef029c5a011e",
+            "created_at": "2026-09-09T12:43:17.749759+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "The man was carried into a waiting police car from Coleraine Times.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749759+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-8194",
+            "_key": "semeval-luna-json-r2-b4-semeval-8194",
+            "chunk_id": "semeval-8194",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ff1b84fb369c3c407d6f5f18f299102cc253aa3fb8000e700d0827dcd66b8d7f",
+            "created_at": "2026-09-09T12:43:17.749765+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "The website publishes analytical articles as well as advanced statistics and projections for individuals and teams.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749765+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-8592",
+            "_key": "semeval-luna-json-r2-b4-semeval-8592",
+            "chunk_id": "semeval-8592",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:fe34a1d40e116b597dc1a8a7fec33b3fd3cdf5b77a04d77caa07e7b62a1ce09d",
+            "created_at": "2026-09-09T12:43:17.749771+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "Noise regulations have come into force.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749771+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-8788",
+            "_key": "semeval-luna-json-r2-b4-semeval-8788",
+            "chunk_id": "semeval-8788",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:745a87c08edbad28205ac805a4063b460f235c37dc35b9fe473622646c6a68ad",
+            "created_at": "2026-09-09T12:43:17.749772+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "He is the author of eight books which have charted the transformation of Europe over the last quarter-century.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749772+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-9222",
+            "_key": "semeval-luna-json-r2-b4-semeval-9222",
+            "chunk_id": "semeval-9222",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ba728feacb2b036f5e14d77ea96e79a4e9fe0011c278afd936171824c9001531",
+            "created_at": "2026-09-09T12:43:17.749778+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "The Braidwood Generating Station, owned by the Exelon Corporation, has leaked tritium into underground water.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749778+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-9459",
+            "_key": "semeval-luna-json-r2-b4-semeval-9459",
+            "chunk_id": "semeval-9459",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:928708a663eff0ea9e89e3c2d701e61e8959e9b20288e834d4e8f97b5c039e7a",
+            "created_at": "2026-09-09T12:43:17.749784+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "They break down into different categories, including tourism, financial services (such as banks, insurance companies), shipping, telecommunications, labour money remitted by nationals working abroad), public services (such as health care, sanitation and education), and public utilities like water, electricity and gas.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749784+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-9505",
+            "_key": "semeval-luna-json-r2-b4-semeval-9505",
+            "chunk_id": "semeval-9505",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:57bb9a39f0db7c8a083e325cc3c4de1ed642e52284b92aa0593d35e7a7c3b945",
+            "created_at": "2026-09-09T12:43:17.749791+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "Rumors have been leaked to the public.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749791+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-9516",
+            "_key": "semeval-luna-json-r2-b4-semeval-9516",
+            "chunk_id": "semeval-9516",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:246224e6bf6200a9d2526c98c53c781346de91caaf9a779574dd31687441f643",
+            "created_at": "2026-09-09T12:43:17.749792+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "Recall that in the Blink application, the timers were started from the booted event.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749792+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-9661",
+            "_key": "semeval-luna-json-r2-b4-semeval-9661",
+            "chunk_id": "semeval-9661",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a3bc2eb35ed3cee45188bafe1ee2fe289f3868e4ffa423312009238022b300f2",
+            "created_at": "2026-09-09T12:43:17.749797+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "The discussion around content shifts to a curation model.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749797+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b4-semeval-9702",
+            "_key": "semeval-luna-json-r2-b4-semeval-9702",
+            "chunk_id": "semeval-9702",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3520b2761025096186bb5cc30ec0b1d47dd9277e085a54740c7e21df8cd6faf2",
+            "created_at": "2026-09-09T12:43:17.749803+00:00",
+            "space_id": "semeval-luna-json-r2-b4",
+            "text": "The house is set in a large garden or plantation of bananas, coconuts, limes, and other fruit trees, and a short distance off are the teachers' and students' houses.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:17.749803+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

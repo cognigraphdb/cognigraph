@@ -1,0 +1,30 @@
+{
+  "id": "incident_analysis",
+  "name": "IT Incident Analysis",
+  "version": 1,
+  "description": "Generalization experiment: authored blind for the 2024 CrowdStrike outage article. Triggers are deliberately naive - the experiment measures whether the loop catches the gaps.",
+  "entities": [
+    { "name": "CrowdStrike", "type": "Company" },
+    { "name": "Microsoft", "type": "Company" },
+    { "name": "Microsoft Windows", "type": "Software", "aliases": ["Windows"] },
+    { "name": "Falcon Sensor", "type": "Software", "aliases": ["Falcon"] },
+    { "name": "Global IT outage", "type": "Event", "aliases": ["the outage", "outages"] },
+    { "name": "Faulty update", "type": "Artifact", "aliases": ["faulty update", "defective update"] },
+    { "name": "Delta Air Lines", "type": "Company", "aliases": ["Delta"] },
+    { "name": "George Kurtz", "type": "Person" }
+  ],
+  "relation_rules": [
+    { "source": "CrowdStrike", "relation": "CAUSED", "target": "Global IT outage",
+      "when_any": ["CrowdStrike distributed a faulty update"] },
+    { "source": "Faulty update", "relation": "AFFECTS", "target": "Falcon Sensor",
+      "when_any": ["update to its Falcon Sensor"] },
+    { "source": "Falcon Sensor", "relation": "RUNS_ON", "target": "Microsoft Windows",
+      "when_any": ["Falcon Sensor for Windows"] },
+    { "source": "Global IT outage", "relation": "AFFECTS", "target": "Delta Air Lines",
+      "when_any": ["Delta was forced to ground"] },
+    { "source": "George Kurtz", "relation": "LEADS", "target": "CrowdStrike",
+      "when_any": ["Kurtz, chief executive of CrowdStrike"] },
+    { "source": "CrowdStrike", "relation": "RESPONDED_WITH", "target": "Faulty update",
+      "when_any": ["deployed a content update fix"] }
+  ]
+}

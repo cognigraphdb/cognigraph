@@ -1,0 +1,1 @@
+FOR d IN documents COLLECT cat = d.category WITH COUNT INTO n SORT n DESC RETURN { cat: cat, n: n }

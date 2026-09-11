@@ -1,0 +1,2203 @@
+{
+  "schema": "cognigraph-synthetic-directed-score-v1",
+  "mode": "live",
+  "corpus_cases": 48,
+  "gold_triples_per_repetition": 32,
+  "negative_cases": 20,
+  "arms": {
+    "luna": {
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "none",
+      "repetitions": [
+        {
+          "repetition": 1,
+          "nominations": 28,
+          "distinct_nominations": 28,
+          "accepted_occurrences": 28,
+          "distinct_accepted": 28,
+          "skips": [],
+          "before_gates": {
+            "tp": 27,
+            "fp": 1,
+            "fn": 5,
+            "precision": 0.9642857142857143,
+            "recall": 0.84375,
+            "f1": 0.9
+          },
+          "after_gates": {
+            "tp": 27,
+            "fp": 1,
+            "fn": 5,
+            "precision": 0.9642857142857143,
+            "recall": 0.84375,
+            "f1": 0.9
+          },
+          "false_positive_triples": [
+            [
+              "case-026",
+              "cipher",
+              "DEPENDS_ON",
+              "delta"
+            ]
+          ],
+          "missed_triples": [
+            [
+              "case-009",
+              "saffron",
+              "SUPPLIES",
+              "thistle"
+            ],
+            [
+              "case-021",
+              "spruce",
+              "OWNS",
+              "tundra"
+            ],
+            [
+              "case-026",
+              "delta",
+              "DEPENDS_ON",
+              "cipher"
+            ],
+            [
+              "case-033",
+              "stack",
+              "DEPENDS_ON",
+              "trace"
+            ],
+            [
+              "case-045",
+              "raven",
+              "BASED_IN",
+              "roseford"
+            ]
+          ],
+          "negative_cases_with_facts": [],
+          "by_category": {
+            "SUPPLIES": {
+              "tp": 7,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1": 0.9333333333333333
+            },
+            "OWNS": {
+              "tp": 7,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1": 0.9333333333333333
+            },
+            "DEPENDS_ON": {
+              "tp": 6,
+              "fp": 1,
+              "fn": 2,
+              "precision": 0.8571428571428571,
+              "recall": 0.75,
+              "f1": 0.8
+            },
+            "BASED_IN": {
+              "tp": 7,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1": 0.9333333333333333
+            }
+          },
+          "by_scenario": {
+            "active": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "denied_quote": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "direction": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "distractor": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "future": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "injection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "multiple": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "negation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "paraphrase": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "passive": {
+              "tp": 3,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.75,
+              "recall": 0.75,
+              "f1": 0.75
+            },
+            "speculation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unicode": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "fact_ledger": [
+            {
+              "fact_key": "fact-0c398f0ecbf9997d8a60b5eca55fc71c321093e9680e3229fb78f74e66da56f4",
+              "identity": [
+                "case-038",
+                "dunlin",
+                "BASED_IN",
+                "creston"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 38
+            },
+            {
+              "fact_key": "fact-1a3baad9d385c6291df7e1b29bee0817d1b0004c158bff8db3688e650fac7a9a",
+              "identity": [
+                "case-008",
+                "poppy",
+                "SUPPLIES",
+                "orchid"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 56
+            },
+            {
+              "fact_key": "fact-1cc42a7ca0ca91e470728084c06e6996d27da8a846a639b8b823ec40a8aea524",
+              "identity": [
+                "case-020",
+                "pearl",
+                "OWNS",
+                "onyx"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-1d881344ee07e1b16b9695458ddf7d2886b23be4b95e5a2b4a90b737fe6d2c9b",
+              "identity": [
+                "case-046",
+                "swift",
+                "BASED_IN",
+                "thornby"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 74
+            },
+            {
+              "fact_key": "fact-24323dd04d0f2866d23509034e664b34dca092f4b3597859502fcdf79a4a23b3",
+              "identity": [
+                "case-044",
+                "osprey",
+                "BASED_IN",
+                "northport"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 70
+            },
+            {
+              "fact_key": "fact-2c80bca05a6bce15a2e39707b5dbae021b09c103b00a5fcf5bbfc135e968ab3c",
+              "identity": [
+                "case-010",
+                "willow",
+                "SUPPLIES",
+                "xenia"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 49
+            },
+            {
+              "fact_key": "fact-3550de47e631eff8dbd4bcb7fd26b8e17bfede617afccbba9e85473f1be091a3",
+              "identity": [
+                "case-026",
+                "cipher",
+                "DEPENDS_ON",
+                "delta"
+              ],
+              "gold_match": false,
+              "trigger_start": 0,
+              "trigger_end": 28
+            },
+            {
+              "fact_key": "fact-4a0de5ae88e12f2cd765ed574e3f2697eab899f1348592c7c0fe88a3aa98acca",
+              "identity": [
+                "case-002",
+                "dahlia",
+                "SUPPLIES",
+                "cobalt"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 29
+            },
+            {
+              "fact_key": "fact-4b171bae3303aa7623e3cd53377d6f9aa164a9f17774cbc1cd41b833b9eabe2f",
+              "identity": [
+                "case-032",
+                "pulse",
+                "DEPENDS_ON",
+                "orbit"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 51
+            },
+            {
+              "fact_key": "fact-5f16e289ee705c50682d53a73a5cc93a12ad89841223934ef5567782802f080e",
+              "identity": [
+                "case-037",
+                "alder",
+                "BASED_IN",
+                "bellport"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 35
+            },
+            {
+              "fact_key": "fact-6e66047ccc98013c0640c73acbaf19ba56b7012b3aab74cbd2ba29bfb8c28c1e",
+              "identity": [
+                "case-034",
+                "unity",
+                "DEPENDS_ON",
+                "vector"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-708f869969ef3f273c933b537ba92b4e90c08ddd17286f29c326799fecfd7faf",
+              "identity": [
+                "case-013",
+                "amber",
+                "OWNS",
+                "birch"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 17
+            },
+            {
+              "fact_key": "fact-7231eea1532f81fd13437e0c4a39a654bed3287af1cf7c469cdb75df108e9dff",
+              "identity": [
+                "case-034",
+                "warp",
+                "DEPENDS_ON",
+                "xeno"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-76073e5489194d27a550c4031e360530aeb28cd0746e4243b89b24668dd1cb34",
+              "identity": [
+                "case-022",
+                "ursa",
+                "OWNS",
+                "vale"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 36
+            },
+            {
+              "fact_key": "fact-765e1d7403223d40e667473ec71ab65a9501e1e495efbae57cc07c6484d4b60c",
+              "identity": [
+                "case-003",
+                "elm",
+                "SUPPLIES",
+                "flint"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 33
+            },
+            {
+              "fact_key": "fact-7f4dbde75478c5c9c3d35127b95b130de9c90ff8a6f8d24e78b99d9f1e716c0f",
+              "identity": [
+                "case-011",
+                "café",
+                "SUPPLIES",
+                "élan"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-8ed690aa065be16bcb0bd193ae9f051c58c947106f3ce7d84d47622fed6d86f8",
+              "identity": [
+                "case-010",
+                "umber",
+                "SUPPLIES",
+                "violet"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 49
+            },
+            {
+              "fact_key": "fact-923b9ba9d23858040d372140d551376f5a5464b0b23a35e2d1be1b435338c0a5",
+              "identity": [
+                "case-027",
+                "echo",
+                "DEPENDS_ON",
+                "flux"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 26
+            },
+            {
+              "fact_key": "fact-b364ae207b32a472277d70093e293ca7288dab3c7b9267ef9c88d4db92551d93",
+              "identity": [
+                "case-014",
+                "dune",
+                "OWNS",
+                "cedar"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 23
+            },
+            {
+              "fact_key": "fact-ba5e4aa485396dbd5329091f0e9ec7d03b8dfe6c0d39a04c786c14953ed5d74d",
+              "identity": [
+                "case-046",
+                "tern",
+                "BASED_IN",
+                "upperford"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 74
+            },
+            {
+              "fact_key": "fact-ddeb6389fd31969fb3a7da2ceb608ac71554ac39807e0a7511e1131df8b8588e",
+              "identity": [
+                "case-035",
+                "réseau",
+                "DEPENDS_ON",
+                "núcleo"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 27
+            },
+            {
+              "fact_key": "fact-e0cb105d42edae4f6e9d7d8934dbb2129b4ec53a1750024ce01cb3a37502c7d4",
+              "identity": [
+                "case-001",
+                "aster",
+                "SUPPLIES",
+                "beryl"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-e267280551fa5b97178b59ceaa499a56fb8ae0954cca9ad1519408fce57cd618",
+              "identity": [
+                "case-023",
+                "málaga",
+                "OWNS",
+                "zürich"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-ee639de570b9292b9d400e15ea5325db1ffcff5c16b485873491f09a605837cb",
+              "identity": [
+                "case-015",
+                "fern",
+                "OWNS",
+                "ember"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 30
+            },
+            {
+              "fact_key": "fact-eedd9e913ddec53f9c0843d7103ba53047c36c1435a219874f542a4bf1367503",
+              "identity": [
+                "case-039",
+                "eider",
+                "BASED_IN",
+                "fairhaven"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 51
+            },
+            {
+              "fact_key": "fact-f52b0034dce2de54388bd3b2ab48ad9686fe0c3270249ada1ce8b5cf37a1ec9c",
+              "identity": [
+                "case-025",
+                "atlas",
+                "DEPENDS_ON",
+                "beacon"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 24
+            },
+            {
+              "fact_key": "fact-fa8895f6604423a439ab1b733c1a8ddc8eb36376fd39af1f9108d5111cae82a4",
+              "identity": [
+                "case-022",
+                "wave",
+                "OWNS",
+                "xenon"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 36
+            },
+            {
+              "fact_key": "fact-fbacda45f57eeaca474306c860e3d38205e01cbb7a7316e5cfed9aaf7b6e03bb",
+              "identity": [
+                "case-047",
+                "étoile",
+                "BASED_IN",
+                "montréal"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 38
+            }
+          ]
+        },
+        {
+          "repetition": 2,
+          "nominations": 27,
+          "distinct_nominations": 27,
+          "accepted_occurrences": 27,
+          "distinct_accepted": 27,
+          "skips": [],
+          "before_gates": {
+            "tp": 26,
+            "fp": 1,
+            "fn": 6,
+            "precision": 0.9629629629629629,
+            "recall": 0.8125,
+            "f1": 0.8813559322033898
+          },
+          "after_gates": {
+            "tp": 26,
+            "fp": 1,
+            "fn": 6,
+            "precision": 0.9629629629629629,
+            "recall": 0.8125,
+            "f1": 0.8813559322033898
+          },
+          "false_positive_triples": [
+            [
+              "case-026",
+              "cipher",
+              "DEPENDS_ON",
+              "delta"
+            ]
+          ],
+          "missed_triples": [
+            [
+              "case-009",
+              "saffron",
+              "SUPPLIES",
+              "thistle"
+            ],
+            [
+              "case-015",
+              "fern",
+              "OWNS",
+              "ember"
+            ],
+            [
+              "case-021",
+              "spruce",
+              "OWNS",
+              "tundra"
+            ],
+            [
+              "case-026",
+              "delta",
+              "DEPENDS_ON",
+              "cipher"
+            ],
+            [
+              "case-033",
+              "stack",
+              "DEPENDS_ON",
+              "trace"
+            ],
+            [
+              "case-045",
+              "raven",
+              "BASED_IN",
+              "roseford"
+            ]
+          ],
+          "negative_cases_with_facts": [],
+          "by_category": {
+            "SUPPLIES": {
+              "tp": 7,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1": 0.9333333333333333
+            },
+            "OWNS": {
+              "tp": 6,
+              "fp": 0,
+              "fn": 2,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1": 0.8571428571428571
+            },
+            "DEPENDS_ON": {
+              "tp": 6,
+              "fp": 1,
+              "fn": 2,
+              "precision": 0.8571428571428571,
+              "recall": 0.75,
+              "f1": 0.8
+            },
+            "BASED_IN": {
+              "tp": 7,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1": 0.9333333333333333
+            }
+          },
+          "by_scenario": {
+            "active": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "denied_quote": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "direction": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "distractor": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "future": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "injection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "multiple": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "negation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "paraphrase": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1": 0.8571428571428571
+            },
+            "passive": {
+              "tp": 3,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.75,
+              "recall": 0.75,
+              "f1": 0.75
+            },
+            "speculation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unicode": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "fact_ledger": [
+            {
+              "fact_key": "fact-03c5f90a14b836f983e18138598301b8daac48feb1a2ed54beb96a6694f28fde",
+              "identity": [
+                "case-032",
+                "pulse",
+                "DEPENDS_ON",
+                "orbit"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 51
+            },
+            {
+              "fact_key": "fact-0e89696437eff8cf91f78a7cdbf08ea53081359f82d79a569b1e46d8addea351",
+              "identity": [
+                "case-037",
+                "alder",
+                "BASED_IN",
+                "bellport"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 35
+            },
+            {
+              "fact_key": "fact-1140e01a358dc4b349aae486318022c3d8ed28970068ec45e065e8f3d93ae6b2",
+              "identity": [
+                "case-046",
+                "tern",
+                "BASED_IN",
+                "upperford"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 74
+            },
+            {
+              "fact_key": "fact-1432b2655e060327814b4b07c61ccb28494eeecb57d16bc608cf88b0abb26eee",
+              "identity": [
+                "case-026",
+                "cipher",
+                "DEPENDS_ON",
+                "delta"
+              ],
+              "gold_match": false,
+              "trigger_start": 0,
+              "trigger_end": 28
+            },
+            {
+              "fact_key": "fact-17158a7116de602483b84e281ce791e6efa81da02a51a96d185b17b3dc525f09",
+              "identity": [
+                "case-047",
+                "étoile",
+                "BASED_IN",
+                "montréal"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 38
+            },
+            {
+              "fact_key": "fact-1ffd16dc600a3357b42b3242e8a08405a54175bcf7f058207552af907e6f6bbc",
+              "identity": [
+                "case-020",
+                "pearl",
+                "OWNS",
+                "onyx"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-2c873f342f717a5e948d1a3f4be42aae2e0833854de9e0b47b2ff007b7276dce",
+              "identity": [
+                "case-044",
+                "osprey",
+                "BASED_IN",
+                "northport"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 70
+            },
+            {
+              "fact_key": "fact-2f309ebf3536b4248451aa274fd00c8b947cae649f30d9fa7e06ccc963561637",
+              "identity": [
+                "case-014",
+                "dune",
+                "OWNS",
+                "cedar"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 23
+            },
+            {
+              "fact_key": "fact-385c5cc5c4909aa90a59cb7e782e02c1ff22c7458e885d8f4d9659c1d1785c93",
+              "identity": [
+                "case-039",
+                "eider",
+                "BASED_IN",
+                "fairhaven"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 51
+            },
+            {
+              "fact_key": "fact-400daf1612f4072571191fec82f18a343885b9a542ca1abf5dce820e36ab6f14",
+              "identity": [
+                "case-013",
+                "amber",
+                "OWNS",
+                "birch"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 17
+            },
+            {
+              "fact_key": "fact-4e3f677f6036f55e3bf3b202183ad0cfd7f9a693ae9173b12278771f8025a384",
+              "identity": [
+                "case-023",
+                "málaga",
+                "OWNS",
+                "zürich"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-620a7d4136d8dd888fd08e907e41ac14800a3cca8efcb3aeb26f38860ab5491d",
+              "identity": [
+                "case-025",
+                "atlas",
+                "DEPENDS_ON",
+                "beacon"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 24
+            },
+            {
+              "fact_key": "fact-6d2ac265213cf0897019f3db24bf2ac1bd865d60f5439bbfb373d9456b297128",
+              "identity": [
+                "case-022",
+                "wave",
+                "OWNS",
+                "xenon"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 36
+            },
+            {
+              "fact_key": "fact-713824fb022784f934550a10248b08efe730830426da0ee4cd9af52861191de9",
+              "identity": [
+                "case-034",
+                "warp",
+                "DEPENDS_ON",
+                "xeno"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-7334c2a3ddd442e384388f204abd873fd182e8fb5da44b9ee7b2a0644780e398",
+              "identity": [
+                "case-010",
+                "umber",
+                "SUPPLIES",
+                "violet"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 49
+            },
+            {
+              "fact_key": "fact-a3cdb4fd1979fa5a6d7817bb1b9ac237c504f314b8164c76b242cabc4c2aa44f",
+              "identity": [
+                "case-001",
+                "aster",
+                "SUPPLIES",
+                "beryl"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-aef89607bd1c577a118a51c1860b90e55b6e59055098b4c42d2194482ee92083",
+              "identity": [
+                "case-008",
+                "poppy",
+                "SUPPLIES",
+                "orchid"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 56
+            },
+            {
+              "fact_key": "fact-c39f15250842ced3f8806651c187c62ff0903be00b2506de3eaedcf505b15953",
+              "identity": [
+                "case-027",
+                "echo",
+                "DEPENDS_ON",
+                "flux"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 26
+            },
+            {
+              "fact_key": "fact-c9f1a89a112d1a49e1c6935751f55d73380073f918234be5e50063cca2a19c01",
+              "identity": [
+                "case-010",
+                "willow",
+                "SUPPLIES",
+                "xenia"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 49
+            },
+            {
+              "fact_key": "fact-d6991d206fa97c2c723fa9e117bc9757b6758b324dbb26903873c5bb2f3e1b1d",
+              "identity": [
+                "case-002",
+                "dahlia",
+                "SUPPLIES",
+                "cobalt"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 29
+            },
+            {
+              "fact_key": "fact-da059308e683a3f27888ca42f78d85042de2457a937bb0ba8234be73171710b4",
+              "identity": [
+                "case-022",
+                "ursa",
+                "OWNS",
+                "vale"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 36
+            },
+            {
+              "fact_key": "fact-df90f093af7dd3e7a49cee4bce85668a355a0b3fcef033d6a1e862081d301bb5",
+              "identity": [
+                "case-035",
+                "réseau",
+                "DEPENDS_ON",
+                "núcleo"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 27
+            },
+            {
+              "fact_key": "fact-e29c08e05ce7d24c9414616ebcd687fa7b66b07fec87404db54a27dbd0c82550",
+              "identity": [
+                "case-038",
+                "dunlin",
+                "BASED_IN",
+                "creston"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 38
+            },
+            {
+              "fact_key": "fact-ef5cc087ce038b85de6938f1d47d8c5ecb6eab919ef508acf5597a59100f310e",
+              "identity": [
+                "case-011",
+                "café",
+                "SUPPLIES",
+                "élan"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-f06e2523b35f5fecf677b4fea077ade1e0b62290f32797ee23fd9024c59c8126",
+              "identity": [
+                "case-046",
+                "swift",
+                "BASED_IN",
+                "thornby"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 74
+            },
+            {
+              "fact_key": "fact-f52417ec7ff69feefabd816c06ccae8bc6558426a42ead989d8cbf3441877508",
+              "identity": [
+                "case-034",
+                "unity",
+                "DEPENDS_ON",
+                "vector"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-f893629fac32ee781f7db49e7cb6930673223e9732b61f39c67a4415cabc67e5",
+              "identity": [
+                "case-003",
+                "elm",
+                "SUPPLIES",
+                "flint"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 33
+            }
+          ]
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 5392,
+        "completion_tokens": 2603,
+        "total_tokens": 7995,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "estimated_standard_token_cost_usd": 0.004202,
+      "http_latency_mean_seconds": 3.7253766043431824,
+      "http_latency_median_seconds": 3.8536964169470593,
+      "http_latency_max_seconds": 6.058783999993466,
+      "provider_calls": 8,
+      "failed_provider_calls": 0,
+      "note": "Token estimate excludes tax and unreported billing adjustments; no invoice evidence."
+    },
+    "astra": {
+      "model": "gpt-6-astra",
+      "reasoning_effort": "medium",
+      "repetitions": [
+        {
+          "repetition": 1,
+          "nominations": 32,
+          "distinct_nominations": 32,
+          "accepted_occurrences": 32,
+          "distinct_accepted": 32,
+          "skips": [],
+          "before_gates": {
+            "tp": 32,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "after_gates": {
+            "tp": 32,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "false_positive_triples": [],
+          "missed_triples": [],
+          "negative_cases_with_facts": [],
+          "by_category": {
+            "SUPPLIES": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "OWNS": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DEPENDS_ON": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "BASED_IN": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "by_scenario": {
+            "active": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "denied_quote": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "direction": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "distractor": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "future": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "injection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "multiple": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "negation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "paraphrase": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "passive": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "speculation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unicode": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "fact_ledger": [
+            {
+              "fact_key": "fact-017ee58b6a86e235e2c57037d8065b5497e26970b9840aa0c4a80010a4322e2a",
+              "identity": [
+                "case-035",
+                "réseau",
+                "DEPENDS_ON",
+                "núcleo"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 27
+            },
+            {
+              "fact_key": "fact-1263648a69de81c1f3d268d0b5ff672e301e588ebf68c5ebb0aef005cfad0ba8",
+              "identity": [
+                "case-001",
+                "aster",
+                "SUPPLIES",
+                "beryl"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-1fcff3a22d00b72938d0df1566192eb0022c17d4a77efa0ecdcda7629ec66e38",
+              "identity": [
+                "case-027",
+                "echo",
+                "DEPENDS_ON",
+                "flux"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 26
+            },
+            {
+              "fact_key": "fact-25101799d8bfc54dfe5ae77fca87f9e9c5df2049e831d09869f001b4a0b92b12",
+              "identity": [
+                "case-034",
+                "warp",
+                "DEPENDS_ON",
+                "xeno"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-256a4b1e5980feb89eff8579290e0fdf0297795e4b7844349910a774ac557a38",
+              "identity": [
+                "case-023",
+                "málaga",
+                "OWNS",
+                "zürich"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-2c89e261120334fe5c02e86541102c8b518782f23a148c42c490ee02ea6ff22a",
+              "identity": [
+                "case-037",
+                "alder",
+                "BASED_IN",
+                "bellport"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 35
+            },
+            {
+              "fact_key": "fact-445043ae460e83dc51347f2060c39c43279ae8983a7e97ac8af6262724b0b2e5",
+              "identity": [
+                "case-038",
+                "dunlin",
+                "BASED_IN",
+                "creston"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 38
+            },
+            {
+              "fact_key": "fact-465ad5c681fb12c4d2e27f3e1a161c9bc27d1654abec987b12b30f28735ca608",
+              "identity": [
+                "case-046",
+                "tern",
+                "BASED_IN",
+                "upperford"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 74
+            },
+            {
+              "fact_key": "fact-4b16fdbb350424b2ba3be8bdec07c5da43f43d9c5db056153cbbcb88d9d0d072",
+              "identity": [
+                "case-011",
+                "café",
+                "SUPPLIES",
+                "élan"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-4e5e29b75f545c7c7a0bcfc1878be472a029ccf2fd6af83125b307fd8e1959e5",
+              "identity": [
+                "case-002",
+                "dahlia",
+                "SUPPLIES",
+                "cobalt"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 29
+            },
+            {
+              "fact_key": "fact-50c9875875103021988cfacb0bf9d1e0989b50a7fba03e78e20cda157d9cbf2f",
+              "identity": [
+                "case-046",
+                "swift",
+                "BASED_IN",
+                "thornby"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 74
+            },
+            {
+              "fact_key": "fact-50f140b02fa73c9f096681ed84142af1746797e3bea107d1a93d4162d96b10ae",
+              "identity": [
+                "case-009",
+                "saffron",
+                "SUPPLIES",
+                "thistle"
+              ],
+              "gold_match": true,
+              "trigger_start": 34,
+              "trigger_end": 59
+            },
+            {
+              "fact_key": "fact-585d83e6f923b22e5d5dfde93cd92d3f6948eff21b694de6b8d14b179193468a",
+              "identity": [
+                "case-003",
+                "elm",
+                "SUPPLIES",
+                "flint"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 33
+            },
+            {
+              "fact_key": "fact-715bb3282ad8cf3c97f0974e2481394ef33fa1fd542fd6133ed133237d44c527",
+              "identity": [
+                "case-013",
+                "amber",
+                "OWNS",
+                "birch"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 17
+            },
+            {
+              "fact_key": "fact-8a4773566b271ee78a0a1b2ff45c6bbda98b1bd9a414495e9a255693397aaa90",
+              "identity": [
+                "case-025",
+                "atlas",
+                "DEPENDS_ON",
+                "beacon"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 24
+            },
+            {
+              "fact_key": "fact-8cf57e813a961ef35a13caf1869147ab4c92be272890d79c3e0758f3e47966c6",
+              "identity": [
+                "case-022",
+                "wave",
+                "OWNS",
+                "xenon"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 36
+            },
+            {
+              "fact_key": "fact-9fe404e7bcab4020900f4c241393d4cef67856bdabffc35c7c39c8aff8b55622",
+              "identity": [
+                "case-015",
+                "fern",
+                "OWNS",
+                "ember"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 30
+            },
+            {
+              "fact_key": "fact-a7be724eff494b0c11241c8232d8890d0316898de01f1e5f21a08c6c216c6848",
+              "identity": [
+                "case-047",
+                "étoile",
+                "BASED_IN",
+                "montréal"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 38
+            },
+            {
+              "fact_key": "fact-ab12baf9852e665e14ac7a808f99ad9133fc75889ed1a50c36cabd440f74dd2d",
+              "identity": [
+                "case-014",
+                "dune",
+                "OWNS",
+                "cedar"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 23
+            },
+            {
+              "fact_key": "fact-ac7a0cdf189f9e170a7f69e90cdb86bcee20f426558d0d7c4f3c4695897b41d8",
+              "identity": [
+                "case-039",
+                "eider",
+                "BASED_IN",
+                "fairhaven"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 51
+            },
+            {
+              "fact_key": "fact-b9605156621240a2753ec255df5fce97d737595906d668c202cb2c998aa957e2",
+              "identity": [
+                "case-026",
+                "delta",
+                "DEPENDS_ON",
+                "cipher"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 28
+            },
+            {
+              "fact_key": "fact-ba5b0ff66bae363bc2ea75bd2db2dd9bd2218b6edae0fad9f3908894606c78aa",
+              "identity": [
+                "case-021",
+                "spruce",
+                "OWNS",
+                "tundra"
+              ],
+              "gold_match": true,
+              "trigger_start": 21,
+              "trigger_end": 40
+            },
+            {
+              "fact_key": "fact-bb836511feb4eb1081750fed2360590d72a35207a1a5a804c873ad566b368e2d",
+              "identity": [
+                "case-034",
+                "unity",
+                "DEPENDS_ON",
+                "vector"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-cb2a5c50cb522ef404d15eaaaf6b235a73da7dceef65ec7df5001d513951d5b3",
+              "identity": [
+                "case-045",
+                "raven",
+                "BASED_IN",
+                "roseford"
+              ],
+              "gold_match": true,
+              "trigger_start": 26,
+              "trigger_end": 61
+            },
+            {
+              "fact_key": "fact-cbe6535b9057c83a81f48267e19a51976a7699acc9aac1b4d0fd034338cb5ea9",
+              "identity": [
+                "case-020",
+                "pearl",
+                "OWNS",
+                "onyx"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-dcbf4f5aeff604e5c06ea8d8c6fc69d3e6245f2fd9cd0f6e2764fc27a3b8acbc",
+              "identity": [
+                "case-010",
+                "willow",
+                "SUPPLIES",
+                "xenia"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 49
+            },
+            {
+              "fact_key": "fact-e01d56e369ab09487056dacbc0210d28cbf2eae90c97cf63c7400ce0370f7e5f",
+              "identity": [
+                "case-022",
+                "ursa",
+                "OWNS",
+                "vale"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 36
+            },
+            {
+              "fact_key": "fact-e208ab3d25bf3de36404157bdb9060bc38d952e67a16c060b9c2f9ec0f372c75",
+              "identity": [
+                "case-032",
+                "pulse",
+                "DEPENDS_ON",
+                "orbit"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 51
+            },
+            {
+              "fact_key": "fact-e21096e5b09c272664931d7e4d4cd3d93bcccc5bc0d5ad0fe7317e6c748c6662",
+              "identity": [
+                "case-008",
+                "poppy",
+                "SUPPLIES",
+                "orchid"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 56
+            },
+            {
+              "fact_key": "fact-f2282ed9ddf519109d7e4f76d7e54ea716235f758ea87377a2c94d8f72fae55d",
+              "identity": [
+                "case-010",
+                "umber",
+                "SUPPLIES",
+                "violet"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 49
+            },
+            {
+              "fact_key": "fact-f570dda3f2595c2c281132fa3179537c77d20e574eb796237ab14522e65300e2",
+              "identity": [
+                "case-033",
+                "stack",
+                "DEPENDS_ON",
+                "trace"
+              ],
+              "gold_match": true,
+              "trigger_start": 36,
+              "trigger_end": 59
+            },
+            {
+              "fact_key": "fact-fe56d3e1496646ae2623839472fffc38113500c4b9bd88a6d5a23b372bc99413",
+              "identity": [
+                "case-044",
+                "osprey",
+                "BASED_IN",
+                "northport"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 70
+            }
+          ]
+        },
+        {
+          "repetition": 2,
+          "nominations": 32,
+          "distinct_nominations": 32,
+          "accepted_occurrences": 32,
+          "distinct_accepted": 32,
+          "skips": [],
+          "before_gates": {
+            "tp": 32,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "after_gates": {
+            "tp": 32,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "false_positive_triples": [],
+          "missed_triples": [],
+          "negative_cases_with_facts": [],
+          "by_category": {
+            "SUPPLIES": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "OWNS": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DEPENDS_ON": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "BASED_IN": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "by_scenario": {
+            "active": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "denied_quote": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "direction": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "distractor": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "future": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "injection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "multiple": {
+              "tp": 8,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "negation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "paraphrase": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "passive": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "speculation": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unicode": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "fact_ledger": [
+            {
+              "fact_key": "fact-0773cea598c6b9ec7d8842a0174be777bb7d702a3fbaa6bab37cd87da0045702",
+              "identity": [
+                "case-003",
+                "elm",
+                "SUPPLIES",
+                "flint"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 33
+            },
+            {
+              "fact_key": "fact-07927cb559b40398d31373ee14fa199259a833429075ac4cf99b73af0c487e83",
+              "identity": [
+                "case-039",
+                "eider",
+                "BASED_IN",
+                "fairhaven"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 51
+            },
+            {
+              "fact_key": "fact-15016ab93dfc5531e50684a85f5f0e39f1f3de007ebf139e04a9adb78c97697f",
+              "identity": [
+                "case-032",
+                "pulse",
+                "DEPENDS_ON",
+                "orbit"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 51
+            },
+            {
+              "fact_key": "fact-16b17648d9b7e3e78a676fe41bb220da17effab1205d45c1f4f147fdbffc0509",
+              "identity": [
+                "case-021",
+                "spruce",
+                "OWNS",
+                "tundra"
+              ],
+              "gold_match": true,
+              "trigger_start": 21,
+              "trigger_end": 40
+            },
+            {
+              "fact_key": "fact-1b3d5a78c4145b7ca323e7c0915f3aa1d90daade60ab0246e13faf0b27030c42",
+              "identity": [
+                "case-002",
+                "dahlia",
+                "SUPPLIES",
+                "cobalt"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 29
+            },
+            {
+              "fact_key": "fact-2e99bb68319ab6cbeae32d32f7132957bea482eb0bea554b15813c1956d6c8bd",
+              "identity": [
+                "case-014",
+                "dune",
+                "OWNS",
+                "cedar"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 23
+            },
+            {
+              "fact_key": "fact-34a9a932f435da32450e510feff7c6809fc903b9d417b9fadbc65c3fac6eb953",
+              "identity": [
+                "case-020",
+                "pearl",
+                "OWNS",
+                "onyx"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-3eaccaf210f8d580b162e2f79ff36fac8d1c43173775c1507baddca6c850f359",
+              "identity": [
+                "case-026",
+                "delta",
+                "DEPENDS_ON",
+                "cipher"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 28
+            },
+            {
+              "fact_key": "fact-49746d7d11d1b68c3cf37aa4bc64afdc21daa7f405c8c0d103a372569450c9a7",
+              "identity": [
+                "case-034",
+                "unity",
+                "DEPENDS_ON",
+                "vector"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-526021b3d33ea4e33e7dec175595d2e3c1ee34e10ee825eb59a1c82086f01af8",
+              "identity": [
+                "case-047",
+                "étoile",
+                "BASED_IN",
+                "montréal"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 38
+            },
+            {
+              "fact_key": "fact-5fab19e41926945e58f96af03c473dd1bf885f929b8b4a1a377c4c7445e82c3a",
+              "identity": [
+                "case-001",
+                "aster",
+                "SUPPLIES",
+                "beryl"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-7046a943f7a9fc22ec8f7894ab62c3bf4366232f7b4230711548c7a9022befa7",
+              "identity": [
+                "case-023",
+                "málaga",
+                "OWNS",
+                "zürich"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-71be623a6cb37888722a142f5e02baf9b91d2431b4fbfc5db9f35d8580a22634",
+              "identity": [
+                "case-010",
+                "willow",
+                "SUPPLIES",
+                "xenia"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 49
+            },
+            {
+              "fact_key": "fact-761535e36de32e2d793563dfd61e79a05e19162886748be0aa5b445ba987e919",
+              "identity": [
+                "case-035",
+                "réseau",
+                "DEPENDS_ON",
+                "núcleo"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 27
+            },
+            {
+              "fact_key": "fact-781851e4e56c2f4ad7fd872cd3d3129f14d23661fa76c5b1901e25f2a1205f6e",
+              "identity": [
+                "case-022",
+                "wave",
+                "OWNS",
+                "xenon"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 36
+            },
+            {
+              "fact_key": "fact-7b425dde7204e4f3909d7247cdc9917fe83691ecb6e15d83f1ab4053ed2bdcd3",
+              "identity": [
+                "case-009",
+                "saffron",
+                "SUPPLIES",
+                "thistle"
+              ],
+              "gold_match": true,
+              "trigger_start": 34,
+              "trigger_end": 59
+            },
+            {
+              "fact_key": "fact-970c41f9a0273a3dc9b586adfdb528349dadfa5485b926acf340c38c429f5bbf",
+              "identity": [
+                "case-027",
+                "echo",
+                "DEPENDS_ON",
+                "flux"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 26
+            },
+            {
+              "fact_key": "fact-9ec4ff548ede1b2a880e8ef381ecbc08196d2510e2bf0a9bd294bf41739207eb",
+              "identity": [
+                "case-010",
+                "umber",
+                "SUPPLIES",
+                "violet"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 49
+            },
+            {
+              "fact_key": "fact-9f966c17b2d02147701123528e1f6550a84cdf0dd26d6bb80ea76540b39892a6",
+              "identity": [
+                "case-015",
+                "fern",
+                "OWNS",
+                "ember"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 30
+            },
+            {
+              "fact_key": "fact-aefc2ff74bddb4ed4dd4725266cf1b39750e472ee12b41ceda6a8c1afe558328",
+              "identity": [
+                "case-046",
+                "swift",
+                "BASED_IN",
+                "thornby"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 74
+            },
+            {
+              "fact_key": "fact-be8a39bb062e4b61ee0da2127c56e9145d7ed1d75198cc0ffb367703669cfbe6",
+              "identity": [
+                "case-045",
+                "raven",
+                "BASED_IN",
+                "roseford"
+              ],
+              "gold_match": true,
+              "trigger_start": 26,
+              "trigger_end": 61
+            },
+            {
+              "fact_key": "fact-bfb2a34013753dd2667ac07b978461864513c65a9607cb533cd61f1bc9bdf1bb",
+              "identity": [
+                "case-008",
+                "poppy",
+                "SUPPLIES",
+                "orchid"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 56
+            },
+            {
+              "fact_key": "fact-cd2fb0cfdafa2959db0613016703a3ed502e07f67f02740291acc186240f2796",
+              "identity": [
+                "case-034",
+                "warp",
+                "DEPENDS_ON",
+                "xeno"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 50
+            },
+            {
+              "fact_key": "fact-d28cc94dca75ec6fd6a49f044da423083b5de687457bfa5706f027117fb9b485",
+              "identity": [
+                "case-044",
+                "osprey",
+                "BASED_IN",
+                "northport"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 70
+            },
+            {
+              "fact_key": "fact-da69ee30e6dec5f5de420f6e50a898bca54316c4cfcc0c376f385fe4473a4877",
+              "identity": [
+                "case-033",
+                "stack",
+                "DEPENDS_ON",
+                "trace"
+              ],
+              "gold_match": true,
+              "trigger_start": 36,
+              "trigger_end": 59
+            },
+            {
+              "fact_key": "fact-de328d83738e69cd4089e6bced505358a6c622aa5a06dc49a87332ecd5dc9575",
+              "identity": [
+                "case-046",
+                "tern",
+                "BASED_IN",
+                "upperford"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 74
+            },
+            {
+              "fact_key": "fact-e58129b2892dae5ea51ff20dec35e1c8d3d5d853995bf66bc1edb4ac96d1cdc2",
+              "identity": [
+                "case-037",
+                "alder",
+                "BASED_IN",
+                "bellport"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 35
+            },
+            {
+              "fact_key": "fact-e9c84d927d4458a1411ea0325daf3020ccf4de39342f020d0ac326fc566b9e04",
+              "identity": [
+                "case-022",
+                "ursa",
+                "OWNS",
+                "vale"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 36
+            },
+            {
+              "fact_key": "fact-eca84070f35a3a3b8aeebdb5e660f6d1c09c55b8e5a81b3b14b0b813136a09d5",
+              "identity": [
+                "case-038",
+                "dunlin",
+                "BASED_IN",
+                "creston"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 38
+            },
+            {
+              "fact_key": "fact-f06bff3bf088bf52a557aeee2a54fa31dcbdd2550402cdb9efb121fee72d3135",
+              "identity": [
+                "case-013",
+                "amber",
+                "OWNS",
+                "birch"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 17
+            },
+            {
+              "fact_key": "fact-f20731a314be0144faffe19f7a692de3facd62ebc0e389545848da5db1e7547c",
+              "identity": [
+                "case-011",
+                "café",
+                "SUPPLIES",
+                "élan"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 21
+            },
+            {
+              "fact_key": "fact-fde4b218ee49ff9fb69b86df1c808b4e6a5644af8cc6e934930551acac6fa7df",
+              "identity": [
+                "case-025",
+                "atlas",
+                "DEPENDS_ON",
+                "beacon"
+              ],
+              "gold_match": true,
+              "trigger_start": 0,
+              "trigger_end": 24
+            }
+          ]
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 5392,
+        "completion_tokens": 2989,
+        "total_tokens": 8381,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0
+      },
+      "estimated_standard_token_cost_usd": 0.20337,
+      "http_latency_mean_seconds": 6.7341560414934065,
+      "http_latency_median_seconds": 7.111739749554545,
+      "http_latency_max_seconds": 11.238075166940689,
+      "provider_calls": 8,
+      "failed_provider_calls": 0,
+      "note": "Token estimate excludes tax and unreported billing adjustments; no invoice evidence."
+    }
+  }
+}

@@ -1,0 +1,1 @@
+FOR d IN documents FILTER STARTS_WITH(d.title, "Be") RETURN d._key

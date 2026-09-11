@@ -1,0 +1,15 @@
+[package]
+name = "cognigraph-core"
+version.workspace = true
+edition.workspace = true
+license = "FSL-1.1-Apache-2.0"
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }

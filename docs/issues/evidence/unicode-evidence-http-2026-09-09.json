@@ -1,0 +1,1431 @@
+{
+  "ticket": "CG-5",
+  "profile": "release",
+  "binary_sha256": "4f7e63df8e95da7c48b98893c1e39092c72afcddd6645d052cde3faddbd7ce9d",
+  "expect_vulnerable": false,
+  "provider": "synthetic loopback OpenAI-compatible",
+  "modes": {
+    "resident-embedded": {
+      "ingestions": [
+        {
+          "kind": "rule",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 13,
+                  "end": 21,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-a464fe432ed6ee4f2347884adf5619ab6d3a2ee147d6786fe4bc89d1ea2cfd24"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 6,
+                  "end": 14,
+                  "trigger": "déploie",
+                  "slice": "déploie",
+                  "valid": true,
+                  "fact_key": "fact-a73d13d75c9ce830cac0f25fbb2e489c711c2ae54141f6ebfbc5490c229fabf4"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 23,
+                  "end": 31,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-de844705117fa9c4bf3b53688506827e36c717b0cd02e9c1f43be7ed9657d73b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "form": "NFC",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 13,
+                  "end": 21,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-a464fe432ed6ee4f2347884adf5619ab6d3a2ee147d6786fe4bc89d1ea2cfd24"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 6,
+                  "end": 14,
+                  "trigger": "déploie",
+                  "slice": "déploie",
+                  "valid": true,
+                  "fact_key": "fact-a73d13d75c9ce830cac0f25fbb2e489c711c2ae54141f6ebfbc5490c229fabf4"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 23,
+                  "end": 31,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-de844705117fa9c4bf3b53688506827e36c717b0cd02e9c1f43be7ed9657d73b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 13,
+                  "end": 21,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-a464fe432ed6ee4f2347884adf5619ab6d3a2ee147d6786fe4bc89d1ea2cfd24"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 6,
+                  "end": 14,
+                  "trigger": "déploie",
+                  "slice": "déploie",
+                  "valid": true,
+                  "fact_key": "fact-a73d13d75c9ce830cac0f25fbb2e489c711c2ae54141f6ebfbc5490c229fabf4"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 23,
+                  "end": 31,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-de844705117fa9c4bf3b53688506827e36c717b0cd02e9c1f43be7ed9657d73b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "revision": "withdraw",
+          "facts": 0
+        },
+        {
+          "kind": "rule",
+          "revision": "restore",
+          "facts": 3
+        },
+        {
+          "kind": "directed",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 27,
+                  "trigger": "Café. Alpha supplies Beta.",
+                  "slice": "Café. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-22e20a3bbdf2243f055339b70e90bb96afa62429d5a2563dd8ca2ad1ac082e7a"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 20,
+                  "trigger": "Café déploie Beta.",
+                  "slice": "Café déploie Beta.",
+                  "valid": true,
+                  "fact_key": "fact-1b59101db3840b63cc964c290331c4d842493c683e8bda7244913452c4a3600e"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 37,
+                  "trigger": "👩‍🔬 가. Alpha supplies Beta.",
+                  "slice": "👩‍🔬 가. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-3e3946752780a9930557647ec40960bfdcdfa1c3f2cf167ef0e9b8e15d2199ac"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "directed",
+          "form": "NFC",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 27,
+                  "trigger": "Café. Alpha supplies Beta.",
+                  "slice": "Café. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-22e20a3bbdf2243f055339b70e90bb96afa62429d5a2563dd8ca2ad1ac082e7a"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 20,
+                  "trigger": "Café déploie Beta.",
+                  "slice": "Café déploie Beta.",
+                  "valid": true,
+                  "fact_key": "fact-1b59101db3840b63cc964c290331c4d842493c683e8bda7244913452c4a3600e"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 37,
+                  "trigger": "👩‍🔬 가. Alpha supplies Beta.",
+                  "slice": "👩‍🔬 가. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-3e3946752780a9930557647ec40960bfdcdfa1c3f2cf167ef0e9b8e15d2199ac"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "directed",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 27,
+                  "trigger": "Café. Alpha supplies Beta.",
+                  "slice": "Café. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-22e20a3bbdf2243f055339b70e90bb96afa62429d5a2563dd8ca2ad1ac082e7a"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 20,
+                  "trigger": "Café déploie Beta.",
+                  "slice": "Café déploie Beta.",
+                  "valid": true,
+                  "fact_key": "fact-1b59101db3840b63cc964c290331c4d842493c683e8bda7244913452c4a3600e"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 37,
+                  "trigger": "👩‍🔬 가. Alpha supplies Beta.",
+                  "slice": "👩‍🔬 가. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-3e3946752780a9930557647ec40960bfdcdfa1c3f2cf167ef0e9b8e15d2199ac"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "directed",
+          "revision": "withdraw",
+          "facts": 0
+        },
+        {
+          "kind": "directed",
+          "revision": "restore",
+          "facts": 3
+        }
+      ],
+      "restarts": [
+        {
+          "store": "source",
+          "unchanged": true
+        },
+        {
+          "store": "restored",
+          "unchanged": true
+        }
+      ],
+      "legacy": {
+        "rule": [
+          {
+            "chunk_id": "c0",
+            "stored_text": "Café. Alpha supplies Beta.",
+            "utf8_bytes": 27,
+            "stored_hash": "sha256:66515f8fe35da06a46da5820b276cd5c4aade2cb137fef66616f72079e61b37e",
+            "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+            "hash_matches": false,
+            "spans": [
+              {
+                "start": 14,
+                "end": 22,
+                "trigger": "supplies",
+                "slice": "upplies ",
+                "valid": false,
+                "fact_key": "fact-1b0fc84984dc495bedede5e9225f3b39a41891c8c4c1aa7564eaa28e1427503c"
+              }
+            ]
+          }
+        ],
+        "directed": [
+          {
+            "chunk_id": "c0",
+            "stored_text": "Café. Alpha supplies Beta.",
+            "utf8_bytes": 27,
+            "stored_hash": "sha256:66515f8fe35da06a46da5820b276cd5c4aade2cb137fef66616f72079e61b37e",
+            "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+            "hash_matches": false,
+            "spans": [
+              {
+                "start": 0,
+                "end": 28,
+                "trigger": "Café. Alpha supplies Beta.",
+                "slice": "Café. Alpha supplies Beta.",
+                "valid": false,
+                "fact_key": "fact-ba1420f13d0e3d061b797340eb1cd7b54c6c452e39df771b1d6a2629e495d85a"
+              }
+            ]
+          }
+        ]
+      },
+      "snapshot_roundtrip": true
+    },
+    "resident-sidecar": {
+      "ingestions": [
+        {
+          "kind": "rule",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 13,
+                  "end": 21,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-a464fe432ed6ee4f2347884adf5619ab6d3a2ee147d6786fe4bc89d1ea2cfd24"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 6,
+                  "end": 14,
+                  "trigger": "déploie",
+                  "slice": "déploie",
+                  "valid": true,
+                  "fact_key": "fact-a73d13d75c9ce830cac0f25fbb2e489c711c2ae54141f6ebfbc5490c229fabf4"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 23,
+                  "end": 31,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-de844705117fa9c4bf3b53688506827e36c717b0cd02e9c1f43be7ed9657d73b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "form": "NFC",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 13,
+                  "end": 21,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-a464fe432ed6ee4f2347884adf5619ab6d3a2ee147d6786fe4bc89d1ea2cfd24"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 6,
+                  "end": 14,
+                  "trigger": "déploie",
+                  "slice": "déploie",
+                  "valid": true,
+                  "fact_key": "fact-a73d13d75c9ce830cac0f25fbb2e489c711c2ae54141f6ebfbc5490c229fabf4"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 23,
+                  "end": 31,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-de844705117fa9c4bf3b53688506827e36c717b0cd02e9c1f43be7ed9657d73b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 13,
+                  "end": 21,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-a464fe432ed6ee4f2347884adf5619ab6d3a2ee147d6786fe4bc89d1ea2cfd24"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 6,
+                  "end": 14,
+                  "trigger": "déploie",
+                  "slice": "déploie",
+                  "valid": true,
+                  "fact_key": "fact-a73d13d75c9ce830cac0f25fbb2e489c711c2ae54141f6ebfbc5490c229fabf4"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 23,
+                  "end": 31,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-de844705117fa9c4bf3b53688506827e36c717b0cd02e9c1f43be7ed9657d73b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "revision": "withdraw",
+          "facts": 0
+        },
+        {
+          "kind": "rule",
+          "revision": "restore",
+          "facts": 3
+        },
+        {
+          "kind": "directed",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 27,
+                  "trigger": "Café. Alpha supplies Beta.",
+                  "slice": "Café. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-22e20a3bbdf2243f055339b70e90bb96afa62429d5a2563dd8ca2ad1ac082e7a"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 20,
+                  "trigger": "Café déploie Beta.",
+                  "slice": "Café déploie Beta.",
+                  "valid": true,
+                  "fact_key": "fact-1b59101db3840b63cc964c290331c4d842493c683e8bda7244913452c4a3600e"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 37,
+                  "trigger": "👩‍🔬 가. Alpha supplies Beta.",
+                  "slice": "👩‍🔬 가. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-3e3946752780a9930557647ec40960bfdcdfa1c3f2cf167ef0e9b8e15d2199ac"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "directed",
+          "form": "NFC",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 27,
+                  "trigger": "Café. Alpha supplies Beta.",
+                  "slice": "Café. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-22e20a3bbdf2243f055339b70e90bb96afa62429d5a2563dd8ca2ad1ac082e7a"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 20,
+                  "trigger": "Café déploie Beta.",
+                  "slice": "Café déploie Beta.",
+                  "valid": true,
+                  "fact_key": "fact-1b59101db3840b63cc964c290331c4d842493c683e8bda7244913452c4a3600e"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 37,
+                  "trigger": "👩‍🔬 가. Alpha supplies Beta.",
+                  "slice": "👩‍🔬 가. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-3e3946752780a9930557647ec40960bfdcdfa1c3f2cf167ef0e9b8e15d2199ac"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "directed",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 27,
+                  "trigger": "Café. Alpha supplies Beta.",
+                  "slice": "Café. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-22e20a3bbdf2243f055339b70e90bb96afa62429d5a2563dd8ca2ad1ac082e7a"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 20,
+                  "trigger": "Café déploie Beta.",
+                  "slice": "Café déploie Beta.",
+                  "valid": true,
+                  "fact_key": "fact-1b59101db3840b63cc964c290331c4d842493c683e8bda7244913452c4a3600e"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 37,
+                  "trigger": "👩‍🔬 가. Alpha supplies Beta.",
+                  "slice": "👩‍🔬 가. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-3e3946752780a9930557647ec40960bfdcdfa1c3f2cf167ef0e9b8e15d2199ac"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "directed",
+          "revision": "withdraw",
+          "facts": 0
+        },
+        {
+          "kind": "directed",
+          "revision": "restore",
+          "facts": 3
+        }
+      ],
+      "restarts": [
+        {
+          "store": "source",
+          "unchanged": true
+        },
+        {
+          "store": "restored",
+          "unchanged": true
+        }
+      ],
+      "legacy": {
+        "rule": [
+          {
+            "chunk_id": "c0",
+            "stored_text": "Café. Alpha supplies Beta.",
+            "utf8_bytes": 27,
+            "stored_hash": "sha256:66515f8fe35da06a46da5820b276cd5c4aade2cb137fef66616f72079e61b37e",
+            "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+            "hash_matches": false,
+            "spans": [
+              {
+                "start": 14,
+                "end": 22,
+                "trigger": "supplies",
+                "slice": "upplies ",
+                "valid": false,
+                "fact_key": "fact-1b0fc84984dc495bedede5e9225f3b39a41891c8c4c1aa7564eaa28e1427503c"
+              }
+            ]
+          }
+        ],
+        "directed": [
+          {
+            "chunk_id": "c0",
+            "stored_text": "Café. Alpha supplies Beta.",
+            "utf8_bytes": 27,
+            "stored_hash": "sha256:66515f8fe35da06a46da5820b276cd5c4aade2cb137fef66616f72079e61b37e",
+            "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+            "hash_matches": false,
+            "spans": [
+              {
+                "start": 0,
+                "end": 28,
+                "trigger": "Café. Alpha supplies Beta.",
+                "slice": "Café. Alpha supplies Beta.",
+                "valid": false,
+                "fact_key": "fact-ba1420f13d0e3d061b797340eb1cd7b54c6c452e39df771b1d6a2629e495d85a"
+              }
+            ]
+          }
+        ]
+      },
+      "snapshot_roundtrip": true
+    },
+    "paged-sidecar": {
+      "ingestions": [
+        {
+          "kind": "rule",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 13,
+                  "end": 21,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-a464fe432ed6ee4f2347884adf5619ab6d3a2ee147d6786fe4bc89d1ea2cfd24"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 6,
+                  "end": 14,
+                  "trigger": "déploie",
+                  "slice": "déploie",
+                  "valid": true,
+                  "fact_key": "fact-a73d13d75c9ce830cac0f25fbb2e489c711c2ae54141f6ebfbc5490c229fabf4"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 23,
+                  "end": 31,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-de844705117fa9c4bf3b53688506827e36c717b0cd02e9c1f43be7ed9657d73b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "form": "NFC",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 13,
+                  "end": 21,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-a464fe432ed6ee4f2347884adf5619ab6d3a2ee147d6786fe4bc89d1ea2cfd24"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 6,
+                  "end": 14,
+                  "trigger": "déploie",
+                  "slice": "déploie",
+                  "valid": true,
+                  "fact_key": "fact-a73d13d75c9ce830cac0f25fbb2e489c711c2ae54141f6ebfbc5490c229fabf4"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 23,
+                  "end": 31,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-de844705117fa9c4bf3b53688506827e36c717b0cd02e9c1f43be7ed9657d73b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 13,
+                  "end": 21,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-a464fe432ed6ee4f2347884adf5619ab6d3a2ee147d6786fe4bc89d1ea2cfd24"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 6,
+                  "end": 14,
+                  "trigger": "déploie",
+                  "slice": "déploie",
+                  "valid": true,
+                  "fact_key": "fact-a73d13d75c9ce830cac0f25fbb2e489c711c2ae54141f6ebfbc5490c229fabf4"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 23,
+                  "end": 31,
+                  "trigger": "supplies",
+                  "slice": "supplies",
+                  "valid": true,
+                  "fact_key": "fact-de844705117fa9c4bf3b53688506827e36c717b0cd02e9c1f43be7ed9657d73b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "rule",
+          "revision": "withdraw",
+          "facts": 0
+        },
+        {
+          "kind": "rule",
+          "revision": "restore",
+          "facts": 3
+        },
+        {
+          "kind": "directed",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 27,
+                  "trigger": "Café. Alpha supplies Beta.",
+                  "slice": "Café. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-22e20a3bbdf2243f055339b70e90bb96afa62429d5a2563dd8ca2ad1ac082e7a"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 20,
+                  "trigger": "Café déploie Beta.",
+                  "slice": "Café déploie Beta.",
+                  "valid": true,
+                  "fact_key": "fact-1b59101db3840b63cc964c290331c4d842493c683e8bda7244913452c4a3600e"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 37,
+                  "trigger": "👩‍🔬 가. Alpha supplies Beta.",
+                  "slice": "👩‍🔬 가. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-3e3946752780a9930557647ec40960bfdcdfa1c3f2cf167ef0e9b8e15d2199ac"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "directed",
+          "form": "NFC",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 27,
+                  "trigger": "Café. Alpha supplies Beta.",
+                  "slice": "Café. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-22e20a3bbdf2243f055339b70e90bb96afa62429d5a2563dd8ca2ad1ac082e7a"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 20,
+                  "trigger": "Café déploie Beta.",
+                  "slice": "Café déploie Beta.",
+                  "valid": true,
+                  "fact_key": "fact-1b59101db3840b63cc964c290331c4d842493c683e8bda7244913452c4a3600e"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 37,
+                  "trigger": "👩‍🔬 가. Alpha supplies Beta.",
+                  "slice": "👩‍🔬 가. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-3e3946752780a9930557647ec40960bfdcdfa1c3f2cf167ef0e9b8e15d2199ac"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "directed",
+          "form": "NFD",
+          "facts": 3,
+          "evidence": [
+            {
+              "chunk_id": "c0",
+              "stored_text": "Café. Alpha supplies Beta.",
+              "utf8_bytes": 27,
+              "stored_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 27,
+                  "trigger": "Café. Alpha supplies Beta.",
+                  "slice": "Café. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-22e20a3bbdf2243f055339b70e90bb96afa62429d5a2563dd8ca2ad1ac082e7a"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c1",
+              "stored_text": "Café déploie Beta.",
+              "utf8_bytes": 20,
+              "stored_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "computed_hash": "sha256:4127ea801d9c03c6915c97d987309bc646090a80825e12033647e8bdf9d7a6a1",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 20,
+                  "trigger": "Café déploie Beta.",
+                  "slice": "Café déploie Beta.",
+                  "valid": true,
+                  "fact_key": "fact-1b59101db3840b63cc964c290331c4d842493c683e8bda7244913452c4a3600e"
+                }
+              ]
+            },
+            {
+              "chunk_id": "c2",
+              "stored_text": "👩‍🔬 가. Alpha supplies Beta.",
+              "utf8_bytes": 37,
+              "stored_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "computed_hash": "sha256:d29940bc0d95d6a093aefe7b82b226670ae56b0c6eddeaa24ef49d4a40c1a20c",
+              "hash_matches": true,
+              "spans": [
+                {
+                  "start": 0,
+                  "end": 37,
+                  "trigger": "👩‍🔬 가. Alpha supplies Beta.",
+                  "slice": "👩‍🔬 가. Alpha supplies Beta.",
+                  "valid": true,
+                  "fact_key": "fact-3e3946752780a9930557647ec40960bfdcdfa1c3f2cf167ef0e9b8e15d2199ac"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "directed",
+          "revision": "withdraw",
+          "facts": 0
+        },
+        {
+          "kind": "directed",
+          "revision": "restore",
+          "facts": 3
+        }
+      ],
+      "restarts": [
+        {
+          "store": "source",
+          "unchanged": true
+        },
+        {
+          "store": "restored",
+          "unchanged": true
+        }
+      ],
+      "legacy": {
+        "rule": [
+          {
+            "chunk_id": "c0",
+            "stored_text": "Café. Alpha supplies Beta.",
+            "utf8_bytes": 27,
+            "stored_hash": "sha256:66515f8fe35da06a46da5820b276cd5c4aade2cb137fef66616f72079e61b37e",
+            "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+            "hash_matches": false,
+            "spans": [
+              {
+                "start": 14,
+                "end": 22,
+                "trigger": "supplies",
+                "slice": "upplies ",
+                "valid": false,
+                "fact_key": "fact-1b0fc84984dc495bedede5e9225f3b39a41891c8c4c1aa7564eaa28e1427503c"
+              }
+            ]
+          }
+        ],
+        "directed": [
+          {
+            "chunk_id": "c0",
+            "stored_text": "Café. Alpha supplies Beta.",
+            "utf8_bytes": 27,
+            "stored_hash": "sha256:66515f8fe35da06a46da5820b276cd5c4aade2cb137fef66616f72079e61b37e",
+            "computed_hash": "sha256:db57258367d54b006a0a55ed11dc57bf3e9d152ded87db5172b30aa3b3189059",
+            "hash_matches": false,
+            "spans": [
+              {
+                "start": 0,
+                "end": 28,
+                "trigger": "Café. Alpha supplies Beta.",
+                "slice": "Café. Alpha supplies Beta.",
+                "valid": false,
+                "fact_key": "fact-ba1420f13d0e3d061b797340eb1cd7b54c6c452e39df771b1d6a2629e495d85a"
+              }
+            ]
+          }
+        ]
+      },
+      "snapshot_roundtrip": true
+    }
+  },
+  "completion_calls": [
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": false,
+      "prompt_sha256": "49f335a09903fd1ebea38cb75f9afffaeb934f2156f817157d4b1033d9196550"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "4bfd5fe7d4fbcd64e16846b82d680917820239273e65c3c3577f8dac6f551c9e"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": false,
+      "prompt_sha256": "49f335a09903fd1ebea38cb75f9afffaeb934f2156f817157d4b1033d9196550"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "4bfd5fe7d4fbcd64e16846b82d680917820239273e65c3c3577f8dac6f551c9e"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": false,
+      "prompt_sha256": "49f335a09903fd1ebea38cb75f9afffaeb934f2156f817157d4b1033d9196550"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "4bfd5fe7d4fbcd64e16846b82d680917820239273e65c3c3577f8dac6f551c9e"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "prompt_is_nfc": true,
+      "prompt_sha256": "82c239db268b3eb5d3447576761395c5c999c26f2eb956d27ef9152c67ba2711"
+    }
+  ],
+  "legacy_binary_sha256": "2b0494b2a64dd193b446d29e10d890718a3f82615b18b29a06aa3912ab4cf18b"
+}

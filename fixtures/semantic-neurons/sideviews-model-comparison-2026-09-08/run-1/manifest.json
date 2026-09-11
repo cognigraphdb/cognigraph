@@ -1,0 +1,23 @@
+{
+  "started_utc": "2026-09-08T17:33:52Z",
+  "models": [
+    [
+      "openai",
+      "gpt-5.6-luna"
+    ],
+    [
+      "gemini",
+      "gemini-3.8-flash"
+    ]
+  ],
+  "binary_sha256": "b6f1220ecfb52b9dde4d3678f75128aa84fa4e861203f1516adc2441cd3ae870",
+  "fixture_sha256": "777c4e8e3ef71daf26490071c1c066ed0c26d333ab4526170eee118846b442c1",
+  "target_pairs": 12,
+  "repetitions": 3,
+  "maximum_calls": 32,
+  "source": "checked public five-passage fixture",
+  "transport": "official upstream APIs via loopback recording proxy",
+  "result": "complete",
+  "completed_utc": "2026-09-08T17:36:14Z",
+  "actual_calls": 32
+}

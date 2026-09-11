@@ -1,0 +1,40 @@
+{
+  "acceptance": {
+    "precision_ge_80": false,
+    "zero_leakage": true
+  },
+  "certification": {
+    "accept_false": 10,
+    "accept_true": 38,
+    "judged": 80,
+    "needs_human_false": 0,
+    "needs_human_true": 0,
+    "oracle_agreement": 68,
+    "reject_false": 30,
+    "reject_true": 2
+  },
+  "cohort": {
+    "otc": 1000,
+    "products": 10000,
+    "rx": 9000
+  },
+  "construction": {
+    "construct_ms": 1517919,
+    "cross_product_leaks": 0,
+    "narrative_facts": 16620
+  },
+  "gate": {
+    "agreed": 12236,
+    "narrative_only": 4384,
+    "narrative_precision_pct": 73.62214199759326,
+    "production_graph_facts": 129091,
+    "structured_only": 116855
+  },
+  "policy_rev": "gate3-policy-v1",
+  "structured_by_relation": {
+    "ADMINISTERED_VIA": 10753,
+    "CONTAINS_INGREDIENT": 98340,
+    "HAS_DOSAGE_FORM": 9999,
+    "MARKETED_BY": 9999
+  }
+}

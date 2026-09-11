@@ -1,0 +1,17 @@
+benchmarking 5 passages, target 12 pairs each
+
+--> openai:gpt-5.6-luna
+    software      12 pairs    4450 ms
+    engineering   12 pairs    4166 ms
+    clinical      12 pairs    3097 ms
+    biography     12 pairs    4404 ms
+    geography     12 pairs    3787 ms
+
+model                          ok  err   pairs   hit% distinct   selfC%  ground%    ansWd   lat_ms
+openai:gpt-5.6-luna             5    0    12.0   100%     100%    100%      96%      9.7     3981
+
+hit% = docs returning >= target pairs; distinct = within-doc unique questions;
+selfC% = standalone questions (no "the passage"); ground% = answer content words
+found in source (lexical proxy for grounding); lat_ms = avg per-doc latency.
+
+full side-views written to /Users/skitsanos/FTP/Products/CogniGraph/code/fixtures/semantic-neurons/sideviews-model-comparison-2026-09-08/run-1/measurement-1-openai-pairs.json

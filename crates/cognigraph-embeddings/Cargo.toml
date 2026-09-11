@@ -1,0 +1,36 @@
+[package]
+name = "cognigraph-embeddings"
+version.workspace = true
+edition.workspace = true
+license = "FSL-1.1-Apache-2.0"
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+cognigraph-core = { path = "../cognigraph-core" }
+reqwest = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+anyhow = { workspace = true }
+async-trait = { workspace = true }
+
+[features]
+default = ["openai", "ollama", "cloudflare", "oauth"]
+openai = []
+ollama = []
+cloudflare = []
+oauth = []
+onnx = ["dep:ort", "dep:tokenizers"]
+
+[dependencies.ort]
+version = "2.0.0-rc.12"
+optional = true
+
+[dependencies.tokenizers]
+version = "0.23"
+optional = true
+
+[dev-dependencies]
+tokio = { workspace = true }
+dotenvy = "0.15"

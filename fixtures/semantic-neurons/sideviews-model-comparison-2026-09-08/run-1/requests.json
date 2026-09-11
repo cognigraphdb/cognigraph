@@ -1,0 +1,3262 @@
+[
+  {
+    "phase": "preflight",
+    "repeat": 0,
+    "passage_order": [
+      "geography"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 5638,
+    "usage": {
+      "prompt_tokens": 381,
+      "completion_tokens": 320,
+      "total_tokens": 701,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "20d7b4bc7b0bd79f4cc946be51512a7ba9ebed07cb9e41301758b28e20e0e684",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Lisbon is the capital and largest city of Portugal.",
+          "question": "What is the capital and largest city of Portugal?"
+        },
+        {
+          "answer": "Lisbon is situated on the Atlantic coast.",
+          "question": "Where is Lisbon situated?"
+        },
+        {
+          "answer": "Lisbon lies where the Tagus River meets the ocean.",
+          "question": "Where does the Tagus River meet the ocean in relation to Lisbon?"
+        },
+        {
+          "answer": "Lisbon is one of the oldest cities in Western Europe.",
+          "question": "How is Lisbon described in terms of its age?"
+        },
+        {
+          "answer": "Lisbon predates modern capitals such as London and Paris by centuries.",
+          "question": "Which modern capitals does Lisbon predate by centuries?"
+        },
+        {
+          "answer": "Lisbon is built across seven hills.",
+          "question": "How many hills is Lisbon built across?"
+        },
+        {
+          "answer": "Many Lisbon streets are steep and winding because the city is built across seven hills.",
+          "question": "Why are many streets in Lisbon steep and winding?"
+        },
+        {
+          "answer": "Lisbon has a mild Mediterranean climate.",
+          "question": "What type of climate does Lisbon have?"
+        },
+        {
+          "answer": "Lisbon has warm, dry summers and cool, rainy winters.",
+          "question": "What are Lisbon's summers and winters like?"
+        },
+        {
+          "answer": "Lisbon's historic tram network is a well-known feature, especially the yellow Route 28 tram.",
+          "question": "Which tram is especially well known in Lisbon?"
+        },
+        {
+          "answer": "The 1755 Lisbon earthquake destroyed much of the city and led to major rebuilding of the downtown Baixa district in a grid pattern.",
+          "question": "What happened to Lisbon after the 1755 earthquake?"
+        }
+      ]
+    },
+    "passage": "geography"
+  },
+  {
+    "phase": "preflight",
+    "repeat": 0,
+    "passage_order": [
+      "geography"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 4626,
+    "usage": {
+      "promptTokenCount": 335,
+      "candidatesTokenCount": 512,
+      "totalTokenCount": 1765,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 335
+        }
+      ],
+      "thoughtsTokenCount": 918,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "2519863a2c3f99ac1d0ea79041db2cb1e1427f1af90cb31b7d90c6c1453b9f84",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Lisbon is the capital and largest city of Portugal.",
+          "question": "What is the capital and largest city of Portugal?"
+        },
+        {
+          "answer": "Lisbon is situated on the Atlantic coast where the Tagus River meets the ocean.",
+          "question": "Where is Lisbon located?"
+        },
+        {
+          "answer": "Lisbon predates modern capitals such as London and Paris by centuries.",
+          "question": "Which modern European capitals does Lisbon predate by centuries?"
+        },
+        {
+          "answer": "Lisbon is built across seven hills.",
+          "question": "How many hills is Lisbon built across?"
+        },
+        {
+          "answer": "Many streets are steep and winding because the city is built across seven hills.",
+          "question": "Why are many streets in Lisbon steep and winding?"
+        },
+        {
+          "answer": "Lisbon has a mild Mediterranean climate with warm dry summers and cool rainy winters.",
+          "question": "What type of climate does Lisbon have?"
+        },
+        {
+          "answer": "Summers in Lisbon are warm and dry.",
+          "question": "What are summer conditions like in Lisbon?"
+        },
+        {
+          "answer": "The yellow Route 28 tram is a well-known feature of Lisbon's historic tram network.",
+          "question": "Which specific yellow tram route is famous in Lisbon?"
+        },
+        {
+          "answer": "The 1755 earthquake destroyed much of Lisbon.",
+          "question": "What historic disaster destroyed much of Lisbon in 1755?"
+        },
+        {
+          "answer": "The downtown Baixa district underwent a major rebuilding after the 1755 earthquake.",
+          "question": "Which downtown Lisbon district was rebuilt following the 1755 earthquake?"
+        },
+        {
+          "answer": "The Baixa district was rebuilt in a grid pattern.",
+          "question": "What layout pattern was used to rebuild Lisbon's Baixa district?"
+        },
+        {
+          "answer": "The Tagus River meets the Atlantic Ocean at Lisbon.",
+          "question": "What river meets the ocean at Lisbon?"
+        }
+      ]
+    },
+    "passage": "geography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 1,
+    "passage_order": [
+      "software",
+      "engineering",
+      "clinical",
+      "biography",
+      "geography"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 4447,
+    "usage": {
+      "prompt_tokens": 382,
+      "completion_tokens": 321,
+      "total_tokens": 703,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "2aa628995e7d67c45fa23203243eb2fea0b208d3731a92850ee03b71731bc1f1",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Redis is an open source, in-memory data structure store used as a database, cache, and message broker.",
+          "question": "What is Redis used for?"
+        },
+        {
+          "answer": "Salvatore Sanfilippo created Redis.",
+          "question": "Who created Redis?"
+        },
+        {
+          "answer": "Redis was first released in 2009.",
+          "question": "When was Redis first released?"
+        },
+        {
+          "answer": "Redis keeps the entire dataset in memory.",
+          "question": "Where does Redis keep its entire dataset?"
+        },
+        {
+          "answer": "Keeping the dataset in memory allows very low-latency reads and writes.",
+          "question": "Why can Redis perform reads and writes with very low latency?"
+        },
+        {
+          "answer": "Redis supports strings, hashes, lists, sets, and sorted sets.",
+          "question": "Which data structures does Redis support?"
+        },
+        {
+          "answer": "Redis provides optional persistence.",
+          "question": "Does Redis provide data persistence?"
+        },
+        {
+          "answer": "Redis can persist data by periodically writing snapshots to disk.",
+          "question": "How can Redis persist data using snapshots?"
+        },
+        {
+          "answer": "Redis can persist data by appending each write operation to a log.",
+          "question": "What is Redis append-based persistence?"
+        },
+        {
+          "answer": "Traditional databases store data primarily on disk, unlike Redis, which keeps the entire dataset in memory.",
+          "question": "How does Redis differ from traditional databases in data storage?"
+        },
+        {
+          "answer": "Redis is commonly used to cache the results of expensive database queries.",
+          "question": "What database results is Redis commonly used to cache?"
+        },
+        {
+          "answer": "Redis is commonly used to store user session data in web applications.",
+          "question": "What type of web application data is Redis commonly used to store?"
+        }
+      ]
+    },
+    "passage": "software"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 1,
+    "passage_order": [
+      "software",
+      "engineering",
+      "clinical",
+      "biography",
+      "geography"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 4162,
+    "usage": {
+      "prompt_tokens": 381,
+      "completion_tokens": 377,
+      "total_tokens": 758,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "105ca87c1db34bfea1ffe9ed1f5578dd1ecb9304dd1091566a66c921545cd617",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "The Airbus A320 is a family of narrow-body airliners developed and manufactured by Airbus.",
+          "question": "What is the Airbus A320?"
+        },
+        {
+          "answer": "Airbus developed and manufactures the A320 family.",
+          "question": "Who developed and manufactures the Airbus A320?"
+        },
+        {
+          "answer": "The A320 was the first commercial aircraft to feature a digital fly-by-wire flight control system.",
+          "question": "What flight-control innovation did the Airbus A320 introduce?"
+        },
+        {
+          "answer": "Pilot inputs are transmitted electronically rather than through mechanical linkages.",
+          "question": "How does the A320\u2019s digital fly-by-wire system transmit pilot inputs?"
+        },
+        {
+          "answer": "The A320 entered service in 1988.",
+          "question": "When did the Airbus A320 enter service?"
+        },
+        {
+          "answer": "The A320 entered service with Air France.",
+          "question": "Which airline introduced the Airbus A320 into service?"
+        },
+        {
+          "answer": "The aircraft typically seats between 140 and 170 passengers.",
+          "question": "How many passengers can an Airbus A320 typically seat?"
+        },
+        {
+          "answer": "The A320 has a range of about 6,100 kilometres.",
+          "question": "What is the approximate range of the Airbus A320?"
+        },
+        {
+          "answer": "The A320 family includes shorter and longer variants called the A318, A319, and A321.",
+          "question": "Which variants are included in the Airbus A320 family?"
+        },
+        {
+          "answer": "The A318, A319, and A321 are shorter and longer variants of the A320 family.",
+          "question": "What are the shorter and longer Airbus A320 family variants?"
+        },
+        {
+          "answer": "The A320 family is one of the best-selling airliner families in history.",
+          "question": "How successful has the Airbus A320 family been in commercial aviation?"
+        },
+        {
+          "answer": "The Airbus A320 is a direct competitor to the Boeing 737.",
+          "question": "Which aircraft directly competes with the Airbus A320?"
+        }
+      ]
+    },
+    "passage": "engineering"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 1,
+    "passage_order": [
+      "software",
+      "engineering",
+      "clinical",
+      "biography",
+      "geography"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 3093,
+    "usage": {
+      "prompt_tokens": 378,
+      "completion_tokens": 325,
+      "total_tokens": 703,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "66fd76e675ee1059f0938673b8ae3a588d0d9b1000e878c3cd20c6c89d60e40c",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Ibuprofen is a nonsteroidal anti-inflammatory drug.",
+          "question": "What type of medication is ibuprofen?"
+        },
+        {
+          "answer": "Ibuprofen is commonly used to reduce fever.",
+          "question": "What does ibuprofen do for fever?"
+        },
+        {
+          "answer": "Ibuprofen relieves mild to moderate pain.",
+          "question": "What level of pain can ibuprofen relieve?"
+        },
+        {
+          "answer": "It can relieve pain from headaches, menstrual cramps, and arthritis.",
+          "question": "Which conditions can ibuprofen help relieve?"
+        },
+        {
+          "answer": "Ibuprofen works by inhibiting cyclooxygenase enzymes.",
+          "question": "How does ibuprofen work?"
+        },
+        {
+          "answer": "Inhibiting cyclooxygenases reduces the production of prostaglandins that cause inflammation and pain.",
+          "question": "Why does inhibiting cyclooxygenases reduce pain and inflammation?"
+        },
+        {
+          "answer": "Ibuprofen is available over the counter in many countries.",
+          "question": "Where is ibuprofen available over the counter?"
+        },
+        {
+          "answer": "Ibuprofen was first marketed in 1969.",
+          "question": "When was ibuprofen first marketed?"
+        },
+        {
+          "answer": "A common side effect of ibuprofen is stomach upset.",
+          "question": "What is a common side effect of ibuprofen?"
+        },
+        {
+          "answer": "Prolonged use increases the risk of gastrointestinal bleeding.",
+          "question": "What risk is associated with prolonged ibuprofen use?"
+        },
+        {
+          "answer": "It is generally advised to take ibuprofen with food to reduce stomach irritation.",
+          "question": "How should ibuprofen be taken to reduce stomach irritation?"
+        },
+        {
+          "answer": "Ibuprofen is not recommended during the later stages of pregnancy.",
+          "question": "When during pregnancy is ibuprofen not recommended?"
+        }
+      ]
+    },
+    "passage": "clinical"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 1,
+    "passage_order": [
+      "software",
+      "engineering",
+      "clinical",
+      "biography",
+      "geography"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 4400,
+    "usage": {
+      "prompt_tokens": 408,
+      "completion_tokens": 355,
+      "total_tokens": 763,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "7b1d572f0a85ec225d28dc7d7cb7b73fbfb44e2d7e6552e3072c166e36e70ca0",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Marie Curie was a physicist and chemist.",
+          "question": "What were Marie Curie's professions?"
+        },
+        {
+          "answer": "She conducted pioneering research on radioactivity.",
+          "question": "What scientific research did Marie Curie pioneer?"
+        },
+        {
+          "answer": "Marie Curie coined the term \u201cradioactivity.\u201d",
+          "question": "Who coined the term radioactivity?"
+        },
+        {
+          "answer": "She was born Maria Sklodowska in Warsaw in 1867.",
+          "question": "Where and when was Marie Curie born?"
+        },
+        {
+          "answer": "She moved to Paris to study at the University of Paris.",
+          "question": "Where did Marie Curie move to study?"
+        },
+        {
+          "answer": "Together with Pierre Curie, she discovered polonium and radium.",
+          "question": "Which elements did Marie Curie and Pierre Curie discover?"
+        },
+        {
+          "answer": "She won the 1903 Nobel Prize in Physics with Pierre Curie and Henri Becquerel.",
+          "question": "Who shared the 1903 Nobel Prize in Physics with Marie Curie?"
+        },
+        {
+          "answer": "She won the Nobel Prize in Chemistry in 1911.",
+          "question": "When did Marie Curie win the Nobel Prize in Chemistry?"
+        },
+        {
+          "answer": "She became the first person to win Nobel Prizes in two different scientific fields.",
+          "question": "Why was Marie Curie's Nobel Prize record historic?"
+        },
+        {
+          "answer": "During the First World War, she developed mobile X-ray units.",
+          "question": "What did Marie Curie develop during the First World War?"
+        },
+        {
+          "answer": "The mobile X-ray units helped treat wounded soldiers.",
+          "question": "How did Marie Curie's mobile X-ray units help soldiers?"
+        },
+        {
+          "answer": "She died in 1934 from aplastic anaemia, likely caused by long exposure to radiation.",
+          "question": "What caused Marie Curie's death?"
+        }
+      ]
+    },
+    "passage": "biography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 1,
+    "passage_order": [
+      "software",
+      "engineering",
+      "clinical",
+      "biography",
+      "geography"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 3783,
+    "usage": {
+      "prompt_tokens": 381,
+      "completion_tokens": 338,
+      "total_tokens": 719,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "20d7b4bc7b0bd79f4cc946be51512a7ba9ebed07cb9e41301758b28e20e0e684",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Lisbon is the capital and largest city of Portugal.",
+          "question": "What is the capital and largest city of Portugal?"
+        },
+        {
+          "answer": "Lisbon is situated on the Atlantic coast.",
+          "question": "Where is Lisbon situated?"
+        },
+        {
+          "answer": "Lisbon lies where the Tagus River meets the ocean.",
+          "question": "Where does the Tagus River meet the ocean in relation to Lisbon?"
+        },
+        {
+          "answer": "Lisbon is one of the oldest cities in Western Europe.",
+          "question": "How old is Lisbon compared with other Western European cities?"
+        },
+        {
+          "answer": "Lisbon predates modern capitals such as London and Paris by centuries.",
+          "question": "Which modern capitals does Lisbon predate by centuries?"
+        },
+        {
+          "answer": "Lisbon is built across seven hills.",
+          "question": "How many hills is Lisbon built across?"
+        },
+        {
+          "answer": "The city's seven hills make many streets steep and winding.",
+          "question": "Why are many streets in Lisbon steep and winding?"
+        },
+        {
+          "answer": "Lisbon has a mild Mediterranean climate.",
+          "question": "What type of climate does Lisbon have?"
+        },
+        {
+          "answer": "Lisbon has warm, dry summers and cool, rainy winters.",
+          "question": "What are Lisbon's summers and winters like?"
+        },
+        {
+          "answer": "Lisbon's historic tram network is a well-known feature.",
+          "question": "What historic transportation network is a well-known feature of Lisbon?"
+        },
+        {
+          "answer": "The yellow Route 28 tram is especially well known.",
+          "question": "Which Lisbon tram route is especially well known?"
+        },
+        {
+          "answer": "The 1755 Lisbon earthquake destroyed much of the city and led to the rebuilding of downtown Baixa in a grid pattern.",
+          "question": "What did the 1755 Lisbon earthquake lead to in downtown Baixa?"
+        }
+      ]
+    },
+    "passage": "geography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 1,
+    "passage_order": [
+      "software",
+      "engineering",
+      "clinical",
+      "biography",
+      "geography"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 9602,
+    "usage": {
+      "promptTokenCount": 333,
+      "candidatesTokenCount": 518,
+      "totalTokenCount": 1497,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 333
+        }
+      ],
+      "thoughtsTokenCount": 646,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "383f5b8898eeb9964a29db2d8d4a9f9d6c86c3dcb1b330fcc8ed44e14092bcd6",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Redis is an open source, in memory data structure store used as a database, cache, and message broker.",
+          "question": "What is Redis?"
+        },
+        {
+          "answer": "Redis was created by Salvatore Sanfilippo.",
+          "question": "Who created Redis?"
+        },
+        {
+          "answer": "Redis was first released in 2009.",
+          "question": "In what year was Redis first released?"
+        },
+        {
+          "answer": "Redis achieves very low latency reads and writes by keeping the entire dataset in memory rather than primarily on disk.",
+          "question": "How does Redis achieve very low latency for reads and writes?"
+        },
+        {
+          "answer": "Traditional databases store data primarily on disk, whereas Redis keeps its entire dataset in memory.",
+          "question": "How does Redis differ from traditional databases in terms of data storage?"
+        },
+        {
+          "answer": "Redis supports strings, hashes, lists, sets, and sorted sets.",
+          "question": "Which data structures are supported by Redis?"
+        },
+        {
+          "answer": "Redis provides optional persistence by periodically writing snapshots to disk or by appending each write operation to a log.",
+          "question": "What methods does Redis use to provide optional persistence?"
+        },
+        {
+          "answer": "Redis is commonly used as a database, cache, and message broker.",
+          "question": "What three primary roles does Redis serve?"
+        },
+        {
+          "answer": "In web applications, Redis is commonly used to store user session data.",
+          "question": "What is a common use for Redis in web applications?"
+        },
+        {
+          "answer": "Redis is commonly used to cache the results of expensive database queries.",
+          "question": "Why is Redis commonly used in front of expensive database queries?"
+        },
+        {
+          "answer": "Redis offers persistence optionally either by writing snapshots periodically or appending each write operation to a log.",
+          "question": "Is persistence required or optional in Redis?"
+        },
+        {
+          "answer": "Redis keeps its entire dataset in memory.",
+          "question": "Where does Redis store its entire dataset during operation?"
+        }
+      ]
+    },
+    "passage": "software"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 1,
+    "passage_order": [
+      "software",
+      "engineering",
+      "clinical",
+      "biography",
+      "geography"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 3620,
+    "usage": {
+      "promptTokenCount": 352,
+      "candidatesTokenCount": 584,
+      "totalTokenCount": 1408,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 352
+        }
+      ],
+      "thoughtsTokenCount": 472,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "4edc73f723ebaea1ea7d37aa8b4d78a38a32a3fd2eb60d8b4a4616641423dd14",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "The Airbus A320 was developed and manufactured by Airbus.",
+          "question": "Who developed and manufactured the Airbus A320?"
+        },
+        {
+          "answer": "The Airbus A320 is a family of narrow body airliners.",
+          "question": "What type of aircraft is the Airbus A320?"
+        },
+        {
+          "answer": "The Airbus A320 was the first commercial airliner to feature a digital fly by wire flight control system.",
+          "question": "What was the first commercial aircraft to use a digital fly by wire flight control system?"
+        },
+        {
+          "answer": "Pilot inputs are transmitted electronically rather than through mechanical linkages.",
+          "question": "How does the digital fly by wire flight control system transmit pilot inputs on the A320?"
+        },
+        {
+          "answer": "The Airbus A320 entered service in 1988.",
+          "question": "When did the Airbus A320 enter commercial service?"
+        },
+        {
+          "answer": "Air France was the airline with which the A320 entered service.",
+          "question": "Which airline introduced the Airbus A320 into service in 1988?"
+        },
+        {
+          "answer": "It typically seats between 140 and 170 passengers.",
+          "question": "What is the typical passenger capacity of an Airbus A320?"
+        },
+        {
+          "answer": "The Airbus A320 has a range of about 6,100 kilometres.",
+          "question": "What is the flight range of the Airbus A320?"
+        },
+        {
+          "answer": "The family includes the A318, A319, and A321 variants.",
+          "question": "What shorter and longer variants are included in the Airbus A320 family?"
+        },
+        {
+          "answer": "The Boeing 737 is the direct competitor to the Airbus A320.",
+          "question": "Which Boeing aircraft is a direct competitor to the Airbus A320?"
+        },
+        {
+          "answer": "It is recognized as one of the best selling airliner families in history.",
+          "question": "How does the Airbus A320 family rank historically in terms of airliner sales?"
+        },
+        {
+          "answer": "Air France.",
+          "question": "Airbus A320 first operator airline"
+        }
+      ]
+    },
+    "passage": "engineering"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 1,
+    "passage_order": [
+      "software",
+      "engineering",
+      "clinical",
+      "biography",
+      "geography"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 4153,
+    "usage": {
+      "promptTokenCount": 325,
+      "candidatesTokenCount": 498,
+      "totalTokenCount": 1577,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 325
+        }
+      ],
+      "thoughtsTokenCount": 754,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "90273c7f6b3cc1ed3d671fd5430622a3536e325225f091bb823c6128f50b7d42",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Ibuprofen is a nonsteroidal anti inflammatory drug.",
+          "question": "What drug classification does ibuprofen belong to?"
+        },
+        {
+          "answer": "It is commonly used to reduce fever and relieve mild to moderate pain.",
+          "question": "What are the common medical uses for ibuprofen?"
+        },
+        {
+          "answer": "It relieves pain from conditions such as headaches, menstrual cramps, and arthritis.",
+          "question": "What specific types of pain can ibuprofen help manage?"
+        },
+        {
+          "answer": "Ibuprofen inhibits enzymes known as cyclooxygenases, which reduces the production of prostaglandins that cause inflammation and pain.",
+          "question": "How does ibuprofen work inside the body to reduce pain and inflammation?"
+        },
+        {
+          "answer": "Cyclooxygenases.",
+          "question": "Which enzymes does ibuprofen inhibit?"
+        },
+        {
+          "answer": "Prostaglandins cause inflammation and pain.",
+          "question": "What effect do prostaglandins have in the body?"
+        },
+        {
+          "answer": "Ibuprofen was first marketed in 1969.",
+          "question": "In what year was ibuprofen first marketed?"
+        },
+        {
+          "answer": "Ibuprofen is available over the counter in many countries.",
+          "question": "Is ibuprofen available over the counter?"
+        },
+        {
+          "answer": "Common side effects include stomach upset and an increased risk of gastrointestinal bleeding with prolonged use.",
+          "question": "What are the common side effects of ibuprofen?"
+        },
+        {
+          "answer": "Prolonged use carries an increased risk of gastrointestinal bleeding.",
+          "question": "What risk is linked to the long-term use of ibuprofen?"
+        },
+        {
+          "answer": "Taking ibuprofen with food is generally advised to reduce stomach irritation.",
+          "question": "Why is it recommended to consume food when taking ibuprofen?"
+        },
+        {
+          "answer": "It is not recommended during the later stages of pregnancy.",
+          "question": "When is the use of ibuprofen not recommended during pregnancy?"
+        }
+      ]
+    },
+    "passage": "clinical"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 1,
+    "passage_order": [
+      "software",
+      "engineering",
+      "clinical",
+      "biography",
+      "geography"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 7163,
+    "usage": {
+      "promptTokenCount": 357,
+      "candidatesTokenCount": 366,
+      "totalTokenCount": 1785,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 357
+        }
+      ],
+      "thoughtsTokenCount": 1062,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "f4dbb394bb3b6b0d8bf28affcb544692eec480cda4b35ee494bef540c043ffd4",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Marie Curie coined the term radioactivity.",
+          "question": "Who coined the term radioactivity?"
+        },
+        {
+          "answer": "Marie Curie was born Maria Sklodowska.",
+          "question": "What was Marie Curie's original birth name?"
+        },
+        {
+          "answer": "She was born in Warsaw in 1867.",
+          "question": "When and where was Marie Curie born?"
+        },
+        {
+          "answer": "She moved to Paris to study at the University of Paris.",
+          "question": "Where did Marie Curie pursue her studies after moving to Paris?"
+        },
+        {
+          "answer": "Marie Curie and Pierre Curie discovered polonium and radium.",
+          "question": "Which chemical elements were discovered by Marie and Pierre Curie?"
+        },
+        {
+          "answer": "The 1903 Nobel Prize in Physics was awarded to Marie Curie, Pierre Curie, and Henri Becquerel.",
+          "question": "Who shared the 1903 Nobel Prize in Physics with Marie Curie?"
+        },
+        {
+          "answer": "She won the Nobel Prize in Chemistry in 1911.",
+          "question": "In which field did Marie Curie win a Nobel Prize in 1911?"
+        },
+        {
+          "answer": "She was the first person to win Nobel Prizes in two different scientific fields.",
+          "question": "What distinction did Marie Curie achieve regarding her Nobel Prize wins?"
+        },
+        {
+          "answer": "She developed mobile X ray units to assist in treating wounded soldiers during the First World War.",
+          "question": "What did Marie Curie develop to help wounded soldiers during the First World War?"
+        },
+        {
+          "answer": "Marie Curie died in 1934.",
+          "question": "In what year did Marie Curie die?"
+        },
+        {
+          "answer": "She died from aplastic anaemia, likely caused by long exposure to radiation.",
+          "question": "What medical condition caused the death of Marie Curie?"
+        },
+        {
+          "answer": "Marie Curie was a physicist and chemist.",
+          "question": "What scientific professions did Marie Curie belong to?"
+        }
+      ]
+    },
+    "passage": "biography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 1,
+    "passage_order": [
+      "software",
+      "engineering",
+      "clinical",
+      "biography",
+      "geography"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 3990,
+    "usage": {
+      "promptTokenCount": 335,
+      "candidatesTokenCount": 534,
+      "totalTokenCount": 1518,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 335
+        }
+      ],
+      "thoughtsTokenCount": 649,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "2519863a2c3f99ac1d0ea79041db2cb1e1427f1af90cb31b7d90c6c1453b9f84",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Lisbon is the capital and largest city of Portugal.",
+          "question": "What is the capital and largest city of Portugal?"
+        },
+        {
+          "answer": "Lisbon is located on the Atlantic coast where the Tagus River meets the ocean.",
+          "question": "Where is Lisbon geographically situated?"
+        },
+        {
+          "answer": "The Tagus River meets the ocean at Lisbon.",
+          "question": "Which river meets the Atlantic ocean at Lisbon?"
+        },
+        {
+          "answer": "Lisbon is one of Western Europe's oldest cities and predates modern capitals such as London and Paris by centuries.",
+          "question": "How does Lisbon's age compare to capitals like London and Paris?"
+        },
+        {
+          "answer": "Lisbon is built across seven hills.",
+          "question": "How many hills is the city of Lisbon built across?"
+        },
+        {
+          "answer": "Many of Lisbon's streets are steep and winding because the city is built across seven hills.",
+          "question": "Why are many streets in Lisbon steep and winding?"
+        },
+        {
+          "answer": "Lisbon has a mild Mediterranean climate.",
+          "question": "What type of climate does Lisbon have?"
+        },
+        {
+          "answer": "Lisbon experiences warm, dry summers and cool, rainy winters.",
+          "question": "What weather patterns characterize Lisbon's summers and winters?"
+        },
+        {
+          "answer": "The yellow Route 28 tram is a well-known feature of Lisbon.",
+          "question": "Which specific yellow tram route is a famous feature of Lisbon's transit network?"
+        },
+        {
+          "answer": "An earthquake in 1755 destroyed much of Lisbon.",
+          "question": "What historical event in 1755 destroyed much of Lisbon?"
+        },
+        {
+          "answer": "The downtown Baixa district was rebuilt in a grid pattern after the 1755 earthquake.",
+          "question": "Which Lisbon district was reconstructed in a grid pattern following the 1755 earthquake?"
+        },
+        {
+          "answer": "The downtown Baixa district was rebuilt in a grid pattern.",
+          "question": "Lisbon Baixa district street layout"
+        }
+      ]
+    },
+    "passage": "geography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 2,
+    "passage_order": [
+      "engineering",
+      "geography",
+      "biography",
+      "software",
+      "clinical"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 4384,
+    "usage": {
+      "promptTokenCount": 352,
+      "candidatesTokenCount": 443,
+      "totalTokenCount": 1493,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 352
+        }
+      ],
+      "thoughtsTokenCount": 698,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "4edc73f723ebaea1ea7d37aa8b4d78a38a32a3fd2eb60d8b4a4616641423dd14",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Airbus develops and manufactures the A320.",
+          "question": "Who manufactures the Airbus A320?"
+        },
+        {
+          "answer": "The Airbus A320 is a family of narrow body airliners.",
+          "question": "What category of airliner is the Airbus A320?"
+        },
+        {
+          "answer": "The Airbus A320 was the first commercial aircraft to feature a digital fly by wire flight control system.",
+          "question": "What was the first commercial airliner to incorporate digital fly by wire flight controls?"
+        },
+        {
+          "answer": "In a digital fly by wire system, pilot inputs are transmitted electronically rather than through mechanical linkages.",
+          "question": "How do pilot inputs travel in the digital fly by wire system of the Airbus A320?"
+        },
+        {
+          "answer": "The Airbus A320 entered service in 1988.",
+          "question": "When did the Airbus A320 enter commercial service?"
+        },
+        {
+          "answer": "The aircraft entered service with Air France.",
+          "question": "Which airline first put the Airbus A320 into service?"
+        },
+        {
+          "answer": "The Airbus A320 typically seats between 140 and 170 passengers.",
+          "question": "What is the typical passenger capacity of the Airbus A320?"
+        },
+        {
+          "answer": "The aircraft has a range of about 6,100 kilometres.",
+          "question": "What is the flight range of an Airbus A320?"
+        },
+        {
+          "answer": "The variants in the A320 family are the A318, A319, and A321.",
+          "question": "What are the shorter and longer variants included in the Airbus A320 family?"
+        },
+        {
+          "answer": "The Airbus A320 is a direct competitor to the Boeing 737.",
+          "question": "Which Boeing model directly competes with the Airbus A320?"
+        },
+        {
+          "answer": "It is recognized as one of the best selling airliner families in history.",
+          "question": "How does the Airbus A320 rank in terms of historical airliner sales?"
+        },
+        {
+          "answer": "The Airbus A320 entered service in 1988 with Air France.",
+          "question": "Airbus A320 launch customer and year"
+        }
+      ]
+    },
+    "passage": "engineering"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 2,
+    "passage_order": [
+      "engineering",
+      "geography",
+      "biography",
+      "software",
+      "clinical"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 3857,
+    "usage": {
+      "promptTokenCount": 335,
+      "candidatesTokenCount": 515,
+      "totalTokenCount": 1435,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 335
+        }
+      ],
+      "thoughtsTokenCount": 585,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "2519863a2c3f99ac1d0ea79041db2cb1e1427f1af90cb31b7d90c6c1453b9f84",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Lisbon is the capital and largest city of Portugal.",
+          "question": "What is the capital and largest city of Portugal?"
+        },
+        {
+          "answer": "Lisbon is located on the Atlantic coast where the Tagus River meets the ocean.",
+          "question": "Where is Lisbon geographically situated?"
+        },
+        {
+          "answer": "The Tagus River meets the Atlantic Ocean at Lisbon.",
+          "question": "Which river meets the ocean at Lisbon?"
+        },
+        {
+          "answer": "Lisbon is one of Western Europe's oldest cities, predating capitals such as London and Paris by centuries.",
+          "question": "How does the age of Lisbon compare to London and Paris?"
+        },
+        {
+          "answer": "Lisbon is built across seven hills.",
+          "question": "Across how many hills is Lisbon built?"
+        },
+        {
+          "answer": "Many streets are steep and winding because Lisbon is built across seven hills.",
+          "question": "Why are many streets in Lisbon steep and winding?"
+        },
+        {
+          "answer": "Lisbon has a mild Mediterranean climate.",
+          "question": "What type of climate does Lisbon experience?"
+        },
+        {
+          "answer": "Lisbon experiences warm dry summers and cool rainy winters.",
+          "question": "What are summer and winter weather conditions like in Lisbon?"
+        },
+        {
+          "answer": "The Route 28 tram is yellow.",
+          "question": "What color is the well-known Route 28 tram in Lisbon?"
+        },
+        {
+          "answer": "Much of Lisbon was destroyed by an earthquake in 1755.",
+          "question": "What major disaster struck Lisbon in 1755?"
+        },
+        {
+          "answer": "The downtown Baixa district was rebuilt in a grid pattern following the 1755 earthquake.",
+          "question": "Which district of Lisbon was rebuilt after the 1755 earthquake?"
+        },
+        {
+          "answer": "The downtown Baixa district was rebuilt in a grid pattern.",
+          "question": "In what pattern was Lisbon's downtown Baixa district rebuilt?"
+        }
+      ]
+    },
+    "passage": "geography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 2,
+    "passage_order": [
+      "engineering",
+      "geography",
+      "biography",
+      "software",
+      "clinical"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 6136,
+    "usage": {
+      "promptTokenCount": 357,
+      "candidatesTokenCount": 352,
+      "totalTokenCount": 1904,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 357
+        }
+      ],
+      "thoughtsTokenCount": 1195,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "f4dbb394bb3b6b0d8bf28affcb544692eec480cda4b35ee494bef540c043ffd4",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Marie Curie coined the term radioactivity.",
+          "question": "Who coined the term radioactivity?"
+        },
+        {
+          "answer": "She was born Maria Sklodowska in 1867.",
+          "question": "What was Marie Curie's birth name?"
+        },
+        {
+          "answer": "She was born in Warsaw.",
+          "question": "Where was Marie Curie born?"
+        },
+        {
+          "answer": "She moved to Paris to study at the University of Paris.",
+          "question": "Where did Marie Curie study after moving to Paris?"
+        },
+        {
+          "answer": "Together with Pierre Curie, she discovered polonium and radium.",
+          "question": "Which chemical elements did Marie Curie and Pierre Curie discover?"
+        },
+        {
+          "answer": "She shared the 1903 Nobel Prize in Physics with Pierre Curie and Henri Becquerel.",
+          "question": "Who shared the 1903 Nobel Prize in Physics with Marie Curie?"
+        },
+        {
+          "answer": "Marie Curie won the Nobel Prize in Chemistry in 1911.",
+          "question": "In what year did Marie Curie win the Nobel Prize in Chemistry?"
+        },
+        {
+          "answer": "Marie Curie was the first person to win Nobel Prizes in two different scientific fields.",
+          "question": "Who was the first person to win Nobel Prizes in two different scientific fields?"
+        },
+        {
+          "answer": "During the First World War, she developed mobile X-ray units to help treat wounded soldiers.",
+          "question": "How did Marie Curie support medical treatment during the First World War?"
+        },
+        {
+          "answer": "She died in 1934.",
+          "question": "When did Marie Curie die?"
+        },
+        {
+          "answer": "She died from aplastic anaemia, likely caused by her long exposure to radiation.",
+          "question": "What caused the death of Marie Curie?"
+        },
+        {
+          "answer": "Marie Curie was a physicist and chemist.",
+          "question": "What scientific professions did Marie Curie hold?"
+        }
+      ]
+    },
+    "passage": "biography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 2,
+    "passage_order": [
+      "engineering",
+      "geography",
+      "biography",
+      "software",
+      "clinical"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 5504,
+    "usage": {
+      "promptTokenCount": 333,
+      "candidatesTokenCount": 494,
+      "totalTokenCount": 1549,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 333
+        }
+      ],
+      "thoughtsTokenCount": 722,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "383f5b8898eeb9964a29db2d8d4a9f9d6c86c3dcb1b330fcc8ed44e14092bcd6",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Redis was created by Salvatore Sanfilippo.",
+          "question": "Who created Redis?"
+        },
+        {
+          "answer": "Redis was first released in 2009.",
+          "question": "When was Redis first released?"
+        },
+        {
+          "answer": "Redis is used as a database, cache, and message broker.",
+          "question": "What primary functions can Redis serve as?"
+        },
+        {
+          "answer": "It keeps the entire dataset in memory rather than primarily on disk.",
+          "question": "Why does Redis achieve very low latency for read and write operations?"
+        },
+        {
+          "answer": "Redis supports strings, hashes, lists, sets, and sorted sets.",
+          "question": "What data structures does Redis support?"
+        },
+        {
+          "answer": "Persistence is provided optionally by periodically writing snapshots to disk or appending each write operation to a log.",
+          "question": "How does Redis handle optional data persistence?"
+        },
+        {
+          "answer": "Common uses include caching results of expensive database queries and storing user session data in web applications.",
+          "question": "What are common use cases for Redis in web applications?"
+        },
+        {
+          "answer": "Yes, Redis is an open source, in-memory data structure store.",
+          "question": "Is Redis open source?"
+        },
+        {
+          "answer": "Traditional databases store data primarily on disk, whereas Redis keeps the entire dataset in memory.",
+          "question": "How does the storage location of Redis differ from traditional databases?"
+        },
+        {
+          "answer": "Redis can periodically write snapshots to disk.",
+          "question": "What disk-based snapshotting mechanism does Redis support for persistence?"
+        },
+        {
+          "answer": "It is used to cache the results of expensive database queries.",
+          "question": "How is Redis used in relation to expensive database queries?"
+        },
+        {
+          "answer": "Redis is an in-memory data structure store.",
+          "question": "What type of data store is Redis?"
+        }
+      ]
+    },
+    "passage": "software"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 2,
+    "passage_order": [
+      "engineering",
+      "geography",
+      "biography",
+      "software",
+      "clinical"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 4189,
+    "usage": {
+      "promptTokenCount": 325,
+      "candidatesTokenCount": 512,
+      "totalTokenCount": 1521,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 325
+        }
+      ],
+      "thoughtsTokenCount": 684,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "90273c7f6b3cc1ed3d671fd5430622a3536e325225f091bb823c6128f50b7d42",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Ibuprofen is a nonsteroidal anti inflammatory drug.",
+          "question": "What class of drug is ibuprofen?"
+        },
+        {
+          "answer": "It is commonly used to reduce fever and relieve mild to moderate pain from conditions such as headaches, menstrual cramps, and arthritis.",
+          "question": "What are the common medical uses of ibuprofen?"
+        },
+        {
+          "answer": "Ibuprofen works by inhibiting enzymes known as cyclooxygenases, which reduces the production of prostaglandins that cause inflammation and pain.",
+          "question": "How does ibuprofen work to alleviate pain and inflammation?"
+        },
+        {
+          "answer": "Cyclooxygenases are the enzymes inhibited by ibuprofen.",
+          "question": "Which specific enzymes does ibuprofen inhibit?"
+        },
+        {
+          "answer": "Prostaglandins cause inflammation and pain.",
+          "question": "What effect do prostaglandins have in the body?"
+        },
+        {
+          "answer": "Ibuprofen was first marketed in 1969.",
+          "question": "When was ibuprofen first marketed?"
+        },
+        {
+          "answer": "Yes, ibuprofen is available over the counter in many countries.",
+          "question": "Can ibuprofen be purchased over the counter?"
+        },
+        {
+          "answer": "Common side effects include stomach upset and an increased risk of gastrointestinal bleeding with prolonged use.",
+          "question": "What side effects are associated with taking ibuprofen?"
+        },
+        {
+          "answer": "Prolonged use of ibuprofen carries an increased risk of gastrointestinal bleeding.",
+          "question": "What is the risk of using ibuprofen over an extended period?"
+        },
+        {
+          "answer": "Taking ibuprofen with food is advised to help reduce stomach irritation.",
+          "question": "Why is it recommended to take ibuprofen with food?"
+        },
+        {
+          "answer": "Ibuprofen is not recommended during the later stages of pregnancy.",
+          "question": "At what stage of pregnancy is ibuprofen not recommended?"
+        },
+        {
+          "answer": "Yes, ibuprofen is commonly used to relieve mild to moderate pain from menstrual cramps.",
+          "question": "Does ibuprofen help with menstrual cramps?"
+        }
+      ]
+    },
+    "passage": "clinical"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 2,
+    "passage_order": [
+      "engineering",
+      "geography",
+      "biography",
+      "software",
+      "clinical"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 4638,
+    "usage": {
+      "prompt_tokens": 381,
+      "completion_tokens": 367,
+      "total_tokens": 748,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "105ca87c1db34bfea1ffe9ed1f5578dd1ecb9304dd1091566a66c921545cd617",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "The Airbus A320 is a family of narrow-body airliners developed and manufactured by Airbus.",
+          "question": "What is the Airbus A320?"
+        },
+        {
+          "answer": "It was developed and manufactured by Airbus.",
+          "question": "Which company developed and manufactures the Airbus A320?"
+        },
+        {
+          "answer": "The A320 was the first commercial aircraft to feature a digital fly-by-wire flight control system.",
+          "question": "Which commercial aircraft first featured a digital fly-by-wire flight control system?"
+        },
+        {
+          "answer": "Pilot inputs are transmitted electronically rather than through mechanical linkages.",
+          "question": "How does the A320's digital fly-by-wire system transmit pilot inputs?"
+        },
+        {
+          "answer": "The A320 entered service in 1988.",
+          "question": "When did the Airbus A320 enter service?"
+        },
+        {
+          "answer": "Air France was the airline with which the A320 entered service.",
+          "question": "With which airline did the Airbus A320 enter service?"
+        },
+        {
+          "answer": "The aircraft typically seats between 140 and 170 passengers.",
+          "question": "How many passengers does the Airbus A320 typically seat?"
+        },
+        {
+          "answer": "The A320 has a range of about 6,100 kilometres.",
+          "question": "What is the approximate range of the Airbus A320?"
+        },
+        {
+          "answer": "The A320 family includes shorter and longer variants.",
+          "question": "What types of variants are included in the Airbus A320 family?"
+        },
+        {
+          "answer": "The variants are known as the A318, A319, and A321.",
+          "question": "Which aircraft variants belong to the Airbus A320 family?"
+        },
+        {
+          "answer": "The A320 family is one of the best-selling airliner families in history.",
+          "question": "How successful has the Airbus A320 family been commercially?"
+        },
+        {
+          "answer": "The Airbus A320 is a direct competitor to the Boeing 737.",
+          "question": "Which aircraft is the Airbus A320's direct competitor?"
+        }
+      ]
+    },
+    "passage": "engineering"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 2,
+    "passage_order": [
+      "engineering",
+      "geography",
+      "biography",
+      "software",
+      "clinical"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 3577,
+    "usage": {
+      "prompt_tokens": 381,
+      "completion_tokens": 345,
+      "total_tokens": 726,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "20d7b4bc7b0bd79f4cc946be51512a7ba9ebed07cb9e41301758b28e20e0e684",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Lisbon is the capital and largest city of Portugal.",
+          "question": "What is the capital and largest city of Portugal?"
+        },
+        {
+          "answer": "Lisbon is situated on the Atlantic coast.",
+          "question": "Where is Lisbon situated?"
+        },
+        {
+          "answer": "Lisbon lies where the Tagus River meets the ocean.",
+          "question": "Where does the Tagus River meet the ocean in relation to Lisbon?"
+        },
+        {
+          "answer": "Lisbon is one of the oldest cities in Western Europe.",
+          "question": "How old is Lisbon compared with other cities in Western Europe?"
+        },
+        {
+          "answer": "Lisbon predates modern capitals such as London and Paris by centuries.",
+          "question": "Which modern capitals does Lisbon predate by centuries?"
+        },
+        {
+          "answer": "Lisbon is built across seven hills.",
+          "question": "How many hills is Lisbon built across?"
+        },
+        {
+          "answer": "The seven hills make many of Lisbon\u2019s streets steep and winding.",
+          "question": "Why are many streets in Lisbon steep and winding?"
+        },
+        {
+          "answer": "Lisbon has a mild Mediterranean climate.",
+          "question": "What type of climate does Lisbon have?"
+        },
+        {
+          "answer": "Lisbon\u2019s summers are warm and dry, while its winters are cool and rainy.",
+          "question": "What are Lisbon\u2019s summers and winters like?"
+        },
+        {
+          "answer": "Lisbon is known for its historic tram network, especially the yellow Route 28 tram.",
+          "question": "What is a well-known feature of Lisbon\u2019s historic tram network?"
+        },
+        {
+          "answer": "The 1755 Lisbon earthquake destroyed much of the city.",
+          "question": "What happened during the 1755 Lisbon earthquake?"
+        },
+        {
+          "answer": "The earthquake led to a major rebuilding of the downtown Baixa district in a grid pattern.",
+          "question": "How was downtown Baixa rebuilt after the 1755 earthquake?"
+        }
+      ]
+    },
+    "passage": "geography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 2,
+    "passage_order": [
+      "engineering",
+      "geography",
+      "biography",
+      "software",
+      "clinical"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 3985,
+    "usage": {
+      "prompt_tokens": 408,
+      "completion_tokens": 341,
+      "total_tokens": 749,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "7b1d572f0a85ec225d28dc7d7cb7b73fbfb44e2d7e6552e3072c166e36e70ca0",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Marie Curie was a physicist and chemist.",
+          "question": "What professions did Marie Curie have?"
+        },
+        {
+          "answer": "She conducted pioneering research on radioactivity.",
+          "question": "What research did Marie Curie pioneer?"
+        },
+        {
+          "answer": "Marie Curie coined the term \"radioactivity.\"",
+          "question": "Who coined the term radioactivity?"
+        },
+        {
+          "answer": "She was born Maria Sklodowska in Warsaw in 1867.",
+          "question": "When and where was Marie Curie born?"
+        },
+        {
+          "answer": "She moved to Paris to study at the University of Paris.",
+          "question": "Where did Marie Curie move to study?"
+        },
+        {
+          "answer": "Together with Pierre Curie, she discovered polonium and radium.",
+          "question": "Which elements did Marie Curie and Pierre Curie discover?"
+        },
+        {
+          "answer": "She won the 1903 Nobel Prize in Physics, shared with Pierre Curie and Henri Becquerel.",
+          "question": "Who shared the 1903 Nobel Prize in Physics with Marie Curie?"
+        },
+        {
+          "answer": "She won the Nobel Prize in Chemistry in 1911.",
+          "question": "When did Marie Curie win the Nobel Prize in Chemistry?"
+        },
+        {
+          "answer": "She became the first person to win Nobel Prizes in two different scientific fields.",
+          "question": "What distinction did Marie Curie achieve with her Nobel Prizes?"
+        },
+        {
+          "answer": "During the First World War, she developed mobile X-ray units to help treat wounded soldiers.",
+          "question": "What did Marie Curie develop during the First World War?"
+        },
+        {
+          "answer": "She died in 1934 from aplastic anaemia, likely caused by long exposure to radiation.",
+          "question": "When and from what did Marie Curie die?"
+        }
+      ]
+    },
+    "passage": "biography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 2,
+    "passage_order": [
+      "engineering",
+      "geography",
+      "biography",
+      "software",
+      "clinical"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 3073,
+    "usage": {
+      "prompt_tokens": 382,
+      "completion_tokens": 294,
+      "total_tokens": 676,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "2aa628995e7d67c45fa23203243eb2fea0b208d3731a92850ee03b71731bc1f1",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Redis is an open source, in-memory data structure store.",
+          "question": "What is Redis?"
+        },
+        {
+          "answer": "Redis is used as a database, cache, and message broker.",
+          "question": "What roles can Redis serve?"
+        },
+        {
+          "answer": "Salvatore Sanfilippo created Redis.",
+          "question": "Who created Redis?"
+        },
+        {
+          "answer": "Redis was first released in 2009.",
+          "question": "When was Redis first released?"
+        },
+        {
+          "answer": "Redis keeps the entire dataset in memory.",
+          "question": "Where does Redis keep its dataset?"
+        },
+        {
+          "answer": "Keeping the dataset in memory allows very low-latency reads and writes.",
+          "question": "Why can Redis perform reads and writes with very low latency?"
+        },
+        {
+          "answer": "Redis supports strings, hashes, lists, sets, and sorted sets.",
+          "question": "Which data structures does Redis support?"
+        },
+        {
+          "answer": "Redis provides optional persistence.",
+          "question": "Does Redis provide data persistence?"
+        },
+        {
+          "answer": "Redis can periodically write snapshots to disk for persistence.",
+          "question": "How can Redis persist data using snapshots?"
+        },
+        {
+          "answer": "Redis can append each write operation to a log for persistence.",
+          "question": "How can Redis persist data using a log?"
+        },
+        {
+          "answer": "Redis is commonly used to cache the results of expensive database queries.",
+          "question": "What expensive database operation can Redis cache?"
+        },
+        {
+          "answer": "Redis is commonly used to store user session data in web applications.",
+          "question": "What user data is Redis commonly used to store in web applications?"
+        }
+      ]
+    },
+    "passage": "software"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 2,
+    "passage_order": [
+      "engineering",
+      "geography",
+      "biography",
+      "software",
+      "clinical"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 3290,
+    "usage": {
+      "prompt_tokens": 378,
+      "completion_tokens": 322,
+      "total_tokens": 700,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "66fd76e675ee1059f0938673b8ae3a588d0d9b1000e878c3cd20c6c89d60e40c",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Ibuprofen is a nonsteroidal anti-inflammatory drug.",
+          "question": "What type of medication is ibuprofen?"
+        },
+        {
+          "answer": "It is commonly used to reduce fever.",
+          "question": "What does ibuprofen help reduce?"
+        },
+        {
+          "answer": "Ibuprofen relieves mild to moderate pain.",
+          "question": "What severity of pain can ibuprofen relieve?"
+        },
+        {
+          "answer": "It can relieve pain from headaches, menstrual cramps, and arthritis.",
+          "question": "What conditions can ibuprofen help relieve pain from?"
+        },
+        {
+          "answer": "Ibuprofen works by inhibiting cyclooxygenase enzymes.",
+          "question": "How does ibuprofen work?"
+        },
+        {
+          "answer": "Inhibiting cyclooxygenases reduces the production of prostaglandins that cause inflammation and pain.",
+          "question": "Why does inhibiting cyclooxygenases reduce inflammation and pain?"
+        },
+        {
+          "answer": "Ibuprofen is available over the counter in many countries.",
+          "question": "Where is ibuprofen available over the counter?"
+        },
+        {
+          "answer": "Ibuprofen was first marketed in 1969.",
+          "question": "When was ibuprofen first marketed?"
+        },
+        {
+          "answer": "A common side effect is stomach upset.",
+          "question": "What is a common side effect of ibuprofen?"
+        },
+        {
+          "answer": "Prolonged use increases the risk of gastrointestinal bleeding.",
+          "question": "What risk is associated with prolonged ibuprofen use?"
+        },
+        {
+          "answer": "Ibuprofen is generally advised to be taken with food to reduce stomach irritation.",
+          "question": "How should ibuprofen be taken to reduce stomach irritation?"
+        },
+        {
+          "answer": "Ibuprofen is not recommended during the later stages of pregnancy.",
+          "question": "When during pregnancy is ibuprofen not recommended?"
+        }
+      ]
+    },
+    "passage": "clinical"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 3,
+    "passage_order": [
+      "biography",
+      "engineering",
+      "software",
+      "clinical",
+      "geography"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 3324,
+    "usage": {
+      "prompt_tokens": 408,
+      "completion_tokens": 350,
+      "total_tokens": 758,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "7b1d572f0a85ec225d28dc7d7cb7b73fbfb44e2d7e6552e3072c166e36e70ca0",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Marie Curie was a physicist and chemist.",
+          "question": "What were Marie Curie's professions?"
+        },
+        {
+          "answer": "She conducted pioneering research on radioactivity.",
+          "question": "What kind of research did Marie Curie conduct?"
+        },
+        {
+          "answer": "Marie Curie coined the term \u201cradioactivity.\u201d",
+          "question": "Who coined the term \u201cradioactivity\u201d?"
+        },
+        {
+          "answer": "She was born Maria Sklodowska in Warsaw in 1867.",
+          "question": "When and where was Marie Curie born, and what was her birth name?"
+        },
+        {
+          "answer": "She moved to Paris to study at the University of Paris.",
+          "question": "Where did Marie Curie move to study?"
+        },
+        {
+          "answer": "Marie Curie and Pierre Curie discovered polonium and radium.",
+          "question": "Which elements did Marie Curie and Pierre Curie discover?"
+        },
+        {
+          "answer": "She won the 1903 Nobel Prize in Physics, shared with Pierre Curie and Henri Becquerel.",
+          "question": "Who shared the 1903 Nobel Prize in Physics with Marie Curie?"
+        },
+        {
+          "answer": "She won the Nobel Prize in Chemistry in 1911.",
+          "question": "When did Marie Curie win the Nobel Prize in Chemistry?"
+        },
+        {
+          "answer": "She became the first person to win Nobel Prizes in two different scientific fields.",
+          "question": "What distinction did Marie Curie achieve with her Nobel Prizes?"
+        },
+        {
+          "answer": "During the First World War, she developed mobile X-ray units to help treat wounded soldiers.",
+          "question": "What did Marie Curie develop during the First World War?"
+        },
+        {
+          "answer": "She died in 1934 from aplastic anaemia, likely caused by long exposure to radiation.",
+          "question": "How and when did Marie Curie die?"
+        }
+      ]
+    },
+    "passage": "biography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 3,
+    "passage_order": [
+      "biography",
+      "engineering",
+      "software",
+      "clinical",
+      "geography"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 3758,
+    "usage": {
+      "prompt_tokens": 381,
+      "completion_tokens": 371,
+      "total_tokens": 752,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "105ca87c1db34bfea1ffe9ed1f5578dd1ecb9304dd1091566a66c921545cd617",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "The Airbus A320 is a family of narrow-body airliners developed and manufactured by Airbus.",
+          "question": "What is the Airbus A320?"
+        },
+        {
+          "answer": "Airbus developed and manufactures the A320 family.",
+          "question": "Who developed and manufactures the Airbus A320?"
+        },
+        {
+          "answer": "The A320 was the first commercial aircraft to feature a digital fly-by-wire flight control system.",
+          "question": "What flight-control innovation did the Airbus A320 introduce?"
+        },
+        {
+          "answer": "Pilot inputs are transmitted electronically rather than through mechanical linkages.",
+          "question": "How does the A320\u2019s digital fly-by-wire system transmit pilot inputs?"
+        },
+        {
+          "answer": "The A320 entered service in 1988.",
+          "question": "When did the Airbus A320 enter service?"
+        },
+        {
+          "answer": "The A320 entered service with Air France.",
+          "question": "Which airline first operated the Airbus A320 in commercial service?"
+        },
+        {
+          "answer": "The aircraft typically seats between 140 and 170 passengers.",
+          "question": "How many passengers does the Airbus A320 typically seat?"
+        },
+        {
+          "answer": "The A320 has a range of about 6,100 kilometres.",
+          "question": "What is the approximate range of the Airbus A320?"
+        },
+        {
+          "answer": "The A320 family includes the shorter A318 and A319 and the longer A321 variants.",
+          "question": "Which variants belong to the Airbus A320 family?"
+        },
+        {
+          "answer": "The A318, A319, and A321 are shorter and longer variants of the A320.",
+          "question": "What are the shorter and longer Airbus A320 family variants?"
+        },
+        {
+          "answer": "The A320 is one of the best-selling airliner families in history.",
+          "question": "How successful is the Airbus A320 family commercially?"
+        },
+        {
+          "answer": "The A320 is a direct competitor to the Boeing 737.",
+          "question": "Which aircraft family directly competes with the Airbus A320?"
+        }
+      ]
+    },
+    "passage": "engineering"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 3,
+    "passage_order": [
+      "biography",
+      "engineering",
+      "software",
+      "clinical",
+      "geography"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 3181,
+    "usage": {
+      "prompt_tokens": 382,
+      "completion_tokens": 320,
+      "total_tokens": 702,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "2aa628995e7d67c45fa23203243eb2fea0b208d3731a92850ee03b71731bc1f1",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Redis is an open source, in-memory data structure store used as a database, cache, and message broker.",
+          "question": "What is Redis used for?"
+        },
+        {
+          "answer": "Salvatore Sanfilippo created Redis.",
+          "question": "Who created Redis?"
+        },
+        {
+          "answer": "Redis was first released in 2009.",
+          "question": "When was Redis first released?"
+        },
+        {
+          "answer": "Redis keeps the entire dataset in memory.",
+          "question": "How does Redis store its dataset?"
+        },
+        {
+          "answer": "Keeping the dataset in memory allows very low-latency reads and writes.",
+          "question": "Why can Redis perform reads and writes with very low latency?"
+        },
+        {
+          "answer": "Redis supports strings, hashes, lists, sets, and sorted sets.",
+          "question": "Which data structures does Redis support?"
+        },
+        {
+          "answer": "Redis provides optional persistence by periodically writing snapshots to disk.",
+          "question": "How can Redis provide persistence through snapshots?"
+        },
+        {
+          "answer": "Redis can provide persistence by appending each write operation to a log.",
+          "question": "What logging method does Redis offer for persistence?"
+        },
+        {
+          "answer": "Traditional databases store data primarily on disk, unlike Redis.",
+          "question": "How does Redis differ from traditional databases in data storage?"
+        },
+        {
+          "answer": "Redis is commonly used to cache the results of expensive database queries.",
+          "question": "What database-query results are commonly cached in Redis?"
+        },
+        {
+          "answer": "Redis is commonly used to store user session data in web applications.",
+          "question": "What kind of web application data can Redis store?"
+        },
+        {
+          "answer": "Redis can function as a database, cache, and message broker.",
+          "question": "Which three roles can Redis perform?"
+        }
+      ]
+    },
+    "passage": "software"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 3,
+    "passage_order": [
+      "biography",
+      "engineering",
+      "software",
+      "clinical",
+      "geography"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 3437,
+    "usage": {
+      "prompt_tokens": 378,
+      "completion_tokens": 324,
+      "total_tokens": 702,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "66fd76e675ee1059f0938673b8ae3a588d0d9b1000e878c3cd20c6c89d60e40c",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Ibuprofen is a nonsteroidal anti-inflammatory drug.",
+          "question": "What type of drug is ibuprofen?"
+        },
+        {
+          "answer": "Ibuprofen is commonly used to reduce fever.",
+          "question": "What symptom can ibuprofen reduce?"
+        },
+        {
+          "answer": "It relieves mild to moderate pain from headaches, menstrual cramps, and arthritis.",
+          "question": "What conditions can ibuprofen help relieve pain from?"
+        },
+        {
+          "answer": "Ibuprofen works by inhibiting cyclooxygenase enzymes.",
+          "question": "How does ibuprofen work?"
+        },
+        {
+          "answer": "Inhibiting cyclooxygenases reduces the production of prostaglandins that cause inflammation and pain.",
+          "question": "Why does inhibiting cyclooxygenases reduce inflammation and pain?"
+        },
+        {
+          "answer": "Ibuprofen is available over the counter in many countries.",
+          "question": "Where is ibuprofen available without a prescription?"
+        },
+        {
+          "answer": "Ibuprofen was first marketed in 1969.",
+          "question": "When was ibuprofen first marketed?"
+        },
+        {
+          "answer": "A common side effect is stomach upset.",
+          "question": "What is a common side effect of ibuprofen?"
+        },
+        {
+          "answer": "Prolonged use increases the risk of gastrointestinal bleeding.",
+          "question": "What risk is associated with prolonged ibuprofen use?"
+        },
+        {
+          "answer": "Ibuprofen is generally advised to be taken with food.",
+          "question": "How should ibuprofen generally be taken to reduce stomach irritation?"
+        },
+        {
+          "answer": "Taking ibuprofen with food can reduce stomach irritation.",
+          "question": "Why should ibuprofen be taken with food?"
+        },
+        {
+          "answer": "Ibuprofen is not recommended during the later stages of pregnancy.",
+          "question": "When during pregnancy is ibuprofen not recommended?"
+        }
+      ]
+    },
+    "passage": "clinical"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 3,
+    "passage_order": [
+      "biography",
+      "engineering",
+      "software",
+      "clinical",
+      "geography"
+    ],
+    "provider": "openai",
+    "requested_model": "gpt-5.6-luna",
+    "response_model": "gpt-5.6-luna",
+    "http_status": 200,
+    "upstream_latency_ms": 3043,
+    "usage": {
+      "prompt_tokens": 381,
+      "completion_tokens": 340,
+      "total_tokens": 721,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      }
+    },
+    "request_sha256": "20d7b4bc7b0bd79f4cc946be51512a7ba9ebed07cb9e41301758b28e20e0e684",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": "none",
+    "generation_config": null,
+    "output": {
+      "pairs": [
+        {
+          "answer": "Lisbon is the capital and largest city of Portugal.",
+          "question": "What is the capital and largest city of Portugal?"
+        },
+        {
+          "answer": "Lisbon is situated on the Atlantic coast.",
+          "question": "Where is Lisbon situated?"
+        },
+        {
+          "answer": "Lisbon lies where the Tagus River meets the ocean.",
+          "question": "Where does the Tagus River meet the ocean in relation to Lisbon?"
+        },
+        {
+          "answer": "Lisbon is one of the oldest cities in Western Europe.",
+          "question": "How old is Lisbon compared with other Western European cities?"
+        },
+        {
+          "answer": "Lisbon predates modern capitals such as London and Paris by centuries.",
+          "question": "Which modern capitals does Lisbon predate by centuries?"
+        },
+        {
+          "answer": "Lisbon is built across seven hills.",
+          "question": "How many hills is Lisbon built across?"
+        },
+        {
+          "answer": "Its many hills make Lisbon's streets steep and winding.",
+          "question": "Why are many streets in Lisbon steep and winding?"
+        },
+        {
+          "answer": "Lisbon has a mild Mediterranean climate.",
+          "question": "What type of climate does Lisbon have?"
+        },
+        {
+          "answer": "Lisbon has warm, dry summers and cool, rainy winters.",
+          "question": "What are Lisbon's summers and winters like?"
+        },
+        {
+          "answer": "Lisbon is known for its historic tram network, especially the yellow Route 28 tram.",
+          "question": "What is a well-known feature of Lisbon's transportation network?"
+        },
+        {
+          "answer": "The 1755 Lisbon earthquake destroyed much of the city.",
+          "question": "What happened to Lisbon in the 1755 earthquake?"
+        },
+        {
+          "answer": "The earthquake led to major rebuilding of the downtown Baixa district in a grid pattern.",
+          "question": "How was Lisbon's downtown Baixa district rebuilt after the 1755 earthquake?"
+        }
+      ]
+    },
+    "passage": "geography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 3,
+    "passage_order": [
+      "biography",
+      "engineering",
+      "software",
+      "clinical",
+      "geography"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 5221,
+    "usage": {
+      "promptTokenCount": 357,
+      "candidatesTokenCount": 516,
+      "totalTokenCount": 1689,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 357
+        }
+      ],
+      "thoughtsTokenCount": 816,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "f4dbb394bb3b6b0d8bf28affcb544692eec480cda4b35ee494bef540c043ffd4",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Marie Curie coined the term radioactivity.",
+          "question": "Who coined the scientific term radioactivity?"
+        },
+        {
+          "answer": "She was a physicist and chemist.",
+          "question": "What were the scientific professions of Marie Curie?"
+        },
+        {
+          "answer": "She was born Maria Sklodowska in Warsaw in 1867.",
+          "question": "What was Marie Curie's birth name and birthplace?"
+        },
+        {
+          "answer": "She studied at the University of Paris.",
+          "question": "Where did Marie Curie study after moving to Paris?"
+        },
+        {
+          "answer": "Marie Curie and her husband Pierre Curie discovered polonium and radium.",
+          "question": "Which chemical elements were discovered by Marie and Pierre Curie?"
+        },
+        {
+          "answer": "She shared the prize with Pierre Curie and Henri Becquerel.",
+          "question": "Who shared the 1903 Nobel Prize in Physics with Marie Curie?"
+        },
+        {
+          "answer": "She won the Nobel Prize in Chemistry in 1911.",
+          "question": "In what year did Marie Curie win the Nobel Prize in Chemistry?"
+        },
+        {
+          "answer": "Marie Curie was the first person to win Nobel Prizes in two different scientific fields.",
+          "question": "Who was the first person to receive Nobel Prizes in two separate scientific fields?"
+        },
+        {
+          "answer": "She developed mobile X-ray units to help treat wounded soldiers.",
+          "question": "What did Marie Curie develop to assist wounded soldiers during the First World War?"
+        },
+        {
+          "answer": "Marie Curie died in 1934.",
+          "question": "In what year did Marie Curie die?"
+        },
+        {
+          "answer": "She died from aplastic anaemia, likely caused by her long exposure to radiation.",
+          "question": "What was the cause of Marie Curie's death?"
+        },
+        {
+          "answer": "She won the Nobel Prize in Physics in 1903.",
+          "question": "Which Nobel Prize did Marie Curie win in 1903?"
+        }
+      ]
+    },
+    "passage": "biography"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 3,
+    "passage_order": [
+      "biography",
+      "engineering",
+      "software",
+      "clinical",
+      "geography"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 5377,
+    "usage": {
+      "promptTokenCount": 352,
+      "candidatesTokenCount": 368,
+      "totalTokenCount": 1944,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 352
+        }
+      ],
+      "thoughtsTokenCount": 1224,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "4edc73f723ebaea1ea7d37aa8b4d78a38a32a3fd2eb60d8b4a4616641423dd14",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Airbus.",
+          "question": "Who develops and manufactures the A320 airliner family?"
+        },
+        {
+          "answer": "It is a narrow body airliner.",
+          "question": "What type of body configuration does the Airbus A320 have?"
+        },
+        {
+          "answer": "A digital fly by wire flight control system.",
+          "question": "What pioneering flight control system was first introduced commercially on the Airbus A320?"
+        },
+        {
+          "answer": "Pilot inputs are transmitted electronically rather than through mechanical linkages.",
+          "question": "How are pilot inputs transmitted in the Airbus A320 flight control system?"
+        },
+        {
+          "answer": "It entered service in 1988.",
+          "question": "In what year did the Airbus A320 enter commercial service?"
+        },
+        {
+          "answer": "Air France.",
+          "question": "Which airline introduced the Airbus A320 into service in 1988?"
+        },
+        {
+          "answer": "It typically seats between 140 and 170 passengers.",
+          "question": "How many passengers can an Airbus A320 typically carry?"
+        },
+        {
+          "answer": "About 6,100 kilometres.",
+          "question": "Airbus A320 typical flight range"
+        },
+        {
+          "answer": "The A318, A319, and A321.",
+          "question": "What are the shorter and longer variants belonging to the Airbus A320 family?"
+        },
+        {
+          "answer": "The Boeing 737.",
+          "question": "Which aircraft is a direct competitor to the Airbus A320?"
+        },
+        {
+          "answer": "It is one of the best selling airliner families in history.",
+          "question": "How does the Airbus A320 rank in historical sales among airliners?"
+        },
+        {
+          "answer": "The Airbus A320 family.",
+          "question": "Which airliner family includes the A318, A319, and A321 variants?"
+        }
+      ]
+    },
+    "passage": "engineering"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 3,
+    "passage_order": [
+      "biography",
+      "engineering",
+      "software",
+      "clinical",
+      "geography"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 4653,
+    "usage": {
+      "promptTokenCount": 333,
+      "candidatesTokenCount": 485,
+      "totalTokenCount": 1663,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 333
+        }
+      ],
+      "thoughtsTokenCount": 845,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "383f5b8898eeb9964a29db2d8d4a9f9d6c86c3dcb1b330fcc8ed44e14092bcd6",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Redis was created by Salvatore Sanfilippo.",
+          "question": "Who created Redis?"
+        },
+        {
+          "answer": "Redis was first released in 2009.",
+          "question": "When was Redis first released?"
+        },
+        {
+          "answer": "Redis is an open source, in-memory data structure store used as a database, cache, and message broker.",
+          "question": "What three primary roles does Redis serve?"
+        },
+        {
+          "answer": "Redis keeps the entire dataset in memory.",
+          "question": "Where does Redis keep its entire dataset to achieve very low latency?"
+        },
+        {
+          "answer": "Because it keeps the entire dataset in memory, unlike traditional databases that store data primarily on disk.",
+          "question": "Why does Redis allow for very low latency reads and writes?"
+        },
+        {
+          "answer": "Redis supports strings, hashes, lists, sets, and sorted sets.",
+          "question": "What data structures are supported by Redis?"
+        },
+        {
+          "answer": "Persistence is optional in Redis.",
+          "question": "Is persistence mandatory or optional in Redis?"
+        },
+        {
+          "answer": "Redis provides persistence by periodically writing snapshots to disk or by appending each write operation to a log.",
+          "question": "How does Redis achieve persistence on disk?"
+        },
+        {
+          "answer": "Traditional databases store data primarily on disk.",
+          "question": "Where do traditional databases primarily store data?"
+        },
+        {
+          "answer": "Redis is open source.",
+          "question": "What type of software source model does Redis use?"
+        },
+        {
+          "answer": "Redis is commonly used to store user session data and to cache the results of expensive database queries.",
+          "question": "What are two common applications of Redis in web development?"
+        },
+        {
+          "answer": "It is commonly used to cache the results of expensive database queries.",
+          "question": "Redis database query caching purpose"
+        }
+      ]
+    },
+    "passage": "software"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 3,
+    "passage_order": [
+      "biography",
+      "engineering",
+      "software",
+      "clinical",
+      "geography"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 4350,
+    "usage": {
+      "promptTokenCount": 325,
+      "candidatesTokenCount": 502,
+      "totalTokenCount": 1534,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 325
+        }
+      ],
+      "thoughtsTokenCount": 707,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "90273c7f6b3cc1ed3d671fd5430622a3536e325225f091bb823c6128f50b7d42",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Ibuprofen is a nonsteroidal anti-inflammatory drug.",
+          "question": "What class of drug is ibuprofen?"
+        },
+        {
+          "answer": "It is commonly used to reduce fever and relieve mild to moderate pain.",
+          "question": "What are the primary therapeutic uses of ibuprofen?"
+        },
+        {
+          "answer": "Ibuprofen can relieve pain from conditions such as headaches, menstrual cramps, and arthritis.",
+          "question": "What specific conditions causing mild to moderate pain can be treated with ibuprofen?"
+        },
+        {
+          "answer": "It works by inhibiting enzymes known as cyclooxygenases, which reduces the production of prostaglandins.",
+          "question": "How does ibuprofen work in the body?"
+        },
+        {
+          "answer": "Ibuprofen inhibits cyclooxygenases.",
+          "question": "Which specific enzymes are inhibited by ibuprofen?"
+        },
+        {
+          "answer": "Prostaglandins cause inflammation and pain.",
+          "question": "What role do prostaglandins play in the body?"
+        },
+        {
+          "answer": "Ibuprofen was first marketed in 1969.",
+          "question": "When was ibuprofen first marketed?"
+        },
+        {
+          "answer": "Yes, it is available over the counter in many countries.",
+          "question": "Can ibuprofen be purchased over the counter?"
+        },
+        {
+          "answer": "Common side effects include stomach upset and, with prolonged use, an increased risk of gastrointestinal bleeding.",
+          "question": "What are the common side effects of taking ibuprofen?"
+        },
+        {
+          "answer": "Prolonged use of ibuprofen increases the risk of gastrointestinal bleeding.",
+          "question": "What health risk is associated with the long-term use of ibuprofen?"
+        },
+        {
+          "answer": "Taking ibuprofen with food helps reduce stomach irritation.",
+          "question": "Why is it recommended to take ibuprofen with food?"
+        },
+        {
+          "answer": "Ibuprofen is not recommended during the later stages of pregnancy.",
+          "question": "During which stage of pregnancy is ibuprofen not recommended?"
+        }
+      ]
+    },
+    "passage": "clinical"
+  },
+  {
+    "phase": "measurement",
+    "repeat": 3,
+    "passage_order": [
+      "biography",
+      "engineering",
+      "software",
+      "clinical",
+      "geography"
+    ],
+    "provider": "gemini",
+    "requested_model": "gemini-3.8-flash",
+    "response_model": "gemini-3.8-flash",
+    "http_status": 200,
+    "upstream_latency_ms": 4921,
+    "usage": {
+      "promptTokenCount": 335,
+      "candidatesTokenCount": 509,
+      "totalTokenCount": 1565,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 335
+        }
+      ],
+      "thoughtsTokenCount": 721,
+      "serviceTier": "standard"
+    },
+    "request_sha256": "2519863a2c3f99ac1d0ea79041db2cb1e1427f1af90cb31b7d90c6c1453b9f84",
+    "schema_sha256": "15019fdd14893fd3484c60f58efcc3f5893400d0f955197475d68ecd951cd8d8",
+    "reasoning_effort": null,
+    "generation_config": {
+      "responseJsonSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "pairs": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "pairs"
+        ],
+        "type": "object"
+      },
+      "responseMimeType": "application/json"
+    },
+    "output": {
+      "pairs": [
+        {
+          "answer": "Lisbon is the capital and largest city of Portugal.",
+          "question": "What is the capital city of Portugal?"
+        },
+        {
+          "answer": "Lisbon is situated on the Atlantic coast where the Tagus River meets the ocean.",
+          "question": "Where is Lisbon located in relation to the coast and major rivers?"
+        },
+        {
+          "answer": "Lisbon predates other modern European capitals like London and Paris by centuries.",
+          "question": "How does Lisbon's age compare to other modern Western European capitals like London and Paris?"
+        },
+        {
+          "answer": "The city is built across seven hills.",
+          "question": "Across how many hills is Lisbon built?"
+        },
+        {
+          "answer": "Many streets are steep and winding because Lisbon is built across seven hills.",
+          "question": "Why are many of Lisbon's streets steep and winding?"
+        },
+        {
+          "answer": "Lisbon has a mild Mediterranean climate.",
+          "question": "What kind of climate does Lisbon have?"
+        },
+        {
+          "answer": "Summers in Lisbon are warm and dry.",
+          "question": "What are summer weather conditions like in Lisbon?"
+        },
+        {
+          "answer": "Lisbon experiences cool, rainy winters.",
+          "question": "How are winters characterized in Lisbon?"
+        },
+        {
+          "answer": "The historic tram network, particularly the yellow Route 28 tram, is a well-known feature.",
+          "question": "What famous yellow tram route operates in Lisbon?"
+        },
+        {
+          "answer": "The 1755 earthquake destroyed much of the city.",
+          "question": "What major natural disaster struck Lisbon in 1755?"
+        },
+        {
+          "answer": "The downtown Baixa district was rebuilt in a grid pattern.",
+          "question": "Which district of Lisbon was rebuilt in a grid pattern following the 1755 earthquake?"
+        },
+        {
+          "answer": "The Tagus River meets the Atlantic Ocean at Lisbon.",
+          "question": "Which river flows into the Atlantic ocean at Lisbon?"
+        }
+      ]
+    },
+    "passage": "geography"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "mode": "live",
+  "started_utc": "2026-09-09T12:23:40.493871Z",
+  "finished": false,
+  "protocol_sha256": "a34044ec695e67aa9f0cabe48c4c0e4bbb97b2050fca3b1af3b6291d8de8087e",
+  "attempts": [
+    "luna-json-r0-b0.json",
+    "glm-flash-r0-b0.json",
+    "luna-json-r1-b1.json",
+    "glm-flash-r1-b1.json"
+  ],
+  "halted_arms": {},
+  "binary_sha256": "4267ee99ffab295e55e1c56ebc74c5fe3ed4d1ba1158b789483857876c0f8cc7",
+  "finished_utc": "2026-09-09T12:25:58.233038Z",
+  "reserved_usd": 0.03999029999999999,
+  "artifact_sha256": {
+    "glm-flash-r0-b0.json": "1c7b00de0960286e677138d938cc80e6fefde111c60fee0ac56ee1bea81b460b",
+    "glm-flash-r1-b1.json": "fa595b05460bf5f5fd1c41412aa8a29d2b753e6d427ecfddd016c2f3523cc6ed",
+    "luna-json-r0-b0.json": "a1d5cc356629740846f4946b4229398b114323cfccef53239db78321a60f3b5c",
+    "luna-json-r1-b1.json": "9c4a416b8d0e22af50b4b024000764ce3b487e5a11a44437ac275885bec06ad0",
+    "provider-calls.json": "b8c0b47cefb6bee8caa9e44257832e63e782406461256a48c28df9a6e70c356b"
+  }
+}

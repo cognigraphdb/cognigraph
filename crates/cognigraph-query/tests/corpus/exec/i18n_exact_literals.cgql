@@ -1,0 +1,4 @@
+// binds: {"name":"cafe\u0301"}
+RETURN ["caf\u00E9" == "cafe\u0301", "cafe\u0301" == @name,
+    NORMALIZE_NFC("cafe\u0301") == "caf\u00E9",
+    NORMALIZE_NFC(@name), NORMALIZE_NFC(42), NORMALIZE_NFC(null)]

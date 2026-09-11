@@ -1,0 +1,175 @@
+{
+  "document_id": "development-817130ca0722959c",
+  "request": {
+    "space_type": "document-trial-development-817130ca0722959c",
+    "taxonomy": [
+      {
+        "relation": "COUNTRY",
+        "description": "The source place, organization, event, or work belongs to or is located in the target country. Do not apply to a person; do not infer unstated geographic containment.",
+        "require_in_sentence": [
+          "country",
+          "in",
+          "of",
+          "located",
+          "based"
+        ]
+      },
+      {
+        "relation": "LOCATED_IN",
+        "description": "The source place is located in the target administrative territory. Require the document to state the containment; do not infer a transitive location chain.",
+        "require_in_sentence": [
+          "in",
+          "located",
+          "part of",
+          "region",
+          "district",
+          "province",
+          "county"
+        ]
+      },
+      {
+        "relation": "HEADQUARTERED_IN",
+        "description": "The source organization has its headquarters in the target location. A branch office or activity in a place is not headquarters.",
+        "require_in_sentence": [
+          "headquarters",
+          "headquartered",
+          "based",
+          "head office"
+        ]
+      },
+      {
+        "relation": "BORN_IN",
+        "description": "The source person was born in the target place. Residence, citizenship, death, or employment alone do not establish birthplace.",
+        "require_in_sentence": [
+          "born",
+          "birth",
+          "birthplace"
+        ]
+      },
+      {
+        "relation": "DIED_IN",
+        "description": "The source person died in the target place. Birthplace, residence, or burial alone do not establish place of death.",
+        "require_in_sentence": [
+          "died",
+          "death",
+          "killed"
+        ]
+      },
+      {
+        "relation": "HAS_FATHER",
+        "description": "The target person is the father of the source person. Do not reverse parent and child or infer from shared surnames.",
+        "require_in_sentence": [
+          "father",
+          "son",
+          "daughter",
+          "parent"
+        ]
+      },
+      {
+        "relation": "HAS_MOTHER",
+        "description": "The target person is the mother of the source person. Do not reverse parent and child or infer from shared surnames.",
+        "require_in_sentence": [
+          "mother",
+          "son",
+          "daughter",
+          "parent"
+        ]
+      },
+      {
+        "relation": "SPOUSE_OF",
+        "description": "The two people are or were married spouses, including explicitly stated former spouses. A proposed marriage or other association does not establish marriage. This relation is symmetric.",
+        "require_in_sentence": [
+          "married",
+          "wife",
+          "husband",
+          "spouse",
+          "marriage",
+          "divorced"
+        ]
+      },
+      {
+        "relation": "HAS_CHILD",
+        "description": "The target person is the child of the source person. Do not reverse the direction or infer from shared surnames.",
+        "require_in_sentence": [
+          "father",
+          "mother",
+          "son",
+          "daughter",
+          "child",
+          "children",
+          "parent"
+        ]
+      },
+      {
+        "relation": "FOUNDED_BY",
+        "description": "The target person or organization founded or co-founded the source organization. A later owner, executive, or employee is not necessarily a founder.",
+        "require_in_sentence": [
+          "founded",
+          "established",
+          "founder",
+          "co-founded"
+        ]
+      },
+      {
+        "relation": "OWNED_BY",
+        "description": "The source asset, organization, or work is or was owned by the target entity. Operation, creation, employment, or partnership alone does not establish ownership.",
+        "require_in_sentence": [
+          "owned",
+          "owner",
+          "ownership",
+          "acquired",
+          "subsidiary",
+          "purchased",
+          "bought"
+        ]
+      },
+      {
+        "relation": "PUBLISHED_BY",
+        "description": "The target organization or person publishes or published the source work. Creation, distribution, and publication are distinct.",
+        "require_in_sentence": [
+          "published",
+          "publisher",
+          "publishing"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "development-817130ca0722959c",
+        "title": "Sonic the Hedgehog",
+        "text": "Sonic the Hedgehog is a media franchise created and produced by Sega .\nIt is primarily a video game franchise , centering on a series of speed - based platform games .\nSonic , the protagonist , is an anthropomorphic blue hedgehog with supersonic speed , capable of reaching the speed of sound .\nTypically , Sonic — usually along with some of his friends , such as Tails , Amy , and Knuckles — must stop antagonist Doctor Eggman 's plans for world domination .\nThe first game in the series , released in 1991 , was conceived by Sega 's Sonic Team division after Sega requested a mascot character .\nIts success spawned many sequels and helped Sega become one of the leading video game companies during the 16-bit era of the early 1990s .\nWhile the first Sonic games were side - scrolling platform games , later games expanded into other genres , such as Mario & Sonic at the Olympic Games .\nThe series and its spin - offs had sold over 89million physical copies by March 2011 , and grossed over by 2014 .\nAs of 2018 , the series has shifted 800million units , including free - to - play mobile game downloads .\nThe franchise has also been spun out into other media , including cartoons , anime , and a comic book series recognized as the longest running based on a video game by Guinness World Records ."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 1,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 0,
+    "proposed": 4,
+    "skips": [
+      "`Sonic the Hedgehog --PUBLISHED_BY--> Sega`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+      "`Sonic --PUBLISHED_BY--> Sega`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+      "`Sonic Team --OWNED_BY--> Sega`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+      "`Mario & Sonic at the Olympic Games --PUBLISHED_BY--> Sega`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "document-trial-development-817130ca0722959c"
+  },
+  "latency_seconds": 0.03869995893910527,
+  "facts": [],
+  "entities": [],
+  "chunks": [
+    {
+      "_id": "chunks/document-trial-development-817130ca0722959c-development-817130ca0722959c",
+      "_key": "document-trial-development-817130ca0722959c-development-817130ca0722959c",
+      "chunk_id": "development-817130ca0722959c",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3a2b1b52bb35c488aa6aade7f1b86487cb37a1da94984a9b2ec1ba2833d3db61",
+      "created_at": "2026-09-09T15:07:30.245536+00:00",
+      "space_id": "document-trial-development-817130ca0722959c",
+      "text": "Sonic the Hedgehog is a media franchise created and produced by Sega .\nIt is primarily a video game franchise , centering on a series of speed - based platform games .\nSonic , the protagonist , is an anthropomorphic blue hedgehog with supersonic speed , capable of reaching the speed of sound .\nTypically , Sonic — usually along with some of his friends , such as Tails , Amy , and Knuckles — must stop antagonist Doctor Eggman 's plans for world domination .\nThe first game in the series , released in 1991 , was conceived by Sega 's Sonic Team division after Sega requested a mascot character .\nIts success spawned many sequels and helped Sega become one of the leading video game companies during the 16-bit era of the early 1990s .\nWhile the first Sonic games were side - scrolling platform games , later games expanded into other genres , such as Mario & Sonic at the Olympic Games .\nThe series and its spin - offs had sold over 89million physical copies by March 2011 , and grossed over by 2014 .\nAs of 2018 , the series has shifted 800million units , including free - to - play mobile game downloads .\nThe franchise has also been spun out into other media , including cartoons , anime , and a comic book series recognized as the longest running based on a video game by Guinness World Records .",
+      "title": "Sonic the Hedgehog",
+      "updated_at": "2026-09-09T15:07:30.245536+00:00"
+    }
+  ]
+}

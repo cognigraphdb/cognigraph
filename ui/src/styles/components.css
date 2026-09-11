@@ -1,0 +1,366 @@
+.health-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.health-dot {
+  flex: 0 0 auto;
+  color: #2fc69d;
+}
+
+.select-wrap,
+.search-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select-wrap select {
+  width: 100%;
+  height: 38px;
+  padding: 0 38px 0 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: white;
+}
+
+.select-wrap > svg,
+.search-field > svg {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  color: var(--text-muted);
+}
+
+.select-wrap.compact select {
+  height: 22px;
+  padding: 0 22px 0 0;
+  border: 0;
+  background: transparent;
+}
+
+.select-wrap.compact > svg {
+  right: 2px;
+}
+
+/* Layout comes from .workspace-header-base (screens.css); the workspace
+   inset comes from the shared margin rule there. */
+
+.breadcrumb {
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* Breadcrumb segments that navigate (router Links). */
+.breadcrumb a {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.collection-heading p {
+  margin-top: 5px;
+  color: var(--text-muted);
+}
+
+.button-divider {
+  width: 1px;
+  height: 24px;
+  margin-left: 4px;
+  background: rgb(255 255 255 / 30%);
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: minmax(210px, 1.2fr) minmax(148px, 0.55fr) minmax(170px, 0.7fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 82px;
+  padding: 0 var(--workspace-pad);
+}
+
+@container (max-width: 720px) {
+  .filters {
+    grid-template-columns: minmax(0, 1fr) minmax(170px, 1fr) auto;
+  }
+
+  .filters > .ant-input-affix-wrapper {
+    grid-column: 1 / -1;
+  }
+
+  .collection-heading {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-block: 20px;
+  }
+
+  .collection-heading > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+.filters .ant-input-search,
+.filters .ant-select {
+  width: 100%;
+}
+
+.search-field input {
+  width: 100%;
+  height: 38px;
+  padding: 0 42px 0 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: white;
+}
+
+.reset-button {
+  height: 36px;
+  border: 0;
+  background: transparent;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.table-region {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.table-scroll {
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  border-top: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  height: 48px;
+  padding: 0 10px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+th {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  height: 45px;
+  background: #fafbfa;
+  color: #4c5755;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+/* Controls row between the page header and a table: filters on the left,
+   record count on the right. Inside an unpadded panel it carries the
+   workspace inset itself (same rule as headers). */
+.workspace-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.collection-panel .workspace-controls {
+  padding-inline: var(--workspace-pad);
+}
+
+.workspace-count {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Table rows that navigate somewhere on click. */
+.clickable-row {
+  cursor: pointer;
+}
+
+/* antd tables (Review, Users) share the canonical document-table look.
+   Colors come from the Table theme tokens (antd-theme.ts); typography and
+   row metrics have no tokens, so they are aligned here. */
+main .ant-table-wrapper .ant-table-thead > tr > th {
+  height: 45px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+main .ant-table-wrapper .ant-table-tbody > tr > td {
+  height: 48px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* DocumentTable (the only antd Table nested in its own scroll region,
+   .table-scroll, rather than the page-level scroll the other antd
+   tables use): antd sets `position: relative` on its own <th> (for the
+   resize handle), which beats a bare `th { position: sticky }` rule on
+   specificity -- so the sticky header needs pinning here explicitly,
+   scoped to .table-region only. This must NOT be widened to a global
+   `.ant-table-thead > tr > th` rule: the other antd tables (Users,
+   Review, Overview, Collections index) scroll at the page level, and a
+   sticky offset there would pin the header against the WRONG ancestor. */
+.table-region .ant-table-thead > tr > th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+th:nth-child(2) {
+  width: 145px;
+}
+th:nth-child(3) {
+  width: 31%;
+}
+th:nth-child(4) {
+  width: 18%;
+}
+th:nth-child(5) {
+  width: 180px;
+}
+
+tbody tr {
+  transition: background-color 120ms ease;
+}
+
+tbody tr:hover {
+  background: #f7faf9;
+}
+
+tbody tr.selected {
+  background: var(--accent-soft);
+}
+
+.selector-column {
+  width: 42px;
+}
+
+.embedding-column,
+.embedding-cell {
+  width: 82px;
+  text-align: center;
+}
+
+.row-selector {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: var(--border-strong);
+}
+
+.row-selector.ant-btn {
+  min-width: 24px;
+  padding: 0;
+}
+
+.row-selector.selected {
+  color: var(--accent);
+}
+
+.key-button {
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  color: var(--accent-dark);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.key-button.ant-btn {
+  height: auto;
+  justify-content: flex-start;
+}
+
+.document-title {
+  font-weight: 550;
+}
+
+.ready-icon {
+  color: var(--success);
+}
+.processing-icon {
+  color: var(--warning);
+}
+.missing-icon {
+  color: var(--text-soft);
+}
+
+/* Derivative of .empty-state-base (screens.css) for antd <Empty>, whose
+   icon sits inside .ant-empty-image rather than as a direct child. */
+.empty-state.ant-empty {
+  margin: 0;
+}
+
+.empty-state .ant-empty-image svg {
+  color: var(--accent);
+}
+
+.empty-state strong {
+  color: var(--text);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 64px;
+  padding: 0 var(--workspace-pad);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.pagination button {
+  min-width: 32px;
+  height: 32px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.pagination .ant-select {
+  min-width: 64px;
+}
+.pagination-summary {
+  margin-left: auto;
+}
+.pagination .current-page {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}

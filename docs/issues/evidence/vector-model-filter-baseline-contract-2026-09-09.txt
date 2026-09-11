@@ -1,0 +1,26 @@
+ArangoDB 3.12.11, trained cosine vector indexes, new fixture against the pre-CG-20 implementation.
+
+running 2 tests
+
+thread 'vector_search::indexed_mixed_model_contract' (11100455) panicked at crates/cognigraph-arango/tests/integration/vector_search.rs:38:9:
+assertion `left == right` failed: model_outside_global_prefix
+  left: []
+ right: [String("b000")]
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test vector_search::indexed_mixed_model_contract ... FAILED
+
+thread 'vector_search::fallback_mixed_model_contract' (11100454) panicked at crates/cognigraph-arango/tests/integration/vector_search.rs:38:9:
+assertion `left == right` failed: duplicates_do_not_starve_other_parents
+  left: [String("b000")]
+ right: [String("b000"), String("b_second"), String("b_third"), String("b_plain")]
+test vector_search::fallback_mixed_model_contract ... FAILED
+
+failures:
+
+failures:
+    vector_search::fallback_mixed_model_contract
+    vector_search::indexed_mixed_model_contract
+
+test result: FAILED. 0 passed; 2 failed; 0 ignored; 0 measured; 6 filtered out; finished in 1.48s
+
+error: test failed, to rerun pass `-p cognigraph-arango --test integration`

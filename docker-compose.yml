@@ -1,0 +1,31 @@
+# Production-shaped single-node deployment. Start: docker compose up -d
+services:
+  cognigraph:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - cognigraph-data:/data
+    environment:
+      COGNIGRAPH_BACKEND: native
+      COGNIGRAPH_NATIVE_PATH: /data/cognigraph.redb
+      # Uncomment for the paged, low-RAM profile:
+      # COGNIGRAPH_VECTOR_MODE: sidecar
+      # COGNIGRAPH_STORAGE_MODE: paged
+      COGNIGRAPH_AUTH_ENABLED: "true"
+      # Set via `docker compose --env-file` or a secrets manager — never commit.
+      COGNIGRAPH_ADMIN_PASSWORD: ${COGNIGRAPH_ADMIN_PASSWORD:?set COGNIGRAPH_ADMIN_PASSWORD}
+      COGNIGRAPH_HOST_ADMIN_PASSWORD: ${COGNIGRAPH_HOST_ADMIN_PASSWORD:?set COGNIGRAPH_HOST_ADMIN_PASSWORD}
+      COGNIGRAPH_JWT_SECRET: ${COGNIGRAPH_JWT_SECRET:?set COGNIGRAPH_JWT_SECRET}
+      # Public trust anchor only. Root/principal private keys never enter the service.
+      COGNIGRAPH_GOVERNANCE_ROOT_PUBLIC_KEY: ${COGNIGRAPH_GOVERNANCE_ROOT_PUBLIC_KEY:-}
+      COGNIGRAPH_QUERY_CACHE_ENABLED: "true"
+      COGNIGRAPH_RATE_LIMIT_PER_MINUTE: "600"
+      COGNIGRAPH_REQUEST_TIMEOUT_SECS: "30"
+      COGNIGRAPH_CGQL_MAX_SOURCE_ROWS: "1000000"
+      COGNIGRAPH_CGQL_TIME_BUDGET_MS: "10000"
+      COGNIGRAPH_LOG_FORMAT: json
+    restart: unless-stopped
+
+volumes:
+  cognigraph-data:

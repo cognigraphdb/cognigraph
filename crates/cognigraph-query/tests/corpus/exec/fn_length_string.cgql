@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d._key == "c" RETURN LENGTH(d.title)

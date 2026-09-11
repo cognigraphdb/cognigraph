@@ -1,0 +1,2453 @@
+{
+  "name": "neuron-authored-mined-v3",
+  "predicates": {
+    "1stRunwayLengthFeet": [
+      "the 1st runway length in feet of {source} is {target}",
+      "the 1st runway at {source} is {target} feet in length",
+      "the first runway length in feet of {source} is {target}",
+      "the first runway of {source} has a length of {target} feet",
+      "the first runway of {source} is {target} feet long",
+      "the length of the 1st runway at {source} is {target} feet",
+      "the length of the first runway at {source} is {target} feet",
+      "the length of the first runway of {source} is {target}",
+      "{source} is 1st {target} runway length",
+      "{source}'s 1st runway has a length of {target} feet",
+      "{target} feet is the length of the first runway at {source}"
+    ],
+    "1stRunwayLengthMetre": [
+      "the length of the 1st runway at {source} is {target} metres",
+      "the length of the first runway at {source} is {target} meters",
+      "the length of the first runway at {source} is {target} metres"
+    ],
+    "1stRunwayNumber": [
+      "{source} 1st runway is number {target}",
+      "{source}'s 1st runway has the number {target}",
+      "{target} is the number of the first runway of {source}"
+    ],
+    "1stRunwaySurfaceType": [
+      "the 1st runway at {source} is made from {target}",
+      "the 1st runway at {source} has an {target} surface",
+      "the 1st runway at {source} is made of {target}",
+      "the first runway at {source} is made from {target}",
+      "the first runway at {source} is made of {target}",
+      "the first runway of {source} is made in {target}",
+      "the surface of the 1st runway at {source} is {target}"
+    ],
+    "2ndRunwaySurfaceType": [
+      "the 2nd runway at {source} is made of {target}"
+    ],
+    "3rdRunwayLengthFeet": [
+      "the length of the 3rd runway at {source} is {target} feet",
+      "the {source}'s 3rd runway length in ft is {target}",
+      "the 3rd runway at {source} is {target} feet",
+      "the 3rd runway at {source} is {target} feet long",
+      "the {source}'s 3rd runway length is ft is {target}"
+    ],
+    "3rdRunwaySurfaceType": [
+      "the 3rd runway at {source} is made of {target}",
+      "{source}'s 3rd runway surface type is {target}"
+    ],
+    "4thRunwayLengthFeet": [
+      "the fourth runway at {source} is {target} feet long",
+      "{source} is 4th runway length feet of {target}",
+      "{source}'s 4th runway has a length in feet of {target}"
+    ],
+    "5thRunwayNumber": [
+      "{source} is 5th runway number {target}",
+      "{target} is the number of the fifth runway of {source}"
+    ],
+    "LCCN_number": [
+      "{source} has the lccn number {target}",
+      "the lccn number of the {source} is {target}",
+      "the {source} has a lccn number of {target}",
+      "{target} is the lccn number for {source}",
+      "{target} is the lccn number of {source}"
+    ],
+    "NationalRegisterOfHistoricPlacesReferenceNumber": [
+      "{target} is {source}' reference number in the national register of historic places"
+    ],
+    "abbreviation": [
+      "the abbreviation {target} is for {source}",
+      "{source} has the abbreviation of {target}",
+      "{target} is the abbreviation of {source}"
+    ],
+    "absoluteMagnitude": [
+      "{source} has an absolute magnitude of {target}",
+      "the absolute magnitude of {source} is {target}",
+      "the celestial body known as {source} has an absolute magnitude of {target}",
+      "{source}’s absolute magnitude is {target}"
+    ],
+    "academicDiscipline": [
+      "the {source} comes under the academic discipline of {target}",
+      "the academic discipline of {source} is {target}",
+      "the {source} covers the academic discipline of {target}",
+      "the {source} publishes about {target}",
+      "{source} comes under the academic discipline {target}",
+      "{source} covers the discipline of {target}",
+      "{source} is academically focused on {target}",
+      "{source} is concerned with the academic discipline of {target}",
+      "{source} is devoted to the study of {target}",
+      "{source} is part of the academic discipline of {target}",
+      "{target} is the academic discipline of {source}"
+    ],
+    "academicStaffSize": [
+      "the academic staff at the {source} number {target}",
+      "the academic staff of the {source} number {target}",
+      "the academic staff size of {source} is {target}",
+      "the {source} has academic staff size of {target}",
+      "{source} has an academic staff of {target}"
+    ],
+    "activeYearsEndDate": [
+      "{source} ended their career on {target}"
+    ],
+    "activeYearsEndYear": [
+      "{source} ended his career in {target}",
+      "{source} stopped performing in {target}"
+    ],
+    "activeYearsStartDate": [
+      "{source} started his career on {target}"
+    ],
+    "activeYearsStartYear": [
+      "{source} started performing in {target}",
+      "{source} started his career in {target}",
+      "{source} became active in music in {target}",
+      "{source} became active in {target}",
+      "{source} began her musical career in {target}",
+      "{source} began his active years in {target}",
+      "{source} began his musical career in {target}",
+      "{source} has been active since {target}",
+      "{source} started being active in {target}",
+      "{source} started playing in {target}",
+      "{source} started to play on the professional level in {target}",
+      "{source}'s active years in music began in {target}",
+      "{source}'s musical career began in {target}"
+    ],
+    "addedToTheNationalRegisterOfHistoricPlaces": [
+      "{source} was added to the national register of historic places on {target}"
+    ],
+    "address": [
+      "the address of {source} is {target}"
+    ],
+    "affiliation": [
+      "the {source} is affiliated with the {target}",
+      "{source} is affiliated to {target}",
+      "{source} is affiliated with the {target}",
+      "{source} is affiliated with {target}",
+      "the {source} is affiliated to the {target}",
+      "the {source} is affiliated to {target}",
+      "the {source} is affiliated with {target}",
+      "{source} is affiliated to the {target}"
+    ],
+    "aircraftFighter": [
+      "the {target} is an aircraft fighter in the {source}",
+      "{source} aircraft fighter is {target}",
+      "{source}'s aircraft fighter is called {target}",
+      "{target} was a fighter aircraft of the {source}"
+    ],
+    "aircraftHelicopter": [
+      "the {target} is a helicopter used by the {source}",
+      "the {target} is an aircraft helicopter of the {source}"
+    ],
+    "almaMater": [
+      "{source}'s alma mater is {target}",
+      "{source}'s alma mater is the {target}",
+      "the alma mater of {source} was the {target}",
+      "the alma mater of {source} is the {target}",
+      "the alma mater of {source} is {target}",
+      "the {target} is the alma mater of {source}",
+      "{source} attended {target}",
+      "{target} is {source}'s almamater",
+      "the alma mater for {source} is the {target}",
+      "{source} alma mater was the {target}",
+      "{source} attended the {target}",
+      "{source} graduated from the {target}",
+      "{source} was a student at {target}",
+      "{source}'s alma mater was {target}",
+      "{target} is the alma mater for {source}"
+    ],
+    "alternativeName": [
+      "the alternative name for {source} is {target}",
+      "the alternative name of the {source} is {target}",
+      "the {source} is also known as the {target}"
+    ],
+    "anthem": [
+      "the anthem of {source} is called the {target}",
+      "the anthem of {source} is {target}",
+      "the national anthem of {source} is {target}",
+      "the {target} is the anthem of {source}",
+      "{source}’s national anthem is called the {target}",
+      "{target} is the national anthem of {source}"
+    ],
+    "apoapsis": [
+      "the apoapsis for {source} is {target}",
+      "{source} has an apoapsis of {target}",
+      "the apoapsis measurement of {source} is {target}",
+      "{source} has an apoapsis measurement of {target}"
+    ],
+    "architect": [
+      "the architect of {source} is {target}",
+      "the architect of {source} was {target}",
+      "{target} is the architect of {source}",
+      "{source} was designed by the architect {target}",
+      "{source}'s architect was {target}",
+      "{target} was the architect of the {source}",
+      "the architect responsible for {source} was {target}",
+      "{source} was designed by the architect, {target}",
+      "{target} designed {source}",
+      "{target} is the architect of the {source}",
+      "{target} is the architect who designed the {source}",
+      "{target} was the architect of {source}",
+      "{target} were the architects of {source}"
+    ],
+    "architecturalStyle": [
+      "the architecture style of {source} falls under {target}",
+      "the {source} are in the architectural style of the {target}",
+      "the {source} are in the architectural style of {target}",
+      "the {source} has an {target} style architecture",
+      "the {source} have the architectural style of {target}",
+      "{source} has the architectural style of the {target}",
+      "{source} is in the architectural style \" {target}\""
+    ],
+    "areaCode": [
+      "the area code for {source} is {target}",
+      "the area code of {source}, is {target}",
+      "the area code of {source} is {target}",
+      "{target} is the area code for {source}",
+      "the area codes for {source} are {target}",
+      "{source} has an area code of {target}",
+      "{source} has the area code of {target}",
+      "{source}, has the area code, {target}"
+    ],
+    "areaOfLand": [
+      "{source} covers an area of {target}"
+    ],
+    "areaOfWater": [
+      "the area of water in {source}, is {target}"
+    ],
+    "areaTotal": [
+      "the total area of {source} is {target}",
+      "the area of {source} is {target}",
+      "the total area in {source} is {target}",
+      "{source} has a total area of {target}"
+    ],
+    "areaUrban": [
+      "the urban area of the city of {source} is {target}",
+      "the urban area of {source} is {target}",
+      "{source} has an urban area of {target} square kilometres"
+    ],
+    "assembly": [
+      "the {source} is assembled in {target}",
+      "the {source} was assembled in {target}",
+      "the {source} is assembled at {target}",
+      "the assembly line of the {source} is in {target}",
+      "the assembly line on the {source} is in {target}",
+      "the {source} assembly is located in {target}",
+      "the {source} assembly line is located at the {target}",
+      "the {source} is assembled by the {target}",
+      "the {source} is assembled by {target}",
+      "the {source} is assembled in the {target}",
+      "the {source} is made at the {target}",
+      "the {source} was assembled at {target}",
+      "the {source} was assembled by {target}",
+      "the {source}'s assemble line is in {target}",
+      "the {source}'s assembly line is in {target}",
+      "the {source}'s is assembled by the {target}",
+      "{source} is assembled at the {target}",
+      "{source} is assembled in {target}",
+      "{source} was assembled in the {target}"
+    ],
+    "associatedBand/associatedMusicalArtist": [
+      "{source} is associated with {target}",
+      "{source} is associated with the musical artist {target}",
+      "{source} is an artist for the band {target}",
+      "{source} is associated with the band {target}",
+      "{source} is a musician for the band {target}",
+      "{source} is associated with the musical artist, {target}",
+      "{source} is associated with the musician {target}",
+      "{source} plays for the {target} band",
+      "musical artist, {source} is associated with fellow musical artist {target}",
+      "musicians, {source} and {target}, are associates",
+      "the band {target} included the member {source}",
+      "{source} collaborates with {target}",
+      "{source} has collaborated with {target}",
+      "{source} has worked with the band {target}",
+      "{source} has worked with {target}",
+      "{source} is a musician associated with the {target}",
+      "{source} is an artist with the band {target}",
+      "{source} is associated with musician {target}",
+      "{source} is associated with the band, {target}",
+      "{source} is associated with the group {target}"
+    ],
+    "associatedRocket": [
+      "the {source} is associated with the rocket {target}",
+      "the {source} is associated with the {target} rocket",
+      "the {target} rocket is associated with the {source}",
+      "the {target} rocket was launched from the {source}",
+      "the {target} was launched from the {source}",
+      "{source} is associated with the rocket, {target}"
+    ],
+    "attackAircraft": [
+      "the {target} is an attack aircraft of the {source}"
+    ],
+    "author": [
+      "{source} was written by {target}",
+      "{target} is the author of {source}",
+      "the author of {source} is {target}",
+      "{source} was authored by {target}",
+      "{source} was penned by {target}",
+      "{source}' author was {target}",
+      "{target} wrote \"{source}\""
+    ],
+    "award": [
+      "{source} was awarded the {target}",
+      "{source} won the {target}",
+      "{source} has won the {target}",
+      "{source} has won the {target} award",
+      "{source} won an award at the {target}",
+      "{source} collected an award from the {target}",
+      "{source} has been awarded by the {target}",
+      "{source} has been awarded the {target}",
+      "{source} has won awards from the {target}",
+      "{source} is an {target} winner",
+      "{source} received an award from the {target}",
+      "{source} received the {target} award",
+      "{source} was a hero and awarded the {target}",
+      "{source} was an award winner at the {target}",
+      "{source} was awarded an award by the {target}",
+      "{source} won an award from the {target}"
+    ],
+    "awards": [
+      "the number of {source}'s awards are {target}",
+      "{source} had {target} awards",
+      "{source} has won {target} awards",
+      "{source} received {target} awards",
+      "{source} won {target} awards"
+    ],
+    "backupPilot": [
+      "{source}'s backup pilot was {target}",
+      "{target} was a backup pilot of {source}",
+      "{target} was the backup pilot of {source}",
+      "{target} was the backup pilot on {source}"
+    ],
+    "battle": [
+      "{source} fought in the {target}",
+      "the {source} battled in the {target}",
+      "{source} battled in the {target}",
+      "{source} fought in {target}",
+      "{source} took part in the {target}",
+      "the {source} fought in the {target}",
+      "{source} fought in battles in the {target}",
+      "among the battles that {source} fought in was the {target}",
+      "one of the battles {source} fought in, was the {target}",
+      "one of the battles {source} was involved in was the {target}",
+      "one of the noted {source} battles was the {target}",
+      "one of {source}'s battles was the {target}",
+      "the {source} fought battles in the {target}",
+      "the {source} fought in the {target} battle",
+      "the {source} has battled in the {target}",
+      "the {source} has fought in the {target}",
+      "the {source} took part in battles in the {target}",
+      "the {source} took part in the battle called {target}",
+      "the {source} was involved in battles at the {target}",
+      "the {source} was involved in battles of the {target}"
+    ],
+    "bedCount": [
+      "the bed count of {source} is {target}",
+      "{source} has {target} beds"
+    ],
+    "bird": [
+      "the {source} state bird is the {target}",
+      "the {target} is a bird found in {source}",
+      "the {target} is a bird living in {source}",
+      "the {target} is a native bird to {source}",
+      "the {target} is a {source} bird"
+    ],
+    "birthDate": [
+      "{source} was born on {target}",
+      "the date of birth of {source} is {target}",
+      "{source}'s birth date is {target}",
+      "{source}'s birthdate is {target}",
+      "{source}'s date of birth is {target}",
+      "{target} was {source}'s birthdate"
+    ],
+    "birthName": [
+      "{source}'s full name was {target}"
+    ],
+    "birthPlace": [
+      "{source} was born in {target}",
+      "{source} was born in the {target}",
+      "{target} was the birthplace of {source}",
+      "the birth place of {source} is {target}",
+      "{target} is the birth place of {source}",
+      "{target} is the birthplace of {source}",
+      "{source}'s birthplace is {target}",
+      "{source}'s birth place is {target}",
+      "{source}'s birth place was {target}",
+      "the {target} was the birthplace of {source}",
+      "{source}'s place of birth was the {target}",
+      "{source}'s place of birth was {target}",
+      "the birth place of {source} was the {target}",
+      "the birthplace of {source} is {target}",
+      "the {target} is the birthplace of {source}",
+      "{source} birth place is {target}",
+      "{source} was born in {target}, russia",
+      "{source}'s birth place is the {target}",
+      "{source}'s birthplace was {target}",
+      "{target}, is the birthplace of {source}"
+    ],
+    "birthYear": [
+      "{source} was born in the year {target}",
+      "{source} was born {target}",
+      "{source} year of birth was {target}",
+      "{source}'s year of birth is {target}",
+      "{source}'s year of birth was {target}"
+    ],
+    "bodyStyle": [
+      "the {source} is a {target}",
+      "the {source} has a {target} style body",
+      "the {source}'s body style is {target}",
+      "the {source}'s body style is the {target}",
+      "{source} has the {target} style of body"
+    ],
+    "builder": [
+      "the {source} was built by {target}",
+      "the {source} was built by the {target}",
+      "the {source} was built in {target}",
+      "{target} is the builder of the {source}",
+      "the builder of the {source} is the {target}",
+      "the builder of the {source} is {target}",
+      "the ship {source} was built by {target}",
+      "the {source} is built by {target}",
+      "the {source} was built by {target} co",
+      "the {target} built the {source}",
+      "{target} built the {source}",
+      "{target} is the company that built the {source}",
+      "{target} was the builder of the {source}"
+    ],
+    "buildingStartDate": [
+      "building started on the {source} in {target}",
+      "the construction of {source} began in {target}",
+      "the start date for building {source} was {target}",
+      "they started to build {source} in {target}"
+    ],
+    "buildingType": [
+      "{source} is the {target}"
+    ],
+    "capital": [
+      "{target} is the capital of {source}",
+      "the capital of {source} is {target}",
+      "the capital of the {source} is {target}",
+      "{target} is the capital of the {source}",
+      "{source}'s capital is {target}",
+      "{target} is the capital city of the {source}",
+      "the capital city of the {source} is {target}",
+      "the capital of {target} is {source}",
+      "{target} is the {source}n capital"
+    ],
+    "category": [
+      "the {source} belongs to the category of {target}",
+      "the {source} falls under the category of {target}",
+      "the {source} is categorised as a {target}",
+      "the {source} is categorized as a {target}"
+    ],
+    "chairman": [
+      "{target} is the chairman of {source}",
+      "the chairman of {source} is {target}",
+      "{source}'s chairman is {target}",
+      "the chairman of the {source} is {target}",
+      "{target} is chairman of {source}"
+    ],
+    "chairmanTitle": [
+      "the {target} is the chairman title of the {source}"
+    ],
+    "champions": [
+      "the {source} champions are {target}",
+      "the champions of {source} are {target}",
+      "the {target} were champions at the {source}",
+      "{target} are champions of {source}",
+      "{target} are former champions of {source}",
+      "{target} are the champions of the {source}",
+      "{target} are the {source} champions",
+      "{target} have been champions of the {source}",
+      "{target} have been champions of {source}",
+      "{target} team won the championship before in the {source}",
+      "{target} won the {source} championship before"
+    ],
+    "chancellor": [
+      "{target} is the chancellor of the {source}"
+    ],
+    "chief": [
+      "{source} chief is {target}"
+    ],
+    "child": [
+      "{source}'s daughter is {target}"
+    ],
+    "christeningDate": [
+      "the christening date of the {source} is {target}",
+      "the {source} christening date is {target}"
+    ],
+    "city": [
+      "{source} is located in the city of {target}",
+      "the {source} is located in the city of {target}",
+      "{source} is in the city of {target}",
+      "the {source} are based in the city of {target}",
+      "the {source} play in {target}",
+      "in their home city, the {source}, play at the {target}",
+      "the \"{source}\" is in the city {target}",
+      "the city of {target} has a university called \"{source}\"",
+      "the home of the {source} is the city of {target}",
+      "the location of the {source} is the {target} in london",
+      "the {source} are from {target}",
+      "the {source} headquarters is called {target}",
+      "the {source} is in the city of {target}",
+      "the {source} location city is {target}",
+      "the {source}' city is {target}",
+      "{source} are based in the city of {target}",
+      "{source} are based in {target}",
+      "{source} are located in the city of {target}",
+      "{source} is headquartered in {target}",
+      "{source} play their home matches at the {target}"
+    ],
+    "cityServed": [
+      "{source} serves the city of {target}",
+      "{target} is served by {source}",
+      "the city of {target} is served by {source}",
+      "the {source} serves the city of {target}",
+      "{source} city served is {target}",
+      "{source} city served {target}",
+      "{source} serves {target}",
+      "{target} is a city which is served by {source}"
+    ],
+    "class": [
+      "the {source} is classed as a {target}",
+      "the {source} is considered a {target}",
+      "the {source} is in the {target} class",
+      "{source} belongs to the {target} class",
+      "{source} class is {target}",
+      "{source} is in the class {target}"
+    ],
+    "club": [
+      "{source} plays for {target}",
+      "{source}'s club is {target}",
+      "{source} played for {target}",
+      "{source} is in the {target} club",
+      "{source} plays for the {target}",
+      "{source} played for the club {target}",
+      "{source} played for the {target}",
+      "{source} plays for the club {target}",
+      "{source} is a member of the {target}",
+      "{source} is a member of the {target} club",
+      "{source} is attached to the club {target}",
+      "{source} plays at the {target}",
+      "{source}'s club is the {target}",
+      "{source} has played for {target}",
+      "{source} is at the {target} club",
+      "{source} plays for the club, {target}",
+      "{source} club is {target}",
+      "{source} is a player in {target}",
+      "{source} played football for {target}",
+      "{source} plays at the {target} club"
+    ],
+    "coach": [
+      "{target} is the coach of the {source}",
+      "{target} is a coach of the {source}",
+      "{target} is the coach for the {source}",
+      "the coach of the {source} is {target}",
+      "the coach of {source} is {target}",
+      "the {source} coach is {target}",
+      "{target} coaches the {source}",
+      "{target} is a coach for the {source}",
+      "{target} is coach for the {source}",
+      "{target} is the coach for {source}",
+      "{target} is the coach of {source}"
+    ],
+    "codenCode": [
+      "the coden code for {source} is {target}",
+      "{source} has a coden code of {target}",
+      "the coden code {target} is for {source}",
+      "the {source} coden code is {target}",
+      "the {source} has a coden code of {target}"
+    ],
+    "college": [
+      "{source} played for the college {target} team"
+    ],
+    "colour": [
+      "{target} is the colour of the {source}"
+    ],
+    "commander": [
+      "{target} was a commander in the {source}",
+      "a commander in {source} was {target}",
+      "{target} was a commander at the {source}",
+      "{target} was a commander during the {source}",
+      "{target} was a commander in {source}",
+      "a commander in the {source} was {target}",
+      "the commander of the {source} was {target}",
+      "the {source} commander was {target}",
+      "{source} was commanded by {target}",
+      "{target} is a commander in the {source}",
+      "{target} was an {source} commander",
+      "{target} was the commander in the {source}",
+      "{target} was the commander in {source}",
+      "{target} was the commander of {source}",
+      "{target} was the commmander in the {source}",
+      "{target} was the {source} commander"
+    ],
+    "competeIn": [
+      "the {source} competed in the {target}",
+      "the {source} is competing in the {target}"
+    ],
+    "completionDate": [
+      "{source} was completed in {target}",
+      "the construction of {source} was completed in {target}",
+      "{source} was finished in {target}",
+      "the building at {source} was completed in {target}",
+      "the building of {source} was completed in {target}",
+      "the completion date of {source} is {target}",
+      "the {source} was completed in {target}",
+      "{source}'s completion date was in {target}"
+    ],
+    "cost": [
+      "the cost to build {source} is {target}",
+      "the {source} costs {target}"
+    ],
+    "country": [
+      "{source} is in the {target}",
+      "{source} is located in the {target}",
+      "{source} is located within the {target}",
+      "{source} is in {target}",
+      "{source} is from {target}",
+      "{source} is in the country of {target}",
+      "the country of {source}, is {target}",
+      "{source} is a food found in {target}",
+      "{source} is located in the country of {target}",
+      "{source}, is within the {target}",
+      "{source} can be found in {target}",
+      "{source} comes from the country of {target}",
+      "{source}, is located in the {target}",
+      "{target} is the country {source} comes from",
+      "the country {source} comes from is the {target}",
+      "the {source} is in the country of {target}",
+      "{source} is a city in {target}",
+      "{source} is a dish from the country of {target}",
+      "{source} is a dish from the {target}",
+      "{source} is a dish in {target}"
+    ],
+    "countryOrigin": [
+      "the country of origin of the {source} is the {target}",
+      "the origin of the {source} is the {target}",
+      "the {source} is from the {target}",
+      "{source} originated in the {target}"
+    ],
+    "countySeat": [
+      "{source} is country seat to {target}",
+      "{target} is the county seat of {source}"
+    ],
+    "course": [
+      "{source} is a type of {target}",
+      "{source} is a dish served as a {target} course",
+      "{source} is a dish served for {target}",
+      "{source} is served at the {target} course",
+      "{source} should be served as the {target} course"
+    ],
+    "creator": [
+      "{source} was created by {target}",
+      "{target} is the creator of {source}",
+      "the creator of {source} is {target}",
+      "the character, {source}, was created by {target}",
+      "{target} created {source}",
+      "the character {source} was created by {target}",
+      "the comic book character {source} was created by {target}",
+      "the fictional comic superhero {source} was created by {target}",
+      "the tv character {source} was created by {target}",
+      "the {source} was created by {target}",
+      "{source} is a fictional character created by {target}",
+      "{target} created the {source}",
+      "{target} was the creator of the character {source}",
+      "{target} was the creator of {source}"
+    ],
+    "creatorOfDish": [
+      "{source} is a dish that was created within {target}",
+      "{target} has resulted in the creation of the dish {source}"
+    ],
+    "crewMembers": [
+      "{source} crew members included {target}",
+      "{target} was a crew member of {source}",
+      "{target} was a crew member on {source}",
+      "{target} was a crewman aboard {source}",
+      "{target} was a member of the crew on {source}"
+    ],
+    "currency": [
+      "the currency of {source} is the {target}",
+      "the currency in {source} is the {target}",
+      "the {target} is the currency in {source}",
+      "the currency of the {source} is the {target}",
+      "{source}'s currency is the {target}",
+      "in {source} the currency is the {target}",
+      "the currency of {source} is {target}",
+      "{target} is the currency in {source}",
+      "money in {source} is called the {target}",
+      "money used in {source} is the {target}",
+      "the currency in the {source} is the {target}",
+      "the {source}'s currency is the {target}",
+      "the {source}'s currency is {target}",
+      "the {source}an currency is the {target}",
+      "the {target} is the currency in the {source}",
+      "the {target} is the money used in {source}",
+      "{source} uses the {target} for its currency"
+    ],
+    "currentclub": [
+      "{source} currently plays for {target}",
+      "{source}'s current club is {target}",
+      "the current club of {source} is {target}",
+      "the current club that {source} plays for is {target}",
+      "{source} is currently with {target}"
+    ],
+    "currentteam": [
+      "{source}' current team is {target}"
+    ],
+    "cylinderCount": [
+      "the {source} has a cylinder count of {target}",
+      "the {source} has {target} cylinders"
+    ],
+    "dateOfRetirement": [
+      "{source}'s retirement date is {target}"
+    ],
+    "dean": [
+      "the dean of the {source} is {target}",
+      "{source}'s dean is {target}"
+    ],
+    "deathCause": [
+      "{source} died from {target}",
+      "{source} died of {target}"
+    ],
+    "deathDate": [
+      "{source}'s date of death was {target}",
+      "{source} died on the {target}",
+      "{source} died {target}"
+    ],
+    "deathPlace": [
+      "{source} died in {target}",
+      "{source} died in the {target}",
+      "{source} passed away in {target}",
+      "{source}'s place of death was {target}",
+      "the death place of {source} is {target}",
+      "the place of death for {source} was {target}",
+      "{source} death place was in {target}",
+      "{source} died at {target}",
+      "{source}'s place of death was in the {target}",
+      "{target} is the death place of {source}"
+    ],
+    "deathYear": [
+      "{source}'s year of death was {target}"
+    ],
+    "debutTeam": [
+      "the debut team of {source} was the {target}",
+      "{source} debuted with the {target}",
+      "{source} made his debut for the {target}",
+      "{source}'s debut team was the {target}",
+      "{source}'s first team were the {target}"
+    ],
+    "dedicatedTo": [
+      "the {source} is dedicated to {target}",
+      "{source} is dedicated to {target}"
+    ],
+    "demonym": [
+      "{source} is inhabited by {target}",
+      "{target} are from {source}",
+      "people in {source} are known as {target}",
+      "the natives of {source} are known as {target}",
+      "the people of {source} are called {target}",
+      "{source} demonym is {target}",
+      "{target} inhabit {source}",
+      "{target} live in {source}",
+      "a {target} is a demonym term used in {source}",
+      "people from the {source} are called {target}",
+      "the demonym for natives of the {source} is {target}",
+      "the demonym for people living in the {source} is {target}",
+      "the demonym of natives of the {source} is {target}",
+      "the demonym of the inhabitants of {source} is {target}",
+      "the demonym of {source} is {target}",
+      "the inhabitants of the {source} are called {target}",
+      "the inhabitants of the {source} are known as {target}",
+      "the inhabitants of {source} have the demonym of {target}",
+      "the inhabitants of {source} have the demonym {target}",
+      "the native citizens of {source} are called {target}"
+    ],
+    "derivative": [
+      "{target} is a derivative of {source}",
+      "{source} is a form of {target}",
+      "{source} is a musical derivative of {target}",
+      "{source} is derived from {target}",
+      "{target} derives from {source}",
+      "{target} derives its sounds from {source}"
+    ],
+    "designCompany": [
+      "the {source} was designed by {target}"
+    ],
+    "designer": [
+      "{target} designed the {source}",
+      "{target} is the designer of the {source}"
+    ],
+    "developer": [
+      "{target} were developers of {source}"
+    ],
+    "diameter": [
+      "the {source} is {target} in diameter"
+    ],
+    "discoverer": [
+      "{source} was discovered by {target}",
+      "{target} discovered {source}",
+      "{target} was the discoverer of {source}",
+      "the discoverer of {source} is {target}",
+      "the celestial body known as {source} was discovered by {target}",
+      "the discoverer of {source} was {target}",
+      "the {target} centre discovers the asteroid {source}",
+      "{target}, was the one to discover, {source}"
+    ],
+    "dishVariation": [
+      "{source} is a variation of {target}",
+      "{target} can be added to {source}",
+      "{target} is a dish variation of {source}",
+      "{target} is a type of {source}",
+      "{target} is a variation of {source}",
+      "a variant of {source} is {target}",
+      "a variation of a {source} is the {target}",
+      "a variation of {source} is to use {target}",
+      "a variation of {source} is {target}",
+      "a variation on {source} is {target}",
+      "a {target} is a {source}",
+      "another variation for a {source} is a {target}",
+      "as a dish variation on a {source}, {target} can be used",
+      "one dish variation called {source} is the use of {target} in the recipe",
+      "one variation of {source} uses {target} as part of its dish",
+      "the {source} is a variation on the {target}",
+      "to vary {source}, {target} may be used",
+      "{source} and {target} are variations of the same dish",
+      "{source} can be made with {target}",
+      "{source} can be varied by adding {target}"
+    ],
+    "distributingCompany": [
+      "{target} is the distributing company for {source}"
+    ],
+    "distributor": [
+      "the distributor of {source} is {target}"
+    ],
+    "district": [
+      "the {source} is found in the {target}",
+      "the {source} is located in the district of the {target}",
+      "the {source} is located on the {target}"
+    ],
+    "division": [
+      "{source} belongs to the division of {target}s",
+      "{source} belongs to {target}s",
+      "{source} is classed as a {target}",
+      "{source} is part of the {target} division",
+      "{source}s are in the division of {target}s",
+      "{target} is a division of the {source} co",
+      "{target} is a division of {source}"
+    ],
+    "doctoralAdvisor": [
+      "{source} did his phd under the supervision of {target}",
+      "{target} was a doctoral advisor of {source}"
+    ],
+    "doctoralStudent": [
+      "{target} was a doctoral student of {source}",
+      "{source}'s doctoral student was {target}"
+    ],
+    "draftTeam": [
+      "{source} was drafted to the {target}",
+      "{source}'s draft team is the {target}",
+      "{source}'s draft team is {target}",
+      "{source}'s draft team was the {target}"
+    ],
+    "draftYear": [
+      "{source} had been drafted in {target}"
+    ],
+    "editor": [
+      "the editor of {source} is {target}",
+      "{source} was edited by {target}"
+    ],
+    "eissnNumber": [
+      "the eissn number of the {source} is {target}",
+      "{source} had the eissnnumber {target}",
+      "{target} is the eissn number for the {source}"
+    ],
+    "elevationAboveTheSeaLevel": [
+      "{source} is located at {target} above sea level",
+      "{source} elevation above the sea level in metres is {target}",
+      "{source} is elevated {target} metres above sea level",
+      "{source} is {target} metres above sea level",
+      "the elevation above the sea level (in metres) of {source} is {target}",
+      "{source} has an elevation of {target} metres above sea level",
+      "{source} is situated at {target} above sea level",
+      "{source} is {target} above sea level",
+      "the elevation above the sea level for {source}, is {target}",
+      "the elevation above the sea level in {source}, is {target}",
+      "the {source} is {target} metres above sea level",
+      "{source} elevation is {target} above the sea level",
+      "{source} is at a height of {target} above sea level",
+      "{source} is at an elevation of {target} from sea level",
+      "{source} is elevated {target} above sea level",
+      "{source} is located {target} metres above sea level",
+      "{source} is {target} metres above the sea level"
+    ],
+    "elevationAboveTheSeaLevelInFeet": [
+      "{source} has an elevation above the sea level (in feet) of {target}",
+      "the elevation above sea level for {source} is {target}ft",
+      "the {source} is {target} feet above sea level",
+      "the {source} is {target} ft above sea level",
+      "{source} has an elevation of {target} feet above sea level",
+      "{source} is elevated {target} feet above sea level",
+      "{source} is {target} feet above sea level"
+    ],
+    "elevationAboveTheSeaLevelInMetres": [
+      "the {source} is {target} meters above sea level"
+    ],
+    "employer": [
+      "{source} is employed by {target}",
+      "{source} works for {target}",
+      "{source}'s employer is {target}"
+    ],
+    "engine": [
+      "the {source} has a {target}",
+      "the {source} has an {target}",
+      "the {source} engine is also known as a {target}",
+      "the {source} has a {target} engine",
+      "the {source} has an engine capable of producing {target}",
+      "the {source} is equipped with an {target}",
+      "there is a {target} in the {source} car"
+    ],
+    "epoch": [
+      "the epoch of {source} is {target}",
+      "the {source} epoch is {target}",
+      "{source}'s epoch date is {target}"
+    ],
+    "escapeVelocity": [
+      "the escape velocity of {source} is {target}",
+      "{source} has an escape velocity of {target}"
+    ],
+    "established": [
+      "the {source} was established in {target}",
+      "the {source} is established in {target}",
+      "the {source} was established in the year {target}"
+    ],
+    "ethnicGroup": [
+      "{target} are an ethnic group in the {source}",
+      "{target} are one of the ethnic groups in the {source}",
+      "one ethnic group in the {source} is {target}",
+      "the {target} are an ethnic group in the {source}",
+      "{source} has an ethnic group called {target}",
+      "{target} are an ethnic group in {source}",
+      "one of the ethnic groups in {source} are the {target}",
+      "one of the ethnic groups of the {source} is the {target}",
+      "the {target} are an ethnic group in {source}",
+      "the {target} are an ethnic group of {source}",
+      "{target} are an ethnic group from the {source}",
+      "{target} are an ethnic group of the {source}",
+      "{target} are an ethnic group of {source}",
+      "{target} are an ethnic group within the {source}",
+      "{target} is an ethnic group in the {source}",
+      "{target} is an ethnic group in {source}",
+      "{target} is one of the ethnic groups in the {source}",
+      "an ethnic group of the {source} is {target}",
+      "an ethnic group of {source} are the {target} people",
+      "an ethnic group of {source} is the {target}"
+    ],
+    "failedLaunches": [
+      "the {source} had {target} launch failure",
+      "the {source} rocket had {target} failed launch"
+    ],
+    "family": [
+      "{source} is part of the {target} family",
+      "{source} is a member of the family {target}",
+      "the {source} belongs to the family of {target}",
+      "the {source} belongs to the {target} family",
+      "the {source} comes from the {target} family",
+      "the {source} is a member of the {target} family",
+      "the {source} plant belongs to the {target} family",
+      "the {source} virus is part of the family of {target}",
+      "{source} belongs to the family of {target}",
+      "{source} belongs to the family {target}",
+      "{source} comes under the family of {target}es",
+      "{source} is in the family of {target}",
+      "{source} is part of the family {target}",
+      "{source}s are from the {target} family"
+    ],
+    "fat": [
+      "{source} contain {target} of fat"
+    ],
+    "fate": [
+      "{source} was acquired by {target}"
+    ],
+    "finalFlight": [
+      "the final flight of the {source} was on {target}",
+      "the final flight of {source} was {target}",
+      "the {source} final flight was on {target}",
+      "the {source} made the last flight on {target}"
+    ],
+    "firstPublicationYear": [
+      "the {source} was first published in {target}",
+      "{source} was first published in {target}"
+    ],
+    "floorArea": [
+      "the floor area of {source} is {target}",
+      "the {source} has a floor area of {target}",
+      "{source} has a floor area of {target}",
+      "{source} has a {target} floor area"
+    ],
+    "floorCount": [
+      "there are {target} floors at {source}",
+      "{source} has a floor count of {target}",
+      "{source} has {target} floors",
+      "the {source} has {target} floors",
+      "the {source} {target} floors",
+      "there are a total of {target} floors in {source}",
+      "there are {target} floors in the {source}",
+      "there are {target} floors in {source}"
+    ],
+    "followedBy": [
+      "{source} was followed by {target}",
+      "the novel {source} is followed by {target}",
+      "the novel {source} was followed by {target}",
+      "{source} is followed by {target}",
+      "the book \"{source}\" was followed by \"{target}\"",
+      "the book {source} is followed by the book {target}",
+      "the book {source} was followed by {target}",
+      "the book {source} was followed up by {target}",
+      "the book {target} followed the book \"{source}\"",
+      "{target} followed the book {source}",
+      "{target} is the sequel to {source}",
+      "{target} was preceded by {source}"
+    ],
+    "formerName": [
+      "the former name of {source} is {target}",
+      "{source} was formerly known as {target}",
+      "{source} was formerly called {target}",
+      "{target} is the former name of {source}",
+      "{target} was the former name of {source}"
+    ],
+    "formerTeam": [
+      "{source} used to play for {target}",
+      "the former team of {source} was {target}",
+      "the {target} are a former team of the player {source}",
+      "{source} former team is the {target}",
+      "{source}' former team is {target}",
+      "{source}' former team was the {target}",
+      "{source}' former team was {target}",
+      "{source}'s former team is the {target}",
+      "{source}'s former team was the {target}",
+      "{target} is the former team of {source}"
+    ],
+    "fossil": [
+      "a {target} is a fossil from {source}",
+      "the {target} fossil was found in {source}",
+      "{source} have fossils of the {target}",
+      "{target} is a fossil from {source}"
+    ],
+    "foundationPlace": [
+      "{source} was founded in {target}",
+      "the {source} was founded in {target}",
+      "the foundation place of {source} is {target}",
+      "{source} was founded in the {target}",
+      "the foundation place of the {source} is {target}",
+      "the {source} company was founded in {target}",
+      "the {source} foundation was founded in {target}",
+      "the {source} was founded in the {target}",
+      "{source}'s foundation place is the {target}",
+      "{source}'s founding place was the {target}",
+      "{target} is the founding place of {source}",
+      "{target} is {source}’s founding place"
+    ],
+    "foundedBy": [
+      "the {source} was founded by {target}",
+      "{source} was founded by {target}"
+    ],
+    "founder": [
+      "{target} founded {source}",
+      "the founder of {source} is {target}",
+      "the founder of {source} was {target}",
+      "{target} is the founder of {source}",
+      "{target} was the founder of {source}"
+    ],
+    "foundingDate": [
+      "{source} was founded on {target}",
+      "the founding date of the {source} was {target}",
+      "the founding date of {source} is {target}",
+      "the {source} was founded on {target}",
+      "the {source} were founded on {target}",
+      "the {source}'s founding date was on {target}",
+      "{source} was founded {target}"
+    ],
+    "fullName": [
+      "the full name of {source} is {target}",
+      "the full name of the {source} is {target}",
+      "the {source}'s full name is{target}",
+      "the {target} is the full name of {source}",
+      "the {target} is the non-abbreviated name of {source}",
+      "{source} full name is {target}",
+      "{source} stands for {target}",
+      "{source}'s full name is {target}"
+    ],
+    "garrison": [
+      "one of the {source}'s garrisons was in {target}",
+      "the {source} has a garrison at {target}",
+      "the {source} has a garrison in {target}"
+    ],
+    "generalManager": [
+      "the general manager of {source} is {target}",
+      "{source}'s general manager is {target}",
+      "{target} is the general manager of the {source}"
+    ],
+    "genre": [
+      "{source} performs {target} music",
+      "{source}'s genre is {target}",
+      "{source} performs {target}",
+      "the musical genre of {source} is {target}",
+      "{source} is an exponent of {target}",
+      "{source} plays {target}",
+      "{source}'s musical genre is {target}",
+      "{source} plays {target} music",
+      "{target} is the genre of {source}",
+      "{source} is a performer of {target}",
+      "{source} is a {target} artist",
+      "{source} is a {target} musician",
+      "{source}'s music genre is {target}",
+      "musician, {source} plays {target}",
+      "the band {source} play {target}",
+      "the band {source}' genre is {target}",
+      "the band {source}'s genre is {target}",
+      "the genre of the band, {source}, is {target}",
+      "the genre of {source} is {target}",
+      "the music genre for {source} is {target}"
+    ],
+    "genus": [
+      "{source} is from the genus {target}",
+      "the genus of the {source} is {target}",
+      "the {source} virus is from the genus {target}",
+      "{source} belongs to the genus {target}",
+      "{source} is a member of the genus {target}",
+      "{source} is of the {target} genus",
+      "{source} is part of genus {target}"
+    ],
+    "governingBody": [
+      "the {target} is the governing body of {source}",
+      "the governing body in {source} is the {target}",
+      "the governing body of {source} is {target}",
+      "{source} is governed by the {target}",
+      "{source}'s governing body is {target}",
+      "{source} has the governing body of {target}",
+      "{target} is the governing body of {source}"
+    ],
+    "governmentType": [
+      "the city of {source} is governed by {target}s",
+      "the type of government in the {source} is {target}",
+      "the type of government of {source} is {target}",
+      "the {source} has a {target} government type",
+      "{target} governs {source}",
+      "{target} is the type of government in the {source}"
+    ],
+    "ground": [
+      "{source}'s ground is {target}",
+      "{target} is the ground of {source}",
+      "{source} play their home games at the {target}",
+      "{source}'s ground is in {target}",
+      "the ground of {source} is located in {target}",
+      "{source} ground is in {target}",
+      "{source} play at the {target}",
+      "{source}'s ground is the {target}",
+      "{target} is the ground for {source}",
+      "{target} is the home ground of {source}",
+      "the ground of {source} can be found in {target}",
+      "the ground of {source} is located in the town of {target}",
+      "the home ground of {source} is {target}",
+      "the home of the {source} is {target}",
+      "the {source} team is based in {target}",
+      "the {target} is the home ground of {source}",
+      "{source} 's football ground is called {target}",
+      "{source} are at {target}",
+      "{source} has the ground {target}",
+      "{source} have a ground in {target}"
+    ],
+    "hasDeputy": [
+      "{source} has the deputy {target}",
+      "{source} has {target} for a deputy",
+      "{source}' deputy is {target}",
+      "{source}'s deputy is {target}",
+      "{target} is the deputy of {source}",
+      "{target} is the deputy to {source}"
+    ],
+    "hasToItsNorth": [
+      "to the north of {source} is {target}",
+      "{source} has {target} to its north",
+      "{target} is north of {source}"
+    ],
+    "hasToItsNortheast": [
+      "{source} has to its northeast {target}",
+      "to the northeast of {source} is {target}",
+      "{source} neighbors {target} to its northeast",
+      "{target} is the area to the northeast of {source}",
+      "{target} is to the northeast of {source}"
+    ],
+    "hasToItsSouthwest": [
+      "{source} has {target} to its southwest",
+      "{target} is to the southwest of {source}"
+    ],
+    "hasToItsWest": [
+      "the west of {source} is the {target}",
+      "the {target} is west of {source}",
+      "to the west of {source}, is {target}",
+      "to the west {source} borders on the {target}",
+      "{source} has to its west {target}"
+    ],
+    "headquarter": [
+      "the headquarters of the {source} is in {target}",
+      "the headquarters of {source} are in {target}",
+      "the headquarters of {source} are located in {target}",
+      "the {source} has its headquarters in {target}",
+      "the {source} is headquartered in {target}",
+      "the headquarters of the {source} are at {target}",
+      "the headquarters of the {source} is at {target}",
+      "the {source} has its hq in {target}",
+      "the {source} headquarter is in {target}",
+      "the {source} headquarters is the {target}",
+      "the {source} is headquartered at {target}",
+      "{source} headquarter is {target}",
+      "{source}'s headquarter is {target}",
+      "{target} is the base of the {source}",
+      "{target} is where the headquarters of the {source} are located",
+      "{target} is where the {source} headquarters is located"
+    ],
+    "height": [
+      "{source} is {target}m tall",
+      "{source}'s height is {target}",
+      "the height of {source} is {target}",
+      "{source} is {target} m tall",
+      "{source} is {target} metres tall",
+      "{source} is {target} tall",
+      "{source} is {target}m high",
+      "{source}'s height is {target} meters",
+      "{source}'s height is {target} metres"
+    ],
+    "hubAirport": [
+      "the hub airport for {source} is {target}",
+      "the hub airport of {source} is {target}",
+      "{source} utilizes the {target} as its hub",
+      "{target} is the hub for {source}"
+    ],
+    "icaoLocationIdentifier": [
+      "the {source}'s icao location identifier is {target}"
+    ],
+    "inOfficeWhileGovernor": [
+      "{source} was in office while {target} was governor"
+    ],
+    "inOfficeWhileMonarch": [
+      "{source} was in office during the reign of monarch, {target}"
+    ],
+    "inOfficeWhilePresident": [
+      "{source} was in office while {target} was president",
+      "{source} was in office at the same time as {target} was president",
+      "{source} was in office during president {target}'s reign"
+    ],
+    "inOfficeWhilePrimeMinister": [
+      "{source} was in office while {target} was prime minister"
+    ],
+    "inOfficeWhileVicePresident": [
+      "{source} was in office while {target} was vice president",
+      "{source} was in office whilst {target} was vice president",
+      "{source} was a politician while vice president {target} was in office",
+      "{source} was in office during the time {target} was vice president",
+      "{source} was in office while {target} was the vice president"
+    ],
+    "inaugurationDate": [
+      "{source} was inaugurated on {target}"
+    ],
+    "industry": [
+      "{source} is in the {target} industry",
+      "{source}'s industry is {target}",
+      "the {source} industry is {target}",
+      "{source} is a company in the {target}",
+      "{source} is a {target} industry",
+      "{source} is an {target} industry",
+      "{source} offers applications in the {target} industry",
+      "{source}'s industry is classified as the {target}"
+    ],
+    "influencedBy": [
+      "{source} was influenced by {target}",
+      "{source} is influenced by {target}"
+    ],
+    "ingredient": [
+      "{target} is an ingredient in {source}",
+      "{target} is an ingredient of {source}",
+      "{target} is an ingredient of a {source}",
+      "an ingredient of {source} is {target}",
+      "one of the ingredients of {source} is {target}",
+      "{target} is an ingredient in a {source}",
+      "{target} is an ingredient in the dish {source}",
+      "{target} is an ingredient used in the preparation of {source}",
+      "an ingredient in a {source} is {target}",
+      "{source} has {target} as one of its ingredients",
+      "{target} is one ingredient in {source}",
+      "{target}s are an ingredient in {source}",
+      "a {source} includes the ingredient {target}",
+      "an ingredient of a {source} is {target}",
+      "one ingredient of a {source} is {target}",
+      "one of the ingredients in {source} is {target}",
+      "one of the ingredients of a {source} is {target}",
+      "one of the ingredients of the {source} sandwich is {target}",
+      "the dish {source} contains {target}s",
+      "the {target} is an ingredient in {source}"
+    ],
+    "instrument": [
+      "{source} plays the {target}",
+      "an instrument played in {source} is the {target}",
+      "musician, {source} plays the {target}",
+      "the musical instrument {target} is closely associated with {source}",
+      "the {target} instrument is closely associated with {source}",
+      "the {target} is a musical instrument used in {source}",
+      "the {target} is an instrument used in {source}",
+      "the {target} is played in {source} music",
+      "the {target} is used in {source} music",
+      "{source} can play the {target}",
+      "{source} genre has {target}s in it",
+      "{source} music uses the {target}",
+      "{source} played the {target}",
+      "{source} plays a {target}",
+      "{source} was a {target}alist",
+      "{source}'s instrument is the {target}",
+      "{target} is an instrument for {source}"
+    ],
+    "isPartOf": [
+      "{source} is part of {target}",
+      "{source} is part of the {target}",
+      "{source}, is part of {target}",
+      "the {source} is part of the {target}",
+      "{source} is a part of {target}",
+      "the city of {source} is part of the state of {target}",
+      "the {source} is a part of {target}",
+      "the {source} is part of {target}",
+      "the {target} is part of {source}",
+      "{source} is a part of the {target}",
+      "{source} is found in the county of {target}",
+      "{source} is located within {target}",
+      "{source} is part of the state of {target}",
+      "{source} was a part of the {target}",
+      "{source} was part of the {target}",
+      "{source} was situated in the {target}",
+      "{source}, is in the {target}",
+      "{target} is a part of {source}",
+      "{target} is situated in {source}"
+    ],
+    "isPartOfMilitaryConflict": [
+      "the {source} was part of the {target} conflict",
+      "the {source} occurred during the {target}",
+      "the {source} took place during the {target}",
+      "the {source} was fought during the {target}",
+      "{source} was part of the {target} conflict",
+      "the {source} was one of the military conflicts in the {target}",
+      "the {source} was part of the military conflict known as the {target}"
+    ],
+    "isbnNumber": [
+      "{source} can be located by its isbn number {target}",
+      "{source} has an isbn number of {target}",
+      "{source} has the isbn number of {target}",
+      "{source} isbn number is {target}",
+      "{source}' isbn number is {target}"
+    ],
+    "issnNumber": [
+      "{source} has the issn number of {target}",
+      "the issn number {target} is for {source}",
+      "the {source} issn number is {target}"
+    ],
+    "jurisdiction": [
+      "{source} jurisdiction is {target}",
+      "the jurisdiction of the {source} is the {target}",
+      "the {source} has its jurisdiction in {target}",
+      "the {source} has jurisdiction of the {target}",
+      "{target} is the jurisdiction of the {source}"
+    ],
+    "keyPerson": [
+      "the key person of {source} is {target}",
+      "a key person at the {source} is {target}",
+      "the key person for {source} is {target}",
+      "{target} is a key figure of {source}",
+      "{target} is a key person at the company {source}",
+      "{target} is a key person at {source}",
+      "{target} is the key person at {source}",
+      "{target} is the key person for {source}",
+      "{target} is the key person of {source}",
+      "{target} was a key person at the {source}",
+      "{target} was the key person of the {source}"
+    ],
+    "language": [
+      "the {target} is spoken in {source}",
+      "{target} is spoken in {source}",
+      "the language of {source} is the {target}",
+      "the language spoken in {source} is {target}",
+      "the {target} are spoken in {source}",
+      "{source} is written in the {target}",
+      "{source} language is {target}",
+      "{target} is a language found in {source}",
+      "{target} is a language spoken in {source}",
+      "{target} is the language of {source}",
+      "in the {source}, the spoken language is {target}",
+      "in {source} one of the languages spoken is {target}",
+      "in {source} the language spoken is the {target}",
+      "in {source}, one of the many languages spoken is {target}",
+      "in {source}, the language is {target}",
+      "one of the languages spoken in {source} is the {target}",
+      "one of the languages spoken in {source} is {target}",
+      "one of the languages used in the {source} is {target}",
+      "one of the languages used in {source} is the {target}",
+      "the language of the {source} is the {target}"
+    ],
+    "largestCity": [
+      "{target} is the largest city in {source}",
+      "the largest city in {source} is {target}",
+      "{source}'s largest city is {target}",
+      "{target} is {source}'s largest city",
+      "the largest city in {source}, is {target}",
+      "{target} is the largest city of the {source}",
+      "{target} is the largest city of {source}"
+    ],
+    "latinName": [
+      "the latin name of the {source} is {target}",
+      "the latin name of {source} is {target}"
+    ],
+    "launchSite": [
+      "the {source} was launched at the {target}",
+      "the {source} was launched at {target}",
+      "the {source} was launched from the {target}",
+      "the {source} was launched from {target}",
+      "the launch site of the {source} is {target}",
+      "the launch site of the {source} was at the {target}",
+      "the launch site of the {source} was the {target}",
+      "the launch site of the {source} was {target} launchpad",
+      "the launch site of {source} is {target}",
+      "the {source} launch site was at {target}",
+      "the {source} launch site was the {target}",
+      "the {source} rocket’s launch site is {target}",
+      "the {source} took off from {target}",
+      "{target} is the launch site of {source}"
+    ],
+    "leader": [
+      "the leader of {source} is {target}",
+      "{target} is the leader of {source}",
+      "{target} is a leader in {source}",
+      "{source}'s leader is {target}",
+      "{target} is the leader of the {source}",
+      "the leader of the {source} is {target}",
+      "{target} is a leader of {source}",
+      "{target} is the name of the leader of {source}",
+      "the leader in {source} is {target}",
+      "{target} is a leader in the {source}",
+      "{target} is a leader of the {source}",
+      "the leader of {source} is called {target}",
+      "{source} is led by {target}",
+      "{target} is the leader in {source}",
+      "the leader of {source} is the {target}",
+      "{source}'s leader name is {target}",
+      "{target} is {source}'s leader",
+      "{target} leads {source}",
+      "{source} leader name is {target}",
+      "{source}'s leader is called {target}"
+    ],
+    "leaderParty": [
+      "the leader party for {source} is the {target}",
+      "the leader party in {source} is {target}",
+      "the {target} are the leading party in {source}",
+      "{target} is the leading party of {source}"
+    ],
+    "leaderTitle": [
+      "the {target} is the leader of {source}",
+      "{source} is led by the {target}",
+      "the {target} leads {source}",
+      "the leader of the {source} has the title {target}",
+      "the leader title of {source}, is {target}",
+      "the title of the leader of the {source} is {target}",
+      "{source}'s leader is the {target}",
+      "{target} is the title of the leader of {source}",
+      "the leader in {source} is the {target}",
+      "the leader of the government in {source} is the {target}",
+      "the leader of the {source} has the title of {target}",
+      "the leader of the {source} is called the {target}",
+      "the leader of the {source} is known as the {target}",
+      "the leader of the {source} is the {target}",
+      "the leader of {source} has the title of {target}",
+      "the leader of {source} is called the {target}",
+      "the leader of {source} is titled the {target}",
+      "the leader's title in {source} is the {target}",
+      "the title of the leader in {source} is the {target}",
+      "the title of the leader of {source} is the {target}"
+    ],
+    "league": [
+      "{source} play in the {target}",
+      "{source} play in {target}",
+      "{source} play in the {target} league",
+      "the league {source} play in is {target}",
+      "{source} plays in the {target}",
+      "{source} is in the {target} league",
+      "the league that {source} play in is the {target}",
+      "the league that {source} play in is {target}",
+      "the league {source} plays in the {target}",
+      "the {source} football club play in {target}",
+      "the {target} is the league that {source} play in",
+      "{source} compete in the {target}",
+      "{source} is a club that belongs to the {target} league",
+      "{source} is in the league, {target}"
+    ],
+    "legislature": [
+      "the {target} is the source of legislature in {source}"
+    ],
+    "length": [
+      "the {source} is {target} in length",
+      "the {source} is {target} long"
+    ],
+    "literaryGenre": [
+      "the literary genre of {source} is {target}",
+      "{source} is considered {target}"
+    ],
+    "location": [
+      "{source} is located in {target}",
+      "the {source} is located in {target}",
+      "the {source} is in {target}",
+      "the location of {source} is {target}",
+      "{source} is located at {target}",
+      "the {source} is located at {target}",
+      "{source} is found in {target}",
+      "{source} are located in {target}",
+      "the {source} is located in the {target}",
+      "{source} is based in {target}",
+      "{source} is situated in {target}",
+      "the {source} is in the {target}",
+      "the {source} is located at the {target}",
+      "{source}'s location is {target}",
+      "{target} is the location of the {source}",
+      "the location of the {source} is {target}",
+      "the {source} can be found in {target}",
+      "the {source} club is located in {target}",
+      "the {source} is located on {target}",
+      "the {source} is located within the {target}"
+    ],
+    "locationIdentifier": [
+      "the {source}'s location id is {target}"
+    ],
+    "longName": [
+      "the full name of the {source} is the {target}"
+    ],
+    "maidenFlight": [
+      "the maiden flight of the {source} was on {target}",
+      "the maiden flight of the {source} was {target}",
+      "the {source} maiden flight was on the {target}"
+    ],
+    "mainIngredient": [
+      "the main ingredient of {source} is {target}",
+      "{target} is a main ingredient in {source}",
+      "one of the main ingredients in {source} is {target}",
+      "one of the main ingredients of {source} is {target}",
+      "{target} is a main ingredient of {source}",
+      "a main ingredient of {source} is {target}",
+      "one of the main ingredients of {source} is the {target}",
+      "the main ingredient in a {source} is {target}",
+      "the main ingredients of {source} are {target}es",
+      "{target} is the main ingredient in {source}",
+      "{target} is the main ingredient of {source}"
+    ],
+    "manager": [
+      "{target} is the manager of {source}",
+      "the manager of {source} is {target}",
+      "{target} is the manager for {source}",
+      "{target} manages {source}",
+      "{source}'s manager is {target}",
+      "{source} manager is {target}",
+      "{target} manages the {source}",
+      "the manager of the {source} is {target}",
+      "{source} are managed by {target}",
+      "{source} is managed by {target}",
+      "{target} has been manager of {source}",
+      "{target} is manager of {source}",
+      "{target} is the manager of the {source}",
+      "{target} manages the {source} team",
+      "{target} was a manager of {source}",
+      "{target} was the manager of {source}"
+    ],
+    "manufacturer": [
+      "the {source} is manufactured by {target}",
+      "{target} is the manufacturer of the {source}",
+      "the {source} was manufactured by {target}",
+      "the manufacturer of the {source} is {target}",
+      "{source} was manufactured by the {target}",
+      "{target} is the manufacturer of {source}",
+      "the manufacturer of the {source} is the company {target}",
+      "the {source} is made by {target}",
+      "the {source} was made by the {target}",
+      "the {source} was manufactured by the {target}",
+      "the {target} is the manufacturer of the {source}",
+      "the {target} manufactured the {source}",
+      "{source} is made by {target}",
+      "{source} is manufactured by the {target}",
+      "{source} is manufactured by {target}",
+      "{target} are the manufacturers of the {source}",
+      "{target} made the {source}",
+      "{target} makes the {source}"
+    ],
+    "maximumTemperature": [
+      "the {source} asteroids maximum temperature is {target}"
+    ],
+    "mayor": [
+      "the mayor of {source} is {target}",
+      "{source} mayor is {target}",
+      "{target} is the mayor of {source}"
+    ],
+    "meanTemperature": [
+      "the mean temperature at {source} is {target}"
+    ],
+    "mediaType": [
+      "{source} is available in {target}",
+      "the book titled {source} is a {target}",
+      "{source} is a {target} book",
+      "{source} is published in {target}",
+      "the book {source} is available in {target}",
+      "{source} is a {target} publication",
+      "{source} is available as an {target}",
+      "{source} was made in {target}",
+      "{source} was published in {target}"
+    ],
+    "militaryBranch": [
+      "{source} served in the {target}",
+      "{source} was in the {target}",
+      "the branch of military {source} belonged to was {target}",
+      "{source} belonged to the {target} branch of the military",
+      "{source} was in the {target} in the military"
+    ],
+    "mission": [
+      "{source} served as a crew member of {target}",
+      "{source} was a member of the {target} crew",
+      "{source} was a crew member aboard {target}",
+      "{source} was a crew member of {target}",
+      "{source} was on the crew of {target}",
+      "{source} crewed {target}",
+      "{source} served as a crew member on {target}",
+      "{source} was a crew member on the {target} flight mission",
+      "{source} was a crew member on {target}",
+      "{source} was a member of the crew of {target}",
+      "{source} was a member of {target}'s crew",
+      "{source} was a part of the crew of {target}"
+    ],
+    "modelYears": [
+      "{target} is one of the model years of the {source}",
+      "the {source} is available in a {target} model",
+      "the {source} model was manufactured during {target}"
+    ],
+    "mostChampions": [
+      "{target} have been the champions of the {source} the most times",
+      "{target} have won the {source} the most times",
+      "{target} won the most championships in the {source}"
+    ],
+    "motto": [
+      "the motto of the {source} is {target}",
+      "{target} is a motto of the {source}"
+    ],
+    "municipality": [
+      "the municipality for the {source} is {target}",
+      "the {source} is in the municipality of {target}",
+      "the {source} is located in the municipality of {target}"
+    ],
+    "musicFusionGenre": [
+      "the musical genre {target} is a fusion genre and contains elements of other genres such as {source}",
+      "{target} is a fusion genre of {source}",
+      "{target} is a fusion of {source} music",
+      "{target} is a genre of music that contain elements of other genres such as {source} and therefore can be considered a fusion genre",
+      "{target} is a music fusion genre of {source}",
+      "{target} is a musical fusion of {source}",
+      "{target} music is a fusion genre of {source}"
+    ],
+    "musicSubgenre": [
+      "{source} has the sub genre {target}",
+      "{target} is a music sub genre of {source}",
+      "{target} is a subgenre of {source}"
+    ],
+    "nationality": [
+      "{source} is from the {target}",
+      "the nationality of {source} is {target}",
+      "{source} is a national of the {target}",
+      "{source} is a {target} national",
+      "{source}'s nationality is {target}",
+      "{source} was from the {target}",
+      "the nationality of {source} was {target}",
+      "{source} had a nationality that was of the {target}",
+      "{source} has a nationality that is of the {target}",
+      "{source} is a national of {target}",
+      "{source}'s nationality is the {target}"
+    ],
+    "nearestCity": [
+      "the city nearest to {source} is {target}",
+      "the nearest city to {source} is {target}"
+    ],
+    "netIncome": [
+      "the net income of {source} is {target}",
+      "{source} earns {target} of net income",
+      "{source} has a net income of {target}"
+    ],
+    "nickname": [
+      "the {source} has the nickname {target}",
+      "{source} has the nickname {target}"
+    ],
+    "notableWork": [
+      "a notable work of {source} is {target}",
+      "{target} is a notable work by {source}"
+    ],
+    "numberOfEmployees": [
+      "the number of employees working at {source} is {target}",
+      "there are {target} people employed by {source}",
+      "{source} has {target} employees",
+      "{source} has {target} workers"
+    ],
+    "numberOfLocations": [
+      "{source} has {target} banking centers",
+      "{source} has {target} branches",
+      "{source} has {target} locations"
+    ],
+    "numberOfMembers": [
+      "{source} has {target} members",
+      "the number of members of {source} is {target}",
+      "the {source} has {target} members",
+      "there are {target} members of {source}",
+      "{source} club has {target} members",
+      "{source} have {target} members"
+    ],
+    "numberOfPostgraduateStudents": [
+      "the number of post graduate students at the {source} is about {target}",
+      "the number of postgraduate students in {source} is ~{target}",
+      "there are about {target} postgraduate students at the {source}",
+      "there are around {target} postgraduate students at the {source}",
+      "{source} has {target} postgraduate students",
+      "{target} students are enrolled in a post-graduate program at {source}"
+    ],
+    "numberOfStudents": [
+      "the {source} has {target} students",
+      "there are {target} students at the {source}",
+      "there are {target} students attending the {source}",
+      "{source} has {target} students enrolled"
+    ],
+    "numberOfUndergraduateStudents": [
+      "the number of undergraduates attending the {source} is roughly {target} students",
+      "the {source} has {target} undergraduate students",
+      "there are around {target} undergraduate students at the {source}",
+      "{source}'s number of undergraduate students total to ~{target}"
+    ],
+    "numberOfVotesAttained": [
+      "{source} obtained {target} votes in his election",
+      "{source} won {target} votes",
+      "{target} people voted for {source}"
+    ],
+    "occupation": [
+      "{source} was a {target}",
+      "{source} is a {target}",
+      "{source} served as a {target}",
+      "{source} performed as a {target}",
+      "{source}'s occupation was a {target}",
+      "{source} makes his living with {target}",
+      "{source} performs as a {target}",
+      "{target} is {source}'s occupation"
+    ],
+    "oclcNumber": [
+      "the oclc number of {source} is {target}",
+      "{source} has the oclc number {target}",
+      "oclc number {target} is {source}",
+      "the oclc number of the {source} is {target}",
+      "the {source} has a oclc number of {target}",
+      "the {source} has an oclc number of {target}",
+      "{source} has a oclc number of {target}",
+      "{source} oclc number is {target}",
+      "{source} was assigned the oclc number {target}",
+      "{target} is the oclc number for {source}"
+    ],
+    "office": [
+      "{source} worked as a {target}",
+      "{source} worked as the {target}",
+      "{source} worked at the {target}",
+      "{source} held office as {target}",
+      "{source} held the office {target}",
+      "{source} was the {target}",
+      "{source} worked as {target}",
+      "{source} works at office as {target}"
+    ],
+    "officialLanguage": [
+      "{target} is the official language of the {source}",
+      "the official language of the {source} is {target}",
+      "the official language in the {source} is {target}",
+      "the official language in {source} is the {target}",
+      "the official language of the {source} is the {target}",
+      "the official language of {source} is the {target}",
+      "the official language of {source} is {target}",
+      "{target} is the official language in the {source}",
+      "{target} is the official language of {source}"
+    ],
+    "operatingIncome": [
+      "the operating income earned by {source} is {target}",
+      "the operating income of {source} is {target}"
+    ],
+    "operatingOrganisation": [
+      "{source} is operated by the {target}",
+      "the {target} is the operating organisation of {source}",
+      "{source} is operated by {target}",
+      "the operating organization for {source} is called {target}",
+      "the operating organization for {source} is in {target}",
+      "the operating organization for {source} is the {target}",
+      "the operating organization for {source} is {target}",
+      "the operators of {source} are in {target}",
+      "the {source} is operated by the {target}",
+      "the {source} is operated by {target}",
+      "the {source} is run by the operation organisation the {target}",
+      "the {target} governs the {source}",
+      "the {target} is the operating organisation for {source}",
+      "the {target} is the operating organisation of the {source}",
+      "the {target} operates the {source}",
+      "{source} is operated by the {target} organisation",
+      "{source} operating organization is {target}",
+      "{target} is the operating organisation for {source}",
+      "{target} is the operating organisation of {source}",
+      "{target} operates the {source}"
+    ],
+    "operator": [
+      "the {source} operator is {target}",
+      "the operator of the {source} is the {target}",
+      "the operator of {source} was {target}",
+      "the {source} mission was operated by {target}",
+      "the {source} program was organized by {target}",
+      "the {source} was operated by {target}",
+      "{source} was operated by {target}",
+      "{target} operate {source}",
+      "{target} operated {source}"
+    ],
+    "orbitalPeriod": [
+      "{source} has an orbital period of {target}",
+      "the orbital period for {source} is {target}",
+      "the orbital period of {source} is {target}",
+      "the asteroid called {source} has an orbital period of {target}",
+      "the dark asteroid called {source} has an orbital period of {target}",
+      "the orbital period for {source}, is {target}",
+      "the orbital period of {source}, is {target}",
+      "{source} has an orbital periodd of {target}"
+    ],
+    "order": [
+      "{source} is of the order {target}",
+      "{source} is under the order of {target}",
+      "a {source} is included in the order of {target}",
+      "the {source} is a member of the {target} plant order",
+      "the {source} is of the order {target}",
+      "{source} are part of the order of {target}",
+      "{source} belongs to the order of {target}",
+      "{source} belongs to the {target} order of plants",
+      "{source} comes from the plant order {target}",
+      "{source} is a fruit of the order {target}",
+      "{source} is a member of the order of {target}",
+      "{source} is of the {target} order",
+      "{source} is one of the members of the order {target}",
+      "{source} is one of the members of the {target} order",
+      "{source} is part of the order of {target}",
+      "{source} is the order of {target}",
+      "{source}s are classified in the order {target}",
+      "{source}s are from the order {target}"
+    ],
+    "origin": [
+      "{source} comes from {target}",
+      "{source} is originally from {target}",
+      "the hometown of {source} is {target}",
+      "the musician {source} originates from {target}",
+      "the origin of {source} is {target}",
+      "{source} origin's {target}",
+      "{source} originated in {target}",
+      "{source}'s origin is the {target}",
+      "{source}'s origins are from {target}",
+      "{target} is the home town of {source}"
+    ],
+    "outlookRanking": [
+      "the outlook ranking for the {source} is {target}",
+      "{source} has an outlook ranking of {target}",
+      "{source}'s outlook ranking is {target}"
+    ],
+    "owner": [
+      "{source} is owned by {target}",
+      "the owner of {source} is {target}",
+      "{target} is the owner of the {source}",
+      "{target} owns {source}",
+      "the owner of the {source} is {target}",
+      "the {source} is owned by {target}",
+      "{source} is owned by the {target}",
+      "{target} is the owner of {source}",
+      "the owner of {source} is the {target}",
+      "the {source} is owned by the {target}",
+      "the {target} is the owner of the {source}",
+      "the {target} looks after the {source}",
+      "{source} owner is {target}",
+      "{target} own {source}",
+      "{target} owns the {source}"
+    ],
+    "owningOrganisation": [
+      "the {source} has been provided by the {target}",
+      "the {target} has responsibility for the {source}",
+      "the {target} owns the {source}"
+    ],
+    "parentCompany": [
+      "{target} is the parent company of {source}",
+      "the parent company of {source} is {target}",
+      "the {target} is the parent company of {source}",
+      "the parent company of the {source} is {target}",
+      "{source} is a subsidiary of the {target} company",
+      "{source}'s parent company is {target}",
+      "{target} are the parent company of {source}",
+      "{target} is the parent company of the {source}",
+      "{target} is the parent company of the {source} co"
+    ],
+    "part": [
+      "{target} is part of {source}"
+    ],
+    "partialFailures": [
+      "the {source} has had {target} partial failures"
+    ],
+    "party": [
+      "{source} belongs to the {target} party",
+      "{source} is a member of the {target} party",
+      "{source} was a politician from the {target}",
+      "{source}'s party is the {target}",
+      "{source}'s party is {target}"
+    ],
+    "patronSaint": [
+      "the patron saint of {source} is {target}"
+    ],
+    "percentageOfAreaWater": [
+      "the percentage of the {source} covered by water is {target}%",
+      "the total area of the {source} covered by water is {target} percent",
+      "{target} percent of the area of the {source} is water"
+    ],
+    "periapsis": [
+      "{source} has a periapsis of {target}",
+      "the periapsis of {source} is {target}",
+      "{source} has a periapsis measurement of {target}",
+      "the asteroid called {source} has a periapsis of {target}",
+      "the dark asteroid {source} has a periapsis is {target}",
+      "the periapsis for {source} is {target}",
+      "the periapsis measurement of {source} is {target}",
+      "the periapsis of the {source} asteroid is {target} gm",
+      "{source} has a periapsis measuring {target}"
+    ],
+    "playerNumber": [
+      "number {target} is {source}'s player number"
+    ],
+    "populationDensity": [
+      "the population density of {source}, is {target}",
+      "the population density in {source} is {target}",
+      "the population density in {source}, is {target}",
+      "the population density of {source} is {target}",
+      "the population density of {source} is {target} per square kilometer",
+      "{source} has a population density of {target}",
+      "{source}, has a population density of {target}"
+    ],
+    "populationTotal": [
+      "the population of {source} is {target}",
+      "the total population of {source} is {target}",
+      "{source} has a population of {target}"
+    ],
+    "position": [
+      "{source} compete in {target}",
+      "{source} is a member team of the {target}",
+      "{source} plays as a {target}",
+      "{source} position is in the {target}",
+      "{source}'s position is a {target}",
+      "{source}'s position is in the {target}",
+      "{source}'s position is the {target}",
+      "{source}'s position is {target}"
+    ],
+    "powerType": [
+      "the {source} is powered by a {target} engine",
+      "the power type of the {source} is the {target} engine",
+      "the {source} has a {target} power type",
+      "the {source} is powered by {target} made engines",
+      "{source} is powered by {target}",
+      "{source} is {target} powered"
+    ],
+    "precededBy": [
+      "{source} was preceded by {target}",
+      "{source} is preceded by {target}",
+      "{source} is the sequel to {target}",
+      "{target} preceded {source}",
+      "{target} came before the book \"{source}\"",
+      "{target} was written prior to \"{source}\""
+    ],
+    "predecessor": [
+      "{source}'s predecessor was {target}",
+      "{source} preceded {target}",
+      "{target} was {source}'s predecessor"
+    ],
+    "president": [
+      "the president of {source} is {target}",
+      "{target} is president of {source}",
+      "{target} is the appointed president of the {source}",
+      "{target} is the president of {source}",
+      "{target} was appointed as the president of the {source}"
+    ],
+    "product": [
+      "{source} produces {target}",
+      "{source} produces {target} products",
+      "one of the products of {source} is {target}",
+      "one of {source}’s products is {target}",
+      "the {source} produces {target}",
+      "the {target} is produced by {source}",
+      "{source} also makes {target} products",
+      "{source} also sells {target}",
+      "{source} is a company that offers products such as {target}",
+      "{source} makes {target}",
+      "{source} makes {target} products",
+      "{source} makes {target}s",
+      "{source} manufactures {target}",
+      "{source} manufactures {target}s",
+      "{source} produces the {target}",
+      "{source} produces {target}s",
+      "{source} sells {target} products",
+      "{target} is one of the products of the {source}",
+      "{target} is one of {source}'s products",
+      "{target} is produced by {source}"
+    ],
+    "productionEndYear": [
+      "the {source}'s final year of production was {target}"
+    ],
+    "profession": [
+      "the profession of {source} was {target}",
+      "{source} was a {target} by profession",
+      "{source}'s profession is {target}"
+    ],
+    "protein": [
+      "{source} contain {target} of protein"
+    ],
+    "publisher": [
+      "{source} is published by {target}",
+      "{source} was published by {target}",
+      "{target} is the publisher of {source}",
+      "the {source} is published by {target}",
+      "{source} is published by the {target}",
+      "{source} was published by the {target}",
+      "{target} is the publisher of the {source}",
+      "the book \"{source} was published by {target}",
+      "the book \"{source}\" was published by {target}",
+      "the {source} was published by {target}",
+      "the {target} publishes {source}",
+      "{source} are the publishers of {target}",
+      "{source} publisher is {target}",
+      "{target} publish {source}",
+      "{target} published {source}",
+      "{target} publishes {source}"
+    ],
+    "recordLabel": [
+      "{source} is signed to the record label {target}",
+      "{source}'s record label is {target}",
+      "{source} is signed with the record label {target}",
+      "{source}'s recording label is {target}",
+      "the record label of {source} is {target}",
+      "{source} is signed to the {target} label",
+      "{source} is signed to {target}",
+      "the label {target} signed {source}",
+      "{source} has been signed to the {target} label",
+      "{source} is signed to the record label of {target}",
+      "{source} is signed with {target}",
+      "{source} record label is {target}",
+      "{source} recorded on the record label, {target}",
+      "{source} uses the record label {target}",
+      "{source} was once signed to the record label {target}",
+      "{source} was once signed to {target}",
+      "{source} was signed to the record label '{target}'",
+      "{source} was signed to {target}",
+      "{target} is the record label of {source}",
+      "{target} is the recording label of {source}"
+    ],
+    "region": [
+      "{source} is from the {target} region",
+      "{source} comes from the region of {target}",
+      "{source} comes from the {target} region",
+      "{source} is a dish from {target}",
+      "{source} is a dish of {target}",
+      "{source}'s region is {target}",
+      "the {source} is popular in the {target} area",
+      "{source} are found in the region of {target}",
+      "{source} come from the {target} region",
+      "{source} comes from the region {target}",
+      "{source} hails from the {target}",
+      "{source} is a dish from the region of {target}",
+      "{source} is a dish from the {target} region",
+      "{source} is a dish that comes from the {target} region",
+      "{source} is a food found in the {target}",
+      "{source} is food found in {target}",
+      "{source} is found in the {target}",
+      "{source} is found in the {target} region",
+      "{source} is in the region of {target}",
+      "{source} is located in the region of {target}"
+    ],
+    "regionServed": [
+      "the {source} serves {target}",
+      "the {source} is based in {target}",
+      "the {source} serves the {target} region",
+      "{source} provides its services in the {target}",
+      "{source} serves all regions of the {target}",
+      "{source} serves the {target}"
+    ],
+    "related": [
+      "the dish {source} is related to {target}",
+      "{source} and {target} are related",
+      "{source} is a snack that is similar to {target}"
+    ],
+    "relatedMeanOfTransportation": [
+      "the {source} is related to the {target}",
+      "the {source} and the {target} are similar means of transport",
+      "the {source} and the {target} are related means of transport in that they are both cars",
+      "{source} and {target} are related forms of transportation",
+      "the {source} and the {target} are related means of transportation",
+      "{source} is related to {target}",
+      "the {source} and the {target} are related means of transport",
+      "the {source} and {target} are a related means of transport",
+      "the {source} and {target} are related kinds of transportation",
+      "the {source} and {target} are related means of transportation",
+      "the {target} and the {source} are related means of transportation",
+      "{source} and {target} are related kinds of transportation",
+      "{source} and {target} are related types of transportation",
+      "{source} is a related means of transport to the {target}",
+      "{source} is a related vehicle to the {target}",
+      "{source} is related to the {target}"
+    ],
+    "religion": [
+      "in {source} the main religion is the {target}",
+      "the established religion in {source} is the {target}",
+      "the official religion of {source} is the {target}",
+      "the religion of {source} is {target}",
+      "{source}'s religion is led by {target}",
+      "{target} is the religion of {source}"
+    ],
+    "representative": [
+      "the {source} representative is {target}",
+      "{target} is a representative of {source}",
+      "{target} represented {source}",
+      "{target} served as a representative of {source}"
+    ],
+    "residence": [
+      "{source} lives in {target}",
+      "{source} resides in {target}",
+      "{source} resided in {target}",
+      "{source} was a resident of {target}"
+    ],
+    "revenue": [
+      "the revenue of {source} is {target}"
+    ],
+    "river": [
+      "the {target} is a river in {source}",
+      "the {target} is {source}'s most well known river"
+    ],
+    "rocketStages": [
+      "the {source} has {target} rocket stages",
+      "the {source} rocket has {target} stages"
+    ],
+    "rotationPeriod": [
+      "{source} has a rotation period of {target}",
+      "the rotation period for {source} is {target}",
+      "the rotation period of {source} is {target}",
+      "{source} has a rotational period of {target}",
+      "the celestial body known as {source} has a rotation period of {target}"
+    ],
+    "runwayLength": [
+      "the runway length of {source} is {target}",
+      "the runway length at {source} is {target}",
+      "{source} has a runway length of {target}",
+      "{source}'s runway length is {target}",
+      "{source} runway length is {target}",
+      "the length of the runway at {source} is {target}",
+      "the runway length at {source} is {target} meters",
+      "the average runway length at {source} is {target} m",
+      "the length of the runway at {source} is {target} metres",
+      "the runway at {source} is {target} in length",
+      "the runway length of {source} is {target} metres",
+      "the {source} has a runway length of {target}",
+      "the {source} runway has a length of {target}",
+      "{source}'s runway has a length of {target}",
+      "{target} is the length of the runway at {source}"
+    ],
+    "runwayName": [
+      "the {source}'s runway name is {target}",
+      "the name of {source} runway is {target}",
+      "the runway at {source} is called {target}",
+      "the runway name at {source} is {target}",
+      "{source}'s runway name is {target}",
+      "{target} is a runway name at {source}"
+    ],
+    "saint": [
+      "the saint of {source} is {target}"
+    ],
+    "season": [
+      "{source} played in the {target} season",
+      "{source} were in the {target} season",
+      "{source} are in season {target}",
+      "{source} competed in the {target} season",
+      "{source} played in season {target}",
+      "{source} was in the {target} season",
+      "i am interested in the {target} {source} season",
+      "{source} competed in the season {target}",
+      "{source} competed in the {target}",
+      "{source} play in season {target}",
+      "{source} was a part of the {target} season"
+    ],
+    "selectedByNasa": [
+      "{source} was chosen by nasa in {target}",
+      "{source} was selected by nasa in {target}",
+      "nasa selected {source} in {target}",
+      "{source} joined nasa in {target}",
+      "{source} was hired by nasa in {target}",
+      "in {target}, {source} was selected by nasa",
+      "{source} started working for nasa in {target}"
+    ],
+    "senators": [
+      "one of {source}'s senators is {target}",
+      "the senator representing {source} was {target}",
+      "{target} is a senator in the state of {source}",
+      "{target} is a senator in {source}"
+    ],
+    "servedAsChiefOfTheAstronautOfficeIn": [
+      "{source} served as chief of the astronaut office in {target}",
+      "{source} was the chief of the astronaut office in {target}"
+    ],
+    "service": [
+      "{source} is a company that offers {target} services",
+      "{source} offers {target} service",
+      "{source} provides {target} services to customers",
+      "{source}'s service is {target}"
+    ],
+    "serviceStartYear": [
+      "{source} began his military career in {target}"
+    ],
+    "servingTemperature": [
+      "{source} should be served {target}"
+    ],
+    "shipBeam": [
+      "the {source} has a ship beam of {target}",
+      "the beam of the {source} is {target}m",
+      "the length of the {source} ship beam is {target}",
+      "the ship {source} has a beam of {target} metres",
+      "the {source} has a beam of {target} m",
+      "the {source} has a beam of {target}etres",
+      "the {source} has a ship beam length of {target}",
+      "the {source} has a {target} m long ship beam"
+    ],
+    "shipLaidDown": [
+      "the ship {source} was laid down on {target}"
+    ],
+    "shipLaunch": [
+      "the {source} was launched on {target}"
+    ],
+    "significantBuilding": [
+      "one of the significant buildings designed by {source} is the {target}",
+      "the {target} is one of {source}'s significant buildings",
+      "{source} designed significant buildings in {target}"
+    ],
+    "significantProject": [
+      "{source} was the architect of the landmark {target}",
+      "{target} was a significant project for {source}",
+      "{target} was a significant project of {source}"
+    ],
+    "site": [
+      "the site of {source} is at the {target}"
+    ],
+    "spokenIn": [
+      "the {source} is spoken in {target}"
+    ],
+    "sportGoverningBody": [
+      "the sport {source} has a governing body called the {target}",
+      "the sports governing body of {source} is the {target}",
+      "the {source} sport is governed by the {target}",
+      "the {target} is the governing body for the {source} sport",
+      "the {target} is the governing body of the sport of {source}"
+    ],
+    "sportsOffered": [
+      "one of the sports offered at the {source} is {target}",
+      "the {source} offers sports including {target}",
+      "{source} offers {target} as a sport",
+      "{target} is one of the sports offered at the {source}"
+    ],
+    "spouse": [
+      "the wife of {source} is {target}",
+      "{source} was married to {target}",
+      "{source}'s spouse was {target}"
+    ],
+    "stadium": [
+      "the {source} are based at the {target}",
+      "the {source} baseball field is the {target}",
+      "the {source} baseball field is {target}",
+      "the {target} is where the {source} play their home games",
+      "{target} is the home of the {source}"
+    ],
+    "starring": [
+      "{target} starred in {source}",
+      "{target} stars in {source}",
+      "the starring of {source} is {target}",
+      "{source} stars {target}",
+      "{target} stared in {source}"
+    ],
+    "state": [
+      "the {source} is in the state of {target}",
+      "{source} is in the state of {target}",
+      "{source} is in {target} state",
+      "{source} is located in the state of {target}",
+      "{source} is located in {target} state"
+    ],
+    "stateOfOrigin": [
+      "{source} has his origins in {target}"
+    ],
+    "stylisticOrigin": [
+      "{source} originated from {target} music",
+      "{source} has its stylistic origins in {target}",
+      "the stylistic origin of {source} is {target}",
+      "{source} has its origins in {target}",
+      "{source} originated from {target}",
+      "{source}'s stylistic origin is {target}",
+      "the {target} is a stylistic origin of {source}",
+      "{source} has its stylistic origin in {target}",
+      "{source} has its stylistic origins in the {target}",
+      "{source} has origins in {target}",
+      "{source} is a derivative of {target} music",
+      "{source} music originated from the {target}",
+      "{source} music origins are {target}",
+      "{source} originated its style from {target} music",
+      "{source} stylistics originated from {target}"
+    ],
+    "subsidiary": [
+      "{target} is a subsidiary of {source}",
+      "the company {target} is owned by {source}",
+      "the {target} is a subsidiary of the {source}",
+      "the {target} is a subsidiary of {source}",
+      "{source} has a subsidiary called {target}",
+      "{source}'s subsidiary is {target}",
+      "{source}’s subsidiary is {target}",
+      "{target}, inc is a subsidiary of {source}"
+    ],
+    "successor": [
+      "{source}'s successor was {target}",
+      "the successor of {source} was {target}",
+      "{target} succeeded {source}",
+      "{source} was succeeded by {target}",
+      "the successor to {source} is {target}",
+      "the {source} was succeeded by the {target}",
+      "{source} successor was {target}",
+      "{target} was the successor to {source}",
+      "the successor to {source} was {target}",
+      "the {source}'s successor is the {target}",
+      "the {target} succeeded the {source}",
+      "{target} was the successor of {source}",
+      "the successor of the {source} automobile was the {target}",
+      "the successor of the {source} is the {target}",
+      "the {source} had the {target} for a successor",
+      "the {target} was preceded by the {source}",
+      "{source}' successor was {target}",
+      "{target} is the successor to {source}",
+      "{target} suceeded {source}",
+      "{target} was succeeded by {source}"
+    ],
+    "temperature": [
+      "the temperature of {source} is {target}"
+    ],
+    "tenant": [
+      "the tenant of the {source} is the {target} hotel",
+      "the tenant of the {source} is {target}",
+      "{target} is a tenant of the {source}",
+      "{target} is a tenant of {source}",
+      "{target} is the tenant of {source}"
+    ],
+    "timeZone": [
+      "the time zone for the {source} is {target}",
+      "the time zone for {source} is the {target}",
+      "the time zone used by the {source} is {target}",
+      "the {source} is in the {target} zone",
+      "the {source}' time zone is {target}"
+    ],
+    "title": [
+      "{source} official title is the {target}",
+      "{source} performed as the {target}",
+      "{source} served as the {target}",
+      "{source}' title is the {target}"
+    ],
+    "topSpeed": [
+      "the top speed of the {source} is {target}",
+      "the {source} has a top speed of {target}",
+      "the top speed of an {source} is {target}",
+      "the top speed pf the {source} is {target}",
+      "the {source} had a top speed of {target} km/h",
+      "the {source} has a top speed is {target}",
+      "the {source}'s top speed is {target} km/h"
+    ],
+    "totalLaunches": [
+      "the {source} has had a total of {target} launches"
+    ],
+    "totalProduction": [
+      "the total number of {source} made is {target}",
+      "the total production amount for the {source} is {target}"
+    ],
+    "trainerAircraft": [
+      "the trainer aircraft for the {source} is the {target}",
+      "the {source} used the {target} as a trainer aircraft"
+    ],
+    "transportAircraft": [
+      "the transport aircraft for the {source} is the {target}",
+      "the {target} is a transport aircraft in the {source}",
+      "{target} is a transport aircraft in the {source}"
+    ],
+    "type": [
+      "the {source} company is a {target}",
+      "{source} is a {target} company",
+      "{source} is one of the {target}",
+      "{source}, inc. is a {target}"
+    ],
+    "unit": [
+      "{source} served in the {target} unit",
+      "{source}'s unit was the {target}"
+    ],
+    "universityTeam": [
+      "the {source} are the university team for {target}",
+      "the {source} team represent {target}"
+    ],
+    "voice": [
+      "the character {source} is voiced by {target}",
+      "{target} does the voice for {source}",
+      "{target} provides the voice for the character {source}"
+    ],
+    "wasGivenTheTechnicalCampusStatusBy": [
+      "the {target} was proud to give the technical campus status to the {source}",
+      "{source} was given the 'technical campus' status by {target}",
+      "{source} was given the technical campus status by the {target}"
+    ],
+    "weight": [
+      "{source} weighs {target}"
+    ],
+    "width": [
+      "the {source} has a width of {target} m",
+      "the {source} is {target} metres wide"
+    ],
+    "year": [
+      "{source} were introduced in {target}",
+      "{source} were invented in {target}"
+    ],
+    "yearOfConstruction": [
+      "{source} was built in {target}",
+      "{source} was constructed in {target}"
+    ],
+    "youthclub": [
+      "{source} played for the {target} youth team",
+      "{source}'s youth club was {target}",
+      "in his youth, {source} played for {target}",
+      "{source} belongs to the youth club {target}",
+      "{source} is a member of the youth side of {target}",
+      "{source} is affiliated with the youth club {target}",
+      "{source} played for the youth club {target}",
+      "{source} played for {target}'s youth team",
+      "{source} played youth football for {target}",
+      "{source} plays for the {target} youth team",
+      "{source} was a member of youth club {target}",
+      "{source}'s is in the youth club {target}",
+      "{source}'s youth club was the {target}",
+      "{source}'s youth football club was {target}"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": 2,
+  "governance": {
+    "root_key_id": "ed25519:sha256:REPLACE_WITH_ROOT_KEY_ID_HEX",
+    "author_registration_id": "REPLACE_WITH_AUTHOR_REGISTRATION_ID",
+    "author_registration_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "policy_revision_id": "REPLACE_WITH_POLICY_REVISION_ID",
+    "policy_revision_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "resolved_policy_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "approval_id": "REPLACE_WITH_APPROVAL_ID",
+    "approval_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "approver_registration_id": "REPLACE_WITH_APPROVER_REGISTRATION_ID",
+    "approver_registration_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "author_principal_id": "REPLACE_WITH_STABLE_AUTHOR_PRINCIPAL_ID",
+    "approver_principal_id": "REPLACE_WITH_DISTINCT_STABLE_APPROVER_PRINCIPAL_ID"
+  }
+}

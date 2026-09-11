@@ -1,0 +1,151 @@
+{
+  "status": "PASS",
+  "replay": {
+    "status": "PASS",
+    "protocol_sha256": "0cb301aae6fd1413bf1d744d4fec2b00c48c1ab2adb454aed33430d8feb5ced1",
+    "manifest_sha256": "191c52f9514655726636418d1d4cbc5fdfe5294b6ac1bb17cb8ef41fd640a05b",
+    "requests_verified": 40,
+    "prompt_unchanged_two_enums_added": true,
+    "holdout_inference_calls": 0,
+    "fixed_proposal_occurrences_removed": [
+      {
+        "document_id": "development-d581ecd86d3ca6b7",
+        "fact": {
+          "_from": "entities/african-national-congress",
+          "_id": "facts/fact-39566b7223554e42385c0e5859958307f6327b23e344e2926b576b9b60e5954b",
+          "_key": "fact-39566b7223554e42385c0e5859958307f6327b23e344e2926b576b9b60e5954b",
+          "_to": "entities/south-africa",
+          "confidence": 1.0,
+          "construction_schema": "occurrence-v1",
+          "evidence_chunk_id": "development-d581ecd86d3ca6b7",
+          "neuron_id": null,
+          "provenance": "narrative",
+          "relation_type": "COUNTRY",
+          "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+          "space_id": "document-trial-development-d581ecd86d3ca6b7",
+          "trigger": "The National Executive Committee of the African National Congress is the chief executive organ of the South African political party , the African National Congress .",
+          "trigger_end": 165,
+          "trigger_start": 0
+        },
+        "skips": [
+          "`African National Congress --COUNTRY--> South Africa`: target does not occur in the evidence sentence — dropped"
+        ]
+      }
+    ]
+  },
+  "live": {
+    "status": "PASS",
+    "protocol_sha256": "0cb301aae6fd1413bf1d744d4fec2b00c48c1ab2adb454aed33430d8feb5ced1",
+    "manifest_sha256": "41d0b0ca5cd212cd3fa2de6ba76bfb7fa6fc99c0993f12766892095eaa16e623",
+    "requests_verified": 40,
+    "prompt_unchanged_two_enums_added": true,
+    "holdout_inference_calls": 0,
+    "fixed_proposal_occurrences_removed": []
+  },
+  "comparison": {
+    "baseline": {
+      "raw": {
+        "matched": 21,
+        "unmatched": 34,
+        "missed": 662,
+        "reference_precision": 0.38181818181818183,
+        "reference_recall": 0.03074670571010249,
+        "reference_f1": 0.056910569105691054
+      },
+      "accepted": {
+        "matched": 16,
+        "unmatched": 16,
+        "missed": 667,
+        "reference_precision": 0.5,
+        "reference_recall": 0.02342606149341142,
+        "reference_f1": 0.044755244755244755
+      },
+      "documents": 40,
+      "evidence_occurrences_checked": 32,
+      "provider_failures": [],
+      "token_cost_usd": {
+        "lower": 0.0201583,
+        "upper": 0.0201583,
+        "unknown_usage_calls": 0,
+        "note": "Standard frozen token tariff estimate; not an invoice."
+      },
+      "latency_seconds": {
+        "mean": 4.125707052115468,
+        "median": 3.7852041459991597,
+        "maximum": 13.119912707945332
+      },
+      "invalid_chunk_citations": 5,
+      "skipped": 23
+    },
+    "fixed_proposals_new_gates": {
+      "raw": {
+        "matched": 21,
+        "unmatched": 34,
+        "missed": 662,
+        "reference_precision": 0.38181818181818183,
+        "reference_recall": 0.03074670571010249,
+        "reference_f1": 0.056910569105691054
+      },
+      "accepted": {
+        "matched": 16,
+        "unmatched": 15,
+        "missed": 667,
+        "reference_precision": 0.5161290322580645,
+        "reference_recall": 0.02342606149341142,
+        "reference_f1": 0.04481792717086835
+      },
+      "documents": 40,
+      "evidence_occurrences_checked": 31,
+      "provider_failures": [],
+      "token_cost_usd": {
+        "lower": 0.0,
+        "upper": 0.0,
+        "unknown_usage_calls": 0,
+        "note": "Standard frozen token tariff estimate; not an invoice."
+      },
+      "latency_seconds": {
+        "mean": 0.031335696860332975,
+        "median": 0.03099868749268353,
+        "maximum": 0.04033054201863706
+      },
+      "invalid_chunk_citations": 5,
+      "skipped": 24
+    },
+    "new_live_candidate": {
+      "raw": {
+        "matched": 25,
+        "unmatched": 26,
+        "missed": 658,
+        "reference_precision": 0.49019607843137253,
+        "reference_recall": 0.036603221083455345,
+        "reference_f1": 0.0681198910081744
+      },
+      "accepted": {
+        "matched": 20,
+        "unmatched": 15,
+        "missed": 663,
+        "reference_precision": 0.5714285714285714,
+        "reference_recall": 0.029282576866764276,
+        "reference_f1": 0.055710306406685235
+      },
+      "documents": 40,
+      "evidence_occurrences_checked": 35,
+      "provider_failures": [],
+      "token_cost_usd": {
+        "lower": 0.0194147,
+        "upper": 0.0194147,
+        "unknown_usage_calls": 0,
+        "note": "Standard frozen token tariff estimate; not an invoice."
+      },
+      "latency_seconds": {
+        "mean": 3.2527835926419355,
+        "median": 2.8021596875041723,
+        "maximum": 7.318068166961893
+      },
+      "invalid_chunk_citations": 0,
+      "skipped": 16
+    }
+  },
+  "interpretation": "Single development pass with incomplete published references; no independently verified precision or negative-case qualification. Fixed-output replay isolates the gate change; live output differences also include generation variability.",
+  "holdout_inference_calls": 0
+}

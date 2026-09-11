@@ -1,0 +1,41 @@
+{
+  "space_id": "study:px-101",
+  "chunks_path": "samples/pharma_study_px101.chunks.jsonl",
+  "questions": [
+    {
+      "id": "hcp-product",
+      "question": "Which product did Dr. Rivera mention?",
+      "expected_facts": [
+        "Dr. Rivera --MENTIONS_PRODUCT--> TheraX"
+      ]
+    },
+    {
+      "id": "product-comparison",
+      "question": "What was TheraX compared with?",
+      "expected_facts": [
+        "TheraX --COMPARES_WITH--> Standard of Care"
+      ]
+    },
+    {
+      "id": "reported-symptom",
+      "question": "What symptom did Patient Persona A report?",
+      "expected_facts": [
+        "Patient Persona A --REPORTS_SYMPTOM--> Fatigue"
+      ]
+    },
+    {
+      "id": "adherence-barrier",
+      "question": "What affected adherence?",
+      "expected_facts": [
+        "Injection Anxiety --AFFECTS--> Adherence"
+      ]
+    },
+    {
+      "id": "support-program",
+      "question": "What improved adherence?",
+      "expected_facts": [
+        "Patient Support Program --IMPROVES--> Adherence"
+      ]
+    }
+  ]
+}

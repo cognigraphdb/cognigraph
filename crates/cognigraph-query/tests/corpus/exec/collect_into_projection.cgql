@@ -1,0 +1,1 @@
+FOR d IN documents FILTER HAS(d, "category") COLLECT cat = d.category INTO titles = d.title SORT cat ASC RETURN { cat: cat, titles: titles }

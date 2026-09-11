@@ -1,0 +1,59 @@
+[workspace]
+members = [
+    "crates/cognigraph-artifacts",
+    "crates/cognigraph-core",
+    "crates/cognigraph-governance",
+    "crates/cognigraph-query",
+    "crates/cognigraph-native",
+    "crates/cognigraph-arango",
+    "crates/cognigraph-embeddings",
+    "crates/cognigraph-lua",
+    "crates/cognigraph-cache",
+    "crates/cognigraph-auth",
+    "crates/cognigraph-construct",
+    "crates/cognigraph-server",
+    "crates/cognigraph-cli",
+]
+resolver = "2"
+
+[workspace.package]
+version = "2.7.0"
+edition = "2024"
+license = "FSL-1.1-Apache-2.0"
+repository = "https://github.com/cognigraphdb/cognigraph"
+homepage = "https://cognigraphdb.com"
+
+[workspace.dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+pest = "2"
+pest_derive = "2"
+
+# HTTP
+reqwest = { version = "0.13", features = ["json", "query", "form"] }
+quick-xml = "0.41"
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+
+# Utils
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+base64 = "0.23"
+lru = "0.18"
+rayon = "1"
+argon2 = { version = "0.5", features = ["std"] }
+sha2 = "0.11"
+ed25519-dalek = "3.0.0"
+getrandom = "0.4.3"
+rustix = { version = "1.1.4", features = ["fs"] }

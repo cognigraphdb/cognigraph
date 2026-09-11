@@ -1,0 +1,562 @@
+{
+  "phase": "measurement",
+  "arm": "luna-json",
+  "repetition": 1,
+  "batch": 35,
+  "request": {
+    "space_type": "semeval-luna-json-r1-b35",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9395",
+        "title": "Relation benchmark excerpt",
+        "text": "The EMC of the common bean flour was determined at 10, 25, and 40 C."
+      },
+      {
+        "id": "semeval-8459",
+        "title": "Relation benchmark excerpt",
+        "text": "She had struggled violently with her attacker, who killed her with a blunt instrument."
+      },
+      {
+        "id": "semeval-10447",
+        "title": "Relation benchmark excerpt",
+        "text": "The thick slab of spiced ham was the best part of this year's new breakfast sandwich; the salty meat was griddled to a crisp, nut-brown sear, and it outshone the surrounding egg, cheese, and bun."
+      },
+      {
+        "id": "semeval-9048",
+        "title": "Relation benchmark excerpt",
+        "text": "$600 billion dollars have been put into the US economy."
+      },
+      {
+        "id": "semeval-9514",
+        "title": "Relation benchmark excerpt",
+        "text": "Here is a reliable and tasty cookie recipe from my grandmother."
+      },
+      {
+        "id": "semeval-10457",
+        "title": "Relation benchmark excerpt",
+        "text": "The show offers a constructive discussion of a hot-button topic with leading M&A experts."
+      },
+      {
+        "id": "semeval-8697",
+        "title": "Relation benchmark excerpt",
+        "text": "Construction worker carrying a wooden plank on his shoulder."
+      },
+      {
+        "id": "semeval-9775",
+        "title": "Relation benchmark excerpt",
+        "text": "To reheat the turkey without drying it out, we placed the slices in a steamer basket set in a pot of simmering water."
+      },
+      {
+        "id": "semeval-10225",
+        "title": "Relation benchmark excerpt",
+        "text": "The annual residence league of various sport codes, the Mini Olympics held during the September break has proven very popular amongst our students."
+      },
+      {
+        "id": "semeval-9108",
+        "title": "Relation benchmark excerpt",
+        "text": "The second hypothesis asserting economic domination is rejected, and the third largely accepted."
+      },
+      {
+        "id": "semeval-9484",
+        "title": "Relation benchmark excerpt",
+        "text": "The burner of the dryer is lined with more than 3 cm thick castable refractory material."
+      },
+      {
+        "id": "semeval-8313",
+        "title": "Relation benchmark excerpt",
+        "text": "A panel discussion focusing on issues such as domestic violence and fearful relationships was held at the University of Rio Grande."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 0,
+    "proposed": 0,
+    "skips": [],
+    "space_type": "semeval-luna-json-r1-b35"
+  },
+  "latency_seconds": 1.1971391249680892,
+  "facts": [],
+  "entities": [],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-10225",
+      "_key": "semeval-luna-json-r1-b35-semeval-10225",
+      "chunk_id": "semeval-10225",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b276266ef92eff65c216b68f316cc2293a5169a2cb04620d9dbcd5f9f9684fed",
+      "created_at": "2026-09-09T12:39:01.397710+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "The annual residence league of various sport codes, the Mini Olympics held during the September break has proven very popular amongst our students.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397710+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-10447",
+      "_key": "semeval-luna-json-r1-b35-semeval-10447",
+      "chunk_id": "semeval-10447",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:469ae2e467e28cd96800a72fda90e9599a072e52d818088687d0477730ec5277",
+      "created_at": "2026-09-09T12:39:01.397717+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "The thick slab of spiced ham was the best part of this year's new breakfast sandwich; the salty meat was griddled to a crisp, nut-brown sear, and it outshone the surrounding egg, cheese, and bun.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397717+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-10457",
+      "_key": "semeval-luna-json-r1-b35-semeval-10457",
+      "chunk_id": "semeval-10457",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:62fae9c7c337829981fbc749bcb98d21498cf9c9f16457693037192edf42c850",
+      "created_at": "2026-09-09T12:39:01.397718+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "The show offers a constructive discussion of a hot-button topic with leading M&A experts.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397718+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-8313",
+      "_key": "semeval-luna-json-r1-b35-semeval-8313",
+      "chunk_id": "semeval-8313",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b5526216312c9a4a9fe7c70fa215eb1ab6fff2c7d76d3c1d6d5b0d7a9ed100a4",
+      "created_at": "2026-09-09T12:39:01.397720+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "A panel discussion focusing on issues such as domestic violence and fearful relationships was held at the University of Rio Grande.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397720+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-8459",
+      "_key": "semeval-luna-json-r1-b35-semeval-8459",
+      "chunk_id": "semeval-8459",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b962efbd1fa5e8ade2f7c5639f9111e76a462ce06141806c63984140c5518b2b",
+      "created_at": "2026-09-09T12:39:01.397726+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "She had struggled violently with her attacker, who killed her with a blunt instrument.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397726+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-8697",
+      "_key": "semeval-luna-json-r1-b35-semeval-8697",
+      "chunk_id": "semeval-8697",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:fde702503d08e459dc01c84446bf9919070dffe22170f603675ad91174aafedd",
+      "created_at": "2026-09-09T12:39:01.397728+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "Construction worker carrying a wooden plank on his shoulder.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397728+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-9048",
+      "_key": "semeval-luna-json-r1-b35-semeval-9048",
+      "chunk_id": "semeval-9048",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f9db5fb3ef3bba6a7420bd8739d183004257eb015a7cc84896eefdb4015537ff",
+      "created_at": "2026-09-09T12:39:01.397729+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "$600 billion dollars have been put into the US economy.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397729+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-9108",
+      "_key": "semeval-luna-json-r1-b35-semeval-9108",
+      "chunk_id": "semeval-9108",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:20d7879eec6995ac13f5e3d858f9f88a6ce35d20c6921b81db66de799e5f5914",
+      "created_at": "2026-09-09T12:39:01.397731+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "The second hypothesis asserting economic domination is rejected, and the third largely accepted.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397731+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-9395",
+      "_key": "semeval-luna-json-r1-b35-semeval-9395",
+      "chunk_id": "semeval-9395",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e92dd05589e6c8abd2c7d4519434d85f91407128a66a55ec0d578e01c038424f",
+      "created_at": "2026-09-09T12:39:01.397733+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "The EMC of the common bean flour was determined at 10, 25, and 40 C.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397733+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-9484",
+      "_key": "semeval-luna-json-r1-b35-semeval-9484",
+      "chunk_id": "semeval-9484",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3c8382eea755195f2f5c9de5d3584c525b8f2d39fd57bffdfcbe9644071647e2",
+      "created_at": "2026-09-09T12:39:01.397734+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "The burner of the dryer is lined with more than 3 cm thick castable refractory material.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397734+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-9514",
+      "_key": "semeval-luna-json-r1-b35-semeval-9514",
+      "chunk_id": "semeval-9514",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b12eee022d2b31845062c0d8569f5649159a544042b7e6dbf54014d9868ccbdb",
+      "created_at": "2026-09-09T12:39:01.397736+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "Here is a reliable and tasty cookie recipe from my grandmother.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397736+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b35-semeval-9775",
+      "_key": "semeval-luna-json-r1-b35-semeval-9775",
+      "chunk_id": "semeval-9775",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1b4f7e68fd5cf63830853a11da2f37f802622cb227c242fa25d917d38b1d13f0",
+      "created_at": "2026-09-09T12:39:01.397737+00:00",
+      "space_id": "semeval-luna-json-r1-b35",
+      "text": "To reheat the turkey without drying it out, we placed the slices in a steamer basket set in a pot of simmering water.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:39:01.397737+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 0,
+        "results": []
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 0,
+        "results": []
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-10225",
+            "_key": "semeval-luna-json-r1-b35-semeval-10225",
+            "chunk_id": "semeval-10225",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b276266ef92eff65c216b68f316cc2293a5169a2cb04620d9dbcd5f9f9684fed",
+            "created_at": "2026-09-09T12:39:01.397710+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "The annual residence league of various sport codes, the Mini Olympics held during the September break has proven very popular amongst our students.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397710+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-10447",
+            "_key": "semeval-luna-json-r1-b35-semeval-10447",
+            "chunk_id": "semeval-10447",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:469ae2e467e28cd96800a72fda90e9599a072e52d818088687d0477730ec5277",
+            "created_at": "2026-09-09T12:39:01.397717+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "The thick slab of spiced ham was the best part of this year's new breakfast sandwich; the salty meat was griddled to a crisp, nut-brown sear, and it outshone the surrounding egg, cheese, and bun.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397717+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-10457",
+            "_key": "semeval-luna-json-r1-b35-semeval-10457",
+            "chunk_id": "semeval-10457",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:62fae9c7c337829981fbc749bcb98d21498cf9c9f16457693037192edf42c850",
+            "created_at": "2026-09-09T12:39:01.397718+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "The show offers a constructive discussion of a hot-button topic with leading M&A experts.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397718+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-8313",
+            "_key": "semeval-luna-json-r1-b35-semeval-8313",
+            "chunk_id": "semeval-8313",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b5526216312c9a4a9fe7c70fa215eb1ab6fff2c7d76d3c1d6d5b0d7a9ed100a4",
+            "created_at": "2026-09-09T12:39:01.397720+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "A panel discussion focusing on issues such as domestic violence and fearful relationships was held at the University of Rio Grande.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397720+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-8459",
+            "_key": "semeval-luna-json-r1-b35-semeval-8459",
+            "chunk_id": "semeval-8459",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b962efbd1fa5e8ade2f7c5639f9111e76a462ce06141806c63984140c5518b2b",
+            "created_at": "2026-09-09T12:39:01.397726+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "She had struggled violently with her attacker, who killed her with a blunt instrument.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397726+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-8697",
+            "_key": "semeval-luna-json-r1-b35-semeval-8697",
+            "chunk_id": "semeval-8697",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:fde702503d08e459dc01c84446bf9919070dffe22170f603675ad91174aafedd",
+            "created_at": "2026-09-09T12:39:01.397728+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "Construction worker carrying a wooden plank on his shoulder.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397728+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-9048",
+            "_key": "semeval-luna-json-r1-b35-semeval-9048",
+            "chunk_id": "semeval-9048",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f9db5fb3ef3bba6a7420bd8739d183004257eb015a7cc84896eefdb4015537ff",
+            "created_at": "2026-09-09T12:39:01.397729+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "$600 billion dollars have been put into the US economy.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397729+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-9108",
+            "_key": "semeval-luna-json-r1-b35-semeval-9108",
+            "chunk_id": "semeval-9108",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:20d7879eec6995ac13f5e3d858f9f88a6ce35d20c6921b81db66de799e5f5914",
+            "created_at": "2026-09-09T12:39:01.397731+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "The second hypothesis asserting economic domination is rejected, and the third largely accepted.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397731+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-9395",
+            "_key": "semeval-luna-json-r1-b35-semeval-9395",
+            "chunk_id": "semeval-9395",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e92dd05589e6c8abd2c7d4519434d85f91407128a66a55ec0d578e01c038424f",
+            "created_at": "2026-09-09T12:39:01.397733+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "The EMC of the common bean flour was determined at 10, 25, and 40 C.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397733+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-9484",
+            "_key": "semeval-luna-json-r1-b35-semeval-9484",
+            "chunk_id": "semeval-9484",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3c8382eea755195f2f5c9de5d3584c525b8f2d39fd57bffdfcbe9644071647e2",
+            "created_at": "2026-09-09T12:39:01.397734+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "The burner of the dryer is lined with more than 3 cm thick castable refractory material.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397734+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-9514",
+            "_key": "semeval-luna-json-r1-b35-semeval-9514",
+            "chunk_id": "semeval-9514",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b12eee022d2b31845062c0d8569f5649159a544042b7e6dbf54014d9868ccbdb",
+            "created_at": "2026-09-09T12:39:01.397736+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "Here is a reliable and tasty cookie recipe from my grandmother.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397736+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b35-semeval-9775",
+            "_key": "semeval-luna-json-r1-b35-semeval-9775",
+            "chunk_id": "semeval-9775",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1b4f7e68fd5cf63830853a11da2f37f802622cb227c242fa25d917d38b1d13f0",
+            "created_at": "2026-09-09T12:39:01.397737+00:00",
+            "space_id": "semeval-luna-json-r1-b35",
+            "text": "To reheat the turkey without drying it out, we placed the slices in a steamer basket set in a pot of simmering water.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:39:01.397737+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

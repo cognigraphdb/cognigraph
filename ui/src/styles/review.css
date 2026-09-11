@@ -1,0 +1,210 @@
+/* Review workspace: queue controls, graduation flags, neuron inspector. */
+
+.review-panel {
+  overflow-y: auto;
+}
+
+.review-panel .console-card.grad-card {
+  margin: 0 var(--workspace-pad) 16px;
+}
+
+.grad-card .card-heading h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.grad-card .card-heading svg {
+  color: var(--warning, #b8860b);
+}
+
+.grad-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.grad-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.grad-target {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--accent, #0f766e);
+  cursor: pointer;
+}
+
+.grad-target:hover {
+  text-decoration: underline;
+}
+
+.grad-fact {
+  color: var(--text);
+}
+
+.grad-reason {
+  color: var(--text-muted);
+}
+
+.grad-flag {
+  color: var(--warning, #b8860b);
+  flex-shrink: 0;
+}
+
+.review-panel .ant-table-wrapper {
+  padding: 0 var(--workspace-pad) var(--workspace-pad);
+}
+
+.review-row {
+  cursor: pointer;
+}
+
+.neuron-fact-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* Inspector */
+
+.neuron-inspector .inspector-body {
+  overflow-y: auto;
+  padding: 0 18px;
+  min-height: 0;
+}
+
+.neuron-inspector .key-block {
+  display: grid;
+  gap: 2px;
+  justify-items: start;
+}
+
+.neuron-id {
+  word-break: break-all;
+}
+
+.neuron-tags {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.neuron-detail {
+  display: grid;
+  gap: 16px;
+  padding-bottom: 16px;
+}
+
+/* Base: bordered chip on the muted surface (facts, trigger phrases). */
+.chip-base {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-muted, #f5f6f8);
+  word-break: break-word;
+}
+
+.neuron-fact {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.neuron-props {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 4px 16px;
+  margin: 0;
+  font-size: 13px;
+}
+
+.neuron-props dt {
+  color: var(--text-muted);
+}
+
+.neuron-props dd {
+  margin: 0;
+  word-break: break-word;
+}
+
+.neuron-props dd small {
+  color: var(--text-muted);
+}
+
+.neuron-block h3 {
+  margin: 0 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.neuron-block p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.neuron-quotes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.neuron-quotes li {
+  display: flex;
+  gap: 7px;
+  align-items: baseline;
+  font-size: 13px;
+}
+
+.neuron-quotes .quote-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.neuron-triggers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.neuron-triggers code {
+  font-size: 12px;
+  padding: 3px 8px;
+}
+
+.neuron-verdicts {
+  display: grid;
+  gap: 10px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+/* Derivative of .actions-row-base: right-aligned verdict bar. */
+.verdict-buttons {
+  justify-content: flex-end;
+}
+
+/* Phosphor icon standing in for antd's Popconfirm exclamation glyph. */
+.confirm-icon {
+  color: var(--warning);
+}
+
+.dialog-hint {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+}

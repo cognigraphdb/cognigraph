@@ -1,0 +1,1268 @@
+{
+  "phase": "measurement",
+  "arm": "luna-json",
+  "repetition": 2,
+  "batch": 39,
+  "request": {
+    "space_type": "semeval-luna-json-r2-b39",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10390",
+        "title": "Relation benchmark excerpt",
+        "text": "The ride starts at the large Bryce Canyon National Park boundary sign on Hwy 63."
+      },
+      {
+        "id": "semeval-9423",
+        "title": "Relation benchmark excerpt",
+        "text": "The oak tree was growing in the woods of the Longleat Estate, in Wiltshire, at the time Darwin was alive and developing his theory."
+      },
+      {
+        "id": "semeval-9043",
+        "title": "Relation benchmark excerpt",
+        "text": "The drug was in a bottle that was not prescribed to her."
+      },
+      {
+        "id": "semeval-8821",
+        "title": "Relation benchmark excerpt",
+        "text": "The ombudsman's report concluded that \"a large part of the package was not provided\"."
+      },
+      {
+        "id": "semeval-8771",
+        "title": "Relation benchmark excerpt",
+        "text": "Even the thinnest crack in a humidor is an open invitation to cigar beetles."
+      },
+      {
+        "id": "semeval-9087",
+        "title": "Relation benchmark excerpt",
+        "text": "Fog caused delays at the Charlotte Douglas International Airport Monday morning."
+      },
+      {
+        "id": "semeval-8609",
+        "title": "Relation benchmark excerpt",
+        "text": "This dryer has a wall on one side, wall on the back, oil heater on the side and a water heater in front."
+      },
+      {
+        "id": "semeval-10192",
+        "title": "Relation benchmark excerpt",
+        "text": "Within a matter of months, Tavi Gevinson, the author of a blog called Style Rookie, was feted by designers."
+      },
+      {
+        "id": "semeval-10682",
+        "title": "Relation benchmark excerpt",
+        "text": "Taking time for introductions and a brief tour of the building helps the pre-service teacher feel part of the school and aids the important transition from college student. Include the pre-service teacher on staff mailing list and in staff workshops and social functions."
+      },
+      {
+        "id": "semeval-8455",
+        "title": "Relation benchmark excerpt",
+        "text": "The suffering caused by the embargo is sometimes reported here as well."
+      },
+      {
+        "id": "semeval-9645",
+        "title": "Relation benchmark excerpt",
+        "text": "His head was in a jar, but most of his brain stem and one ear was left on his body."
+      },
+      {
+        "id": "semeval-8047",
+        "title": "Relation benchmark excerpt",
+        "text": "By dividing the space in a kitchen drawer where you keep all your cooking utensils, you grouped items by size or purpose."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 10,
+    "proposed": 11,
+    "skips": [
+      "`ride --Entity-Destination--> sign`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-luna-json-r2-b39"
+  },
+  "latency_seconds": 5.966080665937625,
+  "facts": [
+    {
+      "_from": "entities/space",
+      "_id": "facts/fact-00e83d62c99123476728eb00943aa237f41ea158d1a4fcdaddd4d4defb5c8f35",
+      "_key": "fact-00e83d62c99123476728eb00943aa237f41ea158d1a4fcdaddd4d4defb5c8f35",
+      "_to": "entities/drawer",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8047",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b39",
+      "trigger": "By dividing the space in a kitchen drawer where you keep all your cooking utensils, you grouped items by size or purpose.",
+      "trigger_end": 121,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/embargo",
+      "_id": "facts/fact-08ab75ff4927568d21e7b2ee6987fee48f8f1e33feae2902a3a5e6e2db3fc1ff",
+      "_key": "fact-08ab75ff4927568d21e7b2ee6987fee48f8f1e33feae2902a3a5e6e2db3fc1ff",
+      "_to": "entities/suffering",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8455",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b39",
+      "trigger": "The suffering caused by the embargo is sometimes reported here as well.",
+      "trigger_end": 71,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/head",
+      "_id": "facts/fact-0bf5c0dec57cf3708249b2d8a1b837ad7e4063b83496693dfd60edb050517717",
+      "_key": "fact-0bf5c0dec57cf3708249b2d8a1b837ad7e4063b83496693dfd60edb050517717",
+      "_to": "entities/jar",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9645",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b39",
+      "trigger": "His head was in a jar, but most of his brain stem and one ear was left on his body.",
+      "trigger_end": 83,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/tree",
+      "_id": "facts/fact-24652162eac87a69d30d1507c7af63dbcfb32b122c4d49d8f71473cc02986ca0",
+      "_key": "fact-24652162eac87a69d30d1507c7af63dbcfb32b122c4d49d8f71473cc02986ca0",
+      "_to": "entities/woods",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9423",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b39",
+      "trigger": "The oak tree was growing in the woods of the Longleat Estate, in Wiltshire, at the time Darwin was alive and developing his theory.",
+      "trigger_end": 131,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/teacher",
+      "_id": "facts/fact-49e5130e8cb248bc2efaa200cdddb3998614dcb230f675c16327c9390b31ae8c",
+      "_key": "fact-49e5130e8cb248bc2efaa200cdddb3998614dcb230f675c16327c9390b31ae8c",
+      "_to": "entities/school",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10682",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b39",
+      "trigger": "Taking time for introductions and a brief tour of the building helps the pre-service teacher feel part of the school and aids the important transition from college student. Include the pre-service teacher on staff mailing list and in staff workshops and social functions.",
+      "trigger_end": 271,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/fog",
+      "_id": "facts/fact-4e7c9f7123e2812920c7c114a2fa1e25d0f18179c8448ab21de1ec46948392d7",
+      "_key": "fact-4e7c9f7123e2812920c7c114a2fa1e25d0f18179c8448ab21de1ec46948392d7",
+      "_to": "entities/delays",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9087",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b39",
+      "trigger": "Fog caused delays at the Charlotte Douglas International Airport Monday morning.",
+      "trigger_end": 80,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/report",
+      "_id": "facts/fact-bd88b8f1a0d5beed19b6d1ca22eb944074e6f270ae0da662ec9fc213bf1d62e6",
+      "_key": "fact-bd88b8f1a0d5beed19b6d1ca22eb944074e6f270ae0da662ec9fc213bf1d62e6",
+      "_to": "entities/ombudsman",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8821",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b39",
+      "trigger": "The ombudsman's report concluded that \"a large part of the package was not provided\".",
+      "trigger_end": 85,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/crack",
+      "_id": "facts/fact-c04df0c0551297eefde722a55ed22bd6ac4ec590de8e7c6475f2f658d19fc77b",
+      "_key": "fact-c04df0c0551297eefde722a55ed22bd6ac4ec590de8e7c6475f2f658d19fc77b",
+      "_to": "entities/humidor",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8771",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b39",
+      "trigger": "Even the thinnest crack in a humidor is an open invitation to cigar beetles.",
+      "trigger_end": 76,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/author",
+      "_id": "facts/fact-f31510afbbf63f80f0cb2ef71460f38ad71faa3545951b1eb042d8e4e5deacd2",
+      "_key": "fact-f31510afbbf63f80f0cb2ef71460f38ad71faa3545951b1eb042d8e4e5deacd2",
+      "_to": "entities/blog",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10192",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b39",
+      "trigger": "Within a matter of months, Tavi Gevinson, the author of a blog called Style Rookie, was feted by designers.",
+      "trigger_end": 107,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/drug",
+      "_id": "facts/fact-f4b0632bba5763defee7bba5b516dd02cd74d9edaa51fd721a2624877d1b0c8c",
+      "_key": "fact-f4b0632bba5763defee7bba5b516dd02cd74d9edaa51fd721a2624877d1b0c8c",
+      "_to": "entities/bottle",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9043",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r2-b39",
+      "trigger": "The drug was in a bottle that was not prescribed to her.",
+      "trigger_end": 56,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/author",
+      "_key": "author",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.908986+00:00",
+      "entity_type": "entity",
+      "name": "author",
+      "updated_at": "2026-09-09T12:53:44.908986+00:00"
+    },
+    {
+      "_id": "entities/blog",
+      "_key": "blog",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.908992+00:00",
+      "entity_type": "entity",
+      "name": "blog",
+      "updated_at": "2026-09-09T12:53:44.908992+00:00"
+    },
+    {
+      "_id": "entities/bottle",
+      "_key": "bottle",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.908993+00:00",
+      "entity_type": "entity",
+      "name": "bottle",
+      "updated_at": "2026-09-09T12:53:44.908993+00:00"
+    },
+    {
+      "_id": "entities/crack",
+      "_key": "crack",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.908994+00:00",
+      "entity_type": "entity",
+      "name": "crack",
+      "updated_at": "2026-09-09T12:53:44.908994+00:00"
+    },
+    {
+      "_id": "entities/delays",
+      "_key": "delays",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.908995+00:00",
+      "entity_type": "event",
+      "name": "delays",
+      "updated_at": "2026-09-09T12:53:44.908995+00:00"
+    },
+    {
+      "_id": "entities/drawer",
+      "_key": "drawer",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.908996+00:00",
+      "entity_type": "container",
+      "name": "drawer",
+      "updated_at": "2026-09-09T12:53:44.908996+00:00"
+    },
+    {
+      "_id": "entities/drug",
+      "_key": "drug",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.908997+00:00",
+      "entity_type": "entity",
+      "name": "drug",
+      "updated_at": "2026-09-09T12:53:44.908997+00:00"
+    },
+    {
+      "_id": "entities/embargo",
+      "_key": "embargo",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909002+00:00",
+      "entity_type": "entity",
+      "name": "embargo",
+      "updated_at": "2026-09-09T12:53:44.909002+00:00"
+    },
+    {
+      "_id": "entities/fog",
+      "_key": "fog",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909002+00:00",
+      "entity_type": "entity",
+      "name": "Fog",
+      "updated_at": "2026-09-09T12:53:44.909002+00:00"
+    },
+    {
+      "_id": "entities/head",
+      "_key": "head",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909003+00:00",
+      "entity_type": "entity",
+      "name": "head",
+      "updated_at": "2026-09-09T12:53:44.909003+00:00"
+    },
+    {
+      "_id": "entities/humidor",
+      "_key": "humidor",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909004+00:00",
+      "entity_type": "entity",
+      "name": "humidor",
+      "updated_at": "2026-09-09T12:53:44.909004+00:00"
+    },
+    {
+      "_id": "entities/jar",
+      "_key": "jar",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909005+00:00",
+      "entity_type": "container",
+      "name": "jar",
+      "updated_at": "2026-09-09T12:53:44.909005+00:00"
+    },
+    {
+      "_id": "entities/ombudsman",
+      "_key": "ombudsman",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909005+00:00",
+      "entity_type": "entity",
+      "name": "ombudsman",
+      "updated_at": "2026-09-09T12:53:44.909005+00:00"
+    },
+    {
+      "_id": "entities/report",
+      "_key": "report",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909006+00:00",
+      "entity_type": "message",
+      "name": "report",
+      "updated_at": "2026-09-09T12:53:44.909006+00:00"
+    },
+    {
+      "_id": "entities/school",
+      "_key": "school",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909007+00:00",
+      "entity_type": "collection",
+      "name": "school",
+      "updated_at": "2026-09-09T12:53:44.909007+00:00"
+    },
+    {
+      "_id": "entities/space",
+      "_key": "space",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909008+00:00",
+      "entity_type": "entity",
+      "name": "space",
+      "updated_at": "2026-09-09T12:53:44.909008+00:00"
+    },
+    {
+      "_id": "entities/suffering",
+      "_key": "suffering",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909009+00:00",
+      "entity_type": "event",
+      "name": "suffering",
+      "updated_at": "2026-09-09T12:53:44.909009+00:00"
+    },
+    {
+      "_id": "entities/teacher",
+      "_key": "teacher",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909011+00:00",
+      "entity_type": "entity",
+      "name": "teacher",
+      "updated_at": "2026-09-09T12:53:44.909011+00:00"
+    },
+    {
+      "_id": "entities/tree",
+      "_key": "tree",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909012+00:00",
+      "entity_type": "entity",
+      "name": "tree",
+      "updated_at": "2026-09-09T12:53:44.909012+00:00"
+    },
+    {
+      "_id": "entities/woods",
+      "_key": "woods",
+      "aliases": [],
+      "created_at": "2026-09-09T12:53:44.909013+00:00",
+      "entity_type": "entity",
+      "name": "woods",
+      "updated_at": "2026-09-09T12:53:44.909013+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-10192",
+      "_key": "semeval-luna-json-r2-b39-semeval-10192",
+      "chunk_id": "semeval-10192",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5e3136ac0333d17fbdbb4f5413b57c6efbf815306ef192d4eae1fada09e6e53d",
+      "created_at": "2026-09-09T12:53:44.909014+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "Within a matter of months, Tavi Gevinson, the author of a blog called Style Rookie, was feted by designers.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909014+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-10390",
+      "_key": "semeval-luna-json-r2-b39-semeval-10390",
+      "chunk_id": "semeval-10390",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a906d9c9af26bb33178760dbaf3406590b18c710d2232ceccd15e71b7cb50f18",
+      "created_at": "2026-09-09T12:53:44.909025+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "The ride starts at the large Bryce Canyon National Park boundary sign on Hwy 63.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909025+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-10682",
+      "_key": "semeval-luna-json-r2-b39-semeval-10682",
+      "chunk_id": "semeval-10682",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f605b27f9e1bb12d2574169b8b3fa2e22331ce81563f8ad6b8b2447020f4fab4",
+      "created_at": "2026-09-09T12:53:44.909027+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "Taking time for introductions and a brief tour of the building helps the pre-service teacher feel part of the school and aids the important transition from college student. Include the pre-service teacher on staff mailing list and in staff workshops and social functions.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909027+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-8047",
+      "_key": "semeval-luna-json-r2-b39-semeval-8047",
+      "chunk_id": "semeval-8047",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:433d269575c0d9044c1598ca2668fb04ef150b80bc7e5ea4dd87782fcc1170d0",
+      "created_at": "2026-09-09T12:53:44.909032+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "By dividing the space in a kitchen drawer where you keep all your cooking utensils, you grouped items by size or purpose.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909032+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-8455",
+      "_key": "semeval-luna-json-r2-b39-semeval-8455",
+      "chunk_id": "semeval-8455",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:99be9dad260224db4ce9da54fcf48f599719839a628666722f9b0a824e465416",
+      "created_at": "2026-09-09T12:53:44.909038+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "The suffering caused by the embargo is sometimes reported here as well.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909038+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-8609",
+      "_key": "semeval-luna-json-r2-b39-semeval-8609",
+      "chunk_id": "semeval-8609",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:97feb78991f273148eaad9cb4bd9d1a30f3a1bb16bf4d762cdabd7875c1c889d",
+      "created_at": "2026-09-09T12:53:44.909044+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "This dryer has a wall on one side, wall on the back, oil heater on the side and a water heater in front.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909044+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-8771",
+      "_key": "semeval-luna-json-r2-b39-semeval-8771",
+      "chunk_id": "semeval-8771",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:0e74e874bc3088b2bfc5fc41b1eef5c8f5433150c5f2042e7a675f3f9d47e4e4",
+      "created_at": "2026-09-09T12:53:44.909045+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "Even the thinnest crack in a humidor is an open invitation to cigar beetles.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909045+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-8821",
+      "_key": "semeval-luna-json-r2-b39-semeval-8821",
+      "chunk_id": "semeval-8821",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:68b44c9bfb046261830dd9a68425548ecbac74e452d4e82f1f8bdafc416f04c4",
+      "created_at": "2026-09-09T12:53:44.909051+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "The ombudsman's report concluded that \"a large part of the package was not provided\".",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909051+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-9043",
+      "_key": "semeval-luna-json-r2-b39-semeval-9043",
+      "chunk_id": "semeval-9043",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:54f6bc74324f07c096ca1e9cabbd62879fbbfe9f2625dd8f4f59a6ad0b7fe4fa",
+      "created_at": "2026-09-09T12:53:44.909057+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "The drug was in a bottle that was not prescribed to her.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909057+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-9087",
+      "_key": "semeval-luna-json-r2-b39-semeval-9087",
+      "chunk_id": "semeval-9087",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:31249ff8e7ced5ad37b40df148d61db08db3bf9a9d9d6514cdb1477fbad6c8f0",
+      "created_at": "2026-09-09T12:53:44.909061+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "Fog caused delays at the Charlotte Douglas International Airport Monday morning.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909061+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-9423",
+      "_key": "semeval-luna-json-r2-b39-semeval-9423",
+      "chunk_id": "semeval-9423",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:787119e430f52f66a76634079bb2cb1527dcbd0901ebcea8a477e66e730e51b8",
+      "created_at": "2026-09-09T12:53:44.909066+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "The oak tree was growing in the woods of the Longleat Estate, in Wiltshire, at the time Darwin was alive and developing his theory.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909066+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b39-semeval-9645",
+      "_key": "semeval-luna-json-r2-b39-semeval-9645",
+      "chunk_id": "semeval-9645",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:442fb90bfcf2be8104cc139a7993d6e1f8c1c60b7c652db0fae897525b2ca358",
+      "created_at": "2026-09-09T12:53:44.909072+00:00",
+      "space_id": "semeval-luna-json-r2-b39",
+      "text": "His head was in a jar, but most of his brain stem and one ear was left on his body.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:53:44.909072+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 10,
+        "results": [
+          {
+            "_from": "entities/space",
+            "_id": "facts/fact-00e83d62c99123476728eb00943aa237f41ea158d1a4fcdaddd4d4defb5c8f35",
+            "_key": "fact-00e83d62c99123476728eb00943aa237f41ea158d1a4fcdaddd4d4defb5c8f35",
+            "_to": "entities/drawer",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8047",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b39",
+            "trigger": "By dividing the space in a kitchen drawer where you keep all your cooking utensils, you grouped items by size or purpose.",
+            "trigger_end": 121,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/embargo",
+            "_id": "facts/fact-08ab75ff4927568d21e7b2ee6987fee48f8f1e33feae2902a3a5e6e2db3fc1ff",
+            "_key": "fact-08ab75ff4927568d21e7b2ee6987fee48f8f1e33feae2902a3a5e6e2db3fc1ff",
+            "_to": "entities/suffering",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8455",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b39",
+            "trigger": "The suffering caused by the embargo is sometimes reported here as well.",
+            "trigger_end": 71,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/head",
+            "_id": "facts/fact-0bf5c0dec57cf3708249b2d8a1b837ad7e4063b83496693dfd60edb050517717",
+            "_key": "fact-0bf5c0dec57cf3708249b2d8a1b837ad7e4063b83496693dfd60edb050517717",
+            "_to": "entities/jar",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9645",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b39",
+            "trigger": "His head was in a jar, but most of his brain stem and one ear was left on his body.",
+            "trigger_end": 83,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/tree",
+            "_id": "facts/fact-24652162eac87a69d30d1507c7af63dbcfb32b122c4d49d8f71473cc02986ca0",
+            "_key": "fact-24652162eac87a69d30d1507c7af63dbcfb32b122c4d49d8f71473cc02986ca0",
+            "_to": "entities/woods",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9423",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b39",
+            "trigger": "The oak tree was growing in the woods of the Longleat Estate, in Wiltshire, at the time Darwin was alive and developing his theory.",
+            "trigger_end": 131,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/teacher",
+            "_id": "facts/fact-49e5130e8cb248bc2efaa200cdddb3998614dcb230f675c16327c9390b31ae8c",
+            "_key": "fact-49e5130e8cb248bc2efaa200cdddb3998614dcb230f675c16327c9390b31ae8c",
+            "_to": "entities/school",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10682",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b39",
+            "trigger": "Taking time for introductions and a brief tour of the building helps the pre-service teacher feel part of the school and aids the important transition from college student. Include the pre-service teacher on staff mailing list and in staff workshops and social functions.",
+            "trigger_end": 271,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/fog",
+            "_id": "facts/fact-4e7c9f7123e2812920c7c114a2fa1e25d0f18179c8448ab21de1ec46948392d7",
+            "_key": "fact-4e7c9f7123e2812920c7c114a2fa1e25d0f18179c8448ab21de1ec46948392d7",
+            "_to": "entities/delays",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9087",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b39",
+            "trigger": "Fog caused delays at the Charlotte Douglas International Airport Monday morning.",
+            "trigger_end": 80,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/report",
+            "_id": "facts/fact-bd88b8f1a0d5beed19b6d1ca22eb944074e6f270ae0da662ec9fc213bf1d62e6",
+            "_key": "fact-bd88b8f1a0d5beed19b6d1ca22eb944074e6f270ae0da662ec9fc213bf1d62e6",
+            "_to": "entities/ombudsman",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8821",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b39",
+            "trigger": "The ombudsman's report concluded that \"a large part of the package was not provided\".",
+            "trigger_end": 85,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/crack",
+            "_id": "facts/fact-c04df0c0551297eefde722a55ed22bd6ac4ec590de8e7c6475f2f658d19fc77b",
+            "_key": "fact-c04df0c0551297eefde722a55ed22bd6ac4ec590de8e7c6475f2f658d19fc77b",
+            "_to": "entities/humidor",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8771",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b39",
+            "trigger": "Even the thinnest crack in a humidor is an open invitation to cigar beetles.",
+            "trigger_end": 76,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/author",
+            "_id": "facts/fact-f31510afbbf63f80f0cb2ef71460f38ad71faa3545951b1eb042d8e4e5deacd2",
+            "_key": "fact-f31510afbbf63f80f0cb2ef71460f38ad71faa3545951b1eb042d8e4e5deacd2",
+            "_to": "entities/blog",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10192",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b39",
+            "trigger": "Within a matter of months, Tavi Gevinson, the author of a blog called Style Rookie, was feted by designers.",
+            "trigger_end": 107,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/drug",
+            "_id": "facts/fact-f4b0632bba5763defee7bba5b516dd02cd74d9edaa51fd721a2624877d1b0c8c",
+            "_key": "fact-f4b0632bba5763defee7bba5b516dd02cd74d9edaa51fd721a2624877d1b0c8c",
+            "_to": "entities/bottle",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9043",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r2-b39",
+            "trigger": "The drug was in a bottle that was not prescribed to her.",
+            "trigger_end": 56,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 20,
+        "results": [
+          {
+            "_id": "entities/author",
+            "_key": "author",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.908986+00:00",
+            "entity_type": "entity",
+            "name": "author",
+            "updated_at": "2026-09-09T12:53:44.908986+00:00"
+          },
+          {
+            "_id": "entities/blog",
+            "_key": "blog",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.908992+00:00",
+            "entity_type": "entity",
+            "name": "blog",
+            "updated_at": "2026-09-09T12:53:44.908992+00:00"
+          },
+          {
+            "_id": "entities/bottle",
+            "_key": "bottle",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.908993+00:00",
+            "entity_type": "entity",
+            "name": "bottle",
+            "updated_at": "2026-09-09T12:53:44.908993+00:00"
+          },
+          {
+            "_id": "entities/crack",
+            "_key": "crack",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.908994+00:00",
+            "entity_type": "entity",
+            "name": "crack",
+            "updated_at": "2026-09-09T12:53:44.908994+00:00"
+          },
+          {
+            "_id": "entities/delays",
+            "_key": "delays",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.908995+00:00",
+            "entity_type": "event",
+            "name": "delays",
+            "updated_at": "2026-09-09T12:53:44.908995+00:00"
+          },
+          {
+            "_id": "entities/drawer",
+            "_key": "drawer",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.908996+00:00",
+            "entity_type": "container",
+            "name": "drawer",
+            "updated_at": "2026-09-09T12:53:44.908996+00:00"
+          },
+          {
+            "_id": "entities/drug",
+            "_key": "drug",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.908997+00:00",
+            "entity_type": "entity",
+            "name": "drug",
+            "updated_at": "2026-09-09T12:53:44.908997+00:00"
+          },
+          {
+            "_id": "entities/embargo",
+            "_key": "embargo",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909002+00:00",
+            "entity_type": "entity",
+            "name": "embargo",
+            "updated_at": "2026-09-09T12:53:44.909002+00:00"
+          },
+          {
+            "_id": "entities/fog",
+            "_key": "fog",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909002+00:00",
+            "entity_type": "entity",
+            "name": "Fog",
+            "updated_at": "2026-09-09T12:53:44.909002+00:00"
+          },
+          {
+            "_id": "entities/head",
+            "_key": "head",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909003+00:00",
+            "entity_type": "entity",
+            "name": "head",
+            "updated_at": "2026-09-09T12:53:44.909003+00:00"
+          },
+          {
+            "_id": "entities/humidor",
+            "_key": "humidor",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909004+00:00",
+            "entity_type": "entity",
+            "name": "humidor",
+            "updated_at": "2026-09-09T12:53:44.909004+00:00"
+          },
+          {
+            "_id": "entities/jar",
+            "_key": "jar",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909005+00:00",
+            "entity_type": "container",
+            "name": "jar",
+            "updated_at": "2026-09-09T12:53:44.909005+00:00"
+          },
+          {
+            "_id": "entities/ombudsman",
+            "_key": "ombudsman",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909005+00:00",
+            "entity_type": "entity",
+            "name": "ombudsman",
+            "updated_at": "2026-09-09T12:53:44.909005+00:00"
+          },
+          {
+            "_id": "entities/report",
+            "_key": "report",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909006+00:00",
+            "entity_type": "message",
+            "name": "report",
+            "updated_at": "2026-09-09T12:53:44.909006+00:00"
+          },
+          {
+            "_id": "entities/school",
+            "_key": "school",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909007+00:00",
+            "entity_type": "collection",
+            "name": "school",
+            "updated_at": "2026-09-09T12:53:44.909007+00:00"
+          },
+          {
+            "_id": "entities/space",
+            "_key": "space",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909008+00:00",
+            "entity_type": "entity",
+            "name": "space",
+            "updated_at": "2026-09-09T12:53:44.909008+00:00"
+          },
+          {
+            "_id": "entities/suffering",
+            "_key": "suffering",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909009+00:00",
+            "entity_type": "event",
+            "name": "suffering",
+            "updated_at": "2026-09-09T12:53:44.909009+00:00"
+          },
+          {
+            "_id": "entities/teacher",
+            "_key": "teacher",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909011+00:00",
+            "entity_type": "entity",
+            "name": "teacher",
+            "updated_at": "2026-09-09T12:53:44.909011+00:00"
+          },
+          {
+            "_id": "entities/tree",
+            "_key": "tree",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909012+00:00",
+            "entity_type": "entity",
+            "name": "tree",
+            "updated_at": "2026-09-09T12:53:44.909012+00:00"
+          },
+          {
+            "_id": "entities/woods",
+            "_key": "woods",
+            "aliases": [],
+            "created_at": "2026-09-09T12:53:44.909013+00:00",
+            "entity_type": "entity",
+            "name": "woods",
+            "updated_at": "2026-09-09T12:53:44.909013+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-10192",
+            "_key": "semeval-luna-json-r2-b39-semeval-10192",
+            "chunk_id": "semeval-10192",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5e3136ac0333d17fbdbb4f5413b57c6efbf815306ef192d4eae1fada09e6e53d",
+            "created_at": "2026-09-09T12:53:44.909014+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "Within a matter of months, Tavi Gevinson, the author of a blog called Style Rookie, was feted by designers.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909014+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-10390",
+            "_key": "semeval-luna-json-r2-b39-semeval-10390",
+            "chunk_id": "semeval-10390",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a906d9c9af26bb33178760dbaf3406590b18c710d2232ceccd15e71b7cb50f18",
+            "created_at": "2026-09-09T12:53:44.909025+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "The ride starts at the large Bryce Canyon National Park boundary sign on Hwy 63.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909025+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-10682",
+            "_key": "semeval-luna-json-r2-b39-semeval-10682",
+            "chunk_id": "semeval-10682",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f605b27f9e1bb12d2574169b8b3fa2e22331ce81563f8ad6b8b2447020f4fab4",
+            "created_at": "2026-09-09T12:53:44.909027+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "Taking time for introductions and a brief tour of the building helps the pre-service teacher feel part of the school and aids the important transition from college student. Include the pre-service teacher on staff mailing list and in staff workshops and social functions.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909027+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-8047",
+            "_key": "semeval-luna-json-r2-b39-semeval-8047",
+            "chunk_id": "semeval-8047",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:433d269575c0d9044c1598ca2668fb04ef150b80bc7e5ea4dd87782fcc1170d0",
+            "created_at": "2026-09-09T12:53:44.909032+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "By dividing the space in a kitchen drawer where you keep all your cooking utensils, you grouped items by size or purpose.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909032+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-8455",
+            "_key": "semeval-luna-json-r2-b39-semeval-8455",
+            "chunk_id": "semeval-8455",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:99be9dad260224db4ce9da54fcf48f599719839a628666722f9b0a824e465416",
+            "created_at": "2026-09-09T12:53:44.909038+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "The suffering caused by the embargo is sometimes reported here as well.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909038+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-8609",
+            "_key": "semeval-luna-json-r2-b39-semeval-8609",
+            "chunk_id": "semeval-8609",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:97feb78991f273148eaad9cb4bd9d1a30f3a1bb16bf4d762cdabd7875c1c889d",
+            "created_at": "2026-09-09T12:53:44.909044+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "This dryer has a wall on one side, wall on the back, oil heater on the side and a water heater in front.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909044+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-8771",
+            "_key": "semeval-luna-json-r2-b39-semeval-8771",
+            "chunk_id": "semeval-8771",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:0e74e874bc3088b2bfc5fc41b1eef5c8f5433150c5f2042e7a675f3f9d47e4e4",
+            "created_at": "2026-09-09T12:53:44.909045+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "Even the thinnest crack in a humidor is an open invitation to cigar beetles.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909045+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-8821",
+            "_key": "semeval-luna-json-r2-b39-semeval-8821",
+            "chunk_id": "semeval-8821",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:68b44c9bfb046261830dd9a68425548ecbac74e452d4e82f1f8bdafc416f04c4",
+            "created_at": "2026-09-09T12:53:44.909051+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "The ombudsman's report concluded that \"a large part of the package was not provided\".",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909051+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-9043",
+            "_key": "semeval-luna-json-r2-b39-semeval-9043",
+            "chunk_id": "semeval-9043",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:54f6bc74324f07c096ca1e9cabbd62879fbbfe9f2625dd8f4f59a6ad0b7fe4fa",
+            "created_at": "2026-09-09T12:53:44.909057+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "The drug was in a bottle that was not prescribed to her.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909057+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-9087",
+            "_key": "semeval-luna-json-r2-b39-semeval-9087",
+            "chunk_id": "semeval-9087",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:31249ff8e7ced5ad37b40df148d61db08db3bf9a9d9d6514cdb1477fbad6c8f0",
+            "created_at": "2026-09-09T12:53:44.909061+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "Fog caused delays at the Charlotte Douglas International Airport Monday morning.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909061+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-9423",
+            "_key": "semeval-luna-json-r2-b39-semeval-9423",
+            "chunk_id": "semeval-9423",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:787119e430f52f66a76634079bb2cb1527dcbd0901ebcea8a477e66e730e51b8",
+            "created_at": "2026-09-09T12:53:44.909066+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "The oak tree was growing in the woods of the Longleat Estate, in Wiltshire, at the time Darwin was alive and developing his theory.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909066+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b39-semeval-9645",
+            "_key": "semeval-luna-json-r2-b39-semeval-9645",
+            "chunk_id": "semeval-9645",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:442fb90bfcf2be8104cc139a7993d6e1f8c1c60b7c652db0fae897525b2ca358",
+            "created_at": "2026-09-09T12:53:44.909072+00:00",
+            "space_id": "semeval-luna-json-r2-b39",
+            "text": "His head was in a jar, but most of his brain stem and one ear was left on his body.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:53:44.909072+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1303 @@
+[
+  {
+    "document_id": "development-921bce669adc12f5",
+    "head": 2,
+    "relation": "LOCATED_IN",
+    "tail": 6,
+    "head_aliases": [
+      "AFL"
+    ],
+    "tail_aliases": [
+      "Australian"
+    ],
+    "candidate_sentence": "The Irish Experiment is the popular name for the interest , primarily from VFL / AFL clubs , in bringing Irish Gaelic footballers over to Australia to play Australian rules football professionally .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-921bce669adc12f5",
+    "head": 8,
+    "relation": "LOCATED_IN",
+    "tail": 7,
+    "head_aliases": [
+      "Melbourne Football Club"
+    ],
+    "tail_aliases": [
+      "the mid-1980s"
+    ],
+    "candidate_sentence": "The Irish Experiment began in the mid-1980s as an informal project of the Melbourne Football Club .",
+    "sentence_id": 2,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-0954205d2e7642ca",
+    "head": 18,
+    "relation": "HAS_MOTHER",
+    "tail": 13,
+    "head_aliases": [
+      "I Wonder ( Departure )"
+    ],
+    "tail_aliases": [
+      "I Am an A"
+    ],
+    "candidate_sentence": "Neither did it feature any of the tracks that the band had performed live on their tours but never included on any of their studio albums , such as \" I Am an A \" , \" Get on the Carousel \" , \" I 'm Still Alive \" , or the original live versions of the songs from the 1977 mini - musical The Girl with the Golden Hair : \" Thank You for the Music \" , \" I Wonder ( Departure ) \" and \" I 'm a Marionette \" , all of which had slightly different lyrics and/or musical arrangements to the subsequent studio recordings included on .",
+    "sentence_id": 8,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-0954205d2e7642ca",
+    "head": 20,
+    "relation": "COUNTRY",
+    "tail": 22,
+    "head_aliases": [
+      "Does Your Mother Know"
+    ],
+    "tail_aliases": [
+      "Hole in Your Soul"
+    ],
+    "candidate_sentence": "Several tracks had also been heavily edited , in the case of the 1979 live recording of \" Does Your Mother Know \" by as much as five minutes since it originally was performed on that tour as a medley with \" Hole in Your Soul \" .",
+    "sentence_id": 9,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-2d2393ed71f936cf",
+    "head": 2,
+    "relation": "COUNTRY",
+    "tail": 0,
+    "head_aliases": [
+      "Mecklenburg"
+    ],
+    "tail_aliases": [
+      "Boltenhagen"
+    ],
+    "candidate_sentence": "Boltenhagen is a German seaside resort in Mecklenburg - Vorpommern situated on the Baltic Sea coast 30   km east of Lübeck .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-2d2393ed71f936cf",
+    "head": 8,
+    "relation": "COUNTRY",
+    "tail": 7,
+    "head_aliases": [
+      "5   km"
+    ],
+    "tail_aliases": [
+      "Bay of Lübeck"
+    ],
+    "candidate_sentence": "It offers a wide view of the Bay of Lübeck ; a 5   km stretch of a wide and sandy beach , a boardwalk , restaurants and health spas .",
+    "sentence_id": 1,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-0001217dd29c73f7",
+    "head": 4,
+    "relation": "LOCATED_IN",
+    "tail": 6,
+    "head_aliases": [
+      "Mary Wilson"
+    ],
+    "tail_aliases": [
+      "U.S. Congress"
+    ],
+    "candidate_sentence": "The legislation , co - authored by former Sha Na Na member Jon \" Bowzer \" Bauman and promoted by him and Mary Wilson of the Supremes , was not passed by the U.S. Congress , but has been enacted in 34 of the 50 states .",
+    "sentence_id": 3,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-0001217dd29c73f7",
+    "head": 4,
+    "relation": "COUNTRY",
+    "tail": 7,
+    "head_aliases": [
+      "Mary Wilson"
+    ],
+    "tail_aliases": [
+      "34"
+    ],
+    "candidate_sentence": "The legislation , co - authored by former Sha Na Na member Jon \" Bowzer \" Bauman and promoted by him and Mary Wilson of the Supremes , was not passed by the U.S. Congress , but has been enacted in 34 of the 50 states .",
+    "sentence_id": 3,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-6069bc7af833fc96",
+    "head": 11,
+    "relation": "LOCATED_IN",
+    "tail": 12,
+    "head_aliases": [
+      "Alameda Creek"
+    ],
+    "tail_aliases": [
+      "San Francisco Public Utilities Commission"
+    ],
+    "candidate_sentence": "These restoration plans by the San Francisco Public Utilities Commission include the planned modification of a Pacific Gas and Electric pipeline that has blocked fish migration in Alameda Creek .",
+    "sentence_id": 6,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-6069bc7af833fc96",
+    "head": 5,
+    "relation": "LOCATED_IN",
+    "tail": 7,
+    "head_aliases": [
+      "Bay Area"
+    ],
+    "tail_aliases": [
+      "Pleasanton"
+    ],
+    "candidate_sentence": "It is largely rural , but is in proximity to the highly populated Bay Area suburbs of Fremont , Pleasanton , and Livermore .",
+    "sentence_id": 2,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-b55e9da60c4698ee",
+    "head": 8,
+    "relation": "LOCATED_IN",
+    "tail": 5,
+    "head_aliases": [
+      "2008"
+    ],
+    "tail_aliases": [
+      "Ålesund"
+    ],
+    "candidate_sentence": "Roald is about north of the city centre of Ålesund , connected via two undersea tunnels which opened in 1987 ( and will be going through extensive upgrades starting in 2008 ) .",
+    "sentence_id": 2,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-b55e9da60c4698ee",
+    "head": 15,
+    "relation": "COUNTRY",
+    "tail": 0,
+    "head_aliases": [
+      "1964"
+    ],
+    "tail_aliases": [
+      "Roald"
+    ],
+    "candidate_sentence": "The village of Roald was the administrative centre of the old Roald Municipality that existed from 1890 until 1964 .",
+    "sentence_id": 6,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-a189841ce1a8a6f6",
+    "head": 24,
+    "relation": "LOCATED_IN",
+    "tail": 23,
+    "head_aliases": [
+      "Løv - Ham"
+    ],
+    "tail_aliases": [
+      "2011"
+    ],
+    "candidate_sentence": "After the 2011 season , Fyllingen merged with Løv - Ham to create FK Fyllingsdalen , and the two clubs ceased to exist .",
+    "sentence_id": 8,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-a189841ce1a8a6f6",
+    "head": 4,
+    "relation": "COUNTRY",
+    "tail": 0,
+    "head_aliases": [
+      "Hordaland"
+    ],
+    "tail_aliases": [
+      "Fyllingen",
+      "Fyllingen Fotball",
+      "Fyllingen IL"
+    ],
+    "candidate_sentence": "Fyllingen Fotball was a Norwegian association football club from Fyllingsdalen , Bergen , Hordaland .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-979c6808daf9f18d",
+    "head": 7,
+    "relation": "HAS_FATHER",
+    "tail": 9,
+    "head_aliases": [
+      "Miami"
+    ],
+    "tail_aliases": [
+      "Chinese"
+    ],
+    "candidate_sentence": "After her unsurprising victory , many expected her to do well in Miss Universe 1984 in Miami ( her father is Australian and her mother is ethnically Chinese ) .",
+    "sentence_id": 3,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-979c6808daf9f18d",
+    "head": 9,
+    "relation": "LOCATED_IN",
+    "tail": 6,
+    "head_aliases": [
+      "Chinese"
+    ],
+    "tail_aliases": [
+      "Miss Universe 1984"
+    ],
+    "candidate_sentence": "After her unsurprising victory , many expected her to do well in Miss Universe 1984 in Miami ( her father is Australian and her mother is ethnically Chinese ) .",
+    "sentence_id": 3,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-d581ecd86d3ca6b7",
+    "head": 9,
+    "relation": "COUNTRY",
+    "tail": 1,
+    "head_aliases": [
+      "KK Khumalo"
+    ],
+    "tail_aliases": [
+      "ANC",
+      "African National Congress"
+    ],
+    "candidate_sentence": "ANC parliamentary caucus Spokesman KK Khumalo said : \" Motlanthe will be the president , not interim , he will be the president of the republic until the election . \"",
+    "sentence_id": 3,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-d581ecd86d3ca6b7",
+    "head": 10,
+    "relation": "LOCATED_IN",
+    "tail": 2,
+    "head_aliases": [
+      "1994"
+    ],
+    "tail_aliases": [
+      "South African"
+    ],
+    "candidate_sentence": "The South African constitution provides that \" parliament elects the president from among its members , dominated by the ANC since 1994 . \"",
+    "sentence_id": 4,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-217ba42d0ba2572a",
+    "head": 9,
+    "relation": "LOCATED_IN",
+    "tail": 11,
+    "head_aliases": [
+      "L.A. City College"
+    ],
+    "tail_aliases": [
+      "New Jersey"
+    ],
+    "candidate_sentence": "In 1955 , while attending L.A. City College , in Los Angeles , New Jersey native Leroy Smith had joined the group .",
+    "sentence_id": 2,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-217ba42d0ba2572a",
+    "head": 17,
+    "relation": "LOCATED_IN",
+    "tail": 18,
+    "head_aliases": [
+      "San Joaquin Valley"
+    ],
+    "tail_aliases": [
+      "Kern county"
+    ],
+    "candidate_sentence": "The Colts is also the first African American vocal group ever coming out of the San Joaquin Valley from Kern county .",
+    "sentence_id": 5,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-0f98e8503fb83a96",
+    "head": 0,
+    "relation": "LOCATED_IN",
+    "tail": 3,
+    "head_aliases": [
+      "Fyns Hoved"
+    ],
+    "tail_aliases": [
+      "Odense Fjord"
+    ],
+    "candidate_sentence": "Fyns Hoved is a bight of northeastern Funen , Denmark , curving south to form the approach to Odense Fjord .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-0f98e8503fb83a96",
+    "head": 1,
+    "relation": "LOCATED_IN",
+    "tail": 0,
+    "head_aliases": [
+      "Funen"
+    ],
+    "tail_aliases": [
+      "Fyns Hoved"
+    ],
+    "candidate_sentence": "Fyns Hoved is a bight of northeastern Funen , Denmark , curving south to form the approach to Odense Fjord .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-4054bbaaf77be04e",
+    "head": 14,
+    "relation": "COUNTRY",
+    "tail": 16,
+    "head_aliases": [
+      "one year"
+    ],
+    "tail_aliases": [
+      "Los Angeles Philharmonic"
+    ],
+    "candidate_sentence": "He taught at Eastman for 17 years , spent one year as cellist of the Vermeer Quartet , and then was appointed principal cellist of the Los Angeles Philharmonic , a post he held for 24 years .",
+    "sentence_id": 6,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-4054bbaaf77be04e",
+    "head": 6,
+    "relation": "LOCATED_IN",
+    "tail": 7,
+    "head_aliases": [
+      "Leonard",
+      "Leonard Rose"
+    ],
+    "tail_aliases": [
+      "Orlando Cole"
+    ],
+    "candidate_sentence": "He was a winner of the Walter Naumburg Competition while a student at the Curtis Institute of Music , where he studied with Leonard Rose and Orlando Cole .",
+    "sentence_id": 3,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-2e4fe62077dc78b2",
+    "head": 21,
+    "relation": "COUNTRY",
+    "tail": 20,
+    "head_aliases": [
+      "No Shelter"
+    ],
+    "tail_aliases": [
+      "The Ghost of Tom Joad"
+    ],
+    "candidate_sentence": "In 1997 the band released a cover version of Bruce Springsteen 's \" The Ghost of Tom Joad \" , and the following year contributed \" No Shelter \" to the soundtrack to the film Godzilla , as well as releasing it as a single .",
+    "sentence_id": 4,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-2e4fe62077dc78b2",
+    "head": 12,
+    "relation": "LOCATED_IN",
+    "tail": 11,
+    "head_aliases": [
+      "four"
+    ],
+    "tail_aliases": [
+      "1992"
+    ],
+    "candidate_sentence": "After a self - issued demo , the band signed with Epic Records and released its self - titled debut album Rage Against the Machine in 1992 , the material for which was written by all four members of the group .",
+    "sentence_id": 2,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-8bacb64876769351",
+    "head": 7,
+    "relation": "COUNTRY",
+    "tail": 0,
+    "head_aliases": [
+      "four years"
+    ],
+    "tail_aliases": [
+      "Lake Hiawatha",
+      "Rice Lake"
+    ],
+    "candidate_sentence": "At that time the lake was a marsh known as Rice Lake , but over four years , the park system transformed the wetland into a lake surrounded by a park .",
+    "sentence_id": 2,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-8bacb64876769351",
+    "head": 3,
+    "relation": "COUNTRY",
+    "tail": 1,
+    "head_aliases": [
+      "Minnesota"
+    ],
+    "tail_aliases": [
+      "Lake Nokomis"
+    ],
+    "candidate_sentence": "Lake Hiawatha is located just north of Lake Nokomis in Minneapolis , Minnesota .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-7cacf44ff7f4231e",
+    "head": 3,
+    "relation": "COUNTRY",
+    "tail": 2,
+    "head_aliases": [
+      "American"
+    ],
+    "tail_aliases": [
+      "September 7 , 1892"
+    ],
+    "candidate_sentence": "Joseph Reid Anderson ( February 16 , 1813 – September 7 , 1892 ) was an American civil engineer , industrialist , politician and soldier .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-7cacf44ff7f4231e",
+    "head": 2,
+    "relation": "LOCATED_IN",
+    "tail": 1,
+    "head_aliases": [
+      "September 7 , 1892"
+    ],
+    "tail_aliases": [
+      "February 16 , 1813"
+    ],
+    "candidate_sentence": "Joseph Reid Anderson ( February 16 , 1813 – September 7 , 1892 ) was an American civil engineer , industrialist , politician and soldier .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-1e7f7cf08479cc2b",
+    "head": 10,
+    "relation": "LOCATED_IN",
+    "tail": 14,
+    "head_aliases": [
+      "3   km"
+    ],
+    "tail_aliases": [
+      "200 feet"
+    ],
+    "candidate_sentence": "Located about 2 miles ( 3   km ) from the entrance to Muir Woods National Monument , the beach is about 1000 feet ( 305 m ) long and 200 feet ( 61 m ) wide , with coarse sand and several large boulders .",
+    "sentence_id": 4,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-1e7f7cf08479cc2b",
+    "head": 13,
+    "relation": "LOCATED_IN",
+    "tail": 11,
+    "head_aliases": [
+      "305 m"
+    ],
+    "tail_aliases": [
+      "Muir Woods National Monument"
+    ],
+    "candidate_sentence": "Located about 2 miles ( 3   km ) from the entrance to Muir Woods National Monument , the beach is about 1000 feet ( 305 m ) long and 200 feet ( 61 m ) wide , with coarse sand and several large boulders .",
+    "sentence_id": 4,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-bd343468b89bf2fb",
+    "head": 4,
+    "relation": "COUNTRY",
+    "tail": 5,
+    "head_aliases": [
+      "Paris"
+    ],
+    "tail_aliases": [
+      "Hachette Filipacchi Associes"
+    ],
+    "candidate_sentence": "The publisher of the magazine , based in Paris , is Hachette Filipacchi Associes , SNC .",
+    "sentence_id": 2,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-bd343468b89bf2fb",
+    "head": 7,
+    "relation": "COUNTRY",
+    "tail": 10,
+    "head_aliases": [
+      "World War II"
+    ],
+    "tail_aliases": [
+      "Suzanne Feingold"
+    ],
+    "candidate_sentence": "During World War II it was a journal of the resistance with editors such as Raymond Burgard , Émile Coornaert , Suzanne Feingold , Marietta Martin , Henri de Montfort and Paul Petit .",
+    "sentence_id": 4,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-c1ddee323157a82d",
+    "head": 6,
+    "relation": "LOCATED_IN",
+    "tail": 8,
+    "head_aliases": [
+      "Brigden Road"
+    ],
+    "tail_aliases": [
+      "Oil City"
+    ],
+    "candidate_sentence": "The community is located at the crossroads of Courtright Line and Brigden Road , between Kimball to the west and Oil City to the east , and about southeast of the city of Sarnia .",
+    "sentence_id": 1,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-c1ddee323157a82d",
+    "head": 17,
+    "relation": "COUNTRY",
+    "tail": 2,
+    "head_aliases": [
+      "Brigden Fair"
+    ],
+    "tail_aliases": [
+      "Lambton County"
+    ],
+    "candidate_sentence": "The annual Brigden Fair is the last fair of the season in Lambton County occurring on Canadian Thanksgiving long weekend .",
+    "sentence_id": 6,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-8bd85bc8aeed131a",
+    "head": 8,
+    "relation": "COUNTRY",
+    "tail": 3,
+    "head_aliases": [
+      "Kaki Allah Morad Hamidi"
+    ],
+    "tail_aliases": [
+      "Kurdish"
+    ],
+    "candidate_sentence": "He started music at a very early age , and learned the Kurdish maqam repertoire and tanbur ( Kurdish lute ) under the supervision of Kurdish masters such as Mirza Sayyed Ali Kafashyan , Kaki Allah Morad Hamidi and Sayyed Vali Hosseyni .",
+    "sentence_id": 2,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-8bd85bc8aeed131a",
+    "head": 14,
+    "relation": "LOCATED_IN",
+    "tail": 13,
+    "head_aliases": [
+      "Europe"
+    ],
+    "tail_aliases": [
+      "Shahram Nazeri"
+    ],
+    "candidate_sentence": "In 1981 , he began collaborating with the Kurdish singer Shahram Nazeri , and performed throughout Europe and North America .",
+    "sentence_id": 4,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-5b3e0345285410d0",
+    "head": 28,
+    "relation": "DIED_IN",
+    "tail": 25,
+    "head_aliases": [
+      "July 31 , 1946"
+    ],
+    "tail_aliases": [
+      "Keansburg"
+    ],
+    "candidate_sentence": "Maher died in Keansburg on July 31 , 1946 .",
+    "sentence_id": 11,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-5b3e0345285410d0",
+    "head": 15,
+    "relation": "COUNTRY",
+    "tail": 16,
+    "head_aliases": [
+      "Democrat"
+    ],
+    "tail_aliases": [
+      "four"
+    ],
+    "candidate_sentence": "Maher was elected as a Democrat to the Sixty - second and to the four succeeding Congresses ( March 4 , 1911 – March 4 , 1921 ) .",
+    "sentence_id": 6,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-d880885b5f52ca9d",
+    "head": 5,
+    "relation": "COUNTRY",
+    "tail": 9,
+    "head_aliases": [
+      "Maryland"
+    ],
+    "tail_aliases": [
+      "Northeast Corridor"
+    ],
+    "candidate_sentence": "The Penn Line is a MARC commuter rail service running from Union Station in Washington , D.C. to Perryville , Maryland via Baltimore 's Penn Station on Amtrak 's Northeast Corridor .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-d880885b5f52ca9d",
+    "head": 14,
+    "relation": "LOCATED_IN",
+    "tail": 13,
+    "head_aliases": [
+      "the mid-19th century"
+    ],
+    "tail_aliases": [
+      "Conrail"
+    ],
+    "candidate_sentence": "The Penn Line is the successor to commuter services provided by the Pennsylvania Railroad ( PRR ) , Penn Central , and Conrail as long ago as the mid-19th century .",
+    "sentence_id": 5,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-cfc5f8dae199266e",
+    "head": 9,
+    "relation": "COUNTRY",
+    "tail": 11,
+    "head_aliases": [
+      "Padraig Pearse"
+    ],
+    "tail_aliases": [
+      "1916"
+    ],
+    "candidate_sentence": "Bracken was under order from Padraig Pearse and took command off him for the duration of the 1916 rising .",
+    "sentence_id": 3,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-cfc5f8dae199266e",
+    "head": 7,
+    "relation": "LOCATED_IN",
+    "tail": 8,
+    "head_aliases": [
+      "Irish Volunteers"
+    ],
+    "tail_aliases": [
+      "Athlone Brigade"
+    ],
+    "candidate_sentence": "In 1914 he was elected Captain by the men of the Tullamore Company Irish Volunteers , before later being appointed Commandant of the Athlone Brigade area by Padraig Pearse .",
+    "sentence_id": 1,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-ca253ca6cdb5fb00",
+    "head": 12,
+    "relation": "COUNTRY",
+    "tail": 13,
+    "head_aliases": [
+      "September 2005"
+    ],
+    "tail_aliases": [
+      "Eidos Interactive"
+    ],
+    "candidate_sentence": "Square Enix has owned Taito Corporation , which continues to publish its own video games , since September 2005 , and acquired game publisher Eidos Interactive in April 2009 , which has been merged with Square Enix 's European publishing wing and renamed as Square Enix Europe .",
+    "sentence_id": 5,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-ca253ca6cdb5fb00",
+    "head": 12,
+    "relation": "LOCATED_IN",
+    "tail": 0,
+    "head_aliases": [
+      "September 2005"
+    ],
+    "tail_aliases": [
+      "Square Enix"
+    ],
+    "candidate_sentence": "Square Enix has owned Taito Corporation , which continues to publish its own video games , since September 2005 , and acquired game publisher Eidos Interactive in April 2009 , which has been merged with Square Enix 's European publishing wing and renamed as Square Enix Europe .",
+    "sentence_id": 5,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-ffba17911572350e",
+    "head": 21,
+    "relation": "LOCATED_IN",
+    "tail": 19,
+    "head_aliases": [
+      "Spider - Man 2"
+    ],
+    "tail_aliases": [
+      "Beverly Hills Cop III"
+    ],
+    "candidate_sentence": "He has had roles in films including Beer League , The Usual Suspects , Natural Born Killers , Suicide Kings , Beverly Hills Cop III , The Animal , Spider - Man 2 , 3000 Miles to Graceland , The Crew , The Hot Chick , The Spirit , Battleship , and Jersey Boys .",
+    "sentence_id": 4,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-ffba17911572350e",
+    "head": 18,
+    "relation": "LOCATED_IN",
+    "tail": 26,
+    "head_aliases": [
+      "Suicide Kings"
+    ],
+    "tail_aliases": [
+      "Battleship"
+    ],
+    "candidate_sentence": "He has had roles in films including Beer League , The Usual Suspects , Natural Born Killers , Suicide Kings , Beverly Hills Cop III , The Animal , Spider - Man 2 , 3000 Miles to Graceland , The Crew , The Hot Chick , The Spirit , Battleship , and Jersey Boys .",
+    "sentence_id": 4,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-895d605cf04656c1",
+    "head": 12,
+    "relation": "HAS_MOTHER",
+    "tail": 13,
+    "head_aliases": [
+      "July 1610",
+      "September 1610"
+    ],
+    "tail_aliases": [
+      "Smolensk"
+    ],
+    "candidate_sentence": "In September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .",
+    "sentence_id": 6,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-895d605cf04656c1",
+    "head": 12,
+    "relation": "HAS_CHILD",
+    "tail": 15,
+    "head_aliases": [
+      "July 1610",
+      "September 1610"
+    ],
+    "tail_aliases": [
+      "Sigismund III Vasa"
+    ],
+    "candidate_sentence": "In September 1610 , he was included in a diplomatic mission , sent to the outskirts of Smolensk to sign a treaty with the Polish king Sigismund III Vasa regarding the accession of his son Wladislaus to the Russian throne .",
+    "sentence_id": 6,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-e1ff0cc06da8ae7a",
+    "head": 13,
+    "relation": "HAS_CHILD",
+    "tail": 11,
+    "head_aliases": [
+      "Korea",
+      "Republic of Korea"
+    ],
+    "tail_aliases": [
+      "Prince Yi Kang"
+    ],
+    "candidate_sentence": "He is a son of Prince Yi Kang , the fifth son of Emperor Gojong of Korea , and his thirteenth wife , Lady Hong Chŏng - sun , a former telephone operator .",
+    "sentence_id": 5,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-e1ff0cc06da8ae7a",
+    "head": 2,
+    "relation": "BORN_IN",
+    "tail": 3,
+    "head_aliases": [
+      "Joseon"
+    ],
+    "tail_aliases": [
+      "House of Yi"
+    ],
+    "candidate_sentence": "Yi Seok ( born 3 August 1941 ) is the nominal King of Joseon as the head of the House of Yi , the Korean royal family .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-5aaba442d1495046",
+    "head": 15,
+    "relation": "LOCATED_IN",
+    "tail": 16,
+    "head_aliases": [
+      "Rosharon"
+    ],
+    "tail_aliases": [
+      "Chocolate Bayou"
+    ],
+    "candidate_sentence": "Angleton ISD serves Angleton as well as the Village of Bonney , parts of the unincorporated area of Rosharon , and the unincorporated areas of Chocolate Bayou , Lochridge , Otey , and Sandy Point .",
+    "sentence_id": 8,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-5aaba442d1495046",
+    "head": 13,
+    "relation": "COUNTRY",
+    "tail": 15,
+    "head_aliases": [
+      "Angleton ISD"
+    ],
+    "tail_aliases": [
+      "Rosharon"
+    ],
+    "candidate_sentence": "Angleton ISD serves Angleton as well as the Village of Bonney , parts of the unincorporated area of Rosharon , and the unincorporated areas of Chocolate Bayou , Lochridge , Otey , and Sandy Point .",
+    "sentence_id": 8,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-817130ca0722959c",
+    "head": 3,
+    "relation": "COUNTRY",
+    "tail": 6,
+    "head_aliases": [
+      "Tails"
+    ],
+    "tail_aliases": [
+      "Eggman"
+    ],
+    "candidate_sentence": "Typically , Sonic — usually along with some of his friends , such as Tails , Amy , and Knuckles — must stop antagonist Doctor Eggman 's plans for world domination .",
+    "sentence_id": 3,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-817130ca0722959c",
+    "head": 3,
+    "relation": "HAS_CHILD",
+    "tail": 6,
+    "head_aliases": [
+      "Tails"
+    ],
+    "tail_aliases": [
+      "Eggman"
+    ],
+    "candidate_sentence": "Typically , Sonic — usually along with some of his friends , such as Tails , Amy , and Knuckles — must stop antagonist Doctor Eggman 's plans for world domination .",
+    "sentence_id": 3,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-ff690eaeaa758eac",
+    "head": 17,
+    "relation": "LOCATED_IN",
+    "tail": 15,
+    "head_aliases": [
+      "Kimi Räikkönen"
+    ],
+    "tail_aliases": [
+      "Spider - Man"
+    ],
+    "candidate_sentence": "As well as the Fingerpori residents , the strip has included characters such as the Pope , The Phantom , Spider - Man , Adolf Hitler , Kimi Räikkönen and Carl Gustaf Emil Mannerheim .",
+    "sentence_id": 5,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-ff690eaeaa758eac",
+    "head": 8,
+    "relation": "LOCATED_IN",
+    "tail": 7,
+    "head_aliases": [
+      "Keskisuomalainen"
+    ],
+    "tail_aliases": [
+      "Karjalainen"
+    ],
+    "candidate_sentence": "It started in Helsingin Sanomat in February 2007 , and is currently syndicated in Satakunnan Kansa , Aamulehti , Karjalainen , Keskisuomalainen , Turun Sanomat and Etelä - Saimaa .",
+    "sentence_id": 1,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-7bc37301d2ec2e45",
+    "head": 1,
+    "relation": "LOCATED_IN",
+    "tail": 2,
+    "head_aliases": [
+      "1952",
+      "31 July 1952"
+    ],
+    "tail_aliases": [
+      "British Government"
+    ],
+    "candidate_sentence": "The Cranford Protocol or Cranford Agreement was an oral undertaking given in 1952 by the British Government to the residents of Cranford in London regarding the usage of the runways at London Heathrow Airport to reduce the impact of aircraft noise on local residents .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-7bc37301d2ec2e45",
+    "head": 10,
+    "relation": "COUNTRY",
+    "tail": 5,
+    "head_aliases": [
+      "Labour Government"
+    ],
+    "tail_aliases": [
+      "Heathrow Airport",
+      "London Heathrow Airport"
+    ],
+    "candidate_sentence": "On 15 January 2009 , the Labour Government announced that it was ending the Cranford Agreement as part of the controversial expansion of London Heathrow Airport .",
+    "sentence_id": 4,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-fc2290335639f26c",
+    "head": 5,
+    "relation": "LOCATED_IN",
+    "tail": 2,
+    "head_aliases": [
+      "Rikken Minseitō"
+    ],
+    "tail_aliases": [
+      "Japanese Army"
+    ],
+    "candidate_sentence": "In 1931 , Home Minister Adachi Kenzō spoke out strongly in support of the Imperial Japanese Army ’s unauthorized incursions into Manchuria and against the diplomatic policies pursued by Kijūrō Shidehara , and was expelled from the ranks of the Rikken Minseitō .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-fc2290335639f26c",
+    "head": 8,
+    "relation": "LOCATED_IN",
+    "tail": 28,
+    "head_aliases": [
+      "Kokumin Dōmei"
+    ],
+    "tail_aliases": [
+      "Hideki Tōjō"
+    ],
+    "candidate_sentence": "In June 1940 , The Kokumin Dōmei was merged into the Imperial Rule Assistance Association as part of Hideki Tōjō 's efforts to create a one - party state , and thereafter ceased to exist .",
+    "sentence_id": 7,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-fb23fff7cbdde412",
+    "head": 9,
+    "relation": "LOCATED_IN",
+    "tail": 7,
+    "head_aliases": [
+      "Peter Svensson"
+    ],
+    "tail_aliases": [
+      "Jacob Kasher Hindlin"
+    ],
+    "candidate_sentence": "The song was written by Lavigne , David Hodges , Chad Kroeger , Jacob Kasher Hindlin , Rickard B. Göransson and Peter Svensson and was produced by Peter Svensson .",
+    "sentence_id": 2,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-fb23fff7cbdde412",
+    "head": 2,
+    "relation": "HAS_MOTHER",
+    "tail": 6,
+    "head_aliases": [
+      "Avril Lavigne",
+      "Lavigne"
+    ],
+    "tail_aliases": [
+      "Chad Kroeger"
+    ],
+    "candidate_sentence": "The song was written by Lavigne , David Hodges , Chad Kroeger , Jacob Kasher Hindlin , Rickard B. Göransson and Peter Svensson and was produced by Peter Svensson .",
+    "sentence_id": 2,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-0292ff09e5c47cf4",
+    "head": 0,
+    "relation": "LOCATED_IN",
+    "tail": 5,
+    "head_aliases": [
+      "Load"
+    ],
+    "tail_aliases": [
+      "the United States"
+    ],
+    "candidate_sentence": "Load is the sixth studio album by the American heavy metal band Metallica , released on June 4 , 1996 by Elektra Records in the United States and by Vertigo Records internationally .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-0292ff09e5c47cf4",
+    "head": 18,
+    "relation": "COUNTRY",
+    "tail": 16,
+    "head_aliases": [
+      "five million copies"
+    ],
+    "tail_aliases": [
+      "5× platinum"
+    ],
+    "candidate_sentence": "It was certified 5× platinum by the Recording Industry Association of America ( RIAA ) for shipping five million copies in the United States .",
+    "sentence_id": 8,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-0559865ed61c73a1",
+    "head": 0,
+    "relation": "LOCATED_IN",
+    "tail": 14,
+    "head_aliases": [
+      "Osmund Ueland",
+      "Ueland"
+    ],
+    "tail_aliases": [
+      "National Rail Administration"
+    ],
+    "candidate_sentence": "Ueland was the director of both , leaving the National Rail Administration in 1999 .",
+    "sentence_id": 5,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-0559865ed61c73a1",
+    "head": 9,
+    "relation": "LOCATED_IN",
+    "tail": 7,
+    "head_aliases": [
+      "NSB Gardermobanen"
+    ],
+    "tail_aliases": [
+      "1994"
+    ],
+    "candidate_sentence": "In 1994 he was hired as CEO for NSB Gardermobanen ; the next year he was promoted to become CEO in the Norwegian State Railways .",
+    "sentence_id": 3,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-d3ca9ace0ab23df5",
+    "head": 23,
+    "relation": "COUNTRY",
+    "tail": 3,
+    "head_aliases": [
+      "The Balcony"
+    ],
+    "tail_aliases": [
+      "Joseph Strick",
+      "Strick"
+    ],
+    "candidate_sentence": "Strick had previously adapted other works of literature - Jean Genet 's The Balcony and James Joyce 's Ulysses .",
+    "sentence_id": 7,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-d3ca9ace0ab23df5",
+    "head": 10,
+    "relation": "COUNTRY",
+    "tail": 7,
+    "head_aliases": [
+      "Phil Brown"
+    ],
+    "tail_aliases": [
+      "James T. Callahan"
+    ],
+    "candidate_sentence": "The film stars Rip Torn , James T. Callahan , David Baur , Laurence Lignères , Phil Brown and Dominique Delpierre .",
+    "sentence_id": 2,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-aaa11554c327cbf8",
+    "head": 6,
+    "relation": "LOCATED_IN",
+    "tail": 7,
+    "head_aliases": [
+      "Palmerston"
+    ],
+    "tail_aliases": [
+      "David Lloyd George"
+    ],
+    "candidate_sentence": "A life - size bronze statue of Jan Smuts by the British artist Jacob Epstein stands on the north side of Parliament Square in London , United Kingdom , between a statue of Lord Palmerston and a statue of David Lloyd George .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-aaa11554c327cbf8",
+    "head": 15,
+    "relation": "LOCATED_IN",
+    "tail": 18,
+    "head_aliases": [
+      "Churchill",
+      "Winston Churchill"
+    ],
+    "tail_aliases": [
+      "September 1950"
+    ],
+    "candidate_sentence": "After Winston Churchill won the 1951 UK general election in October 1951 , he proposed erecting a statue in Parliament Square as a memorial to Smuts , who had died in September 1950 .",
+    "sentence_id": 4,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-7731557f810b3b18",
+    "head": 8,
+    "relation": "LOCATED_IN",
+    "tail": 11,
+    "head_aliases": [
+      "BMT",
+      "Brooklyn – Manhattan Transit Corporation"
+    ],
+    "tail_aliases": [
+      "IRT",
+      "Interborough Rapid Transit Company"
+    ],
+    "candidate_sentence": "The most used scheme is found on all of the B Division , which consists of lines originally built to the Brooklyn – Manhattan Transit Corporation ( BMT ) and Independent Subway System ( IND ) 's wider specifications , as well as on most of the A Division , which consists of lines built to the narrower specifications of the Interborough Rapid Transit Company ( IRT ) .",
+    "sentence_id": 6,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-7731557f810b3b18",
+    "head": 12,
+    "relation": "LOCATED_IN",
+    "tail": 7,
+    "head_aliases": [
+      "IRT Dyre Avenue Line"
+    ],
+    "tail_aliases": [
+      "B Division"
+    ],
+    "candidate_sentence": "An older system was used on all of the A Division , but with the conversion of the IRT Dyre Avenue Line signals to the B Division scheme , this system is no longer in use .",
+    "sentence_id": 7,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-64764209a3442088",
+    "head": 3,
+    "relation": "HAS_MOTHER",
+    "tail": 1,
+    "head_aliases": [
+      "Islam",
+      "Muslim"
+    ],
+    "tail_aliases": [
+      "Nabi"
+    ],
+    "candidate_sentence": "Yūsuf ibn Yaʿqūb ibn Is - ḥāq ibn Ibrāhīm ( ) is a Nabi ( , Prophet ) mentioned in the Qurʾān , the scripture of Islam , and corresponds to Joseph ( son of Jacob ) , a person from the Tanakh , the Jewish religious scripture , and the Christian Bible , who was estimated to have lived in the 16th century BCE .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-64764209a3442088",
+    "head": 0,
+    "relation": "LOCATED_IN",
+    "tail": 3,
+    "head_aliases": [
+      "Joseph",
+      "Yusuf",
+      "Yūsuf ibn Yaʿqūb ibn Is - ḥāq ibn Ibrāhīm"
+    ],
+    "tail_aliases": [
+      "Islam",
+      "Muslim"
+    ],
+    "candidate_sentence": "Yūsuf ibn Yaʿqūb ibn Is - ḥāq ibn Ibrāhīm ( ) is a Nabi ( , Prophet ) mentioned in the Qurʾān , the scripture of Islam , and corresponds to Joseph ( son of Jacob ) , a person from the Tanakh , the Jewish religious scripture , and the Christian Bible , who was estimated to have lived in the 16th century BCE .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-cc17840e0004a25f",
+    "head": 13,
+    "relation": "LOCATED_IN",
+    "tail": 7,
+    "head_aliases": [
+      "Latin American"
+    ],
+    "tail_aliases": [
+      "Spanish"
+    ],
+    "candidate_sentence": "These two versions were included on the Latin American edition of A Mi Edad , the Spanish - language version of Alla Mia Età .",
+    "sentence_id": 6,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-cc17840e0004a25f",
+    "head": 4,
+    "relation": "HAS_CHILD",
+    "tail": 3,
+    "head_aliases": [
+      "Ferro",
+      "Tiziano Ferro"
+    ],
+    "tail_aliases": [
+      "Italian"
+    ],
+    "candidate_sentence": "\" Il Regalo Più Grande \" ( English : \" The Greatest Gift \" ) is a song by Italian singer Tiziano Ferro .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-05fbe21cf860490d",
+    "head": 3,
+    "relation": "COUNTRY",
+    "tail": 4,
+    "head_aliases": [
+      "Germany"
+    ],
+    "tail_aliases": [
+      "Southwestern Regional Football Association"
+    ],
+    "candidate_sentence": "The Oberliga Rheinland - Pfalz / Saar , formerly the Oberliga Südwest , is the highest regional football league for the Rhineland - Palatinate and Saarland states of Germany , organized by the Southwestern Regional Football Association .",
+    "sentence_id": 0,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  },
+  {
+    "document_id": "development-05fbe21cf860490d",
+    "head": 10,
+    "relation": "LOCATED_IN",
+    "tail": 11,
+    "head_aliases": [
+      "2008"
+    ],
+    "tail_aliases": [
+      "the Regionalligas"
+    ],
+    "candidate_sentence": "Liga in 2008 it was the fourth tier of the league system , until the introduction of the Regionalligas in 1994 the third tier .",
+    "sentence_id": 4,
+    "verdict": "unreviewed",
+    "note": "Absent from source annotations; not proof that the relation is false."
+  }
+]

@@ -1,0 +1,418 @@
+{
+  "issue": "CG-13",
+  "date": "2026-09-09",
+  "binary_profile": "release",
+  "binary_sha256": "4f7e63df8e95da7c48b98893c1e39092c72afcddd6645d052cde3faddbd7ce9d",
+  "expected": "vulnerable baseline",
+  "providers": "synthetic loopback HTTP only; Luna settings unchanged",
+  "modes": {
+    "resident-embedded": {
+      "delete_surfaces": {
+        "direct": {
+          "remaining": 0,
+          "http": 200
+        },
+        "batch": {
+          "remaining": 1,
+          "http": 200
+        },
+        "cgql": {
+          "remaining": 1,
+          "http": 200
+        },
+        "lua_delete": {
+          "remaining": 1,
+          "http": 200
+        },
+        "lua_batch": {
+          "remaining": 1,
+          "http": 200
+        },
+        "lua_query": {
+          "remaining": 1,
+          "http": 200
+        },
+        "drop": {
+          "remaining": 1,
+          "http": 200
+        }
+      },
+      "publication_races": [
+        {
+          "method": "direct",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "direct",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "batch",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "batch",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "cgql",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "cgql",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_delete",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_delete",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_batch",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_batch",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_query",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_query",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "drop",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "drop",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        }
+      ],
+      "restart": {
+        "bypassed_cascades_persisted": true
+      }
+    },
+    "resident-sidecar": {
+      "delete_surfaces": {
+        "direct": {
+          "remaining": 0,
+          "http": 200
+        },
+        "batch": {
+          "remaining": 1,
+          "http": 200
+        },
+        "cgql": {
+          "remaining": 1,
+          "http": 200
+        },
+        "lua_delete": {
+          "remaining": 1,
+          "http": 200
+        },
+        "lua_batch": {
+          "remaining": 1,
+          "http": 200
+        },
+        "lua_query": {
+          "remaining": 1,
+          "http": 200
+        },
+        "drop": {
+          "remaining": 1,
+          "http": 200
+        }
+      },
+      "publication_races": [
+        {
+          "method": "direct",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "direct",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "batch",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "batch",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "cgql",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "cgql",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_delete",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_delete",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_batch",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_batch",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_query",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_query",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "drop",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "drop",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        }
+      ],
+      "restart": {
+        "bypassed_cascades_persisted": true
+      }
+    },
+    "paged-sidecar": {
+      "delete_surfaces": {
+        "direct": {
+          "remaining": 0,
+          "http": 200
+        },
+        "batch": {
+          "remaining": 1,
+          "http": 200
+        },
+        "cgql": {
+          "remaining": 1,
+          "http": 200
+        },
+        "lua_delete": {
+          "remaining": 1,
+          "http": 200
+        },
+        "lua_batch": {
+          "remaining": 1,
+          "http": 200
+        },
+        "lua_query": {
+          "remaining": 1,
+          "http": 200
+        },
+        "drop": {
+          "remaining": 1,
+          "http": 200
+        }
+      },
+      "publication_races": [
+        {
+          "method": "direct",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "direct",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "batch",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "batch",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "cgql",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "cgql",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_delete",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_delete",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_batch",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_batch",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_query",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "lua_query",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "drop",
+          "provider_wait": "completion",
+          "recreated": false,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        },
+        {
+          "method": "drop",
+          "provider_wait": "embedding",
+          "recreated": true,
+          "job_status": "succeeded",
+          "stale_rows": 1
+        }
+      ],
+      "restart": {
+        "bypassed_cascades_persisted": true
+      }
+    }
+  },
+  "completion_calls": 63,
+  "embedding_calls": 63,
+  "logs_directory": "/var/folders/v2/x4zbz9nd10lf_kqzhpm4r84w0000gn/T/cognigraph-cg13-live-hg9_tua1"
+}

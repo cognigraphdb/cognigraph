@@ -1,0 +1,301 @@
+.page-workspace {
+  grid-column: 2;
+  min-width: 0;
+  min-height: 0;
+  padding: 0 var(--workspace-pad) var(--workspace-pad);
+  overflow: auto;
+  background: var(--bg);
+}
+
+.page-workspace.no-scroll {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Base: the header band at the top of every workspace (PageHeader and the
+   collection toolbar heading). Derivatives only position it. */
+.workspace-header-base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 136px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Inside an unpadded panel (Collections, Review) the header carries the
+   workspace inset itself; in .page-workspace the container provides it. */
+.collection-heading,
+.collection-panel .page-header {
+  margin: 0 var(--workspace-pad);
+}
+
+.page-header p,
+.card-heading p,
+.operation-row p {
+  margin-top: 5px;
+  color: var(--text-muted);
+}
+
+/* Base: a horizontal row of action buttons. */
+.actions-row-base {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+
+/* Overview: session identity strip + collections subheading. */
+.overview-session {
+  margin: 18px 0 0;
+}
+
+.overview-subheading {
+  margin: 0;
+  font-size: 15px;
+}
+
+.metric-card,
+.console-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.metric-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3px 10px;
+  padding: 18px;
+}
+
+.metric-card > svg {
+  grid-row: 1 / 4;
+  color: var(--accent);
+}
+
+.metric-card > span,
+.metric-card > small {
+  color: var(--text-muted);
+}
+
+.metric-card > strong {
+  font-size: 19px;
+  text-transform: capitalize;
+}
+
+/* Numeric/formatted values (latency, uptime, counts) are not words —
+   capitalize would render "25.6 ms" as "25.6 Ms". */
+.metric-card-literal > strong {
+  text-transform: none;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--border);
+}
+
+.compact-heading {
+  min-height: 58px;
+  padding: 0 18px;
+}
+
+.compact-heading h2 {
+  font-size: 16px;
+}
+
+.compact-heading span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.status-pill,
+.role-pill {
+  padding: 4px 9px;
+  border-radius: 99px;
+  background: var(--surface-muted);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.status-pill.online {
+  background: #e6f6ef;
+  color: var(--success);
+}
+
+.status-pill.offline {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.connection-form {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(300px, 1.2fr) auto;
+  gap: 14px;
+  align-items: end;
+  padding: 22px;
+}
+
+.connection-form .ant-form-item {
+  margin-bottom: 0;
+}
+
+.connection-form > .ant-btn {
+  align-self: end;
+}
+
+.user-list {
+  margin-top: 16px;
+}
+
+.user-list .ant-result {
+  padding-top: 70px;
+}
+
+/* User detail page: facts strip + token section. */
+.user-facts {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 6px 18px;
+  margin: 20px 0 26px;
+  font-size: 13px;
+}
+
+.user-facts dt {
+  color: var(--text-muted);
+}
+
+.user-facts dd {
+  margin: 0;
+  word-break: break-all;
+}
+
+.user-tokens-section h2 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.user-missing {
+  min-height: 320px;
+}
+
+/* Token panel on the user detail page. */
+.token-panel {
+  padding: 4px 0 8px;
+}
+
+.token-panel-controls {
+  padding-bottom: 10px;
+}
+
+.token-plaintext {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 12px;
+  margin: 6px 0 10px;
+}
+
+.token-plaintext code {
+  flex: 1;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+
+.token-copied {
+  color: var(--success);
+}
+
+.token-expiry {
+  margin-bottom: 0;
+}
+
+.connection-form .ant-form-item-label > label {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.panel-loading {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: var(--workspace-pad);
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.collection-panel {
+  position: relative;
+}
+
+.feature-state,
+/* Base: centered "nothing here" state (result panels, filtered tables,
+   graph canvas). Derivatives add spacing or contained-widget rules. */
+.empty-state-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 260px;
+  color: var(--text-muted);
+}
+
+.empty-state-base > svg {
+  color: var(--accent);
+}
+
+.result-empty {
+  padding: 30px;
+  text-align: center;
+}
+
+.feature-state > svg {
+  color: var(--accent);
+}
+
+.feature-state p {
+  max-width: 520px;
+}
+
+.admin-table th:first-child,
+.admin-table td:first-child {
+  padding-left: 22px;
+}
+
+.admin-table th:nth-child(2),
+.admin-table th:nth-child(3),
+.admin-table th:nth-child(4) {
+  width: 22%;
+}
+
+.mono-cell {
+  color: var(--text-muted);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+}
+
+.mono-cell svg {
+  vertical-align: -2px;
+}
+
+@media (max-width: 1180px) {
+  .page-workspace {
+    grid-column: 2;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

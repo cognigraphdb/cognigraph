@@ -1,0 +1,986 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 1,
+  "batch": 28,
+  "request": {
+    "space_type": "semeval-glm-flash-r1-b28",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-8120",
+        "title": "Relation benchmark excerpt",
+        "text": "The telescope comprises lenses and tubes: both are extremely important to the performance of the telescope."
+      },
+      {
+        "id": "semeval-10296",
+        "title": "Relation benchmark excerpt",
+        "text": "He has fear from darkness, ghosts, robbers & being alone, of thunder, in the crowd, of death, of disease, of evil, that something may happen."
+      },
+      {
+        "id": "semeval-9755",
+        "title": "Relation benchmark excerpt",
+        "text": "The deepest portion of the photosphere is the source of a continuous spectrum."
+      },
+      {
+        "id": "semeval-10135",
+        "title": "Relation benchmark excerpt",
+        "text": "More particularly, the invention is a sealless pump that employs a magnetic coupling to drive the impeller."
+      },
+      {
+        "id": "semeval-9400",
+        "title": "Relation benchmark excerpt",
+        "text": "The computer is kept in a common area within our home."
+      },
+      {
+        "id": "semeval-10658",
+        "title": "Relation benchmark excerpt",
+        "text": "This book chapter provides pluralistic yet concise introduction to the doctrine and theory of employment discrimination law."
+      },
+      {
+        "id": "semeval-9921",
+        "title": "Relation benchmark excerpt",
+        "text": "He gets the door open easily and leads Sam inside, fingers curled into the front pocket of his jeans."
+      },
+      {
+        "id": "semeval-8475",
+        "title": "Relation benchmark excerpt",
+        "text": "The entrance to the temple was originally from the east, near the southeastern corner and decorated with twin monolithic limestone pillars colored red and bearing on the exterior side vertical hieroglyphic inscriptions in sunk relief with the queen's titulary, name and depiction."
+      },
+      {
+        "id": "semeval-9581",
+        "title": "Relation benchmark excerpt",
+        "text": "It took the dirt out of the house into a canister which was located in the garage."
+      },
+      {
+        "id": "semeval-9712",
+        "title": "Relation benchmark excerpt",
+        "text": "The researchers produced a report which has, literally, saved their jobs."
+      },
+      {
+        "id": "semeval-10660",
+        "title": "Relation benchmark excerpt",
+        "text": "It is text at the top of a newspaper article indicating the nature of the article below it."
+      },
+      {
+        "id": "semeval-9228",
+        "title": "Relation benchmark excerpt",
+        "text": "The clashes resulted in a great deal of bloodshed, including the deaths of at least 1200 civilians and 180 Pakistani soldiers."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:glm-5.3-flash@directed-policy-v1",
+    "facts_grounded": 6,
+    "proposed": 6,
+    "skips": [],
+    "space_type": "semeval-glm-flash-r1-b28"
+  },
+  "latency_seconds": 6.32219533296302,
+  "facts": [
+    {
+      "_from": "entities/portion",
+      "_id": "facts/fact-0b434bdf45ecfb7ca2a91d180e47a64ed3a304fc1e6f167908c173bd0a6a1b48",
+      "_key": "fact-0b434bdf45ecfb7ca2a91d180e47a64ed3a304fc1e6f167908c173bd0a6a1b48",
+      "_to": "entities/spectrum",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9755",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "trigger": "The deepest portion of the photosphere is the source of a continuous spectrum.",
+      "trigger_end": 78,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/telescope",
+      "_id": "facts/fact-3442ae92eadd67c1eaa4ceeeb26e27fcc0b04b67cf463cfcede0b419aff28d64",
+      "_key": "fact-3442ae92eadd67c1eaa4ceeeb26e27fcc0b04b67cf463cfcede0b419aff28d64",
+      "_to": "entities/lenses",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8120",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "trigger": "The telescope comprises lenses and tubes: both are extremely important to the performance of the telescope.",
+      "trigger_end": 107,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/clashes",
+      "_id": "facts/fact-3a81468b3b1640a4d00eedd9582ac8fbe57eb7a5d6363a9f28f8e28976f18a3b",
+      "_key": "fact-3a81468b3b1640a4d00eedd9582ac8fbe57eb7a5d6363a9f28f8e28976f18a3b",
+      "_to": "entities/deaths",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9228",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "trigger": "The clashes resulted in a great deal of bloodshed, including the deaths of at least 1200 civilians and 180 Pakistani soldiers.",
+      "trigger_end": 126,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/book-chapter",
+      "_id": "facts/fact-6e59c00cea3a3c8a53b19eb154a125e72a3e2ebef4f4052765d3696110ba9037",
+      "_key": "fact-6e59c00cea3a3c8a53b19eb154a125e72a3e2ebef4f4052765d3696110ba9037",
+      "_to": "entities/doctrine",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10658",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "trigger": "This book chapter provides pluralistic yet concise introduction to the doctrine and theory of employment discrimination law.",
+      "trigger_end": 124,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/pocket",
+      "_id": "facts/fact-8c9cbec73d240609d106d7cf71d851b1d2da15c1843dbd5cc6e630c63018bc2f",
+      "_key": "fact-8c9cbec73d240609d106d7cf71d851b1d2da15c1843dbd5cc6e630c63018bc2f",
+      "_to": "entities/jeans",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9921",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "trigger": "He gets the door open easily and leads Sam inside, fingers curled into the front pocket of his jeans.",
+      "trigger_end": 101,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/report",
+      "_id": "facts/fact-ce7443133dcbc033aee663c76ff4845dc19f79f02dd24fe59e73a85327939d01",
+      "_key": "fact-ce7443133dcbc033aee663c76ff4845dc19f79f02dd24fe59e73a85327939d01",
+      "_to": "entities/researchers",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9712",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "trigger": "The researchers produced a report which has, literally, saved their jobs.",
+      "trigger_end": 73,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/book-chapter",
+      "_key": "book-chapter",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210176+00:00",
+      "entity_type": "message",
+      "name": "book chapter",
+      "updated_at": "2026-09-09T12:37:37.210176+00:00"
+    },
+    {
+      "_id": "entities/clashes",
+      "_key": "clashes",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210181+00:00",
+      "entity_type": "cause",
+      "name": "clashes",
+      "updated_at": "2026-09-09T12:37:37.210181+00:00"
+    },
+    {
+      "_id": "entities/deaths",
+      "_key": "deaths",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210182+00:00",
+      "entity_type": "effect",
+      "name": "deaths",
+      "updated_at": "2026-09-09T12:37:37.210182+00:00"
+    },
+    {
+      "_id": "entities/doctrine",
+      "_key": "doctrine",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210183+00:00",
+      "entity_type": "topic",
+      "name": "doctrine",
+      "updated_at": "2026-09-09T12:37:37.210183+00:00"
+    },
+    {
+      "_id": "entities/jeans",
+      "_key": "jeans",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210183+00:00",
+      "entity_type": "whole",
+      "name": "jeans",
+      "updated_at": "2026-09-09T12:37:37.210183+00:00"
+    },
+    {
+      "_id": "entities/lenses",
+      "_key": "lenses",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210184+00:00",
+      "entity_type": "component",
+      "name": "lenses",
+      "updated_at": "2026-09-09T12:37:37.210184+00:00"
+    },
+    {
+      "_id": "entities/pocket",
+      "_key": "pocket",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210185+00:00",
+      "entity_type": "component",
+      "name": "pocket",
+      "updated_at": "2026-09-09T12:37:37.210185+00:00"
+    },
+    {
+      "_id": "entities/portion",
+      "_key": "portion",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210186+00:00",
+      "entity_type": "entity",
+      "name": "portion",
+      "updated_at": "2026-09-09T12:37:37.210186+00:00"
+    },
+    {
+      "_id": "entities/report",
+      "_key": "report",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210187+00:00",
+      "entity_type": "product",
+      "name": "report",
+      "updated_at": "2026-09-09T12:37:37.210187+00:00"
+    },
+    {
+      "_id": "entities/researchers",
+      "_key": "researchers",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210188+00:00",
+      "entity_type": "producer",
+      "name": "researchers",
+      "updated_at": "2026-09-09T12:37:37.210188+00:00"
+    },
+    {
+      "_id": "entities/spectrum",
+      "_key": "spectrum",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210189+00:00",
+      "entity_type": "origin",
+      "name": "spectrum",
+      "updated_at": "2026-09-09T12:37:37.210189+00:00"
+    },
+    {
+      "_id": "entities/telescope",
+      "_key": "telescope",
+      "aliases": [],
+      "created_at": "2026-09-09T12:37:37.210189+00:00",
+      "entity_type": "whole",
+      "name": "telescope",
+      "updated_at": "2026-09-09T12:37:37.210189+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-10135",
+      "_key": "semeval-glm-flash-r1-b28-semeval-10135",
+      "chunk_id": "semeval-10135",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:391618108ff5c3c9e21aa905786d25edb2cceae71281ce916c1c2d0bdb84b694",
+      "created_at": "2026-09-09T12:37:37.210191+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "More particularly, the invention is a sealless pump that employs a magnetic coupling to drive the impeller.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210191+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-10296",
+      "_key": "semeval-glm-flash-r1-b28-semeval-10296",
+      "chunk_id": "semeval-10296",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:22434eb1d67ae23bfb4fe501841986e3cd314a9bf063c732c7da15d5e8dd0df9",
+      "created_at": "2026-09-09T12:37:37.210192+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "He has fear from darkness, ghosts, robbers & being alone, of thunder, in the crowd, of death, of disease, of evil, that something may happen.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210192+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-10658",
+      "_key": "semeval-glm-flash-r1-b28-semeval-10658",
+      "chunk_id": "semeval-10658",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6aa26f2b5b9b69f6f471d7f7b1f2defa7c6e2da0e5390f960bf049d8ee10a40e",
+      "created_at": "2026-09-09T12:37:37.210193+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "This book chapter provides pluralistic yet concise introduction to the doctrine and theory of employment discrimination law.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210193+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-10660",
+      "_key": "semeval-glm-flash-r1-b28-semeval-10660",
+      "chunk_id": "semeval-10660",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d5c6e139a2f6820354741cdc09d5e4ea62bd3eae0f0e836840536178e89e9b69",
+      "created_at": "2026-09-09T12:37:37.210204+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "It is text at the top of a newspaper article indicating the nature of the article below it.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210204+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-8120",
+      "_key": "semeval-glm-flash-r1-b28-semeval-8120",
+      "chunk_id": "semeval-8120",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5ce98871599845cc6eec9b421d7e485b8a18ad5a47ff182a37e4716cf4195b9f",
+      "created_at": "2026-09-09T12:37:37.210205+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "The telescope comprises lenses and tubes: both are extremely important to the performance of the telescope.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210205+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-8475",
+      "_key": "semeval-glm-flash-r1-b28-semeval-8475",
+      "chunk_id": "semeval-8475",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:fd5bd65783b2ff36a5cc556ae9a698a2ad0b8c5ce3a9f51efb7c71229f3a8da4",
+      "created_at": "2026-09-09T12:37:37.210212+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "The entrance to the temple was originally from the east, near the southeastern corner and decorated with twin monolithic limestone pillars colored red and bearing on the exterior side vertical hieroglyphic inscriptions in sunk relief with the queen's titulary, name and depiction.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210212+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9228",
+      "_key": "semeval-glm-flash-r1-b28-semeval-9228",
+      "chunk_id": "semeval-9228",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d7e895c53c991132a12b5a016497afe1d7edf1477757921c2db242ecccd45987",
+      "created_at": "2026-09-09T12:37:37.210213+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "The clashes resulted in a great deal of bloodshed, including the deaths of at least 1200 civilians and 180 Pakistani soldiers.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210213+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9400",
+      "_key": "semeval-glm-flash-r1-b28-semeval-9400",
+      "chunk_id": "semeval-9400",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6c80ea5b0476d8fa72a832b5fe029ca7d897cf1cd762cc88206f288d808064c5",
+      "created_at": "2026-09-09T12:37:37.210218+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "The computer is kept in a common area within our home.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210218+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9581",
+      "_key": "semeval-glm-flash-r1-b28-semeval-9581",
+      "chunk_id": "semeval-9581",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f1165a2e9673e9a81937ba1376ccf6f45af20454f84164fcb0b23a32dd819a7e",
+      "created_at": "2026-09-09T12:37:37.210219+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "It took the dirt out of the house into a canister which was located in the garage.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210219+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9712",
+      "_key": "semeval-glm-flash-r1-b28-semeval-9712",
+      "chunk_id": "semeval-9712",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7e313b6189bacd62e100a0a6b08f046d17a0404a8f2fd4187d05f24ca978098f",
+      "created_at": "2026-09-09T12:37:37.210222+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "The researchers produced a report which has, literally, saved their jobs.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210222+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9755",
+      "_key": "semeval-glm-flash-r1-b28-semeval-9755",
+      "chunk_id": "semeval-9755",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ac891785740a1ef80f2cddedd32b33826e5951b064a8451f262bb28e4349581a",
+      "created_at": "2026-09-09T12:37:37.210226+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "The deepest portion of the photosphere is the source of a continuous spectrum.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210226+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9921",
+      "_key": "semeval-glm-flash-r1-b28-semeval-9921",
+      "chunk_id": "semeval-9921",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:381fc398f41cb163e1c3769630fd3488af2a72aa8f98a90bf7b559f107caa9e0",
+      "created_at": "2026-09-09T12:37:37.210232+00:00",
+      "space_id": "semeval-glm-flash-r1-b28",
+      "text": "He gets the door open easily and leads Sam inside, fingers curled into the front pocket of his jeans.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:37:37.210232+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 6,
+        "results": [
+          {
+            "_from": "entities/portion",
+            "_id": "facts/fact-0b434bdf45ecfb7ca2a91d180e47a64ed3a304fc1e6f167908c173bd0a6a1b48",
+            "_key": "fact-0b434bdf45ecfb7ca2a91d180e47a64ed3a304fc1e6f167908c173bd0a6a1b48",
+            "_to": "entities/spectrum",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9755",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "trigger": "The deepest portion of the photosphere is the source of a continuous spectrum.",
+            "trigger_end": 78,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/telescope",
+            "_id": "facts/fact-3442ae92eadd67c1eaa4ceeeb26e27fcc0b04b67cf463cfcede0b419aff28d64",
+            "_key": "fact-3442ae92eadd67c1eaa4ceeeb26e27fcc0b04b67cf463cfcede0b419aff28d64",
+            "_to": "entities/lenses",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8120",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "trigger": "The telescope comprises lenses and tubes: both are extremely important to the performance of the telescope.",
+            "trigger_end": 107,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/clashes",
+            "_id": "facts/fact-3a81468b3b1640a4d00eedd9582ac8fbe57eb7a5d6363a9f28f8e28976f18a3b",
+            "_key": "fact-3a81468b3b1640a4d00eedd9582ac8fbe57eb7a5d6363a9f28f8e28976f18a3b",
+            "_to": "entities/deaths",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9228",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "trigger": "The clashes resulted in a great deal of bloodshed, including the deaths of at least 1200 civilians and 180 Pakistani soldiers.",
+            "trigger_end": 126,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/book-chapter",
+            "_id": "facts/fact-6e59c00cea3a3c8a53b19eb154a125e72a3e2ebef4f4052765d3696110ba9037",
+            "_key": "fact-6e59c00cea3a3c8a53b19eb154a125e72a3e2ebef4f4052765d3696110ba9037",
+            "_to": "entities/doctrine",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10658",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "trigger": "This book chapter provides pluralistic yet concise introduction to the doctrine and theory of employment discrimination law.",
+            "trigger_end": 124,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/pocket",
+            "_id": "facts/fact-8c9cbec73d240609d106d7cf71d851b1d2da15c1843dbd5cc6e630c63018bc2f",
+            "_key": "fact-8c9cbec73d240609d106d7cf71d851b1d2da15c1843dbd5cc6e630c63018bc2f",
+            "_to": "entities/jeans",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9921",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "trigger": "He gets the door open easily and leads Sam inside, fingers curled into the front pocket of his jeans.",
+            "trigger_end": 101,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/report",
+            "_id": "facts/fact-ce7443133dcbc033aee663c76ff4845dc19f79f02dd24fe59e73a85327939d01",
+            "_key": "fact-ce7443133dcbc033aee663c76ff4845dc19f79f02dd24fe59e73a85327939d01",
+            "_to": "entities/researchers",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9712",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "trigger": "The researchers produced a report which has, literally, saved their jobs.",
+            "trigger_end": 73,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "entities/book-chapter",
+            "_key": "book-chapter",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210176+00:00",
+            "entity_type": "message",
+            "name": "book chapter",
+            "updated_at": "2026-09-09T12:37:37.210176+00:00"
+          },
+          {
+            "_id": "entities/clashes",
+            "_key": "clashes",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210181+00:00",
+            "entity_type": "cause",
+            "name": "clashes",
+            "updated_at": "2026-09-09T12:37:37.210181+00:00"
+          },
+          {
+            "_id": "entities/deaths",
+            "_key": "deaths",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210182+00:00",
+            "entity_type": "effect",
+            "name": "deaths",
+            "updated_at": "2026-09-09T12:37:37.210182+00:00"
+          },
+          {
+            "_id": "entities/doctrine",
+            "_key": "doctrine",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210183+00:00",
+            "entity_type": "topic",
+            "name": "doctrine",
+            "updated_at": "2026-09-09T12:37:37.210183+00:00"
+          },
+          {
+            "_id": "entities/jeans",
+            "_key": "jeans",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210183+00:00",
+            "entity_type": "whole",
+            "name": "jeans",
+            "updated_at": "2026-09-09T12:37:37.210183+00:00"
+          },
+          {
+            "_id": "entities/lenses",
+            "_key": "lenses",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210184+00:00",
+            "entity_type": "component",
+            "name": "lenses",
+            "updated_at": "2026-09-09T12:37:37.210184+00:00"
+          },
+          {
+            "_id": "entities/pocket",
+            "_key": "pocket",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210185+00:00",
+            "entity_type": "component",
+            "name": "pocket",
+            "updated_at": "2026-09-09T12:37:37.210185+00:00"
+          },
+          {
+            "_id": "entities/portion",
+            "_key": "portion",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210186+00:00",
+            "entity_type": "entity",
+            "name": "portion",
+            "updated_at": "2026-09-09T12:37:37.210186+00:00"
+          },
+          {
+            "_id": "entities/report",
+            "_key": "report",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210187+00:00",
+            "entity_type": "product",
+            "name": "report",
+            "updated_at": "2026-09-09T12:37:37.210187+00:00"
+          },
+          {
+            "_id": "entities/researchers",
+            "_key": "researchers",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210188+00:00",
+            "entity_type": "producer",
+            "name": "researchers",
+            "updated_at": "2026-09-09T12:37:37.210188+00:00"
+          },
+          {
+            "_id": "entities/spectrum",
+            "_key": "spectrum",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210189+00:00",
+            "entity_type": "origin",
+            "name": "spectrum",
+            "updated_at": "2026-09-09T12:37:37.210189+00:00"
+          },
+          {
+            "_id": "entities/telescope",
+            "_key": "telescope",
+            "aliases": [],
+            "created_at": "2026-09-09T12:37:37.210189+00:00",
+            "entity_type": "whole",
+            "name": "telescope",
+            "updated_at": "2026-09-09T12:37:37.210189+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-10135",
+            "_key": "semeval-glm-flash-r1-b28-semeval-10135",
+            "chunk_id": "semeval-10135",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:391618108ff5c3c9e21aa905786d25edb2cceae71281ce916c1c2d0bdb84b694",
+            "created_at": "2026-09-09T12:37:37.210191+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "More particularly, the invention is a sealless pump that employs a magnetic coupling to drive the impeller.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210191+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-10296",
+            "_key": "semeval-glm-flash-r1-b28-semeval-10296",
+            "chunk_id": "semeval-10296",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:22434eb1d67ae23bfb4fe501841986e3cd314a9bf063c732c7da15d5e8dd0df9",
+            "created_at": "2026-09-09T12:37:37.210192+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "He has fear from darkness, ghosts, robbers & being alone, of thunder, in the crowd, of death, of disease, of evil, that something may happen.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210192+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-10658",
+            "_key": "semeval-glm-flash-r1-b28-semeval-10658",
+            "chunk_id": "semeval-10658",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6aa26f2b5b9b69f6f471d7f7b1f2defa7c6e2da0e5390f960bf049d8ee10a40e",
+            "created_at": "2026-09-09T12:37:37.210193+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "This book chapter provides pluralistic yet concise introduction to the doctrine and theory of employment discrimination law.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210193+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-10660",
+            "_key": "semeval-glm-flash-r1-b28-semeval-10660",
+            "chunk_id": "semeval-10660",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d5c6e139a2f6820354741cdc09d5e4ea62bd3eae0f0e836840536178e89e9b69",
+            "created_at": "2026-09-09T12:37:37.210204+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "It is text at the top of a newspaper article indicating the nature of the article below it.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210204+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-8120",
+            "_key": "semeval-glm-flash-r1-b28-semeval-8120",
+            "chunk_id": "semeval-8120",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5ce98871599845cc6eec9b421d7e485b8a18ad5a47ff182a37e4716cf4195b9f",
+            "created_at": "2026-09-09T12:37:37.210205+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "The telescope comprises lenses and tubes: both are extremely important to the performance of the telescope.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210205+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-8475",
+            "_key": "semeval-glm-flash-r1-b28-semeval-8475",
+            "chunk_id": "semeval-8475",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:fd5bd65783b2ff36a5cc556ae9a698a2ad0b8c5ce3a9f51efb7c71229f3a8da4",
+            "created_at": "2026-09-09T12:37:37.210212+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "The entrance to the temple was originally from the east, near the southeastern corner and decorated with twin monolithic limestone pillars colored red and bearing on the exterior side vertical hieroglyphic inscriptions in sunk relief with the queen's titulary, name and depiction.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210212+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9228",
+            "_key": "semeval-glm-flash-r1-b28-semeval-9228",
+            "chunk_id": "semeval-9228",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d7e895c53c991132a12b5a016497afe1d7edf1477757921c2db242ecccd45987",
+            "created_at": "2026-09-09T12:37:37.210213+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "The clashes resulted in a great deal of bloodshed, including the deaths of at least 1200 civilians and 180 Pakistani soldiers.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210213+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9400",
+            "_key": "semeval-glm-flash-r1-b28-semeval-9400",
+            "chunk_id": "semeval-9400",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6c80ea5b0476d8fa72a832b5fe029ca7d897cf1cd762cc88206f288d808064c5",
+            "created_at": "2026-09-09T12:37:37.210218+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "The computer is kept in a common area within our home.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210218+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9581",
+            "_key": "semeval-glm-flash-r1-b28-semeval-9581",
+            "chunk_id": "semeval-9581",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f1165a2e9673e9a81937ba1376ccf6f45af20454f84164fcb0b23a32dd819a7e",
+            "created_at": "2026-09-09T12:37:37.210219+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "It took the dirt out of the house into a canister which was located in the garage.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210219+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9712",
+            "_key": "semeval-glm-flash-r1-b28-semeval-9712",
+            "chunk_id": "semeval-9712",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7e313b6189bacd62e100a0a6b08f046d17a0404a8f2fd4187d05f24ca978098f",
+            "created_at": "2026-09-09T12:37:37.210222+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "The researchers produced a report which has, literally, saved their jobs.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210222+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9755",
+            "_key": "semeval-glm-flash-r1-b28-semeval-9755",
+            "chunk_id": "semeval-9755",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ac891785740a1ef80f2cddedd32b33826e5951b064a8451f262bb28e4349581a",
+            "created_at": "2026-09-09T12:37:37.210226+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "The deepest portion of the photosphere is the source of a continuous spectrum.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210226+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b28-semeval-9921",
+            "_key": "semeval-glm-flash-r1-b28-semeval-9921",
+            "chunk_id": "semeval-9921",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:381fc398f41cb163e1c3769630fd3488af2a72aa8f98a90bf7b559f107caa9e0",
+            "created_at": "2026-09-09T12:37:37.210232+00:00",
+            "space_id": "semeval-glm-flash-r1-b28",
+            "text": "He gets the door open easily and leads Sam inside, fingers curled into the front pocket of his jeans.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:37:37.210232+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

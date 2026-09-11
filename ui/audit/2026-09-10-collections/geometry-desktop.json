@@ -1,0 +1,166 @@
+[
+  {
+    "bounds": [
+      {
+        "clientWidth": 643,
+        "left": 194,
+        "name": "filters",
+        "right": 836.734375,
+        "scrollWidth": 643
+      },
+      {
+        "clientWidth": 56,
+        "left": 753.203125,
+        "name": "ant-btn css-dev-only-do-not-override-dspgc0 cognigraph ant-btn-link ant-btn-color-link ant-btn-variant-link reset-button",
+        "right": 808.734375,
+        "scrollWidth": 56
+      },
+      {
+        "clientWidth": 442,
+        "left": 836.734375,
+        "name": "inspector",
+        "right": 1279.9921875,
+        "scrollWidth": 442
+      },
+      {
+        "clientWidth": 442,
+        "left": 837.734375,
+        "name": "inspector-header",
+        "right": 1279.9921875,
+        "scrollWidth": 442
+      },
+      {
+        "clientWidth": 279,
+        "left": 865.734375,
+        "name": "inspector-actions",
+        "right": 1144.7265625,
+        "scrollWidth": 279
+      }
+    ],
+    "page": [1280, 1280],
+    "viewport": [1280, 800]
+  },
+  {
+    "bounds": [
+      {
+        "clientWidth": 584,
+        "left": 194,
+        "name": "filters",
+        "right": 778.140625,
+        "scrollWidth": 584
+      },
+      {
+        "clientWidth": 56,
+        "left": 694.609375,
+        "name": "ant-btn css-dev-only-do-not-override-dspgc0 cognigraph ant-btn-link ant-btn-color-link ant-btn-variant-link reset-button",
+        "right": 750.140625,
+        "scrollWidth": 56
+      },
+      {
+        "clientWidth": 402,
+        "left": 778.140625,
+        "name": "inspector",
+        "right": 1181,
+        "scrollWidth": 402
+      },
+      {
+        "clientWidth": 402,
+        "left": 779.140625,
+        "name": "inspector-header",
+        "right": 1181,
+        "scrollWidth": 402
+      },
+      {
+        "clientWidth": 279,
+        "left": 807.140625,
+        "name": "inspector-actions",
+        "right": 1086.1328125,
+        "scrollWidth": 279
+      }
+    ],
+    "page": [1181, 1181],
+    "viewport": [1181, 800]
+  },
+  {
+    "bounds": [
+      {
+        "clientWidth": 655,
+        "left": 72,
+        "name": "filters",
+        "right": 727.15625,
+        "scrollWidth": 655
+      },
+      {
+        "clientWidth": 56,
+        "left": 643.625,
+        "name": "ant-btn css-dev-only-do-not-override-dspgc0 cognigraph ant-btn-link ant-btn-color-link ant-btn-variant-link reset-button",
+        "right": 699.15625,
+        "scrollWidth": 56
+      },
+      {
+        "clientWidth": 451,
+        "left": 727.15625,
+        "name": "inspector",
+        "right": 1179,
+        "scrollWidth": 451
+      },
+      {
+        "clientWidth": 451,
+        "left": 728.15625,
+        "name": "inspector-header",
+        "right": 1179,
+        "scrollWidth": 451
+      },
+      {
+        "clientWidth": 279,
+        "left": 756.15625,
+        "name": "inspector-actions",
+        "right": 1035.1484375,
+        "scrollWidth": 279
+      }
+    ],
+    "page": [1179, 1179],
+    "viewport": [1179, 800]
+  },
+  {
+    "bounds": [
+      {
+        "clientWidth": 832,
+        "left": 194,
+        "name": "filters",
+        "right": 1026.1171875,
+        "scrollWidth": 832
+      },
+      {
+        "clientWidth": 56,
+        "left": 942.578125,
+        "name": "ant-btn css-dev-only-do-not-override-dspgc0 cognigraph ant-btn-link ant-btn-color-link ant-btn-variant-link reset-button",
+        "right": 998.1171875,
+        "scrollWidth": 56
+      },
+      {
+        "clientWidth": 573,
+        "left": 1026.1171875,
+        "name": "inspector",
+        "right": 1600,
+        "scrollWidth": 573
+      },
+      {
+        "clientWidth": 573,
+        "left": 1027.1171875,
+        "name": "inspector-header",
+        "right": 1600,
+        "scrollWidth": 573
+      },
+      {
+        "clientWidth": 279,
+        "left": 1293.0078125,
+        "name": "inspector-actions",
+        "right": 1572,
+        "scrollWidth": 279
+      }
+    ],
+    "page": [1600, 1600],
+    "viewport": [1600, 1000]
+  }
+]

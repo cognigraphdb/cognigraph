@@ -1,0 +1,1199 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 2,
+  "batch": 9,
+  "request": {
+    "space_type": "semeval-terra-low-r2-b9",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9837",
+        "title": "Relation benchmark excerpt",
+        "text": "The line-item veto is the best tool the president has to rein in excessive spending."
+      },
+      {
+        "id": "semeval-8458",
+        "title": "Relation benchmark excerpt",
+        "text": "Also, a small carved wooden sculpture of a rhinoceros was made by craftsmen in Africa."
+      },
+      {
+        "id": "semeval-10411",
+        "title": "Relation benchmark excerpt",
+        "text": "Synaesthesia literally means 'union of the senses' and is defined as the stimulation of one sensory modality by another (e.g., sound by vision)."
+      },
+      {
+        "id": "semeval-10250",
+        "title": "Relation benchmark excerpt",
+        "text": "The Prince (Italian: Il Principe) is a political treatise by an Italian public servant and political theorist."
+      },
+      {
+        "id": "semeval-8131",
+        "title": "Relation benchmark excerpt",
+        "text": "Gary Wheelan, a womanizing, adulterous thirty-something Dallas attorney, finally gets what he deserves when his verbal assaults provoke a telephone operator."
+      },
+      {
+        "id": "semeval-9276",
+        "title": "Relation benchmark excerpt",
+        "text": "Flanking or backing rudders are used by towboats and other vessels that require a high degree of manoeuvrability."
+      },
+      {
+        "id": "semeval-9964",
+        "title": "Relation benchmark excerpt",
+        "text": "The award has been given to the scholar who proved the mathematical theory."
+      },
+      {
+        "id": "semeval-8926",
+        "title": "Relation benchmark excerpt",
+        "text": "The covered Clamp style handles hold mop firmly between the jaws of the mop handle."
+      },
+      {
+        "id": "semeval-8830",
+        "title": "Relation benchmark excerpt",
+        "text": "This documentary film reveals a shocking insight into the Jamaican economy and everyday life."
+      },
+      {
+        "id": "semeval-9076",
+        "title": "Relation benchmark excerpt",
+        "text": "Nitrogen is falling into remote lakes."
+      },
+      {
+        "id": "semeval-8702",
+        "title": "Relation benchmark excerpt",
+        "text": "The brick is aligned with the hinge of the repaired book."
+      },
+      {
+        "id": "semeval-8362",
+        "title": "Relation benchmark excerpt",
+        "text": "The yeast is an ingredient for making beer."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 9,
+    "proposed": 11,
+    "skips": [
+      "`veto --Instrument-Agency--> president`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped",
+      "`beer --Entity-Origin--> yeast`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-terra-low-r2-b9"
+  },
+  "latency_seconds": 18.93346141697839,
+  "facts": [
+    {
+      "_from": "entities/film",
+      "_id": "facts/fact-0ccc1b43f1917cccda4255594c65a0a3f8b284f62134c9ea98a2bdc2acad0eed",
+      "_key": "fact-0ccc1b43f1917cccda4255594c65a0a3f8b284f62134c9ea98a2bdc2acad0eed",
+      "_to": "entities/economy",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8830",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b9",
+      "trigger": "This documentary film reveals a shocking insight into the Jamaican economy and everyday life.",
+      "trigger_end": 93,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/jaws",
+      "_id": "facts/fact-120871c2333545283dae322ae92397065f05b3dcfb90d6ed87a7fb6b36946b2a",
+      "_key": "fact-120871c2333545283dae322ae92397065f05b3dcfb90d6ed87a7fb6b36946b2a",
+      "_to": "entities/handle",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8926",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b9",
+      "trigger": "The covered Clamp style handles hold mop firmly between the jaws of the mop handle.",
+      "trigger_end": 83,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/treatise",
+      "_id": "facts/fact-2832771d7467d7a6255aafe30eb71bdcff33b90a76d8b901532e91f95a5638fb",
+      "_key": "fact-2832771d7467d7a6255aafe30eb71bdcff33b90a76d8b901532e91f95a5638fb",
+      "_to": "entities/theorist",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10250",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b9",
+      "trigger": "The Prince (Italian: Il Principe) is a political treatise by an Italian public servant and political theorist.",
+      "trigger_end": 110,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/hinge",
+      "_id": "facts/fact-75730b26db35063748b04406f3bfd6fa7a3e37e308ae06d2b82ecc007fac6f75",
+      "_key": "fact-75730b26db35063748b04406f3bfd6fa7a3e37e308ae06d2b82ecc007fac6f75",
+      "_to": "entities/book",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8702",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b9",
+      "trigger": "The brick is aligned with the hinge of the repaired book.",
+      "trigger_end": 57,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/nitrogen",
+      "_id": "facts/fact-90c7a3910a39efe0072d120ad194c1dd192828ffebd3b6893649124e1444a68a",
+      "_key": "fact-90c7a3910a39efe0072d120ad194c1dd192828ffebd3b6893649124e1444a68a",
+      "_to": "entities/lakes",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9076",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b9",
+      "trigger": "Nitrogen is falling into remote lakes.",
+      "trigger_end": 38,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/award",
+      "_id": "facts/fact-9288656fe1b5cfa2f15c4a0b800fb596dfb2fcade286004646abc75d514a7aa5",
+      "_key": "fact-9288656fe1b5cfa2f15c4a0b800fb596dfb2fcade286004646abc75d514a7aa5",
+      "_to": "entities/scholar",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9964",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b9",
+      "trigger": "The award has been given to the scholar who proved the mathematical theory.",
+      "trigger_end": 75,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/sculpture",
+      "_id": "facts/fact-b344fa3e07924cd0dc4b6c73523eae1ac9ac7aa19441f100a22ffcd50892ca0c",
+      "_key": "fact-b344fa3e07924cd0dc4b6c73523eae1ac9ac7aa19441f100a22ffcd50892ca0c",
+      "_to": "entities/craftsmen",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8458",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b9",
+      "trigger": "Also, a small carved wooden sculpture of a rhinoceros was made by craftsmen in Africa.",
+      "trigger_end": 86,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/senses",
+      "_id": "facts/fact-ec0098f04d2d21c02837325ca65788a90ef1bdcdf10953d3d82b4278c79057ff",
+      "_key": "fact-ec0098f04d2d21c02837325ca65788a90ef1bdcdf10953d3d82b4278c79057ff",
+      "_to": "entities/union",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10411",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b9",
+      "trigger": "Synaesthesia literally means 'union of the senses' and is defined as the stimulation of one sensory modality by another (e.g., sound by vision).",
+      "trigger_end": 144,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/rudders",
+      "_id": "facts/fact-ef1231c261dc1846b51f67053aefbc9fcb6125d11fcecac2c1b6e7fe53165140",
+      "_key": "fact-ef1231c261dc1846b51f67053aefbc9fcb6125d11fcecac2c1b6e7fe53165140",
+      "_to": "entities/towboats",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9276",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r2-b9",
+      "trigger": "Flanking or backing rudders are used by towboats and other vessels that require a high degree of manoeuvrability.",
+      "trigger_end": 113,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/award",
+      "_key": "award",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668566+00:00",
+      "entity_type": "Entity",
+      "name": "award",
+      "updated_at": "2026-09-09T13:49:29.668566+00:00"
+    },
+    {
+      "_id": "entities/book",
+      "_key": "book",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668570+00:00",
+      "entity_type": "Whole",
+      "name": "book",
+      "updated_at": "2026-09-09T13:49:29.668570+00:00"
+    },
+    {
+      "_id": "entities/craftsmen",
+      "_key": "craftsmen",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668570+00:00",
+      "entity_type": "Producer",
+      "name": "craftsmen",
+      "updated_at": "2026-09-09T13:49:29.668570+00:00"
+    },
+    {
+      "_id": "entities/economy",
+      "_key": "economy",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668571+00:00",
+      "entity_type": "Topic",
+      "name": "economy",
+      "updated_at": "2026-09-09T13:49:29.668571+00:00"
+    },
+    {
+      "_id": "entities/film",
+      "_key": "film",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668572+00:00",
+      "entity_type": "Message",
+      "name": "film",
+      "updated_at": "2026-09-09T13:49:29.668572+00:00"
+    },
+    {
+      "_id": "entities/handle",
+      "_key": "handle",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668573+00:00",
+      "entity_type": "Whole",
+      "name": "handle",
+      "updated_at": "2026-09-09T13:49:29.668573+00:00"
+    },
+    {
+      "_id": "entities/hinge",
+      "_key": "hinge",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668573+00:00",
+      "entity_type": "Component",
+      "name": "hinge",
+      "updated_at": "2026-09-09T13:49:29.668573+00:00"
+    },
+    {
+      "_id": "entities/jaws",
+      "_key": "jaws",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668574+00:00",
+      "entity_type": "Component",
+      "name": "jaws",
+      "updated_at": "2026-09-09T13:49:29.668574+00:00"
+    },
+    {
+      "_id": "entities/lakes",
+      "_key": "lakes",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668574+00:00",
+      "entity_type": "Destination",
+      "name": "lakes",
+      "updated_at": "2026-09-09T13:49:29.668574+00:00"
+    },
+    {
+      "_id": "entities/nitrogen",
+      "_key": "nitrogen",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668575+00:00",
+      "entity_type": "Entity",
+      "name": "Nitrogen",
+      "updated_at": "2026-09-09T13:49:29.668575+00:00"
+    },
+    {
+      "_id": "entities/rudders",
+      "_key": "rudders",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668576+00:00",
+      "entity_type": "Instrument",
+      "name": "rudders",
+      "updated_at": "2026-09-09T13:49:29.668576+00:00"
+    },
+    {
+      "_id": "entities/scholar",
+      "_key": "scholar",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668577+00:00",
+      "entity_type": "Destination",
+      "name": "scholar",
+      "updated_at": "2026-09-09T13:49:29.668577+00:00"
+    },
+    {
+      "_id": "entities/sculpture",
+      "_key": "sculpture",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668577+00:00",
+      "entity_type": "Product",
+      "name": "sculpture",
+      "updated_at": "2026-09-09T13:49:29.668577+00:00"
+    },
+    {
+      "_id": "entities/senses",
+      "_key": "senses",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668578+00:00",
+      "entity_type": "Member",
+      "name": "senses",
+      "updated_at": "2026-09-09T13:49:29.668578+00:00"
+    },
+    {
+      "_id": "entities/theorist",
+      "_key": "theorist",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668578+00:00",
+      "entity_type": "Producer",
+      "name": "theorist",
+      "updated_at": "2026-09-09T13:49:29.668578+00:00"
+    },
+    {
+      "_id": "entities/towboats",
+      "_key": "towboats",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668579+00:00",
+      "entity_type": "Agency",
+      "name": "towboats",
+      "updated_at": "2026-09-09T13:49:29.668579+00:00"
+    },
+    {
+      "_id": "entities/treatise",
+      "_key": "treatise",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668580+00:00",
+      "entity_type": "Product",
+      "name": "treatise",
+      "updated_at": "2026-09-09T13:49:29.668580+00:00"
+    },
+    {
+      "_id": "entities/union",
+      "_key": "union",
+      "aliases": [],
+      "created_at": "2026-09-09T13:49:29.668580+00:00",
+      "entity_type": "Collection",
+      "name": "union",
+      "updated_at": "2026-09-09T13:49:29.668580+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-10250",
+      "_key": "semeval-terra-low-r2-b9-semeval-10250",
+      "chunk_id": "semeval-10250",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1ac475b22efa1f9042571f1867ec0f7ebed9ef938dfd85f2c311068979d97a6d",
+      "created_at": "2026-09-09T13:49:29.668581+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "The Prince (Italian: Il Principe) is a political treatise by an Italian public servant and political theorist.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668581+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-10411",
+      "_key": "semeval-terra-low-r2-b9-semeval-10411",
+      "chunk_id": "semeval-10411",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:63f6f8b6d2f414de95a4feccc776310c56ff65981b67fefabad31a4a5e451a73",
+      "created_at": "2026-09-09T13:49:29.668593+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "Synaesthesia literally means 'union of the senses' and is defined as the stimulation of one sensory modality by another (e.g., sound by vision).",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668593+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-8131",
+      "_key": "semeval-terra-low-r2-b9-semeval-8131",
+      "chunk_id": "semeval-8131",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4ec3157b538b184ac7d0ec801d5a18c6964e050b0dcae05be90f457fdd98a4f0",
+      "created_at": "2026-09-09T13:49:29.668600+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "Gary Wheelan, a womanizing, adulterous thirty-something Dallas attorney, finally gets what he deserves when his verbal assaults provoke a telephone operator.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668600+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-8362",
+      "_key": "semeval-terra-low-r2-b9-semeval-8362",
+      "chunk_id": "semeval-8362",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:45a828f7777ad408835b8cd945d2e70a479eea62de10a4e5e16ee41f747d881e",
+      "created_at": "2026-09-09T13:49:29.668600+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "The yeast is an ingredient for making beer.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668600+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-8458",
+      "_key": "semeval-terra-low-r2-b9-semeval-8458",
+      "chunk_id": "semeval-8458",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e2870d24ee0e81262dc7fb84b49cea7eeded6e6ad5f17010e53b4e544ed4c9b3",
+      "created_at": "2026-09-09T13:49:29.668601+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "Also, a small carved wooden sculpture of a rhinoceros was made by craftsmen in Africa.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668601+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-8702",
+      "_key": "semeval-terra-low-r2-b9-semeval-8702",
+      "chunk_id": "semeval-8702",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c6c12ba0833ac9e88f00b3de1dcc5bc90ce7458736275f963099e7a90c22fa6e",
+      "created_at": "2026-09-09T13:49:29.668605+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "The brick is aligned with the hinge of the repaired book.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668605+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-8830",
+      "_key": "semeval-terra-low-r2-b9-semeval-8830",
+      "chunk_id": "semeval-8830",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3691d2f10ca6a19e0638bbdb621fa19f11325973704f46032c838dd9b31b3189",
+      "created_at": "2026-09-09T13:49:29.668609+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "This documentary film reveals a shocking insight into the Jamaican economy and everyday life.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668609+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-8926",
+      "_key": "semeval-terra-low-r2-b9-semeval-8926",
+      "chunk_id": "semeval-8926",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3b8fb5ccdf625e4a9d82b828e2c68f9ea80b0558bb5a8676d644ddbf0c0ab03c",
+      "created_at": "2026-09-09T13:49:29.668613+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "The covered Clamp style handles hold mop firmly between the jaws of the mop handle.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668613+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-9076",
+      "_key": "semeval-terra-low-r2-b9-semeval-9076",
+      "chunk_id": "semeval-9076",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4f0d971d765be21344007d9131ddfebdf7b4404bd5b6daf4ef24d2932522911f",
+      "created_at": "2026-09-09T13:49:29.668617+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "Nitrogen is falling into remote lakes.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668617+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-9276",
+      "_key": "semeval-terra-low-r2-b9-semeval-9276",
+      "chunk_id": "semeval-9276",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:670651e71e6bbe749fa20b7c61e0dd89b31cdf13b82fa79f44c58a794ec2424c",
+      "created_at": "2026-09-09T13:49:29.668620+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "Flanking or backing rudders are used by towboats and other vessels that require a high degree of manoeuvrability.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668620+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-9837",
+      "_key": "semeval-terra-low-r2-b9-semeval-9837",
+      "chunk_id": "semeval-9837",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:35f9f0cc7b9295033bcff7fa60d6e67d4f318b39c802002c0e3b82c2fad28816",
+      "created_at": "2026-09-09T13:49:29.668624+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "The line-item veto is the best tool the president has to rein in excessive spending.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668624+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r2-b9-semeval-9964",
+      "_key": "semeval-terra-low-r2-b9-semeval-9964",
+      "chunk_id": "semeval-9964",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:40509f90b0a1ffdb98fd2aa2b1bfc41ad1e3b0951da5f8907f4a562b316744bb",
+      "created_at": "2026-09-09T13:49:29.668624+00:00",
+      "space_id": "semeval-terra-low-r2-b9",
+      "text": "The award has been given to the scholar who proved the mathematical theory.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:49:29.668624+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 9,
+        "results": [
+          {
+            "_from": "entities/film",
+            "_id": "facts/fact-0ccc1b43f1917cccda4255594c65a0a3f8b284f62134c9ea98a2bdc2acad0eed",
+            "_key": "fact-0ccc1b43f1917cccda4255594c65a0a3f8b284f62134c9ea98a2bdc2acad0eed",
+            "_to": "entities/economy",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8830",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b9",
+            "trigger": "This documentary film reveals a shocking insight into the Jamaican economy and everyday life.",
+            "trigger_end": 93,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/jaws",
+            "_id": "facts/fact-120871c2333545283dae322ae92397065f05b3dcfb90d6ed87a7fb6b36946b2a",
+            "_key": "fact-120871c2333545283dae322ae92397065f05b3dcfb90d6ed87a7fb6b36946b2a",
+            "_to": "entities/handle",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8926",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b9",
+            "trigger": "The covered Clamp style handles hold mop firmly between the jaws of the mop handle.",
+            "trigger_end": 83,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/treatise",
+            "_id": "facts/fact-2832771d7467d7a6255aafe30eb71bdcff33b90a76d8b901532e91f95a5638fb",
+            "_key": "fact-2832771d7467d7a6255aafe30eb71bdcff33b90a76d8b901532e91f95a5638fb",
+            "_to": "entities/theorist",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10250",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b9",
+            "trigger": "The Prince (Italian: Il Principe) is a political treatise by an Italian public servant and political theorist.",
+            "trigger_end": 110,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/hinge",
+            "_id": "facts/fact-75730b26db35063748b04406f3bfd6fa7a3e37e308ae06d2b82ecc007fac6f75",
+            "_key": "fact-75730b26db35063748b04406f3bfd6fa7a3e37e308ae06d2b82ecc007fac6f75",
+            "_to": "entities/book",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8702",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b9",
+            "trigger": "The brick is aligned with the hinge of the repaired book.",
+            "trigger_end": 57,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/nitrogen",
+            "_id": "facts/fact-90c7a3910a39efe0072d120ad194c1dd192828ffebd3b6893649124e1444a68a",
+            "_key": "fact-90c7a3910a39efe0072d120ad194c1dd192828ffebd3b6893649124e1444a68a",
+            "_to": "entities/lakes",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9076",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b9",
+            "trigger": "Nitrogen is falling into remote lakes.",
+            "trigger_end": 38,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/award",
+            "_id": "facts/fact-9288656fe1b5cfa2f15c4a0b800fb596dfb2fcade286004646abc75d514a7aa5",
+            "_key": "fact-9288656fe1b5cfa2f15c4a0b800fb596dfb2fcade286004646abc75d514a7aa5",
+            "_to": "entities/scholar",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9964",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b9",
+            "trigger": "The award has been given to the scholar who proved the mathematical theory.",
+            "trigger_end": 75,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/sculpture",
+            "_id": "facts/fact-b344fa3e07924cd0dc4b6c73523eae1ac9ac7aa19441f100a22ffcd50892ca0c",
+            "_key": "fact-b344fa3e07924cd0dc4b6c73523eae1ac9ac7aa19441f100a22ffcd50892ca0c",
+            "_to": "entities/craftsmen",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8458",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b9",
+            "trigger": "Also, a small carved wooden sculpture of a rhinoceros was made by craftsmen in Africa.",
+            "trigger_end": 86,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/senses",
+            "_id": "facts/fact-ec0098f04d2d21c02837325ca65788a90ef1bdcdf10953d3d82b4278c79057ff",
+            "_key": "fact-ec0098f04d2d21c02837325ca65788a90ef1bdcdf10953d3d82b4278c79057ff",
+            "_to": "entities/union",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10411",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b9",
+            "trigger": "Synaesthesia literally means 'union of the senses' and is defined as the stimulation of one sensory modality by another (e.g., sound by vision).",
+            "trigger_end": 144,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/rudders",
+            "_id": "facts/fact-ef1231c261dc1846b51f67053aefbc9fcb6125d11fcecac2c1b6e7fe53165140",
+            "_key": "fact-ef1231c261dc1846b51f67053aefbc9fcb6125d11fcecac2c1b6e7fe53165140",
+            "_to": "entities/towboats",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9276",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r2-b9",
+            "trigger": "Flanking or backing rudders are used by towboats and other vessels that require a high degree of manoeuvrability.",
+            "trigger_end": 113,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 18,
+        "results": [
+          {
+            "_id": "entities/award",
+            "_key": "award",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668566+00:00",
+            "entity_type": "Entity",
+            "name": "award",
+            "updated_at": "2026-09-09T13:49:29.668566+00:00"
+          },
+          {
+            "_id": "entities/book",
+            "_key": "book",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668570+00:00",
+            "entity_type": "Whole",
+            "name": "book",
+            "updated_at": "2026-09-09T13:49:29.668570+00:00"
+          },
+          {
+            "_id": "entities/craftsmen",
+            "_key": "craftsmen",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668570+00:00",
+            "entity_type": "Producer",
+            "name": "craftsmen",
+            "updated_at": "2026-09-09T13:49:29.668570+00:00"
+          },
+          {
+            "_id": "entities/economy",
+            "_key": "economy",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668571+00:00",
+            "entity_type": "Topic",
+            "name": "economy",
+            "updated_at": "2026-09-09T13:49:29.668571+00:00"
+          },
+          {
+            "_id": "entities/film",
+            "_key": "film",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668572+00:00",
+            "entity_type": "Message",
+            "name": "film",
+            "updated_at": "2026-09-09T13:49:29.668572+00:00"
+          },
+          {
+            "_id": "entities/handle",
+            "_key": "handle",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668573+00:00",
+            "entity_type": "Whole",
+            "name": "handle",
+            "updated_at": "2026-09-09T13:49:29.668573+00:00"
+          },
+          {
+            "_id": "entities/hinge",
+            "_key": "hinge",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668573+00:00",
+            "entity_type": "Component",
+            "name": "hinge",
+            "updated_at": "2026-09-09T13:49:29.668573+00:00"
+          },
+          {
+            "_id": "entities/jaws",
+            "_key": "jaws",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668574+00:00",
+            "entity_type": "Component",
+            "name": "jaws",
+            "updated_at": "2026-09-09T13:49:29.668574+00:00"
+          },
+          {
+            "_id": "entities/lakes",
+            "_key": "lakes",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668574+00:00",
+            "entity_type": "Destination",
+            "name": "lakes",
+            "updated_at": "2026-09-09T13:49:29.668574+00:00"
+          },
+          {
+            "_id": "entities/nitrogen",
+            "_key": "nitrogen",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668575+00:00",
+            "entity_type": "Entity",
+            "name": "Nitrogen",
+            "updated_at": "2026-09-09T13:49:29.668575+00:00"
+          },
+          {
+            "_id": "entities/rudders",
+            "_key": "rudders",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668576+00:00",
+            "entity_type": "Instrument",
+            "name": "rudders",
+            "updated_at": "2026-09-09T13:49:29.668576+00:00"
+          },
+          {
+            "_id": "entities/scholar",
+            "_key": "scholar",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668577+00:00",
+            "entity_type": "Destination",
+            "name": "scholar",
+            "updated_at": "2026-09-09T13:49:29.668577+00:00"
+          },
+          {
+            "_id": "entities/sculpture",
+            "_key": "sculpture",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668577+00:00",
+            "entity_type": "Product",
+            "name": "sculpture",
+            "updated_at": "2026-09-09T13:49:29.668577+00:00"
+          },
+          {
+            "_id": "entities/senses",
+            "_key": "senses",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668578+00:00",
+            "entity_type": "Member",
+            "name": "senses",
+            "updated_at": "2026-09-09T13:49:29.668578+00:00"
+          },
+          {
+            "_id": "entities/theorist",
+            "_key": "theorist",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668578+00:00",
+            "entity_type": "Producer",
+            "name": "theorist",
+            "updated_at": "2026-09-09T13:49:29.668578+00:00"
+          },
+          {
+            "_id": "entities/towboats",
+            "_key": "towboats",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668579+00:00",
+            "entity_type": "Agency",
+            "name": "towboats",
+            "updated_at": "2026-09-09T13:49:29.668579+00:00"
+          },
+          {
+            "_id": "entities/treatise",
+            "_key": "treatise",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668580+00:00",
+            "entity_type": "Product",
+            "name": "treatise",
+            "updated_at": "2026-09-09T13:49:29.668580+00:00"
+          },
+          {
+            "_id": "entities/union",
+            "_key": "union",
+            "aliases": [],
+            "created_at": "2026-09-09T13:49:29.668580+00:00",
+            "entity_type": "Collection",
+            "name": "union",
+            "updated_at": "2026-09-09T13:49:29.668580+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-10250",
+            "_key": "semeval-terra-low-r2-b9-semeval-10250",
+            "chunk_id": "semeval-10250",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1ac475b22efa1f9042571f1867ec0f7ebed9ef938dfd85f2c311068979d97a6d",
+            "created_at": "2026-09-09T13:49:29.668581+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "The Prince (Italian: Il Principe) is a political treatise by an Italian public servant and political theorist.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668581+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-10411",
+            "_key": "semeval-terra-low-r2-b9-semeval-10411",
+            "chunk_id": "semeval-10411",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:63f6f8b6d2f414de95a4feccc776310c56ff65981b67fefabad31a4a5e451a73",
+            "created_at": "2026-09-09T13:49:29.668593+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "Synaesthesia literally means 'union of the senses' and is defined as the stimulation of one sensory modality by another (e.g., sound by vision).",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668593+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-8131",
+            "_key": "semeval-terra-low-r2-b9-semeval-8131",
+            "chunk_id": "semeval-8131",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4ec3157b538b184ac7d0ec801d5a18c6964e050b0dcae05be90f457fdd98a4f0",
+            "created_at": "2026-09-09T13:49:29.668600+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "Gary Wheelan, a womanizing, adulterous thirty-something Dallas attorney, finally gets what he deserves when his verbal assaults provoke a telephone operator.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668600+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-8362",
+            "_key": "semeval-terra-low-r2-b9-semeval-8362",
+            "chunk_id": "semeval-8362",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:45a828f7777ad408835b8cd945d2e70a479eea62de10a4e5e16ee41f747d881e",
+            "created_at": "2026-09-09T13:49:29.668600+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "The yeast is an ingredient for making beer.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668600+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-8458",
+            "_key": "semeval-terra-low-r2-b9-semeval-8458",
+            "chunk_id": "semeval-8458",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e2870d24ee0e81262dc7fb84b49cea7eeded6e6ad5f17010e53b4e544ed4c9b3",
+            "created_at": "2026-09-09T13:49:29.668601+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "Also, a small carved wooden sculpture of a rhinoceros was made by craftsmen in Africa.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668601+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-8702",
+            "_key": "semeval-terra-low-r2-b9-semeval-8702",
+            "chunk_id": "semeval-8702",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c6c12ba0833ac9e88f00b3de1dcc5bc90ce7458736275f963099e7a90c22fa6e",
+            "created_at": "2026-09-09T13:49:29.668605+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "The brick is aligned with the hinge of the repaired book.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668605+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-8830",
+            "_key": "semeval-terra-low-r2-b9-semeval-8830",
+            "chunk_id": "semeval-8830",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3691d2f10ca6a19e0638bbdb621fa19f11325973704f46032c838dd9b31b3189",
+            "created_at": "2026-09-09T13:49:29.668609+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "This documentary film reveals a shocking insight into the Jamaican economy and everyday life.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668609+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-8926",
+            "_key": "semeval-terra-low-r2-b9-semeval-8926",
+            "chunk_id": "semeval-8926",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3b8fb5ccdf625e4a9d82b828e2c68f9ea80b0558bb5a8676d644ddbf0c0ab03c",
+            "created_at": "2026-09-09T13:49:29.668613+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "The covered Clamp style handles hold mop firmly between the jaws of the mop handle.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668613+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-9076",
+            "_key": "semeval-terra-low-r2-b9-semeval-9076",
+            "chunk_id": "semeval-9076",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4f0d971d765be21344007d9131ddfebdf7b4404bd5b6daf4ef24d2932522911f",
+            "created_at": "2026-09-09T13:49:29.668617+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "Nitrogen is falling into remote lakes.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668617+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-9276",
+            "_key": "semeval-terra-low-r2-b9-semeval-9276",
+            "chunk_id": "semeval-9276",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:670651e71e6bbe749fa20b7c61e0dd89b31cdf13b82fa79f44c58a794ec2424c",
+            "created_at": "2026-09-09T13:49:29.668620+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "Flanking or backing rudders are used by towboats and other vessels that require a high degree of manoeuvrability.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668620+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-9837",
+            "_key": "semeval-terra-low-r2-b9-semeval-9837",
+            "chunk_id": "semeval-9837",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:35f9f0cc7b9295033bcff7fa60d6e67d4f318b39c802002c0e3b82c2fad28816",
+            "created_at": "2026-09-09T13:49:29.668624+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "The line-item veto is the best tool the president has to rein in excessive spending.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668624+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r2-b9-semeval-9964",
+            "_key": "semeval-terra-low-r2-b9-semeval-9964",
+            "chunk_id": "semeval-9964",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:40509f90b0a1ffdb98fd2aa2b1bfc41ad1e3b0951da5f8907f4a562b316744bb",
+            "created_at": "2026-09-09T13:49:29.668624+00:00",
+            "space_id": "semeval-terra-low-r2-b9",
+            "text": "The award has been given to the scholar who proved the mathematical theory.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:49:29.668624+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

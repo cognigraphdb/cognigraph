@@ -1,0 +1,1 @@
+[{"v":"a","d":0,"e":null},{"v":"b","d":1,"e":{"_id":"relationships/e1","_key":"e1","_from":"documents/a","_to":"documents/b","relation_type":"links","confidence":0.9}},{"v":"c","d":1,"e":{"_id":"relationships/e3","_key":"e3","_from":"documents/a","_to":"documents/c","relation_type":"weak","confidence":0.2}}]

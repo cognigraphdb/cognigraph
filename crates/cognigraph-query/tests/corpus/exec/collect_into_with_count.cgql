@@ -1,0 +1,1 @@
+FOR d IN documents FILTER HAS(d, "category") COLLECT cat = d.category INTO ks = d._key WITH COUNT INTO n SORT cat ASC RETURN { cat: cat, ks: ks, n: n }

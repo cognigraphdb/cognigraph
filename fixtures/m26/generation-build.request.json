@@ -1,0 +1,7 @@
+{
+  "target": {
+    "space_type": "acme_supply",
+    "channel": "m26-production"
+  },
+  "expected_promotion_head_decision_id": "REPLACE_WITH_64_LOWERCASE_HEX_CURRENT_PROMOTION_DECISION_ID"
+}

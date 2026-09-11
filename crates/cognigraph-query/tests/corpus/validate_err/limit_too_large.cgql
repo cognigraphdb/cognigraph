@@ -1,0 +1,1 @@
+FOR d IN documents LIMIT 10001 RETURN d

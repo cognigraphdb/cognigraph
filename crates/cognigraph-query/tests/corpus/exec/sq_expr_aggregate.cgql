@@ -1,0 +1,3 @@
+FOR d IN documents
+COLLECT AGGREGATE n = SUM(LENGTH((FOR e IN relationships FILTER e._from == d._id RETURN 1)))
+RETURN n

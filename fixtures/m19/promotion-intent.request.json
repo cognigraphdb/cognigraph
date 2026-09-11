@@ -1,0 +1,36 @@
+{
+  "statement": {
+    "schema_version": 1,
+    "domain": "cognigraph.promotion-intent.v1",
+    "tenant": "REPLACE_WITH_TENANT",
+    "tenant_incarnation": "REPLACE_WITH_TENANT_INCARNATION",
+    "payload": {
+      "requested_action": "promote",
+      "target": {
+        "space_type": "pharma",
+        "channel": "m19-production"
+      },
+      "evidence_id": "REPLACE_WITH_M19_EVIDENCE_ID",
+      "evidence_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+      "policy_revision_id": "REPLACE_WITH_POLICY_REVISION_ID",
+      "policy_revision_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+      "approval_id": "REPLACE_WITH_APPROVAL_ID",
+      "approval_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+      "gate_assessment_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+      "expected_head_decision_id": null,
+      "rollback_target_evidence_id": null,
+      "reason": "Passed the exact independently approved policy",
+      "idempotency_key_hash": "sha256:REPLACE_WITH_SHA256_OF_IDEMPOTENCY_HEADER",
+      "promoter_registration_id": "REPLACE_WITH_PROMOTER_REGISTRATION_ID",
+      "promoter_principal_id": "REPLACE_WITH_THIRD_STABLE_PRINCIPAL_ID",
+      "signed_at_ms": 1
+    }
+  },
+  "promoter_signature": {
+    "schema_version": 1,
+    "algorithm": "ed25519",
+    "key_id": "ed25519:sha256:REPLACE_WITH_PROMOTER_KEY_ID_HEX",
+    "statement_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "signature": "REPLACE_WITH_UNPADDED_BASE64URL_64_BYTE_PROMOTER_SIGNATURE"
+  }
+}

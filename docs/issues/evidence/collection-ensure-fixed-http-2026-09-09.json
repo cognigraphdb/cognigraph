@@ -1,0 +1,1396 @@
+{
+  "issue": "CG-35",
+  "revision": "aae43ad93e6f13dabc8e073fc9f792b93834b879",
+  "binary_sha256": "eed0bdac848e4928e730881f12a7e443e9ccb2c236a4d6ec67e394f2695fb806",
+  "seed_binary_sha256": "9bf65bcdae28e09dca921dae0025a2f0fe78984f0219eff4634731223472a903",
+  "harness_sha256": "2c3e3fe2b9bd5283a71752625bc30cfd3b31bde7c9e665b645b4376410cb098d",
+  "provider": "none",
+  "expect_rebuilds": false,
+  "runs": [
+    {
+      "mode": "resident-embedded",
+      "authenticated_restarts": 3,
+      "events": [
+        {
+          "kind": "rows",
+          "phase": "seed",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "seed",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "seed",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "seed",
+          "key": "a"
+        },
+        {
+          "kind": "rows",
+          "phase": "startup",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "startup",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "startup",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "startup",
+          "key": "a"
+        },
+        {
+          "kind": "derivative",
+          "phase": "startup_noop",
+          "file": "db.redb.f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "73a546d9-d3af-4fb2-ae7a-5905bdcd520f",
+            "sha256": "a9596bb4581cd4c79dabcd4c1b8057e447d9cb1abce883763986649769f4e26e",
+            "identity_sha256": "f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d",
+            "mtime_ns": 1788943853923205088,
+            "inode": 170811015
+          },
+          "after": {
+            "kind": "text",
+            "revision": "73a546d9-d3af-4fb2-ae7a-5905bdcd520f",
+            "sha256": "a9596bb4581cd4c79dabcd4c1b8057e447d9cb1abce883763986649769f4e26e",
+            "identity_sha256": "f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d",
+            "mtime_ns": 1788943853923205088,
+            "inode": 170811015
+          }
+        },
+        {
+          "kind": "catalog",
+          "phase": "explicit_noop",
+          "collections": [
+            {
+              "collection_type": "edge",
+              "count": 0,
+              "name": "cg35_edges"
+            },
+            {
+              "collection_type": "document",
+              "count": 2,
+              "name": "cg35_vectors"
+            }
+          ],
+          "ensure_calls": 16
+        },
+        {
+          "kind": "rows",
+          "phase": "explicit_noop",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "explicit_noop",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "explicit_noop",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "explicit_noop",
+          "key": "a"
+        },
+        {
+          "kind": "derivative",
+          "phase": "explicit_noop",
+          "file": "db.redb.f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "73a546d9-d3af-4fb2-ae7a-5905bdcd520f",
+            "sha256": "a9596bb4581cd4c79dabcd4c1b8057e447d9cb1abce883763986649769f4e26e",
+            "identity_sha256": "f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d",
+            "mtime_ns": 1788943853923205088,
+            "inode": 170811015
+          },
+          "after": {
+            "kind": "text",
+            "revision": "73a546d9-d3af-4fb2-ae7a-5905bdcd520f",
+            "sha256": "a9596bb4581cd4c79dabcd4c1b8057e447d9cb1abce883763986649769f4e26e",
+            "identity_sha256": "f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d",
+            "mtime_ns": 1788943853923205088,
+            "inode": 170811015
+          }
+        },
+        {
+          "kind": "rows",
+          "phase": "real_creation",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_creation",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_creation",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "real_creation",
+          "key": "a"
+        },
+        {
+          "kind": "derivative",
+          "phase": "real_creation",
+          "file": "db.redb.f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": false,
+          "reused": false,
+          "before": {
+            "kind": "text",
+            "revision": "73a546d9-d3af-4fb2-ae7a-5905bdcd520f",
+            "sha256": "a9596bb4581cd4c79dabcd4c1b8057e447d9cb1abce883763986649769f4e26e",
+            "identity_sha256": "f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d",
+            "mtime_ns": 1788943853923205088,
+            "inode": 170811015
+          },
+          "after": {
+            "kind": "text",
+            "revision": "e83f5f72-d8df-4bc0-9159-e2c64af13e7b",
+            "sha256": "f39285856db7ec60ad03c18bdf6ebf98b9168aa593234c85b16ad197182ad57b",
+            "identity_sha256": "f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d",
+            "mtime_ns": 1788943854992262235,
+            "inode": 170811136
+          }
+        },
+        {
+          "kind": "rows",
+          "phase": "real_mutation",
+          "rows": [
+            {
+              "key": "a",
+              "text": "updated"
+            },
+            {
+              "key": "b",
+              "text": "needle"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_mutation",
+          "surface": "http",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_mutation",
+          "surface": "lua",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "real_mutation",
+          "key": "b"
+        },
+        {
+          "kind": "rows",
+          "phase": "data_restart",
+          "rows": [
+            {
+              "key": "a",
+              "text": "updated"
+            },
+            {
+              "key": "b",
+              "text": "needle"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "data_restart",
+          "surface": "http",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "data_restart",
+          "surface": "lua",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "data_restart",
+          "key": "b"
+        },
+        {
+          "kind": "derivative",
+          "phase": "data_restart",
+          "file": "db.redb.f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "779998eb-1c8e-4122-856b-c7d723bdae50",
+            "sha256": "284c0589ac5bb6545f1dabcb91f96618773aec727be327dbc999c3bc9e7b147c",
+            "identity_sha256": "f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d",
+            "mtime_ns": 1788943855147927262,
+            "inode": 170811168
+          },
+          "after": {
+            "kind": "text",
+            "revision": "779998eb-1c8e-4122-856b-c7d723bdae50",
+            "sha256": "284c0589ac5bb6545f1dabcb91f96618773aec727be327dbc999c3bc9e7b147c",
+            "identity_sha256": "f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d",
+            "mtime_ns": 1788943855147927262,
+            "inode": 170811168
+          }
+        },
+        {
+          "kind": "rows",
+          "phase": "unchanged_restart",
+          "rows": [
+            {
+              "key": "a",
+              "text": "updated"
+            },
+            {
+              "key": "b",
+              "text": "needle"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "unchanged_restart",
+          "surface": "http",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "unchanged_restart",
+          "surface": "lua",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "unchanged_restart",
+          "key": "b"
+        },
+        {
+          "kind": "derivative",
+          "phase": "unchanged_restart",
+          "file": "db.redb.f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "779998eb-1c8e-4122-856b-c7d723bdae50",
+            "sha256": "284c0589ac5bb6545f1dabcb91f96618773aec727be327dbc999c3bc9e7b147c",
+            "identity_sha256": "f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d",
+            "mtime_ns": 1788943855147927262,
+            "inode": 170811168
+          },
+          "after": {
+            "kind": "text",
+            "revision": "779998eb-1c8e-4122-856b-c7d723bdae50",
+            "sha256": "284c0589ac5bb6545f1dabcb91f96618773aec727be327dbc999c3bc9e7b147c",
+            "identity_sha256": "f32727a3834a045985db50ca8af553ebe1602e4cb6e660246b7aacc5cf1d649d",
+            "mtime_ns": 1788943855147927262,
+            "inode": 170811168
+          }
+        }
+      ],
+      "checks": 34
+    },
+    {
+      "mode": "resident-sidecar",
+      "authenticated_restarts": 3,
+      "events": [
+        {
+          "kind": "rows",
+          "phase": "seed",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "seed",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "seed",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "seed",
+          "key": "a"
+        },
+        {
+          "kind": "rows",
+          "phase": "startup",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "startup",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "startup",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "startup",
+          "key": "a"
+        },
+        {
+          "kind": "derivative",
+          "phase": "startup_noop",
+          "file": "db.redb.520690ed4f0012a4326f1266803f0350d86f8115b5d3ace4db72519748c9fcef.vectors",
+          "derivative_kind": "vector",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "vector",
+            "sha256": "b877bf1af629baabd92a7c9684113cfb91a40c58efddc3b5f6f2f2a77abfe8de",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 40,
+            "revision": "86a49ba008754befa3541ae439892f91",
+            "mtime_ns": 1788943855736789924,
+            "inode": 170811176
+          },
+          "after": {
+            "kind": "vector",
+            "sha256": "b877bf1af629baabd92a7c9684113cfb91a40c58efddc3b5f6f2f2a77abfe8de",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 40,
+            "revision": "86a49ba008754befa3541ae439892f91",
+            "mtime_ns": 1788943855736789924,
+            "inode": 170811176
+          }
+        },
+        {
+          "kind": "derivative",
+          "phase": "startup_noop",
+          "file": "db.redb.56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "86a49ba0-0875-4bef-a354-1ae439892f91",
+            "sha256": "f62ac324d84027e1327c7c1061531c8c9bd031d14e0ef8045561c1dec43bd455",
+            "identity_sha256": "56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584",
+            "mtime_ns": 1788943855874814231,
+            "inode": 170811205
+          },
+          "after": {
+            "kind": "text",
+            "revision": "86a49ba0-0875-4bef-a354-1ae439892f91",
+            "sha256": "f62ac324d84027e1327c7c1061531c8c9bd031d14e0ef8045561c1dec43bd455",
+            "identity_sha256": "56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584",
+            "mtime_ns": 1788943855874814231,
+            "inode": 170811205
+          }
+        },
+        {
+          "kind": "catalog",
+          "phase": "explicit_noop",
+          "collections": [
+            {
+              "collection_type": "edge",
+              "count": 0,
+              "name": "cg35_edges"
+            },
+            {
+              "collection_type": "document",
+              "count": 2,
+              "name": "cg35_vectors"
+            }
+          ],
+          "ensure_calls": 16
+        },
+        {
+          "kind": "rows",
+          "phase": "explicit_noop",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "explicit_noop",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "explicit_noop",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "explicit_noop",
+          "key": "a"
+        },
+        {
+          "kind": "derivative",
+          "phase": "explicit_noop",
+          "file": "db.redb.520690ed4f0012a4326f1266803f0350d86f8115b5d3ace4db72519748c9fcef.vectors",
+          "derivative_kind": "vector",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "vector",
+            "sha256": "b877bf1af629baabd92a7c9684113cfb91a40c58efddc3b5f6f2f2a77abfe8de",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 40,
+            "revision": "86a49ba008754befa3541ae439892f91",
+            "mtime_ns": 1788943855736789924,
+            "inode": 170811176
+          },
+          "after": {
+            "kind": "vector",
+            "sha256": "b877bf1af629baabd92a7c9684113cfb91a40c58efddc3b5f6f2f2a77abfe8de",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 40,
+            "revision": "86a49ba008754befa3541ae439892f91",
+            "mtime_ns": 1788943855736789924,
+            "inode": 170811176
+          }
+        },
+        {
+          "kind": "derivative",
+          "phase": "explicit_noop",
+          "file": "db.redb.56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "86a49ba0-0875-4bef-a354-1ae439892f91",
+            "sha256": "f62ac324d84027e1327c7c1061531c8c9bd031d14e0ef8045561c1dec43bd455",
+            "identity_sha256": "56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584",
+            "mtime_ns": 1788943855874814231,
+            "inode": 170811205
+          },
+          "after": {
+            "kind": "text",
+            "revision": "86a49ba0-0875-4bef-a354-1ae439892f91",
+            "sha256": "f62ac324d84027e1327c7c1061531c8c9bd031d14e0ef8045561c1dec43bd455",
+            "identity_sha256": "56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584",
+            "mtime_ns": 1788943855874814231,
+            "inode": 170811205
+          }
+        },
+        {
+          "kind": "rows",
+          "phase": "real_creation",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_creation",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_creation",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "real_creation",
+          "key": "a"
+        },
+        {
+          "kind": "derivative",
+          "phase": "real_creation",
+          "file": "db.redb.520690ed4f0012a4326f1266803f0350d86f8115b5d3ace4db72519748c9fcef.vectors",
+          "derivative_kind": "vector",
+          "expected_reuse": false,
+          "reused": false,
+          "before": {
+            "kind": "vector",
+            "sha256": "b877bf1af629baabd92a7c9684113cfb91a40c58efddc3b5f6f2f2a77abfe8de",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 40,
+            "revision": "86a49ba008754befa3541ae439892f91",
+            "mtime_ns": 1788943855736789924,
+            "inode": 170811176
+          },
+          "after": {
+            "kind": "vector",
+            "sha256": "2c57bc8aec63679f9310d12be9b8f38db9e66a41019bcd6a61d9b29a06e87bdd",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 41,
+            "revision": "20f2fdbc83654be1a275c1df9ddb1af0",
+            "mtime_ns": 1788943856033500206,
+            "inode": 170811209
+          }
+        },
+        {
+          "kind": "derivative",
+          "phase": "real_creation",
+          "file": "db.redb.56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": false,
+          "reused": false,
+          "before": {
+            "kind": "text",
+            "revision": "86a49ba0-0875-4bef-a354-1ae439892f91",
+            "sha256": "f62ac324d84027e1327c7c1061531c8c9bd031d14e0ef8045561c1dec43bd455",
+            "identity_sha256": "56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584",
+            "mtime_ns": 1788943855874814231,
+            "inode": 170811205
+          },
+          "after": {
+            "kind": "text",
+            "revision": "20f2fdbc-8365-4be1-a275-c1df9ddb1af0",
+            "sha256": "6f9feae9df5d1bf4908da5c1259195dd06a73be09cd64ebbd4a355813d24f1d9",
+            "identity_sha256": "56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584",
+            "mtime_ns": 1788943856148226615,
+            "inode": 170811238
+          }
+        },
+        {
+          "kind": "rows",
+          "phase": "real_mutation",
+          "rows": [
+            {
+              "key": "a",
+              "text": "updated"
+            },
+            {
+              "key": "b",
+              "text": "needle"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_mutation",
+          "surface": "http",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_mutation",
+          "surface": "lua",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "real_mutation",
+          "key": "b"
+        },
+        {
+          "kind": "rows",
+          "phase": "data_restart",
+          "rows": [
+            {
+              "key": "a",
+              "text": "updated"
+            },
+            {
+              "key": "b",
+              "text": "needle"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "data_restart",
+          "surface": "http",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "data_restart",
+          "surface": "lua",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "data_restart",
+          "key": "b"
+        },
+        {
+          "kind": "derivative",
+          "phase": "data_restart",
+          "file": "db.redb.520690ed4f0012a4326f1266803f0350d86f8115b5d3ace4db72519748c9fcef.vectors",
+          "derivative_kind": "vector",
+          "expected_reuse": false,
+          "reused": false,
+          "before": {
+            "kind": "vector",
+            "sha256": "2c57bc8aec63679f9310d12be9b8f38db9e66a41019bcd6a61d9b29a06e87bdd",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 41,
+            "revision": "20f2fdbc83654be1a275c1df9ddb1af0",
+            "mtime_ns": 1788943856033500206,
+            "inode": 170811209
+          },
+          "after": {
+            "kind": "vector",
+            "sha256": "ad533faffed7a13e3be3d10804d89e91498dbfe209781862c624114c50759fa3",
+            "payload_sha256": "ea6e16f7f76aa584a9312262be4ec5f46e7ddd1cc978c201f0def03c169d8eef",
+            "generation": 43,
+            "revision": "18bdb302b3f54781a2a0b92cf5266bf1",
+            "mtime_ns": 1788943856459093532,
+            "inode": 170811274
+          }
+        },
+        {
+          "kind": "derivative",
+          "phase": "data_restart",
+          "file": "db.redb.56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "18bdb302-b3f5-4781-a2a0-b92cf5266bf1",
+            "sha256": "d818d8978324c55f3bf348b5c8a6861ba159c309a9a20a55a61d462c88a238d5",
+            "identity_sha256": "56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584",
+            "mtime_ns": 1788943856272632925,
+            "inode": 170811270
+          },
+          "after": {
+            "kind": "text",
+            "revision": "18bdb302-b3f5-4781-a2a0-b92cf5266bf1",
+            "sha256": "d818d8978324c55f3bf348b5c8a6861ba159c309a9a20a55a61d462c88a238d5",
+            "identity_sha256": "56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584",
+            "mtime_ns": 1788943856272632925,
+            "inode": 170811270
+          }
+        },
+        {
+          "kind": "rows",
+          "phase": "unchanged_restart",
+          "rows": [
+            {
+              "key": "a",
+              "text": "updated"
+            },
+            {
+              "key": "b",
+              "text": "needle"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "unchanged_restart",
+          "surface": "http",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "unchanged_restart",
+          "surface": "lua",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "unchanged_restart",
+          "key": "b"
+        },
+        {
+          "kind": "derivative",
+          "phase": "unchanged_restart",
+          "file": "db.redb.520690ed4f0012a4326f1266803f0350d86f8115b5d3ace4db72519748c9fcef.vectors",
+          "derivative_kind": "vector",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "vector",
+            "sha256": "ad533faffed7a13e3be3d10804d89e91498dbfe209781862c624114c50759fa3",
+            "payload_sha256": "ea6e16f7f76aa584a9312262be4ec5f46e7ddd1cc978c201f0def03c169d8eef",
+            "generation": 43,
+            "revision": "18bdb302b3f54781a2a0b92cf5266bf1",
+            "mtime_ns": 1788943856459093532,
+            "inode": 170811274
+          },
+          "after": {
+            "kind": "vector",
+            "sha256": "ad533faffed7a13e3be3d10804d89e91498dbfe209781862c624114c50759fa3",
+            "payload_sha256": "ea6e16f7f76aa584a9312262be4ec5f46e7ddd1cc978c201f0def03c169d8eef",
+            "generation": 43,
+            "revision": "18bdb302b3f54781a2a0b92cf5266bf1",
+            "mtime_ns": 1788943856459093532,
+            "inode": 170811274
+          }
+        },
+        {
+          "kind": "derivative",
+          "phase": "unchanged_restart",
+          "file": "db.redb.56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "18bdb302-b3f5-4781-a2a0-b92cf5266bf1",
+            "sha256": "d818d8978324c55f3bf348b5c8a6861ba159c309a9a20a55a61d462c88a238d5",
+            "identity_sha256": "56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584",
+            "mtime_ns": 1788943856272632925,
+            "inode": 170811270
+          },
+          "after": {
+            "kind": "text",
+            "revision": "18bdb302-b3f5-4781-a2a0-b92cf5266bf1",
+            "sha256": "d818d8978324c55f3bf348b5c8a6861ba159c309a9a20a55a61d462c88a238d5",
+            "identity_sha256": "56cdca115969de1b0e6ae61cd9129a0f4e694bc1f39754518956099a02bc5584",
+            "mtime_ns": 1788943856272632925,
+            "inode": 170811270
+          }
+        }
+      ],
+      "checks": 39
+    },
+    {
+      "mode": "paged-sidecar",
+      "authenticated_restarts": 3,
+      "events": [
+        {
+          "kind": "rows",
+          "phase": "seed",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "seed",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "seed",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "seed",
+          "key": "a"
+        },
+        {
+          "kind": "rows",
+          "phase": "startup",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "startup",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "startup",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "startup",
+          "key": "a"
+        },
+        {
+          "kind": "derivative",
+          "phase": "startup_noop",
+          "file": "db.redb.4a5cd2d74ff8b4f85b5f6dc2f616016b531caa0c24a89bf42750bdc80c3d662b.vectors",
+          "derivative_kind": "vector",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "vector",
+            "sha256": "ffc4f205e757d535d5e881c745cec3f1c5c69db6597dbc12a5d1d8ef68190006",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 40,
+            "revision": "0d27611bfe8d4b558b32a3cf8f0fdd5d",
+            "mtime_ns": 1788943856875886062,
+            "inode": 170811278
+          },
+          "after": {
+            "kind": "vector",
+            "sha256": "ffc4f205e757d535d5e881c745cec3f1c5c69db6597dbc12a5d1d8ef68190006",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 40,
+            "revision": "0d27611bfe8d4b558b32a3cf8f0fdd5d",
+            "mtime_ns": 1788943856875886062,
+            "inode": 170811278
+          }
+        },
+        {
+          "kind": "derivative",
+          "phase": "startup_noop",
+          "file": "db.redb.31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "0d27611b-fe8d-4b55-8b32-a3cf8f0fdd5d",
+            "sha256": "a5551fb3af43feb3c6256be953644f0f2ea0c9af05ef8ae47d86015f0a2f35c6",
+            "identity_sha256": "31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54",
+            "mtime_ns": 1788943857290076903,
+            "inode": 170811311
+          },
+          "after": {
+            "kind": "text",
+            "revision": "0d27611b-fe8d-4b55-8b32-a3cf8f0fdd5d",
+            "sha256": "a5551fb3af43feb3c6256be953644f0f2ea0c9af05ef8ae47d86015f0a2f35c6",
+            "identity_sha256": "31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54",
+            "mtime_ns": 1788943857290076903,
+            "inode": 170811311
+          }
+        },
+        {
+          "kind": "catalog",
+          "phase": "explicit_noop",
+          "collections": [
+            {
+              "collection_type": "edge",
+              "count": 0,
+              "name": "cg35_edges"
+            },
+            {
+              "collection_type": "document",
+              "count": 2,
+              "name": "cg35_vectors"
+            }
+          ],
+          "ensure_calls": 16
+        },
+        {
+          "kind": "rows",
+          "phase": "explicit_noop",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "explicit_noop",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "explicit_noop",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "explicit_noop",
+          "key": "a"
+        },
+        {
+          "kind": "derivative",
+          "phase": "explicit_noop",
+          "file": "db.redb.4a5cd2d74ff8b4f85b5f6dc2f616016b531caa0c24a89bf42750bdc80c3d662b.vectors",
+          "derivative_kind": "vector",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "vector",
+            "sha256": "ffc4f205e757d535d5e881c745cec3f1c5c69db6597dbc12a5d1d8ef68190006",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 40,
+            "revision": "0d27611bfe8d4b558b32a3cf8f0fdd5d",
+            "mtime_ns": 1788943856875886062,
+            "inode": 170811278
+          },
+          "after": {
+            "kind": "vector",
+            "sha256": "ffc4f205e757d535d5e881c745cec3f1c5c69db6597dbc12a5d1d8ef68190006",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 40,
+            "revision": "0d27611bfe8d4b558b32a3cf8f0fdd5d",
+            "mtime_ns": 1788943856875886062,
+            "inode": 170811278
+          }
+        },
+        {
+          "kind": "derivative",
+          "phase": "explicit_noop",
+          "file": "db.redb.31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "0d27611b-fe8d-4b55-8b32-a3cf8f0fdd5d",
+            "sha256": "a5551fb3af43feb3c6256be953644f0f2ea0c9af05ef8ae47d86015f0a2f35c6",
+            "identity_sha256": "31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54",
+            "mtime_ns": 1788943857290076903,
+            "inode": 170811311
+          },
+          "after": {
+            "kind": "text",
+            "revision": "0d27611b-fe8d-4b55-8b32-a3cf8f0fdd5d",
+            "sha256": "a5551fb3af43feb3c6256be953644f0f2ea0c9af05ef8ae47d86015f0a2f35c6",
+            "identity_sha256": "31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54",
+            "mtime_ns": 1788943857290076903,
+            "inode": 170811311
+          }
+        },
+        {
+          "kind": "rows",
+          "phase": "real_creation",
+          "rows": [
+            {
+              "key": "a",
+              "text": "needle"
+            },
+            {
+              "key": "b",
+              "text": "straw"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_creation",
+          "surface": "http",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_creation",
+          "surface": "lua",
+          "key": "a",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "real_creation",
+          "key": "a"
+        },
+        {
+          "kind": "derivative",
+          "phase": "real_creation",
+          "file": "db.redb.4a5cd2d74ff8b4f85b5f6dc2f616016b531caa0c24a89bf42750bdc80c3d662b.vectors",
+          "derivative_kind": "vector",
+          "expected_reuse": false,
+          "reused": false,
+          "before": {
+            "kind": "vector",
+            "sha256": "ffc4f205e757d535d5e881c745cec3f1c5c69db6597dbc12a5d1d8ef68190006",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 40,
+            "revision": "0d27611bfe8d4b558b32a3cf8f0fdd5d",
+            "mtime_ns": 1788943856875886062,
+            "inode": 170811278
+          },
+          "after": {
+            "kind": "vector",
+            "sha256": "5b3b5dedc6d3f43fd719af0816a978173d4c23a64dee58d531be2093d78362eb",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 41,
+            "revision": "d5773e55c9714145a96febf8019d6680",
+            "mtime_ns": 1788943857561582990,
+            "inode": 170811338
+          }
+        },
+        {
+          "kind": "derivative",
+          "phase": "real_creation",
+          "file": "db.redb.31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": false,
+          "reused": false,
+          "before": {
+            "kind": "text",
+            "revision": "0d27611b-fe8d-4b55-8b32-a3cf8f0fdd5d",
+            "sha256": "a5551fb3af43feb3c6256be953644f0f2ea0c9af05ef8ae47d86015f0a2f35c6",
+            "identity_sha256": "31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54",
+            "mtime_ns": 1788943857290076903,
+            "inode": 170811311
+          },
+          "after": {
+            "kind": "text",
+            "revision": "d5773e55-c971-4145-a96f-ebf8019d6680",
+            "sha256": "a67fd5552f7ef78c178b36fa5b57def67baab45b4d540cc2e461477097756319",
+            "identity_sha256": "31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54",
+            "mtime_ns": 1788943857879500162,
+            "inode": 170811390
+          }
+        },
+        {
+          "kind": "rows",
+          "phase": "real_mutation",
+          "rows": [
+            {
+              "key": "a",
+              "text": "updated"
+            },
+            {
+              "key": "b",
+              "text": "needle"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_mutation",
+          "surface": "http",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "real_mutation",
+          "surface": "lua",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "real_mutation",
+          "key": "b"
+        },
+        {
+          "kind": "rows",
+          "phase": "data_restart",
+          "rows": [
+            {
+              "key": "a",
+              "text": "updated"
+            },
+            {
+              "key": "b",
+              "text": "needle"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "data_restart",
+          "surface": "http",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "data_restart",
+          "surface": "lua",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "data_restart",
+          "key": "b"
+        },
+        {
+          "kind": "derivative",
+          "phase": "data_restart",
+          "file": "db.redb.4a5cd2d74ff8b4f85b5f6dc2f616016b531caa0c24a89bf42750bdc80c3d662b.vectors",
+          "derivative_kind": "vector",
+          "expected_reuse": false,
+          "reused": false,
+          "before": {
+            "kind": "vector",
+            "sha256": "5b3b5dedc6d3f43fd719af0816a978173d4c23a64dee58d531be2093d78362eb",
+            "payload_sha256": "e4135729f971835767651958a65210cf450e9054ff3d14ed36e3f59b99f02bc2",
+            "generation": 41,
+            "revision": "d5773e55c9714145a96febf8019d6680",
+            "mtime_ns": 1788943857561582990,
+            "inode": 170811338
+          },
+          "after": {
+            "kind": "vector",
+            "sha256": "484088d79d669ebf6c9eae7d9d22686cc0c8fe710899f7920f32155d5a085f28",
+            "payload_sha256": "ea6e16f7f76aa584a9312262be4ec5f46e7ddd1cc978c201f0def03c169d8eef",
+            "generation": 43,
+            "revision": "4cfa17287ff7457fba69842f0d700dda",
+            "mtime_ns": 1788943858480578038,
+            "inode": 170811470
+          }
+        },
+        {
+          "kind": "derivative",
+          "phase": "data_restart",
+          "file": "db.redb.31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "4cfa1728-7ff7-457f-ba69-842f0d700dda",
+            "sha256": "dfcc9dc5dff1a0876fbc4f4f97ee1d8fcf806f642eacb978b8372a544c596530",
+            "identity_sha256": "31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54",
+            "mtime_ns": 1788943858289731407,
+            "inode": 170811448
+          },
+          "after": {
+            "kind": "text",
+            "revision": "4cfa1728-7ff7-457f-ba69-842f0d700dda",
+            "sha256": "dfcc9dc5dff1a0876fbc4f4f97ee1d8fcf806f642eacb978b8372a544c596530",
+            "identity_sha256": "31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54",
+            "mtime_ns": 1788943858289731407,
+            "inode": 170811448
+          }
+        },
+        {
+          "kind": "rows",
+          "phase": "unchanged_restart",
+          "rows": [
+            {
+              "key": "a",
+              "text": "updated"
+            },
+            {
+              "key": "b",
+              "text": "needle"
+            }
+          ]
+        },
+        {
+          "kind": "vector_result",
+          "phase": "unchanged_restart",
+          "surface": "http",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "vector_result",
+          "phase": "unchanged_restart",
+          "surface": "lua",
+          "key": "b",
+          "score": 1
+        },
+        {
+          "kind": "text_result",
+          "phase": "unchanged_restart",
+          "key": "b"
+        },
+        {
+          "kind": "derivative",
+          "phase": "unchanged_restart",
+          "file": "db.redb.4a5cd2d74ff8b4f85b5f6dc2f616016b531caa0c24a89bf42750bdc80c3d662b.vectors",
+          "derivative_kind": "vector",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "vector",
+            "sha256": "484088d79d669ebf6c9eae7d9d22686cc0c8fe710899f7920f32155d5a085f28",
+            "payload_sha256": "ea6e16f7f76aa584a9312262be4ec5f46e7ddd1cc978c201f0def03c169d8eef",
+            "generation": 43,
+            "revision": "4cfa17287ff7457fba69842f0d700dda",
+            "mtime_ns": 1788943858480578038,
+            "inode": 170811470
+          },
+          "after": {
+            "kind": "vector",
+            "sha256": "484088d79d669ebf6c9eae7d9d22686cc0c8fe710899f7920f32155d5a085f28",
+            "payload_sha256": "ea6e16f7f76aa584a9312262be4ec5f46e7ddd1cc978c201f0def03c169d8eef",
+            "generation": 43,
+            "revision": "4cfa17287ff7457fba69842f0d700dda",
+            "mtime_ns": 1788943858480578038,
+            "inode": 170811470
+          }
+        },
+        {
+          "kind": "derivative",
+          "phase": "unchanged_restart",
+          "file": "db.redb.31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54.tantivy",
+          "derivative_kind": "text",
+          "expected_reuse": true,
+          "reused": true,
+          "before": {
+            "kind": "text",
+            "revision": "4cfa1728-7ff7-457f-ba69-842f0d700dda",
+            "sha256": "dfcc9dc5dff1a0876fbc4f4f97ee1d8fcf806f642eacb978b8372a544c596530",
+            "identity_sha256": "31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54",
+            "mtime_ns": 1788943858289731407,
+            "inode": 170811448
+          },
+          "after": {
+            "kind": "text",
+            "revision": "4cfa1728-7ff7-457f-ba69-842f0d700dda",
+            "sha256": "dfcc9dc5dff1a0876fbc4f4f97ee1d8fcf806f642eacb978b8372a544c596530",
+            "identity_sha256": "31e1322b88aee0367205774cfc5fb0c632f4e960d05670b4934167d4d1c59f54",
+            "mtime_ns": 1788943858289731407,
+            "inode": 170811448
+          }
+        }
+      ],
+      "checks": 39
+    }
+  ]
+}

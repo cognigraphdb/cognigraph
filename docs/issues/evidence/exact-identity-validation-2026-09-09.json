@@ -1,0 +1,113 @@
+{
+  "issue": "CG-33",
+  "date": "2026-09-09",
+  "base_revision": "f74f0aa36d53107fa06013fca965fb9db82367c1",
+  "state": "CG-21 committed; CG-33 uncommitted; nothing pushed; no production migration",
+  "gates": {
+    "cargo fmt --all -- --check": {
+      "exit_code": 0
+    },
+    "cargo clippy --all-targets -- -D warnings": {
+      "exit_code": 0,
+      "log_sha256": "d731633fa8c3d5201d03d3c1772e30c8baee9034be7285c22df9b7879b49d57a"
+    },
+    "cargo test --all": {
+      "exit_code": 0,
+      "result_groups": 71,
+      "passed": 945,
+      "failed": 0,
+      "ignored": 0,
+      "log_sha256": "2264de921c824959a3ad0c602025ef14c4fd04e561e88f0cfc5f692e663e4413"
+    },
+    "cargo build --release -p cognigraph-server -p cognigraph-cli": {
+      "exit_code": 0,
+      "log_sha256": "48b01431a3f580d8b336752aa465e960be2733132d1a4bdff7539d08dde7f5ee"
+    }
+  },
+  "focused": {
+    "command": "cargo test -p cognigraph-query -p cognigraph-core -p cognigraph-cli -p cognigraph-arango -p cognigraph-native",
+    "exit_code": 0,
+    "result_groups": 32,
+    "passed": 335,
+    "failed": 0,
+    "ignored": 0,
+    "log_sha256": "1ce7188b0a9b4af99e75912958173e6db02463c57c6d272d8adaf4443c64c766"
+  },
+  "test_limits": [
+    "Eight Arango integration entries early-returned because ARANGO_PASSWORD was absent; no live Arango in this batch.",
+    "Existing provider embedding smoke entries reported success; dedicated feature harnesses used loopback providers only."
+  ],
+  "binaries": {
+    "target/release/cognigraph-server": "05de3c77c255863c2d021b170c56ede2aded7db3def77fe7b5488f47867539e1",
+    "target/release/cognigraph": "e91cbeca12190f3cc938fa1619dfb3261bc3a13a93275517455c9f63984b0032",
+    "/tmp/cognigraph-pre-cg33-server": "f78fba7a8c397bd9fd09dd0d2ec8c84e5261e5e6819cb323ec717f0b0e5c2e3f"
+  },
+  "harnesses": {
+    "docs/issues/evidence/exact-identity-http.py": "1aa2c38cf3fa11f8ab6fb38823612c611132c417da70ca8fc70de4212004cb46",
+    "docs/issues/evidence/side-view-lifecycle-http.py": "56267a8ec3cd6c61e3c12a0d079bfbe413791964fe40d3f87eef027df4dc19e8",
+    "docs/issues/evidence/unicode-evidence-http.py": "da28cc97eae5fb4bc15286ab2e81df3d89875d88a9cbb73e6cfa11a87ff37f74"
+  },
+  "evidence": {
+    "docs/issues/evidence/exact-identity-baseline-http-2026-09-09.json": {
+      "sha256": "bf99f8774e665cabb8c96e1124237a6213be70aa6508d00d4b13cb2cf7958b4c",
+      "bytes": 22967
+    },
+    "docs/issues/evidence/exact-identity-construction-http-2026-09-09.json": {
+      "sha256": "3fb1ee13e5e9900dc16907618b7fcc52ac0742ae37521e0079fe426d3d45b561",
+      "bytes": 48896
+    },
+    "docs/issues/evidence/exact-identity-fixed-http-2026-09-09.json": {
+      "sha256": "96788b9f150bfffd5dd51a8e0f2920ec84bf5f71e97c582927362b2dffe8ff20",
+      "bytes": 29842
+    },
+    "docs/issues/evidence/exact-identity-sideviews-http-2026-09-09.json": {
+      "sha256": "4a841ba802bd70e9d8bd2ffb41b2f7b43017263505496514c150318325029cdc",
+      "bytes": 14471
+    }
+  },
+  "changed_crate_files": {
+    "crates/cognigraph-cli/Cargo.toml": "2af2881878f31378a355ae849f2b9e4cbf1db85e54326a14c0b9b7b683873d60",
+    "crates/cognigraph-cli/src/args.rs": "60022ca298ea30668b2702fef96022f979c42312d526ff606e9b85324a786e8e",
+    "crates/cognigraph-cli/src/main.rs": "f53ec2db2e3169adc7aef8ebfe3c9b59c76da507dd27495c2a7db836674d95b0",
+    "crates/cognigraph-cli/src/references.rs": "f31f360d48dc08f97bcfbea4d0525d5cf2704ad24bb0a63e5e0047e034de372b",
+    "crates/cognigraph-cli/src/references/tests.rs": "be26ecfe2c9bda32b97dc3bf98a2bf97d563ffc2c31129e8918cc4df5f7f3762",
+    "crates/cognigraph-core/src/traits.rs": "a79ec5391d3190c8319acecec2e58fb2091ef121b492cd80f92e490d5102f77c",
+    "crates/cognigraph-core/src/types/document.rs": "ff47e4f4f48da2f0e293c7b888469e0e66884e8a8da33da9581f2bfb265f4aca",
+    "crates/cognigraph-native/Cargo.toml": "efce3426ce572fac3247f866ca343025baa5135d7c9c9dd502982d8a9c7766ed",
+    "crates/cognigraph-native/src/memory/helpers.rs": "1bef219c9f20d36ad1766408626ba397835e024cecc2a850356ed27a7a0582d4",
+    "crates/cognigraph-native/tests/exact_identity.rs": "e8b5f27fe757b48ea72118e44fc2261b24227206658e0294eece098e8ca7a10e",
+    "crates/cognigraph-native/tests/native_backend.rs": "883420997a7baa4788abaa54ea1a5533e598830e1e03cb6b4141ca8a37c75863",
+    "crates/cognigraph-query/src/functions/mod.rs": "febac53d67b3e1e4ecbbbdfd68ea54844a659e823ee446ec032ab52cf9578046",
+    "crates/cognigraph-query/src/functions/string.rs": "072ad851f73bc9a32319bfa6672547d4c0744b311a5e72526415c97b3477297b",
+    "crates/cognigraph-query/src/parser/expr.rs": "1b4fa75c05c35cb5bafe84cdf35ce8084abd1bf4f8fa12a9b81170f93d77a735",
+    "crates/cognigraph-query/tests/corpus/exec/i18n_exact_literals.cgql": "7e520b0780803cd45bd3a3b885ad2fd68f1b6e312dde0a9ea2b52f1b5437d71e",
+    "crates/cognigraph-query/tests/corpus/exec/i18n_exact_literals.json": "ee746eecb1f738809e843f9eeab9a74a6291e87e77506af5491b5d1606416da9",
+    "crates/cognigraph-query/tests/corpus/validate_err/normalize_nfc_arity.cgql": "6f9bf0a6a03316626ef7d0e87c36fcef9c154057b484a31cca793d360e855a07",
+    "crates/cognigraph-server/src/side_views.rs": "a4f47d2673031f1b5d0e942b83f21eadf07f198659cb2af7711b528995b81974",
+    "crates/cognigraph-server/src/side_views/tests.rs": "4b6026e63a40fbe985a53437746bcaaed84c4c2108f3a57b4391a585f708b8d9"
+  },
+  "live": {
+    "baseline_checks": 105,
+    "baseline_mismatches": 69,
+    "fixed_checks": 138,
+    "fixed_mismatches": 0,
+    "fixed_restarts": 6,
+    "old_binary_snapshot_repairs": 3,
+    "sideview_deletion_cases": 21,
+    "sideview_provider_races": 42,
+    "sideview_restarts": 3,
+    "construction_ingestions": 30,
+    "construction_snapshot_roundtrips": 3,
+    "construction_restarts": 6,
+    "repair_output_permissions": {
+      "resident-embedded": "0o600",
+      "resident-sidecar": "0o600",
+      "paged-sidecar": "0o600"
+    }
+  },
+  "corrected_attempts": [
+    "Initial test/API/fixture compilation errors corrected; see report.",
+    "Initial release build exhausted disk; removed rebuildable target/debug/incremental only, then rebuilt successfully.",
+    "Initial Lua source escaping and getter name corrected before final live passes."
+  ]
+}

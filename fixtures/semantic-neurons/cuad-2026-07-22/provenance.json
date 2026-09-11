@@ -1,0 +1,108 @@
+{
+  "experiment_date": "2026-07-22",
+  "recovery_date": "2026-09-09",
+  "status": "partial historical recovery; scoring replayable, complete extraction replay unavailable",
+  "source_directory": "/Users/skitsanos/FTP/Projects/rust/cognigraph-evals/cuad",
+  "historical_files": {
+    "prep.py": {
+      "sha256": "92807d2a39635c520f73df60a3605175d5fd79b9e47249292534f8a47cde987d",
+      "bytes": 4083
+    },
+    "score.py": {
+      "sha256": "5c310302eea31a063588915878c1d6256fa857d9d71a8a82c4ef1840065af2f6",
+      "bytes": 3932
+    },
+    "run_directed.py": {
+      "sha256": "b64ecde73a6b74fd97acf45523b0462b544a177c67f6c95c2f279c3e9a537779",
+      "bytes": 7563
+    },
+    "TRACK-B-STATUS.md": {
+      "sha256": "8c0b5a57b7e1137c2b7287f184fe0aa3a91feb03963822e6287657cca97668a2",
+      "bytes": 6234
+    },
+    "work/sample.json": {
+      "sha256": "175a233f83aeca976b5786d1048153e1d70dc80bd126976a999ba3e5992a5ad9",
+      "bytes": 3766
+    },
+    "work/gold.json": {
+      "sha256": "750369d5c236508ad6eaad9f6b3640181d4ab395daf2526ffd83cd6933474d6a",
+      "bytes": 173301
+    },
+    "work/design_chunks.jsonl": {
+      "sha256": "60e3eabff22201556c996701edf5ca2b74eef8663a4c358a6f4f0b0185b0cf24",
+      "bytes": 1247518
+    },
+    "work/holdout_chunks.jsonl": {
+      "sha256": "ab69ef5e4a874978fc7e3c11e48effaecce000996f267fa7fca8cb1133982b6c",
+      "bytes": 3254381
+    },
+    "work/extractions_design.json": {
+      "sha256": "b223fb5dc92a3fee1b7ae10439e349319aef58f85538ec45cb0ce6bbe06df9ec",
+      "bytes": 25729
+    },
+    "work/extractions_holdout.json": {
+      "sha256": "52024f49bf8bf03600ab169a3aadc72dbd960188c0d59874d3fccd45cc3f1539",
+      "bytes": 64358
+    }
+  },
+  "dataset": {
+    "name": "Contract Understanding Atticus Dataset (CUAD) v1",
+    "authors": [
+      "Dan Hendrycks",
+      "Collin Burns",
+      "Anya Chen",
+      "Spencer Ball"
+    ],
+    "curator": "The Atticus Project",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://huggingface.co/datasets/theatticusproject/cuad/blob/main/README.md",
+    "record_url": "https://zenodo.org/records/4595826",
+    "download_url": "https://zenodo.org/records/4595826/files/CUAD_v1.zip?download=1",
+    "archive_sha256": "88b694d99007d39777fa44cd72daf8297773d285dc3eab0091ba32078888d18e",
+    "archive_md5": "c38f490a984420b8a62600db401fafd5",
+    "archive_bytes": 105883672
+  },
+  "split": {
+    "design_contracts": 10,
+    "holdout_contracts": 40,
+    "seed": 20260722,
+    "stratified_using_gold_category_coverage": true,
+    "contract_ids": "historical/work/sample.json",
+    "holdout_is_official_cuad_test_split": false
+  },
+  "execution": {
+    "initial_implementation_revision": "3b8e1eb",
+    "restart_revision": "e0ff466",
+    "headline_revision": "fcd8c318a9e814053464ca16cc36a4d492c5461b",
+    "policy": "directed-policy-v1",
+    "model": null,
+    "provider": null,
+    "resolved_generation_settings": null,
+    "request_chunk_limit": 28,
+    "original_runner": "historical/run_directed.py",
+    "frozen_taxonomy": "taxonomy.json",
+    "raw_nominations_available": false,
+    "full_accepted_fact_rows_available": false,
+    "retained_projection_fields": [
+      "evidence",
+      "suspect"
+    ],
+    "holdout_restart_after_redacted_endpoint_failure": true,
+    "fresh_model_calls_during_recovery": 0
+  },
+  "limits": [
+    "No original completion request/response archive or resolved server model/settings survives in the recovered package.",
+    "Stored evidence projections omit source/target identities, offsets, chunk/fact keys and model attribution; they cannot prove the full original gate/write lifecycle.",
+    "The retained design predictions are from the final calibration run, whose taxonomy differs from the restored round-1 taxonomy used for holdout.",
+    "The holdout was exposed to a runtime failure and restarted; it was one completed scored run, not one untouched execution.",
+    "Legacy scorer mixes span-level true positives with contract/category-level false negatives."
+  ],
+  "derived_taxonomy_sha256": "6414a63b1d8dc119d9bca29c6e7c3236f14cec8cbfad2f6e21923965cbad9e06",
+  "data_removal_status": {
+    "date": "2026-09-11",
+    "status": "Partially withdrawn",
+    "notice": "Historical aggregate results and source hashes affected by repository data removal are withdrawn. Retained records are a subset, not a rerun or a qualified benchmark. See the repository data-removal record for the current boundary.",
+    "original_reproduction_available": false
+  }
+}

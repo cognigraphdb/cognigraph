@@ -1,0 +1,162 @@
+[
+  {
+    "name": "insert_input",
+    "query": "INSERT {_key:\"c\", copied:DOCUMENT(@ref).v} INTO notes RETURN NEW",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "update_input",
+    "query": "UPDATE \"a\" WITH {copied:DOCUMENT(@ref).v} IN notes RETURN NEW.copied",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "replace_input",
+    "query": "REPLACE \"a\" WITH {copied:DOCUMENT(@ref).v} IN notes RETURN NEW",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "update_selector",
+    "query": "UPDATE DOCUMENT(@ref)._key WITH {v:99} IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "replace_selector",
+    "query": "REPLACE DOCUMENT(@ref)._key WITH {v:99} IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "remove_selector",
+    "query": "REMOVE DOCUMENT(@ref)._key IN notes RETURN OLD",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "upsert_search",
+    "query": "UPSERT {_key:DOCUMENT(@ref)._key} INSERT {_key:\"c\"} UPDATE {v:99} IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "upsert_insert",
+    "query": "UPSERT {_key:\"absent\"} INSERT {_key:\"c\",copied:DOCUMENT(@ref).v} UPDATE {v:99} IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "upsert_update",
+    "query": "UPSERT {_key:\"a\"} INSERT {_key:\"c\"} UPDATE {copied:DOCUMENT(@ref).v} IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "insert_return",
+    "query": "INSERT {_key:\"c\"} INTO notes RETURN {new:NEW,ref:DOCUMENT(@ref),self:DOCUMENT(NEW._id)}",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "update_return",
+    "query": "UPDATE \"a\" WITH {v:99} IN notes RETURN {old:OLD,new:NEW,ref:DOCUMENT(@ref),self:DOCUMENT(NEW._id)}",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "replace_return",
+    "query": "REPLACE \"a\" WITH {v:99} IN notes RETURN {old:OLD,ref:DOCUMENT(@ref)}",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "remove_return",
+    "query": "REMOVE \"a\" IN notes RETURN {old:OLD,ref:DOCUMENT(@ref),self:DOCUMENT(OLD._id)}",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "upsert_return",
+    "query": "UPSERT {_key:\"a\"} INSERT {_key:\"c\"} UPDATE {v:99} IN notes RETURN {old:OLD,new:NEW,ref:DOCUMENT(@ref)}",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "body_let",
+    "query": "FOR seed IN [1] LET d=DOCUMENT(@ref) UPDATE \"a\" WITH {copied:d.v} IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "body_filter",
+    "query": "FOR d IN notes FILTER DOCUMENT(@ref).v == 2 UPDATE d._key WITH {v:99} IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "body_for",
+    "query": "FOR d IN DOCUMENT([@ref]) REMOVE d._key IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "subquery",
+    "query": "FOR seed IN [1] LET refs=(FOR d IN notes RETURN DOCUMENT(@ref)) INSERT {_key:\"c\",refs:refs} INTO notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "nested_subquery",
+    "query": "FOR seed IN [1] LET refs=(LET inner=(RETURN DOCUMENT(@ref)) RETURN inner) INSERT {_key:\"c\",refs:refs} INTO notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "nested_sort",
+    "query": "FOR seed IN [1] LET refs=(FOR d IN notes SORT DOCUMENT(@ref).v RETURN d) INSERT {_key:\"c\",refs:refs} INTO notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "nested_collect",
+    "query": "FOR seed IN [1] LET refs=(FOR d IN notes COLLECT v=DOCUMENT(@ref).v RETURN v) INSERT {_key:\"c\",refs:refs} INTO notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "nested_aggregate",
+    "query": "FOR seed IN [1] LET refs=(FOR d IN notes COLLECT AGGREGATE v=SUM(DOCUMENT(@ref).v) RETURN v) INSERT {_key:\"c\",refs:refs} INTO notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "nested_into",
+    "query": "FOR seed IN [1] LET refs=(FOR d IN notes COLLECT v=d.v INTO members=DOCUMENT(@ref) RETURN members) INSERT {_key:\"c\",refs:refs} INTO notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "conditional_untaken",
+    "query": "UPDATE \"a\" WITH {v:(false ? DOCUMENT(@ref).v : 99)} IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "nested_array_function",
+    "query": "INSERT {_key:\"c\",v:COALESCE(FIRST([document(@ref)]).v,0)} INTO notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "unary",
+    "query": "UPDATE \"a\" WITH {v:-DOCUMENT(@ref).v} IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "binary",
+    "query": "UPDATE \"a\" WITH {v:1+DOCUMENT(@ref).v} IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "nested_lookup",
+    "query": "UPDATE \"a\" WITH {v:DOCUMENT(DOCUMENT(@ref).ref).v} IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "traversal_document_start",
+    "query": "FOR v IN 1..1 OUTBOUND DOCUMENT(@ref)._id links REMOVE v._key IN notes",
+    "error": "DOCUMENT() is not supported in mutation queries"
+  },
+  {
+    "name": "correlated_traversal",
+    "query": "FOR start IN [@ref] LET refs=(FOR v IN 1..1 OUTBOUND start links RETURN v) UPDATE \"a\" WITH {refs:refs} IN notes",
+    "error": "correlated traversal starts are not supported in mutation queries"
+  },
+  {
+    "name": "nested_correlated_traversal",
+    "query": "FOR d IN notes LET refs=(FOR v IN 1..1 OUTBOUND d._id links RETURN v) UPDATE d._key WITH {refs:refs,ref:@ref} IN notes",
+    "error": "correlated traversal starts are not supported in mutation queries"
+  },
+  {
+    "name": "wrapped_correlated_start",
+    "query": "FOR start IN [@ref] LET refs=(FOR v IN 1..1 OUTBOUND CONCAT(start, \"\") links RETURN v) UPDATE \"a\" WITH {refs:refs} IN notes",
+    "error": "correlated traversal starts are not supported in mutation queries"
+  }
+]

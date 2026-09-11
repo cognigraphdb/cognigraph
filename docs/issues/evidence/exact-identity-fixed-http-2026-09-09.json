@@ -1,0 +1,1222 @@
+{
+  "binary_sha256": "05de3c77c255863c2d021b170c56ede2aded7db3def77fe7b5488f47867539e1",
+  "cli_sha256": "e91cbeca12190f3cc938fa1619dfb3261bc3a13a93275517455c9f63984b0032",
+  "seed_binary_sha256": "f78fba7a8c397bd9fd09dd0d2ec8c84e5261e5e6819cb323ec717f0b0e5c2e3f",
+  "expect_vulnerable": false,
+  "root": "/var/folders/v2/x4zbz9nd10lf_kqzhpm4r84w0000gn/T/cognigraph-cg33-live-dq4a0g4f",
+  "results": [
+    {
+      "mode": "resident-embedded",
+      "checks": [
+        {
+          "case": "legacy_repaired_target",
+          "actual": "legacy_docs/café",
+          "expected": "legacy_docs/café",
+          "correct": true
+        },
+        {
+          "case": "protected_import",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "repaired_traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "0-0-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-0-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "0-0-literal",
+          "actual": [
+            "0-0"
+          ],
+          "expected": [
+            "0-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-0-bind",
+          "actual": [
+            "0-0"
+          ],
+          "expected": [
+            "0-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-0-lua",
+          "actual": "0-0",
+          "expected": "0-0",
+          "correct": true
+        },
+        {
+          "case": "0-0-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-1-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-1-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "0-1-literal",
+          "actual": [
+            "0-1"
+          ],
+          "expected": [
+            "0-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-1-bind",
+          "actual": [
+            "0-1"
+          ],
+          "expected": [
+            "0-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-1-lua",
+          "actual": "0-1",
+          "expected": "0-1",
+          "correct": true
+        },
+        {
+          "case": "0-1-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-1-traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "0-1-model",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "1-0-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-0-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "1-0-literal",
+          "actual": [
+            "1-0"
+          ],
+          "expected": [
+            "1-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-0-bind",
+          "actual": [
+            "1-0"
+          ],
+          "expected": [
+            "1-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-0-lua",
+          "actual": "1-0",
+          "expected": "1-0",
+          "correct": true
+        },
+        {
+          "case": "1-0-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-0-traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "1-1-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-1-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "1-1-literal",
+          "actual": [
+            "1-1"
+          ],
+          "expected": [
+            "1-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-1-bind",
+          "actual": [
+            "1-1"
+          ],
+          "expected": [
+            "1-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-1-lua",
+          "actual": "1-1",
+          "expected": "1-1",
+          "correct": true
+        },
+        {
+          "case": "1-1-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-1-traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "1-1-model",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "literal_identity",
+          "actual": [
+            false
+          ],
+          "expected": [
+            false
+          ],
+          "correct": true
+        },
+        {
+          "case": "explicit_text_normalization",
+          "actual": [
+            "café"
+          ],
+          "expected": [
+            "café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "batch-frozen-payload",
+          "actual": {
+            "collection": "café",
+            "keys": [
+              "café",
+              "café"
+            ]
+          },
+          "expected": {
+            "collection": "café",
+            "keys": [
+              "café",
+              "café"
+            ]
+          },
+          "correct": true
+        },
+        {
+          "case": "cgql-mutation",
+          "actual": [
+            "café"
+          ],
+          "expected": [
+            "café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "durable-collection",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "durable-keys",
+          "actual": [
+            "café",
+            "café"
+          ],
+          "expected": [
+            "café",
+            "café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "restarted-job-status",
+          "actual": "succeeded",
+          "expected": "succeeded",
+          "correct": true
+        },
+        {
+          "case": "restarted-job-rows",
+          "actual": 2,
+          "expected": 2,
+          "correct": true
+        },
+        {
+          "case": "exact-parent-handles",
+          "actual": [
+            "café/café",
+            "café/café"
+          ],
+          "expected": [
+            "café/café",
+            "café/café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "exact-cascade-count",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "collision-peer-survives",
+          "actual": [
+            "café/café"
+          ],
+          "expected": [
+            "café/café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "collision-peer-document",
+          "actual": "1-0",
+          "expected": "1-0",
+          "correct": true
+        },
+        {
+          "case": "post-cascade-restart",
+          "actual": {
+            "documents": {
+              "d5deab8a-db8f-4117-92da-6f6649a3bdba": {
+                "_id": "side_views/d5deab8a-db8f-4117-92da-6f6649a3bdba",
+                "_key": "d5deab8a-db8f-4117-92da-6f6649a3bdba",
+                "answer": "Synthetic source answer",
+                "created_at": "2026-09-09T06:30:43.997455+00:00",
+                "document_id": "café/café",
+                "embedding": [
+                  1.0,
+                  0.0
+                ],
+                "kind": "side_view",
+                "question": "Synthetic identity question",
+                "updated_at": "2026-09-09T06:30:43.997455+00:00"
+              }
+            },
+            "type": "document"
+          },
+          "expected": {
+            "documents": {
+              "d5deab8a-db8f-4117-92da-6f6649a3bdba": {
+                "_id": "side_views/d5deab8a-db8f-4117-92da-6f6649a3bdba",
+                "_key": "d5deab8a-db8f-4117-92da-6f6649a3bdba",
+                "answer": "Synthetic source answer",
+                "created_at": "2026-09-09T06:30:43.997455+00:00",
+                "document_id": "café/café",
+                "embedding": [
+                  1.0,
+                  0.0
+                ],
+                "kind": "side_view",
+                "question": "Synthetic identity question",
+                "updated_at": "2026-09-09T06:30:43.997455+00:00"
+              }
+            },
+            "type": "document"
+          },
+          "correct": true
+        },
+        {
+          "case": "completed-job-still-terminal",
+          "actual": "succeeded",
+          "expected": "succeeded",
+          "correct": true
+        }
+      ],
+      "repair": {
+        "edge_key": "1fe939af-5604-4ead-a851-866026989361",
+        "audit_findings": 2,
+        "repair": {
+          "changes": 1,
+          "output_sha256": "0b185d6ba8ed1575a086cac58a9beacd6cf453047beb8735d1a486911816fdbb",
+          "source_sha256": "af004df03bec5f56051c1b637d1088cec1f0f35ce75aaf58dc177e16b8360298",
+          "status": "offline snapshot written; no live import performed"
+        },
+        "source_preserved": true,
+        "protected_data_preserved": true,
+        "existing_output_and_unsafe_plans_rejected": true
+      },
+      "restart_count": 2
+    },
+    {
+      "mode": "resident-sidecar",
+      "checks": [
+        {
+          "case": "legacy_repaired_target",
+          "actual": "legacy_docs/café",
+          "expected": "legacy_docs/café",
+          "correct": true
+        },
+        {
+          "case": "protected_import",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "repaired_traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "0-0-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-0-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "0-0-literal",
+          "actual": [
+            "0-0"
+          ],
+          "expected": [
+            "0-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-0-bind",
+          "actual": [
+            "0-0"
+          ],
+          "expected": [
+            "0-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-0-lua",
+          "actual": "0-0",
+          "expected": "0-0",
+          "correct": true
+        },
+        {
+          "case": "0-0-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-1-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-1-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "0-1-literal",
+          "actual": [
+            "0-1"
+          ],
+          "expected": [
+            "0-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-1-bind",
+          "actual": [
+            "0-1"
+          ],
+          "expected": [
+            "0-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-1-lua",
+          "actual": "0-1",
+          "expected": "0-1",
+          "correct": true
+        },
+        {
+          "case": "0-1-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-1-traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "0-1-model",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "1-0-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-0-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "1-0-literal",
+          "actual": [
+            "1-0"
+          ],
+          "expected": [
+            "1-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-0-bind",
+          "actual": [
+            "1-0"
+          ],
+          "expected": [
+            "1-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-0-lua",
+          "actual": "1-0",
+          "expected": "1-0",
+          "correct": true
+        },
+        {
+          "case": "1-0-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-0-traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "1-1-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-1-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "1-1-literal",
+          "actual": [
+            "1-1"
+          ],
+          "expected": [
+            "1-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-1-bind",
+          "actual": [
+            "1-1"
+          ],
+          "expected": [
+            "1-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-1-lua",
+          "actual": "1-1",
+          "expected": "1-1",
+          "correct": true
+        },
+        {
+          "case": "1-1-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-1-traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "1-1-model",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "literal_identity",
+          "actual": [
+            false
+          ],
+          "expected": [
+            false
+          ],
+          "correct": true
+        },
+        {
+          "case": "explicit_text_normalization",
+          "actual": [
+            "café"
+          ],
+          "expected": [
+            "café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "batch-frozen-payload",
+          "actual": {
+            "collection": "café",
+            "keys": [
+              "café",
+              "café"
+            ]
+          },
+          "expected": {
+            "collection": "café",
+            "keys": [
+              "café",
+              "café"
+            ]
+          },
+          "correct": true
+        },
+        {
+          "case": "cgql-mutation",
+          "actual": [
+            "café"
+          ],
+          "expected": [
+            "café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "durable-collection",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "durable-keys",
+          "actual": [
+            "café",
+            "café"
+          ],
+          "expected": [
+            "café",
+            "café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "restarted-job-status",
+          "actual": "succeeded",
+          "expected": "succeeded",
+          "correct": true
+        },
+        {
+          "case": "restarted-job-rows",
+          "actual": 2,
+          "expected": 2,
+          "correct": true
+        },
+        {
+          "case": "exact-parent-handles",
+          "actual": [
+            "café/café",
+            "café/café"
+          ],
+          "expected": [
+            "café/café",
+            "café/café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "exact-cascade-count",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "collision-peer-survives",
+          "actual": [
+            "café/café"
+          ],
+          "expected": [
+            "café/café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "collision-peer-document",
+          "actual": "1-0",
+          "expected": "1-0",
+          "correct": true
+        },
+        {
+          "case": "post-cascade-restart",
+          "actual": {
+            "documents": {
+              "bd5d080a-0282-4e77-9fb9-d8b3b7e8bf1d": {
+                "_id": "side_views/bd5d080a-0282-4e77-9fb9-d8b3b7e8bf1d",
+                "_key": "bd5d080a-0282-4e77-9fb9-d8b3b7e8bf1d",
+                "answer": "Synthetic source answer",
+                "created_at": "2026-09-09T06:30:47.800638+00:00",
+                "document_id": "café/café",
+                "embedding": [
+                  1.0,
+                  0.0
+                ],
+                "kind": "side_view",
+                "question": "Synthetic identity question",
+                "updated_at": "2026-09-09T06:30:47.800638+00:00"
+              }
+            },
+            "type": "document"
+          },
+          "expected": {
+            "documents": {
+              "bd5d080a-0282-4e77-9fb9-d8b3b7e8bf1d": {
+                "_id": "side_views/bd5d080a-0282-4e77-9fb9-d8b3b7e8bf1d",
+                "_key": "bd5d080a-0282-4e77-9fb9-d8b3b7e8bf1d",
+                "answer": "Synthetic source answer",
+                "created_at": "2026-09-09T06:30:47.800638+00:00",
+                "document_id": "café/café",
+                "embedding": [
+                  1.0,
+                  0.0
+                ],
+                "kind": "side_view",
+                "question": "Synthetic identity question",
+                "updated_at": "2026-09-09T06:30:47.800638+00:00"
+              }
+            },
+            "type": "document"
+          },
+          "correct": true
+        },
+        {
+          "case": "completed-job-still-terminal",
+          "actual": "succeeded",
+          "expected": "succeeded",
+          "correct": true
+        }
+      ],
+      "repair": {
+        "edge_key": "8c9dda45-0a37-475f-84f9-57965c79bf83",
+        "audit_findings": 2,
+        "repair": {
+          "changes": 1,
+          "output_sha256": "948b8a4ea33ab25184d6870696070f1cf14774b79235cfd9f4c1b947d5edc36d",
+          "source_sha256": "47a22cc1a2fec924962f01abcf106ce0ebdfbb5c95450276915e5901dd3223f4",
+          "status": "offline snapshot written; no live import performed"
+        },
+        "source_preserved": true,
+        "protected_data_preserved": true,
+        "existing_output_and_unsafe_plans_rejected": true
+      },
+      "restart_count": 2
+    },
+    {
+      "mode": "paged-sidecar",
+      "checks": [
+        {
+          "case": "legacy_repaired_target",
+          "actual": "legacy_docs/café",
+          "expected": "legacy_docs/café",
+          "correct": true
+        },
+        {
+          "case": "protected_import",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "repaired_traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "0-0-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-0-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "0-0-literal",
+          "actual": [
+            "0-0"
+          ],
+          "expected": [
+            "0-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-0-bind",
+          "actual": [
+            "0-0"
+          ],
+          "expected": [
+            "0-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-0-lua",
+          "actual": "0-0",
+          "expected": "0-0",
+          "correct": true
+        },
+        {
+          "case": "0-0-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-1-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-1-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "0-1-literal",
+          "actual": [
+            "0-1"
+          ],
+          "expected": [
+            "0-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-1-bind",
+          "actual": [
+            "0-1"
+          ],
+          "expected": [
+            "0-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "0-1-lua",
+          "actual": "0-1",
+          "expected": "0-1",
+          "correct": true
+        },
+        {
+          "case": "0-1-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "0-1-traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "0-1-model",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "1-0-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-0-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "1-0-literal",
+          "actual": [
+            "1-0"
+          ],
+          "expected": [
+            "1-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-0-bind",
+          "actual": [
+            "1-0"
+          ],
+          "expected": [
+            "1-0"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-0-lua",
+          "actual": "1-0",
+          "expected": "1-0",
+          "correct": true
+        },
+        {
+          "case": "1-0-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-0-traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "1-1-stored-reference",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-1-opaque",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "1-1-literal",
+          "actual": [
+            "1-1"
+          ],
+          "expected": [
+            "1-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-1-bind",
+          "actual": [
+            "1-1"
+          ],
+          "expected": [
+            "1-1"
+          ],
+          "correct": true
+        },
+        {
+          "case": "1-1-lua",
+          "actual": "1-1",
+          "expected": "1-1",
+          "correct": true
+        },
+        {
+          "case": "1-1-edge",
+          "actual": "café/café",
+          "expected": "café/café",
+          "correct": true
+        },
+        {
+          "case": "1-1-traversal",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "1-1-model",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "literal_identity",
+          "actual": [
+            false
+          ],
+          "expected": [
+            false
+          ],
+          "correct": true
+        },
+        {
+          "case": "explicit_text_normalization",
+          "actual": [
+            "café"
+          ],
+          "expected": [
+            "café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "batch-frozen-payload",
+          "actual": {
+            "collection": "café",
+            "keys": [
+              "café",
+              "café"
+            ]
+          },
+          "expected": {
+            "collection": "café",
+            "keys": [
+              "café",
+              "café"
+            ]
+          },
+          "correct": true
+        },
+        {
+          "case": "cgql-mutation",
+          "actual": [
+            "café"
+          ],
+          "expected": [
+            "café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "durable-collection",
+          "actual": "café",
+          "expected": "café",
+          "correct": true
+        },
+        {
+          "case": "durable-keys",
+          "actual": [
+            "café",
+            "café"
+          ],
+          "expected": [
+            "café",
+            "café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "restarted-job-status",
+          "actual": "succeeded",
+          "expected": "succeeded",
+          "correct": true
+        },
+        {
+          "case": "restarted-job-rows",
+          "actual": 2,
+          "expected": 2,
+          "correct": true
+        },
+        {
+          "case": "exact-parent-handles",
+          "actual": [
+            "café/café",
+            "café/café"
+          ],
+          "expected": [
+            "café/café",
+            "café/café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "exact-cascade-count",
+          "actual": 1,
+          "expected": 1,
+          "correct": true
+        },
+        {
+          "case": "collision-peer-survives",
+          "actual": [
+            "café/café"
+          ],
+          "expected": [
+            "café/café"
+          ],
+          "correct": true
+        },
+        {
+          "case": "collision-peer-document",
+          "actual": "1-0",
+          "expected": "1-0",
+          "correct": true
+        },
+        {
+          "case": "post-cascade-restart",
+          "actual": {
+            "documents": {
+              "0097775c-b408-4095-8415-3e273e83370a": {
+                "_id": "side_views/0097775c-b408-4095-8415-3e273e83370a",
+                "_key": "0097775c-b408-4095-8415-3e273e83370a",
+                "answer": "Synthetic source answer",
+                "created_at": "2026-09-09T06:30:52.054126+00:00",
+                "document_id": "café/café",
+                "embedding": [
+                  1.0,
+                  0.0
+                ],
+                "kind": "side_view",
+                "question": "Synthetic identity question",
+                "updated_at": "2026-09-09T06:30:52.054126+00:00"
+              }
+            },
+            "type": "document"
+          },
+          "expected": {
+            "documents": {
+              "0097775c-b408-4095-8415-3e273e83370a": {
+                "_id": "side_views/0097775c-b408-4095-8415-3e273e83370a",
+                "_key": "0097775c-b408-4095-8415-3e273e83370a",
+                "answer": "Synthetic source answer",
+                "created_at": "2026-09-09T06:30:52.054126+00:00",
+                "document_id": "café/café",
+                "embedding": [
+                  1.0,
+                  0.0
+                ],
+                "kind": "side_view",
+                "question": "Synthetic identity question",
+                "updated_at": "2026-09-09T06:30:52.054126+00:00"
+              }
+            },
+            "type": "document"
+          },
+          "correct": true
+        },
+        {
+          "case": "completed-job-still-terminal",
+          "actual": "succeeded",
+          "expected": "succeeded",
+          "correct": true
+        }
+      ],
+      "repair": {
+        "edge_key": "0ce7c122-8178-47ac-82c4-61c3ccb70e97",
+        "audit_findings": 2,
+        "repair": {
+          "changes": 1,
+          "output_sha256": "2723dd7c740afe9ff1e02e306b84bd7df32f9eb70307fb404cde8292b499789c",
+          "source_sha256": "0deae4a0e5b5463af30701bc7c8f64d6650bbc8ad8deb3f7d337797acf1623bb",
+          "status": "offline snapshot written; no live import performed"
+        },
+        "source_preserved": true,
+        "protected_data_preserved": true,
+        "existing_output_and_unsafe_plans_rejected": true
+      },
+      "restart_count": 2
+    }
+  ],
+  "provider_calls": {
+    "completion": 9,
+    "embedding": 6
+  }
+}

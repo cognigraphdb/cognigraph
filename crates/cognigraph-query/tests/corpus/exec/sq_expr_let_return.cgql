@@ -1,0 +1,2 @@
+LET n = LENGTH((FOR d IN documents RETURN d._key))
+RETURN {n, keys: (FOR d IN documents SORT d._key RETURN d._key)}

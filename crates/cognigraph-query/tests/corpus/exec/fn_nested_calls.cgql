@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d._key == "a" RETURN UPPER(SUBSTRING(TRIM(d.title), 0, 2))

@@ -1,0 +1,31 @@
+[package]
+name = "cognigraph-construct"
+version.workspace = true
+edition.workspace = true
+license-file = "LICENSE"
+repository.workspace = true
+homepage.workspace = true
+description = "Governed knowledge construction: Semantic Neurons, grounding, and the recall/restraint eval loop"
+
+[dependencies]
+cognigraph-core = { path = "../cognigraph-core" }
+cognigraph-embeddings = { path = "../cognigraph-embeddings" }
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+reqwest = { workspace = true }
+quick-xml = { workspace = true }
+sha2 = { workspace = true }
+chrono = { workspace = true }
+tokio = { workspace = true }
+unicode-normalization = "0.1.25"
+regex-syntax = { version = "0.8.11", default-features = false, features = ["std", "unicode-perl"] }
+dotenvy = "0.15"
+
+[dev-dependencies]
+async-trait = { workspace = true }
+dotenvy = "0.15"
+cognigraph-arango = { path = "../cognigraph-arango" }
+cognigraph-native = { path = "../cognigraph-native" }
+tokio = { workspace = true }

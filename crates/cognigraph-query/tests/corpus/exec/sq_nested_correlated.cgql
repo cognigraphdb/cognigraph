@@ -1,0 +1,10 @@
+LET total = LENGTH((FOR d IN documents RETURN 1))
+FOR d IN documents FILTER d._key IN ["a", "b"]
+LET related = (
+  FOR e IN relationships FILTER e._from == d._id
+  LET targets = (FOR t IN documents FILTER t._id == e._to RETURN t._key)
+  SORT e._to
+  RETURN {target: FIRST(targets), matched: LENGTH((FOR t IN documents FILTER t._id == e._to RETURN 1))}
+)
+SORT d._key
+RETURN {key: d._key, total, related}

@@ -1,0 +1,20 @@
+{
+  "issue": "CG-29",
+  "date": "2026-09-08",
+  "binary_profile": "release",
+  "binary_sha256": "65755532d1809c95e7d7426d089b0e2526e0cbd331c27050eb6318fa2ec85feb",
+  "provider": "synthetic loopback HTTP only",
+  "expected": "vulnerable baseline",
+  "server": {
+    "explicit-gemini-both-keys": {
+      "construction": {
+        "provider": "openai",
+        "model": "cg29-model",
+        "lane": "construction"
+      }
+    }
+  },
+  "rejected_startup": {},
+  "harness": {},
+  "result": "PASS"
+}

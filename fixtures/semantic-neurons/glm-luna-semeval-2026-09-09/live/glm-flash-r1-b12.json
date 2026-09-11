@@ -1,0 +1,1406 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 1,
+  "batch": 12,
+  "request": {
+    "space_type": "semeval-glm-flash-r1-b12",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9857",
+        "title": "Relation benchmark excerpt",
+        "text": "We describe the design and synthesis of a ferroelectric liquid crystal composed of racemic molecules."
+      },
+      {
+        "id": "semeval-10460",
+        "title": "Relation benchmark excerpt",
+        "text": "The crocodile has a lump on his snout."
+      },
+      {
+        "id": "semeval-8060",
+        "title": "Relation benchmark excerpt",
+        "text": "A digital door lock is an electronic lock for residential applications such as front doors on apartments and single-family houses."
+      },
+      {
+        "id": "semeval-9028",
+        "title": "Relation benchmark excerpt",
+        "text": "Considerations have been concerned with cases where the forces between particles can be handled in a satisfactory manner."
+      },
+      {
+        "id": "semeval-9054",
+        "title": "Relation benchmark excerpt",
+        "text": "The convention of splitting tax bills is based on the construction of the first paragraph of s 55 that is rejected by the High Court in Permanent Trustee."
+      },
+      {
+        "id": "semeval-9078",
+        "title": "Relation benchmark excerpt",
+        "text": "More than 40 years have passed since the spacecraft departed into the outer-space with a fuel cell on-board."
+      },
+      {
+        "id": "semeval-9794",
+        "title": "Relation benchmark excerpt",
+        "text": "The nice thing about the title of the first book was that as soon as you saw the the cover, or even read the title, you knew immediately about the blog without having to read a review or a \"to get more info\" blurb."
+      },
+      {
+        "id": "semeval-8966",
+        "title": "Relation benchmark excerpt",
+        "text": "On the way in we saw a big raft of Eider ducks and there were some tiny babies with them."
+      },
+      {
+        "id": "semeval-10498",
+        "title": "Relation benchmark excerpt",
+        "text": "The first box that arrived at Shirley Shupp's door was filled with braces to help with her arthritis."
+      },
+      {
+        "id": "semeval-9354",
+        "title": "Relation benchmark excerpt",
+        "text": "The two chiefs quickly gather round them a phalanx of their comrades."
+      },
+      {
+        "id": "semeval-10600",
+        "title": "Relation benchmark excerpt",
+        "text": "Arriving home from this concert, I found an e-mail message from a musician friend."
+      },
+      {
+        "id": "semeval-9311",
+        "title": "Relation benchmark excerpt",
+        "text": "The light was radiating from the face of Jesus Christ."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:glm-5.3-flash@directed-policy-v1",
+    "facts_grounded": 12,
+    "proposed": 12,
+    "skips": [],
+    "space_type": "semeval-glm-flash-r1-b12"
+  },
+  "latency_seconds": 12.42433491605334,
+  "facts": [
+    {
+      "_from": "entities/message",
+      "_id": "facts/fact-11297bc5739d558c3e5fc20a08a0785ce711038cbd02af559833ed31fa7e9374",
+      "_key": "fact-11297bc5739d558c3e5fc20a08a0785ce711038cbd02af559833ed31fa7e9374",
+      "_to": "entities/friend",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10600",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "Arriving home from this concert, I found an e-mail message from a musician friend.",
+      "trigger_end": 82,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/comrades",
+      "_id": "facts/fact-446f68e327b8598c400501d6e579219340609ba9a1d5142e800328eff6e2c15c",
+      "_key": "fact-446f68e327b8598c400501d6e579219340609ba9a1d5142e800328eff6e2c15c",
+      "_to": "entities/phalanx",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9354",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "The two chiefs quickly gather round them a phalanx of their comrades.",
+      "trigger_end": 69,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/light",
+      "_id": "facts/fact-5b9876c5e53784c0db513e9a2c0117464fb46c8c61f0aba0b69017831406ec60",
+      "_key": "fact-5b9876c5e53784c0db513e9a2c0117464fb46c8c61f0aba0b69017831406ec60",
+      "_to": "entities/face",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9311",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "The light was radiating from the face of Jesus Christ.",
+      "trigger_end": 54,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/molecules",
+      "_id": "facts/fact-5ee4dfffdc22fb3a6675d12106b71a9eea5d0d495d04e7535649be3b4178510b",
+      "_key": "fact-5ee4dfffdc22fb3a6675d12106b71a9eea5d0d495d04e7535649be3b4178510b",
+      "_to": "entities/crystal",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9857",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "We describe the design and synthesis of a ferroelectric liquid crystal composed of racemic molecules.",
+      "trigger_end": 101,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/considerations",
+      "_id": "facts/fact-6d9ba6be00ce763d9a88c3fa0c4e0445702a1b70fe8a8c26fb53b661c8c83667",
+      "_key": "fact-6d9ba6be00ce763d9a88c3fa0c4e0445702a1b70fe8a8c26fb53b661c8c83667",
+      "_to": "entities/cases",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9028",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "Considerations have been concerned with cases where the forces between particles can be handled in a satisfactory manner.",
+      "trigger_end": 121,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/title",
+      "_id": "facts/fact-87a046e1150804b98b2718f29933ac25096a66d75c64fd548967f4bcdfd82bb3",
+      "_key": "fact-87a046e1150804b98b2718f29933ac25096a66d75c64fd548967f4bcdfd82bb3",
+      "_to": "entities/book",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9794",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "The nice thing about the title of the first book was that as soon as you saw the the cover, or even read the title, you knew immediately about the blog without having to read a review or a \"to get more info\" blurb.",
+      "trigger_end": 214,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/snout",
+      "_id": "facts/fact-a15848df66177ef5afc1b8e874c8fe8686cbc3436ed9d5c041d231d6e11d242b",
+      "_key": "fact-a15848df66177ef5afc1b8e874c8fe8686cbc3436ed9d5c041d231d6e11d242b",
+      "_to": "entities/crocodile",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10460",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "The crocodile has a lump on his snout.",
+      "trigger_end": 38,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/spacecraft",
+      "_id": "facts/fact-b1154f1ed7bb75781e2074b263568a86ff2bb1501ac8787adb7122c4033db70e",
+      "_key": "fact-b1154f1ed7bb75781e2074b263568a86ff2bb1501ac8787adb7122c4033db70e",
+      "_to": "entities/outer-space",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9078",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "More than 40 years have passed since the spacecraft departed into the outer-space with a fuel cell on-board.",
+      "trigger_end": 108,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/lock",
+      "_id": "facts/fact-c0241a5f368eb5de6859b675444df833cb4c896d06e7cfd7153945c1f42d2718",
+      "_key": "fact-c0241a5f368eb5de6859b675444df833cb4c896d06e7cfd7153945c1f42d2718",
+      "_to": "entities/door",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8060",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "A digital door lock is an electronic lock for residential applications such as front doors on apartments and single-family houses.",
+      "trigger_end": 130,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/convention",
+      "_id": "facts/fact-d299fddef7f31aee95878d5a2b7ac3689c629009e75a6726b789632d2c628e11",
+      "_key": "fact-d299fddef7f31aee95878d5a2b7ac3689c629009e75a6726b789632d2c628e11",
+      "_to": "entities/bills",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9054",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "The convention of splitting tax bills is based on the construction of the first paragraph of s 55 that is rejected by the High Court in Permanent Trustee.",
+      "trigger_end": 154,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/ducks",
+      "_id": "facts/fact-ec5acd18b43d43efd0901a44ab77a0526eca6226a8f64fef237167e5153cd706",
+      "_key": "fact-ec5acd18b43d43efd0901a44ab77a0526eca6226a8f64fef237167e5153cd706",
+      "_to": "entities/raft",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8966",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "On the way in we saw a big raft of Eider ducks and there were some tiny babies with them.",
+      "trigger_end": 89,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/braces",
+      "_id": "facts/fact-f5fcbdaaa353bf457836da7098bf8e677d03f1ef35b23a611ad11f64bd34faca",
+      "_key": "fact-f5fcbdaaa353bf457836da7098bf8e677d03f1ef35b23a611ad11f64bd34faca",
+      "_to": "entities/box",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10498",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "trigger": "The first box that arrived at Shirley Shupp's door was filled with braces to help with her arthritis.",
+      "trigger_end": 101,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/bills",
+      "_key": "bills",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302072+00:00",
+      "entity_type": "Topic",
+      "name": "bills",
+      "updated_at": "2026-09-09T12:33:16.302072+00:00"
+    },
+    {
+      "_id": "entities/book",
+      "_key": "book",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302077+00:00",
+      "entity_type": "Whole",
+      "name": "book",
+      "updated_at": "2026-09-09T12:33:16.302077+00:00"
+    },
+    {
+      "_id": "entities/box",
+      "_key": "box",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302079+00:00",
+      "entity_type": "Container",
+      "name": "box",
+      "updated_at": "2026-09-09T12:33:16.302079+00:00"
+    },
+    {
+      "_id": "entities/braces",
+      "_key": "braces",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302080+00:00",
+      "entity_type": "Content",
+      "name": "braces",
+      "updated_at": "2026-09-09T12:33:16.302080+00:00"
+    },
+    {
+      "_id": "entities/cases",
+      "_key": "cases",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302082+00:00",
+      "entity_type": "Topic",
+      "name": "cases",
+      "updated_at": "2026-09-09T12:33:16.302082+00:00"
+    },
+    {
+      "_id": "entities/comrades",
+      "_key": "comrades",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302083+00:00",
+      "entity_type": "Member",
+      "name": "comrades",
+      "updated_at": "2026-09-09T12:33:16.302083+00:00"
+    },
+    {
+      "_id": "entities/considerations",
+      "_key": "considerations",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302085+00:00",
+      "entity_type": "Message",
+      "name": "Considerations",
+      "updated_at": "2026-09-09T12:33:16.302085+00:00"
+    },
+    {
+      "_id": "entities/convention",
+      "_key": "convention",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302086+00:00",
+      "entity_type": "Message",
+      "name": "convention",
+      "updated_at": "2026-09-09T12:33:16.302086+00:00"
+    },
+    {
+      "_id": "entities/crocodile",
+      "_key": "crocodile",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302087+00:00",
+      "entity_type": "Whole",
+      "name": "crocodile",
+      "updated_at": "2026-09-09T12:33:16.302087+00:00"
+    },
+    {
+      "_id": "entities/crystal",
+      "_key": "crystal",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302089+00:00",
+      "entity_type": "Whole",
+      "name": "crystal",
+      "updated_at": "2026-09-09T12:33:16.302089+00:00"
+    },
+    {
+      "_id": "entities/door",
+      "_key": "door",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302090+00:00",
+      "entity_type": "Whole",
+      "name": "door",
+      "updated_at": "2026-09-09T12:33:16.302090+00:00"
+    },
+    {
+      "_id": "entities/ducks",
+      "_key": "ducks",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302091+00:00",
+      "entity_type": "Member",
+      "name": "ducks",
+      "updated_at": "2026-09-09T12:33:16.302091+00:00"
+    },
+    {
+      "_id": "entities/face",
+      "_key": "face",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302092+00:00",
+      "entity_type": "Origin",
+      "name": "face",
+      "updated_at": "2026-09-09T12:33:16.302092+00:00"
+    },
+    {
+      "_id": "entities/friend",
+      "_key": "friend",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302094+00:00",
+      "entity_type": "Origin",
+      "name": "friend",
+      "updated_at": "2026-09-09T12:33:16.302094+00:00"
+    },
+    {
+      "_id": "entities/light",
+      "_key": "light",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302095+00:00",
+      "entity_type": "Entity",
+      "name": "light",
+      "updated_at": "2026-09-09T12:33:16.302095+00:00"
+    },
+    {
+      "_id": "entities/lock",
+      "_key": "lock",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302096+00:00",
+      "entity_type": "Component",
+      "name": "lock",
+      "updated_at": "2026-09-09T12:33:16.302096+00:00"
+    },
+    {
+      "_id": "entities/message",
+      "_key": "message",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302098+00:00",
+      "entity_type": "Entity",
+      "name": "message",
+      "updated_at": "2026-09-09T12:33:16.302098+00:00"
+    },
+    {
+      "_id": "entities/molecules",
+      "_key": "molecules",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302099+00:00",
+      "entity_type": "Component",
+      "name": "molecules",
+      "updated_at": "2026-09-09T12:33:16.302099+00:00"
+    },
+    {
+      "_id": "entities/outer-space",
+      "_key": "outer-space",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302101+00:00",
+      "entity_type": "Destination",
+      "name": "outer-space",
+      "updated_at": "2026-09-09T12:33:16.302101+00:00"
+    },
+    {
+      "_id": "entities/phalanx",
+      "_key": "phalanx",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302102+00:00",
+      "entity_type": "Collection",
+      "name": "phalanx",
+      "updated_at": "2026-09-09T12:33:16.302102+00:00"
+    },
+    {
+      "_id": "entities/raft",
+      "_key": "raft",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302103+00:00",
+      "entity_type": "Collection",
+      "name": "raft",
+      "updated_at": "2026-09-09T12:33:16.302103+00:00"
+    },
+    {
+      "_id": "entities/snout",
+      "_key": "snout",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302105+00:00",
+      "entity_type": "Component",
+      "name": "snout",
+      "updated_at": "2026-09-09T12:33:16.302105+00:00"
+    },
+    {
+      "_id": "entities/spacecraft",
+      "_key": "spacecraft",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302106+00:00",
+      "entity_type": "Entity",
+      "name": "spacecraft",
+      "updated_at": "2026-09-09T12:33:16.302106+00:00"
+    },
+    {
+      "_id": "entities/title",
+      "_key": "title",
+      "aliases": [],
+      "created_at": "2026-09-09T12:33:16.302107+00:00",
+      "entity_type": "Component",
+      "name": "title",
+      "updated_at": "2026-09-09T12:33:16.302107+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-10460",
+      "_key": "semeval-glm-flash-r1-b12-semeval-10460",
+      "chunk_id": "semeval-10460",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1d0d02c12e3321dbcd56d17077c4a3d390d0152a6f3098066ad22ba8d03f1113",
+      "created_at": "2026-09-09T12:33:16.302109+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "The crocodile has a lump on his snout.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302109+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-10498",
+      "_key": "semeval-glm-flash-r1-b12-semeval-10498",
+      "chunk_id": "semeval-10498",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c6dbf590d653a8591dfc31be707848972f4c41c6ae5520cef30d2454cdcc50ee",
+      "created_at": "2026-09-09T12:33:16.302125+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "The first box that arrived at Shirley Shupp's door was filled with braces to help with her arthritis.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302125+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-10600",
+      "_key": "semeval-glm-flash-r1-b12-semeval-10600",
+      "chunk_id": "semeval-10600",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:caf8986a81b9f1306bb5150c8fe44d724bacd110c01f05cd2c9819855d7c35d8",
+      "created_at": "2026-09-09T12:33:16.302136+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "Arriving home from this concert, I found an e-mail message from a musician friend.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302136+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-8060",
+      "_key": "semeval-glm-flash-r1-b12-semeval-8060",
+      "chunk_id": "semeval-8060",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ce6803c1af783829289c9376d4b30401cf8a3336a1255d7200d5d92c4c645cde",
+      "created_at": "2026-09-09T12:33:16.302145+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "A digital door lock is an electronic lock for residential applications such as front doors on apartments and single-family houses.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302145+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-8966",
+      "_key": "semeval-glm-flash-r1-b12-semeval-8966",
+      "chunk_id": "semeval-8966",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c336eafeeed72603c42c979aa3cf7c9b3a3686cf4f6008fd1e4180dfe5039544",
+      "created_at": "2026-09-09T12:33:16.302153+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "On the way in we saw a big raft of Eider ducks and there were some tiny babies with them.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302153+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9028",
+      "_key": "semeval-glm-flash-r1-b12-semeval-9028",
+      "chunk_id": "semeval-9028",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:eaea38cef3188843ed8ec3d36a6533951f2842d2642148f571805c08c84035ee",
+      "created_at": "2026-09-09T12:33:16.302163+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "Considerations have been concerned with cases where the forces between particles can be handled in a satisfactory manner.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302163+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9054",
+      "_key": "semeval-glm-flash-r1-b12-semeval-9054",
+      "chunk_id": "semeval-9054",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c124b2c6cc8e4dc620ed8502b2333b20a2c917ac3ff3f8752aa082dd751ec475",
+      "created_at": "2026-09-09T12:33:16.302171+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "The convention of splitting tax bills is based on the construction of the first paragraph of s 55 that is rejected by the High Court in Permanent Trustee.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302171+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9078",
+      "_key": "semeval-glm-flash-r1-b12-semeval-9078",
+      "chunk_id": "semeval-9078",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:56448cbd049bd8bc5cc39034901a5e4d7c6f2a20a6cb633559107c05d6d75944",
+      "created_at": "2026-09-09T12:33:16.302180+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "More than 40 years have passed since the spacecraft departed into the outer-space with a fuel cell on-board.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302180+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9311",
+      "_key": "semeval-glm-flash-r1-b12-semeval-9311",
+      "chunk_id": "semeval-9311",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:130a55b564ec56413972376a92c28d80ab7226fd981e45b5b0150a992f4c6b45",
+      "created_at": "2026-09-09T12:33:16.302193+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "The light was radiating from the face of Jesus Christ.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302193+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9354",
+      "_key": "semeval-glm-flash-r1-b12-semeval-9354",
+      "chunk_id": "semeval-9354",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ed59c9f09f19dd5bb69acb196186c1e06a46125c269dd710390aaa2cc7734e93",
+      "created_at": "2026-09-09T12:33:16.302204+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "The two chiefs quickly gather round them a phalanx of their comrades.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302204+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9794",
+      "_key": "semeval-glm-flash-r1-b12-semeval-9794",
+      "chunk_id": "semeval-9794",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:42979bbe618e456942b660b8294e42faaa49ce2601ea7bd2c147907b797bd43f",
+      "created_at": "2026-09-09T12:33:16.302216+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "The nice thing about the title of the first book was that as soon as you saw the the cover, or even read the title, you knew immediately about the blog without having to read a review or a \"to get more info\" blurb.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302216+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9857",
+      "_key": "semeval-glm-flash-r1-b12-semeval-9857",
+      "chunk_id": "semeval-9857",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8ad6224da516f40f2d086a110732b89b6e73cf73f337e68e1a1749b633c625a3",
+      "created_at": "2026-09-09T12:33:16.302225+00:00",
+      "space_id": "semeval-glm-flash-r1-b12",
+      "text": "We describe the design and synthesis of a ferroelectric liquid crystal composed of racemic molecules.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:33:16.302225+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_from": "entities/message",
+            "_id": "facts/fact-11297bc5739d558c3e5fc20a08a0785ce711038cbd02af559833ed31fa7e9374",
+            "_key": "fact-11297bc5739d558c3e5fc20a08a0785ce711038cbd02af559833ed31fa7e9374",
+            "_to": "entities/friend",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10600",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "Arriving home from this concert, I found an e-mail message from a musician friend.",
+            "trigger_end": 82,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/comrades",
+            "_id": "facts/fact-446f68e327b8598c400501d6e579219340609ba9a1d5142e800328eff6e2c15c",
+            "_key": "fact-446f68e327b8598c400501d6e579219340609ba9a1d5142e800328eff6e2c15c",
+            "_to": "entities/phalanx",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9354",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "The two chiefs quickly gather round them a phalanx of their comrades.",
+            "trigger_end": 69,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/light",
+            "_id": "facts/fact-5b9876c5e53784c0db513e9a2c0117464fb46c8c61f0aba0b69017831406ec60",
+            "_key": "fact-5b9876c5e53784c0db513e9a2c0117464fb46c8c61f0aba0b69017831406ec60",
+            "_to": "entities/face",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9311",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "The light was radiating from the face of Jesus Christ.",
+            "trigger_end": 54,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/molecules",
+            "_id": "facts/fact-5ee4dfffdc22fb3a6675d12106b71a9eea5d0d495d04e7535649be3b4178510b",
+            "_key": "fact-5ee4dfffdc22fb3a6675d12106b71a9eea5d0d495d04e7535649be3b4178510b",
+            "_to": "entities/crystal",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9857",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "We describe the design and synthesis of a ferroelectric liquid crystal composed of racemic molecules.",
+            "trigger_end": 101,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/considerations",
+            "_id": "facts/fact-6d9ba6be00ce763d9a88c3fa0c4e0445702a1b70fe8a8c26fb53b661c8c83667",
+            "_key": "fact-6d9ba6be00ce763d9a88c3fa0c4e0445702a1b70fe8a8c26fb53b661c8c83667",
+            "_to": "entities/cases",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9028",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "Considerations have been concerned with cases where the forces between particles can be handled in a satisfactory manner.",
+            "trigger_end": 121,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/title",
+            "_id": "facts/fact-87a046e1150804b98b2718f29933ac25096a66d75c64fd548967f4bcdfd82bb3",
+            "_key": "fact-87a046e1150804b98b2718f29933ac25096a66d75c64fd548967f4bcdfd82bb3",
+            "_to": "entities/book",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9794",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "The nice thing about the title of the first book was that as soon as you saw the the cover, or even read the title, you knew immediately about the blog without having to read a review or a \"to get more info\" blurb.",
+            "trigger_end": 214,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/snout",
+            "_id": "facts/fact-a15848df66177ef5afc1b8e874c8fe8686cbc3436ed9d5c041d231d6e11d242b",
+            "_key": "fact-a15848df66177ef5afc1b8e874c8fe8686cbc3436ed9d5c041d231d6e11d242b",
+            "_to": "entities/crocodile",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10460",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "The crocodile has a lump on his snout.",
+            "trigger_end": 38,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/spacecraft",
+            "_id": "facts/fact-b1154f1ed7bb75781e2074b263568a86ff2bb1501ac8787adb7122c4033db70e",
+            "_key": "fact-b1154f1ed7bb75781e2074b263568a86ff2bb1501ac8787adb7122c4033db70e",
+            "_to": "entities/outer-space",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9078",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "More than 40 years have passed since the spacecraft departed into the outer-space with a fuel cell on-board.",
+            "trigger_end": 108,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/lock",
+            "_id": "facts/fact-c0241a5f368eb5de6859b675444df833cb4c896d06e7cfd7153945c1f42d2718",
+            "_key": "fact-c0241a5f368eb5de6859b675444df833cb4c896d06e7cfd7153945c1f42d2718",
+            "_to": "entities/door",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8060",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "A digital door lock is an electronic lock for residential applications such as front doors on apartments and single-family houses.",
+            "trigger_end": 130,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/convention",
+            "_id": "facts/fact-d299fddef7f31aee95878d5a2b7ac3689c629009e75a6726b789632d2c628e11",
+            "_key": "fact-d299fddef7f31aee95878d5a2b7ac3689c629009e75a6726b789632d2c628e11",
+            "_to": "entities/bills",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9054",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "The convention of splitting tax bills is based on the construction of the first paragraph of s 55 that is rejected by the High Court in Permanent Trustee.",
+            "trigger_end": 154,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/ducks",
+            "_id": "facts/fact-ec5acd18b43d43efd0901a44ab77a0526eca6226a8f64fef237167e5153cd706",
+            "_key": "fact-ec5acd18b43d43efd0901a44ab77a0526eca6226a8f64fef237167e5153cd706",
+            "_to": "entities/raft",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8966",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "On the way in we saw a big raft of Eider ducks and there were some tiny babies with them.",
+            "trigger_end": 89,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/braces",
+            "_id": "facts/fact-f5fcbdaaa353bf457836da7098bf8e677d03f1ef35b23a611ad11f64bd34faca",
+            "_key": "fact-f5fcbdaaa353bf457836da7098bf8e677d03f1ef35b23a611ad11f64bd34faca",
+            "_to": "entities/box",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10498",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "trigger": "The first box that arrived at Shirley Shupp's door was filled with braces to help with her arthritis.",
+            "trigger_end": 101,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 24,
+        "results": [
+          {
+            "_id": "entities/bills",
+            "_key": "bills",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302072+00:00",
+            "entity_type": "Topic",
+            "name": "bills",
+            "updated_at": "2026-09-09T12:33:16.302072+00:00"
+          },
+          {
+            "_id": "entities/book",
+            "_key": "book",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302077+00:00",
+            "entity_type": "Whole",
+            "name": "book",
+            "updated_at": "2026-09-09T12:33:16.302077+00:00"
+          },
+          {
+            "_id": "entities/box",
+            "_key": "box",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302079+00:00",
+            "entity_type": "Container",
+            "name": "box",
+            "updated_at": "2026-09-09T12:33:16.302079+00:00"
+          },
+          {
+            "_id": "entities/braces",
+            "_key": "braces",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302080+00:00",
+            "entity_type": "Content",
+            "name": "braces",
+            "updated_at": "2026-09-09T12:33:16.302080+00:00"
+          },
+          {
+            "_id": "entities/cases",
+            "_key": "cases",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302082+00:00",
+            "entity_type": "Topic",
+            "name": "cases",
+            "updated_at": "2026-09-09T12:33:16.302082+00:00"
+          },
+          {
+            "_id": "entities/comrades",
+            "_key": "comrades",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302083+00:00",
+            "entity_type": "Member",
+            "name": "comrades",
+            "updated_at": "2026-09-09T12:33:16.302083+00:00"
+          },
+          {
+            "_id": "entities/considerations",
+            "_key": "considerations",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302085+00:00",
+            "entity_type": "Message",
+            "name": "Considerations",
+            "updated_at": "2026-09-09T12:33:16.302085+00:00"
+          },
+          {
+            "_id": "entities/convention",
+            "_key": "convention",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302086+00:00",
+            "entity_type": "Message",
+            "name": "convention",
+            "updated_at": "2026-09-09T12:33:16.302086+00:00"
+          },
+          {
+            "_id": "entities/crocodile",
+            "_key": "crocodile",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302087+00:00",
+            "entity_type": "Whole",
+            "name": "crocodile",
+            "updated_at": "2026-09-09T12:33:16.302087+00:00"
+          },
+          {
+            "_id": "entities/crystal",
+            "_key": "crystal",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302089+00:00",
+            "entity_type": "Whole",
+            "name": "crystal",
+            "updated_at": "2026-09-09T12:33:16.302089+00:00"
+          },
+          {
+            "_id": "entities/door",
+            "_key": "door",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302090+00:00",
+            "entity_type": "Whole",
+            "name": "door",
+            "updated_at": "2026-09-09T12:33:16.302090+00:00"
+          },
+          {
+            "_id": "entities/ducks",
+            "_key": "ducks",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302091+00:00",
+            "entity_type": "Member",
+            "name": "ducks",
+            "updated_at": "2026-09-09T12:33:16.302091+00:00"
+          },
+          {
+            "_id": "entities/face",
+            "_key": "face",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302092+00:00",
+            "entity_type": "Origin",
+            "name": "face",
+            "updated_at": "2026-09-09T12:33:16.302092+00:00"
+          },
+          {
+            "_id": "entities/friend",
+            "_key": "friend",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302094+00:00",
+            "entity_type": "Origin",
+            "name": "friend",
+            "updated_at": "2026-09-09T12:33:16.302094+00:00"
+          },
+          {
+            "_id": "entities/light",
+            "_key": "light",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302095+00:00",
+            "entity_type": "Entity",
+            "name": "light",
+            "updated_at": "2026-09-09T12:33:16.302095+00:00"
+          },
+          {
+            "_id": "entities/lock",
+            "_key": "lock",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302096+00:00",
+            "entity_type": "Component",
+            "name": "lock",
+            "updated_at": "2026-09-09T12:33:16.302096+00:00"
+          },
+          {
+            "_id": "entities/message",
+            "_key": "message",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302098+00:00",
+            "entity_type": "Entity",
+            "name": "message",
+            "updated_at": "2026-09-09T12:33:16.302098+00:00"
+          },
+          {
+            "_id": "entities/molecules",
+            "_key": "molecules",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302099+00:00",
+            "entity_type": "Component",
+            "name": "molecules",
+            "updated_at": "2026-09-09T12:33:16.302099+00:00"
+          },
+          {
+            "_id": "entities/outer-space",
+            "_key": "outer-space",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302101+00:00",
+            "entity_type": "Destination",
+            "name": "outer-space",
+            "updated_at": "2026-09-09T12:33:16.302101+00:00"
+          },
+          {
+            "_id": "entities/phalanx",
+            "_key": "phalanx",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302102+00:00",
+            "entity_type": "Collection",
+            "name": "phalanx",
+            "updated_at": "2026-09-09T12:33:16.302102+00:00"
+          },
+          {
+            "_id": "entities/raft",
+            "_key": "raft",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302103+00:00",
+            "entity_type": "Collection",
+            "name": "raft",
+            "updated_at": "2026-09-09T12:33:16.302103+00:00"
+          },
+          {
+            "_id": "entities/snout",
+            "_key": "snout",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302105+00:00",
+            "entity_type": "Component",
+            "name": "snout",
+            "updated_at": "2026-09-09T12:33:16.302105+00:00"
+          },
+          {
+            "_id": "entities/spacecraft",
+            "_key": "spacecraft",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302106+00:00",
+            "entity_type": "Entity",
+            "name": "spacecraft",
+            "updated_at": "2026-09-09T12:33:16.302106+00:00"
+          },
+          {
+            "_id": "entities/title",
+            "_key": "title",
+            "aliases": [],
+            "created_at": "2026-09-09T12:33:16.302107+00:00",
+            "entity_type": "Component",
+            "name": "title",
+            "updated_at": "2026-09-09T12:33:16.302107+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-10460",
+            "_key": "semeval-glm-flash-r1-b12-semeval-10460",
+            "chunk_id": "semeval-10460",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1d0d02c12e3321dbcd56d17077c4a3d390d0152a6f3098066ad22ba8d03f1113",
+            "created_at": "2026-09-09T12:33:16.302109+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "The crocodile has a lump on his snout.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302109+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-10498",
+            "_key": "semeval-glm-flash-r1-b12-semeval-10498",
+            "chunk_id": "semeval-10498",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c6dbf590d653a8591dfc31be707848972f4c41c6ae5520cef30d2454cdcc50ee",
+            "created_at": "2026-09-09T12:33:16.302125+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "The first box that arrived at Shirley Shupp's door was filled with braces to help with her arthritis.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302125+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-10600",
+            "_key": "semeval-glm-flash-r1-b12-semeval-10600",
+            "chunk_id": "semeval-10600",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:caf8986a81b9f1306bb5150c8fe44d724bacd110c01f05cd2c9819855d7c35d8",
+            "created_at": "2026-09-09T12:33:16.302136+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "Arriving home from this concert, I found an e-mail message from a musician friend.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302136+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-8060",
+            "_key": "semeval-glm-flash-r1-b12-semeval-8060",
+            "chunk_id": "semeval-8060",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ce6803c1af783829289c9376d4b30401cf8a3336a1255d7200d5d92c4c645cde",
+            "created_at": "2026-09-09T12:33:16.302145+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "A digital door lock is an electronic lock for residential applications such as front doors on apartments and single-family houses.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302145+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-8966",
+            "_key": "semeval-glm-flash-r1-b12-semeval-8966",
+            "chunk_id": "semeval-8966",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c336eafeeed72603c42c979aa3cf7c9b3a3686cf4f6008fd1e4180dfe5039544",
+            "created_at": "2026-09-09T12:33:16.302153+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "On the way in we saw a big raft of Eider ducks and there were some tiny babies with them.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302153+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9028",
+            "_key": "semeval-glm-flash-r1-b12-semeval-9028",
+            "chunk_id": "semeval-9028",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:eaea38cef3188843ed8ec3d36a6533951f2842d2642148f571805c08c84035ee",
+            "created_at": "2026-09-09T12:33:16.302163+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "Considerations have been concerned with cases where the forces between particles can be handled in a satisfactory manner.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302163+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9054",
+            "_key": "semeval-glm-flash-r1-b12-semeval-9054",
+            "chunk_id": "semeval-9054",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c124b2c6cc8e4dc620ed8502b2333b20a2c917ac3ff3f8752aa082dd751ec475",
+            "created_at": "2026-09-09T12:33:16.302171+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "The convention of splitting tax bills is based on the construction of the first paragraph of s 55 that is rejected by the High Court in Permanent Trustee.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302171+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9078",
+            "_key": "semeval-glm-flash-r1-b12-semeval-9078",
+            "chunk_id": "semeval-9078",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:56448cbd049bd8bc5cc39034901a5e4d7c6f2a20a6cb633559107c05d6d75944",
+            "created_at": "2026-09-09T12:33:16.302180+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "More than 40 years have passed since the spacecraft departed into the outer-space with a fuel cell on-board.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302180+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9311",
+            "_key": "semeval-glm-flash-r1-b12-semeval-9311",
+            "chunk_id": "semeval-9311",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:130a55b564ec56413972376a92c28d80ab7226fd981e45b5b0150a992f4c6b45",
+            "created_at": "2026-09-09T12:33:16.302193+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "The light was radiating from the face of Jesus Christ.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302193+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9354",
+            "_key": "semeval-glm-flash-r1-b12-semeval-9354",
+            "chunk_id": "semeval-9354",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ed59c9f09f19dd5bb69acb196186c1e06a46125c269dd710390aaa2cc7734e93",
+            "created_at": "2026-09-09T12:33:16.302204+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "The two chiefs quickly gather round them a phalanx of their comrades.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302204+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9794",
+            "_key": "semeval-glm-flash-r1-b12-semeval-9794",
+            "chunk_id": "semeval-9794",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:42979bbe618e456942b660b8294e42faaa49ce2601ea7bd2c147907b797bd43f",
+            "created_at": "2026-09-09T12:33:16.302216+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "The nice thing about the title of the first book was that as soon as you saw the the cover, or even read the title, you knew immediately about the blog without having to read a review or a \"to get more info\" blurb.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302216+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r1-b12-semeval-9857",
+            "_key": "semeval-glm-flash-r1-b12-semeval-9857",
+            "chunk_id": "semeval-9857",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8ad6224da516f40f2d086a110732b89b6e73cf73f337e68e1a1749b633c625a3",
+            "created_at": "2026-09-09T12:33:16.302225+00:00",
+            "space_id": "semeval-glm-flash-r1-b12",
+            "text": "We describe the design and synthesis of a ferroelectric liquid crystal composed of racemic molecules.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:33:16.302225+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

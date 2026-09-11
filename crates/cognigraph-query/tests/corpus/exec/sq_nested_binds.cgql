@@ -1,0 +1,3 @@
+// binds: {"offset":10,"increment":2}
+LET base = FIRST((RETURN @offset))
+RETURN {first: (FOR n IN [1, 2] RETURN base + FIRST((RETURN n))), second: (FOR n IN [3] RETURN base + FIRST((RETURN n + @increment)))}

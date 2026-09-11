@@ -1,0 +1,2295 @@
+{
+  "binary_sha256": "29424f808e3d0f530afc305d72d8364719d353ab9f21528a62ac62860f83112f",
+  "fixture_sha256": "ce801201e903d1383f853ef54bc1ab6151a7717eb363d55602e0b5c3f677f747",
+  "expect_vulnerable": true,
+  "runs": [
+    {
+      "mode": "resident-embedded",
+      "seed_observations": [
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "http",
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "lua",
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "http",
+          "keys": [
+            "b0",
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.8,
+            0.6,
+            0.4
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "lua",
+          "keys": [
+            "b0",
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.8,
+            0.6,
+            0.4
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "http",
+          "keys": [
+            "uppercase"
+          ],
+          "scores": [
+            0.9
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "lua",
+          "keys": [
+            "uppercase"
+          ],
+          "scores": [
+            0.9
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "http",
+          "keys": [
+            "empty"
+          ],
+          "scores": [
+            0.7
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "lua",
+          "keys": [
+            "empty"
+          ],
+          "scores": [
+            0.7
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "http",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "lua",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "http",
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "lua",
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        }
+      ],
+      "seed_vector_bytes_preserved": true,
+      "delta_kept_base_files": true,
+      "restart_vector_bytes_preserved": true,
+      "seed_files": {},
+      "startup_files": {},
+      "rebuilt_files": {},
+      "restart_files": {},
+      "results": [
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "http",
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "lua",
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "http",
+          "keys": [
+            "b0",
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.8,
+            0.6,
+            0.4
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "lua",
+          "keys": [
+            "b0",
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.8,
+            0.6,
+            0.4
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "http",
+          "keys": [
+            "uppercase"
+          ],
+          "scores": [
+            0.9
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "lua",
+          "keys": [
+            "uppercase"
+          ],
+          "scores": [
+            0.9
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "http",
+          "keys": [
+            "empty"
+          ],
+          "scores": [
+            0.7
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "lua",
+          "keys": [
+            "empty"
+          ],
+          "scores": [
+            0.7
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "http",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "lua",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "http",
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "lua",
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "model_only_out",
+          "case": "b0_leaves_model",
+          "surface": "http",
+          "keys": [
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.6,
+            0.4
+          ],
+          "passed": true
+        },
+        {
+          "phase": "model_only_out",
+          "case": "b0_leaves_model",
+          "surface": "lua",
+          "keys": [
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.6,
+            0.4
+          ],
+          "passed": true
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_enters_model",
+          "surface": "http",
+          "keys": [
+            "a000",
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.999,
+            0.6,
+            0.4
+          ],
+          "passed": true
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_enters_model",
+          "surface": "lua",
+          "keys": [
+            "a000",
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.999,
+            0.6,
+            0.4
+          ],
+          "passed": true
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_leaves_old_model",
+          "surface": "http",
+          "keys": [
+            "a001"
+          ],
+          "scores": [
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_leaves_old_model",
+          "surface": "lua",
+          "keys": [
+            "a001"
+          ],
+          "scores": [
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "delta_create",
+          "case": "new_delta_wins",
+          "surface": "http",
+          "keys": [
+            "fresh",
+            "a000",
+            "b1"
+          ],
+          "scores": [
+            1.0,
+            0.999,
+            0.6
+          ],
+          "passed": true
+        },
+        {
+          "phase": "delta_create",
+          "case": "new_delta_wins",
+          "surface": "lua",
+          "keys": [
+            "fresh",
+            "a000",
+            "b1"
+          ],
+          "scores": [
+            1,
+            0.999,
+            0.6
+          ],
+          "passed": true
+        },
+        {
+          "phase": "remove_model",
+          "case": "removed_models_excluded",
+          "surface": "http",
+          "keys": [
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.6,
+            0.4
+          ],
+          "passed": true
+        },
+        {
+          "phase": "remove_model",
+          "case": "removed_models_excluded",
+          "surface": "lua",
+          "keys": [
+            "b1",
+            "b2"
+          ],
+          "scores": [
+            0.6,
+            0.4
+          ],
+          "passed": true
+        },
+        {
+          "phase": "remove_model",
+          "case": "unannotated_stays_searchable",
+          "surface": "http",
+          "keys": [
+            "fresh"
+          ],
+          "scores": [
+            1.0
+          ],
+          "passed": true
+        },
+        {
+          "phase": "remove_model",
+          "case": "unannotated_stays_searchable",
+          "surface": "lua",
+          "keys": [
+            "fresh"
+          ],
+          "scores": [
+            1
+          ],
+          "passed": true
+        },
+        {
+          "phase": "delete_and_remove_embedding",
+          "case": "tombstones_exclude_base",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "delete_and_remove_embedding",
+          "case": "tombstones_exclude_base",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "batch_models",
+          "case": "batch_model_update",
+          "surface": "http",
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ],
+          "passed": true
+        },
+        {
+          "phase": "batch_models",
+          "case": "batch_model_update",
+          "surface": "lua",
+          "keys": [
+            "b0"
+          ],
+          "scores": [
+            0.8
+          ],
+          "passed": true
+        },
+        {
+          "phase": "batch_models",
+          "case": "empty_delta",
+          "surface": "http",
+          "keys": [
+            "batch_empty",
+            "empty"
+          ],
+          "scores": [
+            0.85,
+            0.7
+          ],
+          "passed": true
+        },
+        {
+          "phase": "batch_models",
+          "case": "empty_delta",
+          "surface": "lua",
+          "keys": [
+            "batch_empty",
+            "empty"
+          ],
+          "scores": [
+            0.85,
+            0.7
+          ],
+          "passed": true
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "new_model_in_delta",
+          "surface": "http",
+          "keys": [
+            "new_model"
+          ],
+          "scores": [
+            0.5000000000000001
+          ],
+          "passed": true
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "new_model_in_delta",
+          "surface": "lua",
+          "keys": [
+            "new_model"
+          ],
+          "scores": [
+            0.5000000000000001
+          ],
+          "passed": true
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "recreated_key",
+          "surface": "http",
+          "keys": [
+            "b0",
+            "b1"
+          ],
+          "scores": [
+            0.8,
+            0.6
+          ],
+          "passed": true
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "recreated_key",
+          "surface": "lua",
+          "keys": [
+            "b0",
+            "b1"
+          ],
+          "scores": [
+            0.8,
+            0.6
+          ],
+          "passed": true
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "http",
+          "keys": [
+            "b0",
+            "b1"
+          ],
+          "scores": [
+            0.8,
+            0.6
+          ],
+          "passed": true
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "lua",
+          "keys": [
+            "b0",
+            "b1"
+          ],
+          "scores": [
+            0.8,
+            0.6
+          ],
+          "passed": true
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "http",
+          "keys": [
+            "new_model"
+          ],
+          "scores": [
+            0.5000000000000001
+          ],
+          "passed": true
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "lua",
+          "keys": [
+            "new_model"
+          ],
+          "scores": [
+            0.5000000000000001
+          ],
+          "passed": true
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "http",
+          "keys": [
+            "batch_empty",
+            "empty"
+          ],
+          "scores": [
+            0.85,
+            0.7
+          ],
+          "passed": true
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "lua",
+          "keys": [
+            "batch_empty",
+            "empty"
+          ],
+          "scores": [
+            0.85,
+            0.7
+          ],
+          "passed": true
+        }
+      ],
+      "after_restart": [
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "http",
+          "keys": [
+            "b0",
+            "b1"
+          ],
+          "scores": [
+            0.8,
+            0.6
+          ],
+          "passed": true
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "lua",
+          "keys": [
+            "b0",
+            "b1"
+          ],
+          "scores": [
+            0.8,
+            0.6
+          ],
+          "passed": true
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "http",
+          "keys": [
+            "new_model"
+          ],
+          "scores": [
+            0.5000000000000001
+          ],
+          "passed": true
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "lua",
+          "keys": [
+            "new_model"
+          ],
+          "scores": [
+            0.5000000000000001
+          ],
+          "passed": true
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "http",
+          "keys": [
+            "batch_empty",
+            "empty"
+          ],
+          "scores": [
+            0.85,
+            0.7
+          ],
+          "passed": true
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "lua",
+          "keys": [
+            "batch_empty",
+            "empty"
+          ],
+          "scores": [
+            0.85,
+            0.7
+          ],
+          "passed": true
+        }
+      ]
+    },
+    {
+      "mode": "resident-sidecar",
+      "seed_observations": [
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "http",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "lua",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        }
+      ],
+      "seed_vector_bytes_preserved": true,
+      "delta_kept_base_files": true,
+      "restart_vector_bytes_preserved": true,
+      "seed_files": {
+        "db.redb.5dda5eb5cc94f095fb6e266ed1cb1274f4741d65ecc181a0a59a4e397dbc693d.vectors": {
+          "file_sha256": "31f000f92f631b81ea55c59e45504ec99a985a674aa51320e0a9be8d8634fa5d",
+          "vectors_sha256": "7d89d4c83f535e80d9d94a94f35f64db198f47ba22281118c8464f3cdfe51370",
+          "generation": 125
+        }
+      },
+      "startup_files": {
+        "db.redb.5dda5eb5cc94f095fb6e266ed1cb1274f4741d65ecc181a0a59a4e397dbc693d.vectors": {
+          "file_sha256": "beccd382a1022df1532d4ad468c899244a09be523ed43ef26a7ac6bd20df9dfe",
+          "vectors_sha256": "7d89d4c83f535e80d9d94a94f35f64db198f47ba22281118c8464f3cdfe51370",
+          "generation": 161
+        }
+      },
+      "rebuilt_files": {
+        "db.redb.5dda5eb5cc94f095fb6e266ed1cb1274f4741d65ecc181a0a59a4e397dbc693d.vectors": {
+          "file_sha256": "06d5a4a4543761f4f4821674e9d517e9d60026f85c041f7767be5a34230acadc",
+          "vectors_sha256": "c2a7f1c6e041946e83550c1529723bba31ddd863aee498efceb138cb83bdeea8",
+          "generation": 241
+        }
+      },
+      "restart_files": {
+        "db.redb.5dda5eb5cc94f095fb6e266ed1cb1274f4741d65ecc181a0a59a4e397dbc693d.vectors": {
+          "file_sha256": "131a6318405c3af33a5f9e02f6d9678121f002b9f94b2f3a8946b826c45c1ed6",
+          "vectors_sha256": "c2a7f1c6e041946e83550c1529723bba31ddd863aee498efceb138cb83bdeea8",
+          "generation": 277
+        }
+      },
+      "results": [
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "http",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "lua",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "model_only_out",
+          "case": "b0_leaves_model",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "model_only_out",
+          "case": "b0_leaves_model",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_enters_model",
+          "surface": "http",
+          "keys": [
+            "a000"
+          ],
+          "scores": [
+            0.999
+          ],
+          "passed": false
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_enters_model",
+          "surface": "lua",
+          "keys": [
+            "a000"
+          ],
+          "scores": [
+            0.999
+          ],
+          "passed": false
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_leaves_old_model",
+          "surface": "http",
+          "keys": [
+            "a001"
+          ],
+          "scores": [
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_leaves_old_model",
+          "surface": "lua",
+          "keys": [
+            "a001"
+          ],
+          "scores": [
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "delta_create",
+          "case": "new_delta_wins",
+          "surface": "http",
+          "keys": [
+            "fresh",
+            "a000"
+          ],
+          "scores": [
+            1.0,
+            0.999
+          ],
+          "passed": false
+        },
+        {
+          "phase": "delta_create",
+          "case": "new_delta_wins",
+          "surface": "lua",
+          "keys": [
+            "fresh",
+            "a000"
+          ],
+          "scores": [
+            1,
+            0.999
+          ],
+          "passed": false
+        },
+        {
+          "phase": "remove_model",
+          "case": "removed_models_excluded",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "remove_model",
+          "case": "removed_models_excluded",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "remove_model",
+          "case": "unannotated_stays_searchable",
+          "surface": "http",
+          "keys": [
+            "fresh"
+          ],
+          "scores": [
+            1.0
+          ],
+          "passed": true
+        },
+        {
+          "phase": "remove_model",
+          "case": "unannotated_stays_searchable",
+          "surface": "lua",
+          "keys": [
+            "fresh"
+          ],
+          "scores": [
+            1
+          ],
+          "passed": true
+        },
+        {
+          "phase": "delete_and_remove_embedding",
+          "case": "tombstones_exclude_base",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "delete_and_remove_embedding",
+          "case": "tombstones_exclude_base",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "batch_models",
+          "case": "batch_model_update",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "batch_models",
+          "case": "batch_model_update",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "batch_models",
+          "case": "empty_delta",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "batch_models",
+          "case": "empty_delta",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "new_model_in_delta",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "new_model_in_delta",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "recreated_key",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "recreated_key",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        }
+      ],
+      "after_restart": [
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        }
+      ]
+    },
+    {
+      "mode": "paged-sidecar",
+      "seed_observations": [
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "http",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "lua",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        }
+      ],
+      "seed_vector_bytes_preserved": true,
+      "delta_kept_base_files": true,
+      "restart_vector_bytes_preserved": true,
+      "seed_files": {
+        "db.redb.662a0dc3396967a87e7e2e0f5c11cfca212948db4f8effc65f191324ebe43e90.vectors": {
+          "file_sha256": "00b4d1e849a6d90a2625c8a6d65da24d3ab784e2fa8d3e3895f00ae944776836",
+          "vectors_sha256": "7d89d4c83f535e80d9d94a94f35f64db198f47ba22281118c8464f3cdfe51370",
+          "generation": 125
+        }
+      },
+      "startup_files": {
+        "db.redb.662a0dc3396967a87e7e2e0f5c11cfca212948db4f8effc65f191324ebe43e90.vectors": {
+          "file_sha256": "dd96c828f9623f3af87eb3dca3ccc81a8c4ea57e2b1aec0892d6370886c036df",
+          "vectors_sha256": "7d89d4c83f535e80d9d94a94f35f64db198f47ba22281118c8464f3cdfe51370",
+          "generation": 161
+        }
+      },
+      "rebuilt_files": {
+        "db.redb.662a0dc3396967a87e7e2e0f5c11cfca212948db4f8effc65f191324ebe43e90.vectors": {
+          "file_sha256": "7140dbd26968e71b1da12702087456bb9962a5819e5a70410a5fe1a2bc131f95",
+          "vectors_sha256": "c2a7f1c6e041946e83550c1529723bba31ddd863aee498efceb138cb83bdeea8",
+          "generation": 241
+        }
+      },
+      "restart_files": {
+        "db.redb.662a0dc3396967a87e7e2e0f5c11cfca212948db4f8effc65f191324ebe43e90.vectors": {
+          "file_sha256": "2a0356798e581ac92a19ff82294b16b3c9de55df4e3c48587afb11b484f77fad",
+          "vectors_sha256": "c2a7f1c6e041946e83550c1529723bba31ddd863aee498efceb138cb83bdeea8",
+          "generation": 277
+        }
+      },
+      "results": [
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "outside_global_prefix",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "all_model_candidates",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "missing_model",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "case_sensitive",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "wrong_case",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "empty_is_distinct",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "http",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "unfiltered",
+          "surface": "lua",
+          "keys": [
+            "a000",
+            "a001"
+          ],
+          "scores": [
+            0.999,
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "threshold",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "above_best",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "base",
+          "case": "zero_limit",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "model_only_out",
+          "case": "b0_leaves_model",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "model_only_out",
+          "case": "b0_leaves_model",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_enters_model",
+          "surface": "http",
+          "keys": [
+            "a000"
+          ],
+          "scores": [
+            0.999
+          ],
+          "passed": false
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_enters_model",
+          "surface": "lua",
+          "keys": [
+            "a000"
+          ],
+          "scores": [
+            0.999
+          ],
+          "passed": false
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_leaves_old_model",
+          "surface": "http",
+          "keys": [
+            "a001"
+          ],
+          "scores": [
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "model_only_in",
+          "case": "a000_leaves_old_model",
+          "surface": "lua",
+          "keys": [
+            "a001"
+          ],
+          "scores": [
+            0.9989
+          ],
+          "passed": true
+        },
+        {
+          "phase": "delta_create",
+          "case": "new_delta_wins",
+          "surface": "http",
+          "keys": [
+            "fresh",
+            "a000"
+          ],
+          "scores": [
+            1.0,
+            0.999
+          ],
+          "passed": false
+        },
+        {
+          "phase": "delta_create",
+          "case": "new_delta_wins",
+          "surface": "lua",
+          "keys": [
+            "fresh",
+            "a000"
+          ],
+          "scores": [
+            1,
+            0.999
+          ],
+          "passed": false
+        },
+        {
+          "phase": "remove_model",
+          "case": "removed_models_excluded",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "remove_model",
+          "case": "removed_models_excluded",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "remove_model",
+          "case": "unannotated_stays_searchable",
+          "surface": "http",
+          "keys": [
+            "fresh"
+          ],
+          "scores": [
+            1.0
+          ],
+          "passed": true
+        },
+        {
+          "phase": "remove_model",
+          "case": "unannotated_stays_searchable",
+          "surface": "lua",
+          "keys": [
+            "fresh"
+          ],
+          "scores": [
+            1
+          ],
+          "passed": true
+        },
+        {
+          "phase": "delete_and_remove_embedding",
+          "case": "tombstones_exclude_base",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "delete_and_remove_embedding",
+          "case": "tombstones_exclude_base",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": true
+        },
+        {
+          "phase": "batch_models",
+          "case": "batch_model_update",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "batch_models",
+          "case": "batch_model_update",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "batch_models",
+          "case": "empty_delta",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "batch_models",
+          "case": "empty_delta",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "new_model_in_delta",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "new_model_in_delta",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "recreated_key",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "new_model_and_recreation",
+          "case": "recreated_key",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        }
+      ],
+      "after_restart": [
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_model_population",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "new_model_in_base",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "http",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        },
+        {
+          "phase": "rebuild",
+          "case": "rebuilt_empty_population",
+          "surface": "lua",
+          "keys": [],
+          "scores": [],
+          "passed": false
+        }
+      ]
+    }
+  ]
+}

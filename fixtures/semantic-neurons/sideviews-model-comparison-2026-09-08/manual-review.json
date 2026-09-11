@@ -1,0 +1,42 @@
+{
+  "reviewer": "Codex; one unblinded assistant review, not an independent human or calibrated judge",
+  "scope": "All 358 measured Q&A pairs compared against the five input passages; preflight pairs excluded",
+  "method": "Check answer claims and question premises for source support. Record concrete unsupported additions, count misses, coverage omissions, and illustrative semantic repetition. This is a post-hoc qualitative review, not a preregistered entailment or recall score.",
+  "unsupported_additions": [
+    {
+      "provider": "openai", "repeat": 3, "passage": "engineering", "pair": 9,
+      "text": "The A320 family includes the shorter A318 and A319 and the longer A321 variants.",
+      "finding": "The passage lists shorter and longer variants named A318, A319, and A321 but does not assign particular variants to each length. The answer adds that assignment. This is unsupported by this passage, regardless of its external truth."
+    },
+    {
+      "provider": "gemini", "repeat": 2, "passage": "engineering", "pair": 12,
+      "text": "Airbus A320 launch customer and year",
+      "finding": "The passage says the A320 entered service in 1988 with Air France. It does not identify a launch customer, which is a separate commercial role. The answer repeats supported service-entry facts under an unsupported question premise."
+    }
+  ],
+  "target_count_misses": [
+    {"provider": "openai", "repeat": 2, "passage": "biography", "requested": 12, "returned": 11},
+    {"provider": "openai", "repeat": 3, "passage": "biography", "requested": 12, "returned": 11}
+  ],
+  "coverage_observations": [
+    {
+      "provider": "gemini", "repeats": [1, 2, 3], "passage": "biography",
+      "finding": "All three runs cover Curie's coining the term radioactivity, but none explicitly covers her pioneering research on radioactivity. Luna covers that fact in all three runs, including both 11-pair outputs. Exact pair count is not semantic coverage."
+    },
+    {
+      "provider": "openai", "repeats": [2], "passage": "software",
+      "finding": "The run covers Redis keeping its dataset in memory but omits the passage's explicit contrast with traditional databases storing primarily on disk. Runs 1 and 3 include the contrast."
+    },
+    {
+      "provider": "gemini", "repeats": [3], "passage": "geography",
+      "finding": "The output covers Lisbon predating London and Paris but does not explicitly state the broader passage claim that Lisbon is one of the oldest cities in Western Europe."
+    }
+  ],
+  "semantic_repetition_examples": [
+    {"provider": "openai", "repeat": 1, "passage": "engineering", "pairs": [9, 10], "finding": "Both pairs ask for the A320 variants and return the same names."},
+    {"provider": "openai", "repeat": 3, "passage": "clinical", "pairs": [10, 11], "finding": "Two differently phrased surfaces cover taking ibuprofen with food to reduce irritation."},
+    {"provider": "gemini", "repeat": 1, "passage": "engineering", "pairs": [6, 12], "finding": "Both surfaces ask for the airline that introduced the A320 into service."},
+    {"provider": "gemini", "repeat": 2, "passage": "geography", "pairs": [11, 12], "finding": "Both cover Baixa being rebuilt in a grid pattern, with different query focus."}
+  ],
+  "interpretation": "Both models produce useful source-based retrieval surfaces, but lexical distinctness and valid JSON overstate semantic diversity and do not guarantee source entailment. This review does not establish that the two recorded additions are the only possible defects, quantify retrieval effectiveness, or qualify either model as an authority-bearing judge."
+}

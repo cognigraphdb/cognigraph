@@ -1,0 +1,42 @@
+{
+  "space_id": "case:alpha",
+  "chunks_path": "samples/digital_forensics_case_alpha.chunks.jsonl",
+  "questions": [
+    {
+      "id": "alex-device",
+      "question": "Which device did Alex Morgan use?",
+      "expected_facts": [
+        "Alex Morgan --USES_DEVICE--> iPhone 14"
+      ]
+    },
+    {
+      "id": "iphone-apps",
+      "question": "Which application was found on the iPhone 14?",
+      "expected_facts": [
+        "iPhone 14 --RUNS_APPLICATION--> Signal"
+      ]
+    },
+    {
+      "id": "thread-participants",
+      "question": "Who participated in Conversation Thread 17?",
+      "expected_facts": [
+        "Alex Morgan --PARTICIPATES_IN--> Conversation Thread 17",
+        "Riley Stone --PARTICIPATES_IN--> Conversation Thread 17"
+      ]
+    },
+    {
+      "id": "thread-location",
+      "question": "Which location was mentioned in Conversation Thread 17?",
+      "expected_facts": [
+        "Conversation Thread 17 --MENTIONS_LOCATION--> Harbor Cafe"
+      ]
+    },
+    {
+      "id": "cloud-backup",
+      "question": "What did the cloud backup contain?",
+      "expected_facts": [
+        "Cloud Backup --CONTAINS_APPLICATION--> Telegram"
+      ]
+    }
+  ]
+}

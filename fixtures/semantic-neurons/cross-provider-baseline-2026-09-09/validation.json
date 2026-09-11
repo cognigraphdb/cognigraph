@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-09",
+  "source": "Post-execution local audit; not an independent model or provenance attestation",
+  "frozen_code_files": 532,
+  "binary_sha256": "4267ee99ffab295e55e1c56ebc74c5fe3ed4d1ba1158b789483857876c0f8cc7",
+  "offline_result_bytes_identical": true,
+  "provider_calls": 38,
+  "negative_probes": [
+    {
+      "case": "artifact tamper",
+      "rejected": true
+    },
+    {
+      "case": "unfinished run",
+      "rejected": true
+    },
+    {
+      "case": "missing attempt",
+      "rejected": true
+    },
+    {
+      "case": "invalid evidence span despite refreshed manifest",
+      "rejected": true
+    },
+    {
+      "case": "wrong returned model despite refreshed manifest",
+      "rejected": true
+    }
+  ],
+  "control_requests": 45,
+  "preservation": {
+    "cognigraph-cross-provider-luna-preservation.json": 33,
+    "local_env_unchanged": true,
+    "cognigraph-cg26-user-files.json": 6
+  },
+  "credential_scan_files": 53,
+  "documentation": {
+    "files": 8,
+    "local_links": 340,
+    "anchors": 24
+  },
+  "decision_index": {
+    "decisions": 54,
+    "inventory_rows": 54,
+    "categories": {
+      "Standing conventions": 6,
+      "Platform contracts": 18,
+      "Construction and review contracts": 8,
+      "Governed operations and authority generations": 12,
+      "Research evidence and historical priorities": 9,
+      "Superseded identity history": 1
+    },
+    "statuses": {
+      "Active": 23,
+      "Amended": 21,
+      "Research": 9,
+      "Historical": 1
+    },
+    "local_links_checked": 154,
+    "markdown_anchors_checked": 20,
+    "external_links_not_checked": 0,
+    "errors": []
+  },
+  "results_sha256": "8da8a2ebe78a5bf1381ecb971b67c86dc26a2b6003830dce719d582184f3e186",
+  "manifest_sha256": "f7b31f311090f3e04db4e63788151fdfdb230533b7a53a05a146e4f19a3cad9f",
+  "verifier_sha256": "5fc3bfe4bf306c33d650de3c56716c654368ca851777e4cd8eb74af0e93d056a",
+  "rust_verification": "No Rust edits; exact previously validated CG-26 binary/source hashes checked. Earlier fmt, strict Clippy, 961 reported tests and live gates were not rerun."
+}

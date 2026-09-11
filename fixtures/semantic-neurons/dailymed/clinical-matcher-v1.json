@@ -1,0 +1,20 @@
+{
+  "calibration_acceptance_limitation": "Project-owner acceptance for engineering calibration only. This is not external clinical validation, medical advice, or the two-reviewer held-out reference.",
+  "calibration_artifact": "fixtures/semantic-neurons/dailymed/clinical-calibration-v1.json",
+  "calibration_cases_digest": "a2508352fdf84353823e0807040f7695740ace58bf8fe11c2c54ec9521edcfc1",
+  "calibration_false_leaks": [],
+  "calibration_false_refused": 8,
+  "calibration_false_total": 8,
+  "calibration_true_asserted_end_to_end": 19,
+  "calibration_true_asserted_semantic": 19,
+  "calibration_true_in_corpus_vocabulary": 19,
+  "calibration_true_missed": [],
+  "calibration_true_total": 19,
+  "caveat": "Validation against the project-owner-accepted calibration. NOT a recall result. No number here may be described as a recall improvement until the held-out expert reference is complete.",
+  "frozen_at": "after project-owner development-showcase calibration acceptance; before held-out expert labels",
+  "matcher_version": "clinical-matcher-v2",
+  "negative_probes_refused": 14,
+  "negative_probes_total": 14,
+  "probe_leaks": [],
+  "vocabulary_digest": "8798c2b20c9442316e4d44c7e539acf187f59c1d8e52bbfe6ce25fd06f8dcbaf"
+}

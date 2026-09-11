@@ -1,0 +1,1198 @@
+{
+  "phase": "measurement",
+  "arm": "luna-low",
+  "repetition": 1,
+  "batch": 15,
+  "request": {
+    "space_type": "semeval-luna-low-r1-b15",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10456",
+        "title": "Relation benchmark excerpt",
+        "text": "The drain was only half way through the bale wall, so when it stormed, the water poured right into the straw-bales."
+      },
+      {
+        "id": "semeval-9622",
+        "title": "Relation benchmark excerpt",
+        "text": "The three-part Irish crime documentary series examined three memorable and notorious large-scale crimes committed in the country."
+      },
+      {
+        "id": "semeval-10322",
+        "title": "Relation benchmark excerpt",
+        "text": "To take the fragment of green material first, I found it caught in the bolt of the communicating door between that room and the adjoining one."
+      },
+      {
+        "id": "semeval-10593",
+        "title": "Relation benchmark excerpt",
+        "text": "In the years following, Detroit's population fell from a peak of roughly 1.8 million in 1950 to about half that number today."
+      },
+      {
+        "id": "semeval-8869",
+        "title": "Relation benchmark excerpt",
+        "text": "Although the clauses were invented by the framers to serve common values, there is some tension between the two."
+      },
+      {
+        "id": "semeval-8065",
+        "title": "Relation benchmark excerpt",
+        "text": "I have inserted a clock into the presentations."
+      },
+      {
+        "id": "semeval-10032",
+        "title": "Relation benchmark excerpt",
+        "text": "An anthology of his poems entitled, Sundramaithry, has been translated into Malayalam by Dr. Dhanya Menon, and published in 2008."
+      },
+      {
+        "id": "semeval-9781",
+        "title": "Relation benchmark excerpt",
+        "text": "Enteric-formulated lactoferrin was more effectively transported into the blood."
+      },
+      {
+        "id": "semeval-10477",
+        "title": "Relation benchmark excerpt",
+        "text": "During this transport, over about 10 kilometres, the Herschel spacecraft was placed inside the payload transport container."
+      },
+      {
+        "id": "semeval-9392",
+        "title": "Relation benchmark excerpt",
+        "text": "The Dickens Community Archive project marks the bicentenary of the author's birth."
+      },
+      {
+        "id": "semeval-9943",
+        "title": "Relation benchmark excerpt",
+        "text": "A room was dug from the side of a hill and the opening closed in by wood, earth, or fabric, such as the wagon's cover."
+      },
+      {
+        "id": "semeval-10040",
+        "title": "Relation benchmark excerpt",
+        "text": "The delays are caused by local governments trying to wring more money out of the feder."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 9,
+    "proposed": 10,
+    "skips": [
+      "`series --Message-Topic--> crimes`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-luna-low-r1-b15"
+  },
+  "latency_seconds": 12.998402666999027,
+  "facts": [
+    {
+      "_from": "entities/bolt",
+      "_id": "facts/fact-0b60fdf2b8ce63629182b9943d817ec2040efcd874acf8043efde9dca887f0be",
+      "_key": "fact-0b60fdf2b8ce63629182b9943d817ec2040efcd874acf8043efde9dca887f0be",
+      "_to": "entities/door",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10322",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b15",
+      "trigger": "To take the fragment of green material first, I found it caught in the bolt of the communicating door between that room and the adjoining one.",
+      "trigger_end": 142,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/water",
+      "_id": "facts/fact-7fd11d2a34467afe72a0d62746bdb2df63f31cc6d571dc551e4da6ac6a09dfe8",
+      "_key": "fact-7fd11d2a34467afe72a0d62746bdb2df63f31cc6d571dc551e4da6ac6a09dfe8",
+      "_to": "entities/straw-bales",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10456",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b15",
+      "trigger": "The drain was only half way through the bale wall, so when it stormed, the water poured right into the straw-bales.",
+      "trigger_end": 115,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/governments",
+      "_id": "facts/fact-8ae411525ebc108a68e191c460449c5c5b080d1ab16bbde2521a2106236b3831",
+      "_key": "fact-8ae411525ebc108a68e191c460449c5c5b080d1ab16bbde2521a2106236b3831",
+      "_to": "entities/delays",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10040",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b15",
+      "trigger": "The delays are caused by local governments trying to wring more money out of the feder.",
+      "trigger_end": 87,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/spacecraft",
+      "_id": "facts/fact-9183a2370ca3cd95a0dfacf011b3e98880e8f87ec12e12b548bb8a76757c5510",
+      "_key": "fact-9183a2370ca3cd95a0dfacf011b3e98880e8f87ec12e12b548bb8a76757c5510",
+      "_to": "entities/container",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10477",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b15",
+      "trigger": "During this transport, over about 10 kilometres, the Herschel spacecraft was placed inside the payload transport container.",
+      "trigger_end": 123,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/lactoferrin",
+      "_id": "facts/fact-a00d5d27efaeaf7881acb280051d878b71a72a8f5052e36ae195795105ab6eaf",
+      "_key": "fact-a00d5d27efaeaf7881acb280051d878b71a72a8f5052e36ae195795105ab6eaf",
+      "_to": "entities/blood",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9781",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b15",
+      "trigger": "Enteric-formulated lactoferrin was more effectively transported into the blood.",
+      "trigger_end": 79,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/room",
+      "_id": "facts/fact-a82027dc017560bf52eef0da4e0073b677f562fb2c86220ab10b43b2aa1f361e",
+      "_key": "fact-a82027dc017560bf52eef0da4e0073b677f562fb2c86220ab10b43b2aa1f361e",
+      "_to": "entities/hill",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9943",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b15",
+      "trigger": "A room was dug from the side of a hill and the opening closed in by wood, earth, or fabric, such as the wagon's cover.",
+      "trigger_end": 118,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/clauses",
+      "_id": "facts/fact-ac69988543558c8352afae02dde1cb3b65ede0f45087ee0eb19ee80ac9072c27",
+      "_key": "fact-ac69988543558c8352afae02dde1cb3b65ede0f45087ee0eb19ee80ac9072c27",
+      "_to": "entities/framers",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8869",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b15",
+      "trigger": "Although the clauses were invented by the framers to serve common values, there is some tension between the two.",
+      "trigger_end": 112,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/clock",
+      "_id": "facts/fact-d258b049bfaf7a80913c9ab29f6a964f77d45faf1bbf584027d05f470f206962",
+      "_key": "fact-d258b049bfaf7a80913c9ab29f6a964f77d45faf1bbf584027d05f470f206962",
+      "_to": "entities/presentations",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8065",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b15",
+      "trigger": "I have inserted a clock into the presentations.",
+      "trigger_end": 47,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/poems",
+      "_id": "facts/fact-e61532e1f6c2e48224d492bdb8ffd0028992dbfd79b1f81aa43bb60738954a6f",
+      "_key": "fact-e61532e1f6c2e48224d492bdb8ffd0028992dbfd79b1f81aa43bb60738954a6f",
+      "_to": "entities/anthology",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10032",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-low-r1-b15",
+      "trigger": "An anthology of his poems entitled, Sundramaithry, has been translated into Malayalam by Dr. Dhanya Menon, and published in 2008.",
+      "trigger_end": 129,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/anthology",
+      "_key": "anthology",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939391+00:00",
+      "entity_type": "collection",
+      "name": "anthology",
+      "updated_at": "2026-09-09T13:28:14.939391+00:00"
+    },
+    {
+      "_id": "entities/blood",
+      "_key": "blood",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939400+00:00",
+      "entity_type": "substance",
+      "name": "blood",
+      "updated_at": "2026-09-09T13:28:14.939400+00:00"
+    },
+    {
+      "_id": "entities/bolt",
+      "_key": "bolt",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939402+00:00",
+      "entity_type": "object",
+      "name": "bolt",
+      "updated_at": "2026-09-09T13:28:14.939402+00:00"
+    },
+    {
+      "_id": "entities/clauses",
+      "_key": "clauses",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939403+00:00",
+      "entity_type": "object",
+      "name": "clauses",
+      "updated_at": "2026-09-09T13:28:14.939403+00:00"
+    },
+    {
+      "_id": "entities/clock",
+      "_key": "clock",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939405+00:00",
+      "entity_type": "object",
+      "name": "clock",
+      "updated_at": "2026-09-09T13:28:14.939405+00:00"
+    },
+    {
+      "_id": "entities/container",
+      "_key": "container",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939407+00:00",
+      "entity_type": "object",
+      "name": "container",
+      "updated_at": "2026-09-09T13:28:14.939407+00:00"
+    },
+    {
+      "_id": "entities/delays",
+      "_key": "delays",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939408+00:00",
+      "entity_type": "event",
+      "name": "delays",
+      "updated_at": "2026-09-09T13:28:14.939408+00:00"
+    },
+    {
+      "_id": "entities/door",
+      "_key": "door",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939409+00:00",
+      "entity_type": "object",
+      "name": "door",
+      "updated_at": "2026-09-09T13:28:14.939409+00:00"
+    },
+    {
+      "_id": "entities/framers",
+      "_key": "framers",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939411+00:00",
+      "entity_type": "person",
+      "name": "framers",
+      "updated_at": "2026-09-09T13:28:14.939411+00:00"
+    },
+    {
+      "_id": "entities/governments",
+      "_key": "governments",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939412+00:00",
+      "entity_type": "agent",
+      "name": "governments",
+      "updated_at": "2026-09-09T13:28:14.939412+00:00"
+    },
+    {
+      "_id": "entities/hill",
+      "_key": "hill",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939414+00:00",
+      "entity_type": "object",
+      "name": "hill",
+      "updated_at": "2026-09-09T13:28:14.939414+00:00"
+    },
+    {
+      "_id": "entities/lactoferrin",
+      "_key": "lactoferrin",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939415+00:00",
+      "entity_type": "object",
+      "name": "lactoferrin",
+      "updated_at": "2026-09-09T13:28:14.939415+00:00"
+    },
+    {
+      "_id": "entities/poems",
+      "_key": "poems",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939416+00:00",
+      "entity_type": "object",
+      "name": "poems",
+      "updated_at": "2026-09-09T13:28:14.939416+00:00"
+    },
+    {
+      "_id": "entities/presentations",
+      "_key": "presentations",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939417+00:00",
+      "entity_type": "object",
+      "name": "presentations",
+      "updated_at": "2026-09-09T13:28:14.939417+00:00"
+    },
+    {
+      "_id": "entities/room",
+      "_key": "room",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939419+00:00",
+      "entity_type": "object",
+      "name": "room",
+      "updated_at": "2026-09-09T13:28:14.939419+00:00"
+    },
+    {
+      "_id": "entities/spacecraft",
+      "_key": "spacecraft",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939420+00:00",
+      "entity_type": "object",
+      "name": "spacecraft",
+      "updated_at": "2026-09-09T13:28:14.939420+00:00"
+    },
+    {
+      "_id": "entities/straw-bales",
+      "_key": "straw-bales",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939425+00:00",
+      "entity_type": "object",
+      "name": "straw-bales",
+      "updated_at": "2026-09-09T13:28:14.939425+00:00"
+    },
+    {
+      "_id": "entities/water",
+      "_key": "water",
+      "aliases": [],
+      "created_at": "2026-09-09T13:28:14.939430+00:00",
+      "entity_type": "object",
+      "name": "water",
+      "updated_at": "2026-09-09T13:28:14.939430+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-10032",
+      "_key": "semeval-luna-low-r1-b15-semeval-10032",
+      "chunk_id": "semeval-10032",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b6dc637f8a2fe2a7691d5271730309f81c2ca85e8437700d51e8accdf26cfe50",
+      "created_at": "2026-09-09T13:28:14.939433+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "An anthology of his poems entitled, Sundramaithry, has been translated into Malayalam by Dr. Dhanya Menon, and published in 2008.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939433+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-10040",
+      "_key": "semeval-luna-low-r1-b15-semeval-10040",
+      "chunk_id": "semeval-10040",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e2f4d360d8fd30b95b9709f6fa6faa569c9b1c5235088910752dabfc024b1fc7",
+      "created_at": "2026-09-09T13:28:14.939454+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "The delays are caused by local governments trying to wring more money out of the feder.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939454+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-10322",
+      "_key": "semeval-luna-low-r1-b15-semeval-10322",
+      "chunk_id": "semeval-10322",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:839634a8ea37f4fcd2dbb6353bb03ace8608a718219e1fbc76b5ce924443ba2d",
+      "created_at": "2026-09-09T13:28:14.939466+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "To take the fragment of green material first, I found it caught in the bolt of the communicating door between that room and the adjoining one.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939466+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-10456",
+      "_key": "semeval-luna-low-r1-b15-semeval-10456",
+      "chunk_id": "semeval-10456",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e5f1b87eb56c25a2381b529c234328909776438da3685d18ec2811d727236655",
+      "created_at": "2026-09-09T13:28:14.939476+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "The drain was only half way through the bale wall, so when it stormed, the water poured right into the straw-bales.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939476+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-10477",
+      "_key": "semeval-luna-low-r1-b15-semeval-10477",
+      "chunk_id": "semeval-10477",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:aeb6c6d3996d0f486f33299d40212c6e5912fe8aca9a3925f1ea0265b9c82c31",
+      "created_at": "2026-09-09T13:28:14.939484+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "During this transport, over about 10 kilometres, the Herschel spacecraft was placed inside the payload transport container.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939484+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-10593",
+      "_key": "semeval-luna-low-r1-b15-semeval-10593",
+      "chunk_id": "semeval-10593",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:95632b75dd80d79d38012d7cf586d9d5de55707ea797eba025dcaa7bfaa5ca60",
+      "created_at": "2026-09-09T13:28:14.939494+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "In the years following, Detroit's population fell from a peak of roughly 1.8 million in 1950 to about half that number today.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939494+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-8065",
+      "_key": "semeval-luna-low-r1-b15-semeval-8065",
+      "chunk_id": "semeval-8065",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2acbaee5e7d9dced2f733f61f5f0744bb252a877fff6252159ae97d6bd916f76",
+      "created_at": "2026-09-09T13:28:14.939496+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "I have inserted a clock into the presentations.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939496+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-8869",
+      "_key": "semeval-luna-low-r1-b15-semeval-8869",
+      "chunk_id": "semeval-8869",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:667e178ed57e13872d18019e50b054420c5fde90f3663724f308c6f080c0f57a",
+      "created_at": "2026-09-09T13:28:14.939506+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "Although the clauses were invented by the framers to serve common values, there is some tension between the two.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939506+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-9392",
+      "_key": "semeval-luna-low-r1-b15-semeval-9392",
+      "chunk_id": "semeval-9392",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d2ef509754cbcfa0e840f380954ad0b16e5115f75c87e1089d3a2c02bcb3d53b",
+      "created_at": "2026-09-09T13:28:14.939514+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "The Dickens Community Archive project marks the bicentenary of the author's birth.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939514+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-9622",
+      "_key": "semeval-luna-low-r1-b15-semeval-9622",
+      "chunk_id": "semeval-9622",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:92875137efeb8f99874ea84faf56245362e7e5726ebec659dea9c1d00c21189c",
+      "created_at": "2026-09-09T13:28:14.939516+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "The three-part Irish crime documentary series examined three memorable and notorious large-scale crimes committed in the country.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939516+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-9781",
+      "_key": "semeval-luna-low-r1-b15-semeval-9781",
+      "chunk_id": "semeval-9781",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e605f0ce9bbae24b4a3cd221d4bb1b55a8485fd258d7bf735fe94538a5bc22a3",
+      "created_at": "2026-09-09T13:28:14.939517+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "Enteric-formulated lactoferrin was more effectively transported into the blood.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939517+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-low-r1-b15-semeval-9943",
+      "_key": "semeval-luna-low-r1-b15-semeval-9943",
+      "chunk_id": "semeval-9943",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:14a5f0dbd5ed935d6a5c0ba695b6c6e1fd43e93cebf5bf34b02fc410f6e5e502",
+      "created_at": "2026-09-09T13:28:14.939527+00:00",
+      "space_id": "semeval-luna-low-r1-b15",
+      "text": "A room was dug from the side of a hill and the opening closed in by wood, earth, or fabric, such as the wagon's cover.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:28:14.939527+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 9,
+        "results": [
+          {
+            "_from": "entities/bolt",
+            "_id": "facts/fact-0b60fdf2b8ce63629182b9943d817ec2040efcd874acf8043efde9dca887f0be",
+            "_key": "fact-0b60fdf2b8ce63629182b9943d817ec2040efcd874acf8043efde9dca887f0be",
+            "_to": "entities/door",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10322",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b15",
+            "trigger": "To take the fragment of green material first, I found it caught in the bolt of the communicating door between that room and the adjoining one.",
+            "trigger_end": 142,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/water",
+            "_id": "facts/fact-7fd11d2a34467afe72a0d62746bdb2df63f31cc6d571dc551e4da6ac6a09dfe8",
+            "_key": "fact-7fd11d2a34467afe72a0d62746bdb2df63f31cc6d571dc551e4da6ac6a09dfe8",
+            "_to": "entities/straw-bales",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10456",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b15",
+            "trigger": "The drain was only half way through the bale wall, so when it stormed, the water poured right into the straw-bales.",
+            "trigger_end": 115,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/governments",
+            "_id": "facts/fact-8ae411525ebc108a68e191c460449c5c5b080d1ab16bbde2521a2106236b3831",
+            "_key": "fact-8ae411525ebc108a68e191c460449c5c5b080d1ab16bbde2521a2106236b3831",
+            "_to": "entities/delays",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10040",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b15",
+            "trigger": "The delays are caused by local governments trying to wring more money out of the feder.",
+            "trigger_end": 87,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/spacecraft",
+            "_id": "facts/fact-9183a2370ca3cd95a0dfacf011b3e98880e8f87ec12e12b548bb8a76757c5510",
+            "_key": "fact-9183a2370ca3cd95a0dfacf011b3e98880e8f87ec12e12b548bb8a76757c5510",
+            "_to": "entities/container",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10477",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b15",
+            "trigger": "During this transport, over about 10 kilometres, the Herschel spacecraft was placed inside the payload transport container.",
+            "trigger_end": 123,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/lactoferrin",
+            "_id": "facts/fact-a00d5d27efaeaf7881acb280051d878b71a72a8f5052e36ae195795105ab6eaf",
+            "_key": "fact-a00d5d27efaeaf7881acb280051d878b71a72a8f5052e36ae195795105ab6eaf",
+            "_to": "entities/blood",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9781",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b15",
+            "trigger": "Enteric-formulated lactoferrin was more effectively transported into the blood.",
+            "trigger_end": 79,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/room",
+            "_id": "facts/fact-a82027dc017560bf52eef0da4e0073b677f562fb2c86220ab10b43b2aa1f361e",
+            "_key": "fact-a82027dc017560bf52eef0da4e0073b677f562fb2c86220ab10b43b2aa1f361e",
+            "_to": "entities/hill",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9943",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b15",
+            "trigger": "A room was dug from the side of a hill and the opening closed in by wood, earth, or fabric, such as the wagon's cover.",
+            "trigger_end": 118,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/clauses",
+            "_id": "facts/fact-ac69988543558c8352afae02dde1cb3b65ede0f45087ee0eb19ee80ac9072c27",
+            "_key": "fact-ac69988543558c8352afae02dde1cb3b65ede0f45087ee0eb19ee80ac9072c27",
+            "_to": "entities/framers",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8869",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b15",
+            "trigger": "Although the clauses were invented by the framers to serve common values, there is some tension between the two.",
+            "trigger_end": 112,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/clock",
+            "_id": "facts/fact-d258b049bfaf7a80913c9ab29f6a964f77d45faf1bbf584027d05f470f206962",
+            "_key": "fact-d258b049bfaf7a80913c9ab29f6a964f77d45faf1bbf584027d05f470f206962",
+            "_to": "entities/presentations",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8065",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b15",
+            "trigger": "I have inserted a clock into the presentations.",
+            "trigger_end": 47,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/poems",
+            "_id": "facts/fact-e61532e1f6c2e48224d492bdb8ffd0028992dbfd79b1f81aa43bb60738954a6f",
+            "_key": "fact-e61532e1f6c2e48224d492bdb8ffd0028992dbfd79b1f81aa43bb60738954a6f",
+            "_to": "entities/anthology",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10032",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-low-r1-b15",
+            "trigger": "An anthology of his poems entitled, Sundramaithry, has been translated into Malayalam by Dr. Dhanya Menon, and published in 2008.",
+            "trigger_end": 129,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 18,
+        "results": [
+          {
+            "_id": "entities/anthology",
+            "_key": "anthology",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939391+00:00",
+            "entity_type": "collection",
+            "name": "anthology",
+            "updated_at": "2026-09-09T13:28:14.939391+00:00"
+          },
+          {
+            "_id": "entities/blood",
+            "_key": "blood",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939400+00:00",
+            "entity_type": "substance",
+            "name": "blood",
+            "updated_at": "2026-09-09T13:28:14.939400+00:00"
+          },
+          {
+            "_id": "entities/bolt",
+            "_key": "bolt",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939402+00:00",
+            "entity_type": "object",
+            "name": "bolt",
+            "updated_at": "2026-09-09T13:28:14.939402+00:00"
+          },
+          {
+            "_id": "entities/clauses",
+            "_key": "clauses",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939403+00:00",
+            "entity_type": "object",
+            "name": "clauses",
+            "updated_at": "2026-09-09T13:28:14.939403+00:00"
+          },
+          {
+            "_id": "entities/clock",
+            "_key": "clock",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939405+00:00",
+            "entity_type": "object",
+            "name": "clock",
+            "updated_at": "2026-09-09T13:28:14.939405+00:00"
+          },
+          {
+            "_id": "entities/container",
+            "_key": "container",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939407+00:00",
+            "entity_type": "object",
+            "name": "container",
+            "updated_at": "2026-09-09T13:28:14.939407+00:00"
+          },
+          {
+            "_id": "entities/delays",
+            "_key": "delays",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939408+00:00",
+            "entity_type": "event",
+            "name": "delays",
+            "updated_at": "2026-09-09T13:28:14.939408+00:00"
+          },
+          {
+            "_id": "entities/door",
+            "_key": "door",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939409+00:00",
+            "entity_type": "object",
+            "name": "door",
+            "updated_at": "2026-09-09T13:28:14.939409+00:00"
+          },
+          {
+            "_id": "entities/framers",
+            "_key": "framers",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939411+00:00",
+            "entity_type": "person",
+            "name": "framers",
+            "updated_at": "2026-09-09T13:28:14.939411+00:00"
+          },
+          {
+            "_id": "entities/governments",
+            "_key": "governments",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939412+00:00",
+            "entity_type": "agent",
+            "name": "governments",
+            "updated_at": "2026-09-09T13:28:14.939412+00:00"
+          },
+          {
+            "_id": "entities/hill",
+            "_key": "hill",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939414+00:00",
+            "entity_type": "object",
+            "name": "hill",
+            "updated_at": "2026-09-09T13:28:14.939414+00:00"
+          },
+          {
+            "_id": "entities/lactoferrin",
+            "_key": "lactoferrin",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939415+00:00",
+            "entity_type": "object",
+            "name": "lactoferrin",
+            "updated_at": "2026-09-09T13:28:14.939415+00:00"
+          },
+          {
+            "_id": "entities/poems",
+            "_key": "poems",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939416+00:00",
+            "entity_type": "object",
+            "name": "poems",
+            "updated_at": "2026-09-09T13:28:14.939416+00:00"
+          },
+          {
+            "_id": "entities/presentations",
+            "_key": "presentations",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939417+00:00",
+            "entity_type": "object",
+            "name": "presentations",
+            "updated_at": "2026-09-09T13:28:14.939417+00:00"
+          },
+          {
+            "_id": "entities/room",
+            "_key": "room",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939419+00:00",
+            "entity_type": "object",
+            "name": "room",
+            "updated_at": "2026-09-09T13:28:14.939419+00:00"
+          },
+          {
+            "_id": "entities/spacecraft",
+            "_key": "spacecraft",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939420+00:00",
+            "entity_type": "object",
+            "name": "spacecraft",
+            "updated_at": "2026-09-09T13:28:14.939420+00:00"
+          },
+          {
+            "_id": "entities/straw-bales",
+            "_key": "straw-bales",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939425+00:00",
+            "entity_type": "object",
+            "name": "straw-bales",
+            "updated_at": "2026-09-09T13:28:14.939425+00:00"
+          },
+          {
+            "_id": "entities/water",
+            "_key": "water",
+            "aliases": [],
+            "created_at": "2026-09-09T13:28:14.939430+00:00",
+            "entity_type": "object",
+            "name": "water",
+            "updated_at": "2026-09-09T13:28:14.939430+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-10032",
+            "_key": "semeval-luna-low-r1-b15-semeval-10032",
+            "chunk_id": "semeval-10032",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b6dc637f8a2fe2a7691d5271730309f81c2ca85e8437700d51e8accdf26cfe50",
+            "created_at": "2026-09-09T13:28:14.939433+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "An anthology of his poems entitled, Sundramaithry, has been translated into Malayalam by Dr. Dhanya Menon, and published in 2008.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939433+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-10040",
+            "_key": "semeval-luna-low-r1-b15-semeval-10040",
+            "chunk_id": "semeval-10040",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e2f4d360d8fd30b95b9709f6fa6faa569c9b1c5235088910752dabfc024b1fc7",
+            "created_at": "2026-09-09T13:28:14.939454+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "The delays are caused by local governments trying to wring more money out of the feder.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939454+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-10322",
+            "_key": "semeval-luna-low-r1-b15-semeval-10322",
+            "chunk_id": "semeval-10322",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:839634a8ea37f4fcd2dbb6353bb03ace8608a718219e1fbc76b5ce924443ba2d",
+            "created_at": "2026-09-09T13:28:14.939466+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "To take the fragment of green material first, I found it caught in the bolt of the communicating door between that room and the adjoining one.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939466+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-10456",
+            "_key": "semeval-luna-low-r1-b15-semeval-10456",
+            "chunk_id": "semeval-10456",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e5f1b87eb56c25a2381b529c234328909776438da3685d18ec2811d727236655",
+            "created_at": "2026-09-09T13:28:14.939476+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "The drain was only half way through the bale wall, so when it stormed, the water poured right into the straw-bales.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939476+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-10477",
+            "_key": "semeval-luna-low-r1-b15-semeval-10477",
+            "chunk_id": "semeval-10477",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:aeb6c6d3996d0f486f33299d40212c6e5912fe8aca9a3925f1ea0265b9c82c31",
+            "created_at": "2026-09-09T13:28:14.939484+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "During this transport, over about 10 kilometres, the Herschel spacecraft was placed inside the payload transport container.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939484+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-10593",
+            "_key": "semeval-luna-low-r1-b15-semeval-10593",
+            "chunk_id": "semeval-10593",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:95632b75dd80d79d38012d7cf586d9d5de55707ea797eba025dcaa7bfaa5ca60",
+            "created_at": "2026-09-09T13:28:14.939494+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "In the years following, Detroit's population fell from a peak of roughly 1.8 million in 1950 to about half that number today.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939494+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-8065",
+            "_key": "semeval-luna-low-r1-b15-semeval-8065",
+            "chunk_id": "semeval-8065",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2acbaee5e7d9dced2f733f61f5f0744bb252a877fff6252159ae97d6bd916f76",
+            "created_at": "2026-09-09T13:28:14.939496+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "I have inserted a clock into the presentations.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939496+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-8869",
+            "_key": "semeval-luna-low-r1-b15-semeval-8869",
+            "chunk_id": "semeval-8869",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:667e178ed57e13872d18019e50b054420c5fde90f3663724f308c6f080c0f57a",
+            "created_at": "2026-09-09T13:28:14.939506+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "Although the clauses were invented by the framers to serve common values, there is some tension between the two.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939506+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-9392",
+            "_key": "semeval-luna-low-r1-b15-semeval-9392",
+            "chunk_id": "semeval-9392",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d2ef509754cbcfa0e840f380954ad0b16e5115f75c87e1089d3a2c02bcb3d53b",
+            "created_at": "2026-09-09T13:28:14.939514+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "The Dickens Community Archive project marks the bicentenary of the author's birth.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939514+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-9622",
+            "_key": "semeval-luna-low-r1-b15-semeval-9622",
+            "chunk_id": "semeval-9622",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:92875137efeb8f99874ea84faf56245362e7e5726ebec659dea9c1d00c21189c",
+            "created_at": "2026-09-09T13:28:14.939516+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "The three-part Irish crime documentary series examined three memorable and notorious large-scale crimes committed in the country.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939516+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-9781",
+            "_key": "semeval-luna-low-r1-b15-semeval-9781",
+            "chunk_id": "semeval-9781",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e605f0ce9bbae24b4a3cd221d4bb1b55a8485fd258d7bf735fe94538a5bc22a3",
+            "created_at": "2026-09-09T13:28:14.939517+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "Enteric-formulated lactoferrin was more effectively transported into the blood.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939517+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-low-r1-b15-semeval-9943",
+            "_key": "semeval-luna-low-r1-b15-semeval-9943",
+            "chunk_id": "semeval-9943",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:14a5f0dbd5ed935d6a5c0ba695b6c6e1fd43e93cebf5bf34b02fc410f6e5e502",
+            "created_at": "2026-09-09T13:28:14.939527+00:00",
+            "space_id": "semeval-luna-low-r1-b15",
+            "text": "A room was dug from the side of a hill and the opening closed in by wood, earth, or fabric, such as the wagon's cover.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:28:14.939527+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1268 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 1,
+  "batch": 43,
+  "request": {
+    "space_type": "semeval-terra-low-r1-b43",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-8028",
+        "title": "Relation benchmark excerpt",
+        "text": "He has built a formidable reputation writing powerful dramas for the stage and screen, based on real events or socially vital issues."
+      },
+      {
+        "id": "semeval-8669",
+        "title": "Relation benchmark excerpt",
+        "text": "Stroker Serpentine alerted me to a very messy situation this evening involving a huge cache of stolen goods."
+      },
+      {
+        "id": "semeval-10195",
+        "title": "Relation benchmark excerpt",
+        "text": "Doctor saves boy with a drill."
+      },
+      {
+        "id": "semeval-9179",
+        "title": "Relation benchmark excerpt",
+        "text": "Dust or vapor cause burns or irritation of the eyes with swelling."
+      },
+      {
+        "id": "semeval-10235",
+        "title": "Relation benchmark excerpt",
+        "text": "Rather, the avenger killed the victim with a rifle, often from a secure hiding place or in ambush."
+      },
+      {
+        "id": "semeval-9651",
+        "title": "Relation benchmark excerpt",
+        "text": "After arresting a computer hacker who stole $2 million from the Federal Reserve, Jake assumes his identity to infiltrate a ring of his associates and discover what their next target will be."
+      },
+      {
+        "id": "semeval-8425",
+        "title": "Relation benchmark excerpt",
+        "text": "The search for the coefficients started at the higher scales (lower frequency) since there were fewer WTMM at higher scales."
+      },
+      {
+        "id": "semeval-8334",
+        "title": "Relation benchmark excerpt",
+        "text": "I won't tell you how much music means now, in these times, when you are battling depression from unemployment."
+      },
+      {
+        "id": "semeval-9756",
+        "title": "Relation benchmark excerpt",
+        "text": "A calendar of saints forms a way of organising a liturgical year on the finely-granulated level of days by assigning each day to association with a saint."
+      },
+      {
+        "id": "semeval-10487",
+        "title": "Relation benchmark excerpt",
+        "text": "A former NHS worker revealed that understaffed maternity wards are sinking into chaos."
+      },
+      {
+        "id": "semeval-9427",
+        "title": "Relation benchmark excerpt",
+        "text": "Two of my girls had the high fever from vaccines, and our family doctor thought nothing of it."
+      },
+      {
+        "id": "semeval-10070",
+        "title": "Relation benchmark excerpt",
+        "text": "There are bedrooms, dining rooms and sitting rooms in the cottage."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 10,
+    "proposed": 11,
+    "skips": [
+      "`dramas --Entity-Origin--> real events`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-terra-low-r1-b43"
+  },
+  "latency_seconds": 11.314338500029407,
+  "facts": [
+    {
+      "_from": "entities/vaccines",
+      "_id": "facts/fact-01c4fee9d4478f70cb50ebcaa09cb98ed426389a55f1b76597489438c5042fcd",
+      "_key": "fact-01c4fee9d4478f70cb50ebcaa09cb98ed426389a55f1b76597489438c5042fcd",
+      "_to": "entities/fever",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9427",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b43",
+      "trigger": "Two of my girls had the high fever from vaccines, and our family doctor thought nothing of it.",
+      "trigger_end": 94,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/rifle",
+      "_id": "facts/fact-48393370d79a1ce4b7d39c6cadad3b25844e17d88cfd9bb32f5c0d51d67b8471",
+      "_key": "fact-48393370d79a1ce4b7d39c6cadad3b25844e17d88cfd9bb32f5c0d51d67b8471",
+      "_to": "entities/avenger",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10235",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b43",
+      "trigger": "Rather, the avenger killed the victim with a rifle, often from a secure hiding place or in ambush.",
+      "trigger_end": 98,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/associates",
+      "_id": "facts/fact-5e3380b7d6efe675db41e74172dbf9755c7b81f6ed1f0ae07794043c3042c64a",
+      "_key": "fact-5e3380b7d6efe675db41e74172dbf9755c7b81f6ed1f0ae07794043c3042c64a",
+      "_to": "entities/ring",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9651",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b43",
+      "trigger": "After arresting a computer hacker who stole $2 million from the Federal Reserve, Jake assumes his identity to infiltrate a ring of his associates and discover what their next target will be.",
+      "trigger_end": 190,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/unemployment",
+      "_id": "facts/fact-8e4016781120121170fc6e95dddeef7e3a5411037362c1b2ad27b05e58103d32",
+      "_key": "fact-8e4016781120121170fc6e95dddeef7e3a5411037362c1b2ad27b05e58103d32",
+      "_to": "entities/depression",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8334",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b43",
+      "trigger": "I won't tell you how much music means now, in these times, when you are battling depression from unemployment.",
+      "trigger_end": 110,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/saints",
+      "_id": "facts/fact-8fca8ccef96b65dcfc859504239176876fb39268de7cb87bc81b5dc0ae558d50",
+      "_key": "fact-8fca8ccef96b65dcfc859504239176876fb39268de7cb87bc81b5dc0ae558d50",
+      "_to": "entities/calendar",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9756",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b43",
+      "trigger": "A calendar of saints forms a way of organising a liturgical year on the finely-granulated level of days by assigning each day to association with a saint.",
+      "trigger_end": 154,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/maternity-wards",
+      "_id": "facts/fact-9673ed390297caa3f8ae39c7a837b87dd4d7a2637b291797ffcfe0016389b30b",
+      "_key": "fact-9673ed390297caa3f8ae39c7a837b87dd4d7a2637b291797ffcfe0016389b30b",
+      "_to": "entities/chaos",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10487",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b43",
+      "trigger": "A former NHS worker revealed that understaffed maternity wards are sinking into chaos.",
+      "trigger_end": 86,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/rooms",
+      "_id": "facts/fact-a6c0bc8cb9ecced46ce34c9db28dff5bf2c4e89e2c698542ffea833add956586",
+      "_key": "fact-a6c0bc8cb9ecced46ce34c9db28dff5bf2c4e89e2c698542ffea833add956586",
+      "_to": "entities/cottage",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10070",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b43",
+      "trigger": "There are bedrooms, dining rooms and sitting rooms in the cottage.",
+      "trigger_end": 66,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/drill",
+      "_id": "facts/fact-b77b145f286f6d165691da31657a1d9bd5e3ea4b3a4a93893dfd245fd39ac6ef",
+      "_key": "fact-b77b145f286f6d165691da31657a1d9bd5e3ea4b3a4a93893dfd245fd39ac6ef",
+      "_to": "entities/doctor",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10195",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Instrument-Agency",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b43",
+      "trigger": "Doctor saves boy with a drill.",
+      "trigger_end": 30,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/goods",
+      "_id": "facts/fact-f3e88f7cf84f2732c83130d33d52e162cddffb2354cbe043644ee26e5ca9bb45",
+      "_key": "fact-f3e88f7cf84f2732c83130d33d52e162cddffb2354cbe043644ee26e5ca9bb45",
+      "_to": "entities/cache",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8669",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b43",
+      "trigger": "Stroker Serpentine alerted me to a very messy situation this evening involving a huge cache of stolen goods.",
+      "trigger_end": 108,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/vapor",
+      "_id": "facts/fact-fcc20b38c5d29fd9ea205106a3c21d3cd1236711accc439b25a70bd95614e485",
+      "_key": "fact-fcc20b38c5d29fd9ea205106a3c21d3cd1236711accc439b25a70bd95614e485",
+      "_to": "entities/swelling",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9179",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b43",
+      "trigger": "Dust or vapor cause burns or irritation of the eyes with swelling.",
+      "trigger_end": 66,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/associates",
+      "_key": "associates",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863807+00:00",
+      "entity_type": "member",
+      "name": "associates",
+      "updated_at": "2026-09-09T13:42:01.863807+00:00"
+    },
+    {
+      "_id": "entities/avenger",
+      "_key": "avenger",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863811+00:00",
+      "entity_type": "agent",
+      "name": "avenger",
+      "updated_at": "2026-09-09T13:42:01.863811+00:00"
+    },
+    {
+      "_id": "entities/cache",
+      "_key": "cache",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863812+00:00",
+      "entity_type": "container",
+      "name": "cache",
+      "updated_at": "2026-09-09T13:42:01.863812+00:00"
+    },
+    {
+      "_id": "entities/calendar",
+      "_key": "calendar",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863813+00:00",
+      "entity_type": "collection",
+      "name": "calendar",
+      "updated_at": "2026-09-09T13:42:01.863813+00:00"
+    },
+    {
+      "_id": "entities/chaos",
+      "_key": "chaos",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863814+00:00",
+      "entity_type": "destination",
+      "name": "chaos",
+      "updated_at": "2026-09-09T13:42:01.863814+00:00"
+    },
+    {
+      "_id": "entities/cottage",
+      "_key": "cottage",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863817+00:00",
+      "entity_type": "whole",
+      "name": "cottage",
+      "updated_at": "2026-09-09T13:42:01.863817+00:00"
+    },
+    {
+      "_id": "entities/depression",
+      "_key": "depression",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863818+00:00",
+      "entity_type": "effect",
+      "name": "depression",
+      "updated_at": "2026-09-09T13:42:01.863818+00:00"
+    },
+    {
+      "_id": "entities/doctor",
+      "_key": "doctor",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863819+00:00",
+      "entity_type": "agent",
+      "name": "Doctor",
+      "updated_at": "2026-09-09T13:42:01.863819+00:00"
+    },
+    {
+      "_id": "entities/drill",
+      "_key": "drill",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863820+00:00",
+      "entity_type": "instrument",
+      "name": "drill",
+      "updated_at": "2026-09-09T13:42:01.863820+00:00"
+    },
+    {
+      "_id": "entities/fever",
+      "_key": "fever",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863821+00:00",
+      "entity_type": "effect",
+      "name": "fever",
+      "updated_at": "2026-09-09T13:42:01.863821+00:00"
+    },
+    {
+      "_id": "entities/goods",
+      "_key": "goods",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863821+00:00",
+      "entity_type": "content",
+      "name": "goods",
+      "updated_at": "2026-09-09T13:42:01.863821+00:00"
+    },
+    {
+      "_id": "entities/maternity-wards",
+      "_key": "maternity-wards",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863822+00:00",
+      "entity_type": "entity",
+      "name": "maternity wards",
+      "updated_at": "2026-09-09T13:42:01.863822+00:00"
+    },
+    {
+      "_id": "entities/rifle",
+      "_key": "rifle",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863823+00:00",
+      "entity_type": "instrument",
+      "name": "rifle",
+      "updated_at": "2026-09-09T13:42:01.863823+00:00"
+    },
+    {
+      "_id": "entities/ring",
+      "_key": "ring",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863824+00:00",
+      "entity_type": "collection",
+      "name": "ring",
+      "updated_at": "2026-09-09T13:42:01.863824+00:00"
+    },
+    {
+      "_id": "entities/rooms",
+      "_key": "rooms",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863825+00:00",
+      "entity_type": "component",
+      "name": "rooms",
+      "updated_at": "2026-09-09T13:42:01.863825+00:00"
+    },
+    {
+      "_id": "entities/saints",
+      "_key": "saints",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863826+00:00",
+      "entity_type": "member",
+      "name": "saints",
+      "updated_at": "2026-09-09T13:42:01.863826+00:00"
+    },
+    {
+      "_id": "entities/swelling",
+      "_key": "swelling",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863827+00:00",
+      "entity_type": "effect",
+      "name": "swelling",
+      "updated_at": "2026-09-09T13:42:01.863827+00:00"
+    },
+    {
+      "_id": "entities/unemployment",
+      "_key": "unemployment",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863828+00:00",
+      "entity_type": "cause",
+      "name": "unemployment",
+      "updated_at": "2026-09-09T13:42:01.863828+00:00"
+    },
+    {
+      "_id": "entities/vaccines",
+      "_key": "vaccines",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863829+00:00",
+      "entity_type": "cause",
+      "name": "vaccines",
+      "updated_at": "2026-09-09T13:42:01.863829+00:00"
+    },
+    {
+      "_id": "entities/vapor",
+      "_key": "vapor",
+      "aliases": [],
+      "created_at": "2026-09-09T13:42:01.863830+00:00",
+      "entity_type": "cause",
+      "name": "vapor",
+      "updated_at": "2026-09-09T13:42:01.863830+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-10070",
+      "_key": "semeval-terra-low-r1-b43-semeval-10070",
+      "chunk_id": "semeval-10070",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:199dfe06885de8b0a7828b091287dfeb34f835da8b3b0fe38d211ae6fd3f6f65",
+      "created_at": "2026-09-09T13:42:01.863831+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "There are bedrooms, dining rooms and sitting rooms in the cottage.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863831+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-10195",
+      "_key": "semeval-terra-low-r1-b43-semeval-10195",
+      "chunk_id": "semeval-10195",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b7192cd16c3d5563fb094af98aca7516dac3dfcd6cf3df6036b090c640897aea",
+      "created_at": "2026-09-09T13:42:01.863842+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "Doctor saves boy with a drill.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863842+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-10235",
+      "_key": "semeval-terra-low-r1-b43-semeval-10235",
+      "chunk_id": "semeval-10235",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:496ff609a4bf4ae6d3bd9e00aeb17657795d15da853b9b3202d2e35971130ffb",
+      "created_at": "2026-09-09T13:42:01.863849+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "Rather, the avenger killed the victim with a rifle, often from a secure hiding place or in ambush.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863849+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-10487",
+      "_key": "semeval-terra-low-r1-b43-semeval-10487",
+      "chunk_id": "semeval-10487",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2bb08c697ad207d93cf8500dddb2c46a72cae4ee69b080bf5d19bcc15fca50c3",
+      "created_at": "2026-09-09T13:42:01.863855+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "A former NHS worker revealed that understaffed maternity wards are sinking into chaos.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863855+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-8028",
+      "_key": "semeval-terra-low-r1-b43-semeval-8028",
+      "chunk_id": "semeval-8028",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8b83bbcfaa1bbc014988c3b89f6e64f0b1902966020bd9f7ee7b5d61ca7d492d",
+      "created_at": "2026-09-09T13:42:01.863861+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "He has built a formidable reputation writing powerful dramas for the stage and screen, based on real events or socially vital issues.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863861+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-8334",
+      "_key": "semeval-terra-low-r1-b43-semeval-8334",
+      "chunk_id": "semeval-8334",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a713f03a9f8272812ea598220657969a39d27f8a1ef458a497e5f9efbadce98a",
+      "created_at": "2026-09-09T13:42:01.863862+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "I won't tell you how much music means now, in these times, when you are battling depression from unemployment.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863862+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-8425",
+      "_key": "semeval-terra-low-r1-b43-semeval-8425",
+      "chunk_id": "semeval-8425",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2cd8c5d3e19aec39a017b476ae42d161d3798ccd9231cc1513d5e4df97748614",
+      "created_at": "2026-09-09T13:42:01.863869+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "The search for the coefficients started at the higher scales (lower frequency) since there were fewer WTMM at higher scales.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863869+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-8669",
+      "_key": "semeval-terra-low-r1-b43-semeval-8669",
+      "chunk_id": "semeval-8669",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8030d49acefd2909fd869556c88f496fed34bde3f0159e124cd4b0b181c224a0",
+      "created_at": "2026-09-09T13:42:01.863870+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "Stroker Serpentine alerted me to a very messy situation this evening involving a huge cache of stolen goods.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863870+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-9179",
+      "_key": "semeval-terra-low-r1-b43-semeval-9179",
+      "chunk_id": "semeval-9179",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:7d9bcc8e542db353404b0a765b262f67505f32bc5bfb0a5763784aef4b452af9",
+      "created_at": "2026-09-09T13:42:01.863876+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "Dust or vapor cause burns or irritation of the eyes with swelling.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863876+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-9427",
+      "_key": "semeval-terra-low-r1-b43-semeval-9427",
+      "chunk_id": "semeval-9427",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3ac631fde8475c9156594ce9f2d985b2adc15bce4da53beb7a665bdcda19daea",
+      "created_at": "2026-09-09T13:42:01.863881+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "Two of my girls had the high fever from vaccines, and our family doctor thought nothing of it.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863881+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-9651",
+      "_key": "semeval-terra-low-r1-b43-semeval-9651",
+      "chunk_id": "semeval-9651",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:0743f8dc14a4155594989b2286aa5533077bd4b600e3541f01ab0da3ea79d073",
+      "created_at": "2026-09-09T13:42:01.863890+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "After arresting a computer hacker who stole $2 million from the Federal Reserve, Jake assumes his identity to infiltrate a ring of his associates and discover what their next target will be.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863890+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b43-semeval-9756",
+      "_key": "semeval-terra-low-r1-b43-semeval-9756",
+      "chunk_id": "semeval-9756",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f0f88e5e92410df9f75feeeb782213e9a8e84f6d7424cb6348028639eef087db",
+      "created_at": "2026-09-09T13:42:01.863897+00:00",
+      "space_id": "semeval-terra-low-r1-b43",
+      "text": "A calendar of saints forms a way of organising a liturgical year on the finely-granulated level of days by assigning each day to association with a saint.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:42:01.863897+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 10,
+        "results": [
+          {
+            "_from": "entities/vaccines",
+            "_id": "facts/fact-01c4fee9d4478f70cb50ebcaa09cb98ed426389a55f1b76597489438c5042fcd",
+            "_key": "fact-01c4fee9d4478f70cb50ebcaa09cb98ed426389a55f1b76597489438c5042fcd",
+            "_to": "entities/fever",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9427",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b43",
+            "trigger": "Two of my girls had the high fever from vaccines, and our family doctor thought nothing of it.",
+            "trigger_end": 94,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/rifle",
+            "_id": "facts/fact-48393370d79a1ce4b7d39c6cadad3b25844e17d88cfd9bb32f5c0d51d67b8471",
+            "_key": "fact-48393370d79a1ce4b7d39c6cadad3b25844e17d88cfd9bb32f5c0d51d67b8471",
+            "_to": "entities/avenger",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10235",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b43",
+            "trigger": "Rather, the avenger killed the victim with a rifle, often from a secure hiding place or in ambush.",
+            "trigger_end": 98,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/associates",
+            "_id": "facts/fact-5e3380b7d6efe675db41e74172dbf9755c7b81f6ed1f0ae07794043c3042c64a",
+            "_key": "fact-5e3380b7d6efe675db41e74172dbf9755c7b81f6ed1f0ae07794043c3042c64a",
+            "_to": "entities/ring",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9651",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b43",
+            "trigger": "After arresting a computer hacker who stole $2 million from the Federal Reserve, Jake assumes his identity to infiltrate a ring of his associates and discover what their next target will be.",
+            "trigger_end": 190,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/unemployment",
+            "_id": "facts/fact-8e4016781120121170fc6e95dddeef7e3a5411037362c1b2ad27b05e58103d32",
+            "_key": "fact-8e4016781120121170fc6e95dddeef7e3a5411037362c1b2ad27b05e58103d32",
+            "_to": "entities/depression",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8334",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b43",
+            "trigger": "I won't tell you how much music means now, in these times, when you are battling depression from unemployment.",
+            "trigger_end": 110,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/saints",
+            "_id": "facts/fact-8fca8ccef96b65dcfc859504239176876fb39268de7cb87bc81b5dc0ae558d50",
+            "_key": "fact-8fca8ccef96b65dcfc859504239176876fb39268de7cb87bc81b5dc0ae558d50",
+            "_to": "entities/calendar",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9756",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b43",
+            "trigger": "A calendar of saints forms a way of organising a liturgical year on the finely-granulated level of days by assigning each day to association with a saint.",
+            "trigger_end": 154,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/maternity-wards",
+            "_id": "facts/fact-9673ed390297caa3f8ae39c7a837b87dd4d7a2637b291797ffcfe0016389b30b",
+            "_key": "fact-9673ed390297caa3f8ae39c7a837b87dd4d7a2637b291797ffcfe0016389b30b",
+            "_to": "entities/chaos",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10487",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b43",
+            "trigger": "A former NHS worker revealed that understaffed maternity wards are sinking into chaos.",
+            "trigger_end": 86,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/rooms",
+            "_id": "facts/fact-a6c0bc8cb9ecced46ce34c9db28dff5bf2c4e89e2c698542ffea833add956586",
+            "_key": "fact-a6c0bc8cb9ecced46ce34c9db28dff5bf2c4e89e2c698542ffea833add956586",
+            "_to": "entities/cottage",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10070",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b43",
+            "trigger": "There are bedrooms, dining rooms and sitting rooms in the cottage.",
+            "trigger_end": 66,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/drill",
+            "_id": "facts/fact-b77b145f286f6d165691da31657a1d9bd5e3ea4b3a4a93893dfd245fd39ac6ef",
+            "_key": "fact-b77b145f286f6d165691da31657a1d9bd5e3ea4b3a4a93893dfd245fd39ac6ef",
+            "_to": "entities/doctor",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10195",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Instrument-Agency",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b43",
+            "trigger": "Doctor saves boy with a drill.",
+            "trigger_end": 30,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/goods",
+            "_id": "facts/fact-f3e88f7cf84f2732c83130d33d52e162cddffb2354cbe043644ee26e5ca9bb45",
+            "_key": "fact-f3e88f7cf84f2732c83130d33d52e162cddffb2354cbe043644ee26e5ca9bb45",
+            "_to": "entities/cache",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8669",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b43",
+            "trigger": "Stroker Serpentine alerted me to a very messy situation this evening involving a huge cache of stolen goods.",
+            "trigger_end": 108,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/vapor",
+            "_id": "facts/fact-fcc20b38c5d29fd9ea205106a3c21d3cd1236711accc439b25a70bd95614e485",
+            "_key": "fact-fcc20b38c5d29fd9ea205106a3c21d3cd1236711accc439b25a70bd95614e485",
+            "_to": "entities/swelling",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9179",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b43",
+            "trigger": "Dust or vapor cause burns or irritation of the eyes with swelling.",
+            "trigger_end": 66,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 20,
+        "results": [
+          {
+            "_id": "entities/associates",
+            "_key": "associates",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863807+00:00",
+            "entity_type": "member",
+            "name": "associates",
+            "updated_at": "2026-09-09T13:42:01.863807+00:00"
+          },
+          {
+            "_id": "entities/avenger",
+            "_key": "avenger",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863811+00:00",
+            "entity_type": "agent",
+            "name": "avenger",
+            "updated_at": "2026-09-09T13:42:01.863811+00:00"
+          },
+          {
+            "_id": "entities/cache",
+            "_key": "cache",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863812+00:00",
+            "entity_type": "container",
+            "name": "cache",
+            "updated_at": "2026-09-09T13:42:01.863812+00:00"
+          },
+          {
+            "_id": "entities/calendar",
+            "_key": "calendar",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863813+00:00",
+            "entity_type": "collection",
+            "name": "calendar",
+            "updated_at": "2026-09-09T13:42:01.863813+00:00"
+          },
+          {
+            "_id": "entities/chaos",
+            "_key": "chaos",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863814+00:00",
+            "entity_type": "destination",
+            "name": "chaos",
+            "updated_at": "2026-09-09T13:42:01.863814+00:00"
+          },
+          {
+            "_id": "entities/cottage",
+            "_key": "cottage",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863817+00:00",
+            "entity_type": "whole",
+            "name": "cottage",
+            "updated_at": "2026-09-09T13:42:01.863817+00:00"
+          },
+          {
+            "_id": "entities/depression",
+            "_key": "depression",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863818+00:00",
+            "entity_type": "effect",
+            "name": "depression",
+            "updated_at": "2026-09-09T13:42:01.863818+00:00"
+          },
+          {
+            "_id": "entities/doctor",
+            "_key": "doctor",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863819+00:00",
+            "entity_type": "agent",
+            "name": "Doctor",
+            "updated_at": "2026-09-09T13:42:01.863819+00:00"
+          },
+          {
+            "_id": "entities/drill",
+            "_key": "drill",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863820+00:00",
+            "entity_type": "instrument",
+            "name": "drill",
+            "updated_at": "2026-09-09T13:42:01.863820+00:00"
+          },
+          {
+            "_id": "entities/fever",
+            "_key": "fever",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863821+00:00",
+            "entity_type": "effect",
+            "name": "fever",
+            "updated_at": "2026-09-09T13:42:01.863821+00:00"
+          },
+          {
+            "_id": "entities/goods",
+            "_key": "goods",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863821+00:00",
+            "entity_type": "content",
+            "name": "goods",
+            "updated_at": "2026-09-09T13:42:01.863821+00:00"
+          },
+          {
+            "_id": "entities/maternity-wards",
+            "_key": "maternity-wards",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863822+00:00",
+            "entity_type": "entity",
+            "name": "maternity wards",
+            "updated_at": "2026-09-09T13:42:01.863822+00:00"
+          },
+          {
+            "_id": "entities/rifle",
+            "_key": "rifle",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863823+00:00",
+            "entity_type": "instrument",
+            "name": "rifle",
+            "updated_at": "2026-09-09T13:42:01.863823+00:00"
+          },
+          {
+            "_id": "entities/ring",
+            "_key": "ring",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863824+00:00",
+            "entity_type": "collection",
+            "name": "ring",
+            "updated_at": "2026-09-09T13:42:01.863824+00:00"
+          },
+          {
+            "_id": "entities/rooms",
+            "_key": "rooms",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863825+00:00",
+            "entity_type": "component",
+            "name": "rooms",
+            "updated_at": "2026-09-09T13:42:01.863825+00:00"
+          },
+          {
+            "_id": "entities/saints",
+            "_key": "saints",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863826+00:00",
+            "entity_type": "member",
+            "name": "saints",
+            "updated_at": "2026-09-09T13:42:01.863826+00:00"
+          },
+          {
+            "_id": "entities/swelling",
+            "_key": "swelling",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863827+00:00",
+            "entity_type": "effect",
+            "name": "swelling",
+            "updated_at": "2026-09-09T13:42:01.863827+00:00"
+          },
+          {
+            "_id": "entities/unemployment",
+            "_key": "unemployment",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863828+00:00",
+            "entity_type": "cause",
+            "name": "unemployment",
+            "updated_at": "2026-09-09T13:42:01.863828+00:00"
+          },
+          {
+            "_id": "entities/vaccines",
+            "_key": "vaccines",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863829+00:00",
+            "entity_type": "cause",
+            "name": "vaccines",
+            "updated_at": "2026-09-09T13:42:01.863829+00:00"
+          },
+          {
+            "_id": "entities/vapor",
+            "_key": "vapor",
+            "aliases": [],
+            "created_at": "2026-09-09T13:42:01.863830+00:00",
+            "entity_type": "cause",
+            "name": "vapor",
+            "updated_at": "2026-09-09T13:42:01.863830+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-10070",
+            "_key": "semeval-terra-low-r1-b43-semeval-10070",
+            "chunk_id": "semeval-10070",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:199dfe06885de8b0a7828b091287dfeb34f835da8b3b0fe38d211ae6fd3f6f65",
+            "created_at": "2026-09-09T13:42:01.863831+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "There are bedrooms, dining rooms and sitting rooms in the cottage.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863831+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-10195",
+            "_key": "semeval-terra-low-r1-b43-semeval-10195",
+            "chunk_id": "semeval-10195",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:b7192cd16c3d5563fb094af98aca7516dac3dfcd6cf3df6036b090c640897aea",
+            "created_at": "2026-09-09T13:42:01.863842+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "Doctor saves boy with a drill.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863842+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-10235",
+            "_key": "semeval-terra-low-r1-b43-semeval-10235",
+            "chunk_id": "semeval-10235",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:496ff609a4bf4ae6d3bd9e00aeb17657795d15da853b9b3202d2e35971130ffb",
+            "created_at": "2026-09-09T13:42:01.863849+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "Rather, the avenger killed the victim with a rifle, often from a secure hiding place or in ambush.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863849+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-10487",
+            "_key": "semeval-terra-low-r1-b43-semeval-10487",
+            "chunk_id": "semeval-10487",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2bb08c697ad207d93cf8500dddb2c46a72cae4ee69b080bf5d19bcc15fca50c3",
+            "created_at": "2026-09-09T13:42:01.863855+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "A former NHS worker revealed that understaffed maternity wards are sinking into chaos.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863855+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-8028",
+            "_key": "semeval-terra-low-r1-b43-semeval-8028",
+            "chunk_id": "semeval-8028",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8b83bbcfaa1bbc014988c3b89f6e64f0b1902966020bd9f7ee7b5d61ca7d492d",
+            "created_at": "2026-09-09T13:42:01.863861+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "He has built a formidable reputation writing powerful dramas for the stage and screen, based on real events or socially vital issues.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863861+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-8334",
+            "_key": "semeval-terra-low-r1-b43-semeval-8334",
+            "chunk_id": "semeval-8334",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a713f03a9f8272812ea598220657969a39d27f8a1ef458a497e5f9efbadce98a",
+            "created_at": "2026-09-09T13:42:01.863862+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "I won't tell you how much music means now, in these times, when you are battling depression from unemployment.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863862+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-8425",
+            "_key": "semeval-terra-low-r1-b43-semeval-8425",
+            "chunk_id": "semeval-8425",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2cd8c5d3e19aec39a017b476ae42d161d3798ccd9231cc1513d5e4df97748614",
+            "created_at": "2026-09-09T13:42:01.863869+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "The search for the coefficients started at the higher scales (lower frequency) since there were fewer WTMM at higher scales.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863869+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-8669",
+            "_key": "semeval-terra-low-r1-b43-semeval-8669",
+            "chunk_id": "semeval-8669",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8030d49acefd2909fd869556c88f496fed34bde3f0159e124cd4b0b181c224a0",
+            "created_at": "2026-09-09T13:42:01.863870+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "Stroker Serpentine alerted me to a very messy situation this evening involving a huge cache of stolen goods.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863870+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-9179",
+            "_key": "semeval-terra-low-r1-b43-semeval-9179",
+            "chunk_id": "semeval-9179",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:7d9bcc8e542db353404b0a765b262f67505f32bc5bfb0a5763784aef4b452af9",
+            "created_at": "2026-09-09T13:42:01.863876+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "Dust or vapor cause burns or irritation of the eyes with swelling.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863876+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-9427",
+            "_key": "semeval-terra-low-r1-b43-semeval-9427",
+            "chunk_id": "semeval-9427",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:3ac631fde8475c9156594ce9f2d985b2adc15bce4da53beb7a665bdcda19daea",
+            "created_at": "2026-09-09T13:42:01.863881+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "Two of my girls had the high fever from vaccines, and our family doctor thought nothing of it.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863881+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-9651",
+            "_key": "semeval-terra-low-r1-b43-semeval-9651",
+            "chunk_id": "semeval-9651",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:0743f8dc14a4155594989b2286aa5533077bd4b600e3541f01ab0da3ea79d073",
+            "created_at": "2026-09-09T13:42:01.863890+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "After arresting a computer hacker who stole $2 million from the Federal Reserve, Jake assumes his identity to infiltrate a ring of his associates and discover what their next target will be.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863890+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b43-semeval-9756",
+            "_key": "semeval-terra-low-r1-b43-semeval-9756",
+            "chunk_id": "semeval-9756",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:f0f88e5e92410df9f75feeeb782213e9a8e84f6d7424cb6348028639eef087db",
+            "created_at": "2026-09-09T13:42:01.863897+00:00",
+            "space_id": "semeval-terra-low-r1-b43",
+            "text": "A calendar of saints forms a way of organising a liturgical year on the finely-granulated level of days by assigning each day to association with a saint.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:42:01.863897+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

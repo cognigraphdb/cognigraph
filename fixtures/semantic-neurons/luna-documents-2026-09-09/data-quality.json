@@ -1,0 +1,83 @@
+{
+  "source_documents_validated": 1000,
+  "source_counts": {
+    "development": 500,
+    "holdout": 500
+  },
+  "source_titles_and_texts_unique": true,
+  "selected_cross_split_5gram_jaccard_at_least_0_8": [],
+  "splits": {
+    "development": {
+      "documents": 40,
+      "whole_document_tokens": {
+        "minimum": 131,
+        "median": 209.5,
+        "maximum": 436
+      },
+      "sentences": 366,
+      "reference_relations": 683,
+      "relations_by_type": {
+        "BORN_IN": 8,
+        "COUNTRY": 229,
+        "DIED_IN": 2,
+        "FOUNDED_BY": 3,
+        "HAS_CHILD": 5,
+        "HAS_FATHER": 4,
+        "HAS_MOTHER": 1,
+        "HEADQUARTERED_IN": 5,
+        "LOCATED_IN": 387,
+        "OWNED_BY": 24,
+        "PUBLISHED_BY": 10,
+        "SPOUSE_OF": 5
+      },
+      "documents_without_in_scope_reference_relations": 1,
+      "in_scope_reference_endpoint_entities": 320,
+      "all_annotated_entities": 825,
+      "relations_without_co_sentence_endpoints": 417,
+      "relations_with_source_evidence_sentence_ids": 325,
+      "ambiguous_normalized_aliases": 6,
+      "source_annotation_name_mismatches": 21
+    },
+    "holdout": {
+      "documents": 80,
+      "whole_document_tokens": {
+        "minimum": 131,
+        "median": 175.5,
+        "maximum": 491
+      },
+      "sentences": 648,
+      "reference_relations": 1351,
+      "relations_by_type": {
+        "BORN_IN": 17,
+        "COUNTRY": 508,
+        "DIED_IN": 14,
+        "FOUNDED_BY": 5,
+        "HAS_CHILD": 9,
+        "HAS_FATHER": 8,
+        "HAS_MOTHER": 1,
+        "HEADQUARTERED_IN": 2,
+        "LOCATED_IN": 749,
+        "OWNED_BY": 5,
+        "PUBLISHED_BY": 29,
+        "SPOUSE_OF": 4
+      },
+      "documents_without_in_scope_reference_relations": 10,
+      "in_scope_reference_endpoint_entities": 648,
+      "all_annotated_entities": 1550,
+      "relations_without_co_sentence_endpoints": 789,
+      "relations_with_source_evidence_sentence_ids": 676,
+      "ambiguous_normalized_aliases": 10,
+      "source_annotation_name_mismatches": 40
+    }
+  },
+  "scope": "All published annotations for twelve predeclared relations; no claim of independently exhaustive truth.",
+  "gold_origin": "Upstream Re-DocRED human-reviewed labels; no CogniGraph/LLM-generated additions.",
+  "source_limits": [
+    "Complete benchmark documents, not full Wikipedia articles or long customer reports.",
+    "Upstream recommend/revise annotation may still omit true relations; unmatched predictions need independent review.",
+    "Source gold includes document-level inference; production prompting asks for explicit evidence.",
+    "Some new source labels lack evidence sentence annotations.",
+    "Public 2022 corpus may have appeared in model training."
+  ],
+  "holdout_status": "Prepared mechanically; no model inference, tuning, or individual error inspection."
+}

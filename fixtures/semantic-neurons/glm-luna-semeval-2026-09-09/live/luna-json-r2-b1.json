@@ -1,0 +1,562 @@
+{
+  "phase": "measurement",
+  "arm": "luna-json",
+  "repetition": 2,
+  "batch": 1,
+  "request": {
+    "space_type": "semeval-luna-json-r2-b1",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9803",
+        "title": "Relation benchmark excerpt",
+        "text": "End-sequencing of the fragments with short 36-base reads therefore leads to elevated coverage near the end of the baits."
+      },
+      {
+        "id": "semeval-10211",
+        "title": "Relation benchmark excerpt",
+        "text": "These documents survey the literature and recommend limits for worker exposure to hazards."
+      },
+      {
+        "id": "semeval-8521",
+        "title": "Relation benchmark excerpt",
+        "text": "The worst pain of all was caused by the torment to her head which was like the pain of thorns pressing into her."
+      },
+      {
+        "id": "semeval-9103",
+        "title": "Relation benchmark excerpt",
+        "text": "The skeleton was discovered inside a Neolithic-age tomb unearthed in Yumuktepe Hoyuk of the southern Mersin province."
+      },
+      {
+        "id": "semeval-9768",
+        "title": "Relation benchmark excerpt",
+        "text": "The court instead achieved the desired flexibility using a harmless error rule."
+      },
+      {
+        "id": "semeval-10590",
+        "title": "Relation benchmark excerpt",
+        "text": "The injured children were handed over to their relatives in Mannaar."
+      },
+      {
+        "id": "semeval-10314",
+        "title": "Relation benchmark excerpt",
+        "text": "There were concrete blocks inside a caisson."
+      },
+      {
+        "id": "semeval-8053",
+        "title": "Relation benchmark excerpt",
+        "text": "The gulp of magpies just left after a quick breakfast of peanuts and cookie crumbs."
+      },
+      {
+        "id": "semeval-8203",
+        "title": "Relation benchmark excerpt",
+        "text": "In 1952, when Fidel ran for congressman on the Ortodoxo party ticket, it was Father who helped finance his campaign."
+      },
+      {
+        "id": "semeval-8278",
+        "title": "Relation benchmark excerpt",
+        "text": "The SWAT team breaks open a 2nd-floor door with a battering ram."
+      },
+      {
+        "id": "semeval-9162",
+        "title": "Relation benchmark excerpt",
+        "text": "I have added references into the name index."
+      },
+      {
+        "id": "semeval-9544",
+        "title": "Relation benchmark excerpt",
+        "text": "He handed the suspects over to the police."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 0,
+    "proposed": 0,
+    "skips": [],
+    "space_type": "semeval-luna-json-r2-b1"
+  },
+  "latency_seconds": 1.5716146250488237,
+  "facts": [],
+  "entities": [],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-10211",
+      "_key": "semeval-luna-json-r2-b1-semeval-10211",
+      "chunk_id": "semeval-10211",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:401376f7fc8d4dc31dd7f253e873eed7525494f014d5e894814617b81352d7eb",
+      "created_at": "2026-09-09T12:42:53.764129+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "These documents survey the literature and recommend limits for worker exposure to hazards.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764129+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-10314",
+      "_key": "semeval-luna-json-r2-b1-semeval-10314",
+      "chunk_id": "semeval-10314",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:44050e35cb68cd422ffcd637381855f17e5dde63a7cbe52089406cc532af8e60",
+      "created_at": "2026-09-09T12:42:53.764136+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "There were concrete blocks inside a caisson.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764136+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-10590",
+      "_key": "semeval-luna-json-r2-b1-semeval-10590",
+      "chunk_id": "semeval-10590",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:835c81133b8aaf950fdfdacf04dfe216c425286324ef6cbbfbcf6663d1bef5e3",
+      "created_at": "2026-09-09T12:42:53.764137+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "The injured children were handed over to their relatives in Mannaar.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764137+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-8053",
+      "_key": "semeval-luna-json-r2-b1-semeval-8053",
+      "chunk_id": "semeval-8053",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:95b6a79b4f535687db1b46e7d0e103efdb4b923deb787d1f11405a9a72329347",
+      "created_at": "2026-09-09T12:42:53.764139+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "The gulp of magpies just left after a quick breakfast of peanuts and cookie crumbs.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764139+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-8203",
+      "_key": "semeval-luna-json-r2-b1-semeval-8203",
+      "chunk_id": "semeval-8203",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8b996fef8848af1bab3d4b26d6cb549e85a70a4ddb4d78f7785e8f80a661b8ae",
+      "created_at": "2026-09-09T12:42:53.764140+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "In 1952, when Fidel ran for congressman on the Ortodoxo party ticket, it was Father who helped finance his campaign.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764140+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-8278",
+      "_key": "semeval-luna-json-r2-b1-semeval-8278",
+      "chunk_id": "semeval-8278",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6fbc7d4461556898aca4af79a4ac7810df55918911d4a838608af1a1ffb4b001",
+      "created_at": "2026-09-09T12:42:53.764142+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "The SWAT team breaks open a 2nd-floor door with a battering ram.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764142+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-8521",
+      "_key": "semeval-luna-json-r2-b1-semeval-8521",
+      "chunk_id": "semeval-8521",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e657dccf044f4c093042afce0acd695d8a1585531571e2173285aaa8b70c7185",
+      "created_at": "2026-09-09T12:42:53.764143+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "The worst pain of all was caused by the torment to her head which was like the pain of thorns pressing into her.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764143+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-9103",
+      "_key": "semeval-luna-json-r2-b1-semeval-9103",
+      "chunk_id": "semeval-9103",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:8397e050fd199441360eb5889b493d7e4414bf66e0e25ba54b4fbe13073150d4",
+      "created_at": "2026-09-09T12:42:53.764144+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "The skeleton was discovered inside a Neolithic-age tomb unearthed in Yumuktepe Hoyuk of the southern Mersin province.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764144+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-9162",
+      "_key": "semeval-luna-json-r2-b1-semeval-9162",
+      "chunk_id": "semeval-9162",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5c782d420cbac9717da59de098cb14de26fbc212888c4b218b8229e7dbadd4ea",
+      "created_at": "2026-09-09T12:42:53.764145+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "I have added references into the name index.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764145+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-9544",
+      "_key": "semeval-luna-json-r2-b1-semeval-9544",
+      "chunk_id": "semeval-9544",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:acfdc13ff761958ff64082349ae6ee608000b762247a9cca9b6ca8170c705f68",
+      "created_at": "2026-09-09T12:42:53.764147+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "He handed the suspects over to the police.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764147+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-9768",
+      "_key": "semeval-luna-json-r2-b1-semeval-9768",
+      "chunk_id": "semeval-9768",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:329d6c012c69ed8d9ebefb03687db2d6efb62b2506150714555c35d0f6c4ef2c",
+      "created_at": "2026-09-09T12:42:53.764148+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "The court instead achieved the desired flexibility using a harmless error rule.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764148+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r2-b1-semeval-9803",
+      "_key": "semeval-luna-json-r2-b1-semeval-9803",
+      "chunk_id": "semeval-9803",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4b5e65857bee9a39454b045c47947fa80356ac351f1ed2fd40b64e2b9b066494",
+      "created_at": "2026-09-09T12:42:53.764150+00:00",
+      "space_id": "semeval-luna-json-r2-b1",
+      "text": "End-sequencing of the fragments with short 36-base reads therefore leads to elevated coverage near the end of the baits.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:42:53.764150+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 0,
+        "results": []
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 0,
+        "results": []
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-10211",
+            "_key": "semeval-luna-json-r2-b1-semeval-10211",
+            "chunk_id": "semeval-10211",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:401376f7fc8d4dc31dd7f253e873eed7525494f014d5e894814617b81352d7eb",
+            "created_at": "2026-09-09T12:42:53.764129+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "These documents survey the literature and recommend limits for worker exposure to hazards.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764129+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-10314",
+            "_key": "semeval-luna-json-r2-b1-semeval-10314",
+            "chunk_id": "semeval-10314",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:44050e35cb68cd422ffcd637381855f17e5dde63a7cbe52089406cc532af8e60",
+            "created_at": "2026-09-09T12:42:53.764136+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "There were concrete blocks inside a caisson.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764136+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-10590",
+            "_key": "semeval-luna-json-r2-b1-semeval-10590",
+            "chunk_id": "semeval-10590",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:835c81133b8aaf950fdfdacf04dfe216c425286324ef6cbbfbcf6663d1bef5e3",
+            "created_at": "2026-09-09T12:42:53.764137+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "The injured children were handed over to their relatives in Mannaar.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764137+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-8053",
+            "_key": "semeval-luna-json-r2-b1-semeval-8053",
+            "chunk_id": "semeval-8053",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:95b6a79b4f535687db1b46e7d0e103efdb4b923deb787d1f11405a9a72329347",
+            "created_at": "2026-09-09T12:42:53.764139+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "The gulp of magpies just left after a quick breakfast of peanuts and cookie crumbs.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764139+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-8203",
+            "_key": "semeval-luna-json-r2-b1-semeval-8203",
+            "chunk_id": "semeval-8203",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8b996fef8848af1bab3d4b26d6cb549e85a70a4ddb4d78f7785e8f80a661b8ae",
+            "created_at": "2026-09-09T12:42:53.764140+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "In 1952, when Fidel ran for congressman on the Ortodoxo party ticket, it was Father who helped finance his campaign.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764140+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-8278",
+            "_key": "semeval-luna-json-r2-b1-semeval-8278",
+            "chunk_id": "semeval-8278",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6fbc7d4461556898aca4af79a4ac7810df55918911d4a838608af1a1ffb4b001",
+            "created_at": "2026-09-09T12:42:53.764142+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "The SWAT team breaks open a 2nd-floor door with a battering ram.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764142+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-8521",
+            "_key": "semeval-luna-json-r2-b1-semeval-8521",
+            "chunk_id": "semeval-8521",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e657dccf044f4c093042afce0acd695d8a1585531571e2173285aaa8b70c7185",
+            "created_at": "2026-09-09T12:42:53.764143+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "The worst pain of all was caused by the torment to her head which was like the pain of thorns pressing into her.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764143+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-9103",
+            "_key": "semeval-luna-json-r2-b1-semeval-9103",
+            "chunk_id": "semeval-9103",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:8397e050fd199441360eb5889b493d7e4414bf66e0e25ba54b4fbe13073150d4",
+            "created_at": "2026-09-09T12:42:53.764144+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "The skeleton was discovered inside a Neolithic-age tomb unearthed in Yumuktepe Hoyuk of the southern Mersin province.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764144+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-9162",
+            "_key": "semeval-luna-json-r2-b1-semeval-9162",
+            "chunk_id": "semeval-9162",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5c782d420cbac9717da59de098cb14de26fbc212888c4b218b8229e7dbadd4ea",
+            "created_at": "2026-09-09T12:42:53.764145+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "I have added references into the name index.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764145+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-9544",
+            "_key": "semeval-luna-json-r2-b1-semeval-9544",
+            "chunk_id": "semeval-9544",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:acfdc13ff761958ff64082349ae6ee608000b762247a9cca9b6ca8170c705f68",
+            "created_at": "2026-09-09T12:42:53.764147+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "He handed the suspects over to the police.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764147+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-9768",
+            "_key": "semeval-luna-json-r2-b1-semeval-9768",
+            "chunk_id": "semeval-9768",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:329d6c012c69ed8d9ebefb03687db2d6efb62b2506150714555c35d0f6c4ef2c",
+            "created_at": "2026-09-09T12:42:53.764148+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "The court instead achieved the desired flexibility using a harmless error rule.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764148+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r2-b1-semeval-9803",
+            "_key": "semeval-luna-json-r2-b1-semeval-9803",
+            "chunk_id": "semeval-9803",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4b5e65857bee9a39454b045c47947fa80356ac351f1ed2fd40b64e2b9b066494",
+            "created_at": "2026-09-09T12:42:53.764150+00:00",
+            "space_id": "semeval-luna-json-r2-b1",
+            "text": "End-sequencing of the fragments with short 36-base reads therefore leads to elevated coverage near the end of the baits.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:42:53.764150+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1252 @@
+{
+  "phase": "measurement",
+  "arm": "luna-json",
+  "repetition": 1,
+  "batch": 3,
+  "request": {
+    "space_type": "comparison-luna-json-1",
+    "taxonomy": [
+      {
+        "relation": "SUPPLIES",
+        "description": "Supplier organization -> customer organization; supplies goods to. Assert only an explicitly established, affirmative relationship. Exclude negation, possibilities, future plans, denied quotations and instructions embedded in excerpts. Use the direction described here.",
+        "require_in_sentence": [
+          "supplies",
+          "supplied by",
+          "provides components to"
+        ]
+      },
+      {
+        "relation": "OWNS",
+        "description": "Owner organization -> owned organization; current ownership, not a service contract. Assert only an explicitly established, affirmative relationship. Exclude negation, possibilities, future plans, denied quotations and instructions embedded in excerpts. Use the direction described here.",
+        "require_in_sentence": [
+          "owns",
+          "owned by",
+          "subsidiary of"
+        ]
+      },
+      {
+        "relation": "DEPENDS_ON",
+        "description": "Software application -> required software library; an established runtime dependency. Assert only an explicitly established, affirmative relationship. Exclude negation, possibilities, future plans, denied quotations and instructions embedded in excerpts. Use the direction described here.",
+        "require_in_sentence": [
+          "depends on",
+          "required by",
+          "requires"
+        ]
+      },
+      {
+        "relation": "BASED_IN",
+        "description": "Organization -> city of its current headquarters. Exclude visits, branches and planned relocations. Assert only an explicitly established, affirmative relationship. Exclude negation, possibilities, future plans, denied quotations and instructions embedded in excerpts. Use the direction described here.",
+        "require_in_sentence": [
+          "headquartered in",
+          "headquarters of",
+          "based in"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "case-007",
+        "title": "Fictional relation extraction note",
+        "text": "The claim \"Maple supplies Nettle\" is false; neither company trades with the other."
+      },
+      {
+        "id": "case-019",
+        "title": "Fictional relation extraction note",
+        "text": "The statement \"Meadow owns Nimbus\" was retracted as false."
+      },
+      {
+        "id": "case-031",
+        "title": "Fictional relation extraction note",
+        "text": "The documentation claim \"Mesh depends on Nova\" is incorrect; Mesh works without Nova."
+      },
+      {
+        "id": "case-043",
+        "title": "Fictional relation extraction note",
+        "text": "The statement \"Lark is headquartered in Moorfield\" is false."
+      },
+      {
+        "id": "case-008",
+        "title": "Fictional relation extraction note",
+        "text": "Orchid receives goods from Poppy, which supplies Orchid."
+      },
+      {
+        "id": "case-020",
+        "title": "Fictional relation extraction note",
+        "text": "Onyx is a subsidiary of Pearl, so Pearl owns Onyx."
+      },
+      {
+        "id": "case-032",
+        "title": "Fictional relation extraction note",
+        "text": "Orbit is required by Pulse, which depends on Orbit."
+      },
+      {
+        "id": "case-044",
+        "title": "Fictional relation extraction note",
+        "text": "Northport is the headquarters of Osprey; Osprey is based in Northport."
+      },
+      {
+        "id": "case-009",
+        "title": "Fictional relation extraction note",
+        "text": "Quince met Rowan at a conference. Saffron supplies Thistle."
+      },
+      {
+        "id": "case-021",
+        "title": "Fictional relation extraction note",
+        "text": "Quartz advises Reed. Spruce owns Tundra."
+      },
+      {
+        "id": "case-033",
+        "title": "Fictional relation extraction note",
+        "text": "Queue and Relay share a maintainer. Stack depends on Trace."
+      },
+      {
+        "id": "case-045",
+        "title": "Fictional relation extraction note",
+        "text": "Plover visited Queensbay. Raven is headquartered in Roseford."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 8,
+    "proposed": 8,
+    "skips": [],
+    "space_type": "comparison-luna-json-1"
+  },
+  "latency_seconds": 4.056621499941684,
+  "facts": [
+    {
+      "_from": "entities/echo",
+      "_id": "facts/fact-050ad286c27005929662f8db5a058ccdeeffa99f8b633efef265df6bd6d9b444",
+      "_key": "fact-050ad286c27005929662f8db5a058ccdeeffa99f8b633efef265df6bd6d9b444",
+      "_to": "entities/flux",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-027",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "DEPENDS_ON",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Echo requires Flux to run.",
+      "trigger_end": 26,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/dahlia",
+      "_id": "facts/fact-2835522410ff63376068013f4b277013288d7ddbab4d0e94bd7131e05f937cbc",
+      "_key": "fact-2835522410ff63376068013f4b277013288d7ddbab4d0e94bd7131e05f937cbc",
+      "_to": "entities/cobalt",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-002",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "SUPPLIES",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Cobalt is supplied by Dahlia.",
+      "trigger_end": 29,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/delta",
+      "_id": "facts/fact-2d0cdf87e1e7525a72724441348b11d3547e175301a32e368a45d683df0400ea",
+      "_key": "fact-2d0cdf87e1e7525a72724441348b11d3547e175301a32e368a45d683df0400ea",
+      "_to": "entities/cipher",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-026",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "DEPENDS_ON",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Cipher is required by Delta.",
+      "trigger_end": 28,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/pulse",
+      "_id": "facts/fact-33142cb14fb2d01e705c0708f85d599aedb17eeb70bf9f4955800ce4dd799d7b",
+      "_key": "fact-33142cb14fb2d01e705c0708f85d599aedb17eeb70bf9f4955800ce4dd799d7b",
+      "_to": "entities/orbit",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-032",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "DEPENDS_ON",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Orbit is required by Pulse, which depends on Orbit.",
+      "trigger_end": 51,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/pearl",
+      "_id": "facts/fact-3cde8613cb36af813b4513b7c44a37d77c6a469949ec11935eee226a30fa6303",
+      "_key": "fact-3cde8613cb36af813b4513b7c44a37d77c6a469949ec11935eee226a30fa6303",
+      "_to": "entities/onyx",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-020",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "OWNS",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Onyx is a subsidiary of Pearl, so Pearl owns Onyx.",
+      "trigger_end": 50,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/aster",
+      "_id": "facts/fact-401047519ed1fce829a77731ba25eee8dc817bb794092dcc5aaa2b699af3b637",
+      "_key": "fact-401047519ed1fce829a77731ba25eee8dc817bb794092dcc5aaa2b699af3b637",
+      "_to": "entities/beryl",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-001",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "SUPPLIES",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Aster supplies Beryl.",
+      "trigger_end": 21,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/stack",
+      "_id": "facts/fact-41d2a241dfe0cac1a9af45f82c71bfd6d7540c476b9a21867df055d6ce1d6b4c",
+      "_key": "fact-41d2a241dfe0cac1a9af45f82c71bfd6d7540c476b9a21867df055d6ce1d6b4c",
+      "_to": "entities/trace",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-033",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "DEPENDS_ON",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Stack depends on Trace.",
+      "trigger_end": 59,
+      "trigger_start": 36
+    },
+    {
+      "_from": "entities/poppy",
+      "_id": "facts/fact-43a7bec6ebcd8abacc082abb69e5d998610417e211ecd63725e9436693e2e07e",
+      "_key": "fact-43a7bec6ebcd8abacc082abb69e5d998610417e211ecd63725e9436693e2e07e",
+      "_to": "entities/orchid",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-008",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "SUPPLIES",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Orchid receives goods from Poppy, which supplies Orchid.",
+      "trigger_end": 56,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/eider",
+      "_id": "facts/fact-747ee99ba23b1b06874dc4eac00d2d5e2d99b402da91ddb7b1799c0b0dc14de0",
+      "_key": "fact-747ee99ba23b1b06874dc4eac00d2d5e2d99b402da91ddb7b1799c0b0dc14de0",
+      "_to": "entities/fairhaven",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-039",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "BASED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Eider is based in Fairhaven, its headquarters city.",
+      "trigger_end": 51,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/saffron",
+      "_id": "facts/fact-76e8d59740ce9d5cddd1120c6c2ac4fb82ac0a587c26d52859fabfd904fc8e1f",
+      "_key": "fact-76e8d59740ce9d5cddd1120c6c2ac4fb82ac0a587c26d52859fabfd904fc8e1f",
+      "_to": "entities/thistle",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-009",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "SUPPLIES",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Saffron supplies Thistle.",
+      "trigger_end": 59,
+      "trigger_start": 34
+    },
+    {
+      "_from": "entities/alder",
+      "_id": "facts/fact-800e990fe8105a6f5cda951dc6644dca764044775e2305e1bdbaad56d1f93d78",
+      "_key": "fact-800e990fe8105a6f5cda951dc6644dca764044775e2305e1bdbaad56d1f93d78",
+      "_to": "entities/bellport",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-037",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "BASED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Alder is headquartered in Bellport.",
+      "trigger_end": 35,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/atlas",
+      "_id": "facts/fact-9739e1aa06673d0ca5df03d1d7090976af2c21bfd8dc2120bf08b6975b88a883",
+      "_key": "fact-9739e1aa06673d0ca5df03d1d7090976af2c21bfd8dc2120bf08b6975b88a883",
+      "_to": "entities/beacon",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-025",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "DEPENDS_ON",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Atlas depends on Beacon.",
+      "trigger_end": 24,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/amber",
+      "_id": "facts/fact-975c9fdc064a2215abe2b766b060e80c29f779ad24e1ee56c211813d8a900ec8",
+      "_key": "fact-975c9fdc064a2215abe2b766b060e80c29f779ad24e1ee56c211813d8a900ec8",
+      "_to": "entities/birch",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-013",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "OWNS",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Amber owns Birch.",
+      "trigger_end": 17,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/elm",
+      "_id": "facts/fact-9dd46f23aa591781dcb70cecf504ea7e57b7a05409a463b3b50705179b13e8ca",
+      "_key": "fact-9dd46f23aa591781dcb70cecf504ea7e57b7a05409a463b3b50705179b13e8ca",
+      "_to": "entities/flint",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-003",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "SUPPLIES",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Elm provides components to Flint.",
+      "trigger_end": 33,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/dune",
+      "_id": "facts/fact-a04adcf6d673d7178522df0dda81d59bfcd89bc36d5c10810eb8b3c77f7277e2",
+      "_key": "fact-a04adcf6d673d7178522df0dda81d59bfcd89bc36d5c10810eb8b3c77f7277e2",
+      "_to": "entities/cedar",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-014",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "OWNS",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Cedar is owned by Dune.",
+      "trigger_end": 23,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/raven",
+      "_id": "facts/fact-dc88d1dceb9220d1e37213d43eaac391df72f8b88ebecac6f731a52ebfec230a",
+      "_key": "fact-dc88d1dceb9220d1e37213d43eaac391df72f8b88ebecac6f731a52ebfec230a",
+      "_to": "entities/roseford",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-045",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "BASED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Raven is headquartered in Roseford.",
+      "trigger_end": 61,
+      "trigger_start": 26
+    },
+    {
+      "_from": "entities/spruce",
+      "_id": "facts/fact-e276cea6c5f8f7f40cf3564da38f0630f0221e769d13c516a27382c3c763a62b",
+      "_key": "fact-e276cea6c5f8f7f40cf3564da38f0630f0221e769d13c516a27382c3c763a62b",
+      "_to": "entities/tundra",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-021",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "OWNS",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Spruce owns Tundra.",
+      "trigger_end": 40,
+      "trigger_start": 21
+    },
+    {
+      "_from": "entities/osprey",
+      "_id": "facts/fact-f0980dacab76bb32cb2a00b49b567c2571f623f6d386592497ea38c6aa12be0d",
+      "_key": "fact-f0980dacab76bb32cb2a00b49b567c2571f623f6d386592497ea38c6aa12be0d",
+      "_to": "entities/northport",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-044",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "BASED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Northport is the headquarters of Osprey; Osprey is based in Northport.",
+      "trigger_end": 70,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/dunlin",
+      "_id": "facts/fact-f63eb8437ecee94126ee2dc174e8890cbe5f95c9f2d62966b645b4567d414e63",
+      "_key": "fact-f63eb8437ecee94126ee2dc174e8890cbe5f95c9f2d62966b645b4567d414e63",
+      "_to": "entities/creston",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "case-038",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "BASED_IN",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "comparison-luna-json-1",
+      "trigger": "Creston is the headquarters of Dunlin.",
+      "trigger_end": 38,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/alder",
+      "_key": "alder",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203190+00:00",
+      "entity_type": "organization",
+      "name": "Alder",
+      "updated_at": "2026-09-09T11:55:03.203190+00:00"
+    },
+    {
+      "_id": "entities/amber",
+      "_key": "amber",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203199+00:00",
+      "entity_type": "organization",
+      "name": "Amber",
+      "updated_at": "2026-09-09T11:55:03.203199+00:00"
+    },
+    {
+      "_id": "entities/aster",
+      "_key": "aster",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203201+00:00",
+      "entity_type": "organization",
+      "name": "Aster",
+      "updated_at": "2026-09-09T11:55:03.203201+00:00"
+    },
+    {
+      "_id": "entities/atlas",
+      "_key": "atlas",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203203+00:00",
+      "entity_type": "software application",
+      "name": "Atlas",
+      "updated_at": "2026-09-09T11:55:03.203203+00:00"
+    },
+    {
+      "_id": "entities/beacon",
+      "_key": "beacon",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203204+00:00",
+      "entity_type": "software library",
+      "name": "Beacon",
+      "updated_at": "2026-09-09T11:55:03.203204+00:00"
+    },
+    {
+      "_id": "entities/beaconworks",
+      "_key": "beaconworks",
+      "aliases": [],
+      "created_at": "2026-09-09T11:54:58.714714+00:00",
+      "entity_type": "organization",
+      "name": "BeaconWorks",
+      "updated_at": "2026-09-09T11:54:58.714714+00:00"
+    },
+    {
+      "_id": "entities/bellport",
+      "_key": "bellport",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203206+00:00",
+      "entity_type": "city",
+      "name": "Bellport",
+      "updated_at": "2026-09-09T11:55:03.203206+00:00"
+    },
+    {
+      "_id": "entities/beryl",
+      "_key": "beryl",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203208+00:00",
+      "entity_type": "organization",
+      "name": "Beryl",
+      "updated_at": "2026-09-09T11:55:03.203208+00:00"
+    },
+    {
+      "_id": "entities/birch",
+      "_key": "birch",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203209+00:00",
+      "entity_type": "organization",
+      "name": "Birch",
+      "updated_at": "2026-09-09T11:55:03.203209+00:00"
+    },
+    {
+      "_id": "entities/cedar",
+      "_key": "cedar",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203210+00:00",
+      "entity_type": "organization",
+      "name": "Cedar",
+      "updated_at": "2026-09-09T11:55:03.203210+00:00"
+    },
+    {
+      "_id": "entities/cipher",
+      "_key": "cipher",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203212+00:00",
+      "entity_type": "software library",
+      "name": "Cipher",
+      "updated_at": "2026-09-09T11:55:03.203212+00:00"
+    },
+    {
+      "_id": "entities/cobalt",
+      "_key": "cobalt",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203213+00:00",
+      "entity_type": "organization",
+      "name": "Cobalt",
+      "updated_at": "2026-09-09T11:55:03.203213+00:00"
+    },
+    {
+      "_id": "entities/creston",
+      "_key": "creston",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203215+00:00",
+      "entity_type": "city",
+      "name": "Creston",
+      "updated_at": "2026-09-09T11:55:03.203215+00:00"
+    },
+    {
+      "_id": "entities/dahlia",
+      "_key": "dahlia",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203216+00:00",
+      "entity_type": "organization",
+      "name": "Dahlia",
+      "updated_at": "2026-09-09T11:55:03.203216+00:00"
+    },
+    {
+      "_id": "entities/delta",
+      "_key": "delta",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203218+00:00",
+      "entity_type": "software application",
+      "name": "Delta",
+      "updated_at": "2026-09-09T11:55:03.203218+00:00"
+    },
+    {
+      "_id": "entities/dune",
+      "_key": "dune",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203219+00:00",
+      "entity_type": "organization",
+      "name": "Dune",
+      "updated_at": "2026-09-09T11:55:03.203219+00:00"
+    },
+    {
+      "_id": "entities/dunlin",
+      "_key": "dunlin",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203221+00:00",
+      "entity_type": "organization",
+      "name": "Dunlin",
+      "updated_at": "2026-09-09T11:55:03.203221+00:00"
+    },
+    {
+      "_id": "entities/echo",
+      "_key": "echo",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203222+00:00",
+      "entity_type": "software application",
+      "name": "Echo",
+      "updated_at": "2026-09-09T11:55:03.203222+00:00"
+    },
+    {
+      "_id": "entities/eider",
+      "_key": "eider",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203224+00:00",
+      "entity_type": "organization",
+      "name": "Eider",
+      "updated_at": "2026-09-09T11:55:03.203224+00:00"
+    },
+    {
+      "_id": "entities/elm",
+      "_key": "elm",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203225+00:00",
+      "entity_type": "organization",
+      "name": "Elm",
+      "updated_at": "2026-09-09T11:55:03.203225+00:00"
+    },
+    {
+      "_id": "entities/fairhaven",
+      "_key": "fairhaven",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203227+00:00",
+      "entity_type": "city",
+      "name": "Fairhaven",
+      "updated_at": "2026-09-09T11:55:03.203227+00:00"
+    },
+    {
+      "_id": "entities/flint",
+      "_key": "flint",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203229+00:00",
+      "entity_type": "organization",
+      "name": "Flint",
+      "updated_at": "2026-09-09T11:55:03.203229+00:00"
+    },
+    {
+      "_id": "entities/flux",
+      "_key": "flux",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:03.203230+00:00",
+      "entity_type": "software library",
+      "name": "Flux",
+      "updated_at": "2026-09-09T11:55:03.203230+00:00"
+    },
+    {
+      "_id": "entities/harborlab",
+      "_key": "harborlab",
+      "aliases": [],
+      "created_at": "2026-09-09T11:54:58.714719+00:00",
+      "entity_type": "organization",
+      "name": "HarborLab",
+      "updated_at": "2026-09-09T11:54:58.714719+00:00"
+    },
+    {
+      "_id": "entities/northport",
+      "_key": "northport",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623014+00:00",
+      "entity_type": "city",
+      "name": "Northport",
+      "updated_at": "2026-09-09T11:55:08.623014+00:00"
+    },
+    {
+      "_id": "entities/onyx",
+      "_key": "onyx",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623020+00:00",
+      "entity_type": "organization",
+      "name": "Onyx",
+      "updated_at": "2026-09-09T11:55:08.623020+00:00"
+    },
+    {
+      "_id": "entities/orbit",
+      "_key": "orbit",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623022+00:00",
+      "entity_type": "required software library",
+      "name": "Orbit",
+      "updated_at": "2026-09-09T11:55:08.623022+00:00"
+    },
+    {
+      "_id": "entities/orchid",
+      "_key": "orchid",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623023+00:00",
+      "entity_type": "organization",
+      "name": "Orchid",
+      "updated_at": "2026-09-09T11:55:08.623023+00:00"
+    },
+    {
+      "_id": "entities/osprey",
+      "_key": "osprey",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623024+00:00",
+      "entity_type": "organization",
+      "name": "Osprey",
+      "updated_at": "2026-09-09T11:55:08.623024+00:00"
+    },
+    {
+      "_id": "entities/pearl",
+      "_key": "pearl",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623028+00:00",
+      "entity_type": "organization",
+      "name": "Pearl",
+      "updated_at": "2026-09-09T11:55:08.623028+00:00"
+    },
+    {
+      "_id": "entities/poppy",
+      "_key": "poppy",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623029+00:00",
+      "entity_type": "organization",
+      "name": "Poppy",
+      "updated_at": "2026-09-09T11:55:08.623029+00:00"
+    },
+    {
+      "_id": "entities/pulse",
+      "_key": "pulse",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623030+00:00",
+      "entity_type": "software application",
+      "name": "Pulse",
+      "updated_at": "2026-09-09T11:55:08.623030+00:00"
+    },
+    {
+      "_id": "entities/raven",
+      "_key": "raven",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623031+00:00",
+      "entity_type": "organization",
+      "name": "Raven",
+      "updated_at": "2026-09-09T11:55:08.623031+00:00"
+    },
+    {
+      "_id": "entities/roseford",
+      "_key": "roseford",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623033+00:00",
+      "entity_type": "city",
+      "name": "Roseford",
+      "updated_at": "2026-09-09T11:55:08.623033+00:00"
+    },
+    {
+      "_id": "entities/saffron",
+      "_key": "saffron",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623034+00:00",
+      "entity_type": "organization",
+      "name": "Saffron",
+      "updated_at": "2026-09-09T11:55:08.623034+00:00"
+    },
+    {
+      "_id": "entities/spruce",
+      "_key": "spruce",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623035+00:00",
+      "entity_type": "organization",
+      "name": "Spruce",
+      "updated_at": "2026-09-09T11:55:08.623035+00:00"
+    },
+    {
+      "_id": "entities/stack",
+      "_key": "stack",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623037+00:00",
+      "entity_type": "software application",
+      "name": "Stack",
+      "updated_at": "2026-09-09T11:55:08.623037+00:00"
+    },
+    {
+      "_id": "entities/thistle",
+      "_key": "thistle",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623038+00:00",
+      "entity_type": "organization",
+      "name": "Thistle",
+      "updated_at": "2026-09-09T11:55:08.623038+00:00"
+    },
+    {
+      "_id": "entities/trace",
+      "_key": "trace",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623039+00:00",
+      "entity_type": "required software library",
+      "name": "Trace",
+      "updated_at": "2026-09-09T11:55:08.623039+00:00"
+    },
+    {
+      "_id": "entities/tundra",
+      "_key": "tundra",
+      "aliases": [],
+      "created_at": "2026-09-09T11:55:08.623040+00:00",
+      "entity_type": "organization",
+      "name": "Tundra",
+      "updated_at": "2026-09-09T11:55:08.623040+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/comparison-luna-json-0-preflight-new",
+      "_key": "comparison-luna-json-0-preflight-new",
+      "chunk_id": "preflight-new",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:566eecb4af0aa3f5de0a742c4781fdf310fef82d94f2a0dead31dc43236f6532",
+      "created_at": "2026-09-09T11:54:58.714721+00:00",
+      "space_id": "comparison-luna-json-0",
+      "text": "HarborLab supplies BeaconWorks.",
+      "title": "Fictional transport preflight",
+      "updated_at": "2026-09-09T11:54:58.714721+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-001",
+      "_key": "comparison-luna-json-1-case-001",
+      "chunk_id": "case-001",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:32cd9adf3b27bbd3949c2124b9f268a94c1abac58340b9a3388f6dd6b53cb46d",
+      "created_at": "2026-09-09T11:55:03.203232+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Aster supplies Beryl.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203232+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-002",
+      "_key": "comparison-luna-json-1-case-002",
+      "chunk_id": "case-002",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:88fa42036af465fd54c2913c432e1d12c0f35c7597131f58b587da042efe0657",
+      "created_at": "2026-09-09T11:55:03.203244+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Cobalt is supplied by Dahlia.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203244+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-003",
+      "_key": "comparison-luna-json-1-case-003",
+      "chunk_id": "case-003",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9f9174dcc874650a3481151e3ba8fb17ef4c946987785088bcd1b302877d451d",
+      "created_at": "2026-09-09T11:55:03.203257+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Elm provides components to Flint.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203257+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-004",
+      "_key": "comparison-luna-json-1-case-004",
+      "chunk_id": "case-004",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:08eb4255cea6dafb9949ed0ad815bf85edd243cde1aad90ceff667c7a2e5bbb6",
+      "created_at": "2026-09-09T11:55:04.565869+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Garnet does not supply Hazel.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565869+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-005",
+      "_key": "comparison-luna-json-1-case-005",
+      "chunk_id": "case-005",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9ef82e63311b773fc71f4ffbb664788c0cf10a932c5d07a4935af7b9c15fa038",
+      "created_at": "2026-09-09T11:55:04.565873+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Iris might supply Juniper if negotiations succeed.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565873+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-006",
+      "_key": "comparison-luna-json-1-case-006",
+      "chunk_id": "case-006",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:03a8a5d3edd1969098622ead7ceb25be94bee7372ee58b777677edd383096583",
+      "created_at": "2026-09-09T11:55:04.565874+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Kestrel plans to supply Laurel next year; deliveries have not begun.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565874+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-007",
+      "_key": "comparison-luna-json-1-case-007",
+      "chunk_id": "case-007",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e8c0a582378d2ac3176795cea3c0f19f8b06d5f05cc2b19fb02a2d12d7e4965c",
+      "created_at": "2026-09-09T11:55:08.623042+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "The claim \"Maple supplies Nettle\" is false; neither company trades with the other.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623042+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-008",
+      "_key": "comparison-luna-json-1-case-008",
+      "chunk_id": "case-008",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6bc77acbaddc5448e718704d175df948302de6e7d2c1744525f6389f1846a55f",
+      "created_at": "2026-09-09T11:55:08.623046+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Orchid receives goods from Poppy, which supplies Orchid.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623046+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-009",
+      "_key": "comparison-luna-json-1-case-009",
+      "chunk_id": "case-009",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f0381852d94aab050754d5abbbf8df5e59464c45f6ff2c9a1b7a48fd56ab6a5b",
+      "created_at": "2026-09-09T11:55:08.623055+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Quince met Rowan at a conference. Saffron supplies Thistle.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623055+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-013",
+      "_key": "comparison-luna-json-1-case-013",
+      "chunk_id": "case-013",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:710366111016be478a0098cad4c6c57a1795a59f55ba313651b4d94d942c188a",
+      "created_at": "2026-09-09T11:55:03.203268+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Amber owns Birch.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203268+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-014",
+      "_key": "comparison-luna-json-1-case-014",
+      "chunk_id": "case-014",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c6b78f82f5b2bebef20edfd9b4db1fd365b45ab8442abe3995a520a158553b40",
+      "created_at": "2026-09-09T11:55:03.203277+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Cedar is owned by Dune.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203277+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-015",
+      "_key": "comparison-luna-json-1-case-015",
+      "chunk_id": "case-015",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1e204a78e61cc438179323a91826364e815dbb9831dd7f0947c6669237f0a69e",
+      "created_at": "2026-09-09T11:55:03.203287+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Ember is a subsidiary of Fern.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203287+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-016",
+      "_key": "comparison-luna-json-1-case-016",
+      "chunk_id": "case-016",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:683c8a0296e75b270ea1b353dd8d6db4e52bdb5f9d924c172b2fa2f096364d94",
+      "created_at": "2026-09-09T11:55:04.565875+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Glade does not own Harbor.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565875+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-017",
+      "_key": "comparison-luna-json-1-case-017",
+      "chunk_id": "case-017",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6f9e871cec918fd9329974557a4f833b9dc3fa60c2338a34c04823b5f8094db3",
+      "created_at": "2026-09-09T11:55:04.565875+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Indigo may acquire Jade, but no agreement exists.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565875+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-018",
+      "_key": "comparison-luna-json-1-case-018",
+      "chunk_id": "case-018",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9cf14e6c1a6a65800047ca2a8d5b6d8e41e984054e8b023b387fe991bc542224",
+      "created_at": "2026-09-09T11:55:04.565876+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Kelvin plans to acquire Lotus next year; Lotus remains independent.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565876+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-019",
+      "_key": "comparison-luna-json-1-case-019",
+      "chunk_id": "case-019",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:128d57830de4c5ca509cfcf03bbb72d5825b3bade7b754e8f51a611cfe62bedd",
+      "created_at": "2026-09-09T11:55:08.623064+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "The statement \"Meadow owns Nimbus\" was retracted as false.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623064+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-020",
+      "_key": "comparison-luna-json-1-case-020",
+      "chunk_id": "case-020",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:f157a313327357a74ce3710968b3b301d4f346ba75c589dfb67c8d84f131542d",
+      "created_at": "2026-09-09T11:55:08.623066+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Onyx is a subsidiary of Pearl, so Pearl owns Onyx.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623066+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-021",
+      "_key": "comparison-luna-json-1-case-021",
+      "chunk_id": "case-021",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:61cf3abad95b5f10e11e62a5416bda7eba330f6ae877b1119d2494a56bce16b8",
+      "created_at": "2026-09-09T11:55:08.623072+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Quartz advises Reed. Spruce owns Tundra.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623072+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-025",
+      "_key": "comparison-luna-json-1-case-025",
+      "chunk_id": "case-025",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2531226ce749f0908faa1182edfdd0a8e0058e8af96f366669b3407faddf967a",
+      "created_at": "2026-09-09T11:55:03.203289+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Atlas depends on Beacon.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203289+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-026",
+      "_key": "comparison-luna-json-1-case-026",
+      "chunk_id": "case-026",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1ba2d2f82beda23845c78b14ccc80635f55bd01c5e9ad402295b5a2687604295",
+      "created_at": "2026-09-09T11:55:03.203299+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Cipher is required by Delta.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203299+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-027",
+      "_key": "comparison-luna-json-1-case-027",
+      "chunk_id": "case-027",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9c2025bf70be2cb8ad7280723a519fd1b8919e63c4354dde1b15f1b9268f2947",
+      "created_at": "2026-09-09T11:55:03.203311+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Echo requires Flux to run.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203311+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-028",
+      "_key": "comparison-luna-json-1-case-028",
+      "chunk_id": "case-028",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:b72ebcb1ea147f2d352c686ffb476ebaff3bcc6d186eb09f3cb882f86934ef49",
+      "created_at": "2026-09-09T11:55:04.565877+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Grid does not depend on Halo.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565877+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-029",
+      "_key": "comparison-luna-json-1-case-029",
+      "chunk_id": "case-029",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:10648025a89b0d1261a2c83ce06b2fd34342991256cc86cdce25f0f24e94ce49",
+      "created_at": "2026-09-09T11:55:04.565878+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Ion might depend on Jolt after a future redesign.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565878+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-030",
+      "_key": "comparison-luna-json-1-case-030",
+      "chunk_id": "case-030",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:605fbb729054e30f9e990a6064cba6436e934d1d916a05eb9da855d5f0445aee",
+      "created_at": "2026-09-09T11:55:04.565879+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Kernel plans to require Lumen in the next release; the current release works without it.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565879+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-031",
+      "_key": "comparison-luna-json-1-case-031",
+      "chunk_id": "case-031",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2770e27d3006bdfb4bf375e7b007bef6ef5b1ed6baf32aa139463c6a2b13f272",
+      "created_at": "2026-09-09T11:55:08.623080+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "The documentation claim \"Mesh depends on Nova\" is incorrect; Mesh works without Nova.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623080+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-032",
+      "_key": "comparison-luna-json-1-case-032",
+      "chunk_id": "case-032",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ecf757e6295d2dcea710c59553ab276b4f00aa8c3e3d7365843e6930a131f244",
+      "created_at": "2026-09-09T11:55:08.623082+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Orbit is required by Pulse, which depends on Orbit.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623082+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-033",
+      "_key": "comparison-luna-json-1-case-033",
+      "chunk_id": "case-033",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:3f4367d97a60147bac049a6f1456b2e32aaecdc6f8a6ec09427e5019d88e958e",
+      "created_at": "2026-09-09T11:55:08.623087+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Queue and Relay share a maintainer. Stack depends on Trace.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623087+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-037",
+      "_key": "comparison-luna-json-1-case-037",
+      "chunk_id": "case-037",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:112eece7ae363072fda7bdf80c40ba249a6b9b956090ff0ae1ef577a7a6abb9d",
+      "created_at": "2026-09-09T11:55:03.203325+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Alder is headquartered in Bellport.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203325+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-038",
+      "_key": "comparison-luna-json-1-case-038",
+      "chunk_id": "case-038",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4adc5ffb8d9245d90c4ec7941ee2ec06beec6ddf228cb9d462ff736a53bb9589",
+      "created_at": "2026-09-09T11:55:03.203340+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Creston is the headquarters of Dunlin.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203340+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-039",
+      "_key": "comparison-luna-json-1-case-039",
+      "chunk_id": "case-039",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4eff7e94d0ea350c28eaca8f4f4e268c7c765946b7edc63a1a86305338cd602e",
+      "created_at": "2026-09-09T11:55:03.203376+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Eider is based in Fairhaven, its headquarters city.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:03.203376+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-040",
+      "_key": "comparison-luna-json-1-case-040",
+      "chunk_id": "case-040",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6c4452a34f3e0edc4014dfe9507b0ec9584bf6b9ce1a60d0760babade5764ad6",
+      "created_at": "2026-09-09T11:55:04.565880+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Gannet is not headquartered in Hillford.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565880+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-041",
+      "_key": "comparison-luna-json-1-case-041",
+      "chunk_id": "case-041",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:83fe98cec16a701609f51d1a2efba40fc70b5ea9d417cc5c583caa144c793b8b",
+      "created_at": "2026-09-09T11:55:04.565880+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Ibis might move its headquarters to Junetown.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565880+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-042",
+      "_key": "comparison-luna-json-1-case-042",
+      "chunk_id": "case-042",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4c2741811b1e87cbc00bd35db5bb85fa4d9fa47f883ab6089428a5681e0c41ff",
+      "created_at": "2026-09-09T11:55:04.565881+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Kite plans to establish its headquarters in Lakeford; no relocation has occurred.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:04.565881+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-043",
+      "_key": "comparison-luna-json-1-case-043",
+      "chunk_id": "case-043",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:cd54d5e97b3131c689f1f71020eb16f9b5d606f0fc91ef03ba93d5eb8f2b219d",
+      "created_at": "2026-09-09T11:55:08.623093+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "The statement \"Lark is headquartered in Moorfield\" is false.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623093+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-044",
+      "_key": "comparison-luna-json-1-case-044",
+      "chunk_id": "case-044",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c81ecb06dcac8f0e88a0b4b85305cea1b0b9b6edba2dae432ef0225a9d381d42",
+      "created_at": "2026-09-09T11:55:08.623095+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Northport is the headquarters of Osprey; Osprey is based in Northport.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623095+00:00"
+    },
+    {
+      "_id": "chunks/comparison-luna-json-1-case-045",
+      "_key": "comparison-luna-json-1-case-045",
+      "chunk_id": "case-045",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:28ec7be11813e5dba6371912a448a26f975fd97e3325dac02ac4ed32ecf6c88f",
+      "created_at": "2026-09-09T11:55:08.623100+00:00",
+      "space_id": "comparison-luna-json-1",
+      "text": "Plover visited Queensbay. Raven is headquartered in Roseford.",
+      "title": "Fictional relation extraction note",
+      "updated_at": "2026-09-09T11:55:08.623100+00:00"
+    }
+  ]
+}

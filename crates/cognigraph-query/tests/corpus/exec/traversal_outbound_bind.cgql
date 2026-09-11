@@ -1,0 +1,5 @@
+// binds: {"start": "documents/a"}
+FOR v, e, p IN 1..2 OUTBOUND @start relationships
+FILTER e.confidence >= 0.5
+SORT v._key ASC
+RETURN { v: v._key, depth: p.depth }

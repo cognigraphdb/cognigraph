@@ -1,0 +1,66 @@
+{
+  "statement": {
+    "schema_version": 1,
+    "domain": "cognigraph.artifact-attestation.v1",
+    "tenant": "REPLACE_WITH_TENANT",
+    "tenant_incarnation": "REPLACE_WITH_TENANT_INCARNATION",
+    "payload": {
+      "attestation_id": "REPLACE_WITH_64_LOWERCASE_HEX_NATURAL_ID",
+      "manifest": {
+        "schema_version": 1,
+        "artifact_kind": "corpus",
+        "artifact_format": "deterministic-tar-v1",
+        "entries": [
+          {
+            "logical_path": "documents/corpus.jsonl",
+            "media_type": "application/x-ndjson",
+            "byte_length": 1,
+            "blob_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_RAW_BYTE_DIGEST",
+            "executable": false
+          }
+        ],
+        "entry_count": 1,
+        "total_bytes": 1
+      },
+      "manifest_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_CANONICAL_MANIFEST_DIGEST",
+      "subject": {
+        "kind": "corpus",
+        "revision": {
+          "kind": "corpus",
+          "revision_id": "REPLACE_WITH_REVISION",
+          "manifest_uri": "urn:cognigraph:artifact:corpus:manifest",
+          "manifest_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_LEGACY_REVISION_DIGEST",
+          "source_lineage": "REPLACE_WITH_LINEAGE",
+          "immutability_method": "content-addressed-manifest-v1",
+          "issuer": "REPLACE_WITH_ISSUER",
+          "issued_at_ms": 1,
+          "verification_uri": "urn:cognigraph:artifact:corpus:verification",
+          "verification_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_VERIFICATION_DIGEST",
+          "candidate_digest": null,
+          "configuration_digest": null,
+          "immutable": true
+        },
+        "preprocessing_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX"
+      },
+      "locations": [
+        {
+          "uri": "s3://REPLACE_WITH_BUCKET/immutable/corpus.tar",
+          "observed_at_ms": 1,
+          "object_version": "REPLACE_WITH_OBJECT_VERSION",
+          "declared_length": 1
+        }
+      ],
+      "attestor_registration_id": "REPLACE_WITH_64_LOWERCASE_HEX_REGISTRATION_ID",
+      "attestor_principal_id": "REPLACE_WITH_STABLE_ARTIFACT_ATTESTOR_PRINCIPAL",
+      "hash_completed_at_ms": 1,
+      "signed_at_ms": 1
+    }
+  },
+  "attestor_signature": {
+    "schema_version": 1,
+    "algorithm": "ed25519",
+    "key_id": "ed25519:sha256:REPLACE_WITH_ATTESTOR_KEY_ID_HEX",
+    "statement_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "signature": "REPLACE_WITH_UNPADDED_BASE64URL_SIGNATURE"
+  }
+}

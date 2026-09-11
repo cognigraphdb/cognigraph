@@ -1,0 +1,192 @@
+{
+ "collections": {
+  "documents": {
+   "type": "document",
+   "documents": {
+    "a": {
+     "_id": "documents/a",
+     "_key": "a",
+     "title": "Alpha",
+     "category": "research",
+     "score": 4.5,
+     "active": true,
+     "tags": [
+      "ai",
+      "graph"
+     ],
+     "meta": {
+      "source": {
+       "name": "web"
+      }
+     },
+     "content": "Rust knowledge graphs",
+     "embedding": [
+      1.0,
+      0.0
+     ]
+    },
+    "b": {
+     "_id": "documents/b",
+     "_key": "b",
+     "title": "Beta",
+     "category": "research",
+     "score": 2,
+     "active": false,
+     "tags": [],
+     "note": null,
+     "content": "Cooking pasta with Rust",
+     "embedding": [
+      0.0,
+      1.0
+     ]
+    },
+    "c": {
+     "_id": "documents/c",
+     "_key": "c",
+     "title": "Γάμμα",
+     "category": "notes",
+     "score": -1.5,
+     "tags": [
+      "ai"
+     ],
+     "empty": "",
+     "content": "  padded  ",
+     "embedding": [
+      0.8,
+      0.6
+     ]
+    },
+    "d": {
+     "_id": "documents/d",
+     "_key": "d",
+     "title": "delta",
+     "nested": {
+      "list": [
+       1,
+       2,
+       2,
+       3
+      ]
+     }
+    }
+   }
+  },
+  "relationships": {
+   "type": "edge",
+   "documents": {
+    "e1": {
+     "_id": "relationships/e1",
+     "_key": "e1",
+     "_from": "documents/a",
+     "_to": "documents/b",
+     "relation_type": "links",
+     "confidence": 0.9
+    },
+    "e2": {
+     "_id": "relationships/e2",
+     "_key": "e2",
+     "_from": "documents/b",
+     "_to": "documents/c",
+     "relation_type": "links",
+     "confidence": 0.8
+    },
+    "e3": {
+     "_id": "relationships/e3",
+     "_key": "e3",
+     "_from": "documents/a",
+     "_to": "documents/c",
+     "relation_type": "weak",
+     "confidence": 0.2
+    },
+    "e4": {
+     "_id": "relationships/e4",
+     "_key": "e4",
+     "_from": "documents/c",
+     "_to": "documents/a",
+     "relation_type": "links",
+     "confidence": 0.6
+    }
+   }
+  },
+  "i18n": {
+   "type": "document",
+   "documents": {
+    "de": {
+     "_id": "i18n/de",
+     "_key": "de",
+     "lang": "de",
+     "title": "Straße über München",
+     "text": "Die Fußgänger überqueren die große Straße"
+    },
+    "es": {
+     "_id": "i18n/es",
+     "_key": "es",
+     "lang": "es",
+     "title": "año mañana",
+     "text": "El niño come jalapeños en señal de fiesta"
+    },
+    "he": {
+     "_id": "i18n/he",
+     "_key": "he",
+     "lang": "he",
+     "title": "שלום עולם",
+     "text": "ירושלים של זהב ושל נחושת"
+    },
+    "mixed": {
+     "_id": "i18n/mixed",
+     "_key": "mixed",
+     "lang": "multi",
+     "title": "Hello мир שלום",
+     "text": "Rust und Русский junto עם עברית"
+    },
+    "ru": {
+     "_id": "i18n/ru",
+     "_key": "ru",
+     "lang": "ru",
+     "title": "Москва",
+     "text": "Быстрая рыжая лиса прыгает через ленивую собаку"
+    }
+   }
+  },
+  "words": {
+   "type": "document",
+   "documents": {
+    "a": {
+     "_id": "words/a",
+     "_key": "a",
+     "t": "Apfel"
+    },
+    "b": {
+     "_id": "words/b",
+     "_key": "b",
+     "t": "Äpfel"
+    },
+    "c": {
+     "_id": "words/c",
+     "_key": "c",
+     "t": "Zebra"
+    }
+   }
+  },
+  "numbers": {
+   "type": "document",
+   "documents": {
+    "n1": {
+     "_id": "numbers/n1",
+     "_key": "n1",
+     "v": 2
+    },
+    "n2": {
+     "_id": "numbers/n2",
+     "_key": "n2",
+     "v": 2.0
+    },
+    "n3": {
+     "_id": "numbers/n3",
+     "_key": "n3",
+     "v": 3
+    }
+   }
+  }
+ }
+}

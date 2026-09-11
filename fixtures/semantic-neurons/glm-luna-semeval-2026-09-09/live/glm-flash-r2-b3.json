@@ -1,0 +1,918 @@
+{
+  "phase": "measurement",
+  "arm": "glm-flash",
+  "repetition": 2,
+  "batch": 3,
+  "request": {
+    "space_type": "semeval-glm-flash-r2-b3",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9410",
+        "title": "Relation benchmark excerpt",
+        "text": "Bertolli takes pages and pages of text to explain the significance of flours."
+      },
+      {
+        "id": "semeval-8019",
+        "title": "Relation benchmark excerpt",
+        "text": "Beneath this invocation there is a zoo of fearsome beasts, including several man-eaters, as well as sphinxes with lions' bodies and human heads."
+      },
+      {
+        "id": "semeval-8244",
+        "title": "Relation benchmark excerpt",
+        "text": "The time machine itself is a plain gray box, with a distinctive electronic \"hum\" created by overlaying the sounds of a mechanical grinder and a car engine, rather than a processed digital effect."
+      },
+      {
+        "id": "semeval-8493",
+        "title": "Relation benchmark excerpt",
+        "text": "Tides are caused by the gravitational pull of the moon and sun, and the rotation of the Earth."
+      },
+      {
+        "id": "semeval-10318",
+        "title": "Relation benchmark excerpt",
+        "text": "The bungalow was built inside a barn."
+      },
+      {
+        "id": "semeval-10133",
+        "title": "Relation benchmark excerpt",
+        "text": "But scientists successfully treated the mice with broad-spectrum antiboitics."
+      },
+      {
+        "id": "semeval-10008",
+        "title": "Relation benchmark excerpt",
+        "text": "He gave two candies to each child."
+      },
+      {
+        "id": "semeval-8213",
+        "title": "Relation benchmark excerpt",
+        "text": "That measured moisture content of bagged samples inserted in a beaker of soil at various depths."
+      },
+      {
+        "id": "semeval-8978",
+        "title": "Relation benchmark excerpt",
+        "text": "The Football Club has rescheduled the trials to the next day due to recent wet weather."
+      },
+      {
+        "id": "semeval-8379",
+        "title": "Relation benchmark excerpt",
+        "text": "Bibliometrics is an increasingly important tool for research evaluation."
+      },
+      {
+        "id": "semeval-8633",
+        "title": "Relation benchmark excerpt",
+        "text": "Air pollution causes smog and respiratory problems when breathed."
+      },
+      {
+        "id": "semeval-9706",
+        "title": "Relation benchmark excerpt",
+        "text": "The primary aim of the present invention is to provide a capless closure for a conventional fuel filler pipe."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:glm-5.3-flash@directed-policy-v1",
+    "facts_grounded": 5,
+    "proposed": 6,
+    "skips": [
+      "`samples --Entity-Destination--> beaker`: no affirmed occurrence of the relation's vocabulary in the evidence sentence — dropped"
+    ],
+    "space_type": "semeval-glm-flash-r2-b3"
+  },
+  "latency_seconds": 5.987701083067805,
+  "facts": [
+    {
+      "_from": "entities/pollution",
+      "_id": "facts/fact-0e81df46e4107f209be6b0106dc389a90cddf0ddd07cb619659421cf34f1bfd9",
+      "_key": "fact-0e81df46e4107f209be6b0106dc389a90cddf0ddd07cb619659421cf34f1bfd9",
+      "_to": "entities/smog",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8633",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "trigger": "Air pollution causes smog and respiratory problems when breathed.",
+      "trigger_end": 65,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/trials",
+      "_id": "facts/fact-1d312588af4a6968aa4e2bd424add10056560517e96d60a37436bbb7fe5095dc",
+      "_key": "fact-1d312588af4a6968aa4e2bd424add10056560517e96d60a37436bbb7fe5095dc",
+      "_to": "entities/day",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8978",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "trigger": "The Football Club has rescheduled the trials to the next day due to recent wet weather.",
+      "trigger_end": 87,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/candies",
+      "_id": "facts/fact-1fc66620ce6a33add5df69a30dcc88102ce4e3a629cb03472c03c2c8d9468089",
+      "_key": "fact-1fc66620ce6a33add5df69a30dcc88102ce4e3a629cb03472c03c2c8d9468089",
+      "_to": "entities/child",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10008",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "trigger": "He gave two candies to each child.",
+      "trigger_end": 34,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/gravitational-pull",
+      "_id": "facts/fact-5a1bcb3ec693f0dba0ae702f374664d8c80d08ec2dc54f70e00133892eb150b0",
+      "_key": "fact-5a1bcb3ec693f0dba0ae702f374664d8c80d08ec2dc54f70e00133892eb150b0",
+      "_to": "entities/tides",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8493",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "trigger": "Tides are caused by the gravitational pull of the moon and sun, and the rotation of the Earth.",
+      "trigger_end": 94,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/bungalow",
+      "_id": "facts/fact-f2bd14d9a7002774fcddfa3a340324489852edb0d8519892e8a46c433178b233",
+      "_key": "fact-f2bd14d9a7002774fcddfa3a340324489852edb0d8519892e8a46c433178b233",
+      "_to": "entities/barn",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10318",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "trigger": "The bungalow was built inside a barn.",
+      "trigger_end": 37,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/barn",
+      "_key": "barn",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:08.618119+00:00",
+      "entity_type": "container",
+      "name": "barn",
+      "updated_at": "2026-09-09T12:43:08.618119+00:00"
+    },
+    {
+      "_id": "entities/bungalow",
+      "_key": "bungalow",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:08.618122+00:00",
+      "entity_type": "content",
+      "name": "bungalow",
+      "updated_at": "2026-09-09T12:43:08.618122+00:00"
+    },
+    {
+      "_id": "entities/candies",
+      "_key": "candies",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:08.618123+00:00",
+      "entity_type": "entity",
+      "name": "candies",
+      "updated_at": "2026-09-09T12:43:08.618123+00:00"
+    },
+    {
+      "_id": "entities/child",
+      "_key": "child",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:08.618124+00:00",
+      "entity_type": "destination",
+      "name": "child",
+      "updated_at": "2026-09-09T12:43:08.618124+00:00"
+    },
+    {
+      "_id": "entities/day",
+      "_key": "day",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:08.618125+00:00",
+      "entity_type": "destination",
+      "name": "day",
+      "updated_at": "2026-09-09T12:43:08.618125+00:00"
+    },
+    {
+      "_id": "entities/gravitational-pull",
+      "_key": "gravitational-pull",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:08.618126+00:00",
+      "entity_type": "cause",
+      "name": "gravitational pull",
+      "updated_at": "2026-09-09T12:43:08.618126+00:00"
+    },
+    {
+      "_id": "entities/pollution",
+      "_key": "pollution",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:08.618127+00:00",
+      "entity_type": "cause",
+      "name": "pollution",
+      "updated_at": "2026-09-09T12:43:08.618127+00:00"
+    },
+    {
+      "_id": "entities/smog",
+      "_key": "smog",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:08.618128+00:00",
+      "entity_type": "effect",
+      "name": "smog",
+      "updated_at": "2026-09-09T12:43:08.618128+00:00"
+    },
+    {
+      "_id": "entities/tides",
+      "_key": "tides",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:08.618128+00:00",
+      "entity_type": "effect",
+      "name": "Tides",
+      "updated_at": "2026-09-09T12:43:08.618128+00:00"
+    },
+    {
+      "_id": "entities/trials",
+      "_key": "trials",
+      "aliases": [],
+      "created_at": "2026-09-09T12:43:08.618130+00:00",
+      "entity_type": "entity",
+      "name": "trials",
+      "updated_at": "2026-09-09T12:43:08.618130+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-10008",
+      "_key": "semeval-glm-flash-r2-b3-semeval-10008",
+      "chunk_id": "semeval-10008",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e7b42d7ed656cd6d8763a6b5d8bc1222ca7c737b8f8f81d81b5d330f2f7d6e31",
+      "created_at": "2026-09-09T12:43:08.618131+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "He gave two candies to each child.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618131+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-10133",
+      "_key": "semeval-glm-flash-r2-b3-semeval-10133",
+      "chunk_id": "semeval-10133",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c651b8e2788746c8ef56f2383d9e9ca397e83369ca395aff6610e9b246f43a2b",
+      "created_at": "2026-09-09T12:43:08.618140+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "But scientists successfully treated the mice with broad-spectrum antiboitics.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618140+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-10318",
+      "_key": "semeval-glm-flash-r2-b3-semeval-10318",
+      "chunk_id": "semeval-10318",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:e2d2caa66477aa1bb3b3768d9b0572e67085a935b2bbc0a5fc212bfb2b510491",
+      "created_at": "2026-09-09T12:43:08.618141+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "The bungalow was built inside a barn.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618141+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8019",
+      "_key": "semeval-glm-flash-r2-b3-semeval-8019",
+      "chunk_id": "semeval-8019",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ca07ab3035b579eb48ab4a0a6a985790710f4b59cad36a500475e20beaca379f",
+      "created_at": "2026-09-09T12:43:08.618148+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "Beneath this invocation there is a zoo of fearsome beasts, including several man-eaters, as well as sphinxes with lions' bodies and human heads.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618148+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8213",
+      "_key": "semeval-glm-flash-r2-b3-semeval-8213",
+      "chunk_id": "semeval-8213",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:5483b1e681647a8cd775e158118c1285836480cd3ba542e778d5441282d63d19",
+      "created_at": "2026-09-09T12:43:08.618149+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "That measured moisture content of bagged samples inserted in a beaker of soil at various depths.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618149+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8244",
+      "_key": "semeval-glm-flash-r2-b3-semeval-8244",
+      "chunk_id": "semeval-8244",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c8f2e211df66722084847e862230a5c1a39368b2d158a7af2faa82aee480c08a",
+      "created_at": "2026-09-09T12:43:08.618151+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "The time machine itself is a plain gray box, with a distinctive electronic \"hum\" created by overlaying the sounds of a mechanical grinder and a car engine, rather than a processed digital effect.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618151+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8379",
+      "_key": "semeval-glm-flash-r2-b3-semeval-8379",
+      "chunk_id": "semeval-8379",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d57d8e3211b75ac6b5684d6e30b0bbcbceecf23af9605e9a7e8f76921deb9b89",
+      "created_at": "2026-09-09T12:43:08.618152+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "Bibliometrics is an increasingly important tool for research evaluation.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618152+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8493",
+      "_key": "semeval-glm-flash-r2-b3-semeval-8493",
+      "chunk_id": "semeval-8493",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:662221c8f96373e5fd8855cc33aa341c67bd52dbbab1abc552b929a34c07e376",
+      "created_at": "2026-09-09T12:43:08.618153+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "Tides are caused by the gravitational pull of the moon and sun, and the rotation of the Earth.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618153+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8633",
+      "_key": "semeval-glm-flash-r2-b3-semeval-8633",
+      "chunk_id": "semeval-8633",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9fcbda77fa53125dcc318eb4cbef134ce4505754d64e49eefcea3d7420a90ff4",
+      "created_at": "2026-09-09T12:43:08.618158+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "Air pollution causes smog and respiratory problems when breathed.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618158+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8978",
+      "_key": "semeval-glm-flash-r2-b3-semeval-8978",
+      "chunk_id": "semeval-8978",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:44f8cbd9c01f7cd34f26d5f0cc1a8885c0663dd50332f4c02ab98d07021da5dc",
+      "created_at": "2026-09-09T12:43:08.618163+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "The Football Club has rescheduled the trials to the next day due to recent wet weather.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618163+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-9410",
+      "_key": "semeval-glm-flash-r2-b3-semeval-9410",
+      "chunk_id": "semeval-9410",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:348c06583def6c04e9a36653bc738cd1ab71900ffe9e5a5c1eb637472cefc888",
+      "created_at": "2026-09-09T12:43:08.618169+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "Bertolli takes pages and pages of text to explain the significance of flours.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618169+00:00"
+    },
+    {
+      "_id": "chunks/semeval-glm-flash-r2-b3-semeval-9706",
+      "_key": "semeval-glm-flash-r2-b3-semeval-9706",
+      "chunk_id": "semeval-9706",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a6a45389dfc3b0e7771fa1578310859551145c8095c1f926235ccaf6df8a0e23",
+      "created_at": "2026-09-09T12:43:08.618170+00:00",
+      "space_id": "semeval-glm-flash-r2-b3",
+      "text": "The primary aim of the present invention is to provide a capless closure for a conventional fuel filler pipe.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:43:08.618170+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 5,
+        "results": [
+          {
+            "_from": "entities/pollution",
+            "_id": "facts/fact-0e81df46e4107f209be6b0106dc389a90cddf0ddd07cb619659421cf34f1bfd9",
+            "_key": "fact-0e81df46e4107f209be6b0106dc389a90cddf0ddd07cb619659421cf34f1bfd9",
+            "_to": "entities/smog",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8633",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "trigger": "Air pollution causes smog and respiratory problems when breathed.",
+            "trigger_end": 65,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/trials",
+            "_id": "facts/fact-1d312588af4a6968aa4e2bd424add10056560517e96d60a37436bbb7fe5095dc",
+            "_key": "fact-1d312588af4a6968aa4e2bd424add10056560517e96d60a37436bbb7fe5095dc",
+            "_to": "entities/day",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8978",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "trigger": "The Football Club has rescheduled the trials to the next day due to recent wet weather.",
+            "trigger_end": 87,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/candies",
+            "_id": "facts/fact-1fc66620ce6a33add5df69a30dcc88102ce4e3a629cb03472c03c2c8d9468089",
+            "_key": "fact-1fc66620ce6a33add5df69a30dcc88102ce4e3a629cb03472c03c2c8d9468089",
+            "_to": "entities/child",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10008",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "trigger": "He gave two candies to each child.",
+            "trigger_end": 34,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/gravitational-pull",
+            "_id": "facts/fact-5a1bcb3ec693f0dba0ae702f374664d8c80d08ec2dc54f70e00133892eb150b0",
+            "_key": "fact-5a1bcb3ec693f0dba0ae702f374664d8c80d08ec2dc54f70e00133892eb150b0",
+            "_to": "entities/tides",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8493",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "trigger": "Tides are caused by the gravitational pull of the moon and sun, and the rotation of the Earth.",
+            "trigger_end": 94,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/bungalow",
+            "_id": "facts/fact-f2bd14d9a7002774fcddfa3a340324489852edb0d8519892e8a46c433178b233",
+            "_key": "fact-f2bd14d9a7002774fcddfa3a340324489852edb0d8519892e8a46c433178b233",
+            "_to": "entities/barn",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10318",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:glm-5.3-flash@directed-policy-v1",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "trigger": "The bungalow was built inside a barn.",
+            "trigger_end": 37,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 10,
+        "results": [
+          {
+            "_id": "entities/barn",
+            "_key": "barn",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:08.618119+00:00",
+            "entity_type": "container",
+            "name": "barn",
+            "updated_at": "2026-09-09T12:43:08.618119+00:00"
+          },
+          {
+            "_id": "entities/bungalow",
+            "_key": "bungalow",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:08.618122+00:00",
+            "entity_type": "content",
+            "name": "bungalow",
+            "updated_at": "2026-09-09T12:43:08.618122+00:00"
+          },
+          {
+            "_id": "entities/candies",
+            "_key": "candies",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:08.618123+00:00",
+            "entity_type": "entity",
+            "name": "candies",
+            "updated_at": "2026-09-09T12:43:08.618123+00:00"
+          },
+          {
+            "_id": "entities/child",
+            "_key": "child",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:08.618124+00:00",
+            "entity_type": "destination",
+            "name": "child",
+            "updated_at": "2026-09-09T12:43:08.618124+00:00"
+          },
+          {
+            "_id": "entities/day",
+            "_key": "day",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:08.618125+00:00",
+            "entity_type": "destination",
+            "name": "day",
+            "updated_at": "2026-09-09T12:43:08.618125+00:00"
+          },
+          {
+            "_id": "entities/gravitational-pull",
+            "_key": "gravitational-pull",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:08.618126+00:00",
+            "entity_type": "cause",
+            "name": "gravitational pull",
+            "updated_at": "2026-09-09T12:43:08.618126+00:00"
+          },
+          {
+            "_id": "entities/pollution",
+            "_key": "pollution",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:08.618127+00:00",
+            "entity_type": "cause",
+            "name": "pollution",
+            "updated_at": "2026-09-09T12:43:08.618127+00:00"
+          },
+          {
+            "_id": "entities/smog",
+            "_key": "smog",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:08.618128+00:00",
+            "entity_type": "effect",
+            "name": "smog",
+            "updated_at": "2026-09-09T12:43:08.618128+00:00"
+          },
+          {
+            "_id": "entities/tides",
+            "_key": "tides",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:08.618128+00:00",
+            "entity_type": "effect",
+            "name": "Tides",
+            "updated_at": "2026-09-09T12:43:08.618128+00:00"
+          },
+          {
+            "_id": "entities/trials",
+            "_key": "trials",
+            "aliases": [],
+            "created_at": "2026-09-09T12:43:08.618130+00:00",
+            "entity_type": "entity",
+            "name": "trials",
+            "updated_at": "2026-09-09T12:43:08.618130+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-10008",
+            "_key": "semeval-glm-flash-r2-b3-semeval-10008",
+            "chunk_id": "semeval-10008",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e7b42d7ed656cd6d8763a6b5d8bc1222ca7c737b8f8f81d81b5d330f2f7d6e31",
+            "created_at": "2026-09-09T12:43:08.618131+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "He gave two candies to each child.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618131+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-10133",
+            "_key": "semeval-glm-flash-r2-b3-semeval-10133",
+            "chunk_id": "semeval-10133",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c651b8e2788746c8ef56f2383d9e9ca397e83369ca395aff6610e9b246f43a2b",
+            "created_at": "2026-09-09T12:43:08.618140+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "But scientists successfully treated the mice with broad-spectrum antiboitics.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618140+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-10318",
+            "_key": "semeval-glm-flash-r2-b3-semeval-10318",
+            "chunk_id": "semeval-10318",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:e2d2caa66477aa1bb3b3768d9b0572e67085a935b2bbc0a5fc212bfb2b510491",
+            "created_at": "2026-09-09T12:43:08.618141+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "The bungalow was built inside a barn.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618141+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8019",
+            "_key": "semeval-glm-flash-r2-b3-semeval-8019",
+            "chunk_id": "semeval-8019",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ca07ab3035b579eb48ab4a0a6a985790710f4b59cad36a500475e20beaca379f",
+            "created_at": "2026-09-09T12:43:08.618148+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "Beneath this invocation there is a zoo of fearsome beasts, including several man-eaters, as well as sphinxes with lions' bodies and human heads.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618148+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8213",
+            "_key": "semeval-glm-flash-r2-b3-semeval-8213",
+            "chunk_id": "semeval-8213",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:5483b1e681647a8cd775e158118c1285836480cd3ba542e778d5441282d63d19",
+            "created_at": "2026-09-09T12:43:08.618149+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "That measured moisture content of bagged samples inserted in a beaker of soil at various depths.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618149+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8244",
+            "_key": "semeval-glm-flash-r2-b3-semeval-8244",
+            "chunk_id": "semeval-8244",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c8f2e211df66722084847e862230a5c1a39368b2d158a7af2faa82aee480c08a",
+            "created_at": "2026-09-09T12:43:08.618151+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "The time machine itself is a plain gray box, with a distinctive electronic \"hum\" created by overlaying the sounds of a mechanical grinder and a car engine, rather than a processed digital effect.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618151+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8379",
+            "_key": "semeval-glm-flash-r2-b3-semeval-8379",
+            "chunk_id": "semeval-8379",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d57d8e3211b75ac6b5684d6e30b0bbcbceecf23af9605e9a7e8f76921deb9b89",
+            "created_at": "2026-09-09T12:43:08.618152+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "Bibliometrics is an increasingly important tool for research evaluation.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618152+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8493",
+            "_key": "semeval-glm-flash-r2-b3-semeval-8493",
+            "chunk_id": "semeval-8493",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:662221c8f96373e5fd8855cc33aa341c67bd52dbbab1abc552b929a34c07e376",
+            "created_at": "2026-09-09T12:43:08.618153+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "Tides are caused by the gravitational pull of the moon and sun, and the rotation of the Earth.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618153+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8633",
+            "_key": "semeval-glm-flash-r2-b3-semeval-8633",
+            "chunk_id": "semeval-8633",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:9fcbda77fa53125dcc318eb4cbef134ce4505754d64e49eefcea3d7420a90ff4",
+            "created_at": "2026-09-09T12:43:08.618158+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "Air pollution causes smog and respiratory problems when breathed.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618158+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-8978",
+            "_key": "semeval-glm-flash-r2-b3-semeval-8978",
+            "chunk_id": "semeval-8978",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:44f8cbd9c01f7cd34f26d5f0cc1a8885c0663dd50332f4c02ab98d07021da5dc",
+            "created_at": "2026-09-09T12:43:08.618163+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "The Football Club has rescheduled the trials to the next day due to recent wet weather.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618163+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-9410",
+            "_key": "semeval-glm-flash-r2-b3-semeval-9410",
+            "chunk_id": "semeval-9410",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:348c06583def6c04e9a36653bc738cd1ab71900ffe9e5a5c1eb637472cefc888",
+            "created_at": "2026-09-09T12:43:08.618169+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "Bertolli takes pages and pages of text to explain the significance of flours.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618169+00:00"
+          },
+          {
+            "_id": "chunks/semeval-glm-flash-r2-b3-semeval-9706",
+            "_key": "semeval-glm-flash-r2-b3-semeval-9706",
+            "chunk_id": "semeval-9706",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a6a45389dfc3b0e7771fa1578310859551145c8095c1f926235ccaf6df8a0e23",
+            "created_at": "2026-09-09T12:43:08.618170+00:00",
+            "space_id": "semeval-glm-flash-r2-b3",
+            "text": "The primary aim of the present invention is to provide a capless closure for a conventional fuel filler pipe.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:43:08.618170+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

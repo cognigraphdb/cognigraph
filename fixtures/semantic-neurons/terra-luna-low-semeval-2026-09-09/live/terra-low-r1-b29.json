@@ -1,0 +1,1336 @@
+{
+  "phase": "measurement",
+  "arm": "terra-low",
+  "repetition": 1,
+  "batch": 29,
+  "request": {
+    "space_type": "semeval-terra-low-r1-b29",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-9527",
+        "title": "Relation benchmark excerpt",
+        "text": "In 1974, the American sociologist David L. Phillips showed that publications of suicides on the frontpage of the news paper were followed by an increase in national suicide rates in the month after the publication."
+      },
+      {
+        "id": "semeval-8829",
+        "title": "Relation benchmark excerpt",
+        "text": "The life-like creatures caused a real scare on the set when a 44-foot spinosaurus malfunctioned and began slamming its head against a prop plane."
+      },
+      {
+        "id": "semeval-8030",
+        "title": "Relation benchmark excerpt",
+        "text": "Therefore, nowadays China is the complex mixture of different cultures from various epochs."
+      },
+      {
+        "id": "semeval-9021",
+        "title": "Relation benchmark excerpt",
+        "text": "As late as the 1950s, for example, only one Mexican served as a policeman in the entire Chicago police force."
+      },
+      {
+        "id": "semeval-9225",
+        "title": "Relation benchmark excerpt",
+        "text": "The US Department of Energy has developed a method for producing natural gas from algae."
+      },
+      {
+        "id": "semeval-9449",
+        "title": "Relation benchmark excerpt",
+        "text": "The best mode of the invention is to form the pillow of firm foam rather than using cotton or cloth or feather filers."
+      },
+      {
+        "id": "semeval-8023",
+        "title": "Relation benchmark excerpt",
+        "text": "I spent a year working for a software company to pay off my college loans."
+      },
+      {
+        "id": "semeval-10509",
+        "title": "Relation benchmark excerpt",
+        "text": "I have put these images into my web page."
+      },
+      {
+        "id": "semeval-8800",
+        "title": "Relation benchmark excerpt",
+        "text": "The users sent an array to the responder."
+      },
+      {
+        "id": "semeval-10328",
+        "title": "Relation benchmark excerpt",
+        "text": "It is unfortunate that the constitution was prepared by leaders of political parties and not legal experts."
+      },
+      {
+        "id": "semeval-10551",
+        "title": "Relation benchmark excerpt",
+        "text": "To alleviate the inconvenience caused by the fence, the Cabinet approved a plan to construct 11 passages through the barrier to facilitate movement in and out of the city."
+      },
+      {
+        "id": "semeval-9993",
+        "title": "Relation benchmark excerpt",
+        "text": "For more than five years after 9/11, a messenger bag coated with debris was sealed in a plastic trash bag."
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-terra@directed-policy-v1",
+    "facts_grounded": 11,
+    "proposed": 11,
+    "skips": [],
+    "space_type": "semeval-terra-low-r1-b29"
+  },
+  "latency_seconds": 12.359374292078428,
+  "facts": [
+    {
+      "_from": "entities/frontpage",
+      "_id": "facts/fact-007b025797758ac5ecae4e5fe7634cded7c2ed7886737674aaad2d5ac47c7fc0",
+      "_key": "fact-007b025797758ac5ecae4e5fe7634cded7c2ed7886737674aaad2d5ac47c7fc0",
+      "_to": "entities/news-paper",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9527",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b29",
+      "trigger": "In 1974, the American sociologist David L. Phillips showed that publications of suicides on the frontpage of the news paper were followed by an increase in national suicide rates in the month after the publication.",
+      "trigger_end": 214,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/foam",
+      "_id": "facts/fact-0b961f5528b7959eadd647385d5e52ef01fce8036ea2a2e891e2bae470626e61",
+      "_key": "fact-0b961f5528b7959eadd647385d5e52ef01fce8036ea2a2e891e2bae470626e61",
+      "_to": "entities/pillow",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9449",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b29",
+      "trigger": "The best mode of the invention is to form the pillow of firm foam rather than using cotton or cloth or feather filers.",
+      "trigger_end": 118,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/fence",
+      "_id": "facts/fact-163c7ecc8ad1ba93f88e7b286590de83c525f885ee24c0d655c08fe9cfc25770",
+      "_key": "fact-163c7ecc8ad1ba93f88e7b286590de83c525f885ee24c0d655c08fe9cfc25770",
+      "_to": "entities/inconvenience",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10551",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b29",
+      "trigger": "To alleviate the inconvenience caused by the fence, the Cabinet approved a plan to construct 11 passages through the barrier to facilitate movement in and out of the city.",
+      "trigger_end": 171,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/gas",
+      "_id": "facts/fact-7a5dabb157d6d372ec74620d780a18410cbaa30022cb80ab1f55bd3224d3a9b5",
+      "_key": "fact-7a5dabb157d6d372ec74620d780a18410cbaa30022cb80ab1f55bd3224d3a9b5",
+      "_to": "entities/algae",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9225",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b29",
+      "trigger": "The US Department of Energy has developed a method for producing natural gas from algae.",
+      "trigger_end": 88,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/images",
+      "_id": "facts/fact-8c12fbe7d26568ebc3ebfc9991ae30f74bb07f67e95080c2315ae03d0df6b9b7",
+      "_key": "fact-8c12fbe7d26568ebc3ebfc9991ae30f74bb07f67e95080c2315ae03d0df6b9b7",
+      "_to": "entities/web-page",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10509",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b29",
+      "trigger": "I have put these images into my web page.",
+      "trigger_end": 41,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/array",
+      "_id": "facts/fact-9448785eba70be966b6983d215b7eb7bdf06179366ffac9a41d6e02aaa0ced65",
+      "_key": "fact-9448785eba70be966b6983d215b7eb7bdf06179366ffac9a41d6e02aaa0ced65",
+      "_to": "entities/responder",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8800",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Destination",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b29",
+      "trigger": "The users sent an array to the responder.",
+      "trigger_end": 41,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/constitution",
+      "_id": "facts/fact-9bb4dfa7683f66090ce83b8ab8e8a65c59fac12417a96672a6f249dc22468a77",
+      "_key": "fact-9bb4dfa7683f66090ce83b8ab8e8a65c59fac12417a96672a6f249dc22468a77",
+      "_to": "entities/leaders",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10328",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b29",
+      "trigger": "It is unfortunate that the constitution was prepared by leaders of political parties and not legal experts.",
+      "trigger_end": 107,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/creatures",
+      "_id": "facts/fact-bfc56d4b3b598f761eeda494d671fd99c547d4a9665f4603d6645f99b07ca940",
+      "_key": "fact-bfc56d4b3b598f761eeda494d671fd99c547d4a9665f4603d6645f99b07ca940",
+      "_to": "entities/scare",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8829",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b29",
+      "trigger": "The life-like creatures caused a real scare on the set when a 44-foot spinosaurus malfunctioned and began slamming its head against a prop plane.",
+      "trigger_end": 145,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/policeman",
+      "_id": "facts/fact-d6ccef5339802a36e91056af2ed472975c538bd5e04ba3403f6b81ef4673e975",
+      "_key": "fact-d6ccef5339802a36e91056af2ed472975c538bd5e04ba3403f6b81ef4673e975",
+      "_to": "entities/police-force",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9021",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b29",
+      "trigger": "As late as the 1950s, for example, only one Mexican served as a policeman in the entire Chicago police force.",
+      "trigger_end": 109,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/cultures",
+      "_id": "facts/fact-e82486847114670643bc11f4e29d95416e9f5d70f04fb71fc1b5f443b8dc0450",
+      "_key": "fact-e82486847114670643bc11f4e29d95416e9f5d70f04fb71fc1b5f443b8dc0450",
+      "_to": "entities/epochs",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8030",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b29",
+      "trigger": "Therefore, nowadays China is the complex mixture of different cultures from various epochs.",
+      "trigger_end": 91,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/messenger-bag",
+      "_id": "facts/fact-fd44cd2e59ed084c5dc911968fe0006f901be6b13288c2784dcd3a4430341135",
+      "_key": "fact-fd44cd2e59ed084c5dc911968fe0006f901be6b13288c2784dcd3a4430341135",
+      "_to": "entities/trash-bag",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9993",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Content-Container",
+      "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+      "space_id": "semeval-terra-low-r1-b29",
+      "trigger": "For more than five years after 9/11, a messenger bag coated with debris was sealed in a plastic trash bag.",
+      "trigger_end": 106,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/algae",
+      "_key": "algae",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596577+00:00",
+      "entity_type": "Origin",
+      "name": "algae",
+      "updated_at": "2026-09-09T13:35:31.596577+00:00"
+    },
+    {
+      "_id": "entities/array",
+      "_key": "array",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596583+00:00",
+      "entity_type": "Entity",
+      "name": "array",
+      "updated_at": "2026-09-09T13:35:31.596583+00:00"
+    },
+    {
+      "_id": "entities/constitution",
+      "_key": "constitution",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596585+00:00",
+      "entity_type": "Product",
+      "name": "constitution",
+      "updated_at": "2026-09-09T13:35:31.596585+00:00"
+    },
+    {
+      "_id": "entities/creatures",
+      "_key": "creatures",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596586+00:00",
+      "entity_type": "Cause",
+      "name": "creatures",
+      "updated_at": "2026-09-09T13:35:31.596586+00:00"
+    },
+    {
+      "_id": "entities/cultures",
+      "_key": "cultures",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596588+00:00",
+      "entity_type": "Entity",
+      "name": "cultures",
+      "updated_at": "2026-09-09T13:35:31.596588+00:00"
+    },
+    {
+      "_id": "entities/epochs",
+      "_key": "epochs",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596589+00:00",
+      "entity_type": "Origin",
+      "name": "epochs",
+      "updated_at": "2026-09-09T13:35:31.596589+00:00"
+    },
+    {
+      "_id": "entities/fence",
+      "_key": "fence",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596590+00:00",
+      "entity_type": "Cause",
+      "name": "fence",
+      "updated_at": "2026-09-09T13:35:31.596590+00:00"
+    },
+    {
+      "_id": "entities/foam",
+      "_key": "foam",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596591+00:00",
+      "entity_type": "Component",
+      "name": "foam",
+      "updated_at": "2026-09-09T13:35:31.596591+00:00"
+    },
+    {
+      "_id": "entities/frontpage",
+      "_key": "frontpage",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596592+00:00",
+      "entity_type": "Component",
+      "name": "frontpage",
+      "updated_at": "2026-09-09T13:35:31.596592+00:00"
+    },
+    {
+      "_id": "entities/gas",
+      "_key": "gas",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596594+00:00",
+      "entity_type": "Entity",
+      "name": "gas",
+      "updated_at": "2026-09-09T13:35:31.596594+00:00"
+    },
+    {
+      "_id": "entities/images",
+      "_key": "images",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596595+00:00",
+      "entity_type": "Entity",
+      "name": "images",
+      "updated_at": "2026-09-09T13:35:31.596595+00:00"
+    },
+    {
+      "_id": "entities/inconvenience",
+      "_key": "inconvenience",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596596+00:00",
+      "entity_type": "Effect",
+      "name": "inconvenience",
+      "updated_at": "2026-09-09T13:35:31.596596+00:00"
+    },
+    {
+      "_id": "entities/leaders",
+      "_key": "leaders",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596597+00:00",
+      "entity_type": "Producer",
+      "name": "leaders",
+      "updated_at": "2026-09-09T13:35:31.596597+00:00"
+    },
+    {
+      "_id": "entities/messenger-bag",
+      "_key": "messenger-bag",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596598+00:00",
+      "entity_type": "Content",
+      "name": "messenger bag",
+      "updated_at": "2026-09-09T13:35:31.596598+00:00"
+    },
+    {
+      "_id": "entities/news-paper",
+      "_key": "news-paper",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596599+00:00",
+      "entity_type": "Whole",
+      "name": "news paper",
+      "updated_at": "2026-09-09T13:35:31.596599+00:00"
+    },
+    {
+      "_id": "entities/pillow",
+      "_key": "pillow",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596601+00:00",
+      "entity_type": "Whole",
+      "name": "pillow",
+      "updated_at": "2026-09-09T13:35:31.596601+00:00"
+    },
+    {
+      "_id": "entities/police-force",
+      "_key": "police-force",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596602+00:00",
+      "entity_type": "Collection",
+      "name": "police force",
+      "updated_at": "2026-09-09T13:35:31.596602+00:00"
+    },
+    {
+      "_id": "entities/policeman",
+      "_key": "policeman",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596606+00:00",
+      "entity_type": "Member",
+      "name": "policeman",
+      "updated_at": "2026-09-09T13:35:31.596606+00:00"
+    },
+    {
+      "_id": "entities/responder",
+      "_key": "responder",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596609+00:00",
+      "entity_type": "Destination",
+      "name": "responder",
+      "updated_at": "2026-09-09T13:35:31.596609+00:00"
+    },
+    {
+      "_id": "entities/scare",
+      "_key": "scare",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596610+00:00",
+      "entity_type": "Effect",
+      "name": "scare",
+      "updated_at": "2026-09-09T13:35:31.596610+00:00"
+    },
+    {
+      "_id": "entities/trash-bag",
+      "_key": "trash-bag",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596612+00:00",
+      "entity_type": "Container",
+      "name": "trash bag",
+      "updated_at": "2026-09-09T13:35:31.596612+00:00"
+    },
+    {
+      "_id": "entities/web-page",
+      "_key": "web-page",
+      "aliases": [],
+      "created_at": "2026-09-09T13:35:31.596613+00:00",
+      "entity_type": "Destination",
+      "name": "web page",
+      "updated_at": "2026-09-09T13:35:31.596613+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-10328",
+      "_key": "semeval-terra-low-r1-b29-semeval-10328",
+      "chunk_id": "semeval-10328",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6593537dbd7e6bb7d3f0f53ef14fe77d629c9ec885e975b418c5689aedc5ef42",
+      "created_at": "2026-09-09T13:35:31.596614+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "It is unfortunate that the constitution was prepared by leaders of political parties and not legal experts.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596614+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-10509",
+      "_key": "semeval-terra-low-r1-b29-semeval-10509",
+      "chunk_id": "semeval-10509",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6cb2252c7ef3d4b3456aeedb98a32636a6ac43e3ed0b38b338d9c583b17d287e",
+      "created_at": "2026-09-09T13:35:31.596630+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "I have put these images into my web page.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596630+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-10551",
+      "_key": "semeval-terra-low-r1-b29-semeval-10551",
+      "chunk_id": "semeval-10551",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2fe99c3927ab63f25a4f09fca14482f770b8166c7cd25ced5d2b01b64b53cf90",
+      "created_at": "2026-09-09T13:35:31.596639+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "To alleviate the inconvenience caused by the fence, the Cabinet approved a plan to construct 11 passages through the barrier to facilitate movement in and out of the city.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596639+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-8023",
+      "_key": "semeval-terra-low-r1-b29-semeval-8023",
+      "chunk_id": "semeval-8023",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c1057da6ced48ef1d51fad45cdef710b5f64a344fa20b16f5fc05d8fb4972144",
+      "created_at": "2026-09-09T13:35:31.596647+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "I spent a year working for a software company to pay off my college loans.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596647+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-8030",
+      "_key": "semeval-terra-low-r1-b29-semeval-8030",
+      "chunk_id": "semeval-8030",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ad1369f810c777f4fdcbab21ba091b64a66e6b78f14a36632992521b64db43a1",
+      "created_at": "2026-09-09T13:35:31.596649+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "Therefore, nowadays China is the complex mixture of different cultures from various epochs.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596649+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-8800",
+      "_key": "semeval-terra-low-r1-b29-semeval-8800",
+      "chunk_id": "semeval-8800",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:c44502ef6717bc443c391baa786c4940329e8347a1c9347c5fe3b6f820fc7c41",
+      "created_at": "2026-09-09T13:35:31.596658+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "The users sent an array to the responder.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596658+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-8829",
+      "_key": "semeval-terra-low-r1-b29-semeval-8829",
+      "chunk_id": "semeval-8829",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:622c57e6f564056796e192604d61b28712ab9f609bc43b2e4f684dcd02558c96",
+      "created_at": "2026-09-09T13:35:31.596667+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "The life-like creatures caused a real scare on the set when a 44-foot spinosaurus malfunctioned and began slamming its head against a prop plane.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596667+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-9021",
+      "_key": "semeval-terra-low-r1-b29-semeval-9021",
+      "chunk_id": "semeval-9021",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1affa47d24a055f674ed4678665ac5d77414d690ec7847124e374976809a2f78",
+      "created_at": "2026-09-09T13:35:31.596674+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "As late as the 1950s, for example, only one Mexican served as a policeman in the entire Chicago police force.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596674+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-9225",
+      "_key": "semeval-terra-low-r1-b29-semeval-9225",
+      "chunk_id": "semeval-9225",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2db1591ec9c773b6bafcd459ba5c347017fc9b4e9c4cf4ea509f7bcb3fe2b40b",
+      "created_at": "2026-09-09T13:35:31.596681+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "The US Department of Energy has developed a method for producing natural gas from algae.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596681+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-9449",
+      "_key": "semeval-terra-low-r1-b29-semeval-9449",
+      "chunk_id": "semeval-9449",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:76f379c8d133012dc418e13b886da23db137466ef3a38dafb5f11a8cab72de7c",
+      "created_at": "2026-09-09T13:35:31.596692+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "The best mode of the invention is to form the pillow of firm foam rather than using cotton or cloth or feather filers.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596692+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-9527",
+      "_key": "semeval-terra-low-r1-b29-semeval-9527",
+      "chunk_id": "semeval-9527",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:331549783382891429e0d1dd2b279d35ce81749aee044a6ebd082195af8d4152",
+      "created_at": "2026-09-09T13:35:31.596702+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "In 1974, the American sociologist David L. Phillips showed that publications of suicides on the frontpage of the news paper were followed by an increase in national suicide rates in the month after the publication.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596702+00:00"
+    },
+    {
+      "_id": "chunks/semeval-terra-low-r1-b29-semeval-9993",
+      "_key": "semeval-terra-low-r1-b29-semeval-9993",
+      "chunk_id": "semeval-9993",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:1007f4baa05f4b012801eb3f22f30bd1fb09ebc12495e1341875745b97b623c5",
+      "created_at": "2026-09-09T13:35:31.596710+00:00",
+      "space_id": "semeval-terra-low-r1-b29",
+      "text": "For more than five years after 9/11, a messenger bag coated with debris was sealed in a plastic trash bag.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T13:35:31.596710+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 11,
+        "results": [
+          {
+            "_from": "entities/frontpage",
+            "_id": "facts/fact-007b025797758ac5ecae4e5fe7634cded7c2ed7886737674aaad2d5ac47c7fc0",
+            "_key": "fact-007b025797758ac5ecae4e5fe7634cded7c2ed7886737674aaad2d5ac47c7fc0",
+            "_to": "entities/news-paper",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9527",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b29",
+            "trigger": "In 1974, the American sociologist David L. Phillips showed that publications of suicides on the frontpage of the news paper were followed by an increase in national suicide rates in the month after the publication.",
+            "trigger_end": 214,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/foam",
+            "_id": "facts/fact-0b961f5528b7959eadd647385d5e52ef01fce8036ea2a2e891e2bae470626e61",
+            "_key": "fact-0b961f5528b7959eadd647385d5e52ef01fce8036ea2a2e891e2bae470626e61",
+            "_to": "entities/pillow",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9449",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b29",
+            "trigger": "The best mode of the invention is to form the pillow of firm foam rather than using cotton or cloth or feather filers.",
+            "trigger_end": 118,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/fence",
+            "_id": "facts/fact-163c7ecc8ad1ba93f88e7b286590de83c525f885ee24c0d655c08fe9cfc25770",
+            "_key": "fact-163c7ecc8ad1ba93f88e7b286590de83c525f885ee24c0d655c08fe9cfc25770",
+            "_to": "entities/inconvenience",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10551",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b29",
+            "trigger": "To alleviate the inconvenience caused by the fence, the Cabinet approved a plan to construct 11 passages through the barrier to facilitate movement in and out of the city.",
+            "trigger_end": 171,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/gas",
+            "_id": "facts/fact-7a5dabb157d6d372ec74620d780a18410cbaa30022cb80ab1f55bd3224d3a9b5",
+            "_key": "fact-7a5dabb157d6d372ec74620d780a18410cbaa30022cb80ab1f55bd3224d3a9b5",
+            "_to": "entities/algae",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9225",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b29",
+            "trigger": "The US Department of Energy has developed a method for producing natural gas from algae.",
+            "trigger_end": 88,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/images",
+            "_id": "facts/fact-8c12fbe7d26568ebc3ebfc9991ae30f74bb07f67e95080c2315ae03d0df6b9b7",
+            "_key": "fact-8c12fbe7d26568ebc3ebfc9991ae30f74bb07f67e95080c2315ae03d0df6b9b7",
+            "_to": "entities/web-page",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10509",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b29",
+            "trigger": "I have put these images into my web page.",
+            "trigger_end": 41,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/array",
+            "_id": "facts/fact-9448785eba70be966b6983d215b7eb7bdf06179366ffac9a41d6e02aaa0ced65",
+            "_key": "fact-9448785eba70be966b6983d215b7eb7bdf06179366ffac9a41d6e02aaa0ced65",
+            "_to": "entities/responder",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8800",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Destination",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b29",
+            "trigger": "The users sent an array to the responder.",
+            "trigger_end": 41,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/constitution",
+            "_id": "facts/fact-9bb4dfa7683f66090ce83b8ab8e8a65c59fac12417a96672a6f249dc22468a77",
+            "_key": "fact-9bb4dfa7683f66090ce83b8ab8e8a65c59fac12417a96672a6f249dc22468a77",
+            "_to": "entities/leaders",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10328",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b29",
+            "trigger": "It is unfortunate that the constitution was prepared by leaders of political parties and not legal experts.",
+            "trigger_end": 107,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/creatures",
+            "_id": "facts/fact-bfc56d4b3b598f761eeda494d671fd99c547d4a9665f4603d6645f99b07ca940",
+            "_key": "fact-bfc56d4b3b598f761eeda494d671fd99c547d4a9665f4603d6645f99b07ca940",
+            "_to": "entities/scare",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8829",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b29",
+            "trigger": "The life-like creatures caused a real scare on the set when a 44-foot spinosaurus malfunctioned and began slamming its head against a prop plane.",
+            "trigger_end": 145,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/policeman",
+            "_id": "facts/fact-d6ccef5339802a36e91056af2ed472975c538bd5e04ba3403f6b81ef4673e975",
+            "_key": "fact-d6ccef5339802a36e91056af2ed472975c538bd5e04ba3403f6b81ef4673e975",
+            "_to": "entities/police-force",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9021",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b29",
+            "trigger": "As late as the 1950s, for example, only one Mexican served as a policeman in the entire Chicago police force.",
+            "trigger_end": 109,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/cultures",
+            "_id": "facts/fact-e82486847114670643bc11f4e29d95416e9f5d70f04fb71fc1b5f443b8dc0450",
+            "_key": "fact-e82486847114670643bc11f4e29d95416e9f5d70f04fb71fc1b5f443b8dc0450",
+            "_to": "entities/epochs",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8030",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b29",
+            "trigger": "Therefore, nowadays China is the complex mixture of different cultures from various epochs.",
+            "trigger_end": 91,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/messenger-bag",
+            "_id": "facts/fact-fd44cd2e59ed084c5dc911968fe0006f901be6b13288c2784dcd3a4430341135",
+            "_key": "fact-fd44cd2e59ed084c5dc911968fe0006f901be6b13288c2784dcd3a4430341135",
+            "_to": "entities/trash-bag",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9993",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Content-Container",
+            "reviewed_by": "directed:gpt-5.6-terra@directed-policy-v1",
+            "space_id": "semeval-terra-low-r1-b29",
+            "trigger": "For more than five years after 9/11, a messenger bag coated with debris was sealed in a plastic trash bag.",
+            "trigger_end": 106,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 22,
+        "results": [
+          {
+            "_id": "entities/algae",
+            "_key": "algae",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596577+00:00",
+            "entity_type": "Origin",
+            "name": "algae",
+            "updated_at": "2026-09-09T13:35:31.596577+00:00"
+          },
+          {
+            "_id": "entities/array",
+            "_key": "array",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596583+00:00",
+            "entity_type": "Entity",
+            "name": "array",
+            "updated_at": "2026-09-09T13:35:31.596583+00:00"
+          },
+          {
+            "_id": "entities/constitution",
+            "_key": "constitution",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596585+00:00",
+            "entity_type": "Product",
+            "name": "constitution",
+            "updated_at": "2026-09-09T13:35:31.596585+00:00"
+          },
+          {
+            "_id": "entities/creatures",
+            "_key": "creatures",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596586+00:00",
+            "entity_type": "Cause",
+            "name": "creatures",
+            "updated_at": "2026-09-09T13:35:31.596586+00:00"
+          },
+          {
+            "_id": "entities/cultures",
+            "_key": "cultures",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596588+00:00",
+            "entity_type": "Entity",
+            "name": "cultures",
+            "updated_at": "2026-09-09T13:35:31.596588+00:00"
+          },
+          {
+            "_id": "entities/epochs",
+            "_key": "epochs",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596589+00:00",
+            "entity_type": "Origin",
+            "name": "epochs",
+            "updated_at": "2026-09-09T13:35:31.596589+00:00"
+          },
+          {
+            "_id": "entities/fence",
+            "_key": "fence",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596590+00:00",
+            "entity_type": "Cause",
+            "name": "fence",
+            "updated_at": "2026-09-09T13:35:31.596590+00:00"
+          },
+          {
+            "_id": "entities/foam",
+            "_key": "foam",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596591+00:00",
+            "entity_type": "Component",
+            "name": "foam",
+            "updated_at": "2026-09-09T13:35:31.596591+00:00"
+          },
+          {
+            "_id": "entities/frontpage",
+            "_key": "frontpage",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596592+00:00",
+            "entity_type": "Component",
+            "name": "frontpage",
+            "updated_at": "2026-09-09T13:35:31.596592+00:00"
+          },
+          {
+            "_id": "entities/gas",
+            "_key": "gas",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596594+00:00",
+            "entity_type": "Entity",
+            "name": "gas",
+            "updated_at": "2026-09-09T13:35:31.596594+00:00"
+          },
+          {
+            "_id": "entities/images",
+            "_key": "images",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596595+00:00",
+            "entity_type": "Entity",
+            "name": "images",
+            "updated_at": "2026-09-09T13:35:31.596595+00:00"
+          },
+          {
+            "_id": "entities/inconvenience",
+            "_key": "inconvenience",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596596+00:00",
+            "entity_type": "Effect",
+            "name": "inconvenience",
+            "updated_at": "2026-09-09T13:35:31.596596+00:00"
+          },
+          {
+            "_id": "entities/leaders",
+            "_key": "leaders",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596597+00:00",
+            "entity_type": "Producer",
+            "name": "leaders",
+            "updated_at": "2026-09-09T13:35:31.596597+00:00"
+          },
+          {
+            "_id": "entities/messenger-bag",
+            "_key": "messenger-bag",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596598+00:00",
+            "entity_type": "Content",
+            "name": "messenger bag",
+            "updated_at": "2026-09-09T13:35:31.596598+00:00"
+          },
+          {
+            "_id": "entities/news-paper",
+            "_key": "news-paper",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596599+00:00",
+            "entity_type": "Whole",
+            "name": "news paper",
+            "updated_at": "2026-09-09T13:35:31.596599+00:00"
+          },
+          {
+            "_id": "entities/pillow",
+            "_key": "pillow",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596601+00:00",
+            "entity_type": "Whole",
+            "name": "pillow",
+            "updated_at": "2026-09-09T13:35:31.596601+00:00"
+          },
+          {
+            "_id": "entities/police-force",
+            "_key": "police-force",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596602+00:00",
+            "entity_type": "Collection",
+            "name": "police force",
+            "updated_at": "2026-09-09T13:35:31.596602+00:00"
+          },
+          {
+            "_id": "entities/policeman",
+            "_key": "policeman",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596606+00:00",
+            "entity_type": "Member",
+            "name": "policeman",
+            "updated_at": "2026-09-09T13:35:31.596606+00:00"
+          },
+          {
+            "_id": "entities/responder",
+            "_key": "responder",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596609+00:00",
+            "entity_type": "Destination",
+            "name": "responder",
+            "updated_at": "2026-09-09T13:35:31.596609+00:00"
+          },
+          {
+            "_id": "entities/scare",
+            "_key": "scare",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596610+00:00",
+            "entity_type": "Effect",
+            "name": "scare",
+            "updated_at": "2026-09-09T13:35:31.596610+00:00"
+          },
+          {
+            "_id": "entities/trash-bag",
+            "_key": "trash-bag",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596612+00:00",
+            "entity_type": "Container",
+            "name": "trash bag",
+            "updated_at": "2026-09-09T13:35:31.596612+00:00"
+          },
+          {
+            "_id": "entities/web-page",
+            "_key": "web-page",
+            "aliases": [],
+            "created_at": "2026-09-09T13:35:31.596613+00:00",
+            "entity_type": "Destination",
+            "name": "web page",
+            "updated_at": "2026-09-09T13:35:31.596613+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-10328",
+            "_key": "semeval-terra-low-r1-b29-semeval-10328",
+            "chunk_id": "semeval-10328",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6593537dbd7e6bb7d3f0f53ef14fe77d629c9ec885e975b418c5689aedc5ef42",
+            "created_at": "2026-09-09T13:35:31.596614+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "It is unfortunate that the constitution was prepared by leaders of political parties and not legal experts.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596614+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-10509",
+            "_key": "semeval-terra-low-r1-b29-semeval-10509",
+            "chunk_id": "semeval-10509",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6cb2252c7ef3d4b3456aeedb98a32636a6ac43e3ed0b38b338d9c583b17d287e",
+            "created_at": "2026-09-09T13:35:31.596630+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "I have put these images into my web page.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596630+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-10551",
+            "_key": "semeval-terra-low-r1-b29-semeval-10551",
+            "chunk_id": "semeval-10551",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2fe99c3927ab63f25a4f09fca14482f770b8166c7cd25ced5d2b01b64b53cf90",
+            "created_at": "2026-09-09T13:35:31.596639+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "To alleviate the inconvenience caused by the fence, the Cabinet approved a plan to construct 11 passages through the barrier to facilitate movement in and out of the city.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596639+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-8023",
+            "_key": "semeval-terra-low-r1-b29-semeval-8023",
+            "chunk_id": "semeval-8023",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c1057da6ced48ef1d51fad45cdef710b5f64a344fa20b16f5fc05d8fb4972144",
+            "created_at": "2026-09-09T13:35:31.596647+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "I spent a year working for a software company to pay off my college loans.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596647+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-8030",
+            "_key": "semeval-terra-low-r1-b29-semeval-8030",
+            "chunk_id": "semeval-8030",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ad1369f810c777f4fdcbab21ba091b64a66e6b78f14a36632992521b64db43a1",
+            "created_at": "2026-09-09T13:35:31.596649+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "Therefore, nowadays China is the complex mixture of different cultures from various epochs.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596649+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-8800",
+            "_key": "semeval-terra-low-r1-b29-semeval-8800",
+            "chunk_id": "semeval-8800",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:c44502ef6717bc443c391baa786c4940329e8347a1c9347c5fe3b6f820fc7c41",
+            "created_at": "2026-09-09T13:35:31.596658+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "The users sent an array to the responder.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596658+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-8829",
+            "_key": "semeval-terra-low-r1-b29-semeval-8829",
+            "chunk_id": "semeval-8829",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:622c57e6f564056796e192604d61b28712ab9f609bc43b2e4f684dcd02558c96",
+            "created_at": "2026-09-09T13:35:31.596667+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "The life-like creatures caused a real scare on the set when a 44-foot spinosaurus malfunctioned and began slamming its head against a prop plane.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596667+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-9021",
+            "_key": "semeval-terra-low-r1-b29-semeval-9021",
+            "chunk_id": "semeval-9021",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1affa47d24a055f674ed4678665ac5d77414d690ec7847124e374976809a2f78",
+            "created_at": "2026-09-09T13:35:31.596674+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "As late as the 1950s, for example, only one Mexican served as a policeman in the entire Chicago police force.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596674+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-9225",
+            "_key": "semeval-terra-low-r1-b29-semeval-9225",
+            "chunk_id": "semeval-9225",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2db1591ec9c773b6bafcd459ba5c347017fc9b4e9c4cf4ea509f7bcb3fe2b40b",
+            "created_at": "2026-09-09T13:35:31.596681+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "The US Department of Energy has developed a method for producing natural gas from algae.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596681+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-9449",
+            "_key": "semeval-terra-low-r1-b29-semeval-9449",
+            "chunk_id": "semeval-9449",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:76f379c8d133012dc418e13b886da23db137466ef3a38dafb5f11a8cab72de7c",
+            "created_at": "2026-09-09T13:35:31.596692+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "The best mode of the invention is to form the pillow of firm foam rather than using cotton or cloth or feather filers.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596692+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-9527",
+            "_key": "semeval-terra-low-r1-b29-semeval-9527",
+            "chunk_id": "semeval-9527",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:331549783382891429e0d1dd2b279d35ce81749aee044a6ebd082195af8d4152",
+            "created_at": "2026-09-09T13:35:31.596702+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "In 1974, the American sociologist David L. Phillips showed that publications of suicides on the frontpage of the news paper were followed by an increase in national suicide rates in the month after the publication.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596702+00:00"
+          },
+          {
+            "_id": "chunks/semeval-terra-low-r1-b29-semeval-9993",
+            "_key": "semeval-terra-low-r1-b29-semeval-9993",
+            "chunk_id": "semeval-9993",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:1007f4baa05f4b012801eb3f22f30bd1fb09ebc12495e1341875745b97b623c5",
+            "created_at": "2026-09-09T13:35:31.596710+00:00",
+            "space_id": "semeval-terra-low-r1-b29",
+            "text": "For more than five years after 9/11, a messenger bag coated with debris was sealed in a plastic trash bag.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T13:35:31.596710+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

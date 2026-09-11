@@ -1,0 +1,15 @@
+{
+  "space_id": "REPLACE_ME_space_id",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "A natural question the document answers.",
+      "expected_facts": [
+        "Entity A --RELATES_TO--> Entity B"
+      ],
+      "forbidden_facts": [
+        "Entity B --RELATES_TO--> Entity A"
+      ]
+    }
+  ]
+}

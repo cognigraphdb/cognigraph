@@ -1,0 +1,51 @@
+name: CI
+
+# Manual-only during active development. The local commit gates (cargo fmt
+# --check, cargo clippy -D warnings, cargo test --all) are the contract on every
+# change, so running the whole workspace build on each push/PR spends Actions
+# minutes for a signal we already have. Trigger deliberately — from the Actions
+# tab or `gh workflow run ci.yml` — before a release or when CI-specific
+# verification is wanted.
+on:
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  gates:
+    name: fmt + Community and Enterprise checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # Issue identities are checked against their first committed record.
+
+      - name: Install Rust (stable + clippy + rustfmt)
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@v2
+
+      # The exact local commit gates, exit-code checked. Environment-gated
+      # tests (live LLM loops need COGNIGRAPH_LIVE_LLM=1 + keys, Arango
+      # conformance needs ARANGO_PASSWORD, live embedding providers need
+      # API keys) self-skip here, so the suite is deterministic.
+      - name: Shared local and CI checks
+        run: python3 scripts/verify.py --suite ci
+
+  docker:
+    name: docker image builds
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    # The image is the deployment artifact; build it on main only (it
+    # recompiles the workspace in release mode inside the container). With the
+    # workflow now manual, this runs when CI is dispatched from main.
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v7
+      - name: Community and Enterprise Docker builds
+        run: python3 scripts/verify.py --suite docker

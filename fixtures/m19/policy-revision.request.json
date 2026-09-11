@@ -1,0 +1,88 @@
+{
+  "statement": {
+    "schema_version": 1,
+    "domain": "cognigraph.policy-revision.v1",
+    "tenant": "REPLACE_WITH_TENANT",
+    "tenant_incarnation": "REPLACE_WITH_TENANT_INCARNATION",
+    "payload": {
+      "policy_revision_id": "REPLACE_WITH_NATURAL_POLICY_REVISION_ID",
+      "target": {
+        "space_type": "pharma",
+        "channel": "m19-production"
+      },
+      "resolved_policy": {
+        "schema_version": 1,
+        "policy_id": "strict-v1",
+        "policy_revision": "1",
+        "source_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+        "allowed_candidate_kinds": [
+          "semantic-neuron-bundle"
+        ],
+        "allowed_candidate_differences": [
+          "candidate_identity",
+          "construction_configuration",
+          "graph_revision",
+          "resolved_configuration"
+        ],
+        "evaluator_id": "construct.evaluate",
+        "metric_semantics_version": "cognigraph.distinct-fact-set.v1",
+        "recall": {
+          "min_expected_distinct": 1,
+          "min_ratio_numerator": 1,
+          "min_ratio_denominator": 1,
+          "max_missing": 0,
+          "max_additional_missing_vs_baseline": 0
+        },
+        "restraint": {
+          "min_forbidden_distinct": 1,
+          "min_ratio_numerator": 1,
+          "min_ratio_denominator": 1,
+          "max_violations": 0,
+          "max_additional_violations_vs_baseline": 0
+        },
+        "exclusions": {
+          "allowed_reason_codes": [],
+          "max_count": 0,
+          "require_same_manifest_as_baseline": true
+        },
+        "required_runs": 2,
+        "require_exact_replay": true,
+        "oracle": {
+          "required_status": "verified",
+          "verifier_name": "cognigraph.oracle-separation-manifest",
+          "verifier_version": "1",
+          "verifier_artifact_digest": "sha256:626de8e04b7035c82e714335ed3f9cd2867b531c8a3c94e0b0f109e7cb5cabe4",
+          "required_stages": [
+            {
+              "stage": "candidate_build",
+              "allow_oracle_reads": false
+            },
+            {
+              "stage": "candidate_tuning",
+              "allow_oracle_reads": false
+            },
+            {
+              "stage": "construction",
+              "allow_oracle_reads": false
+            },
+            {
+              "stage": "evaluation",
+              "allow_oracle_reads": true
+            }
+          ]
+        }
+      },
+      "resolved_policy_digest": "sha256:REPLACE_WITH_CANONICAL_POLICY_DIGEST",
+      "author_registration_id": "REPLACE_WITH_AUTHOR_REGISTRATION_ID",
+      "author_principal_id": "REPLACE_WITH_STABLE_AUTHOR_PRINCIPAL_ID",
+      "signed_at_ms": 1
+    }
+  },
+  "author_signature": {
+    "schema_version": 1,
+    "algorithm": "ed25519",
+    "key_id": "ed25519:sha256:REPLACE_WITH_AUTHOR_KEY_ID_HEX",
+    "statement_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "signature": "REPLACE_WITH_UNPADDED_BASE64URL_64_BYTE_AUTHOR_SIGNATURE"
+  }
+}

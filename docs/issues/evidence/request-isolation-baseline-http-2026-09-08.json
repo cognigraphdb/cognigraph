@@ -1,0 +1,53 @@
+{
+  "issue": "CG-12",
+  "binary_profile": "release",
+  "provider": "paused synthetic loopback embedding HTTP server",
+  "expected": "vulnerable baseline",
+  "modes": {
+    "resident": {
+      "deleted_before_resume": {
+        "request_status": 200,
+        "live_database_reopened_by_old_request": true,
+        "new_tenant_document_status": 200,
+        "old_credentials_status": 401,
+        "quarantined_files": 0
+      },
+      "recreated_before_resume": {
+        "request_status": 200,
+        "replacement_document_unchanged": false,
+        "replacement_text": "old request",
+        "old_vector_count": 1
+      },
+      "suspended_during_provider": {
+        "new_request_status": 403,
+        "admitted_request_status": 200,
+        "resumed_read_status": 200
+      },
+      "restart_preserved_results": true
+    },
+    "paged": {
+      "deleted_before_resume": {
+        "request_status": 200,
+        "live_database_reopened_by_old_request": true,
+        "new_tenant_document_status": 200,
+        "old_credentials_status": 401,
+        "quarantined_files": 0
+      },
+      "recreated_before_resume": {
+        "request_status": 200,
+        "replacement_document_unchanged": false,
+        "replacement_text": "old request",
+        "old_vector_count": 1
+      },
+      "suspended_during_provider": {
+        "new_request_status": 403,
+        "admitted_request_status": 200,
+        "resumed_read_status": 200
+      },
+      "restart_preserved_results": true
+    }
+  },
+  "result": "EXPECTED DEFECT REPRODUCED",
+  "date": "2026-09-08",
+  "binary_sha256": "33c8b473e692614e485ede0099a563058f12ae0767dbf2861a3517556397416c"
+}

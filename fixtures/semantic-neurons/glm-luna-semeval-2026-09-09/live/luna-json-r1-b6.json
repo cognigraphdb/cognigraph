@@ -1,0 +1,1406 @@
+{
+  "phase": "measurement",
+  "arm": "luna-json",
+  "repetition": 1,
+  "batch": 6,
+  "request": {
+    "space_type": "semeval-luna-json-r1-b6",
+    "taxonomy": [
+      {
+        "relation": "Cause-Effect",
+        "description": "Cause -> effect: an event or object causes another event or object.",
+        "require_in_sentence": [
+          "cause",
+          "causes",
+          "caused",
+          "causing",
+          "result",
+          "results",
+          "resulted",
+          "produce",
+          "produces",
+          "produced",
+          "lead",
+          "leads",
+          "led",
+          "due",
+          "because",
+          "from",
+          "by",
+          "of"
+        ]
+      },
+      {
+        "relation": "Instrument-Agency",
+        "description": "Instrument -> agent: an agent uses an instrument to act. A component of an object alone is Component-Whole.",
+        "require_in_sentence": [
+          "use",
+          "uses",
+          "used",
+          "using",
+          "with",
+          "by",
+          "through",
+          "via"
+        ]
+      },
+      {
+        "relation": "Product-Producer",
+        "description": "Product -> producer: a producer makes or creates a product.",
+        "require_in_sentence": [
+          "make",
+          "makes",
+          "made",
+          "making",
+          "produce",
+          "produces",
+          "produced",
+          "create",
+          "created",
+          "write",
+          "wrote",
+          "written",
+          "build",
+          "built",
+          "by",
+          "of",
+          "from"
+        ]
+      },
+      {
+        "relation": "Content-Container",
+        "description": "Content -> container: an object is physically stored in a delimited container, a static situation. Movement into a destination is Entity-Destination.",
+        "require_in_sentence": [
+          "in",
+          "inside",
+          "contain",
+          "contains",
+          "contained",
+          "fill",
+          "filled",
+          "of",
+          "within",
+          "into"
+        ]
+      },
+      {
+        "relation": "Entity-Origin",
+        "description": "Entity -> origin: an entity comes or is derived from an origin or source.",
+        "require_in_sentence": [
+          "from",
+          "out of",
+          "origin",
+          "origins",
+          "source",
+          "sources",
+          "derived",
+          "of"
+        ]
+      },
+      {
+        "relation": "Entity-Destination",
+        "description": "Entity -> destination: an entity moves towards a destination.",
+        "require_in_sentence": [
+          "to",
+          "into",
+          "onto",
+          "toward",
+          "towards",
+          "enter",
+          "entered",
+          "arrive",
+          "arrived"
+        ]
+      },
+      {
+        "relation": "Component-Whole",
+        "description": "Component -> whole: an object is a functional or structural part of a larger whole.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "has",
+          "have",
+          "had",
+          "with",
+          "part",
+          "parts",
+          "component",
+          "components",
+          "include",
+          "includes",
+          "consists",
+          "comprises"
+        ]
+      },
+      {
+        "relation": "Member-Collection",
+        "description": "Member -> collection: a member is a nonfunctional part of a collection or group, rather than a structural component.",
+        "require_in_sentence": [
+          "of",
+          "in",
+          "member",
+          "members",
+          "group",
+          "groups",
+          "collection",
+          "collections",
+          "consists",
+          "comprises",
+          "include",
+          "includes"
+        ]
+      },
+      {
+        "relation": "Message-Topic",
+        "description": "Message -> topic: a written or spoken message communicates about a topic.",
+        "require_in_sentence": [
+          "about",
+          "on",
+          "of",
+          "discuss",
+          "discusses",
+          "discussed",
+          "describe",
+          "describes",
+          "described",
+          "regarding",
+          "concerning",
+          "address",
+          "addresses"
+        ]
+      }
+    ],
+    "chunks": [
+      {
+        "id": "semeval-10706",
+        "title": "Relation benchmark excerpt",
+        "text": "The sample was pressed from powder into a platelet with about 10 mm thickness, which was cut into a rectangle and put on the platinum leads."
+      },
+      {
+        "id": "semeval-9327",
+        "title": "Relation benchmark excerpt",
+        "text": "Most Americans are interested in topics or questions that have to do with cultural differences and with language."
+      },
+      {
+        "id": "semeval-10492",
+        "title": "Relation benchmark excerpt",
+        "text": "The world we live in is rooted in an infinite life."
+      },
+      {
+        "id": "semeval-10075",
+        "title": "Relation benchmark excerpt",
+        "text": "The boat departs from the port of Thap Lamu near the resort town of Khao Lak"
+      },
+      {
+        "id": "semeval-9808",
+        "title": "Relation benchmark excerpt",
+        "text": "It is an ongoing academic project by social scientists to assess the state of sociocultural, moral, religious, and political values of different cultures around the world."
+      },
+      {
+        "id": "semeval-9722",
+        "title": "Relation benchmark excerpt",
+        "text": "The Queen has expressed her shock at the devastation caused by the flooding."
+      },
+      {
+        "id": "semeval-8450",
+        "title": "Relation benchmark excerpt",
+        "text": "O'Reilly drew yet more ire from Think Progress smear artists Christy Harvey and Judd Legum by pointing out an obvious truth, that the Internet gives scum of various stripes support and encouragement by linking them up with like minded cretin."
+      },
+      {
+        "id": "semeval-8010",
+        "title": "Relation benchmark excerpt",
+        "text": "This thesis defines the clinical characteristics of amyloid disease."
+      },
+      {
+        "id": "semeval-8941",
+        "title": "Relation benchmark excerpt",
+        "text": "The first French aircraft designer to try this simply installed a deflector plate on the propellor blade."
+      },
+      {
+        "id": "semeval-8716",
+        "title": "Relation benchmark excerpt",
+        "text": "The northeast was the source of contention between these various rivaling groups."
+      },
+      {
+        "id": "semeval-9302",
+        "title": "Relation benchmark excerpt",
+        "text": "In a known motor-pump unit of this type, the slot-barrel motor is connected, to the drive spindle of the screw-spindle pump with a pressure side throttle interval interposed."
+      },
+      {
+        "id": "semeval-8330",
+        "title": "Relation benchmark excerpt",
+        "text": "When Victor Hugo was shown a poem written by a worker, his embarrassed and patronizing response was \"In your fine verse there is something more than fine verse.\""
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "chunks": 12,
+    "extracted_by": "directed:gpt-5.6-luna@directed-policy-v1",
+    "facts_grounded": 12,
+    "proposed": 12,
+    "skips": [],
+    "space_type": "semeval-luna-json-r1-b6"
+  },
+  "latency_seconds": 6.829378082999028,
+  "facts": [
+    {
+      "_from": "entities/boat",
+      "_id": "facts/fact-110ada95d6ec0781681716602678fa60e048be766de7cab8899fb117acd70ade",
+      "_key": "fact-110ada95d6ec0781681716602678fa60e048be766de7cab8899fb117acd70ade",
+      "_to": "entities/port",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10075",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "The boat departs from the port of Thap Lamu near the resort town of Khao Lak",
+      "trigger_end": 76,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/flooding",
+      "_id": "facts/fact-24a31992bef229e874c244de10ec9e13625a88c9a90ec45b7b048a06c482d5fb",
+      "_key": "fact-24a31992bef229e874c244de10ec9e13625a88c9a90ec45b7b048a06c482d5fb",
+      "_to": "entities/devastation",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9722",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Cause-Effect",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "The Queen has expressed her shock at the devastation caused by the flooding.",
+      "trigger_end": 76,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/poem",
+      "_id": "facts/fact-285753b8675f9d40a0bcd0d33dd94a96de3013d61c28e0ef04e78abc8a598ad6",
+      "_key": "fact-285753b8675f9d40a0bcd0d33dd94a96de3013d61c28e0ef04e78abc8a598ad6",
+      "_to": "entities/worker",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8330",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Product-Producer",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "When Victor Hugo was shown a poem written by a worker, his embarrassed and patronizing response was \"In your fine verse there is something more than fine verse.\"",
+      "trigger_end": 161,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/blade",
+      "_id": "facts/fact-37e70236d05a25daa121fa05ade36245d7c007e48db2308d4129f85078ab6aee",
+      "_key": "fact-37e70236d05a25daa121fa05ade36245d7c007e48db2308d4129f85078ab6aee",
+      "_to": "entities/propellor",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8941",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "The first French aircraft designer to try this simply installed a deflector plate on the propellor blade.",
+      "trigger_end": 105,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/spindle",
+      "_id": "facts/fact-3c68cd69ea7ffd1a80b5faa00c06c0aa225239aed9cd65a82c877b6ba0fb8261",
+      "_key": "fact-3c68cd69ea7ffd1a80b5faa00c06c0aa225239aed9cd65a82c877b6ba0fb8261",
+      "_to": "entities/pump",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9302",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "In a known motor-pump unit of this type, the slot-barrel motor is connected, to the drive spindle of the screw-spindle pump with a pressure side throttle interval interposed.",
+      "trigger_end": 174,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/thesis",
+      "_id": "facts/fact-551fdb813404062e537736ca33eb333848ba3b7d1d8c22214725b1809be05a73",
+      "_key": "fact-551fdb813404062e537736ca33eb333848ba3b7d1d8c22214725b1809be05a73",
+      "_to": "entities/clinical-characteristics",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8010",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "This thesis defines the clinical characteristics of amyloid disease.",
+      "trigger_end": 68,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/powder",
+      "_id": "facts/fact-6479b75bacfa34f4685a9a09217131e0ea21f9ae83691ae7b16b1b8e2935b6a7",
+      "_key": "fact-6479b75bacfa34f4685a9a09217131e0ea21f9ae83691ae7b16b1b8e2935b6a7",
+      "_to": "entities/sample",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10706",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Entity-Origin",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "The sample was pressed from powder into a platelet with about 10 mm thickness, which was cut into a rectangle and put on the platinum leads.",
+      "trigger_end": 140,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/questions",
+      "_id": "facts/fact-66501de9ae2c9c2c559d05136782129297e6023a22970f552b9f84bb37cb2ba4",
+      "_key": "fact-66501de9ae2c9c2c559d05136782129297e6023a22970f552b9f84bb37cb2ba4",
+      "_to": "entities/cultural-differences",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9327",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "Most Americans are interested in topics or questions that have to do with cultural differences and with language.",
+      "trigger_end": 113,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/world",
+      "_id": "facts/fact-68b8adab397d5b4d54a21b45cbc9ad192ed3358e437baba9b129ec4b4e451c5e",
+      "_key": "fact-68b8adab397d5b4d54a21b45cbc9ad192ed3358e437baba9b129ec4b4e451c5e",
+      "_to": "entities/life",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-10492",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Component-Whole",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "The world we live in is rooted in an infinite life.",
+      "trigger_end": 51,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/project",
+      "_id": "facts/fact-68f093802be77bb4698c65427fbcafc0293d8b27636116e7b344d7c0017dcdc3",
+      "_key": "fact-68f093802be77bb4698c65427fbcafc0293d8b27636116e7b344d7c0017dcdc3",
+      "_to": "entities/state",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-9808",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "It is an ongoing academic project by social scientists to assess the state of sociocultural, moral, religious, and political values of different cultures around the world.",
+      "trigger_end": 171,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/stripes",
+      "_id": "facts/fact-ac285e75e6f3052e2aa679863bddc0e74880c1f9f8af08ce031d401697e22a14",
+      "_key": "fact-ac285e75e6f3052e2aa679863bddc0e74880c1f9f8af08ce031d401697e22a14",
+      "_to": "entities/scum",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8450",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Member-Collection",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "O'Reilly drew yet more ire from Think Progress smear artists Christy Harvey and Judd Legum by pointing out an obvious truth, that the Internet gives scum of various stripes support and encouragement by linking them up with like minded cretin.",
+      "trigger_end": 242,
+      "trigger_start": 0
+    },
+    {
+      "_from": "entities/northeast",
+      "_id": "facts/fact-ff466c68278247cc429fec0ca8965f3f3acf4fe62d375235af98ed40cb17cc8e",
+      "_key": "fact-ff466c68278247cc429fec0ca8965f3f3acf4fe62d375235af98ed40cb17cc8e",
+      "_to": "entities/contention",
+      "confidence": 1.0,
+      "construction_schema": "occurrence-v1",
+      "evidence_chunk_id": "semeval-8716",
+      "neuron_id": null,
+      "provenance": "narrative",
+      "relation_type": "Message-Topic",
+      "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+      "space_id": "semeval-luna-json-r1-b6",
+      "trigger": "The northeast was the source of contention between these various rivaling groups.",
+      "trigger_end": 81,
+      "trigger_start": 0
+    }
+  ],
+  "entities": [
+    {
+      "_id": "entities/blade",
+      "_key": "blade",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731686+00:00",
+      "entity_type": "component",
+      "name": "blade",
+      "updated_at": "2026-09-09T12:31:53.731686+00:00"
+    },
+    {
+      "_id": "entities/boat",
+      "_key": "boat",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731696+00:00",
+      "entity_type": "object",
+      "name": "boat",
+      "updated_at": "2026-09-09T12:31:53.731696+00:00"
+    },
+    {
+      "_id": "entities/clinical-characteristics",
+      "_key": "clinical-characteristics",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731698+00:00",
+      "entity_type": "topic",
+      "name": "clinical characteristics",
+      "updated_at": "2026-09-09T12:31:53.731698+00:00"
+    },
+    {
+      "_id": "entities/contention",
+      "_key": "contention",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731703+00:00",
+      "entity_type": "topic",
+      "name": "contention",
+      "updated_at": "2026-09-09T12:31:53.731703+00:00"
+    },
+    {
+      "_id": "entities/cultural-differences",
+      "_key": "cultural-differences",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731705+00:00",
+      "entity_type": "topic",
+      "name": "cultural differences",
+      "updated_at": "2026-09-09T12:31:53.731705+00:00"
+    },
+    {
+      "_id": "entities/devastation",
+      "_key": "devastation",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731708+00:00",
+      "entity_type": "effect",
+      "name": "devastation",
+      "updated_at": "2026-09-09T12:31:53.731708+00:00"
+    },
+    {
+      "_id": "entities/flooding",
+      "_key": "flooding",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731709+00:00",
+      "entity_type": "event",
+      "name": "flooding",
+      "updated_at": "2026-09-09T12:31:53.731709+00:00"
+    },
+    {
+      "_id": "entities/life",
+      "_key": "life",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731711+00:00",
+      "entity_type": "object",
+      "name": "life",
+      "updated_at": "2026-09-09T12:31:53.731711+00:00"
+    },
+    {
+      "_id": "entities/northeast",
+      "_key": "northeast",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731713+00:00",
+      "entity_type": "object",
+      "name": "northeast",
+      "updated_at": "2026-09-09T12:31:53.731713+00:00"
+    },
+    {
+      "_id": "entities/poem",
+      "_key": "poem",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731715+00:00",
+      "entity_type": "message",
+      "name": "poem",
+      "updated_at": "2026-09-09T12:31:53.731715+00:00"
+    },
+    {
+      "_id": "entities/port",
+      "_key": "port",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731717+00:00",
+      "entity_type": "location",
+      "name": "port",
+      "updated_at": "2026-09-09T12:31:53.731717+00:00"
+    },
+    {
+      "_id": "entities/powder",
+      "_key": "powder",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731719+00:00",
+      "entity_type": "object",
+      "name": "powder",
+      "updated_at": "2026-09-09T12:31:53.731719+00:00"
+    },
+    {
+      "_id": "entities/project",
+      "_key": "project",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731720+00:00",
+      "entity_type": "object",
+      "name": "project",
+      "updated_at": "2026-09-09T12:31:53.731720+00:00"
+    },
+    {
+      "_id": "entities/propellor",
+      "_key": "propellor",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731722+00:00",
+      "entity_type": "whole",
+      "name": "propellor",
+      "updated_at": "2026-09-09T12:31:53.731722+00:00"
+    },
+    {
+      "_id": "entities/pump",
+      "_key": "pump",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731723+00:00",
+      "entity_type": "whole",
+      "name": "pump",
+      "updated_at": "2026-09-09T12:31:53.731723+00:00"
+    },
+    {
+      "_id": "entities/questions",
+      "_key": "questions",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731725+00:00",
+      "entity_type": "message",
+      "name": "questions",
+      "updated_at": "2026-09-09T12:31:53.731725+00:00"
+    },
+    {
+      "_id": "entities/sample",
+      "_key": "sample",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731727+00:00",
+      "entity_type": "object",
+      "name": "sample",
+      "updated_at": "2026-09-09T12:31:53.731727+00:00"
+    },
+    {
+      "_id": "entities/scum",
+      "_key": "scum",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731730+00:00",
+      "entity_type": "member",
+      "name": "scum",
+      "updated_at": "2026-09-09T12:31:53.731730+00:00"
+    },
+    {
+      "_id": "entities/spindle",
+      "_key": "spindle",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731731+00:00",
+      "entity_type": "component",
+      "name": "spindle",
+      "updated_at": "2026-09-09T12:31:53.731731+00:00"
+    },
+    {
+      "_id": "entities/state",
+      "_key": "state",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731732+00:00",
+      "entity_type": "object",
+      "name": "state",
+      "updated_at": "2026-09-09T12:31:53.731732+00:00"
+    },
+    {
+      "_id": "entities/stripes",
+      "_key": "stripes",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731734+00:00",
+      "entity_type": "collection",
+      "name": "stripes",
+      "updated_at": "2026-09-09T12:31:53.731734+00:00"
+    },
+    {
+      "_id": "entities/thesis",
+      "_key": "thesis",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731735+00:00",
+      "entity_type": "message",
+      "name": "thesis",
+      "updated_at": "2026-09-09T12:31:53.731735+00:00"
+    },
+    {
+      "_id": "entities/worker",
+      "_key": "worker",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731737+00:00",
+      "entity_type": "producer",
+      "name": "worker",
+      "updated_at": "2026-09-09T12:31:53.731737+00:00"
+    },
+    {
+      "_id": "entities/world",
+      "_key": "world",
+      "aliases": [],
+      "created_at": "2026-09-09T12:31:53.731739+00:00",
+      "entity_type": "object",
+      "name": "world",
+      "updated_at": "2026-09-09T12:31:53.731739+00:00"
+    }
+  ],
+  "chunks": [
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-10075",
+      "_key": "semeval-luna-json-r1-b6-semeval-10075",
+      "chunk_id": "semeval-10075",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:d2efbdeed03a5290b0312f17ae7e39f1e98d638d2b42fabf36b556d30739a393",
+      "created_at": "2026-09-09T12:31:53.731741+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "The boat departs from the port of Thap Lamu near the resort town of Khao Lak",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731741+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-10492",
+      "_key": "semeval-luna-json-r1-b6-semeval-10492",
+      "chunk_id": "semeval-10492",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:243f3893c929f97d79f7874269fcc3ce2cc56f91102936a371daa72b1dfdc439",
+      "created_at": "2026-09-09T12:31:53.731763+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "The world we live in is rooted in an infinite life.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731763+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-10706",
+      "_key": "semeval-luna-json-r1-b6-semeval-10706",
+      "chunk_id": "semeval-10706",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ee9bbe7d0a35a9664e8c9898e3183c889854e9edbcf23bffbb4b13f1352ebae3",
+      "created_at": "2026-09-09T12:31:53.731781+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "The sample was pressed from powder into a platelet with about 10 mm thickness, which was cut into a rectangle and put on the platinum leads.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731781+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-8010",
+      "_key": "semeval-luna-json-r1-b6-semeval-8010",
+      "chunk_id": "semeval-8010",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:38aaf3fcc38d834d39ca8c3f3bc2671d575e1793d019e53f1419e268ac7e2eaf",
+      "created_at": "2026-09-09T12:31:53.731791+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "This thesis defines the clinical characteristics of amyloid disease.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731791+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-8330",
+      "_key": "semeval-luna-json-r1-b6-semeval-8330",
+      "chunk_id": "semeval-8330",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a85d1a167ce23c4bff5a6684f5dfbe49129e2899c85ef2ee5405f49fda0a09ec",
+      "created_at": "2026-09-09T12:31:53.731805+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "When Victor Hugo was shown a poem written by a worker, his embarrassed and patronizing response was \"In your fine verse there is something more than fine verse.\"",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731805+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-8450",
+      "_key": "semeval-luna-json-r1-b6-semeval-8450",
+      "chunk_id": "semeval-8450",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:365a53ec485fb41ae97df1a2cf5954d457f80322649ad992b8ab6b16e3a0163d",
+      "created_at": "2026-09-09T12:31:53.731817+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "O'Reilly drew yet more ire from Think Progress smear artists Christy Harvey and Judd Legum by pointing out an obvious truth, that the Internet gives scum of various stripes support and encouragement by linking them up with like minded cretin.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731817+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-8716",
+      "_key": "semeval-luna-json-r1-b6-semeval-8716",
+      "chunk_id": "semeval-8716",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:a275e1a69e285ffa0bbfeda8d1303ebd95f46afa30666030a6237c9cda274b46",
+      "created_at": "2026-09-09T12:31:53.731829+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "The northeast was the source of contention between these various rivaling groups.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731829+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-8941",
+      "_key": "semeval-luna-json-r1-b6-semeval-8941",
+      "chunk_id": "semeval-8941",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:ca4379f5b9182d93f358cc5cc4913edccd7c17c9d8b89fae104f08b36c62a34c",
+      "created_at": "2026-09-09T12:31:53.731843+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "The first French aircraft designer to try this simply installed a deflector plate on the propellor blade.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731843+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-9302",
+      "_key": "semeval-luna-json-r1-b6-semeval-9302",
+      "chunk_id": "semeval-9302",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:2f028b6d58a9452bf0b4b6d39f3201e57c9276064fd53edca5b6ff8225f542c2",
+      "created_at": "2026-09-09T12:31:53.731862+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "In a known motor-pump unit of this type, the slot-barrel motor is connected, to the drive spindle of the screw-spindle pump with a pressure side throttle interval interposed.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731862+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-9327",
+      "_key": "semeval-luna-json-r1-b6-semeval-9327",
+      "chunk_id": "semeval-9327",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:6e00a1e3612a654baf803f560a747be06471eb6020e735a3526c3cd917cf3727",
+      "created_at": "2026-09-09T12:31:53.731876+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "Most Americans are interested in topics or questions that have to do with cultural differences and with language.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731876+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-9722",
+      "_key": "semeval-luna-json-r1-b6-semeval-9722",
+      "chunk_id": "semeval-9722",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:4782b88a84a174dd21a3c110ce5d9699d2da41e8f69abca13d27c4678c462be7",
+      "created_at": "2026-09-09T12:31:53.731888+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "The Queen has expressed her shock at the devastation caused by the flooding.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731888+00:00"
+    },
+    {
+      "_id": "chunks/semeval-luna-json-r1-b6-semeval-9808",
+      "_key": "semeval-luna-json-r1-b6-semeval-9808",
+      "chunk_id": "semeval-9808",
+      "construction_schema": "occurrence-v1",
+      "content_hash": "sha256:9d3d5946578ef305f5dd698cd331512b05eee4b534ed6dfdd218876ecffd36d6",
+      "created_at": "2026-09-09T12:31:53.731899+00:00",
+      "space_id": "semeval-luna-json-r1-b6",
+      "text": "It is an ongoing academic project by social scientists to assess the state of sociocultural, moral, religious, and political values of different cultures around the world.",
+      "title": "Relation benchmark excerpt",
+      "updated_at": "2026-09-09T12:31:53.731899+00:00"
+    }
+  ],
+  "store_queries": {
+    "facts": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_from": "entities/boat",
+            "_id": "facts/fact-110ada95d6ec0781681716602678fa60e048be766de7cab8899fb117acd70ade",
+            "_key": "fact-110ada95d6ec0781681716602678fa60e048be766de7cab8899fb117acd70ade",
+            "_to": "entities/port",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10075",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "The boat departs from the port of Thap Lamu near the resort town of Khao Lak",
+            "trigger_end": 76,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/flooding",
+            "_id": "facts/fact-24a31992bef229e874c244de10ec9e13625a88c9a90ec45b7b048a06c482d5fb",
+            "_key": "fact-24a31992bef229e874c244de10ec9e13625a88c9a90ec45b7b048a06c482d5fb",
+            "_to": "entities/devastation",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9722",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Cause-Effect",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "The Queen has expressed her shock at the devastation caused by the flooding.",
+            "trigger_end": 76,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/poem",
+            "_id": "facts/fact-285753b8675f9d40a0bcd0d33dd94a96de3013d61c28e0ef04e78abc8a598ad6",
+            "_key": "fact-285753b8675f9d40a0bcd0d33dd94a96de3013d61c28e0ef04e78abc8a598ad6",
+            "_to": "entities/worker",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8330",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Product-Producer",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "When Victor Hugo was shown a poem written by a worker, his embarrassed and patronizing response was \"In your fine verse there is something more than fine verse.\"",
+            "trigger_end": 161,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/blade",
+            "_id": "facts/fact-37e70236d05a25daa121fa05ade36245d7c007e48db2308d4129f85078ab6aee",
+            "_key": "fact-37e70236d05a25daa121fa05ade36245d7c007e48db2308d4129f85078ab6aee",
+            "_to": "entities/propellor",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8941",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "The first French aircraft designer to try this simply installed a deflector plate on the propellor blade.",
+            "trigger_end": 105,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/spindle",
+            "_id": "facts/fact-3c68cd69ea7ffd1a80b5faa00c06c0aa225239aed9cd65a82c877b6ba0fb8261",
+            "_key": "fact-3c68cd69ea7ffd1a80b5faa00c06c0aa225239aed9cd65a82c877b6ba0fb8261",
+            "_to": "entities/pump",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9302",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "In a known motor-pump unit of this type, the slot-barrel motor is connected, to the drive spindle of the screw-spindle pump with a pressure side throttle interval interposed.",
+            "trigger_end": 174,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/thesis",
+            "_id": "facts/fact-551fdb813404062e537736ca33eb333848ba3b7d1d8c22214725b1809be05a73",
+            "_key": "fact-551fdb813404062e537736ca33eb333848ba3b7d1d8c22214725b1809be05a73",
+            "_to": "entities/clinical-characteristics",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8010",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "This thesis defines the clinical characteristics of amyloid disease.",
+            "trigger_end": 68,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/powder",
+            "_id": "facts/fact-6479b75bacfa34f4685a9a09217131e0ea21f9ae83691ae7b16b1b8e2935b6a7",
+            "_key": "fact-6479b75bacfa34f4685a9a09217131e0ea21f9ae83691ae7b16b1b8e2935b6a7",
+            "_to": "entities/sample",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10706",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Entity-Origin",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "The sample was pressed from powder into a platelet with about 10 mm thickness, which was cut into a rectangle and put on the platinum leads.",
+            "trigger_end": 140,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/questions",
+            "_id": "facts/fact-66501de9ae2c9c2c559d05136782129297e6023a22970f552b9f84bb37cb2ba4",
+            "_key": "fact-66501de9ae2c9c2c559d05136782129297e6023a22970f552b9f84bb37cb2ba4",
+            "_to": "entities/cultural-differences",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9327",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "Most Americans are interested in topics or questions that have to do with cultural differences and with language.",
+            "trigger_end": 113,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/world",
+            "_id": "facts/fact-68b8adab397d5b4d54a21b45cbc9ad192ed3358e437baba9b129ec4b4e451c5e",
+            "_key": "fact-68b8adab397d5b4d54a21b45cbc9ad192ed3358e437baba9b129ec4b4e451c5e",
+            "_to": "entities/life",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-10492",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Component-Whole",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "The world we live in is rooted in an infinite life.",
+            "trigger_end": 51,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/project",
+            "_id": "facts/fact-68f093802be77bb4698c65427fbcafc0293d8b27636116e7b344d7c0017dcdc3",
+            "_key": "fact-68f093802be77bb4698c65427fbcafc0293d8b27636116e7b344d7c0017dcdc3",
+            "_to": "entities/state",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-9808",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "It is an ongoing academic project by social scientists to assess the state of sociocultural, moral, religious, and political values of different cultures around the world.",
+            "trigger_end": 171,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/stripes",
+            "_id": "facts/fact-ac285e75e6f3052e2aa679863bddc0e74880c1f9f8af08ce031d401697e22a14",
+            "_key": "fact-ac285e75e6f3052e2aa679863bddc0e74880c1f9f8af08ce031d401697e22a14",
+            "_to": "entities/scum",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8450",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Member-Collection",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "O'Reilly drew yet more ire from Think Progress smear artists Christy Harvey and Judd Legum by pointing out an obvious truth, that the Internet gives scum of various stripes support and encouragement by linking them up with like minded cretin.",
+            "trigger_end": 242,
+            "trigger_start": 0
+          },
+          {
+            "_from": "entities/northeast",
+            "_id": "facts/fact-ff466c68278247cc429fec0ca8965f3f3acf4fe62d375235af98ed40cb17cc8e",
+            "_key": "fact-ff466c68278247cc429fec0ca8965f3f3acf4fe62d375235af98ed40cb17cc8e",
+            "_to": "entities/contention",
+            "confidence": 1.0,
+            "construction_schema": "occurrence-v1",
+            "evidence_chunk_id": "semeval-8716",
+            "neuron_id": null,
+            "provenance": "narrative",
+            "relation_type": "Message-Topic",
+            "reviewed_by": "directed:gpt-5.6-luna@directed-policy-v1",
+            "space_id": "semeval-luna-json-r1-b6",
+            "trigger": "The northeast was the source of contention between these various rivaling groups.",
+            "trigger_end": 81,
+            "trigger_start": 0
+          }
+        ]
+      }
+    },
+    "entities": {
+      "status": 200,
+      "response": {
+        "count": 24,
+        "results": [
+          {
+            "_id": "entities/blade",
+            "_key": "blade",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731686+00:00",
+            "entity_type": "component",
+            "name": "blade",
+            "updated_at": "2026-09-09T12:31:53.731686+00:00"
+          },
+          {
+            "_id": "entities/boat",
+            "_key": "boat",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731696+00:00",
+            "entity_type": "object",
+            "name": "boat",
+            "updated_at": "2026-09-09T12:31:53.731696+00:00"
+          },
+          {
+            "_id": "entities/clinical-characteristics",
+            "_key": "clinical-characteristics",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731698+00:00",
+            "entity_type": "topic",
+            "name": "clinical characteristics",
+            "updated_at": "2026-09-09T12:31:53.731698+00:00"
+          },
+          {
+            "_id": "entities/contention",
+            "_key": "contention",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731703+00:00",
+            "entity_type": "topic",
+            "name": "contention",
+            "updated_at": "2026-09-09T12:31:53.731703+00:00"
+          },
+          {
+            "_id": "entities/cultural-differences",
+            "_key": "cultural-differences",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731705+00:00",
+            "entity_type": "topic",
+            "name": "cultural differences",
+            "updated_at": "2026-09-09T12:31:53.731705+00:00"
+          },
+          {
+            "_id": "entities/devastation",
+            "_key": "devastation",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731708+00:00",
+            "entity_type": "effect",
+            "name": "devastation",
+            "updated_at": "2026-09-09T12:31:53.731708+00:00"
+          },
+          {
+            "_id": "entities/flooding",
+            "_key": "flooding",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731709+00:00",
+            "entity_type": "event",
+            "name": "flooding",
+            "updated_at": "2026-09-09T12:31:53.731709+00:00"
+          },
+          {
+            "_id": "entities/life",
+            "_key": "life",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731711+00:00",
+            "entity_type": "object",
+            "name": "life",
+            "updated_at": "2026-09-09T12:31:53.731711+00:00"
+          },
+          {
+            "_id": "entities/northeast",
+            "_key": "northeast",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731713+00:00",
+            "entity_type": "object",
+            "name": "northeast",
+            "updated_at": "2026-09-09T12:31:53.731713+00:00"
+          },
+          {
+            "_id": "entities/poem",
+            "_key": "poem",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731715+00:00",
+            "entity_type": "message",
+            "name": "poem",
+            "updated_at": "2026-09-09T12:31:53.731715+00:00"
+          },
+          {
+            "_id": "entities/port",
+            "_key": "port",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731717+00:00",
+            "entity_type": "location",
+            "name": "port",
+            "updated_at": "2026-09-09T12:31:53.731717+00:00"
+          },
+          {
+            "_id": "entities/powder",
+            "_key": "powder",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731719+00:00",
+            "entity_type": "object",
+            "name": "powder",
+            "updated_at": "2026-09-09T12:31:53.731719+00:00"
+          },
+          {
+            "_id": "entities/project",
+            "_key": "project",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731720+00:00",
+            "entity_type": "object",
+            "name": "project",
+            "updated_at": "2026-09-09T12:31:53.731720+00:00"
+          },
+          {
+            "_id": "entities/propellor",
+            "_key": "propellor",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731722+00:00",
+            "entity_type": "whole",
+            "name": "propellor",
+            "updated_at": "2026-09-09T12:31:53.731722+00:00"
+          },
+          {
+            "_id": "entities/pump",
+            "_key": "pump",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731723+00:00",
+            "entity_type": "whole",
+            "name": "pump",
+            "updated_at": "2026-09-09T12:31:53.731723+00:00"
+          },
+          {
+            "_id": "entities/questions",
+            "_key": "questions",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731725+00:00",
+            "entity_type": "message",
+            "name": "questions",
+            "updated_at": "2026-09-09T12:31:53.731725+00:00"
+          },
+          {
+            "_id": "entities/sample",
+            "_key": "sample",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731727+00:00",
+            "entity_type": "object",
+            "name": "sample",
+            "updated_at": "2026-09-09T12:31:53.731727+00:00"
+          },
+          {
+            "_id": "entities/scum",
+            "_key": "scum",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731730+00:00",
+            "entity_type": "member",
+            "name": "scum",
+            "updated_at": "2026-09-09T12:31:53.731730+00:00"
+          },
+          {
+            "_id": "entities/spindle",
+            "_key": "spindle",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731731+00:00",
+            "entity_type": "component",
+            "name": "spindle",
+            "updated_at": "2026-09-09T12:31:53.731731+00:00"
+          },
+          {
+            "_id": "entities/state",
+            "_key": "state",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731732+00:00",
+            "entity_type": "object",
+            "name": "state",
+            "updated_at": "2026-09-09T12:31:53.731732+00:00"
+          },
+          {
+            "_id": "entities/stripes",
+            "_key": "stripes",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731734+00:00",
+            "entity_type": "collection",
+            "name": "stripes",
+            "updated_at": "2026-09-09T12:31:53.731734+00:00"
+          },
+          {
+            "_id": "entities/thesis",
+            "_key": "thesis",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731735+00:00",
+            "entity_type": "message",
+            "name": "thesis",
+            "updated_at": "2026-09-09T12:31:53.731735+00:00"
+          },
+          {
+            "_id": "entities/worker",
+            "_key": "worker",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731737+00:00",
+            "entity_type": "producer",
+            "name": "worker",
+            "updated_at": "2026-09-09T12:31:53.731737+00:00"
+          },
+          {
+            "_id": "entities/world",
+            "_key": "world",
+            "aliases": [],
+            "created_at": "2026-09-09T12:31:53.731739+00:00",
+            "entity_type": "object",
+            "name": "world",
+            "updated_at": "2026-09-09T12:31:53.731739+00:00"
+          }
+        ]
+      }
+    },
+    "chunks": {
+      "status": 200,
+      "response": {
+        "count": 12,
+        "results": [
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-10075",
+            "_key": "semeval-luna-json-r1-b6-semeval-10075",
+            "chunk_id": "semeval-10075",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:d2efbdeed03a5290b0312f17ae7e39f1e98d638d2b42fabf36b556d30739a393",
+            "created_at": "2026-09-09T12:31:53.731741+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "The boat departs from the port of Thap Lamu near the resort town of Khao Lak",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731741+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-10492",
+            "_key": "semeval-luna-json-r1-b6-semeval-10492",
+            "chunk_id": "semeval-10492",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:243f3893c929f97d79f7874269fcc3ce2cc56f91102936a371daa72b1dfdc439",
+            "created_at": "2026-09-09T12:31:53.731763+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "The world we live in is rooted in an infinite life.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731763+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-10706",
+            "_key": "semeval-luna-json-r1-b6-semeval-10706",
+            "chunk_id": "semeval-10706",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ee9bbe7d0a35a9664e8c9898e3183c889854e9edbcf23bffbb4b13f1352ebae3",
+            "created_at": "2026-09-09T12:31:53.731781+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "The sample was pressed from powder into a platelet with about 10 mm thickness, which was cut into a rectangle and put on the platinum leads.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731781+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-8010",
+            "_key": "semeval-luna-json-r1-b6-semeval-8010",
+            "chunk_id": "semeval-8010",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:38aaf3fcc38d834d39ca8c3f3bc2671d575e1793d019e53f1419e268ac7e2eaf",
+            "created_at": "2026-09-09T12:31:53.731791+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "This thesis defines the clinical characteristics of amyloid disease.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731791+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-8330",
+            "_key": "semeval-luna-json-r1-b6-semeval-8330",
+            "chunk_id": "semeval-8330",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a85d1a167ce23c4bff5a6684f5dfbe49129e2899c85ef2ee5405f49fda0a09ec",
+            "created_at": "2026-09-09T12:31:53.731805+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "When Victor Hugo was shown a poem written by a worker, his embarrassed and patronizing response was \"In your fine verse there is something more than fine verse.\"",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731805+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-8450",
+            "_key": "semeval-luna-json-r1-b6-semeval-8450",
+            "chunk_id": "semeval-8450",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:365a53ec485fb41ae97df1a2cf5954d457f80322649ad992b8ab6b16e3a0163d",
+            "created_at": "2026-09-09T12:31:53.731817+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "O'Reilly drew yet more ire from Think Progress smear artists Christy Harvey and Judd Legum by pointing out an obvious truth, that the Internet gives scum of various stripes support and encouragement by linking them up with like minded cretin.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731817+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-8716",
+            "_key": "semeval-luna-json-r1-b6-semeval-8716",
+            "chunk_id": "semeval-8716",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:a275e1a69e285ffa0bbfeda8d1303ebd95f46afa30666030a6237c9cda274b46",
+            "created_at": "2026-09-09T12:31:53.731829+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "The northeast was the source of contention between these various rivaling groups.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731829+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-8941",
+            "_key": "semeval-luna-json-r1-b6-semeval-8941",
+            "chunk_id": "semeval-8941",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:ca4379f5b9182d93f358cc5cc4913edccd7c17c9d8b89fae104f08b36c62a34c",
+            "created_at": "2026-09-09T12:31:53.731843+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "The first French aircraft designer to try this simply installed a deflector plate on the propellor blade.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731843+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-9302",
+            "_key": "semeval-luna-json-r1-b6-semeval-9302",
+            "chunk_id": "semeval-9302",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:2f028b6d58a9452bf0b4b6d39f3201e57c9276064fd53edca5b6ff8225f542c2",
+            "created_at": "2026-09-09T12:31:53.731862+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "In a known motor-pump unit of this type, the slot-barrel motor is connected, to the drive spindle of the screw-spindle pump with a pressure side throttle interval interposed.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731862+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-9327",
+            "_key": "semeval-luna-json-r1-b6-semeval-9327",
+            "chunk_id": "semeval-9327",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:6e00a1e3612a654baf803f560a747be06471eb6020e735a3526c3cd917cf3727",
+            "created_at": "2026-09-09T12:31:53.731876+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "Most Americans are interested in topics or questions that have to do with cultural differences and with language.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731876+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-9722",
+            "_key": "semeval-luna-json-r1-b6-semeval-9722",
+            "chunk_id": "semeval-9722",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:4782b88a84a174dd21a3c110ce5d9699d2da41e8f69abca13d27c4678c462be7",
+            "created_at": "2026-09-09T12:31:53.731888+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "The Queen has expressed her shock at the devastation caused by the flooding.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731888+00:00"
+          },
+          {
+            "_id": "chunks/semeval-luna-json-r1-b6-semeval-9808",
+            "_key": "semeval-luna-json-r1-b6-semeval-9808",
+            "chunk_id": "semeval-9808",
+            "construction_schema": "occurrence-v1",
+            "content_hash": "sha256:9d3d5946578ef305f5dd698cd331512b05eee4b534ed6dfdd218876ecffd36d6",
+            "created_at": "2026-09-09T12:31:53.731899+00:00",
+            "space_id": "semeval-luna-json-r1-b6",
+            "text": "It is an ongoing academic project by social scientists to assess the state of sociocultural, moral, religious, and political values of different cultures around the world.",
+            "title": "Relation benchmark excerpt",
+            "updated_at": "2026-09-09T12:31:53.731899+00:00"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+FOR d IN i18n FILTER CONTAINS(d.text, "Rust") AND CONTAINS(d.text, "עברית") RETURN d._key

@@ -1,0 +1,44 @@
+CogniGraph {{ .Chart.AppVersion }} is deploying as {{ include "cognigraph.fullname" . }} (single node).
+
+Wait for readiness:
+  kubectl -n {{ .Release.Namespace }} rollout status statefulset/{{ include "cognigraph.fullname" . }}
+
+Reach it from inside the cluster:
+  http://{{ include "cognigraph.fullname" . }}.{{ .Release.Namespace }}.svc:{{ .Values.service.port }}
+
+Or from your machine:
+  kubectl -n {{ .Release.Namespace }} port-forward svc/{{ include "cognigraph.fullname" . }} 3000:{{ .Values.service.port }}
+  curl -s localhost:3000/health/database
+
+{{- if .Values.auth.enabled }}
+
+Log in (admin password is in Secret {{ include "cognigraph.authSecretName" . }}, key admin-password):
+  curl -s -X POST localhost:3000/api/auth/login -H 'content-type: application/json' \
+    -d '{"username":"admin","password":"..."}'
+{{- else }}
+
+Authentication is DISABLED. Anyone who can reach the service has full access.
+Set auth.enabled=true before exposing it beyond the namespace.
+{{- end }}
+
+First query{{ if .Values.auth.enabled }} (replace TOKEN with the login response token){{ end }}:
+  curl -s -X POST localhost:3000/api/search/query{{ if .Values.auth.enabled }} -H 'Authorization: Bearer TOKEN'{{ end }} -H 'content-type: application/json' \
+    -d '{"query":"FOR d IN documents LIMIT 5 RETURN d"}'
+
+{{- if .Values.backup.enabled }}
+
+Backups: CronJob {{ include "cognigraph.fullname" . }}-backup writes JSON snapshots to
+PVC {{ .Values.backup.persistence.existingClaim | default (printf "%s-backups" (include "cognigraph.fullname" .)) }}
+on schedule "{{ .Values.backup.schedule }}" and keeps {{ .Values.backup.retentionDays }} days.
+Restore: POST the file to /api/admin/import on a fresh instance (docs/operations/recovery.md).
+{{- else }}
+
+Backups are not enabled (backup.enabled=false). The redb file on the data PVC is
+the single source of truth; snapshot the volume or enable the CronJob.
+{{- end }}
+
+{{- if .Values.enterprise.multiTenant }}
+
+NOTE: enterprise.multiTenant=true. Multi-tenancy is an Enterprise Component;
+production use requires LICENSE-COMMERCIAL.
+{{- end }}

@@ -1,0 +1,26 @@
+[package]
+name = "cognigraph-cli"
+version.workspace = true
+edition.workspace = true
+license = "FSL-1.1-Apache-2.0"
+repository.workspace = true
+homepage.workspace = true
+
+[[bin]]
+name = "cognigraph"
+path = "src/main.rs"
+
+[features]
+default = []
+enterprise = ["dep:cognigraph-artifacts"]
+
+[dependencies]
+cognigraph-artifacts = { path = "../cognigraph-artifacts", optional = true }
+reqwest = { workspace = true, features = ["blocking"] }
+rustix = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+unicode-normalization = "0.1.25"
+
+[dev-dependencies]
+tempfile = "3"

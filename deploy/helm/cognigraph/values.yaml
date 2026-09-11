@@ -1,0 +1,203 @@
+# CogniGraph single-node Helm values.
+#
+# This chart deploys one CogniGraph server as a StatefulSet with one persistent
+# volume. Running more than one replica is refused: the Native backend is a
+# single-writer redb file. Read replicas are a separate design
+# (docs/architecture/design-notes/read-replicas.md); sharded clustering is an
+# Enterprise capability.
+
+edition: community         # community | enterprise; must match the image build
+
+image:
+  repository: cognigraph
+  tag: ""            # defaults to appVersion (Community) or appVersion-enterprise
+  pullPolicy: IfNotPresent
+imagePullSecrets: []
+
+# Single writer. The chart fails to render if this is not 1.
+replicaCount: 1
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  name: ""
+  annotations: {}
+
+podAnnotations: {}
+podLabels: {}
+
+service:
+  type: ClusterIP
+  port: 3000
+  annotations: {}
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: cognigraph.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
+# ---------------------------------------------------------------------------
+# Storage
+# ---------------------------------------------------------------------------
+persistence:
+  enabled: true
+  storageClass: ""       # "" = cluster default; "-" = disable dynamic provisioning
+  accessModes: [ReadWriteOnce]
+  size: 20Gi
+  annotations: {}
+  # existingClaim: ""    # bind to a pre-created PVC instead of the volumeClaimTemplate
+
+storage:
+  # resident: everything in RAM, fastest. paged: keys + LRU in RAM, requires vectorMode=sidecar.
+  mode: resident          # resident | paged
+  vectorMode: embedded    # embedded | sidecar (int8 mmap, ~7x less RAM)
+  cacheBytes: ""          # paged-mode document cache budget in bytes; "" = server default (256 MiB)
+
+# ---------------------------------------------------------------------------
+# Authentication and secrets
+# ---------------------------------------------------------------------------
+auth:
+  enabled: true
+  jwtTtlSecs: 3600
+  # Either set the three values below (the chart creates a Secret) or point
+  # existingSecret at a Secret with keys admin-password, host-admin-password,
+  # jwt-secret. Leaving all three empty with auth.enabled=true fails to render.
+  adminPassword: ""
+  hostAdminPassword: ""
+  jwtSecret: ""
+  existingSecret: ""
+
+# ---------------------------------------------------------------------------
+# Server behaviour (COGNIGRAPH_* environment)
+# ---------------------------------------------------------------------------
+server:
+  logFormat: json
+  requestTimeoutSecs: 30
+  rateLimitPerMinute: 600          # 0 = off
+  cgql:
+    mutationsEnabled: true         # mounts read-write POST /api/query
+    maxSourceRows: 1000000         # 0 = unlimited
+    timeBudgetMs: 10000            # 0 = unlimited
+  lua:
+    instructionLimit: 0            # 0 = engine default (1,000,000)
+  queryCache:
+    enabled: true
+    backend: memory                # memory | persistent (persistent stores embeddings on the data volume)
+  serveConsole: false              # true requires an image that contains ui/dist at /ui
+  consolePath: /ui
+
+# Embedding provider. Keys are read from embeddings.existingSecret (keys:
+# openai-api-key, gemini-api-key) so they never appear in values.
+embeddings:
+  provider: none                   # none | openai | ollama | gemini
+  model: ""
+  ollamaBaseUrl: ""
+  openaiBaseUrl: ""
+  existingSecret: ""
+
+# Any additional COGNIGRAPH_* / provider variables, passed through verbatim.
+extraEnv: []
+#  - name: COGNIGRAPH_TOKEN_TTL_SECS
+#    value: "7776000"
+extraEnvFrom: []
+
+# ---------------------------------------------------------------------------
+# Backups: hot JSON snapshot via GET /api/admin/export, written to a second PVC.
+# Requires auth.enabled=true (the export route is admin-only).
+# ---------------------------------------------------------------------------
+backup:
+  enabled: false
+  schedule: "0 3 * * *"
+  retentionDays: 14                 # positive integer; prune only after a verified snapshot
+  persistence:
+    storageClass: ""
+    size: 20Gi
+    accessModes: [ReadWriteOnce]
+    # existingClaim: ""
+  image:
+    repository: python
+    tag: "slim"
+  resources:
+    requests: { cpu: 50m, memory: 64Mi }
+    limits: { memory: 256Mi }
+
+# ---------------------------------------------------------------------------
+# Resources and scheduling
+# ---------------------------------------------------------------------------
+resources:
+  requests:
+    cpu: 500m
+    memory: 1Gi
+  limits:
+    memory: 4Gi
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+priorityClassName: ""
+terminationGracePeriodSeconds: 30
+
+podSecurityContext:
+  runAsNonRoot: true
+  runAsUser: 10001
+  runAsGroup: 10001
+  fsGroup: 10001
+  fsGroupChangePolicy: OnRootMismatch
+  seccompProfile:
+    type: RuntimeDefault
+
+securityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  capabilities:
+    drop: [ALL]
+
+livenessProbe:
+  httpGet: { path: /health, port: http }
+  initialDelaySeconds: 10
+  periodSeconds: 15
+  timeoutSeconds: 3
+  failureThreshold: 3
+readinessProbe:
+  httpGet: { path: /health/database, port: http }
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 3
+  failureThreshold: 3
+startupProbe:
+  httpGet: { path: /health, port: http }
+  periodSeconds: 5
+  failureThreshold: 60             # up to 5 minutes for a large resident store to load
+
+metrics:
+  serviceMonitor:
+    enabled: false                 # requires the Prometheus Operator CRDs
+    interval: 30s
+    labels: {}
+
+networkPolicy:
+  enabled: false
+  # Namespaces / pod selectors allowed to reach the service. Empty = same namespace only.
+  allowFrom: []
+
+# ---------------------------------------------------------------------------
+# Enterprise Components — require LICENSE-COMMERCIAL for production use.
+# ---------------------------------------------------------------------------
+enterprise:
+  # Multi-tenant mode: per-tenant stores under the data volume, control store
+  # at _control.redb. Mutually exclusive with the single-tenant Native path.
+  multiTenant: false
+  # Public trust anchor for signed governance (M19–M26). Never a private key.
+  governanceRootPublicKey: ""
+  # Read-only artifact CAS mount for M21–M26 (existing PVC name).
+  artifactCas:
+    existingClaim: ""
+    mountPath: /cas

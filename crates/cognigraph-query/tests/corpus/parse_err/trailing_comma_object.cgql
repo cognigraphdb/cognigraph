@@ -1,0 +1,1 @@
+FOR d IN documents RETURN { a: 1, }
