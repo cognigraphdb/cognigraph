@@ -1,0 +1,18 @@
+{
+  "ui_check": "PASS: Biome 118 files and TypeScript",
+  "ui_tests": {
+    "pass": 146,
+    "fail": 0,
+    "files": 21,
+    "assertions": 733
+  },
+  "ui_build": "PASS: 1731 modules",
+  "keyboard_steps": 231,
+  "focus_checks": 18,
+  "layout_checks": 13,
+  "layout_resize_observation": "Admin Overview already-focused last link falls below viewport after resize; fresh Tab brings it fully into view.",
+  "runtime_readback": "PASS: unchanged fixture, Viewer users 403, served asset bytes match build",
+  "browser_warnings_errors": 0,
+  "cleanup": "Owned server, QA tab, disposable store and text index removed; viewport restored",
+  "rust_changes": false
+}

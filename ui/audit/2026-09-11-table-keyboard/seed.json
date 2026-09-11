@@ -1,0 +1,78 @@
+{
+  "collections": {
+    "collections": [
+      {
+        "collection_type": "document",
+        "count": 2,
+        "name": "aa_keyboard_docs"
+      },
+      {
+        "collection_type": "document",
+        "count": 1,
+        "name": "neurons"
+      },
+      {
+        "collection_type": "edge",
+        "count": 1,
+        "name": "qa_edges"
+      },
+      {
+        "collection_type": "document",
+        "count": 1,
+        "name": "space_types"
+      }
+    ],
+    "count": 4
+  },
+  "document": {
+    "_id": "aa_keyboard_docs/rigel",
+    "_key": "rigel",
+    "embedding": [
+      1,
+      0
+    ],
+    "title": "Synthetic Rigel keyboard document"
+  },
+  "neuron": {
+    "_id": "neurons/qa-neuron",
+    "_key": "qa-neuron",
+    "aliases": [],
+    "boost": 0,
+    "confidence": 0.9,
+    "entity": "",
+    "evidence": [
+      "Rigel connects Vega."
+    ],
+    "id": "qa-neuron",
+    "proposed_at": 1789131600,
+    "proposed_by": "qa-fixture",
+    "rationale": "Synthetic keyboard verification",
+    "relation": "LINK",
+    "source": "Rigel",
+    "space_type": "qa-keyboard",
+    "status": "proposed",
+    "target": "Vega",
+    "triggers": [
+      "connects"
+    ],
+    "type": "relation_hint"
+  },
+  "vector": {
+    "count": 1,
+    "results": [
+      {
+        "document": {
+          "_id": "aa_keyboard_docs/rigel",
+          "_key": "rigel",
+          "embedding": [
+            1,
+            0
+          ],
+          "title": "Synthetic Rigel keyboard document"
+        },
+        "score": 1.0,
+        "source": "native"
+      }
+    ]
+  }
+}

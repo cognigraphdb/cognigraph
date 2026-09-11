@@ -208,8 +208,21 @@ verified one persisted Lua write per intentional run, query/error recovery and
 pending state across navigation/tab changes; 137 UI tests pass. Seven Open issues
 remain, all P2.
 
-Next, address result provenance ([CG-56](issues/CG-56.md)), then accessibility,
-with real-browser regressions and
+The [result ownership batch](../ui/audit/2026-09-11-result-ownership/audit.md)
+resolves [CG-56](issues/CG-56.md): input edits and reruns clear results/timing;
+obsolete responses cannot publish; graph loading/failures appear in both views
+without old inspectors or paths. Real delayed requests, reversed vector/graph
+completion, failed reruns and persisted Lua/relationship readback pass, alongside
+144 UI tests. Six Open issues remain, all P2.
+
+The [table keyboard-access batch](../ui/audit/2026-09-11-table-keyboard/audit.md)
+resolves [CG-57](issues/CG-57.md): native navigation links and review selection
+buttons expose the same actions as pointer rows. Tab/Enter/Space journeys,
+direct reloads, Delete isolation, scaled focus and Viewer restrictions pass on
+the Rust-served Native console; 146 UI tests pass. Five Open issues remain, all P2.
+
+Next, address empty/error guidance ([CG-58](issues/CG-58.md)), followed by the
+remaining guidance/search/accessibility defects and
 CI coverage ([CG-60](issues/CG-60.md)). Keep Docker publication preparation
 separate from this pending UI remediation.
 

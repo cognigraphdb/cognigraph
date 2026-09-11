@@ -1,0 +1,12 @@
+{
+  "alerts": [],
+  "at": 1789136409318,
+  "graph": "Latest traversal response from qa_docs/gamma. Expanded neighborhoods are combined in Visual view.{  \"count\": 1,  \"results\": [    {      \"depth\": 1,      \"edges\": [        {          \"_from\": \"qa_docs/gamma\",          \"_id\": \"qa_other_edges/3c1f1f8c-f0cd-4099-b2ab-2f0d84ceed4c\",          \"_key\": \"3c1f1f8c-f0cd-4099-b2ab-2f0d84ceed4c\",          \"_to\": \"qa_docs/beta\",          \"confidence\": 0.9,          \"relation_type\": \"CG56_OTHER\"        }      ],      \"score\": 0.7200000000000001,      \"vertices\": [        {          \"_id\": \"qa_docs/gamma\",          \"_key\": \"gamma\",          \"embedding\": [            -1,            0          ],          \"title\": \"Gamma\",          \"trial\": \"cg56\"        },        {          \"_id\": \"qa_docs/beta\",          \"_key\": \"beta\",          \"embedding\": [            0,            1          ],          \"title\": \"Beta\",          \"trial\": \"cg56\"        }      ]    }  ]}",
+  "inspectors": 0,
+  "notices": [
+    "Graph traversal completed"
+  ],
+  "paths": 0,
+  "statuses": [],
+  "timings": []
+}

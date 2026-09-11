@@ -1,0 +1,84 @@
+{
+  "qa_docs": {
+    "type": "document",
+    "documents": {
+      "alpha": {
+        "_key": "alpha",
+        "embedding": [
+          1,
+          0
+        ],
+        "title": "Alpha",
+        "trial": "cg56",
+        "_id": "qa_docs/alpha"
+      },
+      "b05cf506-0309-4f4d-93d6-693de6450752": {
+        "_id": "qa_docs/b05cf506-0309-4f4d-93d6-693de6450752",
+        "_key": "b05cf506-0309-4f4d-93d6-693de6450752",
+        "created_at": "2026-09-11T14:14:07.468222+00:00",
+        "title": "CG56 slow write",
+        "trial": "cg56-write",
+        "updated_at": "2026-09-11T14:14:07.468222+00:00"
+      },
+      "beta": {
+        "_key": "beta",
+        "embedding": [
+          0,
+          1
+        ],
+        "title": "Beta",
+        "trial": "cg56",
+        "_id": "qa_docs/beta"
+      },
+      "delta": {
+        "_key": "delta",
+        "embedding": [
+          0,
+          -1
+        ],
+        "title": "Delta",
+        "trial": "cg56",
+        "_id": "qa_docs/delta"
+      },
+      "gamma": {
+        "_key": "gamma",
+        "embedding": [
+          -1,
+          0
+        ],
+        "title": "Gamma",
+        "trial": "cg56",
+        "_id": "qa_docs/gamma"
+      }
+    }
+  },
+  "qa_edges": {
+    "type": "edge",
+    "documents": {
+      "alpha-beta": {
+        "_from": "qa_docs/alpha",
+        "_key": "alpha-beta",
+        "_to": "qa_docs/beta",
+        "confidence": 0.9,
+        "relation_type": "LINK",
+        "_id": "qa_edges/alpha-beta"
+      },
+      "beta-gamma": {
+        "_from": "qa_docs/beta",
+        "_key": "beta-gamma",
+        "_to": "qa_docs/gamma",
+        "confidence": 0.9,
+        "relation_type": "LINK",
+        "_id": "qa_edges/beta-gamma"
+      },
+      "gamma-delta": {
+        "_from": "qa_docs/gamma",
+        "_key": "gamma-delta",
+        "_to": "qa_docs/delta",
+        "confidence": 0.9,
+        "relation_type": "LINK",
+        "_id": "qa_edges/gamma-delta"
+      }
+    }
+  }
+}

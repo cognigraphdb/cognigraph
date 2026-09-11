@@ -6,7 +6,9 @@ import { useAccess } from "../components/AccessBoundary.tsx";
 import { JsonResult } from "../components/JsonResult.tsx";
 import { LuaEditor } from "../components/LuaEditor.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
+import { RequestFeedback } from "../components/RequestFeedback.tsx";
 import { useExecution } from "../hooks/useExecution.ts";
+import { useRequestResult } from "../hooks/useRequestResult.ts";
 import type { Notify } from "../types.ts";
 
 interface LuaScreenProps {
@@ -48,27 +50,17 @@ return graph.traverse("documents/some-key", {
 export function LuaScreen({ api, notify }: LuaScreenProps) {
   const { luaWrite } = useAccess();
   const [script, setScript] = useState(defaultScript);
-  const [result, setResult] = useState<unknown>();
+  const { state: result, run: runResult } = useRequestResult<unknown>(api, script);
   const { running, execute } = useExecution(api);
-  const [elapsed, setElapsed] = useState<number>();
+  const elapsed = "elapsed" in result ? result.elapsed : undefined;
 
   const run = () =>
-    execute(async (isCurrent) => {
-      const started = performance.now();
-      try {
-        const response = await api.post("/lua/execute", { script });
-        if (!isCurrent()) return;
-        setResult(response);
-        notify("Script completed");
-      } catch (error) {
-        if (!isCurrent()) return;
-        const message = error instanceof Error ? error.message : "Script failed";
-        setResult({ error: message });
-        notify(message, "error");
-      } finally {
-        if (isCurrent()) setElapsed(Math.round(performance.now() - started));
-      }
-    });
+    execute(() =>
+      runResult(
+        () => api.post("/lua/execute", { script }),
+        () => notify("Script completed"),
+      ),
+    );
 
   return (
     <main className="page-workspace no-scroll">
@@ -121,7 +113,8 @@ export function LuaScreen({ api, notify }: LuaScreenProps) {
             <h2>Result</h2>
           </div>
           <div className="result-body">
-            <JsonResult empty="Run a script to inspect its result." value={result} />
+            <RequestFeedback state={result} waiting={running} />
+            {result.status === "success" ? <JsonResult value={result.data} /> : null}
           </div>
         </section>
       </div>

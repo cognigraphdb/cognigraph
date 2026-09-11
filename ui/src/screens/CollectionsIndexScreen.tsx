@@ -20,7 +20,7 @@ import {
   Tag,
 } from "antd";
 import { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import type { CogniGraphApi } from "../api/client.ts";
 import { useAccess } from "../components/AccessBoundary.tsx";
 import { ErrorAlert } from "../components/ErrorAlert.tsx";
@@ -79,7 +79,19 @@ export function CollectionsIndexScreen({ api, notify }: { api: CogniGraphApi; no
     {
       title: "Collection",
       dataIndex: "name",
-      render: (value) => <strong className="mono-cell">{String(value)}</strong>,
+      render: (_, info) =>
+        isBrowsable(info) ? (
+          <Link
+            aria-label={`Open collection ${info.name}`}
+            className="table-action mono-cell"
+            onClick={(event) => event.stopPropagation()}
+            to={`/collections/${encodeURIComponent(info.name)}`}
+          >
+            <strong>{info.name}</strong>
+          </Link>
+        ) : (
+          <strong className="mono-cell">{info.name}</strong>
+        ),
     },
     {
       title: "Type",

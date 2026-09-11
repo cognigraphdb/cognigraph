@@ -1,0 +1,105 @@
+{
+  "qa_docs": {
+    "count": 5,
+    "results": [
+      {
+        "_id": "qa_docs/alpha",
+        "_key": "alpha",
+        "embedding": [
+          1,
+          0
+        ],
+        "title": "Alpha",
+        "trial": "cg56"
+      },
+      {
+        "_id": "qa_docs/b05cf506-0309-4f4d-93d6-693de6450752",
+        "_key": "b05cf506-0309-4f4d-93d6-693de6450752",
+        "created_at": "2026-09-11T14:14:07.468222+00:00",
+        "title": "CG56 slow write",
+        "trial": "cg56-write",
+        "updated_at": "2026-09-11T14:14:07.468222+00:00"
+      },
+      {
+        "_id": "qa_docs/beta",
+        "_key": "beta",
+        "embedding": [
+          0,
+          1
+        ],
+        "title": "Beta",
+        "trial": "cg56"
+      },
+      {
+        "_id": "qa_docs/delta",
+        "_key": "delta",
+        "embedding": [
+          0,
+          -1
+        ],
+        "title": "Delta",
+        "trial": "cg56"
+      },
+      {
+        "_id": "qa_docs/gamma",
+        "_key": "gamma",
+        "embedding": [
+          -1,
+          0
+        ],
+        "title": "Gamma",
+        "trial": "cg56"
+      }
+    ]
+  },
+  "qa_edges": {
+    "count": 4,
+    "results": [
+      {
+        "_from": "qa_docs/alpha",
+        "_id": "qa_edges/alpha-beta",
+        "_key": "alpha-beta",
+        "_to": "qa_docs/beta",
+        "confidence": 0.9,
+        "relation_type": "LINK"
+      },
+      {
+        "_from": "qa_docs/beta",
+        "_id": "qa_edges/beta-gamma",
+        "_key": "beta-gamma",
+        "_to": "qa_docs/gamma",
+        "confidence": 0.9,
+        "relation_type": "LINK"
+      },
+      {
+        "_from": "qa_docs/alpha",
+        "_id": "qa_edges/f18591a6-a780-490e-a8fd-510ac8f7ff36",
+        "_key": "f18591a6-a780-490e-a8fd-510ac8f7ff36",
+        "_to": "qa_docs/delta",
+        "confidence": 0.9,
+        "relation_type": "CG56_ADDED"
+      },
+      {
+        "_from": "qa_docs/gamma",
+        "_id": "qa_edges/gamma-delta",
+        "_key": "gamma-delta",
+        "_to": "qa_docs/delta",
+        "confidence": 0.9,
+        "relation_type": "LINK"
+      }
+    ]
+  },
+  "qa_other_edges": {
+    "count": 1,
+    "results": [
+      {
+        "_from": "qa_docs/gamma",
+        "_id": "qa_other_edges/3c1f1f8c-f0cd-4099-b2ab-2f0d84ceed4c",
+        "_key": "3c1f1f8c-f0cd-4099-b2ab-2f0d84ceed4c",
+        "_to": "qa_docs/beta",
+        "confidence": 0.9,
+        "relation_type": "CG56_OTHER"
+      }
+    ]
+  }
+}

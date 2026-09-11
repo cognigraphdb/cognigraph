@@ -119,8 +119,12 @@ resolves CG-53. That checkpoint had **53 Resolved, 1 Closed without change, and
 resolves CG-54. That checkpoint had **54 Resolved, 1 Closed without change, and
 8 Open issues (all P2)**.
 [Console execution guards](../../ui/audit/2026-09-11-execution-guards/audit.md)
-resolves CG-55. Current registry: **55 Resolved, 1 Closed without change, and
+resolves CG-55. That checkpoint had **55 Resolved, 1 Closed without change, and
 7 Open issues (all P2)**.
+[Input-scoped console results](../../ui/audit/2026-09-11-result-ownership/audit.md)
+resolves CG-56. The [table keyboard-access batch](../../ui/audit/2026-09-11-table-keyboard/audit.md)
+resolves CG-57. Current registry: **57 Resolved, 1 Closed without change, and
+5 Open issues (all P2)**.
 
 ## Conventions
 
@@ -189,8 +193,8 @@ resolves CG-55. Current registry: **55 Resolved, 1 Closed without change, and
 | [CG-53](CG-53.md) | P2 | Resolved | Console actions ignore server edition and authenticated role capabilities |
 | [CG-54](CG-54.md) | P2 | Resolved | Review queue and space selectors silently truncate their datasets |
 | [CG-55](CG-55.md) | P2 | Resolved | Console keyboard shortcuts bypass the running request guard |
-| [CG-56](CG-56.md) | P2 | Open | Console results remain attached to changed inputs and failed graph requests |
-| [CG-57](CG-57.md) | P2 | Open | Clickable table rows cannot be opened with the keyboard |
+| [CG-56](CG-56.md) | P2 | Resolved | Console results remain attached to changed inputs and failed graph requests |
+| [CG-57](CG-57.md) | P2 | Resolved | Clickable table rows cannot be opened with the keyboard |
 | [CG-58](CG-58.md) | P2 | Open | Review empty-state guidance recommends a forbidden space creation path |
 | [CG-59](CG-59.md) | P2 | Open | Collection search and filters present partial matches as complete results |
 | [CG-60](CG-60.md) | P2 | Open | CI omits the UI checks and browser regression coverage |

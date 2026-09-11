@@ -1,0 +1,54 @@
+[
+  {
+    "case": "Viewer catalog",
+    "focus": {
+      "focusVisible": true,
+      "href": "/collections/aa_keyboard_docs",
+      "name": "Open collection aa_keyboard_docs",
+      "outline": "color(srgb 0.370392 0.673725 0.666078) solid 2px",
+      "pressed": null,
+      "rect": {
+        "height": 14,
+        "width": 115.59375,
+        "x": 104,
+        "y": 315.4140625
+      },
+      "tag": "A",
+      "text": "aa_keyboard_docs",
+      "url": "/collections",
+      "viewport": {
+        "height": 667,
+        "width": 1067
+      }
+    },
+    "observed": {
+      "createDisabled": true,
+      "deleteButtons": 0,
+      "edgeLinks": 0
+    }
+  },
+  {
+    "case": "Viewer destination",
+    "observed": {
+      "heading": "aa_keyboard_docs",
+      "inspector": "KEYrigelEditDeleteJSONMetadata{  \"_id\": \"aa_keyboard_docs/rigel\",  \"_key\": \"rigel\",  \"embedding\": [    1,    0  ],  \"title\": \"Synthetic Rigel keyboard document\"} Embedding: readyDimensions: 2Re-embed",
+      "url": "/collections/aa_keyboard_docs"
+    }
+  },
+  {
+    "case": "Viewer review",
+    "observed": {
+      "neuron": "qa-neuron",
+      "proposeDisabled": true,
+      "url": "/review?space=qa-keyboard&neuron=qa-neuron",
+      "verdictButtons": 0
+    }
+  },
+  {
+    "case": "Viewer user route",
+    "observed": {
+      "main": "UnauthorizedPage unavailableThis page is unavailable for your current role.Open your workspace",
+      "url": "/users"
+    }
+  }
+]

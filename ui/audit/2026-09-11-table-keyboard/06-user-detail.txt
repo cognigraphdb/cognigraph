@@ -1,0 +1,75 @@
+- complementary:
+  - img "CogniGraph":
+    - generic: CogniGraph
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38487
+  - generic: Healthy
+  - generic: Sep 11, 2026, 6:08 PM
+  - generic: admin
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - generic: Access / users / qa-keyboard-viewer
+  - heading "qa-keyboard-viewer" [level=1]
+  - paragraph: Read-only documents, graph, and search.
+  - button "Delete user":
+    - generic: Delete user
+  - button "Refresh":
+    - generic: Refresh
+  - term: Role
+  - definition:
+    - generic: Viewer
+  - term: Tenant
+  - definition: default
+  - term: Key
+  - definition: 9af2483c-5398-4e67-9ed3-bdf1dd5512ae
+  - heading "API tokens" [level=2]
+  - button "New token":
+    - generic: New token
+  - generic: 0 tokens
+  - table:
+    - rowgroup:
+      - row "Name Key Created Expires":
+        - columnheader "Name"
+        - columnheader "Key"
+        - columnheader "Created"
+        - columnheader "Expires"
+        - columnheader
+    - rowgroup:
+      - row "No API tokens issued for this account":
+        - cell "No API tokens issued for this account"

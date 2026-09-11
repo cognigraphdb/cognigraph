@@ -1,0 +1,104 @@
+- complementary:
+  - img "CogniGraph":
+    - generic: CogniGraph
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38487
+  - generic: Healthy
+  - generic: Sep 11, 2026, 6:08 PM
+  - generic: admin
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - generic: Data / collections
+  - heading "Collections" [level=1]
+  - paragraph: Browse and edit application documents; explore edge collections on the Graph page.
+  - button "Create collection":
+    - generic: Create collection
+  - button "Refresh":
+    - generic: Refresh
+  - generic: 4 collections
+  - table:
+    - rowgroup:
+      - row "Collection Type Entries":
+        - columnheader "Collection"
+        - columnheader "Type"
+        - columnheader "Entries"
+        - columnheader
+    - rowgroup:
+      - row "Open collection aa_keyboard_docs Documents 2 Delete":
+        - cell "Open collection aa_keyboard_docs":
+          - link "Open collection aa_keyboard_docs" [active]:
+            - /url: /collections/aa_keyboard_docs
+            - strong: aa_keyboard_docs
+        - cell "Documents":
+          - generic: Documents
+        - cell "2"
+        - cell "Delete":
+          - button "Delete":
+            - generic: Delete
+      - row "Open collection neurons Documents 1 Delete":
+        - cell "Open collection neurons":
+          - link "Open collection neurons":
+            - /url: /collections/neurons
+            - strong: neurons
+        - cell "Documents":
+          - generic: Documents
+        - cell "1"
+        - cell "Delete":
+          - button "Delete":
+            - generic: Delete
+      - row "qa_edges Edges 1 Delete":
+        - cell "qa_edges":
+          - strong: qa_edges
+        - cell "Edges":
+          - generic: Edges
+        - cell "1"
+        - cell "Delete":
+          - button "Delete":
+            - generic: Delete
+      - row "Open collection space_types Documents 1 Delete":
+        - cell "Open collection space_types":
+          - link "Open collection space_types":
+            - /url: /collections/space_types
+            - strong: space_types
+        - cell "Documents":
+          - generic: Documents
+        - cell "1"
+        - cell "Delete":
+          - button "Delete":
+            - generic: Delete

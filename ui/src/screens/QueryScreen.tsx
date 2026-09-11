@@ -5,8 +5,10 @@ import { ApiError, type CogniGraphApi } from "../api/client.ts";
 import { CgqlEditor } from "../components/CgqlEditor.tsx";
 import { JsonResult } from "../components/JsonResult.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
+import { RequestFeedback } from "../components/RequestFeedback.tsx";
 import { SearchPanel } from "../components/SearchPanel.tsx";
 import { useExecution } from "../hooks/useExecution.ts";
+import { useRequestResult } from "../hooks/useRequestResult.ts";
 import {
   diagnosticFromCgqlError,
   emptyQueryDiagnostic,
@@ -23,9 +25,12 @@ const defaultQuery = "FOR d IN documents\n  SORT d.updatedAt DESC\n  LIMIT 25\n 
 export function QueryScreen({ api, notify }: { api: CogniGraphApi; notify: Notify }) {
   const [query, setQuery] = useState(defaultQuery);
   const [bindVars, setBindVars] = useState("{}");
-  const [result, setResult] = useState<unknown>();
+  const { state: result, run: runResult } = useRequestResult<unknown>(
+    api,
+    JSON.stringify([query, bindVars]),
+  );
   const { running, execute } = useExecution(api);
-  const [elapsed, setElapsed] = useState<number>();
+  const elapsed = "elapsed" in result ? result.elapsed : undefined;
   const [history, setHistory] = useState<string[]>([]);
   const parsedBindVars = useMemo(() => parseBindVariables(bindVars), [bindVars]);
 
@@ -59,31 +64,22 @@ export function QueryScreen({ api, notify }: { api: CogniGraphApi; notify: Notif
   );
 
   const runQuery = () =>
-    execute(async (isCurrent) => {
-      if ("error" in parsedBindVars) {
-        notify(parsedBindVars.error, "error");
-        return;
-      }
-      const started = performance.now();
-      try {
-        const response = await api.post("/search/query", {
-          query,
-          bind_vars: parsedBindVars.value,
-          language: "cgql",
-        });
-        if (!isCurrent()) return;
-        setResult(response);
-        setHistory((current) => [query, ...current.filter((item) => item !== query)].slice(0, 5));
-        notify("CGQL query completed");
-      } catch (error) {
-        if (!isCurrent()) return;
-        const message = error instanceof Error ? error.message : "Query failed";
-        setResult({ error: message });
-        notify(message, "error");
-      } finally {
-        if (isCurrent()) setElapsed(Math.round(performance.now() - started));
-      }
-    });
+    execute(() =>
+      runResult(
+        async () => {
+          if ("error" in parsedBindVars) throw new Error(parsedBindVars.error);
+          return api.post("/search/query", {
+            query,
+            bind_vars: parsedBindVars.value,
+            language: "cgql",
+          });
+        },
+        () => {
+          setHistory((current) => [query, ...current.filter((item) => item !== query)].slice(0, 5));
+          notify("CGQL query completed");
+        },
+      ),
+    );
 
   const searchTabs = (Object.keys(SEARCH_MODE_META) as SearchMode[]).map((mode) => ({
     key: mode,
@@ -168,7 +164,8 @@ export function QueryScreen({ api, notify }: { api: CogniGraphApi; notify: Notif
                     <h2>Result</h2>
                   </div>
                   <div className="result-body">
-                    <JsonResult value={result} />
+                    <RequestFeedback state={result} waiting={running} />
+                    {result.status === "success" ? <JsonResult value={result.data} /> : null}
                   </div>
                 </section>
               </div>

@@ -1,0 +1,88 @@
+- complementary:
+  - img "CogniGraph":
+    - generic: CogniGraph
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Graph":
+      - /url: /graph
+      - generic: Graph
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+    - link "Lua":
+      - /url: /lua
+      - generic: Lua
+    - link "Users":
+      - /url: /users
+      - generic: Users
+    - link "Operations":
+      - /url: /operations
+      - generic: Operations
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38486
+  - generic: Healthy
+  - generic: Sep 11, 2026, 5:22 PM
+  - generic: admin
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - link "Collections":
+    - /url: /collections
+  - text: / qa_docs
+  - heading "qa_docs" [level=1]
+  - paragraph: JSON collection • 5 documents
+  - button "Create document":
+    - generic: Create document
+  - textbox "Search documents":
+    - /placeholder: Search the whole collection, or paste a key...
+    - text: b05cf506-0309-4f4d-93d6-693de6450752
+  - button:
+  - 'generic "Category: All"':
+    - text: "Category: All"
+    - combobox "Filter by category"
+  - 'generic "Has embedding: All"':
+    - text: "Has embedding: All"
+    - combobox "Filter by embedding status"
+  - button "Reset":
+    - generic: Reset
+  - table:
+    - rowgroup:
+      - row "Select Key Title Category Updated Embedding":
+        - columnheader "Select":
+          - generic: Select
+        - columnheader "Key"
+        - columnheader "Title"
+        - columnheader "Category"
+        - columnheader "Updated"
+        - columnheader "Embedding"
+    - rowgroup:
+      - row "Try a different key, title, category, or embedding status. No documents match these filters":
+        - cell "Try a different key, title, category, or embedding status. No documents match these filters":
+          - generic: Try a different key, title, category, or embedding status.
+          - strong: No documents match these filters
+  - generic: "Rows per page:"
+  - generic "25":
+    - text: "25"
+    - combobox "Rows per page"
+  - generic: 0 documents
+  - button "Previous page" [disabled]:
+  - button "1"
+  - button "Next page" [disabled]:

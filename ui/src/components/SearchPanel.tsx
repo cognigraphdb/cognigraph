@@ -1,8 +1,9 @@
 import { CircleNotch, MagnifyingGlass } from "@phosphor-icons/react";
 import { Button, Form, Input, InputNumber, Select, Table, type TableColumnsType } from "antd";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import type { CogniGraphApi } from "../api/client.ts";
+import { useRequestResult } from "../hooks/useRequestResult.ts";
 import type { CollectionListResponse } from "../lib/collections.ts";
 import {
   buildSearchRequest,
@@ -12,10 +13,11 @@ import {
   type SearchFormValues,
   type SearchHit,
   type SearchMode,
+  searchDocumentPath,
 } from "../lib/search.ts";
 import type { JsonObject } from "../types.ts";
-import { ErrorAlert } from "./ErrorAlert.tsx";
 import { JsonResult } from "./JsonResult.tsx";
+import { RequestFeedback } from "./RequestFeedback.tsx";
 
 interface SearchPanelProps {
   api: CogniGraphApi;
@@ -38,11 +40,14 @@ export function SearchPanel({ api, mode }: SearchPanelProps) {
     edgeCollection: undefined,
     maxDepth: 2,
   });
-  const [running, setRunning] = useState(false);
-  const [error, setError] = useState("");
-  const [hits, setHits] = useState<SearchHit[]>();
-  const [raw, setRaw] = useState<JsonObject>();
-  const [elapsed, setElapsed] = useState<number>();
+  const { state: result, run: runResult } = useRequestResult<JsonObject>(
+    api,
+    JSON.stringify([mode, values]),
+  );
+  const running = result.status === "pending";
+  const raw = result.status === "success" ? result.data : undefined;
+  const hits = raw ? extractHits(raw) : undefined;
+  const elapsed = "elapsed" in result ? result.elapsed : undefined;
 
   useEffect(() => {
     api
@@ -70,30 +75,8 @@ export function SearchPanel({ api, mode }: SearchPanelProps) {
     (needsQuery ? Boolean(values.query.trim()) : Boolean(values.vectorText.trim())) &&
     (mode !== "graph-augmented" || Boolean(values.edgeCollection));
 
-  async function run() {
-    let body: JsonObject;
-    try {
-      body = buildSearchRequest(mode, values);
-    } catch (reason) {
-      setError(reason instanceof Error ? reason.message : "Invalid input");
-      return;
-    }
-    setRunning(true);
-    setError("");
-    const started = performance.now();
-    try {
-      const response = await api.post<JsonObject>(meta.endpoint, body);
-      setRaw(response);
-      setHits(extractHits(response));
-      setElapsed(Math.round(performance.now() - started));
-    } catch (reason) {
-      setHits(undefined);
-      setRaw(undefined);
-      setError(friendlySearchError(reason instanceof Error ? reason.message : "Search failed"));
-    } finally {
-      setRunning(false);
-    }
-  }
+  const run = () =>
+    runResult(async () => api.post<JsonObject>(meta.endpoint, buildSearchRequest(mode, values)));
 
   const columns: TableColumnsType<SearchHit> = [
     {
@@ -105,7 +88,21 @@ export function SearchPanel({ api, mode }: SearchPanelProps) {
     {
       title: "Document",
       key: "doc",
-      render: (_, hit) => <span className="mono-cell">{hit.document_id}</span>,
+      render: (_, hit) => {
+        const path = searchDocumentPath(hit.document_id);
+        return path ? (
+          <Link
+            aria-label={`Open document ${hit.document_id}`}
+            className="table-action mono-cell"
+            onClick={(event) => event.stopPropagation()}
+            to={path}
+          >
+            {hit.document_id}
+          </Link>
+        ) : (
+          <span className="mono-cell">{hit.document_id || "—"}</span>
+        );
+      },
     },
     {
       title: "Title",
@@ -203,9 +200,15 @@ export function SearchPanel({ api, mode }: SearchPanelProps) {
         </Button>
       </Form>
 
-      {error ? <ErrorAlert title={error} /> : null}
+      <RequestFeedback
+        state={
+          result.status === "error"
+            ? { ...result, error: friendlySearchError(result.error) }
+            : result
+        }
+      />
 
-      {hits !== undefined && !error ? (
+      {hits !== undefined ? (
         <section className="search-results">
           <div className="workspace-controls">
             <span className="workspace-count">
@@ -219,16 +222,12 @@ export function SearchPanel({ api, mode }: SearchPanelProps) {
             locale={{ emptyText: "No documents matched — loosen the threshold or rephrase." }}
             onRow={(hit) => ({
               onClick: () => {
-                const [collection, key] = hit.document_id.split("/");
-                if (collection && key) {
-                  navigate(
-                    `/collections/${encodeURIComponent(collection)}?doc=${encodeURIComponent(key)}`,
-                  );
-                }
+                const path = searchDocumentPath(hit.document_id);
+                if (path) navigate(path);
               },
             })}
             pagination={false}
-            rowClassName={() => "clickable-row"}
+            rowClassName={(hit) => (searchDocumentPath(hit.document_id) ? "clickable-row" : "")}
             rowKey="document_id"
             size="small"
           />

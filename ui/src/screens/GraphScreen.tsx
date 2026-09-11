@@ -4,12 +4,13 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type { CogniGraphApi } from "../api/client.ts";
 import { useAccess } from "../components/AccessBoundary.tsx";
 import { CreateEdgeDialog } from "../components/CreateEdgeDialog.tsx";
-import { ErrorAlert } from "../components/ErrorAlert.tsx";
 import { GraphCanvas } from "../components/GraphCanvas.tsx";
 import { GraphInspector } from "../components/GraphInspector.tsx";
 import { JsonResult } from "../components/JsonResult.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
+import { RequestFeedback } from "../components/RequestFeedback.tsx";
 import { SelectedGraphPath } from "../components/SelectedGraphPath.tsx";
+import { useRequestResult } from "../hooks/useRequestResult.ts";
 import {
   type ExplorerGraph,
   mergeExplorerGraphs,
@@ -35,14 +36,21 @@ export function GraphScreen({ api, notify, onOpenDocument }: GraphScreenProps) {
   const [depth, setDepth] = useState(2);
   const [minConfidence, setMinConfidence] = useState(0.5);
   const [mode, setMode] = useState<"visual" | "json">("visual");
-  const [graph, setGraph] = useState<ExplorerGraph>();
-  const [rootId, setRootId] = useState("");
+  const inputKey = JSON.stringify([startVertex, edgeCollection, direction, depth, minConfidence]);
+  const { state: result, run: runResult } = useRequestResult<{
+    graph: ExplorerGraph;
+    rootId: string;
+    vertexId: string;
+    emptyExpansion: boolean;
+  }>(api, inputKey);
+  const graph = result.status === "success" ? result.data.graph : undefined;
+  const rootId = result.status === "success" ? result.data.rootId : "";
   const [selectedNodeId, setSelectedNodeId] = useState<string>();
   const [selectedEdgeId, setSelectedEdgeId] = useState<string>();
   const [selectedPathId, setSelectedPathId] = useState<string>();
-  const [running, setRunning] = useState(false);
-  const [error, setError] = useState("");
+  const running = result.status === "pending";
   const [edgeDialog, setEdgeDialog] = useState(false);
+  const [createdTraversal, setCreatedTraversal] = useState<{ vertexId: string }>();
 
   const selectedPath = useMemo(
     () => graph?.paths.find((path) => path.id === selectedPathId),
@@ -52,43 +60,49 @@ export function GraphScreen({ api, notify, onOpenDocument }: GraphScreenProps) {
   const selectedEdge = graph?.edges.find((edge) => edge.id === selectedEdgeId);
 
   const loadTraversal = useCallback(
-    async (vertexId: string, merge = false, edgeOverride?: string) => {
-      setRunning(true);
-      setError("");
-      try {
-        const response = await api.post("/graph/traverse", {
-          start_vertex: vertexId,
-          edge_collection: edgeOverride ?? edgeCollection,
-          direction,
-          min_depth: 1,
-          max_depth: depth,
-          min_confidence: minConfidence,
-          path_decay: 0.8,
-        });
-        const incoming = parseTraversalResponse(response);
-        if (merge && incoming.nodes.length === 0) {
+    (vertexId: string, merge = false) =>
+      runResult(
+        async () => {
+          const response = await api.post("/graph/traverse", {
+            start_vertex: vertexId,
+            edge_collection: edgeCollection,
+            direction,
+            min_depth: 1,
+            max_depth: depth,
+            min_confidence: minConfidence,
+            path_decay: 0.8,
+          });
+          const incoming = parseTraversalResponse(response);
+          return {
+            graph: merge ? mergeExplorerGraphs(graph, incoming, vertexId) : incoming,
+            rootId: merge ? rootId : vertexId,
+            vertexId,
+            emptyExpansion: merge && incoming.nodes.length === 0,
+          };
+        },
+        (completed) => {
           setSelectedNodeId(vertexId);
           setSelectedEdgeId(undefined);
-          notify("No additional neighbors found from this node");
-          return;
-        }
-        setGraph((current) =>
-          merge ? mergeExplorerGraphs(current, incoming, vertexId) : incoming,
-        );
-        setSelectedNodeId(vertexId);
-        setSelectedEdgeId(undefined);
-        setSelectedPathId(incoming.paths[0]?.id);
-        notify(merge ? "Neighborhood added to the graph" : "Graph traversal completed");
-      } catch (loadError) {
-        const message = loadError instanceof Error ? loadError.message : "Traversal failed";
-        setError(message);
-        notify(message, "error");
-      } finally {
-        setRunning(false);
-      }
-    },
-    [api, depth, direction, edgeCollection, minConfidence, notify],
+          setSelectedPathId(pathForSelection(completed.graph, vertexId)?.id);
+          notify(
+            completed.emptyExpansion
+              ? "No additional neighbors found from this node"
+              : merge
+                ? "Neighborhood added to the graph"
+                : "Graph traversal completed",
+          );
+        },
+      ),
+    [api, depth, direction, edgeCollection, minConfidence, notify, graph, rootId, runResult],
   );
+
+  // A newly created relationship may change the toolbar's input scope. Start
+  // its readback only after those inputs own the new result store.
+  useEffect(() => {
+    if (!createdTraversal) return;
+    setCreatedTraversal(undefined);
+    void loadTraversal(createdTraversal.vertexId);
+  }, [createdTraversal, loadTraversal]);
 
   useEffect(() => {
     api
@@ -105,7 +119,6 @@ export function GraphScreen({ api, notify, onOpenDocument }: GraphScreenProps) {
 
   const traverse = () => {
     if (!startVertex.trim() || !edgeCollection) return;
-    setRootId(startVertex.trim());
     void loadTraversal(startVertex.trim());
   };
 
@@ -127,13 +140,12 @@ export function GraphScreen({ api, notify, onOpenDocument }: GraphScreenProps) {
   // the edge was written to, so it appears regardless of the toolbar state.
   const edgeCreated = (from: string, collection: string) => {
     setEdgeDialog(false);
-    setEdgeCollection(collection);
-    if (graph?.nodes.some((node) => node.id === from)) {
-      void loadTraversal(from, true, collection);
+    if (collection === edgeCollection && graph?.nodes.some((node) => node.id === from)) {
+      void loadTraversal(from, true);
     } else {
       setStartVertex(from);
-      setRootId(from);
-      void loadTraversal(from, false, collection);
+      setEdgeCollection(collection);
+      setCreatedTraversal({ vertexId: from });
     }
   };
 
@@ -220,9 +232,12 @@ export function GraphScreen({ api, notify, onOpenDocument }: GraphScreenProps) {
         </Button>
       </Form>
       <section className="graph-explorer-surface">
-        {mode === "visual" ? (
+        <RequestFeedback
+          state={result}
+          idle="Enter a start vertex and run a traversal. Results clear when traversal inputs change."
+        />
+        {result.status !== "success" ? null : mode === "visual" ? (
           <VisualExplorer
-            error={error}
             graph={graph}
             onEdge={selectEdge}
             onNode={selectNode}
@@ -233,6 +248,10 @@ export function GraphScreen({ api, notify, onOpenDocument }: GraphScreenProps) {
           />
         ) : (
           <div className="graph-json-result">
+            <p className="dialog-hint">
+              Latest traversal response from {result.data.vertexId}. Expanded neighborhoods are
+              combined in Visual view.
+            </p>
             <JsonResult empty="Run a traversal to inspect its JSON response." value={graph?.raw} />
           </div>
         )}
@@ -270,7 +289,6 @@ export function GraphScreen({ api, notify, onOpenDocument }: GraphScreenProps) {
 }
 
 function VisualExplorer({
-  error,
   graph,
   rootId,
   selectedNodeId,
@@ -279,7 +297,6 @@ function VisualExplorer({
   onNode,
   onEdge,
 }: {
-  error: string;
   graph?: ExplorerGraph;
   rootId: string;
   selectedNodeId?: string;
@@ -288,13 +305,6 @@ function VisualExplorer({
   onNode: (id: string) => void;
   onEdge: (id: string) => void;
 }) {
-  if (error) {
-    return (
-      <div className="empty-state-base graph-empty-state">
-        <ErrorAlert title={error} />
-      </div>
-    );
-  }
   if (!graph || graph.nodes.length === 0) {
     return (
       <div className="empty-state-base graph-empty-state">

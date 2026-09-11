@@ -1,7 +1,7 @@
 import { ArrowsClockwise, CircleNotch, Key, UserPlus, UsersThree } from "@phosphor-icons/react";
 import { Button, Result, Spin, Table, type TableColumnsType, Tag, Tooltip } from "antd";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import type { CogniGraphApi } from "../api/client.ts";
 import { CreateUserDialog } from "../components/CreateUserDialog.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
@@ -55,7 +55,16 @@ export function UsersScreen({ api, notify, session, edition }: UsersScreenProps)
     {
       title: "Username",
       dataIndex: "username",
-      render: (value) => <strong>{String(value ?? "—")}</strong>,
+      render: (_, user) => (
+        <Link
+          aria-label={`Open user ${user.username}`}
+          className="table-action"
+          onClick={(event) => event.stopPropagation()}
+          to={`/users/${encodeURIComponent(user.username)}`}
+        >
+          <strong>{user.username}</strong>
+        </Link>
+      ),
     },
     {
       title: "Role",

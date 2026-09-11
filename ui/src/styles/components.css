@@ -201,6 +201,21 @@ th {
   cursor: pointer;
 }
 
+.table-action {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent-dark);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+}
+
+.table-action:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
 /* antd tables (Review, Users) share the canonical document-table look.
    Colors come from the Table theme tokens (antd-theme.ts); typography and
    row metrics have no tokens, so they are aligned here. */

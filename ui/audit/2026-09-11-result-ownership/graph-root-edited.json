@@ -1,0 +1,12 @@
+{
+  "alerts": [],
+  "at": 1789136227368,
+  "graph": "Enter a start vertex and run a traversal. Results clear when traversal inputs change.",
+  "inspectors": 0,
+  "notices": [],
+  "paths": 0,
+  "statuses": [
+    "Enter a start vertex and run a traversal. Results clear when traversal inputs change."
+  ],
+  "timings": []
+}

@@ -13,6 +13,14 @@ export interface SearchHit {
   document: JsonObject | null;
 }
 
+/// Only complete document handles have a navigable target. Encode each
+/// identifier so query punctuation cannot change the destination or filter.
+export function searchDocumentPath(id: string): string | undefined {
+  const [collection, key, extra] = id.split("/");
+  if (!collection || !key || extra !== undefined) return undefined;
+  return `/collections/${encodeURIComponent(collection)}?doc=${encodeURIComponent(key)}`;
+}
+
 export const SEARCH_MODE_META: Record<
   SearchMode,
   { label: string; endpoint: string; hint: string }

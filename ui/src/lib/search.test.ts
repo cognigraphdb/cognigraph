@@ -1,6 +1,28 @@
 import { describe, expect, test } from "bun:test";
 import type { SearchFormValues } from "./search.ts";
-import { buildSearchRequest, extractHits, friendlySearchError } from "./search.ts";
+import {
+  buildSearchRequest,
+  extractHits,
+  friendlySearchError,
+  searchDocumentPath,
+} from "./search.ts";
+
+describe("searchDocumentPath", () => {
+  test("encodes a document handle without introducing extra query parameters", () => {
+    expect(searchDocumentPath("labels/rigel")).toBe("/collections/labels?doc=rigel");
+    const path = searchDocumentPath("research notes/Rigel & Vega?#1");
+    const url = new URL(path ?? "", "http://localhost");
+    expect(url.pathname).toBe("/collections/research%20notes");
+    expect([...url.searchParams]).toEqual([["doc", "Rigel & Vega?#1"]]);
+    expect(url.hash).toBe("");
+  });
+
+  test("leaves incomplete or ambiguous handles without a navigation action", () => {
+    for (const id of ["", "rigel", "/rigel", "labels/", "labels/rigel/extra", "labels/rigel/"]) {
+      expect(searchDocumentPath(id)).toBeUndefined();
+    }
+  });
+});
 
 const values: SearchFormValues = {
   query: "corticosteroid cream",

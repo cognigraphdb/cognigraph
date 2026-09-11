@@ -1,0 +1,152 @@
+{
+  "health": {
+    "edition": "enterprise",
+    "service": "cognigraph",
+    "status": "ok",
+    "version": "2.7.0"
+  },
+  "session": {
+    "auth_enabled": true,
+    "edition": "enterprise",
+    "scopes": [
+      "documents-read",
+      "documents-write",
+      "graph-read",
+      "graph-write",
+      "search",
+      "lua-execute",
+      "admin",
+      "promotion-read",
+      "governance-trust"
+    ],
+    "user": {
+      "key": "defba1d1-5f20-4be2-b04d-3505a3c63fea",
+      "role": "admin",
+      "tenant": "default",
+      "username": "admin"
+    }
+  },
+  "alpha": {
+    "count": 1,
+    "results": [
+      {
+        "document": {
+          "_key": "alpha",
+          "embedding": [
+            1,
+            0
+          ],
+          "title": "Alpha",
+          "trial": "cg56"
+        },
+        "score": 1.0,
+        "source": "native"
+      }
+    ]
+  },
+  "beta": {
+    "count": 1,
+    "results": [
+      {
+        "document": {
+          "_key": "beta",
+          "embedding": [
+            0,
+            1
+          ],
+          "title": "Beta",
+          "trial": "cg56"
+        },
+        "score": 1.0,
+        "source": "native"
+      }
+    ]
+  },
+  "graph": {
+    "count": 2,
+    "results": [
+      {
+        "depth": 1,
+        "edges": [
+          {
+            "_from": "qa_docs/alpha",
+            "_key": "alpha-beta",
+            "_to": "qa_docs/beta",
+            "confidence": 0.9,
+            "relation_type": "LINK"
+          }
+        ],
+        "score": 0.7200000000000001,
+        "vertices": [
+          {
+            "_key": "alpha",
+            "embedding": [
+              1,
+              0
+            ],
+            "title": "Alpha",
+            "trial": "cg56"
+          },
+          {
+            "_key": "beta",
+            "embedding": [
+              0,
+              1
+            ],
+            "title": "Beta",
+            "trial": "cg56"
+          }
+        ]
+      },
+      {
+        "depth": 2,
+        "edges": [
+          {
+            "_from": "qa_docs/alpha",
+            "_key": "alpha-beta",
+            "_to": "qa_docs/beta",
+            "confidence": 0.9,
+            "relation_type": "LINK"
+          },
+          {
+            "_from": "qa_docs/beta",
+            "_key": "beta-gamma",
+            "_to": "qa_docs/gamma",
+            "confidence": 0.9,
+            "relation_type": "LINK"
+          }
+        ],
+        "score": 0.5184000000000001,
+        "vertices": [
+          {
+            "_key": "alpha",
+            "embedding": [
+              1,
+              0
+            ],
+            "title": "Alpha",
+            "trial": "cg56"
+          },
+          {
+            "_key": "beta",
+            "embedding": [
+              0,
+              1
+            ],
+            "title": "Beta",
+            "trial": "cg56"
+          },
+          {
+            "_key": "gamma",
+            "embedding": [
+              -1,
+              0
+            ],
+            "title": "Gamma",
+            "trial": "cg56"
+          }
+        ]
+      }
+    ]
+  }
+}

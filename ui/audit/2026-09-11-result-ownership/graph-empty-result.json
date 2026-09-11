@@ -1,0 +1,12 @@
+{
+  "alerts": [],
+  "at": 1789136295073,
+  "graph": "No connected paths found.",
+  "inspectors": 0,
+  "notices": [
+    "Graph traversal completed"
+  ],
+  "paths": 0,
+  "statuses": [],
+  "timings": []
+}

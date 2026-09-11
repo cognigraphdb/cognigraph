@@ -353,3 +353,33 @@ already sent to the server or promise idempotency across tabs/reloads.
 regressions. Automatic non-executing EXPLAIN validation is separate from explicit
 CGQL execution. Submitted-input snapshots and stale-result presentation remain
 [CG-56](../issues/CG-56.md).
+
+## Addendum (2026-09-11): clear results when their inputs change
+
+Query, Lua, search and graph results now belong to one API identity, input scope
+and execution owner. Editing inputs clears results, errors and timings immediately;
+reruns clear the previous result before making the request. Returning to previous
+input values does not restore an earlier result. Obsolete completions cannot
+publish results or success callbacks. Lua/CGQL continue holding their execution
+slot while an already-submitted request finishes, even after input edits.
+
+Graph loading and errors are persistent in both Visual and JSON views, and old
+inspectors/paths are removed with the graph. Expansion captures its base graph for
+the new result; changing root or edge collection after relationship creation starts
+readback in the updated input scope. JSON identifies the most recent traversal
+response; Visual combines expanded neighborhoods. [CG-56](../issues/CG-56.md)
+owns the verification record and coverage limits.
+
+## Addendum (2026-09-11): native controls inside clickable tables
+
+Navigation rows expose descriptive native links in their identity columns;
+Review facts expose native selection buttons with current selection state.
+Whole rows do not add tab stops. Row clicks remain a pointer convenience, while
+nested links/buttons stop propagation and retain their own action. Anchors use
+the shared visible-focus treatment. Edge collections have no document-browser
+link, and incomplete search handles have no navigation target.
+
+[CG-57](../issues/CG-57.md) records keyboard, pointer, direct-load, scaled-layout
+and read-only-role checks against the Rust-served production console. This does
+not certify screen-reader narration or remove the separately tracked collapsed
+navigation naming issue.

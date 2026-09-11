@@ -1,0 +1,12 @@
+{
+  "alerts": [],
+  "at": 1789136047372,
+  "inspectors": 0,
+  "notices": [],
+  "paths": 0,
+  "result": "{  \"result\": \"CG56 Lua first\"}",
+  "statuses": [],
+  "timings": [
+    "15 ms"
+  ]
+}

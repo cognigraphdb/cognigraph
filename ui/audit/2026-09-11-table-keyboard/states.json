@@ -1,0 +1,16 @@
+[
+  {
+    "case": "empty vector results",
+    "observed": {
+      "links": 0,
+      "text": "Bring your own pre-computed vector (JSON array) — no embedding call is made.Vector (JSON array)[0,-1]Collectionaa_keyboard_docsLimitThresholdSearch0 hits · 9 msScoreDocumentTitleNo documents matched — loosen the threshold or rephrase.Raw response{  \"count\": 0,  \"results\": []}"
+    }
+  },
+  {
+    "case": "invalid vector",
+    "observed": {
+      "links": 0,
+      "text": "Bring your own pre-computed vector (JSON array) — no embedding call is made.Vector (JSON array)invalid vectorCollectionaa_keyboard_docsLimitThresholdSearchThe vector must be a JSON array of numbers."
+    }
+  }
+]

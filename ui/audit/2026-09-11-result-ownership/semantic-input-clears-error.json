@@ -1,0 +1,13 @@
+{
+  "alerts": [],
+  "at": 1789136514819,
+  "inspectors": 0,
+  "notices": [
+    "CGQL query completed"
+  ],
+  "paths": 0,
+  "statuses": [
+    "Run the request to see results. Results clear when inputs change."
+  ],
+  "timings": []
+}

@@ -9,7 +9,7 @@ import {
 } from "@phosphor-icons/react";
 import { Alert, Button, Table, type TableColumnsType, Tag, Tooltip } from "antd";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import type { CogniGraphApi } from "../api/client.ts";
 import { useAccess } from "../components/AccessBoundary.tsx";
 import { PageHeader } from "../components/PageHeader.tsx";
@@ -67,7 +67,19 @@ export function OverviewScreen({ api, health, session, onRefresh }: OverviewScre
     {
       title: "Collection",
       dataIndex: "name",
-      render: (value) => <strong className="mono-cell">{String(value)}</strong>,
+      render: (_, info) =>
+        isBrowsable(info) ? (
+          <Link
+            aria-label={`Open collection ${info.name}`}
+            className="table-action mono-cell"
+            onClick={(event) => event.stopPropagation()}
+            to={`/collections/${encodeURIComponent(info.name)}`}
+          >
+            <strong>{info.name}</strong>
+          </Link>
+        ) : (
+          <strong className="mono-cell">{info.name}</strong>
+        ),
     },
     {
       title: "Type",

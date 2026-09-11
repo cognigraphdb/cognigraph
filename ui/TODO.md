@@ -16,15 +16,25 @@ The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
 recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
 explicit untested boundaries. The historical Done entries below describe
 implementation checkpoints; they do not establish current acceptance. The UI
-suite now passes 137 helper tests after CG-49–CG-55/CG-62 remediation,
+suite now passes 146 helper tests after CG-49–CG-57/CG-62 remediation,
 but CI omits it and no browser regression suite exists yet. Keep defect status
 in the linked registry rather than duplicating it.
 
+- [x] [Table keyboard access CG-57](../docs/issues/CG-57.md): native links for
+  navigation and buttons for review selection, with visible focus and isolated
+  pointer shortcuts. [Browser/API evidence](audit/2026-09-11-table-keyboard/audit.md)
+  covers Tab/Enter/Space, direct reloads, scaled layouts and Viewer restrictions.
+  Five P2s remain open.
+- [x] [Result ownership CG-56](../docs/issues/CG-56.md): clear results/timing on
+  input edits and reruns; ignore obsolete responses; share graph loading/error
+  feedback across both views. [Browser/API evidence](audit/2026-09-11-result-ownership/audit.md)
+  covers delayed/reversed requests, failures, expansion and persisted mutations.
+  That checkpoint left six P2s open.
 - [x] [Execution guards CG-55](../docs/issues/CG-55.md): synchronous submission
   ownership for Lua/CGQL buttons, shortcuts and form submit, with obsolete
   completion suppression. [Browser/API evidence](audit/2026-09-11-execution-guards/audit.md)
   verifies delayed real executions, persisted write counts, errors and recovery.
-  Seven P2s remain open.
+  That checkpoint left seven P2s open.
 - [x] [Review/space paging CG-54](../docs/issues/CG-54.md): truthful queue ranges,
   complete searchable catalogs and off-page selection/graduation links.
   [Browser/API evidence](audit/2026-09-11-review-paging/audit.md) covers 101 spaces,
@@ -51,9 +61,7 @@ in the linked registry rather than duplicating it.
   review. [Browser/API evidence](audit/2026-09-11-data-preservation/audit.md).
 - [ ] Reconcile [empty/error guidance CG-58](../docs/issues/CG-58.md) and
   [collection search/filter scope CG-59](../docs/issues/CG-59.md).
-- [ ] Repair [result provenance CG-56](../docs/issues/CG-56.md),
-  [table keyboard access CG-57](../docs/issues/CG-57.md), and
-  [collapsed navigation names CG-63](../docs/issues/CG-63.md).
+- [ ] Repair [collapsed navigation names CG-63](../docs/issues/CG-63.md).
 - [ ] Establish [UI CI/browser coverage CG-60](../docs/issues/CG-60.md) and
   refresh the [advisory-affected dependency CG-61](../docs/issues/CG-61.md).
 

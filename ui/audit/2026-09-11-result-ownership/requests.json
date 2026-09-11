@@ -1,0 +1,619 @@
+[
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nFOR d IN documents\n  SORT d.updatedAt DESC\n  LIMIT 25\n  RETURN d",
+      "bind_vars": {},
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789135902.848355,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789135902.8518012,
+    "delivered_at": 1789135902.8521442
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nFOR d IN documents\n  SORT d.updatedAt DESC\n  LIMIT 25\n  RETURN d",
+      "bind_vars": {},
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789135902.85061,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789135902.8517299,
+    "delivered_at": 1789135902.851904
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nRETURN @value",
+      "bind_vars": {
+        "value": "CG56 first"
+      },
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789135931.172502,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789135931.17341,
+    "delivered_at": 1789135931.173586
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "RETURN @value",
+      "bind_vars": {
+        "value": "CG56 first"
+      },
+      "language": "cgql"
+    },
+    "validation": false,
+    "received_at": 1789135931.218534,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789135931.219626,
+    "delivered_at": 1789135931.2198021
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "RETURN @value",
+      "bind_vars": {
+        "value": "CG56 first"
+      },
+      "language": "cgql"
+    },
+    "validation": false,
+    "received_at": 1789135941.417651,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789135941.4185479,
+    "delivered_at": 1789135941.4187908
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nRETURN @value",
+      "bind_vars": {
+        "value": "CG56 first"
+      },
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789135941.695015,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789135941.69579,
+    "delivered_at": 1789135941.696068
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nRETURN @value",
+      "bind_vars": {
+        "value": "CG56 changed binding"
+      },
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789135941.88594,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789135941.886993,
+    "delivered_at": 1789135941.887511
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "RETURN \"CG56 slow query\"",
+      "bind_vars": {
+        "value": "CG56 changed binding"
+      },
+      "language": "cgql"
+    },
+    "validation": false,
+    "received_at": 1789135968.667288,
+    "delay_seconds": 20,
+    "status": 500,
+    "backend_completed_at": 1789135968.6680992,
+    "delivered_at": 1789135988.672865
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nRETURN \"CG56 current query not run\"",
+      "bind_vars": {
+        "value": "CG56 changed binding"
+      },
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789135969.5484228,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789135969.55178,
+    "delivered_at": 1789135969.552449
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "RETURN \"CG56 current query not run\"",
+      "bind_vars": {
+        "value": "CG56 changed binding"
+      },
+      "language": "cgql"
+    },
+    "validation": false,
+    "received_at": 1789136007.4669151,
+    "delay_seconds": 0,
+    "status": 500,
+    "backend_completed_at": 1789136007.4676921,
+    "delivered_at": 1789136007.4678771
+  },
+  {
+    "path": "/api/lua/execute",
+    "input": {
+      "script": "return \"CG56 Lua first\""
+    },
+    "validation": false,
+    "received_at": 1789136011.0679512,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136011.0799098,
+    "delivered_at": 1789136011.080238
+  },
+  {
+    "path": "/api/lua/execute",
+    "input": {
+      "script": "return graph.create_document(\"qa_docs\", { title = \"CG56 slow write\", trial = \"cg56-write\" })"
+    },
+    "validation": false,
+    "received_at": 1789136047.466053,
+    "delay_seconds": 20,
+    "status": 200,
+    "backend_completed_at": 1789136047.479319,
+    "delivered_at": 1789136067.494142
+  },
+  {
+    "path": "/api/lua/execute",
+    "input": {
+      "script": "return \"CG56 current Lua\""
+    },
+    "validation": false,
+    "received_at": 1789136093.683296,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136093.6848419,
+    "delivered_at": 1789136093.685075
+  },
+  {
+    "path": "/api/lua/execute",
+    "input": {
+      "script": "error(\"CG56 expected Lua failure\")"
+    },
+    "validation": false,
+    "received_at": 1789136094.117756,
+    "delay_seconds": 0,
+    "status": 500,
+    "backend_completed_at": 1789136094.119415,
+    "delivered_at": 1789136094.119839
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nFOR d IN documents\n  SORT d.updatedAt DESC\n  LIMIT 25\n  RETURN d",
+      "bind_vars": {},
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789136094.549403,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136094.550221,
+    "delivered_at": 1789136094.550559
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nFOR d IN documents\n  SORT d.updatedAt DESC\n  LIMIT 25\n  RETURN d",
+      "bind_vars": {},
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789136094.550313,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136094.551075,
+    "delivered_at": 1789136094.551263
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "RETURN \"CG56 recovered query\"",
+      "bind_vars": {},
+      "language": "cgql"
+    },
+    "validation": false,
+    "received_at": 1789136097.86715,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136097.867931,
+    "delivered_at": 1789136097.868137
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nRETURN \"CG56 recovered query\"",
+      "bind_vars": {},
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789136098.365518,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136098.3664908,
+    "delivered_at": 1789136098.36676
+  },
+  {
+    "path": "/api/search/vector",
+    "input": {
+      "collection": "qa_docs",
+      "limit": 10,
+      "threshold": 0.3,
+      "vector": [
+        1,
+        0
+      ]
+    },
+    "validation": false,
+    "received_at": 1789136111.717193,
+    "delay_seconds": 20,
+    "status": 200,
+    "backend_completed_at": 1789136111.717914,
+    "delivered_at": 1789136131.7186172
+  },
+  {
+    "path": "/api/search/vector",
+    "input": {
+      "collection": "qa_docs",
+      "limit": 10,
+      "threshold": 0.3,
+      "vector": [
+        0,
+        1
+      ]
+    },
+    "validation": false,
+    "received_at": 1789136112.1664782,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136112.167351,
+    "delivered_at": 1789136112.1675699
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/alpha",
+      "edge_collection": "qa_edges",
+      "direction": "outbound",
+      "min_depth": 1,
+      "max_depth": 2,
+      "min_confidence": 0.5,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136226.4342752,
+    "delay_seconds": 20,
+    "status": 200,
+    "backend_completed_at": 1789136226.435188,
+    "delivered_at": 1789136246.443855
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/gamma",
+      "edge_collection": "qa_edges",
+      "direction": "outbound",
+      "min_depth": 1,
+      "max_depth": 2,
+      "min_confidence": 0.5,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136227.4163399,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136227.417129,
+    "delivered_at": 1789136227.417351
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/gamma",
+      "edge_collection": "qa_edges",
+      "direction": "outbound",
+      "min_depth": 1,
+      "max_depth": 1,
+      "min_confidence": 0.5,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136261.4166222,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136261.41739,
+    "delivered_at": 1789136261.417612
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/gamma",
+      "edge_collection": "qa_edges",
+      "direction": "outbound",
+      "min_depth": 1,
+      "max_depth": 1,
+      "min_confidence": 0.8,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136261.8005838,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136261.801326,
+    "delivered_at": 1789136261.801536
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/gamma",
+      "edge_collection": "qa_edges",
+      "direction": "inbound",
+      "min_depth": 1,
+      "max_depth": 1,
+      "min_confidence": 0.8,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136282.1537468,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136282.154552,
+    "delivered_at": 1789136282.154787
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/gamma",
+      "edge_collection": "qa_other_edges",
+      "direction": "inbound",
+      "min_depth": 1,
+      "max_depth": 1,
+      "min_confidence": 0.8,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136294.616896,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136294.6177542,
+    "delivered_at": 1789136294.61796
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/alpha",
+      "edge_collection": "qa_edges",
+      "direction": "outbound",
+      "min_depth": 1,
+      "max_depth": 1,
+      "min_confidence": 0.8,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136296.6416771,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136296.6426308,
+    "delivered_at": 1789136296.642933
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/alpha",
+      "edge_collection": "qa_edges",
+      "direction": "outbound",
+      "min_depth": 1,
+      "max_depth": 1,
+      "min_confidence": 0.8,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136312.2571552,
+    "delay_seconds": 0,
+    "dropped_before_forward": true
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/alpha",
+      "edge_collection": "qa_edges",
+      "direction": "outbound",
+      "min_depth": 1,
+      "max_depth": 1,
+      "min_confidence": 0.8,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136379.002481,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136379.006046,
+    "delivered_at": 1789136379.0066361
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/alpha",
+      "edge_collection": "qa_edges",
+      "direction": "outbound",
+      "min_depth": 1,
+      "max_depth": 1,
+      "min_confidence": 0.8,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136379.476682,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136379.4774468,
+    "delivered_at": 1789136379.477747
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/alpha",
+      "edge_collection": "qa_edges",
+      "direction": "outbound",
+      "min_depth": 1,
+      "max_depth": 1,
+      "min_confidence": 0.8,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136387.7152698,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136387.716255,
+    "delivered_at": 1789136387.7166238
+  },
+  {
+    "path": "/api/graph/traverse",
+    "input": {
+      "start_vertex": "qa_docs/gamma",
+      "edge_collection": "qa_other_edges",
+      "direction": "outbound",
+      "min_depth": 1,
+      "max_depth": 1,
+      "min_confidence": 0.8,
+      "path_decay": 0.8
+    },
+    "validation": false,
+    "received_at": 1789136408.9708438,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136408.9717472,
+    "delivered_at": 1789136408.97203
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nFOR d IN documents\n  SORT d.updatedAt DESC\n  LIMIT 25\n  RETURN d",
+      "bind_vars": {},
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789136443.8488362,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136443.8541172,
+    "delivered_at": 1789136443.8545809
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nFOR d IN documents\n  SORT d.updatedAt DESC\n  LIMIT 25\n  RETURN d",
+      "bind_vars": {},
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789136443.859936,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136443.860824,
+    "delivered_at": 1789136443.861204
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nRETURN @value",
+      "bind_vars": {
+        "value": "CG56 slow bound query"
+      },
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789136447.162548,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136447.164042,
+    "delivered_at": 1789136447.16453
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "RETURN @value",
+      "bind_vars": {
+        "value": "CG56 slow bound query"
+      },
+      "language": "cgql"
+    },
+    "validation": false,
+    "received_at": 1789136447.19086,
+    "delay_seconds": 20,
+    "status": 200,
+    "backend_completed_at": 1789136447.192103,
+    "delivered_at": 1789136467.193571
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "EXPLAIN\nRETURN @value",
+      "bind_vars": {
+        "value": "CG56 changed pending binding"
+      },
+      "language": "cgql"
+    },
+    "validation": true,
+    "received_at": 1789136447.5209842,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136447.522424,
+    "delivered_at": 1789136447.522871
+  },
+  {
+    "path": "/api/search/query",
+    "input": {
+      "query": "RETURN @value",
+      "bind_vars": {
+        "value": "CG56 changed pending binding"
+      },
+      "language": "cgql"
+    },
+    "validation": false,
+    "received_at": 1789136513.733584,
+    "delay_seconds": 0,
+    "status": 200,
+    "backend_completed_at": 1789136513.734446,
+    "delivered_at": 1789136513.7347322
+  },
+  {
+    "path": "/api/search/semantic",
+    "input": {
+      "collection": "qa_docs",
+      "limit": 10,
+      "threshold": 0.3,
+      "query": "CG56 factual query"
+    },
+    "validation": false,
+    "received_at": 1789136514.473483,
+    "delay_seconds": 0,
+    "status": 500,
+    "backend_completed_at": 1789136514.475855,
+    "delivered_at": 1789136514.476183
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "ui_check": "PASS: 118 files and TypeScript",
+  "ui_tests": {
+    "passed": 144,
+    "files": 21,
+    "assertions": 723
+  },
+  "ui_build": {
+    "modules": 1731,
+    "javascript": "index-nfg3bnmz.js"
+  },
+  "evidence_verifier": "PASS: input resets, obsolete replies, reversed real responses, graph errors, persisted mutations, reloads and scaled geometry",
+  "scope": "UI only; Rust unchanged; no push/remote CI",
+  "cleanup": "Owned tabs closed, viewport reset, owned API/proxy stopped, /tmp/cg56-qa store, sidecar and control removed"
+}

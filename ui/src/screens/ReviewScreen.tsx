@@ -109,7 +109,19 @@ export function ReviewScreen({ api, notify }: { api: CogniGraphApi; notify: Noti
               <Flag aria-hidden="true" className="grad-flag" size={14} weight="fill" />
             </Tooltip>
           ) : null}
-          <strong>{factOf(neuron)}</strong>
+          <button
+            aria-label={`Inspect neuron ${neuron.id}: ${factOf(neuron)}`}
+            aria-pressed={neuron._key === selectedKey}
+            className="table-action"
+            disabled={verdictBusy}
+            onClick={(event) => {
+              event.stopPropagation();
+              updateLocation({ space, neuron: neuron._key });
+            }}
+            type="button"
+          >
+            <strong>{factOf(neuron)}</strong>
+          </button>
         </span>
       ),
     },

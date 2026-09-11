@@ -1,0 +1,38 @@
+- complementary:
+  - img "CogniGraph"
+  - navigation "Primary navigation":
+    - link "Overview":
+      - /url: /overview
+      - generic: Overview
+    - link "Collections":
+      - /url: /collections
+      - generic: Collections
+    - link "Query":
+      - /url: /query
+      - generic: Query
+    - link "Review":
+      - /url: /review
+      - generic: Review
+    - link "Construct":
+      - /url: /construct
+      - generic: Construct
+  - generic: System healthy
+  - generic: Version 2.7.0
+  - button "Collapse sidebar":
+    - generic: Collapse
+- banner:
+  - generic: Tenant
+  - strong: default
+  - generic: Server
+  - strong: 127.0.0.1:38487
+  - generic: Healthy
+  - generic: Sep 11, 2026, 6:14 PM
+  - generic: qa-keyboard-viewer
+  - button "Sign out":
+    - generic: Sign out
+- main:
+  - img "Unauthorized"
+  - generic: Page unavailable
+  - generic: This page is unavailable for your current role.
+  - button "Open your workspace":
+    - generic: Open your workspace
