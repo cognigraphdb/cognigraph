@@ -25,8 +25,10 @@ maps the original 105 records to their checkpoint source lines and hashes.
 ## Unreleased
 
 - 2026-09-12: [Use Native storage as the only runtime backend](2026-09-12-native-runtime.md)
+- 2026-09-12: [Qualify Native-only operation before first deployment](2026-09-12-native-readiness.md)
 - 2026-09-12: [Approve the Native-only storage engineering batch](2026-09-12-native-only-plan.md)
 - 2026-09-12: [Preserve Native conformance coverage before adapter removal](2026-09-12-native-conformance.md)
+- 2026-09-12: [Align product and website copy with Native-only storage](2026-09-12-native-alignment.md)
 - 2026-09-11: [Explain tenant deletion and display quarantine outcomes](2026-09-11-ui-tenant-deletion.md)
 - 2026-09-11: [Align tenant onboarding and user provisioning with authorization](2026-09-11-ui-provisioning.md)
 - 2026-09-11: [Use the production origin and verify console access](2026-09-11-ui-production-origin.md)
@@ -150,6 +152,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Releases
 
+- 2026-09-12: [Prepare v2.7.2 Native-only CI candidate](2026-09-12-ci-candidate-v2.7.2.md)
 - 2026-09-11: [Console remediation and verification — v2.7.1](2026-09-11-v2-7-1.md)
 - 2026-09-11: [2.7.0 — Community builds and a fresh repository](2026-09-11-v2-7-0.md)
 - 2026-09-11: [2.6.2 — Repository data removal](2026-09-11-v2-6-2.md)

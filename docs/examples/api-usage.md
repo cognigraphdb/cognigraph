@@ -196,7 +196,7 @@ must not submit any receipt or derived authority.
 The receipt retains content addresses and signed manifest projections, not a
 second copy of raw or prepared bytes. Native snapshots therefore validate the
 address chain but cannot replay preparation without the separately preserved
-tenant-incarnation CAS; ArangoDB has no CogniGraph application snapshot. M23
+tenant-incarnation CAS. M23
 accepts only already extracted UTF-8 plain text. It does not parse PDF, HTML,
 office, compressed, or image inputs; run extraction/OCR outside CogniGraph and
 attest the resulting exact text bytes. It also does not populate operational
@@ -249,8 +249,8 @@ cognigraph artifact custody restore /mnt/backup/cognigraph-$EVIDENCE_ID \
 
 The receipt records one successful reread; it does not prove ongoing custody,
 freshness, independent replication, encryption, or availability. Pair the CAS
-bundle with a Native backend snapshot/cold copy or an operator-native ArangoDB
-backup, external configuration, the trust anchor, and secrets. See the
+bundle with a Native snapshot/cold copy, external configuration, the trust
+anchor, and secrets. See the
 [M24 operations section](../operations/governance/artifact-custody.md#m24-artifact-custody-and-verified-restoration)
 and [M24 decision](../decisions/decision_m24_durable_cas_custody_verified_restoration.md).
 

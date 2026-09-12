@@ -691,8 +691,9 @@ FOR d IN documents FILTER d.stale == true REMOVE d._key IN documents
 
 ## v2: Multiple FOR, positional semantics, subqueries (2026-07-04)
 
-Approved design: docs/decisions/decision_cgql_v2.md. AQL is the reference
-semantics.
+Approved design: [CGQL v2](../decisions/decision_cgql_v2.md). The iteration
+model follows AQL conventions; the CGQL rules below and its fixed corpus define
+the implemented contract. No external database is needed to execute or test it.
 
 ### Positional body semantics (breaking change vs v1)
 

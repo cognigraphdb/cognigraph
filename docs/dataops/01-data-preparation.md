@@ -243,8 +243,7 @@ Snapshots are the migration path between in-memory and persistent modes,
 and between machines for backend state. M21-M23 external artifact bytes are not
 included. M24 derives a bounded evidence recovery plan and creates/verifies an
 offline tenant-incarnation CAS bundle; restore that bundle separately from the
-Native backend snapshot. ArangoDB does not provide the CogniGraph application
-snapshot surface and requires its own operator-native database backup in
-addition to the CAS bundle.
+Native database snapshot. Database records, CAS bytes and external
+configuration/trust/secrets must form one recovery plan.
 
 Next: [02 — CGQL for DataOps](02-cgql-for-dataops.md).

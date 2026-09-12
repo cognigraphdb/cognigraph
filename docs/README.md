@@ -4,12 +4,12 @@ Start with the [implementation plan](implementation-plan.md) for current status
 and next work. The [issue registry](issues/README.md) owns defect resolution;
 [decisions](decisions/README.md) own rationale and contract amendments.
 
-The active engineering batch is [Native-only storage](plans/native-only-2026-09-12.md):
-preserve useful Native contracts, remove the Arango runtime adapter, then qualify
-fresh Native operation before first live deployment. [The decision](decisions/decision_native_only.md)
-is accepted; CG-65 and CG-67 are complete. The current tree runs Native only;
-[CG-68](issues/CG-68.md) still owns final packaging and readiness. CG-64/CG-66
-are deferred optional importer work.
+Native is the only runtime storage backend. The [Native-only batch](plans/native-only-2026-09-12.md)
+is locally qualified through CG-65, CG-67 and CG-68. Start with the
+[first-deployment guide](operations/first-deployment.md) and
+[acceptance record](issues/native-readiness-2026-09-12.md) before preparing a live
+environment. Publication and deployment are separate; CG-64/CG-66 remain
+deferred optional importer work.
 
 | Area | Read it for |
 |---|---|

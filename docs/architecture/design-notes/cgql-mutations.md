@@ -1,5 +1,9 @@
 # CGQL Mutations — Design Proposal (for discussion)
 
+This is the dated design discussion. Use the [current CGQL specification](../../reference/cgql.md#mutations)
+for implemented mutation rules and the [Native-only decision](../../decisions/decision_native_only.md)
+for current storage. Earlier backend comparisons below are historical.
+
 Status: ACCEPTED 2026-07-02. Decisions:
 1. v1 = INSERT / UPDATE / REPLACE / REMOVE. **UPDATE is a partial update
    (merge); REPLACE swaps the whole document.** UPSERT delivered 2026-07-03

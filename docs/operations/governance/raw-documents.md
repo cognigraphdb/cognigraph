@@ -87,8 +87,7 @@ Native snapshots retain signed manifest projections and content addresses but
 not a second copy of `documents.json`, `corpus.json`, or their decoded raw text.
 Recovery and snapshot preflight can validate the authority/address chain;
 re-execution requires the external tenant-incarnation CAS. Back up, replicate,
-and restore that CAS separately. ArangoDB has no CogniGraph application
-snapshot surface.
+and restore that CAS separately from the Native database.
 
 “Raw document” here means exact bytes already declared as strict UTF-8 plain
 text. M23 does not parse PDF, HTML, office, archive, or compressed containers;
@@ -99,6 +98,5 @@ materialized tenant documents, chunks, embeddings, entities, mentions,
 indexes, trigger spans, storage keys, or a complete operational graph. M23 does
 not publish/deploy the graph, execute staged code, route traffic, switch a
 consumer, distribute the scheduler, or add replication, quorum, consensus, or
-HA. The authenticated release probes passed on persistent Native in 14.46
-seconds and live ArangoDB Enterprise 3.12.9-1 in 109.22 seconds; the Arango
-probe removed all 36 records it created and restored zero pre-existing records.
+HA. The [M23 decision](../../decisions/decision_m23_reproducible_raw_document_prepared_corpus_processing.md)
+retains the dated release-probe measurements and cleanup evidence.

@@ -227,10 +227,9 @@ chunk without raw `chunk_id` cannot be distinguished safely from a collision:
 rebuild the derived `chunks`, `mentions`, and `facts` collections before
 re-ingesting that key.
 
-Atomic reconciliation is capability-gated. The native backend provides it;
-the maintenance-mode Arango backend currently rejects construction ingestion
-before creating collections or writing entities rather than risking a partial
-revision.
+Atomic reconciliation uses Native batches. Capability checks precede
+collection creation and entity writes so an unsupported implementation cannot
+partially apply a revision.
 
 M25 rejects hand-written `facts` edges and generic writes to all four derived
 collections (`entities`, `chunks`, `mentions`, `facts`). This closes the old
@@ -586,8 +585,7 @@ This is invoked verified repair, not an automatic controller. Promotion does
 not build, build does not deploy, and M26 adds no drift scheduler, durable
 materialization job, background retry, LLM/prompt qualification, physical
 per-generation query routing, generation deletion/GC, distributed writer, or
-HA. ArangoDB rejects M26 before CAS reads or writes because it lacks atomic
-batch execution.
+HA. M26 requires Native atomic batch execution.
 
 ## 6. Prove: re-measure, attribute, prune
 

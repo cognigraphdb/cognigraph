@@ -52,8 +52,10 @@ nested instructions before editing a component, including [ui/AGENTS.md](ui/AGEN
 - Native is the only runtime storage backend. Follow the
   [storage decision](docs/decisions/decision_native_only.md) and
   [batch plan](docs/plans/native-only-2026-09-12.md). The owner confirms no
-  external delivery or live deployment yet; complete CG-68 readiness before
-  first deployment. CG-64/CG-66 are optional deferred importer work.
+  external delivery or live deployment yet. [CG-68](docs/issues/CG-68.md) records
+  local readiness; follow the [first-deployment guide](docs/operations/first-deployment.md)
+  and requalify changed runtime/build inputs before deployment. CG-64/CG-66
+  are optional deferred importer work.
   Preserve useful `GraphBackend` contracts, Native storage modes and explicit
   capabilities, including guarded and tenant-scoped wrappers.
 - Public HTTP and Lua query text uses parsed CGQL. Backend language declarations
@@ -78,8 +80,8 @@ nested instructions before editing a component, including [ui/AGENTS.md](ui/AGEN
 
 ```bash
 cargo fmt --all -- --check
-cargo clippy --all-targets -- -D warnings
-cargo test --all
+cargo clippy --locked --all-targets -- -D warnings
+cargo test --locked --all
 ```
 
 - If formatting fails because code needs rewriting, run `cargo fmt --all`, then rerun the validation commands.
@@ -148,7 +150,8 @@ failing hook with `--no-verify` or disable it to publish an unchecked candidate.
    a retry of that unchanged candidate does not require another increment.
 3. Inspect the current [CI workflows](.github/workflows/) and run every applicable
    check locally against the final integrated, versioned candidate. This gate
-   applies even while remote CI is manual and even for docs-only pushes. Currently:
+   applies to PR branches and even to docs-only pushes. The shared runners below
+   are authoritative; [CI setup](docs/operations/ci.md) owns tool prerequisites. Currently:
 
    ```sh
    cargo fmt --all -- --check
@@ -157,16 +160,20 @@ failing hook with `--no-verify` or disable it to publish an unchecked candidate.
    python3 scripts/check-docs.py
    python3 scripts/check-decision-index.py
    python3 scripts/issue.py check
-   cargo clippy --all-targets -- -D warnings
-   cargo test --all
+   cargo clippy --locked --all-targets -- -D warnings
+   cargo test --locked --all
    python3 scripts/check-editions.py
-   cargo clippy --all-targets --features enterprise -- -D warnings
-   cargo test --all --features enterprise
+   cargo clippy --locked --all-targets --features enterprise -- -D warnings
+   cargo test --locked --all --features enterprise
    python3 scripts/verify.py --suite ui
    python3 scripts/verify.py --suite ui-browser
+   python3 scripts/verify.py --suite native
+   python3 scripts/verify.py --suite helm
+   python3 scripts/verify.py --suite advisories
+   actionlint
    ```
 
-   For a push to `main`, also run the CI Docker build:
+   For every outgoing branch candidate, also run the CI Docker build and Helm backups:
    `python3 scripts/verify.py --suite docker` (Community and Enterprise). Follow current workflow conditions and toolchain
    requirements if they change. Run the relevant UI gates and real-binary/browser
    regression checks for affected behavior. A failed or unavailable required check

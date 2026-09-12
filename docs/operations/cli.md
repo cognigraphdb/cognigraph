@@ -1,8 +1,8 @@
 # Cli
 
-Direct ArangoDB dump ingestion is a [deferred design](../plans/arangodump-import-design.md)
-under CG-64/CG-66, not a prerequisite for Native-only readiness. Current
-`cognigraph import` accepts CogniGraph JSON snapshots only.
+`cognigraph import` accepts CogniGraph JSON snapshots. See the
+[recovery guide](recovery.md) for restore behavior and the
+[external migration guide](../reference/aql-to-cgql.md) for format differences.
 
 The default CLI is Community. Ordinary database, auth and snapshot commands work
 in both builds; neuron, construction, jobs, tenant and governance commands need

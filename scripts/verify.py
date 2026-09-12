@@ -14,21 +14,34 @@ def commands(suite):
     if suite == 'ci':
         return commands('ui') + [
             (ROOT, ['cargo', 'fmt', '--all', '--', '--check']),
+            (ROOT, ['actionlint']),
+            *commands('advisories'),
             (ROOT, [sys.executable, '-m', 'unittest', 'discover', '-s', 'scripts/tests']),
             (ROOT, [sys.executable, 'scripts/check-server-modularity.py']),
             (ROOT, [sys.executable, 'scripts/check-editions.py']),
             (ROOT, [sys.executable, 'scripts/check-docs.py']),
             (ROOT, [sys.executable, 'scripts/check-decision-index.py']),
             (ROOT, [sys.executable, 'scripts/issue.py', 'check']),
-            (ROOT, ['cargo', 'clippy', '--all-targets', '--', '-D', 'warnings']),
-            (ROOT, ['cargo', 'test', '--all']),
-            (ROOT, ['cargo', 'clippy', '--all-targets', '--features', 'enterprise', '--', '-D', 'warnings']),
-            (ROOT, ['cargo', 'test', '--all', '--features', 'enterprise']),
+            (ROOT, ['cargo', 'clippy', '--locked', '--all-targets', '--', '-D', 'warnings']),
+            (ROOT, ['cargo', 'test', '--locked', '--all']),
+            (ROOT, ['cargo', 'clippy', '--locked', '--all-targets', '--features', 'enterprise', '--', '-D', 'warnings']),
+            (ROOT, ['cargo', 'test', '--locked', '--all', '--features', 'enterprise']),
+            *commands('helm'),
+            *commands('native'),
             *commands('ui-browser'),
         ]
     if suite == 'docker':
         return [(ROOT, command) for command in docker_images.build_commands()] + [
-            (ROOT, [sys.executable, 'scripts/docker_images.py', 'check'])]
+            (ROOT, [sys.executable, 'scripts/docker_images.py', 'check']),
+            (ROOT, [sys.executable, 'scripts/check-helm.py', '--live']),
+            (ROOT, [sys.executable, 'scripts/check-helm.py', '--live', '--enterprise'])]
+    if suite == 'advisories':
+        return [(ROOT, ['cargo', 'audit']), (ROOT / 'ui', ['bun', 'audit'])]
+    if suite == 'helm':
+        return [(ROOT, [sys.executable, 'scripts/check-helm.py']),
+                (ROOT, [sys.executable, 'scripts/check-helm.py', '--enterprise'])]
+    if suite == 'native':
+        return [(ROOT, [sys.executable, 'scripts/native_ci.py'])]
     if suite == 'ui':
         return [(ROOT / 'ui', ['bun', 'install', '--frozen-lockfile']),
                 (ROOT / 'ui', ['bun', 'run', 'check']),
@@ -40,7 +53,10 @@ def commands(suite):
 
 
 def run(suite):
+    if sys.flags.optimize:
+        raise RuntimeError('Verification requires Python assertions; do not use -O')
     environment = os.environ.copy()
+    environment.pop('PYTHONOPTIMIZE', None)
     if suite == 'ci':
         environment['COGNIGRAPH_LIVE_LLM'] = '0'
         print('CI excludes live LLM loops and opt-in embedding-provider qualification.', flush=True)
@@ -54,7 +70,7 @@ def run(suite):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--suite', choices=('ci', 'docker', 'ui', 'ui-browser'), default='ci')
+    parser.add_argument('--suite', choices=('ci', 'docker', 'ui', 'ui-browser', 'native', 'helm', 'advisories'), default='ci')
     args = parser.parse_args()
     try:
         run(args.suite)

@@ -1,5 +1,8 @@
 # Running
 
+For a fresh store and first live environment, start with the
+[first-deployment guide](first-deployment.md).
+
 ## Build editions
 
 Cargo and Docker build **Community** by default. Its server and CLI exclude

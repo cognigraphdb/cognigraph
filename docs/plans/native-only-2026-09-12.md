@@ -1,7 +1,7 @@
 # Native-only storage engineering batch
 
 - Date: 2026-09-12
-- Status: CG-65 and CG-67 complete; CG-68 next
+- Status: CG-65, CG-67 and CG-68 complete; locally qualified, not deployed
 - Decision: [Native-only storage](../decisions/decision_native_only.md)
 - Baseline: CogniGraph 2.7.1, revision `efe9839`
 
@@ -11,7 +11,7 @@ Complete Native-only cleanup before the first live deployment. The owner confirm
 that CogniGraph has never been provided to anyone; breaking changes are allowed
 freely during this phase. Public source checkpoints do not create an installed
 customer migration requirement. CG-67 has removed the runtime adapter from the
-current tree; final Native-only readiness remains CG-68.
+current tree; CG-68 has qualified local Native-only readiness.
 
 The initial migration-first draft is replaced by the order below. There is no
 customer cutover, legacy-support period, compatibility bridge, application-state
@@ -29,7 +29,9 @@ CG-65 is complete: the [coverage report](../issues/native-conformance-2026-09-12
 records the retained contracts, replacement doubles and local Rust/release-binary
 verification. CG-67 is also complete: the [runtime report](../issues/native-runtime-2026-09-12.md)
 records adapter/configuration removal and both editions' Rust, release-binary
-and browser checks. Proceed with CG-68; it does not wait for an importer. The
+and browser checks. CG-68 is complete: the [acceptance record](../issues/native-readiness-2026-09-12.md)
+records the full shared CI suite, both images and Helm backup checks. Publication
+and the chosen live environment remain separate operations. The
 [registry](../issues/README.md) owns statuses.
 
 ## Deferred optional backlog

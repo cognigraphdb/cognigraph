@@ -21,16 +21,16 @@ and test counts live in [change records](changelog/README.md), the
   defects, tested journeys and backend capabilities it does not yet expose;
   scoped follow-up work is tracked in [UI TODO](../ui/TODO.md).
 
-## Active engineering batch — Native-only storage, 2026-09-12
+## Completed engineering batch — Native-only storage, 2026-09-12
 
 The owner approved [Native-only storage before first deployment](decisions/decision_native_only.md)
 and clarified that CogniGraph has never been provided to anyone. Breaking cleanup
 is allowed freely before first delivery. The [batch plan](plans/native-only-2026-09-12.md)
 has completed [CG-65](issues/CG-65.md), preserving useful Native coverage, and
 [CG-67](issues/CG-67.md), removing the adapter and configuration.
-[CG-68](issues/CG-68.md) reconciles active guides/workflows and verifies fresh
-Native operation before any live deployment. No customer migration, compatibility
-window or last-Arango release is needed. Final deployment readiness is pending.
+[CG-68](issues/CG-68.md) reconciles active guides/workflows and qualifies local
+Native operation, both Linux/amd64 images and Helm backups. No customer migration, compatibility
+window or last-Arango release is needed. Local readiness passed; the chosen deployment environment still needs verification.
 
 The [CG-65 report](issues/native-conformance-2026-09-12.md) records four
 capability-boundary test replacements, all 126 expected CGQL results across
@@ -41,15 +41,22 @@ existing query goldens and historical captures remain unchanged.
 The [CG-67 report](issues/native-runtime-2026-09-12.md) records strict Clippy
 and full Rust suites in both editions, 514 fresh release-binary checks across
 four Native modes, cross-edition CLI/snapshot/tenant probes and all nine browser
-regressions. Docker/Helm qualification and broader active-guide reconciliation
-remain CG-68. The runtime cleanup has not been published or deployed.
+regressions. The [CG-68 acceptance report](issues/native-readiness-2026-09-12.md)
+adds fresh shared CI, image/runtime, Helm backup and startup rejection checks,
+plus active-guide reconciliation. The runtime cleanup has not reached main,
+Docker Hub or a deployed environment. [Sibling product and website alignment](plans/native-only-alignment-2026-09-12.md)
+is complete locally. **Deployment is on hold at the owner's request.** The
+[first-deployment guide](operations/first-deployment.md) remains the reference
+when deployment work resumes.
 
 [CG-64](issues/CG-64.md) and [CG-66](issues/CG-66.md) are deferred optional
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **64 Resolved, 1 Closed without change, and 3 Open issues**,
-all P2: one active batch ticket and two explicitly deferred backlog tickets.
+The registry now has **65 Resolved, 1 Closed without change, and 4 Open issues**.
+[CG-69](issues/CG-69.md) prepares automatic CI and repository protections on PR
+branches; [CG-70](issues/CG-70.md) tracks transitive advisory follow-up. CG-64/CG-66
+remain deferred optional import work. Deployment remains on hold.
 The earlier console defect list remains
 closed. Additional console features and the research qualification below are
 separate backlogs, not prerequisites for this batch. No model or holdout runs

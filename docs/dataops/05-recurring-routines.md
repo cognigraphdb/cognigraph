@@ -156,8 +156,7 @@ cognigraph export --out "backup-$(date +%F).json"
 Take one before every bulk load, ontology change, or neuron acceptance
 batch. This preserves supported Native backend state; it is not a complete
 disaster-recovery story. M21-M24 recovery also needs a verified artifact-CAS
-bundle plus external configuration, trust anchors, and secrets. ArangoDB uses
-operator-native database backup rather than CogniGraph snapshot export.
+bundle plus external configuration, trust anchors, and secrets.
 Composition and restore drills belong in [../operations.md](../operations/README.md).
 Native M26 import preflight validates the stored-plus-incoming immutable
 revision/review, generation, and deployment authority union; rebuilds derived

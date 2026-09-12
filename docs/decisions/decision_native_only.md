@@ -1,6 +1,6 @@
 # Decision: Native-only storage before first deployment
 
-Date: 2026-09-12 · Status: ACCEPTED; runtime removal complete, final readiness pending
+Date: 2026-09-12 · Status: ACCEPTED; runtime removal and local readiness complete
 
 ## Context
 
@@ -101,7 +101,7 @@ holdouts, model comparisons and broader console feature work are separate.
 
 Direction accepted and runtime cleanup implemented by CG-67. The
 [active batch](../plans/native-only-2026-09-12.md) has completed CG-65 and CG-67;
-CG-68 remains the final Native-only readiness gate before first deployment.
+CG-68 has passed local Native-only readiness; publication and deployment remain separate.
 CG-64/CG-66 remain deferred optional backlog, outside the readiness gate. This
 owner clarification supersedes the initial migration-first ordering and forced
 major-version/cutover requirements in the uncommitted September 12 draft.
@@ -113,5 +113,6 @@ complete: retained Native contracts and replacement capability doubles pass
 both Rust suites and local release-binary probes. The
 [CG-67 runtime report](../issues/native-runtime-2026-09-12.md) records both Rust
 suites, 514 Native runtime assertions, cross-edition CLI/snapshot/tenant probes
-and nine browser regressions. Broader documentation and Docker/Helm qualification
-remain CG-68; no new release, image publication or deployment is claimed.
+and nine browser regressions. [CG-68 readiness](../issues/native-readiness-2026-09-12.md)
+also passes the full shared CI suite, both Linux/amd64 images and Helm live
+backup checks. No new release, image publication or deployment is claimed.

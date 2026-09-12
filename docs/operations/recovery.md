@@ -1,9 +1,7 @@
 # Recovery
 
-These are the current backup/restore mechanisms. The approved
-[Native-only batch](../plans/native-only-2026-09-12.md) verifies fresh Native
-operation before first deployment. [External Arango dump conversion](../plans/arangodump-import-design.md)
-is deferred optional work; the application snapshot API does not accept dumps.
+Native supports hot application snapshots and cold database copies. For first
+deployment, follow the [setup and readiness guide](first-deployment.md).
 
 ## Backend backup and restore
 
