@@ -124,12 +124,14 @@ class ImageIdentity(unittest.TestCase):
                     'org.opencontainers.image.source': images.SOURCE, 'io.cognigraph.edition': edition}}}
 
     def test_both_labels_and_platform_checked_before_any_container_starts(self):
-        for change in ('version', 'revision', 'edition', 'root', 'platform'):
+        for change in ('version', 'revision', 'edition', 'root', 'platform', 'volume'):
             info = self.info('enterprise')
             if change == 'root':
                 info['Config']['User'] = 'root'
             elif change == 'platform':
                 info['Architecture'] = 'arm64'
+            elif change == 'volume':
+                info['Config']['Volumes'] = {'/data': {}}
             else:
                 key = 'io.cognigraph.edition' if change == 'edition' else f'org.opencontainers.image.{change}'
                 info['Config']['Labels'][key] = 'wrong'
