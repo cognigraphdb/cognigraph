@@ -49,7 +49,8 @@ ENV COGNIGRAPH_HOST=0.0.0.0 \
     COGNIGRAPH_NATIVE_PATH=/data/cognigraph.redb \
     COGNIGRAPH_UI_DIST=/ui \
     COGNIGRAPH_LOG_FORMAT=json
-VOLUME /data
+# Attach persistent /data storage through the deployment platform or docker run.
+# Railway rejects Docker's VOLUME instruction; the image must remain portable.
 EXPOSE 3000
 HEALTHCHECK --interval=15s --timeout=3s --start-period=10s \
     CMD curl -fsS http://127.0.0.1:3000/health || exit 1

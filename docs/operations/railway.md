@@ -10,8 +10,10 @@ that a deployment or restore succeeded.
 
 Create a separate `database` service in production, EU West. Use the verified
 `cognigraphdb/cognigraph` main revision and the root Dockerfile, whose default
-edition is Community. Build args may set the OCI version/revision labels; verify
-the actual binary through `/health`. The image bundles the frozen console at
+edition is Community. On Railway, leave OCI build labels at `dev`/`unknown` and
+identify the release through `/health` plus Railway's Git commit/deployment
+metadata. Fixed version/revision variables would become stale on automatic
+main deployments. The image bundles the frozen console at
 `/ui`; Rust serves the UI and API at one origin. No Bun process runs in production.
 
 [railway-settings.json](../../deploy/railway-settings.json) is the reviewed
@@ -24,10 +26,13 @@ Use one replica, no serverless sleep, no overlapping writers, a 30-second
 SIGTERM grace period and `/health/database` as the startup check. Volume-bound
 deployments have downtime; this installation has no HA or failover. Expose only
 Railway's HTTPS domain, targeting container port 3000. Do not create a public
-raw TCP proxy. CI-required protected-main changes are the source gate; disable
+raw TCP proxy. Enable the source trigger's **Wait for CI** setting. CI-required
+protected-main changes are the source gate; disable
 unreviewed branch/PR deployments for this persistent instance.
 
-Attach a persistent volume at `/data` before startup. Set:
+Attach a persistent volume at `/data` before startup. The Dockerfile deliberately
+has no `VOLUME` declaration because Railway rejects that instruction. Ordinary
+Docker runs must also attach `/data` explicitly, as in the root README. Set:
 
 | Variable | Value |
 |---|---|

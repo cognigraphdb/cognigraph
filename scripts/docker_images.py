@@ -81,6 +81,7 @@ def smoke(image, edition, version):
     # Docker owns this anonymous /data volume; rm -v removes only this probe's data.
     password = secrets.token_urlsafe(24)
     container = output('docker', 'create', '--read-only', '--cap-drop=ALL',
+                       '--mount', 'type=volume,target=/data',
                        '--security-opt=no-new-privileges', '--publish', '127.0.0.1::3000',
                        '--env', 'COGNIGRAPH_AUTH_ENABLED=true',
                        '--env', f'COGNIGRAPH_ADMIN_PASSWORD={password}',
@@ -129,6 +130,8 @@ def checked_images(version, revision, platform=None):
                 and labels.get('org.opencontainers.image.source') == SOURCE
                 and labels.get('io.cognigraph.edition') == edition, f'{tag}: rebuild stale image metadata')
         require(info['Config']['User'] == 'cognigraph', f'{tag}: expected non-root runtime')
+        require(not info['Config'].get('Volumes'),
+                f'{tag}: Railway rejects image VOLUME declarations; attach storage at deployment')
         actual = f"{info['Os']}/{info['Architecture']}"
         require(platform is None or actual == platform, f'{tag}: expected {platform}, got {actual}')
         images[edition] = info['Id']

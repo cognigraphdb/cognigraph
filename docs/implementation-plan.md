@@ -58,9 +58,9 @@ when deployment work resumes.
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **66 Resolved, 1 Closed without change, and 4 Open issues**.
-[CG-69](issues/CG-69.md) prepares automatic CI and repository protections on PR
-branches. [CG-70](issues/CG-70.md) removes the Native lru unsoundness advisory
+The registry now has **67 Resolved, 1 Closed without change, and 3 Open issues**.
+[CG-69](issues/CG-69.md) delivers automatic CI and repository protections,
+with both CI PRs merged. [CG-70](issues/CG-70.md) removes the Native lru unsoundness advisory
 through a bounded upstream patch, makes unsoundness fatal in CI, and records
 a dated optional ONNX maintenance exception. Both local CI and Docker suites
 pass; the corrected dependency tree has one visible paste maintenance warning.

@@ -1,0 +1,44 @@
+[
+  {
+    "number": 2,
+    "head": "356320364513b9eb8bae64f54bd0d822d8c5d078",
+    "disposition": "deferred",
+    "reason": "Development types only; defer to the maintenance batch after CG-71 and run the frozen Bun/type gates there.",
+    "decision": "Agent scope decision for the owner-authorized first-deployment batch: finish CG-71 using its qualified dependency set; retain this PR for the subsequent dependency-maintenance review."
+  },
+  {
+    "number": 3,
+    "head": "505e9d8cf5051521e214414c6162bb9e16b759ac",
+    "disposition": "deferred",
+    "reason": "The lockfile introduces multiple @codemirror/view 6.43.6 copies beside 6.43.11. Needs a deduplicated editor update and real editor regressions before inclusion.",
+    "decision": "Agent scope decision for the owner-authorized first-deployment batch: finish CG-71 using its qualified dependency set; retain this PR for the subsequent dependency-maintenance review."
+  },
+  {
+    "number": 4,
+    "head": "dd6c4f15a656f3446b4a46f00f176a287e53ab98",
+    "disposition": "deferred",
+    "reason": "react-dom becomes 19.3.0 with peer react ^19.3.0, while react stays locked at 19.2.7. Needs a coordinated React update and browser qualification.",
+    "decision": "Agent scope decision for the owner-authorized first-deployment batch: finish CG-71 using its qualified dependency set; retain this PR for the subsequent dependency-maintenance review."
+  },
+  {
+    "number": 5,
+    "head": "f6f2a809e3e934273f5bfcb408569ef8e59224f4",
+    "disposition": "deferred",
+    "reason": "quick-xml 0.42 changes the byte-oriented API to strings without migrating application source; also includes unrelated Windows dependency rebinding. Review XML callers in a separate migration.",
+    "decision": "Agent scope decision for the owner-authorized first-deployment batch: finish CG-71 using its qualified dependency set; retain this PR for the subsequent dependency-maintenance review."
+  },
+  {
+    "number": 6,
+    "head": "a99ee8ffbcc663a37daf97df1b5be9bbe6aee7c9",
+    "disposition": "deferred",
+    "reason": "Optional ONNX tokenizer update, including daachorse 1 to 3 and unrelated Windows rebinding. CG-70 already confirmed 0.23.2 retains paste; this is not the deployment advisory remedy. Qualify ONNX separately.",
+    "decision": "Agent scope decision for the owner-authorized first-deployment batch: finish CG-71 using its qualified dependency set; retain this PR for the subsequent dependency-maintenance review."
+  },
+  {
+    "number": 7,
+    "head": "ac116f44f24b2cf1fe350dc713cc982005de4d18",
+    "disposition": "deferred",
+    "reason": "mlua/mlua-sys update needs dedicated LuaJIT sandbox and hook regressions. Upstream 8ceeceb allocation fix applies only to external-state module mode, which this embedding does not use; current candidate advisory and sandbox gates pass. Defer to the next maintenance batch.",
+    "decision": "Agent scope decision for the owner-authorized first-deployment batch: finish CG-71 using its qualified dependency set; retain this PR for the subsequent dependency-maintenance review."
+  }
+]
