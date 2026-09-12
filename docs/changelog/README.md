@@ -153,6 +153,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 ## Releases
 
 - 2026-09-12: [Align local verification with current stable Rust](2026-09-12-ci-toolchain-v2.7.3.md)
+- 2026-09-12: [Bound asynchronous lifecycle test waits by elapsed time](2026-09-12-ci-job-waits-v2.7.4.md)
 - 2026-09-12: [Prepare v2.7.2 Native-only CI candidate](2026-09-12-ci-candidate-v2.7.2.md)
 - 2026-09-11: [Console remediation and verification — v2.7.1](2026-09-11-v2-7-1.md)
 - 2026-09-11: [2.7.0 — Community builds and a fresh repository](2026-09-11-v2-7-0.md)
