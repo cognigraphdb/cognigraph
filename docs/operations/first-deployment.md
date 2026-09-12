@@ -5,6 +5,8 @@ replication, failover and multiple writers are not implemented. Use the
 [Native-only acceptance record](../issues/native-readiness-2026-09-12.md) to
 identify the locally qualified revision, platform and exclusions. Source or
 image publication does not establish a live deployment.
+The [Railway Community acceptance](../issues/railway-community-2026-09-12.md)
+records the first hosted v2.7.7 installation; qualify other environments separately.
 
 ## Fresh local setup
 
@@ -68,7 +70,8 @@ bootstrap/provider settings with a local embedding fixture.
    binaries can opt in by pointing that variable at a built console. Follow the
    [Railway guide](railway.md) for the selected first Community hosting target.
 4. Plan a [backup and restore drill](recovery.md) on a fresh store. A hot import
-   is additive; use an empty target for exact restoration. Cold-copy the redb
+   is additive; use a fresh target and the documented bootstrap-account cleanup
+   for exact restoration. Cold-copy the redb
    file only after stopping its writer. Preserve external CAS bytes, trust and
    configuration/secrets separately when Enterprise governance uses them.
 5. For containers, select the intended edition and exact qualified image digest.

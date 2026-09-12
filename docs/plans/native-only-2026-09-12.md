@@ -1,15 +1,15 @@
 # Native-only storage engineering batch
 
 - Date: 2026-09-12
-- Status: CG-65, CG-67 and CG-68 complete; locally qualified, not deployed
+- Status: CG-65, CG-67 and CG-68 complete; subsequent CG-71 Railway deployment qualified
 - Decision: [Native-only storage](../decisions/decision_native_only.md)
 - Baseline: CogniGraph 2.7.1, revision `efe9839`
 
 ## Goal and owner clarification
 
-Complete Native-only cleanup before the first live deployment. The owner confirms
-that CogniGraph has never been provided to anyone; breaking changes are allowed
-freely during this phase. Public source checkpoints do not create an installed
+Complete Native-only cleanup before the first live deployment. At approval, the owner confirmed
+that CogniGraph had never been provided to anyone; breaking changes were allowed
+freely during that phase. Public source checkpoints did not create an installed
 customer migration requirement. CG-67 has removed the runtime adapter from the
 current tree; CG-68 has qualified local Native-only readiness.
 
@@ -117,3 +117,9 @@ CG-68 records local Native-only readiness. Only then may live-environment
 preparation/deployment proceed when requested by the owner. Source publication,
 remote CI, image publication and actual deployment remain separately reported
 operations. No existing-customer rollback or last-Arango release is required.
+
+The owner subsequently authorized one Railway Community instance with the
+console. [CG-71's acceptance](../issues/railway-community-2026-09-12.md) records
+v2.7.7 on protected main, passing CI and hosted API/browser/restart/restore checks.
+Docker Hub remains deferred. This completes the first-deployment follow-up;
+future deployments must preserve the now-existing database and its backups.

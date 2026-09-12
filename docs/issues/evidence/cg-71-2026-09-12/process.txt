@@ -1,0 +1,10 @@
+Name:	cognigraph-serv
+Pid:	1
+Uid:	10001	10001	10001	10001
+Gid:	10001	10001	10001	10001
+CapEff:	0000000000000000
+NoNewPrivs:	1
+/data/native 10001:10001 700
+/data/native/cognigraph.redb 10001:10001 600
+/ui 0:0 755
+/ui/index.html 0:0 644

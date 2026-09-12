@@ -51,9 +51,10 @@ nested instructions before editing a component, including [ui/AGENTS.md](ui/AGEN
 
 - Native is the only runtime storage backend. Follow the
   [storage decision](docs/decisions/decision_native_only.md) and
-  [batch plan](docs/plans/native-only-2026-09-12.md). The owner confirms no
-  external delivery or live deployment yet. [CG-68](docs/issues/CG-68.md) records
-  local readiness; follow the [first-deployment guide](docs/operations/first-deployment.md)
+  [batch plan](docs/plans/native-only-2026-09-12.md). The pre-deployment cleanup
+  is complete. [CG-68](docs/issues/CG-68.md) records local readiness and
+  [CG-71](docs/issues/CG-71.md) records the first live Community deployment.
+  Follow the [first-deployment guide](docs/operations/first-deployment.md)
   and requalify changed runtime/build inputs before deployment. CG-64/CG-66
   are optional deferred importer work.
   Preserve useful `GraphBackend` contracts, Native storage modes and explicit

@@ -4,10 +4,11 @@ Current engineering status, reviewed 2026-09-12. Detailed historical delivery
 and test counts live in [change records](changelog/README.md), the
 [issue registry](issues/README.md) and [archived implementation history](plans/archive/implementation-history-through-2026-09-09.md).
 
-The owner has now authorized first deployment on Railway: one Community
-instance including the console. [CG-71](issues/CG-71.md) owns packaging and live
-acceptance; [Railway operations](operations/railway.md) owns setup and recovery.
-Docker Hub publication is deferred. The separate website is already live.
+The first database deployment is live on Railway: one authenticated Community
+v2.7.7 instance including the console. [CG-71](issues/CG-71.md) records passing
+local/GitHub CI, hosted API/browser checks, restart and both application and
+platform restore drills. [Railway operations](operations/railway.md) owns setup
+and recovery. Docker Hub publication is deferred. The separate website remains live.
 
 ## Delivered scope
 
@@ -29,13 +30,14 @@ Docker Hub publication is deferred. The separate website is already live.
 ## Completed engineering batch — Native-only storage, 2026-09-12
 
 The owner approved [Native-only storage before first deployment](decisions/decision_native_only.md)
-and clarified that CogniGraph has never been provided to anyone. Breaking cleanup
-is allowed freely before first delivery. The [batch plan](plans/native-only-2026-09-12.md)
+and confirmed that CogniGraph had not yet been provided to anyone. Breaking cleanup
+was allowed freely before first delivery. The [batch plan](plans/native-only-2026-09-12.md)
 has completed [CG-65](issues/CG-65.md), preserving useful Native coverage, and
 [CG-67](issues/CG-67.md), removing the adapter and configuration.
 [CG-68](issues/CG-68.md) reconciles active guides/workflows and qualifies local
 Native operation, both Linux/amd64 images and Helm backups. No customer migration, compatibility
-window or last-Arango release is needed. Local readiness passed; the chosen deployment environment still needs verification.
+window or last-Arango release was needed. Local readiness passed; subsequent
+[Railway acceptance](issues/railway-community-2026-09-12.md) qualifies the chosen environment.
 
 The [CG-65 report](issues/native-conformance-2026-09-12.md) records four
 capability-boundary test replacements, all 126 expected CGQL results across
@@ -48,24 +50,26 @@ and full Rust suites in both editions, 514 fresh release-binary checks across
 four Native modes, cross-edition CLI/snapshot/tenant probes and all nine browser
 regressions. The [CG-68 acceptance report](issues/native-readiness-2026-09-12.md)
 adds fresh shared CI, image/runtime, Helm backup and startup rejection checks,
-plus active-guide reconciliation. The runtime cleanup has not reached main,
-Docker Hub or a deployed environment. [Sibling product and website alignment](plans/native-only-alignment-2026-09-12.md)
-is complete locally. **Deployment is on hold at the owner's request.** The
-[first-deployment guide](operations/first-deployment.md) remains the reference
-when deployment work resumes.
+plus active-guide reconciliation. The runtime cleanup and CI changes reached
+protected main before the owner authorized CG-71's deployment. [Sibling product
+and website alignment](plans/native-only-alignment-2026-09-12.md) has its own dated
+checkpoint. The website and Community database are now live; Docker Hub remains
+deferred. The [first-deployment guide](operations/first-deployment.md) remains
+the reference for qualifying additional environments.
 
 [CG-64](issues/CG-64.md) and [CG-66](issues/CG-66.md) are deferred optional
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **67 Resolved, 1 Closed without change, and 3 Open issues**.
+The registry now has **68 Resolved, 1 Closed without change, and 2 Open issues**.
 [CG-69](issues/CG-69.md) delivers automatic CI and repository protections,
 with both CI PRs merged. [CG-70](issues/CG-70.md) removes the Native lru unsoundness advisory
 through a bounded upstream patch, makes unsoundness fatal in CI, and records
 a dated optional ONNX maintenance exception. Both local CI and Docker suites
 pass; the corrected dependency tree has one visible paste maintenance warning.
 CG-64/CG-66
-remain deferred optional import work. Deployment remains on hold.
+remain deferred optional import work. [CG-71](issues/CG-71.md) resolves the first
+Community deployment and console packaging, including a clean backed-up store.
 The earlier console defect list remains
 closed. Additional console features and the research qualification below are
 separate backlogs, not prerequisites for this batch. No model or holdout runs
@@ -73,8 +77,8 @@ are scheduled by it.
 
 Retain `GraphBackend`, the existing CGQL corpus and historical Arango evidence.
 No major-version jump is required solely for this pre-deployment removal; the
-normal per-push increment and checks remain. Planning does not bump the current
-2.7.1 workspace. Migration command/format support remains an
+normal per-push increment and checks remain. The deployed workspace version is
+2.7.7. Migration command/format support remains an
 [unqualified deferred design](plans/arangodump-import-design.md).
 
 ## Review checkpoint — 2026-09-09
