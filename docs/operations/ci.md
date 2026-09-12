@@ -18,6 +18,12 @@ The Docker suite builds both Linux images, tests their packaged server/CLI and
 persistence, and exercises the rendered Helm backup in both editions. CI uses
 Linux/amd64; local Docker defaults must target the same platform for publication
 qualification. The chart probes use disposable Docker resources, not a cluster.
+Their backup target is an owned Docker volume, so Linux ownership is exercised
+on Docker Desktop too. A bounded provisioner initializes that temporary volume;
+the backup writer and inspectors run without root or capabilities. Inspection
+requires mode `0600`, reads as backup UID 10001 and verifies denial for UID 10002.
+The harness removes its volume afterward and does not relax snapshot permissions
+to make it readable by the host runner.
 
 ## Tools and diagnostics
 
