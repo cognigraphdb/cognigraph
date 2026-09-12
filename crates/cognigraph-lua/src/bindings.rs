@@ -8,8 +8,6 @@ use crate::LuaExecutionControl;
 
 use cognigraph_core::{Direction, GraphBackend, TraversalOpts, VectorSearchOpts};
 
-const OPAQUE_QUERY_CAPABILITY: &str = "an explicitly enabled unsafe opaque-query capability";
-
 /// Registers graph primitives on the Lua `graph` global table.
 ///
 /// Bridges the async `GraphBackend` into synchronous Lua functions
@@ -19,7 +17,7 @@ pub fn register_graph_bindings(
     backend: Arc<dyn GraphBackend>,
     handle: Handle,
 ) -> Result<(), mlua::Error> {
-    register_graph_bindings_with_permissions(lua, backend, handle, false, false)
+    register_graph_bindings_with_mode(lua, backend, handle, false)
 }
 
 /// `allow_writes` enables every mutation-capable binding. The caller must
@@ -31,24 +29,11 @@ pub fn register_graph_bindings_with_mode(
     handle: Handle,
     allow_writes: bool,
 ) -> Result<(), mlua::Error> {
-    register_graph_bindings_with_permissions(lua, backend, handle, allow_writes, allow_writes)
-}
-
-/// Register bindings with separate permission gates for typed graph writes
-/// and opaque backend-native queries.
-pub fn register_graph_bindings_with_permissions(
-    lua: &Lua,
-    backend: Arc<dyn GraphBackend>,
-    handle: Handle,
-    allow_writes: bool,
-    allow_backend_queries: bool,
-) -> Result<(), mlua::Error> {
     register_graph_bindings_with_control(
         lua,
         backend,
         handle,
         allow_writes,
-        allow_backend_queries,
         LuaExecutionControl::default(),
     )
 }
@@ -58,12 +43,11 @@ pub(crate) fn register_graph_bindings_with_control(
     backend: Arc<dyn GraphBackend>,
     handle: Handle,
     allow_writes: bool,
-    allow_backend_queries: bool,
     control: LuaExecutionControl,
 ) -> Result<(), mlua::Error> {
     let graph = lua.create_table()?;
 
-    // graph.backend -> string (e.g. "arango")
+    // graph.backend -> the active Native store identity
     graph.set("backend", backend.backend_name())?;
     graph.set("query_language", backend.query_language().as_str())?;
 
@@ -75,19 +59,10 @@ pub(crate) fn register_graph_bindings_with_control(
         let cgql = backend.query_language() == cognigraph_core::QueryLanguage::Cgql;
         let query_fn =
             lua.create_function(move |lua, (query, bind_vars): (String, LuaValue)| {
-                // A backend-native query is opaque to CogniGraph and may
-                // mutate even when it looks read-only. Require an explicit
-                // embedder-granted unsafe capability; the server keeps it off
-                // for AQL rather than relying on textual classification.
-                if !cgql {
-                    require_access(
-                        allow_backend_queries,
-                        "graph.query",
-                        OPAQUE_QUERY_CAPABILITY,
-                    )?;
-                }
+                // A declared language cannot authorize opaque passthrough.
+                require_access(cgql, "graph.query", "a backend with parsed CGQL support")?;
                 let vars = lua_to_bind_vars(lua, bind_vars)?;
-                let results = if cgql {
+                let results = {
                     let mode = if allow_writes {
                         cognigraph_query::QueryMode::ReadWrite
                     } else {
@@ -105,10 +80,6 @@ pub(crate) fn register_graph_bindings_with_control(
                             ),
                         )?
                         .map_err(|error| query_error("graph.query", error))?
-                } else {
-                    control
-                        .block_on(&handle, backend.query(&query, vars))?
-                        .map_err(|error| backend_error("graph.query", error))?
                 };
                 lua.to_value(&results)
             })?;
@@ -447,7 +418,7 @@ fn parse_direction(s: Option<&str>) -> Result<Direction, mlua::Error> {
     }
 }
 
-/// Convert a Lua value (table or nil) into a HashMap for AQL bind variables.
+/// Convert a Lua value (table or nil) into a HashMap for CGQL bind variables.
 fn lua_to_bind_vars(
     lua: &Lua,
     value: LuaValue,

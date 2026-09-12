@@ -6,16 +6,6 @@ pub(crate) const DEFAULT_ARTIFACT_MAX_CUSTODY_BYTES: u64 = 2_147_483_648;
 
 /// Server configuration loaded from environment variables.
 pub struct Config {
-    /// Backend type: "native" (default) or "arango"
-    pub backend: String,
-    /// ArangoDB connection URL
-    pub arango_url: String,
-    /// ArangoDB database name
-    pub arango_db: String,
-    /// ArangoDB username
-    pub arango_user: String,
-    /// ArangoDB password
-    pub arango_password: String,
     /// Server listen address
     pub listen_addr: SocketAddr,
     /// Embedding provider: "openai", "ollama", or "none"
@@ -29,8 +19,6 @@ pub struct Config {
     /// Ollama base URL override
     pub ollama_base_url: Option<String>,
     pub gemini_api_key: Option<String>,
-    /// Vector search mode: "native" (APPROX_NEAR_COSINE, default) or "fallback" (AQL cosine)
-    pub vector_search_mode: String,
     /// Whether the query cache is enabled
     pub cache_enabled: bool,
     /// Storage path for the native backend; in-memory when unset.
@@ -115,7 +103,7 @@ impl Config {
     ///
     /// Naming (decision_env_naming.md): every CogniGraph-owned knob is
     /// `COGNIGRAPH_*`; only ecosystem-standard third-party names stay bare
-    /// (`OPENAI_API_KEY`, `GEMINI_API_KEY`, `OLLAMA_BASE_URL`, `ARANGO_*`,
+    /// (`OPENAI_API_KEY`, `GEMINI_API_KEY`, `OLLAMA_BASE_URL`,
     /// `RUST_LOG`). Legacy unprefixed names are NOT read — `warn_legacy_env`
     /// flags them at startup so a stale .env fails loudly, not silently.
     pub fn from_env() -> Self {
@@ -125,11 +113,6 @@ impl Config {
         let addr = format!("{host}:{port}");
 
         Self {
-            backend: env("COGNIGRAPH_BACKEND", "native"),
-            arango_url: env("ARANGO_URL", "http://localhost:8529"),
-            arango_db: env("ARANGO_DB", "cognigraph"),
-            arango_user: env("ARANGO_USER", "root"),
-            arango_password: env("ARANGO_PASSWORD", ""),
             listen_addr: addr.parse().unwrap_or_else(|_| {
                 panic!("Invalid listen address: {addr}");
             }),
@@ -139,7 +122,6 @@ impl Config {
             embedding_model: env_opt("COGNIGRAPH_EMBEDDING_MODEL"),
             ollama_base_url: env_opt("OLLAMA_BASE_URL"),
             gemini_api_key: env_opt("GEMINI_API_KEY"),
-            vector_search_mode: env("COGNIGRAPH_VECTOR_SEARCH_MODE", "native"),
             cache_enabled: env("COGNIGRAPH_QUERY_CACHE_ENABLED", "false") == "true",
             native_path: env_opt("COGNIGRAPH_NATIVE_PATH"),
             data_dir: env_opt("COGNIGRAPH_DATA_DIR"),
@@ -329,7 +311,6 @@ fn warn_legacy_env() {
         ("LOG_FORMAT", "COGNIGRAPH_LOG_FORMAT"),
         ("EMBEDDING_PROVIDER", "COGNIGRAPH_EMBEDDING_PROVIDER"),
         ("EMBEDDING_MODEL", "COGNIGRAPH_EMBEDDING_MODEL"),
-        ("VECTOR_SEARCH_MODE", "COGNIGRAPH_VECTOR_SEARCH_MODE"),
     ];
     for (old, new) in RENAMED {
         if std::env::var(old).is_ok() {

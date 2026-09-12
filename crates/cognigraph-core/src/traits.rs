@@ -14,7 +14,7 @@ use crate::types::*;
 /// an explicit caller operation, separate from backend metadata stamping.
 #[async_trait]
 pub trait GraphBackend: Send + Sync {
-    /// Returns the backend name (e.g. "arango").
+    /// Returns the backend name (e.g. "native").
     fn backend_name(&self) -> &str;
 
     /// Returns the query language accepted by `query()`.
@@ -271,7 +271,7 @@ pub trait GraphBackend: Send + Sync {
 
     // --- Raw query ---
 
-    /// Execute a raw query (AQL, SurrealQL, Datalog, etc.) with bind variables.
+    /// Execute a query in the declared language with bind variables.
     async fn query(
         &self,
         query: &str,

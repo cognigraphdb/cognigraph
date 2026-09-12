@@ -24,7 +24,7 @@ pub(super) fn public_record_value<T: Serialize>(record: &T) -> Result<Value, Cog
 }
 pub fn scoped_key(tenant: &str, incarnation: &str, kind: &str, id: &str) -> String {
     let scope = digest_bytes(format!("{tenant}\0{incarnation}").as_bytes());
-    // `:` is accepted by both native storage and ArangoDB document keys.
+    // `:` is accepted by Native document keys.
     // Keep the prefix lexicographically sortable for cursor scans.
     format!("{}:{kind}:{id}", scope.trim_start_matches("sha256:"))
 }

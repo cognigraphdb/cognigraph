@@ -2928,8 +2928,8 @@ components:
         target: { type: string, minLength: 1, maxLength: 256 }
         backend:
           type: string
-          enum: [native, arango, artifact-snapshot]
-          description: M18-M20 use the live native/arango backend identity; M21 schema 4, M22 schema 5, and M23 schema 6 require artifact-snapshot.
+          enum: [native, artifact-snapshot]
+          description: M18-M20 use the live Native backend identity; M21 schema 4, M22 schema 5, and M23 schema 6 require artifact-snapshot.
         backend_version: { type: string, minLength: 1, maxLength: 256 }
         command_digest: { $ref: '#/components/schemas/Sha256Digest' }
         resolved_config_digest: { $ref: '#/components/schemas/Sha256Digest' }
@@ -3068,7 +3068,7 @@ components:
                 - { $ref: '#/components/schemas/PromotionReproducibilityContext' }
                 - type: object
                   properties:
-                    backend: { type: string, enum: [native, arango] }
+                    backend: { type: string, enum: [native] }
           not:
             anyOf:
               - { required: [governance] }
@@ -3087,7 +3087,7 @@ components:
                 - { $ref: '#/components/schemas/PromotionReproducibilityContext' }
                 - type: object
                   properties:
-                    backend: { type: string, enum: [native, arango] }
+                    backend: { type: string, enum: [native] }
           not:
             anyOf:
               - { required: [artifact_attestations] }
@@ -3106,7 +3106,7 @@ components:
                 - { $ref: '#/components/schemas/PromotionReproducibilityContext' }
                 - type: object
                   properties:
-                    backend: { type: string, enum: [native, arango] }
+                    backend: { type: string, enum: [native] }
           not:
             required: [consumption_plan]
     PromotionContextV4:
@@ -4107,9 +4107,8 @@ paths:
               required: [query]
               properties:
                 query: { type: string }
-                documents_collection: { type: string, default: documents, description: Text-search collection on non-AQL backends }
+                documents_collection: { type: string, default: documents, description: Native text-search collection }
                 embeddings_collection: { type: string, default: embeddings }
-                search_view: { type: string, default: documents_view, description: ArangoSearch view used by the AQL backend }
                 search_fields: { type: array, minItems: 1, items: { type: string }, default: [content, title] }
                 threshold: { type: number, default: 0.7 }
                 limit: { type: integer, default: 10 }
@@ -5445,7 +5444,7 @@ paths:
         fact-occurrence row and the exact candidate-versus-baseline semantic
         impact. Creation does not deploy the graph. Authentication is mandatory
         even when the rest of the server runs with auth disabled. M26 requires
-        the single-writer native backend because ArangoDB lacks the required
+        the single-writer Native backend with the required
         repository-and-graph atomic batch boundary.
       parameters:
         - { $ref: '#/components/parameters/PromotionIdempotencyKey' }
@@ -5479,7 +5478,7 @@ paths:
           description: Per-generation row/byte limit or retained tenant/space generation quota is exhausted
           headers:
             Retry-After: { description: Retry delay in seconds, schema: { type: integer, enum: [1] } }
-        '503': { description: "Local CAS, signed governance, promotion repository, or native atomic backend is unavailable; ArangoDB fails closed before M26 writes" }
+        '503': { description: "Local CAS, signed governance, promotion repository, or native atomic backend is unavailable" }
     get:
       summary: List immutable verified Semantic Repair generations (governance reader)
       parameters:
@@ -5551,7 +5550,7 @@ paths:
           headers:
             Retry-After: { description: Retry delay in seconds, schema: { type: integer, enum: [1] } }
         '422': { description: "Malformed JSON or request body does not match the strict signed deployment shape, including omission of either required nullable field" }
-        '503': { description: "Promotion, signed governance, Semantic Repair, or native atomic backend is unavailable; ArangoDB fails closed before M26 writes" }
+        '503': { description: "Promotion, signed governance, Semantic Repair, or native atomic backend is unavailable" }
   /api/semantic-repairs/deployments/current/{space_type}:
     get:
       summary: Read the current derived verified Semantic Repair deployment head

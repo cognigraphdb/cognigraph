@@ -56,8 +56,6 @@ spec:
               value: "0.0.0.0"
             - name: COGNIGRAPH_PORT
               value: "3000"
-            - name: COGNIGRAPH_BACKEND
-              value: native
             {{- if .Values.enterprise.multiTenant }}
             - name: COGNIGRAPH_DATA_DIR
               value: /data

@@ -12,8 +12,7 @@ Use this workflow for changes under `crates/cognigraph-native/` and native-backe
 
 ## Scope
 
-- Treat `cognigraph-native` as the strategic backend; ArangoDB remains the
-  maintenance/conformance reference.
+- Native is the only runtime storage backend in both editions.
 - Preserve the delivered in-memory and redb-persistent modes, resident/paged
   storage, and optional vector sidecars. Follow the current
   [storage model](../../../docs/architecture/native-storage.md); documents are
@@ -31,7 +30,7 @@ Use this workflow for changes under `crates/cognigraph-native/` and native-backe
    - `crates/cognigraph-core/src/types/`
    - `crates/cognigraph-native/src/`
    - `crates/cognigraph-native/tests/`
-2. Compare behavior with `cognigraph-arango` when changing shared semantics.
+2. Compare supported Native storage modes and failure/capability doubles when changing shared semantics.
 3. Add or update tests for each affected operation:
    - document CRUD
    - schema collection handling

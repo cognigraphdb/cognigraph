@@ -1,6 +1,9 @@
 # Decision: model-filtered Arango vector candidates and distinct-parent limits
 
-Status: accepted and implemented 2026-09-09 for CG-20.
+Status: historical; accepted and implemented 2026-09-09 for CG-20, runtime adapter
+removed by [CG-67](../issues/CG-67.md) on 2026-09-12 under the
+[Native-only decision](decision_native_only.md). The contract and verification
+below describe that earlier implementation, not current setup instructions.
 
 ## Contract and implementation
 

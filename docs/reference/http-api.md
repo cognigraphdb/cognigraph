@@ -34,7 +34,7 @@ both reads and writes.
 | `/api/search/text` | Plain BM25 full-text search over string fields (`GraphBackend::text_search`); no embedder required — backs the document browser's search box |
 | `/api/search/query` | Parsed, read-only CGQL; `language` may be omitted or set to `cgql`. Opaque backend-native text is disabled. |
 | `/api/search/semantic` | Text → embed → vector search → fetch docs |
-| `/api/search/hybrid` | BM25 + vector with RRF fusion; native uses `GraphBackend::text_search`, Arango uses AQL/ArangoSearch, and unsupported backends skip the BM25 leg explicitly |
+| `/api/search/hybrid` | Native BM25 + vector with RRF fusion; unavailable BM25 data is reported explicitly |
 | `/api/search/graph-augmented` | Semantic seeds + multi-hop graph traversal |
 
 ### Graph
@@ -343,7 +343,7 @@ Parsed CGQL reads may inspect the eight M25-managed ordinary collections, but
 all five mutation forms targeting one are rejected. Opaque backend-native query
 text cannot safely prove read-only behavior, so the guarded raw-query boundary
 rejects any reference to a managed collection, including collection bind
-values. Direct operator AQL/database access is outside the HTTP/Lua product
+values. Direct operator database-file access is outside the HTTP/Lua product
 trust boundary.
 
 ### Sessions (unauthenticated; requires `COGNIGRAPH_AUTH_ENABLED` + `COGNIGRAPH_JWT_SECRET`)
@@ -373,7 +373,7 @@ trust boundary.
 ### Batch (documents:write scope)
 | Method | Path | Description |
 |---|---|---|
-| POST | `/api/batch` | Capability-dependent atomic multi-op writes; native is all-or-nothing, while Arango currently returns unsupported |
+| POST | `/api/batch` | Atomic multi-op writes using Native all-or-nothing batches |
 
 ### Cache
 | Method | Path | Description |

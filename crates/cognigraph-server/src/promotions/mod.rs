@@ -11,8 +11,7 @@ use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::{Arc, Mutex};
 
 use cognigraph_core::{
-    CogniGraphError, CollectionType, FieldPredicate, GraphBackend, IndexDef, IndexType,
-    PredicateOp, QueryLanguage,
+    CogniGraphError, CollectionType, FieldPredicate, GraphBackend, IndexDef, IndexType, PredicateOp,
 };
 use serde::de::DeserializeOwned;
 use serde::{Deserialize, Serialize};

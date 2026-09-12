@@ -88,7 +88,7 @@ def run_edition(edition, dist):
         env = isolated_env()
         env.update({
             'COGNIGRAPH_HOST': '127.0.0.1', 'COGNIGRAPH_PORT': origin.rsplit(':', 1)[1],
-            'COGNIGRAPH_BACKEND': 'native', 'COGNIGRAPH_NATIVE_PATH': str(work / 'store.redb'),
+            'COGNIGRAPH_NATIVE_PATH': str(work / 'store.redb'),
             'COGNIGRAPH_UI_DIST': str(dist), 'COGNIGRAPH_AUTH_ENABLED': 'true',
             'COGNIGRAPH_ADMIN_PASSWORD': password,
             'COGNIGRAPH_JWT_SECRET': secrets.token_urlsafe(48),
@@ -139,7 +139,7 @@ def main():
     editions = ['community', 'enterprise'] if args.edition == 'both' else [args.edition]
     for edition in editions:
         run_edition(edition, dist)
-    print('Not included: ArangoDB, external providers, model benchmarks or research holdouts.', flush=True)
+    print('Not included: external providers, model benchmarks or research holdouts.', flush=True)
 
 
 if __name__ == '__main__':

@@ -32,37 +32,10 @@ impl PromotionManager {
             },
         ];
         let fields = promotion_record_fields(DECISIONS_COLLECTION)?;
-        let rows = if self.backend.query_language() == QueryLanguage::Aql {
-            let query = "FOR decision IN @@collection \
-                     FILTER decision.tenant == @tenant \
-                       AND decision.tenant_incarnation == @incarnation \
-                       AND decision.target.space_type == @space_type \
-                       AND decision.target.channel == @channel \
-                     RETURN KEEP(decision, @fields)";
-            self.backend
-                .query(
-                    query,
-                    HashMap::from([
-                        ("@collection".into(), json!(DECISIONS_COLLECTION)),
-                        ("tenant".into(), json!(tenant)),
-                        ("incarnation".into(), json!(incarnation)),
-                        ("space_type".into(), json!(target.space_type)),
-                        ("channel".into(), json!(target.channel)),
-                        ("fields".into(), json!(fields)),
-                    ]),
-                )
-                .await?
-        } else {
-            self.backend
-                .list_documents_filtered(
-                    DECISIONS_COLLECTION,
-                    &predicates,
-                    Some(&fields),
-                    None,
-                    None,
-                )
-                .await?
-        };
+        let rows = self
+            .backend
+            .list_documents_filtered(DECISIONS_COLLECTION, &predicates, Some(&fields), None, None)
+            .await?;
         rows.into_iter()
             .map(|value| {
                 let record: PromotionDecision = serde_json::from_value(value).map_err(|error| {

@@ -46,8 +46,6 @@ use tower_http::cors::CorsLayer;
 use tower_http::trace::TraceLayer;
 use tracing_subscriber::EnvFilter;
 
-use cognigraph_arango::ArangoBackend;
-use cognigraph_arango::backend::VectorSearchMode;
 use cognigraph_cache::{CacheConfig, InMemoryCache};
 use cognigraph_core::GraphBackend;
 use cognigraph_native::NativeBackend;
@@ -156,77 +154,26 @@ async fn main() {
     let mut state = if let Some(state) = registry_state {
         state
     } else {
-        let backend: std::sync::Arc<dyn GraphBackend> = match config.backend.as_str() {
-            "native" => {
-                let backend = match &config.native_path {
-                    Some(path) => {
-                        let mode = match config.vector_mode.as_str() {
-                            "sidecar" => cognigraph_native::VectorMode::Sidecar,
-                            _ => cognigraph_native::VectorMode::Embedded,
-                        };
-                        let storage = match config.storage_mode.as_str() {
-                            "paged" => cognigraph_native::StorageMode::Paged,
-                            _ => cognigraph_native::StorageMode::Resident,
-                        };
-                        tracing::info!(path, vector_mode = ?mode, storage_mode = ?storage, "Opening native backend with persistent storage");
-                        NativeBackend::open_with_modes(path, mode, storage, config.cache_bytes)
-                            .unwrap_or_else(|e| {
-                                panic!("Failed to open native storage at {path}: {e}")
-                            })
-                    }
-                    None => {
-                        tracing::info!("Opening native in-memory backend");
-                        NativeBackend::new()
-                    }
+        let backend = match &config.native_path {
+            Some(path) => {
+                let mode = match config.vector_mode.as_str() {
+                    "sidecar" => cognigraph_native::VectorMode::Sidecar,
+                    _ => cognigraph_native::VectorMode::Embedded,
                 };
-                std::sync::Arc::new(backend)
+                let storage = match config.storage_mode.as_str() {
+                    "paged" => cognigraph_native::StorageMode::Paged,
+                    _ => cognigraph_native::StorageMode::Resident,
+                };
+                tracing::info!(path, vector_mode = ?mode, storage_mode = ?storage, "Opening native backend with persistent storage");
+                NativeBackend::open_with_modes(path, mode, storage, config.cache_bytes)
+                    .unwrap_or_else(|e| panic!("Failed to open native storage at {path}: {e}"))
             }
-            "arango" => {
-                tracing::info!(
-                    url = config.arango_url,
-                    db = config.arango_db,
-                    "Connecting to ArangoDB"
-                );
-
-                let vector_mode = match config.vector_search_mode.as_str() {
-                    "fallback" => {
-                        tracing::info!("Vector search: AQL cosine fallback (full collection scan)");
-                        VectorSearchMode::Fallback
-                    }
-                    _ => {
-                        tracing::info!("Vector search: APPROX_NEAR_COSINE (native vector index)");
-                        VectorSearchMode::Native
-                    }
-                };
-
-                let backend = ArangoBackend::connect(
-                    &config.arango_url,
-                    &config.arango_db,
-                    &config.arango_user,
-                    &config.arango_password,
-                )
-                .with_vector_mode(vector_mode);
-
-                // Initialize database schema
-                if let Err(e) = cognigraph_arango::database::initialize(&backend).await {
-                    tracing::warn!("Database initialization failed: {e}");
-                }
-
-                std::sync::Arc::new(backend)
-            }
-            other => {
-                tracing::warn!(
-                    backend = other,
-                    "Unknown backend, falling back to the native backend"
-                );
-                let backend = match &config.native_path {
-                    Some(path) => NativeBackend::open(path)
-                        .unwrap_or_else(|e| panic!("Failed to open native storage at {path}: {e}")),
-                    None => NativeBackend::new(),
-                };
-                std::sync::Arc::new(backend)
+            None => {
+                tracing::info!("Opening native in-memory backend");
+                NativeBackend::new()
             }
         };
+        let backend: std::sync::Arc<dyn GraphBackend> = std::sync::Arc::new(backend);
         #[cfg(not(feature = "enterprise"))]
         edition::validate_store(backend.as_ref())
             .await
@@ -763,7 +710,7 @@ async fn main() {
 
     tracing::info!(
         addr = %config.listen_addr,
-        backend = %config.backend,
+        backend = "native",
         "CogniGraph server listening"
     );
 

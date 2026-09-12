@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
 use cognigraph_cache::{CacheHit, CacheKey, SearchMode, cache_weight, normalize_query};
-use cognigraph_core::{QueryLanguage, VectorSearchOpts};
+use cognigraph_core::VectorSearchOpts;
 
 use crate::error::AppError;
 use crate::state::AppState;
@@ -15,7 +15,7 @@ use super::{
 };
 
 // ---------------------------------------------------------------------------
-// Hybrid search (BM25 via ArangoSearch + vector search, fused via RRF)
+// Hybrid search (Native BM25 + vector search, fused via RRF)
 // ---------------------------------------------------------------------------
 
 #[derive(Clone, Deserialize, Serialize)]
@@ -25,14 +25,11 @@ pub(super) struct HybridSearchRequest {
     // in the structured parameter identity, including future request fields.
     #[serde(skip_serializing)]
     query: String,
-    /// Collection whose text fields are searched on backends with native
-    /// full-text support (non-AQL). Arango uses `search_view` instead.
+    /// Collection whose text fields are searched by Native BM25.
     #[serde(default = "default_documents_collection")]
     documents_collection: String,
     #[serde(default = "default_embeddings_collection")]
     embeddings_collection: String,
-    #[serde(default = "default_search_view")]
-    search_view: String,
     #[serde(default = "default_search_fields")]
     search_fields: Vec<String>,
     #[serde(default = "default_threshold")]
@@ -75,9 +72,6 @@ impl HybridSearchRequest {
 fn default_documents_collection() -> String {
     "documents".into()
 }
-fn default_search_view() -> String {
-    "documents_view".into()
-}
 fn default_search_fields() -> Vec<String> {
     vec!["content".into(), "title".into()]
 }
@@ -95,9 +89,7 @@ pub(super) async fn hybrid_search(
     State(state): State<AppState>,
     Json(req): Json<HybridSearchRequest>,
 ) -> Result<Json<serde_json::Value>, AppError> {
-    if state.backend.query_language() == QueryLanguage::Cgql {
-        cognigraph_native::validate_text_search_fields(&req.search_fields)?;
-    }
+    cognigraph_native::validate_text_search_fields(&req.search_fields)?;
     if req.search_fields.is_empty() {
         return Err(AppError(cognigraph_core::CogniGraphError::ValidationError(
             "search_fields must contain at least one field".into(),
@@ -144,30 +136,10 @@ pub(super) async fn hybrid_search(
 
     let fetch_limit = req.limit * 3;
 
-    // Full-text leg: AQL backends go through ArangoSearch views; other
-    // backends use the GraphBackend text_search capability. When neither
-    // works the response says so explicitly instead of degrading silently.
+    // Full-text failures are explicit in the response; vector retrieval can
+    // still contribute results when the text collection is unavailable.
     let mut bm25_skipped: Option<String> = None;
-    let bm25_results = if state.backend.query_language() == QueryLanguage::Aql {
-        let bm25_filter = arango_bm25_filter(req.search_fields.len());
-
-        let bm25_aql = format!(
-            "FOR doc IN @@view SEARCH {bm25_filter} \
-             SORT BM25(doc) DESC \
-             LIMIT @limit \
-             RETURN {{ _id: doc._id, _key: doc._key, score: BM25(doc), doc: doc }}"
-        );
-
-        let mut bm25_vars = HashMap::new();
-        bm25_vars.insert("@view".to_string(), serde_json::json!(req.search_view));
-        bm25_vars.insert("query".to_string(), serde_json::json!(req.query));
-        bm25_vars.insert("limit".to_string(), serde_json::json!(fetch_limit));
-        for (index, field) in req.search_fields.iter().enumerate() {
-            bm25_vars.insert(format!("field_{index}"), serde_json::json!(field));
-        }
-
-        state.backend.query(&bm25_aql, bm25_vars).await?
-    } else {
+    let bm25_results = {
         match state
             .backend
             .text_search(
@@ -353,15 +325,6 @@ pub(super) async fn hybrid_search(
     Ok(Json(response))
 }
 
-/// Build an AQL predicate using dynamic attribute bind variables. Field names
-/// are request data and must never be interpolated into executable AQL.
-fn arango_bm25_filter(field_count: usize) -> String {
-    (0..field_count)
-        .map(|index| format!("ANALYZER(PHRASE(doc[@field_{index}], @query), \"text_en\")"))
-        .collect::<Vec<_>>()
-        .join(" OR ")
-}
-
 #[cfg(test)]
 #[path = "hybrid_cache_tests.rs"]
 mod cache_tests;
@@ -397,7 +360,6 @@ mod tests {
                 query: "who is the admin".into(),
                 documents_collection: default_documents_collection(),
                 embeddings_collection: "_users".into(),
-                search_view: default_search_view(),
                 search_fields: default_search_fields(),
                 threshold: 0.0,
                 limit: 5,
@@ -450,7 +412,6 @@ mod tests {
             query: "new question".into(),
             documents_collection: "documents".into(),
             embeddings_collection: "embeddings".into(),
-            search_view: default_search_view(),
             search_fields: default_search_fields(),
             threshold: 0.0,
             limit: 10,
@@ -519,7 +480,6 @@ mod tests {
                 query: "new question".into(),
                 documents_collection: "documents".into(),
                 embeddings_collection: "embeddings".into(),
-                search_view: default_search_view(),
                 search_fields: default_search_fields(),
                 threshold: 0.0,
                 limit: 10,
@@ -562,7 +522,6 @@ mod tests {
             query: "new question".into(),
             documents_collection: "documents".into(),
             embeddings_collection: "embeddings".into(),
-            search_view: default_search_view(),
             search_fields: default_search_fields(),
             threshold: 0.0,
             limit: 10,
@@ -614,18 +573,6 @@ mod tests {
         assert_eq!(stats.misses, 1);
     }
 
-    #[test]
-    fn arango_search_fields_are_always_bind_variables() {
-        let attack =
-            r#"title], @query), "text_en") RETURN DOCUMENT(CONCAT("_us","ers"), "admin") //"#;
-        let query_fragment = arango_bm25_filter(1);
-        assert!(!query_fragment.contains(attack));
-        assert_eq!(
-            query_fragment,
-            "ANALYZER(PHRASE(doc[@field_0], @query), \"text_en\")"
-        );
-    }
-
     #[tokio::test]
     async fn side_view_hits_boost_their_parent_document() {
         // A side-view row carries a `document_id` pointer to its source. When
@@ -673,7 +620,6 @@ mod tests {
             query: "special topic".into(),
             documents_collection: "documents".into(),
             embeddings_collection: "embeddings".into(),
-            search_view: default_search_view(),
             search_fields: default_search_fields(),
             threshold: 0.0,
             limit: 10,

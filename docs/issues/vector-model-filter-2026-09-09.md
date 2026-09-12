@@ -24,7 +24,7 @@ its scan when expanding the window.
 
 ## Fixture and baseline
 
-The [12-case fixture](../../crates/cognigraph-arango/tests/fixtures/vector-model-filter.json)
+The [12-case fixture](evidence/arango/vector-model-filter.json)
 contains 126 two-dimensional vectors. Eighty higher-scoring model-A rows crowd
 the global prefix, while model B has 40 chunks for one parent and four other
 eligible identities. Additional rows have missing and empty model names.

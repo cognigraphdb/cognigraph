@@ -1,9 +1,7 @@
 # Configuration
 
-The current release still accepts Arango settings. The approved
-[Native-only cleanup](../plans/native-only-2026-09-12.md) will remove them before
-first live deployment; preserving legacy settings is not required. Current
-configuration below describes existing code, not the completed cleanup.
+CogniGraph opens Native storage directly. Set `COGNIGRAPH_NATIVE_PATH` for
+persistence or leave it unset for an in-memory store.
 
 The default build is Community. Multi-tenant storage, governance, construction,
 job and artifact settings belong to the Enterprise build; Community rejects
@@ -17,7 +15,6 @@ Cargo feature or select the corresponding Docker image as described in
 | Variable | Default | Meaning |
 |---|---|---|
 | `COGNIGRAPH_HOST` / `COGNIGRAPH_PORT` | `0.0.0.0` / `3000` | Listen address |
-| `COGNIGRAPH_BACKEND` | `native` | `native` or `arango` (maintenance) |
 | `COGNIGRAPH_NATIVE_PATH` | unset | redb file; unset = in-memory (no durability) |
 | `COGNIGRAPH_VECTOR_MODE` | `embedded` | `sidecar` = int8 mmap vectors, ~7x less RAM |
 | `COGNIGRAPH_STORAGE_MODE` | `resident` | `paged` = keys+LRU in RAM (requires sidecar) |
@@ -73,11 +70,6 @@ consumption and derivation are not in use.
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `ARANGO_URL` | `http://localhost:8529` | ArangoDB connection URL |
-| `ARANGO_DB` | `cognigraph` | ArangoDB database name |
-| `ARANGO_USER` | `root` | ArangoDB username |
-| `ARANGO_PASSWORD` | (empty) | ArangoDB password |
-| `COGNIGRAPH_VECTOR_SEARCH_MODE` | `native` | ArangoDB vector search: `native` (model filtering requires ≥3.12.6) or `fallback`; filter before candidate selection and expand candidates for parent deduplication |
 | `COGNIGRAPH_EMBEDDING_MODEL` | Provider default | Model name override |
 | `OLLAMA_BASE_URL` | `http://localhost:11434` | Ollama server URL |
 | `COGNIGRAPH_QUERY_CACHE_TTL_SECS` | `900` | Time-to-live for cache entries |

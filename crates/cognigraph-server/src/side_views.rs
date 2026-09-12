@@ -274,7 +274,7 @@ pub(crate) fn require_source_identity(parent: &DocumentId) -> Result<()> {
 
 async fn has_side_views(backend: &dyn GraphBackend) -> Result<bool> {
     // Explicit existence check also supports remote backends that surface a
-    // missing AQL collection as a query error. Other errors must propagate.
+    // missing collection as a query error. Other errors must propagate.
     Ok(backend
         .list_collections()
         .await?

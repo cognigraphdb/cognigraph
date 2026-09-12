@@ -32,7 +32,6 @@ COPY LICENSE LICENSE-COMMERCIAL /usr/share/licenses/cognigraph/
 USER cognigraph
 ENV COGNIGRAPH_HOST=0.0.0.0 \
     COGNIGRAPH_PORT=3000 \
-    COGNIGRAPH_BACKEND=native \
     COGNIGRAPH_NATIVE_PATH=/data/cognigraph.redb \
     COGNIGRAPH_LOG_FORMAT=json
 VOLUME /data

@@ -1,6 +1,6 @@
 # Decision: Native-only storage before first deployment
 
-Date: 2026-09-12 · Status: ACCEPTED; runtime removal pending
+Date: 2026-09-12 · Status: ACCEPTED; runtime removal complete, final readiness pending
 
 ## Context
 
@@ -20,7 +20,8 @@ both server editions through an unconditional dependency. The adapter has about
 It supplies shared storage-contract coverage for documents, edges, traversal
 and vectors; it does not implement Native atomic batches or application
 snapshots. See the [server manifest](../../crates/cognigraph-server/Cargo.toml),
-[adapter](../../crates/cognigraph-arango/src/backend/graph_backend.rs) and
+adapter source (`crates/cognigraph-arango/src/backend/graph_backend.rs`
+at `bcec5b0`) and
 [shared contract](../../crates/cognigraph-core/src/contract.rs).
 
 The [CGQL corpus](../../crates/cognigraph-query/tests/corpus/README.md) already
@@ -98,14 +99,19 @@ holdouts, model comparisons and broader console feature work are separate.
 
 ## Outcome
 
-Direction accepted; runtime cleanup is **not implemented** by this record.
-The [active batch](../plans/native-only-2026-09-12.md) is CG-65 → CG-67 → CG-68.
+Direction accepted and runtime cleanup implemented by CG-67. The
+[active batch](../plans/native-only-2026-09-12.md) has completed CG-65 and CG-67;
+CG-68 remains the final Native-only readiness gate before first deployment.
 CG-64/CG-66 remain deferred optional backlog, outside the readiness gate. This
 owner clarification supersedes the initial migration-first ordering and forced
 major-version/cutover requirements in the uncommitted September 12 draft.
-Current code still contains Arango until CG-67 is implemented.
+Current code runs Native directly in both editions without an Arango dependency,
+backend selector or opaque query passthrough. No compatibility shim is retained.
 
 [CG-65 coverage verification](../issues/native-conformance-2026-09-12.md) is
 complete: retained Native contracts and replacement capability doubles pass
-both Rust suites and local release-binary probes. CG-67 is unblocked; this is
-not the final Native-only readiness gate owned by CG-68.
+both Rust suites and local release-binary probes. The
+[CG-67 runtime report](../issues/native-runtime-2026-09-12.md) records both Rust
+suites, 514 Native runtime assertions, cross-edition CLI/snapshot/tenant probes
+and nine browser regressions. Broader documentation and Docker/Helm qualification
+remain CG-68; no new release, image publication or deployment is claimed.

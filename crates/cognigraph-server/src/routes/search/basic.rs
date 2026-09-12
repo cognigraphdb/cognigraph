@@ -100,7 +100,7 @@ pub(super) async fn text_search(
 }
 
 // ---------------------------------------------------------------------------
-// Raw AQL query
+// Read-only CGQL query
 // ---------------------------------------------------------------------------
 
 #[derive(Deserialize)]
@@ -126,9 +126,7 @@ pub(super) async fn raw_query(
             "public opaque backend-native queries are disabled; use parsed read-only CGQL".into(),
         )));
     }
-    // Public query text is always parsed CGQL. Server-authored backend-native
-    // queries remain internal; a textual AQL denylist is defense-in-depth, not
-    // a security boundary (quoted identifiers can encode Unicode escapes).
+    // Parse public CGQL and enforce collection and read-only boundaries.
     crate::system_collections::deny_system_collections_in_cgql(&req.query).map_err(AppError)?;
     let results = cognigraph_query::parse_and_execute_backend_with_options(
         &req.query,

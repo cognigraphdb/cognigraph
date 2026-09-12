@@ -1,10 +1,7 @@
 # Components and backend contracts
 
-This page describes the current implementation, including the 2.7.x Arango
-adapter. [Native-only storage](../decisions/decision_native_only.md) is now the
-approved direction; [CG-65/CG-67/CG-68](../plans/native-only-2026-09-12.md) cover
-preserved Native contracts, removal and first-deployment readiness. The component map below is not a commitment
-to continued Arango runtime support.
+CogniGraph uses Native storage in both editions. The shared `GraphBackend`
+contract supports storage modes, guarded access, tenant routing and test doubles.
 
 ## Workspace Structure
 
@@ -38,12 +35,6 @@ cognigraph/
 │   ├── cognigraph-auth/          # Auth & RBAC over any GraphBackend
 │   │   └── src/
 │   │       └── lib.rs            # Users/tokens in _users/_tokens, argon2, scopes
-│   ├── cognigraph-arango/        # ArangoDB backend (maintenance mode, contract reference)
-│   │   └── src/
-│   │       ├── lib.rs
-│   │       ├── client/           # HTTP client for ArangoDB REST API
-│   │       ├── backend/          # GraphBackend trait implementation
-│   │       └── database.rs       # Schema initialization
 │   ├── cognigraph-cache/         # Semantic query cache with continuous influence
 │   │   └── src/
 │   │       ├── lib.rs
@@ -127,7 +118,7 @@ The central storage abstraction. Every database backend implements this trait, m
 #[async_trait]
 pub trait GraphBackend: Send + Sync {
     fn backend_name(&self) -> &str;
-    fn query_language(&self) -> QueryLanguage;  // Cgql for native, Aql for Arango
+    fn query_language(&self) -> QueryLanguage;  // Cgql for Native
     fn supports_atomic_batches(&self) -> bool;  // explicit capability, false by default
     async fn ping(&self) -> Result<()>;         // backend-agnostic health probe
 
@@ -159,7 +150,7 @@ pub trait GraphBackend: Send + Sync {
     // Full-text search (native BM25; capability method, default = unsupported)
     async fn text_search(&self, collection: &str, query: &str, fields: &[String], limit: usize) -> Result<Vec<SearchHit>>;
 
-    // Raw query in the backend's language (CGQL for native, AQL for Arango)
+    // CGQL query with bind variables
     async fn query(&self, query: &str, bind_vars: HashMap<String, serde_json::Value>) -> Result<Vec<serde_json::Value>>;
 
     // Schema management
@@ -209,7 +200,7 @@ pub trait QueryCache: Send + Sync {
 
 ```
 Client Request → Rate Limit → Auth/RBAC → Axum Router → Handler → GraphBackend trait
-                                                                       → NativeBackend (memory + redb) | ArangoDB
+                                                                       → NativeBackend (memory + redb)
                                     │
                                     ├── EmbeddingProvider trait → OpenAI / Ollama
                                     │
@@ -224,8 +215,8 @@ process-local dispatcher executes tenant queues round-robin through explicit
 `TenantScoped` backends. Native ingestion yields after each atomic chunk-batch
 checkpoint; startup requeues an interrupted record and may replay its last
 idempotent batch. Evaluations remain non-preemptible operations. Job state and
-transition history share one document so their replacement is atomic on native
-and maintenance-mode ArangoDB. Persistent storage provides restart recovery,
+transition history share one document so their replacement is atomic in Native.
+Persistent storage provides restart recovery,
 not multi-process coordination or HA.
 
 The hot job record and `_cognigraph_job_archive` are authoritative. The
@@ -246,7 +237,7 @@ the hot record. Retention never means destructive purge in M17.
 2. **Router** dispatches to the appropriate handler based on path and method.
 3. **Handler** accesses shared `AppState` containing backend, embedder, and cache.
 4. For search routes: **Cache** is checked first. Strong similarity hits are returned directly. Above-floor weaker matches are merged with fresh search results via RRF fusion with continuous weighting; at or below the floor the fresh result is used without claiming cache assistance.
-5. **GraphBackend** dispatches typed operations and server-authored queries to the selected native or maintenance-mode ArangoDB backend. Public query text is parsed CGQL; opaque AQL is not exposed over HTTP or Lua.
+5. **GraphBackend** dispatches typed operations to Native storage. HTTP and Lua execute parsed CGQL with the same collection guards and explicit read/write permissions.
 6. Server mutation-capable routes perform **dependency-safe result-cache invalidation** after the attempt (or after commit for typed single operations). This includes read-write CGQL and write-capable Lua. Writes made outside the server require an explicit result-cache clear.
 7. **Response** is serialized as JSON and returned to the client.
 
@@ -256,22 +247,5 @@ incarnation explicitly, and tenant suspension/deletion fences the worker before
 the store can be retired.
 
 For Lua script execution, the Lua runtime is invoked with graph primitives bound to the active backend.
-
----
-
-## Custom ArangoDB Client
-
-Purpose-built rather than relying on the semi-maintained `arangors` crate. Minimal surface area, fully understood, fully controlled.
-
-### Supported Operations
-
-| Category | Operations |
-|---|---|
-| **Authentication** | Basic auth (base64), bearer token (JWT) |
-| **Documents** | Create, read, update, replace, delete, list |
-| **AQL** | Execute queries via `/_api/cursor`, bind variables |
-| **Collections** | Create, drop, ensure (idempotent) |
-| **Indexes** | Create (persistent, hash, fulltext, geo, inverted, vector) |
-| **Vector Search** | `APPROX_NEAR_COSINE` (native) or `COSINE_SIMILARITY()` (fallback) |
 
 ---

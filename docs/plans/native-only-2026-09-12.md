@@ -1,7 +1,7 @@
 # Native-only storage engineering batch
 
 - Date: 2026-09-12
-- Status: CG-65 complete; CG-67 next, followed by CG-68
+- Status: CG-65 and CG-67 complete; CG-68 next
 - Decision: [Native-only storage](../decisions/decision_native_only.md)
 - Baseline: CogniGraph 2.7.1, revision `efe9839`
 
@@ -10,8 +10,8 @@
 Complete Native-only cleanup before the first live deployment. The owner confirms
 that CogniGraph has never been provided to anyone; breaking changes are allowed
 freely during this phase. Public source checkpoints do not create an installed
-customer migration requirement. The adapter still exists today; this plan does
-not claim removal or readiness has already passed.
+customer migration requirement. CG-67 has removed the runtime adapter from the
+current tree; final Native-only readiness remains CG-68.
 
 The initial migration-first draft is replaced by the order below. There is no
 customer cutover, legacy-support period, compatibility bridge, application-state
@@ -27,7 +27,9 @@ migration or mandatory major-version jump for removing this unused backend.
 
 CG-65 is complete: the [coverage report](../issues/native-conformance-2026-09-12.md)
 records the retained contracts, replacement doubles and local Rust/release-binary
-verification. Proceed with CG-67; it does not wait for an importer. The
+verification. CG-67 is also complete: the [runtime report](../issues/native-runtime-2026-09-12.md)
+records adapter/configuration removal and both editions' Rust, release-binary
+and browser checks. Proceed with CG-68; it does not wait for an importer. The
 [registry](../issues/README.md) owns statuses.
 
 ## Deferred optional backlog

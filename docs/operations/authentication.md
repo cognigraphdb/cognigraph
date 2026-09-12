@@ -33,13 +33,12 @@ deployment decisions),
 `artifact-attestor` (signed external artifact manifests only), and `host-admin`
 (tenant lifecycle only). Route groups declare read/write scope pairs;
 GET/HEAD normally select the read scope and other methods the write scope.
-Lua typed CRUD, edge, and batch mutations require `documents:write`; opaque
-backend-native AQL is disabled on every public surface regardless of role.
+Lua typed CRUD, edge, and batch mutations require `documents:write`. All public
+query text is parsed CGQL, regardless of role.
 `/api/search/query` always parses read-only CGQL; a non-`cgql` language request
-is forbidden even for Admin. On a parsed-CGQL backend, Lua `graph.query()` is
+is forbidden even for Admin. Lua `graph.query()` is
 available to callers with `lua:execute`: it is read-only unless the caller also
-has `documents:write`, which enables permission-gated CGQL mutations. It is
-disabled entirely when the active backend language is AQL. Auth-disabled Lua
+has `documents:write`, which enables permission-gated CGQL mutations. Auth-disabled Lua
 stays read-only, so disabling RBAC does not silently enable a scripting
 mutation surface. Use typed APIs or explicit CGQL.
 
@@ -56,21 +55,10 @@ not forcibly killed, and already committed writes remain committed. Budget
 errors retain the existing HTTP 500 error mapping; the outer request timeout
 returns 408.
 
-This supersedes the earlier Admin-only opaque-query contract: textual AQL
-screening is not a security boundary because quoted identifiers can encode
-Unicode escapes. Protected-name/handle checks and the dangerous dynamic,
-document, collection-catalog, graph/traversal, geo, and full-text capability
-denylist (`CALL`, `APPLY`, `DOCUMENT`, and related helpers) remain
-defence-in-depth for internal/server-authored backend-native query paths; they
-do not make public raw AQL available.
-
-Governed construction ingestion requires an atomic-batch backend. The native
-backend provides the required all-or-nothing replacement; maintenance-mode
-Arango rejects `/api/construct/ingest`, `/api/construct/governed-ingest`, and
-M26 generation build/deploy and recovery of present M26 authority before CAS
-reads or construction writes. General Arango startup and operator status remain
-available; when no M26 authority is present, startup recovery is a no-op and
-status reports M26 disabled.
+Governed construction ingestion requires atomic batches. Native provides the
+all-or-nothing replacement used by construction and M26 materialization.
+Capability checks reject unsupported test or embedding implementations before
+preparatory writes; they do not grant access to protected collections.
 
 When moving
 an older store to the occurrence model, legacy chunk rows without raw

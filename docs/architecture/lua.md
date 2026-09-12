@@ -18,14 +18,13 @@
   operations must return, and already committed writes are not rolled back.
 - **Authorization:** read primitives require `lua:execute`; typed CRUD, edge,
   and batch mutations additionally require `documents:write`. `graph.query()`
-  is available only when the active backend uses parsed CGQL; opaque AQL is
-  disabled for every role. With auth disabled, Lua graph writes remain disabled.
+  always executes parsed CGQL; opaque passthrough is unavailable. With auth disabled, Lua graph writes remain disabled.
 
 ### Exposed Primitives
 
 | Function | Description |
 |---|---|
-| `graph.query(query, bind_vars)` | Parsed CGQL query; disabled on AQL backends |
+| `graph.query(query, bind_vars)` | Parsed CGQL query; mutations require the write scope |
 | `graph.get_document(collection, key)` | Fetch single document |
 | `graph.find_documents(collection, opts)` | List with limit/offset |
 | `graph.create_document(collection, doc)` | Create document |

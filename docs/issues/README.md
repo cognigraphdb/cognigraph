@@ -133,9 +133,10 @@ resolves CG-60. That checkpoint had **62 Resolved, 1 Closed without change, and
 
 The [Native-only storage batch](../plans/native-only-2026-09-12.md), approved on
 2026-09-12, adds CG-64–CG-68. [Native conformance coverage](native-conformance-2026-09-12.md)
-resolves CG-65. Current registry: **63 Resolved, 1 Closed without
-change, and 4 Open issues (all P2)**. The remaining active sequence is
-**CG-67 → CG-68**, following the owner's no-prior-delivery clarification. CG-64 and CG-66 remain
+resolves CG-65. [Runtime removal](native-runtime-2026-09-12.md) resolves CG-67.
+Current registry: **64 Resolved, 1 Closed without
+change, and 3 Open issues (all P2)**. The remaining active task is
+**CG-68**, following the owner's no-prior-delivery clarification. CG-64 and CG-66 remain
 Open with deferred optional scheduling; they do not block Native-only readiness
 or first deployment. These are engineering tasks under the
 [Native-only decision](../decisions/decision_native_only.md), not reopened UI
@@ -219,7 +220,7 @@ defects. No ticket is closed merely because it was deferred.
 | [CG-64](CG-64.md) | P2 | Open | Define the ArangoDB dump migration contract and qualification fixtures |
 | [CG-65](CG-65.md) | P2 | Resolved | Preserve Native conformance coverage before retiring ArangoDB |
 | [CG-66](CG-66.md) | P2 | Open | Implement the Community offline ArangoDB dump importer |
-| [CG-67](CG-67.md) | P2 | Open | Remove the ArangoDB runtime backend and reject retired configuration |
+| [CG-67](CG-67.md) | P2 | Resolved | Remove the ArangoDB runtime backend and reject retired configuration |
 | [CG-68](CG-68.md) | P2 | Open | Qualify and document the Native-only release |
 
 Next available identifier: **CG-69**.

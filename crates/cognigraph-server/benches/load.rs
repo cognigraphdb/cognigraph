@@ -71,14 +71,13 @@ fn run_mode(mode: &str, scratch: &std::path::Path, native_path: Option<&str>) {
     let base = format!("http://127.0.0.1:{port}");
 
     // env_clear + a scratch cwd: the project .env must not leak in (it
-    // selects the arango backend and API keys).
+    // contains API keys or local store settings).
     let mut command = Command::new(env!("CARGO_BIN_EXE_cognigraph-server"));
     command
         .env_clear()
         .env("PATH", std::env::var("PATH").unwrap_or_default())
         .env("COGNIGRAPH_HOST", "127.0.0.1")
         .env("COGNIGRAPH_PORT", port.to_string())
-        .env("COGNIGRAPH_BACKEND", "native")
         .env("RUST_LOG", "error")
         .current_dir(scratch)
         .stdout(Stdio::null())

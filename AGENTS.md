@@ -49,16 +49,15 @@ nested instructions before editing a component, including [ui/AGENTS.md](ui/AGEN
 
 ## Query And Backend Direction
 
-- Native-only storage is the approved direction. Follow the
-  [retirement decision](docs/decisions/decision_native_only.md) and
-  [batch plan](docs/plans/native-only-2026-09-12.md): ArangoDB still exists in
-  the current implementation. The owner confirms no external delivery or live
-  deployment yet: complete CG-65, CG-67 and CG-68 before first deployment.
-  CG-64/CG-66 are optional deferred importer work, not removal prerequisites.
-  Breaking cleanup may remove legacy settings and active support narratives.
-  Preserve useful `GraphBackend` contracts and explicit capabilities.
-- Public query text uses parsed CGQL. Opaque AQL is an internal ArangoDB detail,
-  not a public escape hatch selected from a backend's declared query language.
+- Native is the only runtime storage backend. Follow the
+  [storage decision](docs/decisions/decision_native_only.md) and
+  [batch plan](docs/plans/native-only-2026-09-12.md). The owner confirms no
+  external delivery or live deployment yet; complete CG-68 readiness before
+  first deployment. CG-64/CG-66 are optional deferred importer work.
+  Preserve useful `GraphBackend` contracts, Native storage modes and explicit
+  capabilities, including guarded and tenant-scoped wrappers.
+- Public HTTP and Lua query text uses parsed CGQL. Backend language declarations
+  and caller roles must never enable opaque query passthrough.
 - Keep `graph.query()` as the Lua query entry point and preserve the separate
   authorization of HTTP read and mutation surfaces.
 - Keep grammar, validation, planning and executor ownership in `cognigraph-query`;

@@ -397,21 +397,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0c9ea0ac24bc397ab3c98583a3c9ba74fa56b09a4449bbe172b9b1ddb016027a"
 
 [[package]]
-name = "cognigraph-arango"
-version = "2.7.1"
-dependencies = [
- "async-trait",
- "base64 0.23.1",
- "cognigraph-core",
- "reqwest",
- "serde",
- "serde_json",
- "thiserror",
- "tokio",
- "tracing",
-]
-
-[[package]]
 name = "cognigraph-artifacts"
 version = "2.7.1"
 dependencies = [
@@ -595,7 +580,6 @@ dependencies = [
  "async-trait",
  "axum",
  "base64 0.23.1",
- "cognigraph-arango",
  "cognigraph-artifacts",
  "cognigraph-auth",
  "cognigraph-cache",

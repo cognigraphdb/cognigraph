@@ -5,9 +5,8 @@
 //! collections under the given prefix and drops them afterwards, so the
 //! suite is safe to run against a database that holds other data.
 //!
-//! Behavior that is deliberately backend-specific (for example collection
-//! type enforcement, which ArangoDB does not apply to document inserts) is
-//! tested in the individual backend crates instead of here.
+//! Storage-mode-specific behavior is tested in the Native backend crate
+//! alongside these shared semantic contracts.
 
 use serde_json::json;
 

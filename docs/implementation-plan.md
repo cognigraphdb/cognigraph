@@ -6,12 +6,11 @@ and test counts live in [change records](changelog/README.md), the
 
 ## Delivered scope
 
-- Native is the strategic backend: redb persistence, resident/paged storage,
-  optional mmap vectors, text search, traversal and atomic batches. ArangoDB is
-  still available for reference/conformance in 2.7.1, with explicit unsupported
-  boundaries. Its retirement is now approved; see the active batch below.
+- Native is the only runtime backend: redb persistence, resident/paged storage,
+  optional mmap vectors, text search, traversal and atomic batches. CG-67 removes
+  the Arango adapter and its configuration from the current unreleased tree.
 - CGQL v2 and workload follow-ups D1–D12 are implemented. Public query surfaces
-  accept parsed CGQL; opaque AQL remains internal. Mutation queries still reject
+  accept parsed CGQL; no opaque query passthrough exists. Mutation queries still reject
   backend `DOCUMENT()` reads and correlated traversal before execution.
 - Governed milestones M15–M26 provide durable jobs, signed authority, verified
   artifact consumption and derivation, custody recovery, and separately signed
@@ -27,24 +26,30 @@ and test counts live in [change records](changelog/README.md), the
 The owner approved [Native-only storage before first deployment](decisions/decision_native_only.md)
 and clarified that CogniGraph has never been provided to anyone. Breaking cleanup
 is allowed freely before first delivery. The [batch plan](plans/native-only-2026-09-12.md)
-has completed [CG-65](issues/CG-65.md), preserving useful Native coverage.
-Next is [CG-67](issues/CG-67.md), removing the backend and configuration.
+has completed [CG-65](issues/CG-65.md), preserving useful Native coverage, and
+[CG-67](issues/CG-67.md), removing the adapter and configuration.
 [CG-68](issues/CG-68.md) reconciles active guides/workflows and verifies fresh
 Native operation before any live deployment. No customer migration, compatibility
-window or last-Arango release is needed. Runtime removal remains pending.
+window or last-Arango release is needed. Final deployment readiness is pending.
 
 The [CG-65 report](issues/native-conformance-2026-09-12.md) records four
 capability-boundary test replacements, all 126 expected CGQL results across
 Native modes and persistent reopen, both Rust validation suites and 900 local
-release-binary checks. Adapter-only test groups are identified for deletion;
+release-binary checks. Adapter-only test groups were removed by CG-67;
 existing query goldens and historical captures remain unchanged.
+
+The [CG-67 report](issues/native-runtime-2026-09-12.md) records strict Clippy
+and full Rust suites in both editions, 514 fresh release-binary checks across
+four Native modes, cross-edition CLI/snapshot/tenant probes and all nine browser
+regressions. Docker/Helm qualification and broader active-guide reconciliation
+remain CG-68. The runtime cleanup has not been published or deployed.
 
 [CG-64](issues/CG-64.md) and [CG-66](issues/CG-66.md) are deferred optional
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **63 Resolved, 1 Closed without change, and 4 Open issues**,
-all P2: two active batch tickets and two explicitly deferred backlog tickets.
+The registry now has **64 Resolved, 1 Closed without change, and 3 Open issues**,
+all P2: one active batch ticket and two explicitly deferred backlog tickets.
 The earlier console defect list remains
 closed. Additional console features and the research qualification below are
 separate backlogs, not prerequisites for this batch. No model or holdout runs

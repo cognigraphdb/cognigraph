@@ -5,7 +5,6 @@ members = [
     "crates/cognigraph-governance",
     "crates/cognigraph-query",
     "crates/cognigraph-native",
-    "crates/cognigraph-arango",
     "crates/cognigraph-embeddings",
     "crates/cognigraph-lua",
     "crates/cognigraph-cache",

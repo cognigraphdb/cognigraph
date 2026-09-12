@@ -24,6 +24,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Unreleased
 
+- 2026-09-12: [Use Native storage as the only runtime backend](2026-09-12-native-runtime.md)
 - 2026-09-12: [Approve the Native-only storage engineering batch](2026-09-12-native-only-plan.md)
 - 2026-09-12: [Preserve Native conformance coverage before adapter removal](2026-09-12-native-conformance.md)
 - 2026-09-11: [Explain tenant deletion and display quarantine outcomes](2026-09-11-ui-tenant-deletion.md)

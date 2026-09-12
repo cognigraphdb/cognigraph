@@ -57,8 +57,7 @@ jobs:
           bun install --frozen-lockfile
           bun --bun x --no-install playwright install --with-deps chromium
 
-      # The exact shared local gates, exit-code checked. Environment-gated
-      # Arango tests require ARANGO_PASSWORD. The runner disables live LLM loops;
+      # The exact shared local gates, exit-code checked. The runner disables live LLM loops;
       # embedding-provider tests require explicit --ignored qualification.
       - name: Shared local and CI checks
         run: python3 scripts/verify.py --suite ci

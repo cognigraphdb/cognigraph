@@ -9,14 +9,11 @@ equivalent. Every "supported" row is backed by the [CGQL specification](cgql.md)
 or the [query corpus](../../crates/cognigraph-query/tests/corpus/); every gap
 names the workaround.
 
-Scope: ArangoDB 3.11/3.12 AQL against CogniGraph 2.6 with the Native backend.
-CogniGraph 2.7.1 still includes the maintenance ArangoDB backend
-(`cognigraph-arango`); it is not a migration bridge. The owner has approved
-[Native-only storage](../decisions/decision_native_only.md). Its
-[retirement batch](../plans/native-only-2026-09-12.md) retains this query guide
-as external migration education. A [direct dump importer](../plans/arangodump-import-design.md)
-is deferred optional work and is not required for Native-only readiness or first
-deployment. The current query comparison remains scoped as above.
+Scope: external ArangoDB 3.11/3.12 AQL compared with CogniGraph CGQL.
+CogniGraph uses Native storage in both editions. This guide covers query/API
+migration; it does not route queries to an external database. A
+[direct dump importer](../plans/arangodump-import-design.md) remains optional,
+unqualified backlog work.
 
 ## Ten things to know before you start
 
