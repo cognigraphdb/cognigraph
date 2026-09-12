@@ -3,7 +3,6 @@ use axum::extract::State;
 use axum::routing::post;
 use axum::{Json, Router};
 use cognigraph_auth::{Scope, User};
-use cognigraph_core::QueryLanguage;
 use serde::Deserialize;
 
 use crate::error::AppError;
@@ -44,18 +43,12 @@ async fn execute_script(
     let backend: std::sync::Arc<dyn cognigraph_core::GraphBackend> = std::sync::Arc::new(
         crate::tenancy::TenantScoped::new(tenant.clone(), state.backend.clone()),
     );
-    // Typed mutations require documents:write. graph.query() is available
-    // only when the backend language is parsed CGQL; opaque AQL is disabled
-    // even for Admin because textual screening is bypassable.
+    // Typed mutations and CGQL writes require documents:write. All query
+    // text is parsed; roles cannot enable an opaque query passthrough.
     let instruction_limit = state.lua_instruction_limit;
     let allow_writes = user
         .as_ref()
         .is_some_and(|Extension(user)| user.role.grants(Scope::DocumentsWrite));
-    let allow_backend_queries = user
-        .as_ref()
-        .is_some_and(|Extension(user)| user.role.grants(Scope::Admin))
-        && state.backend.query_language() == QueryLanguage::Cgql;
-
     let control = cognigraph_lua::LuaExecutionControl::new(state.cgql_budget);
     let _cancel_on_drop = CancelOnDrop(control.clone());
     // The supervisor survives an HTTP timeout long enough to join the worker
@@ -67,7 +60,6 @@ async fn execute_script(
                 backend,
                 handle,
                 allow_writes,
-                allow_backend_queries,
                 control,
             )
             .map_err(|e| cognigraph_core::CogniGraphError::LuaError(e.to_string()))?;
@@ -331,16 +323,12 @@ mod tests {
                 .is_some()
         );
 
-        // Arango is intentionally unreachable. The ScriptRunner must be
-        // rejected by Lua before raw AQL can touch the backend.
-        let aql_state = crate::state::AppState::new(cognigraph_arango::ArangoBackend::connect(
-            "http://127.0.0.1:1",
-            "test",
-            "root",
-            "",
-        ));
+        // Opaque queries must be rejected before any storage access.
+        let opaque_backend =
+            std::sync::Arc::new(cognigraph_core::contract::NoAccessBackend::default());
+        let opaque_state = crate::state::AppState::new_shared(opaque_backend.clone());
         let err = execute_script(
-            State(aql_state.clone()),
+            State(opaque_state.clone()),
             Some(user(Role::ScriptRunner, "default")),
             Json(ExecuteRequest {
                 script: r#"return graph.query("REMOVE 'n1' IN notes", {})"#.into(),
@@ -348,13 +336,10 @@ mod tests {
         )
         .await
         .unwrap_err();
-        assert!(
-            err.0.to_string().contains("unsafe opaque-query capability"),
-            "{err:?}"
-        );
+        assert!(err.0.to_string().contains("parsed CGQL support"), "{err:?}");
 
         let err = execute_script(
-            State(aql_state.clone()),
+            State(opaque_state.clone()),
             Some(user(Role::Editor, "default")),
             Json(ExecuteRequest {
                 script: r#"return graph.query("REMOVE 'n1' IN notes", {})"#.into(),
@@ -364,11 +349,11 @@ mod tests {
         .unwrap_err();
         assert!(
             matches!(err.0, cognigraph_core::CogniGraphError::Forbidden(_)),
-            "Editor must not receive opaque AQL authority: {err:?}"
+            "Editor must not receive opaque query authority: {err:?}"
         );
 
         let err = execute_script(
-            State(aql_state),
+            State(opaque_state),
             Some(user(Role::Admin, "default")),
             Json(ExecuteRequest {
                 script: r#"return graph.query("FOR d IN `_cognigraph_\\u006aobs` RETURN d", {})"#
@@ -379,12 +364,13 @@ mod tests {
         .unwrap_err();
         assert!(
             matches!(err.0, cognigraph_core::CogniGraphError::Forbidden(_)),
-            "Admin must not receive opaque AQL authority: {err:?}"
+            "Admin must not receive opaque query authority: {err:?}"
         );
         assert!(
-            err.0.to_string().contains("unsafe opaque-query capability"),
-            "Admin denial must not imply that the Admin role enables AQL: {err:?}"
+            err.0.to_string().contains("parsed CGQL support"),
+            "Admin denial must not imply that the Admin role enables opaque queries: {err:?}"
         );
+        opaque_backend.assert_unused();
     }
 
     /// Lua scripts talk to `state.backend` — the guarded facade — so a

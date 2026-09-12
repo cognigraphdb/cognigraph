@@ -366,13 +366,8 @@ async fn reingest_retracts_matching_legacy_fact_edges() {
 }
 
 #[tokio::test]
-async fn arango_is_rejected_before_any_preparatory_write() {
-    let backend = cognigraph_arango::ArangoBackend::connect(
-        "http://127.0.0.1:1",
-        "unreachable",
-        "unused",
-        "unused",
-    );
+async fn non_atomic_backend_is_rejected_before_any_preparatory_write() {
+    let backend = cognigraph_core::contract::NoAccessBackend::default();
 
     let err = ingest_chunks(
         &backend,
@@ -385,7 +380,8 @@ async fn arango_is_rejected_before_any_preparatory_write() {
     .unwrap_err();
 
     assert!(err.to_string().contains("requires atomic batch support"));
-    assert!(err.to_string().contains("backend `arango`"));
+    assert!(err.to_string().contains("backend `no-access-test`"));
+    backend.assert_unused();
 }
 
 /// A space whose trigger does NOT name the target, so a licensing sentence can

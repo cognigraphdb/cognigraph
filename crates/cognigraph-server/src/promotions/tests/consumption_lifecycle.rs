@@ -63,7 +63,7 @@ async fn m21_verified_artifacts_drive_evaluation_evidence_and_promotion() {
     let candidate_artifacts = candidate_context.artifact_attestations.clone().unwrap();
 
     let baseline_original =
-        submit_evaluation(&state, "m21-baseline-original", baseline_context.clone()).await;
+        submit_delayed_evaluation(&state, "m21-baseline-original", baseline_context.clone()).await;
     let baseline_replay = submit_evaluation(&state, "m21-baseline-replay", baseline_context).await;
     state.jobs.set_artifact_consumption_delay_ms(5_000);
     let candidate_original = state

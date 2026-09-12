@@ -1,5 +1,9 @@
 # Cli
 
+`cognigraph import` accepts CogniGraph JSON snapshots. See the
+[recovery guide](recovery.md) for restore behavior and the
+[external migration guide](../reference/aql-to-cgql.md) for format differences.
+
 The default CLI is Community. Ordinary database, auth and snapshot commands work
 in both builds; neuron, construction, jobs, tenant and governance commands need
 `cargo build --release -p cognigraph-cli --features enterprise` and an Enterprise

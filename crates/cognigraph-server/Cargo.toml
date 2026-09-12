@@ -13,7 +13,6 @@ enterprise = ["dep:cognigraph-artifacts", "dep:cognigraph-construct", "dep:cogni
 [dependencies]
 cognigraph-artifacts = { path = "../cognigraph-artifacts", optional = true }
 cognigraph-core = { path = "../cognigraph-core" }
-cognigraph-arango = { path = "../cognigraph-arango" }
 cognigraph-embeddings = { path = "../cognigraph-embeddings" }
 cognigraph-construct = { path = "../cognigraph-construct", optional = true }
 cognigraph-governance = { path = "../cognigraph-governance", optional = true }

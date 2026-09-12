@@ -196,7 +196,7 @@ must not submit any receipt or derived authority.
 The receipt retains content addresses and signed manifest projections, not a
 second copy of raw or prepared bytes. Native snapshots therefore validate the
 address chain but cannot replay preparation without the separately preserved
-tenant-incarnation CAS; ArangoDB has no CogniGraph application snapshot. M23
+tenant-incarnation CAS. M23
 accepts only already extracted UTF-8 plain text. It does not parse PDF, HTML,
 office, compressed, or image inputs; run extraction/OCR outside CogniGraph and
 attest the resulting exact text bytes. It also does not populate operational
@@ -249,8 +249,8 @@ cognigraph artifact custody restore /mnt/backup/cognigraph-$EVIDENCE_ID \
 
 The receipt records one successful reread; it does not prove ongoing custody,
 freshness, independent replication, encryption, or availability. Pair the CAS
-bundle with a Native backend snapshot/cold copy or an operator-native ArangoDB
-backup, external configuration, the trust anchor, and secrets. See the
+bundle with a Native snapshot/cold copy, external configuration, the trust
+anchor, and secrets. See the
 [M24 operations section](../operations/governance/artifact-custody.md#m24-artifact-custody-and-verified-restoration)
 and [M24 decision](../decisions/decision_m24_durable_cas_custody_verified_restoration.md).
 
@@ -386,16 +386,15 @@ curl -X POST http://localhost:3000/api/search/semantic \
 
 ### Hybrid search (BM25 + vector with RRF fusion)
 
-On the default native backend, the BM25 leg uses the backend text index. On
-ArangoDB, configure an ArangoSearch view on the documents collection and pass it
-as `search_view`.
+The BM25 leg searches `documents_collection` using the Native text index.
+`search_fields` chooses the text fields; the vector leg searches `embeddings_collection`.
 
 ```bash
 curl -X POST http://localhost:3000/api/search/hybrid \
   -H 'Content-Type: application/json' \
   -d '{
     "query": "graph database traversal",
-    "search_view": "documents_view",
+    "documents_collection": "documents",
     "search_fields": ["content", "title"],
     "threshold": 0.3,
     "limit": 10,
@@ -423,9 +422,8 @@ curl -X POST http://localhost:3000/api/search/graph-augmented \
 
 ### CGQL query (read-only)
 
-Works on every backend. `"language": "cgql"` may be explicit or omitted; both
-select the parsed read-only CGQL path. Public opaque backend-native passthrough,
-including AQL, is disabled for every role.
+`"language": "cgql"` may be explicit or omitted; both select the parsed
+read-only CGQL path. Other language values are forbidden for every role.
 
 ```bash
 curl -X POST http://localhost:3000/api/search/query \
@@ -549,11 +547,6 @@ See [lua-scripting.md](lua-scripting.md) for comprehensive Lua examples.
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `COGNIGRAPH_BACKEND` | `native` | Backend: `native` or `arango` (maintenance) |
-| `ARANGO_URL` | `http://localhost:8529` | ArangoDB connection URL |
-| `ARANGO_DB` | `cognigraph` | Database name |
-| `ARANGO_USER` | `root` | ArangoDB username |
-| `ARANGO_PASSWORD` | _(empty)_ | ArangoDB password |
 | `COGNIGRAPH_HOST` | `0.0.0.0` | Server bind host |
 | `COGNIGRAPH_PORT` | `3000` | Server bind port |
 | `COGNIGRAPH_EMBEDDING_PROVIDER` | `none` | `openai`, `ollama`, `gemini`, or `none` |
@@ -566,7 +559,6 @@ See [lua-scripting.md](lua-scripting.md) for comprehensive Lua examples.
 | `COGNIGRAPH_SIDEVIEWS_PROVIDER` | inherits main provider | Separate side-view lane; explicit provider uses its own model default |
 | `COGNIGRAPH_SIDEVIEWS_MODEL` | inherits main model or separate provider default | Override side-view completion model |
 | `OLLAMA_BASE_URL` | — | Override Ollama endpoint |
-| `COGNIGRAPH_VECTOR_SEARCH_MODE` | `native` | ArangoDB vector search: `native` (APPROX_NEAR_COSINE; model filtering requires ≥3.12.6) or `fallback` (COSINE_SIMILARITY). Candidates expand when parent deduplication underfills the limit. |
 | `COGNIGRAPH_NATIVE_PATH` | — | redb storage path for the native backend; in-memory when unset |
 | `COGNIGRAPH_VECTOR_MODE` | `embedded` | Native vector storage: `embedded` or `sidecar` |
 | `COGNIGRAPH_STORAGE_MODE` | `resident` | Native storage mode: `resident` or `paged` |

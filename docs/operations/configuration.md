@@ -1,5 +1,8 @@
 # Configuration
 
+CogniGraph opens Native storage directly. Set `COGNIGRAPH_NATIVE_PATH` for
+persistence or leave it unset for an in-memory store.
+
 The default build is Community. Multi-tenant storage, governance, construction,
 job and artifact settings belong to the Enterprise build; Community rejects
 configured multi-tenant storage, governance roots and artifact CAS. Enable the
@@ -12,7 +15,6 @@ Cargo feature or select the corresponding Docker image as described in
 | Variable | Default | Meaning |
 |---|---|---|
 | `COGNIGRAPH_HOST` / `COGNIGRAPH_PORT` | `0.0.0.0` / `3000` | Listen address |
-| `COGNIGRAPH_BACKEND` | `native` | `native` or `arango` (maintenance) |
 | `COGNIGRAPH_NATIVE_PATH` | unset | redb file; unset = in-memory (no durability) |
 | `COGNIGRAPH_VECTOR_MODE` | `embedded` | `sidecar` = int8 mmap vectors, ~7x less RAM |
 | `COGNIGRAPH_STORAGE_MODE` | `resident` | `paged` = keys+LRU in RAM (requires sidecar) |
@@ -46,7 +48,7 @@ Cargo feature or select the corresponding Docker image as described in
 | `OPENAI_BASE_URL` / `GEMINI_BASE_URL` | `https://api.openai.com/v1` / `https://generativelanguage.googleapis.com/v1beta` | Completion endpoint base, including separate side-view lanes; absolute HTTP(S), without query/fragment. Both dedicated OpenAI judges share `OPENAI_BASE_URL`; whitespace/trailing slashes are normalized ([CG-36](../issues/CG-36.md)). |
 | `COGNIGRAPH_JUDGE_MODEL` | unset | Dedicated OpenAI review-judge model for `/api/construct/review`, independent of the main provider/model; uses `OPENAI_API_KEY` and `OPENAI_BASE_URL`. Unset/blank falls back to completion. A nonempty model requires a nonempty OpenAI key; invalid selected judge configuration fails startup before storage opens |
 | `COGNIGRAPH_JUDGE_PARTNER_MODEL` | unset | Dedicated OpenAI agreement-lane (Lane A+) partner with the same key/base validation. Unset/blank = A+ degrades to queue; explicit model without a nonempty key fails startup. Review-policy qualification and exact pair matching remain required |
-| `COGNIGRAPH_DATA_DIR` | unset | Multi-tenant mode: per-tenant stores at `<dir>/<tenant>.redb`, control store (auth + tenant records) at `<dir>/_control.redb`. Mutually exclusive with `COGNIGRAPH_NATIVE_PATH` |
+| `COGNIGRAPH_DATA_DIR` | unset | Multi-tenant mode: per-tenant stores at `<dir>/<tenant>.redb`, control store (auth + tenant records) at `<dir>/_control.redb`. Takes precedence over `COGNIGRAPH_NATIVE_PATH`; configure only the intended storage root |
 | `COGNIGRAPH_RATE_LIMIT_PER_MINUTE` | 0 (off) | Per-client request cap |
 | `COGNIGRAPH_REQUEST_TIMEOUT_SECS` | 30 | Request deadline (408 past it) |
 | `COGNIGRAPH_LOG_FORMAT` | `text` | `json` for log shippers |
@@ -68,11 +70,6 @@ consumption and derivation are not in use.
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `ARANGO_URL` | `http://localhost:8529` | ArangoDB connection URL |
-| `ARANGO_DB` | `cognigraph` | ArangoDB database name |
-| `ARANGO_USER` | `root` | ArangoDB username |
-| `ARANGO_PASSWORD` | (empty) | ArangoDB password |
-| `COGNIGRAPH_VECTOR_SEARCH_MODE` | `native` | ArangoDB vector search: `native` (model filtering requires ≥3.12.6) or `fallback`; filter before candidate selection and expand candidates for parent deduplication |
 | `COGNIGRAPH_EMBEDDING_MODEL` | Provider default | Model name override |
 | `OLLAMA_BASE_URL` | `http://localhost:11434` | Ollama server URL |
 | `COGNIGRAPH_QUERY_CACHE_TTL_SECS` | `900` | Time-to-live for cache entries |

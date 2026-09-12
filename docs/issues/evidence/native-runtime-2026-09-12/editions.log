@@ -1,0 +1,4 @@
+PASS: cognigraph-server Community dependencies
+PASS: cognigraph-server Enterprise dependencies
+PASS: cognigraph-cli Community dependencies
+PASS: cognigraph-cli Enterprise dependencies

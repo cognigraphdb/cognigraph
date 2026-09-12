@@ -86,23 +86,15 @@ deployment decisions. The target being replaced is independently capped at
 there is no delete, eviction, or garbage collection.
 
 M26 build, deployment, rollback, and recovery of present M26 authority require
-all-or-nothing backend batch execution. Native is the only supported M26
-backend. Maintenance-mode ArangoDB still starts normally and reports M26
-disabled when no M26 authority is present. It rejects M26 mutation with HTTP
-503 before CAS reads, M26 collection creation, authority writes, or graph
-mutation, and rejects an incoming snapshot containing M26 authority before
-import. The checked public placeholders live in
+all-or-nothing Native batch execution. Capability checks precede CAS reads,
+collection creation, authority writes and graph mutation. Snapshot preflight
+validates incoming authority before import. The checked public placeholders live in
 [`fixtures/m26/`](../../../fixtures/m26). The server and CLI accept no private key
 material.
 
-The 2026-07-19 release-binary verification imported and replayed the complete
-authority on persistent Native, materialized the exact active `DISTRIBUTES`
-and `SUPPLIES` facts, reported healthy state through explicit recovery, and
-preserved the same head, facts, and status across restart. The configured
-ArangoDB Enterprise 3.12.9-1 probe started successfully, reported M26 disabled,
-returned HTTP 503 for an authenticated generation build in 304 ms, wrote no
-M26 authority or graph rows, and was cleaned back to its exact 13-collection
-baseline (five application plus eight ArangoDB system collections).
+The [M26 decision](../../decisions/decision_m26_verified_semantic_repair_materialization.md)
+retains the 2026-07-19 release-binary authority replay, materialization, recovery
+and restart evidence. Those measurements describe that revision.
 
 M26 is not an automatic self-healing controller. Promotion does not trigger a
 build, and build does not trigger deployment. There is no drift monitor,
@@ -437,9 +429,7 @@ This proves internal provenance consistency, not backup custody or freshness.
 CogniGraph does not sign a whole snapshot, publish a transparency checkpoint,
 or detect replay of an older but otherwise valid complete backup. Sign,
 timestamp, transport, and retain backups and external artifact bytes outside
-CogniGraph if that threat is in scope. ArangoDB uses the same protected
-governance semantics but does not gain CogniGraph application snapshot support
-or cross-document transactions.
+CogniGraph if that threat is in scope.
 
 `GET /health/promotions` is a generic unauthenticated readiness signal and
 returns HTTP 503 when recovery has latched an authoritative repository error.

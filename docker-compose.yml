@@ -7,7 +7,6 @@ services:
     volumes:
       - cognigraph-data:/data
     environment:
-      COGNIGRAPH_BACKEND: native
       COGNIGRAPH_NATIVE_PATH: /data/cognigraph.redb
       # Uncomment for the paged, low-RAM profile:
       # COGNIGRAPH_VECTOR_MODE: sidecar

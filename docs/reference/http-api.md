@@ -34,7 +34,7 @@ both reads and writes.
 | `/api/search/text` | Plain BM25 full-text search over string fields (`GraphBackend::text_search`); no embedder required — backs the document browser's search box |
 | `/api/search/query` | Parsed, read-only CGQL; `language` may be omitted or set to `cgql`. Opaque backend-native text is disabled. |
 | `/api/search/semantic` | Text → embed → vector search → fetch docs |
-| `/api/search/hybrid` | BM25 + vector with RRF fusion; native uses `GraphBackend::text_search`, Arango uses AQL/ArangoSearch, and unsupported backends skip the BM25 leg explicitly |
+| `/api/search/hybrid` | Native BM25 + vector with RRF fusion; unavailable BM25 data is reported explicitly |
 | `/api/search/graph-augmented` | Semantic seeds + multi-hop graph traversal |
 
 ### Graph
@@ -159,7 +159,7 @@ promotion intent binds their aggregate authority digest. Signed locations are
 audit observations: the server never fetches them, stores the external bytes,
 or proves that `construct.evaluate` consumed them. Evaluation still reads the
 live tenant graph. Native snapshots include authority records and manifests,
-not external bytes; ArangoDB has no application snapshot surface.
+not external bytes.
 
 M21 context v4 adds a closed loader plan and uses an optional operator-staged,
 tenant-incarnation-scoped local CAS. The worker streams and rehashes every blob
@@ -173,8 +173,8 @@ slots, and canonical result. Its unkeyed hash does not authenticate authorship
 by itself; evidence v4 and the signed consumption authority digest carry it
 into governed authority. This adds no network fetch,
 artifact upload, graph-derivation proof, external receipt signature, deployment,
-quorum, or HA surface. Its repository gates and release-binary
-persistent-Native and live-ArangoDB verification passed on 2026-07-18.
+quorum, or HA surface. Its dated verification is retained in the
+[M21 decision](../decisions/decision_m21_verified_artifact_consumption.md).
 
 M22 context v5 pins loader plan v2 and a nested prepared-corpus derivation plan.
 The corpus manifest must contain one canonical `corpus.json` bound to the
@@ -200,7 +200,7 @@ canonical evaluation-fact projection. It does not replay raw-document
 preprocessing or reconstruct persistent chunks, entities, mentions, indexes,
 trigger spans, or storage keys. It does not publish or deploy a graph, execute
 staged code, switch a consumer, remotely attest a host, or add quorum or HA.
-Final release-binary Native and live-ArangoDB verification is recorded in the
+Dated release-binary verification is recorded in the
 M22 decision.
 
 M23 preserves that M22 meaning and adds a fresh context-v6 authority
@@ -246,15 +246,13 @@ later four-run evidence establish downstream derivation/preparation authority;
 the preparation receipt does not claim that authority by itself. Neither layer
 copies those byte streams into jobs or Native snapshots. Re-execution
 therefore requires the external tenant-incarnation CAS, which operators must
-back up and replicate separately; ArangoDB still has no CogniGraph application
-snapshot. M23 does not extract text, run OCR, parse containers, materialize the
+back up and replicate separately. M23 does not extract text, run OCR, parse containers, materialize the
 prepared corpus into tenant document/chunk/entity/mention collections, rebuild
 the complete operational graph, publish or deploy artifacts, execute staged
 code, switch a consumer, or add distributed scheduling, replication, quorum,
-consensus, or HA. Authenticated release-binary verification passed on
-persistent Native in 14.46 seconds and live ArangoDB Enterprise 3.12.9-1 in
-109.22 seconds, including restart/recovery, fail-closed prepared-output and CAS
-tamper cases, revocation/history fencing, and isolated cleanup.
+consensus, or HA. The [M23 decision](../decisions/decision_m23_reproducible_raw_document_prepared_corpus_processing.md)
+retains the dated restart/recovery, prepared-output and CAS tamper, revocation
+and cleanup measurements.
 
 M24 closes only that external byte-recovery boundary. The Admin plan endpoint
 projects one immutable M21-M23 evidence record into a timestamp-free canonical
@@ -269,9 +267,9 @@ publication. A final normal-CAS reread precedes the external restore receipt.
 No M18-M23 generation changes: custody observations neither authorize
 promotion nor change evaluation quality. The unkeyed receipts prove one
 successful read, not ongoing custody, backup provenance, freshness,
-availability, independent replication, encryption, RPO/RTO, or HA. Native and
-ArangoDB database recovery remain separate and must be composed with the CAS
-bundle and externally retained configuration/trust/secrets.
+availability, independent replication, encryption, RPO/RTO, or HA. Native
+database recovery must be composed with the CAS bundle and externally
+retained configuration/trust/secrets.
 
 M25 leaves every M18-M24 promotion wire contract unchanged. It stores the
 exact M22 schema-v1 construction candidate in one tenant/incarnation/target-
@@ -343,7 +341,7 @@ Parsed CGQL reads may inspect the eight M25-managed ordinary collections, but
 all five mutation forms targeting one are rejected. Opaque backend-native query
 text cannot safely prove read-only behavior, so the guarded raw-query boundary
 rejects any reference to a managed collection, including collection bind
-values. Direct operator AQL/database access is outside the HTTP/Lua product
+values. Direct operator database-file access is outside the HTTP/Lua product
 trust boundary.
 
 ### Sessions (unauthenticated; requires `COGNIGRAPH_AUTH_ENABLED` + `COGNIGRAPH_JWT_SECRET`)
@@ -373,7 +371,7 @@ trust boundary.
 ### Batch (documents:write scope)
 | Method | Path | Description |
 |---|---|---|
-| POST | `/api/batch` | Capability-dependent atomic multi-op writes; native is all-or-nothing, while Arango currently returns unsupported |
+| POST | `/api/batch` | Atomic multi-op writes using Native all-or-nothing batches |
 
 ### Cache
 | Method | Path | Description |

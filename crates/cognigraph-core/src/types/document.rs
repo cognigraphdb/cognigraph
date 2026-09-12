@@ -20,7 +20,7 @@ impl DocumentId {
         }
     }
 
-    /// Returns the full ArangoDB-style ID: "collection/key"
+    /// Returns the full document ID: "collection/key"
     pub fn full_id(&self) -> String {
         format!("{}/{}", self.collection, self.key)
     }

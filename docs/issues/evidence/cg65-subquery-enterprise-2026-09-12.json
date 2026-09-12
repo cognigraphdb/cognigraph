@@ -1,0 +1,3866 @@
+{
+  "issues": [
+    "CG-28",
+    "CG-37",
+    "CG-38"
+  ],
+  "known_defects": [],
+  "expect_collisions": false,
+  "expect_plan_errors_500": false,
+  "revision": "4273ff3f3fcc5d001d7dfc734c493131a6e17370",
+  "binary_profile": "release",
+  "binary_sha256": "8cb78a42013183b72467fbf278cf6feee54d50b3966f710a267df8178885c9e5",
+  "harness_sha256": "a0aeed7bf5c39087ed941dc48e029f63d18dd28bdec670eeecfeffec3949a0fe",
+  "fixtures": {
+    "crates/cognigraph-query/tests/corpus/dataset.json": "3590d46844a1c75447ba3401642d8f1dfcfc4566ef32d18dce8189e74718899e",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_aggregate.cgql": "834ceb93e5d82594cb91908756b7c6b89c819a577150499dae59a0f4f53e9835",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_aggregate.json": "37421eb4dd4f0fed39e1941f859a16c6dc85eb6cee5648d598c171e2f35899a8",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_collect.cgql": "905b333ac6116f28d5c0c46ede64f857e32e1ea5617aac16bacd86b58e726377",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_collect.json": "aebe02a34a969fa43df5713464c540a445eaa1d7b3211d52b941863f431000bc",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_filter.cgql": "2b9da87609687b173051fea68b7c51e32e2fb595db2e8b6c15716d1f5a997795",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_filter.json": "92260ea0cbd70738c0bccba89c8dbf5881ec50d1a09891ea531aa254a783c9cd",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_for.cgql": "0bcd0c8a7270505c856817302136f4edd67666bb2c2bb7c46ba22bf94622938e",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_for.json": "d07b9d8316ee81e6179b991d327efe1d1c3c6a93d09bce8c3c2eb9a17c4a52ff",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_let_return.cgql": "b262d5991e068bb55ede5b6fa660ef39b6afa10c39d13b83ee10ed8cda8112dc",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_let_return.json": "1c493b696e4a6198872a7e1791668110d0bb9adf2a8ad6cffea05ed576cb2b54",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_nested.cgql": "0c0f69edf3f0d41879b6651f1d2c9a4137d0c4cff7f86f3fb41536c60d826be1",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_nested.json": "b4b0c657dd7e32c46250d8a32c0e1a515391552c0bf0cbf0c3f59269f2466bee",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_sort.cgql": "30a4c3b11d883598aaef743de0052ff83d3d064e309fea866e11d4e152e7df65",
+    "crates/cognigraph-query/tests/corpus/exec/sq_expr_sort.json": "d07b9d8316ee81e6179b991d327efe1d1c3c6a93d09bce8c3c2eb9a17c4a52ff",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_binding_collision.cgql": "45fa565d6edafc26f105145482bc7ac5a7e93517abf61fbebe188b4b1611ab2f",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_binding_collision.json": "6f8aa42112219c8e4769c9812536090c07d6fde5b0bde0d4fdf177a2ae6e72ff",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_binds.cgql": "fe93626c4ba5e9760b0dd51ad3bbd82f6fd76bd3fcc5c98afd7c1ac65bd07637",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_binds.json": "e014b0a1610779b732a252ed88da658716c95b41b781440a5dc7853779f94c0a",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_correlated.cgql": "de24d68855c64b946d991433b9805806b306a943e0e2e6142e92addea33e917e",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_correlated.json": "ba9a9900b6c99f767b8c99d1636aeaa3885fada88cd74730585e551943ad91d2",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_document.cgql": "2944c7c14d9575c693d2433505a36e0a50df9df9cd60ea6eeeb9f4badb545035",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_document.json": "1a647f917364f6a0b522319d0704319d6d1b386bb2b2dcbff8aca6f4092ae7e7",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_siblings.cgql": "4da90cfeaa65e7406bf7d90a265c46807e22f25d1df727b1f406be660f601d95",
+    "crates/cognigraph-query/tests/corpus/exec/sq_nested_siblings.json": "0e07dd018c8035cab15acbdf0e189f468da730703df618701e3a5c3bc0c1f5a7",
+    "crates/cognigraph-query/tests/corpus/exec/sq_postcollect_rewrite.cgql": "9ad8e5dc0a94b0c8643100b289b04d14da70a550164ccf526865b40feabfc6bf",
+    "crates/cognigraph-query/tests/corpus/exec/sq_postcollect_rewrite.json": "ad03765a9a655684794a889aacffc8f8e4bbeb92f739fc7d32917fb82911c834",
+    "crates/cognigraph-query/tests/corpus/exec/sq_precollect_into.cgql": "18a0bc7d2f0c1f0cb038aec456846a4aba62844172cdb5e40d7b4ee24718cadb",
+    "crates/cognigraph-query/tests/corpus/exec/sq_precollect_into.json": "ef847f3cd1bcd90872d58e5f0b302a1fd077630377253eff77c5b5e7708882bd",
+    "crates/cognigraph-query/tests/corpus/parse_err/sq_contains_mutation.cgql": "1d64ea8e0d995efbe26545ecdf8f318e33c6e1eb595d983c929672714a7b7053",
+    "crates/cognigraph-query/tests/corpus/parse_err/sq_postcollect_return.cgql": "8d0210abef5d4b04f3ef3dd63d960d3f0935b4dac614266fafa34c54b4777821",
+    "crates/cognigraph-query/tests/corpus/parse_err/sq_postcollect_sort.cgql": "7c72468db1cfd99eae91d4b953a0215dc975e35b7c85e6d5bc5971f06423547e",
+    "crates/cognigraph-query/tests/corpus/parse_ok/sq_mutation_for.cgql": "2a6fbc2c3924211a300cd48252b684fd63badb859c128c8b0b8dd571bd239b8f",
+    "crates/cognigraph-query/tests/corpus/parse_ok/sq_mutation_let.cgql": "eff66a063cc24453d6a8d36087bc98a560c9e25289377b1665391644122d6908",
+    "crates/cognigraph-query/tests/corpus/validate_err/sq_into_inline.cgql": "d99a9b13b5388009c460d36bdc870d3c0cc9232e59cbcd22454581d864f4d458",
+    "crates/cognigraph-query/tests/corpus/validate_err/sq_mutation_document.cgql": "047ba3801a133333b01c286141feccaea50d3a3419ada99f0bc697a233886965",
+    "crates/cognigraph-query/tests/corpus/validate_err/sq_mutation_operand.cgql": "1e4794439882f91cb6d567412947dc52f5523442b32312d742c8c56a42a835ce"
+  },
+  "provider": "none",
+  "modes": {
+    "resident": {
+      "checks": 144,
+      "events": [
+        {
+          "kind": "read",
+          "case": "sq_expr_aggregate",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            4.0
+          ],
+          "actual": [
+            4.0
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_aggregate",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            4.0
+          ],
+          "actual": [
+            4.0
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_aggregate",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            4.0
+          ],
+          "actual": [
+            4
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_aggregate",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_collect",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ],
+          "actual": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_collect",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ],
+          "actual": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_collect",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ],
+          "actual": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_collect",
+          "result_rows": 3
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_filter",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            "a"
+          ],
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_filter",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            "a"
+          ],
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_filter",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            "a"
+          ],
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_filter",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_for",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_for",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_for",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_for",
+          "result_rows": 4
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_let_return",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ],
+              "n": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_let_return",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ],
+              "n": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_let_return",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ],
+              "n": 4
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_let_return",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_nested",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            [
+              4
+            ]
+          ],
+          "actual": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_nested",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            [
+              4
+            ]
+          ],
+          "actual": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_nested",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            [
+              4
+            ]
+          ],
+          "actual": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_nested",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_sort",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_sort",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_sort",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_sort",
+          "result_rows": 4
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binding_collision",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binding_collision",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binding_collision",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_nested_binding_collision",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binds",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "first": [
+                11.0,
+                12.0
+              ],
+              "second": [
+                15.0
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "first": [
+                11.0,
+                12.0
+              ],
+              "second": [
+                15.0
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binds",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "first": [
+                11.0,
+                12.0
+              ],
+              "second": [
+                15.0
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "first": [
+                11.0,
+                12.0
+              ],
+              "second": [
+                15.0
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binds",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "first": [
+                11.0,
+                12.0
+              ],
+              "second": [
+                15.0
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "first": [
+                11,
+                12
+              ],
+              "second": [
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_nested_binds",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_correlated",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "related": [
+                {
+                  "target": "b",
+                  "matched": 1
+                },
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "related": [
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "b"
+                },
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_correlated",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "related": [
+                {
+                  "target": "b",
+                  "matched": 1
+                },
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "related": [
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "b"
+                },
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_correlated",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "related": [
+                {
+                  "target": "b",
+                  "matched": 1
+                },
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "related": [
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "b"
+                },
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_nested_correlated",
+          "result_rows": 2
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_document",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "looked_up": [
+                "Alpha"
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "looked_up": [
+                "Beta"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "looked_up": [
+                "Alpha"
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "looked_up": [
+                "Beta"
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_document",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "looked_up": [
+                "Alpha"
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "looked_up": [
+                "Beta"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "looked_up": [
+                "Alpha"
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "looked_up": [
+                "Beta"
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_document",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "looked_up": [
+                "Alpha"
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "looked_up": [
+                "Beta"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "looked_up": [
+                "Alpha"
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "looked_up": [
+                "Beta"
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_nested_document",
+          "result_rows": 2
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_siblings",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            [
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_siblings",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            [
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_siblings",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            [
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_nested_siblings",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_postcollect_rewrite",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "size": 4,
+              "n": 4
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_postcollect_rewrite",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "size": 4,
+              "n": 4
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_postcollect_rewrite",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "size": 4,
+              "n": 4
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_postcollect_rewrite",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_precollect_into",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_precollect_into",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_precollect_into",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_precollect_into",
+          "result_rows": 1
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead.\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_postcollect_sort.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_postcollect_sort.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_postcollect_sort.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead.\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_postcollect_sort.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_contains_mutation.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 16: expected field_access, add_op, mul_op, kw_and, kw_in, or kw_or"
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_contains_mutation.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_contains_mutation.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: parse error at line 1, column 16: expected field_access, add_op, mul_op, kw_and, kw_in, or kw_or\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_contains_mutation.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_into_inline.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_into_inline.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: subqueries are only allowed as LET values\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_mutation_operand.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_mutation_operand.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_mutation_operand.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: subqueries are only allowed as LET values\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_mutation_operand.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_mutation_document.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: DOCUMENT() is not supported in mutation queries"
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_mutation_document.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_mutation_document.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: DOCUMENT() is not supported in mutation queries\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_mutation_document.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "9f5fc2710fcedce2f78e77388bf47e26414795ccf71a5d1a0002b0ac7b826843"
+        },
+        {
+          "kind": "mutation",
+          "case": "parse_ok/sq_mutation_let.cgql",
+          "surface": "/api/query",
+          "expected": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ],
+          "actual": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ]
+        },
+        {
+          "kind": "persisted",
+          "case": "parse_ok/sq_mutation_let.cgql",
+          "surface": "/api/query",
+          "actual": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ]
+        },
+        {
+          "kind": "mutation",
+          "case": "parse_ok/sq_mutation_let.cgql",
+          "surface": "lua",
+          "expected": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ],
+          "actual": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ]
+        },
+        {
+          "kind": "persisted",
+          "case": "parse_ok/sq_mutation_let.cgql",
+          "surface": "lua",
+          "actual": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ]
+        },
+        {
+          "kind": "mutation",
+          "case": "parse_ok/sq_mutation_for.cgql",
+          "surface": "/api/query",
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "persisted",
+          "case": "parse_ok/sq_mutation_for.cgql",
+          "surface": "/api/query",
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "mutation",
+          "case": "parse_ok/sq_mutation_for.cgql",
+          "surface": "lua",
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "persisted",
+          "case": "parse_ok/sq_mutation_for.cgql",
+          "surface": "lua",
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 7: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 7: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 15: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 15: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 23: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 23: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "ce4a3f1a635c94ee6ed256b6ae7c4f7e92f435c8681257b56bbb16debcca85af"
+        },
+        {
+          "kind": "error_class_control",
+          "case": "forbidden",
+          "prefix": "",
+          "surface": "/api/query",
+          "status": 403,
+          "error": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "forbidden",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "status": 403,
+          "error": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "forbidden",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "status": 403,
+          "error": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "forbidden",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "status": 403,
+          "error": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "runtime",
+          "prefix": "",
+          "surface": "/api/query",
+          "status": 500,
+          "error": {
+            "error": "Query execution error: FOR source must be an array"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "runtime",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "status": 500,
+          "error": {
+            "error": "Query execution error: FOR source must be an array"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "runtime",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "status": 500,
+          "error": {
+            "error": "Query execution error: FOR source must be an array"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "runtime",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "status": 500,
+          "error": {
+            "error": "Query execution error: FOR source must be an array"
+          }
+        }
+      ]
+    },
+    "paged": {
+      "checks": 144,
+      "events": [
+        {
+          "kind": "read",
+          "case": "sq_expr_aggregate",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            4.0
+          ],
+          "actual": [
+            4.0
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_aggregate",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            4.0
+          ],
+          "actual": [
+            4.0
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_aggregate",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            4.0
+          ],
+          "actual": [
+            4
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_aggregate",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_collect",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ],
+          "actual": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_collect",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ],
+          "actual": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_collect",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ],
+          "actual": [
+            {
+              "degree": 0,
+              "n": 1
+            },
+            {
+              "degree": 1,
+              "n": 2
+            },
+            {
+              "degree": 2,
+              "n": 1
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_collect",
+          "result_rows": 3
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_filter",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            "a"
+          ],
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_filter",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            "a"
+          ],
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_filter",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            "a"
+          ],
+          "actual": [
+            "a"
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_filter",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_for",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_for",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_for",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_for",
+          "result_rows": 4
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_let_return",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ],
+              "n": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_let_return",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ],
+              "n": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_let_return",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "keys": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ],
+              "n": 4
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_let_return",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_nested",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            [
+              4
+            ]
+          ],
+          "actual": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_nested",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            [
+              4
+            ]
+          ],
+          "actual": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_nested",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            [
+              4
+            ]
+          ],
+          "actual": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_nested",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_sort",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_sort",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_expr_sort",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_expr_sort",
+          "result_rows": 4
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binding_collision",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binding_collision",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binding_collision",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "nested": [
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_nested_binding_collision",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binds",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "first": [
+                11.0,
+                12.0
+              ],
+              "second": [
+                15.0
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "first": [
+                11.0,
+                12.0
+              ],
+              "second": [
+                15.0
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binds",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "first": [
+                11.0,
+                12.0
+              ],
+              "second": [
+                15.0
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "first": [
+                11.0,
+                12.0
+              ],
+              "second": [
+                15.0
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_binds",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "first": [
+                11.0,
+                12.0
+              ],
+              "second": [
+                15.0
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "first": [
+                11,
+                12
+              ],
+              "second": [
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_nested_binds",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_correlated",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "related": [
+                {
+                  "target": "b",
+                  "matched": 1
+                },
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "related": [
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "b"
+                },
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_correlated",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "related": [
+                {
+                  "target": "b",
+                  "matched": 1
+                },
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "related": [
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "b"
+                },
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_correlated",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "related": [
+                {
+                  "target": "b",
+                  "matched": 1
+                },
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "related": [
+                {
+                  "target": "c",
+                  "matched": 1
+                }
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "b"
+                },
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "related": [
+                {
+                  "matched": 1,
+                  "target": "c"
+                }
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_nested_correlated",
+          "result_rows": 2
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_document",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "looked_up": [
+                "Alpha"
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "looked_up": [
+                "Beta"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "looked_up": [
+                "Alpha"
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "looked_up": [
+                "Beta"
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_document",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "looked_up": [
+                "Alpha"
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "looked_up": [
+                "Beta"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "looked_up": [
+                "Alpha"
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "looked_up": [
+                "Beta"
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_document",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "key": "a",
+              "total": 4,
+              "looked_up": [
+                "Alpha"
+              ]
+            },
+            {
+              "key": "b",
+              "total": 4,
+              "looked_up": [
+                "Beta"
+              ]
+            }
+          ],
+          "actual": [
+            {
+              "key": "a",
+              "looked_up": [
+                "Alpha"
+              ],
+              "total": 4
+            },
+            {
+              "key": "b",
+              "looked_up": [
+                "Beta"
+              ],
+              "total": 4
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_nested_document",
+          "result_rows": 2
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_siblings",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            [
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_siblings",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            [
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_nested_siblings",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            [
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_nested_siblings",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_postcollect_rewrite",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            {
+              "size": 4,
+              "n": 4
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_postcollect_rewrite",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            {
+              "size": 4,
+              "n": 4
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_postcollect_rewrite",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            {
+              "size": 4,
+              "n": 4
+            }
+          ],
+          "actual": [
+            {
+              "n": 4,
+              "size": 4
+            }
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_postcollect_rewrite",
+          "result_rows": 1
+        },
+        {
+          "kind": "read",
+          "case": "sq_precollect_into",
+          "surface": "/api/query",
+          "status": 200,
+          "expected": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_precollect_into",
+          "surface": "/api/search/query",
+          "status": 200,
+          "expected": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "read",
+          "case": "sq_precollect_into",
+          "surface": "lua",
+          "status": 200,
+          "expected": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ],
+          "actual": [
+            [
+              0,
+              1,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "kind": "analysis",
+          "case": "sq_precollect_into",
+          "result_rows": 1
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead.\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_postcollect_sort.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_postcollect_sort.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_postcollect_sort.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead.\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_postcollect_sort.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_contains_mutation.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 16: expected field_access, add_op, mul_op, kw_and, kw_in, or kw_or"
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_contains_mutation.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "rejected",
+          "case": "parse_err/sq_contains_mutation.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: parse error at line 1, column 16: expected field_access, add_op, mul_op, kw_and, kw_in, or kw_or\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "parse_err/sq_contains_mutation.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_into_inline.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_into_inline.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: subqueries are only allowed as LET values\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_mutation_operand.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_mutation_operand.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_mutation_operand.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: subqueries are only allowed as LET values\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_mutation_operand.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_mutation_document.cgql",
+          "surface": "/api/query",
+          "status": 400,
+          "error": {
+            "error": "Validation error: DOCUMENT() is not supported in mutation queries"
+          }
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_mutation_document.cgql",
+          "surface": "/api/query",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "rejected",
+          "case": "validate_err/sq_mutation_document.cgql",
+          "surface": "lua",
+          "status": 200,
+          "error": "graph.query: DOCUMENT() is not supported in mutation queries\nstack traceback:\n\t[C]: in function 'graph.query'\n\t[C]: in function 'pcall'\n\tcrates/cognigraph-lua/src/runtime.rs:131:1: in main chunk\n"
+        },
+        {
+          "kind": "unchanged",
+          "case": "validate_err/sq_mutation_document.cgql",
+          "surface": "lua",
+          "snapshot_sha256": "3975753200e32dd8f0d82ecc7e565524e1a365fba121ac80993ea2e314c85c0e"
+        },
+        {
+          "kind": "mutation",
+          "case": "parse_ok/sq_mutation_let.cgql",
+          "surface": "/api/query",
+          "expected": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ],
+          "actual": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ]
+        },
+        {
+          "kind": "persisted",
+          "case": "parse_ok/sq_mutation_let.cgql",
+          "surface": "/api/query",
+          "actual": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ]
+        },
+        {
+          "kind": "mutation",
+          "case": "parse_ok/sq_mutation_let.cgql",
+          "surface": "lua",
+          "expected": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ],
+          "actual": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ]
+        },
+        {
+          "kind": "persisted",
+          "case": "parse_ok/sq_mutation_let.cgql",
+          "surface": "lua",
+          "actual": [
+            [
+              "a",
+              "b",
+              "c",
+              "d"
+            ]
+          ]
+        },
+        {
+          "kind": "mutation",
+          "case": "parse_ok/sq_mutation_for.cgql",
+          "surface": "/api/query",
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "persisted",
+          "case": "parse_ok/sq_mutation_for.cgql",
+          "surface": "/api/query",
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "mutation",
+          "case": "parse_ok/sq_mutation_for.cgql",
+          "surface": "lua",
+          "expected": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "persisted",
+          "case": "parse_ok/sq_mutation_for.cgql",
+          "surface": "lua",
+          "actual": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 7: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 7: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 15: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 15: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 23: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "syntax",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error at line 1, column 23: expected unary_expr or kw_distinct"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "syntax",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "scope",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: identifier `unknown` is not in scope"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "scope",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: parse error: a subquery in SORT or RETURN after COLLECT cannot be lifted: COLLECT drops row variables, so the subquery would not see what it reads. Bind it to a LET before the COLLECT instead."
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "parse_err/sq_postcollect_return.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "client_plan_error",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "desired_status": 400,
+          "actual_status": 400,
+          "error": {
+            "error": "Validation error: subqueries are only allowed as LET values"
+          }
+        },
+        {
+          "kind": "plan_error_unchanged",
+          "case": "validate_err/sq_into_inline.cgql",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "snapshot_sha256": "515a5c3d14d8c3e794fcee7cd73c703744c244cffc1aa8e90ff603df0c24f910"
+        },
+        {
+          "kind": "error_class_control",
+          "case": "forbidden",
+          "prefix": "",
+          "surface": "/api/query",
+          "status": 403,
+          "error": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "forbidden",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "status": 403,
+          "error": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "forbidden",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "status": 403,
+          "error": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "forbidden",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "status": 403,
+          "error": {
+            "error": "Forbidden: collection `_users` is system-reserved and not accessible through the API"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "runtime",
+          "prefix": "",
+          "surface": "/api/query",
+          "status": 500,
+          "error": {
+            "error": "Query execution error: FOR source must be an array"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "runtime",
+          "prefix": "",
+          "surface": "/api/search/query",
+          "status": 500,
+          "error": {
+            "error": "Query execution error: FOR source must be an array"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "runtime",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/query",
+          "status": 500,
+          "error": {
+            "error": "Query execution error: FOR source must be an array"
+          }
+        },
+        {
+          "kind": "error_class_control",
+          "case": "runtime",
+          "prefix": "EXPLAIN ANALYZE ",
+          "surface": "/api/search/query",
+          "status": 500,
+          "error": {
+            "error": "Query execution error: FOR source must be an array"
+          }
+        }
+      ]
+    }
+  }
+}

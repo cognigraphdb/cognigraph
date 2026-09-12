@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-12",
+  "issue": "CG-68",
+  "results": [
+    {
+      "command": [
+        "python3",
+        "scripts/check-docs.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"documents\": 417,\n  \"local_links_checked\": 2320,\n  \"optional_product_links_skipped\": 18,\n  \"changelog_records\": 143,\n  \"errors\": []\n}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check-docs.py",
+        "--include-product"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"documents\": 437,\n  \"local_links_checked\": 2420,\n  \"optional_product_links_skipped\": 0,\n  \"changelog_records\": 143,\n  \"errors\": []\n}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check-decision-index.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"decisions\": 57,\n  \"inventory_rows\": 57,\n  \"categories\": {\n    \"Standing conventions\": 7,\n    \"Platform contracts\": 19,\n    \"Construction and review contracts\": 9,\n    \"Governed operations and authority generations\": 12,\n    \"Research evidence and historical priorities\": 9,\n    \"Superseded identity history\": 1\n  },\n  \"statuses\": {\n    \"Active\": 13,\n    \"Amended\": 33,\n    \"Historical\": 2,\n    \"Research\": 9\n  },\n  \"local_links_checked\": 168,\n  \"markdown_anchors_checked\": 20,\n  \"external_links_not_checked\": 0,\n  \"optional_product_links_not_checked\": 1,\n  \"errors\": []\n}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/issue.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"issues\": 68,\n  \"registry_rows\": 68,\n  \"errors\": []\n}\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": ""
+    }
+  ]
+}

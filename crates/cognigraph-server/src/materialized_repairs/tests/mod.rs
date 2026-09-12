@@ -3,8 +3,6 @@ use std::path::PathBuf;
 use std::sync::Arc;
 use std::time::Duration;
 
-use cognigraph_arango::ArangoBackend;
-
 use super::*;
 use crate::jobs::JobManager;
 

@@ -1,8 +1,11 @@
 # CGQL test corpus
 
 Reusable `.cgql` files exercised by `tests/corpus.rs` (in-memory executor)
-and by `crates/cognigraph-native/tests/cgql_corpus.rs` (the same queries
-through `NativeBackend::query()` — dual-engine equivalence).
+and by `crates/cognigraph-native/tests/cgql_corpus.rs` through
+`NativeBackend::query()`. Native runs the expected-result cases in memory and
+in persistent resident/embedded, resident/sidecar and paged/sidecar modes,
+before and after reopening each persistent store without reseeding. These
+paths share the CGQL implementation; they are not independent language oracles.
 
 - `parse_ok/` — must parse, validate, and plan
 - `parse_err/` — must fail parsing

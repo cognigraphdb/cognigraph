@@ -23,32 +23,6 @@ use cognigraph_core::{
     IndexDef, QueryLanguage, Result, SearchHit, TraversalOpts, TraversalPath,
 };
 
-/// Control-store collections that a raw (non-CGQL) query string must never
-/// name. CGQL is parsed and rejects EVERY underscore-prefixed source; raw
-/// AQL can't be parsed here, so the known control collections are matched
-/// textually instead.
-const CONTROL_COLLECTIONS: [&str; 19] = [
-    "_users",
-    "_tokens",
-    "_tenants",
-    "_cognigraph_jobs",
-    "_cognigraph_job_archive",
-    "_cognigraph_job_catalog",
-    "_cognigraph_evaluation_evidence",
-    "_cognigraph_promotion_decisions",
-    "_cognigraph_promotion_heads",
-    "_cognigraph_governance_keys",
-    "_cognigraph_governance_key_revocations",
-    "_cognigraph_promotion_policy_revisions",
-    "_cognigraph_promotion_policy_approvals",
-    "_cognigraph_artifact_attestations",
-    "_cognigraph_semantic_repair_revisions",
-    "_cognigraph_semantic_repair_reviews",
-    "_cognigraph_semantic_repair_generations",
-    "_cognigraph_semantic_repair_deployment_decisions",
-    "_cognigraph_semantic_repair_deployment_heads",
-];
-
 /// Semantic authority and deterministically derived graph collections.
 ///
 /// These deliberately remain ordinary (non-underscore) collection names so
@@ -206,131 +180,6 @@ pub fn deny_system_collections_in_cgql(query: &str) -> Result<()> {
             };
             deny_managed_collection_mutation(&collection)?;
             deny_generated_collection_mutation(&collection)?;
-        }
-    }
-    Ok(())
-}
-
-/// Textual check for raw backend-native queries (AQL): reject when a known
-/// control or managed collection appears as a standalone token. Raw queries
-/// cannot be classified safely as read-only across backend dialects, so they
-/// never receive access to governed collections. Attribute accesses
-/// (`doc._users`) and bind-var names (`@_users`) don't count; bind-var VALUES
-/// naming a denied collection (`@@coll` → "_users") do.
-fn deny_control_collections_in_raw_query(
-    query: &str,
-    bind_vars: &HashMap<String, serde_json::Value>,
-) -> Result<()> {
-    fn references_collection(value: &serde_json::Value, name: &str) -> bool {
-        match value {
-            serde_json::Value::String(value) => {
-                value == name
-                    || value
-                        .strip_prefix(name)
-                        .is_some_and(|suffix| suffix.starts_with('/'))
-            }
-            serde_json::Value::Array(values) => values
-                .iter()
-                .any(|value| references_collection(value, name)),
-            serde_json::Value::Object(values) => values
-                .values()
-                .any(|value| references_collection(value, name)),
-            _ => false,
-        }
-    }
-
-    fn is_ident(ch: char) -> bool {
-        ch.is_alphanumeric() || ch == '_'
-    }
-    let query_upper = query.to_ascii_uppercase();
-    for capability in [
-        // CALL/APPLY would otherwise reconstruct every denied function name
-        // dynamically (for example CALL(CONCAT("DOC", "UMENT"), ...)).
-        "CALL",
-        "APPLY",
-        "DOCUMENT",
-        "COLLECTIONS",
-        "COLLECTION_COUNT",
-        "EDGES",
-        "NEIGHBORS",
-        "PATHS",
-        "TRAVERSAL",
-        "FULLTEXT",
-        "NEAR",
-        "WITHIN",
-        "WITHIN_RECTANGLE",
-        "GRAPH_COMMON_NEIGHBORS",
-        "GRAPH_COMMON_PROPERTIES",
-        "GRAPH_DISTANCE_TO",
-        "GRAPH_EDGES",
-        "GRAPH_NEIGHBORS",
-        "GRAPH_PATHS",
-        "GRAPH_SHORTEST_PATH",
-        "GRAPH_TRAVERSAL",
-        "OUTBOUND",
-        "INBOUND",
-        "ANY",
-        "SHORTEST_PATH",
-        "K_SHORTEST_PATHS",
-        "ALL_SHORTEST_PATHS",
-    ] {
-        if query_upper.match_indices(capability).any(|(index, _)| {
-            let before = query_upper[..index].chars().next_back();
-            let after = query_upper[index + capability.len()..].chars().next();
-            !matches!(before, Some(ch) if is_ident(ch) || ch == '.' || ch == '@')
-                && !matches!(after, Some(ch) if is_ident(ch))
-        }) {
-            return Err(CogniGraphError::Forbidden(format!(
-                "raw AQL capability `{capability}` is disabled because it can construct system-reserved document handles"
-            )));
-        }
-    }
-    for name in CONTROL_COLLECTIONS {
-        for (index, _) in query.match_indices(name) {
-            let before = query[..index].chars().next_back();
-            let after = query[index + name.len()..].chars().next();
-            let standalone = !matches!(before, Some(ch) if is_ident(ch) || ch == '.' || ch == '@')
-                && !matches!(after, Some(ch) if is_ident(ch));
-            if standalone {
-                return Err(forbidden(name));
-            }
-        }
-        for value in bind_vars.values() {
-            if references_collection(value, name) {
-                return Err(forbidden(name));
-            }
-        }
-    }
-    for name in MANAGED_COLLECTIONS {
-        for (index, _) in query.match_indices(name) {
-            let before = query[..index].chars().next_back();
-            let after = query[index + name.len()..].chars().next();
-            let standalone = !matches!(before, Some(ch) if is_ident(ch) || ch == '.' || ch == '@')
-                && !matches!(after, Some(ch) if is_ident(ch));
-            if standalone {
-                return Err(managed_mutation_forbidden(name));
-            }
-        }
-        for value in bind_vars.values() {
-            if references_collection(value, name) {
-                return Err(managed_mutation_forbidden(name));
-            }
-        }
-    }
-    for name in GENERATED_COLLECTIONS {
-        for (index, _) in query.match_indices(name) {
-            let before = query[..index].chars().next_back();
-            let after = query[index + name.len()..].chars().next();
-            let standalone = !matches!(before, Some(ch) if is_ident(ch) || ch == '.' || ch == '@')
-                && !matches!(after, Some(ch) if is_ident(ch));
-            if standalone {
-                return Err(generated_mutation_forbidden(name));
-            }
-        }
-        for value in bind_vars.values() {
-            if references_collection(value, name) {
-                return Err(generated_mutation_forbidden(name));
-            }
         }
     }
     Ok(())
@@ -679,20 +528,19 @@ impl GraphBackend for GuardedBackend {
         // through this facade). Execute the parsed query against this facade
         // so runtime traversal starts and returned vertices receive the same
         // system-collection checks as direct trait calls.
-        if self.inner.query_language() == QueryLanguage::Cgql {
-            deny_system_collections_in_cgql(query)?;
-            return match cognigraph_query::parse_and_execute_backend(query, self, &bind_vars).await
-            {
-                Ok(rows) => Ok(rows),
-                Err(cognigraph_query::ExecutionError::Forbidden(message)) => {
-                    Err(CogniGraphError::Forbidden(message))
-                }
-                Err(error) => Err(CogniGraphError::QueryError(error.to_string())),
-            };
-        } else {
-            deny_control_collections_in_raw_query(query, &bind_vars)?;
+        if self.inner.query_language() != QueryLanguage::Cgql {
+            return Err(CogniGraphError::Forbidden(
+                "queries require a backend with parsed CGQL support".into(),
+            ));
         }
-        self.inner.query(query, bind_vars).await
+        deny_system_collections_in_cgql(query)?;
+        match cognigraph_query::parse_and_execute_backend(query, self, &bind_vars).await {
+            Ok(rows) => Ok(rows),
+            Err(cognigraph_query::ExecutionError::Forbidden(message)) => {
+                Err(CogniGraphError::Forbidden(message))
+            }
+            Err(error) => Err(CogniGraphError::QueryError(error.to_string())),
+        }
     }
 
     async fn ensure_collection(&self, name: &str, collection_type: CollectionType) -> Result<()> {
@@ -1194,16 +1042,6 @@ mod tests {
             assert_generated_forbidden(backend.query(&query, HashMap::new()).await);
         }
 
-        // Raw backend-native text can't be classified read vs write, so any
-        // reference is rejected — the same policy managed collections get.
-        let none = HashMap::new();
-        assert!(
-            deny_control_collections_in_raw_query(
-                &format!("FOR sv IN {SIDE_VIEWS_COLLECTION} RETURN sv"),
-                &none,
-            )
-            .is_err()
-        );
         assert!(deny_generated_collection_mutation("notes").is_ok());
     }
 
@@ -1312,147 +1150,21 @@ mod tests {
         );
     }
 
-    #[test]
-    fn raw_query_screen_matches_restricted_collections_only() {
-        let none = HashMap::new();
-        assert!(deny_control_collections_in_raw_query("FOR u IN _users RETURN u", &none).is_err());
-        assert!(
-            deny_control_collections_in_raw_query("INSERT {} INTO _tokens RETURN NEW", &none)
-                .is_err()
-        );
-        assert!(
-            deny_control_collections_in_raw_query("FOR j IN _cognigraph_jobs RETURN j", &none,)
-                .is_err()
-        );
-        for collection in [
-            "_cognigraph_evaluation_evidence",
-            "_cognigraph_promotion_decisions",
-            "_cognigraph_promotion_heads",
-            "_cognigraph_governance_keys",
-            "_cognigraph_governance_key_revocations",
-            "_cognigraph_promotion_policy_revisions",
-            "_cognigraph_promotion_policy_approvals",
-            "_cognigraph_semantic_repair_revisions",
-            "_cognigraph_semantic_repair_reviews",
-            "_cognigraph_semantic_repair_generations",
-            "_cognigraph_semantic_repair_deployment_decisions",
-            "_cognigraph_semantic_repair_deployment_heads",
+    #[tokio::test]
+    async fn opaque_queries_are_rejected_before_any_backend_access() {
+        let probe = Arc::new(cognigraph_core::contract::NoAccessBackend::default());
+        let backend = GuardedBackend::new(probe.clone());
+        for query in [
+            "RETURN 1",
+            "FOR row IN notes RETURN row",
+            "RETURN DOCUMENT(CONCAT('_us', 'ers/admin'))",
+            "INSERT {} INTO notes",
         ] {
-            assert!(
-                deny_control_collections_in_raw_query(
-                    &format!("FOR record IN {collection} RETURN record"),
-                    &none,
-                )
-                .is_err(),
-                "raw queries must not expose {collection}"
-            );
+            let error = backend.query(query, HashMap::new()).await.unwrap_err();
+            assert!(matches!(error, CogniGraphError::Forbidden(message)
+                if message.contains("parsed CGQL support")));
         }
-        // Attribute access and bind-var NAMES are not collection references.
-        assert!(
-            deny_control_collections_in_raw_query("FOR d IN docs RETURN d._users", &none).is_ok()
-        );
-        assert!(
-            deny_control_collections_in_raw_query(
-                "FOR d IN docs FILTER d.x == @_users RETURN d",
-                &none
-            )
-            .is_ok()
-        );
-        // A bind-var VALUE naming a control collection is (`FOR u IN @@coll`).
-        let mut vars = HashMap::new();
-        vars.insert("@coll".to_string(), json!("_users"));
-        assert!(deny_control_collections_in_raw_query("FOR u IN @@coll RETURN u", &vars).is_err());
-
-        for collection in [
-            "_cognigraph_evaluation_evidence",
-            "_cognigraph_promotion_decisions",
-            "_cognigraph_promotion_heads",
-            "_cognigraph_governance_keys",
-            "_cognigraph_governance_key_revocations",
-            "_cognigraph_promotion_policy_revisions",
-            "_cognigraph_promotion_policy_approvals",
-            "_cognigraph_semantic_repair_revisions",
-            "_cognigraph_semantic_repair_reviews",
-            "_cognigraph_semantic_repair_generations",
-            "_cognigraph_semantic_repair_deployment_decisions",
-            "_cognigraph_semantic_repair_deployment_heads",
-        ] {
-            for value in [
-                json!(format!("{collection}/record-key")),
-                json!(["public/key", format!("{collection}/record-key")]),
-                json!({"nested": {"handle": format!("{collection}/record-key")}}),
-            ] {
-                let vars = HashMap::from([("id".to_string(), value)]);
-                assert!(
-                    deny_control_collections_in_raw_query("RETURN DOCUMENT(@id)", &vars).is_err(),
-                    "raw bind values must not expose document handles in {collection}"
-                );
-            }
-        }
-        assert!(
-            deny_control_collections_in_raw_query(
-                "RETURN DOCUMENT(CONCAT('_cognigraph_evaluation_', 'evidence/', @key))",
-                &HashMap::from([("key".into(), json!("record-key"))]),
-            )
-            .is_err()
-        );
-        assert!(
-            deny_control_collections_in_raw_query(
-                "RETURN DoCuMeNt(CONCAT('_cognigraph_evaluation_', 'evidence/', @key))",
-                &HashMap::from([("key".into(), json!("record-key"))]),
-            )
-            .is_err()
-        );
-        assert!(
-            deny_control_collections_in_raw_query(
-                "RETURN CALL(CONCAT('DOC', 'UMENT'), CONCAT('_cognigraph_evaluation_', 'evidence/', @key))",
-                &HashMap::from([("key".into(), json!("record-key"))]),
-            )
-            .is_err()
-        );
-        assert!(
-            deny_control_collections_in_raw_query(
-                "RETURN aPpLy('DOCUMENT', [@id])",
-                &HashMap::from([(
-                    "id".into(),
-                    json!("_cognigraph_promotion_decisions/record-key"),
-                )]),
-            )
-            .is_err()
-        );
-        assert!(
-            deny_control_collections_in_raw_query(
-                "FOR vertex IN 0..0 OUTBOUND CONCAT('_cognigraph_promotion_', 'heads/', @key) public_edges RETURN vertex",
-                &HashMap::from([("key".into(), json!("record-key"))]),
-            )
-            .is_err()
-        );
-
-        // Backend-native query text is not trusted to distinguish reads from
-        // writes, so managed collections are entirely unavailable there.
-        for collection in MANAGED_COLLECTIONS {
-            assert!(
-                deny_control_collections_in_raw_query(
-                    &format!("FOR record IN {collection} RETURN record"),
-                    &none,
-                )
-                .is_err(),
-                "raw queries must not reference managed collection {collection}"
-            );
-            let vars = HashMap::from([("@collection".to_string(), json!(collection))]);
-            assert!(
-                deny_control_collections_in_raw_query(
-                    "FOR record IN @@collection RETURN record",
-                    &vars,
-                )
-                .is_err(),
-                "raw bind values must not name managed collection {collection}"
-            );
-        }
-        assert!(
-            deny_control_collections_in_raw_query("FOR d IN docs RETURN d.neurons", &none).is_ok(),
-            "an attribute named like a managed collection is not a collection reference"
-        );
+        probe.assert_unused();
     }
 
     #[tokio::test]

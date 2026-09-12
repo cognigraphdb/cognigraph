@@ -156,8 +156,7 @@ def main():
         return
     repository, state, prs, _ = preflight(remote, updates, head)
     verify.run('ci')
-    if any(ref == 'refs/heads/main' for _, _, ref, _ in updates):
-        verify.run('docker')
+    verify.run('docker')
     clean()
     require(output('git', 'rev-parse', 'HEAD') == head, 'HEAD changed during verification')
     require(remote_state(remote) == state, 'Remote refs changed during verification; review incoming work again')

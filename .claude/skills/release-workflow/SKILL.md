@@ -23,7 +23,8 @@ incoming-PR processing, a product version bump and all applicable CI checks loca
   there is no established `develop` release flow. Do not infer protection or
   approval rules from a local branch name.
 - Inspect automation before promising it. At this revision,
-  [ci.yml](../../../.github/workflows/ci.yml) is manually dispatched and there is
+  [ci.yml](../../../.github/workflows/ci.yml) verifies PRs and main pushes, also
+  supports manual dispatch, and there is
   no `release.yml` artifact workflow. A tag push alone does not run release CI
   or produce binaries. Re-check this at release time.
 - Identify the previous release tag relevant to the target and compare its
@@ -75,7 +76,7 @@ python3 scripts/check-decision-index.py
 
 Before pushing, run all additional checks required by the current CI workflows
 and root push procedure, including the server modularity guard and the Docker
-build for `main`. Run applicable UI checks from repository instructions.
+build and Helm backup checks for every outgoing branch. Run applicable UI checks from repository instructions.
 Exercise changed features through the real binary with disposable data. Record
 credential-gated skips separately. Resolve failures before proceeding; when
 fixes are already authorized, make them and rerun the affected gates.
@@ -121,8 +122,8 @@ the candidate. Check tag absence, then create an annotated tag at that exact
 commit when tagging is authorized. Verify its resolved commit, branch ancestry
 and the tagged manifest. Push only the specific authorized refs.
 
-When remote CI is required, deliberately dispatch the available workflow on the
-candidate branch/ref and record the run and commit tested. A local build or push
+Record the automatic PR/main workflow run and commit tested. Use manual
+dispatch when verification is needed on a branch without a PR. A local build or push
 does not establish green remote CI. Report which binaries, image, GitHub release
 or registry packages were actually produced.
 

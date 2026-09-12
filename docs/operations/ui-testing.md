@@ -2,8 +2,9 @@
 
 The shared `ci` suite runs the frozen Bun install, Biome/TypeScript, Bun unit
 tests and production build, the Rust/documentation gates, then Chromium browser
-regressions against real Community and Enterprise binaries. The manual CI trigger
-is unchanged; these checks also run through the local pre-push gate.
+regressions against real Community and Enterprise binaries. CI runs on PRs to
+main, main pushes and manual dispatch; these checks also run through the local
+pre-push gate. [Continuous verification](ci.md) owns the complete workflow.
 
 ## Setup and commands
 
@@ -65,7 +66,7 @@ other origins fail the test. Expected 401/403 and verified empty-catalog 404
 behavior are scoped explicitly. Browser contexts are fresh per case. Synthetic
 collection/user identifiers are isolated; fixture data is deleted with the store.
 
-This suite makes no provider requests and does not run ArangoDB, model benchmarks
+This suite makes no provider requests and does not run model benchmarks
 or research holdouts. It does not cover every governance/job workflow or every
 browser/OS. Manual scoped QA remains required for behavior outside these cases.
 
@@ -74,8 +75,8 @@ control-loop tests. The two external embedding tests are marked ignored before
 dotenv loading. Separate, explicitly authorized provider qualification uses
 `cargo test -p cognigraph-embeddings --test live_providers -- --ignored`; missing
 keys fail that opted-in command. Normal `cargo test --all` reports these tests as
-ignored and makes no calls from them. Arango's existing credential-gated tests
-remain separate from the browser suite's executed Native coverage.
+ignored and makes no calls from them. The two construction live-loop cases
+return early with `COGNIGRAPH_LIVE_LLM=0`; the shared CI runner sets this value.
 
 ## Results and failure qualification
 

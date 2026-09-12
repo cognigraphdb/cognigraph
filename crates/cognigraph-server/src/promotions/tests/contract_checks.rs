@@ -34,11 +34,11 @@ fn canonical_digest_normalizes_nfc_and_object_order() {
         scoped_key(TENANT, INCARNATION, "d", &"b".repeat(64)),
         head_key(TENANT, INCARNATION, &target).unwrap(),
     ] {
-        assert!(key.len() <= 254, "Arango key is too long: {key}");
+        assert!(key.len() <= 254, "record key is too long: {key}");
         assert!(
             key.chars()
                 .all(|ch| ch.is_ascii_alphanumeric() || "_-.@()+,=;$!*'%:".contains(ch)),
-            "Arango-unsafe key: {key}"
+            "unsafe record key: {key}"
         );
     }
 }

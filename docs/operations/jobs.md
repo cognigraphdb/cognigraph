@@ -253,12 +253,9 @@ HTTP 409. Retention is an eligibility cutoff, not an automatic deletion timer,
 and M17 performs **no purge**; any destructive archive-retention policy is a
 separate operator decision.
 
-Do not shorten `_cognigraph_jobs` to `_jobs`: that is an ArangoDB-owned system
-collection. Persistent native stores include the live records, catalog, and
-archive in snapshots and cold backups. In-memory mode executes the API but
-cannot provide restart recovery. Maintenance-mode ArangoDB persists jobs,
-catalog, archive, and evaluations; `construct.ingest` becomes a failed job
-before graph writes because Arango does not advertise atomic batches.
+`_cognigraph_jobs` is the reserved collection for durable jobs. Persistent
+Native stores include the live records, catalog, and archive in snapshots and
+cold backups. In-memory mode executes the API but cannot provide restart recovery.
 
 `GET /health/jobs` reports collection, data, and catalog errors latched by
 startup recovery or queue/list/archive/reconciliation operations; it is not a

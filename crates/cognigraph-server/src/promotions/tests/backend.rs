@@ -16,7 +16,7 @@ impl GraphBackend for FailNextBatchBackend {
         self.inner.backend_name()
     }
 
-    fn query_language(&self) -> QueryLanguage {
+    fn query_language(&self) -> cognigraph_core::QueryLanguage {
         self.inner.query_language()
     }
 

@@ -3,22 +3,9 @@
 use super::*;
 
 #[tokio::test]
-async fn arango_build_fails_at_atomic_capability_before_cas_or_backend_access() {
-    let reserved =
-        std::net::TcpListener::bind("127.0.0.1:0").expect("reserve an unreachable Arango endpoint");
-    let endpoint = format!(
-        "http://{}",
-        reserved.local_addr().expect("read reserved endpoint")
-    );
-    drop(reserved);
-
-    let backend: Arc<dyn cognigraph_core::GraphBackend> = Arc::new(ArangoBackend::connect(
-        endpoint,
-        "unreachable-m26",
-        "nobody",
-        "not-a-secret",
-    ));
-    assert_eq!(backend.backend_name(), "arango");
+async fn non_atomic_build_fails_before_cas_or_backend_access() {
+    let probe = Arc::new(cognigraph_core::contract::NoAccessBackend::default());
+    let backend: Arc<dyn cognigraph_core::GraphBackend> = probe.clone();
     assert!(!backend.supports_atomic_batches());
     let jobs = Arc::new(JobManager::new(backend.clone(), 1));
     let manager = PromotionManager::new(backend, jobs);
@@ -36,7 +23,7 @@ async fn arango_build_fails_at_atomic_capability_before_cas_or_backend_access() 
                 username: "promoter@example.test".into(),
                 role: Role::Promoter,
             },
-            "m26-arango-capability",
+            "m26-non-atomic-capability",
             BuildSemanticRepairGenerationRequest {
                 target: PromotionTarget {
                     space_type: "pharma".into(),
@@ -47,13 +34,14 @@ async fn arango_build_fails_at_atomic_capability_before_cas_or_backend_access() 
         )),
     )
     .await
-    .expect("M26 capability rejection must not wait for Arango")
-    .expect_err("non-atomic Arango must reject M26 generation builds");
+    .expect("M26 capability rejection must not wait for storage")
+    .expect_err("non-atomic backend must reject M26 generation builds");
     assert!(matches!(
         result,
         CogniGraphError::ConnectionError(message)
-            if message == "M26 verified Semantic Repair materialization requires atomic batch support; backend `arango` is unsupported"
+            if message == "M26 verified Semantic Repair materialization requires atomic batch support; backend `no-access-test` is unsupported"
     ));
+    probe.assert_unused();
     assert_eq!(
         fs::read_dir(cas_root.0.join("tenants"))
             .expect("inspect CAS after rejected build")
@@ -67,7 +55,7 @@ fn non_atomic_repository_probe_requires_all_protected_collections_to_be_absent()
     assert_eq!(M26_PROTECTED_COLLECTIONS.len(), 3);
     for collection in M26_PROTECTED_COLLECTIONS {
         validate_non_atomic_repository_probe(
-            "arango",
+            "non-atomic-test",
             collection,
             Err(CogniGraphError::CollectionNotFound("missing".into())),
         )
@@ -75,9 +63,9 @@ fn non_atomic_repository_probe_requires_all_protected_collections_to_be_absent()
 
         for present in [Vec::new(), vec![json!({"_key": "authority"})]] {
             assert!(matches!(
-                validate_non_atomic_repository_probe("arango", collection, Ok(present)),
+                validate_non_atomic_repository_probe("non-atomic-test", collection, Ok(present)),
                 Err(CogniGraphError::ConnectionError(message))
-                    if message.contains(collection) && message.contains("arango")
+                    if message.contains(collection) && message.contains("non-atomic-test")
             ));
         }
     }
@@ -85,7 +73,7 @@ fn non_atomic_repository_probe_requires_all_protected_collections_to_be_absent()
     for collection in M26_PROTECTED_COLLECTIONS {
         assert!(matches!(
             validate_non_atomic_repository_probe(
-                "arango",
+                "non-atomic-test",
                 collection,
                 Err(CogniGraphError::BackendError("probe failed".into())),
             ),

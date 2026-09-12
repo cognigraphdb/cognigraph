@@ -41,32 +41,17 @@ impl LuaEngine {
         Self::with_backend_mode(backend, handle, false)
     }
 
-    /// `allow_writes` enables mutation-capable graph bindings. Opaque
-    /// backend-native query passthrough remains disabled by this convenience
-    /// constructor.
+    /// `allow_writes` enables mutation-capable graph bindings. Queries always
+    /// use parsed CGQL under the same read/write permission and execution limits.
     pub fn with_backend_mode(
         backend: Arc<dyn GraphBackend>,
         handle: Handle,
         allow_writes: bool,
     ) -> Result<Self, mlua::Error> {
-        Self::with_backend_permissions(backend, handle, allow_writes, false)
-    }
-
-    /// Create an engine with independent typed-mutation and opaque
-    /// backend-query permissions. Enabling the latter is an explicit unsafe
-    /// trust-boundary choice for embedders; the CogniGraph server never enables
-    /// it for AQL because textual collection screening is bypassable.
-    pub fn with_backend_permissions(
-        backend: Arc<dyn GraphBackend>,
-        handle: Handle,
-        allow_writes: bool,
-        allow_backend_queries: bool,
-    ) -> Result<Self, mlua::Error> {
         Self::with_backend_control(
             backend,
             handle,
             allow_writes,
-            allow_backend_queries,
             LuaExecutionControl::default(),
         )
     }
@@ -76,7 +61,6 @@ impl LuaEngine {
         backend: Arc<dyn GraphBackend>,
         handle: Handle,
         allow_writes: bool,
-        allow_backend_queries: bool,
         control: LuaExecutionControl,
     ) -> Result<Self, mlua::Error> {
         let engine = Self::with_control(control.clone())?;
@@ -85,7 +69,6 @@ impl LuaEngine {
             backend,
             handle,
             allow_writes,
-            allow_backend_queries,
             control,
         )?;
         Ok(engine)

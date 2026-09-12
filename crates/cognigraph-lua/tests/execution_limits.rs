@@ -6,6 +6,27 @@ use cognigraph_native::NativeBackend;
 use cognigraph_query::ExecutionBudget;
 use serde_json::json;
 
+#[tokio::test(flavor = "multi_thread")]
+async fn write_permission_never_enables_opaque_query_passthrough() {
+    for allow_writes in [false, true] {
+        let backend = Arc::new(cognigraph_core::contract::NoAccessBackend::default());
+        let probe = backend.clone();
+        let handle = tokio::runtime::Handle::current();
+        tokio::task::spawn_blocking(move || {
+            let engine = LuaEngine::with_backend_mode(backend, handle, allow_writes).unwrap();
+            for query in ["RETURN 1", "INSERT {} INTO notes"] {
+                let script = format!("return graph.query({query:?})");
+                let error = engine.execute(&script).unwrap_err();
+                assert!(cognigraph_lua::is_access_denied(&error));
+                assert!(error.to_string().contains("parsed CGQL support"));
+            }
+        })
+        .await
+        .unwrap();
+        probe.assert_unused();
+    }
+}
+
 #[test]
 fn jit_and_loader_restoration_are_unavailable() {
     let engine = LuaEngine::new().unwrap();
@@ -57,8 +78,7 @@ async fn both_query_permissions_receive_row_limits_and_share_elapsed_time() {
                 time_budget_ms: Some(100),
             });
             let engine =
-                LuaEngine::with_backend_control(backend, handle, allow_writes, false, control)
-                    .unwrap();
+                LuaEngine::with_backend_control(backend, handle, allow_writes, control).unwrap();
             engine.set_instruction_limit(u32::MAX);
             let err = engine
                 .execute(r#"return graph.query("FOR n IN [1,2,3,4,5] RETURN n")"#)

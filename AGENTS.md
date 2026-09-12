@@ -49,11 +49,17 @@ nested instructions before editing a component, including [ui/AGENTS.md](ui/AGEN
 
 ## Query And Backend Direction
 
-- Native is the strategic backend; ArangoDB is maintained for reference and
-  conformance. Preserve the shared `GraphBackend` contract and explicit
-  capability boundaries; do not silently emulate unsupported guarantees.
-- Public query text uses parsed CGQL. Opaque AQL is an internal ArangoDB detail,
-  not a public escape hatch selected from a backend's declared query language.
+- Native is the only runtime storage backend. Follow the
+  [storage decision](docs/decisions/decision_native_only.md) and
+  [batch plan](docs/plans/native-only-2026-09-12.md). The owner confirms no
+  external delivery or live deployment yet. [CG-68](docs/issues/CG-68.md) records
+  local readiness; follow the [first-deployment guide](docs/operations/first-deployment.md)
+  and requalify changed runtime/build inputs before deployment. CG-64/CG-66
+  are optional deferred importer work.
+  Preserve useful `GraphBackend` contracts, Native storage modes and explicit
+  capabilities, including guarded and tenant-scoped wrappers.
+- Public HTTP and Lua query text uses parsed CGQL. Backend language declarations
+  and caller roles must never enable opaque query passthrough.
 - Keep `graph.query()` as the Lua query entry point and preserve the separate
   authorization of HTTP read and mutation surfaces.
 - Keep grammar, validation, planning and executor ownership in `cognigraph-query`;
@@ -74,8 +80,8 @@ nested instructions before editing a component, including [ui/AGENTS.md](ui/AGEN
 
 ```bash
 cargo fmt --all -- --check
-cargo clippy --all-targets -- -D warnings
-cargo test --all
+cargo clippy --locked --all-targets -- -D warnings
+cargo test --locked --all
 ```
 
 - If formatting fails because code needs rewriting, run `cargo fmt --all`, then rerun the validation commands.
@@ -136,12 +142,16 @@ failing hook with `--no-verify` or disable it to publish an unchecked candidate.
    and record the version in `docs/changelog/`. Use a patch increment for routine
    compatible fixes/docs; features and breaking changes require the appropriate
    semantic version increment. Honor any exact version already chosen by the user.
+   The [pre-deployment Native-only decision](docs/decisions/decision_native_only.md)
+   explicitly permits breaking cleanup without a mandatory major jump solely
+   for Arango removal; the per-push version increment and verification still apply.
    Compare with the latest published product version, not only the last local tag.
    Branch and release-tag refs publishing the same candidate share one version;
    a retry of that unchanged candidate does not require another increment.
 3. Inspect the current [CI workflows](.github/workflows/) and run every applicable
    check locally against the final integrated, versioned candidate. This gate
-   applies even while remote CI is manual and even for docs-only pushes. Currently:
+   applies to PR branches and even to docs-only pushes. The shared runners below
+   are authoritative; [CI setup](docs/operations/ci.md) owns tool prerequisites. Currently:
 
    ```sh
    cargo fmt --all -- --check
@@ -150,16 +160,20 @@ failing hook with `--no-verify` or disable it to publish an unchecked candidate.
    python3 scripts/check-docs.py
    python3 scripts/check-decision-index.py
    python3 scripts/issue.py check
-   cargo clippy --all-targets -- -D warnings
-   cargo test --all
+   cargo clippy --locked --all-targets -- -D warnings
+   cargo test --locked --all
    python3 scripts/check-editions.py
-   cargo clippy --all-targets --features enterprise -- -D warnings
-   cargo test --all --features enterprise
+   cargo clippy --locked --all-targets --features enterprise -- -D warnings
+   cargo test --locked --all --features enterprise
    python3 scripts/verify.py --suite ui
    python3 scripts/verify.py --suite ui-browser
+   python3 scripts/verify.py --suite native
+   python3 scripts/verify.py --suite helm
+   python3 scripts/verify.py --suite advisories
+   actionlint
    ```
 
-   For a push to `main`, also run the CI Docker build:
+   For every outgoing branch candidate, also run the CI Docker build and Helm backups:
    `python3 scripts/verify.py --suite docker` (Community and Enterprise). Follow current workflow conditions and toolchain
    requirements if they change. Run the relevant UI gates and real-binary/browser
    regression checks for affected behavior. A failed or unavailable required check

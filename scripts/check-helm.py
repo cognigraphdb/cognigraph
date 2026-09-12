@@ -25,6 +25,39 @@ options = parser.parse_args()
 def run(args, **kwargs):
     return sp.run(args, text=True, capture_output=True, check=True, **kwargs).stdout
 
+def inspect_backup(image, volume):
+    # Inspect as the backup owner, preserving mode 0600. A Docker volume uses
+    # Linux ownership semantics on both native Linux and Docker Desktop.
+    args = ['docker', 'run', '--rm', '--network', 'none', '--read-only',
+            '--cap-drop=ALL', '--security-opt', 'no-new-privileges',
+            '-v', f'{volume}:/backups:ro']
+    probe = '''import json, os, stat
+from pathlib import Path
+directory = Path('/backups')
+files = list(directory.glob('*.json'))
+assert len(files) == 1
+assert not list(directory.glob('*.partial'))
+path = files[0]
+info = path.stat()
+assert stat.S_IMODE(info.st_mode) == 0o600
+assert info.st_uid == os.getuid()
+print(json.dumps({'snapshot': json.loads(path.read_text()), 'bytes': info.st_size, 'filename': path.name}))
+'''
+    result = json.loads(run(args + ['--user', '10001:10001', image,
+                                   'python3', '-I', '-c', probe]))
+    denied = '''import sys
+from pathlib import Path
+try:
+    (Path('/backups') / sys.argv[1]).read_bytes()
+except PermissionError:
+    print('denied')
+else:
+    raise AssertionError('another user could read the private backup')
+'''
+    assert run(args + ['--user', '10002:10002', image,
+                       'python3', '-I', '-c', denied, result['filename']]).strip() == 'denied'
+    return result
+
 def render(values):
     raw = run(['helm', 'template', 'qa', str(chart), '-f', '-'], input=json.dumps(values))
     parsed = run(['bun', '-e', 'const s=await Bun.stdin.text(); console.log(JSON.stringify(s.split(/^---$/m).filter(x=>x.trim()).map(x=>Bun.YAML.parse(x))))'], input=raw)
@@ -93,12 +126,10 @@ server = pod['spec']['containers'][0]
 backup = jobpod['spec']['containers'][0]
 script = next(o for o in objects if o['kind'] == 'ConfigMap')['data']['backup.py']
 (out / 'backup.py').write_text(script)
-backupdir = out / 'backups'
-backupdir.mkdir(exist_ok=True)
-backupdir.chmod(0o777)
 name = 'cognigraph-push-qa-' + uuid.uuid4().hex[:8]
 container = None
 network = False
+backup_volume = None
 def http(base, path, body=None, token=None):
     headers = {'Content-Type': 'application/json'}
     if token: headers['Authorization'] = f'Bearer {token}'
@@ -107,6 +138,13 @@ def http(base, path, body=None, token=None):
 
 try:
     run(['docker','network','create',name]); network = True
+    backup_volume = run(['docker', 'volume', 'create', name + '-backups']).strip()
+    # Initialize only this disposable volume, as a provisioner would do for a
+    # PVC. The writer and both readers below remain non-root without capabilities.
+    run(['docker', 'run', '--rm', '--network', 'none', '--read-only', '--user', '0:0',
+         '--cap-drop=ALL', '--cap-add=CHOWN', '--security-opt', 'no-new-privileges',
+         '-v', f'{backup_volume}:/backups', backup['image'], 'python3', '-I', '-c',
+         "import os; os.chmod('/backups', 0o755); os.chown('/backups', 10001, 10001)"])
     env = envs(server)
     args = ['docker','run','-d','--name',name,'--network',name,'--network-alias','qa-cognigraph',
             '--read-only','--user','10001:10001','--cap-drop=ALL','--security-opt','no-new-privileges',
@@ -128,17 +166,16 @@ try:
     env = envs(backup)
     args = ['docker','run','--rm','--network',name,'--read-only','--user','10001:10001',
             '--cap-drop=ALL','--security-opt','no-new-privileges',
-            '-v',f'{out}/backup.py:/scripts/backup.py:ro','-v',f'{backupdir}:/backups']
+            '-v',f'{out}/backup.py:/scripts/backup.py:ro','-v',f'{backup_volume}:/backups']
     for key in env: args += ['-e',key]
     result = run(args+[backup['image']]+backup['command'], env={**os.environ, **env})
-    files = list(backupdir.glob('*.json'))
-    assert len(files) == 1
-    snapshot = json.loads(files[0].read_text())
+    inspected = inspect_backup(backup['image'], backup_volume)
+    snapshot = inspected['snapshot']
     assert snapshot['collections']['helm_qa']['documents']['one']['text'] == 'synthetic chart backup evidence'
-    assert not list(backupdir.glob('*.partial'))
-    print('PASS: rendered server env, probes, login, imported document, packaged backup in hardened containers', flush=True)
-    (out/'result.json').write_text(json.dumps({'edition':values['edition'],'helm_variants':10,'rejections':11,'objects':11,'http_backup':'passed','snapshot_bytes':files[0].stat().st_size,'cluster_deployment':False}, indent=2))
+    print('PASS: rendered server env, probes, login, imported document, private backup and non-owner denial in hardened containers', flush=True)
+    (out/'result.json').write_text(json.dumps({'edition':values['edition'],'helm_variants':10,'rejections':11,'objects':11,'http_backup':'passed','snapshot_bytes':inspected['bytes'],'cluster_deployment':False}, indent=2))
 finally:
     if container: run(['docker','rm','-f',container])
     if network: run(['docker','network','rm',name])
+    if backup_volume: run(['docker', 'volume', 'rm', backup_volume])
     workspace.cleanup()

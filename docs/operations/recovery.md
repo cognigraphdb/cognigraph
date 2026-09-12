@@ -1,5 +1,8 @@
 # Recovery
 
+Native supports hot application snapshots and cold database copies. For first
+deployment, follow the [setup and readiness guide](first-deployment.md).
+
 ## Backend backup and restore
 
 Two complementary mechanisms:
@@ -30,7 +33,5 @@ rebuild).
 
 Neither Native mechanism includes the M21-M24 external artifact CAS; pair it
 with the matching M24 bundle and separately retained configuration, trust
-anchor, and secrets. ArangoDB does not implement this CogniGraph application
-snapshot surface: use tested `arangodump`/`arangorestore` or a platform-native
-database backup, then pair that database recovery with the same CAS bundle and
-external material.
+anchor, and secrets. The CAS bundle and Native database backup must belong to
+the same recovery plan.

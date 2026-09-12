@@ -16,8 +16,11 @@ to replace a different hook path or existing active hooks. Install it separately
 in each clone. The CI suite includes workflow regression tests, formatting, server
 modularity, documentation/index and issue-history checks, edition dependency checks, strict Clippy and all workspace tests for both Community
 and Enterprise feature sets.
+The [CI guide](ci.md) owns tool setup, automatic triggers and repository protections.
 The Docker suite builds the same Community and Enterprise images as CI and runs
-isolated packaged-server HTTP, authentication, edition and restart/persistence checks.
+isolated packaged-server HTTP, authentication, edition, restart/persistence and
+both-edition Helm backup checks. The CI suite also includes Native release
+acceptance, Helm rendering, workflow lint and dependency advisory scans.
 CI image publication is a separate opt-in step described in
 [Docker image publication](docker-publishing.md). The UI suite uses the frozen Bun
 lockfile, Biome/TypeScript, tests and production build. The CI suite always
@@ -46,8 +49,8 @@ No external API keys or existing databases are needed for browser coverage.
 
   Updating this file is not permission to invent a deferral. A changed PR head
   requires review again. Missing GitHub access blocks the gate.
-- The CI suite, including UI and browser regressions, runs on every push; a
-  branch push to `main` also runs the Docker suite. UI checks are not conditional
+- Both CI and Docker suites run on every outgoing branch candidate, including
+  PR branches, to match the automatic GitHub workflow. UI checks are not conditional
   on the changed paths, and do not run a second time after the CI suite.
   Relevant real HTTP/browser tests are still required by the feature workflow;
   command success alone cannot prove those acceptance criteria.
@@ -60,7 +63,7 @@ publishing. It performs network reads and the full local checks. The hook does n
 merge PRs, bump versions, create commits/tags or push refs itself.
 
 This is a developer workflow guard, not a security boundary against someone
-changing Git configuration. It does not install server-side branch protection,
+changing Git configuration. It does not install server-side branch protection or
 guarantee remote CI success, or cover an unrelated product-documentation repository.
 Deletion and prerelease version schemes need their own reviewed workflow.
 Initial publication uses the explicit procedure below. Never bypass checks to

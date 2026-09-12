@@ -17,9 +17,8 @@ The `graph.backend` field tells your script which backend is active. The
 `graph.query_language` field reports the active backend language.
 `graph.query()` is available only for parsed CGQL backends and is read-only by
 default. With auth enabled, `documents:write` permits CGQL mutations and every
-typed direct CRUD, edge, and batch primitive. On an AQL backend,
-`graph.query()` is disabled for every role; use typed primitives or
-`/api/search/query` with parsed CGQL. `script-runner` therefore retains the
+typed direct CRUD, edge, and batch primitive. All query text is parsed CGQL.
+`script-runner` retains the
 read-only scripting surface without an opaque-query side door. With auth
 disabled, mutation paths remain disabled.
 
@@ -28,8 +27,7 @@ return {
     backend = graph.backend,
     query_language = graph.query_language
 }
--- Returns: { backend = "native", query_language = "cgql" } on the default
--- backend, or { backend = "arango", query_language = "aql" }.
+-- Returns: { backend = "native", query_language = "cgql" }.
 ```
 
 All other `graph.*` functions expose document CRUD, edges, traversal, and
@@ -278,11 +276,10 @@ return results
 
 ## Parsed CGQL Queries
 
-`graph.query()` parses CGQL on the default native backend. Scripts that must run
-on ArangoDB should use the typed primitives in this guide; opaque AQL is not a
-public Lua capability.
+`graph.query()` parses CGQL with read/write permissions and execution limits.
+Opaque query passthrough is unavailable, including to embedders.
 
-### CGQL (native backend, the default)
+### CGQL
 
 ```lua
 return graph.query(
@@ -325,18 +322,9 @@ return graph.query([[
 ]], { slug = "home" })
 ```
 
-### ArangoDB (maintenance mode)
-
-`graph.query()` is unavailable on AQL backends, including for Admin. Unicode
-escapes in quoted AQL identifiers made textual system-collection screening
-bypassable, so M18 removed the public opaque-query authority. Typed document,
-edge, traversal, vector, and search operations remain backend-independent.
-
----
-
 ## Complex Workflows
 
-These examples use only backend-agnostic functions and work on **all backends**.
+These examples use Native graph primitives.
 
 ### Build a knowledge subgraph from a seed document
 
@@ -497,9 +485,9 @@ require("socket")          -- attempt to call global 'require' (a nil value)
 
 | Function | Description | Backend |
 |----------|-------------|---------|
-| `graph.backend` | Active backend name (`"native"` by default, or `"arango"`) | All |
-| `graph.query_language` | Active backend language (`"cgql"` for native, `"aql"` for ArangoDB); informational when opaque queries are disabled | All |
-| `graph.query(query, bind_vars)` | Execute parsed CGQL; mutations require `documents:write`. Disabled on AQL backends. | Native/CGQL |
+| `graph.backend` | Native backend identity (`"native"`) | All |
+| `graph.query_language` | Query language (`"cgql"`) | All |
+| `graph.query(query, bind_vars)` | Execute parsed CGQL; mutations require `documents:write`. | Native/CGQL |
 | `graph.get_document(collection, key)` | Fetch a single document | All |
 | `graph.find_documents(collection, opts)` | List documents with limit/offset | All |
 | `graph.create_document(collection, doc)` | Create a document (`documents:write`) | All |

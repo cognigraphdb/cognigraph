@@ -64,9 +64,8 @@ Scorer/verifier blobs are matched against the executable-path digest pinned at
 startup but are never executed. Staged code is never run; promotion never
 deploys; building never activates; M26 adds no drift scheduler, automatic
 healing, per-generation query routing, generation GC, distributed writer,
-quorum, replication, or HA. Maintenance-mode ArangoDB has no application
-snapshot surface and fails closed before governed construction because it lacks
-atomic batches.
+quorum, replication, or HA. Native atomic batches provide the required
+all-or-nothing construction boundary.
 
 ### Multi-tenancy
 

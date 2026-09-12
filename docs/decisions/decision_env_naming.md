@@ -1,5 +1,12 @@
 # Decision: environment variable naming — the pre-2.0 sweep
 
+> Current storage scope (2026-09-12): [Native-only storage](decision_native_only.md)
+> supersedes this record's runtime-backend choices and adapter-specific paths.
+> Both editions now use Native; public HTTP/Lua queries are parsed CGQL.
+> Storage-independent contracts below remain applicable. Earlier backend
+> behavior, configuration and verification are retained as dated history,
+> not current setup instructions. Use the [operator guides](../operations/README.md).
+
 **Status:** Decided 2026-07-05. Executed the same day (H5).
 
 ## Context

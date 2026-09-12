@@ -1,6 +1,6 @@
 # Docker image publication
 
-The [manual CI workflow](../../.github/workflows/ci.yml) builds and tests both
+The [CI workflow](../../.github/workflows/ci.yml) builds and tests both
 editions. Its `publish_images` input defaults to `false`; ordinary pushes, tags,
 PRs and build-only CI runs do not publish images. Publication is an explicit
 manual run from `main` in `cognigraphdb/cognigraph`, after the shared CI gates.

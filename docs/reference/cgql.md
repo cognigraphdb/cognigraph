@@ -625,11 +625,10 @@ filter conjuncts, scan limits, vector thresholds, and exact-depth-1 traversal
 confidence can be pushed into backend capabilities; the detailed semantic
 guards are in the Pushdown section below.
 
-Lua keeps a single query entry point where it can be governed safely:
-`graph.query(query, bind_vars)` executes parsed CGQL on the native backend.
-`graph.query_language` still reports the backend language, but the Lua query
-entry point is disabled when that language is opaque AQL. Arango functionality
-remains available through typed graph/document/search primitives.
+Lua uses one query entry point: `graph.query(query, bind_vars)` executes parsed
+CGQL on Native storage. `graph.query_language` reports `cgql`. Query text is
+parsed under the caller's read/write permissions and execution budget; there is
+no opaque query passthrough.
 
 ## Mutations
 
@@ -638,9 +637,8 @@ CGQL supports data modification, executed only in read-write mode
 `COGNIGRAPH_CGQL_MUTATIONS_ENABLED`). `/api/search/query` always parses CGQL in
 read-only mode, whether `language` is omitted or explicitly `cgql`. Lua
 `graph.query()` is read-only without auth and is lifted to CGQL mutation mode
-only for callers with the write scope. It is disabled on AQL backends for every
-role because opaque text cannot enforce the system-collection boundary. With
-authentication disabled, Lua remains read-only.
+only for callers with the write scope. With authentication disabled, Lua remains
+read-only. Every query enforces the system-collection boundary.
 
 ```cgql
 INSERT { title: "New" } INTO documents RETURN NEW
@@ -693,8 +691,9 @@ FOR d IN documents FILTER d.stale == true REMOVE d._key IN documents
 
 ## v2: Multiple FOR, positional semantics, subqueries (2026-07-04)
 
-Approved design: docs/decisions/decision_cgql_v2.md. AQL is the reference
-semantics.
+Approved design: [CGQL v2](../decisions/decision_cgql_v2.md). The iteration
+model follows AQL conventions; the CGQL rules below and its fixed corpus define
+the implemented contract. No external database is needed to execute or test it.
 
 ### Positional body semantics (breaking change vs v1)
 

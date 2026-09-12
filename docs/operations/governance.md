@@ -16,17 +16,10 @@ running the unchanged M22 derivation. Promotion operations are tenant-local and
 fail closed
 unless auth is enabled. An auth-disabled server may still run legacy diagnostic
 evaluations, but it cannot create evidence or make promotion decisions. The
-M19, M20, and M21 adversarial suites and release-binary Native/live-Arango
-lifecycles are verified in their decision records. M22's final persistent
-Native and configured live-ArangoDB release-binary probes are also verified.
-The M21 and M22 probes include restart/recovery, CAS tamper, prospective
-Artifact Attestor revocation, and exact cleanup; M22 additionally rejects a
-signed score-equivalent graph with forged evidence.
-M23's authenticated release-binary lifecycle is verified on persistent Native
-and configured live ArangoDB Enterprise 3.12.9-1. Both probes cover
-restart/recovery, signed inconsistent prepared-output rejection,
-`documents.json` CAS-tamper rejection, prospective Artifact Attestor
-revocation/history fencing, and isolated cleanup.
+M19–M23 decision records retain their dated adversarial and release-binary
+evidence: restart/recovery, CAS tamper, prospective Artifact Attestor revocation,
+forged evidence and inconsistent prepared-output rejection. Current runtime
+qualification is recorded in the [Native-only acceptance report](../issues/native-readiness-2026-09-12.md).
 
 M24 adds offline custody bundle/restore around those external bytes. M25 binds
 the exact construction candidate to a PolicyAuthor-signed revision,
@@ -219,8 +212,8 @@ canonical score result, but no separate verifier-program verdict. Its unkeyed
 hash does not independently authenticate server authorship; later signed
 promotion authority binds it into the governed chain. It is not an external
 signature, remote attestation, trusted timestamp, or custody proof.
-The CAS bytes themselves are not included in a Native snapshot and are not
-copied into ArangoDB; back up and replicate them separately.
+The CAS bytes themselves are not included in a Native snapshot; back up and
+replicate them separately.
 
 ## Detailed procedures
 

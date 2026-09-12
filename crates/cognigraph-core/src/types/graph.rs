@@ -52,8 +52,6 @@ pub struct CollectionInfo {
 /// Query language accepted by a backend's raw query entry point.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum QueryLanguage {
-    /// ArangoDB Query Language.
-    Aql,
     /// CogniGraph Query Language.
     Cgql,
     /// Backend-native query language not represented by a first-class variant.
@@ -63,7 +61,6 @@ pub enum QueryLanguage {
 impl QueryLanguage {
     pub fn as_str(&self) -> &str {
         match self {
-            QueryLanguage::Aql => "aql",
             QueryLanguage::Cgql => "cgql",
             QueryLanguage::BackendNative(name) => name.as_str(),
         }

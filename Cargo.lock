@@ -358,9 +358,9 @@ checksum = "613afe47fcd5fac7ccf1db93babcb082c5994d996f20b8b159f2ad1658eb5724"
 
 [[package]]
 name = "chacha20"
-version = "0.10.1"
+version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d524456ba66e72eb8b115ff89e01e497f8e6d11d78b70b1aa13c0fbd97540a81"
+checksum = "65c35e4b699c7e15ccbe7ee35c005e4fc0a278d22238a2857e6ce2dadeda1b06"
 dependencies = [
  "cfg-if",
  "cpufeatures 0.3.0",
@@ -397,23 +397,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0c9ea0ac24bc397ab3c98583a3c9ba74fa56b09a4449bbe172b9b1ddb016027a"
 
 [[package]]
-name = "cognigraph-arango"
-version = "2.7.1"
-dependencies = [
- "async-trait",
- "base64 0.23.1",
- "cognigraph-core",
- "reqwest",
- "serde",
- "serde_json",
- "thiserror",
- "tokio",
- "tracing",
-]
-
-[[package]]
 name = "cognigraph-artifacts"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "cognigraph-core",
  "cognigraph-governance",
@@ -429,7 +414,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-auth"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "argon2",
  "base64 0.23.1",
@@ -447,11 +432,11 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-cache"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "async-trait",
  "cognigraph-core",
- "lru 0.18.4",
+ "lru",
  "redb",
  "serde",
  "serde_json",
@@ -462,7 +447,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-cli"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "cognigraph-artifacts",
  "reqwest",
@@ -475,12 +460,11 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-construct"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "anyhow",
  "async-trait",
  "chrono",
- "cognigraph-arango",
  "cognigraph-core",
  "cognigraph-embeddings",
  "cognigraph-native",
@@ -498,7 +482,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-core"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "async-trait",
  "chrono",
@@ -510,7 +494,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-embeddings"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -526,7 +510,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-governance"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "base64 0.23.1",
  "ed25519-dalek",
@@ -540,7 +524,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-lua"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "cognigraph-core",
  "cognigraph-native",
@@ -553,7 +537,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-native"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "async-trait",
  "chrono",
@@ -572,7 +556,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-query"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "async-trait",
  "chrono",
@@ -590,13 +574,12 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-server"
-version = "2.7.1"
+version = "2.7.6"
 dependencies = [
  "anyhow",
  "async-trait",
  "axum",
  "base64 0.23.1",
- "cognigraph-arango",
  "cognigraph-artifacts",
  "cognigraph-auth",
  "cognigraph-cache",
@@ -1089,7 +1072,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb"
 dependencies = [
  "libc",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -1310,9 +1293,9 @@ dependencies = [
 
 [[package]]
 name = "h2"
-version = "0.4.15"
+version = "0.4.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6cb093c84e8bd9b188d4c4a8cb6579fc016968d14c99882163cd3ff402a4f155"
+checksum = "ef8e5e5a340588f4452631496976cf8636d4a7ecf600239fdc27615d2530bc16"
 dependencies = [
  "atomic-waker",
  "bytes",
@@ -1325,17 +1308,6 @@ dependencies = [
  "tokio",
  "tokio-util",
  "tracing",
-]
-
-[[package]]
-name = "hashbrown"
-version = "0.16.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100"
-dependencies = [
- "allocator-api2",
- "equivalent",
- "foldhash",
 ]
 
 [[package]]
@@ -1972,7 +1944,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d466e9454f08e4a911e14806c24e16fba1b4c121d1ea474396f396069cf949d9"
 dependencies = [
  "equivalent",
- "hashbrown 0.17.1",
+ "hashbrown",
 ]
 
 [[package]]
@@ -2147,20 +2119,11 @@ checksum = "0ceec5bc11778974d1bcb055b18002eba7f4b3518b6a0081b3af5f21666da9ad"
 
 [[package]]
 name = "lru"
-version = "0.16.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f66e8d5d03f609abc3a39e6f08e4164ebf1447a732906d39eb9b99b7919ef39"
-dependencies = [
- "hashbrown 0.16.1",
-]
-
-[[package]]
-name = "lru"
 version = "0.18.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ff9840bcc50b71349309900da0ce7279aa336ae71d73250b07998932c7d97c25"
 dependencies = [
- "hashbrown 0.17.1",
+ "hashbrown",
 ]
 
 [[package]]
@@ -2407,7 +2370,7 @@ version = "0.50.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7957b9740744892f114936ab4a57b3f487491bbeafaf8083688b16841a4240e5"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -2824,7 +2787,7 @@ dependencies = [
  "once_cell",
  "socket2",
  "tracing",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -3088,7 +3051,7 @@ dependencies = [
  "errno",
  "libc",
  "linux-raw-sys",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -3145,7 +3108,7 @@ dependencies = [
  "security-framework",
  "security-framework-sys",
  "webpki-root-certs",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -3523,8 +3486,6 @@ dependencies = [
 [[package]]
 name = "tantivy"
 version = "0.26.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "edde6a10743fff00a4e1a8c9ef020bf5f3cbad301b7d2d39f2b07f123c4eac07"
 dependencies = [
  "aho-corasick",
  "arc-swap",
@@ -3544,7 +3505,7 @@ dependencies = [
  "itertools",
  "levenshtein_automata",
  "log",
- "lru 0.16.4",
+ "lru",
  "lz4_flex",
  "measure_time",
  "memmap2",
@@ -3678,7 +3639,7 @@ dependencies = [
  "getrandom 0.4.3",
  "once_cell",
  "rustix",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -4351,7 +4312,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]

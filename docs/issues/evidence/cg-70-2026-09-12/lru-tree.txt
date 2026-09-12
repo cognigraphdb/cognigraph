@@ -1,0 +1,13 @@
+lru v0.18.4
+├── cognigraph-cache v2.7.5 (${REPO}/crates/cognigraph-cache)
+│   └── cognigraph-server v2.7.5 (${REPO}/crates/cognigraph-server)
+└── tantivy v0.26.1 (${REPO}/vendor/tantivy-0.26.1)
+    └── cognigraph-native v2.7.5 (${REPO}/crates/cognigraph-native)
+        └── cognigraph-server v2.7.5 (${REPO}/crates/cognigraph-server)
+        [dev-dependencies]
+        ├── cognigraph-auth v2.7.5 (${REPO}/crates/cognigraph-auth)
+        │   └── cognigraph-server v2.7.5 (${REPO}/crates/cognigraph-server)
+        ├── cognigraph-construct v2.7.5 (${REPO}/crates/cognigraph-construct)
+        │   └── cognigraph-server v2.7.5 (${REPO}/crates/cognigraph-server)
+        └── cognigraph-lua v2.7.5 (${REPO}/crates/cognigraph-lua)
+            └── cognigraph-server v2.7.5 (${REPO}/crates/cognigraph-server)

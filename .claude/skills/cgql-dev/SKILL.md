@@ -16,7 +16,7 @@ Use this workflow for changes under `crates/cognigraph-query/` and CGQL-facing d
   Update Native, server and Lua integration as required by the requested behavior.
 - Keep `graph.query()` as the Lua query entry point. Public HTTP and Lua query
   text uses parsed CGQL within each surface's capabilities and authorization;
-  a backend's AQL declaration does not enable public opaque query passthrough.
+  a language declaration cannot enable opaque query passthrough.
 - Preserve AQL/XQuery-style keyword handling: keywords are case-insensitive; identifiers are case-sensitive.
 - Multiple `FOR` clauses, joins and read subqueries are delivered capabilities.
   Preserve the tested restrictions in [the current specification](../../../docs/reference/cgql.md),

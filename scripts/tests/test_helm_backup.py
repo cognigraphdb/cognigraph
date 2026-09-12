@@ -4,6 +4,7 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import stat
 import tempfile
 import threading
 import unittest
@@ -60,6 +61,7 @@ class Backup(unittest.TestCase):
         os.utime(unrelated, (1, 1))
         output = client.backup(self.url, self.password, self.directory, 14)
         self.assertEqual(json.loads(output.read_text()), json.loads(self.body))
+        self.assertEqual(stat.S_IMODE(output.stat().st_mode), 0o600)
         self.assertFalse(self.previous.exists())
         self.assertTrue(unrelated.exists())
         self.assertEqual(list(self.directory.glob('*.partial')), [])

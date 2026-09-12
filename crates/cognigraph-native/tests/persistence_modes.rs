@@ -41,6 +41,7 @@ async fn sidecar_mode_full_lifecycle() {
     let mut vectors = Vec::new();
     {
         let backend = NativeBackend::open_with_mode(dir.db_path(), VectorMode::Sidecar).unwrap();
+        cognigraph_core::contract::run_all(&backend, "sidecar_contract").await;
         backend
             .ensure_collection("vecs", CollectionType::Document)
             .await

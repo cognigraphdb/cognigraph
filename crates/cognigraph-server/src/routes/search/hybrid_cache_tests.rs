@@ -43,7 +43,6 @@ async fn every_result_parameter_partitions_exact_and_similarity_lookups() {
     for (field, value) in [
         ("documents_collection", json!("other;view=docs")),
         ("embeddings_collection", json!("other;embeddings")),
-        ("search_view", json!("other;fields=a,b")),
         ("search_fields", json!(["a", "b"])),
         ("threshold", json!(0.8)),
         ("limit", json!(3)),
@@ -149,12 +148,8 @@ async fn delimiter_collisions_cannot_reuse_direct_or_assisted_hybrid_results() {
             json!({"search_fields": ["a", r#""b\c"#]}),
         ),
         (
-            json!({"documents_collection": "docs;view=west", "search_view": "east", "search_fields": ["text"]}),
-            json!({"documents_collection": "docs", "search_view": "west;view=east", "search_fields": ["text"]}),
-        ),
-        (
-            json!({"search_view": "index;fields=title", "search_fields": ["text"]}),
-            json!({"search_view": "index", "search_fields": ["title;fields=text"]}),
+            json!({"documents_collection": "docs;fields=title", "search_fields": ["text"]}),
+            json!({"documents_collection": "docs", "search_fields": ["title;fields=text"]}),
         ),
     ] {
         for query in ["needle", "alias", "related"] {

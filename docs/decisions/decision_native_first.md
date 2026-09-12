@@ -2,6 +2,12 @@
 
 Date: 2026-07-02 · Status: ACCEPTED, delivered (M1–M10)
 
+Amended 2026-09-12 by [Native-only storage](decision_native_only.md): the owner
+replaced indefinite Arango maintenance with pre-deployment Native-only cleanup.
+There are no existing users to migrate; dump tooling is optional deferred work.
+The Native/CGQL direction and historical outcome below remain intact. Arango
+removal is implemented by CG-67; follow the successor for current readiness.
+
 ## Context
 ArangoDB (the original primary backend) changed its licensing model and broke
 large API surfaces in v4, signaling third-party-backend risk. Maintaining

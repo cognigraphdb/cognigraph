@@ -1,16 +1,21 @@
 # CogniGraph implementation plan
 
-Current engineering status, reviewed 2026-09-11. Detailed historical delivery
+Current engineering status, reviewed 2026-09-12. Detailed historical delivery
 and test counts live in [change records](changelog/README.md), the
 [issue registry](issues/README.md) and [archived implementation history](plans/archive/implementation-history-through-2026-09-09.md).
 
+The owner has now authorized first deployment on Railway: one Community
+instance including the console. [CG-71](issues/CG-71.md) owns packaging and live
+acceptance; [Railway operations](operations/railway.md) owns setup and recovery.
+Docker Hub publication is deferred. The separate website is already live.
+
 ## Delivered scope
 
-- Native is the strategic backend: redb persistence, resident/paged storage,
-  optional mmap vectors, text search, traversal and atomic batches. ArangoDB is
-  maintained for reference/conformance, with explicit unsupported boundaries.
+- Native is the only runtime backend: redb persistence, resident/paged storage,
+  optional mmap vectors, text search, traversal and atomic batches. CG-67 removes
+  the Arango adapter and its configuration from the current unreleased tree.
 - CGQL v2 and workload follow-ups D1–D12 are implemented. Public query surfaces
-  accept parsed CGQL; opaque AQL remains internal. Mutation queries still reject
+  accept parsed CGQL; no opaque query passthrough exists. Mutation queries still reject
   backend `DOCUMENT()` reads and correlated traversal before execution.
 - Governed milestones M15–M26 provide durable jobs, signed authority, verified
   artifact consumption and derivation, custody recovery, and separately signed
@@ -20,6 +25,57 @@ and test counts live in [change records](changelog/README.md), the
   [full UI review](../ui/audit/2026-09-11-full-review/audit.md) records confirmed
   defects, tested journeys and backend capabilities it does not yet expose;
   scoped follow-up work is tracked in [UI TODO](../ui/TODO.md).
+
+## Completed engineering batch — Native-only storage, 2026-09-12
+
+The owner approved [Native-only storage before first deployment](decisions/decision_native_only.md)
+and clarified that CogniGraph has never been provided to anyone. Breaking cleanup
+is allowed freely before first delivery. The [batch plan](plans/native-only-2026-09-12.md)
+has completed [CG-65](issues/CG-65.md), preserving useful Native coverage, and
+[CG-67](issues/CG-67.md), removing the adapter and configuration.
+[CG-68](issues/CG-68.md) reconciles active guides/workflows and qualifies local
+Native operation, both Linux/amd64 images and Helm backups. No customer migration, compatibility
+window or last-Arango release is needed. Local readiness passed; the chosen deployment environment still needs verification.
+
+The [CG-65 report](issues/native-conformance-2026-09-12.md) records four
+capability-boundary test replacements, all 126 expected CGQL results across
+Native modes and persistent reopen, both Rust validation suites and 900 local
+release-binary checks. Adapter-only test groups were removed by CG-67;
+existing query goldens and historical captures remain unchanged.
+
+The [CG-67 report](issues/native-runtime-2026-09-12.md) records strict Clippy
+and full Rust suites in both editions, 514 fresh release-binary checks across
+four Native modes, cross-edition CLI/snapshot/tenant probes and all nine browser
+regressions. The [CG-68 acceptance report](issues/native-readiness-2026-09-12.md)
+adds fresh shared CI, image/runtime, Helm backup and startup rejection checks,
+plus active-guide reconciliation. The runtime cleanup has not reached main,
+Docker Hub or a deployed environment. [Sibling product and website alignment](plans/native-only-alignment-2026-09-12.md)
+is complete locally. **Deployment is on hold at the owner's request.** The
+[first-deployment guide](operations/first-deployment.md) remains the reference
+when deployment work resumes.
+
+[CG-64](issues/CG-64.md) and [CG-66](issues/CG-66.md) are deferred optional
+external dump-import work, to reconsider after Native-only readiness. They do
+not block this batch or first deployment and are not automatically started next.
+
+The registry now has **66 Resolved, 1 Closed without change, and 4 Open issues**.
+[CG-69](issues/CG-69.md) prepares automatic CI and repository protections on PR
+branches. [CG-70](issues/CG-70.md) removes the Native lru unsoundness advisory
+through a bounded upstream patch, makes unsoundness fatal in CI, and records
+a dated optional ONNX maintenance exception. Both local CI and Docker suites
+pass; the corrected dependency tree has one visible paste maintenance warning.
+CG-64/CG-66
+remain deferred optional import work. Deployment remains on hold.
+The earlier console defect list remains
+closed. Additional console features and the research qualification below are
+separate backlogs, not prerequisites for this batch. No model or holdout runs
+are scheduled by it.
+
+Retain `GraphBackend`, the existing CGQL corpus and historical Arango evidence.
+No major-version jump is required solely for this pre-deployment removal; the
+normal per-push increment and checks remain. Planning does not bump the current
+2.7.1 workspace. Migration command/format support remains an
+[unqualified deferred design](plans/arangodump-import-design.md).
 
 ## Review checkpoint — 2026-09-09
 
@@ -254,14 +310,12 @@ Native APIs. Broken source/bundle candidates fail; provider qualification is
 explicitly excluded. The complete local CI gate passes. The registry now has
 62 Resolved, 1 Closed without change and 0 Open issues.
 
-The full UI review's defect list is closed. Next, prepare the pending changes
-for the separately authorized commit/publication workflow, then prioritize
-operator journeys from the UI tracker. This checkpoint does not publish Docker
-images, run remote CI or qualify the research holdout.
-
-The outgoing [2.7.1 maintenance version](changelog/2026-09-11-v2-7-1.md) collects
-CG-49–CG-63 remediation and the shared browser/CI gate. Its code publication
-requires the current push checks; image publication and remote CI remain separate.
+The full UI review's defect list is closed. The
+[2.7.1 maintenance version](changelog/2026-09-11-v2-7-1.md) collects CG-49–CG-63
+remediation and the shared browser/CI gate. Code was pushed to `origin/main`
+at `efe9839` after local CI, browser, Docker and Helm checks on 2026-09-11.
+Image publication and remote CI were not triggered. The Native-only batch above
+now takes precedence over adding further operator journeys from the UI tracker.
 
 The console does not yet provide complete durable-job, signed-governance,
 promotion/repair/deployment, side-view or tenant-quota management workflows. The

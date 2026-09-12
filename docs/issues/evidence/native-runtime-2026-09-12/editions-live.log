@@ -1,0 +1,3 @@
+PASS: Community CRUD, CGQL, Lua, text/vector/graph search, auth, rejection, snapshot safety and CLI
+PASS: ordinary file/snapshot interoperability and 65 Enterprise-only spec paths
+PASS: Community configuration/store refusal, preserved governed data, Enterprise tenant isolation

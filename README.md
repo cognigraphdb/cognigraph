@@ -56,7 +56,6 @@ COGNIGRAPH_DEMO_DIR="$(mktemp -d)"
 cd "$COGNIGRAPH_DEMO_DIR"
 COGNIGRAPH_HOST=127.0.0.1 \
 COGNIGRAPH_PORT=3000 \
-COGNIGRAPH_BACKEND=native \
 COGNIGRAPH_NATIVE_PATH="$COGNIGRAPH_DEMO_DIR/cognigraph.redb" \
 COGNIGRAPH_AUTH_ENABLED=false \
 COGNIGRAPH_EMBEDDING_PROVIDER=none \
@@ -136,7 +135,7 @@ separate [backup requirements](docs/operations/recovery.md).
 
 Today the server is a single-writer deployment. Cargo and Docker default to
 Community; [build editions](docs/operations/running.md#build-editions) explains
-the Enterprise feature flag. ArangoDB is retained as a reference/conformance backend.
+the Enterprise feature flag. Native is the only runtime storage backend.
 
 Community Components are free to run in production under the
 [FSL-1.1-Apache-2.0](LICENSE), with conversion to Apache 2.0 two years after each

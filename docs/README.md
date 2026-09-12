@@ -4,6 +4,13 @@ Start with the [implementation plan](implementation-plan.md) for current status
 and next work. The [issue registry](issues/README.md) owns defect resolution;
 [decisions](decisions/README.md) own rationale and contract amendments.
 
+Native is the only runtime storage backend. The [Native-only batch](plans/native-only-2026-09-12.md)
+is locally qualified through CG-65, CG-67 and CG-68. Start with the
+[first-deployment guide](operations/first-deployment.md) and
+[acceptance record](issues/native-readiness-2026-09-12.md) before preparing a live
+environment. Publication and deployment are separate; CG-64/CG-66 remain
+deferred optional importer work.
+
 | Area | Read it for |
 |---|---|
 | [Architecture](architecture/README.md) | Components, storage, cache and governance boundaries |
