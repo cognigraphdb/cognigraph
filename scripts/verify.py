@@ -15,6 +15,7 @@ def commands(suite):
         return commands('ui') + [
             (ROOT, ['cargo', 'fmt', '--all', '--', '--check']),
             (ROOT, ['actionlint']),
+            (ROOT, [sys.executable, 'scripts/check-vendored.py']),
             *commands('advisories'),
             (ROOT, [sys.executable, '-m', 'unittest', 'discover', '-s', 'scripts/tests']),
             (ROOT, [sys.executable, 'scripts/check-server-modularity.py']),
@@ -36,7 +37,7 @@ def commands(suite):
             (ROOT, [sys.executable, 'scripts/check-helm.py', '--live']),
             (ROOT, [sys.executable, 'scripts/check-helm.py', '--live', '--enterprise'])]
     if suite == 'advisories':
-        return [(ROOT, ['cargo', 'audit']), (ROOT / 'ui', ['bun', 'audit'])]
+        return [(ROOT, ['cargo', 'audit', '--deny', 'unsound']), (ROOT / 'ui', ['bun', 'audit'])]
     if suite == 'helm':
         return [(ROOT, [sys.executable, 'scripts/check-helm.py']),
                 (ROOT, [sys.executable, 'scripts/check-helm.py', '--enterprise'])]

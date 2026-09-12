@@ -57,6 +57,8 @@ class WorkflowPolicy(unittest.TestCase):
             for command in verify.commands(suite):
                 self.assertIn(command, commands)
         self.assertIn((ROOT, ['actionlint']), commands)
+        self.assertIn((ROOT, [sys.executable, 'scripts/check-vendored.py']), commands)
+        self.assertIn((ROOT, ['cargo', 'audit', '--deny', 'unsound']), commands)
         for _, command in commands:
             if command[:2] in (['cargo', 'clippy'], ['cargo', 'test']):
                 self.assertIn('--locked', command)

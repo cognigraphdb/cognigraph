@@ -53,9 +53,13 @@ when deployment work resumes.
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **65 Resolved, 1 Closed without change, and 4 Open issues**.
+The registry now has **66 Resolved, 1 Closed without change, and 3 Open issues**.
 [CG-69](issues/CG-69.md) prepares automatic CI and repository protections on PR
-branches; [CG-70](issues/CG-70.md) tracks transitive advisory follow-up. CG-64/CG-66
+branches. [CG-70](issues/CG-70.md) removes the Native lru unsoundness advisory
+through a bounded upstream patch, makes unsoundness fatal in CI, and records
+a dated optional ONNX maintenance exception. Both local CI and Docker suites
+pass; the corrected dependency tree has one visible paste maintenance warning.
+CG-64/CG-66
 remain deferred optional import work. Deployment remains on hold.
 The earlier console defect list remains
 closed. Additional console features and the research qualification below are

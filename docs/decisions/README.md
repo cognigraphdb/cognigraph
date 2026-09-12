@@ -60,6 +60,7 @@ limitations.
 
 | Decision | Status | Operative scope | Successor / amendment |
 |---|---|---|---|
+| [Dependency advisories](decision_dependency_advisories.md) | Active | Bounded Tantivy patch, visible time-bounded optional ONNX maintenance exception, and fatal unsoundness advisories. | [CG-70](../issues/CG-70.md) owns validation and dependency inventory. |
 | [Continuous verification](decision_ci_verification.md) | Active | Shared local/PR checks, required successful aggregate, pinned Actions and separate publication authority. | [CI guide](../operations/ci.md) owns tool setup and repository settings; [CG-69](../issues/CG-69.md) records qualification and the private website plan limit. |
 | [Benchmark before optimizing](decision_benchmarks_first.md) | Active | Require measured before/after rows and retain rejected approaches. | No replacement; measurements live in [benchmarks](../research/benchmarks/native-backend.md). |
 | [Custom implementations and library exceptions](decision_custom_vs_library.md) | Active | Prefer understandable custom implementations, with explicit safety and measurement exceptions. | Its Outcome records Tantivy replacing custom BM25; the preference itself remains. |

@@ -12,7 +12,9 @@ The first suite includes frozen UI installation/checks/build, workflow lint,
 Cargo and Bun advisory scans, script regressions, formatting, docs, issue and
 edition boundaries, strict Clippy/tests in both editions, Helm rendering,
 Native release acceptance and both-edition Chromium regressions. Rust builds,
-Clippy and tests use the lockfile without modification.
+Clippy and tests use the lockfile without modification. The bounded Tantivy
+snapshot also passes `scripts/check-vendored.py`, which checks published source
+bytes and permits only the reviewed dependency-manifest patch.
 
 The Docker suite builds both Linux images, tests their packaged server/CLI and
 persistence, and exercises the rendered Helm backup in both editions. CI uses
@@ -46,9 +48,12 @@ an overall summary, including on failure. The workflow uploads those results
 and `ui/test-results/` for seven days even when earlier checks fail. Python
 optimization is rejected or isolated so assertions cannot be silently removed.
 
-Advisory scans fail on the tools' vulnerability errors and unavailable scans.
-RustSec informational warnings remain visible; they are not suppressed or
-reported as fixed. Current dependency follow-up is [CG-70](../issues/CG-70.md).
+Advisory scans fail on the tools' vulnerability errors and unavailable scans;
+`cargo audit --deny unsound` also rejects RustSec unsoundness advisories.
+Maintenance warnings remain visible. [CG-70](../issues/CG-70.md) and the
+[dependency decision](../decisions/decision_dependency_advisories.md) document
+the bounded Tantivy patch and the optional ONNX paste maintenance exception,
+including its review triggers. That exception does not suppress an advisory.
 Weekly Dependabot updates cover Actions, Cargo and the UI Bun lockfile. Updates
 arrive as PRs and do not authorize integration. Model APIs, research holdouts and
 provider qualification are outside routine CI.

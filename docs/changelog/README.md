@@ -29,6 +29,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 - 2026-09-12: [Approve the Native-only storage engineering batch](2026-09-12-native-only-plan.md)
 - 2026-09-12: [Preserve Native conformance coverage before adapter removal](2026-09-12-native-conformance.md)
 - 2026-09-12: [Align product and website copy with Native-only storage](2026-09-12-native-alignment.md)
+- 2026-09-12: [Resolve Native lru unsoundness and review optional ONNX maintenance](2026-09-12-dependency-advisories.md)
 - 2026-09-11: [Explain tenant deletion and display quarantine outcomes](2026-09-11-ui-tenant-deletion.md)
 - 2026-09-11: [Align tenant onboarding and user provisioning with authorization](2026-09-11-ui-provisioning.md)
 - 2026-09-11: [Use the production origin and verify console access](2026-09-11-ui-production-origin.md)

@@ -5,6 +5,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential pkg-config libssl-dev ca-certificates && rm -rf /var/lib/apt/lists/*
 COPY Cargo.toml Cargo.lock ./
+COPY vendor/ vendor/
 COPY crates/ crates/
 ARG COGNIGRAPH_EDITION=community
 RUN case "$COGNIGRAPH_EDITION" in \
@@ -29,6 +30,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY --from=builder /app/target/release/cognigraph-server /usr/local/bin/cognigraph-server
 COPY --from=builder /app/target/release/cognigraph /usr/local/bin/cognigraph
 COPY LICENSE LICENSE-COMMERCIAL /usr/share/licenses/cognigraph/
+COPY vendor/tantivy-0.26.1/LICENSE /usr/share/licenses/cognigraph/tantivy-MIT
 USER cognigraph
 ENV COGNIGRAPH_HOST=0.0.0.0 \
     COGNIGRAPH_PORT=3000 \
