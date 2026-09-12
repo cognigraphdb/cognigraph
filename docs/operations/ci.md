@@ -26,6 +26,11 @@ libraries, Docker, Helm 4.2.4, actionlint 1.7.12 and cargo-audit 0.22.2. CI pins
 Action implementations to upstream commit SHAs. Rust stable, Bun latest and
 Docker base-image latest tags retain the project's current-runtime policy.
 
+Run `rustup update stable` before qualifying an outgoing candidate, then confirm
+`rustc --version` and `cargo clippy --version`. A locally installed toolchain
+named stable can lag behind the fresh stable installed by GitHub; CG-69's first
+PR run exposed a new Clippy lint after local validation on an older release.
+
 Native acceptance runs through `scripts/native_ci.py` and the existing readiness
 harness using a loopback embedding fixture and owned temporary stores. It
 qualifies memory, resident/embedded, resident/sidecar and paged/sidecar modes
