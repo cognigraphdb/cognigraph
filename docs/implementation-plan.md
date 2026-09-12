@@ -4,6 +4,11 @@ Current engineering status, reviewed 2026-09-12. Detailed historical delivery
 and test counts live in [change records](changelog/README.md), the
 [issue registry](issues/README.md) and [archived implementation history](plans/archive/implementation-history-through-2026-09-09.md).
 
+The owner has now authorized first deployment on Railway: one Community
+instance including the console. [CG-71](issues/CG-71.md) owns packaging and live
+acceptance; [Railway operations](operations/railway.md) owns setup and recovery.
+Docker Hub publication is deferred. The separate website is already live.
+
 ## Delivered scope
 
 - Native is the only runtime backend: redb persistence, resident/paged storage,
@@ -53,7 +58,7 @@ when deployment work resumes.
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **66 Resolved, 1 Closed without change, and 3 Open issues**.
+The registry now has **66 Resolved, 1 Closed without change, and 4 Open issues**.
 [CG-69](issues/CG-69.md) prepares automatic CI and repository protections on PR
 branches. [CG-70](issues/CG-70.md) removes the Native lru unsoundness advisory
 through a bounded upstream patch, makes unsoundness fatal in CI, and records

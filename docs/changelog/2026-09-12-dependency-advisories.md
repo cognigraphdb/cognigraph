@@ -1,7 +1,7 @@
 # Resolve Native lru unsoundness and review optional ONNX maintenance
 
 - Date: 2026-09-12
-- Status: Unreleased
+- Status: v2.7.6
 - Kind: Dependencies and verification
 
 ## Changes

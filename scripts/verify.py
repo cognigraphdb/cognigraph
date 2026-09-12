@@ -34,6 +34,7 @@ def commands(suite):
     if suite == 'docker':
         return [(ROOT, command) for command in docker_images.build_commands()] + [
             (ROOT, [sys.executable, 'scripts/docker_images.py', 'check']),
+            (ROOT, [sys.executable, 'scripts/check-container-startup.py']),
             (ROOT, [sys.executable, 'scripts/check-helm.py', '--live']),
             (ROOT, [sys.executable, 'scripts/check-helm.py', '--live', '--enterprise'])]
     if suite == 'advisories':

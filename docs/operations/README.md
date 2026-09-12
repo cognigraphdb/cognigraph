@@ -3,6 +3,7 @@
 Run, configure and recover CogniGraph. Commands run from the code repository root unless stated otherwise.
 
 - [First Native deployment](first-deployment.md)
+- [Railway Community deployment](railway.md)
 - [Running, monitoring and capacity](running.md)
 - [Local verification and push gates](push.md)
 - [Continuous verification and GitHub protections](ci.md)

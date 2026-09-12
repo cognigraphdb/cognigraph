@@ -136,8 +136,9 @@ The [Native-only storage batch](../plans/native-only-2026-09-12.md), approved on
 resolves CG-65. [Runtime removal](native-runtime-2026-09-12.md) resolves CG-67.
 [Local readiness](native-readiness-2026-09-12.md) resolves CG-68.
 Current registry: **66 Resolved, 1 Closed without
-change, and 3 Open issues**. The Native-only batch is complete. [CG-69](CG-69.md)
-is the active CI/protection task (P1). [CG-70](CG-70.md) resolves Native lru
+change, and 4 Open issues**. The Native-only batch is complete. [CG-69](CG-69.md)
+is the active CI/protection task (P1); [CG-71](CG-71.md) owns first Community
+deployment and console packaging (P1). [CG-70](CG-70.md) resolves Native lru
 unsoundness and records a reviewed optional ONNX maintenance exception.
 CG-64 and CG-66 remain
 Open with deferred optional scheduling; they do not block Native-only readiness
@@ -227,8 +228,9 @@ defects. No ticket is closed merely because it was deferred.
 | [CG-68](CG-68.md) | P2 | Resolved | Qualify and document the Native-only release |
 | [CG-69](CG-69.md) | P1 | Open | Automate Native CI and enforce verified repository changes |
 | [CG-70](CG-70.md) | P2 | Resolved | Track transitive dependency safety and maintenance advisories |
+| [CG-71](CG-71.md) | P1 | Open | Package and qualify the first Community deployment with the console |
 
-Next available identifier: **CG-71**.
+Next available identifier: **CG-72**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

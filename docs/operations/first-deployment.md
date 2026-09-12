@@ -64,8 +64,9 @@ bootstrap/provider settings with a local embedding fixture.
 3. Configure authentication, distinct operator credentials, JWT secret, query
    budgets and request limits using the [configuration guide](configuration.md).
    Terminate TLS at the trusted reverse proxy and keep the raw API private.
-   Add the optional console through `COGNIGRAPH_UI_DIST`; the Docker image is
-   API/CLI-only and does not bundle the React assets.
+   The Docker image bundles the console at `COGNIGRAPH_UI_DIST=/ui`; standalone
+   binaries can opt in by pointing that variable at a built console. Follow the
+   [Railway guide](railway.md) for the selected first Community hosting target.
 4. Plan a [backup and restore drill](recovery.md) on a fresh store. A hot import
    is additive; use an empty target for exact restoration. Cold-copy the redb
    file only after stopping its writer. Preserve external CAS bytes, trust and
