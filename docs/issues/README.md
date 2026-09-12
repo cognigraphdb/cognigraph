@@ -128,8 +128,17 @@ resolves CG-58. The [collection search/filter scope batch](../../ui/audit/2026-0
 resolves CG-59. The [sidebar naming fix](../../ui/audit/2026-09-11-sidebar-names/audit.md)
 resolves CG-63. The [React Router update](../../ui/audit/2026-09-11-router-update/audit.md)
 resolves CG-61. The [shared UI CI and browser gate](../../ui/audit/2026-09-11-ui-ci/audit.md)
-resolves CG-60. Current registry: **62 Resolved, 1 Closed without change, and
+resolves CG-60. That checkpoint had **62 Resolved, 1 Closed without change, and
 0 Open issues**.
+
+The [Native-only storage batch](../plans/native-only-2026-09-12.md), approved on
+2026-09-12, adds CG-64–CG-68. Current registry: **62 Resolved, 1 Closed without
+change, and 5 Open issues (all P2)**. The owner's no-prior-delivery clarification
+reorders the active batch to **CG-65 → CG-67 → CG-68**. CG-64 and CG-66 remain
+Open with deferred optional scheduling; they do not block Native-only readiness
+or first deployment. These are engineering tasks under the
+[Native-only decision](../decisions/decision_native_only.md), not reopened UI
+defects. No ticket is closed merely because it was deferred.
 
 ## Conventions
 
@@ -206,8 +215,13 @@ resolves CG-60. Current registry: **62 Resolved, 1 Closed without change, and
 | [CG-61](CG-61.md) | P2 | Resolved | React Router lockfile retains an advisory-affected release |
 | [CG-62](CG-62.md) | P1 | Resolved | Plain-text construction imports reuse chunk IDs and replace earlier evidence |
 | [CG-63](CG-63.md) | P2 | Resolved | Collapsed sidebar removes the accessible names of navigation links |
+| [CG-64](CG-64.md) | P2 | Open | Define the ArangoDB dump migration contract and qualification fixtures |
+| [CG-65](CG-65.md) | P2 | Open | Preserve Native conformance coverage before retiring ArangoDB |
+| [CG-66](CG-66.md) | P2 | Open | Implement the Community offline ArangoDB dump importer |
+| [CG-67](CG-67.md) | P2 | Open | Remove the ArangoDB runtime backend and reject retired configuration |
+| [CG-68](CG-68.md) | P2 | Open | Qualify and document the Native-only release |
 
-Next available identifier: **CG-64**.
+Next available identifier: **CG-69**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

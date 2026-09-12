@@ -1,5 +1,10 @@
 # Configuration
 
+The current release still accepts Arango settings. The approved
+[Native-only cleanup](../plans/native-only-2026-09-12.md) will remove them before
+first live deployment; preserving legacy settings is not required. Current
+configuration below describes existing code, not the completed cleanup.
+
 The default build is Community. Multi-tenant storage, governance, construction,
 job and artifact settings belong to the Enterprise build; Community rejects
 configured multi-tenant storage, governance roots and artifact CAS. Enable the

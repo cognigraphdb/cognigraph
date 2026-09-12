@@ -10,8 +10,13 @@ or the [query corpus](../../crates/cognigraph-query/tests/corpus/); every gap
 names the workaround.
 
 Scope: ArangoDB 3.11/3.12 AQL against CogniGraph 2.6 with the Native backend.
-CogniGraph's ArangoDB backend (`cognigraph-arango`) exists for conformance
-testing, not as a migration bridge.
+CogniGraph 2.7.1 still includes the maintenance ArangoDB backend
+(`cognigraph-arango`); it is not a migration bridge. The owner has approved
+[Native-only storage](../decisions/decision_native_only.md). Its
+[retirement batch](../plans/native-only-2026-09-12.md) retains this query guide
+as external migration education. A [direct dump importer](../plans/arangodump-import-design.md)
+is deferred optional work and is not required for Native-only readiness or first
+deployment. The current query comparison remains scoped as above.
 
 ## Ten things to know before you start
 
@@ -51,7 +56,7 @@ testing, not as a migration bridge.
 | `/_api/transaction` | `POST /api/batch` | Atomic multi-op write batch on Native; not a general transaction with reads. |
 | ArangoSearch views, `SEARCH` clause | `/api/search/text` (BM25), `/api/search/hybrid` (BM25 + vector, RRF) | Full-text is an HTTP endpoint, not a CGQL clause. |
 | `/_api/database` | tenants (Enterprise) or one server per database | The Community build runs one tenant. |
-| `arangodump` / `arangorestore` | `GET /api/admin/export`, `POST /api/admin/import` (JSON snapshot); `cognigraph-cli` backup/restore | See [recovery](../operations/recovery.md). |
+| `arangodump` / `arangorestore` | No direct dump import; [optional design deferred](../plans/arangodump-import-design.md) | Current `cognigraph export/import` and `/api/admin/export/import` use CogniGraph JSON snapshots, not Arango dumps. See [recovery](../operations/recovery.md). |
 | `arangojs` | HTTP + `fetch`; a TypeScript SDK is planned | Bind variables and result arrays map directly. |
 
 ## Query structure

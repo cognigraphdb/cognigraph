@@ -1,5 +1,11 @@
 # Components and backend contracts
 
+This page describes the current implementation, including the 2.7.x Arango
+adapter. [Native-only storage](../decisions/decision_native_only.md) is now the
+approved direction; [CG-65/CG-67/CG-68](../plans/native-only-2026-09-12.md) cover
+preserved Native contracts, removal and first-deployment readiness. The component map below is not a commitment
+to continued Arango runtime support.
+
 ## Workspace Structure
 
 ```

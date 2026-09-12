@@ -49,9 +49,14 @@ nested instructions before editing a component, including [ui/AGENTS.md](ui/AGEN
 
 ## Query And Backend Direction
 
-- Native is the strategic backend; ArangoDB is maintained for reference and
-  conformance. Preserve the shared `GraphBackend` contract and explicit
-  capability boundaries; do not silently emulate unsupported guarantees.
+- Native-only storage is the approved direction. Follow the
+  [retirement decision](docs/decisions/decision_native_only.md) and
+  [batch plan](docs/plans/native-only-2026-09-12.md): ArangoDB still exists in
+  the current implementation. The owner confirms no external delivery or live
+  deployment yet: complete CG-65, CG-67 and CG-68 before first deployment.
+  CG-64/CG-66 are optional deferred importer work, not removal prerequisites.
+  Breaking cleanup may remove legacy settings and active support narratives.
+  Preserve useful `GraphBackend` contracts and explicit capabilities.
 - Public query text uses parsed CGQL. Opaque AQL is an internal ArangoDB detail,
   not a public escape hatch selected from a backend's declared query language.
 - Keep `graph.query()` as the Lua query entry point and preserve the separate
@@ -136,6 +141,9 @@ failing hook with `--no-verify` or disable it to publish an unchecked candidate.
    and record the version in `docs/changelog/`. Use a patch increment for routine
    compatible fixes/docs; features and breaking changes require the appropriate
    semantic version increment. Honor any exact version already chosen by the user.
+   The [pre-deployment Native-only decision](docs/decisions/decision_native_only.md)
+   explicitly permits breaking cleanup without a mandatory major jump solely
+   for Arango removal; the per-push version increment and verification still apply.
    Compare with the latest published product version, not only the last local tag.
    Branch and release-tag refs publishing the same candidate share one version;
    a retry of that unchanged candidate does not require another increment.
