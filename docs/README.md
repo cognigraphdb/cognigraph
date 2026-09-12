@@ -7,7 +7,7 @@ and next work. The [issue registry](issues/README.md) owns defect resolution;
 The active engineering batch is [Native-only storage](plans/native-only-2026-09-12.md):
 preserve useful Native contracts, remove the Arango runtime adapter, then qualify
 fresh Native operation before first live deployment. [The decision](decisions/decision_native_only.md)
-is accepted; CG-65 → CG-67 → CG-68 is the active sequence. CG-64/CG-66 are deferred
+is accepted; CG-65 is complete and CG-67 → CG-68 remains. CG-64/CG-66 are deferred
 optional importer work. Current 2.7.1 still includes Arango.
 
 | Area | Read it for |

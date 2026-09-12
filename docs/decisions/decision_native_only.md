@@ -1,6 +1,6 @@
 # Decision: Native-only storage before first deployment
 
-Date: 2026-09-12 · Status: ACCEPTED; implementation pending
+Date: 2026-09-12 · Status: ACCEPTED; runtime removal pending
 
 ## Context
 
@@ -104,3 +104,8 @@ CG-64/CG-66 remain deferred optional backlog, outside the readiness gate. This
 owner clarification supersedes the initial migration-first ordering and forced
 major-version/cutover requirements in the uncommitted September 12 draft.
 Current code still contains Arango until CG-67 is implemented.
+
+[CG-65 coverage verification](../issues/native-conformance-2026-09-12.md) is
+complete: retained Native contracts and replacement capability doubles pass
+both Rust suites and local release-binary probes. CG-67 is unblocked; this is
+not the final Native-only readiness gate owned by CG-68.

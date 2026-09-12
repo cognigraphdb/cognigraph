@@ -1,0 +1,230 @@
+{
+  "base_commit": "4273ff3f3fcc5d001d7dfc734c493131a6e17370",
+  "version": "2.7.1",
+  "changed_source_sha256": {
+    "Cargo.lock": "8d67fbff40e197950200c9e201b7f8d7c91609473d4aaf6799f86337f26bf1f0",
+    "crates/cognigraph-construct/Cargo.toml": "d4c68a41cf94eb685f345e43ec7ad9aba3b5afe2210dfc017773d1188c3f81d2",
+    "crates/cognigraph-construct/tests/ingest_integrity.rs": "73b10b0502ae5ceebf229d4626874f3b061764433ccaf0fb8f2773e6a46235d6",
+    "crates/cognigraph-core/src/contract.rs": "a1a890e45ef6eb0199dc0f63f0da4dca1ee1ef9bf74534adea2be644d06105c1",
+    "crates/cognigraph-core/src/contract/no_access.rs": "a5e4690ca3e3f94d8b5812f3801eba51818af302d58bd2cac26da003ec9a7018",
+    "crates/cognigraph-native/tests/cgql_corpus.rs": "e9ff619523bb35f910a46d2a00874563777a828844746d034b2355d681c284f1",
+    "crates/cognigraph-native/tests/persistence_modes.rs": "381a2653cb7598cc78d2099d1afcdb1cb4ccb68bbbc5dd08b0fb996fb001a1a9",
+    "crates/cognigraph-server/src/materialized_repairs/tests/backend_boundary.rs": "b7256772580fd56a4dda90df7f9bf26282345f6c494046573dc1a124920783b6",
+    "crates/cognigraph-server/src/materialized_repairs/tests/mod.rs": "4212bf7af790f486f44079b55d52dea24cfce0febbe411f0b4aa69ffd03a288f",
+    "crates/cognigraph-server/src/routes/lua.rs": "531df83013d91bc72c06ef6d5a6eee4cdcc2a476bfcb1e9dc386b1e3db9412ab",
+    "crates/cognigraph-server/src/routes/search/basic.rs": "6ab1fa3a18abad65924a08bac6a69462a64d3212c1b02ecad9da4375a753cd7c"
+  },
+  "issue": "CG-65",
+  "date": "2026-09-12",
+  "scope": "Local Native conformance before adapter removal",
+  "environment": {
+    "ARANGO_PASSWORD": "unset",
+    "COGNIGRAPH_LIVE_LLM": "0",
+    "live_servers": "loopback, authenticated, disposable stores, embedding provider none"
+  },
+  "validation": [
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "log_sha256": "976500ba89aec21bb357f71608a9e1e03fe8d57fe6c3e907926b3dc7c767c31c"
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--all"
+      ],
+      "exit_code": 0,
+      "log_sha256": "97f8c2de144829bd839dbd8adc3c2da582e46e25c025908ff4a330465ec58ff5",
+      "reported_passed": 780,
+      "failed": 0,
+      "ignored": 2,
+      "early_returning": {
+        "Arango integration": 8,
+        "live construction loops": 2
+      },
+      "ignored_qualification": {
+        "embedding providers": 2
+      }
+    },
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--all-targets",
+        "--features",
+        "enterprise",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "log_sha256": "d266a12912f52e242233083b24a309e98f7c3c77c1b6986c8a513f4f490621f5"
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--all",
+        "--features",
+        "enterprise"
+      ],
+      "exit_code": 0,
+      "log_sha256": "d4703b0fe88b5a9a41521a3b24a84204697fdbc1adfa91d0fa5f5d149cdd46c3",
+      "reported_passed": 971,
+      "failed": 0,
+      "ignored": 2,
+      "early_returning": {
+        "Arango integration": 8,
+        "live construction loops": 2
+      },
+      "ignored_qualification": {
+        "embedding providers": 2
+      }
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "-p",
+        "cognigraph-server"
+      ],
+      "exit_code": 0,
+      "log_sha256": "901a9622b7d16778de4ceedd169db7255e58ff01cc5624006b2cf47f852b4593"
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "-p",
+        "cognigraph-server",
+        "--features",
+        "enterprise"
+      ],
+      "exit_code": 0,
+      "log_sha256": "847269404024add41c4f147d3c24821fb8bfc4644a776076b2e68c9662be3fcc"
+    }
+  ],
+  "captures": [
+    {
+      "edition": "community",
+      "binary_sha256": "085afa8497ed1f7929eba691576062665a3177356445e6ffc763ea0f3a0cb8d7",
+      "script": "docs/issues/evidence/subquery-contract-http.py",
+      "script_sha256": "a0aeed7bf5c39087ed941dc48e029f63d18dd28bdec670eeecfeffec3949a0fe",
+      "capture": "docs/issues/evidence/cg65-subquery-community-2026-09-12.json",
+      "capture_sha256": "b8b39935b0cf7364bc14025e76659e420e6492067b105fed97fcf32b24facf0c",
+      "checks_by_mode": {
+        "resident": 144,
+        "paged": 144
+      },
+      "command": [
+        "python3",
+        "docs/issues/evidence/subquery-contract-http.py",
+        "--binary",
+        "target/cg65/server-community",
+        "--output",
+        "target/cg65/subquery-community.json"
+      ]
+    },
+    {
+      "edition": "community",
+      "binary_sha256": "085afa8497ed1f7929eba691576062665a3177356445e6ffc763ea0f3a0cb8d7",
+      "script": "docs/issues/evidence/sidecar-model-filter-http.py",
+      "script_sha256": "131b213bd9d6729e0ce4f942e082c946c2e341fb5a9447f7801c33135e3534c9",
+      "capture": "docs/issues/evidence/cg65-sidecar-community-2026-09-12.json",
+      "capture_sha256": "e0e2a40c3a33da34156ff2f55a1be09fd8920606059df3e7a1c58a7708f71e92",
+      "checks_by_mode": {
+        "resident-embedded": 54,
+        "resident-sidecar": 54,
+        "paged-sidecar": 54
+      },
+      "command": [
+        "python3",
+        "docs/issues/evidence/sidecar-model-filter-http.py",
+        "--binary",
+        "target/cg65/server-community",
+        "--output",
+        "target/cg65/sidecar-community.json"
+      ]
+    },
+    {
+      "edition": "enterprise",
+      "binary_sha256": "8cb78a42013183b72467fbf278cf6feee54d50b3966f710a267df8178885c9e5",
+      "script": "docs/issues/evidence/subquery-contract-http.py",
+      "script_sha256": "a0aeed7bf5c39087ed941dc48e029f63d18dd28bdec670eeecfeffec3949a0fe",
+      "capture": "docs/issues/evidence/cg65-subquery-enterprise-2026-09-12.json",
+      "capture_sha256": "be5369d9ea8c7dd906fd30f9f7bcaa6ba2d798de373b33c334f85a52c3bda18f",
+      "checks_by_mode": {
+        "resident": 144,
+        "paged": 144
+      },
+      "command": [
+        "python3",
+        "docs/issues/evidence/subquery-contract-http.py",
+        "--binary",
+        "target/cg65/server-enterprise",
+        "--output",
+        "target/cg65/subquery-enterprise.json"
+      ]
+    },
+    {
+      "edition": "enterprise",
+      "binary_sha256": "8cb78a42013183b72467fbf278cf6feee54d50b3966f710a267df8178885c9e5",
+      "script": "docs/issues/evidence/sidecar-model-filter-http.py",
+      "script_sha256": "131b213bd9d6729e0ce4f942e082c946c2e341fb5a9447f7801c33135e3534c9",
+      "capture": "docs/issues/evidence/cg65-sidecar-enterprise-2026-09-12.json",
+      "capture_sha256": "f2106fbc7901449a24ddb972331f06073405aba1c5f0d852d226e7c9c5dc3af4",
+      "checks_by_mode": {
+        "resident-embedded": 54,
+        "resident-sidecar": 54,
+        "paged-sidecar": 54
+      },
+      "command": [
+        "python3",
+        "docs/issues/evidence/sidecar-model-filter-http.py",
+        "--binary",
+        "target/cg65/server-enterprise",
+        "--output",
+        "target/cg65/sidecar-enterprise.json"
+      ]
+    }
+  ],
+  "live_checks": 900,
+  "native_corpus": {
+    "expected_result_cases": 126,
+    "comparisons_per_suite": 882,
+    "modes": [
+      "memory",
+      "resident/embedded before and after reopen",
+      "resident/sidecar before and after reopen",
+      "paged/sidecar before and after reopen"
+    ],
+    "unchanged_fixture_files_compared_to_base_commit": 253,
+    "independent_language_implementation": false
+  },
+  "exclusions": [
+    "No live Arango backend coverage",
+    "No provider requests or research holdout execution",
+    "No Native-only packaging, remote CI, image publication or deployment qualification"
+  ]
+}

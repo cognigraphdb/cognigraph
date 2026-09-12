@@ -165,8 +165,8 @@ fn cgql_error(error: cognigraph_query::ExecutionError) -> AppError {
 mod tests {
     use super::*;
     use crate::state::AppState;
-    use cognigraph_arango::ArangoBackend;
     use cognigraph_auth::Role;
+    use cognigraph_core::contract::NoAccessBackend;
     use cognigraph_native::NativeBackend;
 
     fn forbidden(err: AppError) {
@@ -278,14 +278,8 @@ mod tests {
 
     #[tokio::test]
     async fn raw_backend_queries_are_disabled_even_for_admin() {
-        // No Arango server is needed: every caller is rejected before opaque
-        // text reaches the backend.
-        let state = AppState::new(ArangoBackend::connect(
-            "http://127.0.0.1:1",
-            "test",
-            "root",
-            "",
-        ));
+        let backend = std::sync::Arc::new(NoAccessBackend::default());
+        let state = AppState::new_shared(backend.clone());
 
         for role in [Role::Viewer, Role::ScriptRunner, Role::Editor, Role::Admin] {
             let err = raw_query(
@@ -317,7 +311,7 @@ mod tests {
         );
 
         // Viewers retain a safe query path: explicit CGQL is parsed and
-        // executed in read-only mode even when the active backend speaks AQL.
+        // executed in read-only mode even when the backend reports an opaque language.
         let response = raw_query(
             State(state),
             Some(user(Role::Viewer)),
@@ -330,5 +324,6 @@ mod tests {
         .await
         .unwrap();
         assert_eq!(response.0["results"], serde_json::json!([1.0]));
+        backend.assert_unused();
     }
 }

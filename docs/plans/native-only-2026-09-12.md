@@ -1,7 +1,7 @@
 # Native-only storage engineering batch
 
 - Date: 2026-09-12
-- Status: Approved pre-deployment plan; implementation pending
+- Status: CG-65 complete; CG-67 next, followed by CG-68
 - Decision: [Native-only storage](../decisions/decision_native_only.md)
 - Baseline: CogniGraph 2.7.1, revision `efe9839`
 
@@ -25,9 +25,10 @@ migration or mandatory major-version jump for removing this unused backend.
 | 2 | [CG-67](../issues/CG-67.md) | Delete Arango runtime/dependencies/configuration and simplify Native startup | CG-65 |
 | 3 | [CG-68](../issues/CG-68.md) | Reconcile active docs/workflows and verify Native-only readiness before live deployment | CG-65 and CG-67 |
 
-Start with CG-65, keeping it bounded to behavior Native actually needs. Do not
-turn the coverage task into a new Arango qualification project. CG-67 does not
-wait for an importer. The [registry](../issues/README.md) owns statuses.
+CG-65 is complete: the [coverage report](../issues/native-conformance-2026-09-12.md)
+records the retained contracts, replacement doubles and local Rust/release-binary
+verification. Proceed with CG-67; it does not wait for an importer. The
+[registry](../issues/README.md) owns statuses.
 
 ## Deferred optional backlog
 

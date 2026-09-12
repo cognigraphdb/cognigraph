@@ -26,6 +26,5 @@ dotenvy = "0.15"
 [dev-dependencies]
 async-trait = { workspace = true }
 dotenvy = "0.15"
-cognigraph-arango = { path = "../cognigraph-arango" }
 cognigraph-native = { path = "../cognigraph-native" }
 tokio = { workspace = true }

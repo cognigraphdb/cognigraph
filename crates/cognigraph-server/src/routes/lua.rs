@@ -331,16 +331,12 @@ mod tests {
                 .is_some()
         );
 
-        // Arango is intentionally unreachable. The ScriptRunner must be
-        // rejected by Lua before raw AQL can touch the backend.
-        let aql_state = crate::state::AppState::new(cognigraph_arango::ArangoBackend::connect(
-            "http://127.0.0.1:1",
-            "test",
-            "root",
-            "",
-        ));
+        // Opaque queries must be rejected before any storage access.
+        let opaque_backend =
+            std::sync::Arc::new(cognigraph_core::contract::NoAccessBackend::default());
+        let opaque_state = crate::state::AppState::new_shared(opaque_backend.clone());
         let err = execute_script(
-            State(aql_state.clone()),
+            State(opaque_state.clone()),
             Some(user(Role::ScriptRunner, "default")),
             Json(ExecuteRequest {
                 script: r#"return graph.query("REMOVE 'n1' IN notes", {})"#.into(),
@@ -354,7 +350,7 @@ mod tests {
         );
 
         let err = execute_script(
-            State(aql_state.clone()),
+            State(opaque_state.clone()),
             Some(user(Role::Editor, "default")),
             Json(ExecuteRequest {
                 script: r#"return graph.query("REMOVE 'n1' IN notes", {})"#.into(),
@@ -368,7 +364,7 @@ mod tests {
         );
 
         let err = execute_script(
-            State(aql_state),
+            State(opaque_state),
             Some(user(Role::Admin, "default")),
             Json(ExecuteRequest {
                 script: r#"return graph.query("FOR d IN `_cognigraph_\\u006aobs` RETURN d", {})"#
@@ -385,6 +381,7 @@ mod tests {
             err.0.to_string().contains("unsafe opaque-query capability"),
             "Admin denial must not imply that the Admin role enables AQL: {err:?}"
         );
+        opaque_backend.assert_unused();
     }
 
     /// Lua scripts talk to `state.backend` — the guarded facade — so a

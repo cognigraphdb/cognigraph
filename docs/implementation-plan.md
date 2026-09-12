@@ -27,18 +27,24 @@ and test counts live in [change records](changelog/README.md), the
 The owner approved [Native-only storage before first deployment](decisions/decision_native_only.md)
 and clarified that CogniGraph has never been provided to anyone. Breaking cleanup
 is allowed freely before first delivery. The [batch plan](plans/native-only-2026-09-12.md)
-now starts with [CG-65](issues/CG-65.md), preserving useful Native coverage,
-followed by [CG-67](issues/CG-67.md), removing the backend and configuration.
+has completed [CG-65](issues/CG-65.md), preserving useful Native coverage.
+Next is [CG-67](issues/CG-67.md), removing the backend and configuration.
 [CG-68](issues/CG-68.md) reconciles active guides/workflows and verifies fresh
 Native operation before any live deployment. No customer migration, compatibility
-window or last-Arango release is needed. Implementation remains pending.
+window or last-Arango release is needed. Runtime removal remains pending.
+
+The [CG-65 report](issues/native-conformance-2026-09-12.md) records four
+capability-boundary test replacements, all 126 expected CGQL results across
+Native modes and persistent reopen, both Rust validation suites and 900 local
+release-binary checks. Adapter-only test groups are identified for deletion;
+existing query goldens and historical captures remain unchanged.
 
 [CG-64](issues/CG-64.md) and [CG-66](issues/CG-66.md) are deferred optional
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **62 Resolved, 1 Closed without change, and 5 Open issues**,
-all P2: three active batch tickets and two explicitly deferred backlog tickets.
+The registry now has **63 Resolved, 1 Closed without change, and 4 Open issues**,
+all P2: two active batch tickets and two explicitly deferred backlog tickets.
 The earlier console defect list remains
 closed. Additional console features and the research qualification below are
 separate backlogs, not prerequisites for this batch. No model or holdout runs

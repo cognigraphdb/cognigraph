@@ -18,6 +18,10 @@ use crate::types::{CollectionType, Direction, TraversalOpts, VectorSearchOpts};
 mod traversal;
 pub use traversal::traversal_confidence_contract;
 
+mod no_access;
+#[doc(hidden)]
+pub use no_access::NoAccessBackend;
+
 /// Document create/get/update/replace/delete/list semantics.
 pub async fn document_crud_contract(backend: &dyn GraphBackend, prefix: &str) {
     let col = format!("{prefix}_docs");
