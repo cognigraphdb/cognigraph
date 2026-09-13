@@ -1,0 +1,6 @@
+// header
+FOR d IN documents
+// between
+FILTER d.x == 1 // trailing
+// another
+RETURN d // end

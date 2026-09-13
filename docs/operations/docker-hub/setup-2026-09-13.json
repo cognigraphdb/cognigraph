@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-09-13T10:05:47.589117+00:00",
+  "source": "Docker Hub anonymous repository and tag APIs",
+  "repositories": [
+    {
+      "repository": "cognigraph/cognigraph",
+      "edition": "community",
+      "public": true,
+      "immutable_tags_settings": {
+        "enabled": true,
+        "rules": [
+          ".*"
+        ]
+      },
+      "categories": [
+        {
+          "name": "Databases & storage",
+          "slug": "databases-and-storage"
+        }
+      ],
+      "tag_count": 0,
+      "overview_sha256": "02c5938b4641b57f45e8f81730f900e3a73e4b384cc75afab8fc023f276771e3"
+    },
+    {
+      "repository": "cognigraph/cognigraph-enterprise",
+      "edition": "enterprise",
+      "public": true,
+      "immutable_tags_settings": {
+        "enabled": true,
+        "rules": [
+          ".*"
+        ]
+      },
+      "categories": [
+        {
+          "name": "Databases & storage",
+          "slug": "databases-and-storage"
+        }
+      ],
+      "tag_count": 0,
+      "overview_sha256": "e44b3c312ad5f2f16d03d7d30e340440ab241eb9cbdd4946df04fac1bae6f507"
+    }
+  ],
+  "scout": {
+    "source": "Docker Hub saved settings read back after reload",
+    "community": "enabled",
+    "enterprise": "not enabled; Personal repository allowance consumed by Community"
+  },
+  "publication": "not executed"
+}

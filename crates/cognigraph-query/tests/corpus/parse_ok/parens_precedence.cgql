@@ -1,0 +1,3 @@
+FOR d IN documents
+FILTER ((d.a == 1 OR d.b == 2) AND NOT (d.c > 3 + 4 * 2))
+RETURN (d.x + d.y) * -d.z

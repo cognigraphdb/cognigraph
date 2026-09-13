@@ -1,0 +1,108 @@
+.auth-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 24px;
+  background: var(--surface-muted, #f5f6f8);
+}
+
+@supports (height: 100dvh) {
+  .auth-screen {
+    height: 100dvh;
+  }
+}
+
+.auth-card {
+  flex: none;
+  /* Auto margins center when there is room and collapse for scrollable overflow. */
+  margin: auto;
+  width: 100%;
+  max-width: 380px;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e3e4e8);
+  border-radius: 16px;
+  padding: 28px 28px 22px;
+  box-shadow: 0 12px 40px rgba(20, 22, 30, 0.08);
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: var(--accent, #0f766e);
+}
+
+.auth-brand h1 {
+  font-size: 18px;
+  margin: 0;
+  color: var(--text, #16171d);
+}
+
+.auth-brand .brand-mark {
+  width: 38px;
+  height: 38px;
+}
+
+.auth-brand p {
+  font-size: 13px;
+  margin: 2px 0 0;
+  color: var(--text-muted, #6a6a75);
+}
+
+.auth-submit {
+  margin-top: 4px;
+}
+
+.auth-foot {
+  margin: 18px 0 0;
+  font-size: 12px;
+  color: var(--text-muted, #6a6a75);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px), (pointer: coarse) {
+  .auth-card .ant-input,
+  .auth-card .ant-input-affix-wrapper {
+    font-size: 16px;
+  }
+
+  .auth-card .ant-input-affix-wrapper,
+  .auth-submit {
+    min-height: 44px;
+  }
+}
+
+.topbar-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+  padding: 4px 10px;
+  border: 1px solid var(--border, #e3e4e8);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-muted, #6a6a75);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.topbar-logout:hover {
+  color: var(--danger, #b3261e);
+  border-color: var(--danger, #b3261e);
+}
+
+.connection-card {
+  max-width: 480px;
+}
+.connection-server {
+  overflow-wrap: anywhere;
+  font-weight: 600;
+}
+.connection-actions {
+  margin-top: 16px;
+  flex-wrap: wrap;
+}

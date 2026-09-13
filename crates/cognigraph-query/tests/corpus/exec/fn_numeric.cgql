@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d._key == "c" RETURN [ABS(d.score), FLOOR(d.score), CEIL(d.score), ROUND(d.score)]

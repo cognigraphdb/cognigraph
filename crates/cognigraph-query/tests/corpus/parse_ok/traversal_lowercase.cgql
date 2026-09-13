@@ -1,0 +1,3 @@
+for v, e, p in 1..3 outbound @start relationships
+filter e.confidence >= @min
+return { v: v, e: e, p: p }

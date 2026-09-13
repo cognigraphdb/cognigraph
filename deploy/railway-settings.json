@@ -1,0 +1,12 @@
+{
+  "dockerfilePath": "Dockerfile",
+  "startCommand": "/usr/local/bin/cognigraph-entrypoint",
+  "numReplicas": 1,
+  "multiRegionConfig": {"europe-west4-drams3a": {"numReplicas": 1}},
+  "healthcheckPath": "/health/database",
+  "healthcheckTimeout": 120,
+  "restartPolicyType": "ALWAYS",
+  "overlapSeconds": 0,
+  "drainingSeconds": 30,
+  "sleepApplication": false
+}

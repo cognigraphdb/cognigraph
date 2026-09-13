@@ -1,0 +1,1 @@
+INSERT { a: 1 } INTO documents RETURN d

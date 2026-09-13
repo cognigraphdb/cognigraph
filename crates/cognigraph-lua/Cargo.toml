@@ -1,0 +1,18 @@
+[package]
+name = "cognigraph-lua"
+version.workspace = true
+edition.workspace = true
+license = "FSL-1.1-Apache-2.0"
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+cognigraph-core = { path = "../cognigraph-core" }
+cognigraph-query = { path = "../cognigraph-query" }
+mlua = { version = "0.12", features = ["luajit", "vendored", "async", "serialize"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+
+[dev-dependencies]
+cognigraph-native = { path = "../cognigraph-native" }

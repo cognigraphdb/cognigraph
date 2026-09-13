@@ -1,0 +1,34 @@
+{
+  "edges": [
+    {"from": "a", "to": "low", "confidence": 0.1},
+    {"from": "low", "to": "low_end", "confidence": 1},
+    {"from": "a", "to": "high", "confidence": 0.6},
+    {"from": "high", "to": "high_end", "confidence": 0.6},
+    {"from": "a", "to": "boundary", "confidence": 0.5},
+    {"from": "a", "to": "zero", "confidence": 0},
+    {"from": "a", "to": "negative", "confidence": -0.2},
+    {"from": "a", "to": "null", "confidence": null},
+    {"from": "a", "to": "string", "confidence": "0.1"},
+    {"from": "a", "to": "boolean", "confidence": false},
+    {"from": "a", "to": "array", "confidence": [0.1]},
+    {"from": "a", "to": "object", "confidence": {"value": 0.1}},
+    {"from": "a", "to": "missing"}
+  ],
+  "cases": [
+    {"name": "per_edge_inclusive_threshold", "start": "a", "min_depth": 0, "max_depth": 2, "direction": "outbound", "min_confidence": 0.5, "path_decay": 0.5, "expected": {"a": 1, "a/high": 0.3, "a/high/high_end": 0.09, "a/boundary": 0.25, "a/null": 0.5, "a/string": 0.5, "a/boolean": 0.5, "a/array": 0.5, "a/object": 0.5, "a/missing": 0.5}},
+    {"name": "reject_low_intermediate_below_min_depth", "start": "a", "min_depth": 2, "max_depth": 2, "direction": "outbound", "min_confidence": 0.5, "path_decay": 0.5, "expected": {"a/high/high_end": 0.09}},
+    {"name": "without_threshold", "start": "a", "min_depth": 0, "max_depth": 2, "direction": "outbound", "min_confidence": null, "path_decay": 0.5, "expected": {"a": 1, "a/high": 0.3, "a/high/high_end": 0.09, "a/boundary": 0.25, "a/null": 0.5, "a/string": 0.5, "a/boolean": 0.5, "a/array": 0.5, "a/object": 0.5, "a/missing": 0.5, "a/low": 0.05, "a/low/low_end": 0.025, "a/zero": 0, "a/negative": -0.1}},
+    {"name": "zero_is_numeric", "start": "a", "min_depth": 0, "max_depth": 2, "direction": "outbound", "min_confidence": 0, "path_decay": 0.5, "expected": {"a": 1, "a/high": 0.3, "a/high/high_end": 0.09, "a/boundary": 0.25, "a/null": 0.5, "a/string": 0.5, "a/boolean": 0.5, "a/array": 0.5, "a/object": 0.5, "a/missing": 0.5, "a/low": 0.05, "a/low/low_end": 0.025, "a/zero": 0}},
+    {"name": "negative_boundary", "start": "a", "min_depth": 0, "max_depth": 2, "direction": "outbound", "min_confidence": -0.2, "path_decay": 0.5, "expected": {"a": 1, "a/high": 0.3, "a/high/high_end": 0.09, "a/boundary": 0.25, "a/null": 0.5, "a/string": 0.5, "a/boolean": 0.5, "a/array": 0.5, "a/object": 0.5, "a/missing": 0.5, "a/low": 0.05, "a/low/low_end": 0.025, "a/zero": 0, "a/negative": -0.1}},
+    {"name": "defaults_are_one", "start": "a", "min_depth": 0, "max_depth": 2, "direction": "outbound", "min_confidence": 1, "path_decay": 0.5, "expected": {"a": 1, "a/null": 0.5, "a/string": 0.5, "a/boolean": 0.5, "a/array": 0.5, "a/object": 0.5, "a/missing": 0.5}},
+    {"name": "above_default_only_depth_zero", "start": "a", "min_depth": 0, "max_depth": 2, "direction": "outbound", "min_confidence": 1.1, "path_decay": 0.5, "expected": {"a": 1}},
+    {"name": "depth_zero_only", "start": "a", "min_depth": 0, "max_depth": 0, "direction": "outbound", "min_confidence": 1.1, "path_decay": 0.5, "expected": {"a": 1}},
+    {"name": "depth_zero_unfiltered", "start": "a", "min_depth": 0, "max_depth": 0, "direction": "outbound", "min_confidence": null, "path_decay": 0.5, "expected": {"a": 1}},
+    {"name": "inbound_reject_low_final", "start": "low_end", "min_depth": 0, "max_depth": 2, "direction": "inbound", "min_confidence": 0.5, "path_decay": 0.5, "expected": {"low_end": 1, "low_end/low": 0.5}},
+    {"name": "inbound_reject_low_first", "start": "low", "min_depth": 1, "max_depth": 2, "direction": "inbound", "min_confidence": 0.5, "path_decay": 0.5, "expected": {}},
+    {"name": "inbound_score_below_threshold", "start": "high_end", "min_depth": 0, "max_depth": 2, "direction": "inbound", "min_confidence": 0.5, "path_decay": 0.5, "expected": {"high_end": 1, "high_end/high": 0.3, "high_end/high/a": 0.09}},
+    {"name": "any_direction", "start": "a", "min_depth": 0, "max_depth": 2, "direction": "any", "min_confidence": 0.5, "path_decay": 0.5, "expected": {"a": 1, "a/high": 0.3, "a/high/high_end": 0.09, "a/boundary": 0.25, "a/null": 0.5, "a/string": 0.5, "a/boolean": 0.5, "a/array": 0.5, "a/object": 0.5, "a/missing": 0.5}},
+    {"name": "any_prune_low_final", "start": "low_end", "min_depth": 0, "max_depth": 2, "direction": "any", "min_confidence": 0.5, "path_decay": 0.5, "expected": {"low_end": 1, "low_end/low": 0.5}},
+    {"name": "decay_is_not_edge_confidence", "start": "a", "min_depth": 2, "max_depth": 2, "direction": "outbound", "min_confidence": 0.5, "path_decay": 0.1, "expected": {"a/high/high_end": 0.0036}}
+  ]
+}

@@ -1,0 +1,38 @@
+.cgql-editor {
+  position: relative;
+}
+
+.cgql-editor:focus-within::after {
+  position: absolute;
+  z-index: 5;
+  border: 2px solid #159e97;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+}
+
+.cgql-editor .cm-editor,
+.cgql-editor .cm-scroller {
+  height: 100%;
+}
+
+.cgql-editor .cm-scroller {
+  overflow: auto;
+}
+
+.cgql-editor .cm-lineNumbers .cm-gutterElement {
+  min-width: 32px;
+  padding: 0 8px 0 4px;
+}
+
+.cgql-editor .cm-lint-marker-error,
+.cgql-editor .cm-lint-marker-warning {
+  transform: scale(0.82);
+}
+
+.cgql-editor .cm-tooltip-lint {
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  box-shadow: 0 5px 16px rgb(26 42 39 / 12%);
+  font-family: var(--font-sans);
+}

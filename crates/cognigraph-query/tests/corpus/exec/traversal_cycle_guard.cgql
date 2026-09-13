@@ -1,0 +1,1 @@
+FOR v, e, p IN 1..4 OUTBOUND "documents/c" relationships SORT p.depth ASC RETURN v._key

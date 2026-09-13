@@ -1,0 +1,126 @@
+{
+  "with_product": {
+    "documents": 329,
+    "local_links_checked": 1203,
+    "optional_product_links_skipped": 0,
+    "changelog_records": 106,
+    "errors": []
+  },
+  "without_product_simulation": {
+    "documents": 313,
+    "local_links_checked": 1139,
+    "optional_product_links_skipped": 17,
+    "changelog_records": 106,
+    "errors": []
+  },
+  "decision_index": {
+    "decisions": 55,
+    "inventory_rows": 55,
+    "categories": {
+      "Standing conventions": 6,
+      "Platform contracts": 18,
+      "Construction and review contracts": 9,
+      "Governed operations and authority generations": 12,
+      "Research evidence and historical priorities": 9,
+      "Superseded identity history": 1
+    },
+    "statuses": {
+      "Active": 24,
+      "Amended": 21,
+      "Research": 9,
+      "Historical": 1
+    },
+    "local_links_checked": 158,
+    "markdown_anchors_checked": 20,
+    "external_links_not_checked": 0,
+    "optional_product_links_not_checked": 1,
+    "errors": []
+  },
+  "validator_probes": [
+    "valid new record accepted and indexed",
+    "stale index rejected",
+    "missing local target rejected",
+    "missing anchor rejected",
+    "invalid date rejected"
+  ],
+  "date": "2026-09-10",
+  "source_revision": "dfc115803cd42fdf1f9b7026333a1bfddc139873",
+  "quickstart": {
+    "health": {
+      "service": "cognigraph",
+      "status": "ok",
+      "version": "2.6.0"
+    },
+    "routes": {
+      "/health": {
+        "status": 200,
+        "bytes": 56
+      },
+      "/health/database": {
+        "status": 200,
+        "bytes": 38
+      },
+      "/health/jobs": {
+        "status": 200,
+        "bytes": 30
+      },
+      "/openapi.yaml": {
+        "status": 200,
+        "bytes": 324699
+      },
+      "/api/collections": {
+        "status": 200,
+        "bytes": 28
+      }
+    },
+    "persistent_demo_database": true,
+    "provider_calls": 0,
+    "shutdown_exit_code": 0
+  },
+  "publication_http": {
+    "assets": 17,
+    "all_http_200": true,
+    "deployed": false
+  },
+  "preservation": {
+    "frozen_files": 1092,
+    "unchanged": true,
+    "exact_archives": 8,
+    "asset_files_identical": 30,
+    "changelog_bodies_preserved": 105,
+    "unaccounted_deleted_sources": []
+  },
+  "publishing": {
+    "original_assets_rewritten": false,
+    "rebuilt_html_byte_identical": true,
+    "original_pdf_pages": 23,
+    "rebuilt_pdf_pages": 23,
+    "all_pdf_page_text_identical": true,
+    "paper_visual_checks": [
+      "title",
+      "measurement section 9.1"
+    ],
+    "deck_export_pages": 11,
+    "deck_visual_checks": [
+      "first slide",
+      "last slide"
+    ],
+    "shell_syntax": "passed",
+    "deployment_invoked": false
+  },
+  "rust": {
+    "source_changes": false,
+    "release_server_build": "passed",
+    "full_suite_and_clippy": "not rerun; unchanged Rust source was validated before dc65a91"
+  },
+  "issues": {
+    "Resolved": 39,
+    "Closed without change": 1
+  },
+  "limits": [
+    "No external website link crawl",
+    "Historical snapshots retain original links",
+    "No model calls or holdout execution",
+    "No remote CI, push, release, publication, or deployment"
+  ]
+}

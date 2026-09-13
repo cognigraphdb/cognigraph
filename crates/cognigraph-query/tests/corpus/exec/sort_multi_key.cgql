@@ -1,0 +1,1 @@
+FOR d IN documents FILTER HAS(d, "category") SORT d.category ASC, d.score DESC RETURN d._key

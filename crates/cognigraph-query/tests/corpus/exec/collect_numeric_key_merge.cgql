@@ -1,0 +1,1 @@
+FOR d IN numbers COLLECT v = d.v WITH COUNT INTO n RETURN [v, n]

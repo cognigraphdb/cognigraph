@@ -1,0 +1,267 @@
+<!doctype html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clinical reference — REVIEWER worksheet</title>
+<style>
+  :root { --line:#d9d9de; --ink:#1a1a1f; --muted:#6a6a75; --true:#0a7d3f; --false:#b3261e;
+          --unc:#8a6d00; --cal:#5b5bd6; --evalbg:#fbfbfd; --calbg:#f4f4fb; }
+  * { box-sizing:border-box; }
+  body { font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         color:var(--ink); margin:0; background:#fff; }
+  header { position:sticky; top:0; background:#fff; border-bottom:1px solid var(--line);
+           padding:12px 20px; z-index:10; display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  header h1 { font-size:16px; margin:0; }
+  .who { font-weight:700; }
+  .prog { color:var(--muted); font-variant-numeric:tabular-nums; }
+  .bar { height:6px; background:var(--line); border-radius:3px; flex:1; min-width:120px; overflow:hidden; }
+  .bar > i { display:block; height:100%; background:var(--true); width:0; transition:width .2s; }
+  button { font:inherit; padding:7px 14px; border:1px solid var(--line); border-radius:7px;
+           background:#fff; cursor:pointer; }
+  button.primary { background:var(--ink); color:#fff; border-color:var(--ink); }
+  button:disabled { opacity:.45; cursor:not-allowed; }
+  main { max-width:900px; margin:0 auto; padding:20px; }
+  .rules { border:1px solid var(--line); border-radius:10px; padding:4px 18px; margin-bottom:20px; }
+  .rules summary { font-weight:700; cursor:pointer; padding:10px 0; }
+  .rules li { margin:6px 0; }
+  .doc { border:1px solid var(--line); border-radius:12px; margin:16px 0; overflow:hidden; }
+  .doc.eval { background:var(--evalbg); }
+  .doc.cal  { background:var(--calbg); }
+  .doc > .head { padding:14px 18px; border-bottom:1px solid var(--line); display:flex;
+                 gap:10px; align-items:baseline; flex-wrap:wrap; }
+  .doc .prod { font-weight:700; font-size:16px; }
+  .badge { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
+           padding:2px 8px; border-radius:20px; }
+  .badge.eval { background:#e7efe9; color:var(--true); }
+  .badge.cal  { background:#e9e9f7; color:var(--cal); }
+  .doc .body { padding:6px 18px 16px; }
+  details.sect { margin:8px 0; }
+  details.sect summary { cursor:pointer; color:var(--muted); font-weight:600; }
+  .sect .txt { white-space:pre-wrap; background:#fff; border:1px solid var(--line);
+               border-radius:8px; padding:10px 12px; margin-top:6px; font-size:14px; }
+  .cand { border-top:1px solid var(--line); padding:12px 0; }
+  .cand .rel { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.03em; }
+  .cand .concept { font-weight:600; }
+  .cand .ev { font-size:13px; color:#333; background:#fff; border-left:3px solid var(--line);
+              padding:4px 10px; margin:6px 0; }
+  .verd { display:flex; gap:6px; flex-wrap:wrap; align-items:center; margin-top:4px; }
+  .verd label { display:inline-flex; gap:5px; align-items:center; padding:3px 10px;
+                border:1px solid var(--line); border-radius:20px; cursor:pointer; user-select:none; }
+  .verd input { accent-color:var(--ink); }
+  .verd label:has(input[value=true]:checked)  { border-color:var(--true); background:#eaf6ef; }
+  .verd label:has(input[value=false]:checked) { border-color:var(--false); background:#fbeceb; }
+  .verd label:has(input[value=uncertain]:checked) { border-color:var(--unc); background:#fbf5e0; }
+  .note { width:100%; margin-top:6px; padding:6px 8px; border:1px solid var(--line);
+          border-radius:6px; font:inherit; }
+  .added { border-top:1px dashed var(--line); margin-top:10px; padding-top:10px; }
+  .added h4 { margin:0 0 8px; font-size:13px; color:var(--muted); }
+  .addrow { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .addrow select, .addrow input, .addrow textarea { padding:6px 8px; border:1px solid var(--line);
+          border-radius:6px; font:inherit; }
+  .addrow textarea { grid-column:1/3; min-height:52px; }
+  .adderr { color:var(--false); font-size:13px; min-height:18px; }
+  .done { padding:12px 18px; border-top:1px solid var(--line); display:flex; gap:10px;
+          align-items:center; background:#fff; }
+  .done label { font-weight:600; display:inline-flex; gap:8px; align-items:center; cursor:pointer; }
+  .saved { color:var(--muted); font-size:13px; margin-left:auto; }
+  footer { max-width:900px; margin:0 auto; padding:0 20px 60px; color:var(--muted); font-size:13px; }
+</style>
+
+<header>
+  <h1>Clinical reference — reviewer <span class="who" id="who"></span></h1>
+  <span class="prog" id="prog"></span>
+  <span class="bar"><i id="fill"></i></span>
+  <button id="save">Save progress</button>
+  <button id="download" class="primary">Download my labels</button>
+</header>
+
+<main>
+  <details class="rules" open>
+    <summary>Labeling rules — R1–R7 (frozen at calibration; read before starting)</summary>
+    <ul>
+      <li><b>R1 — Concept preservation (governing).</b> Drop a qualifier only when it does
+        not change the concept's extension. Subtype, severity, anatomy, timing, causative
+        drug, and treatment combination are <b>essential</b>. A lossy broad candidate is
+        <span style="color:var(--false)">false</span>; add the exact qualified concept as
+        <span style="color:var(--true)">true</span>. ("Known" may be dropped; the allergen
+        may not.) <i>systemic fungal infection ≠ infection; partial-onset seizures ≠
+        seizures; hypersensitivity to pregabalin ≠ hypersensitivity.</i></li>
+      <li><b>R2 — Adjunctive therapy counts as treatment</b>, but the target keeps its subtype.</li>
+      <li><b>R3 — Treated target, not associated context.</b> "adjunctive therapy in edema
+        associated with congestive heart failure" is TREATS <i>edema…</i>, not TREATS
+        <i>heart failure</i>.</li>
+      <li><b>R4 — Contraindications decided on clinical meaning, never phrasing.</b> Bare
+        list items and "should not be used in…" are valid contraindications.</li>
+      <li><b>R5 — Combination contraindications bind the combination.</b> "Do not co-administer
+        aliskiren with olmesartan in patients with diabetes" does <b>not</b> make diabetes a
+        contraindication for olmesartan alone.</li>
+      <li><b>R6 — Restricted/refractory-only indications</b> do not support a plain TREATS;
+        mark the plain concept <span style="color:var(--false)">false</span> and add the
+        qualified one.</li>
+      <li><b>R7 — Boilerplate is not an indication</b> (e.g. antibiotic-stewardship language).</li>
+    </ul>
+    <p><b>For every candidate:</b> mark <span style="color:var(--true)">true</span> /
+      <span style="color:var(--false)">false</span> /
+      <span style="color:var(--unc)">uncertain</span>. <b>Then read the full section</b> and
+      <b>add any real fact the candidates missed</b> — the reference must be exhaustive for
+      these two relations. Evidence for an added fact must be copied <b>exactly</b> from the
+      section text. Do not consult any tool output. Work independently of the other reviewer.</p>
+  </details>
+  <div id="docs"></div>
+</main>
+<footer id="foot"></footer>
+
+<script id="payload" type="application/json">__PAYLOAD__</script>
+<script>
+const DATA = JSON.parse(document.getElementById("payload").textContent);
+const KEY = "clinref-" + DATA.annotator;
+const state = JSON.parse(localStorage.getItem(KEY) || "{}"); // set_id -> {facts:{i:{v,note}}, added:[], complete}
+document.getElementById("who").textContent = DATA.annotator;
+
+const REL = { TREATS:"TREATS", CONTRAINDICATED_IN:"CONTRAINDICATED_IN" };
+const docsEl = document.getElementById("docs");
+
+function docState(id){ return state[id] || (state[id] = {facts:{}, added:[], complete:false}); }
+
+function render(){
+  docsEl.innerHTML = "";
+  DATA.packets.forEach(p => {
+    const st = docState(p.set_id);
+    const d = document.createElement("div");
+    d.className = "doc " + (p.split==="calibration"?"cal":"eval");
+    const badge = p.split==="calibration"
+      ? '<span class="badge cal">calibration</span>'
+      : '<span class="badge eval">held-out</span>';
+    let sects = p.sections.map(s =>
+      `<details class="sect"><summary>${s.code} — ${esc(s.title||"(section)")} · read full text</summary>
+        <div class="txt">${esc(s.text)}</div></details>`).join("");
+    let cands = p.candidates.map((c,i) => {
+      const cur = st.facts[i] || {};
+      const rid = p.set_id+"-"+i;
+      return `<div class="cand">
+        <div class="rel">${c.relation}</div>
+        <div class="concept">${esc(c.condition)}</div>
+        <div class="ev">${esc(c.evidence)}</div>
+        <div class="verd" data-doc="${p.set_id}" data-i="${i}">
+          ${["true","false","uncertain"].map(v =>
+            `<label><input type="radio" name="${rid}" value="${v}" ${cur.v===v?"checked":""}>${v}</label>`).join("")}
+          <input class="note" placeholder="note (optional)" value="${esc(cur.note||"")}"
+                 data-doc="${p.set_id}" data-i="${i}" style="max-width:280px">
+        </div></div>`;
+    }).join("");
+    d.innerHTML = `<div class="head">${badge}<span class="prod">${esc(p.product)}</span>
+        <span style="color:var(--muted);font-size:13px">${p.candidates.length} candidate(s)</span></div>
+      <div class="body">${sects}${cands}
+        <div class="added" data-doc="${p.set_id}"><h4>Facts the candidates missed (add exhaustively)</h4>
+          <div class="addlist"></div>
+          <div class="addrow">
+            <select class="a-rel"><option value="TREATS">TREATS</option><option value="CONTRAINDICATED_IN">CONTRAINDICATED_IN</option></select>
+            <input class="a-cond" placeholder="condition / concept (keep qualifiers — R1)">
+            <select class="a-sect">${p.sections.map(s=>`<option value="${s.code}">${s.code} — ${esc(s.title||"")}</option>`).join("")}</select>
+            <input class="a-note" placeholder="note (optional)">
+            <textarea class="a-ev" placeholder="evidence — copy EXACTLY from the section text above"></textarea>
+          </div>
+          <div class="adderr"></div>
+          <button class="a-add">+ add fact</button>
+        </div>
+      </div>
+      <div class="done"><label><input type="checkbox" class="cx" ${st.complete?"checked":""} data-doc="${p.set_id}">
+        Mark this document complete</label><span class="saved" data-doc="${p.set_id}"></span></div>`;
+    docsEl.appendChild(d);
+    renderAdded(p);
+  });
+  wire();
+  refresh();
+}
+
+function renderAdded(p){
+  const wrap = docsEl.querySelector(`.added[data-doc="${p.set_id}"] .addlist`);
+  const st = docState(p.set_id);
+  wrap.innerHTML = st.added.map((a,j) =>
+    `<div class="cand"><div class="rel">${a.relation} · added</div>
+      <div class="concept">${esc(a.condition)}</div><div class="ev">${esc(a.evidence)}</div>
+      <button data-doc="${p.set_id}" data-j="${j}" class="a-del">remove</button></div>`).join("");
+  docsEl.querySelectorAll(`.added[data-doc="${p.set_id}"] .a-del`).forEach(b =>
+    b.onclick = () => { st.added.splice(+b.dataset.j,1); save(); renderAdded(p); refresh(); });
+}
+
+function wire(){
+  docsEl.querySelectorAll(".verd input[type=radio]").forEach(r => r.onchange = e => {
+    const w = e.target.closest(".verd"); const st = docState(w.dataset.doc);
+    (st.facts[w.dataset.i] = st.facts[w.dataset.i]||{}).v = e.target.value; save(); refresh();
+  });
+  docsEl.querySelectorAll("input.note").forEach(n => n.oninput = e => {
+    const st = docState(e.target.dataset.doc);
+    (st.facts[e.target.dataset.i] = st.facts[e.target.dataset.i]||{}).note = e.target.value; save();
+  });
+  docsEl.querySelectorAll(".cx").forEach(c => c.onchange = e => {
+    const id = e.target.dataset.doc;
+    if (e.target.checked && !docComplete(id)) {
+      e.target.checked = false;
+      alert("Every candidate in this document needs a verdict before it can be marked complete.");
+      return;
+    }
+    docState(id).complete = e.target.checked; save(); refresh();
+  });
+  docsEl.querySelectorAll(".a-add").forEach(b => b.onclick = () => {
+    const box = b.closest(".added"); const id = box.dataset.doc;
+    const p = DATA.packets.find(x => x.set_id===id);
+    const rel = box.querySelector(".a-rel").value, cond = box.querySelector(".a-cond").value.trim();
+    const code = box.querySelector(".a-sect").value, ev = box.querySelector(".a-ev").value.trim();
+    const note = box.querySelector(".a-note").value.trim();
+    const err = box.querySelector(".adderr");
+    const sect = p.sections.find(s => s.code===code);
+    if (cond.length < 3) return err.textContent = "Enter a condition/concept.";
+    if (ev.length < 4)  return err.textContent = "Paste the exact evidence from the section.";
+    if (!sect.text.includes(ev)) return err.textContent =
+      "Evidence must be copied EXACTLY from the chosen section (it is not a substring). The toolkit will reject it otherwise.";
+    docState(id).added.push({relation:rel, condition:cond, section_code:code, evidence:ev, notes:note});
+    box.querySelector(".a-cond").value=""; box.querySelector(".a-ev").value="";
+    box.querySelector(".a-note").value=""; err.textContent="";
+    save(); renderAdded(p); refresh();
+  });
+}
+
+function docComplete(id){
+  const p = DATA.packets.find(x=>x.set_id===id), st = docState(id);
+  return p.candidates.every((_,i) => st.facts[i] && st.facts[i].v);
+}
+function refresh(){
+  let done = 0;
+  DATA.packets.forEach(p => {
+    const ok = docState(p.set_id).complete;
+    if (ok) done++;
+    const tag = docsEl.querySelector(`.saved[data-doc="${p.set_id}"]`);
+    if (tag) tag.textContent = ok ? "✓ complete" : (docComplete(p.set_id) ? "ready to mark complete" : "");
+  });
+  const n = DATA.packets.length;
+  document.getElementById("prog").textContent = done + " / " + n + " documents complete";
+  document.getElementById("fill").style.width = (100*done/n) + "%";
+  document.getElementById("download").disabled = done !== n;
+  document.getElementById("foot").textContent = done===n
+    ? "All documents complete. Download your labels and send the file to the coordinator."
+    : "Autosaves to this browser as you go. You can close and return.";
+}
+function save(){ localStorage.setItem(KEY, JSON.stringify(state));
+  document.querySelectorAll(".saved").forEach(()=>{}); }
+document.getElementById("save").onclick = () => { save(); alert("Saved to this browser."); };
+
+document.getElementById("download").onclick = () => {
+  const lines = DATA.packets.map(p => {
+    const st = docState(p.set_id);
+    const facts = p.candidates.map((c,i) => ({
+      relation:c.relation, condition:c.condition, verdict:(st.facts[i]||{}).v || "unreviewed",
+      section_code:c.section_code, evidence:c.evidence, notes:(st.facts[i]||{}).note || ""
+    })).concat(st.added.map(a => ({
+      relation:a.relation, condition:a.condition, verdict:"true",
+      section_code:a.section_code, evidence:a.evidence, notes:a.notes||""
+    })));
+    return JSON.stringify({schema_version:DATA.schema_version, set_id:p.set_id,
+      annotator:DATA.annotator, complete:st.complete, facts, notes:""});
+  });
+  const blob = new Blob([lines.join("\n")+"\n"], {type:"application/x-ndjson"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = DATA.annotator + ".jsonl"; a.click();
+};
+function esc(s){ return (s||"").replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m])); }
+render();
+</script>

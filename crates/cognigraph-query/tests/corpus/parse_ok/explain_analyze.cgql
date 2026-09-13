@@ -1,0 +1,1 @@
+EXPLAIN ANALYZE FOR d IN documents FILTER d.category == "research" RETURN d._key

@@ -1,0 +1,31 @@
+{
+  "statement": {
+    "schema_version": 1,
+    "domain": "cognigraph.policy-approval.v1",
+    "tenant": "REPLACE_WITH_TENANT",
+    "tenant_incarnation": "REPLACE_WITH_TENANT_INCARNATION",
+    "payload": {
+      "approval_id": "REPLACE_WITH_NATURAL_APPROVAL_ID",
+      "policy_revision_id": "REPLACE_WITH_POLICY_REVISION_ID",
+      "policy_revision_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+      "target": {
+        "space_type": "pharma",
+        "channel": "m19-production"
+      },
+      "resolved_policy_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+      "author_principal_id": "REPLACE_WITH_STABLE_AUTHOR_PRINCIPAL_ID",
+      "approver_registration_id": "REPLACE_WITH_APPROVER_REGISTRATION_ID",
+      "approver_principal_id": "REPLACE_WITH_DISTINCT_STABLE_APPROVER_PRINCIPAL_ID",
+      "decision": "approve",
+      "reason": "Independent approval of the exact frozen policy revision",
+      "signed_at_ms": 1
+    }
+  },
+  "approval_signature": {
+    "schema_version": 1,
+    "algorithm": "ed25519",
+    "key_id": "ed25519:sha256:REPLACE_WITH_APPROVER_KEY_ID_HEX",
+    "statement_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX",
+    "signature": "REPLACE_WITH_UNPADDED_BASE64URL_64_BYTE_APPROVER_SIGNATURE"
+  }
+}

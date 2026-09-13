@@ -1,0 +1,1 @@
+FOR d IN documents COLLECT c = d.category AGGREGATE c = SUM(d.score) RETURN c

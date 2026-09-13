@@ -1,0 +1,4 @@
+FOR d IN documents
+LET degree = LENGTH((FOR e IN relationships FILTER e._from == d._id RETURN 1))
+COLLECT group = 1 INTO counts = degree
+RETURN SORTED(counts)

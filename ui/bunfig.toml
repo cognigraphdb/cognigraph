@@ -1,0 +1,7 @@
+[serve.static]
+# Public development routing only. Never inline all server environment variables.
+env = "COGNIGRAPH_UI_DEV_*"
+
+[test]
+# Browser cases use Playwright and real Rust APIs through scripts/ui_browser.py.
+root = "./src"

@@ -1,0 +1,1 @@
+FOR sort IN documents RETURN sort

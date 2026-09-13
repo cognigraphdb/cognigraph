@@ -1,0 +1,17 @@
+[package]
+name = "cognigraph-governance"
+version.workspace = true
+edition.workspace = true
+license-file = "LICENSE"
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+base64 = { workspace = true }
+ed25519-dalek = { workspace = true }
+getrandom = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+thiserror = { workspace = true }
+unicode-normalization = "0.1.25"

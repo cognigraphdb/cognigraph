@@ -1,0 +1,4 @@
+interface:
+  display_name: "CogniGraph UI QA"
+  short_description: "Verify console flows, layout and persisted state"
+  default_prompt: "Use $cognigraph-ui-qa to verify the affected CogniGraph console flow and record browser evidence."

@@ -1,0 +1,144 @@
+/* rc-motion intermittently freezes the modal enter transition under the
+   Bun dev bundle: the panel sticks in its -prepare/-appear phase at
+   opacity 0 and never becomes visible. Motion is disabled in the theme
+   (antd-theme.ts); this override guarantees that a stuck frame can never
+   leave a mounted modal invisible. */
+.ant-modal[class*="ant-zoom"] {
+  /* biome-ignore lint/complexity/noImportantStyles: must beat antd's cssinjs motion classes, which load after this sheet */
+  opacity: 1 !important;
+  /* biome-ignore lint/complexity/noImportantStyles: same cssinjs override */
+  transform: none !important;
+  /* biome-ignore lint/complexity/noImportantStyles: same cssinjs override */
+  animation: none !important;
+}
+
+.dialog-backdrop {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgb(15 23 22 / 48%);
+  backdrop-filter: blur(2px);
+}
+
+.dialog {
+  position: relative;
+  width: min(480px, calc(100vw - 48px));
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.dialog-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+}
+
+.dialog-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 17px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.dialog-icon.danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.dialog > p {
+  margin: 8px 0 22px;
+  color: var(--text-muted);
+}
+
+.dialog-description {
+  margin: 0 0 18px;
+  color: var(--text-muted);
+}
+
+.delete-dialog-copy {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  color: var(--text-muted);
+}
+
+.delete-dialog-copy .dialog-icon {
+  margin: 0;
+}
+
+.delete-dialog-copy p {
+  margin: 3px 0 0;
+}
+
+.dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dialog form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.dialog form input,
+.dialog form select,
+.dialog form textarea {
+  width: 100%;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 10px 11px;
+  background: white;
+  font-weight: 400;
+}
+
+.dialog form select {
+  appearance: auto;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.toast {
+  position: fixed;
+  z-index: 30;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 15px;
+  border-radius: var(--radius);
+  background: #163f37;
+  color: white;
+  box-shadow: var(--shadow);
+  font-weight: 600;
+}
+.dialog-busy-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

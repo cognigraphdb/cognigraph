@@ -1,0 +1,1 @@
+FOR d IN documents FILTER HAS(d, "score") SORT d.score DESC RETURN d.score

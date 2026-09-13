@@ -1,0 +1,1 @@
+FOR d IN documents SORT d.title ASC COLLATE "not a locale!" RETURN d

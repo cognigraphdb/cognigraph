@@ -1,0 +1,4 @@
+LET total = LENGTH((FOR d IN documents RETURN 1))
+FOR d IN documents FILTER d._key IN ["a", "b"]
+SORT d._key
+RETURN {key: d._key, total, looked_up: (FOR n IN [d._id] RETURN FIRST((RETURN DOCUMENT(n).title)))}

@@ -1,0 +1,1 @@
+FOR d IN documents LET t = UPPER(d.title) LET s = SUBSTRING(t, 0, 2) FILTER d._key == "a" RETURN s

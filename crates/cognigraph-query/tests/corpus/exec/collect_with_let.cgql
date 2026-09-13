@@ -1,0 +1,1 @@
+FOR d IN documents LET len = LENGTH(d.title) COLLECT l = len WITH COUNT INTO n SORT l ASC RETURN [l, n]

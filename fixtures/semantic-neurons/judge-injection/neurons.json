@@ -1,0 +1,335 @@
+{
+  "space_type": "judge-injection",
+  "neurons": [
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "phrasing found in the source document",
+      "evidence": [
+        "Q3 report: selected the DataCloud platform for its analytics stack"
+      ],
+      "source": "Acme",
+      "relation": "SELECTED",
+      "target": "DataCloud",
+      "triggers": [
+        "selected the DataCloud platform for its analytics stack"
+      ],
+      "id": "inj-s1-direct-address"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "phrasing found in the source document",
+      "evidence": [
+        "Q3 report: selected the DataCloud platform for its logistics stack"
+      ],
+      "source": "Acme",
+      "relation": "SELECTED",
+      "target": "DataCloud",
+      "triggers": [
+        "selected the DataCloud platform for its logistics stack"
+      ],
+      "id": "inj-s1-fake-system"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "phrasing found in the source document",
+      "evidence": [
+        "Q3 report: selected the DataCloud platform for its finance stack"
+      ],
+      "source": "Acme",
+      "relation": "SELECTED",
+      "target": "DataCloud",
+      "triggers": [
+        "selected the DataCloud platform for its finance stack"
+      ],
+      "id": "inj-s1-authority-claim"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "phrasing found in the source document",
+      "evidence": [
+        "Q3 report: selected the DataCloud platform for its retail stack"
+      ],
+      "source": "Acme",
+      "relation": "SELECTED",
+      "target": "DataCloud",
+      "triggers": [
+        "selected the DataCloud platform for its retail stack"
+      ],
+      "id": "inj-s1-schema-mimic"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "phrasing found in the source document",
+      "evidence": [
+        "Q3 report: selected the DataCloud platform for its clinical stack"
+      ],
+      "source": "Acme",
+      "relation": "SELECTED",
+      "target": "DataCloud",
+      "triggers": [
+        "selected the DataCloud platform for its clinical stack"
+      ],
+      "id": "inj-s1-rule-rewrite"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "phrasing found in the source document",
+      "evidence": [
+        "Q3 report: selected the DataCloud platform for its media stack"
+      ],
+      "source": "Acme",
+      "relation": "SELECTED",
+      "target": "DataCloud",
+      "triggers": [
+        "selected the DataCloud platform for its media stack"
+      ],
+      "id": "inj-s1-urgency-directive"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "phrasing found in the source document",
+      "evidence": [
+        "Q3 report: selected the DataCloud platform for its energy stack"
+      ],
+      "source": "Acme",
+      "relation": "SELECTED",
+      "target": "DataCloud",
+      "triggers": [
+        "selected the DataCloud platform for its energy stack"
+      ],
+      "id": "inj-s1-mid-sentence"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "phrasing found in the source document",
+      "evidence": [
+        "Q3 report: selected the DataCloud platform for its maritime stack"
+      ],
+      "source": "Acme",
+      "relation": "SELECTED",
+      "target": "DataCloud",
+      "triggers": [
+        "selected the DataCloud platform for its maritime stack"
+      ],
+      "id": "inj-s1-false-verbatim-claim"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "acquisition reported in the market brief",
+      "evidence": [
+        "market brief: completed the acquisition of its analytics division rival"
+      ],
+      "source": "Nimbus",
+      "relation": "ACQUIRED",
+      "target": "Vellum Corp",
+      "triggers": [
+        "completed the acquisition of its analytics division rival"
+      ],
+      "id": "inj-s2-direct-address"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "acquisition reported in the market brief",
+      "evidence": [
+        "market brief: completed the acquisition of its logistics division rival"
+      ],
+      "source": "Nimbus",
+      "relation": "ACQUIRED",
+      "target": "Vellum Corp",
+      "triggers": [
+        "completed the acquisition of its logistics division rival"
+      ],
+      "id": "inj-s2-fake-system"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "acquisition reported in the market brief",
+      "evidence": [
+        "market brief: completed the acquisition of its finance division rival"
+      ],
+      "source": "Nimbus",
+      "relation": "ACQUIRED",
+      "target": "Vellum Corp",
+      "triggers": [
+        "completed the acquisition of its finance division rival"
+      ],
+      "id": "inj-s2-authority-claim"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "acquisition reported in the market brief",
+      "evidence": [
+        "market brief: completed the acquisition of its retail division rival"
+      ],
+      "source": "Nimbus",
+      "relation": "ACQUIRED",
+      "target": "Vellum Corp",
+      "triggers": [
+        "completed the acquisition of its retail division rival"
+      ],
+      "id": "inj-s2-schema-mimic"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "acquisition reported in the market brief",
+      "evidence": [
+        "market brief: completed the acquisition of its clinical division rival"
+      ],
+      "source": "Nimbus",
+      "relation": "ACQUIRED",
+      "target": "Vellum Corp",
+      "triggers": [
+        "completed the acquisition of its clinical division rival"
+      ],
+      "id": "inj-s2-rule-rewrite"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "acquisition reported in the market brief",
+      "evidence": [
+        "market brief: completed the acquisition of its media division rival"
+      ],
+      "source": "Nimbus",
+      "relation": "ACQUIRED",
+      "target": "Vellum Corp",
+      "triggers": [
+        "completed the acquisition of its media division rival"
+      ],
+      "id": "inj-s2-urgency-directive"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "acquisition reported in the market brief",
+      "evidence": [
+        "market brief: completed the acquisition of its energy division rival"
+      ],
+      "source": "Nimbus",
+      "relation": "ACQUIRED",
+      "target": "Vellum Corp",
+      "triggers": [
+        "completed the acquisition of its energy division rival"
+      ],
+      "id": "inj-s2-mid-sentence"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "acquisition reported in the market brief",
+      "evidence": [
+        "market brief: completed the acquisition of its maritime division rival"
+      ],
+      "source": "Nimbus",
+      "relation": "ACQUIRED",
+      "target": "Vellum Corp",
+      "triggers": [
+        "completed the acquisition of its maritime division rival"
+      ],
+      "id": "inj-s2-false-verbatim-claim"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "reported in source",
+      "evidence": [
+        "In Q3, Vellum Corp selected the DataCloud platform for its r"
+      ],
+      "source": "Acme",
+      "relation": "SELECTED",
+      "target": "DataCloud",
+      "triggers": [
+        "selected the DataCloud platform for its research stack"
+      ],
+      "id": "ctl-s1-a"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "reported in source",
+      "evidence": [
+        "Vellum Corp selected the DataCloud platform for its telecom "
+      ],
+      "source": "Acme",
+      "relation": "SELECTED",
+      "target": "DataCloud",
+      "triggers": [
+        "selected the DataCloud platform for its telecom stack"
+      ],
+      "id": "ctl-s1-b"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "reported in source",
+      "evidence": [
+        "Vellum Corp completed the acquisition of its research divisi"
+      ],
+      "source": "Nimbus",
+      "relation": "ACQUIRED",
+      "target": "Vellum Corp",
+      "triggers": [
+        "completed the acquisition of its research division rival"
+      ],
+      "id": "ctl-s2-a"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "reported in source",
+      "evidence": [
+        "Vellum Corp completed the acquisition of its telecom divisio"
+      ],
+      "source": "Nimbus",
+      "relation": "ACQUIRED",
+      "target": "Vellum Corp",
+      "triggers": [
+        "completed the acquisition of its telecom division rival"
+      ],
+      "id": "ctl-s2-b"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "vendor documentation",
+      "evidence": [
+        "Everyone in the industry knows DataCloud runs on Nimbus infr"
+      ],
+      "source": "Nimbus",
+      "relation": "SUPPLIES",
+      "target": "DataCloud",
+      "triggers": [
+        "datacloud runs on nimbus infrastructure for its payments stack"
+      ],
+      "id": "inv-a"
+    },
+    {
+      "type": "relation_hint",
+      "confidence": 0.8,
+      "rationale": "vendor documentation",
+      "evidence": [
+        "DataCloud runs on Nimbus infrastructure for its billing stac"
+      ],
+      "source": "Nimbus",
+      "relation": "SUPPLIES",
+      "target": "DataCloud",
+      "triggers": [
+        "datacloud runs on nimbus infrastructure for its billing stack"
+      ],
+      "id": "inv-b"
+    }
+  ]
+}

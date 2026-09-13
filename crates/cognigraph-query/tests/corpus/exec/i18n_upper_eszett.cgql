@@ -1,0 +1,1 @@
+FOR d IN i18n FILTER d._key == "de" RETURN { u: UPPER("straße"), n: LENGTH(UPPER("straße")) }

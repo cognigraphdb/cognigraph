@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d.category == "research" FOR t IN d.tags SORT t ASC RETURN t

@@ -1,0 +1,1 @@
+for d in documents collect c = d.x with count into n return [c, n]

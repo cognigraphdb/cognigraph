@@ -1,0 +1,121 @@
+{
+  "schema": "cognigraph-public-distribution-v1",
+  "max_file_bytes": 1048576,
+  "size_exceptions": {
+    "docs/evidence/catalog.json": {
+      "max_bytes": 2097152,
+      "reason": "Path, size and digest metadata only; contains no raw captured bodies."
+    }
+  },
+  "private_capture_prefixes": [
+    "docs/issues/evidence/",
+    "ui/audit/",
+    "data/"
+  ],
+  "private_capture_filenames": [
+    "provider-calls.json",
+    "provider-requests.json"
+  ],
+  "semantic_neuron_test_inputs": {
+    "fixtures/semantic-neurons/blind/TEMPLATE/chunks.jsonl": {
+      "sha256": "884b8f14e2d195a05ba5ab490c77e83bd7794c15f407c8546d308d044189d7af",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/blind/TEMPLATE/eval.json": {
+      "sha256": "cbf516d0ecbb394c6cdae5e4ccc2fba138a9afb2d0c2a909f3058ae4da15f66e",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/blind/TEMPLATE/space_type.json": {
+      "sha256": "7faac0627d9719df22a119721c4c5e12073c623311f0162a0d5c2191ca7595de",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/chunks/digital_forensics_case_alpha.chunks.jsonl": {
+      "sha256": "b86475510e52f24facdfb5b5f93c68ece0232025bfcd47b2f376c6aaf313add4",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/chunks/digital_forensics_case_bravo.chunks.jsonl": {
+      "sha256": "dc1c94fe967b67c66a83d2461ffee7332732feaeefff34cbfba5204d9769754b",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/chunks/pharma_study_px101.chunks.jsonl": {
+      "sha256": "f1a602d6ea965993196468969dce471988324275e3571c2b97e1410966b0e7f8",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/chunks/state_of_the_union_2024.chunks.jsonl": {
+      "sha256": "55f716fd5df2545f1c2e075f92ddf2462ec03e6e484e93cbae107050aebc43c0",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/evaluations/demo_sotu_2024.json": {
+      "sha256": "ec4086312881dd6f42b855785180251650a397d493b2e42b4b4b2e69ffbce386",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/evaluations/forensics_case_alpha.json": {
+      "sha256": "5ee252260ea3a326866ebaeeeafe8b4c84406470c7dd99692bbbf2c7adf672b3",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/evaluations/forensics_case_bravo.json": {
+      "sha256": "b04f29947a31c11d82c6ad866c1bb7dc7615fd72f9fc5bce133cc5ecdc5a774d",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/evaluations/pharma_study_px101.json": {
+      "sha256": "fe0545e73135a349992373a72ccdd169d4bcee8e61996ea52f1637bb5cd4480e",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/generalization/crowdstrike_2024.chunks.jsonl": {
+      "sha256": "d047b7939190315432916b2d0f02ee52b013d83556231fda5d9bf0072fbaa731",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/generalization/crowdstrike_2024.chunks.v2.jsonl": {
+      "sha256": "ca33284f8bb3ee55fdf932602680316ea45023240bb2f4ebe9fbd14c8ed7000d",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/generalization/crowdstrike_2024.eval.json": {
+      "sha256": "94d0c9d3ca98f04a79f6f4ffb7134bc1cc2315dcada759c6f300c307794e3c2d",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/generalization/crowdstrike_2024.neurons.accepted.json": {
+      "sha256": "32293bba59b179e90ee959a736f954dae1e0b53b1e4c5729d304a57a90ffba34",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/generalization/crowdstrike_2024.neurons.proposed.json": {
+      "sha256": "216d27af7eaf40baa5a94401b337d7e69b9d937c5b9c651a05dfd7f8e47b69d0",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/generalization/crowdstrike_2024.neurons.reviewed.json": {
+      "sha256": "8a2db3bc6e8fbe9192d93f8c28d8f3d7e8cf099397b0425f36f3fba324623710",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/generalization/crowdstrike_2024.space_type.json": {
+      "sha256": "a755e10915970ed864c80b3a4c3ddf63ccab836cd1a93309179d5d2dfd6b396f",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/judge-injection/cases.json": {
+      "sha256": "3d90cbc75ccc708e5502a59b24a0b212bbb2deceb9e356f8b2c4f274efb6b4e8",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/judge-injection/chunks.jsonl": {
+      "sha256": "71a725d3e8daa208ef079b622edaa0e33f63b41d5769ea03c6f854b893167df8",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/judge-injection/neurons.json": {
+      "sha256": "40bea8f83477caf2200aea4c216e5d324d65ac98156e59293678525931dd7f9f",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/neurons/demo_policy_speech.neurons.json": {
+      "sha256": "28bb2a22f928cd42d565457aa744b48ee02e779ac857f416c73a7a1d02d58547",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/space_types/demo_policy_speech.json": {
+      "sha256": "a53e72a33237b8aef976d4362088aa218e5e95e087f8b05133dbeadb7d01dbd9",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/space_types/digital_forensics.json": {
+      "sha256": "7a3d08687fa295593437ec8b5622fdf03aef4a289f3c64e5944f624264872845",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    },
+    "fixtures/semantic-neurons/space_types/pharma_research.json": {
+      "sha256": "2730aef696feec3523c4b6c59a324364c5fa55534d8a1b7bf70be1f7d4c922f8",
+      "reason": "Small deterministic regression input or empty authoring template; attribution is retained with its fixture."
+    }
+  }
+}

@@ -1,0 +1,1 @@
+FOR d IN documents COLLECT c = d.category WITH COUNT INTO n LIMIT 2 RETURN {category: c, n: n}

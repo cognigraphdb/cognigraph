@@ -1,0 +1,4 @@
+// binds: {"start": "documents/a"}
+FOR v, e, p IN 0..1 OUTBOUND @start relationships
+SORT p.depth ASC
+RETURN { v: v._key, d: p.depth, e: e }

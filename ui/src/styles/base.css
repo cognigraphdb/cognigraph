@@ -1,0 +1,213 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --bg: #f7f8f6;
+  --surface: #ffffff;
+  --surface-muted: #f3f5f3;
+  --sidebar: #19201f;
+  --sidebar-soft: #232b2a;
+  --text: #1d2524;
+  --text-muted: #66716f;
+  --text-soft: #89918f;
+  --border: #dfe4e2;
+  --border-strong: #cbd2d0;
+  --accent: #087f7c;
+  --accent-dark: #056663;
+  --accent-soft: #e2f3f1;
+  --danger: #d33d42;
+  --danger-soft: #fff0f0;
+  --success: #1b9b67;
+  --warning: #ba7a14;
+  --radius: 6px;
+  --shadow: 0 12px 36px rgb(20 33 31 / 12%);
+  /* Horizontal/bottom inset of every page's workspace area. Screens that
+     manage their own scroll regions apply it per-section; either way the
+     content edge is identical on every page. */
+  --workspace-pad: 28px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+#root > .ant-app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+button {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 65%, white);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+select {
+  appearance: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.primary-button,
+.outline-button,
+.danger-button,
+.secondary-button,
+.solid-danger-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  border-radius: var(--radius);
+  padding: 0 13px;
+  font-weight: 600;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    transform 140ms ease;
+}
+
+.primary-button {
+  border: 1px solid var(--accent-dark);
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 2px 5px rgb(8 127 124 / 20%);
+}
+
+.primary-button:hover {
+  background: var(--accent-dark);
+}
+
+.primary-button:active,
+.outline-button:active,
+.danger-button:active,
+.secondary-button:active {
+  transform: translateY(1px);
+}
+
+.primary-button.simple {
+  min-width: 132px;
+}
+
+.outline-button {
+  border: 1px solid var(--accent);
+  background: white;
+  color: var(--accent-dark);
+}
+
+.outline-button:hover {
+  background: var(--accent-soft);
+}
+
+.danger-button {
+  border: 1px solid #e46a6e;
+  background: white;
+  color: var(--danger);
+}
+
+.danger-button:hover {
+  background: var(--danger-soft);
+}
+
+.secondary-button {
+  border: 1px solid var(--border-strong);
+  background: white;
+}
+
+.secondary-button:hover {
+  background: var(--surface-muted);
+}
+
+.solid-danger-button {
+  border: 1px solid #b6292e;
+  background: var(--danger);
+  color: white;
+}
+
+.icon-button {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+}
+
+.icon-button:hover {
+  background: var(--surface-muted);
+}
+
+.cg-spin {
+  animation: cg-spin 900ms linear infinite;
+}
+
+@keyframes cg-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

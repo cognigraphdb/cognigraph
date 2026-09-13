@@ -1,0 +1,39 @@
+{
+  "statement": {
+    "schema_version": 1,
+    "domain": "cognigraph.semantic-repair-deployment-intent.v1",
+    "tenant": "REPLACE_WITH_TENANT",
+    "tenant_incarnation": "REPLACE_WITH_TENANT_INCARNATION",
+    "payload": {
+      "requested_action": "activate",
+      "target": {
+        "space_type": "acme_supply",
+        "channel": "m26-production"
+      },
+      "semantic_repair_generation_id": "REPLACE_WITH_64_LOWERCASE_HEX_GENERATION_ID",
+      "semantic_repair_generation_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_GENERATION_DIGEST",
+      "impact_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_IMPACT_DIGEST",
+      "promotion_head_decision_id": "REPLACE_WITH_64_LOWERCASE_HEX_CURRENT_PROMOTION_DECISION_ID",
+      "promotion_head_projection_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_PROMOTION_HEAD_DIGEST",
+      "candidate_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_CANDIDATE_DIGEST",
+      "semantic_repair_revision_id": "REPLACE_WITH_64_LOWERCASE_HEX_REVISION_ID",
+      "semantic_repair_revision_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_REVISION_DIGEST",
+      "semantic_repair_review_id": "REPLACE_WITH_64_LOWERCASE_HEX_REVIEW_ID",
+      "semantic_repair_review_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_REVIEW_DIGEST",
+      "expected_deployment_head_decision_id": null,
+      "rollback_target_generation_id": null,
+      "reason": "Activate the verified Semantic Repair generation",
+      "idempotency_key_hash": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_IDEMPOTENCY_KEY_HASH",
+      "promoter_registration_id": "REPLACE_WITH_PROMOTER_REGISTRATION_ID",
+      "promoter_principal_id": "REPLACE_WITH_DISTINCT_STABLE_PROMOTER_PRINCIPAL_ID",
+      "signed_at_ms": 1
+    }
+  },
+  "promoter_signature": {
+    "schema_version": 1,
+    "algorithm": "ed25519",
+    "key_id": "ed25519:sha256:REPLACE_WITH_PROMOTER_KEY_ID_HEX",
+    "statement_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_STATEMENT_DIGEST",
+    "signature": "REPLACE_WITH_UNPADDED_BASE64URL_64_BYTE_PROMOTER_SIGNATURE"
+  }
+}

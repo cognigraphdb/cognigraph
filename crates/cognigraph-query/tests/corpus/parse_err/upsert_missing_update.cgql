@@ -1,0 +1,1 @@
+UPSERT { _key: "k" } INSERT { a: 1 } IN documents

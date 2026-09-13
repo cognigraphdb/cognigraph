@@ -1,0 +1,4 @@
+// binds: {"label": "tag"}
+FOR d IN documents
+FILTER d._key == "a"
+RETURN { t: @label, arr: [@label, d._key] }

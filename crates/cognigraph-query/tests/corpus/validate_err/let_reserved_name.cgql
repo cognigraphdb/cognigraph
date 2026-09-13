@@ -1,0 +1,1 @@
+FOR d IN documents LET filter = 1 RETURN filter

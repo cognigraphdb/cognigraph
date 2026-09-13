@@ -1,0 +1,45 @@
+{
+  "space_type": "incident_analysis",
+  "neurons": [
+    {
+      "id": "relation-hint-001",
+      "type": "relation_hint",
+      "status": "proposed",
+      "confidence": 0.95,
+      "rationale": "The evidence explicitly states that Falcon sensor software runs on Windows PCs and servers, specifically on Windows 10 and Windows 11 systems, and that the problematic update affected only Windows versions, indicating that Falcon Sensor runs on Microsoft Windows.",
+      "evidence": [
+        "On 19 July 2024 at 04:09 UTC, CrowdStrike distributed a faulty configuration update for its Falcon sensor software running on Windows PCs and servers. A modification to a configuration file which was responsible for screening named pipes, Channel File 291, caused an out-of-bounds memory read in the Windows sensor client that resulted in an invalid page fault.",
+        "The problem affected systems running Windows 10 and Windows 11 running the CrowdStrike Falcon software.",
+        "Computers running macOS and Linux were unaffected, as the problematic content file was only for Windows, but similar problems had affected Linux distributions of CrowdStrike software in April 2024."
+      ],
+      "entity": "",
+      "aliases": [],
+      "source": "Falcon Sensor",
+      "relation": "RUNS_ON",
+      "target": "Microsoft Windows",
+      "triggers": [
+        "Falcon sensor software running on Windows PCs and servers",
+        "systems running Windows 10 and Windows 11 running the CrowdStrike Falcon software",
+        "problematic content file was only for Windows"
+      ]
+    },
+    {
+      "id": "relation-hint-1",
+      "type": "relation_hint",
+      "status": "proposed",
+      "confidence": 0.9,
+      "rationale": "The evidence lists airlines among the many industries affected by the outage, which implies that Delta Air Lines, as an airline, was affected by the global IT outage.",
+      "evidence": [
+        "Many industries were affected—airlines, airports, banks, hotels, hospitals, manufacturing, stock markets, broadcasting, gas stations, retail stores, and governmental services, such as emergency services and websites."
+      ],
+      "entity": "",
+      "aliases": [],
+      "source": "Global IT outage",
+      "relation": "AFFECTS",
+      "target": "Delta Air Lines",
+      "triggers": [
+        "Many industries were affected—airlines"
+      ]
+    }
+  ]
+}

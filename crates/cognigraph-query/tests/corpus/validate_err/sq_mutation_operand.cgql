@@ -1,0 +1,1 @@
+INSERT {keys: (FOR d IN documents RETURN d._key)} INTO sq_results RETURN NEW

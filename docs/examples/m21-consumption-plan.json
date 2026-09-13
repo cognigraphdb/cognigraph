@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "resolver": "tenant-local-cas-v1",
+  "loader_id": "cognigraph.verified-artifact-loader",
+  "loader_version": "1",
+  "loader_semantics_digest": "sha256:d15590bf62dc2d037de7c541c2c41316ad0614a8079b0df0cf49b431e2bc0576",
+  "scorer_abi_digest": "sha256:cec6656015755098318abdc50b6732f37f0901c00623ab8afbc1fa93a7420f76",
+  "verifier_abi_digest": "sha256:bc8e00aada805e6419eb816b4f32ba1c80dc79fb5c3ac6ec8a0c8a184d130793",
+  "corpus": {
+    "artifact_kind": "corpus",
+    "artifact_format": "cognigraph.corpus.v1",
+    "mode": "complete_manifest"
+  },
+  "graph": {
+    "artifact_kind": "graph",
+    "artifact_format": "cognigraph.evaluation-graph.v1",
+    "entrypoint": "graph.json",
+    "mode": "evaluation_graph_json"
+  },
+  "oracle": {
+    "artifact_kind": "oracle",
+    "artifact_format": "cognigraph.promotion-oracle.v1",
+    "entrypoint": "oracle.json",
+    "mode": "promotion_oracle_json"
+  },
+  "scorer": {
+    "artifact_kind": "scorer",
+    "artifact_format": "cognigraph.server-executable.v1",
+    "entrypoint": "cognigraph-server",
+    "mode": "current_executable"
+  },
+  "verifier": {
+    "artifact_kind": "verifier",
+    "artifact_format": "cognigraph.server-executable.v1",
+    "entrypoint": "cognigraph-server",
+    "mode": "current_executable"
+  },
+  "plan_digest": "sha256:85c52521f90cb7e155d5249f040d875434cc5644126af40798754af1a3ba5d6b"
+}

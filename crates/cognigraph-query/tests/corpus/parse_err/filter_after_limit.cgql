@@ -1,0 +1,1 @@
+FOR d IN documents LIMIT 5 FILTER d.y == 1 RETURN d

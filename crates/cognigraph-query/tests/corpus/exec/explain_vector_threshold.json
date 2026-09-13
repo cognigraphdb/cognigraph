@@ -1,0 +1,1 @@
+[{"sources":[{"kind":"vector_search","collection":"documents","var":"d","depth":0,"limit_pushdown":5,"threshold_pushdown":"0.9"}],"pipeline":["FOR d","FILTER","LIMIT 5","RETURN"],"bind_vars":[]}]

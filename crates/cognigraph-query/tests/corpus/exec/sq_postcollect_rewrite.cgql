@@ -1,0 +1,4 @@
+FOR d IN documents
+LET size = LENGTH((FOR x IN documents RETURN 1))
+COLLECT size = size WITH COUNT INTO n
+RETURN {size, n}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 2,
+  "resolver": "tenant-local-cas-v1",
+  "loader_id": "cognigraph.verified-artifact-loader",
+  "loader_version": "2",
+  "loader_semantics_digest": "sha256:0ec21e2622748f69f916537569537febeb2ddc910691a3bdaaf10b7a2996459e",
+  "scorer_abi_digest": "sha256:cec6656015755098318abdc50b6732f37f0901c00623ab8afbc1fa93a7420f76",
+  "verifier_abi_digest": "sha256:bc8e00aada805e6419eb816b4f32ba1c80dc79fb5c3ac6ec8a0c8a184d130793",
+  "corpus": {
+    "artifact_kind": "corpus",
+    "artifact_format": "cognigraph.prepared-chunk-corpus.v1",
+    "entrypoint": "corpus.json",
+    "mode": "prepared_chunk_corpus_json"
+  },
+  "graph": {
+    "artifact_kind": "graph",
+    "artifact_format": "cognigraph.reproducible-evaluation-graph.v1",
+    "entrypoint": "graph.json",
+    "auxiliary_entrypoints": [
+      "candidate.json"
+    ],
+    "mode": "reproducible_evaluation_graph_package"
+  },
+  "oracle": {
+    "artifact_kind": "oracle",
+    "artifact_format": "cognigraph.promotion-oracle.v1",
+    "entrypoint": "oracle.json",
+    "mode": "promotion_oracle_json"
+  },
+  "scorer": {
+    "artifact_kind": "scorer",
+    "artifact_format": "cognigraph.server-executable.v1",
+    "entrypoint": "cognigraph-server",
+    "mode": "current_executable"
+  },
+  "verifier": {
+    "artifact_kind": "verifier",
+    "artifact_format": "cognigraph.server-executable.v1",
+    "entrypoint": "cognigraph-server",
+    "mode": "current_executable"
+  },
+  "derivation": {
+    "schema_version": 1,
+    "deriver_id": "cognigraph.prepared-corpus-grounder",
+    "deriver_version": "1",
+    "deriver_semantics_digest": "sha256:fbcea8184ff15f198cbc22c1ffbf166cc18fa382ce554ab1fdc53f648768e5ae",
+    "derivation_abi_digest": "sha256:f12bdec86c2368cb3018c07dcc98cd93b68ef336483c87ab1f3846b60d1d9666",
+    "corpus_retention_bytes": 67108864,
+    "candidate_retention_bytes": 8388608,
+    "graph_retention_bytes": 33554432,
+    "max_chunks": 100000,
+    "max_chunk_text_bytes": 1048576,
+    "max_config_items": 100000,
+    "max_grounding_work": 10000000,
+    "max_chunk_grounding_work": 250000,
+    "max_derived_facts": 100000,
+    "plan_digest": "sha256:22e20e4d05fe665976c5e3201756fd22cc372f6ae635623ffb87506ea91032de"
+  },
+  "plan_digest": "sha256:8bca350b68b0f6964336e495212098a6ef537a7c4456a29a11763139dc91f03e"
+}

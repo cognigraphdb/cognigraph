@@ -1,0 +1,1 @@
+[{"sources":[{"kind":"collection_scan","collection":"documents","var":"d","depth":0,"pushdown":{"projection":["category","score","title"],"predicates":[".score >= 2.0",".category == @cat"],"all_filters_pushed":true,"fetch_limit":3}}],"pipeline":["FOR d","FILTER","LIMIT 3","RETURN"],"bind_vars":["cat"]}]

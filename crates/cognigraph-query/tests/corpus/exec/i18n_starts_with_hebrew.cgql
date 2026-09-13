@@ -1,0 +1,1 @@
+FOR d IN i18n FILTER STARTS_WITH(d.title, "שלום") RETURN d._key

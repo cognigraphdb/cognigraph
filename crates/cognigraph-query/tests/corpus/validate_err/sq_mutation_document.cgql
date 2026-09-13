@@ -1,0 +1,3 @@
+FOR seed IN [1]
+LET docs = (FOR d IN documents RETURN DOCUMENT(d._id))
+INSERT {docs} INTO sq_results RETURN NEW

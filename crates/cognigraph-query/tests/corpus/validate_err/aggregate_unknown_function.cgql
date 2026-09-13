@@ -1,0 +1,1 @@
+FOR d IN documents COLLECT c = d.category AGGREGATE t = FOO(d.score) RETURN t

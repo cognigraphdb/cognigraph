@@ -1,0 +1,125 @@
+# CogniGraph Enterprise License
+
+Version 1.0-draft, 2026-09-10
+
+Copyright 2026 Gedank Rayze, LDA ("Gedank Rayze", "we", "us")
+
+This license governs the Enterprise Components of CogniGraph. It is a draft
+prepared for legal review and is not yet in force as a signed commercial
+agreement. Until a commercial agreement is executed, the Evaluation Grant in
+Section 3 is the only grant available for the Enterprise Components.
+
+## 1. Definitions
+
+"Software" means CogniGraph as made available by Gedank Rayze, including
+source code, binaries, container images, Helm charts and documentation.
+
+"Community Components" means the parts of the Software licensed under the
+Functional Source License, Version 1.1, Apache 2.0 Future License, as
+identified in `LICENSING.md`.
+
+"Enterprise Components" means the parts of the Software identified in
+`LICENSING.md` as Enterprise Components, whether delivered as separate crates,
+as modules compiled into a shared binary, or as capabilities enabled by
+configuration. At the date of this draft these are:
+
+  (a) the governed promotion, attestation, custody and repair chain
+      (milestones M15 through M26 as documented under `docs/operations/governance/`),
+      including signed policy authority, separation of duties, content-addressed
+      artifact attestation, verified consumption, reproducible derivation,
+      durable custody and verified restoration, and governed semantic repair;
+  (b) Semantic Neurons governed knowledge construction, including grounding,
+      recall/restraint evaluation, gate advisors, directed construction and
+      side-view materialization;
+  (c) multi-tenancy, meaning the operation of more than one tenant within a
+      single server process or database;
+  (d) sharded or consensus clustering, automatic failover and multi-writer
+      deployment modes that Gedank Rayze may release; and
+  (e) any component whose source files or crate manifests reference this
+      license.
+
+Read replicas and manual standby with operator-controlled promotion for a
+single-writer Community store are Community Components when released. This
+does not change the classification of other Enterprise Components used in a
+replicated deployment, such as multi-tenancy or governed construction.
+
+"Production Use" means any use other than evaluation, development, testing,
+continuous integration or demonstration.
+
+"Subscription" means a written commercial agreement between you and Gedank
+Rayze that grants rights to the Enterprise Components in exchange for fees.
+
+## 2. Ownership
+
+The Enterprise Components are proprietary to Gedank Rayze. Access to their
+source code does not grant you any right to use them except as expressly set
+out in this license or in a Subscription. All rights not expressly granted are
+reserved.
+
+## 3. Evaluation Grant
+
+Subject to your compliance with this license, Gedank Rayze grants you a
+non-exclusive, non-transferable, revocable, royalty-free right to use, copy,
+modify and compile the Enterprise Components solely for evaluation,
+development, testing, continuous integration and demonstration, and not for
+Production Use.
+
+You may not:
+
+  (a) put the Enterprise Components into Production Use without a Subscription;
+  (b) make the Enterprise Components available to third parties as a hosted,
+      managed or embedded service;
+  (c) remove, disable or circumvent any license key, feature gate, notice or
+      technical measure that controls access to the Enterprise Components;
+  (d) remove or alter any copyright, license or attribution notice; or
+  (e) redistribute the Enterprise Components in source or binary form, except
+      as an unmodified part of a Gedank Rayze release accompanied by this
+      license.
+
+## 4. Subscription
+
+Production Use of the Enterprise Components requires a Subscription. The
+Subscription defines the licensed scope (tenants, nodes, environments, support
+level, term and fees) and takes precedence over Section 3 for its duration.
+Subscription terms are published separately and are not part of this file.
+
+## 5. Contributions
+
+If you submit a modification to the Enterprise Components to Gedank Rayze, the
+Contributor License Agreement in `CLA.md` governs that submission.
+
+## 6. Trademarks
+
+"CogniGraph", "CGQL", "Semantic Neurons" and the CogniGraph logo are
+trademarks of Gedank Rayze. This license grants no trademark rights beyond
+identifying Gedank Rayze as the origin of the Software.
+
+## 7. Termination
+
+This license terminates automatically if you breach it. On termination you
+must stop using the Enterprise Components and destroy all copies, except that
+a valid Subscription continues under its own terms.
+
+## 8. Disclaimer and limitation of liability
+
+THE ENTERPRISE COMPONENTS ARE PROVIDED "AS IS" AND WITHOUT WARRANTIES OF ANY
+KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF FITNESS
+FOR A PARTICULAR PURPOSE, MERCHANTABILITY, TITLE OR NON-INFRINGEMENT.
+
+IN NO EVENT WILL GEDANK RAYZE HAVE ANY LIABILITY TO YOU ARISING OUT OF OR
+RELATED TO THE ENTERPRISE COMPONENTS UNDER THIS EVALUATION GRANT, INCLUDING
+INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES, EVEN IF GEDANK RAYZE
+HAS BEEN INFORMED OF THEIR POSSIBILITY IN ADVANCE. A Subscription may provide
+warranties and remedies that this license does not.
+
+## 9. Governing law
+
+This license is governed by the laws of Portugal. The courts of Lisbon have
+exclusive jurisdiction, without prejudice to mandatory consumer law.
+
+## 10. Relationship to the Community Components
+
+Nothing in this license restricts your rights to the Community Components
+under the Functional Source License in `LICENSE`. Where a single binary
+contains both, the Community Components remain under `LICENSE` and the
+Enterprise Components remain under this license.

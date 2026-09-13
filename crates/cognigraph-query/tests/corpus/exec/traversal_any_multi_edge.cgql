@@ -1,0 +1,1 @@
+FOR v, e, p IN 1..1 ANY "documents/a" relationships SORT v._key ASC RETURN v._key

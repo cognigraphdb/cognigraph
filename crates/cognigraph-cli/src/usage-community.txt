@@ -1,0 +1,36 @@
+cognigraph — CogniGraph Community administration
+
+USAGE: cognigraph [--url URL] [--token TOKEN] <command>
+
+Connection (flags override env):
+  --url URL       server base URL   [env COGNIGRAPH_URL, default http://127.0.0.1:3000]
+  --token TOKEN   bearer token      [env COGNIGRAPH_TOKEN]
+
+COMMANDS
+  health                          liveness + backend readiness
+  export [--out FILE]             hot JSON snapshot (stdout by default)
+  import [FILE]                   restore a snapshot (stdin if no FILE)
+  references audit SNAPSHOT       bounded offline identity/reference report
+  references repair SNAPSHOT PLAN --out FILE
+                                  offline explicit repair to a NEW snapshot
+  query [--write] [--bind k=JSON]... QUERY
+                                  run CGQL (EXPLAIN supported; --write for mutations)
+  doc get COLLECTION KEY
+  doc list COLLECTION [--limit N] [--offset N]
+  doc put COLLECTION JSON|@FILE   create a document
+  doc delete COLLECTION KEY
+  user create USERNAME ROLE   password from COGNIGRAPH_PASSWORD or stdin
+  user list
+  user delete KEY
+  token issue USERKEY [--ttl-secs N]   secret printed once (0 = non-expiring)
+  token list USERKEY
+  token revoke USERKEY TOKENKEY
+  token rotate USERKEY TOKENKEY [--ttl-secs N]   same key, fresh secret
+  embed COLLECTION FILE.jsonl [--text-field F] [--batch-size N]
+                                  server-side embed + atomic store (H8)
+  cache stats | cache clear
+  login USERNAME                  password from COGNIGRAPH_PASSWORD or stdin
+  help
+
+Enterprise build required for neurons, construction, jobs, tenants, governance,
+promotions, semantic repairs and artifact custody.

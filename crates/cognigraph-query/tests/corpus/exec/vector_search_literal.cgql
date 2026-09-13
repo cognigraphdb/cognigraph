@@ -1,0 +1,1 @@
+FOR v IN VECTOR_SEARCH(documents, [0.0, 1.0]) LIMIT 1 RETURN v._key

@@ -1,0 +1,3 @@
+FOR returned IN documents
+FILTER returned.form == 1 AND returned.inbound != null
+RETURN returned.sortable

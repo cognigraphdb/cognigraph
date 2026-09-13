@@ -1,0 +1,1 @@
+FOR d IN documents COLLECT cat = d.category RETURN cat

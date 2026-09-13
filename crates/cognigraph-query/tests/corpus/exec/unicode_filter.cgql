@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d.title == "Γάμμα" RETURN LENGTH(d.title)

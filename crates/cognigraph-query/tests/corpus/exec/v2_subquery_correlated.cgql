@@ -1,0 +1,1 @@
+FOR d IN documents LET related = (FOR e IN relationships FILTER e._from == d._id SORT e._key ASC RETURN e._to) SORT d._key ASC RETURN {k: d._key, related: related}

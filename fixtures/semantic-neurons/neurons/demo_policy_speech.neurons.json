@@ -1,0 +1,58 @@
+{
+  "space_type": "demo_policy_speech",
+  "neurons": [
+    {
+      "id": "us-supports-ukraine-001",
+      "type": "relation_hint",
+      "status": "accepted",
+      "confidence": 0.95,
+      "rationale": "The evidence clearly shows the United States supporting Ukraine through providing weapons and standing with them against Putin. Multiple chunks contain direct statements about standing with Ukraine and providing weapons, which demonstrates US support.",
+      "evidence": [
+        "Ukraine can stop Putin if we stand with Ukraine and provide the weapons that it needs to defend itself",
+        "If the United States walks away, it will put Ukraine at risk",
+        "We will not walk away. We will not bow down"
+      ],
+      "source": "United States",
+      "relation": "SUPPORTS",
+      "target": "Ukraine",
+      "triggers": [
+        "stand with Ukraine",
+        "provide the weapons",
+        "Ukraine can stop Putin if we stand with Ukraine"
+      ]
+    },
+    {
+      "id": "alabama-ivf-location",
+      "type": "relation_hint",
+      "status": "accepted",
+      "confidence": 0.95,
+      "rationale": "The evidence clearly shows that IVF treatments were shut down in Alabama by the Alabama Supreme Court, establishing a strong location relationship between Alabama and IVF. This is directly supported by the text mentioning 'Alabama Supreme Court shut down IVF treatments across the State' and the story of Latorya Beasley from Birmingham, Alabama who was affected by this IVF shutdown.",
+      "evidence": [
+        "History is watching another assault on freedom. Joining us tonight is Latorya Beasley, a social worker from Birmingham, Alabama. Fourteen months ago—fourteen months ago, she and her husband welcomed a baby girl thanks to the miracle of IVF. She scheduled treatments to have that second child, but the Alabama Supreme Court shut down IVF treatments across the State, unleashed by a Supreme Court decision overturning Roe v. Wade."
+      ],
+      "source": "Alabama",
+      "relation": "LOCATION",
+      "target": "IVF",
+      "triggers": [
+        "Alabama Supreme Court shut down IVF",
+        "IVF treatments across the State"
+      ]
+    },
+    {
+      "id": "admin-proposes-billionaire-tax",
+      "type": "relation_hint",
+      "status": "accepted",
+      "confidence": 0.95,
+      "rationale": "The evidence clearly shows the Administration (represented by 'The President') proposing a minimum tax for billionaires of 25 percent. This is a direct policy proposal from the Administration.",
+      "evidence": [
+        "I proposed a minimum tax for billionaires of 25 percent—just 25 percent. You know what that would raise? That would raise $500 billion over the next 10 years."
+      ],
+      "source": "Administration",
+      "relation": "PROPOSES",
+      "target": "Billionaire minimum tax",
+      "triggers": [
+        "I proposed a minimum tax for billionaires of 25 percent"
+      ]
+    }
+  ]
+}

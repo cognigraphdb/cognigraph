@@ -1,0 +1,1 @@
+[{"key": "a", "total": 4, "related": [{"target": "b", "matched": 1}, {"target": "c", "matched": 1}]}, {"key": "b", "total": 4, "related": [{"target": "c", "matched": 1}]}]

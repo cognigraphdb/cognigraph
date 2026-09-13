@@ -1,0 +1,87 @@
+{
+  "space_type": "incident_analysis",
+  "neurons": [
+    {
+      "id": "falcon-sensor-runs-on-microsoft-windows",
+      "type": "relation_hint",
+      "status": "proposed",
+      "confidence": 0.95,
+      "rationale": "These sentences explicitly state that 'Falcon sensor software' runs on Windows PCs and servers, including Windows 10 and Windows 11, explicitly supporting the relation that Falcon Sensor runs on Microsoft Windows.",
+      "evidence": [
+        "On 19 July 2024 at 04:09 UTC, CrowdStrike distributed a faulty configuration update for its Falcon sensor software running on Windows PCs and servers.",
+        "The problem affected systems running Windows 10 and Windows 11 running the CrowdStrike Falcon software."
+      ],
+      "entity": "",
+      "aliases": [],
+      "source": "Falcon Sensor",
+      "relation": "RUNS_ON",
+      "target": "Microsoft Windows",
+      "triggers": [
+        "Falcon sensor software running on Windows PCs and servers",
+        "systems running Windows 10 and Windows 11 running the CrowdStrike Falcon software"
+      ]
+    },
+    {
+      "id": "global-it-outage-affects-delta-air-lines",
+      "type": "relation_hint",
+      "status": "proposed",
+      "confidence": 0.95,
+      "rationale": "The quoted sentences explicitly state that Delta Air Lines was affected by the Global IT outage, including impacts on their crew-tracking software and flight operations, thus supporting the 'AFFECTS' relation.",
+      "evidence": [
+        "On 21 July, Delta CEO Ed Bastian apologised to customers in a statement and revealed that the outage had left one of Delta's crew-tracking software programs \"unable to effectively process the unprecedented number of changes triggered by the system shutdown\". Delta CIO Rahul Samant said the program had been brought back online around 11 a.m. on 19 July, but was overwhelmed by the backlog of updates awaiting processing and had been trying to catch up ever since.",
+        "After the ground stop left too many crew members in the wrong places, Delta struggled to assemble enough pilots and flight attendants at airport gates to operate scheduled flights. Many flights were repeatedly delayed and finally cancelled because the few crew members who made it to the gate for a particular flight kept hitting their legal flight time limit before the airline could finish fully staffing the flight, and this caused the crisis to snowball as those crew and their aircraft were now in the wrong place for the following day's flights. (A similar phenomenon occurred during the 2022 Southwest Airlines scheduling crisis.) That same day, US Secretary of Transportation Pete Buttigieg said on social media that the US Department of Transportation had received hundreds of complaints about Delta, and reminded the airline of its legal obligations to affected passengers."
+      ],
+      "entity": "",
+      "aliases": [],
+      "source": "Global IT outage",
+      "relation": "AFFECTS",
+      "target": "Delta Air Lines",
+      "triggers": [
+        "Delta CEO Ed Bastian apologised to customers in a statement and revealed that the outage had left one of Delta's crew-tracking software programs \"unable to effectively process the unprecedented number of changes triggered by the system shutdown\".",
+        "After the ground stop left too many crew members in the wrong places, Delta struggled to assemble enough pilots and flight attendants at airport gates to operate scheduled flights."
+      ]
+    },
+    {
+      "id": "kurtz-leads-crowdstrike",
+      "type": "relation_hint",
+      "status": "proposed",
+      "confidence": 1.0,
+      "rationale": "The mention of George Kurtz as CrowdStrike CEO explicitly asserts leadership of CrowdStrike by George Kurtz. The title 'CEO' is a direct indicator of leading the company.",
+      "evidence": [
+        "At 07:15 UTC, Google stated that the CrowdStrike update was at fault. Within hours, CrowdStrike CEO George Kurtz confirmed that CrowdStrike's faulty kernel configuration file update had caused the problem.",
+        "At 09:45 UTC, Kurtz confirmed that the fix was deployed and that the problem was not the result of a cyberattack."
+      ],
+      "entity": "",
+      "aliases": [],
+      "source": "George Kurtz",
+      "relation": "LEADS",
+      "target": "CrowdStrike",
+      "triggers": [
+        "CrowdStrike CEO George Kurtz",
+        "Kurtz confirmed"
+      ]
+    },
+    {
+      "id": "crowdstrike-responded-with-faulty-update",
+      "type": "relation_hint",
+      "status": "proposed",
+      "confidence": 0.9,
+      "rationale": "The evidence explicitly states that CrowdStrike distributed a faulty update causing major system issues, confirming that CrowdStrike responded with a faulty update.",
+      "evidence": [
+        "On 19 July 2024 at 04:09 UTC, CrowdStrike distributed a faulty configuration update for its Falcon sensor software running on Windows PCs and servers.",
+        "At 07:15 UTC, Google stated that the CrowdStrike update was at fault.",
+        "Within hours, CrowdStrike CEO George Kurtz confirmed that CrowdStrike's faulty kernel configuration file update had caused the problem."
+      ],
+      "entity": "",
+      "aliases": [],
+      "source": "CrowdStrike",
+      "relation": "RESPONDED_WITH",
+      "target": "Faulty update",
+      "triggers": [
+        "CrowdStrike distributed a faulty configuration update",
+        "CrowdStrike update was at fault",
+        "CrowdStrike's faulty kernel configuration file update"
+      ]
+    }
+  ]
+}

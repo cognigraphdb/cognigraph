@@ -1,0 +1,21 @@
+[package]
+name = "cognigraph-artifacts"
+version.workspace = true
+edition.workspace = true
+license-file = "LICENSE"
+repository.workspace = true
+homepage.workspace = true
+
+[dependencies]
+cognigraph-core = { path = "../cognigraph-core" }
+cognigraph-governance = { path = "../cognigraph-governance" }
+rustix = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+tokio = { workspace = true }
+unicode-normalization = "0.1.25"
+uuid = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3"

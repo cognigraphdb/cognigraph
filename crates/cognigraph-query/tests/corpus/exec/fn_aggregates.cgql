@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d._key == "d" RETURN { min: MIN(d.nested.list), max: MAX(d.nested.list), sum: SUM(d.nested.list), avg: AVG(d.nested.list) }

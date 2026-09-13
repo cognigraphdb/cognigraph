@@ -1,0 +1,21 @@
+apiVersion: v2
+name: cognigraph
+description: CogniGraph single-node deployment — the Community tier on Kubernetes
+type: application
+version: 0.2.1
+appVersion: "2.7.1"
+kubeVersion: ">=1.25.0-0"
+home: https://cognigraphdb.com
+sources:
+  - https://github.com/cognigraphdb/cognigraph
+maintainers:
+  - name: Gedank Rayze, LDA
+    email: info@skitsanos.com
+keywords:
+  - database
+  - graph
+  - knowledge-graph
+  - cgql
+  - vector-search
+annotations:
+  cognigraph.io/license: "Chart: FSL-1.1-Apache-2.0. Enterprise values (multi-tenancy, governance) require LICENSE-COMMERCIAL."

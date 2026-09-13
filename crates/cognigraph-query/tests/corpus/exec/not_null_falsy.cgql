@@ -1,0 +1,1 @@
+FOR d IN documents FILTER NOT d.missing SORT d._key ASC RETURN d._key

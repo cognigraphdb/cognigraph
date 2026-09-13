@@ -1,0 +1,1 @@
+FOR w IN words SORT w.t ASC COLLATE "de" RETURN w.t

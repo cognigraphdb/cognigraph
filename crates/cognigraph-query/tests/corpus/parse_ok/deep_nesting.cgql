@@ -1,0 +1,2 @@
+FOR d IN documents
+RETURN { a: { b: [ { c: [1, [2, { d: null }]] } ] }, e: [[[]]] }

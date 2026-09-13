@@ -1,0 +1,1 @@
+FOR d IN documents COLLECT c = d.x REMOVE d._key IN documents

@@ -1,0 +1,30 @@
+[package]
+name = "cognigraph-native"
+version.workspace = true
+edition.workspace = true
+license = "FSL-1.1-Apache-2.0"
+repository.workspace = true
+homepage.workspace = true
+description = "Native CogniGraph backend"
+
+[dependencies]
+cognigraph-core = { path = "../cognigraph-core" }
+cognigraph-query = { path = "../cognigraph-query" }
+
+async-trait = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+tracing = { workspace = true }
+rayon = { workspace = true }
+redb = "4.1.0"
+memmap2 = "0.9.11"
+tantivy = "0.26.1"
+
+[dev-dependencies]
+tokio = { workspace = true }
+
+[[bench]]
+name = "perf"
+harness = false

@@ -1,0 +1,1 @@
+FOR d IN documents FILTER d._key == "b" RETURN [TYPENAME(d.note), TYPENAME(d.tags), TYPENAME(d.score), TYPENAME(d.title), TYPENAME(d.active), TYPENAME(d)]

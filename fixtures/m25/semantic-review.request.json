@@ -1,0 +1,32 @@
+{
+  "statement": {
+    "schema_version": 1,
+    "domain": "cognigraph.semantic-repair-review.v1",
+    "tenant": "REPLACE_WITH_TENANT",
+    "tenant_incarnation": "REPLACE_WITH_TENANT_INCARNATION",
+    "payload": {
+      "semantic_repair_review_id": "REPLACE_WITH_64_LOWERCASE_HEX_NATURAL_REVIEW_ID",
+      "semantic_repair_revision_id": "REPLACE_WITH_64_LOWERCASE_HEX_NATURAL_REVISION_ID",
+      "semantic_repair_revision_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_ACCEPTED_REVISION_DIGEST",
+      "target": {
+        "space_type": "acme_supply",
+        "channel": "m25-production"
+      },
+      "base_promotion_head_decision_id": null,
+      "candidate_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_CANONICAL_CANDIDATE_DIGEST",
+      "author_principal_id": "REPLACE_WITH_STABLE_POLICY_AUTHOR_PRINCIPAL_ID",
+      "approver_registration_id": "REPLACE_WITH_POLICY_APPROVER_REGISTRATION_ID",
+      "approver_principal_id": "REPLACE_WITH_DISTINCT_STABLE_POLICY_APPROVER_PRINCIPAL_ID",
+      "decision": "approve",
+      "reason": "Independent approval of the exact typed Semantic Repair candidate",
+      "signed_at_ms": 1
+    }
+  },
+  "approver_signature": {
+    "schema_version": 1,
+    "algorithm": "ed25519",
+    "key_id": "ed25519:sha256:REPLACE_WITH_POLICY_APPROVER_KEY_ID_HEX",
+    "statement_digest": "sha256:REPLACE_WITH_64_LOWERCASE_HEX_STATEMENT_DIGEST",
+    "signature": "REPLACE_WITH_UNPADDED_BASE64URL_64_BYTE_APPROVER_SIGNATURE"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "crates/cognigraph-server/src/promotions/tests/materialization_lifecycle.rs": {
+    "max_lines": 2019,
+    "reason": "One existing M26 lifecycle scenario preserves the complete signed build, deployment, rollback, no-write failure, snapshot tamper, and restart sequence. Splitting its shared async state/assertions requires a separate behavior-reviewed test redesign."
+  },
+  "crates/cognigraph-server/src/promotions/tests/durable_lifecycle.rs": {
+    "max_lines": 665,
+    "reason": "The existing durable lifecycle wrapper and single shared-state scenario cover history, conflicts, snapshot restoration, and head repair together; splitting would alter its test scaffolding and sequencing."
+  },
+  "crates/cognigraph-server/src/promotions/tests/raw_document_lifecycle.rs": {
+    "max_lines": 643,
+    "reason": "One existing M23 raw-document preparation-to-promotion scenario with corruption and recovery branches; preserve its single shared-state lifetime and test name."
+  },
+  "crates/cognigraph-server/src/promotions/tests/consumption_lifecycle.rs": {
+    "max_lines": 490,
+    "reason": "One existing M21 verified-consumption lifecycle scenario with replay, signed authority, revocation and tamper checks; kept whole rather than replacing assertions with abstraction."
+  },
+  "crates/cognigraph-server/src/promotions/tests/derivation_variant.rs": {
+    "max_lines": 452,
+    "reason": "One existing fixture factory builds and signs the complete M22/M23 variant. Its 452 lines are just over the soft cap; splitting its shared digest/manifest locals adds indirection."
+  },
+  "crates/cognigraph-server/src/jobs/worker.rs": {
+    "max_lines": 680,
+    "reason": "The existing run_job method owns one lease/checkpoint/cancellation/error boundary across all four payload variants. Extracting branches requires an explicit behavior-reviewed worker redesign, beyond mechanical movement."
+  },
+  "crates/cognigraph-server/src/artifact_consumption/consume.rs": {
+    "max_lines": 534,
+    "reason": "The existing consume_verified_evaluation_inputs method holds the verified artifact read set, derivation/preparation checks and receipt construction across one execution. Its local state and authority checks remain one reviewed unit."
+  }
+}

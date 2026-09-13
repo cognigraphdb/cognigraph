@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "domain": "cognigraph.artifact-restore-receipt.v1",
+  "digest_algorithm": "sha256",
+  "tenant": "fixture-tenant",
+  "tenant_incarnation": "fixture-incarnation-1",
+  "tenant_scope_digest": "sha256:7ab2d735228e0b4092500d370cf10937e72252008958a1d6d6d0308d03308f44",
+  "evidence_id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "evidence_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "plan_digest": "sha256:29c076859c16d8a6be5c32b708baa59724bb5b9430a35d99d36843bdd41e88c6",
+  "backup_receipt_digest": "sha256:1bf47b0bfe6881e05010ace4846dca3ffe3173e46cf1fda8fae9f6cd31f209dd",
+  "blob_count": 2,
+  "total_bytes": 10,
+  "receipt_digest": "sha256:746e8c6985496cbad6dd97761bfbab1e9d507715e9b31f6ec1ef10f94cc31ca6"
+}

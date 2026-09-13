@@ -1,0 +1,55 @@
+# Build artifacts
+/target
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Cloudflare Wrangler local cache
+.wrangler/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug
+*.pdb
+
+# Generated pilot corpora (manifests and source documents can be multi-GB)
+/data/dailymed-pilot/
+/data/dailymed-clinical-reference/
+
+# WebNLG text + RDF oracle pilot (downloaded third-party research data)
+/data/webnlg-pilot/
+
+# Drift HTML cache (Method A follow-up)
+/data/dailymed-drift/
+
+# Local dev launcher — may contain secrets (JWT, admin password); never commit
+/.claude/launch.json
+/.dev-data/
+
+# Python workflow helpers
+__pycache__/
+/docs/issues/.registry.lock
+
+# Restricted research packages are kept in an external private archive.
+/fixtures/semantic-neurons/hostile/
+/fixtures/semantic-neurons/judge-replay/
+/fixtures/semantic-neurons/blind/qualitative-research-software-market-size/
+/fixtures/semantic-neurons/blind/qualitative-research-software-market-size-gap/
+
+# Raw captures and local research scratch never enter public distribution.
+/docs/issues/evidence/
+/ui/audit/
+/data/
+
+# Per-developer Claude Code settings
+.claude/settings.local.json

@@ -1,0 +1,164 @@
+{
+  "id": "digital_forensics",
+  "name": "Digital Forensics",
+  "version": 1,
+  "description": "Synthetic ontology for case-centered digital forensic investigations.",
+  "entities": [
+    {
+      "name": "Case Alpha",
+      "type": "Case",
+      "aliases": [
+        "Case DF-001"
+      ]
+    },
+    {
+      "name": "Alex Morgan",
+      "type": "Suspect"
+    },
+    {
+      "name": "Riley Stone",
+      "type": "Suspect"
+    },
+    {
+      "name": "Persona A",
+      "type": "Persona",
+      "aliases": [
+        "account alpha"
+      ]
+    },
+    {
+      "name": "iPhone 14",
+      "type": "Device"
+    },
+    {
+      "name": "Samsung Galaxy S21",
+      "type": "Device"
+    },
+    {
+      "name": "Signal",
+      "type": "Application"
+    },
+    {
+      "name": "WhatsApp",
+      "type": "Application"
+    },
+    {
+      "name": "Telegram",
+      "type": "Application"
+    },
+    {
+      "name": "Harbor Cafe",
+      "type": "Location"
+    },
+    {
+      "name": "Blue Sedan",
+      "type": "Vehicle"
+    },
+    {
+      "name": "Cloud Backup",
+      "type": "EvidenceSource"
+    },
+    {
+      "name": "Conversation Thread 17",
+      "type": "Conversation"
+    }
+  ],
+  "relation_rules": [
+    {
+      "source": "Case Alpha",
+      "relation": "INVESTIGATES",
+      "target": "Alex Morgan",
+      "when_any": [
+        "Case Alpha identifies Alex Morgan as a primary suspect"
+      ]
+    },
+    {
+      "source": "Case Alpha",
+      "relation": "INVESTIGATES",
+      "target": "Riley Stone",
+      "when_any": [
+        "Case Alpha also lists Riley Stone as an associate"
+      ]
+    },
+    {
+      "source": "Alex Morgan",
+      "relation": "USES_DEVICE",
+      "target": "iPhone 14",
+      "when_any": [
+        "Alex Morgan used the iPhone 14"
+      ]
+    },
+    {
+      "source": "Riley Stone",
+      "relation": "USES_DEVICE",
+      "target": "Samsung Galaxy S21",
+      "when_any": [
+        "Riley Stone used the Samsung Galaxy S21"
+      ]
+    },
+    {
+      "source": "Persona A",
+      "relation": "CONTROLS_ACCOUNT",
+      "target": "Signal",
+      "when_any": [
+        "Persona A controlled the Signal account"
+      ]
+    },
+    {
+      "source": "iPhone 14",
+      "relation": "RUNS_APPLICATION",
+      "target": "Signal",
+      "when_any": [
+        "iPhone 14 contained Signal"
+      ]
+    },
+    {
+      "source": "Samsung Galaxy S21",
+      "relation": "RUNS_APPLICATION",
+      "target": "WhatsApp",
+      "when_any": [
+        "Samsung Galaxy S21 contained WhatsApp"
+      ]
+    },
+    {
+      "source": "Alex Morgan",
+      "relation": "PARTICIPATES_IN",
+      "target": "Conversation Thread 17",
+      "when_any": [
+        "Alex Morgan participated in Conversation Thread 17"
+      ]
+    },
+    {
+      "source": "Riley Stone",
+      "relation": "PARTICIPATES_IN",
+      "target": "Conversation Thread 17",
+      "when_any": [
+        "Riley Stone participated in Conversation Thread 17"
+      ]
+    },
+    {
+      "source": "Conversation Thread 17",
+      "relation": "MENTIONS_LOCATION",
+      "target": "Harbor Cafe",
+      "when_any": [
+        "Conversation Thread 17 mentioned Harbor Cafe"
+      ]
+    },
+    {
+      "source": "Blue Sedan",
+      "relation": "OBSERVED_AT",
+      "target": "Harbor Cafe",
+      "when_any": [
+        "Blue Sedan was observed at Harbor Cafe"
+      ]
+    },
+    {
+      "source": "Cloud Backup",
+      "relation": "CONTAINS_APPLICATION",
+      "target": "Telegram",
+      "when_any": [
+        "Cloud Backup contained Telegram exports"
+      ]
+    }
+  ]
+}

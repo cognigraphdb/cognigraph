@@ -1,0 +1,234 @@
+{{- include "cognigraph.validate" . -}}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "cognigraph.fullname" . }}
+  labels:
+    {{- include "cognigraph.labels" . | nindent 4 }}
+spec:
+  serviceName: {{ include "cognigraph.fullname" . }}-headless
+  replicas: {{ .Values.replicaCount }}
+  podManagementPolicy: OrderedReady
+  updateStrategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      {{- include "cognigraph.serverSelectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "cognigraph.labels" . | nindent 8 }}
+        app.kubernetes.io/component: server
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      annotations:
+        {{- if not .Values.auth.existingSecret }}
+        checksum/auth-secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+        {{- end }}
+        {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "cognigraph.serviceAccountName" . }}
+      {{- with .Values.priorityClassName }}
+      priorityClassName: {{ . }}
+      {{- end }}
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: cognigraph
+          image: {{ include "cognigraph.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          env:
+            - name: COGNIGRAPH_HOST
+              value: "0.0.0.0"
+            - name: COGNIGRAPH_PORT
+              value: "3000"
+            {{- if .Values.enterprise.multiTenant }}
+            - name: COGNIGRAPH_DATA_DIR
+              value: /data
+            {{- else }}
+            - name: COGNIGRAPH_NATIVE_PATH
+              value: /data/cognigraph.redb
+            {{- end }}
+            - name: COGNIGRAPH_STORAGE_MODE
+              value: {{ .Values.storage.mode | quote }}
+            - name: COGNIGRAPH_VECTOR_MODE
+              value: {{ .Values.storage.vectorMode | quote }}
+            {{- if .Values.storage.cacheBytes }}
+            - name: COGNIGRAPH_CACHE_BYTES
+              value: {{ .Values.storage.cacheBytes | quote }}
+            {{- end }}
+            - name: COGNIGRAPH_LOG_FORMAT
+              value: {{ .Values.server.logFormat | quote }}
+            - name: COGNIGRAPH_REQUEST_TIMEOUT_SECS
+              value: {{ .Values.server.requestTimeoutSecs | quote }}
+            - name: COGNIGRAPH_RATE_LIMIT_PER_MINUTE
+              value: {{ .Values.server.rateLimitPerMinute | quote }}
+            - name: COGNIGRAPH_CGQL_MUTATIONS_ENABLED
+              value: {{ .Values.server.cgql.mutationsEnabled | quote }}
+            - name: COGNIGRAPH_CGQL_MAX_SOURCE_ROWS
+              value: {{ .Values.server.cgql.maxSourceRows | quote }}
+            - name: COGNIGRAPH_CGQL_TIME_BUDGET_MS
+              value: {{ .Values.server.cgql.timeBudgetMs | quote }}
+            - name: COGNIGRAPH_LUA_INSTRUCTION_LIMIT
+              value: {{ .Values.server.lua.instructionLimit | quote }}
+            - name: COGNIGRAPH_QUERY_CACHE_ENABLED
+              value: {{ .Values.server.queryCache.enabled | quote }}
+            - name: COGNIGRAPH_QUERY_CACHE_BACKEND
+              value: {{ .Values.server.queryCache.backend | quote }}
+            {{- if eq .Values.server.queryCache.backend "persistent" }}
+            - name: COGNIGRAPH_QUERY_CACHE_PATH
+              value: /data/query-cache.redb
+            {{- end }}
+            {{- if .Values.server.serveConsole }}
+            - name: COGNIGRAPH_UI_DIST
+              value: {{ .Values.server.consolePath | quote }}
+            {{- end }}
+            - name: COGNIGRAPH_AUTH_ENABLED
+              value: {{ .Values.auth.enabled | quote }}
+            {{- if .Values.auth.enabled }}
+            - name: COGNIGRAPH_JWT_TTL_SECS
+              value: {{ .Values.auth.jwtTtlSecs | quote }}
+            - name: COGNIGRAPH_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "cognigraph.authSecretName" . }}
+                  key: admin-password
+            - name: COGNIGRAPH_HOST_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "cognigraph.authSecretName" . }}
+                  key: host-admin-password
+            - name: COGNIGRAPH_JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "cognigraph.authSecretName" . }}
+                  key: jwt-secret
+            {{- end }}
+            - name: COGNIGRAPH_EMBEDDING_PROVIDER
+              value: {{ .Values.embeddings.provider | quote }}
+            {{- with .Values.embeddings.model }}
+            - name: COGNIGRAPH_EMBEDDING_MODEL
+              value: {{ . | quote }}
+            {{- end }}
+            {{- with .Values.embeddings.ollamaBaseUrl }}
+            - name: OLLAMA_BASE_URL
+              value: {{ . | quote }}
+            {{- end }}
+            {{- with .Values.embeddings.openaiBaseUrl }}
+            - name: OPENAI_BASE_URL
+              value: {{ . | quote }}
+            {{- end }}
+            {{- if .Values.embeddings.existingSecret }}
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.embeddings.existingSecret }}
+                  key: openai-api-key
+                  optional: true
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.embeddings.existingSecret }}
+                  key: gemini-api-key
+                  optional: true
+            {{- end }}
+            {{- with .Values.enterprise.governanceRootPublicKey }}
+            - name: COGNIGRAPH_GOVERNANCE_ROOT_PUBLIC_KEY
+              value: {{ . | quote }}
+            {{- end }}
+            {{- if .Values.enterprise.artifactCas.existingClaim }}
+            - name: COGNIGRAPH_ARTIFACT_SOURCE
+              value: local-cas
+            - name: COGNIGRAPH_ARTIFACT_CAS_ROOT
+              value: {{ .Values.enterprise.artifactCas.mountPath | quote }}
+            {{- end }}
+            {{- with .Values.extraEnv }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
+          {{- with .Values.extraEnvFrom }}
+          envFrom:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+          startupProbe:
+            {{- toYaml .Values.startupProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: data
+              mountPath: /data
+            - name: tmp
+              mountPath: /tmp
+            {{- if .Values.enterprise.artifactCas.existingClaim }}
+            - name: artifact-cas
+              mountPath: {{ .Values.enterprise.artifactCas.mountPath }}
+              readOnly: true
+            {{- end }}
+      volumes:
+        - name: tmp
+          emptyDir: {}
+        {{- if .Values.enterprise.artifactCas.existingClaim }}
+        - name: artifact-cas
+          persistentVolumeClaim:
+            claimName: {{ .Values.enterprise.artifactCas.existingClaim }}
+            readOnly: true
+        {{- end }}
+        {{- if not .Values.persistence.enabled }}
+        - name: data
+          emptyDir: {}
+        {{- else if .Values.persistence.existingClaim }}
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim }}
+        {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+  {{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+        {{- with .Values.persistence.annotations }}
+        annotations:
+          {{- toYaml . | nindent 10 }}
+        {{- end }}
+      spec:
+        accessModes:
+          {{- toYaml .Values.persistence.accessModes | nindent 10 }}
+        {{- if .Values.persistence.storageClass }}
+        {{- if eq "-" .Values.persistence.storageClass }}
+        storageClassName: ""
+        {{- else }}
+        storageClassName: {{ .Values.persistence.storageClass | quote }}
+        {{- end }}
+        {{- end }}
+        resources:
+          requests:
+            storage: {{ .Values.persistence.size }}
+  {{- end }}

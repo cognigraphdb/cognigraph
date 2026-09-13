@@ -1,0 +1,1 @@
+FOR d IN documents FOR e IN relationships FILTER e._from == d._id SORT e._key ASC RETURN [d._key, e._key]

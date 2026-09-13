@@ -1,0 +1,1 @@
+LET xs = [10, 20] FOR x IN xs RETURN x + 1

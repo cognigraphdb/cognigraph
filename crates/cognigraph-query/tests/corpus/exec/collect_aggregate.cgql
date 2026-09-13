@@ -1,0 +1,1 @@
+FOR d IN documents FILTER HAS(d, "score") COLLECT cat = d.category AGGREGATE total = SUM(d.score), top = MAX(d.score) WITH COUNT INTO n SORT cat ASC RETURN { cat: cat, total: total, top: top, n: n }

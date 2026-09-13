@@ -1,0 +1,4 @@
+// binds: {"embedding": [1.0, 0.0]}
+FOR v IN VECTOR_SEARCH(documents, @embedding)
+LIMIT 2
+RETURN v._key

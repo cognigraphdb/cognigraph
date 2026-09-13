@@ -1,0 +1,3 @@
+FOR d IN documents
+FILTER LENGTH((FOR e IN relationships FILTER e._from == d._id RETURN 1)) > 1
+RETURN d._key

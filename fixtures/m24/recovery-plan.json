@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "domain": "cognigraph.artifact-recovery-plan.v1",
+  "digest_algorithm": "sha256",
+  "tenant": "fixture-tenant",
+  "tenant_incarnation": "fixture-incarnation-1",
+  "tenant_scope_digest": "sha256:7ab2d735228e0b4092500d370cf10937e72252008958a1d6d6d0308d03308f44",
+  "evidence_id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "evidence_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "evidence_schema_version": 6,
+  "artifact_authority_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+  "candidate_artifact_set_digest": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+  "baseline_artifact_set_digest": "sha256:4444444444444444444444444444444444444444444444444444444444444444",
+  "attestations": [
+    {
+      "kind": "corpus",
+      "attestation_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "attestation_digest": "sha256:5555555555555555555555555555555555555555555555555555555555555555",
+      "manifest_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "kind": "graph",
+      "attestation_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "attestation_digest": "sha256:6666666666666666666666666666666666666666666666666666666666666666",
+      "manifest_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "kind": "graph",
+      "attestation_id": "bcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbc",
+      "attestation_digest": "sha256:abababababababababababababababababababababababababababababababab",
+      "manifest_digest": "sha256:fbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb"
+    },
+    {
+      "kind": "oracle",
+      "attestation_id": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "attestation_digest": "sha256:7777777777777777777777777777777777777777777777777777777777777777",
+      "manifest_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    },
+    {
+      "kind": "scorer",
+      "attestation_id": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "attestation_digest": "sha256:8888888888888888888888888888888888888888888888888888888888888888",
+      "manifest_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "kind": "verifier",
+      "attestation_id": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "attestation_digest": "sha256:9999999999999999999999999999999999999999999999999999999999999999",
+      "manifest_digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    }
+  ],
+  "blobs": [
+    {
+      "blob_digest": "sha256:2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
+      "byte_length": 5
+    },
+    {
+      "blob_digest": "sha256:486ea46224d1bb4fb680f34f7c9ad96a8f24ec88be73ea8e5a6c65260e9cb8a7",
+      "byte_length": 5
+    }
+  ],
+  "manifest_entry_count": 6,
+  "blob_count": 2,
+  "total_bytes": 10,
+  "plan_digest": "sha256:29c076859c16d8a6be5c32b708baa59724bb5b9430a35d99d36843bdd41e88c6"
+}

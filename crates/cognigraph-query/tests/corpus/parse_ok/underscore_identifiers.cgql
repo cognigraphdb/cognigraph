@@ -1,0 +1,1 @@
+FOR _d IN _private_collection FILTER _d._internal == 1 RETURN _d.__meta
