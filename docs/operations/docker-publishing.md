@@ -16,8 +16,11 @@ registry digests and independently executed checks of the published images.
 | Enterprise | `cognigraph/cognigraph-enterprise:<version>` | `linux/amd64` |
 
 Tags use the stable workspace version, such as `2.7.1`, without a `v` prefix.
-No `latest`, minor-version alias or ARM build is published.
-This avoids silently changing a deployment's selected version. Local Docker
+The mutable `latest` tag selects the current stable release in each repository.
+Starting with v2.7.14, publication advances both aliases only after both numbered
+images have verified registry digests. Pin an explicit version or digest when a
+deployment must retain its selected release. No minor-version alias or native
+ARM build is published. Local Docker
 checks use the host platform unless `DOCKER_DEFAULT_PLATFORM` is set; ARM host
 success alone is not amd64 acceptance. CI explicitly builds and checks amd64.
 
@@ -45,8 +48,11 @@ is separately named **`cognigraphdb`**; it is not the image namespace.
 3. Limit other writers to these release tags. The workflow rejects any existing
    version tag and serializes its own runs, but the remote existence check and
    upload are not an atomic registry operation. Both repositories now enforce
-   **All tags are immutable** (`enabled: true`, rule `.*`), adding registry-side
-   protection against replacement or deletion of a published version.
+   **Specific tags are immutable**, with the exact rule
+   `^[0-9]+\.[0-9]+\.[0-9]+$`. This protects every stable version while allowing
+   `latest` to advance. The publisher rejects other settings before upload.
+   The initial v2.7.11 setup used all-tag immutability; its sealed receipt
+   retains that historical policy.
 
 ### Verified account setup — 2026-09-13
 
@@ -122,12 +128,19 @@ authenticated insertion, edition-specific OpenAPI paths, and HTTP/CLI CGQL reads
 after container restart. Each check uses an isolated Docker volume,
 synthetic data and no model provider; it removes its own containers and volumes.
 
+The [v2.7.14 change record](../changelog/2026-09-13-v2-7-14.md) records the
+maintained alias contract. Hosted QA remains separately opt-in.
+
 Before an upload, the publishing helper requires a clean Actions checkout,
 the official repository and manual-main trigger, an unchanged remote main head,
 public target repositories and unused version tags. It checks both images again,
 then repeats the remote checks before any upload. It tags the tested image IDs
-and pushes them without rebuilding. The Actions summary records each accepted
-image reference, registry digest, edition and source commit.
+and pushes them without rebuilding. Each numbered digest is read back from
+Docker Hub. Once both match, the helper rechecks main and the previous aliases,
+then publishes `latest` from the same tested image IDs and verifies exact digest
+equality with the numbered tags. Main is checked again before each alias push.
+The Actions summary records each successful upload, registry digest, edition
+and source commit, including uploads preceding a later verification failure.
 
 Inspect the completed run and its logs. Build success alone is not publication
 success, and local checks do not establish a remote CI result. For deployment,
@@ -142,13 +155,19 @@ error is never treated as an unused tag. If main advances during verification,
 dispatch a new run for the current candidate. No image is uploaded until both
 editions pass the runtime checks.
 
-The two repository uploads are sequential, not atomic. If one succeeds and the
+The repository uploads and alias updates are sequential, not atomic. No alias
+advances if either numbered publication or its readback fails. If one succeeds and the
 other fails, retain the successful digest and inspect Docker Hub before retrying.
 An existing tag blocks automatic retries even when it appears to be the same
 candidate. Do not delete or overwrite it to force a green run. Review the partial
 publication and either perform an explicitly authorized recovery of the missing
 edition or prepare a newly versioned, fully verified candidate. The workflow
 does not delete images, create Git tags/releases or roll back registry state.
+If an alias update fails after both versions are published, retain the immutable
+images and inspect each alias before an explicitly authorized repair. A partial
+alias update can temporarily leave editions on different releases. Only the
+serialized workflow should write these tags; checks cannot make independent
+writers or cross-repository updates atomic.
 
 The guard checks only the current version in these repositories. The normal
 push/version policy still owns comparison with earlier published product

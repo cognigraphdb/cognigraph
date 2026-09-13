@@ -30,8 +30,12 @@ evidence split, CG-75–CG-78, explicit hosted QA and Docker cleanup rules, and
 passed the full local and remote CI gates and reached both integration and release
 branches. The [v2.7.13 source snapshot](changelog/2026-09-13-v2-7-13.md) retains
 that implementation with refreshed release metadata and a reviewed public root.
-Docker Hub remains at the previously published v2.7.11 images; new image
-publication is a separate operation.
+The [v2.7.14 maintenance release](changelog/2026-09-13-v2-7-14.md) adds maintained
+Docker Hub `latest` aliases for both editions while preserving immutable
+numbered tags. Its publication requires local and remote CI, registry digest
+readback, and independent pulled-image checks under the
+[Docker publishing guide](operations/docker-publishing.md). Release runs do not
+initiate hosted QA.
 
 ## Completed dependency and branch maintenance
 
