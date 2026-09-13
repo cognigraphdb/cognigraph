@@ -135,7 +135,7 @@ The [Native-only storage batch](../plans/native-only-2026-09-12.md), approved on
 2026-09-12, adds CG-64–CG-68. [Native conformance coverage](native-conformance-2026-09-12.md)
 resolves CG-65. [Runtime removal](native-runtime-2026-09-12.md) resolves CG-67.
 [Local readiness](native-readiness-2026-09-12.md) resolves CG-68.
-Current registry: **69 Resolved, 1 Closed without
+Current registry: **70 Resolved, 1 Closed without
 change, and 2 Open issues**. The Native-only batch is complete. [CG-69](CG-69.md)
 resolves automatic CI/protections; [CG-71](CG-71.md) resolves first Community
 deployment and console packaging with [live recovery evidence](railway-community-2026-09-12.md).
@@ -143,12 +143,18 @@ deployment and console packaging with [live recovery evidence](railway-community
 unsoundness and records a reviewed optional ONNX maintenance exception.
 [CG-72](CG-72.md) resolves the subsequent login centering defect in narrow
 windows with local Chromium/WebKit and both-edition browser evidence;
-publication is pending.
+published to develop in v2.7.8; production deployment remains pending.
 CG-64 and CG-66 remain
 Open with deferred optional scheduling; they do not block Native-only readiness
 or first deployment. These are engineering tasks under the
 [Native-only decision](../decisions/decision_native_only.md), not reopened UI
 defects. No ticket is closed merely because it was deferred.
+
+The [CG-73 transition](CG-73.md) integrates the six incoming dependency updates,
+replaces Dependabot with Renovate, and establishes protected develop integration
+with a separate main release branch. Its activation checkpoint has only the two
+permanent branches and the primary worktree: **70 Resolved, 1 Closed without
+change, and 2 Open issues** (CG-64/CG-66 remain deferred).
 
 ## Conventions
 
@@ -234,7 +240,7 @@ defects. No ticket is closed merely because it was deferred.
 | [CG-70](CG-70.md) | P2 | Resolved | Track transitive dependency safety and maintenance advisories |
 | [CG-71](CG-71.md) | P1 | Resolved | Package and qualify the first Community deployment with the console |
 | [CG-72](CG-72.md) | P2 | Resolved | Login screen is off-center and clipped in narrow viewports |
-| [CG-73](CG-73.md) | P2 | Open | Route dependency updates through develop and retire stale branches |
+| [CG-73](CG-73.md) | P2 | Resolved | Route dependency updates through develop and retire stale branches |
 
 Next available identifier: **CG-74**.
 ## After the current ticket list

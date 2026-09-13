@@ -10,13 +10,15 @@ local/GitHub CI, hosted API/browser checks, restart and both application and
 platform restore drills. [Railway operations](operations/railway.md) owns setup
 and recovery. Docker Hub publication is deferred. The separate website remains live.
 
-## Current maintenance batch
+## Completed dependency and branch maintenance
 
 [CG-73](issues/CG-73.md) integrates six incoming dependency PRs, establishes
 `develop` as the default integration branch, replaces Dependabot with Renovate,
 and removes obsolete topic branches after preserving their work. The
 [branch decision](decisions/decision_develop_integration.md) keeps main as the
 separately promoted production release branch. Candidate v2.7.8 includes CG-72;
+v2.7.9 records the GitHub activation and cleanup; v2.7.10 corrects a login-test
+synchronization race found by remote CI.
 Railway remains on v2.7.7 until release promotion is authorized.
 
 ## Delivered scope
@@ -70,7 +72,7 @@ the reference for qualifying additional environments.
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **69 Resolved, 1 Closed without change, and 3 Open issues**.
+The registry now has **70 Resolved, 1 Closed without change, and 2 Open issues**.
 [CG-69](issues/CG-69.md) delivers automatic CI and repository protections,
 with both CI PRs merged. [CG-70](issues/CG-70.md) removes the Native lru unsoundness advisory
 through a bounded upstream patch, makes unsoundness fatal in CI, and records
@@ -83,8 +85,7 @@ The earlier console defect list remains
 closed. The [2026-09-13 login centering audit](../ui/audit/2026-09-13-login-centering/audit.md)
 adds [CG-72](issues/CG-72.md), a reproduced narrow-window layout defect in both
 local and hosted Community consoles. Its [responsive-login fix](../ui/audit/2026-09-13-login-responsive/audit.md)
-passes local Chromium/WebKit and both-edition browser checks; publication is
-pending. Additional console features and the research qualification below are
+passes local Chromium/WebKit and both-edition browser checks; it is published on develop in v2.7.8, with production deployment pending. Additional console features and the research qualification below are
 separate backlogs, not prerequisites for this batch. No model or holdout runs
 are scheduled by it.
 
