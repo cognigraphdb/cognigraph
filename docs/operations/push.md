@@ -58,7 +58,7 @@ No external API keys or existing databases are needed for browser coverage.
   unchanged. Resolve changes before retrying. A failed or unavailable required
   check blocks the push. Intentional credential-gated test skips remain visible.
 
-Use `git push --dry-run origin main` to exercise the real installed gate without
+Use `git push --dry-run origin HEAD:develop` to exercise the real installed gate without
 publishing. It performs network reads and the full local checks. The hook does not
 merge PRs, bump versions, create commits/tags or push refs itself.
 
@@ -126,3 +126,21 @@ archive and local recovery copies still retain their own history; this operation
 does not delete them or certify erasure from GitHub storage. Historical hashes
 and PR numbers in dated engineering records refer to the former repository and
 are retained as provenance, not as navigable refs in the fresh repository.
+
+## Integration branches and cleanup
+
+Follow the [branch decision](../decisions/decision_develop_integration.md): PRs
+normally target develop, and main is promoted only for an authorized release.
+The same candidate can retain its version when promoted unchanged; newly changed
+content needs the next version and fresh checks. Do not merge a bot update to
+main merely because it passed CI.
+
+Enable GitHub's automatic deletion of merged topic branches. For an explicit
+cleanup, inventory all local/remote tips, PR dispositions and `git worktree list
+--porcelain`. Confirm each topic's changes are included or superseded before
+removing it. Preserve unique local work and private historical ancestry in an
+external private recovery bundle. Remove only clean, unused extra worktrees;
+retain the primary checkout. The ordinary push hook refuses ref deletions, so
+perform reviewed remote cleanup as separate exact-ref GitHub API operations,
+with fresh tip comparison and readback. Never bypass the hook or use force-push
+for source publication. Future bot PRs temporarily create branches again.

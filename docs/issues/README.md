@@ -234,8 +234,9 @@ defects. No ticket is closed merely because it was deferred.
 | [CG-70](CG-70.md) | P2 | Resolved | Track transitive dependency safety and maintenance advisories |
 | [CG-71](CG-71.md) | P1 | Resolved | Package and qualify the first Community deployment with the console |
 | [CG-72](CG-72.md) | P2 | Resolved | Login screen is off-center and clipped in narrow viewports |
+| [CG-73](CG-73.md) | P2 | Open | Route dependency updates through develop and retire stale branches |
 
-Next available identifier: **CG-73**.
+Next available identifier: **CG-74**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

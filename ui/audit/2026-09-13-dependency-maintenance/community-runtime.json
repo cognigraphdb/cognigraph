@@ -1,0 +1,9 @@
+{
+  "edition": "community",
+  "origin": "http://127.0.0.1:51871",
+  "backend": "native",
+  "binary_sha256": "f9c76f020e980051e03485651e80a85dfed7d050b9477df32fe5f699adb6a3c8",
+  "html_sha256": "038d35ff8dab0dc9601250580ce8784eff2ad06f16a42e29b560b6052941ff28",
+  "server_stopped": true,
+  "temporary_store_removed_on_exit": true
+}

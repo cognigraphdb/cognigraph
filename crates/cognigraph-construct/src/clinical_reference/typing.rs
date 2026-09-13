@@ -274,13 +274,13 @@ fn active_substances(xml: &str) -> BTreeSet<String> {
                 // typing safer. Coverage is still corpus-bounded (a drug never
                 // marketed in this corpus cannot be typed) — recorded as a
                 // limitation, not hidden.
-                b"ingredientSubstance" => in_substance = true,
-                b"name" if in_substance && !capture => capture = true,
+                "ingredientSubstance" => in_substance = true,
+                "name" if in_substance && !capture => capture = true,
                 _ => {}
             },
             Ok(Event::Text(t)) => {
                 if capture {
-                    let name = t.decode().unwrap_or_default().trim().to_lowercase();
+                    let name = t.trim().to_lowercase();
                     if !name.is_empty() && name.len() < 90 {
                         names.insert(name);
                     }
@@ -288,7 +288,7 @@ fn active_substances(xml: &str) -> BTreeSet<String> {
                 }
             }
             Ok(Event::End(e)) => {
-                if e.name().as_ref() == b"ingredientSubstance" {
+                if e.name().as_ref() == "ingredientSubstance" {
                     in_substance = false;
                 }
             }

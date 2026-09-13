@@ -123,6 +123,12 @@ python3 scripts/check-decision-index.py
 
 ## Push Workflow
 
+Use `develop` for integration and dependency PRs; `main` is the production release
+branch. Follow the [branch decision](docs/decisions/decision_develop_integration.md)
+and [CI guide](docs/operations/ci.md). Promote to main only when the user authorizes
+that release. Keep only main/develop as permanent branches; remove included topic
+branches after verifying their work is preserved.
+
 Before every authorized push, complete these steps in order:
 
 Install the tracked hook once per checkout with `python3 scripts/install-hooks.py`.

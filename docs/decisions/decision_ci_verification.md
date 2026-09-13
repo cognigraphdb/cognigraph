@@ -39,3 +39,11 @@ and publication boundaries. Repository settings take effect immediately; workflo
 and Dependabot changes on the default branch require a separate authorized merge.
 The current work publishes candidate PRs only. [CG-70](../issues/CG-70.md) tracks
 the outstanding transitive dependency warnings.
+
+## Amendment — develop integration, 2026-09-13
+
+The [develop/Renovate decision](decision_develop_integration.md) extends automatic
+verification and branch protection to develop, makes it the default integration
+branch, and replaces Dependabot update PRs with Renovate. Main remains the
+production release branch. The original CG-69 authorization and settings above
+are a historical checkpoint; current setup is recorded in CG-73 and the CI guide.

@@ -1,7 +1,7 @@
 # Continuous verification
 
-The [workflow](../../.github/workflows/ci.yml) runs on PRs targeting `main`,
-pushes to `main`, and manual dispatch. The same commands run locally:
+The [workflow](../../.github/workflows/ci.yml) runs on PRs targeting `main` or `develop`,
+pushes to either branch, and manual dispatch. The same commands run locally:
 
 ```sh
 python3 scripts/verify.py --suite ci
@@ -54,13 +54,18 @@ Maintenance warnings remain visible. [CG-70](../issues/CG-70.md) and the
 [dependency decision](../decisions/decision_dependency_advisories.md) document
 the bounded Tantivy patch and the optional ONNX paste maintenance exception,
 including its review triggers. That exception does not suppress an advisory.
-Weekly Dependabot updates cover Actions, Cargo and the UI Bun lockfile. Updates
-arrive as PRs and do not authorize integration. Model APIs, research holdouts and
+The [Renovate configuration](../../.github/renovate.json) covers Actions, Cargo
+and the UI Bun lockfile, targeting only `develop`. Its weekly window is Monday
+00:00–03:59 Europe/Bucharest; advisory updates use Renovate's security scheduling.
+React and CodeMirror updates are grouped, with no automerge. Install the official
+Renovate GitHub App for this repository only. Dependabot automatic security-update
+PRs are disabled separately from vulnerability alerts, which remain enabled.
+Updates arrive as PRs and do not authorize integration. Model APIs, research holdouts and
 provider qualification are outside routine CI.
 
 ## GitHub protections
 
-The public code repository uses a `main` ruleset requiring PRs, the GitHub Actions
+The public code repository uses rulesets for `main` and `develop` requiring PRs, the GitHub Actions
 `CI required` check on an up-to-date candidate, resolved review conversations,
 and no branch deletion or force-push. The aggregate check requires both the
 source/Native job and Docker/Helm job to succeed; failure, cancellation or skips
@@ -69,8 +74,8 @@ owner-operated repository. No bypass actor is configured.
 
 Action permissions stay read-only by default and cannot approve PRs. Action
 references require full SHAs. Secret scanning and push protection are enabled
-on the public code repository; Dependabot alerts and security-update PRs are
-enabled. These settings are verified through GitHub's API, not inferred from YAML.
+on the public code repository; Dependabot vulnerability alerts stay enabled
+while Renovate owns update PRs. These settings are verified through GitHub's API, not inferred from YAML.
 
 The separate website has its own `Website CI required` job and local
 `scripts/verify.py`, covering Bun checks/audit and a non-root/read-only Docker
@@ -87,8 +92,8 @@ then independently passes the [publication preflight](docker-publishing.md).
 PR code has no publication token. A manual run keeps its upload from being
 cancelled by newer automated verification. Tests do not deploy an application.
 
-The current authorization is to publish CI branches and open PRs. Merging those
-PRs, publishing images, creating tags and deploying remain separate actions.
-Default-branch automation and Dependabot configuration become active when the
-workflow/configuration PRs are merged. Until then, PR checks validate their
-candidate workflows and the existing main workflow retains its earlier trigger.
+`develop` is the default integration branch. `main` retains production history
+and Railway's source branch. Promote an explicitly authorized release through a
+verified develop-to-main PR. The [branch decision](../decisions/decision_develop_integration.md)
+owns this boundary. [CG-73](../issues/CG-73.md) records transition status and remote
+receipts; changing the default branch does not itself deploy either application.

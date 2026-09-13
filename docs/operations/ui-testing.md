@@ -49,7 +49,7 @@ environment allowlist, disables Bun dotenv loading for the browser process and
 never starts inside the code checkout's dotenv directory. It stops its server
 and removes its store on success or failure. It does not reuse a local API.
 
-Six cases run in both editions, with a seventh HostAdmin case in Enterprise:
+Seven cases run in both editions, with an eighth HostAdmin case in Enterprise:
 
 - Fresh production-origin login, invalid-login recovery, off-page encoded-key
   deep links, keyboard navigation, Back/Forward and refresh.
@@ -63,6 +63,8 @@ Six cases run in both editions, with a seventh HostAdmin case in Enterprise:
   desktop workspace minimum width across login/logout.
 - Short-screen scrolling through required-field and real invalid-login errors,
   plus a presentation-only long-server-name fixture that keeps the API local.
+- CodeMirror edits submit Unicode CGQL and Lua scripts to the real server and
+  render their returned values.
 - Enterprise HostAdmin landing/reload and tenant-data denial in UI and API.
 
 Browser page exceptions, unexpected HTTP/transport failures and requests to

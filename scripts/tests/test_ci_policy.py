@@ -25,7 +25,7 @@ class WorkflowPolicy(unittest.TestCase):
 
     def test_pull_request_validation_has_read_only_permissions_and_no_privileged_trigger(self):
         self.assertEqual(set(self.flow['on']), {'push', 'pull_request', 'workflow_dispatch'})
-        self.assertEqual(self.flow['on']['pull_request']['branches'], ['main'])
+        self.assertEqual(self.flow['on']['pull_request']['branches'], ['main', 'develop'])
         self.assertEqual(self.flow['permissions'], {'contents': 'read'})
         self.assertFalse(self.flow['on']['workflow_dispatch']['inputs']['publish_images']['default'])
         for job in self.flow['jobs'].values():
@@ -37,6 +37,24 @@ class WorkflowPolicy(unittest.TestCase):
                 if 'DOCKERHUB_TOKEN' in json.dumps(step) or 'publish' in step.get('run', '') \
                         or 'preflight' in step.get('run', ''):
                     self.assertEqual(step['if'], "github.event_name == 'workflow_dispatch' && inputs.publish_images")
+
+    def test_dependency_updates_target_only_develop(self):
+        config = json.loads((ROOT / '.github/renovate.json').read_text())
+        self.assertEqual(config['baseBranchPatterns'], ['develop'])
+        self.assertFalse(config['automerge'])
+        self.assertFalse((ROOT / '.github/dependabot.yml').exists())
+        self.assertEqual(self.flow['on']['push']['branches'], ['main', 'develop'])
+        step = next(step for step in self.flow['jobs']['gates']['steps']
+                    if step.get('name') == 'Require dependency PRs to target develop')
+        self.assertEqual(step['if'], "github.event_name == 'pull_request'")
+        for author, base, expected in [('renovate[bot]', 'main', 1),
+                                       ('dependabot[bot]', 'main', 1),
+                                       ('renovate[bot]', 'develop', 0),
+                                       ('dependabot[bot]', 'develop', 0),
+                                       ('maintainer', 'main', 0)]:
+            result = subprocess.run(['bash', '-e', '-c', step['run']],
+                                    env={**os.environ, 'PR_AUTHOR': author, 'PR_BASE': base})
+            self.assertEqual(result.returncode, expected, (author, base))
 
     def test_required_check_rejects_failures_cancellations_and_skipped_jobs(self):
         job = self.flow['jobs']['required']

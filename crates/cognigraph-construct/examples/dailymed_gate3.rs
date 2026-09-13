@@ -145,7 +145,7 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
             Ok(Event::Start(e)) => {
                 depth += 1;
                 match e.name().as_ref() {
-                    b"ingredient" => {
+                    "ingredient" => {
                         let class = e
                             .try_get_attribute("classCode")?
                             .map(|a| {
@@ -160,24 +160,24 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
                             current_substance.clear();
                         }
                     }
-                    b"ingredientSubstance" if ingredient_class.is_some() => in_substance = true,
-                    b"activeMoiety" if in_substance => moiety_depth = depth,
+                    "ingredientSubstance" if ingredient_class.is_some() => in_substance = true,
+                    "activeMoiety" if in_substance => moiety_depth = depth,
                     // The substance name comes before the nested activeMoiety
                     // name; capture the substance first, moiety second.
-                    b"name" if in_substance && capture.is_none() => {
+                    "name" if in_substance && capture.is_none() => {
                         capture = Some(if moiety_depth > 0 {
                             "moiety"
                         } else {
                             "substance"
                         });
                     }
-                    b"representedOrganization" if oracle.labeler.is_none() => in_labeler = true,
-                    b"name" if in_labeler && capture.is_none() => capture = Some("labeler"),
+                    "representedOrganization" if oracle.labeler.is_none() => in_labeler = true,
+                    "name" if in_labeler && capture.is_none() => capture = Some("labeler"),
                     _ => {}
                 }
             }
             Ok(Event::Empty(e)) => match e.name().as_ref() {
-                b"routeCode" => {
+                "routeCode" => {
                     if let Some(display) = e.try_get_attribute("displayName")? {
                         oracle.routes.insert(
                             display
@@ -187,7 +187,7 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
                         );
                     }
                 }
-                b"formCode" if oracle.dosage_form.is_none() => {
+                "formCode" if oracle.dosage_form.is_none() => {
                     let system = e
                         .try_get_attribute("codeSystem")?
                         .map(|a| {
@@ -211,7 +211,7 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
             },
             Ok(Event::Text(t)) => {
                 if let Some(kind) = capture.take() {
-                    let text = t.decode().unwrap_or_default().trim().to_string();
+                    let text = t.trim().to_string();
                     if !text.is_empty() {
                         match kind {
                             "substance" => {
@@ -244,14 +244,14 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
             }
             Ok(Event::End(e)) => {
                 match e.name().as_ref() {
-                    b"ingredient" if ingredient_class.is_some() && depth == ingredient_depth => {
+                    "ingredient" if ingredient_class.is_some() && depth == ingredient_depth => {
                         ingredient_class = None;
                         in_substance = false;
                         moiety_depth = 0;
                     }
-                    b"activeMoiety" if depth == moiety_depth => moiety_depth = 0,
-                    b"ingredientSubstance" => in_substance = false,
-                    b"representedOrganization" => in_labeler = false,
+                    "activeMoiety" if depth == moiety_depth => moiety_depth = 0,
+                    "ingredientSubstance" => in_substance = false,
+                    "representedOrganization" => in_labeler = false,
                     _ => {}
                 }
                 depth = depth.saturating_sub(1);

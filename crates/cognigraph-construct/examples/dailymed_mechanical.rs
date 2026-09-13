@@ -103,7 +103,7 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
             Ok(Event::Start(e)) => {
                 depth += 1;
                 match e.name().as_ref() {
-                    b"ingredient" => {
+                    "ingredient" => {
                         let class = e
                             .try_get_attribute("classCode")?
                             .map(|a| {
@@ -118,21 +118,21 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
                             pending_unii.clear();
                         }
                     }
-                    b"ingredientSubstance" if in_active_ingredient => in_substance = true,
-                    b"name" if in_substance && capture_text_for.is_none() => {
+                    "ingredientSubstance" if in_active_ingredient => in_substance = true,
+                    "name" if in_substance && capture_text_for.is_none() => {
                         capture_text_for = Some("ingredient");
                     }
-                    b"representedOrganization" if oracle.labeler.is_none() => {
+                    "representedOrganization" if oracle.labeler.is_none() => {
                         in_labeler_org = true;
                     }
-                    b"name" if in_labeler_org && capture_text_for.is_none() => {
+                    "name" if in_labeler_org && capture_text_for.is_none() => {
                         capture_text_for = Some("labeler");
                     }
                     _ => {}
                 }
             }
             Ok(Event::Empty(e)) => match e.name().as_ref() {
-                b"code" if in_substance && pending_unii.is_empty() => {
+                "code" if in_substance && pending_unii.is_empty() => {
                     if let Some(code) = e.try_get_attribute("code")? {
                         pending_unii = code
                             .normalized_value(XmlVersion::default())
@@ -140,7 +140,7 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
                             .to_string();
                     }
                 }
-                b"routeCode" => {
+                "routeCode" => {
                     if let Some(display) = e.try_get_attribute("displayName")? {
                         oracle.routes.insert(
                             display
@@ -150,7 +150,7 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
                         );
                     }
                 }
-                b"formCode" if oracle.dosage_form.is_none() => {
+                "formCode" if oracle.dosage_form.is_none() => {
                     let system = e
                         .try_get_attribute("codeSystem")?
                         .map(|a| {
@@ -174,7 +174,7 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
             },
             Ok(Event::Text(t)) => {
                 if let Some(kind) = capture_text_for.take() {
-                    let text = t.decode().unwrap_or_default().trim().to_string();
+                    let text = t.trim().to_string();
                     if !text.is_empty() {
                         match kind {
                             "ingredient" => {
@@ -196,12 +196,12 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
             }
             Ok(Event::End(e)) => {
                 match e.name().as_ref() {
-                    b"ingredient" if in_active_ingredient && depth == ingredient_depth => {
+                    "ingredient" if in_active_ingredient && depth == ingredient_depth => {
                         in_active_ingredient = false;
                         in_substance = false;
                     }
-                    b"ingredientSubstance" => in_substance = false,
-                    b"representedOrganization" => in_labeler_org = false,
+                    "ingredientSubstance" => in_substance = false,
+                    "representedOrganization" => in_labeler_org = false,
                     _ => {}
                 }
                 depth = depth.saturating_sub(1);

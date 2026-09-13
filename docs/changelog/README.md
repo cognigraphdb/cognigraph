@@ -155,6 +155,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Releases
 
+- 2026-09-13: [Develop integration and dependency maintenance — v2.7.8](2026-09-13-develop-renovate-v2.7.8.md)
 - 2026-09-12: [v2.7.7 — Explicit storage mounts for Railway builds](2026-09-12-v2-7-7.md)
 - 2026-09-12: [v2.7.6 — Community deployment packaging](2026-09-12-v2-7-6.md)
 - 2026-09-12: [Resolve Native lru unsoundness and review optional ONNX maintenance](2026-09-12-dependency-advisories.md)

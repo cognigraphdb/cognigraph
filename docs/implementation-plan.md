@@ -10,6 +10,15 @@ local/GitHub CI, hosted API/browser checks, restart and both application and
 platform restore drills. [Railway operations](operations/railway.md) owns setup
 and recovery. Docker Hub publication is deferred. The separate website remains live.
 
+## Current maintenance batch
+
+[CG-73](issues/CG-73.md) integrates six incoming dependency PRs, establishes
+`develop` as the default integration branch, replaces Dependabot with Renovate,
+and removes obsolete topic branches after preserving their work. The
+[branch decision](decisions/decision_develop_integration.md) keeps main as the
+separately promoted production release branch. Candidate v2.7.8 includes CG-72;
+Railway remains on v2.7.7 until release promotion is authorized.
+
 ## Delivered scope
 
 - Native is the only runtime backend: redb persistence, resident/paged storage,
@@ -61,7 +70,7 @@ the reference for qualifying additional environments.
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **69 Resolved, 1 Closed without change, and 2 Open issues**.
+The registry now has **69 Resolved, 1 Closed without change, and 3 Open issues**.
 [CG-69](issues/CG-69.md) delivers automatic CI and repository protections,
 with both CI PRs merged. [CG-70](issues/CG-70.md) removes the Native lru unsoundness advisory
 through a bounded upstream patch, makes unsoundness fatal in CI, and records

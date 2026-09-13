@@ -23,7 +23,7 @@
     "@phosphor-icons/react": "^2.1.10",
     "antd": "^6.5.1",
     "codemirror": "^6.0.2",
-    "react": "^19.2.7",
+    "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-router": "^8.3.1"
   },

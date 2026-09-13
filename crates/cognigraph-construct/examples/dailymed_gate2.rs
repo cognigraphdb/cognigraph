@@ -94,7 +94,7 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
             Ok(Event::Start(e)) => {
                 depth += 1;
                 match e.name().as_ref() {
-                    b"ingredient" => {
+                    "ingredient" => {
                         let class = e
                             .try_get_attribute("classCode")?
                             .map(|a| {
@@ -110,13 +110,13 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
                             ingredient_depth = depth;
                         }
                     }
-                    b"ingredientSubstance" if ingredient_class.is_some() => in_substance = true,
-                    b"name" if in_substance && !capture_ingredient => capture_ingredient = true,
+                    "ingredientSubstance" if ingredient_class.is_some() => in_substance = true,
+                    "name" if in_substance && !capture_ingredient => capture_ingredient = true,
                     _ => {}
                 }
             }
             Ok(Event::Empty(e)) => {
-                if e.name().as_ref() == b"routeCode"
+                if e.name().as_ref() == "routeCode"
                     && let Some(display) = e.try_get_attribute("displayName")?
                 {
                     oracle.routes.insert(
@@ -129,7 +129,7 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
             }
             Ok(Event::Text(t)) => {
                 if capture_ingredient {
-                    let name = t.decode().unwrap_or_default().trim().to_string();
+                    let name = t.trim().to_string();
                     if !name.is_empty() {
                         let active = ingredient_class
                             .as_deref()
@@ -144,11 +144,11 @@ fn parse_oracle(xml: &str) -> Result<OracleDoc> {
             }
             Ok(Event::End(e)) => {
                 match e.name().as_ref() {
-                    b"ingredient" if ingredient_class.is_some() && depth == ingredient_depth => {
+                    "ingredient" if ingredient_class.is_some() && depth == ingredient_depth => {
                         ingredient_class = None;
                         in_substance = false;
                     }
-                    b"ingredientSubstance" => in_substance = false,
+                    "ingredientSubstance" => in_substance = false,
                     _ => {}
                 }
                 depth = depth.saturating_sub(1);
