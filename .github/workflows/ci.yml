@@ -116,7 +116,7 @@ jobs:
         with:
           username: cognigraph
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Publish both tested editions with version tags
+      - name: Publish both tested editions with version and latest tags
         if: github.event_name == 'workflow_dispatch' && inputs.publish_images
         run: python3 scripts/docker_images.py publish
 

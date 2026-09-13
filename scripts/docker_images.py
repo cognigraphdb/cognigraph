@@ -18,6 +18,7 @@ REPOSITORY = 'cognigraphdb/cognigraph'
 SOURCE = f'https://github.com/{REPOSITORY}'
 IMAGES = {'community': ('cognigraph:ci', 'cognigraph/cognigraph'),
           'enterprise': ('cognigraph:ci-enterprise', 'cognigraph/cognigraph-enterprise')}
+VERSION_TAG_RULE = r'^[0-9]+\.[0-9]+\.[0-9]+$'
 
 
 def require(condition, message):
@@ -160,11 +161,13 @@ def available_tags(version):
         require(info is not None, f'Create the public Docker Hub repository {repository} before publishing')
         require(info.get('namespace') == namespace and info.get('name') == name
                 and info.get('is_private') is False, f'{repository}: public repository identity mismatch')
+        require(info.get('immutable_tags_settings') == {'enabled': True, 'rules': [VERSION_TAG_RULE]},
+                f'{repository}: require immutable x.y.z tags and a mutable latest alias')
         require(hub_json(f'{path}/tags/{version}', missing_ok=True) is None,
                 f'{repository}:{version} already exists; never overwrite a release tag')
 
 
-def preflight(version, revision):
+def current_candidate(revision):
     require(os.environ.get('GITHUB_ACTIONS') == 'true'
             and os.environ.get('GITHUB_EVENT_NAME') == 'workflow_dispatch'
             and os.environ.get('GITHUB_REPOSITORY') == REPOSITORY
@@ -174,7 +177,41 @@ def preflight(version, revision):
     require(not output('git', 'status', '--porcelain', '--untracked-files=all'), 'Publication requires a clean checkout')
     remote = output('git', 'ls-remote', 'origin', 'refs/heads/main').split()
     require(remote == [revision, 'refs/heads/main'], 'Main changed; publish a newly verified candidate')
+
+
+def preflight(version, revision):
+    current_candidate(revision)
     available_tags(version)
+
+
+def tag_digest(repository, tag, missing_ok=False):
+    namespace, name = repository.split('/')
+    info = hub_json(f'{namespace}/repositories/{name}/tags/{tag}', missing_ok=missing_ok)
+    if info is None:
+        return None
+    digest = info.get('digest')
+    require(isinstance(digest, str) and re.fullmatch(r'sha256:[0-9a-f]{64}', digest),
+            f'{repository}:{tag}: missing or invalid registry digest')
+    return digest
+
+
+def verify_tag(repository, tag, expected):
+    # Hub metadata may lag a successful push. Only absence/mismatch is retried;
+    # authentication, rate-limit and transport errors still fail closed.
+    for attempt in range(6):
+        if tag_digest(repository, tag, missing_ok=True) == expected:
+            return
+        if attempt < 5:
+            time.sleep(2)
+    raise RuntimeError(f'{repository}:{tag}: registry digest mismatch; inspect remote state before retrying')
+
+
+def publication_record(target, digest, edition, revision):
+    record = f'- `{target}@{digest}` — {edition}, commit `{revision}`\n'
+    print(record, flush=True)
+    if summary := os.environ.get('GITHUB_STEP_SUMMARY'):
+        with open(summary, 'a') as destination:
+            destination.write(record)
 
 
 def push_image(image, target):
@@ -192,14 +229,30 @@ def publish(version, revision):
     images = checked_images(version, revision, 'linux/amd64')
     # Both editions have passed before any upload. Recheck the remote head and both tags.
     preflight(version, revision)
+    previous = {edition: tag_digest(repository, 'latest', missing_ok=True)
+                for edition, (_, repository) in IMAGES.items()}
+    digests = {}
     for edition, image in images.items():
-        target = f'docker.io/{IMAGES[edition][1]}:{version}'
+        repository = IMAGES[edition][1]
+        target = f'docker.io/{repository}:{version}'
         digest = push_image(image, target)
-        record = f'- `{target}@{digest}` — {edition}, commit `{revision}`\n'
-        print(record, flush=True)
-        if summary := os.environ.get('GITHUB_STEP_SUMMARY'):
-            with open(summary, 'a') as destination:
-                destination.write(record)
+        # Preserve successful push receipts even if readback or the next upload fails.
+        publication_record(target, digest, edition, revision)
+        verify_tag(repository, version, digest)
+        digests[edition] = digest
+    # Advance aliases only after BOTH version tags have verified registry receipts.
+    current_candidate(revision)
+    for edition, (_, repository) in IMAGES.items():
+        require(tag_digest(repository, 'latest', missing_ok=True) == previous[edition],
+                f'{repository}: latest changed during publication; inspect remote state')
+    for edition, image in images.items():
+        current_candidate(revision)
+        repository = IMAGES[edition][1]
+        target = f'docker.io/{repository}:latest'
+        digest = push_image(image, target)
+        publication_record(target, digest, edition, revision)
+        require(digest == digests[edition], f'{target}: alias differs from the verified version digest')
+        verify_tag(repository, 'latest', digest)
 
 
 if __name__ == '__main__':

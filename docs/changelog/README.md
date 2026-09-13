@@ -156,6 +156,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Releases
 
+- 2026-09-13: [v2.7.14 — Stable Docker image aliases](2026-09-13-v2-7-14.md)
 - 2026-09-13: [v2.7.13 — Source snapshot maintenance](2026-09-13-v2-7-13.md)
 - 2026-09-13: [v2.7.12 — Public evidence boundary and local test cleanup](2026-09-13-v2-7-12.md)
 - 2026-09-13: [Separate private captures and make hosted QA on demand](2026-09-13-public-evidence-and-hosted-qa.md)
