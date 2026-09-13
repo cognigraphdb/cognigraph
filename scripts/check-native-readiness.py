@@ -15,7 +15,7 @@ import threading
 from http.server import ThreadingHTTPServer
 
 ROOT = Path(__file__).resolve().parents[1]
-PROTOCOL = ROOT / 'docs/issues/evidence/native-runtime-http.py'
+PROTOCOL = ROOT / 'docs/verification/harnesses/native-runtime-http.py'
 spec = importlib.util.spec_from_file_location('native_protocol', PROTOCOL)
 protocol = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(protocol)

@@ -1,7 +1,11 @@
 # Archived engineering plans
 
-These are dated snapshots, not the active backlog. Historical paths and links
-refer to their source revision and are preserved in exact editorial snapshots.
+These are dated plans, not the active backlog. Historical claims retain the
+scope of their source revision. The implementation history and roadmap are
+[amended reading copies](../archive-navigation-2026-09-13.md): navigation is
+maintained, with exact originals preserved privately and identified by hash.
+The architecture original remains unchanged under an explicit hash-bound
+link-checking exemption. Other archived pages are included in documentation checks.
 Use the [current implementation plan](../../implementation-plan.md) for status.
 
 - [2026-07-02-cgql-semantics-hardening](2026-07-02-cgql-semantics-hardening.md)

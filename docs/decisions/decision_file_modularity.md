@@ -78,7 +78,7 @@ signature domains, state transitions, and lock boundaries are preserved.
 Of 240 source/test files in these families, 233 fit the 450-line soft cap.
 Seven existing indivisible functions/scenarios are explicitly retained: two
 production execution methods, four full lifecycle scenarios, and one fixture
-factory. Their [size budgets and reasons](../issues/evidence/server-modularity-exceptions.json)
+factory. Their [size budgets and reasons](../../scripts/policies/server-modularity-exceptions.json)
 prevent unreviewed growth; coherence takes precedence over mechanical line
 splitting. The 2,019-line M26 scenario remains one test so its shared state and
 failure sequencing are not redesigned in a mechanical refactor.

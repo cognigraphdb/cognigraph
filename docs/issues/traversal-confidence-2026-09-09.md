@@ -33,7 +33,7 @@ numeric zero and negative values, no threshold, thresholds above the default,
 depth zero alone and within a larger depth range, outbound/inbound/any traversal,
 and valid paths whose product or decayed score is below the edge threshold.
 
-The [release harness](evidence/traversal-confidence-http.py) seeds only synthetic
+The [release harness](../evidence/engineering-historical-checks.md#artifact-5499b8d3fa2d652bda91) seeds only synthetic
 records through authenticated public HTTP routes, then executes the same
 fixture through `/api/graph/traverse` and Lua `graph.traverse`. It repeats every
 case after restarting the CogniGraph server over the same store. Each run covers
@@ -49,8 +49,8 @@ passed all 180 checks. The old Arango implementation also failed the new Rust
 contract on its first case, admitting `a/low/low_end` and losing depth zero and
 several default-confidence paths. These are intentional pre-fix failures:
 
-- [Pre-fix live contract failure](evidence/traversal-confidence-baseline-contract-2026-09-09.txt)
-- [Pre-fix release observations and binary hash](evidence/traversal-confidence-baseline-http-2026-09-09.json)
+- [Pre-fix live contract failure](../evidence/engineering-historical-checks.md#artifact-17aec8c20f8f4f71869d)
+- [Pre-fix release observations and binary hash](../evidence/engineering-historical-checks.md#artifact-c613d65a3321d1d1a07e)
 
 Live Arango used a disposable, loopback-only Docker container with synthetic
 credentials and separate contract, baseline HTTP, and corrected HTTP databases.
@@ -115,5 +115,5 @@ CG-19 was committed locally with CG-20 as `fb49c78`; nothing was
 pushed. The registry has 22 resolved and 11 open issues. Next is CG-20,
 indexed vector search model filtering before candidate truncation.
 
-- [Corrected release paths, scores, and restart evidence](evidence/traversal-confidence-http-2026-09-09.json)
-- [Validation totals, source hashes, image identity, and runtime summary](evidence/traversal-confidence-validation-2026-09-09.json)
+- [Corrected release paths, scores, and restart evidence](../evidence/engineering-historical-checks.md#artifact-4692ef47be2a37d3a960)
+- [Validation totals, source hashes, image identity, and runtime summary](../evidence/engineering-historical-checks.md#artifact-f198c5dfdb49eb775352)

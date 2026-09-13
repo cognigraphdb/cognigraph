@@ -52,7 +52,10 @@ are relative to the code repository unless a different working directory is stat
    Use the root Rust gates when Rust changes. Instruction-only edits use the root
    documentation checks. A successful build does not substitute for browser
    evidence; report unavailable runtime checks as untested.
-5. Put a dated report and selected sanitized screenshots under `ui/audit/`.
+5. Put raw reports and screenshots in a dated private evidence package or an
+   explicit external capture directory. Publish a reviewed summary in the issue,
+   changelog or `docs/reviews/ui/`, with private path/hash references where needed.
+   Follow the [evidence policy](../../../docs/operations/evidence-policy.md).
    Register verified defects with the next unused CG number in the
    [shared registry](../../../docs/issues/README.md); link the report from the
    relevant ticket or changelog. Mark only executed acceptance criteria complete.

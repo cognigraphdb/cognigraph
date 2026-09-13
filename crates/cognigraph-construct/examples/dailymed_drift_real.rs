@@ -339,7 +339,7 @@ async fn main() -> Result<()> {
     println!("  restraint on administrative-only: {admin_stable}/{admin} narrative-stable");
     println!("  NOTE: name-based HTML oracle — lower rigor than the XML gates (Method A caveat)");
 
-    let out = PathBuf::from("fixtures/semantic-neurons/dailymed/drift-real-results.json");
+    let out = PathBuf::from("data/dailymed/drift-real-results.json");
     std::fs::create_dir_all(out.parent().unwrap())?;
     std::fs::write(
         &out,

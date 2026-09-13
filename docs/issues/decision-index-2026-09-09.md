@@ -63,7 +63,7 @@ reported the report link as missing before this report was created; the final
 check passed. Broader checks verified the changed Markdown links, registry
 rows/counts, unchanged decision bodies, untouched Rust/manifests/fixtures,
 and preservation of the six pre-existing user-owned paths.
-The [machine-readable evidence](evidence/decision-index-validation-2026-09-09.json)
+The [machine-readable evidence](../evidence/engineering-historical-checks.md#artifact-196494a9662103b84f55)
 records counts, hashes, and the reviewed revision.
 
 The index documents its maintenance rule: add one row for each decision,

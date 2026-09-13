@@ -1,0 +1,325 @@
+{
+  "publication": {
+    "version": "2.7.11",
+    "workflow_conclusion": "success",
+    "workflow_url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34755296051",
+    "source_commit": "4a960357bd8902b15a1a1782dd0961c4932543f5",
+    "checked_at": "2026-09-13T12:10:30.117218+00:00",
+    "images": [
+      {
+        "repository": "cognigraph/cognigraph",
+        "edition": "community",
+        "digest": "sha256:c0ccd1f5f1661190fab4185025bf9ee61cbc33acf601be836f01720735c30a6c",
+        "tag": "2.7.11",
+        "platforms": [
+          "linux/amd64"
+        ],
+        "public": true,
+        "immutable": true,
+        "last_pushed": "2026-09-13T12:08:48.255096Z"
+      },
+      {
+        "repository": "cognigraph/cognigraph-enterprise",
+        "edition": "enterprise",
+        "digest": "sha256:a28e782cd78f21f90b9a6f3518815e4dd8de4e6e1d30df6fe885f1f047a9b9a0",
+        "tag": "2.7.11",
+        "platforms": [
+          "linux/amd64"
+        ],
+        "public": true,
+        "immutable": true,
+        "last_pushed": "2026-09-13T12:08:55.260807Z"
+      }
+    ]
+  },
+  "integration": {
+    "version": "2.7.11",
+    "candidate_commit": "31f50f20e103adb16b2653b37cb034704918060a",
+    "candidate_tree": "1804d51c8fbe6274bf5d02c19d34ea3d829f8481",
+    "full_local_ci": "passed",
+    "full_local_docker_and_helm": "passed",
+    "pre_push_hook": "passed",
+    "push_log_sha256": "72c4ee3c594d6535ab9da1ac159fc49a500cbd66ea7c83c073d6f501303f88a6",
+    "correction_pr": "https://github.com/cognigraphdb/cognigraph/pull/13",
+    "correction_run": 34753140856,
+    "promotion_pr": "https://github.com/cognigraphdb/cognigraph/pull/12",
+    "correction_remote_ci": "passed",
+    "develop_merge_commit": "ad3d6b2d4a2df0a100c57176c97964f60b9f36eb",
+    "promotion_run": 34754122922,
+    "develop_push_run": 34754120677,
+    "promotion_remote_ci": "passed",
+    "source_commit": "4a960357bd8902b15a1a1782dd0961c4932543f5",
+    "source_tree": "1804d51c8fbe6274bf5d02c19d34ea3d829f8481",
+    "promotion_merged": true
+  },
+  "live_api": {
+    "health": {
+      "edition": "community",
+      "service": "cognigraph",
+      "status": "ok",
+      "version": "2.7.11"
+    },
+    "readiness": {
+      "database": "connected",
+      "status": "ok"
+    },
+    "anonymous_denial": true,
+    "admin_login": true,
+    "pre_release_data_equal": true,
+    "synthetic_create_read_patch_cgql_delete": true,
+    "cleanup_exact_baseline": true,
+    "baseline_sha256": "c31513285502708d1183e73407c6f6cd41eca58772133049d850ceae846ab5d1"
+  },
+  "published_image_tests": {
+    "results": [
+      {
+        "edition": "community",
+        "reference": "cognigraph/cognigraph@sha256:c0ccd1f5f1661190fab4185025bf9ee61cbc33acf601be836f01720735c30a6c",
+        "image_id": "sha256:c0ccd1f5f1661190fab4185025bf9ee61cbc33acf601be836f01720735c30a6c",
+        "platform": "linux/amd64",
+        "oci_labels_match": true,
+        "packaged_smoke": "passed"
+      },
+      {
+        "edition": "enterprise",
+        "reference": "cognigraph/cognigraph-enterprise@sha256:a28e782cd78f21f90b9a6f3518815e4dd8de4e6e1d30df6fe885f1f047a9b9a0",
+        "image_id": "sha256:a28e782cd78f21f90b9a6f3518815e4dd8de4e6e1d30df6fe885f1f047a9b9a0",
+        "platform": "linux/amd64",
+        "oci_labels_match": true,
+        "packaged_smoke": "passed"
+      }
+    ],
+    "removed_test_image_references": [
+      "cognigraph/cognigraph@sha256:c0ccd1f5f1661190fab4185025bf9ee61cbc33acf601be836f01720735c30a6c",
+      "cognigraph/cognigraph-enterprise@sha256:a28e782cd78f21f90b9a6f3518815e4dd8de4e6e1d30df6fe885f1f047a9b9a0"
+    ],
+    "unrelated_resources_modified": false
+  },
+  "local_image_cleanup": {
+    "removed": [
+      {
+        "tag": "cognigraph:ci",
+        "image_id": "sha256:1a0ccf77ffec85b5527cfbb661b2fdfa2ed128f8864116191b6f36d58931e9e0",
+        "reason": "Exact committed candidate tests complete; unused local test image"
+      },
+      {
+        "tag": "cognigraph:ci-enterprise",
+        "image_id": "sha256:a60bb5753b49b894ad5dc7cc2c2d5b9b8c3e6010ebd9c2edd84832cb129de99b",
+        "reason": "Exact committed candidate tests complete; unused local test image"
+      }
+    ],
+    "database_volumes_removed": false,
+    "unrelated_containers_removed": false
+  },
+  "overviews": {
+    "checked_at": "2026-09-13T12:16:04.008765+00:00",
+    "source": "Docker Hub anonymous repository API after saved UI edit",
+    "repositories": [
+      {
+        "repository": "cognigraph/cognigraph",
+        "overview_sha256": "46a3d2f7b44a4d5d87454eb74e589535ce4e50b50138cbc86f1d29d7fc9b3561",
+        "public": true,
+        "immutable_tags_settings": {
+          "enabled": true,
+          "rules": [
+            ".*"
+          ]
+        }
+      },
+      {
+        "repository": "cognigraph/cognigraph-enterprise",
+        "overview_sha256": "28ee9bbaf44cc24221a206887ad3bbaf9ca82bc2de969b6f22da5a704ce91aa0",
+        "public": true,
+        "immutable_tags_settings": {
+          "enabled": true,
+          "rules": [
+            ".*"
+          ]
+        }
+      }
+    ]
+  },
+  "checked_at": "2026-09-13T12:17:11.840843+00:00",
+  "ci_runs": [
+    {
+      "conclusion": "success",
+      "event": "pull_request",
+      "headSha": "31f50f20e103adb16b2653b37cb034704918060a",
+      "jobs": [
+        {
+          "name": "Rust, UI and Native acceptance",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34753140856/job/103712941007",
+          "completedAt": "2026-09-13T11:09:06Z"
+        },
+        {
+          "name": "Packaged editions and Helm backups",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34753140856/job/103714354194",
+          "completedAt": "2026-09-13T11:18:03Z"
+        },
+        {
+          "name": "CI required",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34753140856/job/103715383573",
+          "completedAt": "2026-09-13T11:18:09Z"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34753140856"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "headSha": "ad3d6b2d4a2df0a100c57176c97964f60b9f36eb",
+      "jobs": [
+        {
+          "name": "Rust, UI and Native acceptance",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34754120677/job/103715493050",
+          "completedAt": "2026-09-13T11:33:16Z"
+        },
+        {
+          "name": "Packaged editions and Helm backups",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34754120677/job/103717091323",
+          "completedAt": "2026-09-13T11:43:11Z"
+        },
+        {
+          "name": "CI required",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34754120677/job/103718195412",
+          "completedAt": "2026-09-13T11:43:17Z"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34754120677"
+    },
+    {
+      "conclusion": "success",
+      "event": "pull_request",
+      "headSha": "ad3d6b2d4a2df0a100c57176c97964f60b9f36eb",
+      "jobs": [
+        {
+          "name": "Rust, UI and Native acceptance",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34754122922/job/103715499121",
+          "completedAt": "2026-09-13T11:35:35Z"
+        },
+        {
+          "name": "Packaged editions and Helm backups",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34754122922/job/103717359961",
+          "completedAt": "2026-09-13T11:45:06Z"
+        },
+        {
+          "name": "CI required",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34754122922/job/103718407114",
+          "completedAt": "2026-09-13T11:45:11Z"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34754122922"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "headSha": "4a960357bd8902b15a1a1782dd0961c4932543f5",
+      "jobs": [
+        {
+          "name": "Rust, UI and Native acceptance",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34755282374/job/103718499005",
+          "completedAt": "2026-09-13T11:59:34Z"
+        },
+        {
+          "name": "Packaged editions and Helm backups",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34755282374/job/103720002926",
+          "completedAt": "2026-09-13T12:09:16Z"
+        },
+        {
+          "name": "CI required",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34755282374/job/103721154863",
+          "completedAt": "2026-09-13T12:09:22Z"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34755282374"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "headSha": "4a960357bd8902b15a1a1782dd0961c4932543f5",
+      "jobs": [
+        {
+          "name": "Rust, UI and Native acceptance",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34755296051/job/103718533788",
+          "completedAt": "2026-09-13T12:00:52Z"
+        },
+        {
+          "name": "Packaged editions and Helm backups",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34755296051/job/103720166267",
+          "completedAt": "2026-09-13T12:08:58Z"
+        },
+        {
+          "name": "CI required",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34755296051/job/103721118878",
+          "completedAt": "2026-09-13T12:09:03Z"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/cognigraphdb/cognigraph/actions/runs/34755296051"
+    }
+  ],
+  "railway": {
+    "status": "SUCCESS",
+    "source_commit": "4a960357bd8902b15a1a1782dd0961c4932543f5",
+    "volume_mounts": [
+      "/data"
+    ],
+    "replicas": 1,
+    "overlap_seconds": 0,
+    "healthcheck_path": "/health/database",
+    "run_uid": 10001,
+    "run_gid": 10001,
+    "effective_capabilities": "0000000000000000",
+    "no_new_privileges": true,
+    "native_directory_mode": "0700",
+    "native_file_mode": "0600"
+  },
+  "boundaries": [
+    "Chromium viewport emulation, not a physical phone or software keyboard",
+    "No provider or holdout runs",
+    "Existing CG-70 advisory maintenance boundary unchanged",
+    "No repeated Railway restore drill; exact pre/post deployment data equality checked",
+    "Only owned test containers, anonymous test volumes and image references removed"
+  ],
+  "public_derivative": {
+    "original_catalog_id": "07b4ca6a926662743150",
+    "removed_fields": [
+      "railway.id"
+    ],
+    "scope": "Original release evidence; hosted QA later stopped between sessions."
+  }
+}

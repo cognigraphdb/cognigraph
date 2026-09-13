@@ -1,9 +1,0 @@
-{
-  "edition": "enterprise",
-  "origin": "http://127.0.0.1:56252",
-  "backend": "native",
-  "binary_sha256": "c03c5717c71bf070c0359da895f6a9dc9c0314ba55e0b6752aede391c8447ff1",
-  "html_sha256": "038d35ff8dab0dc9601250580ce8784eff2ad06f16a42e29b560b6052941ff28",
-  "server_stopped": true,
-  "temporary_store_removed_on_exit": true
-}

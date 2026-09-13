@@ -1,0 +1,20 @@
+{
+  "schema": "cognigraph-archive-navigation-amendment-v1",
+  "date": "2026-09-13",
+  "repository": "cognigraphdb/cognigraph-evidence",
+  "treatment": "Current public pages are reading copies with amended navigation and a provenance notice; historical body claims and original manifests are preserved",
+  "originals": [
+    {
+      "original_path": "docs/plans/archive/implementation-history-through-2026-09-09.md",
+      "archive_path": "archives/2026-09-13-archive-navigation/original/docs/plans/archive/implementation-history-through-2026-09-09.md",
+      "sha256": "7384394bfffa190f66fd74959a73b4f28a61c99faf1ff16a820b44c90b2b9f3d",
+      "bytes": 118510
+    },
+    {
+      "original_path": "docs/plans/archive/roadmap-2026-h2.md",
+      "archive_path": "archives/2026-09-13-archive-navigation/original/docs/plans/archive/roadmap-2026-h2.md",
+      "sha256": "d800f731592ea128675a378797c4caa751c52d16e6a1c402ab171015e79f0bf4",
+      "bytes": 53954
+    }
+  ]
+}

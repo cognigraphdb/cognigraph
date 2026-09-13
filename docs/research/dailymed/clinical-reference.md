@@ -1,5 +1,10 @@
 # DailyMed clinical domain-expert reference
 
+Current CLI defaults use ignored `data/dailymed/` for local vocabulary, lexicon,
+calibration and matcher inputs. Historical fixture paths identify private captures
+in the [catalog](../../evidence/research-dailymed.md). Supply explicitly prepared
+inputs; missing research inputs do not qualify a skipped run.
+
 This workflow closes the only label-gated part of the DailyMed pass-2
 evaluation: real-corpus recall and clinical judge quality for `TREATS` and
 `CONTRAINDICATED_IN`. It does not use an LLM to create, complete, or adjudicate

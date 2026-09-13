@@ -94,6 +94,6 @@ data, or local environment edits were used. Temporary stores/logs are retained
 at the evidence artifact's `temporary_root` for inspection.
 
 - [Shared query fixtures](../../crates/cognigraph-query/tests/fixtures/mutation_backend_reads.json)
-- [Reproducible release-server regression](evidence/mutation-backend-reads-http.py)
-- [Pre-fix observations and binary hash](evidence/mutation-backend-reads-baseline-http-2026-09-08.json)
-- [Final runtime observations and binary/fixture hashes](evidence/mutation-backend-reads-http-2026-09-08.json)
+- [Reproducible release-server regression](../evidence/engineering-historical-checks.md#artifact-fa1db110f28dbefcccd9)
+- [Pre-fix observations and binary hash](../evidence/engineering-historical-checks.md#artifact-8e9212b9fd04ee94f14b)
+- [Final runtime observations and binary/fixture hashes](../evidence/engineering-historical-checks.md#artifact-f327e1474a0a8b8ec5be)

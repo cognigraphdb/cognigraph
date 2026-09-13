@@ -13,7 +13,7 @@ production API origin, lossy document editing, misleading tenant deletion and
 construction imports that replace earlier evidence through reused chunk IDs.
 No application fixes or publication are included.
 
-The [audit report](../../ui/audit/2026-09-11-full-review/audit.md) contains the
+The [audit report](../evidence/ui-2026-09-11-full-review.md#artifact-2a08bd45b55e9bd0cb9c) contains the
 capability map, browser/API evidence, reproduction boundaries and remaining
 qualification work. Update the implementation plan and UI tracker to distinguish
 implemented UI, verified journeys and backend workflows without a UI.

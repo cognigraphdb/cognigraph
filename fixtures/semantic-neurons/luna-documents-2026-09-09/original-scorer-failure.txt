@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/skitsanos/FTP/Products/CogniGraph/code/fixtures/semantic-neurons/luna-documents-2026-09-09/score.py", line 161, in <module>
-    save(args.output, score(args.directory))
-                      ~~~~~^^^^^^^^^^^^^^^^
-  File "/Users/skitsanos/FTP/Products/CogniGraph/code/fixtures/semantic-neurons/luna-documents-2026-09-09/score.py", line 97, in score
-    assert all(p['chunk_id'] == doc_id for p in predictions)
-           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError

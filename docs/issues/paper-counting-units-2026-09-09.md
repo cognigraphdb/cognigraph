@@ -18,7 +18,7 @@ The [D4 decision](../decisions/decision_grounding_gates.md) and current
 `(source, relation, target)` triples once within a kit, even when repeated
 across questions. The combined score sums four separate scoring spaces; it
 does not assert that all 59 triples are globally unique across those spaces.
-The [corrected fixture ledger](../../fixtures/semantic-neurons/blind/blind_eval-results-2026-07-06.md)
+The [corrected fixture ledger](../evidence/research-blind.md#artifact-f05cc4248bac68b6e807)
 records the distinct baselines and the July 17 stored-proposal recheck.
 
 | Counting scheme, summed over four kits | Expected denominator | Forbidden denominator |
@@ -40,7 +40,7 @@ corrected distinct-fact scores as its construction result.
 
 Per-kit repaired numerators are 13, 15, 14, and 12 against denominators 13, 17,
 14, and 15. Per-kit forbidden denominators are 8, 8, 6, and 10. The
-[machine-readable recount](evidence/paper-counting-units-2026-09-09.json) records
+[machine-readable recount](../evidence/engineering-historical-checks.md#artifact-2a5e42fb3ed383ca2fbd) records
 all input hashes, the exact kit identities, the binary/harness hashes, and
 all twelve replay outcomes. Reapplying the historical counting scheme to these
 results recovers 67/67 cold and 62/67 repaired; neither is a distinct-fact score.
@@ -99,14 +99,14 @@ and runbook content.
 - Served the local bundle over real HTTP and checked 1440px and 390px browser
   widths: page/PDF HTTP 200, fonts loaded, corrected construction and answer
   text, no horizontal overflow, broken internal anchors, browser errors, or
-  external resource requests. See [browser evidence](evidence/paper-counting-units-browser-2026-09-09.json).
+  external resource requests. See [browser evidence](../evidence/engineering-historical-checks.md#artifact-ea63c2a7bb3ac7895ca4).
 - Rendered all 23 PDF pages, visually inspected page overviews and the affected
   pages at readable resolution, and inspected desktop/mobile section captures.
   Text is legible and the correction is present without clipped or overlapping
   content. Text extraction separately checks scores and paragraph preservation.
 - Checked local documentation links, registry statuses/counts, whitespace,
   source/export parity, and preservation. See the
-  [validation artifact](evidence/paper-counting-units-validation-2026-09-09.json).
+  [validation artifact](../evidence/engineering-historical-checks.md#artifact-32e592f8a5a2a903d379).
 
 The first browser-check attempt looked for “per question” while the corrected
 text said “each question.” Its assertion was corrected; the final desktop and

@@ -75,9 +75,9 @@ key change requires no data or cache migration: result entries are memory-only,
 and embedding keys/storage are unchanged. ArangoDB was not live-tested; these
 request key builders are backend-neutral.
 
-- [Pre-fix observations and executable hash](evidence/search-cache-baseline-http-2026-09-08.json)
-- [Fixed observations and executable hash](evidence/search-cache-http-2026-09-08.json)
-- [Standalone HTTP regression](evidence/search-cache-http.py)
+- [Pre-fix observations and executable hash](../evidence/engineering-historical-checks.md#artifact-948dca0a6be8010c9af4)
+- [Fixed observations and executable hash](../evidence/engineering-historical-checks.md#artifact-f0a9f30384601ae94285)
+- [Standalone HTTP regression](../evidence/engineering-historical-checks.md#artifact-0d3007e97d268a33d54e)
 
 ```bash
 cargo build --release -p cognigraph-server

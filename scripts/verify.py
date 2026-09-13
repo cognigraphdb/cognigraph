@@ -16,6 +16,7 @@ def commands(suite):
             (ROOT, ['cargo', 'fmt', '--all', '--', '--check']),
             (ROOT, ['actionlint']),
             (ROOT, [sys.executable, 'scripts/check-vendored.py']),
+            (ROOT, [sys.executable, 'scripts/check-public-distribution.py']),
             *commands('advisories'),
             (ROOT, [sys.executable, '-m', 'unittest', 'discover', '-s', 'scripts/tests']),
             (ROOT, [sys.executable, 'scripts/check-server-modularity.py']),

@@ -6,7 +6,7 @@
 
 ## Findings
 
-The [login audit](../../ui/audit/2026-09-13-login-centering/audit.md) checks the
+The [login audit](../evidence/ui-2026-09-13-login-centering.md#artifact-eb63247e87967d1d3597) checks the
 real local packaged console and Railway Community v2.7.7 at seven viewport sizes
 each. Both center correctly at widths of 960 CSS pixels and above. Narrower
 windows inherit the desktop workspace's minimum width, shifting the card right

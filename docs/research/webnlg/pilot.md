@@ -212,7 +212,7 @@ cargo build --release -p cognigraph-construct --bin webnlg-pilot \
 python3 docs/issues/evidence/webnlg-status-replay.py --output /tmp/cg27-replay.json
 ```
 
-The [replay harness](../../issues/evidence/webnlg-status-replay.py) verifies the cached
+The [replay harness](../../evidence/engineering-historical-checks.md#artifact-e3ef687898a673fad37a) verifies the cached
 corpus, reproduces the mined artifact into a temporary file, and invokes
 `webnlg-score` plus `webnlg-llm-run --load` for both stored proposal files.
 Scoring gets a separate temporary root containing only train and validation;

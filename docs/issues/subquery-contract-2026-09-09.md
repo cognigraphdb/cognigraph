@@ -59,18 +59,18 @@ to fix this defect or redefine it as intended language behavior.
 The full gates ran in the required order. The production source and release
 binary are unchanged from CG-22; the binary hash is checked against that batch's
 validation artifact. Gate and fixture hashes are recorded in the
-[validation artifact](evidence/subquery-contract-validation-2026-09-09.json).
+[validation artifact](../evidence/engineering-historical-checks.md#artifact-ce9180259737a08450d6).
 
 ## Release verification
 
-The [harness](evidence/subquery-contract-http.py) starts the release binary with
+The [harness](../verification/harnesses/subquery-contract-http.py) starts the release binary with
 authenticated, disposable resident/sidecar and paged/sidecar Native stores,
 explicit configuration, and no embedding/completion provider. It seeds the
 shared corpus through document/relationship routes; generated edge keys are
 not used in comparisons. It runs from a temporary directory rather than loading
 the checkout's local environment. Both processes stop after verification.
 
-[HTTP/Lua evidence](evidence/subquery-contract-http-2026-09-09.json) records
+[HTTP/Lua evidence](../evidence/engineering-historical-checks.md#artifact-8a8eb5bf06340e73565f) records
 **148 checks** across both modes:
 
 - 54 exact read results through `/api/query`, `/api/search/query`, and Lua

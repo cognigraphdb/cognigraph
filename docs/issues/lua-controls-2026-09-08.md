@@ -37,7 +37,7 @@ preserved.
 
 Live verification used the real release server with a disposable resident
 Native store, synthetic users, and loopback HTTP only. No external provider or
-production data was used. The [sanitized observations](evidence/lua-controls-http-2026-09-08.json)
+production data was used. The [sanitized observations](../evidence/engineering-historical-checks.md#artifact-1c3c84fa68a79b188cd0)
 record:
 
 | Check | Observed result |

@@ -26,5 +26,5 @@ boundaries. See [the testing guide](../operations/ui-testing.md).
 
 Four Community and five Enterprise Chromium cases pass. Deliberately broken
 TypeScript and production-bundle candidates fail the expected gates.
-[CG-60 evidence and limits](../../ui/audit/2026-09-11-ui-ci/audit.md) records the
+[CG-60 evidence and limits](../evidence/ui-2026-09-11-ui-ci.md#artifact-d71f3d04fcdc5baa0fdb) records the
 combined local CI result; no remote CI run or publication is implied.

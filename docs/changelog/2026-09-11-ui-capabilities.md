@@ -21,6 +21,6 @@ Rust tests and repository checks. UI lint/types, 120 tests and production build
 pass. Real release binaries pass 225 HTTP role checks and browser journeys for
 all nine roles in both editions, both anonymous modes, persisted writes/reviews,
 read-only execution, governance revocation and scaled layouts.
-[Evidence and limitations](../../ui/audit/2026-09-11-capabilities/audit.md).
+[Evidence and limitations](../evidence/ui-2026-09-11-capabilities.md#artifact-29cda8d45940a3ab08a8).
 Arango integration was skipped; existing OpenAI/Gemini embedding smoke tests ran.
 No push, remote CI or image publication was performed.

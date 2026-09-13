@@ -64,7 +64,7 @@ interleavings; the HTTP human-pair stress below is additional scheduling coverag
 
 ## Release HTTP verification
 
-The [reusable harness](evidence/neuron-lifecycle-http.py) launches authenticated
+The [reusable harness](../evidence/engineering-historical-checks.md#artifact-3f30aacf242b486e4fa2) launches authenticated
 release servers with disposable Native stores and a gated loopback OpenAI-shaped
 completion service. It forwards no real provider credentials and makes no
 external model calls. Config/policy fixtures enter through admin snapshot import;
@@ -107,9 +107,9 @@ release process, and no external provider qualification run was performed.
   baseline and corrected harness both completed, with expected failures asserted
   only for the saved old binary.
 
-[Baseline observations](evidence/neuron-lifecycle-baseline-http-2026-09-09.json),
-[corrected HTTP and restart observations](evidence/neuron-lifecycle-http-2026-09-09.json),
-and [validation totals, source hashes, and executable hashes](evidence/neuron-lifecycle-validation-2026-09-09.json)
+[Baseline observations](../evidence/engineering-historical-checks.md#artifact-f15271a428541a921325),
+[corrected HTTP and restart observations](../evidence/engineering-historical-checks.md#artifact-92a3d69368060d1d6652),
+and [validation totals, source hashes, and executable hashes](../evidence/engineering-historical-checks.md#artifact-9e2d1c192278ba54d6d4)
 identify the tested artifacts. No final Rust gate or corrected release check failed.
 
 ## Corrected attempts

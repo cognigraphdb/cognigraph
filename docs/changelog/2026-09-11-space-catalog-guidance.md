@@ -19,5 +19,5 @@ UI lint/types, 151 tests and the production build pass. Real Native browser/API
 checks cover provider-free draft acceptance and persisted attribution, denied
 generic mutations, host-role denial, Community absence, delayed requests,
 transport failure/retry, keyboard retry and scaled error layouts.
-[Evidence and runtime limits](../../ui/audit/2026-09-11-space-guidance/audit.md).
+[Evidence and runtime limits](../evidence/ui-2026-09-11-space-guidance.md#artifact-ec49fa342ffd2bbdc01d).
 No Rust source changed; no remote publication.

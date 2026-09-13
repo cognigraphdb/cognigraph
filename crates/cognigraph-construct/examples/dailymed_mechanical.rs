@@ -335,7 +335,7 @@ async fn main() -> Result<()> {
     let corpus = PathBuf::from(arg("--corpus").unwrap_or_else(|| "data/dailymed-pilot".into()));
     let n_rx: usize = arg("--rx").and_then(|v| v.parse().ok()).unwrap_or(90);
     let n_otc: usize = arg("--otc").and_then(|v| v.parse().ok()).unwrap_or(10);
-    let out_dir = PathBuf::from("fixtures/semantic-neurons/dailymed");
+    let out_dir = PathBuf::from("data/dailymed");
 
     // 1+2. Cohort, chunks, oracle.
     let mut cohort = manifest_cohort(&corpus, "manifest-rx.jsonl", n_rx)?;

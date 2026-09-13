@@ -38,7 +38,7 @@ and Lua role tests retain the same pre-access rejection boundary.
 Adapter-only client, wire-protocol, AQL-generation and live-service tests are
 deleted under the CG-65 disposition. No final external database run is required.
 The removed crate's synthetic `tests/fixtures/vector-model-filter.json` is
-preserved at [its evidence location](evidence/arango/vector-model-filter.json),
+preserved at [its evidence location](../evidence/engineering-arango.md#artifact-85619321477dcd112762),
 with unchanged SHA-256:
 `fce58fa5125ac15e908e216a6568c10cfc7e39769e806b3458f2ccb1212ca5ec`.
 
@@ -51,18 +51,18 @@ direct dump import is still deferred optional work.
 ## Verification
 
 All required CG-67 checks passed locally. The
-[Native runtime harness](evidence/native-runtime-http.py) uses owned temporary
+[Native runtime harness](../verification/harnesses/native-runtime-http.py) uses owned temporary
 stores, fresh authentication and a deterministic loopback embedding endpoint.
 It does not configure a backend selector or connect to an external database.
 It records result assertions and expected HTTP statuses, excluding credentials
 and exported authentication records from captures.
 
-The [manifest](evidence/native-runtime-2026-09-12/manifest.json) binds the base
+The [manifest](../evidence/engineering-native-runtime-2026-09-12.md#artifact-1b2d524317ee357c0ed6) binds the base
 commit, changed and retained executable sources, removed paths, corpus files,
 four release binaries and captured outputs. The work was verified on macOS
 with CG-67 changes uncommitted; the base commit alone does not contain this change.
-Raw logs and [Community](evidence/native-runtime-2026-09-12/community.json)/
-[Enterprise](evidence/native-runtime-2026-09-12/enterprise.json) captures are
+Raw logs and [Community](../evidence/engineering-native-runtime-2026-09-12.md#artifact-f1a8992232b6dc5d8156)/
+[Enterprise](../evidence/engineering-native-runtime-2026-09-12.md#artifact-e3273bb44d3a73585b3b) captures are
 preserved beside the manifest. The 353 corpus-directory files and all tracked
 research fixtures are unchanged from the base revision.
 
@@ -93,7 +93,7 @@ retain the existing HTTP 500 mapping; the capture checks their error messages
 and verifies that the rejected mutation created no document. Authorization and
 unsupported language requests return 403. No selector remains to exercise.
 
-The [browser record](../../ui/audit/2026-09-12-native-runtime/audit.md) preserves
+The [browser record](../evidence/ui-2026-09-12-native-runtime.md#artifact-c663fb393e4f7b0b7363) preserves
 results, binary/UI hashes and screenshots for production assets served by fresh
 Rust processes. Tests cover document persistence, direct routes and history,
 Viewer denial, edition availability and HostAdmin isolation. These are the

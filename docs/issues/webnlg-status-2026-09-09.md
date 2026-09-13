@@ -66,7 +66,7 @@ It consumed only train+validation, with no test files in its input root.
 
 ## Current release replay
 
-The [offline harness](evidence/webnlg-status-replay.py) built on the existing
+The [offline harness](../evidence/engineering-historical-checks.md#artifact-e3ef687898a673fad37a) built on the existing
 release binaries executes five commands: cached-corpus verification, temporary
 mining, the validation scorer, and two explicit `webnlg-llm-run --load` runs.
 Every command exited successfully. Scoring/mining use a temporary root with
@@ -101,9 +101,9 @@ historical July 17 baseline diagnostic row (12.4% / 90.1%). The unbounded fuzzy
 row (28.5% / 8.3%) remains historical evidence: the current CLI sweeps only gaps
 0–3. No `webnlg-test` command was executed and no rule was tuned during replay.
 
-The [replay artifact](evidence/webnlg-status-replay-2026-09-09.json) records all
+The [replay artifact](../evidence/engineering-historical-checks.md#artifact-88580d96a54c6a89cc22) records all
 command outputs, binary/harness hashes, file digests, and input boundaries.
-The [validation artifact](evidence/webnlg-status-validation-2026-09-09.json)
+The [validation artifact](../evidence/engineering-historical-checks.md#artifact-299831a7964800966d4f)
 checks exact counts, reported rates, links, registry state, and preservation.
 
 ## Reproduction and checks

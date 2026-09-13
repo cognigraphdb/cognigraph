@@ -24,7 +24,7 @@ its scan when expanding the window.
 
 ## Fixture and baseline
 
-The [12-case fixture](evidence/arango/vector-model-filter.json)
+The [12-case fixture](../evidence/engineering-arango.md#artifact-85619321477dcd112762)
 contains 126 two-dimensional vectors. Eighty higher-scoring model-A rows crowd
 the global prefix, while model B has 40 chunks for one parent and four other
 eligible identities. Additional rows have missing and empty model names.
@@ -33,12 +33,12 @@ Expected row keys and scores are explicit; no model API creates these vectors.
 The new Rust tests ran against the pre-CG-20 implementation and failed in both
 modes. Indexed search returned no requested-model hit; fallback returned only
 one parent when four were expected. The
-[saved release observations](evidence/vector-model-filter-baseline-http-2026-09-09.json)
+[saved release observations](../evidence/engineering-historical-checks.md#artifact-310e1c7c8a576866c7fd)
 reproduced 24 indexed and 16 fallback HTTP/Lua mismatches across two server
-lifetimes. The [live Rust failures](evidence/vector-model-filter-baseline-contract-2026-09-09.txt)
+lifetimes. The [live Rust failures](../evidence/engineering-historical-checks.md#artifact-cc411c40fd78ffa31070)
 are retained as regression evidence.
 
-The [release harness](evidence/vector-model-filter-http.py) seeds synthetic
+The [release harness](../evidence/engineering-historical-checks.md#artifact-2b473948829f29da1324) seeds synthetic
 embeddings through authenticated document routes, creates a trained cosine
 index, and executes `/api/search/vector` and Lua `graph.similarity`. Eleven
 cases have a numeric threshold and run through both surfaces; the twelfth,
@@ -126,8 +126,8 @@ was pushed and unrelated drafts remain untouched. The registry has 23 resolved
 and 11 open issues. Next is CG-34, then the remaining registry beginning with
 CG-21. The deferred model benchmark and Luna baseline remain unchanged.
 
-- [Corrected release results, candidate windows, and actual indexed query plan](evidence/vector-model-filter-http-2026-09-09.json)
-- [Validation totals, source hashes, and corrected attempts](evidence/vector-model-filter-validation-2026-09-09.json)
+- [Corrected release results, candidate windows, and actual indexed query plan](../evidence/engineering-historical-checks.md#artifact-4ed5f50dfab96eded2af)
+- [Validation totals, source hashes, and corrected attempts](../evidence/engineering-historical-checks.md#artifact-12be747b4b0d2ed95c87)
 
 Follow-up: the separately reproduced Native model-filtering gap was resolved
 by [CG-34](CG-34.md). Its original failing observations above remain baseline

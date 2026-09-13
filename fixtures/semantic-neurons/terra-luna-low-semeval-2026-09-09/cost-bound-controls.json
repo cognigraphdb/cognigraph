@@ -1,9 +1,0 @@
-{
-  "seed": 20260909,
-  "random_complete_allocations": 1000,
-  "missing_counter_masks_per_allocation": 4,
-  "compatible_actual_cost_within_reported_bounds": 4000,
-  "status": "passed",
-  "accounting_sha256": "f1f915cda38318bb04b52947069690e75525c0fcabb049e25e855ef08107aee3",
-  "generator_sha256": "ca1bf6b2c6ec98449dbc834a0459e9cfaf55d20539fbf2dedb98d9a64d9b474c"
-}

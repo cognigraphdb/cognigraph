@@ -38,7 +38,7 @@ These are custom evidence-match diagnostics, not official CUAD scores or fact
 truth judgments. The holdout was restarted after the redacted-endpoint runtime
 fix, rather than executed untouched once. Raw nominations, full accepted fact
 rows, and resolved model/settings remain absent; current defaults cannot
-replace that history. See the [recovered package](../../fixtures/semantic-neurons/cuad-2026-07-22/README.md)
+replace that history. See the [recovered package](../research/experiments/cuad-2026-07-22/README.md)
 and [verification report](../issues/cuad-recovery-2026-09-09.md).
 The [issue registry](../issues/README.md) is the active defect backlog.
 

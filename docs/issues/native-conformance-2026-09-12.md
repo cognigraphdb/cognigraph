@@ -67,7 +67,7 @@ query corpus alone.
 ## Verification
 
 Verified locally against 2.7.1 at `4273ff3` plus the recorded CG-65 source
-changes. The [verification manifest](evidence/cg65-native-conformance-2026-09-12.json)
+changes. The [verification manifest](../evidence/engineering-historical-checks.md#artifact-5f0b76c1483f7861c7c7)
 contains changed-source, binary, harness, log and capture hashes plus the exact
 commands. No production behavior changed in this ticket.
 
@@ -89,8 +89,8 @@ data, authentication enabled, isolated directories and no embedding provider:
 
 | Executed live harness | Community | Enterprise | Coverage |
 |---|---|---|---|
-| [Subqueries and public query contracts](evidence/subquery-contract-http.py) | [288 checks](evidence/cg65-subquery-community-2026-09-12.json) | [288 checks](evidence/cg65-subquery-enterprise-2026-09-12.json) | Resident/paged sidecar stores; HTTP query/search and Lua reads, mutation results, unchanged data after rejection, analysis, client/runtime error mapping and reserved-collection denial |
-| [Vector model lifecycle](evidence/sidecar-model-filter-http.py) | [162 checks](evidence/cg65-sidecar-community-2026-09-12.json) | [162 checks](evidence/cg65-sidecar-enterprise-2026-09-12.json) | Resident embedded, resident sidecar and paged sidecar; HTTP/Lua scores and keys, CRUD/batch changes, sidecar rebuilds and vector continuity after server restart |
+| [Subqueries and public query contracts](../verification/harnesses/subquery-contract-http.py) | [288 checks](../evidence/engineering-historical-checks.md#artifact-ba512fd37cba1eed4af8) | [288 checks](../evidence/engineering-historical-checks.md#artifact-c8ce57dad4b81668f1d5) | Resident/paged sidecar stores; HTTP query/search and Lua reads, mutation results, unchanged data after rejection, analysis, client/runtime error mapping and reserved-collection denial |
+| [Vector model lifecycle](../evidence/engineering-historical-checks.md#artifact-1f814aafa876b8b70981) | [162 checks](../evidence/engineering-historical-checks.md#artifact-12f304d9861b36328e86) | [162 checks](../evidence/engineering-historical-checks.md#artifact-08e34689c787cb164c5c) | Resident embedded, resident sidecar and paged sidecar; HTTP/Lua scores and keys, CRUD/batch changes, sidecar rebuilds and vector continuity after server restart |
 
 All **900 live checks pass**, with zero vector-result mismatches. The unsupported
 backend double is exercised by Rust tests; no production server exposes it.

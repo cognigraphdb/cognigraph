@@ -19,6 +19,6 @@ protected develop PR. Production remains on main's Community v2.7.7.
 ## Verification
 
 Full local CI and both Docker editions pass, including all 15 browser cases.
-The [correction report](../../ui/audit/2026-09-13-login-ci-wait/audit.md) retains
+The [correction report](../evidence/ui-2026-09-13-login-ci-wait.md#artifact-575a26ce864c9e390a0b) retains
 the remote failure and fresh local evidence. Remote PR CI remains required
 before protected develop integration.

@@ -1,2 +1,0 @@
-PASS: 10 Helm variants, 11 rejection cases, edition image tags, server/backup selectors
-PASS: rendered server env, probes, login, imported document, packaged backup in hardened containers

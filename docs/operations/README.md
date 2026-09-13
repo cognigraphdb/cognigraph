@@ -9,6 +9,7 @@ Run, configure and recover CogniGraph. Commands run from the code repository roo
 - [Continuous verification and GitHub protections](ci.md)
 - [Console CI and browser regression tests](ui-testing.md)
 - [Docker image publication](docker-publishing.md)
+- [Local Docker test cleanup](docker-cleanup.md)
 - [Configuration reference](configuration.md)
 - [Authentication, tokens and tenancy](authentication.md)
 - [Administration CLI](cli.md)
@@ -17,3 +18,8 @@ Run, configure and recover CogniGraph. Commands run from the code repository roo
 - [Backend backup and restore](recovery.md)
 - [Exact-identity diagnosis and repair](reference-repair.md)
 - [Data operations](../dataops/README.md)
+
+## Evidence and hosted QA
+
+- [Evidence publication policy](evidence-policy.md) and [private artifact catalog](../evidence/README.md).
+- [On-demand hosted QA](railway.md#hosted-qa-sessions) describes deliberate startup and shutdown.

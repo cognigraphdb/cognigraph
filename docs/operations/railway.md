@@ -1,20 +1,48 @@
 # Railway Community deployment
 
-The first database target is one Community instance in the existing CogniGraph
-Railway project, alongside the independently deployed website. The owner
-authorized source deployment with the console and deferred Docker Hub publishing.
-[CG-71](../issues/CG-71.md) owns live acceptance; this guide alone is not evidence
-that a deployment or restore succeeded. The [2026-09-12 acceptance record](../issues/railway-community-2026-09-12.md)
-qualifies v2.7.7 at [the hosted console](https://database-production-fe77.up.railway.app).
+> Public reading copy: environment-specific addresses and identifiers are omitted.
+> The original is preserved in the private evidence catalog (artifact `f2d5b4e7a1220fd78833`).
+> Dated acceptance describes that run; the shared service now follows on-demand QA.
+
+The shared database follows the [on-demand QA decision](../decisions/decision_hosted_qa_lifecycle.md).
+It stays stopped between hosted tests, with its existing volume preserved for now.
+Applications deploy their own instances; this service is not a shared production
+backend or public demo. The independently deployed website has its own lifecycle.
+Historical [deployment acceptance](../issues/railway-community-2026-09-12.md) and
+[v2.7.11 qualification](docker-hub/release-2.7.11.md) retain their dated scope.
+
+## Hosted QA sessions
+
+Use local disposable stores and CI for ordinary verification. Test Railway only
+when the user explicitly requests a hosted test session. Routine builds, pushes,
+releases and CI do not authorize a session, even if a change affects deployment.
+Keep the database's automatic GitHub deployment trigger absent, so a
+code push cannot start an idle QA service. The platform environment name does
+not determine whether a service is production or QA.
+
+Before starting a session, select the exact service and a qualified source/image
+revision, inspect the retained volume and take an appropriate private backup.
+Use Railway's manual deployment of that explicit revision. Redeploying an existing
+deployment reuses its source; deploying latest source is a different operation.
+Verify effective settings and source identity before exercising authenticated,
+synthetic tests. Do not silently replace the retained store with an empty one.
+
+After the checks, remove owned probes, record the results privately and stop only
+the QA database, for example with `railway down --service <database-service-id>
+--environment <environment-id> --project <project-id> --yes` (one command).
+Check that it has no active deployment and that the public endpoint no longer
+serves the application. Confirm the volume remains attached and the website's
+active deployment is unchanged. Retained storage/backups may still incur charges.
+Volume deletion and destructive recovery require their own explicit scope.
 
 ## Service configuration
 
-Create a separate `database` service in production, EU West. Use the verified
+Create a separate `database` service in the chosen QA environment. Use the verified
 `cognigraphdb/cognigraph` main revision and the root Dockerfile, whose default
 edition is Community. On Railway, leave OCI build labels at `dev`/`unknown` and
 identify the release through `/health` plus Railway's Git commit/deployment
-metadata. Fixed version/revision variables would become stale on automatic
-main deployments. The image bundles the frozen console at
+metadata. Fixed version/revision variables would become stale on later manual
+deployments. The image bundles the frozen console at
 `/ui`; Rust serves the UI and API at one origin. No Bun process runs in production.
 
 [railway-settings.json](../../deploy/railway-settings.json) is the reviewed
@@ -30,11 +58,10 @@ new services. Project-wide IaC is outside this service-scoped setup.
 
 Use one replica, no serverless sleep, no overlapping writers, a 30-second
 SIGTERM grace period and `/health/database` as the startup check. Volume-bound
-deployments have downtime; this installation has no HA or failover. Expose only
-Railway's HTTPS domain, targeting container port 3000. Do not create a public
-raw TCP proxy. Enable the source trigger's **Wait for CI** setting. CI-required
-protected-main changes are the source gate; disable
-unreviewed branch/PR deployments for this persistent instance.
+deployments have downtime; this installation has no HA or failover. For a temporary authenticated HTTP test, expose only HTTPS targeting container
+port 3000; do not create a public raw TCP proxy. Keep the source deployment
+trigger absent and start the qualified revision manually. A future permanent
+installation must separately qualify its access boundary and CI-gated lifecycle.
 
 Attach a persistent volume at `/data` before startup. The Dockerfile deliberately
 has no `VOLUME` declaration because Railway rejects that instruction. Ordinary
@@ -66,9 +93,8 @@ CLI. Never include values in source, command arguments, screenshots or logs.
 Read the initial Admin credential in Railway to log in; create separate operator
 accounts through the existing authenticated user-management flow. Changing the
 bootstrap password variable does not rotate a user already stored in Native.
-For this installation, the bootstrap username is `admin`; retrieve its password
-from CogniGraph → production → database → Variables → `COGNIGRAPH_ADMIN_PASSWORD`.
-Do not put the password or an authenticated snapshot in this repository.
+Keep actual operator identities and credential retrieval details in the private
+runbook. Do not put passwords or authenticated snapshots in either repository.
 
 ## Verification and recovery
 

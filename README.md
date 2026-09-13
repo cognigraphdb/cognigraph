@@ -64,7 +64,7 @@ COGNIGRAPH_CGQL_MUTATIONS_ENABLED=true \
 ```
 
 Leave the server running and use another terminal for the requests below.
-Bun is needed only for the optional [React console](ui/).
+Bun is needed only for the optional [React console](docs/evidence/README.md).
 
 </details>
 

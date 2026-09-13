@@ -68,9 +68,9 @@ warmed embedding with zero provider calls; the memory cache made one call.
 The fingerprint change requires no persistent-cache migration because result
 entries are memory-only. Embedding cache keys and storage are unchanged.
 
-- [Pre-fix observations and executable hash](evidence/hybrid-cache-baseline-http-2026-09-08.json)
-- [Fixed observations and executable hash](evidence/hybrid-cache-http-2026-09-08.json)
-- [Runnable regression](evidence/hybrid-cache-http.py)
+- [Pre-fix observations and executable hash](../evidence/engineering-historical-checks.md#artifact-8ed5eee7d7eb56dca74f)
+- [Fixed observations and executable hash](../evidence/engineering-historical-checks.md#artifact-e0e12819ab9233215ffb)
+- [Runnable regression](../evidence/engineering-historical-checks.md#artifact-670fb75e536415f259a8)
 
 ```bash
 cargo build --release -p cognigraph-server

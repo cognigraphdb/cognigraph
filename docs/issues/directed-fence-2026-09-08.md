@@ -48,7 +48,7 @@ provider or production data was used.
 | Same rejection after graceful restart | Passed | Passed |
 | Directed ingestion into an undeployed space | HTTP 200, one fact | HTTP 200, one fact |
 
-The [sanitized HTTP observations](evidence/directed-fence-http-2026-09-08.json)
+The [sanitized HTTP observations](../evidence/engineering-historical-checks.md#artifact-82a5f0c427abd427f836)
 record the responses and invariants. An initial live pass used a new chunk ID;
 the final pass strengthened the probe to reuse the exact retained deployed
 chunk ID. Both passed. An unused import in the new test module was removed

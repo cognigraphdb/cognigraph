@@ -1,0 +1,9 @@
+{
+  "schema": "cognigraph-docs-links-v1",
+  "frozen_link_exceptions": {
+    "docs/plans/archive/2026-09-10/architecture.original.md": {
+      "sha256": "2390ea3030c968b833019dfcffb43f3c41173659cffab0f34bb398b00203815d",
+      "reason": "Exact original preserved by the 2026-09-10 migration manifest; its three historical navigation targets belong to that source layout. Current architecture navigation is maintained in docs/architecture/README.md."
+    }
+  }
+}

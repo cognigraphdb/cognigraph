@@ -163,7 +163,7 @@ loopback providers, including assertions on Luna's reasoning setting. No
 validation or live regression failed. That initial validation did not measure
 external API access, quality, or latency. The subsequent real comparison is
 recorded below. See the initial
-[model-default HTTP evidence](../issues/evidence/completion-model-defaults-http-2026-09-08.json).
+[model-default HTTP evidence](../evidence/engineering-historical-checks.md#artifact-201201a66072dda40b7c).
 
 ## Real comparison of the new defaults (2026-09-08)
 
@@ -171,7 +171,7 @@ The existing Rust harness subsequently made **32 successful real API calls**:
 two preflights and 30 measured requests (five passages, three repetitions,
 two providers). The APIs returned the requested `gpt-5.6-luna` and
 `gemini-3.8-flash` model identities. The
-[full report and reproducible artifacts](../../fixtures/semantic-neurons/sideviews-model-comparison-2026-09-08/README.md)
+[full report and reproducible artifacts](../research/experiments/sideviews-model-comparison-2026-09-08/README.md)
 include per-call usage, outputs, request hashes, and a qualitative source review.
 
 | Measured result | Luna, reasoning none | Gemini 3.8 Flash, default thinking |
@@ -379,14 +379,14 @@ not exercise the run_job write path (follow-up: a mock-provider integration test
 The user dropped DeepSeek V4 Flash entirely from future evaluations. Its earlier
 failed capture remains historical evidence; no configuration follow-up is planned.
 The completed
-[600-sentence independent-label supplied-pair trial](../../fixtures/semantic-neurons/glm-luna-semeval-2026-09-09/results.md)
+[600-sentence independent-label supplied-pair trial](../research/experiments/glm-luna-semeval-2026-09-09/results.md)
 scored GLM Flash at 65.75% and Luna at 42.67% pooled raw accuracy. Both
 retained substantial Other-case restraint errors.
 This benchmarks directed relation classification against published human labels,
 with a shared pair-aware evaluation adapter. It is separate from side-view
 retrieval and judge qualification. Luna remains the current product baseline.
 
-The [low-effort extension](../../fixtures/semantic-neurons/terra-luna-low-semeval-2026-09-09/results.md)
+The [low-effort extension](../research/experiments/terra-luna-low-semeval-2026-09-09/results.md)
 adds Terra low (72.42%) and Luna low (70.08%) on the identical task. Terra's
 2.33-point advantage costs about 10.4 times as much; Luna low and GLM Flash
 are the recommended candidates for representative document qualification.

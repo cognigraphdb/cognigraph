@@ -18,5 +18,5 @@ UI lint/types, 92 tests and the production build pass. Real Native Community
 browser checks cover fresh production login on port 38471, a document save and
 reload, default/custom Bun ports, offline recovery, a saved split-port session
 moved to production, and authentication-disabled operation.
-[Report and captures](../../ui/audit/2026-09-11-production-origin/audit.md).
+[Report and captures](../evidence/ui-2026-09-11-production-origin.md#artifact-a495041e72ddd34399af).
 No Rust source changed. Remote CI, push and publication were not performed.

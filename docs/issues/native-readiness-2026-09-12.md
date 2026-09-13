@@ -16,7 +16,7 @@ under CG-64/CG-66. No hosted models or research holdouts are part of this gate.
 ## Qualification
 
 All local qualification checks passed. The
-[manifest](evidence/native-readiness-2026-09-12/manifest.json) binds source,
+[manifest](../evidence/engineering-native-readiness-2026-09-12.md#artifact-b3200f40deb2ef60a45d) binds source,
 protocol/fixture hashes, release binaries, images and captures to this revision.
 Rust, Cargo and Docker inputs are unchanged from `4fdaa47`; the local changes
 add documentation and the readiness harness. Both release binaries were rebuilt
@@ -39,8 +39,8 @@ both editions with `--pull`, Linux/amd64 and revision labels for `4fdaa47`.
 | Linux/amd64 Community + Enterprise Docker images | Built and passed hardened runtime checks |
 | Both Helm live backup checks | Rendering/rejections, environment, probes, authentication, seeded document and packaged backup passed |
 
-The [Native captures](evidence/native-readiness-2026-09-12/community.json) and
-[Enterprise captures](evidence/native-readiness-2026-09-12/enterprise.json) cover
+The [Native captures](../evidence/engineering-native-readiness-2026-09-12.md#artifact-655fcef3ecb676aece66) and
+[Enterprise captures](../evidence/engineering-native-readiness-2026-09-12.md#artifact-eba4980d725a2315b53c) cover
 memory, resident/embedded, resident/sidecar and paged/sidecar stores. Each tests
 CRUD persistence, CGQL/Lua writes and read permissions, protected collections,
 query languages and row budgets, atomic rollback, traversal, BM25/vector/hybrid
@@ -50,10 +50,10 @@ listen address, Community edition refusal and Enterprise completion/judge/CAS
 configuration. Completion/judge validation is Enterprise-only; it is not an
 expected Community rejection surface.
 
-The [browser record](../../ui/audit/2026-09-12-native-readiness/audit.md) binds
+The [browser record](../evidence/ui-2026-09-12-native-readiness.md#artifact-c9962a91f863ef6fac4a) binds
 fresh production-asset journeys to the Rust debug binaries. These scoped
 regressions do not cover every console feature or viewport. The
-[image identities](evidence/native-readiness-2026-09-12/images.json) identify
+[image identities](../evidence/engineering-native-readiness-2026-09-12.md#artifact-393355e38234cec5160b) identify
 the two locally built images. Runtime checks verify non-root execution,
 read-only root filesystem, authentication, edition API, CLI, packaged licences,
 restart and persisted CGQL. Helm checks run isolated Docker containers and
@@ -74,7 +74,7 @@ decision inventory now point to implemented Native-only behavior. The current
 configuration guide also describes the actual tenant-directory precedence;
 operators should set only the intended storage root.
 
-The [reference inventory](evidence/native-readiness-2026-09-12/reference-inventory.json)
+The [reference inventory](../evidence/engineering-native-readiness-2026-09-12.md#artifact-927d9de815af0bd592ba)
 classifies remaining tracked Arango/AQL references. They are dated decisions,
 research, captures and batch history; external migration/language comparisons;
 or explicit dependency guards, isolation fixtures and query-language rejection

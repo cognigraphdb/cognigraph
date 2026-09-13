@@ -524,7 +524,7 @@ async fn main() -> Result<()> {
         .unwrap_or(40);
     let calibrate = has_flag("--calibrate");
     let dry = has_flag("--dry");
-    let out_dir = PathBuf::from("fixtures/semantic-neurons/dailymed");
+    let out_dir = PathBuf::from("data/dailymed");
 
     let t = Instant::now();
     let docs = load_cohort(&corpus, n_rx, n_otc)?;

@@ -23,9 +23,12 @@ nested instructions before editing a component, including [ui/AGENTS.md](ui/AGEN
   describe their historical checkpoints, not the current backlog.
 - Use synthetic organizations in regression tests. Do not copy client-specific
   research or publishing assets into code fixtures; keep them outside this repository.
-- Keep runtime contracts, operational guides, decisions, issues and reproducible
-  evidence with the code. Product strategy, sales, positioning, papers and
-  publishing assets belong in the optional sibling `../docs/` directory.
+- Keep runtime contracts, generic operational guides, decisions, issues and reviewed
+  research conclusions with the code. Raw captures, labelled research packages and
+  deployment inventories belong in the private optional sibling `../evidence/`
+  repository under the [evidence policy](docs/operations/evidence-policy.md).
+  Product strategy, sales, positioning, papers and publishing assets belong in
+  the optional sibling `../docs/` directory.
 - Keep [issue identifiers and statuses](docs/issues/README.md) stable. Create a
   new issue only with `python3 scripts/issue.py new "Title" --priority P2 --area "..."`,
   which allocates the next identifier from the working tree, index, committed history and the
@@ -53,7 +56,9 @@ nested instructions before editing a component, including [ui/AGENTS.md](ui/AGEN
   [storage decision](docs/decisions/decision_native_only.md) and
   [batch plan](docs/plans/native-only-2026-09-12.md). The pre-deployment cleanup
   is complete. [CG-68](docs/issues/CG-68.md) records local readiness and
-  [CG-71](docs/issues/CG-71.md) records the first live Community deployment.
+  [CG-71](docs/issues/CG-71.md) records the first hosted Community qualification.
+  The shared Railway database follows the [on-demand QA lifecycle](docs/decisions/decision_hosted_qa_lifecycle.md);
+  applications deploy their own instances.
   Follow the [first-deployment guide](docs/operations/first-deployment.md)
   and requalify changed runtime/build inputs before deployment. CG-64/CG-66
   are optional deferred importer work.
@@ -100,11 +105,16 @@ For documentation, navigation or agent-workflow changes, run from the code root:
 ```bash
 python3 scripts/check-docs.py
 python3 scripts/check-decision-index.py
+python3 scripts/check-public-distribution.py
 ```
 
 - When changing cross-repository links or product docs, also run
   `python3 scripts/check-docs.py --include-product` with the sibling checkout present.
   The default code checks must work without that checkout.
+- Archived reading-copy links are checked too. Preserve original bytes and add
+  provenance when amending navigation; do not rewrite historical migration hashes.
+  Only explicit hash-bound originals are exempt under the
+  [archive navigation policy](docs/plans/archive-navigation-2026-09-13.md).
 - For documentation-only changes, use these checks and any relevant example,
   script or publishing validation. A changed runnable example needs a real run;
   a wording or navigation edit does not require the full Rust suite.
@@ -114,6 +124,15 @@ python3 scripts/check-decision-index.py
 - Unit and route tests are necessary but not sufficient. After implementing a feature, live test it first — run the real binary and exercise the feature end to end (e.g. a release-build server over real HTTP with the relevant env/config) — and only then declare it done or suggest next steps and possible directions.
 - Prefer disposable databases and isolated local configuration for verification.
   Preserve existing data unless the user has authorized the required reset or repair.
+- Run Railway tests only when the user explicitly requests them. Builds, CI,
+  pushes and releases do not authorize hosted QA. The ordinary live verification
+  requirement is satisfied with local binaries and Docker; follow the
+  [hosted QA lifecycle](docs/decisions/decision_hosted_qa_lifecycle.md).
+- Finish each test session by removing its CogniGraph containers, temporary
+  images, networks and disposable volumes, including after failures. Only
+  explicitly identified reusable Evidence data volumes may be retained to avoid
+  reimporting data. Follow the [Docker cleanup guide](docs/operations/docker-cleanup.md)
+  for ownership checks; other projects' resources are outside this cleanup scope.
 - Distinguish unit/route tests, executed live integration checks, and checks that
   skipped or returned early because credentials or services were unavailable.
   An early-returning integration test is not executed backend coverage.
@@ -164,6 +183,7 @@ failing hook with `--no-verify` or disable it to publish an unchecked candidate.
    cargo fmt --all -- --check
    python3 -m unittest discover -s scripts/tests
    python3 scripts/check-server-modularity.py
+   python3 scripts/check-public-distribution.py
    python3 scripts/check-docs.py
    python3 scripts/check-decision-index.py
    python3 scripts/issue.py check

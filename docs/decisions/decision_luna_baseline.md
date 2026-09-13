@@ -38,7 +38,7 @@ remaining recovery scope, rather than marked reproduced or resolved.
 
 ## Evaluation decision
 
-Start with the [captured synthetic baseline](../../fixtures/semantic-neurons/luna-baseline-2026-09-09/README.md):
+Start with the [captured synthetic baseline](../research/experiments/luna-baseline-2026-09-09/README.md):
 48 fictional excerpts, four relations, 32 gold triples, 20 negative excerpts,
 and two runs per model. Freeze the corpus, labels, taxonomy, prompt/schema,
 source and binary hashes, generation settings, and scoring policy before
@@ -99,13 +99,13 @@ tests, sixteen synthetic control requests, a rejection/duplicate capture
 control, exact score replay, integrity probes, and navigation checks passed.
 The real release binary and all Rust sources match the already validated
 CG-26 state; this evaluation changed no Rust behavior. See the
-[full result and limitations](../../fixtures/semantic-neurons/luna-baseline-2026-09-09/results.md).
+[full result and limitations](../research/experiments/luna-baseline-2026-09-09/results.md).
 
 ## Cross-provider extension — 2026-09-09
 
 The user requested DeepSeek V4 Pro/Flash and Z.ai GLM-5.3/Flash, identifying
 `DEEPSEEK_API_KEY` and `ZHIPU_API_KEY` in the existing local environment file.
-The [separate frozen comparison](../../fixtures/semantic-neurons/cross-provider-baseline-2026-09-09/README.md)
+The [separate frozen comparison](../research/experiments/cross-provider-baseline-2026-09-09/README.md)
 uses those official providers through a loopback evaluation adapter. The
 original Luna/Astra package, Rust sources, binary, and production defaults
 remain unchanged.
@@ -122,7 +122,7 @@ preflight, a $5 reservation budget, failure retention without retries, and
 provider-specific time-dependent pricing. DeepSeek peak/off-peak windows and
 GLM Flash's promotion expiry at 2026-09-09 16:00 UTC must remain visible in any
 cost comparison. An incomplete arm receives no full-corpus accuracy score.
-The [completed comparison](../../fixtures/semantic-neurons/cross-provider-baseline-2026-09-09/results.md)
+The [completed comparison](../research/experiments/cross-provider-baseline-2026-09-09/results.md)
 made 38 provider calls: four complete arms, five successful preflights, and a
 retained DeepSeek Flash failure on its first measured batch. Luna scored
 31/0/1 and 31/1/1 TP/FP/FN; DeepSeek Pro, GLM Flash, and GLM-5.3 each scored
@@ -150,7 +150,7 @@ The user authorized a larger GLM Flash–Luna comparison if the data was suitabl
 [SemEval-2010 Task 8](https://aclanthology.org/S10-1006/) supplies published human
 annotations, with independent annotators and disagreement resolution. The data
 release declares CC BY 3.0; attribution and exact mirrored source bytes are
-retained in the [trial package](../../fixtures/semantic-neurons/glm-luna-semeval-2026-09-09/README.md).
+retained in the [trial package](../research/experiments/glm-luna-semeval-2026-09-09/README.md).
 This is an independent public-label benchmark, not a newly commissioned human
 review or a representative customer-document evaluation.
 
@@ -165,7 +165,7 @@ Raw pair classification is primary; the unchanged Rust writer and finite frozen
 vocabulary gates are a separate diagnostic. Scores include direction, restraint,
 repeat stability and paired uncertainty.
 
-**Captured outcome:** the [results](../../fixtures/semantic-neurons/glm-luna-semeval-2026-09-09/results.md)
+**Captured outcome:** the [results](../research/experiments/glm-luna-semeval-2026-09-09/results.md)
 show GLM Flash at 65.75% pooled raw accuracy against Luna's 42.67%, a +23.08
 percentage-point lead with paired 95% interval [+17.67, +28.75]. Nine-relation
 macro F1 was 71.24% versus 46.48%. On 110 Other sentences repeated twice,
@@ -213,7 +213,7 @@ extraction or production accuracy.
 ## Low-effort extension — 2026-09-09
 
 The user authorized `gpt-5.6-terra` low and a `gpt-5.6-luna` low control on the
-same 600 sentences and two repetitions. The [separate package](../../fixtures/semantic-neurons/terra-luna-low-semeval-2026-09-09/README.md)
+same 600 sentences and two repetitions. The [separate package](../research/experiments/terra-luna-low-semeval-2026-09-09/README.md)
 preserves the prior trial. Corpus bytes, human labels, supplied pairs, prompts,
 JSON mode, 8,192-token cap, taxonomy gates and release binary are identical.
 The primary Terra low–Luna low contrast interleaves calls; contrasts to the
@@ -221,7 +221,7 @@ earlier Luna none and GLM Flash low captures are historical, with potentially
 different serving and cache conditions. No prompts, labels or scoring rules
 were tuned to the new output.
 
-The [verified results](../../fixtures/semantic-neurons/terra-luna-low-semeval-2026-09-09/results.md)
+The [verified results](../research/experiments/terra-luna-low-semeval-2026-09-09/results.md)
 give Terra low **72.42%** pooled raw accuracy and Luna low **70.08%**. Terra's
 advantage is **+2.33 percentage points**, paired 95% interval **[+0.42, +4.25]**.
 Macro F1 is 77.96% and 76.32%, respectively. Terra costs about 10.4 times as
@@ -251,7 +251,7 @@ still apply; none of these results qualifies exhaustive document extraction.
 All **202 new calls** were captured, with no retry, repair or restart. Each
 model completed **96/100** measured requests. Batches 23 and 42 were content
 filtered for both models in both repetitions; each failed request stored no
-facts. The [failure ledger](../../fixtures/semantic-neurons/terra-luna-low-semeval-2026-09-09/operational-failures.json)
+facts. The [failure ledger](../evidence/research-terra-luna-low-semeval-2026-09-09.md#artifact-5202caa13afa1474e95c)
 retains the raw outcome. New measured costs at standard tariffs are
 **$0.153621–$0.153868** for Luna low and **$1.593414–$1.595879** for Terra.
 Including preflights, the schedule estimate is **$1.764058–$1.766769**. All
@@ -260,7 +260,7 @@ are bounded rather than treated as zero. The conservative reservation is
 $13.587759, below the frozen $20 cap. These figures are token estimates, not
 invoices.
 
-The [new accounting](../../fixtures/semantic-neurons/terra-luna-low-semeval-2026-09-09/accounting.json)
+The [new accounting](../evidence/research-terra-luna-low-semeval-2026-09-09.md#artifact-1a82737c7ae88f508944)
 adds OpenAI's cache-write premium and bounds missing cache counters. The earlier
 helper omitted that premium. Historical Luna none's corrected measured estimate
 is **$0.088354–$0.088601**, replacing $0.085574 for comparison purposes here;
@@ -286,7 +286,7 @@ domain. DeepSeek V4 Flash remains retired.
 ## Document development trial — 2026-09-09
 
 The shared runtime adoption is complete. The user chose general factual
-materials for the [first document trial](../../fixtures/semantic-neurons/luna-documents-2026-09-09/results.md).
+materials for the [first document trial](../research/experiments/luna-documents-2026-09-09/results.md).
 It freezes 40 development and 80 unrun holdout documents from the authors'
 [human-reviewed Re-DocRED release](https://github.com/tonytan48/Re-DocRED), with
 twelve predeclared relations. All benchmark sentences are retained; these short
@@ -321,7 +321,7 @@ Clippy, all 967 reported Rust tests, the release build and 34 OpenAI/Gemini HTTP
 cases passed. Eight Arango test entries returned early without the exported
 password; the live contract checks used disposable Native databases.
 
-The [frozen candidate](../../fixtures/semantic-neurons/luna-directed-v2-2026-09-09/results.md)
+The [frozen candidate](../research/experiments/luna-directed-v2-2026-09-09/results.md)
 first replayed the original 55 proposals without model calls. It removed one
 invalid endpoint occurrence and retained all 16 stored reference matches.
 A fresh 40-document Luna-low pass produced zero invalid chunk citations, versus

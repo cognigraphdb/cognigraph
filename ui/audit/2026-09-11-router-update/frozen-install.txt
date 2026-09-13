@@ -1,5 +1,0 @@
-bun install v1.4.2 (744846f84)
-
-Checked 189 installs across 216 packages (no changes) [8.00ms]
-
-Exit code: 0

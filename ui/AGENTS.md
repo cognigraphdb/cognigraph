@@ -38,8 +38,11 @@ bun run build
 - When changing routing, assets or API-origin configuration, also verify the
   production build served by Rust with `COGNIGRAPH_UI_DIST`: direct page loads,
   refreshes, login redirects and API calls must work at the configured origin.
-- Record scoped browser evidence under `ui/audit/` and summarize the result in
-  the relevant issue or changelog. State which environments and flows were
+- Record raw browser evidence in a dated package under the optional private
+  `../../evidence/runs/` checkout or an explicit external capture directory. Publish
+  a reviewed summary in the relevant issue, changelog or `docs/reviews/ui/` from
+  the code root, following the [evidence policy](../docs/operations/evidence-policy.md).
+  State which environments and flows were
   actually checked; dated audit results do not verify a newer build.
 - Instruction/documentation-only edits use the root documentation checks.
   They do not require starting servers or rerunning the UI/Rust suites unless
@@ -59,10 +62,9 @@ bun run build
   the mark centered when the sidebar wordmark is hidden. Builds must not depend
   on the sibling product-docs checkout.
 - Preserve the restrained database-console layout: dark sidebar, light document
-  table and right-side JSON inspector. Use the [approved Ant Design audit](audit/antd-final/audit.md)
-  and [collection reference](audit/antd-final/02-collections.png) for historical
-  visual context; the current [theme](src/antd-theme.ts) and [styles](src/styles/)
-  define the implemented tokens and layout.
+  table and right-side JSON inspector. The current [theme](src/antd-theme.ts)
+  and [styles](src/styles/) define the implemented tokens and layout. Historical
+  screenshots are private; inspect the running console when they are unavailable.
 - Before substantial visual changes with an unclear source, use Product Design's
   `get-context` workflow when available. Otherwise inspect the current screen,
   relevant references and theme, and clarify only missing goals or design input.

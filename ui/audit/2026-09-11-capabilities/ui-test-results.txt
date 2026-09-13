@@ -1,5 +1,0 @@
-
- 120 pass
- 0 fail
- 622 expect() calls
-Ran 120 tests across 18 files. [19.00ms]

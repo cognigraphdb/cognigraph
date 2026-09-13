@@ -95,7 +95,7 @@ unexpected tree changes. The gate still runs CI and Docker, requires a patch
 version increment, and blocks on incoming PRs or changed refs. Send the complete
 transaction atomically with explicit force-with-lease values; do not use
 `--no-verify`. Never use this mode for ordinary feature publication.
-See the [data-removal boundary](repository-data-removal.md).
+Follow the [evidence policy](evidence-policy.md); keep exact remediation manifests and incident records private.
 
 ## Initial publication to a fresh repository
 

@@ -45,3 +45,11 @@ __pycache__/
 /fixtures/semantic-neurons/judge-replay/
 /fixtures/semantic-neurons/blind/qualitative-research-software-market-size/
 /fixtures/semantic-neurons/blind/qualitative-research-software-market-size-gap/
+
+# Raw captures and local research scratch never enter public distribution.
+/docs/issues/evidence/
+/ui/audit/
+/data/
+
+# Per-developer Claude Code settings
+.claude/settings.local.json

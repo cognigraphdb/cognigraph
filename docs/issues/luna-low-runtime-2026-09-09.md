@@ -35,7 +35,7 @@ embedding tests both completed; provider credentials were available to them.
 
 ## Release HTTP evidence
 
-The [loopback matrix](evidence/luna-low-runtime-http-2026-09-09.json) passed 13
+The [loopback matrix](../evidence/engineering-historical-checks.md#artifact-bf189a2e9245548ba8d0) passed 13
 server configurations, 13 invalid configurations rejected before opening
 storage, and three side-view CLI cases. Its 27 captured completion requests
 verify Luna low, original strict JSON schemas, provider inheritance, explicit
@@ -43,11 +43,11 @@ model overrides, Gemini's native schema shape, generated-pair persistence, and
 disabled behavior without credentials. All provider responses in this matrix
 are synthetic; the server and CLI binaries are real release builds.
 
-The [real OpenAI smoke](evidence/luna-low-runtime-live-2026-09-09/result.json)
+The [real OpenAI smoke](../evidence/engineering-luna-low-runtime-live-2026-09-09.md#artifact-2d698e923ca868f6e8fa)
 then exercised the default model and inherited side-view lane. Its recorder
 forwarded the server's request bytes unchanged to OpenAI, preserving
 `response_format: json_schema`, `strict: true`, and `reasoning_effort: low`.
-The [two complete request/response captures](evidence/luna-low-runtime-live-2026-09-09/provider-calls.json)
+The [two complete request/response captures](../evidence/engineering-luna-low-runtime-live-2026-09-09.md#artifact-59e8d9a3532a27094867)
 include usage and request identifiers, without credentials. No format adapter,
 prompt alteration, or reasoning override was applied, and neither call retried.
 
@@ -80,7 +80,7 @@ their old provider settings and hashes intentionally remain frozen.
 
 The newly tested release server SHA-256 is
 `46a61487809b6e65e58f42fe929422cf224eb40d251a4d38a14ce20ebc72af32`.
-The [validation record](evidence/luna-low-runtime-validation-2026-09-09.json)
+The [validation record](../evidence/engineering-historical-checks.md#artifact-0ff3dc76b45e874b073f)
 records commands, source and artifact hashes, preservation checks and limits.
 Reproduce the runtime checks with:
 

@@ -18,4 +18,4 @@
   matches. Forty fresh Luna-low calls produced zero invalid chunk citations and
   35 stored occurrences with 20 reference matches. The original trial is committed
   as `a0e4b24`; historical packages and the unrun holdout remain unchanged.
-  See the [candidate results and limits](../../fixtures/semantic-neurons/luna-directed-v2-2026-09-09/results.md).
+  See the [candidate results and limits](../research/experiments/luna-directed-v2-2026-09-09/results.md).

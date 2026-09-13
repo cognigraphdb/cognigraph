@@ -17,4 +17,4 @@
   controls, integrity probes and exact offline replay passed. Luna remains
   the default; independent representative-document evaluation is still needed.
   No Rust behavior, model defaults, or judge qualification changed. See the
-  [results](../../fixtures/semantic-neurons/luna-baseline-2026-09-09/results.md).
+  [results](../research/experiments/luna-baseline-2026-09-09/results.md).

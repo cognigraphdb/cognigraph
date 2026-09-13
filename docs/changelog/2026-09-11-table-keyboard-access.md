@@ -16,5 +16,5 @@ edge collections and incomplete search handles do not gain document links.
 UI lint/types, 146 tests and the production build pass. Real Rust/Native browser
 journeys verify Tab/Enter/Space, direct reloads, mouse shortcuts, Delete/Cancel,
 scaled focus and Viewer restrictions. Fresh API reads confirm unchanged fixtures
-and denied Viewer user administration. [Evidence and limits](../../ui/audit/2026-09-11-table-keyboard/audit.md).
+and denied Viewer user administration. [Evidence and limits](../evidence/ui-2026-09-11-table-keyboard.md#artifact-a5b3ed52a87a809a63dc).
 No Rust changes or remote publication.

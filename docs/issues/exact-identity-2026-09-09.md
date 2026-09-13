@@ -45,7 +45,7 @@ The server route regression now accepts exact non-NFC identities and still
 rejects ambiguous collection delimiters.
 
 Final workspace validation and counts are recorded in
-[the gate artifact](evidence/exact-identity-validation-2026-09-09.json).
+[the gate artifact](../evidence/engineering-historical-checks.md#artifact-ae8238270f2656206dba).
 `cargo fmt --all -- --check`, `cargo clippy --all-targets -- -D warnings`, and
 `cargo test --all` passed. The complete test run reported 945 passed, zero failed,
 and zero ignored across 71 test/doc-test result groups. Eight reported passes
@@ -67,10 +67,10 @@ No real provider or model qualification was exercised by these harnesses.
 
 | Suite | Verified outcome |
 |---|---|
-| [Old-binary identity reproduction](evidence/exact-identity-baseline-http-2026-09-09.json) | 105 checks, 69 desired-contract mismatches, three restarts |
-| [Corrected exact identity and repair](evidence/exact-identity-fixed-http-2026-09-09.json) | 138 checks, zero mismatches, six restarts, three repaired old-binary snapshots |
-| [Side-view lifecycle regression](evidence/exact-identity-sideviews-http-2026-09-09.json) | 21 delete cases, 42 controlled provider races/retries, three accepted non-NFC sources, three rejected `/` collections, regeneration/rollback checks, three restarts |
-| [Construction evidence regression](evidence/exact-identity-construction-http-2026-09-09.json) | 30 ingestion/reconciliation calls, three snapshot roundtrips, six restarts; all checked hashes/spans valid |
+| [Old-binary identity reproduction](../evidence/engineering-historical-checks.md#artifact-3f36ba05a7d3efafe7d9) | 105 checks, 69 desired-contract mismatches, three restarts |
+| [Corrected exact identity and repair](../evidence/engineering-historical-checks.md#artifact-edff67199edb01f43b5f) | 138 checks, zero mismatches, six restarts, three repaired old-binary snapshots |
+| [Side-view lifecycle regression](../evidence/engineering-historical-checks.md#artifact-24081eeffb4759a463f8) | 21 delete cases, 42 controlled provider races/retries, three accepted non-NFC sources, three rejected `/` collections, regeneration/rollback checks, three restarts |
+| [Construction evidence regression](../evidence/engineering-historical-checks.md#artifact-e9c2831ed3f5986c50f3) | 30 ingestion/reconciliation calls, three snapshot roundtrips, six restarts; all checked hashes/spans valid |
 
 The identity suite creates four distinct collection/key combinations from
 composed and decomposed spellings. It checks exact HTTP storage, CGQL literal

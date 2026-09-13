@@ -47,8 +47,8 @@ fn triggers(relation: &str) -> Vec<&'static str> {
 /// ~20 required concepts were never surfaced). The frozen vocabulary is built
 /// from the corpus's own indication/contraindication wording — see
 /// `clinical_reference::build_vocabulary` and
-/// `fixtures/semantic-neurons/dailymed/clinical-vocabulary-v1.json`.
-const VOCABULARY_PATH: &str = "fixtures/semantic-neurons/dailymed/clinical-vocabulary-v1.json";
+/// `data/dailymed/clinical-vocabulary-v1.json`.
+const VOCABULARY_PATH: &str = "data/dailymed/clinical-vocabulary-v1.json";
 
 fn load_conditions() -> Result<Vec<String>> {
     let vocabulary = ClinicalVocabulary::load(std::path::Path::new(VOCABULARY_PATH))
@@ -339,7 +339,7 @@ fn main() -> Result<()> {
         if restraint_pass { "PASS" } else { "FAIL" }
     );
 
-    let out = PathBuf::from("fixtures/semantic-neurons/dailymed/clinical-results.json");
+    let out = PathBuf::from("data/dailymed/clinical-results.json");
     std::fs::create_dir_all(out.parent().unwrap())?;
     std::fs::write(
         &out,
