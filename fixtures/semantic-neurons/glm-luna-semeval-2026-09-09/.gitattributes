@@ -1,2 +1,0 @@
-# Retain exact upstream archive member bytes, including their original CRLF.
-source/* -text

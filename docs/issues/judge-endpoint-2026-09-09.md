@@ -65,12 +65,12 @@ The embeddings crate's two standard live integration tests load the existing
 repository `.env`; both provider keys were configured and those tests passed.
 They are existing embedding regressions, separate from the synthetic judge
 routing harness. No live judge qualification or new model comparison was run.
-The [validation artifact](evidence/judge-endpoint-validation-2026-09-09.json)
+The [validation artifact](../evidence/engineering-historical-checks.md#artifact-a47b9f164e97bad74f08)
 records gate logs, source/binary hashes, documentation checks, and limits.
 
 ## Release verification
 
-The [harness](evidence/judge-endpoint-http.py) uses disposable authenticated
+The [harness](../evidence/engineering-historical-checks.md#artifact-3352cfbb13b09efc07e6) uses disposable authenticated
 Native servers and two protocol paths on a loopback provider: OpenAI chat
 completions and Gemini generation. It checks exact request paths, synthetic
 credential headers, explicit model names, and each screen/quality stage.
@@ -106,13 +106,13 @@ models alone do not confer acceptance authority.
 | Loopback screen/quality requests | 24 | 58 |
 | Invalid judge configurations rejected before storage opens | 0 of 12 | 12 of 12 |
 
-The [baseline artifact](evidence/judge-endpoint-baseline-http-2026-09-09.json)
+The [baseline artifact](../evidence/engineering-historical-checks.md#artifact-93ba2e040d448da882b9)
 records nine dedicated-judge failures as expected defect reproductions. Every
 failed review leaves its proposal exactly unchanged. All twelve invalid
 configurations instead start the old server and create storage; the startup
 probes send no provider requests.
 
-The [corrected artifact](evidence/judge-endpoint-fixed-http-2026-09-09.json)
+The [corrected artifact](../evidence/engineering-historical-checks.md#artifact-ec607773991e0ea4d28e)
 verifies 22 successful review scenarios and 12 startup rejections. All eighteen
 routing cases accept the synthetic eligible proposal; the four authority
 controls retain it as proposed with triage. Qualified A+ acceptance records

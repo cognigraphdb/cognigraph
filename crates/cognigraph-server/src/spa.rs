@@ -36,23 +36,19 @@ mod tests {
     use tower::ServiceExt;
 
     /// A dist directory shaped like `bun run build` output.
-    fn dist_fixture() -> std::path::PathBuf {
-        static NEXT_FIXTURE: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
-        let fixture = NEXT_FIXTURE.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
-        let dir = std::env::temp_dir().join(format!(
-            "cognigraph-spa-test-{}-{fixture}",
-            std::process::id()
-        ));
-        std::fs::create_dir_all(&dir).expect("fixture dir");
-        std::fs::write(dir.join("index.html"), "<html>console shell</html>").expect("index");
-        std::fs::write(dir.join("index-abc123.css"), "body{color:red}").expect("asset");
+    fn dist_fixture() -> tempfile::TempDir {
+        let dir = tempfile::Builder::new()
+            .prefix("cognigraph-spa-test-")
+            .tempdir()
+            .expect("fixture dir");
+        std::fs::write(dir.path().join("index.html"), "<html>console shell</html>").expect("index");
+        std::fs::write(dir.path().join("index-abc123.css"), "body{color:red}").expect("asset");
         dir
     }
 
     /// Mirrors the shape main.rs assembles: exact routes, the /api nest
     /// with its JSON 404 fallback, and the SPA fallback underneath.
-    fn app() -> Router {
-        let dist = dist_fixture();
+    fn app(dist: &std::path::Path) -> Router {
         let api = Router::new()
             .route("/ping", axum::routing::get(|| async { "pong" }))
             .fallback(api_not_found);
@@ -63,7 +59,10 @@ mod tests {
     }
 
     async fn get(path: &str) -> (StatusCode, String, String) {
-        let response = app()
+        // Keep the fixture alive until the streamed file body has been consumed.
+        // TempDir also removes it if request handling or an assertion panics.
+        let dist = dist_fixture();
+        let response = app(dist.path())
             .oneshot(Request::get(path).body(Body::empty()).expect("request"))
             .await
             .expect("response");
@@ -77,6 +76,7 @@ mod tests {
         let body = axum::body::to_bytes(response.into_body(), 1 << 20)
             .await
             .expect("body");
+        dist.close().expect("fixture cleanup");
         (
             status,
             String::from_utf8_lossy(&body).into_owned(),

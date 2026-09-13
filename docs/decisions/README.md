@@ -60,6 +60,8 @@ limitations.
 
 | Decision | Status | Operative scope | Successor / amendment |
 |---|---|---|---|
+| [Public evidence boundary](decision_public_evidence_boundary.md) | Active | Public engineering records and CI inputs; private captured research, audits and operational inventories. | [Evidence policy](../operations/evidence-policy.md) owns enforcement; CG-75/CG-77 own migration and qualification. |
+| [Hosted QA lifecycle](decision_hosted_qa_lifecycle.md) | Active | On-demand Railway QA, separate application instances, retained volume and manual deployment. | [CG-76](../issues/CG-76.md) records shutdown and removal of the unfinished permanent ingress setup. |
 | [Dependency advisories](decision_dependency_advisories.md) | Active | Bounded Tantivy patch, visible time-bounded optional ONNX maintenance exception, and fatal unsoundness advisories. | [CG-70](../issues/CG-70.md) owns validation and dependency inventory. |
 | [Continuous verification](decision_ci_verification.md) | Amended | Shared local/PR checks, required successful aggregate, pinned Actions and separate publication authority. | [CI guide](../operations/ci.md) owns tool setup and repository settings; [CG-69](../issues/CG-69.md) records qualification and the private website plan limit. |
 | [Develop integration and Renovate](decision_develop_integration.md) | Active | Develop is the default integration branch; main is the separately promoted production branch. Renovate targets only develop. | [CG-73](../issues/CG-73.md) records transition evidence; [CI guide](../operations/ci.md) owns operating details. |

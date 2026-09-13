@@ -4,7 +4,11 @@ An evidence-linked multi-model database in Rust. Store documents, connect them w
 
 ## Image availability
 
-The Docker Hub repositories are being prepared for the first image release. No image tags have been published yet. Until tags appear, use the [source-build quick start](https://github.com/cognigraphdb/cognigraph/blob/main/README.md#five-minute-start).
+Version **2.7.11** is available for `linux/amd64`.
+
+```sh
+docker pull --platform linux/amd64 cognigraph/cognigraph:2.7.11
+```
 
 Releases use explicit `x.y.z` tags for `linux/amd64`. Tags are immutable; no `latest` alias or native ARM image is currently published. Select a version from the Tags page and pin its digest for deployment.
 

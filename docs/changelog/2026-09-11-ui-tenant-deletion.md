@@ -21,5 +21,5 @@ UI lint/types, 96 tests and production build pass. Real Native Enterprise
 browser/HTTP checks cover cancellation with data and credentials, deletion,
 same-name recreation, old JWT/API-token/login rejection, empty and already-absent
 results, connection failure and recovery, keyboard controls, host-admin login
-and ordinary-admin denial. [Report](../../ui/audit/2026-09-11-tenant-deletion/audit.md).
+and ordinary-admin denial. [Report](../evidence/ui-2026-09-11-tenant-deletion.md#artifact-0ec008ada9942ef8213a).
 No Rust source changed. No remote CI, push or publication was performed.

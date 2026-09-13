@@ -61,12 +61,12 @@ Final verification:
 The three new Rust test functions account for the increase from 950 to 953.
 Corpus examples are additional assertions inside existing test functions.
 The full formatting, Clippy, and workspace-test gates ran in that order.
-[Validation evidence](evidence/subquery-bindings-validation-2026-09-09.json)
+[Validation evidence](../evidence/engineering-historical-checks.md#artifact-8c2e063c848a6d0fcf62)
 records log, binary, fixture, harness, and document hashes.
 
 ## Release HTTP and Lua verification
 
-The [release harness](evidence/subquery-contract-http.py) starts authenticated,
+The [release harness](../verification/harnesses/subquery-contract-http.py) starts authenticated,
 temporary resident/sidecar and paged/sidecar Native stores, seeds the shared
 corpus through real HTTP routes, and stops both servers after each run. It uses
 explicit configuration outside the checkout and no embedding/completion
@@ -95,9 +95,9 @@ Each run records **180 observations**:
 | Subsequent reads of those stored mutation values | 8 | 8 |
 | Known CG-38 status mismatches (500, desired 400) | 4 | 4 |
 
-[Baseline evidence](evidence/subquery-bindings-baseline-http-2026-09-09.json)
+[Baseline evidence](../evidence/engineering-historical-checks.md#artifact-60ebb4e7a1ce44017759)
 uses `--expect-collisions` to assert the former failure. The
-[corrected evidence](evidence/subquery-bindings-fixed-http-2026-09-09.json)
+[corrected evidence](../evidence/engineering-historical-checks.md#artifact-3a263aaba10202f26d74)
 uses the default expectations and verifies all 14 executable `sq_*` examples.
 The four CG-38 observations intentionally preserve a separate defect; they are
 not desired-behavior passes. Lua rejection checks use `pcall`, so their HTTP

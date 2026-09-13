@@ -19,4 +19,4 @@
   1,772 evidence checks and tamper probes passed. Luna low and GLM Flash are
   the candidates recommended by that experiment; the subsequent user decision
   selects Luna low, adopted above. See
-  [results, costs and limits](../../fixtures/semantic-neurons/terra-luna-low-semeval-2026-09-09/results.md).
+  [results, costs and limits](../research/experiments/terra-luna-low-semeval-2026-09-09/results.md).

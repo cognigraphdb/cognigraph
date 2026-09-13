@@ -19,6 +19,6 @@ UI lint/types, 100 tests and production build pass. Real Native Community and
 Enterprise browser/HTTP checks cover first-admin setup and conflicts, new-admin
 login, persisted role assignments, denied cross-tenant/host-admin provisioning,
 data-access boundaries and desktop/scaled layouts.
-[Report](../../ui/audit/2026-09-11-provisioning/audit.md). Governance console entry
+[Report](../evidence/ui-2026-09-11-provisioning.md#artifact-e96a930169a1f87db8a2). Governance console entry
 and role-aware navigation remain CG-53. No Rust source changed; no remote CI,
 push or publication was performed.

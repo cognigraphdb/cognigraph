@@ -21,6 +21,6 @@ checks covered 101 spaces and 402 seeded neurons, full proposed-queue traversal,
 final-page acceptance, off-page retirement, reload, searchable space choices and
 a new proposal in the 101st space. Fresh HTTP reads confirm persisted results.
 A labelled proxy failure verifies incomplete catalog handling and retry.
-[Evidence and limitations](../../ui/audit/2026-09-11-review-paging/audit.md).
-[Final status-filter layout and keyboard verification](../../ui/audit/2026-09-11-review-paging/layout-followup.md).
+[Evidence and limitations](../evidence/ui-2026-09-11-review-paging.md#artifact-cbe96c45605c68a64fba).
+[Final status-filter layout and keyboard verification](../evidence/ui-2026-09-11-review-paging.md#artifact-7e6b4dce7be6ec199447).
 No Rust source changed; no push or publication was performed.

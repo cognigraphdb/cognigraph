@@ -11,7 +11,7 @@ SOFT_CAP = 450
 
 def check(root):
     source = root / 'crates/cognigraph-server/src'
-    exceptions = json.loads((root / 'docs/issues/evidence/server-modularity-exceptions.json').read_text())
+    exceptions = json.loads((root / 'scripts/policies/server-modularity-exceptions.json').read_text())
     errors, inventory = [], {}
     for family in FAMILIES:
         directory = source / family

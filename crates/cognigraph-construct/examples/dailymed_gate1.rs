@@ -11,7 +11,7 @@
 //!    stats are the chunking verdict.
 //! 3. Draft a bounded ontology from the cohort with the governed drafter
 //!    (draft-policy-v1: verbatim/closure checks + gate advisor). The
-//!    draft is written to `fixtures/semantic-neurons/dailymed/` for
+//!    draft is written to `data/dailymed/` for
 //!    human review — gate 1 validates the loop, it does not freeze
 //!    policy (that is gate 3's job).
 //! 4. Ingest the cohort with the drafted ontology and report grounding:
@@ -179,7 +179,7 @@ async fn main() -> Result<()> {
     let sample_cap: usize = arg("--sample-cap")
         .and_then(|v| v.parse().ok())
         .unwrap_or(24);
-    let out_dir = PathBuf::from("fixtures/semantic-neurons/dailymed");
+    let out_dir = PathBuf::from("data/dailymed");
 
     // 1. Cohort — the manifests' own deterministic selection order.
     let mut cohort = manifest_cohort(&corpus, "manifest-rx.jsonl", n_rx)?;

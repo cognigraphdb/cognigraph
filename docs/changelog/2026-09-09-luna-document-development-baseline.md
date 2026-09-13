@@ -19,4 +19,4 @@
   findings: CG-39 endpoint substring acceptance and CG-40 unconstrained completion
   identifiers, subsequently resolved by policy v2 above. No Rust behavior changed
   during this original baseline capture. See the
-  [results and limits](../../fixtures/semantic-neurons/luna-documents-2026-09-09/results.md).
+  [results and limits](../research/experiments/luna-documents-2026-09-09/results.md).

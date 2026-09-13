@@ -305,7 +305,7 @@ async fn main() -> Result<()> {
         .and_then(|v| v.parse().ok())
         .unwrap_or(30);
     let dry = has_flag("--dry");
-    let out_dir = PathBuf::from("fixtures/semantic-neurons/dailymed");
+    let out_dir = PathBuf::from("data/dailymed");
 
     // 1. Cohort, chunks, oracle.
     let mut cohort = manifest_cohort(&corpus, "manifest-rx.jsonl", n_rx)?;

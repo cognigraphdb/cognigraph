@@ -27,6 +27,13 @@ requires mode `0600`, reads as backup UID 10001 and verifies denial for UID 1000
 The harness removes its volume afterward and does not relax snapshot permissions
 to make it readable by the host runner.
 
+These suites run locally or inside the CI runner. The container startup check
+emulates Railway's volume mount locally; it does not contact or start Railway.
+Hosted QA runs only on the user's explicit request, independently of builds,
+pushes and releases. After local testing, finish the
+[Docker cleanup procedure](docker-cleanup.md), retaining only identified reusable
+Evidence data volumes from the test session.
+
 ## Tools and diagnostics
 
 Install Rust stable with Clippy/rustfmt, Bun, Playwright Chromium and its system
@@ -97,3 +104,10 @@ and Railway's source branch. Promote an explicitly authorized release through a
 verified develop-to-main PR. The [branch decision](../decisions/decision_develop_integration.md)
 owns this boundary. [CG-73](../issues/CG-73.md) records transition status and remote
 receipts; changing the default branch does not itself deploy either application.
+
+## Public distribution gate
+
+The shared CI runner also executes `python3 scripts/check-public-distribution.py`.
+It enforces the [evidence policy](evidence-policy.md) without a private checkout.
+Private archive verification is a separate explicit local check using
+`--private-root ../evidence`; it never replaces ordinary public tests.

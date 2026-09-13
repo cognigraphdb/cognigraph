@@ -62,9 +62,9 @@ consistent with the pre-existing directed contract.
 
 ## Verification and development measurement
 
-The [original trial](../../fixtures/semantic-neurons/luna-documents-2026-09-09/README.md)
+The [original trial](../research/experiments/luna-documents-2026-09-09/README.md)
 and minimal failure reproduction were committed as `a0e4b24` before fixes.
-The [candidate package](../../fixtures/semantic-neurons/luna-directed-v2-2026-09-09/README.md)
+The [candidate package](../research/experiments/luna-directed-v2-2026-09-09/README.md)
 freezes new source/binary hashes and evaluates only the same 40 development
 documents. Fixed-output replay isolates endpoint-gate effects; a fresh single
 Luna-low pass measures the new request schema. Historical evidence and the
@@ -75,7 +75,7 @@ Formatting, `cargo clippy --all-targets -- -D warnings`, `cargo test --all` and
 the release server build passed. The suite reported 967 passing tests; eight
 Arango integration entries returned early without an exported `ARANGO_PASSWORD`,
 so this run does not establish live Arango coverage. The
-[release HTTP matrix](../issues/evidence/directed-contract-fixes-2026-09-09.json)
+[release HTTP matrix](../evidence/engineering-historical-checks.md#artifact-97932bee025d16118de5)
 passed 34 cases across OpenAI and Gemini with synthetic loopback completions.
 It verifies actual provider schemas, rejection of ignored enums, unchanged facts
 after malformed envelopes, explicit-empty clearing and stored quote byte spans.
@@ -88,7 +88,7 @@ storage. No writer identity behavior was changed to make these tests pass.
 
 Fixed-output replay retained all 16 published-reference matches and removed the
 single previously stored `South Africa` occurrence derived from `South African`.
-The [fresh development pass](../../fixtures/semantic-neurons/luna-directed-v2-2026-09-09/results.md)
+The [fresh development pass](../research/experiments/luna-directed-v2-2026-09-09/results.md)
 completed 40 real Luna-low calls without retries or provider failures. It had
 zero invalid chunk citations, stored 35 occurrences and matched 20 published
 references, versus 32/16 in the original capture. Estimated token cost was
@@ -96,7 +96,7 @@ $0.0194147. All 40 replay and 40 fresh request schemas/prompts were verified,
 as were 31 replay and 35 fresh evidence spans. Five integrity probes passed on
 copies. This single development pass is not independent truth qualification;
 the next step remains reference/evidence-policy review with the holdout unrun.
-The [validation record](../issues/evidence/directed-fixes-validation-2026-09-09.json)
+The [validation record](../evidence/engineering-historical-checks.md#artifact-417ef1d20b7bd9a5a302)
 summarizes command results, preserved failures, artifact hashes and worktree
 preservation. The fixes and new candidate remain local and uncommitted after the
 `a0e4b24` evidence checkpoint; no remote push was made.

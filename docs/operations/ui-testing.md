@@ -75,7 +75,7 @@ collection/user identifiers are isolated; fixture data is deleted with the store
 This suite makes no provider requests and does not run model benchmarks
 or research holdouts. It does not cover every governance/job workflow or every
 browser/OS. Manual scoped QA remains required for behavior outside these cases.
-The [CG-72 report](../../ui/audit/2026-09-13-login-responsive/audit.md) adds local
+The [CG-72 report](../evidence/ui-2026-09-13-login-responsive.md#artifact-79f36a0e0176e7eab1b0) adds local
 WebKit touch/viewport emulation for login only; it is separate from CI's Chromium
 suite and does not qualify the rest of the console for mobile devices.
 

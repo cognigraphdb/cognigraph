@@ -15,4 +15,4 @@
   thinking. Exact 12-pair counts were 13/15 versus 15/15. The source review
   found unsupported additions from both models; no judge qualification or
   model default changed. See the
-  [measurement, limitations, and raw artifacts](../../fixtures/semantic-neurons/sideviews-model-comparison-2026-09-08/README.md).
+  [measurement, limitations, and raw artifacts](../research/experiments/sideviews-model-comparison-2026-09-08/README.md).

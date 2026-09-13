@@ -1,12 +1,6 @@
-# Blind Eval Fixtures
+# Evaluation authoring template
 
-`TEMPLATE/` is the generic authoring kit for the independent B1 blind-eval
-protocol. Corporate and market-research kits are excluded from the public
-snapshot; recovery copies remain private. The original multi-kit results are
-withdrawn, and no replacement model comparison has been run.
-
-The historical CG-24 counting report describes private inputs. Its offline
-recount helper now requires an explicit external `--fixture-root`; the public
-checkout does not contain those kits or imply that their results can be
-reproduced without access to them. See the
-[distribution boundary](../README.md#public-distribution).
+[TEMPLATE](TEMPLATE/README.md) contains a generic empty authoring kit. Completed
+labelled evaluation packages and captured judgements belong in the private evidence
+repository. Follow the experiment protocol and split boundaries; routine CI and
+documentation work must not execute a research holdout.

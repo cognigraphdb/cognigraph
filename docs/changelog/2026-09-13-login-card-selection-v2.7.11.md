@@ -11,7 +11,7 @@ release promotion. The geometry test now requires the exact login heading
 inside the card, excluding the transient connection-status panel rendered
 while logout revalidates the session. Production source, styles and geometry
 tolerances are unchanged. Twenty repeated real-server journeys pass across
-Community and Enterprise; the [browser report](../../ui/audit/2026-09-13-login-card-selection/audit.md)
+Community and Enterprise; the [browser report](../evidence/ui-2026-09-13-login-card-selection.md#artifact-e88d1680df2562dd58a3)
 retains evidence and the remaining qualification boundary.
 
 The candidate includes the [Docker Hub account setup record](2026-09-13-docker-hub-setup.md)

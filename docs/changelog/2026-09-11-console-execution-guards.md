@@ -17,5 +17,5 @@ UI lint/types, 137 tests and the production build pass. A real Enterprise/Native
 release binary and controlled response latency verified repeated shortcuts,
 CGQL form submission, one Lua write per intentional run, persisted reloads,
 server-error recovery, invalid bindings and completion ownership.
-[Evidence and boundaries](../../ui/audit/2026-09-11-execution-guards/audit.md).
+[Evidence and boundaries](../evidence/ui-2026-09-11-execution-guards.md#artifact-ba0883e40b9f39017230).
 No Rust source changed; no push or publication was performed.

@@ -12,14 +12,14 @@ this tracker. [UI instructions](AGENTS.md) define the current workflow.
 
 ## Current review — 2026-09-11
 
-Subsequent [2026-09-13 login centering check](audit/2026-09-13-login-centering/audit.md)
+Subsequent [2026-09-13 login centering check](../docs/evidence/ui-2026-09-13-login-centering.md#artifact-eb63247e87967d1d3597)
 adds [CG-72](../docs/issues/CG-72.md), resolved by the
-[responsive-login fix](audit/2026-09-13-login-responsive/audit.md). Local production
+[responsive-login fix](../docs/evidence/ui-2026-09-13-login-responsive.md#artifact-79f36a0e0176e7eab1b0). Local production
 UI, phone-size Chromium/WebKit emulation and both-edition regressions pass.
 The fix is published to develop in v2.7.8; production deployment remains pending.
 The authenticated workspace remains desktop-oriented.
 
-The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
+The [full code/contract/browser audit](../docs/evidence/ui-2026-09-11-full-review.md#artifact-2a08bd45b55e9bd0cb9c)
 recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
 explicit untested boundaries. The historical Done entries below describe
 implementation checkpoints; they do not establish current acceptance. The UI
@@ -30,65 +30,65 @@ planned scope. Keep defect status in the linked registry.
 
 - [x] [Empty/error guidance CG-58](../docs/issues/CG-58.md): supported draft
   review/acceptance, verified fresh-tenant emptiness and shared catalog notices
-  for loading, denial and retryable failure. [Browser/API evidence](audit/2026-09-11-space-guidance/audit.md)
+  for loading, denial and retryable failure. [Browser/API evidence](../docs/evidence/ui-2026-09-11-space-guidance.md#artifact-ec49fa342ffd2bbdc01d)
   covers persisted acceptance, mutation guards, denied roles/editions and retry.
   That checkpoint left four P2s open.
 - [x] [Table keyboard access CG-57](../docs/issues/CG-57.md): native links for
   navigation and buttons for review selection, with visible focus and isolated
-  pointer shortcuts. [Browser/API evidence](audit/2026-09-11-table-keyboard/audit.md)
+  pointer shortcuts. [Browser/API evidence](../docs/evidence/ui-2026-09-11-table-keyboard.md#artifact-a5b3ed52a87a809a63dc)
   covers Tab/Enter/Space, direct reloads, scaled layouts and Viewer restrictions.
   That checkpoint left five P2s open.
 - [x] [Result ownership CG-56](../docs/issues/CG-56.md): clear results/timing on
   input edits and reruns; ignore obsolete responses; share graph loading/error
-  feedback across both views. [Browser/API evidence](audit/2026-09-11-result-ownership/audit.md)
+  feedback across both views. [Browser/API evidence](../docs/evidence/ui-2026-09-11-result-ownership.md#artifact-8aa8b46fb43543771a2c)
   covers delayed/reversed requests, failures, expansion and persisted mutations.
   That checkpoint left six P2s open.
 - [x] [Execution guards CG-55](../docs/issues/CG-55.md): synchronous submission
   ownership for Lua/CGQL buttons, shortcuts and form submit, with obsolete
-  completion suppression. [Browser/API evidence](audit/2026-09-11-execution-guards/audit.md)
+  completion suppression. [Browser/API evidence](../docs/evidence/ui-2026-09-11-execution-guards.md#artifact-ba0883e40b9f39017230)
   verifies delayed real executions, persisted write counts, errors and recovery.
   That checkpoint left seven P2s open.
 - [x] [Review/space paging CG-54](../docs/issues/CG-54.md): truthful queue ranges,
   complete searchable catalogs and off-page selection/graduation links.
-  [Browser/API evidence](audit/2026-09-11-review-paging/audit.md) covers 101 spaces,
+  [Browser/API evidence](../docs/evidence/ui-2026-09-11-review-paging.md#artifact-cbe96c45605c68a64fba) covers 101 spaces,
   402 seeded neurons, persisted verdicts and catalog retry. That checkpoint left eight P2s open.
 - [x] [Edition/role capabilities CG-53](../docs/issues/CG-53.md): verified session
   context, scoped navigation/direct routes/actions, governance-role entry and
-  explicit anonymous development policy. [Browser/API evidence](audit/2026-09-11-capabilities/audit.md)
+  explicit anonymous development policy. [Browser/API evidence](../docs/evidence/ui-2026-09-11-capabilities.md#artifact-29cda8d45940a3ab08a8)
   covers all nine roles in both editions. That checkpoint left nine P2s open.
 - [x] [Tenant/user provisioning CG-52](../docs/issues/CG-52.md): resumable
   first-admin setup, current-tenant requests and edition-appropriate roles.
-  [Browser/API evidence](audit/2026-09-11-provisioning/audit.md) covers new-admin
+  [Browser/API evidence](../docs/evidence/ui-2026-09-11-provisioning.md#artifact-e96a930169a1f87db8a2) covers new-admin
   login, persisted accounts and denied authority crossings. That checkpoint left ten P2s open.
 - [x] [Tenant deletion disclosure CG-51](../docs/issues/CG-51.md): explicit
   consequences, actual quarantine results, cancel/recreation and failure checks.
-  [Browser/API evidence](audit/2026-09-11-tenant-deletion/audit.md), including the
+  [Browser/API evidence](../docs/evidence/ui-2026-09-11-tenant-deletion.md#artifact-0ec008ada9942ef8213a), including the
   CG-49 follow-up for host-admin catalog verification. All audited P1s are resolved;
   that checkpoint left 11 P2s open.
 - [x] [Production origin CG-49](../docs/issues/CG-49.md): same-origin production,
   explicit dev port, verified authentication state and stale-target recovery.
-  [Browser/API evidence](audit/2026-09-11-production-origin/audit.md).
+  [Browser/API evidence](../docs/evidence/ui-2026-09-11-production-origin.md#artifact-a495041e72ddd34399af).
 - [x] [Document JSON fidelity CG-50](../docs/issues/CG-50.md) and
   [construction import identity CG-62](../docs/issues/CG-62.md): raw JSON editing,
   changed-field PATCH, creation readback, stable import IDs and explicit replacement
-  review. [Browser/API evidence](audit/2026-09-11-data-preservation/audit.md).
+  review. [Browser/API evidence](../docs/evidence/ui-2026-09-11-data-preservation.md#artifact-6afad6337a2d11fc893d).
 - [x] [Collection search/filter scope CG-59](../docs/issues/CG-59.md): explicit
   search cap, retrieved counts, page-local filter labels and usable paging
-  through filtered-empty pages. [Browser/API evidence](audit/2026-09-11-collection-search-scope/audit.md)
+  through filtered-empty pages. [Browser/API evidence](../docs/evidence/ui-2026-09-11-collection-search-scope.md#artifact-1c2e51790ed0aa822e41)
   covers 126 documents, off-page keys, reset, failure/retry and scaled layouts.
   That checkpoint left three P2s open.
 - [x] [Collapsed navigation names CG-63](../docs/issues/CG-63.md): explicit
   accessible names and hover/focus labels in every sidebar mode.
-  [Browser evidence](audit/2026-09-11-sidebar-names/audit.md) covers all Admin
+  [Browser evidence](../docs/evidence/ui-2026-09-11-sidebar-names.md#artifact-2bc6b4831aa16897066a) covers all Admin
   links, host-only Tenants, keyboard/pointer interaction and scaled layouts.
   That checkpoint left two P2s open.
 - [x] [Dependency advisory CG-61](../docs/issues/CG-61.md): React Router 8.3.1,
-  clean dependency audit and unchanged application source. [Routing evidence](audit/2026-09-11-router-update/audit.md)
+  clean dependency audit and unchanged application source. [Routing evidence](../docs/evidence/ui-2026-09-11-router-update.md#artifact-f2ee775cf86eb46ca1d7)
   covers production login/deep links, history, refresh, role landings and assets.
   That checkpoint left one P2 open.
 - [x] [UI CI/browser coverage CG-60](../docs/issues/CG-60.md): shared CI and
   pre-push run the UI suite and deterministic Community/Enterprise browser cases.
-  [Qualification evidence](audit/2026-09-11-ui-ci/audit.md) records nine browser
+  [Qualification evidence](../docs/evidence/ui-2026-09-11-ui-ci.md#artifact-d71f3d04fcdc5baa0fdb) records nine browser
   passes, the complete local CI gate, failed negative candidates and explicit
   provider exclusions. All findings from the review are closed.
 
@@ -108,11 +108,11 @@ defect remediation; these are planned features, not claims of broken endpoints.
 
 ## Done
 
-- [x] [Product logo](audit/2026-09-10-logo/audit.md): use the supplied CogniGraph
+- [x] [Product logo](../docs/evidence/ui-2026-09-10-logo.md#artifact-4f92a4cc74b35c52e5a4): use the supplied CogniGraph
   mark in the expanded/compact sidebar and sign-in screen, with surface colors
-  and measured alignment. [Cleaned master refresh](audit/2026-09-11-logo-refresh/audit.md)
+  and measured alignment. [Cleaned master refresh](../docs/evidence/ui-2026-09-11-logo-refresh.md#artifact-a97141c47ad0254e491c)
   preserves the supplied geometry and existing console colors.
-- [x] [Collections QA and fixes](audit/2026-09-10-collections/audit.md): CG-41–CG-44
+- [x] [Collections QA and fixes](../docs/evidence/ui-2026-09-10-collections.md#artifact-088100ac46441b68bcc4): CG-41–CG-44
   cover draft preservation, API save errors, off-page links, scaled desktop
   controls and keyboard dialog focus. Scoped Native/admin verification only.
 

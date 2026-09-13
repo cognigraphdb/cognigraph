@@ -4,8 +4,9 @@ The [CI workflow](../../.github/workflows/ci.yml) builds and tests both
 editions. Its `publish_images` input defaults to `false`; ordinary pushes, tags,
 PRs and build-only CI runs do not publish images. Publication is an explicit
 manual run from `main` in `cognigraphdb/cognigraph`, after the shared CI gates.
-The first publishing run has not been executed. Continue to use the
-[source-build quick start](../../README.md#five-minute-start) until images exist.
+The first publishing run succeeded on 2026-09-13: **v2.7.11** is available for
+both editions. The [release receipt](docker-hub/release-2.7.11.md) records the
+registry digests and independently executed checks of the published images.
 
 ## Destinations and scope
 
@@ -55,30 +56,29 @@ is separately named **`cognigraphdb`**; it is not the image namespace.
   and edition-specific overviews. Their maintained overview text lives in
   [Community overview](docker-hub/community.md) and
   [Enterprise overview](docker-hub/enterprise.md). Update the availability
-  paragraphs after the first successful image publication. Both public pages
-  currently show **Empty repository**: Docker Hub withholds the saved detailed
-  overview from public rendering until the first image is pushed.
+  paragraphs when publishing a new image. At the initial setup checkpoint both
+  pages showed **Empty repository**; after v2.7.11 publication their saved
+  overviews were updated to show the exact pull commands.
 - The existing `github-actions-cognigraph-publish` PAT is Active, Read & Write,
-  expires on 2026-12-10 and has never been used. `DOCKERHUB_TOKEN` is present in
+  expires on 2026-12-10 and was unused at initial setup. `DOCKERHUB_TOKEN` is present in
   GitHub Actions, last updated on 2026-09-11. No token was created, disclosed or
-  rotated during setup. Metadata confirms configuration; successful publisher
-  authentication still needs the first authorized publishing run.
+  rotated during setup. The v2.7.11 publishing run subsequently authenticated
+  successfully with this existing credential.
 - Docker Scout analysis is enabled for Community and persisted after reload.
   Enterprise analysis is not enabled: the Personal plan's repository allowance
   is consumed by Community. No paid upgrade was made. Docker's current
   [Scout documentation](https://docs.docker.com/scout/) lists one included
   repository; recheck the account's allowance before changing this allocation.
-- Anonymous API readback confirms both repository identities, public visibility,
+- Initial anonymous API readback confirmed both repository identities, public visibility,
   immutable tags, categories, saved overviews and zero tags. The
   [setup receipt](docker-hub/setup-2026-09-13.json) records the readback and
-  overview hashes. Repository setup does not constitute an image release.
+  original overview hashes. The later [release receipt](docker-hub/release-2.7.11.json)
+  records published tags and updated overview hashes; the setup receipt remains unchanged.
 
-At this checkpoint, main is v2.7.7 (`9218771`) and develop is v2.7.10
-(`7238514`). Main-only publication can use the existing release; publishing the
-newer integration first requires the separately authorized main promotion in the
-[branch decision](../decisions/decision_develop_integration.md). Production
-promotion also affects the Railway deployment. No release branch, image tag or
-deployment was changed by account setup.
+At initial account setup, main was v2.7.7 (`9218771`) and develop was v2.7.10
+(`7238514`). Account setup itself changed no release branch, image tag or
+deployment. The subsequent authorized v2.7.11 promotion followed the
+[branch decision](../decisions/decision_develop_integration.md) and updated Railway.
 
 The login action runs only after build/runtime checks and logs out in its post
 step. Workflow permissions are limited to reading GitHub repository contents.
@@ -88,11 +88,12 @@ permission should not be reused as a general development credential.
 ## Approved first release — v2.7.11
 
 The owner approved promoting the corrected v2.7.11 candidate through develop
-to main, updating Railway Community, and publishing both Docker editions.
+to main, updating Railway Community, and publishing both Docker editions. All
+three actions succeeded; [release acceptance](docker-hub/release-2.7.11.md)
+records the exact main commit, CI runs, image digests and live checks.
 [CG-74](../issues/CG-74.md) records the selector defect that blocked v2.7.10 and
-the passing local qualification of its replacement. Remote required CI and
-actual registry publication must still succeed before this becomes release
-evidence. Remove unused test containers and images after their checks; preserve
+the passing local and remote qualification of its replacement.
+Remove unused test containers and images after their checks; preserve
 persistent volumes and unrelated Docker resources.
 
 ## Verify and publish

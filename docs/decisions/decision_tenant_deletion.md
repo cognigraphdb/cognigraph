@@ -109,6 +109,6 @@ Suspend from Delete and explains that recreating the name restores neither data
 nor credentials. The result retains the server's `deleted` flag and quarantined
 entry names; failed or malformed responses cannot become a success toast.
 
-The [CG-51 browser and HTTP verification](../../ui/audit/2026-09-11-tenant-deletion/audit.md)
+The [CG-51 browser and HTTP verification](../evidence/ui-2026-09-11-tenant-deletion.md#artifact-0ec008ada9942ef8213a)
 exercised cancellation, deletion, same-name recreation and credential rejection
 on disposable Native Enterprise data. The server contract above is unchanged.

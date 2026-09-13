@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Validate maintained local Markdown links and the changelog, without dependencies.
 
-Historical plan snapshots and frozen evidence retain their original paths.
+Archived reading copies are checked; exact frozen exceptions are hash-bound.
 The sibling product checkout is optional unless --include-product is requested.
 """
 
 import argparse
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -103,12 +104,8 @@ def documents(include_product):
         path = ROOT / name
         if path.is_file() and path.suffix == ".md" and name.startswith(("docs/", "crates/", "ui/", ".claude/skills/", ".agents/skills/")):
             relative = path.relative_to(ROOT)
-            if any(part in relative.parts for part in ("node_modules", "dist", "target", "evidence")):
+            if any(part in relative.parts for part in ("node_modules", "dist", "target")):
                 continue
-            if path.is_relative_to(ROOT / "docs/plans/archive"):
-                # The archive index remains maintained; snapshots are historical.
-                if path != ROOT / "docs/plans/archive/README.md":
-                    continue
             paths.append(path)
     if include_product:
         paths.extend(p for p in PRODUCT.rglob("*.md")
@@ -116,8 +113,44 @@ def documents(include_product):
     return sorted(set(paths))
 
 
+def frozen_link_exceptions():
+    """Only explicitly reviewed, unchanged originals may retain historical links."""
+    exempt, errors = set(), []
+    try:
+        policy = json.loads((ROOT / 'scripts/policies/docs-links.json').read_text())
+        if policy.get('schema') != 'cognigraph-docs-links-v1':
+            raise ValueError('unknown schema')
+        entries = policy['frozen_link_exceptions']
+        if not isinstance(entries, dict):
+            raise ValueError('exceptions must be a mapping')
+        for name, entry in entries.items():
+            if (not isinstance(name, str) or not name.startswith('docs/')
+                    or not name.endswith('.md') or '\\' in name
+                    or any(part in ('', '.', '..') for part in name.split('/'))):
+                errors.append('Invalid frozen documentation path')
+                continue
+            if (not isinstance(entry, dict)
+                    or not isinstance(entry.get('reason'), str) or not entry['reason'].strip()
+                    or not isinstance(entry.get('sha256'), str)
+                    or not re.fullmatch(r'[a-f0-9]{64}', entry['sha256'])):
+                errors.append(f'{name}: frozen exception needs a SHA-256 and reason')
+                continue
+            path = ROOT / name
+            if not path.is_file() or path.is_symlink() or not path.resolve().is_relative_to(ROOT.resolve()):
+                errors.append(f'{name}: missing or unsafe frozen original')
+            elif hashlib.sha256(path.read_bytes()).hexdigest() != entry['sha256']:
+                errors.append(f'{name}: frozen original changed; preserve original bytes and amend a reading copy')
+            else:
+                exempt.add(path)
+    except (OSError, ValueError, KeyError, TypeError, AttributeError) as error:
+        errors.append(f'Documentation exception policy could not be checked: {type(error).__name__}')
+    return exempt, errors
+
+
 def check(include_product=False, write_index=False):
     records, errors = changelog()
+    exempt, policy_errors = frozen_link_exceptions()
+    errors.extend(policy_errors)
     index = ROOT / "docs/changelog/README.md"
     expected = render_index(records)
     if write_index:
@@ -131,6 +164,8 @@ def check(include_product=False, write_index=False):
     optional_links = 0
     paths = documents(include_product)
     for source in paths:
+        if source in exempt:
+            continue
         for number, line in active_lines(source.read_text()):
             for raw in LINK.findall(line):
                 value = raw[1:raw.index(">")] if raw.startswith("<") else raw.split(' "', 1)[0].split(" '", 1)[0]
@@ -155,6 +190,7 @@ def check(include_product=False, write_index=False):
                     if unquote(target.fragment) not in cache[dest]:
                         errors.append(f"{label}: missing anchor {value}")
     return {"documents": len(paths), "local_links_checked": links,
+            "frozen_documents_skipped": len(exempt),
             "optional_product_links_skipped": optional_links,
             "changelog_records": len(records), "errors": errors}
 

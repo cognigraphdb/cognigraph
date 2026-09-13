@@ -13,3 +13,7 @@ ui/dist
 fixtures
 *.redb
 *.tantivy
+
+data
+ui/audit
+ui/*.png

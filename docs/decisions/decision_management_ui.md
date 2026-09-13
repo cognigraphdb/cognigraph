@@ -244,7 +244,7 @@ A pre-submit read detects changes while the preview was open. It does not add
 atomic compare-and-swap guarantees against concurrent external writers.
 
 [CG-50](../issues/CG-50.md), [CG-62](../issues/CG-62.md), and the
-[dated browser/HTTP report](../../ui/audit/2026-09-11-data-preservation/audit.md)
+[dated browser/HTTP report](../evidence/ui-2026-09-11-data-preservation.md#artifact-6afad6337a2d11fc893d)
 record the rationale, implementation and verification boundaries. Earlier UI
 checkpoints above remain historical evidence, not current full-console acceptance.
 
@@ -262,13 +262,13 @@ Retry instead of an anonymous admin-labelled shell. Returning to the default
 server clears both the old target and its authentication state first.
 
 [CG-49](../issues/CG-49.md) and its
-[browser/HTTP evidence](../../ui/audit/2026-09-11-production-origin/audit.md)
+[browser/HTTP evidence](../evidence/ui-2026-09-11-production-origin.md#artifact-a495041e72ddd34399af)
 record production, development, recovery and anonymous-mode verification.
 The [running guide](../operations/running.md#management-console) owns the commands.
 
 ### Enterprise probe and deletion follow-up — 2026-09-11
 
-The [CG-51 verification](../../ui/audit/2026-09-11-tenant-deletion/audit.md) exposed
+The [CG-51 verification](../evidence/ui-2026-09-11-tenant-deletion.md#artifact-0ec008ada9942ef8213a) exposed
 and corrected missing host-admin coverage in CG-49: collection-catalog denial
 now triggers a protected tenant-catalog probe. A successful, recognizable
 response is still required; the UI does not treat 403 itself as authorization.
@@ -299,7 +299,7 @@ Creation uses the server's default tenant quotas and correctly documents that
 `max_active_jobs` is enforced. Quota editing is still a separate planned workflow.
 The [auth runbook](../operations/authentication.md#console-tenant-onboarding)
 owns operator instructions. [CG-52](../issues/CG-52.md) and the
-[browser/HTTP report](../../ui/audit/2026-09-11-provisioning/audit.md) record
+[browser/HTTP report](../evidence/ui-2026-09-11-provisioning.md#artifact-e96a930169a1f87db8a2) record
 verification; role-aware navigation and governance console entry remain CG-53.
 
 ## Addendum (2026-09-11): verified edition and role capabilities

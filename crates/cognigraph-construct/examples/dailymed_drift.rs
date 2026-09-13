@@ -345,7 +345,7 @@ async fn main() -> Result<()> {
         "  production-graph drift is exact by construction (production = structured-agreed; D4)"
     );
 
-    let out = PathBuf::from("fixtures/semantic-neurons/dailymed/drift-synthetic-results.json");
+    let out = PathBuf::from("data/dailymed/drift-synthetic-results.json");
     std::fs::create_dir_all(out.parent().unwrap())?;
     std::fs::write(
         &out,

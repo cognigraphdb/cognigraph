@@ -67,12 +67,12 @@ Final checks:
 - `cargo build --release -p cognigraph-server -p cognigraph-cli`: passed.
 
 The standard formatting, Clippy, and full-test gates run in that order. The
-[validation artifact](evidence/collection-ensure-validation-2026-09-09.json)
+[validation artifact](../evidence/engineering-historical-checks.md#artifact-1f7113a94674f37ec51f)
 records logs, hashes, documentation checks, and unrelated-file preservation.
 
 ## Release HTTP, Lua, and file evidence
 
-The [harness](evidence/collection-ensure-http.py) starts disposable authenticated
+The [harness](../evidence/engineering-historical-checks.md#artifact-2a4e1cdbef2f955eb019) starts disposable authenticated
 servers outside the checkout with explicit configuration and no providers.
 It covers resident/embedded, resident/sidecar, and paged/sidecar stores. Each
 mode has a seed process and three subsequent authenticated restarts. The
@@ -107,11 +107,11 @@ mtime, and inode. Text checks include the persisted revision, identity hash,
 `meta.json` SHA-256, mtime, and inode. These establish actual file reuse; result
 equality alone would not distinguish a correct rebuild from a warm open.
 
-The [baseline artifact](evidence/collection-ensure-baseline-http-2026-09-09.json)
+The [baseline artifact](../evidence/engineering-historical-checks.md#artifact-53943152ccf73f48f086)
 uses `--expect-rebuilds` and reproduces **18 unnecessary rewrites**: six vector
 files and twelve text indexes across no-op phases. Its other seven file
 rewrites are expected after real changes. The
-[corrected artifact](evidence/collection-ensure-fixed-http-2026-09-09.json)
+[corrected artifact](../evidence/engineering-historical-checks.md#artifact-9389ab6b8ad776bb70b5)
 preserves those 18 files exactly and still observes **seven required rebuilds**:
 five derivatives after actual collection creation and two vector files after
 reopening stores with unflushed deltas. The latest text indexes survive that

@@ -17,5 +17,5 @@ UI lint/types, 144 tests and production build pass. Real Enterprise/Native brows
 checks verify input edits, delayed successes/errors, reversed vector/graph
 completion, graph connection failures/retry, expansion, relationship creation
 and persisted reloads. Error layouts pass at effective 125%/150% desktop sizes.
-[Evidence and limits](../../ui/audit/2026-09-11-result-ownership/audit.md).
+[Evidence and limits](../evidence/ui-2026-09-11-result-ownership.md#artifact-8aa8b46fb43543771a2c).
 No Rust source changed; no push or publication was performed.

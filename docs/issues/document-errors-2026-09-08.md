@@ -83,6 +83,6 @@ cargo build --release -p cognigraph-server --bin cognigraph-server
 python3 docs/issues/evidence/document-errors-http.py
 ```
 
-- [Reproducible provider-free release HTTP regression](evidence/document-errors-http.py)
-- [Pre-fix responses and binary hash](evidence/document-errors-baseline-http-2026-09-08.json)
-- [Corrected release responses and binary hash](evidence/document-errors-http-2026-09-08.json)
+- [Reproducible provider-free release HTTP regression](../evidence/engineering-historical-checks.md#artifact-796dd15a2ddf5ea6fc59)
+- [Pre-fix responses and binary hash](../evidence/engineering-historical-checks.md#artifact-0eaa7fd290f905c3f878)
+- [Corrected release responses and binary hash](../evidence/engineering-historical-checks.md#artifact-2676fc9654a971fefb29)

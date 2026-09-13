@@ -71,9 +71,9 @@ credentials returned 401 in both lifecycle probes.
 
 Evidence includes executable SHA-256 hashes:
 
-- [Pre-fix observations](evidence/request-isolation-baseline-http-2026-09-08.json)
-- [Fixed observations](evidence/request-isolation-http-2026-09-08.json)
-- [Reproduction script](evidence/request-isolation-http.py)
+- [Pre-fix observations](../evidence/engineering-historical-checks.md#artifact-c7111c26d7efc235815d)
+- [Fixed observations](../evidence/engineering-historical-checks.md#artifact-4859dacdbe396807c921)
+- [Reproduction script](../evidence/engineering-historical-checks.md#artifact-cc2a98d243e9f2557967)
 
 Run the checked script from the repository after building the release binary:
 

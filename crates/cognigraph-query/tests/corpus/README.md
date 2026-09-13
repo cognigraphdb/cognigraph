@@ -21,7 +21,7 @@ The `sq_*.cgql` cases support the
 [CG-28 subquery-position contract](../../../../docs/reference/cgql.md#subqueries-in-expression-position):
 fourteen execution examples, two mutation-body forms that parse/validate/plan,
 three parse rejections, and three validation rejections. The mutation forms are
-also executed by the [release harness](../../../../docs/issues/evidence/subquery-contract-http.py).
+also executed by the [release harness](../../../../docs/verification/harnesses/subquery-contract-http.py).
 `exec/sq_nested_binding_collision.cgql` now requires the corrected result for
 [CG-37](../../../../docs/issues/CG-37.md), with four further nested/sibling,
 correlated, bind-variable, and dynamic-document examples. `--expect-collisions`

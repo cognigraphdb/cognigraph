@@ -64,7 +64,7 @@ resident and paged modes passed the following sequence:
    before serving requests with `database schema version 2 is newer than
    supported 1`.
 
-The [sanitized observations](evidence/derivative-isolation-http-2026-09-08.json)
+The [sanitized observations](../evidence/engineering-historical-checks.md#artifact-e026c0f3d837a12e2da9)
 record both modes. All live checks passed on their first run. During local
 test development, the old persistence test still expected `GENERATION`
 instead of `REVISION`, and the new server test assumed an unavailable UUID

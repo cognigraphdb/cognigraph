@@ -1,8 +1,12 @@
 # First Railway Community acceptance — 2026-09-12
 
+> Public reading copy: environment-specific addresses and identifiers are omitted.
+> The original is preserved in the private evidence catalog (artifact `a9cf8b9e8c99589fd1b5`).
+> Dated acceptance describes that run; the shared service now follows on-demand QA.
+
 [CG-71](CG-71.md) is resolved. One authenticated Native Community v2.7.7 writer
 and the bundled React console are live at
-[database-production-fe77.up.railway.app](https://database-production-fe77.up.railway.app).
+[database.example.com](https://database.example.com).
 Docker Hub publication was explicitly deferred. The separately hosted website
 remained unchanged and returned HTTP 200 after the database recovery drill.
 
@@ -15,12 +19,12 @@ remained unchanged and returned HTTP 200 after the database recovery drill.
 | Protected main / deployed commit | `92187713786fb9256fa732da5a197586ac56315b`; identical tree to the source candidate |
 | PR CI | [34710554925](https://github.com/cognigraphdb/cognigraph/actions/runs/34710554925), success |
 | Main CI | [34711926177](https://github.com/cognigraphdb/cognigraph/actions/runs/34711926177), success |
-| Railway service | `database`, production, `3753fa34-e5a5-4199-9846-805aa95688c9` |
-| Final deployment | `5d2b0cef-8836-4019-88b0-8f0f91aa0a70`, SUCCESS |
-| Final running instance | `248684f1-c41a-4514-8b06-8f3e0b6d629a` |
+| Railway service | `database`, production, `platform-id-in-private-record` |
+| Final deployment | `platform-id-in-private-record`, SUCCESS |
+| Final running instance | `platform-id-in-private-record` |
 | Railway image manifest | `sha256:7f61af7154a67eaa27380b4628a825b358108bb05462ce35ab1c9a6ec858f651` |
-| Active restored volume | `e9a3212b-23fd-4f82-96c1-90c1c4d4d82d`, `/data`, EU West |
-| Active volume instance | `842ca21d-1203-4438-90ad-18756cfee30e` |
+| Active restored volume | `platform-id-in-private-record`, `/data`, EU West |
+| Active volume instance | `platform-id-in-private-record` |
 
 Local shared CI and the installed pre-push hook passed the final source tree:
 strict Rust formatting/Clippy/tests in both editions, 72 Python tests, 161 UI
@@ -28,8 +32,8 @@ units, nine browser cases, 514 Native release checks, twelve startup rejections,
 documentation/issue/decision/modularity/edition checks and advisory gates.
 Both Linux/amd64 Docker editions passed API/CLI/auth/restart, packaged-console,
 root-volume privilege/symlink/shutdown and Helm backup checks. GitHub separately
-passed its source and packaged-edition jobs. See the [CI summaries](evidence/cg-71-2026-09-12/ci.json)
-and [local image identities](evidence/cg-71-2026-09-12/images.json).
+passed its source and packaged-edition jobs. See the [CI summaries](../evidence/engineering-cg-71-2026-09-12.md#artifact-5ca53d19bef4430e98ba)
+and [local image identities](../evidence/engineering-cg-71-2026-09-12.md#artifact-cc78918990713b11c248).
 
 The incoming PR gate reviewed #2–#7 and deferred their exact heads in
 [the disposition registry](../operations/pr-dispositions.json). #3 has duplicate
@@ -61,11 +65,11 @@ owns the configuration and credential handover.
 | Restart | Real hosted shutdown/reopen preserves the full application snapshot |
 | Final clean state | No user collections, one Admin, zero tokens/tenants; exact clean export survives another restart |
 
-See the [browser audit](../../ui/audit/2026-09-12-railway-community/audit.md),
-[process readback](evidence/cg-71-2026-09-12/process.txt),
-[first restart](evidence/cg-71-2026-09-12/snapshot-export.json) and
-[final runtime](evidence/cg-71-2026-09-12/final-runtime.json).
-[Final access/configuration readback](evidence/cg-71-2026-09-12/final-access.json)
+See the [browser audit](../evidence/ui-2026-09-12-railway-community.md#artifact-e8012f0d05cc4486141b),
+[process readback](../evidence/engineering-cg-71-2026-09-12.md#artifact-720f5a91f9c56fb940e6),
+[first restart](../evidence/engineering-cg-71-2026-09-12.md#artifact-06cb5ec6222531c92463) and
+[final runtime](../evidence/engineering-cg-71-2026-09-12.md#artifact-f8945775b8f9916eb65b).
+[Final access/configuration readback](../evidence/engineering-cg-71-2026-09-12.md#artifact-3c0c6ff2bad360bf2c7b)
 also confirms anonymous denial and the unchanged website deployment. The first restart
 shut down at 19:30:03.804718 UTC, reopened Native at 19:30:04.454308 and listened
 at 19:30:04.457321. These timestamps describe this small synthetic store, not an RTO.
@@ -78,24 +82,24 @@ snapshot through authenticated import after removing its newly generated
 bootstrap Admin using a temporary restore Admin. After source-Admin login and
 temporary-account removal, the full parsed export matched exactly, including
 internal collections. It still matched after restart. The disposable container
-and volume were removed. [Application evidence](evidence/cg-71-2026-09-12/application-restore.json)
+and volume were removed. [Application evidence](../evidence/engineering-cg-71-2026-09-12.md#artifact-bd223ccf7bff77cee845)
 and [the corrected procedure](../operations/recovery.md#exact-authenticated-restore)
 retain that account-handling requirement.
 
 **Railway volume snapshot:** stopped the original writer, created manual backup
-`337ebbf2-e24b-451c-b4bc-5afa5fb9da89` at 19:33:52.638 UTC, restarted, and added
+`platform-id-in-private-record` at 19:33:52.638 UTC, restarted, and added
 an `after_backup` marker. After stopping again, restored that backup to a new
 volume and reviewed the exact database-only mount replacement. Applying it
 deployed the same main commit. The complete export matched the pre-backup
-snapshot and the later marker returned 404. [Platform evidence](evidence/cg-71-2026-09-12/platform-restore.json)
+snapshot and the later marker returned 404. [Platform evidence](../evidence/engineering-cg-71-2026-09-12.md#artifact-6f0eda56ce3e2c141219)
 records the identities and successful comparison.
 
 The source application snapshot SHA-256 was
 `38cd51199e1dfab9c4caaa1e252246c53fed7a08bca235ecef9a485199152702`.
 The active restored volume inherited the tested backup as
-`a3848029-d512-4801-b516-aa7fceb3f050`, plus daily and weekly schedules
+`platform-id-in-private-record`, plus daily and weekly schedules
 (six and 27 days retention). Only the owned synthetic collection was then
-dropped. A cold clean-baseline backup, `d3ac0892-ee29-4301-8dff-a13e78b48bab`, was
+dropped. A cold clean-baseline backup, `platform-id-in-private-record`, was
 created at 19:42:34.321 UTC and catalog readback confirmed it. The service was
 restarted and its complete clean export matched SHA-256
 `3fc01db99b0db309cccf8311e9f322ed14544ad25619094ef618912ff4d655fc`
@@ -103,13 +107,13 @@ for the saved clean snapshot.
 This final baseline was created and read back; the preceding synthetic backup
 is the one whose platform restore was executed.
 
-The original unmounted, probe-only volume `0062ccbb-85ef-485f-90a5-abe6f6a1772c`
+The original unmounted, probe-only volume `platform-id-in-private-record`
 was retired after acceptance. Railway acknowledged deletion and reports
 `isPendingDeletion: true`, scheduled for 2026-09-14 19:51:11 UTC. It remains in
 the platform inventory during that retention window; it is not mounted to a
 service. The active volume is READY and not pending deletion, with no staged
-environment changes. See [backup/config readback](evidence/cg-71-2026-09-12/inventory.json)
-and [cleanup readback](evidence/cg-71-2026-09-12/volume-cleanup.json).
+environment changes. See [backup/config readback](../evidence/engineering-cg-71-2026-09-12.md#artifact-f2ce2dc6af426a32e52e)
+and [cleanup readback](../evidence/engineering-cg-71-2026-09-12.md#artifact-0fb782288076d5230047).
 
 Snapshots contain password hashes and are intentionally not tracked. Credentials
 remain only in Railway's protected variables and transient test processes. The
@@ -118,9 +122,9 @@ in chat or source. Screenshots contain only synthetic data.
 
 ## Failed attempts and corrected assumptions
 
-- v2.7.6 deployment `8464128a-6008-4c61-a7d0-5111b6ce3eb2` failed at build time:
+- v2.7.6 deployment `platform-id-in-private-record` failed at build time:
   Railway rejected Docker `VOLUME`. v2.7.7 removed it and explicitly tested mounts.
-- Initial v2.7.7 deployment `06ee8ca0-73c7-461a-8b93-6907f9678b0b` built and
+- Initial v2.7.7 deployment `platform-id-in-private-record` built and
   listened on 3000 but failed platform healthchecks. Explicitly aligning Railway
   `PORT` and the Rust listener resolved the target-port mismatch.
 - Two subsequent attempts encountered Native's file lock during failed-instance

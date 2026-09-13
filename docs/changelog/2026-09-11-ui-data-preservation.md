@@ -16,7 +16,7 @@ before replacing their evidence. Duplicate IDs and stale previews are refused;
 confirmation discloses rebuilding facts and mentions. Keyboard focus and preview
 scrolling are verified at three desktop sizes.
 
-[Scoped browser and HTTP verification](../../ui/audit/2026-09-11-data-preservation/audit.md)
+[Scoped browser and HTTP verification](../evidence/ui-2026-09-11-data-preservation.md#artifact-6afad6337a2d11fc893d)
 passed against real Native Community/Enterprise binaries. The UI passes lint,
 type checks, 85 helper tests and its production build. Frozen audit captures are
 excluded from Biome instead of being reformatted. No Rust code changed, and no

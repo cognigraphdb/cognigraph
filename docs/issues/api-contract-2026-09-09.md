@@ -61,18 +61,18 @@ The existing two provider-embedding smoke entries also reported success as part
 of the workspace run; they retain their existing environment-based setup and
 are separate from the loopback-only feature harness. Source hashes, gate logs,
 and binary identities are recorded in the
-[validation artifact](evidence/api-contract-validation-2026-09-09.json).
+[validation artifact](../evidence/engineering-historical-checks.md#artifact-129a8f80bcd1b85c841d).
 
 ## Release HTTP and CLI verification
 
-The [release harness](evidence/api-contract-http.py) starts the real server with
+The [release harness](../evidence/engineering-historical-checks.md#artifact-033680f9287410ed2b75) starts the real server with
 authentication and a disposable persistent Native store. Its environment is
 explicit and does not load repository `.env` credentials. OpenAI main completion,
 Gemini side-view completion, and Ollama embedding endpoints are all synthetic
 loopback servers. No production data or external provider was used by this
 harness, and Docker was not required.
 
-[Raw evidence](evidence/api-contract-http-2026-09-09.json) records **57 checks**
+[Raw evidence](../evidence/engineering-historical-checks.md#artifact-ee2877a3f468090d7777) records **57 checks**
 and **16 local provider calls**. The served `/openapi.yaml` matched the source
 byte-for-byte and passed a standard OpenAPI 3.0 validator. Request fixtures and
 actual job/submission/list responses passed OpenAPI schema validation.

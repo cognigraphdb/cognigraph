@@ -1,7 +1,0 @@
-   Compiling cognigraph-artifacts v2.7.1 (/Users/skitsanos/FTP/Products/CogniGraph/code/crates/cognigraph-artifacts)
-   Compiling cognigraph-embeddings v2.7.1 (/Users/skitsanos/FTP/Products/CogniGraph/code/crates/cognigraph-embeddings)
-   Compiling cognigraph-auth v2.7.1 (/Users/skitsanos/FTP/Products/CogniGraph/code/crates/cognigraph-auth)
-   Compiling cognigraph-server v2.7.1 (/Users/skitsanos/FTP/Products/CogniGraph/code/crates/cognigraph-server)
-   Compiling cognigraph-cli v2.7.1 (/Users/skitsanos/FTP/Products/CogniGraph/code/crates/cognigraph-cli)
-   Compiling cognigraph-construct v2.7.1 (/Users/skitsanos/FTP/Products/CogniGraph/code/crates/cognigraph-construct)
-    Finished `release` profile [optimized] target(s) in 29.38s

@@ -116,6 +116,6 @@ reconciliation, snapshot roundtrips, and restarts. `--binary ...
 All stores, credentials, records, and provider responses are synthetic and
 local. No environment file is edited.
 
-- [Reproducible release-server regression](evidence/unicode-evidence-http.py)
-- [Pre-fix observations and binary hash](evidence/unicode-evidence-baseline-http-2026-09-09.json)
-- [Corrected release, legacy repair, snapshot, and restart evidence](evidence/unicode-evidence-http-2026-09-09.json)
+- [Reproducible release-server regression](../evidence/engineering-historical-checks.md#artifact-2d6c70245cdf8f22b7bf)
+- [Pre-fix observations and binary hash](../evidence/engineering-historical-checks.md#artifact-4100ebc6b53048a2e2c3)
+- [Corrected release, legacy repair, snapshot, and restart evidence](../evidence/engineering-historical-checks.md#artifact-3a67f6382aec29686620)

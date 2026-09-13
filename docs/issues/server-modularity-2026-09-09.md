@@ -33,7 +33,7 @@ paths through re-exports; child modules remain private implementation details.
 | [construction routes](../../crates/cognigraph-server/src/routes/construct/mod.rs) | 2,868 | 28 | 106 | Routing, directed/ordinary/governed ingest, evaluation, drafting/acceptance, proposals, review policy/lanes, tests. |
 
 Of **240 files, 233 are within the 450-line soft cap**. The seven
-[documented exceptions](evidence/server-modularity-exceptions.json) are two
+[documented exceptions](../../scripts/policies/server-modularity-exceptions.json) are two
 existing production execution methods, four complete lifecycle scenarios, and
 one fixture factory. The largest production file is the 680-line worker;
 the largest test remains the 2,019-line M26 scenario. These shared-state units
@@ -53,7 +53,7 @@ A temporary `syn` parser compared **1,087 constants, types, functions, and
 inherent/trait methods** against `3fa7db7`. The full multiset matched after
 normalizing visibility, syntactic trailing commas, parsed string literals, and
 relocated `include_str!` paths. This preserves literal values as well as control
-flow. The [movement ledger](evidence/server-modularity-motion-2026-09-09.json)
+flow. The [movement ledger](../evidence/engineering-historical-checks.md#artifact-4c796e18d94a35a7f7fb)
 provides each old/new source location and normalized token digest.
 
 The remaining edits are module/import scaffolding, `pub(super)` access within
@@ -120,12 +120,12 @@ an incorrect deployment-head field name; correcting the probe to the existing
 `applied_deployment_decision_id` contract made both releases pass. No product
 behavior fix was introduced to make the probes pass.
 
-See [validation evidence](evidence/server-modularity-validation-2026-09-09.json),
-[baseline HTTP](evidence/server-modularity-baseline-http-2026-09-09.json),
-[final HTTP](evidence/server-modularity-http-2026-09-09.json),
-[API replay](evidence/server-modularity-api-http-2026-09-09.json),
-[neuron replay](evidence/server-modularity-neuron-http-2026-09-09.json), and
-[Arango boundary](evidence/server-modularity-arango-2026-09-09.json).
+See [validation evidence](../evidence/engineering-historical-checks.md#artifact-75946b15f6fda4788e75),
+[baseline HTTP](../evidence/engineering-historical-checks.md#artifact-ee9cee82340985e1f495),
+[final HTTP](../evidence/engineering-historical-checks.md#artifact-92596e505ae38fd8f32c),
+[API replay](../evidence/engineering-historical-checks.md#artifact-6a98f4080529c22f7158),
+[neuron replay](../evidence/engineering-historical-checks.md#artifact-aa2e7af3f3b8a7c7bd2e), and
+[Arango boundary](../evidence/engineering-historical-checks.md#artifact-607b2443c9f595b20ccc).
 
 To regenerate the disposable signed fixture and replay Native HTTP:
 

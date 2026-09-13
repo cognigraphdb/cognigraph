@@ -1,5 +1,11 @@
 # Roadmap 2026 H2 — CGQL v2, Semantic Neurons, and governed operations
 
+> Amended reading copy — 2026-09-13. Link targets have been updated for the current
+> repository layout; dated claims retain their original scope.
+> The exact original is preserved in the private evidence repository.
+> Original SHA-256: `d800f731592ea128675a378797c4caa751c52d16e6a1c402ab171015e79f0bf4` (53954 bytes).
+> See the [navigation amendment](../archive-navigation-2026-09-13.md) for its path and provenance.
+
 Written 2026-07-04, after Phase 10 closed (312 tests at that historical
 checkpoint, packaged, operable, administrable; see implementation-plan.md
 for the current delivered surface).
@@ -19,7 +25,7 @@ adjacency for endpoint-equality listings; D1b indexes materialized correlated
 equality candidates. D2 adds correlated traversal, D3–D9 add expressions and
 helpers, D10 defers projection-only calculations, D11 limits retry work to the
 phase that needs it, and D12 adds directed construction. The
-[workload decision](decisions/decision_cgql_v2_workload_gaps.md) preserves the
+[workload decision](../../decisions/decision_cgql_v2_workload_gaps.md) preserves the
 original failures and their resolution; they are not upcoming implementation work.
 
 The July 21 CRM re-run recorded **8 of 8 queries completing**, up from 4 of 8,
@@ -27,14 +33,14 @@ with agreeing row counts. The later July 22 release evaluation recorded a
 **780 ms CGQL / 927 ms reference** total for its selected query formulations.
 Those are historical measurements of one 254,076-document workload, not current
 latency guarantees or general backend rankings. The
-[benchmark record](benchmarks.md#d11-retry-only-the-phase-that-missed-2026-07-22)
+[benchmark record](../../research/benchmarks/native-backend.md#d11-retry-only-the-phase-that-missed-2026-07-22)
 also preserves the workload-dependent costs of correlated traversal and query
 formulation. CG-23's source and example checks do not re-run that partner dataset.
 
 Governed milestones M15–M26 remain delivered, with the singleton/Native and
 other boundaries recorded below. The September review found defects after
 those milestones; completion dates do not establish current correctness. The
-[implementation plan](implementation-plan.md#review-checkpoint--2026-09-09)
+[implementation plan](../../implementation-plan.md#review-checkpoint--2026-09-09)
 records fixes through local commit `57d65af` (CG-36): formatting, strict Clippy,
 and 961 reported Rust passes,
 including eight Arango entries that early-returned without credentials and two
@@ -49,7 +55,7 @@ uncommitted documentation reconciliation now records the completed WebNLG
 experiments, exact artifact paths, and offline validation replay, preserving
 the historical model and frozen test boundaries.
 
-**Next work:** finish the open [CG issue registry](issues/README.md), which is
+**Next work:** finish the open [CG issue registry](../../issues/README.md), which is
 the active defect backlog. It includes research and reproduction gaps
 (CG-25), modularity and decision indexing (CG-26/30).
 Query-spec parity (CG-28), nested generated binding collisions (CG-37),
@@ -59,7 +65,7 @@ with regression tests and runtime evidence.
 The July research directions below remain proposals for later evaluation.
 After CG-1 through CG-32 are resolved or explicitly closed, revisit the latest
 DeepSeek, GLM, and other models against the economical `gpt-5.6-luna` baseline,
-as recorded in the [deferred benchmark plan](issues/README.md#after-the-current-ticket-list).
+as recorded in the [deferred benchmark plan](../../issues/README.md#after-the-current-ticket-list).
 
 ## Historical delivery and research checkpoint (2026-07-20–22)
 
@@ -120,7 +126,7 @@ converged labels 22% while **halving** label-neutral answer coverage, so it was 
   were slow or incomplete. Backend adjacency alone did not fix the correlated
   case: D1b's index over materialized candidates was also needed. The subsequent
   run completed all eight, and D2–D12 were delivered by July 22. See the
-  [dated results and corrected diagnosis](decisions/decision_cgql_v2_workload_gaps.md).
+  [dated results and corrected diagnosis](../../decisions/decision_cgql_v2_workload_gaps.md).
 
 The next research sequence proposed in July was **rule-drafting density** —
 the leading lever identified then for the ~33% genuinely
@@ -131,7 +137,7 @@ then, only if density is exhausted, a **fixed operator-supplied relation vocabul
 "align draft to stored entity identities" step, which every repeat run over a corpus now
 needs; HA/replication; client SDKs.
 
-NOTE on CI: the checked-in [workflow](../.github/workflows/ci.yml) is
+NOTE on CI: the checked-in [workflow](../../../.github/workflows/ci.yml) is
 **manual-trigger only** (`workflow_dispatch`) during active
 development — the local commit gates (`cargo fmt --all -- --check`, `cargo clippy --all-targets -- -D warnings`,
 `cargo test --all`) are the contract on every change, so we don't spend Actions minutes
@@ -150,7 +156,7 @@ retains one bounded immutable complete occurrence projection with exact
 candidate-versus-baseline impact. A separate externally signed Promoter act
 deploys or rolls back that retained generation on the Native backend. The
 contract is recorded in the
-[M26 decision](decisions/decision_m26_verified_semantic_repair_materialization.md).
+[M26 decision](../../decisions/decision_m26_verified_semantic_repair_materialization.md).
 
 - [x] No changes to M18-M25 context, job, artifact-consumption, preparation,
   derivation, evidence, decision, promotion-intent, head, Semantic Repair
@@ -175,7 +181,7 @@ contract is recorded in the
   ArangoDB rejects before CAS reads, collection creation, authority writes, or
   graph mutation.
 - [x] HTTP/CLI build, list, detail, deploy, and current-deployment surfaces plus
-  checked public-only templates in [`fixtures/m26/`](../fixtures/m26/).
+  checked public-only templates in [`fixtures/m26/`](../../../fixtures/m26/).
 
 M26 remains an explicit Native-only singleton operation. Promotion does not
 build, build does not deploy, and recovery does not choose new authority. It
@@ -194,7 +200,7 @@ approve or reject decision. The existing M18-M24 promotion head remains the
 sole selection authority, and governed resolution requires its selected exact
 candidate digest to equal the candidate stored in one valid approved revision.
 The bounded contract is recorded in the
-[M25 decision](decisions/decision_m25_governed_semantic_repair_authority.md).
+[M25 decision](../../decisions/decision_m25_governed_semantic_repair_authority.md).
 
 - [x] Immutable tenant/incarnation/target-bound semantic revisions containing
   the exact unchanged typed M22 candidate and its server-recomputed canonical
@@ -209,7 +215,7 @@ The bounded contract is recorded in the
 - [x] Full authority recovery and Native stored-plus-incoming snapshot
   preflight, plus rollback, revocation, immutable-conflict, fresh-channel, and
   historical-version compatibility regressions.
-- [x] Checked request templates in [`fixtures/m25/`](../fixtures/m25/),
+- [x] Checked request templates in [`fixtures/m25/`](../../../fixtures/m25/),
   HTTP/CLI/operator documentation, exact Rust gates, and authenticated
   release-binary persistent-Native and configured live-ArangoDB authority
   lifecycles.
@@ -232,7 +238,7 @@ baseline M20 artifact sets. Offline operator tooling copies those
 tenant-incarnation content addresses into a closed bundle, rehashes the copy,
 and can restore a completely absent CAS scope through verified commit-last
 publication. The contract is recorded in the
-[M24 decision](decisions/decision_m24_durable_cas_custody_verified_restoration.md).
+[M24 decision](../../decisions/decision_m24_durable_cas_custody_verified_restoration.md).
 
 - [x] Canonical `cognigraph.artifact-recovery-plan.v1` with historical signed
   authority validation, sorted unique attestations and blobs, checked counts,
@@ -264,9 +270,9 @@ then continues through the unchanged M22 prepared-corpus-to-evaluation-facts
 derivation. The signed `corpus.json` is accepted only when its object, canonical
 bytes, length, and SHA-256 address exactly match the independently reproduced
 output. The current contract is recorded in the
-[M23 decision](decisions/decision_m23_reproducible_raw_document_prepared_corpus_processing.md),
-[checked plan](examples/m23-preparation-plan.json), and
-[`fixtures/m23/` authoring guide](../fixtures/m23/).
+[M23 decision](../../decisions/decision_m23_reproducible_raw_document_prepared_corpus_processing.md),
+[checked plan](../../examples/m23-preparation-plan.json), and
+[`fixtures/m23/` authoring guide](../../../fixtures/m23/).
 
 - [x] Closed consumption plan v3 with nested preparation plan v1 and the
   unchanged M22 derivation plan v1. The context preprocessing digest must equal
@@ -738,14 +744,14 @@ rewiring along alternative paths) may be referenced generically.
 
 ### WebNLG external-oracle benchmark (recorded July 17–20, 2026)
 
-The [pilot guide](webnlg-pilot.md) and
-[dated scoring ledger](decisions/decision_webnlg_scoring.md) describe an
+The [pilot guide](../../research/webnlg/pilot.md) and
+[dated scoring ledger](../../decisions/decision_webnlg_scoring.md) describe an
 entity-provided relation-construction benchmark over public data-to-text pairs.
 Its reference triples make scoring mechanical; this is not a full text-to-graph
 or runtime governed-review result.
 
 - [x] July 17: prepared corpus, W1–W7 scoring policy, and supervised mining from
-  train+validation. The [frozen mined ruleset](../crates/cognigraph-construct/fixtures/webnlg/neuron-ruleset.mined.json)
+  train+validation. The [frozen mined ruleset](../../../crates/cognigraph-construct/fixtures/webnlg/neuron-ruleset.mined.json)
   contains 303 predicates and 1,842 templates. Validation informed tuning;
   its exact score was 12.4% recall / 76.6% precision.
 - [x] July 17: one-shot test scored **7.0% recall / 68.8% precision**
@@ -760,11 +766,11 @@ or runtime governed-review result.
   More examples did not improve recall in this experiment.
 - [x] July 20: live `gpt-5.4-mini` proposals, using train examples for the
   top-25 predicates selected by validation frequency. The
-  [raw snapshot](../crates/cognigraph-construct/fixtures/webnlg/llm-proposals.json)
+  [raw snapshot](../../../crates/cognigraph-construct/fixtures/webnlg/llm-proposals.json)
   scored 13.0% recall / 53.2% precision; automatic disambiguation reached
   12.6% / 71.7%. These are development-set measurements.
 - [x] July 20: offline pruning removed 46 entries, leaving 202 in the
-  [pruned snapshot](../crates/cognigraph-construct/fixtures/webnlg/llm-proposals-pruned.json).
+  [pruned snapshot](../../../crates/cognigraph-construct/fixtures/webnlg/llm-proposals-pruned.json).
   Merged and disambiguated, it scored 12.6% recall / 76.3% precision:
   609 correct versus 601 baseline. That is a small recall gain with a slight
   precision loss, not a strict improvement on both metrics. The ledger's

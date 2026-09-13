@@ -50,12 +50,12 @@ reads and analyzed execution.
 
 The two new Rust test functions cover plan rejection and execution-error
 preservation. Full formatting, Clippy, and workspace-test gates run in that
-order. [Validation evidence](evidence/query-error-status-validation-2026-09-09.json)
+order. [Validation evidence](../evidence/engineering-historical-checks.md#artifact-3cfe9229f05c56ff1227)
 records logs, hashes, registry/link checks, and preservation of unrelated work.
 
 ## Release verification
 
-The [shared harness](evidence/subquery-contract-http.py) starts authenticated,
+The [shared harness](../verification/harnesses/subquery-contract-http.py) starts authenticated,
 disposable resident/sidecar and paged/sidecar Native servers outside the
 checkout, with explicit configuration and no embedding/completion provider.
 It seeds only the public corpus and synthetic mutation destination, exercises
@@ -82,10 +82,10 @@ Each run records **288 observations**:
 | Exact source and destination preservation after those invalid queries | 48 |
 | Forbidden 403 and execution 500 controls on both HTTP routes | 16 |
 
-The [baseline](evidence/query-error-status-baseline-http-2026-09-09.json)
+The [baseline](../evidence/engineering-historical-checks.md#artifact-e05300d7dcef3f6191e9)
 explicitly expects CG-38's old read-only 500 status: **24 of 48 plan-error
 responses differ from the desired 400**. It confirms the other endpoint already
-returns 400. The [corrected run](evidence/query-error-status-fixed-http-2026-09-09.json)
+returns 400. The [corrected run](../evidence/engineering-historical-checks.md#artifact-dd2f64e20e7539fa7773)
 requires 400 for all 48 plan errors and equal JSON bodies between endpoints,
 with **zero status mismatches**. The old known-status assertions have been
 replaced by this default desired-behavior matrix. `--expect-plan-errors-500`

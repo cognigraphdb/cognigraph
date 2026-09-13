@@ -88,9 +88,9 @@ No validation or live check failed. No production data or external provider
 requests were used. These are routing/configuration and job-execution checks;
 external provider availability and model quality were not tested.
 
-- [Reproducible loopback regression](evidence/completion-provider-http.py)
-- [Pre-fix observation](evidence/completion-provider-baseline-http-2026-09-08.json)
-- [Fixed release observations and binary SHA-256 values](evidence/completion-provider-http-2026-09-08.json)
+- [Reproducible loopback regression](../evidence/engineering-historical-checks.md#artifact-9599d4e1f8da5ec17718)
+- [Pre-fix observation](../evidence/engineering-historical-checks.md#artifact-65fc48fd0507d84c76f9)
+- [Fixed release observations and binary SHA-256 values](../evidence/engineering-historical-checks.md#artifact-aebb355b52fd7db98b17)
 
 The next bounded issue is [CG-7](CG-7.md), where accepted `DOCUMENT()`
 expressions in mutations can silently store null.
@@ -109,7 +109,7 @@ The release routing matrix was rerun with these defaults: all 13 server
 configurations, 13 rejected startups, and 3 benchmark runs passed. HTTP stubs
 asserted Luna's reasoning field and its absence on other OpenAI model
 overrides. Each enabled side-view job again wrote one generated pair. The
-[new release evidence](evidence/completion-model-defaults-http-2026-09-08.json)
+[new release evidence](../evidence/engineering-historical-checks.md#artifact-201201a66072dda40b7c)
 records the new binary hashes and model IDs; the original CG-29 evidence and
 July model-quality benchmark remain historical records. These checks use
 synthetic loopback providers and do not measure the new models' actual output
@@ -122,7 +122,7 @@ refresh remains uncommitted with CG-29 and CG-32; nothing was pushed.
 ## Subsequent real provider comparison
 
 The user subsequently authorized the
-[real side-view model comparison](../../fixtures/semantic-neurons/sideviews-model-comparison-2026-09-08/README.md):
+[real side-view model comparison](../research/experiments/sideviews-model-comparison-2026-09-08/README.md):
 both API preflights and all 30 measured requests succeeded. The earlier
 loopback-only limitations above describe the initial implementation checks;
 the new report records actual provider usage, latency, outputs, cost estimates,

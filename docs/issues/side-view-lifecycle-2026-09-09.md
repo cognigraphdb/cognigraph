@@ -59,7 +59,7 @@ in-process fence does not coordinate independent direct database writers.
 
 ## Regression evidence
 
-The [saved pre-fix release](evidence/side-view-lifecycle-baseline-http-2026-09-09.json)
+The [saved pre-fix release](../evidence/engineering-historical-checks.md#artifact-0be48098cbbc3763859a)
 reproduced **18 bypassed cascades** (six alternate paths across three storage
 modes) and **42 stale publications** (seven delete paths, two provider waits,
 three modes). It used 63 synthetic completion and 63 synthetic embedding calls.
@@ -71,7 +71,7 @@ cleanup, overlapping generation, regeneration failure, legacy orphans, publicati
 commit versus deletion, and tenant/incarnation isolation. The source identity
 guard has its own composed/decomposed check.
 
-The [fixed release HTTP artifact](evidence/side-view-lifecycle-http-2026-09-09.json)
+The [fixed release HTTP artifact](../evidence/engineering-historical-checks.md#artifact-5b2d96d7f7c228096a0e)
 passes the following matrix in resident/embedded, resident/sidecar, and
 paged/sidecar modes:
 

@@ -44,7 +44,7 @@ successful formatting, strict Clippy, and full workspace run (**950 reported
 passes**, eight unconfigured Arango entries early-returned). Those full gates
 were not repeated for this documentation-only update.
 
-The [runnable capability examples](evidence/roadmap-parity-http.py) passed
+The [runnable capability examples](../evidence/engineering-historical-checks.md#artifact-85304197281a57b74af2) passed
 **58 HTTP/Lua checks** through the existing release binary: fourteen query
 examples and matching analyzed result counts, plus a Lua `graph.query()` call,
 in each of resident/sidecar and paged/sidecar Native storage. D1–D11 examples
@@ -61,9 +61,9 @@ uses authentication, explicit configuration with `/api/query` enabled, disposabl
 stores, and no embedding or completion provider. It starts outside the checkout
 to avoid loading local environment files, and both processes stop afterward.
 
-[HTTP evidence](evidence/roadmap-parity-http-2026-09-09.json) records the queries,
+[HTTP evidence](../evidence/engineering-historical-checks.md#artifact-6385fa4ddca682cb81c5) records the queries,
 expected and observed values, modes, and binary/dataset/harness hashes.
-[Validation evidence](evidence/roadmap-parity-validation-2026-09-09.json) records
+[Validation evidence](../evidence/engineering-historical-checks.md#artifact-e4a1a3fd2ff42f8b6fc4) records
 test counts, documentation checks, and preservation of unrelated files.
 D12's live grounding/replacement/error checks were already run with this exact
 binary for CG-22; no new provider request was needed here.

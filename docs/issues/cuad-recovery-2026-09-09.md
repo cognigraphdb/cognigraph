@@ -8,7 +8,7 @@ counts below describe this report's earlier checkpoint. See the
 
 [CG-25](CG-25.md) is **partially remediated and remains open**. Its original
 scoring package was found outside the moved checkout and recovered into
-[fixtures](../../fixtures/semantic-neurons/cuad-2026-07-22/README.md). The
+[fixtures](../research/experiments/cuad-2026-07-22/README.md). The
 headline reproduces arithmetically, but the scorer mixes counting units. The
 paper, HTML/PDF exports, and pilot one-pager now qualify the experiment and
 withdraw the old recall/F1 as quality claims. Missing original execution
@@ -24,7 +24,7 @@ The original directory survives at
 copied byte for byte: the preparation, scoring, and execution scripts; original
 status report; split IDs; gold labels; design/holdout chunks; and accepted
 evidence projections. Their original bytes are hashed in the package's
-[provenance manifest](../../fixtures/semantic-neurons/cuad-2026-07-22/provenance.json).
+[provenance manifest](../evidence/research-cuad-2026-07-22.md#artifact-91829b71e18bcb6a6c03).
 The source files were not modified. The full corpus archive stays outside Git;
 the package contains a pinned, licensed fetch/preparation recipe.
 
@@ -72,7 +72,7 @@ causal language was removed from the affected paper passages.
   all four prepared files byte for byte from the CSV and 510 text members.
 - Offline replay reproduced the historical per-category and aggregate counts,
   then produced consistent counts and a full assignment ledger for both splits
-  and both semantics-filter lanes. The [notebook](../../fixtures/semantic-neurons/cuad-2026-07-22/analysis.ipynb)
+  and both semantics-filter lanes. The [notebook](../evidence/research-cuad-2026-07-22.md#artifact-d63e0fc54a456a2b2a91)
   executed all four code cells, including count assertions.
 - Seven scoring/input regression tests passed, including partial-category
   misses, duplicate predictions, empty predictions, matcher boundaries, and six
@@ -98,7 +98,7 @@ loaded its declared font assets. The web reader received a Zenodo 429, while
 the actual pinned archive download succeeded. These were corrected verification
 attempts, not failed final data replays.
 
-See [validation evidence](evidence/cuad-recovery-validation-2026-09-09.json) for
+See [validation evidence](../evidence/engineering-historical-checks.md#artifact-d03477ea2db63f872c5a) for
 hashes, commands, counts, and preservation checks. The package README provides
 commands usable from a clean checkout. The full extraction runner is retained
 as historical source and was not run against a server.

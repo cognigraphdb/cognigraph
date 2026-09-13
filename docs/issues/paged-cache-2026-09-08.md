@@ -54,7 +54,7 @@ from production builds.
 
 Live checks used the release server with synthetic authentication, disposable
 databases, and loopback HTTP. No external provider or production data was used.
-The [sanitized observations](evidence/paged-cache-http-2026-09-08.json) cover:
+The [sanitized observations](../evidence/engineering-historical-checks.md#artifact-a492f54ba3e04e63cd7d) cover:
 
 | Check, per profile | Paged, 1 MiB cache | Paged, zero cache | Resident sidecar |
 |---|---|---|---|

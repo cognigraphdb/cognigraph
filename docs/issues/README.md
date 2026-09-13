@@ -84,50 +84,50 @@ is a new captured evaluation, not a reconstruction of that history.
 [Server modularity](server-modularity-2026-09-09.md) resolves CG-26 across its six
 named hotspots, with compatible entry points and seven documented size exceptions.
 The original remediation batch closed all 38 tickets. The subsequent
-[Luna document trial](../../fixtures/semantic-neurons/luna-documents-2026-09-09/results.md)
+[Luna document trial](../research/experiments/luna-documents-2026-09-09/results.md)
 identified two new directed-construction findings: endpoint substring acceptance
 (CG-39) and unconstrained completion identifiers (CG-40). The current registry
 had **39 Resolved, 1 Closed without change, and 0 Open issues** after the
 [policy v2 fixes and development verification](../decisions/decision_directed_extraction_contracts.md).
 
-The [2026-09-10 Collections QA](../../ui/audit/2026-09-10-collections/audit.md)
+The [2026-09-10 Collections QA](../evidence/ui-2026-09-10-collections.md#artifact-088100ac46441b68bcc4)
 resolved CG-41–CG-44. That checkpoint had **43 Resolved, 1 Closed without change,
 and 0 Open issues**. Packaging review added CG-45–CG-48; the
 [Community/Enterprise build split](CG-45.md) closes the last of these.
-The [2026-09-11 full UI review](../../ui/audit/2026-09-11-full-review/audit.md)
+The [2026-09-11 full UI review](../evidence/ui-2026-09-11-full-review.md#artifact-2a08bd45b55e9bd0cb9c)
 adds CG-49–CG-63: **15 Open issues (4 P1, 11 P2)** at that checkpoint.
 The review includes real Community/Enterprise browser and API evidence, and a
 separate map of backend capabilities not yet exposed by the console. No finding
 was fixed by the audit; this count is not complete UI or product acceptance.
 
-The [data-preservation fixes](../../ui/audit/2026-09-11-data-preservation/audit.md)
+The [data-preservation fixes](../evidence/ui-2026-09-11-data-preservation.md#artifact-6afad6337a2d11fc893d)
 resolve CG-50 and CG-62. That checkpoint had **49 Resolved, 1 Closed without change,
 and 13 Open issues (2 P1, 11 P2)**.
-[Production origin and connection-state verification](../../ui/audit/2026-09-11-production-origin/audit.md)
+[Production origin and connection-state verification](../evidence/ui-2026-09-11-production-origin.md#artifact-a495041e72ddd34399af)
 resolves CG-49. That checkpoint had **50 Resolved, 1 Closed without change, and
 12 Open issues (1 P1, 11 P2)**.
-[Tenant deletion disclosure and lifecycle verification](../../ui/audit/2026-09-11-tenant-deletion/audit.md)
+[Tenant deletion disclosure and lifecycle verification](../evidence/ui-2026-09-11-tenant-deletion.md#artifact-0ec008ada9942ef8213a)
 resolves CG-51 and adds Enterprise host-admin probe coverage to CG-49. That
 checkpoint had **51 Resolved, 1 Closed without change, and 11 Open issues (all P2)**.
-[Tenant onboarding and user provisioning](../../ui/audit/2026-09-11-provisioning/audit.md)
+[Tenant onboarding and user provisioning](../evidence/ui-2026-09-11-provisioning.md#artifact-e96a930169a1f87db8a2)
 resolves CG-52. That checkpoint had **52 Resolved, 1 Closed without change, and
 10 Open issues (all P2)**.
-[Verified console capabilities](../../ui/audit/2026-09-11-capabilities/audit.md)
+[Verified console capabilities](../evidence/ui-2026-09-11-capabilities.md#artifact-29cda8d45940a3ab08a8)
 resolves CG-53. That checkpoint had **53 Resolved, 1 Closed without change, and
 9 Open issues (all P2)**.
-[Review paging and complete space catalogs](../../ui/audit/2026-09-11-review-paging/audit.md)
+[Review paging and complete space catalogs](../evidence/ui-2026-09-11-review-paging.md#artifact-cbe96c45605c68a64fba)
 resolves CG-54. That checkpoint had **54 Resolved, 1 Closed without change, and
 8 Open issues (all P2)**.
-[Console execution guards](../../ui/audit/2026-09-11-execution-guards/audit.md)
+[Console execution guards](../evidence/ui-2026-09-11-execution-guards.md#artifact-ba0883e40b9f39017230)
 resolves CG-55. That checkpoint had **55 Resolved, 1 Closed without change, and
 7 Open issues (all P2)**.
-[Input-scoped console results](../../ui/audit/2026-09-11-result-ownership/audit.md)
-resolves CG-56. The [table keyboard-access batch](../../ui/audit/2026-09-11-table-keyboard/audit.md)
-resolves CG-57. The [space guidance and catalog-state batch](../../ui/audit/2026-09-11-space-guidance/audit.md)
-resolves CG-58. The [collection search/filter scope batch](../../ui/audit/2026-09-11-collection-search-scope/audit.md)
-resolves CG-59. The [sidebar naming fix](../../ui/audit/2026-09-11-sidebar-names/audit.md)
-resolves CG-63. The [React Router update](../../ui/audit/2026-09-11-router-update/audit.md)
-resolves CG-61. The [shared UI CI and browser gate](../../ui/audit/2026-09-11-ui-ci/audit.md)
+[Input-scoped console results](../evidence/ui-2026-09-11-result-ownership.md#artifact-8aa8b46fb43543771a2c)
+resolves CG-56. The [table keyboard-access batch](../evidence/ui-2026-09-11-table-keyboard.md#artifact-a5b3ed52a87a809a63dc)
+resolves CG-57. The [space guidance and catalog-state batch](../evidence/ui-2026-09-11-space-guidance.md#artifact-ec49fa342ffd2bbdc01d)
+resolves CG-58. The [collection search/filter scope batch](../evidence/ui-2026-09-11-collection-search-scope.md#artifact-1c2e51790ed0aa822e41)
+resolves CG-59. The [sidebar naming fix](../evidence/ui-2026-09-11-sidebar-names.md#artifact-2bc6b4831aa16897066a)
+resolves CG-63. The [React Router update](../evidence/ui-2026-09-11-router-update.md#artifact-f2ee775cf86eb46ca1d7)
+resolves CG-61. The [shared UI CI and browser gate](../evidence/ui-2026-09-11-ui-ci.md#artifact-d71f3d04fcdc5baa0fdb)
 resolves CG-60. That checkpoint had **62 Resolved, 1 Closed without change, and
 0 Open issues**.
 
@@ -135,7 +135,7 @@ The [Native-only storage batch](../plans/native-only-2026-09-12.md), approved on
 2026-09-12, adds CG-64–CG-68. [Native conformance coverage](native-conformance-2026-09-12.md)
 resolves CG-65. [Runtime removal](native-runtime-2026-09-12.md) resolves CG-67.
 [Local readiness](native-readiness-2026-09-12.md) resolves CG-68.
-Current registry: **70 Resolved, 1 Closed without
+Current registry: **76 Resolved, 1 Closed without
 change, and 2 Open issues**. The Native-only batch is complete. [CG-69](CG-69.md)
 resolves automatic CI/protections; [CG-71](CG-71.md) resolves first Community
 deployment and console packaging with [live recovery evidence](railway-community-2026-09-12.md).
@@ -143,7 +143,8 @@ deployment and console packaging with [live recovery evidence](railway-community
 unsoundness and records a reviewed optional ONNX maintenance exception.
 [CG-72](CG-72.md) resolves the subsequent login centering defect in narrow
 windows with local Chromium/WebKit and both-edition browser evidence;
-published to develop in v2.7.8; production deployment remains pending.
+published to develop in v2.7.8 and deployed to Railway in v2.7.11 with
+[hosted acceptance](../evidence/ui-2026-09-13-railway-v2.7.11.md#artifact-28071583ad3d71443c64).
 CG-64 and CG-66 remain
 Open with deferred optional scheduling; they do not block Native-only readiness
 or first deployment. These are engineering tasks under the
@@ -155,6 +156,10 @@ replaces Dependabot with Renovate, and establishes protected develop integration
 with a separate main release branch. Its activation checkpoint has only the two
 permanent branches and the primary worktree: **70 Resolved, 1 Closed without
 change, and 2 Open issues** (CG-64/CG-66 remain deferred).
+
+[CG-74](CG-74.md) resolves the transient-card selector race found during the
+v2.7.10 promotion. Its v2.7.11 correction and promotion passed required CI and
+merged into main. Historical failed runs remain linked from the issue.
 
 ## Conventions
 
@@ -241,21 +246,26 @@ change, and 2 Open issues** (CG-64/CG-66 remain deferred).
 | [CG-71](CG-71.md) | P1 | Resolved | Package and qualify the first Community deployment with the console |
 | [CG-72](CG-72.md) | P2 | Resolved | Login screen is off-center and clipped in narrow viewports |
 | [CG-73](CG-73.md) | P2 | Resolved | Route dependency updates through develop and retire stale branches |
-| [CG-74](CG-74.md) | P2 | Open | Login layout test can measure the transient connection card after logout |
+| [CG-74](CG-74.md) | P2 | Resolved | Login layout test can measure the transient connection card after logout |
+| [CG-75](CG-75.md) | P2 | Resolved | Separate captured research evidence from public distribution |
+| [CG-76](CG-76.md) | P2 | Resolved | Define and enforce the hosted database access boundary |
+| [CG-77](CG-77.md) | P2 | Resolved | Enforce the public evidence boundary in CI and agent workflows |
+| [CG-78](CG-78.md) | P2 | Resolved | Validate archived documentation links and preserve amended-source provenance |
+| [CG-79](CG-79.md) | P2 | Resolved | Remove leaked SPA test fixture directories |
 
-Next available identifier: **CG-75**.
+Next available identifier: **CG-80**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected
 a [captured Luna baseline and bounded Astra reference](../decisions/decision_luna_baseline.md)
 after retiring CUAD. The subsequent
-[DeepSeek/GLM comparison](../../fixtures/semantic-neurons/cross-provider-baseline-2026-09-09/results.md)
+[DeepSeek/GLM comparison](../research/experiments/cross-provider-baseline-2026-09-09/results.md)
 has completed. The user has dropped DeepSeek V4 Flash from all future runs;
 its failed capture is retained as history. The
-[larger independently labelled supplied-pair trial](../../fixtures/semantic-neurons/glm-luna-semeval-2026-09-09/results.md)
+[larger independently labelled supplied-pair trial](../research/experiments/glm-luna-semeval-2026-09-09/results.md)
 is complete: GLM Flash scored 65.75% versus Luna's 42.67% pooled accuracy,
 with substantial Other-case restraint errors in both models.
-The subsequent [Terra low / Luna low extension](../../fixtures/semantic-neurons/terra-luna-low-semeval-2026-09-09/results.md)
+The subsequent [Terra low / Luna low extension](../research/experiments/terra-luna-low-semeval-2026-09-09/results.md)
 scored 72.42% and 70.08%. Terra's 2.33-point margin costs about 10.4 times as
 much. That experiment recommended Luna low and GLM Flash as economical
 candidates, with Terra as a stronger reference; its supplied-pair results do not
@@ -265,16 +275,16 @@ the completed evaluation evidence are checkpointed locally as `8b8cceb`. Next
 comes representative document qualification and restraint work on separate
 development and holdout splits. The original document trial was checkpointed
 as `a0e4b24`; its CG-39/CG-40 findings are now resolved with a
-[separately frozen development candidate](../../fixtures/semantic-neurons/luna-directed-v2-2026-09-09/results.md).
+[separately frozen development candidate](../research/experiments/luna-directed-v2-2026-09-09/results.md).
 Next comes independent reference/evidence-policy review before precision claims
 or holdout execution. Further model comparisons are optional references.
 See the [implementation plan](../implementation-plan.md#review-checkpoint--2026-09-09)
-and [existing measured baseline](../../fixtures/semantic-neurons/sideviews-model-comparison-2026-09-08/README.md).
+and [existing measured baseline](../research/experiments/sideviews-model-comparison-2026-09-08/README.md).
 
 ## Review evidence
 
 - [Product status, crate map, scope, validation and remediation order](review-2026-09-08.md)
-- [Sanitized local HTTP observations](evidence/http-2026-09-08.json)
+- [Sanitized local HTTP observations](../evidence/engineering-historical-checks.md#artifact-b88e1642e95b63187a57)
 
 The source citations inside issues refer to the reviewed revision. Recheck line
 numbers and behavior when implementing a fix, especially after the modularity work.

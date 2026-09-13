@@ -18,4 +18,4 @@
   recorder correction. Combined known token cost was $0.119233, with two
   timeout calls of unknown usage. Six tests, amended gold/failure HTTP controls,
   official scoring, exact replay, 1,705 evidence checks and integrity checks
-  passed. See the [results and limits](../../fixtures/semantic-neurons/glm-luna-semeval-2026-09-09/results.md).
+  passed. See the [results and limits](../research/experiments/glm-luna-semeval-2026-09-09/results.md).

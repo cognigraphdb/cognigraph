@@ -1,5 +1,11 @@
 # DailyMed 10k-document pilot corpus
 
+Current example scratch output uses ignored `data/dailymed/`. Historical
+`fixtures/semantic-neurons/dailymed/` paths below identify sealed private captures;
+see the [artifact catalog](../../evidence/research-dailymed.md). Prepare inputs
+under the current [evidence policy](../../operations/evidence-policy.md) before a
+new experiment. The dated results below have not been rerun for this move.
+
 This workflow builds the real-corpus input for the first operational
 Semantic Neurons pilot. It is a corpus acquisition step, not a clinical
 application, and its output must not be used as medical advice.

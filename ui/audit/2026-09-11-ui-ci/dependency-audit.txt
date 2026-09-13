@@ -1,3 +1,0 @@
-bun audit v1.4.2 (744846f84)
-
-No vulnerabilities found (checked 216 packages) [297.00ms]

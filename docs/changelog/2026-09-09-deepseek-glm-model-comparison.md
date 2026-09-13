@@ -17,4 +17,4 @@
   GLM Flash is the strongest candidate for a representative-data trial; Luna
   remains the default. Six tests, 45 synthetic controls, exact score replay,
   255 occurrence checks and preservation/integrity checks passed. See the
-  [comparison and limits](../../fixtures/semantic-neurons/cross-provider-baseline-2026-09-09/results.md).
+  [comparison and limits](../research/experiments/cross-provider-baseline-2026-09-09/results.md).

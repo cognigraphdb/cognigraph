@@ -106,6 +106,6 @@ existing HTTP 500 mapping on the query routes; Lua pcall catches the query
 error and the enclosing script returns HTTP 200. This batch changes budget
 enforcement and diagnostic counts, not those runtime error status mappings.
 
-- [Reproducible provider-free HTTP regression](evidence/dynamic-query-http.py)
-- [Pre-fix observations and binary hash](evidence/dynamic-query-baseline-http-2026-09-08.json)
-- [Corrected release observations and binary hash](evidence/dynamic-query-http-2026-09-08.json)
+- [Reproducible provider-free HTTP regression](../evidence/engineering-historical-checks.md#artifact-8c7e4a39a7e57f7e019e)
+- [Pre-fix observations and binary hash](../evidence/engineering-historical-checks.md#artifact-5b49864d4dc8f5f46616)
+- [Corrected release observations and binary hash](../evidence/engineering-historical-checks.md#artifact-bcbdee901635c9864b2c)

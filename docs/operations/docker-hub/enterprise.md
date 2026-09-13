@@ -8,7 +8,11 @@ Enterprise Components use the [CogniGraph Enterprise License](https://github.com
 
 ## Image availability
 
-The Docker Hub repositories are being prepared for the first image release. No image tags have been published yet. Until tags appear, follow the [Enterprise source-build instructions](https://github.com/cognigraphdb/cognigraph/blob/main/docs/operations/running.md#build-editions).
+Version **2.7.11** is available for `linux/amd64`.
+
+```sh
+docker pull --platform linux/amd64 cognigraph/cognigraph-enterprise:2.7.11
+```
 
 Releases use explicit `x.y.z` tags for `linux/amd64`. Tags are immutable; no `latest` alias or native ARM image is currently published. Select a version from the Tags page and pin its digest for deployment.
 

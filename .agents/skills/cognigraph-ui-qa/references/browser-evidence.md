@@ -38,7 +38,10 @@ observe a required condition, record that limitation and the evidence available.
 
 ## Evidence record
 
-Create `ui/audit/YYYY-MM-DD-short-scope/audit.md` with relative screenshot links.
+Create `../evidence/runs/YYYY-MM-DD-ui-scope/audit.md` with relative screenshot
+links, or use an explicit external capture directory. This is private evidence.
+Public issue/changelog summaries use example origins and synthetic identities;
+keep actual deployment inventories and raw screenshots private.
 Keep these details sufficient to repeat the observation:
 
 | Field | Record |

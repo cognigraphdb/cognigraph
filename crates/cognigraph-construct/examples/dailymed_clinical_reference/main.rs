@@ -225,7 +225,7 @@ fn vocabulary(options: &Options) -> Result<()> {
     let root = options.path("--root", "data/dailymed-clinical-reference");
     let output = options.path(
         "--output",
-        PathBuf::from("fixtures/semantic-neurons/dailymed/clinical-vocabulary-v1.json"),
+        PathBuf::from("data/dailymed/clinical-vocabulary-v1.json"),
     );
     let min_df = options.usize("--min-df", DEFAULT_MIN_DOCUMENT_FREQUENCY)?;
 
@@ -236,7 +236,7 @@ fn vocabulary(options: &Options) -> Result<()> {
         packets.iter().map(|p| p.set_id.clone()).collect();
 
     let drugs = DrugLexicon::load(std::path::Path::new(
-        "fixtures/semantic-neurons/dailymed/clinical-drug-lexicon-v1.json",
+        "data/dailymed/clinical-drug-lexicon-v1.json",
     ))
     .context("load the drug lexicon; run `lexicon` first")?
     .set();
@@ -276,7 +276,7 @@ fn lexicon(options: &Options) -> Result<()> {
     let corpus = options.path("--corpus", "data/dailymed-pilot");
     let output = options.path(
         "--output",
-        PathBuf::from("fixtures/semantic-neurons/dailymed/clinical-drug-lexicon-v1.json"),
+        PathBuf::from("data/dailymed/clinical-drug-lexicon-v1.json"),
     );
     let built = build_drug_lexicon(&corpus)?;
     built.save(&output)?;
@@ -297,18 +297,18 @@ fn matcher(options: &Options) -> Result<()> {
     assert_workspace_fresh(&packets)?;
     let corpus = ClinicalVocabulary::load(&options.path(
         "--vocabulary",
-        PathBuf::from("fixtures/semantic-neurons/dailymed/clinical-vocabulary-v1.json"),
+        PathBuf::from("data/dailymed/clinical-vocabulary-v1.json"),
     ))?;
     let treats: BTreeSet<String> = corpus.treats.iter().cloned().collect();
     let contra: BTreeSet<String> = corpus.contraindicated_in.iter().cloned().collect();
     let drugs = DrugLexicon::load(std::path::Path::new(
-        "fixtures/semantic-neurons/dailymed/clinical-drug-lexicon-v1.json",
+        "data/dailymed/clinical-drug-lexicon-v1.json",
     ))
     .context("load the drug lexicon; run `lexicon` first")?
     .set();
     let calibration_path = options.path(
         "--calibration",
-        PathBuf::from("fixtures/semantic-neurons/dailymed/clinical-calibration-v1.json"),
+        PathBuf::from("data/dailymed/clinical-calibration-v1.json"),
     );
     let accepted = load_calibration(&calibration_path, &packets)?;
 
@@ -568,7 +568,7 @@ fn matcher(options: &Options) -> Result<()> {
     });
     let output = options.path(
         "--output",
-        PathBuf::from("fixtures/semantic-neurons/dailymed/clinical-matcher-v1.json"),
+        PathBuf::from("data/dailymed/clinical-matcher-v1.json"),
     );
     fs::write(&output, serde_json::to_string_pretty(&frozen)?)?;
     println!("\nfrozen       {}", output.display());
@@ -590,16 +590,16 @@ fn losses(options: &Options) -> Result<()> {
     assert_workspace_fresh(&packets)?;
     let corpus = ClinicalVocabulary::load(&options.path(
         "--vocabulary",
-        PathBuf::from("fixtures/semantic-neurons/dailymed/clinical-vocabulary-v1.json"),
+        PathBuf::from("data/dailymed/clinical-vocabulary-v1.json"),
     ))?;
-    let frozen = PathBuf::from("fixtures/semantic-neurons/dailymed/clinical-matcher-v1.json");
+    let frozen = PathBuf::from("data/dailymed/clinical-matcher-v1.json");
     if !frozen.exists() {
         bail!("the matcher must be validated and frozen first: run `matcher`");
     }
     let treats: BTreeSet<String> = corpus.treats.iter().cloned().collect();
     let contra: BTreeSet<String> = corpus.contraindicated_in.iter().cloned().collect();
     let drugs = DrugLexicon::load(std::path::Path::new(
-        "fixtures/semantic-neurons/dailymed/clinical-drug-lexicon-v1.json",
+        "data/dailymed/clinical-drug-lexicon-v1.json",
     ))
     .context("load the drug lexicon; run `lexicon` first")?
     .set();
@@ -688,7 +688,7 @@ fn losses(options: &Options) -> Result<()> {
     println!("\n  {}", report.caveat);
     let output = options.path(
         "--output",
-        PathBuf::from("fixtures/semantic-neurons/dailymed/clinical-losses.json"),
+        PathBuf::from("data/dailymed/clinical-losses.json"),
     );
     fs::write(&output, serde_json::to_string_pretty(&report)?)?;
     println!("\nsaved        {}", output.display());
@@ -708,7 +708,7 @@ fn score(options: &Options) -> Result<()> {
     // lane is skipped rather than silently falling back to the gold concepts.
     let vocabulary_path = options.path(
         "--vocabulary",
-        PathBuf::from("fixtures/semantic-neurons/dailymed/clinical-vocabulary-v1.json"),
+        PathBuf::from("data/dailymed/clinical-vocabulary-v1.json"),
     );
     let corpus_vocabulary = ClinicalVocabulary::load(&vocabulary_path).ok();
 

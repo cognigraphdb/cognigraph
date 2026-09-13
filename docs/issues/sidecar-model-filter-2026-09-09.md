@@ -42,7 +42,7 @@ the rebuild threshold, and true unchanged-revision file reuse after reopening
 both the original and rebuilt stores. The pre-fix implementation passed the
 embedded control and failed both sidecar tests on the first model-filter case.
 
-The [release harness](evidence/sidecar-model-filter-http.py) seeds authenticated
+The [release harness](../evidence/engineering-historical-checks.md#artifact-1f814aafa876b8b70981) seeds authenticated
 servers with the saved pre-fix release, then opens those stores with the
 corrected release. It runs 24 numeric-threshold cases through HTTP and Lua,
 then repeats the final three cases after another server restart: 54 checks per
@@ -105,10 +105,10 @@ All stores, credentials, and vectors are synthetic. The harness makes no model
 calls, edits no environment file, and terminates its own processes. Model
 benchmarking remains deferred and Luna remains the economical baseline.
 
-- [Pre-fix Rust failures](evidence/sidecar-model-filter-baseline-contract-2026-09-09.txt)
-- [Pre-fix release observations](evidence/sidecar-model-filter-baseline-http-2026-09-09.json)
-- [Corrected release, old-store continuity, file hashes, and restart evidence](evidence/sidecar-model-filter-http-2026-09-09.json)
-- [Validation totals, source and binary hashes, and corrected attempt](evidence/sidecar-model-filter-validation-2026-09-09.json)
+- [Pre-fix Rust failures](../evidence/engineering-historical-checks.md#artifact-50823d655873df3d7044)
+- [Pre-fix release observations](../evidence/engineering-historical-checks.md#artifact-6f8353f4af73c38ebcbd)
+- [Corrected release, old-store continuity, file hashes, and restart evidence](../evidence/engineering-historical-checks.md#artifact-abb2ebcfecb602580661)
+- [Validation totals, source and binary hashes, and corrected attempt](../evidence/engineering-historical-checks.md#artifact-761b8668177e1d455dcc)
 
 ## Completion
 

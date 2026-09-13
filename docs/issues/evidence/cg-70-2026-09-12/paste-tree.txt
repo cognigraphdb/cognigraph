@@ -1,8 +1,0 @@
-paste v1.0.15 (proc-macro)
-├── macro_rules_attribute v0.2.2
-│   └── tokenizers v0.23.1
-│       └── cognigraph-embeddings v2.7.5 (${REPO}/crates/cognigraph-embeddings)
-│           ├── cognigraph-construct v2.7.5 (${REPO}/crates/cognigraph-construct)
-│           │   └── cognigraph-server v2.7.5 (${REPO}/crates/cognigraph-server)
-│           └── cognigraph-server v2.7.5 (${REPO}/crates/cognigraph-server)
-└── tokenizers v0.23.1 (*)

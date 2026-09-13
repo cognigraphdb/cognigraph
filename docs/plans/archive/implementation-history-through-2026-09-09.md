@@ -1,12 +1,18 @@
 # CogniGraph Rust — Implementation Plan
 
+> Amended reading copy — 2026-09-13. Link targets have been updated for the current
+> repository layout; dated claims retain their original scope.
+> The exact original is preserved in the private evidence repository.
+> Original SHA-256: `7384394bfffa190f66fd74959a73b4f28a61c99faf1ff16a820b44c90b2b9f3d` (118510 bytes).
+> See the [navigation amendment](../archive-navigation-2026-09-13.md) for its path and provenance.
+
 ## Documentation organization — planning, 2026-09-10
 
 The user requested documentation cleanup and confirmed that product strategy,
 positioning, sales, papers and publishing material belong in the sibling
 `/Users/skitsanos/FTP/Products/CogniGraph/docs` directory. Engineering contracts,
 decisions, issue records and reproducible experiments remain with the code.
-The [layout and migration proposal](plans/documentation-layout-2026-09-10.md)
+The [layout and migration proposal](../../plans/documentation-layout-2026-09-10.md)
 defines the suggested folders, draft reconciliation, smaller README and individual
 changelog records. No moves have been performed yet. Root/UI AGENTS.md, hooks,
 skills and related workflow policy will be reviewed after the documentation
@@ -16,13 +22,13 @@ migration, with only necessary path corrections included in that migration.
 
 The completed CG-7, CG-29, CG-32, and model-baseline work was committed locally
 as `41cdb8a`. Unrelated research/draft changes were excluded; nothing was pushed.
-The [dynamic-query batch](issues/dynamic-query-2026-09-08.md) resolved CG-8 and
+The [dynamic-query batch](../../issues/dynamic-query-2026-09-08.md) resolved CG-8 and
 CG-15 together: normal execution and analysis share backend resolution, one
 row counter spans all phases, and reports distinguish settled rows from
 attempted retry work. Formatting, Clippy, all 901 tests, 60 release
 normal/analysis comparisons, 240 budget-boundary executions, plain EXPLAIN,
 and resident/paged restart checks passed. These changes were committed below.
-The subsequent [document-error batch](issues/document-errors-2026-09-08.md)
+The subsequent [document-error batch](../../issues/document-errors-2026-09-08.md)
 resolved CG-16: backend failures abort DOCUMENT lookups, with 403/503/500
 responses preserved through normal/analyzed HTTP and Lua execution. Missing
 documents still return null. Formatting, Clippy, all 907 tests, 72 release
@@ -30,7 +36,7 @@ forbidden-lookup cases, 72 controls, 36 plain EXPLAIN checks, 12 Lua pcall check
 and resident/paged restarts passed. Injected route tests verify connection and
 storage failure status mappings. Both batches were committed as `41490db`
 on 2026-09-09, excluding unrelated research/draft changes. Nothing was pushed.
-The [canonical-evidence batch](issues/unicode-evidence-2026-09-09.md) resolved
+The [canonical-evidence batch](../../issues/unicode-evidence-2026-09-09.md) resolved
 CG-5: NFC chunk text precedes grounding, content hashes, byte spans, and fact
 occurrence keys across ordinary/directed ingestion and pure materialization.
 Stale custom-grounder spans are rejected before the atomic write. Formatting,
@@ -40,7 +46,7 @@ persistent Native configurations. Existing inconsistent rows require explicit
 re-ingestion; governed generations retain their rebuild/approval boundary.
 CG-5 was committed locally with CG-13 as `36a4a19`.
 
-The [side-view lifecycle batch](issues/side-view-lifecycle-2026-09-09.md) resolved
+The [side-view lifecycle batch](../../issues/side-view-lifecycle-2026-09-09.md) resolved
 CG-13. Public deletes share cascade cleanup with a tenant/incarnation-scoped
 publication fence; provider calls stay outside the critical section, and stale
 results cannot publish after delete/recreation. Native deletes are atomic;
@@ -53,7 +59,7 @@ restriction while retaining the `/` collection-name rejection. CG-5 and CG-13
 were committed locally as `36a4a19`; nothing was pushed. The registry has
 36 resolved and 2 open tickets after the CG-30 work below.
 
-The [traversal confidence batch](issues/traversal-confidence-2026-09-09.md)
+The [traversal confidence batch](../../issues/traversal-confidence-2026-09-09.md)
 resolved CG-19: Arango applies the inclusive threshold to every edge, including
 before `min_depth`, defaults missing/nonnumeric confidence to 1.0, and preserves
 depth zero. Native already follows that contract. The shared 15-case fixture,
@@ -64,7 +70,7 @@ the corrected release produced none. The disposable Arango container was
 removed afterward. CG-19 was committed locally with CG-20 as `fb49c78`;
 nothing was pushed.
 
-The [Arango vector candidate batch](issues/vector-model-filter-2026-09-09.md)
+The [Arango vector candidate batch](../../issues/vector-model-filter-2026-09-09.md)
 resolved CG-20. Model filtering precedes indexed candidate truncation; both
 indexed and fallback queries expand candidates until enough distinct parents
 are found or candidates are exhausted. Filtered indexed search requires ArangoDB
@@ -76,7 +82,7 @@ The disposable Arango container was removed afterward. CG-19 and CG-20 were
 committed locally as `fb49c78`, excluding unrelated research/draft changes;
 nothing was pushed.
 
-The [Native sidecar model-selection batch](issues/sidecar-model-filter-2026-09-09.md)
+The [Native sidecar model-selection batch](../../issues/sidecar-model-filter-2026-09-09.md)
 resolved CG-34. Resident/sidecar and paged/sidecar filter base and delta
 candidates by model before truncation, using metadata reconstructed from redb
 without a file-format migration. Formatting, strict Clippy, all 928 reported
@@ -89,7 +95,7 @@ that separate performance defect is CG-35. An initial harness assumption about
 whole-server file reuse failed and was corrected, as recorded in the report.
 CG-34 was committed locally as `8164f4e`; nothing was pushed.
 
-The [neuron lifecycle batch](issues/neuron-lifecycle-2026-09-09.md) resolved
+The [neuron lifecycle batch](../../issues/neuron-lifecycle-2026-09-09.md) resolved
 CG-21. Human transitions, automated publication, and snapshot import share a
 tenant/incarnation boundary. Provider calls stay outside the lock; publication
 requires the exact proposed source, policy, and ontology to remain current.
@@ -105,7 +111,7 @@ OpenAI base URL at that checkpoint (CG-36, resolved below); live verification us
 with A+ partner races covered through the production routers. CG-21 was committed
 locally as `f74f0aa`; nothing was pushed.
 
-The [exact-identity batch](issues/exact-identity-2026-09-09.md) resolves CG-33.
+The [exact-identity batch](../../issues/exact-identity-2026-09-09.md) resolves CG-33.
 Generic Native writes and CGQL literals preserve exact Unicode strings, so keys,
 endpoints, model identities, frozen jobs, and parent references agree. Canonically
 equivalent keys remain distinct. `NORMALIZE_NFC(...)` provides explicit canonical
@@ -122,7 +128,7 @@ eight unconfigured Arango integration entries early-returned). Full gate results
 and compatibility details are recorded in the report.
 CG-33 was committed with CG-22 as `9fb4933`; nothing was pushed.
 
-The [API/operator contract batch](issues/api-contract-2026-09-09.md) reconciles
+The [API/operator contract batch](../../issues/api-contract-2026-09-09.md) reconciles
 CG-22. OpenAPI and current references cover all four job kinds, typed job input
 pairing, async draft controls, side-view defaults/clamping and provider selection,
 and directed limits and replacement semantics. The five added drift tests compare
@@ -137,7 +143,7 @@ attempts are recorded in the report.
 CG-22 and CG-33 were committed locally as `9fb4933`, excluding unrelated
 research/draft files and the existing `CLAUDE.md` deletion. Nothing was pushed.
 
-The [roadmap parity batch](issues/roadmap-parity-2026-09-09.md) resolves CG-23.
+The [roadmap parity batch](../../issues/roadmap-parity-2026-09-09.md) resolves CG-23.
 Current roadmap and workload status now agree that D1–D12 shipped. July failure
 analysis, research proposals, and timings are clearly historical, with the
 original measurements and caveats preserved. The active priorities link to the
@@ -146,7 +152,7 @@ across resident/paged Native stores, and documentation checks passed. Two harnes
 setup errors were corrected; no Rust change or new CRM/model benchmark was made.
 CG-23 was committed locally with CG-28 as `b9084e6`. CG-28 is completed below.
 
-The [subquery contract batch](issues/subquery-contract-2026-09-09.md) resolves
+The [subquery contract batch](../../issues/subquery-contract-2026-09-09.md) resolves
 CG-28. The specification, v2 amendment, and unsupported list now distinguish
 supported expression positions from post-collect parse errors and unsupported
 inline INTO/mutation operands. Read subqueries can feed a mutation through its
@@ -160,7 +166,7 @@ Initial fixture/Lua harness errors are recorded in the report. CG-23 and CG-28
 were committed locally as `b9084e6`, excluding unrelated research/draft files
 and the existing `CLAUDE.md` deletion. Nothing was pushed.
 
-The [generated-binding batch](issues/subquery-bindings-2026-09-09.md) resolves
+The [generated-binding batch](../../issues/subquery-bindings-2026-09-09.md) resolves
 CG-37. A single counter spans nested and sibling desugaring within each parsed
 query, preventing generated names from shadowing outer bindings. The original
 reproducer now executes; four more corpus examples and three Rust tests cover
@@ -175,7 +181,7 @@ the complete runs passed, as recorded in the report. CG-37 was committed locally
 as `c48a3b4`, preserving unrelated research/draft files and the existing
 `CLAUDE.md` deletion; nothing was pushed. CG-38 is completed below.
 
-The [query-error classification batch](issues/query-error-status-2026-09-09.md)
+The [query-error classification batch](../../issues/query-error-status-2026-09-09.md)
 resolves CG-38. The read-only route now classifies typed plan errors as HTTP
 400, matching the read-write route and preserving identical diagnostics across
 normal queries, EXPLAIN, and analysis. Forbidden 403, connection 503, and other
@@ -188,7 +194,7 @@ source/destination preservation after invalid requests. CG-38 was committed
 locally as `aae43ad`, excluding unrelated research/draft files and the existing
 `CLAUDE.md` deletion. Nothing was pushed. CG-35 is completed below.
 
-The [collection-ensure batch](issues/collection-ensure-2026-09-09.md) resolves
+The [collection-ensure batch](../../issues/collection-ensure-2026-09-09.md) resolves
 CG-35. Existing collections return before persistence under the creation write
 lock, preserving types, data, process versions, durable generation, and revision.
 Concurrent ensures commit one creation; real creation and writes still
@@ -203,7 +209,7 @@ benchmark is claimed. CG-35 was committed locally as `d98e374`, preserving
 unrelated research/draft work and the existing `CLAUDE.md` deletion; nothing was
 pushed. CG-36 is completed below.
 
-The [dedicated judge endpoint batch](issues/judge-endpoint-2026-09-09.md) resolves
+The [dedicated judge endpoint batch](../../issues/judge-endpoint-2026-09-09.md) resolves
 CG-36. Both judge models use the shared configuration snapshot and validated
 OpenAI endpoint independently of the main provider/model. Explicit judge
 configuration now fails before storage opens for missing/blank keys or invalid
@@ -218,7 +224,7 @@ blocked by a local proxy without forwarding. No real judge qualification or
 model benchmark was run. CG-36 was committed locally as `57d65af`; nothing
 was pushed, and unrelated user work was preserved. CG-24 is completed below.
 
-The [paper counting-unit correction](issues/paper-counting-units-2026-09-09.md)
+The [paper counting-unit correction](../../issues/paper-counting-units-2026-09-09.md)
 resolves CG-24. Rev2 and its HTML/PDF exports now use 59/59 cold construction,
 54/59 repaired, and 0/32 violations, counting distinct triples within each kit.
 The historical adjacent-only deduplication and per-question answer units are
@@ -231,7 +237,7 @@ CG-24 was committed locally as `b90a28a`, including the corrected paper and its
 existing publication build assets; no publication or push was performed.
 CG-27 is completed below.
 
-The [WebNLG status reconciliation](issues/webnlg-status-2026-09-09.md) resolves
+The [WebNLG status reconciliation](../../issues/webnlg-status-2026-09-09.md) resolves
 CG-27. Current guidance records the July 17 deterministic/test result and the
 July 20 fuzzy, expanded-corpus, live-proposal, and pruned-candidate experiments
 with their dates and limits. Retained artifact links now resolve under the
@@ -243,7 +249,7 @@ frozen mined artifact reproduces byte for byte. Rust source, original research
 edits, and the CG-24 publication bundle are unchanged. CG-27 was committed
 locally as `44e8890`; nothing was pushed. CG-30 is completed below.
 
-The [decision-index reconciliation](issues/decision-index-2026-09-09.md) resolves
+The [decision-index reconciliation](../../issues/decision-index-2026-09-09.md) resolves
 CG-30. All 53 decision records have scoped statuses and amendment/successor
 links, with current owner documents for 14 areas. Historical decisions and
 measurements remain unchanged. A reusable checker validates complete, unique
@@ -252,7 +258,7 @@ six negative probes verify rejection of navigation defects. Registry and
 preservation checks passed. No Rust or product behavior changed. CG-30 was
 committed locally as `e7ea755`; nothing was pushed. CG-25 progressed below.
 
-The [CUAD recovery](issues/cuad-recovery-2026-09-09.md) partially remediates
+The [CUAD recovery](../../issues/cuad-recovery-2026-09-09.md) partially remediates
 CG-25. Ten original external evaluation files now form a pinned scoring
 package; a fresh source download and the retained archive both reproduce the
 prepared split/gold/chunks byte for byte. The historical 0.744 / 0.635 / 0.685
@@ -267,7 +273,7 @@ completion/nominations, and full accepted fact rows. This recovery was committed
 locally as `3fa7db7`; nothing was pushed. CG-26 is completed below.
 At that recovery checkpoint, broader model benchmarking was still deferred.
 
-The [server modularity refactor](issues/server-modularity-2026-09-09.md) resolves
+The [server modularity refactor](../../issues/server-modularity-2026-09-09.md) resolves
 CG-26 for the six named hotspots. Compatible module entry points now separate
 contracts, validation, transitions, recovery/storage, and tests. Of 240 files,
 233 meet the 450-line soft cap; seven existing coherent methods/scenarios have
@@ -289,14 +295,14 @@ active evaluation and close CG-25 without change to its missing original
 execution evidence. At that checkpoint the registry had 37 Resolved, 1 Closed
 without change, and 0 Open issues; the later directed checkpoint below closes
 the two subsequent findings. Preserve the corrected historical package and qualified
-paper. Establish a [captured Luna baseline](decisions/decision_luna_baseline.md)
+paper. Establish a [captured Luna baseline](../../decisions/decision_luna_baseline.md)
 using 48 fictional relation-extraction excerpts through the real server, with
 full provider requests/responses, gate results and accepted occurrence rows.
 Astra at medium reasoning is the bounded stronger reference; Luna at none
 remains the economical default. Both configurations use the same frozen corpus,
 prompt/schema, taxonomy, and scoring grain. This synthetic regression sample
 has no independent annotator and cannot support general product accuracy.
-The [completed results](../fixtures/semantic-neurons/luna-baseline-2026-09-09/results.md)
+The [completed results](../../research/experiments/luna-baseline-2026-09-09/results.md)
 record sixteen successful real provider/server calls, no retries, Luna TP/FP/FN
 27/1/5 and 26/1/6, and Astra 32/0/0 twice. All 119 accepted occurrences pass
 provenance checks. Mean twelve-excerpt batch latency was 3.725 s versus 6.734 s;
@@ -309,7 +315,7 @@ qualification remain follow-ups. No new commit or push.
 
 **Cross-provider comparison (2026-09-09):** the user requested DeepSeek V4
 Pro/Flash and GLM-5.3/Flash using the existing `.env` keys. A
-[separate captured comparison](../fixtures/semantic-neurons/cross-provider-baseline-2026-09-09/results.md)
+[separate captured comparison](../../research/experiments/cross-provider-baseline-2026-09-09/results.md)
 uses JSON-object mode and a shared schema appendix for all four candidates and
 a fresh Luna reference. The earlier baseline remains byte-for-byte intact.
 Among 38 provider calls, four configurations completed both repetitions.
@@ -325,14 +331,14 @@ integrity probes, frozen code/binary checks and shared-file preservation passed.
 **Current candidate policy:** the user dropped DeepSeek V4 Flash entirely;
 retain its historical failure, with no configuration follow-up or further calls.
 Luna remains the default. A larger GLM Flash–Luna trial is complete in the
-[SemEval package](../fixtures/semantic-neurons/glm-luna-semeval-2026-09-09/README.md):
+[SemEval package](../../research/experiments/glm-luna-semeval-2026-09-09/README.md):
 600 distinct externally human-labelled sentences, including 110 Other pairs,
 two repetitions and paired uncertainty. The pair-aware benchmark adapter gives
 both models the same supplied nominals; it does not test entity discovery or
 exhaustive customer-document extraction. Raw classification and frozen-vocabulary
 post-gate results are separate. See the
-[decision](decisions/decision_luna_baseline.md#independently-labelled-supplied-pair-trial--2026-09-09).
-The [measured result](../fixtures/semantic-neurons/glm-luna-semeval-2026-09-09/results.md)
+[decision](../../decisions/decision_luna_baseline.md#independently-labelled-supplied-pair-trial--2026-09-09).
+The [measured result](../../research/experiments/glm-luna-semeval-2026-09-09/results.md)
 is GLM 65.75% versus Luna 42.67% pooled raw accuracy, a +23.08-point lead
 with paired 95% interval [+17.67, +28.75]. Other-case false assertions remain
 high (113 versus 175 across 220 repeated observations); accepted accuracy is
@@ -347,9 +353,9 @@ integration, Rust behavior or judge qualification changed.
 
 **Low-effort extension (2026-09-09, completed):** the user authorized
 `gpt-5.6-terra` low and a `gpt-5.6-luna` low control on the identical 600 cases,
-two repetitions, prompts and scoring. The [separate frozen protocol](../fixtures/semantic-neurons/terra-luna-low-semeval-2026-09-09/protocol.json)
+two repetitions, prompts and scoring. The [separate frozen protocol](../../evidence/research-terra-luna-low-semeval-2026-09-09.md)
 retains the old trial intact and treats comparisons to its Luna none / GLM
-Flash low captures as historical contrasts. The [results](../fixtures/semantic-neurons/terra-luna-low-semeval-2026-09-09/results.md)
+Flash low captures as historical contrasts. The [results](../../research/experiments/terra-luna-low-semeval-2026-09-09/results.md)
 show Terra at 72.42% and Luna low at 70.08% raw accuracy. Terra's +2.33-point
 margin has paired 95% interval [+0.42, +4.25], at about 10.4 times the token
 cost and 42% more HTTP latency. Luna low gains 27.42 observed points over
@@ -374,7 +380,7 @@ OpenAI provider now sends `low` wherever Luna is resolved, including inherited
 side-views. Other model overrides retain their provider defaults. Production
 JSON schemas, prompts, timeouts, and judge qualification are unchanged.
 Formatting, strict Clippy, all 962 reported tests, and the release server/CLI
-build passed. The [runtime verification](issues/luna-low-runtime-2026-09-09.md)
+build passed. The [runtime verification](../../issues/luna-low-runtime-2026-09-09.md)
 passed 13 server configurations, 13 rejected configurations, three CLI cases,
 and two real Luna calls with unchanged strict JSON schemas. Construction stored
 the two expected directed facts and abstained on the negative excerpt; the
@@ -397,7 +403,7 @@ on the untouched holdout. GLM/Terra remain optional references; DeepSeek V4
 Flash remains retired.
 
 **Document development checkpoint (2026-09-09):** the user selected general
-factual documents. The [Luna document trial](../fixtures/semantic-neurons/luna-documents-2026-09-09/results.md)
+factual documents. The [Luna document trial](../../research/experiments/luna-documents-2026-09-09/results.md)
 freezes 40 development and 80 unrun holdout documents from independently
 human-reviewed Re-DocRED, covering twelve predeclared relations. These are whole
 annotated benchmark documents, not full Wikipedia articles or customer reports.
@@ -414,19 +420,19 @@ V2 amendment retains those as unmatched predictions, without modifying model
 outputs or making extra calls. Ten tests, forty real-server gold controls,
 source/selection replay, forty prompt comparisons, 32 live evidence checks and
 five integrity probes passed. Three additional synthetic release HTTP cases
-reproduced [CG-39](issues/CG-39.md), endpoint substring acceptance, and
-[CG-40](issues/CG-40.md), unconstrained completion identifiers. The original
+reproduced [CG-39](../../issues/CG-39.md), endpoint substring acceptance, and
+[CG-40](../../issues/CG-40.md), unconstrained completion identifiers. The original
 trial was committed locally as `a0e4b24` before implementation.
 
 **Directed contract checkpoint (2026-09-09): CG-39 and CG-40 resolved.**
-[Policy v2](decisions/decision_directed_extraction_contracts.md) separates Unicode
+[Policy v2](../../decisions/decision_directed_extraction_contracts.md) separates Unicode
 endpoint boundaries from unchanged quote lookup and binds completion chunk IDs
 and relations to exact request values. Formatting, strict Clippy, 967 reported
 Rust tests, the release build and 34 OpenAI/Gemini HTTP cases passed. Eight Arango
 integration entries returned early without the exported password; release tests
 used disposable Native stores. No existing database reset was needed.
 
-The [new frozen candidate](../fixtures/semantic-neurons/luna-directed-v2-2026-09-09/results.md)
+The [new frozen candidate](../../research/experiments/luna-directed-v2-2026-09-09/results.md)
 replayed all 55 original proposals, removing one invalid endpoint occurrence
 while retaining all 16 reference matches. Forty fresh Luna-low calls had zero
 invalid chunk citations and stored 35 occurrences, 20 matching the 683 published
@@ -440,7 +446,7 @@ qualification criteria before using holdout data. Published-reference agreement
 does not establish truth precision or abstention quality. Keep Luna low as the
 baseline; no further model comparison is required for this step.
 
-The [mutation backend-read batch](issues/mutation-backend-reads-2026-09-08.md)
+The [mutation backend-read batch](../../issues/mutation-backend-reads-2026-09-08.md)
 resolved CG-7 by rejecting `DOCUMENT()` and correlated traversal starts
 throughout mutation queries before execution. This selects the issue's explicit
 validation remedy; enabling these reads remains future capability work with
@@ -463,7 +469,7 @@ latency, and cost with reproducible artifacts. Construction and judge use
 require their separate qualification evaluations. This follow-up is deferred
 work outside the current remediation list, not a prerequisite for closing it.
 
-The [real side-view comparison](../fixtures/semantic-neurons/sideviews-model-comparison-2026-09-08/README.md)
+The [real side-view comparison](../../research/experiments/sideviews-model-comparison-2026-09-08/README.md)
 is complete: two preflights plus 30 measured real API calls, all successful.
 Luna returned 178 pairs and hit the exact count on 13/15 requests; Gemini
 returned 180 and hit 15/15. Mean latency was 3.679 s versus 5.141 s; estimated
@@ -485,7 +491,7 @@ Formatting, Clippy, all 888 tests, and the release HTTP/harness matrix passed
 again with the new defaults and synthetic loopback providers. The subsequent
 real comparison is recorded above.
 
-The [completion-provider batch](issues/completion-provider-2026-09-08.md)
+The [completion-provider batch](../../issues/completion-provider-2026-09-08.md)
 resolved CG-29: server and harnesses share validated provider/key/model/base-URL
 selection and side-view inheritance. Explicit configuration errors now fail
 startup before stores open, while unconfigured lanes remain optional.
@@ -496,7 +502,7 @@ were committed as `41cdb8a`. Its next bounded issue, `DOCUMENT()` mutation handl
 
 The completed review/remediation through CG-31 was committed locally as
 `291fbb1`, preserving unrelated research/draft changes. The subsequent
-[semantic/graph-cache batch](issues/search-cache-2026-09-08.md) resolved CG-32:
+[semantic/graph-cache batch](../../issues/search-cache-2026-09-08.md) resolved CG-32:
 versioned JSON retains optional values and collection-name boundaries, with
 production key builders in fixtures. Formatting, Clippy, all 876 tests,
 OpenAPI checks, and release HTTP exact/strong/assisted/restart regressions
@@ -504,7 +510,7 @@ passed across resident/paged storage and memory/persistent caches. CG-32
 changes were committed as `41cdb8a`. Its next bounded quick win, completion-provider
 override handling (CG-29), is completed above.
 
-The [hybrid-cache identity batch](issues/hybrid-cache-2026-09-08.md) resolved
+The [hybrid-cache identity batch](../../issues/hybrid-cache-2026-09-08.md) resolved
 CG-31. Versioned JSON preserves all result parameters and ordered field lists;
 fixtures use the production builder. Formatting, Clippy, all 872 tests, and
 release HTTP exact/strong/assisted/restart probes passed with resident/paged
@@ -512,7 +518,7 @@ storage and memory/persistent caches. Result caches still start cold on
 restart, while persistent embeddings survive. Cross-checks found semantic
 and graph-augmented key collisions, recorded as CG-32 and now completed above.
 
-The [request-isolation batch](issues/request-isolation-2026-09-08.md) resolved
+The [request-isolation batch](../../issues/request-isolation-2026-09-08.md) resolved
 CG-12. Admission pins incarnation/store/cache under the tenant lifecycle lock;
 Lua carries that context across tasks, and user administration fences its
 shared-control-store operations. Formatting, Clippy, all 869 tests, and
@@ -522,7 +528,7 @@ cannot reach a replacement tenant. All reviewed P1 issues are now resolved.
 Its next bounded quick win, the hybrid-cache fingerprint collision (CG-31),
 is completed as recorded above.
 
-The [tenant derivative isolation batch](issues/derivative-isolation-2026-09-08.md)
+The [tenant derivative isolation batch](../../issues/derivative-isolation-2026-09-08.md)
 resolved CG-11. Native schema 2 binds derivatives to database and commit
 identity; retirement includes text directories and unfinished vector builds.
 Opening schema 1 upgrades metadata atomically, and older binaries reject the
@@ -531,7 +537,7 @@ regressions, and resident/paged release HTTP upgrade/recreation/restart checks
 passed. Its next priority, request incarnation pinning (CG-12), is completed
 as recorded above.
 
-The [paged-cache batch](issues/paged-cache-2026-09-08.md) resolved CG-10 and
+The [paged-cache batch](../../issues/paged-cache-2026-09-08.md) resolved CG-10 and
 CG-14: ordered write/cache/vector publication, protected cache fills, complete
 collection-cache purge, and serialized sidecar builds. Formatting, Clippy,
 all 857 tests, deterministic interleavings, and release HTTP concurrent-access,
@@ -539,7 +545,7 @@ drop/recreate, export, and restart checks passed. These checks covered paged
 caching enabled/disabled and resident sidecars. Its next priority, tenant
 derivative isolation (CG-11), is completed as recorded above.
 
-The [directed deployment fence](issues/directed-fence-2026-09-08.md) resolved
+The [directed deployment fence](../../issues/directed-fence-2026-09-08.md) resolved
 CG-3. Directed ingestion shares tenant-health and M26 admission checks and
 holds the promotion transition lock through provider execution and
 reconciliation. Formatting, Clippy, all 848 tests, the concurrent signed M26
@@ -548,7 +554,7 @@ restart and exact snapshot preservation on rejection. Its next batch,
 paged-cache validity (CG-10/CG-14), is completed as recorded above. General
 request incarnation pinning is now completed in CG-12 as recorded above.
 
-The [Lua execution-control batch](issues/lua-controls-2026-09-08.md) resolved
+The [Lua execution-control batch](../../issues/lua-controls-2026-09-08.md) resolved
 CG-1 and CG-6: verified JIT disabling, protected-call/coroutine instruction
 termination, CGQL budget parity, a shared script deadline, and worker
 cancellation with tenant-correct cache cleanup. Formatting, Clippy, all 845
@@ -556,7 +562,7 @@ tests, and release-server HTTP checks passed. Cancellation remains cooperative
 for synchronous backend work; completed writes are not rolled back. Its next
 priority, directed deployment fencing (CG-3), is completed as recorded above.
 
-The [first remediation batch](issues/fixes-2026-09-08.md) resolved CG-2, CG-4,
+The [first remediation batch](../../issues/fixes-2026-09-08.md) resolved CG-2, CG-4,
 CG-9, CG-17, and CG-18: safe derivative paths, strict directed-output validation,
 complete UPSERT matching, and Native text-search field/index identity handling.
 Formatting, Clippy, all 836 tests, and release-server HTTP regressions in
@@ -565,8 +571,8 @@ fingerprint collision discovered during that batch; its original next priority,
 Lua execution controls, is now completed as recorded above.
 
 The documentation and Rust implementation review is recorded in
-[the product-status report](issues/review-2026-09-08.md), with the open defect
-backlog in [the CG issue registry](issues/README.md). Existing milestone
+[the product-status report](../../issues/review-2026-09-08.md), with the open defect
+backlog in [the CG issue registry](../../issues/README.md). Existing milestone
 completion dates below remain historical delivery records; the review found
 unresolved execution, storage, tenant-lifecycle, construction, and query
 correctness defects. No remediation phase is marked complete by this audit.
@@ -627,7 +633,7 @@ Roadmap milestones (each gets its own detailed plan under
 
 M26 closes M25's selection-versus-deployment boundary for one deliberately
 bounded Native-only target projection. The accepted contract is recorded in the
-[M26 decision](decisions/decision_m26_verified_semantic_repair_materialization.md).
+[M26 decision](../../decisions/decision_m26_verified_semantic_repair_materialization.md).
 
 - [x] Add a synchronous generation build that accepts only the current M22 or
   M23 promotion selection with an exactly approved M25 revision. Reverify the
@@ -703,8 +709,8 @@ The complete evidence and release-binary digests are in the M26 decision.
 M25 closes the remaining authority gap between the mutable legacy Semantic
 Neurons workflow and the signed M18-M24 candidate-selection chain. The bounded
 foundation contract is recorded in the
-[M25 decision](decisions/decision_m25_governed_semantic_repair_authority.md)
-and the unsigned authoring templates under [`fixtures/m25/`](../fixtures/m25/).
+[M25 decision](../../decisions/decision_m25_governed_semantic_repair_authority.md)
+and the unsigned authoring templates under [`fixtures/m25/`](../../../fixtures/m25/).
 
 - [x] Store the exact unchanged M22 schema-v1 typed `candidate.json` inside an
   immutable tenant/incarnation/target-bound semantic revision signed by an
@@ -742,7 +748,7 @@ and the unsigned authoring templates under [`fixtures/m25/`](../fixtures/m25/).
 
 M24 closes the explicit M21-M23 byte-recovery gap without changing evaluation
 or promotion authority. The accepted contract is recorded in the
-[M24 decision](decisions/decision_m24_durable_cas_custody_verified_restoration.md).
+[M24 decision](../../decisions/decision_m24_durable_cas_custody_verified_restoration.md).
 
 - [x] Add a deterministic, read-only Admin recovery-plan endpoint for one
   immutable M21-M23 evidence record. Bind the exact candidate and baseline
@@ -788,9 +794,9 @@ from exact verified raw UTF-8 document bytes and accepts the signed
 `corpus.json` only when its object, canonical bytes, byte length, and SHA-256
 content address exactly equal the independently reproduced prepared-chunk
 corpus. The exact contract is recorded in the
-[M23 decision](decisions/decision_m23_reproducible_raw_document_prepared_corpus_processing.md),
-the [checked plan](examples/m23-preparation-plan.json), and the
-[`fixtures/m23/` authoring guide](../fixtures/m23/).
+[M23 decision](../../decisions/decision_m23_reproducible_raw_document_prepared_corpus_processing.md),
+the [checked plan](../../examples/m23-preparation-plan.json), and the
+[`fixtures/m23/` authoring guide](../../../fixtures/m23/).
 
 The M23 authority-version matrix is:
 
@@ -1496,7 +1502,7 @@ reference implementation until native parity.
   (609 correct versus 601 baseline). Validation informed predicate selection;
   this is a small recall/precision tradeoff, not a new frozen test result.
   Hard negatives, entity-discovered scoring, and runtime governed-review
-  evaluation remain follow-up work. See the [current guide](webnlg-pilot.md).
+  evaluation remain follow-up work. See the [current guide](../../research/webnlg/pilot.md).
 - [x] Hot JSON snapshot export/import; CSV export is not implemented
 
 **Crates:** `cognigraph-server` (extensions), `cognigraph-cache`
