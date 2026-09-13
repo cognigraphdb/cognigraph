@@ -1,0 +1,5 @@
+{
+  "ui/package.json": "d4320808dd6cfed34f7217855fc1a4702db7751606b752e5ce6a1fb0d3b64d32",
+  "ui/bun.lock": "a2a4bfd1e002a80702333a6993d1dfc63b4ce1656c9ac96d684184d064873f91",
+  "ui/e2e/editors.spec.ts": "82ca133374943b08e93c80c56e8878133a88ec16b00db8f7cf5aa3a821a246c1"
+}

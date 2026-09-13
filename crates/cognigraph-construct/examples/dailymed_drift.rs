@@ -71,7 +71,7 @@ fn parse_active(xml: &str) -> Result<BTreeSet<String>> {
             Ok(Event::Start(e)) => {
                 depth += 1;
                 match e.name().as_ref() {
-                    b"ingredient" => {
+                    "ingredient" => {
                         let c = e
                             .try_get_attribute("classCode")?
                             .map(|a| {
@@ -85,14 +85,14 @@ fn parse_active(xml: &str) -> Result<BTreeSet<String>> {
                             idepth = depth;
                         }
                     }
-                    b"ingredientSubstance" if cls.is_some() => in_sub = true,
-                    b"name" if in_sub && !cap => cap = true,
+                    "ingredientSubstance" if cls.is_some() => in_sub = true,
+                    "name" if in_sub && !cap => cap = true,
                     _ => {}
                 }
             }
             Ok(Event::Text(t)) => {
                 if cap {
-                    let n = t.decode().unwrap_or_default().trim().to_string();
+                    let n = t.trim().to_string();
                     if !n.is_empty() {
                         active.insert(n);
                     }
@@ -101,11 +101,11 @@ fn parse_active(xml: &str) -> Result<BTreeSet<String>> {
             }
             Ok(Event::End(e)) => {
                 match e.name().as_ref() {
-                    b"ingredient" if cls.is_some() && depth == idepth => {
+                    "ingredient" if cls.is_some() && depth == idepth => {
                         cls = None;
                         in_sub = false;
                     }
-                    b"ingredientSubstance" => in_sub = false,
+                    "ingredientSubstance" => in_sub = false,
                     _ => {}
                 }
                 depth = depth.saturating_sub(1);

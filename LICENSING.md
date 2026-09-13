@@ -27,11 +27,10 @@ a Permitted Purpose. A hosted "CogniGraph as a service" is not.
 
 ## What is in each tier
 
-**Community** — everything a single-node ArangoDB Community Edition user
-needs, without the dataset cap and without the commercial-use restriction:
+**Community** — the single-node multi-model database:
 
 - Native storage backend (redb primary, resident and paged modes, rebuildable
-  derivatives), and the ArangoDB conformance backend
+  derivatives)
 - CGQL v2: `FOR`/`FILTER`/`SORT`/`LIMIT`/`LET`/`COLLECT`, subqueries, joins,
   traversals, mutations, `EXPLAIN ANALYZE`, index-assisted planning
 - Full-text (tantivy) and vector search, hybrid retrieval, semantic query cache
@@ -70,7 +69,6 @@ remain Enterprise scope.
 | `cognigraph-core` | FSL-1.1-Apache-2.0 | Traits, document model, errors |
 | `cognigraph-query` | FSL-1.1-Apache-2.0 | CGQL parser, AST, planner |
 | `cognigraph-native` | FSL-1.1-Apache-2.0 | Native backend |
-| `cognigraph-arango` | FSL-1.1-Apache-2.0 | ArangoDB conformance backend |
 | `cognigraph-lua` | FSL-1.1-Apache-2.0 | Lua runtime and primitives |
 | `cognigraph-cache` | FSL-1.1-Apache-2.0 | Semantic and paged caches |
 | `cognigraph-embeddings` | FSL-1.1-Apache-2.0 | Embedding providers |

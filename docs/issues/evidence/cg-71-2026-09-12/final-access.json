@@ -1,0 +1,39 @@
+{
+  "verified_at": "2026-09-12T19:57:33.214766+00:00",
+  "database_health": {
+    "edition": "community",
+    "service": "cognigraph",
+    "status": "ok",
+    "version": "2.7.7"
+  },
+  "database_readiness": {
+    "database": "connected",
+    "status": "ok"
+  },
+  "configuration_values_verified": [
+    "PORT",
+    "COGNIGRAPH_PORT",
+    "COGNIGRAPH_AUTH_ENABLED",
+    "COGNIGRAPH_EMBEDDING_PROVIDER",
+    "RAILWAY_RUN_UID",
+    "COGNIGRAPH_NATIVE_PATH",
+    "COGNIGRAPH_CGQL_MAX_SOURCE_ROWS",
+    "COGNIGRAPH_CGQL_TIME_BUDGET_MS",
+    "COGNIGRAPH_CGQL_MUTATIONS_ENABLED"
+  ],
+  "anonymous_documents_status": 401,
+  "anonymous_export_status": 401,
+  "clean_snapshot_equal": true,
+  "website": {
+    "id": "2fc9c038-1441-4efb-ad68-7777b61239ed",
+    "instances": [
+      {
+        "id": "95a8ad89-718e-4d20-aeff-71841aedf51f",
+        "status": "RUNNING"
+      }
+    ],
+    "status": "SUCCESS",
+    "commit": "ac8455f438171fa52664370321c792ea5f02f0e9",
+    "http_status": 200
+  }
+}

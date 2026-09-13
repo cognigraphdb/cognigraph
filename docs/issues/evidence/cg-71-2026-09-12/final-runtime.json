@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "health": {
+    "edition": "community",
+    "service": "cognigraph",
+    "status": "ok",
+    "version": "2.7.7"
+  },
+  "readiness": {
+    "database": "connected",
+    "status": "ok"
+  },
+  "deployment": {
+    "id": "5d2b0cef-8836-4019-88b0-8f0f91aa0a70",
+    "instances": [
+      {
+        "id": "248684f1-c41a-4514-8b06-8f3e0b6d629a",
+        "status": "RUNNING"
+      }
+    ],
+    "status": "SUCCESS"
+  },
+  "exact_clean_snapshot_after_restart": true,
+  "user_collections": 0,
+  "users": 1,
+  "tokens": 0
+}

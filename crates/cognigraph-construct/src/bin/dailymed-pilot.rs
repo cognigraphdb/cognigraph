@@ -705,22 +705,22 @@ fn parse_spl(
             Event::Start(event) => {
                 let name = event.local_name();
                 match name.as_ref() {
-                    b"section" => {
+                    "section" => {
                         section_depth += 1;
                         if section_depth == 1 {
                             current = Some(SectionBuilder::default());
                         }
                     }
-                    b"title" if section_depth == 1 => title_depth += 1,
-                    b"text" if section_depth == 1 => text_depth += 1,
-                    b"code" => {
+                    "title" if section_depth == 1 => title_depth += 1,
+                    "text" if section_depth == 1 => text_depth += 1,
+                    "code" => {
                         inspect_code(&event, section_depth, &mut observed_doctype, &mut current)?;
                     }
-                    b"setId" if observed_set_id.is_none() => {
-                        observed_set_id = attribute(&event, b"root")?;
+                    "setId" if observed_set_id.is_none() => {
+                        observed_set_id = attribute(&event, "root")?;
                     }
-                    b"versionNumber" if observed_version.is_none() => {
-                        observed_version = attribute(&event, b"value")?
+                    "versionNumber" if observed_version.is_none() => {
+                        observed_version = attribute(&event, "value")?
                             .map(|value| value.parse())
                             .transpose()
                             .context("parse SPL versionNumber")?;
@@ -729,14 +729,14 @@ fn parse_spl(
                 }
             }
             Event::Empty(event) => match event.local_name().as_ref() {
-                b"code" => {
+                "code" => {
                     inspect_code(&event, section_depth, &mut observed_doctype, &mut current)?;
                 }
-                b"setId" if observed_set_id.is_none() => {
-                    observed_set_id = attribute(&event, b"root")?;
+                "setId" if observed_set_id.is_none() => {
+                    observed_set_id = attribute(&event, "root")?;
                 }
-                b"versionNumber" if observed_version.is_none() => {
-                    observed_version = attribute(&event, b"value")?
+                "versionNumber" if observed_version.is_none() => {
+                    observed_version = attribute(&event, "value")?
                         .map(|value| value.parse())
                         .transpose()
                         .context("parse SPL versionNumber")?;
@@ -745,7 +745,7 @@ fn parse_spl(
             },
             Event::Text(text) => {
                 if let Some(section) = &mut current {
-                    let decoded = unescape(&text.xml10_content()?)?.into_owned();
+                    let decoded = unescape(&text.xml10_content())?.into_owned();
                     if title_depth > 0 {
                         push_text(&mut section.title, &decoded);
                     }
@@ -756,7 +756,7 @@ fn parse_spl(
             }
             Event::CData(text) => {
                 if let Some(section) = &mut current {
-                    let decoded = text.decode()?.into_owned();
+                    let decoded = text.into_inner().into_owned();
                     if title_depth > 0 {
                         push_text(&mut section.title, &decoded);
                     }
@@ -766,9 +766,9 @@ fn parse_spl(
                 }
             }
             Event::End(event) => match event.local_name().as_ref() {
-                b"title" if section_depth == 1 => title_depth = title_depth.saturating_sub(1),
-                b"text" if section_depth == 1 => text_depth = text_depth.saturating_sub(1),
-                b"section" => {
+                "title" if section_depth == 1 => title_depth = title_depth.saturating_sub(1),
+                "text" if section_depth == 1 => text_depth = text_depth.saturating_sub(1),
+                "section" => {
                     if section_depth == 1
                         && let Some(section) = current.take().and_then(SectionBuilder::finish)
                     {
@@ -857,8 +857,8 @@ fn inspect_code(
     observed_doctype: &mut Option<LabelKind>,
     current: &mut Option<SectionBuilder>,
 ) -> Result<()> {
-    let code = attribute(event, b"code")?;
-    let display_name = attribute(event, b"displayName")?;
+    let code = attribute(event, "code")?;
+    let display_name = attribute(event, "displayName")?;
     match display_name.as_deref() {
         Some("HUMAN PRESCRIPTION DRUG LABEL") => {
             *observed_doctype = Some(LabelKind::HumanPrescription);
@@ -875,7 +875,7 @@ fn inspect_code(
     Ok(())
 }
 
-fn attribute(event: &BytesStart<'_>, name: &[u8]) -> Result<Option<String>> {
+fn attribute(event: &BytesStart<'_>, name: &str) -> Result<Option<String>> {
     for attribute in event.attributes() {
         let attribute = attribute?;
         if attribute.key.local_name().as_ref() == name {
@@ -1049,6 +1049,58 @@ mod tests {
         assert!(doc.text.contains("Structured evidence"));
         assert!(doc.text.contains("Not indicated for gamma."));
         assert_eq!(doc.doctype_code, RX_DOCTYPE);
+    }
+
+    #[test]
+    fn preserves_utf8_cdata_and_normalized_attributes() {
+        let xml = String::from_utf8(RX_SPL.to_vec())
+            .unwrap()
+            .replace(
+                "Alpha is indicated for condition beta.",
+                "Café is indicated for condition β.",
+            )
+            .replace(
+                "Not indicated for gamma.",
+                "<![CDATA[Not indicated for γ < 2.]]>",
+            );
+        let doc = parse_spl(
+            xml.as_bytes(),
+            LabelKind::HumanPrescription,
+            &entry(),
+            "https://example.test/unicode.xml".into(),
+        )
+        .unwrap();
+        assert!(doc.text.contains("Café is indicated for condition β."));
+        assert!(doc.text.contains("Not indicated for γ < 2."));
+        let event = BytesStart::from_content("code displayName=\"A &amp; B\"", 4);
+        assert_eq!(
+            attribute(&event, "displayName").unwrap().as_deref(),
+            Some("A & B")
+        );
+    }
+
+    #[test]
+    fn rejects_malformed_and_non_utf8_xml() {
+        let invalid = String::from_utf8(RX_SPL.to_vec())
+            .unwrap()
+            .replace("</paragraph>", "</broken>");
+        let mut non_utf8 = RX_SPL.to_vec();
+        let offset = non_utf8
+            .windows(5)
+            .position(|part| part == b"Alpha")
+            .unwrap();
+        non_utf8[offset] = 0xff;
+        for raw in [invalid.as_bytes(), non_utf8.as_slice()] {
+            assert!(
+                parse_spl(
+                    raw,
+                    LabelKind::HumanPrescription,
+                    &entry(),
+                    "https://example.test/invalid.xml".into()
+                )
+                .is_err()
+            );
+        }
     }
 
     #[test]

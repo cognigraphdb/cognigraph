@@ -19,11 +19,11 @@ incoming-PR processing, a product version bump and all applicable CI checks loca
 - Inspect the worktree, branch, remotes, tags, workspace/member manifests and
   release configuration. Fetch the selected remote for current state. Preserve
   unrelated work; prepare a clean isolated checkout if needed.
-- Discover the actual target branch and protection. This checkout uses `main`;
-  there is no established `develop` release flow. Do not infer protection or
+- Discover the actual target branch and protection. Integration uses `develop`;
+  `main` is the release branch. Do not infer protection or
   approval rules from a local branch name.
 - Inspect automation before promising it. At this revision,
-  [ci.yml](../../../.github/workflows/ci.yml) verifies PRs and main pushes, also
+  [ci.yml](../../../.github/workflows/ci.yml) verifies PRs and pushes to main/develop, also
   supports manual dispatch, and there is
   no `release.yml` artifact workflow. A tag push alone does not run release CI
   or produce binaries. Re-check this at release time.
@@ -112,8 +112,8 @@ a release commit naming the version. Show the candidate, included records, test
 evidence and intended refs before the publication decision.
 
 **Gate — remote writes:** Obtain missing authorization before the first branch
-push, PR merge or tag push. Follow actual PR/protection requirements; do not invent
-a develop-to-main flow. Prepare multiline PR text in a file for
+push, PR merge or tag push. Follow actual PR/protection requirements; use the documented
+develop-to-main promotion flow only for an authorized release. Prepare multiline PR text in a file for
 `gh ... --body-file`, or use a structured tool argument.
 
 Once integrated, verify the final commit belongs to the intended release branch
@@ -122,7 +122,7 @@ the candidate. Check tag absence, then create an annotated tag at that exact
 commit when tagging is authorized. Verify its resolved commit, branch ancestry
 and the tagged manifest. Push only the specific authorized refs.
 
-Record the automatic PR/main workflow run and commit tested. Use manual
+Record the automatic PR/branch workflow run and commit tested. Use manual
 dispatch when verification is needed on a branch without a PR. A local build or push
 does not establish green remote CI. Report which binaries, image, GitHub release
 or registry packages were actually produced.

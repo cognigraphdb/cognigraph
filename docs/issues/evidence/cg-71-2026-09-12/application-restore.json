@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "mechanism": "authenticated JSON import to a fresh local Community container, with temporary restore-admin cleanup",
+  "bootstrap_account_removed_before_import": true,
+  "temporary_admin_removed_after_import": true,
+  "exact_snapshot_equal": true,
+  "equal_after_restart": true,
+  "snapshot_sha256": "38cd51199e1dfab9c4caaa1e252246c53fed7a08bca235ecef9a485199152702",
+  "collection_count": 4
+}

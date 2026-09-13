@@ -22,7 +22,7 @@ exclude = ["vendor/tantivy-0.26.1"]
 tantivy = { path = "vendor/tantivy-0.26.1" }
 
 [workspace.package]
-version = "2.7.7"
+version = "2.7.11"
 edition = "2024"
 license = "FSL-1.1-Apache-2.0"
 repository = "https://github.com/cognigraphdb/cognigraph"
@@ -41,7 +41,7 @@ pest_derive = "2"
 
 # HTTP
 reqwest = { version = "0.13", features = ["json", "query", "form"] }
-quick-xml = "0.41"
+quick-xml = "0.42"
 
 # Error handling
 thiserror = "2"

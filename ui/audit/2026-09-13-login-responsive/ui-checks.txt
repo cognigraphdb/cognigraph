@@ -1,0 +1,231 @@
+RUN [ui] bun install --frozen-lockfile
+bun install v1.4.2 (744846f84)
+
+Checked 192 installs across 219 packages (no changes) [52.00ms]
+RUN [ui] bun run check
+$ biome check . && tsc --noEmit
+Checked 127 files in 55ms. No fixes applied.
+RUN [ui] bun test
+bun test v1.4.2 (744846f84)
+
+src/lib/users.test.ts:
+(pass) tenant-local provisioning > only tenant administrators can create accounts; host-admin is never a creatable role [0.21ms]
+(pass) tenant-local provisioning > governance choices require a confirmed Enterprise edition [0.03ms]
+(pass) tenant-local provisioning > the payload cannot select another tenant and preserves the entered password [0.01ms]
+(pass) isProtectedFromDeletion > the signed-in account cannot be deleted [0.01ms]
+(pass) isProtectedFromDeletion > other accounts can be deleted
+(pass) isProtectedFromDeletion > unknown session protects nothing
+(pass) ROLE_META > covers every role [0.01ms]
+
+src/lib/graph-explorer.test.ts:
+(pass) graph explorer data > maps traversal paths into deduplicated nodes and edges [0.36ms]
+(pass) graph explorer data > merges an expanded neighborhood without duplicating the anchor [0.13ms]
+
+src/lib/access.test.ts:
+(pass) edition and role capability boundaries > community admin: routes, mutations and identity-only landing [0.12ms]
+(pass) edition and role capability boundaries > community editor: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > community viewer: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > community script-runner: routes, mutations and identity-only landing [0.02ms]
+(pass) edition and role capability boundaries > community host-admin: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > community policy-author: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > community policy-approver: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > community promoter: routes, mutations and identity-only landing [0.01ms]
+(pass) edition and role capability boundaries > community artifact-attestor: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > enterprise admin: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > enterprise editor: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > enterprise viewer: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > enterprise script-runner: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > enterprise host-admin: routes, mutations and identity-only landing [0.01ms]
+(pass) edition and role capability boundaries > enterprise policy-author: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > enterprise policy-approver: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > enterprise promoter: routes, mutations and identity-only landing [0.05ms]
+(pass) edition and role capability boundaries > enterprise artifact-attestor: routes, mutations and identity-only landing
+(pass) edition and role capability boundaries > development mode retains data operations and read-only Lua, excluding identity workflows [0.04ms]
+(pass) edition and role capability boundaries > a role label alone cannot grant actions without server-provided scopes [0.01ms]
+(pass) edition and role capability boundaries > unavailable edition is explained before attempting the route's requests
+
+src/lib/tenants.test.ts:
+(pass) tenant deletion response > preserves actual record deletion and quarantine results independently [0.04ms]
+(pass) tenant deletion response > does not turn a malformed successful HTTP response into confirmed deletion [0.03ms]
+(pass) canManageTenants > only host-admin sessions manage tenants [0.01ms]
+(pass) TENANT_STATUS_META > covers both lifecycle states
+
+src/lib/api-documents.test.ts:
+(pass) API document mapping > normalizes a server document for the collection table [0.34ms]
+(pass) embedding state normalization > a stored vector reads as ready even without a status field [0.04ms]
+(pass) embedding state normalization > an explicit processing status wins over the vector [0.02ms]
+(pass) embedding state normalization > the vector and its provenance text stay out of content [0.01ms]
+(pass) embedDocumentRequest > derives text from title, summary, and string content fields [0.06ms]
+(pass) embedDocumentRequest > a document with no embeddable text yields an empty source [0.01ms]
+
+src/lib/documents.test.ts:
+(pass) filterDocuments > combines search, category, and embedding filters [0.09ms]
+(pass) filterDocuments > finds documents by key [0.02ms]
+
+src/lib/cgql-validation.test.ts:
+(pass) CGQL editor validation > adds a non-executing EXPLAIN line while preserving source locations [0.15ms]
+(pass) CGQL editor validation > downgrades EXPLAIN ANALYZE to non-executing EXPLAIN [0.01ms]
+(pass) CGQL editor validation > maps server parse coordinates back into the original query [0.11ms]
+(pass) CGQL editor validation > marks unknown identifiers and missing bind variables [0.04ms]
+(pass) CGQL editor validation > accepts only JSON objects as bind variables [0.05ms]
+(pass) CGQL editor validation > reports missing bind variables outside strings and comments [0.08ms]
+
+src/lib/server-logs.test.ts:
+(pass) normalizeLogEvent > maps the server event shape [0.02ms]
+(pass) normalizeLogEvent > tolerates a missing tenant and defaults [0.01ms]
+(pass) statusClass > bands by severity
+
+src/lib/metrics.test.ts:
+(pass) parseMetrics > reads counters, class labels, and derives mean latency [0.10ms]
+(pass) parseMetrics > avg latency is undefined with no requests, other fields zero [0.01ms]
+(pass) parseMetrics > a name is not matched by a longer name with the same prefix
+(pass) formatUptime > formats across scales [0.03ms]
+
+src/lib/document-edit.test.ts:
+(pass) raw document editing > preserves {"note":"kept"} content during a title-only round trip [0.13ms]
+(pass) raw document editing > preserves "raw text" content during a title-only round trip [0.03ms]
+(pass) raw document editing > preserves [1,null,{"ok":true}] content during a title-only round trip [0.02ms]
+(pass) raw document editing > preserves null content during a title-only round trip [0.02ms]
+(pass) raw document editing > preserves 42 content during a title-only round trip [0.02ms]
+(pass) raw document editing > preserves false content during a title-only round trip [0.02ms]
+(pass) raw document editing > edits real custom fields and keeps their JSON types without template defaults [0.06ms]
+(pass) raw document editing > does not resend unchanged fields, including when a read omits a sidecar vector [0.02ms]
+(pass) raw document editing > rejects changes to identity, revision, and server timestamps [0.05ms]
+(pass) raw document editing > rejects field removal instead of silently keeping it on a merging backend [0.07ms]
+(pass) raw document editing > rejects invalid JSON and non-object documents before a write [0.06ms]
+
+src/lib/construct.test.ts:
+(pass) parseChunks > distinct corpora have distinct identities, stable across retries and reordering [0.81ms]
+(pass) parseChunks > JSONL preserves explicit ids and titles; absent ids use canonical content [0.13ms]
+(pass) parseChunks > rejects duplicate text, invalid ids and backend key collisions before writes [0.20ms]
+(pass) parseChunks > malformed JSONL names the line [0.07ms]
+(pass) parseChunks > empty input yields no chunks [0.02ms]
+(pass) parseGaps > accepts fact lines and rejects junk [0.07ms]
+(pass) summarizeRun > summarizes each action from its response fields [0.06ms]
+(pass) summarizeRun evaluate > reads recall and restraint counters
+
+src/lib/search.test.ts:
+(pass) searchDocumentPath > encodes a document handle without introducing extra query parameters [0.10ms]
+(pass) searchDocumentPath > leaves incomplete or ambiguous handles without a navigation action [0.01ms]
+(pass) buildSearchRequest > semantic sends query + collection + bounds [0.03ms]
+(pass) buildSearchRequest > hybrid feeds both leg targets from the one collection choice [0.02ms]
+(pass) buildSearchRequest > vector parses the JSON array and rejects junk [0.06ms]
+(pass) buildSearchRequest > graph-augmented carries edge collection and depth
+(pass) extractHits > maps the standard hit shape [0.03ms]
+(pass) extractHits > falls back to document._id when the hit has no top-level id (vector mode)
+(pass) extractHits > tolerates missing fields and non-array results
+(pass) friendlySearchError > maps the no-provider message to actionable copy
+(pass) friendlySearchError > passes other messages through
+
+src/lib/construct-import.test.ts:
+(pass) construction import review > existing explicit ids retain current source text for replacement review [0.31ms]
+(pass) construction import review > changed or newly created chunks invalidate a stale preview without mutation [0.08ms]
+(pass) construction import review > denied reads, outages, and raw identity collisions fail closed [0.10ms]
+(pass) construction import review > checks every chunk beyond a small page and refuses empty input [0.63ms]
+
+src/lib/execution-guard.test.ts:
+(pass) console execution ownership > same-tick button, shortcut and form submissions perform one write [0.11ms]
+(pass) console execution ownership > the slot is claimed before caller code can re-enter submission [0.03ms]
+(pass) console execution ownership > both a rejected request and a synchronous throw release the slot [0.06ms]
+(pass) console execution ownership > invalidation suppresses publication but retains the pending request slot [0.06ms]
+(pass) console execution ownership > a departed connection's completion cannot clear a newer execution's busy state [0.06ms]
+
+src/lib/neurons.test.ts:
+(pass) factOf > relation hint renders a directed triple [0.02ms]
+(pass) factOf > blocker renders the vetoed triple
+(pass) factOf > alias renders entity and aliases
+(pass) factOf > rank hint renders signed boost [0.02ms]
+(pass) factOf > missing fields render placeholders, not undefined
+(pass) triggersOf > hints and blockers expose triggers [0.01ms]
+(pass) triggersOf > aliases and rank hints have none even if the field is set
+(pass) verdictsFor > proposed can be accepted or rejected
+(pass) verdictsFor > accepted can only be retired
+(pass) verdictsFor > rejected and retired are terminal
+(pass) formatUnixSeconds > zero and absent mean never [0.02ms]
+(pass) formatUnixSeconds > renders a real timestamp [2.24ms]
+
+src/lib/graph-edges.test.ts:
+(pass) vertexIdError > accepts collection/key [0.02ms]
+(pass) vertexIdError > rejects malformed addresses [0.01ms]
+(pass) vertexIdError > refuses system collections
+(pass) buildRelationshipRequest > maps the draft to the server contract and trims text [0.02ms]
+
+src/lib/collection-search.test.ts:
+(pass) bounded collection search > 125 available text matches remain a labelled cap with an additional exact key [0.99ms]
+(pass) bounded collection search > an exact key within text results is deduplicated and keeps its direct read [0.07ms]
+(pass) bounded collection search > only a key 404 is a normal absence; failed text search remains explicit [0.07ms]
+(pass) bounded collection search > denied exact-key lookup does not hide successful text hits or the failure [0.04ms]
+(pass) bounded collection search > exact key survives failed text search, and a retry can replace partial results [0.07ms]
+(pass) page-local filters and retrieved-result pagination > a filtered-empty first page still advances to later embedding states [0.03ms]
+(pass) page-local filters and retrieved-result pagination > without a catalog total, next-page availability uses unfiltered rows [0.02ms]
+(pass) page-local filters and retrieved-result pagination > retrieved filters apply before paging and clamp a now-out-of-range page [0.03ms]
+(pass) page-local filters and retrieved-result pagination > reset restores full page counts; a terminal page cannot advance [0.11ms]
+(pass) page-local filters and retrieved-result pagination > zero retrieved matches stays distinct from the collection total [0.01ms]
+
+src/lib/api-origin.test.ts:
+(pass) production preserves non-default ports, HTTPS, default ports and IPv6 origins [0.03ms]
+(pass) the explicit Bun dev port changes only the port, keeping host and protocol [0.01ms]
+
+src/lib/request-result.test.ts:
+(pass) input-bound result publication > a rerun clears data and timing immediately; failure cannot reveal the prior result [0.17ms]
+(pass) input-bound result publication > a result scope discarded on edit cannot publish data or success feedback later [0.06ms]
+(pass) input-bound result publication > reversed success completion keeps the newest execution's result and timing [0.04ms]
+(pass) input-bound result publication > an obsolete failure cannot clear the current pending state [0.03ms]
+(pass) input-bound result publication > late success cannot replace a newer failure [0.04ms]
+(pass) input-bound result publication > invalid local input clears an earlier success without invoking an API [0.03ms]
+(pass) input-bound result publication > returning to earlier input values does not resurrect a discarded result [0.02ms]
+
+src/lib/review-data.test.ts:
+(pass) complete space catalogs > a successful empty page is empty without a fallback request [0.17ms]
+(pass) complete space catalogs > a fresh tenant is empty only after the collection catalog confirms absence [0.10ms]
+(pass) complete space catalogs > a 404 for an existing collection remains a failure [0.04ms]
+(pass) complete space catalogs > denials and service failures retain their status without becoming empty catalogs [0.06ms]
+(pass) complete space catalogs > unverified or failed fallback catalogs cannot prove an empty tenant [0.06ms]
+(pass) complete space catalogs > continues beyond 100 spaces and ignores the response's page count [0.13ms]
+(pass) complete space catalogs > an exact page boundary needs an empty continuation before completion [0.06ms]
+(pass) complete space catalogs > a failed second page rejects the catalog instead of returning the first 100 [0.05ms]
+(pass) complete space catalogs > repeated pages fail explicitly instead of looping or inventing completeness [0.06ms]
+(pass) complete space catalogs > cancellation stops continuation and passes the signal to the request [0.09ms]
+(pass) review continuation > all 201 neurons are reachable once through bounded pages and truthful labels [0.25ms]
+(pass) review continuation > exactly 50 rows are a terminal page; All omits the status predicate [0.05ms]
+(pass) review continuation > a removed final row or stale far-away page recovers with one first-page retry [0.04ms]
+(pass) review continuation > empty and malformed responses stay distinguishable [0.04ms]
+(pass) selection independent of the queue page > direct lookup resolves an off-page item with its current persisted status [0.04ms]
+(pass) selection independent of the queue page > a stale or wrong-space selection cannot populate the inspector [0.02ms]
+(pass) selection independent of the queue page > URL filters and selected identity survive a round trip; invalid pages are bounded [0.04ms]
+
+src/lib/tokens.test.ts:
+(pass) ttlSecondsFor > server default omits the field [0.01ms]
+(pass) ttlSecondsFor > never maps to the explicit 0 sentinel
+(pass) ttlSecondsFor > finite presets map to seconds
+(pass) ttlSecondsFor > every preset resolves through the lookup
+(pass) describeExpiry > null and zero mean never [0.01ms]
+(pass) describeExpiry > past timestamps read as expired
+(pass) describeExpiry > future timestamps carry the formatted instant [0.07ms]
+(pass) formatUnixSeconds > absent means em dash
+
+src/api/client.test.ts:
+(pass) health carries only recognized product editions for provisioning choices [0.19ms]
+(pass) verified session context > verifies governance identity without needing a tenant-data catalog [0.07ms]
+(pass) verified session context > accepts explicit anonymous mode without inventing a role [0.03ms]
+(pass) verified session context > 401 invalidates an expired bearer session [0.03ms]
+(pass) verified session context > denied, missing, limited, and failing endpoints never imply anonymous access [0.04ms]
+(pass) verified session context > HTML, unverified identity and malformed scope/edition responses stay closed [0.08ms]
+(pass) verified session context > connection failure and timeout propagate, with a bounded probe signal [0.06ms]
+
+ 161 pass
+ 0 fail
+ 783 expect() calls
+Ran 161 tests across 22 files. [25.00ms]
+RUN [ui] bun run build
+$ rm -rf dist && bun build ./index.html --minify --outdir=dist --public-path=/ --define process.env.COGNIGRAPH_UI_DEV_API_PORT:null
+Bundled 1735 modules in 121ms
+
+  index-vqzkrjph.js               3.53 MB    (entry point)
+  index.html                      0.53 KB    (entry point)
+  index-5wmjhfrd.css              36.84 KB   (asset)
+  cognigraph-mark-b1k1wyxb.svg    1.59 KB    (asset)
+  document-t810r2m7.svg           458 bytes  (asset)
+  document-selected-76325wwg.svg  464 bytes  (asset)
+
+PASS [ui]

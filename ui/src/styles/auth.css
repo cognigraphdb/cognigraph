@@ -1,12 +1,22 @@
 .auth-screen {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
   padding: 24px;
   background: var(--surface-muted, #f5f6f8);
 }
 
+@supports (height: 100dvh) {
+  .auth-screen {
+    height: 100dvh;
+  }
+}
+
 .auth-card {
+  flex: none;
+  /* Auto margins center when there is room and collapse for scrollable overflow. */
+  margin: auto;
   width: 100%;
   max-width: 380px;
   background: var(--surface, #fff);
@@ -50,6 +60,19 @@
   font-size: 12px;
   color: var(--text-muted, #6a6a75);
   text-align: center;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px), (pointer: coarse) {
+  .auth-card .ant-input,
+  .auth-card .ant-input-affix-wrapper {
+    font-size: 16px;
+  }
+
+  .auth-card .ant-input-affix-wrapper,
+  .auth-submit {
+    min-height: 44px;
+  }
 }
 
 .topbar-logout {

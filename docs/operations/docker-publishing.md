@@ -35,7 +35,7 @@ is separately named **`cognigraphdb`**; it is not the image namespace.
 1. Create public Docker Hub repositories named `cognigraph` and
    `cognigraph-enterprise` under the `cognigraph` account. The workflow refuses
    missing, private or mismatched repositories rather than creating them during
-   a release. On 2026-09-11 neither repository was publicly available.
+   a release. Both repositories were created and verified public on 2026-09-13.
 2. Store a dedicated Read & Write Docker Hub PAT as the GitHub Actions repository
    secret `DOCKERHUB_TOKEN`. The workflow fixes the username to `cognigraph` and
    does not require Delete permission. The initial token was configured on
@@ -43,13 +43,57 @@ is separately named **`cognigraphdb`**; it is not the image namespace.
    run after that date. Do not put tokens in repository files or command arguments.
 3. Limit other writers to these release tags. The workflow rejects any existing
    version tag and serializes its own runs, but the remote existence check and
-   upload are not an atomic registry operation. Account-level tag immutability,
-   when available, adds enforcement against concurrent external publishers.
+   upload are not an atomic registry operation. Both repositories now enforce
+   **All tags are immutable** (`enabled: true`, rule `.*`), adding registry-side
+   protection against replacement or deletion of a published version.
+
+### Verified account setup — 2026-09-13
+
+- [Community](https://hub.docker.com/r/cognigraph/cognigraph) and
+  [Enterprise](https://hub.docker.com/r/cognigraph/cognigraph-enterprise) are
+  public, categorized as **Databases & storage**, and have saved descriptions
+  and edition-specific overviews. Their maintained overview text lives in
+  [Community overview](docker-hub/community.md) and
+  [Enterprise overview](docker-hub/enterprise.md). Update the availability
+  paragraphs after the first successful image publication. Both public pages
+  currently show **Empty repository**: Docker Hub withholds the saved detailed
+  overview from public rendering until the first image is pushed.
+- The existing `github-actions-cognigraph-publish` PAT is Active, Read & Write,
+  expires on 2026-12-10 and has never been used. `DOCKERHUB_TOKEN` is present in
+  GitHub Actions, last updated on 2026-09-11. No token was created, disclosed or
+  rotated during setup. Metadata confirms configuration; successful publisher
+  authentication still needs the first authorized publishing run.
+- Docker Scout analysis is enabled for Community and persisted after reload.
+  Enterprise analysis is not enabled: the Personal plan's repository allowance
+  is consumed by Community. No paid upgrade was made. Docker's current
+  [Scout documentation](https://docs.docker.com/scout/) lists one included
+  repository; recheck the account's allowance before changing this allocation.
+- Anonymous API readback confirms both repository identities, public visibility,
+  immutable tags, categories, saved overviews and zero tags. The
+  [setup receipt](docker-hub/setup-2026-09-13.json) records the readback and
+  overview hashes. Repository setup does not constitute an image release.
+
+At this checkpoint, main is v2.7.7 (`9218771`) and develop is v2.7.10
+(`7238514`). Main-only publication can use the existing release; publishing the
+newer integration first requires the separately authorized main promotion in the
+[branch decision](../decisions/decision_develop_integration.md). Production
+promotion also affects the Railway deployment. No release branch, image tag or
+deployment was changed by account setup.
 
 The login action runs only after build/runtime checks and logs out in its post
 step. Workflow permissions are limited to reading GitHub repository contents.
 The PAT is scoped to this dedicated Docker account, so its account-wide Write
 permission should not be reused as a general development credential.
+
+## Approved first release — v2.7.11
+
+The owner approved promoting the corrected v2.7.11 candidate through develop
+to main, updating Railway Community, and publishing both Docker editions.
+[CG-74](../issues/CG-74.md) records the selector defect that blocked v2.7.10 and
+the passing local qualification of its replacement. Remote required CI and
+actual registry publication must still succeed before this becomes release
+evidence. Remove unused test containers and images after their checks; preserve
+persistent volumes and unrelated Docker resources.
 
 ## Verify and publish
 

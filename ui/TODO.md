@@ -12,6 +12,13 @@ this tracker. [UI instructions](AGENTS.md) define the current workflow.
 
 ## Current review — 2026-09-11
 
+Subsequent [2026-09-13 login centering check](audit/2026-09-13-login-centering/audit.md)
+adds [CG-72](../docs/issues/CG-72.md), resolved by the
+[responsive-login fix](audit/2026-09-13-login-responsive/audit.md). Local production
+UI, phone-size Chromium/WebKit emulation and both-edition regressions pass.
+The fix is published to develop in v2.7.8; production deployment remains pending.
+The authenticated workspace remains desktop-oriented.
+
 The [full code/contract/browser audit](audit/2026-09-11-full-review/audit.md)
 recorded 15 open findings at its checkpoint, with real Native Community/Enterprise evidence and
 explicit untested boundaries. The historical Done entries below describe

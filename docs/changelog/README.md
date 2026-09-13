@@ -24,6 +24,9 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Unreleased
 
+- 2026-09-13: [Responsive authentication layout](2026-09-13-responsive-login.md)
+- 2026-09-13: [Local and hosted login centering audit](2026-09-13-login-centering-audit.md)
+- 2026-09-12: [First Railway Community deployment accepted](2026-09-12-railway-acceptance.md)
 - 2026-09-12: [Use Native storage as the only runtime backend](2026-09-12-native-runtime.md)
 - 2026-09-12: [Qualify Native-only operation before first deployment](2026-09-12-native-readiness.md)
 - 2026-09-12: [Approve the Native-only storage engineering batch](2026-09-12-native-only-plan.md)
@@ -152,6 +155,11 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Releases
 
+- 2026-09-13: [Wait for login rendering before CI geometry checks — v2.7.10](2026-09-13-login-ci-readiness-v2.7.10.md)
+- 2026-09-13: [Select the login form before measuring logout layout — v2.7.11](2026-09-13-login-card-selection-v2.7.11.md)
+- 2026-09-13: [Docker Hub account and repository setup](2026-09-13-docker-hub-setup.md)
+- 2026-09-13: [Develop integration and dependency maintenance — v2.7.8](2026-09-13-develop-renovate-v2.7.8.md)
+- 2026-09-13: [GitHub branch and Renovate activation — v2.7.9](2026-09-13-branch-activation-v2.7.9.md)
 - 2026-09-12: [v2.7.7 — Explicit storage mounts for Railway builds](2026-09-12-v2-7-7.md)
 - 2026-09-12: [v2.7.6 — Community deployment packaging](2026-09-12-v2-7-6.md)
 - 2026-09-12: [Resolve Native lru unsoundness and review optional ONNX maintenance](2026-09-12-dependency-advisories.md)

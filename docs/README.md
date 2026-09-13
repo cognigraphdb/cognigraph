@@ -5,11 +5,14 @@ and next work. The [issue registry](issues/README.md) owns defect resolution;
 [decisions](decisions/README.md) own rationale and contract amendments.
 
 Native is the only runtime storage backend. The [Native-only batch](plans/native-only-2026-09-12.md)
-is locally qualified through CG-65, CG-67 and CG-68. Start with the
-[first-deployment guide](operations/first-deployment.md) and
-[acceptance record](issues/native-readiness-2026-09-12.md) before preparing a live
-environment. Publication and deployment are separate; CG-64/CG-66 remain
-deferred optional importer work.
+is complete through CG-65, CG-67 and CG-68. [CG-71's live acceptance](issues/railway-community-2026-09-12.md)
+qualifies the first Railway Community deployment with the console. Use the
+[Railway operating guide](operations/railway.md) for that installation and the
+[first-deployment guide](operations/first-deployment.md) for another environment.
+[Docker Hub account setup](operations/docker-publishing.md#verified-account-setup--2026-09-13)
+is complete; [CG-74](issues/CG-74.md) qualifies the correction required before
+the first image publication. CG-64/CG-66
+optional importer work remains deferred.
 
 | Area | Read it for |
 |---|---|
