@@ -17,7 +17,8 @@ and recovery. Docker Hub publication is deferred. The separate website remains l
 and removes obsolete topic branches after preserving their work. The
 [branch decision](decisions/decision_develop_integration.md) keeps main as the
 separately promoted production release branch. Candidate v2.7.8 includes CG-72;
-v2.7.9 records the GitHub activation and cleanup.
+v2.7.9 records the GitHub activation and cleanup; v2.7.10 corrects a login-test
+synchronization race found by remote CI.
 Railway remains on v2.7.7 until release promotion is authorized.
 
 ## Delivered scope

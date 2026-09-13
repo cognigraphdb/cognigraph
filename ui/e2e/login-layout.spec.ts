@@ -2,7 +2,10 @@ import type { Locator, Page } from "@playwright/test";
 import { expect, login, test } from "./fixtures.ts";
 
 async function expectCentered(page: Page) {
-  const card = await page.locator(".auth-card").boundingBox();
+  const loginCard = page.locator(".auth-card");
+  // Logout schedules a React render; wait for the card before measuring it.
+  await expect(loginCard).toBeVisible();
+  const card = await loginCard.boundingBox();
   const viewport = page.viewportSize();
   if (!card || !viewport) throw new Error("Login geometry is unavailable");
   expect(Math.abs(card.x + card.width / 2 - viewport.width / 2)).toBeLessThanOrEqual(1);
