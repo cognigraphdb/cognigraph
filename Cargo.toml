@@ -41,7 +41,7 @@ pest_derive = "2"
 
 # HTTP
 reqwest = { version = "0.13", features = ["json", "query", "form"] }
-quick-xml = "0.41"
+quick-xml = "0.42"
 
 # Error handling
 thiserror = "2"
