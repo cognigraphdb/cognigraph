@@ -9,7 +9,10 @@ is complete through CG-65, CG-67 and CG-68. [CG-71's live acceptance](issues/rai
 qualifies the first Railway Community deployment with the console. Use the
 [Railway operating guide](operations/railway.md) for that installation and the
 [first-deployment guide](operations/first-deployment.md) for another environment.
-Docker Hub publication and CG-64/CG-66 optional importer work remain deferred.
+[Docker Hub account setup](operations/docker-publishing.md#verified-account-setup--2026-09-13)
+is complete; [CG-74](issues/CG-74.md) qualifies the correction required before
+the first image publication. CG-64/CG-66
+optional importer work remains deferred.
 
 | Area | Read it for |
 |---|---|

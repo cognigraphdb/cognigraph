@@ -241,8 +241,9 @@ change, and 2 Open issues** (CG-64/CG-66 remain deferred).
 | [CG-71](CG-71.md) | P1 | Resolved | Package and qualify the first Community deployment with the console |
 | [CG-72](CG-72.md) | P2 | Resolved | Login screen is off-center and clipped in narrow viewports |
 | [CG-73](CG-73.md) | P2 | Resolved | Route dependency updates through develop and retire stale branches |
+| [CG-74](CG-74.md) | P2 | Open | Login layout test can measure the transient connection card after logout |
 
-Next available identifier: **CG-74**.
+Next available identifier: **CG-75**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

@@ -8,7 +8,14 @@ The first database deployment is live on Railway: one authenticated Community
 v2.7.7 instance including the console. [CG-71](issues/CG-71.md) records passing
 local/GitHub CI, hosted API/browser checks, restart and both application and
 platform restore drills. [Railway operations](operations/railway.md) owns setup
-and recovery. Docker Hub publication is deferred. The separate website remains live.
+and recovery. [Docker Hub account setup](operations/docker-publishing.md#verified-account-setup--2026-09-13)
+is complete: both public edition repositories, immutable tags, overviews and the
+existing active publisher PAT are configured. Community uses the included Scout
+analysis slot. No images have been published. The authorized v2.7.10 promotion
+was blocked by a reproduced browser-test race; [CG-74](issues/CG-74.md) prepares
+the corrected v2.7.11 candidate. Full local CI and both Docker suites pass;
+the owner has approved v2.7.11 promotion, Railway deployment and both Docker
+edition images. Remote qualification is pending. The separate website remains live.
 
 ## Completed dependency and branch maintenance
 
@@ -19,7 +26,10 @@ and removes obsolete topic branches after preserving their work. The
 separately promoted production release branch. Candidate v2.7.8 includes CG-72;
 v2.7.9 records the GitHub activation and cleanup; v2.7.10 corrects a login-test
 synchronization race found by remote CI.
-Railway remains on v2.7.7 until release promotion is authorized.
+The owner authorized v2.7.10 promotion and both edition images, but its promotion
+PR reproduced a second selector race. CG-74 waits for the actual login form
+instead of the transient connection panel. Railway remains on v2.7.7 while the
+corrected candidate is qualified.
 
 ## Delivered scope
 
@@ -72,7 +82,7 @@ the reference for qualifying additional environments.
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **70 Resolved, 1 Closed without change, and 2 Open issues**.
+The registry now has **70 Resolved, 1 Closed without change, and 3 Open issues**.
 [CG-69](issues/CG-69.md) delivers automatic CI and repository protections,
 with both CI PRs merged. [CG-70](issues/CG-70.md) removes the Native lru unsoundness advisory
 through a bounded upstream patch, makes unsoundness fatal in CI, and records

@@ -1,0 +1,13 @@
+{
+  "base_commit": "723851452d2778af60dbe1760b363d9ad4abae26",
+  "browser_runs_version": "2.7.10",
+  "uncommitted_change": "Login card selector requires exact login heading",
+  "sha256": {
+    "ui/e2e/login-layout.spec.ts": "91d25bcca193832a6468b0d6c0f968dc68b376724e076d21d6f1ac00955281c8",
+    "ui/src/App.tsx": "8fdb3a9b7b7d526f0019c01f75725476f82283be776bcedac1bd084f747840e4",
+    "ui/src/components/ConnectionGate.tsx": "c50da7e2586b12d9029cf1a9984bc9ab61f8c5f95c56a0d8258d6e5e66f12a14",
+    "ui/src/screens/LoginScreen.tsx": "0f820b901e224153bdb26f8a90fee3479744ac4435379f4f7e872f52adc37adb",
+    "ui/src/styles/auth.css": "c770768f328e9e39ecf9d083151719039835ea1ada899357a7136b62687d11b1",
+    "ui/dist/index.html": "038d35ff8dab0dc9601250580ce8784eff2ad06f16a42e29b560b6052941ff28"
+  }
+}

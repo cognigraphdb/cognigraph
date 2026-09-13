@@ -2,8 +2,11 @@ import type { Locator, Page } from "@playwright/test";
 import { expect, login, test } from "./fixtures.ts";
 
 async function expectCentered(page: Page) {
-  const loginCard = page.locator(".auth-card");
-  // Logout schedules a React render; wait for the card before measuring it.
+  const loginCard = page.locator(".auth-card").filter({
+    has: page.getByRole("heading", { name: "CogniGraph Console", exact: true }),
+  });
+  // The connection gate also uses auth-card while logout rechecks the session.
+  // Wait for the actual login form, whose card survives the measurement.
   await expect(loginCard).toBeVisible();
   const card = await loginCard.boundingBox();
   const viewport = page.viewportSize();
