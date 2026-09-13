@@ -1,0 +1,11 @@
+{
+  "base": "0802064",
+  "runtime": "Community v2.7.7 release image with current production UI bind mount",
+  "source_sha256": {
+    "ui/src/styles/base.css": "dcb8643b4a926dd9db9fda8fe3df980bf000d6251ee528286f53666bc4811876",
+    "ui/src/styles/layout.css": "99f9b0cc3aea72312ed58fcd6d49aded2969de980f84841056d9999caa661999",
+    "ui/src/styles/auth.css": "c770768f328e9e39ecf9d083151719039835ea1ada899357a7136b62687d11b1",
+    "ui/e2e/login-layout.spec.ts": "81c2a434a5030e630a4f11bf0d65e1f2b16764e66dd00f1565de709cabc3f754",
+    "ui/dist/index.html": "9099c5a10c3fda7e36f3c0319bd1398649b2e09f88e3924ae1859e7cc31128f6"
+  }
+}

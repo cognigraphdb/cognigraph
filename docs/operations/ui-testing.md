@@ -49,7 +49,7 @@ environment allowlist, disables Bun dotenv loading for the browser process and
 never starts inside the code checkout's dotenv directory. It stops its server
 and removes its store on success or failure. It does not reuse a local API.
 
-Four cases run in both editions, with a fifth HostAdmin case in Enterprise:
+Six cases run in both editions, with a seventh HostAdmin case in Enterprise:
 
 - Fresh production-origin login, invalid-login recovery, off-page encoded-key
   deep links, keyboard navigation, Back/Forward and refresh.
@@ -59,6 +59,10 @@ Four cases run in both editions, with a fifth HostAdmin case in Enterprise:
   write/admin denials, unchanged stored data and logout/reload.
 - Edition-specific Review access/empty-catalog guidance and named collapsed
   navigation at 1067 × 667.
+- Login centering from 1600 down to 320 CSS pixels, phone-sized fields, and the
+  desktop workspace minimum width across login/logout.
+- Short-screen scrolling through required-field and real invalid-login errors,
+  plus a presentation-only long-server-name fixture that keeps the API local.
 - Enterprise HostAdmin landing/reload and tenant-data denial in UI and API.
 
 Browser page exceptions, unexpected HTTP/transport failures and requests to
@@ -69,6 +73,9 @@ collection/user identifiers are isolated; fixture data is deleted with the store
 This suite makes no provider requests and does not run model benchmarks
 or research holdouts. It does not cover every governance/job workflow or every
 browser/OS. Manual scoped QA remains required for behavior outside these cases.
+The [CG-72 report](../../ui/audit/2026-09-13-login-responsive/audit.md) adds local
+WebKit touch/viewport emulation for login only; it is separate from CI's Chromium
+suite and does not qualify the rest of the console for mobile devices.
 
 The combined CI runner also overrides `COGNIGRAPH_LIVE_LLM=0` for existing Rust
 control-loop tests. The two external embedding tests are marked ignored before

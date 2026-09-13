@@ -1,6 +1,6 @@
 # CogniGraph implementation plan
 
-Current engineering status, reviewed 2026-09-12. Detailed historical delivery
+Current engineering status, reviewed 2026-09-13. Detailed historical delivery
 and test counts live in [change records](changelog/README.md), the
 [issue registry](issues/README.md) and [archived implementation history](plans/archive/implementation-history-through-2026-09-09.md).
 
@@ -61,7 +61,7 @@ the reference for qualifying additional environments.
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **68 Resolved, 1 Closed without change, and 2 Open issues**.
+The registry now has **69 Resolved, 1 Closed without change, and 2 Open issues**.
 [CG-69](issues/CG-69.md) delivers automatic CI and repository protections,
 with both CI PRs merged. [CG-70](issues/CG-70.md) removes the Native lru unsoundness advisory
 through a bounded upstream patch, makes unsoundness fatal in CI, and records
@@ -71,7 +71,11 @@ CG-64/CG-66
 remain deferred optional import work. [CG-71](issues/CG-71.md) resolves the first
 Community deployment and console packaging, including a clean backed-up store.
 The earlier console defect list remains
-closed. Additional console features and the research qualification below are
+closed. The [2026-09-13 login centering audit](../ui/audit/2026-09-13-login-centering/audit.md)
+adds [CG-72](issues/CG-72.md), a reproduced narrow-window layout defect in both
+local and hosted Community consoles. Its [responsive-login fix](../ui/audit/2026-09-13-login-responsive/audit.md)
+passes local Chromium/WebKit and both-edition browser checks; publication is
+pending. Additional console features and the research qualification below are
 separate backlogs, not prerequisites for this batch. No model or holdout runs
 are scheduled by it.
 

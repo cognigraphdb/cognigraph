@@ -3,6 +3,7 @@
   grid-template-columns: 194px minmax(0, 1fr);
   grid-template-rows: 66px minmax(0, 1fr);
   width: 100%;
+  min-width: 960px;
   height: 100%;
 }
 

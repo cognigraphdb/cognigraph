@@ -135,12 +135,15 @@ The [Native-only storage batch](../plans/native-only-2026-09-12.md), approved on
 2026-09-12, adds CG-64–CG-68. [Native conformance coverage](native-conformance-2026-09-12.md)
 resolves CG-65. [Runtime removal](native-runtime-2026-09-12.md) resolves CG-67.
 [Local readiness](native-readiness-2026-09-12.md) resolves CG-68.
-Current registry: **68 Resolved, 1 Closed without
+Current registry: **69 Resolved, 1 Closed without
 change, and 2 Open issues**. The Native-only batch is complete. [CG-69](CG-69.md)
 resolves automatic CI/protections; [CG-71](CG-71.md) resolves first Community
 deployment and console packaging with [live recovery evidence](railway-community-2026-09-12.md).
 [CG-70](CG-70.md) resolves Native lru
 unsoundness and records a reviewed optional ONNX maintenance exception.
+[CG-72](CG-72.md) resolves the subsequent login centering defect in narrow
+windows with local Chromium/WebKit and both-edition browser evidence;
+publication is pending.
 CG-64 and CG-66 remain
 Open with deferred optional scheduling; they do not block Native-only readiness
 or first deployment. These are engineering tasks under the
@@ -230,8 +233,9 @@ defects. No ticket is closed merely because it was deferred.
 | [CG-69](CG-69.md) | P1 | Resolved | Automate Native CI and enforce verified repository changes |
 | [CG-70](CG-70.md) | P2 | Resolved | Track transitive dependency safety and maintenance advisories |
 | [CG-71](CG-71.md) | P1 | Resolved | Package and qualify the first Community deployment with the console |
+| [CG-72](CG-72.md) | P2 | Resolved | Login screen is off-center and clipped in narrow viewports |
 
-Next available identifier: **CG-72**.
+Next available identifier: **CG-73**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

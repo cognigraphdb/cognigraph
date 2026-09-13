@@ -24,6 +24,8 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Unreleased
 
+- 2026-09-13: [Responsive authentication layout](2026-09-13-responsive-login.md)
+- 2026-09-13: [Local and hosted login centering audit](2026-09-13-login-centering-audit.md)
 - 2026-09-12: [First Railway Community deployment accepted](2026-09-12-railway-acceptance.md)
 - 2026-09-12: [Use Native storage as the only runtime backend](2026-09-12-native-runtime.md)
 - 2026-09-12: [Qualify Native-only operation before first deployment](2026-09-12-native-readiness.md)
