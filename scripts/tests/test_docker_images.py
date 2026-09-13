@@ -16,6 +16,8 @@ import docker_images as images
 
 REVISION = 'a' * 40
 VERSION = '1.2.3'
+DIGEST = 'sha256:' + 'c' * 64
+SETTINGS = {'enabled': True, 'rules': [images.VERSION_TAG_RULE]}
 ENV = {'GITHUB_ACTIONS': 'true', 'GITHUB_EVENT_NAME': 'workflow_dispatch',
        'GITHUB_REPOSITORY': images.REPOSITORY, 'GITHUB_REF': 'refs/heads/main',
        'GITHUB_SHA': REVISION}
@@ -91,7 +93,8 @@ class Registry(unittest.TestCase):
                 images.hub_json('fixture', missing_ok=True)
 
     def test_existing_tag_missing_private_or_wrong_repository_blocks(self):
-        valid = {'namespace': 'cognigraph', 'name': 'cognigraph', 'is_private': False}
+        valid = {'namespace': 'cognigraph', 'name': 'cognigraph', 'is_private': False,
+                 'immutable_tags_settings': SETTINGS}
         for responses in ([None], [{**valid, 'is_private': True}],
                           [{**valid, 'namespace': 'wrong'}], [valid, {'name': VERSION}]):
             with self.subTest(responses=responses), patch.object(images, 'hub_json', side_effect=responses):
@@ -99,11 +102,34 @@ class Registry(unittest.TestCase):
                     images.available_tags(VERSION)
 
     def test_both_destinations_checked(self):
-        repos = [{'namespace': 'cognigraph', 'name': repo.split('/')[1], 'is_private': False}
+        repos = [{'namespace': 'cognigraph', 'name': repo.split('/')[1], 'is_private': False,
+                  'immutable_tags_settings': SETTINGS}
                  for _, repo in images.IMAGES.values()]
         with patch.object(images, 'hub_json', side_effect=[repos[0], None, repos[1], None]) as get:
             images.available_tags(VERSION)
         self.assertEqual(get.call_count, 4)
+
+    def test_mutable_versions_or_immutable_latest_block_publication(self):
+        for settings in (None, {'enabled': False, 'rules': []}, {'enabled': True, 'rules': ['.*']}):
+            with self.subTest(settings=settings), patch.object(images, 'hub_json', return_value={
+                    'namespace': 'cognigraph', 'name': 'cognigraph', 'is_private': False,
+                    'immutable_tags_settings': settings}):
+                with self.assertRaisesRegex(RuntimeError, 'immutable x.y.z'):
+                    images.available_tags(VERSION)
+
+    def test_digest_readback_retries_absence_but_rejects_invalid_identity(self):
+        with patch.object(images, 'hub_json', side_effect=[None, {'digest': DIGEST}]), \
+                patch.object(images.time, 'sleep'):
+            images.verify_tag('cognigraph/cognigraph', VERSION, DIGEST)
+        with patch.object(images, 'hub_json', return_value={'digest': 'invalid'}):
+            with self.assertRaisesRegex(RuntimeError, 'invalid registry digest'):
+                images.tag_digest('cognigraph/cognigraph', VERSION)
+
+    def test_failed_digest_readback_is_not_accepted(self):
+        with patch.object(images, 'tag_digest', return_value='sha256:' + 'd' * 64), \
+                patch.object(images.time, 'sleep'):
+            with self.assertRaisesRegex(RuntimeError, 'registry digest mismatch'):
+                images.verify_tag('cognigraph/cognigraph', 'latest', DIGEST)
 
 
 class ImageIdentity(unittest.TestCase):
@@ -155,6 +181,9 @@ class Publication(unittest.TestCase):
         self.addCleanup(patch.stopall)
         patch.dict(os.environ, {}, clear=True).start()
         self.preflight = patch.object(images, 'preflight').start()
+        self.current = patch.object(images, 'current_candidate').start()
+        self.tag = patch.object(images, 'tag_digest', return_value=None).start()
+        self.verify = patch.object(images, 'verify_tag').start()
         self.checked = patch.object(images, 'checked_images', return_value={
             'community': 'sha256:tested-community', 'enterprise': 'sha256:tested-enterprise'}).start()
         self.push = patch.object(images, 'push_image', return_value='sha256:' + 'c' * 64).start()
@@ -171,16 +200,41 @@ class Publication(unittest.TestCase):
             images.publish(VERSION, REVISION)
         self.push.assert_not_called()
 
-    def test_publishes_tested_ids_only_with_version_tags_and_records_each_digest(self):
+    def test_publishes_both_versions_before_aliases_and_records_each_digest(self):
         with tempfile.TemporaryDirectory() as folder, contextlib.redirect_stdout(io.StringIO()):
             summary = Path(folder) / 'summary'
             with patch.dict(os.environ, {'GITHUB_STEP_SUMMARY': str(summary)}):
                 images.publish(VERSION, REVISION)
-            self.assertEqual(summary.read_text().count('sha256:'), 2)
+            self.assertEqual(summary.read_text().count('sha256:'), 4)
             self.assertIn(REVISION, summary.read_text())
         self.assertEqual(self.push.call_args_list, [
             call('sha256:tested-community', 'docker.io/cognigraph/cognigraph:1.2.3'),
-            call('sha256:tested-enterprise', 'docker.io/cognigraph/cognigraph-enterprise:1.2.3')])
+            call('sha256:tested-enterprise', 'docker.io/cognigraph/cognigraph-enterprise:1.2.3'),
+            call('sha256:tested-community', 'docker.io/cognigraph/cognigraph:latest'),
+            call('sha256:tested-enterprise', 'docker.io/cognigraph/cognigraph-enterprise:latest')])
+        self.assertEqual(self.verify.call_count, 4)
+
+    def test_unverified_version_prevents_all_alias_updates(self):
+        self.verify.side_effect = [None, RuntimeError('registry digest mismatch')]
+        with contextlib.redirect_stdout(io.StringIO()), self.assertRaises(RuntimeError):
+            images.publish(VERSION, REVISION)
+        self.assertEqual(self.push.call_count, 2)
+
+    def test_main_or_latest_drift_after_version_publication_prevents_alias_updates(self):
+        for drift in ('main', 'latest'):
+            self.push.reset_mock()
+            self.current.side_effect = RuntimeError('Main changed') if drift == 'main' else None
+            self.tag.side_effect = [None, None, DIGEST] if drift == 'latest' else None
+            with self.subTest(drift=drift), contextlib.redirect_stdout(io.StringIO()), \
+                    self.assertRaises(RuntimeError):
+                images.publish(VERSION, REVISION)
+            self.assertEqual(self.push.call_count, 2)
+
+    def test_alias_digest_must_equal_its_version_digest(self):
+        self.push.side_effect = [DIGEST, DIGEST, 'sha256:' + 'd' * 64]
+        with contextlib.redirect_stdout(io.StringIO()), self.assertRaisesRegex(RuntimeError, 'alias differs'):
+            images.publish(VERSION, REVISION)
+        self.assertEqual(self.push.call_count, 3)
 
     def test_failed_first_push_stops_second(self):
         self.push.side_effect = subprocess.CalledProcessError(1, ['docker', 'push'])
