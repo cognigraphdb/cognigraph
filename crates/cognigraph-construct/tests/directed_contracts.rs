@@ -74,7 +74,7 @@ fn both_endpoints_reject_embedded_words_and_unicode_word_continuations() {
             assert_eq!(skips.len(), 1);
             let side = if source_side { "source" } else { "target" };
             assert!(
-                skips[0].contains(&format!("{side} does not occur")),
+                skips[0].reason.contains(&format!("{side} does not occur")),
                 "{skips:?}"
             );
         }

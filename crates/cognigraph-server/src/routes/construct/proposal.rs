@@ -81,6 +81,19 @@ pub(super) async fn propose(
             })
         })
         .collect();
+    let mut refusals: Vec<RefusalRow> = report
+        .skipped
+        .iter()
+        .map(|s| {
+            proposal_refusal(
+                s.gate,
+                &s.fact.source,
+                &s.fact.relation,
+                &s.fact.target,
+                &s.reason,
+            )
+        })
+        .collect();
     for mut neuron in report.set.neurons {
         neuron.status = NeuronStatus::Proposed;
         let set = NeuronSet {
@@ -88,7 +101,15 @@ pub(super) async fn propose(
             neurons: vec![neuron.clone()],
         };
         if let Err(e) = validate_neurons(&set, &space) {
-            skipped.push(json!({ "fact": neuron.id, "reason": format!("validation: {e}") }));
+            let reason = format!("validation: {e}");
+            skipped.push(json!({ "fact": neuron.id, "reason": reason }));
+            refusals.push(proposal_refusal(
+                "validation_failed",
+                &neuron.source,
+                &neuron.relation,
+                &neuron.target,
+                &reason,
+            ));
             continue;
         }
         let mut doc = serde_json::to_value(&neuron).map_err(CogniGraphError::from)?;
@@ -109,11 +130,31 @@ pub(super) async fn propose(
             }
             Err(CogniGraphError::DocumentConflict(_)) => {
                 skipped.push(json!({ "fact": neuron.id, "reason": "neuron id already exists" }));
+                refusals.push(proposal_refusal(
+                    "duplicate_id",
+                    &neuron.source,
+                    &neuron.relation,
+                    &neuron.target,
+                    "neuron id already exists",
+                ));
             }
             Err(e) => return Err(AppError(e)),
         }
     }
-    Ok(Json(json!({
+    let attribution = format!("propose:{}", provider.model_name());
+    let ledger = record_refusals(
+        &*state.managed_backend,
+        &RefusalContext {
+            space_type: &req.space_type,
+            origin: "propose",
+            policy: None,
+            attribution: &attribution,
+            actor: &proposed_by,
+        },
+        &refusals,
+    )
+    .await;
+    let mut response = json!({
         "space_type": req.space_type,
         "gaps": gaps.len(),
         "stored": stored.len(),
@@ -121,6 +162,27 @@ pub(super) async fn propose(
         "skipped": skipped,
         "proposed_by": proposed_by,
         "note": "proposals are inert until accepted via POST /api/neurons/{key}/accept",
-    })))
+    });
+    attach(&mut response, ledger);
+    Ok(Json(response))
+}
+
+/// A proposal-side refusal: no chunk or quote, the gap triple as identity.
+fn proposal_refusal(
+    gate: &'static str,
+    source: &str,
+    relation: &str,
+    target: &str,
+    reason: &str,
+) -> RefusalRow {
+    RefusalRow {
+        gate: gate.into(),
+        source: source.into(),
+        relation: relation.into(),
+        target: target.into(),
+        chunk_id: None,
+        evidence: None,
+        reason: reason.into(),
+    }
 }
 pub(super) const REVIEW_POLICIES: &str = "review_policies";

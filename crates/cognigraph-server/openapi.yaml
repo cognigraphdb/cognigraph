@@ -4427,7 +4427,7 @@ paths:
             schema: { $ref: '#/components/schemas/DirectedConstructRequest' }
       responses:
         '401': { description: Authentication is required when enabled }
-        '200': { description: '{space_type, chunks, proposed, facts_grounded, skips, extracted_by}' }
+        '200': { description: '{space_type, chunks, proposed, facts_grounded, skips, extracted_by, refusals[], refusals_stored, refusals_dropped, refusals_error?}. skips keep their string form; refusals are the same rejections as structured rows {_key, gate, source, relation, target, chunk_id, evidence, reason, stored} written to the generated construction_refusals ledger in the same request (10,000 rows per tenant, newest dropped at the cap; a ledger write failure sets refusals_error and never fails the construction).' }
         '400': { description: "Empty/oversized chunks, invalid taxonomy, or occurrence identity validation failure" }
         '403': { description: "Caller lacks graph-write scope, or a governed deployment fences this legacy writer" }
         '408': { description: Configured HTTP request deadline exceeded; synchronous backend effects may already have completed }
@@ -4527,7 +4527,7 @@ paths:
                   type: object
                   description: Inline EvalSpec for gap measurement; omission reads an already-existing protected eval_specs/{space_type} record. Generic writes to eval_specs are refused after M25.
       responses:
-        '200': { description: '{gaps, stored, proposed[], skipped[], proposed_by}' }
+        '200': { description: '{gaps, stored, proposed[], skipped[], proposed_by, refusals[], refusals_stored, refusals_dropped, refusals_error?}. skipped keeps its {fact, reason} form; refusals are the same skips as structured rows with gate codes (proposal_rejected, forbidden_fact_not_grounded, blocker_rejected, blocker_round_failed, blocker_round_dry, validation_failed, duplicate_id) written to the construction_refusals ledger.' }
         '400': { description: "Bad gap line, or no gaps source available" }
   /api/construct/review:
     post:
