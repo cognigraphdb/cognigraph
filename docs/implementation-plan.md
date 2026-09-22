@@ -1,6 +1,6 @@
 # CogniGraph implementation plan
 
-Current engineering status, reviewed 2026-09-13. Detailed historical delivery
+Current engineering status, reviewed 2026-09-14. Detailed historical delivery
 and test counts live in [change records](changelog/README.md), the
 [issue registry](issues/README.md) and [archived implementation history](plans/archive/implementation-history-through-2026-09-09.md).
 
@@ -38,6 +38,25 @@ readback, and independent pulled-image checks under the
 initiate hosted QA.
 
 ## Completed dependency and branch maintenance
+
+The [develop qualification policy](decisions/decision_develop_qualification.md)
+is implemented locally under [CG-82](issues/CG-82.md). [CG-83](issues/CG-83.md)
+resolves five direct Cargo updates, six direct UI updates and compatible
+transitive refresh. Candidate v2.7.15 passes the full CI and Docker suites,
+58 direct freshness checks without exceptions or resolution drift, and
+password/store/console compatibility acceptance. The
+[verification record](verification/dependency-refresh-2026-09-14.md) qualifies
+the combined CG-80/CG-82/CG-83 candidate locally. Source changes remain
+uncommitted and unpublished. Recheck incoming PRs and the exact candidate under
+the push policy before authorized integration and image publication.
+
+The [2026-09-14 container security change](changelog/2026-09-14-container-security.md)
+addresses [CG-80](issues/CG-80.md): refresh inherited Debian packages and scan
+both edition images for all fixable vulnerabilities before qualification.
+[CG-81](issues/CG-81.md) tracks unfixed findings, including the remaining Scout
+zlib advisory. [Local verification](verification/container-security-2026-09-14.md)
+is separate from a new versioned publication; Docker Hub still serves v2.7.14
+until the corrective release is authorized and passes its release gates.
 
 [CG-73](issues/CG-73.md) integrates six incoming dependency PRs, establishes
 `develop` as the default integration branch, replaces Dependabot with Renovate,
@@ -104,7 +123,15 @@ the reference for qualifying additional environments.
 external dump-import work, to reconsider after Native-only readiness. They do
 not block this batch or first deployment and are not automatically started next.
 
-The registry now has **76 Resolved, 1 Closed without change, and 2 Open issues**.
+[CG-84](issues/CG-84.md) through [CG-87](issues/CG-87.md) record four
+application-integration preconditions identified on 2026-09-20 (TypeScript client,
+bind variables in `LIMIT`, unique constraints and declarable indexes, and arm64
+builds). By owner decision they are deferred optional backlog, to reconsider when
+the first external application integration is ready to start; they are not part
+of any active batch.
+
+The registry now has **79 Resolved, 1 Closed without change, and 7 Open issues**
+(CG-64, CG-66 and CG-84 through CG-87 deferred; CG-81 active).
 The [public evidence batch](plans/public-evidence-boundary-2026-09-13.md) resolves
 CG-75–CG-77 locally: private originals are verified, public CI and both Docker
 editions pass, and hosted QA is stopped with its volume retained. The

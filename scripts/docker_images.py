@@ -46,7 +46,8 @@ def metadata():
 
 def build_commands():
     version, revision = metadata()
-    return [['docker', 'build', '--pull', '--build-arg', f'COGNIGRAPH_EDITION={edition}',
+    return [['docker', 'build', '--pull', '--no-cache-filter', 'runtime',
+             '--build-arg', f'COGNIGRAPH_EDITION={edition}',
              '--build-arg', f'COGNIGRAPH_VERSION={version}',
              '--build-arg', f'COGNIGRAPH_REVISION={revision}', '-t', image, '.']
             for edition, (image, _) in IMAGES.items()]

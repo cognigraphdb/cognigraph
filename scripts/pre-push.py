@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Fail closed unless this clean candidate has reviewed incoming work and passes CI."""
-import json
 import os
 from pathlib import Path
 import re
@@ -11,6 +10,7 @@ from types import SimpleNamespace
 
 sys.dont_write_bytecode = True
 import verify
+import incoming
 
 ROOT = Path(__file__).resolve().parents[1]
 ZERO = '0' * 40
@@ -69,22 +69,16 @@ def remote_state(remote):
 
 
 def open_prs(repository):
-    pages = json.loads(output('gh', 'api', '--paginate', '--slurp',
-                              f'repos/{repository}/pulls?state=open&per_page=100'))
-    return sorted((p['number'], p['head']['sha'], p['base']['ref'])
-                  for page in pages for p in page)
+    return incoming.open_prs(repository, output)
 
 
 def verify_incoming(prs, head):
-    path = ROOT / 'docs/operations/pr-dispositions.json'
-    records = json.loads(path.read_text()) if path.exists() else []
-    for number, sha, _ in prs:
-        if ancestor(sha, head):
-            continue
-        matched = [r for r in records if r.get('number') == number and r.get('head') == sha
-                   and r.get('disposition') in ('superseded', 'deferred')
-                   and r.get('reason', '').strip() and r.get('decision', '').strip()]
-        require(matched, f'PR #{number} is not integrated or explicitly dispositioned at head {sha}')
+    incoming.verify(prs, head, ROOT, ancestor)
+
+
+def review_incoming(mode):
+    subprocess.run([sys.executable, str(ROOT / 'scripts/check-incoming.py'), '--mode', mode],
+                   cwd=ROOT, check=True)
 
 
 def clean():
@@ -155,12 +149,14 @@ def main():
     if not updates:
         return
     repository, state, prs, _ = preflight(remote, updates, head)
+    review_incoming('snapshot')
     verify.run('ci')
     verify.run('docker')
     clean()
     require(output('git', 'rev-parse', 'HEAD') == head, 'HEAD changed during verification')
     require(remote_state(remote) == state, 'Remote refs changed during verification; review incoming work again')
     require(open_prs(repository) == prs, 'Incoming PRs changed during verification; review them again')
+    review_incoming('compare')
     print(f'PASS pre-push: {head}, {len(prs)} open PRs accounted for', flush=True)
 
 

@@ -257,9 +257,9 @@
 }
 
 .sidebar.collapsed .nav-item span,
+.sidebar.collapsed .collapse-button span,
 .sidebar.collapsed .sidebar-footer > .health-line span,
-.sidebar.collapsed .sidebar-footer > small,
-.sidebar.collapsed .collapse-button span {
+.sidebar.collapsed .sidebar-footer > small {
   display: none;
 }
 

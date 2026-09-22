@@ -135,8 +135,11 @@ The [Native-only storage batch](../plans/native-only-2026-09-12.md), approved on
 2026-09-12, adds CG-64–CG-68. [Native conformance coverage](native-conformance-2026-09-12.md)
 resolves CG-65. [Runtime removal](native-runtime-2026-09-12.md) resolves CG-67.
 [Local readiness](native-readiness-2026-09-12.md) resolves CG-68.
-Current registry: **76 Resolved, 1 Closed without
-change, and 2 Open issues**. The Native-only batch is complete. [CG-69](CG-69.md)
+Current registry: **79 Resolved, 1 Closed without
+change, and 3 Open issues**. [CG-81](CG-81.md) tracks unfixed image findings.
+[CG-83](CG-83.md) resolves the dependency refresh and local candidate qualification
+required by the [develop gate](CG-82.md); publication remains separate.
+The Native-only batch is complete. [CG-69](CG-69.md)
 resolves automatic CI/protections; [CG-71](CG-71.md) resolves first Community
 deployment and console packaging with [live recovery evidence](railway-community-2026-09-12.md).
 [CG-70](CG-70.md) resolves Native lru
@@ -252,8 +255,21 @@ merged into main. Historical failed runs remain linked from the issue.
 | [CG-77](CG-77.md) | P2 | Resolved | Enforce the public evidence boundary in CI and agent workflows |
 | [CG-78](CG-78.md) | P2 | Resolved | Validate archived documentation links and preserve amended-source provenance |
 | [CG-79](CG-79.md) | P2 | Resolved | Remove leaked SPA test fixture directories |
+| [CG-80](CG-80.md) | P1 | Resolved | Published container base packages carry fixable vulnerabilities |
+| [CG-81](CG-81.md) | P2 | Open | Triage remaining container CVEs without Debian fixes |
+| [CG-82](CG-82.md) | P1 | Resolved | Enforce PR review and dependency freshness before develop integration |
+| [CG-83](CG-83.md) | P1 | Resolved | Refresh the application dependency baseline for develop qualification |
+| [CG-84](CG-84.md) | P2 | Open | TypeScript client for Bun and Node applications |
+| [CG-85](CG-85.md) | P2 | Open | Bind variables in LIMIT for client-controlled pagination |
+| [CG-86](CG-86.md) | P2 | Open | Unique constraints and user-declarable indexes on ordinary collections |
+| [CG-87](CG-87.md) | P2 | Open | Native linux/arm64 and macOS Apple Silicon builds for local development |
+| [CG-88](CG-88.md) | P2 | Open | Side views as a proposal-queue gap detector |
+| [CG-89](CG-89.md) | P2 | Open | Graph-augmented search defaults to document_relations and omits neuron-built facts |
+| [CG-90](CG-90.md) | P2 | Open | Construction gate refusals are not durably recorded |
+| [CG-91](CG-91.md) | P3 | Resolved | Construct crate module docs describe a graduated status that does not exist |
+| [CG-92](CG-92.md) | P1 | Resolved | Refresh dependencies to pass the develop freshness gate after the v2.7.15 qualification |
 
-Next available identifier: **CG-80**.
+Next available identifier: **CG-93**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

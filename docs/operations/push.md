@@ -17,6 +17,10 @@ in each clone. The CI suite includes workflow regression tests, formatting, serv
 modularity, documentation/index and issue-history checks, edition dependency checks, strict Clippy and all workspace tests for both Community
 and Enterprise feature sets.
 The [CI guide](ci.md) owns tool setup, automatic triggers and repository protections.
+The [develop gate](develop-gate.md) owns mandatory dependency freshness and
+incoming-work processing before integration. Its read-only resolver checks direct
+release channels and compatible Cargo/Bun lockfile drift. Registry failures block
+qualification. Explicit pin decisions cannot waive available vulnerability fixes.
 The Docker suite builds the same Community and Enterprise images as CI and runs
 isolated packaged-server HTTP, authentication, edition, restart/persistence and
 both-edition Helm backup checks. The CI suite also includes Native release
@@ -38,7 +42,7 @@ No external API keys or existing databases are needed for browser coverage.
   for new changes, agrees with local packages in Cargo.lock, and has a versioned
   change record. Branch/tag refs for the same candidate share the version. Tags
   are annotated, named for the version and cannot replace a published tag.
-- The current open PR list is fetched in full. A PR is accounted for when its head
+- The current open PR list is fetched in full, with review/check metadata. A PR is accounted for when its head
   is an ancestor of the candidate. If a reviewed PR is superseded or explicitly
   deferred, record its exact head and rationale in `docs/operations/pr-dispositions.json`:
 
@@ -47,8 +51,12 @@ No external API keys or existing databases are needed for browser coverage.
     "reason": "Why it is excluded", "decision": "Reference to the user's deferral decision"}]
   ```
 
+  `needs-changes` is also supported for explicitly excluded work requiring repair.
   Updating this file is not permission to invent a deferral. A changed PR head
   requires review again. Missing GitHub access blocks the gate.
+  Included PRs with requested changes still outstanding are rejected. The normal
+  hook brackets qualification with `scripts/check-incoming.py`; CI runs the same
+  checks before/after source acceptance and again after image qualification.
 - Both CI and Docker suites run on every outgoing branch candidate, including
   PR branches, to match the automatic GitHub workflow. UI checks are not conditional
   on the changed paths, and do not run a second time after the CI suite.
@@ -134,6 +142,12 @@ normally target develop, and main is promoted only for an authorized release.
 The same candidate can retain its version when promoted unchanged; newly changed
 content needs the next version and fresh checks. Do not merge a bot update to
 main merely because it passed CI.
+
+Immediately before an authorized develop merge, repeat incoming, dependency and
+advisory checks from the [develop gate](develop-gate.md). Green CI does not refresh
+itself when a registry publishes a new version or another PR appears. If several
+PRs need inclusion, prepare a combined reviewed candidate and qualify the result;
+do not invent mutual deferrals simply to merge individually stale bot PRs.
 
 Enable GitHub's automatic deletion of merged topic branches. For an explicit
 cleanup, inventory all local/remote tips, PR dispositions and `git worktree list

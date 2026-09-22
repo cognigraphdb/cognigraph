@@ -173,7 +173,11 @@ The guard checks only the current version in these repositories. The normal
 push/version policy still owns comparison with earlier published product
 versions. Registry checks do not replace PR review, license review, full edition
 conformance, image vulnerability scanning or deployment acceptance. Automated
-image scanning/signing and native ARM publication are separate future work.
+image scanning is now part of the shared Docker suite under the
+[container vulnerability policy](../decisions/decision_container_vulnerability_gate.md).
+Signing and native ARM publication remain separate future work. Available image
+fixes block the build at every severity; unfixed findings remain in its reports
+and require review. A passing scan does not certify a zero-CVE image.
 
 The implementation follows Docker's
 [test-before-push guidance](https://docs.docker.com/build/ci/github-actions/test-before-push/)

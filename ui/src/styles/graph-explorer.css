@@ -215,6 +215,14 @@
   font-size: 11px;
 }
 
+.path-node strong,
+.path-node span {
+  overflow: hidden;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .selected-graph-path header strong span,
 .path-metrics {
   color: var(--text-muted);
@@ -259,14 +267,6 @@
   padding: 7px 9px;
   border: 1px solid var(--border-strong);
   border-radius: 4px;
-}
-
-.path-node strong,
-.path-node span {
-  overflow: hidden;
-  font-size: 10px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .path-node small {

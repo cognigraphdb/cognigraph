@@ -3,7 +3,7 @@
 The shared `ci` suite runs the frozen Bun install, Biome/TypeScript, Bun unit
 tests and production build, the Rust/documentation gates, then Chromium browser
 regressions against real Community and Enterprise binaries. CI runs on PRs to
-main, main pushes and manual dispatch; these checks also run through the local
+`main` or `develop`, pushes to either branch and manual dispatch; these checks also run through the local
 pre-push gate. [Continuous verification](ci.md) owns the complete workflow.
 
 ## Setup and commands
@@ -49,7 +49,7 @@ environment allowlist, disables Bun dotenv loading for the browser process and
 never starts inside the code checkout's dotenv directory. It stops its server
 and removes its store on success or failure. It does not reuse a local API.
 
-Seven cases run in both editions, with an eighth HostAdmin case in Enterprise:
+Eight cases run in both editions, with a ninth HostAdmin case in Enterprise:
 
 - Fresh production-origin login, invalid-login recovery, off-page encoded-key
   deep links, keyboard navigation, Back/Forward and refresh.
@@ -65,6 +65,10 @@ Seven cases run in both editions, with an eighth HostAdmin case in Enterprise:
   plus a presentation-only long-server-name fixture that keeps the API local.
 - CodeMirror edits submit Unicode CGQL and Lua scripts to the real server and
   render their returned values.
+- A synthetic graph traversal paints the main G6 canvas, survives a scaled
+  viewport/fit operation and remounts after switching through the JSON view.
+  The check reads painted layers and clicks visible segmented labels; transparent
+  helper canvases and hidden native radio inputs are not interaction targets.
 - Enterprise HostAdmin landing/reload and tenant-data denial in UI and API.
 
 Browser page exceptions, unexpected HTTP/transport failures and requests to
@@ -93,7 +97,8 @@ Ignored `ui/test-results/{community,enterprise}/` holds Playwright JSON results,
 screenshots, server logs and runtime hashes. CI uploads results for seven days,
 including failure diagnostics. Traces/videos and saved authentication state are
 disabled to avoid retaining credentials or bearer headers. Review artifacts
-before copying selected sanitized evidence to a dated `ui/audit/` directory.
+before copying evidence to a dated private `../evidence/runs/` package. Public
+summaries cite its path and hash under the [evidence policy](evidence-policy.md).
 
 For isolated diagnosis, `python3 scripts/ui_browser.py --edition community`
 runs one edition; report that as partial coverage. The gate always uses both.

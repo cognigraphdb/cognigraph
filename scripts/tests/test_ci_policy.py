@@ -71,7 +71,7 @@ class WorkflowPolicy(unittest.TestCase):
 
     def test_shared_runner_includes_live_native_helm_and_advisory_checks(self):
         commands = verify.commands('ci')
-        for suite in ('native', 'helm', 'advisories'):
+        for suite in ('native', 'helm', 'advisories', 'dependencies'):
             for command in verify.commands(suite):
                 self.assertIn(command, commands)
         self.assertIn((ROOT, ['actionlint']), commands)
@@ -83,8 +83,33 @@ class WorkflowPolicy(unittest.TestCase):
             if command[:2] in (['cargo', 'clippy'], ['cargo', 'test']):
                 self.assertIn('--locked', command)
         docker = verify.commands('docker')
+        self.assertIn((ROOT, [sys.executable, 'scripts/check-image-vulnerabilities.py']), docker)
+        for _, command in docker:
+            if command[:2] == ['docker', 'build']:
+                self.assertIn('--pull', command)
+                self.assertEqual(command[command.index('--no-cache-filter') + 1], 'runtime')
         for flags in (['--live'], ['--live', '--enterprise']):
             self.assertIn((ROOT, [sys.executable, 'scripts/check-helm.py', *flags]), docker)
+
+    def test_incoming_work_is_checked_with_read_only_access_before_required_passes(self):
+        source = self.flow['jobs']['gates']['steps']
+        commands = [s.get('run') for s in source]
+        self.assertLess(commands.index('python3 scripts/check-incoming.py'),
+                        commands.index('python3 scripts/verify.py --suite ci'))
+        self.assertLess(commands.index('python3 scripts/verify.py --suite ci'),
+                        commands.index('python3 scripts/check-incoming.py --mode compare'))
+        for name in ('gates', 'docker'):
+            job = self.flow['jobs'][name]
+            self.assertTrue(all(value == 'read' for value in job['permissions'].values()))
+            self.assertEqual(job['permissions']['pull-requests'], 'read')
+            checkout = next(step for step in job['steps'] if step.get('uses', '').startswith('actions/checkout@'))
+            self.assertEqual(checkout['with']['fetch-depth'], 0)
+        steps = self.flow['jobs']['docker']['steps']
+        build = next(i for i, s in enumerate(steps) if s.get('run') == 'python3 scripts/verify.py --suite docker')
+        incoming = next(i for i, s in enumerate(steps) if s.get('run') == 'python3 scripts/check-incoming.py')
+        publish = next(i for i, s in enumerate(steps) if s.get('run') == 'python3 scripts/docker_images.py publish')
+        self.assertLess(build, incoming)
+        self.assertLess(incoming, publish)
 
 
 if __name__ == '__main__':

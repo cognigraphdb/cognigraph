@@ -111,6 +111,7 @@ class PushGate(unittest.TestCase):
         patch.object(gate, 'output', side_effect=output).start()
         patch.object(gate, 'github_repository', return_value='owner/repo').start()
         self.prs = patch.object(gate, 'open_prs', return_value=[]).start()
+        self.review = patch.object(gate, 'review_incoming').start()
 
     def git(self, *args):
         return subprocess.check_output(['git', *args], cwd=self.root, text=True).strip()
@@ -215,6 +216,20 @@ class PushGate(unittest.TestCase):
              patch.object(gate, 'remote_state', side_effect=[state, {**state, 'refs/heads/new': self.head}]):
             with self.assertRaisesRegex(RuntimeError, 'Remote refs changed'):
                 gate.main()
+
+    def test_incoming_review_brackets_qualification_and_failure_blocks_before_tests(self):
+        from io import StringIO
+        row = f'refs/heads/main {self.head} refs/heads/main {self.base}\n'
+        with patch.object(sys, 'argv', ['pre-push.py', 'origin', str(self.remote)]), \
+                patch.object(sys, 'stdin', StringIO(row)), patch.object(verify, 'run'):
+            gate.main()
+        self.assertEqual([c.args[0] for c in self.review.call_args_list], ['snapshot', 'compare'])
+        self.review.side_effect = RuntimeError('review unavailable')
+        with patch.object(sys, 'argv', ['pre-push.py', 'origin', str(self.remote)]), \
+                patch.object(sys, 'stdin', StringIO(row)), patch.object(verify, 'run') as run:
+            with self.assertRaisesRegex(RuntimeError, 'review unavailable'):
+                gate.main()
+            run.assert_not_called()
 
 
 if __name__ == '__main__':

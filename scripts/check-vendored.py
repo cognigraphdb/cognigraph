@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def check(root=ROOT):
     vendor = root / 'vendor'
-    record = json.loads((vendor / 'tantivy-0.26.1.provenance.json').read_text())
-    snapshot = vendor / 'tantivy-0.26.1'
+    record = json.loads((vendor / 'tantivy-0.26.2.provenance.json').read_text())
+    snapshot = vendor / 'tantivy-0.26.2'
     expected = record['original_files']
     actual = {p.relative_to(snapshot).as_posix() for p in snapshot.rglob('*') if p.is_file()}
     if actual != set(expected):

@@ -60,3 +60,11 @@ The bounded patch and integrity gate are implemented. The
 This decision accepts a maintenance strategy for paste; it does not claim that
 paste is maintained, replaced or absent from Cargo.lock. Commit, publication,
 merge and deployment remain separate from local resolution.
+
+## Addendum — 2026-09-14
+
+[CG-83](../issues/CG-83.md) refreshes the patched Tantivy release to 0.26.2 and
+the compatible dependency resolution, including the optional macro helper.
+The [refresh decision](decision_dependency_refresh_2026_09_14.md) amends these
+version-specific choices and records the required compatibility checks. It
+retains the existing maintenance deadline, visible warnings and patch limits.

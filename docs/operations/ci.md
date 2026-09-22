@@ -9,14 +9,15 @@ python3 scripts/verify.py --suite docker
 ```
 
 The first suite includes frozen UI installation/checks/build, workflow lint,
-Cargo and Bun advisory scans, script regressions, formatting, docs, issue and
+Cargo and Bun advisory scans, read-only dependency freshness checks, script regressions, formatting, docs, issue and
 edition boundaries, strict Clippy/tests in both editions, Helm rendering,
 Native release acceptance and both-edition Chromium regressions. Rust builds,
 Clippy and tests use the lockfile without modification. The bounded Tantivy
 snapshot also passes `scripts/check-vendored.py`, which checks published source
 bytes and permits only the reviewed dependency-manifest patch.
 
-The Docker suite builds both Linux images, tests their packaged server/CLI and
+The Docker suite builds both Linux images, refreshes installed runtime packages,
+scans both image IDs for vulnerabilities, tests their packaged server/CLI and
 persistence, and exercises the rendered Helm backup in both editions. CI uses
 Linux/amd64; local Docker defaults must target the same platform for publication
 qualification. The chart probes use disposable Docker resources, not a cluster.
@@ -38,7 +39,8 @@ Evidence data volumes from the test session.
 
 Install Rust stable with Clippy/rustfmt, Bun, Playwright Chromium and its system
 libraries, Docker, Helm 4.2.4, actionlint 1.7.12 and cargo-audit 0.22.2. CI pins
-Action implementations to upstream commit SHAs. Rust stable, Bun latest and
+Action implementations to upstream commit SHAs. Install Trivy 0.74.0 as well
+(`brew install trivy` on macOS; CI uses the pinned official installer). Rust stable, Bun latest and
 Docker base-image latest tags retain the project's current-runtime policy.
 
 Run `rustup update stable` before qualifying an outgoing candidate, then confirm
@@ -70,7 +72,38 @@ PRs are disabled separately from vulnerability alerts, which remain enabled.
 Updates arrive as PRs and do not authorize integration. Model APIs, research holdouts and
 provider qualification are outside routine CI.
 
+## Container vulnerability gate
+
+The [container vulnerability gate](../decisions/decision_container_vulnerability_gate.md)
+runs `scripts/check-image-vulnerabilities.py` inside the Docker suite. It rejects
+every finding with a fixed version at any severity. It needs local Docker access
+and network access to Trivy's vulnerability database, without a Docker Hub login.
+Scanner errors and missing inventory fail the gate. It scans the exact local IDs
+and ignores local suppression/configuration overrides. Reports under
+`target/ci/image-security/run-*/` include all findings, scanner/database metadata
+and image IDs; CI uploads them as `image-security-results` for seven days, even
+if the scan fails. Unfixed findings remain visible and require review; a passing
+gate is not a zero-CVE claim. [CG-81](../issues/CG-81.md) owns the remaining
+2026-09-14 review. Cargo/Bun scans cover dependencies that an image scan may miss.
+
 ## GitHub protections
+
+The [develop qualification gate](develop-gate.md) requires current direct
+application dependencies and fresh compatible Cargo/Bun resolutions, including
+optional Cargo feature paths and UI development dependencies. Registry or
+resolver errors fail the check. The local push hook and workflow bracket source
+qualification with incoming PR snapshots; the Docker job checks incoming work
+again before it can pass or publish. These steps have read-only PR/check/status
+permissions, and their token is scoped to the inspection steps rather than all
+source tests. Full Git history is required in both jobs.
+
+Dependency inventories and resolver logs under `target/ci/dependencies/`, and
+`target/ci/incoming.json`, are included in acceptance diagnostics. Review/check
+states are recorded separately from exact-head accounting. The owner still reviews
+the work and authorizes merges. [CG-82](../issues/CG-82.md) tracks this local
+workflow change. [CG-83](../issues/CG-83.md) qualifies the refreshed combined
+candidate locally; remote activation still requires an authorized push and
+passing remote CI.
 
 The public code repository uses rulesets for `main` and `develop` requiring PRs, the GitHub Actions
 `CI required` check on an up-to-date candidate, resolved review conversations,

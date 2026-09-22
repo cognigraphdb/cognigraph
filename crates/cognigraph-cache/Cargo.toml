@@ -14,7 +14,7 @@ serde_json = { workspace = true }
 tokio = { workspace = true }
 tracing = { workspace = true }
 lru = { workspace = true }
-redb = "4.1.0"
+redb = "4.3.0"
 
 [dev-dependencies]
 tempfile = "3"
