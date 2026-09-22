@@ -331,11 +331,30 @@ pub enum SortDirection {
     Desc,
 }
 
+/// A LIMIT operand: a literal, or a bind variable resolved before execution
+/// (CG-85). Literals keep their bare JSON number shape; binds serialize as
+/// `{"bind": "name"}`.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum LimitValue {
+    Literal(u64),
+    Bind { bind: String },
+}
+
+impl std::fmt::Display for LimitValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::Literal(n) => write!(f, "{n}"),
+            Self::Bind { bind } => write!(f, "@{bind}"),
+        }
+    }
+}
+
 /// A limit clause.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct LimitClause {
-    pub offset: Option<u64>,
-    pub count: u64,
+    pub offset: Option<LimitValue>,
+    pub count: LimitValue,
 }
 
 /// CGQL expression.

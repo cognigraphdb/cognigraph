@@ -1,6 +1,6 @@
 use cognigraph_query::{
-    BinaryOp, Direction, Expr, ForClause, LimitClause, ObjectField, SortDirection, UnaryOp,
-    parse_query,
+    BinaryOp, Direction, Expr, ForClause, LimitClause, LimitValue, ObjectField, SortDirection,
+    UnaryOp, parse_query,
 };
 
 #[test]
@@ -29,7 +29,7 @@ fn parses_collection_query() {
         query.limit,
         Some(LimitClause {
             offset: None,
-            count: 20
+            count: LimitValue::Literal(20)
         })
     );
     assert_eq!(
@@ -105,8 +105,8 @@ fn parses_limit_with_offset() {
     assert_eq!(
         query.limit,
         Some(LimitClause {
-            offset: Some(10),
-            count: 25
+            offset: Some(LimitValue::Literal(10)),
+            count: LimitValue::Literal(25)
         })
     );
 }

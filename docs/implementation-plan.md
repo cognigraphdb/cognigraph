@@ -77,7 +77,9 @@ The shared Railway database is now stopped under the on-demand QA lifecycle.
   optional mmap vectors, text search, traversal and atomic batches. CG-67 removes
   the Arango adapter and its configuration from the current unreleased tree.
 - CGQL v2 and workload follow-ups D1–D12 are implemented. Public query surfaces
-  accept parsed CGQL; no opaque query passthrough exists. Mutation queries still reject
+  accept parsed CGQL; no opaque query passthrough exists. Since v2.7.25,
+  `LIMIT` operands may be bind variables resolved before execution
+  ([CG-85](issues/CG-85.md), [decision](decisions/decision_limit_bind_variables.md)). Mutation queries still reject
   backend `DOCUMENT()` reads and correlated traversal before execution.
 - Governed milestones M15–M26 provide durable jobs, signed authority, verified
   artifact consumption and derivation, custody recovery, and separately signed

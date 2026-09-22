@@ -53,6 +53,11 @@ pub enum ValidationError {
     #[error("LIMIT count {count} exceeds configured maximum {max}")]
     LimitTooLarge { count: u64, max: u64 },
 
+    /// A bound LIMIT operand resolved to something other than a non-negative
+    /// integer JSON number (raised before execution, CG-85).
+    #[error("LIMIT {role} bind variable `@{name}` must be a non-negative integer")]
+    LimitBindNotInteger { role: String, name: String },
+
     #[error("traversal maximum depth {depth} exceeds configured maximum {max}")]
     TraversalDepthTooLarge { depth: u32, max: u32 },
 
@@ -382,15 +387,19 @@ fn validate_traversal_start(expr: &Expr) -> Result<(), ValidationError> {
     }
 }
 
+/// Literal operands are checked here; bound operands are checked with the
+/// same errors once their values are known, before any storage access.
 fn validate_limit(limit: &LimitClause, options: ValidationOptions) -> Result<(), ValidationError> {
-    if limit.count == 0 {
-        return Err(ValidationError::ZeroLimit);
-    }
-    if limit.count > options.max_limit {
-        return Err(ValidationError::LimitTooLarge {
-            count: limit.count,
-            max: options.max_limit,
-        });
+    if let crate::ast::LimitValue::Literal(count) = limit.count {
+        if count == 0 {
+            return Err(ValidationError::ZeroLimit);
+        }
+        if count > options.max_limit {
+            return Err(ValidationError::LimitTooLarge {
+                count,
+                max: options.max_limit,
+            });
+        }
     }
     Ok(())
 }

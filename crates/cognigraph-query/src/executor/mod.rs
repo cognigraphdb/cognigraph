@@ -1,5 +1,6 @@
 mod eval;
 mod explain;
+mod limit;
 mod materialize;
 mod mutation;
 mod pipeline;
@@ -288,6 +289,7 @@ pub async fn parse_and_execute_backend_with_options(
     }
     if plan.analyze {
         check_bind_vars(&plan.bind_vars, bind_vars)?;
+        limit::precheck(&plan, bind_vars)?;
         return analyze_backend(&plan, backend, bind_vars, budget, deadline).await;
     }
     if plan.mutation.is_some() {
@@ -295,9 +297,11 @@ pub async fn parse_and_execute_backend_with_options(
             return Err(ExecutionError::MutationNotAllowed);
         }
         check_bind_vars(&plan.bind_vars, bind_vars)?;
+        limit::precheck(&plan, bind_vars)?;
         return execute_mutation(&plan, backend, bind_vars, &budget, deadline).await;
     }
     check_bind_vars(&plan.bind_vars, bind_vars)?;
+    limit::precheck(&plan, bind_vars)?;
     let cx = RunCx::new(bind_vars, deadline, &budget);
     resolve::execute_read(&plan, backend, &cx).await
 }
@@ -315,6 +319,7 @@ pub async fn execute_backend_plan(
         return Err(ExecutionError::MutationNotAllowed);
     }
     check_bind_vars(&plan.bind_vars, bind_vars)?;
+    limit::precheck(plan, bind_vars)?;
     if plan.analyze {
         return analyze_backend(
             plan,
@@ -343,6 +348,7 @@ pub fn execute_plan(
         return Err(ExecutionError::MutationUnsupported);
     }
     check_bind_vars(&plan.bind_vars, bind_vars)?;
+    limit::precheck(plan, bind_vars)?;
     if plan.analyze {
         return analyze_memory(plan, dataset, bind_vars);
     }

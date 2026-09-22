@@ -1,6 +1,6 @@
 use cognigraph_query::{
-    Direction, Expr, LimitClause, PlanError, PlanSource, SortClause, SortDirection, SortKey,
-    ValidationError, parse_and_plan,
+    Direction, Expr, LimitClause, LimitValue, PlanError, PlanSource, SortClause, SortDirection,
+    SortKey, ValidationError, parse_and_plan,
 };
 
 #[test]
@@ -32,7 +32,7 @@ fn plans_collection_scan() {
         plan.limit,
         Some(LimitClause {
             offset: None,
-            count: 20
+            count: LimitValue::Literal(20)
         })
     );
     assert_eq!(plan.bind_vars, vec!["category"]);
@@ -120,6 +120,7 @@ fn logical_plan_is_serializable() {
                 }
             ],
             "distinct": false,
+            "max_limit": 10000,
             "collect": null,
             "mutation": null,
             "sort": null,

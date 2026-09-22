@@ -1,0 +1,1 @@
+FOR d IN documents LIMIT @n + 1 RETURN d

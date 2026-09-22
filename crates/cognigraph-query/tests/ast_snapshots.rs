@@ -190,3 +190,25 @@ fn vector_query_ast_shape() {
         })
     );
 }
+
+/// CG-85: a bound LIMIT keeps the literal JSON shape for literals and marks
+/// bind names explicitly; both names are declared in `bind_vars`.
+#[test]
+fn limit_bind_ast_shape() {
+    let bound = parsed_json("FOR d IN documents LIMIT @o, @n RETURN d");
+    assert_eq!(
+        bound["limit"],
+        json!({ "offset": { "bind": "o" }, "count": { "bind": "n" } })
+    );
+    assert_eq!(bound["bind_vars"], json!(["n", "o"]));
+
+    let literal = parsed_json("FOR d IN documents LIMIT 3, 2 RETURN d");
+    assert_eq!(literal["limit"], json!({ "offset": 3, "count": 2 }));
+    assert_eq!(literal["bind_vars"], json!([]));
+
+    let mixed = parsed_json("FOR d IN documents LIMIT 1, @n RETURN d");
+    assert_eq!(
+        mixed["limit"],
+        json!({ "offset": 1, "count": { "bind": "n" } })
+    );
+}

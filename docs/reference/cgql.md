@@ -197,15 +197,29 @@ If no direction is provided, a key sorts ascending.
 
 ## Limit
 
-Limit accepts either count or offset plus count:
+Limit accepts either count or offset plus count. Each operand is an unsigned
+integer literal or a bind variable; the two may be mixed:
 
 ```cgql
 LIMIT 20
 LIMIT 10, 20
+LIMIT @count
+LIMIT @offset, @count
+LIMIT 10, @count
 ```
 
 Validation rejects `LIMIT 0`. Validation options can set a maximum accepted
-limit.
+limit. A bound operand must be supplied as a non-negative integer JSON
+number; strings, floats (including `2.0`), negatives, booleans and null are
+rejected before execution with
+`LIMIT count bind variable `@count` must be a non-negative integer` (or
+`offset`). A bound count of zero or above the maximum raises the same errors
+as a literal. Bound values are resolved after the bind-variable presence
+check and before any storage access, including inside `LET` subqueries, so
+an invalid value never starts a scan. Expressions (`@n + 1`, `-@n`,
+`d.count`) are not operands. Plain `EXPLAIN` shows the bind names
+(`LIMIT @offset, @count`); pushdown behaves as for literals with the resolved
+values. See the [decision record](../decisions/decision_limit_bind_variables.md).
 
 ## Return
 

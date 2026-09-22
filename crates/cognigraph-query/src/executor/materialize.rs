@@ -21,6 +21,7 @@ use super::backend_execution_error;
 use super::eval::{EvalCtx, eval_expr};
 use super::run::{Materialized, RunCx, SiteRows, TraversalHit};
 use super::{BindVars, Env, ExecutionError, InMemoryDataset};
+use crate::ast::LimitClause;
 
 // ---------------------------------------------------------------------------
 // Pushdown analysis (shared by materialization and EXPLAIN)
@@ -51,9 +52,10 @@ pub(super) struct ScanPushdown {
     /// True when every same-plan FILTER decomposed entirely into pushed
     /// conjuncts (the engine still re-applies them as a correctness belt).
     pub all_filters_pushed: bool,
-    /// LIMIT pushdown (offset + count): only for a plan whose body has
-    /// exactly this one For, with no SORT/COLLECT and no residual filters.
-    pub fetch_limit: Option<usize>,
+    /// LIMIT pushdown (offset + count, resolved at run time): only for a
+    /// plan whose body has exactly this one For, with no SORT/COLLECT and no
+    /// residual filters.
+    pub fetch_limit: Option<LimitClause>,
 }
 
 /// Analyze pushdown for the For op at `for_index` in `plan.body`.
@@ -84,7 +86,7 @@ pub(super) fn analyze_scan(plan: &LogicalPlan, for_index: usize, var: &str) -> S
                 && plan.collect.is_none()
                 && all_filters_pushed =>
         {
-            Some(limit.offset.unwrap_or(0) as usize + limit.count as usize)
+            Some(limit.clone())
         }
         _ => None,
     };
@@ -457,20 +459,21 @@ async fn materialize_backend_plan(
                 match source {
                     PlanSource::CollectionScan { collection } => {
                         let pushdown = analyze_scan(plan, index, var);
+                        let fetch_limit = pushdown
+                            .fetch_limit
+                            .as_ref()
+                            .map(|l| super::limit::resolve_limit(l, cx.bind_vars, plan.max_limit))
+                            .transpose()?
+                            .map(super::limit::ResolvedLimit::fetch_len);
                         let fetch_started = std::time::Instant::now();
                         let rows = if pushdown.predicates.is_empty() {
                             match &pushdown.fields {
                                 Some(fields) => backend
-                                    .list_documents_projected(
-                                        collection,
-                                        fields,
-                                        pushdown.fetch_limit,
-                                        None,
-                                    )
+                                    .list_documents_projected(collection, fields, fetch_limit, None)
                                     .await
                                     .map_err(backend_execution_error)?,
                                 None => backend
-                                    .list_documents(collection, pushdown.fetch_limit, None)
+                                    .list_documents(collection, fetch_limit, None)
                                     .await
                                     .map_err(backend_execution_error)?,
                             }
@@ -482,7 +485,7 @@ async fn materialize_backend_plan(
                                     collection,
                                     &predicates,
                                     pushdown.fields.as_deref(),
-                                    pushdown.fetch_limit,
+                                    fetch_limit,
                                     None,
                                 )
                                 .await
@@ -503,8 +506,9 @@ async fn materialize_backend_plan(
                         let search_limit = plan
                             .limit
                             .as_ref()
-                            .map(|limit| limit.offset.unwrap_or(0) as usize + limit.count as usize)
-                            .unwrap_or(100);
+                            .map(|l| super::limit::resolve_limit(l, cx.bind_vars, plan.max_limit))
+                            .transpose()?
+                            .map_or(100, super::limit::ResolvedLimit::fetch_len);
                         let threshold = match vector_threshold(plan, var) {
                             Some(value) => resolve_push_number(&value, cx.bind_vars)?,
                             None => None,

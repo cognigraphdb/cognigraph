@@ -1,0 +1,2 @@
+// binds: {"n": 1}
+FOR d IN documents SORT d._key ASC LIMIT @n, @n RETURN d._key

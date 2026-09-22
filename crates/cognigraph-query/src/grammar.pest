@@ -43,7 +43,8 @@ collect_count = { kw_with ~ kw_count ~ kw_into ~ ident }
 sort_clause = { kw_sort ~ sort_key ~ ("," ~ sort_key)* ~ (kw_collate ~ string)? }
 sort_key = { expr ~ sort_direction? }
 sort_direction = { kw_asc | kw_desc }
-limit_clause = { kw_limit ~ uint ~ ("," ~ uint)? }
+limit_clause = { kw_limit ~ limit_value ~ ("," ~ limit_value)? }
+limit_value = { uint | bind_var }
 return_clause = { kw_return ~ kw_distinct? ~ expr }
 
 expr = { ternary_expr }
