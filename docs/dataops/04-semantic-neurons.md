@@ -606,6 +606,51 @@ took over); a blocker whose forbidden fact no longer grounds even
 unvetoed is flagged inert. Flags are advisories — **retirement stays a
 human decision** (`cognigraph neuron retire KEY`).
 
+## 6b. Trace: what the gates refused
+
+Every rejection from `POST /api/construct/directed` and
+`POST /api/construct/propose` is recorded in the generated
+`construction_refusals` collection in the same request that produced it
+([decision](../decisions/decision_construction_refusal_ledger.md), CG-90).
+Rows carry `origin` (`directed` or `propose`), `space_type`, `gate`, the
+nominated `source`/`relation`/`target`, `chunk_id` and `evidence` (directed
+only), the human-readable `reason`, `policy`, `attribution`, `actor` and
+`recorded_at`. Keys are deterministic, so re-submitting the same nomination
+records once. The collection is readable through generic reads, CGQL and
+`cognigraph export`, and publicly write-protected like `side_views`.
+
+Refusals per gate for one space:
+
+```text
+FOR r IN construction_refusals
+  FILTER r.space_type == "acme"
+  COLLECT gate = r.gate WITH COUNT INTO n
+  RETURN { gate, n }
+```
+
+The nominations one gate refused, with their evidence:
+
+```text
+FOR r IN construction_refusals
+  FILTER r.space_type == "acme" AND r.gate == "vocabulary_not_affirmed"
+  RETURN { fact: CONCAT(r.source, " --", r.relation, "--> ", r.target),
+           chunk: r.chunk_id, evidence: r.evidence, by: r.attribution }
+```
+
+Directed gate codes, in gate order: `relation_not_in_taxonomy`,
+`chunk_not_in_request`, `empty_endpoint`, `unusable_endpoint_identity`,
+`evidence_not_verbatim`, `source_not_in_sentence`, `target_not_in_sentence`,
+`vocabulary_not_affirmed`. Proposal codes: `proposal_rejected`,
+`forbidden_fact_not_grounded`, `blocker_rejected`, `blocker_round_failed`,
+`blocker_round_dry`, `validation_failed`, `duplicate_id`.
+
+Each tenant store keeps at most 10,000 rows. At the cap, new refusals are
+still returned in the response (`refusals[].stored: false`,
+`refusals_dropped`) but not written; there is no retention sweeper yet, so
+clearing the ledger is an operator action through snapshot tooling. A
+ledger write failure is reported as `refusals_error` and never fails the
+construction that already happened.
+
 ## 7. Answer-level checks
 
 Construction metrics prove the right edges exist; the answer layer

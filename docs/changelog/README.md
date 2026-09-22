@@ -164,6 +164,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 - 2026-09-22: [v2.7.20 — Pin CI jobs to the ubuntu-24.04 runner image](2026-09-22-pin-ci-runner-image.md)
 - 2026-09-22: [v2.7.21 — Graph-augmented search warns when accepted rank hints are inert](2026-09-22-inert-rank-hint-warning.md)
 - 2026-09-22: [v2.7.18 — Dependency refresh for the develop freshness gate](2026-09-22-dependency-refresh.md)
+- 2026-09-22: [v2.7.22 — Construction gate refusals are recorded in a ledger](2026-09-22-construction-refusal-ledger.md)
 - 2026-09-22: [v2.7.16 — Construct lifecycle documentation and Semantic Neurons tickets](2026-09-22-construct-lifecycle-and-tickets.md)
 - 2026-09-22: [v2.7.19 — Take CodeMirror patch releases published during CI](2026-09-22-codemirror-registry-drift.md)
 - 2026-09-14: [v2.7.15 — Dependency and container-security candidate](2026-09-14-v2-7-15.md)

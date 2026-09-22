@@ -13,6 +13,8 @@ use crate::validate::validate_neurons;
 #[derive(Debug, Clone)]
 pub struct ProposalSkip {
     pub fact: Fact,
+    /// Stable snake_case code naming the gate that refused (CG-90).
+    pub gate: &'static str,
     pub reason: String,
 }
 
@@ -153,6 +155,7 @@ pub async fn propose_neurons_report(
             Ok(neuron) => neurons.push(neuron),
             Err(reason) => skipped.push(ProposalSkip {
                 fact: fact.clone(),
+                gate: "proposal_rejected",
                 reason,
             }),
         }
@@ -240,6 +243,7 @@ pub async fn propose_neurons_via_backend(
             Ok(neuron) => neurons.push(neuron),
             Err(reason) => skipped.push(ProposalSkip {
                 fact: fact.clone(),
+                gate: "proposal_rejected",
                 reason,
             }),
         }
@@ -282,6 +286,7 @@ pub async fn propose_blockers_report(
         if violating.is_empty() {
             skipped.push(ProposalSkip {
                 fact: fact.clone(),
+                gate: "forbidden_fact_not_grounded",
                 reason: "forbidden fact does not ground from any chunk".into(),
             });
             continue;
@@ -317,6 +322,7 @@ pub async fn propose_blockers_report(
             }
             Err(reason) => skipped.push(ProposalSkip {
                 fact: fact.clone(),
+                gate: "blocker_rejected",
                 reason,
             }),
         }
@@ -365,6 +371,7 @@ pub async fn propose_blockers_covering(
         if violating_all.is_empty() {
             skipped.push(ProposalSkip {
                 fact: fact.clone(),
+                gate: "forbidden_fact_not_grounded",
                 reason: "forbidden fact does not ground from any chunk".into(),
             });
             continue;
@@ -389,6 +396,7 @@ pub async fn propose_blockers_covering(
                     let reason = format!("round {rounds}: {reason}");
                     skipped.push(ProposalSkip {
                         fact: fact.clone(),
+                        gate: "blocker_round_failed",
                         reason: reason.clone(),
                     });
                     stopped = Some(reason);
@@ -416,6 +424,7 @@ pub async fn propose_blockers_covering(
                 );
                 skipped.push(ProposalSkip {
                     fact: fact.clone(),
+                    gate: "blocker_round_dry",
                     reason: reason.clone(),
                 });
                 stopped = Some(reason);

@@ -89,14 +89,30 @@ pub(super) async fn directed(
         provider.as_ref(),
     )
     .await?;
+    // Ledger append in the same request, under the same transition boundary.
+    let rows: Vec<RefusalRow> = outcome.refusals.iter().map(RefusalRow::from).collect();
+    let ledger = record_refusals(
+        &*state.managed_backend,
+        &RefusalContext {
+            space_type: &req.space_type,
+            origin: "directed",
+            policy: Some(cognigraph_construct::directed::DIRECTED_POLICY),
+            attribution: &outcome.extracted_by,
+            actor: &actor(&user),
+        },
+        &rows,
+    )
+    .await;
     drop(transition);
     state.invalidate_search_results().await;
-    Ok(Json(json!({
+    let mut response = json!({
         "space_type": req.space_type,
         "chunks": req.chunks.len(),
         "proposed": outcome.proposed,
         "facts_grounded": outcome.facts_grounded,
         "skips": outcome.skips,
         "extracted_by": outcome.extracted_by,
-    })))
+    });
+    attach(&mut response, ledger);
+    Ok(Json(response))
 }
