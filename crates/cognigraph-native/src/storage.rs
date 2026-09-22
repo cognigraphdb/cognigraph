@@ -17,8 +17,14 @@ const META: TableDefinition<'_, &str, u32> = TableDefinition::new("meta");
 const COLLECTIONS: TableDefinition<'_, &str, u8> = TableDefinition::new("collections");
 const DOCUMENTS: TableDefinition<'_, &str, &str> = TableDefinition::new("documents");
 const IDENTITY: TableDefinition<'_, &str, &str> = TableDefinition::new("identity");
+/// `"{collection}\0{index}"` -> JSON `IndexDef` (CG-86).
+pub(crate) const INDEXES: TableDefinition<'_, &str, &str> = TableDefinition::new("indexes");
+/// `"{collection}\0{index}\0{value key}"` -> document key (CG-86).
+pub(crate) const INDEX_ENTRIES: TableDefinition<'_, &str, &str> =
+    TableDefinition::new("index_entries");
 
-const SCHEMA_VERSION: u32 = 2;
+/// Version 3 adds the two index tables; the upgrade is additive.
+const SCHEMA_VERSION: u32 = 3;
 const DATA_GENERATION_KEY: &str = "data_generation";
 
 /// Composite-key separator. Collection names and document keys must not
@@ -43,14 +49,35 @@ pub(crate) enum StoreOp<'a> {
         collection: &'a str,
         key: &'a str,
     },
+    PutIndex {
+        collection: &'a str,
+        name: &'a str,
+        def: &'a cognigraph_core::IndexDef,
+    },
+    /// Removes the definition and every entry under it.
+    DropIndex {
+        collection: &'a str,
+        name: &'a str,
+    },
+    PutIndexEntry {
+        collection: &'a str,
+        index: &'a str,
+        value_key: &'a str,
+        doc_key: &'a str,
+    },
+    DeleteIndexEntry {
+        collection: &'a str,
+        index: &'a str,
+        value_key: &'a str,
+    },
 }
 
 pub(crate) struct RedbStore {
-    db: Database,
+    pub(crate) db: Database,
     database_id: String,
 }
 
-fn store_err(e: impl std::fmt::Display) -> CogniGraphError {
+pub(crate) fn store_err(e: impl std::fmt::Display) -> CogniGraphError {
     CogniGraphError::BackendError(format!("native storage: {e}"))
 }
 
@@ -63,8 +90,26 @@ fn check_name(name: &str) -> Result<()> {
     Ok(())
 }
 
-fn composite_key(collection: &str, key: &str) -> String {
+pub(crate) fn composite_key(collection: &str, key: &str) -> String {
     format!("{collection}{SEP}{key}")
+}
+
+/// Every key of `table` that starts with `prefix`. Prefixes end in the
+/// NUL separator, so the exclusive upper bound is the prefix with that
+/// final NUL replaced by the next byte: everything under the prefix sorts
+/// below it and nothing else sorts between.
+fn keys_with_prefix<T: ReadableTable<&'static str, &'static str>>(
+    table: &T,
+    prefix: &str,
+) -> Result<Vec<String>> {
+    let base = prefix.strip_suffix(SEP).unwrap_or(prefix);
+    let end = format!("{base}\u{1}");
+    table
+        .range(prefix..end.as_str())
+        .map_err(store_err)?
+        .map(|entry| entry.map(|(key, _)| key.value().to_string()))
+        .collect::<std::result::Result<Vec<_>, _>>()
+        .map_err(store_err)
 }
 
 fn collection_type_to_u8(collection_type: CollectionType) -> u8 {
@@ -128,6 +173,8 @@ impl RedbStore {
             // missing tables.
             txn.open_table(COLLECTIONS).map_err(store_err)?;
             txn.open_table(DOCUMENTS).map_err(store_err)?;
+            txn.open_table(INDEXES).map_err(store_err)?;
+            txn.open_table(INDEX_ENTRIES).map_err(store_err)?;
         }
         txn.commit().map_err(store_err)?;
 
@@ -411,6 +458,8 @@ impl RedbStore {
         {
             let mut collections = txn.open_table(COLLECTIONS).map_err(store_err)?;
             let mut documents = txn.open_table(DOCUMENTS).map_err(store_err)?;
+            let mut indexes = txn.open_table(INDEXES).map_err(store_err)?;
+            let mut entries = txn.open_table(INDEX_ENTRIES).map_err(store_err)?;
 
             for op in ops {
                 match op {
@@ -425,16 +474,15 @@ impl RedbStore {
                     }
                     StoreOp::DropCollection { name } => {
                         collections.remove(*name).map_err(store_err)?;
-                        let start = format!("{name}{SEP}");
-                        let end = format!("{name}\u{1}");
-                        let keys = documents
-                            .range(start.as_str()..end.as_str())
-                            .map_err(store_err)?
-                            .map(|entry| entry.map(|(key, _)| key.value().to_string()))
-                            .collect::<std::result::Result<Vec<_>, _>>()
-                            .map_err(store_err)?;
-                        for key in keys {
+                        let prefix = format!("{name}{SEP}");
+                        for key in keys_with_prefix(&documents, &prefix)? {
                             documents.remove(key.as_str()).map_err(store_err)?;
+                        }
+                        for key in keys_with_prefix(&indexes, &prefix)? {
+                            indexes.remove(key.as_str()).map_err(store_err)?;
+                        }
+                        for key in keys_with_prefix(&entries, &prefix)? {
+                            entries.remove(key.as_str()).map_err(store_err)?;
                         }
                     }
                     StoreOp::PutDocument {
@@ -452,6 +500,49 @@ impl RedbStore {
                     StoreOp::DeleteDocument { collection, key } => {
                         documents
                             .remove(composite_key(collection, key).as_str())
+                            .map_err(store_err)?;
+                    }
+                    StoreOp::PutIndex {
+                        collection,
+                        name,
+                        def,
+                    } => {
+                        check_name(collection)?;
+                        check_name(name)?;
+                        let json = serde_json::to_string(def).map_err(store_err)?;
+                        indexes
+                            .insert(composite_key(collection, name).as_str(), json.as_str())
+                            .map_err(store_err)?;
+                    }
+                    StoreOp::DropIndex { collection, name } => {
+                        indexes
+                            .remove(composite_key(collection, name).as_str())
+                            .map_err(store_err)?;
+                        let prefix = format!("{collection}{SEP}{name}{SEP}");
+                        for key in keys_with_prefix(&entries, &prefix)? {
+                            entries.remove(key.as_str()).map_err(store_err)?;
+                        }
+                    }
+                    StoreOp::PutIndexEntry {
+                        collection,
+                        index,
+                        value_key,
+                        doc_key,
+                    } => {
+                        entries
+                            .insert(
+                                format!("{collection}{SEP}{index}{SEP}{value_key}").as_str(),
+                                *doc_key,
+                            )
+                            .map_err(store_err)?;
+                    }
+                    StoreOp::DeleteIndexEntry {
+                        collection,
+                        index,
+                        value_key,
+                    } => {
+                        entries
+                            .remove(format!("{collection}{SEP}{index}{SEP}{value_key}").as_str())
                             .map_err(store_err)?;
                     }
                 }

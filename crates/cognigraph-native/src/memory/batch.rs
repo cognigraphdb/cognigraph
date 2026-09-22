@@ -7,7 +7,7 @@ use serde_json::Value;
 use crate::storage::StoreOp;
 
 use super::helpers::{collection_mut, document_key, merge_json, stamp_document, stamp_edge};
-use super::{NativeBackend, NativeState, VectorMode};
+use super::{NativeBackend, NativeState, VectorMode, indexes};
 
 impl NativeBackend {
     /// Atomic batch: everything validated and prepared under the write
@@ -20,8 +20,12 @@ impl NativeBackend {
         }
         let mut state = self.write_state()?;
 
-        // Phase 1: validate every op and compute its final document.
+        // Phase 1: validate every op and compute its final document. Unique
+        // index deltas are computed in order against a batch shadow so an
+        // earlier op's freed value is usable by a later one (CG-86).
         let mut planned: Vec<(String, String, CollectionType, Effect)> = Vec::new();
+        let mut deltas: Vec<(indexes::Entries, indexes::Entries)> = Vec::new();
+        let mut shadow: indexes::Shadow = Default::default();
         let collection_type = |state: &NativeState, collection: &str| -> CollectionType {
             state
                 .collection_types
@@ -109,6 +113,9 @@ impl NativeBackend {
                         )));
                     }
                     let doc = stamp(collection, &key, collection_type, doc.clone())?;
+                    let added = indexes::check(&state, &shadow, collection, &key, &doc)?;
+                    indexes::shadow_write(&mut shadow, collection, &key, &indexes::NONE, &added);
+                    deltas.push((Vec::new(), added));
                     planned.push((
                         collection.clone(),
                         key,
@@ -135,8 +142,12 @@ impl NativeBackend {
                                 key: key.clone(),
                             }
                         })?;
+                    let removed = indexes::entries_of(&state, collection, &updated);
                     merge_json(&mut updated, merge.clone());
                     let doc = stamp(collection, key, collection_type, updated)?;
+                    let added = indexes::check(&state, &shadow, collection, key, &doc)?;
+                    indexes::shadow_write(&mut shadow, collection, key, &removed, &added);
+                    deltas.push((removed, added));
                     planned.push((
                         collection.clone(),
                         key.clone(),
@@ -156,7 +167,13 @@ impl NativeBackend {
                             key: key.clone(),
                         });
                     }
+                    let removed = base_doc(&state, &planned, collection, key)?
+                        .map(|old| indexes::entries_of(&state, collection, &old))
+                        .unwrap_or_default();
                     let doc = stamp(collection, key, collection_type, doc.clone())?;
+                    let added = indexes::check(&state, &shadow, collection, key, &doc)?;
+                    indexes::shadow_write(&mut shadow, collection, key, &removed, &added);
+                    deltas.push((removed, added));
                     planned.push((
                         collection.clone(),
                         key.clone(),
@@ -172,6 +189,11 @@ impl NativeBackend {
                             key: key.clone(),
                         });
                     }
+                    let removed = base_doc(&state, &planned, collection, key)?
+                        .map(|old| indexes::entries_of(&state, collection, &old))
+                        .unwrap_or_default();
+                    indexes::shadow_write(&mut shadow, collection, key, &removed, &indexes::NONE);
+                    deltas.push((removed, Vec::new()));
                     planned.push((
                         collection.clone(),
                         key.clone(),
@@ -207,12 +229,18 @@ impl NativeBackend {
                     Effect::Delete => StoreOp::DeleteDocument { collection, key },
                 }),
         );
+        for ((collection, key, _, _), (removed, added)) in planned.iter().zip(&deltas) {
+            store_ops.extend(indexes::ops(collection, key, removed, added));
+        }
         self.persist(&store_ops)?;
 
         // Phase 3: apply to memory, cache, and sidecar delta.
         let mut results = Vec::with_capacity(planned.len());
-        for (collection_name, key, collection_type, effect) in &planned {
+        for ((collection_name, key, collection_type, effect), (removed, added)) in
+            planned.iter().zip(&deltas)
+        {
             self.triples_invalidate(collection_name);
+            indexes::apply(&mut state, collection_name, key, removed, added);
             match effect {
                 Effect::Put { doc } => {
                     let stored = self.strip_embedding_if_sidecar(doc.clone());

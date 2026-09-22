@@ -155,6 +155,18 @@ fn cgql_error(error: cognigraph_query::ExecutionError) -> AppError {
         cognigraph_query::ExecutionError::Connection(message) => {
             AppError(CogniGraphError::ConnectionError(message))
         }
+        cognigraph_query::ExecutionError::Conflict(message) => {
+            AppError(CogniGraphError::DocumentConflict(message))
+        }
+        cognigraph_query::ExecutionError::UniqueViolation {
+            collection,
+            index,
+            existing,
+        } => AppError(CogniGraphError::UniqueViolation {
+            collection,
+            index,
+            existing,
+        }),
         other => AppError(CogniGraphError::QueryError(other.to_string())),
     }
 }
@@ -325,3 +337,7 @@ mod tests {
         backend.assert_unused();
     }
 }
+
+#[cfg(test)]
+#[path = "cgql_conflict_tests.rs"]
+mod conflict_tests;

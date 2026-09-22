@@ -559,6 +559,15 @@ impl GraphBackend for GuardedBackend {
         self.inner.ensure_index(collection, index).await
     }
 
+    async fn list_indexes(&self, collection: &str) -> Result<Vec<IndexDef>> {
+        self.inner.list_indexes(collection).await
+    }
+
+    async fn drop_index(&self, collection: &str, name: &str) -> Result<bool> {
+        deny_public_collection_mutation(collection)?;
+        self.inner.drop_index(collection, name).await
+    }
+
     async fn drop_collection(&self, name: &str) -> Result<()> {
         deny_public_collection_mutation(name)?;
         #[cfg(feature = "enterprise")]

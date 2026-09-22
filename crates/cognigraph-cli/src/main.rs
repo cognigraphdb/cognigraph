@@ -144,6 +144,28 @@ fn run(api: &Api, command: Command) -> Result<Option<Value>, String> {
         Command::DocDelete { collection, key } => {
             Ok(Some(api.delete(&format!("/documents/{collection}/{key}"))?))
         }
+        Command::IndexList { collection } => Ok(Some(
+            api.get(&format!("/collections/{collection}/indexes"))?,
+        )),
+        Command::IndexEnsure {
+            collection,
+            fields,
+            name,
+            unique,
+            sparse,
+        } => {
+            let mut body = json!({ "fields": fields, "unique": unique, "sparse": sparse });
+            if let Some(name) = name {
+                body["name"] = json!(name);
+            }
+            Ok(Some(api.post(
+                &format!("/collections/{collection}/indexes"),
+                &body,
+            )?))
+        }
+        Command::IndexDrop { collection, name } => Ok(Some(
+            api.delete(&format!("/collections/{collection}/indexes/{name}"))?,
+        )),
         Command::UserCreate {
             username,
             role,

@@ -4,6 +4,7 @@ mod derivative;
 mod memory;
 mod sidecar;
 mod storage;
+mod storage_indexes;
 mod text_index;
 
 pub use memory::{NativeBackend, StorageMode, VectorMode};

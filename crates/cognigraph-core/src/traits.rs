@@ -284,7 +284,28 @@ pub trait GraphBackend: Send + Sync {
     async fn ensure_collection(&self, name: &str, collection_type: CollectionType) -> Result<()>;
 
     /// Ensure an index exists on a collection.
+    /// Ensure an index exists on a collection. A unique `persistent`/`hash`
+    /// definition on a document collection becomes an enforced constraint:
+    /// declaring it over existing duplicates fails with `UniqueViolation` and
+    /// stores nothing; the same definition again is a success; a different
+    /// definition under the same name is a `ValidationError`. Unique
+    /// constraints on edge collections and index types other than
+    /// persistent/hash are rejected; non-unique declarations are recorded
+    /// for any collection and never enforced (CG-86).
     async fn ensure_index(&self, collection: &str, index: &IndexDef) -> Result<()>;
+
+    /// Index definitions recorded for a collection, names resolved.
+    async fn list_indexes(&self, _collection: &str) -> Result<Vec<IndexDef>> {
+        Ok(Vec::new())
+    }
+
+    /// Drop an index by name; `Ok(false)` when it did not exist.
+    async fn drop_index(&self, _collection: &str, _name: &str) -> Result<bool> {
+        Err(crate::error::CogniGraphError::BackendError(format!(
+            "{} does not support index management",
+            self.backend_name()
+        )))
+    }
 
     /// Drop a collection if it exists.
     async fn drop_collection(&self, name: &str) -> Result<()>;

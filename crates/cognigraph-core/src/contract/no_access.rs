@@ -143,6 +143,12 @@ impl GraphBackend for NoAccessBackend {
     async fn ensure_index(&self, _: &str, _: &IndexDef) -> Result<()> {
         self.unexpected("ensure_index")
     }
+    async fn list_indexes(&self, _: &str) -> Result<Vec<IndexDef>> {
+        self.unexpected("list_indexes")
+    }
+    async fn drop_index(&self, _: &str, _: &str) -> Result<bool> {
+        self.unexpected("drop_index")
+    }
 
     async fn drop_collection(&self, _: &str) -> Result<()> {
         self.unexpected("drop_collection")

@@ -79,7 +79,10 @@ The shared Railway database is now stopped under the on-demand QA lifecycle.
 - CGQL v2 and workload follow-ups D1–D12 are implemented. Public query surfaces
   accept parsed CGQL; no opaque query passthrough exists. Since v2.7.25,
   `LIMIT` operands may be bind variables resolved before execution
-  ([CG-85](issues/CG-85.md), [decision](decisions/decision_limit_bind_variables.md)). Mutation queries still reject
+  ([CG-85](issues/CG-85.md), [decision](decisions/decision_limit_bind_variables.md)). Since v2.7.26, document
+  collections accept persisted unique constraints enforced on every write path
+  ([CG-86](issues/CG-86.md), [decision](decisions/decision_unique_indexes.md));
+  secondary-index pushdown remains later work. Mutation queries still reject
   backend `DOCUMENT()` reads and correlated traversal before execution.
 - Governed milestones M15–M26 provide durable jobs, signed authority, verified
   artifact consumption and derivation, custody recovery, and separately signed

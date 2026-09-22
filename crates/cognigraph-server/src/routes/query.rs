@@ -62,6 +62,18 @@ async fn read_write_query(
         cognigraph_query::ExecutionError::Connection(message) => {
             AppError(CogniGraphError::ConnectionError(message))
         }
+        cognigraph_query::ExecutionError::Conflict(message) => {
+            AppError(CogniGraphError::DocumentConflict(message))
+        }
+        cognigraph_query::ExecutionError::UniqueViolation {
+            collection,
+            index,
+            existing,
+        } => AppError(CogniGraphError::UniqueViolation {
+            collection,
+            index,
+            existing,
+        }),
         other => AppError(CogniGraphError::QueryError(other.to_string())),
     })?;
 

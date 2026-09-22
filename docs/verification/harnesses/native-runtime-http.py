@@ -14,6 +14,8 @@ from pathlib import Path
 import subprocess
 import tempfile
 import threading
+from urllib.error import HTTPError
+from urllib.request import Request, urlopen
 from http.server import ThreadingHTTPServer
 
 REPO = Path(__file__).resolve().parents[3]
@@ -27,6 +29,17 @@ MODES = ("memory", "resident-embedded", "resident-sidecar", "paged-sidecar")
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def status_of(base, path, body, token):
+    """HTTP status of one write, for races where either 200 or 409 is expected."""
+    request = Request(base + path, data=json.dumps(body).encode(), method="POST",
+                      headers={"Content-Type": "application/json", "Authorization": "Bearer " + token})
+    try:
+        with urlopen(request, timeout=10) as response:
+            return response.status
+    except HTTPError as error:
+        return error.code
 
 
 def verify(binary, edition, mode, directory, provider_url):
@@ -103,6 +116,40 @@ def verify(binary, edition, mode, directory, provider_url):
         ]}, status=409)
         call("/api/documents/notes/rollback", status=404)
 
+        # CG-86: unique constraints hold on every write path and under races.
+        declared = call("/api/collections/notes/indexes", {"fields": ["title"]})
+        expect("Unique index declared", declared["index"]["name"] == "title_unique" and declared["index"]["unique"] is True)
+        expect("Unique index listed", call("/api/collections/notes/indexes")["count"] == 1)
+        violation = call("/api/documents", {"collection": "notes", "_key": "dup", "title": "updated"}, status=409)
+        expect("Unique violation code", violation.get("code") == "unique_violation" and "title_unique" in violation["error"])
+        call("/api/documents/notes/dup", status=404)
+        cgql = call("/api/query", {"query": 'INSERT { _key: "dup", title: "updated" } INTO notes'}, status=409)
+        expect("CGQL unique violation is 409", cgql.get("code") == "unique_violation")
+        call("/api/batch", {"ops": [
+            {"op": "insert", "collection": "notes", "doc": {"_key": "batch1", "title": "batch"}},
+            {"op": "insert", "collection": "notes", "doc": {"_key": "batch2", "title": "batch"}},
+        ]}, status=409)
+        call("/api/documents/notes/batch1", status=404)
+        statuses = []
+        def race(key):
+            statuses.append(status_of(base, "/api/documents", {"collection": "notes", "_key": key, "title": "race"},
+                                      tokens["admin"]))
+        racers = [threading.Thread(target=race, args=(f"race{i}",)) for i in range(6)]
+        for racer in racers:
+            racer.start()
+        for racer in racers:
+            racer.join()
+        expect("Concurrent violating writes admit exactly one",
+               sorted(statuses) == [200] + [409] * 5)
+        events.append({"path": "/api/documents", "method": "POST", "actor": "admin",
+                       "expected_status": "one 200, five 409", "passed": True})
+        winners = call("/api/search/query", {"query": 'FOR d IN notes FILTER d.title == "race" RETURN d._key'})["results"]
+        expect("Exactly one race winner stored", len(winners) == 1)
+        call(f"/api/documents/notes/{winners[0]}", method="DELETE")
+        call("/api/collections/notes/indexes/title_unique", method="DELETE")
+        expect("Dropped index is gone", call("/api/collections/notes/indexes")["count"] == 0)
+        call("/api/collections/notes/indexes", {"fields": ["title"]})
+
         call("/api/graph/relationships", {"collection": "links", "from": "notes/a", "to": "notes/b",
              "relation_type": "RELATES", "confidence": 0.9})
         paths = call("/api/graph/traverse", {"start_vertex": "notes/a", "edge_collection": "links",
@@ -143,6 +190,8 @@ def verify(binary, edition, mode, directory, provider_url):
             result = probe.http(base, "/api/search/query", {"query":
                    'FOR v IN 1..1 OUTBOUND "notes/a" links RETURN v._key'}, token)
             expect("Edges survive restart", result["results"] == ["b"])
+            expect("Unique index survives restart", probe.http(base, "/api/collections/notes/indexes", token=token)["count"] == 1)
+            probe.http(base, "/api/documents", {"collection": "notes", "_key": "dup2", "title": "updated"}, token, status=409)
     return {"mode": mode, "checks": len(events), "events": events}
 
 
