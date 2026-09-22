@@ -270,8 +270,9 @@ merged into main. Historical failed runs remain linked from the issue.
 | [CG-92](CG-92.md) | P1 | Resolved | Refresh dependencies to pass the develop freshness gate after the v2.7.15 qualification |
 | [CG-93](CG-93.md) | P3 | Open | Move CI runners from pinned Ubuntu 24.04 to Ubuntu 26.04 deliberately |
 | [CG-94](CG-94.md) | P3 | Open | Split propose.rs and directed.rs in cognigraph-construct to the module line budget |
+| [CG-95](CG-95.md) | P3 | Open | Split draft.rs and grounding.rs in cognigraph-construct to the module line budget |
 
-Next available identifier: **CG-95**.
+Next available identifier: **CG-96**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected
