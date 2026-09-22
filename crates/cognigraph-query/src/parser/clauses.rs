@@ -246,24 +246,45 @@ pub(super) fn build_let_clause(pair: Pair<'_, Rule>) -> Result<LetClause, ParseE
 }
 
 pub(super) fn build_limit_clause(pair: Pair<'_, Rule>) -> Result<LimitClause, ParseError> {
-    let nums = pair
+    let values = pair
         .into_inner()
         .filter(|pair| !is_keyword_rule(pair.as_rule()))
-        .map(|n| {
-            n.as_str()
-                .parse::<u64>()
-                .map_err(|e| ParseError::new(format!("invalid LIMIT value: {e}")))
-        })
+        .map(build_limit_value)
         .collect::<Result<Vec<_>, _>>()?;
-    match nums.as_slice() {
+    match values.as_slice() {
         [count] => Ok(LimitClause {
             offset: None,
-            count: *count,
+            count: count.clone(),
         }),
         [offset, count] => Ok(LimitClause {
-            offset: Some(*offset),
-            count: *count,
+            offset: Some(offset.clone()),
+            count: count.clone(),
         }),
-        _ => Err(ParseError::new("LIMIT expects one or two integer values")),
+        _ => Err(ParseError::new("LIMIT expects one or two values")),
+    }
+}
+
+/// A `limit_value`: an unsigned literal or a bind variable (CG-85).
+fn build_limit_value(pair: Pair<'_, Rule>) -> Result<LimitValue, ParseError> {
+    let inner = pair
+        .into_inner()
+        .next()
+        .ok_or_else(|| ParseError::new("LIMIT expects an integer or a bind variable"))?;
+    match inner.as_rule() {
+        Rule::uint => inner
+            .as_str()
+            .parse::<u64>()
+            .map(LimitValue::Literal)
+            .map_err(|e| ParseError::new(format!("invalid LIMIT value: {e}"))),
+        Rule::bind_var => inner
+            .into_inner()
+            .find(|p| p.as_rule() == Rule::ident)
+            .map(|ident| LimitValue::Bind {
+                bind: ident.as_str().to_string(),
+            })
+            .ok_or_else(|| ParseError::new("invalid LIMIT bind variable")),
+        other => Err(ParseError::new(format!(
+            "unexpected LIMIT operand {other:?}"
+        ))),
     }
 }

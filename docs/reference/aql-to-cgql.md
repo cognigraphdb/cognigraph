@@ -22,7 +22,8 @@ unqualified backlog work.
    (`{ title: d.title }`), not quoted strings.
 2. **No `LIKE`, no `=~`, no `%`.** Use `CONTAINS`, `STARTS_WITH`, `REGEX_TEST`;
    there is no modulo operator.
-3. **`LIMIT` takes literal integers**, not bind variables or expressions.
+3. **`LIMIT` takes literal integers or bind variables**, not expressions:
+   `LIMIT @offset, @count` works (since v2.7.25); `LIMIT @n + 1` does not.
 4. **No `@@collection` bind variables.** Collection names are identifiers in
    the query text.
 5. **No bracket access.** `d.attr` and `d.a.b` work; `d["attr"]`, `d[@key]` and
@@ -74,8 +75,8 @@ unqualified backlog work.
 | `SORT a ASC, b DESC` | same | Supported |
 | `SORT … ` locale-aware | `SORT d.name COLLATE "de"` | CogniGraph-only addition |
 | `SORT RAND()` | none | Not supported |
-| `LIMIT n`, `LIMIT offset, n` | same, literal integers only; `LIMIT 0` rejected | Supported |
-| `LIMIT @n` | not supported | Interpolate client-side |
+| `LIMIT n`, `LIMIT offset, n` | same; `LIMIT 0` rejected | Supported |
+| `LIMIT @n`, `LIMIT @offset, @n` | same; bound values must be non-negative integer JSON numbers, checked before execution | Supported (v2.7.25) |
 | `FILTER` after `SORT`/`LIMIT` | rejected | Wrap the sorted/limited part in a subquery, filter outside |
 | `COLLECT k = expr` | same | Supported |
 | `COLLECT … AGGREGATE s = SUM(x), m = MAX(x)` | same; `SUM`, `MIN`, `MAX`, `AVG` only | `COUNT`, `UNIQUE`, `SORTED_UNIQUE`, `LENGTH`, `COUNT_DISTINCT`, `VARIANCE`, `STDDEV` in `AGGREGATE`: collect `INTO g = x` and apply the function in `RETURN` |

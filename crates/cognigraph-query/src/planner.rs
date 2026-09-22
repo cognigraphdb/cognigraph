@@ -28,6 +28,10 @@ pub struct LogicalPlan {
     pub mutation: Option<MutationClause>,
     pub projection: Option<Expr>,
     pub bind_vars: Vec<String>,
+    /// Maximum accepted LIMIT count, carried from validation so a bound
+    /// LIMIT is checked against the same ceiling at execution (CG-85).
+    #[serde(default = "default_plan_max_limit")]
+    pub max_limit: u64,
     /// Index into `body` where the deferred suffix begins (move-calculations-
     /// down): ops from here on are referenced only by the projection, so the
     /// runner executes them after SORT and LIMIT, on the surviving rows only.
@@ -116,7 +120,7 @@ pub enum PlanError {
 /// Validate and plan a parsed CGQL query using default validation options.
 pub fn plan_query(query: &Query) -> Result<LogicalPlan, PlanError> {
     validate_query(query)?;
-    Ok(build_plan(query))
+    Ok(build_plan(query, ValidationOptions::default().max_limit))
 }
 
 /// Validate and plan a parsed CGQL query using explicit validation options.
@@ -125,7 +129,7 @@ pub fn plan_query_with_options(
     options: ValidationOptions,
 ) -> Result<LogicalPlan, PlanError> {
     validate_query_with_options(query, options)?;
-    Ok(build_plan(query))
+    Ok(build_plan(query, options.max_limit))
 }
 
 /// Parse, validate, and plan a CGQL query using default validation options.
@@ -143,11 +147,15 @@ pub fn parse_and_plan_with_options(
     plan_query_with_options(&query, options)
 }
 
-fn build_plan(query: &Query) -> LogicalPlan {
-    build_plan_scoped(query, &BTreeSet::new())
+fn default_plan_max_limit() -> u64 {
+    ValidationOptions::default().max_limit
 }
 
-fn build_plan_scoped(query: &Query, outer_scope: &BTreeSet<String>) -> LogicalPlan {
+fn build_plan(query: &Query, max_limit: u64) -> LogicalPlan {
+    build_plan_scoped(query, &BTreeSet::new(), max_limit)
+}
+
+fn build_plan_scoped(query: &Query, outer_scope: &BTreeSet<String>, max_limit: u64) -> LogicalPlan {
     let mut scope = outer_scope.clone();
     let mut body = Vec::new();
     for clause in &query.body {
@@ -159,7 +167,7 @@ fn build_plan_scoped(query: &Query, outer_scope: &BTreeSet<String>) -> LogicalPl
                     // in the enclosing scopes at this point.
                     let free = free_var_roots(subquery);
                     let correlated = free.iter().any(|root| scope.contains(root));
-                    let plan = build_plan_scoped(subquery, &scope);
+                    let plan = build_plan_scoped(subquery, &scope, max_limit);
                     scope.insert(let_clause.name.clone());
                     body.push(PlanOp::LetSubquery {
                         name: let_clause.name.clone(),
@@ -186,6 +194,7 @@ fn build_plan_scoped(query: &Query, outer_scope: &BTreeSet<String>) -> LogicalPl
         mutation: query.mutation.clone(),
         projection: query.return_expr.clone(),
         bind_vars: query.bind_vars.clone(),
+        max_limit,
         deferred_start: None,
     };
     defer_return_only_lets(&mut plan);

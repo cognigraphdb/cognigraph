@@ -2,7 +2,7 @@ use std::cmp::Ordering;
 
 use serde_json::{Value, json};
 
-use crate::ast::{LimitClause, SortClause, SortDirection};
+use crate::ast::{SortClause, SortDirection};
 use crate::functions;
 use crate::planner::LogicalPlan;
 
@@ -118,7 +118,8 @@ pub(super) fn apply_collect_sort_limit(
     }
 
     if let Some(limit) = &plan.limit {
-        *rows = apply_limit(std::mem::take(rows), limit);
+        let resolved = super::limit::resolve_limit(limit, cx.bind_vars, plan.max_limit)?;
+        *rows = apply_limit(std::mem::take(rows), resolved);
         cx.record_stage(*stage, rows.len());
         *stage += 1;
     }
@@ -290,9 +291,9 @@ fn compare_sort_key(
     }
 }
 
-fn apply_limit(rows: Vec<Env>, limit: &LimitClause) -> Vec<Env> {
+fn apply_limit(rows: Vec<Env>, limit: super::limit::ResolvedLimit) -> Vec<Env> {
     rows.into_iter()
-        .skip(limit.offset.unwrap_or(0) as usize)
-        .take(limit.count as usize)
+        .skip(limit.offset_len())
+        .take(limit.count_len())
         .collect()
 }
