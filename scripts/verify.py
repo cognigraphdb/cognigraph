@@ -18,6 +18,7 @@ def commands(suite):
             (ROOT, [sys.executable, 'scripts/check-vendored.py']),
             (ROOT, [sys.executable, 'scripts/check-public-distribution.py']),
             *commands('advisories'),
+            *commands('dependencies'),
             (ROOT, [sys.executable, '-m', 'unittest', 'discover', '-s', 'scripts/tests']),
             (ROOT, [sys.executable, 'scripts/check-server-modularity.py']),
             (ROOT, [sys.executable, 'scripts/check-editions.py']),
@@ -34,12 +35,15 @@ def commands(suite):
         ]
     if suite == 'docker':
         return [(ROOT, command) for command in docker_images.build_commands()] + [
+            (ROOT, [sys.executable, 'scripts/check-image-vulnerabilities.py']),
             (ROOT, [sys.executable, 'scripts/docker_images.py', 'check']),
             (ROOT, [sys.executable, 'scripts/check-container-startup.py']),
             (ROOT, [sys.executable, 'scripts/check-helm.py', '--live']),
             (ROOT, [sys.executable, 'scripts/check-helm.py', '--live', '--enterprise'])]
     if suite == 'advisories':
         return [(ROOT, ['cargo', 'audit', '--deny', 'unsound']), (ROOT / 'ui', ['bun', 'audit'])]
+    if suite == 'dependencies':
+        return [(ROOT, [sys.executable, 'scripts/dependency_freshness.py'])]
     if suite == 'helm':
         return [(ROOT, [sys.executable, 'scripts/check-helm.py']),
                 (ROOT, [sys.executable, 'scripts/check-helm.py', '--enterprise'])]
@@ -73,7 +77,7 @@ def run(suite):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--suite', choices=('ci', 'docker', 'ui', 'ui-browser', 'native', 'helm', 'advisories'), default='ci')
+    parser.add_argument('--suite', choices=('ci', 'docker', 'ui', 'ui-browser', 'native', 'helm', 'advisories', 'dependencies'), default='ci')
     args = parser.parse_args()
     try:
         run(args.suite)

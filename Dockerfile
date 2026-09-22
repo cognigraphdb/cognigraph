@@ -24,7 +24,7 @@ RUN case "$COGNIGRAPH_EDITION" in \
     esac
 
 # Runtime stage
-FROM debian:stable-slim
+FROM debian:stable-slim AS runtime
 ARG COGNIGRAPH_VERSION=dev
 ARG COGNIGRAPH_REVISION=unknown
 ARG COGNIGRAPH_EDITION=community
@@ -32,7 +32,10 @@ LABEL org.opencontainers.image.source="https://github.com/cognigraphdb/cognigrap
     org.opencontainers.image.version="$COGNIGRAPH_VERSION" \
     org.opencontainers.image.revision="$COGNIGRAPH_REVISION" \
     io.cognigraph.edition="$COGNIGRAPH_EDITION"
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# Refresh packages already present in the base as well as new dependencies.
+# Installing curl alone leaves vulnerable libc/perl/etc. base packages untouched.
+RUN apt-get update && apt-get upgrade -y --no-install-recommends \
+    && apt-get install -y --no-install-recommends \
     ca-certificates curl util-linux && rm -rf /var/lib/apt/lists/* \
     && groupadd --system --gid 10001 cognigraph \
     && useradd --system --uid 10001 --gid 10001 cognigraph \
@@ -42,7 +45,7 @@ COPY --from=builder /app/target/release/cognigraph /usr/local/bin/cognigraph
 COPY --from=console /ui/dist/ /ui/
 COPY --chmod=755 deploy/container-entrypoint.sh /usr/local/bin/cognigraph-entrypoint
 COPY LICENSE LICENSE-COMMERCIAL /usr/share/licenses/cognigraph/
-COPY vendor/tantivy-0.26.1/LICENSE /usr/share/licenses/cognigraph/tantivy-MIT
+COPY vendor/tantivy-0.26.2/LICENSE /usr/share/licenses/cognigraph/tantivy-MIT
 USER cognigraph
 ENV COGNIGRAPH_HOST=0.0.0.0 \
     COGNIGRAPH_PORT=3000 \

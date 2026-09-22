@@ -9,7 +9,7 @@ use std::collections::HashMap;
 use std::sync::Arc;
 
 use argon2::Argon2;
-use argon2::password_hash::{PasswordHash, PasswordHasher, PasswordVerifier, SaltString};
+use argon2::password_hash::{PasswordHasher, PasswordVerifier, phc::PasswordHash};
 use cognigraph_core::{CogniGraphError, CollectionType, GraphBackend, Result};
 use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
@@ -319,11 +319,9 @@ impl AuthProvider {
                 "user `{username}` already exists"
             )));
         }
-        // 16 random bytes from the OS RNG (uuid v4) as the argon2 salt.
-        let salt = SaltString::encode_b64(Uuid::new_v4().as_bytes())
-            .map_err(|e| auth_err(format!("salt generation failed: {e}")))?;
+        // Argon2 generates a fresh salt with the OS RNG and retains PHC parameters.
         let hash = Argon2::default()
-            .hash_password(password.as_bytes(), &salt)
+            .hash_password(password.as_bytes())
             .map_err(|e| auth_err(format!("password hashing failed: {e}")))?
             .to_string();
         let id = self

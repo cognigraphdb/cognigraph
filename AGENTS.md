@@ -148,6 +148,15 @@ and [CI guide](docs/operations/ci.md). Promote to main only when the user author
 that release. Keep only main/develop as permanent branches; remove included topic
 branches after verifying their work is preserved.
 
+Every integration into develop follows the
+[dependency and incoming-work gate](docs/operations/develop-gate.md). Review and
+account for incoming PRs, refresh direct Cargo/UI dependencies to their current
+release channels and compatible transitive resolutions, and close every fixable
+vulnerability before qualification. Breaking upgrades and deliberate pins require
+an explicit, dated decision; do not invent exceptions to get a passing gate.
+Checks are read-only and must not silently update a candidate. Recheck incoming
+heads and dependency/advisory state immediately before an authorized merge.
+
 Before every authorized push, complete these steps in order:
 
 Install the tracked hook once per checkout with `python3 scripts/install-hooks.py`.
@@ -162,6 +171,10 @@ failing hook with `--no-verify` or disable it to publish an unchecked candidate.
    (included, needs changes, superseded or explicitly deferred); resolve outstanding
    inclusion decisions before proceeding. Verify the combined code after integration.
    An unavailable PR listing is an incomplete gate, not evidence of no incoming work.
+   Run `python3 scripts/verify.py --suite dependencies` and the advisory suite
+   before finalizing the candidate. Resolve reported updates and requalify the
+   combined code; the [develop gate guide](docs/operations/develop-gate.md) owns
+   exception scope, transitive-version limits and required post-merge checks.
 2. Bump the product version for every outgoing change set, including documentation
    and maintenance pushes. Use `[workspace.package].version` in `Cargo.toml`, keep
    inherited member versions/internal requirements consistent, refresh `Cargo.lock`
@@ -197,6 +210,7 @@ failing hook with `--no-verify` or disable it to publish an unchecked candidate.
    python3 scripts/verify.py --suite native
    python3 scripts/verify.py --suite helm
    python3 scripts/verify.py --suite advisories
+   python3 scripts/verify.py --suite dependencies
    actionlint
    ```
 
@@ -210,7 +224,8 @@ failing hook with `--no-verify` or disable it to publish an unchecked candidate.
    The shared CI suite includes both UI suites above on every run. Follow the
    [UI testing guide](docs/operations/ui-testing.md) for Bun/Chromium setup and
    the browser suite's disposable Community/Enterprise scope.
-4. Re-check incoming PRs and the target remote head immediately before pushing.
+4. Re-check incoming PRs and the target remote head immediately before pushing,
+   and repeat incoming/dependency/advisory checks immediately before merging to develop.
    If new incoming work changes the candidate, process it and repeat the checks
    affected by that change. Report the final version, commit, PR dispositions and
    validation results; push only the authorized refs. An uncertain push result

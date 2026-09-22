@@ -27,7 +27,7 @@ class VendoredIntegrity(unittest.TestCase):
             for name, mutate in mutations.items():
                 with self.subTest(path=name):
                     shutil.copytree(ROOT / 'vendor', root / 'vendor')
-                    path = root / 'vendor/tantivy-0.26.1' / name
+                    path = root / 'vendor/tantivy-0.26.2' / name
                     changed = mutate(path.read_text() if path.exists() else '')
                     if changed is None:
                         path.unlink()

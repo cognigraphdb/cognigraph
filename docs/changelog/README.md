@@ -24,6 +24,10 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Unreleased
 
+- 2026-09-14: [Start from the published Docker image in the README](2026-09-14-docker-quick-start.md)
+- 2026-09-14: [Require dependency freshness and incoming-work review before integration](2026-09-14-develop-gates.md)
+- 2026-09-14: [Refresh application dependencies and preserve stored-data compatibility](2026-09-14-dependency-refresh.md)
+- 2026-09-14: [Refresh container packages and gate fixable image vulnerabilities](2026-09-14-container-security.md)
 - 2026-09-13: [Responsive authentication layout](2026-09-13-responsive-login.md)
 - 2026-09-13: [Local and hosted login centering audit](2026-09-13-login-centering-audit.md)
 - 2026-09-13: [First Docker images and Railway v2.7.11 accepted](2026-09-13-first-docker-release.md)
@@ -156,6 +160,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Releases
 
+- 2026-09-14: [v2.7.15 — Dependency and container-security candidate](2026-09-14-v2-7-15.md)
 - 2026-09-13: [v2.7.14 — Stable Docker image aliases](2026-09-13-v2-7-14.md)
 - 2026-09-13: [v2.7.13 — Source snapshot maintenance](2026-09-13-v2-7-13.md)
 - 2026-09-13: [v2.7.12 — Public evidence boundary and local test cleanup](2026-09-13-v2-7-12.md)

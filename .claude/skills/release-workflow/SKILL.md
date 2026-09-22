@@ -48,18 +48,25 @@ using available GitHub tooling. Present which changes affect the release.
 **Gate — inclusion:** Resolve which PRs, if any, belong in the release before
 merging. If none are ready, confirm continuation unless already directed.
 Review included changes; review is not merge authorization. Re-check incoming
-PRs immediately before an authorized push and resolve new inclusion decisions.
+PRs immediately before an authorized push or develop merge and resolve new
+inclusion decisions. Use the shared [develop gate](../../../docs/operations/develop-gate.md)
+for exact-head accounting and fresh review/check snapshots; source CI repeats
+the incoming check, and the Docker job checks again after image qualification.
 
 ## 2. Dependency scope
 
-When dependency refresh is included in the request, run `cargo update` for
-compatible lockfile updates and inspect the diff. Use `cargo outdated --depth 1`
-and `cargo audit` when installed; report unavailable checks honestly.
-Do not broaden a targeted release into unrelated upgrades.
+Before every develop integration or release, run
+`python3 scripts/verify.py --suite dependencies` and the advisory suite.
+The [develop gate](../../../docs/operations/develop-gate.md) owns freshness scope
+and exceptions. The checker resolves updates in a disposable copy, including
+local Cargo patches; it never changes the candidate. Apply authorized updates
+deliberately, inspect manifests/lockfiles and qualify the combined result.
 
 **Gate — major updates/advisories:** Present major-version drift or audit findings
 and resolve whether to fix or defer. Already-authorized fixes may proceed.
-Record accepted deferrals and implications; a failed audit is not a passing result.
+Record accepted deferrals with exact current/latest versions, rationale,
+decision reference and expiry. They cannot waive a fixable vulnerability or
+compatible resolver drift. A failed or unavailable audit is not a passing result.
 
 ## 3. Verify the candidate
 

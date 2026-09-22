@@ -14,15 +14,15 @@ members = [
     "crates/cognigraph-cli",
 ]
 resolver = "2"
-exclude = ["vendor/tantivy-0.26.1"]
+exclude = ["vendor/tantivy-0.26.2"]
 
 # CG-70: backport upstream's lru requirement fix without unreleased Tantivy code.
 # Provenance, integrity checks and removal criteria: vendor/README.md.
 [patch.crates-io]
-tantivy = { path = "vendor/tantivy-0.26.1" }
+tantivy = { path = "vendor/tantivy-0.26.2" }
 
 [workspace.package]
-version = "2.7.14"
+version = "2.7.15"
 edition = "2024"
 license = "FSL-1.1-Apache-2.0"
 repository = "https://github.com/cognigraphdb/cognigraph"
@@ -57,7 +57,7 @@ chrono = { version = "0.4", features = ["serde"] }
 base64 = "0.23"
 lru = "0.18"
 rayon = "1"
-argon2 = { version = "0.5", features = ["std"] }
+argon2 = "0.6"
 sha2 = "0.11"
 ed25519-dalek = "3.0.0"
 getrandom = "0.4.3"

@@ -231,6 +231,21 @@ th {
   text-decoration: underline;
 }
 
+/* DocumentTable (the only antd Table nested in its own scroll region,
+   .table-scroll, rather than the page-level scroll the other antd
+   tables use): antd sets `position: relative` on its own <th> (for the
+   resize handle), which beats a bare `th { position: sticky }` rule on
+   specificity -- so the sticky header needs pinning here explicitly,
+   scoped to .table-region only. This must NOT be widened to a global
+   `.ant-table-thead > tr > th` rule: the other antd tables (Users,
+   Review, Overview, Collections index) scroll at the page level, and a
+   sticky offset there would pin the header against the WRONG ancestor. */
+.table-region .ant-table-thead > tr > th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
 /* antd tables (Review, Users) share the canonical document-table look.
    Colors come from the Table theme tokens (antd-theme.ts); typography and
    row metrics have no tokens, so they are aligned here. */
@@ -246,21 +261,6 @@ main .ant-table-wrapper .ant-table-tbody > tr > td {
   height: 48px;
   padding-top: 0;
   padding-bottom: 0;
-}
-
-/* DocumentTable (the only antd Table nested in its own scroll region,
-   .table-scroll, rather than the page-level scroll the other antd
-   tables use): antd sets `position: relative` on its own <th> (for the
-   resize handle), which beats a bare `th { position: sticky }` rule on
-   specificity -- so the sticky header needs pinning here explicitly,
-   scoped to .table-region only. This must NOT be widened to a global
-   `.ant-table-thead > tr > th` rule: the other antd tables (Users,
-   Review, Overview, Collections index) scroll at the page level, and a
-   sticky offset there would pin the header against the WRONG ancestor. */
-.table-region .ant-table-thead > tr > th {
-  position: sticky;
-  top: 0;
-  z-index: 2;
 }
 
 th:nth-child(2) {

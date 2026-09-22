@@ -26,17 +26,25 @@ supported behavior and compatibility limits.
 
 ## Five-minute start
 
-Clone the public source and build the Community Docker image:
+With Docker running, pull the published Community image and start a local demo:
 
 ```sh
-git clone https://github.com/cognigraphdb/cognigraph.git
-cd cognigraph
-docker build -t cognigraph .
-docker run -d --name cognigraph -p 127.0.0.1:3000:3000 -v cognigraph-data:/data \
+docker pull --platform linux/amd64 cognigraph/cognigraph:latest
+docker run -d --name cognigraph --platform linux/amd64 \
+  -p 127.0.0.1:3000:3000 -v cognigraph-data:/data \
   -e COGNIGRAPH_AUTH_ENABLED=false -e COGNIGRAPH_EMBEDDING_PROVIDER=none \
-  -e COGNIGRAPH_CGQL_MUTATIONS_ENABLED=true cognigraph
-curl --fail --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:3000/health/database
+  -e COGNIGRAPH_CGQL_MUTATIONS_ENABLED=true cognigraph/cognigraph:latest
+curl --fail --retry 10 --retry-all-errors --retry-delay 1 http://127.0.0.1:3000/health/database
 ```
+
+Open the included [console](http://127.0.0.1:3000), or try the HTTP example below.
+The `cognigraph-data` volume keeps your database across container restarts.
+Use `docker stop cognigraph` and `docker start cognigraph` to stop and resume it.
+
+Published images target `linux/amd64`; ARM hosts such as Apple Silicon need
+Docker's emulation support. `latest` follows the current stable release; use a
+[numbered tag or digest](docs/operations/docker-publishing.md#destinations-and-scope)
+when you need a fixed version.
 
 The demo runs without authentication and is exposed only on loopback. For a
 shared deployment, configure [authentication](docs/operations/authentication.md).
@@ -46,10 +54,12 @@ configuration, or the [Helm chart](deploy/helm/cognigraph/README.md#install) for
 <details>
 <summary>Build and run directly with Rust</summary>
 
-Requires stable Rust and a C/C++ toolchain. From the cloned repository, build
-the server and run in a scratch directory to isolate its database and `.env`:
+Requires stable Rust and a C/C++ toolchain. Clone the source, build the server
+and run in a scratch directory to isolate its database and `.env`:
 
 ```sh
+git clone https://github.com/cognigraphdb/cognigraph.git
+cd cognigraph
 cargo build --release -p cognigraph-server
 COGNIGRAPH_BINARY="$PWD/target/release/cognigraph-server"
 COGNIGRAPH_DEMO_DIR="$(mktemp -d)"
