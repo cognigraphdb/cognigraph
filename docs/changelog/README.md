@@ -167,6 +167,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 - 2026-09-22: [v2.7.22 — Construction gate refusals are recorded in a ledger](2026-09-22-construction-refusal-ledger.md)
 - 2026-09-22: [v2.7.23 — Move the draft and grounding tests out of their modules](2026-09-22-construct-tests-separate-files.md)
 - 2026-09-22: [v2.7.16 — Construct lifecycle documentation and Semantic Neurons tickets](2026-09-22-construct-lifecycle-and-tickets.md)
+- 2026-09-22: [v2.7.24 — Every cognigraph-construct module keeps its tests in a sibling file](2026-09-22-construct-crate-tests-separate-files.md)
 - 2026-09-22: [v2.7.19 — Take CodeMirror patch releases published during CI](2026-09-22-codemirror-registry-drift.md)
 - 2026-09-14: [v2.7.15 — Dependency and container-security candidate](2026-09-14-v2-7-15.md)
 - 2026-09-13: [v2.7.14 — Stable Docker image aliases](2026-09-13-v2-7-14.md)
