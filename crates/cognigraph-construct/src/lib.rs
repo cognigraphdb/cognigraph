@@ -1,13 +1,15 @@
 //! Governed knowledge construction for CogniGraph — the Semantic Neurons
-//! pattern ported from the research (see docs/semantic-neurons-port-design.md
-//! and the paper it cites).
+//! pattern ported from the research (see
+//! docs/architecture/design-notes/semantic-neurons-port.md and the paper it
+//! cites).
 //!
 //! An LLM reliably extracts entities but not relations; this crate supplies
 //! the construction layer: an ontology (space types), governed
-//! edge-construction operators (neurons: proposed → accepted → graduated),
-//! negation-aware evidence grounding, and an evaluation loop that measures
-//! both recall (expected facts built) and restraint (forbidden facts NOT
-//! built).
+//! edge-construction operators (neurons: proposed → accepted | rejected, and
+//! later retired; graduation is a leave-one-out redundancy report, not a
+//! status), negation-aware evidence grounding, and an evaluation loop that
+//! measures both recall (expected facts built) and restraint (forbidden facts
+//! NOT built).
 
 pub mod advisor;
 pub mod answers;
