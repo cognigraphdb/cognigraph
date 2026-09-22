@@ -35,7 +35,7 @@ both reads and writes.
 | `/api/search/query` | Parsed, read-only CGQL; `language` may be omitted or set to `cgql`. Opaque backend-native text is disabled. |
 | `/api/search/semantic` | Text → embed → vector search → fetch docs |
 | `/api/search/hybrid` | Native BM25 + vector with RRF fusion; unavailable BM25 data is reported explicitly |
-| `/api/search/graph-augmented` | Semantic seeds + multi-hop graph traversal |
+| `/api/search/graph-augmented` | Semantic seeds + multi-hop graph traversal. `edge_collection` defaults to the application-written `document_relations`; pass `"facts"` to rank construct-built facts, which is the only collection where accepted `relation_rank_hint` neurons can apply. Enterprise responses computed in the request (fresh or cache-assisted) add `warnings` with code `inert_rank_hints` when accepted rank hints exist but `edge_collection` is not exactly `facts`; strong cache hits omit `warnings`. See the [decision record](../decisions/decision_graph_augmented_edge_collection.md). |
 
 ### Graph
 | Method | Path | Description |

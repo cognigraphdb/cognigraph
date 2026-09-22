@@ -264,7 +264,7 @@ merged into main. Historical failed runs remain linked from the issue.
 | [CG-86](CG-86.md) | P2 | Open | Unique constraints and user-declarable indexes on ordinary collections |
 | [CG-87](CG-87.md) | P2 | Open | Native linux/arm64 and macOS Apple Silicon builds for local development |
 | [CG-88](CG-88.md) | P2 | Open | Side views as a proposal-queue gap detector |
-| [CG-89](CG-89.md) | P2 | Open | Graph-augmented search defaults to document_relations and omits neuron-built facts |
+| [CG-89](CG-89.md) | P2 | Resolved | Graph-augmented search defaults to document_relations and omits neuron-built facts |
 | [CG-90](CG-90.md) | P2 | Open | Construction gate refusals are not durably recorded |
 | [CG-91](CG-91.md) | P3 | Resolved | Construct crate module docs describe a graduated status that does not exist |
 | [CG-92](CG-92.md) | P1 | Resolved | Refresh dependencies to pass the develop freshness gate after the v2.7.15 qualification |

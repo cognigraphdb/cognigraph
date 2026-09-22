@@ -4130,6 +4130,13 @@ paths:
         cached trace metadata. At or below the cache floor, retrieval is fresh.
         All cache paths require identical result parameters, including the
         complete edge and neuron collection names and optional confidence.
+        Neuron-built facts live in the managed `facts` edge collection; the
+        default `edge_collection` is the application-written
+        `document_relations`. Enterprise responses computed in the request
+        (fresh or cache-assisted) carry `warnings` with code
+        `inert_rank_hints` when accepted relation_rank_hint neurons exist but
+        `edge_collection` is not exactly `facts`; strong cache hits omit
+        `warnings` because they perform no neurons read.
       requestBody:
         required: true
         content:
@@ -4140,7 +4147,7 @@ paths:
               properties:
                 query: { type: string }
                 collection: { type: string, default: embeddings }
-                edge_collection: { type: string, default: document_relations }
+                edge_collection: { type: string, default: document_relations, description: 'Pass "facts" to rank construct-built facts and let accepted rank hints apply' }
                 threshold: { type: number, default: 0.7 }
                 seed_limit: { type: integer, default: 5 }
                 max_depth: { type: integer, default: 2 }
@@ -4151,7 +4158,7 @@ paths:
                 neurons_collection: { type: string, default: neurons }
                 graph_facts_limit: { type: integer, default: 12 }
       responses:
-        '200': { description: 'results + graph_facts [{source, relation, target, evidence_chunk_id, fact}]' }
+        '200': { description: 'results + graph_facts [{source, relation, target, evidence_chunk_id, fact}]; Enterprise adds warnings [{code: inert_rank_hints, message, accepted_rank_hints, edge_collection}] when present' }
   /api/query:
     post:
       summary: Parsed read-write CGQL for ordinary collections (mutations; mounted only when COGNIGRAPH_CGQL_MUTATIONS_ENABLED=true)
