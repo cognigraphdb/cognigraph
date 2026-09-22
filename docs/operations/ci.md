@@ -18,9 +18,15 @@ bytes and permits only the reviewed dependency-manifest patch.
 
 The Docker suite builds both Linux images, refreshes installed runtime packages,
 scans both image IDs for vulnerabilities, tests their packaged server/CLI and
-persistence, and exercises the rendered Helm backup in both editions. CI uses
-Linux/amd64; local Docker defaults must target the same platform for publication
-qualification. The chart probes use disposable Docker resources, not a cluster.
+persistence, and exercises the rendered Helm backup in both editions. CI runs
+it natively on `linux/amd64` (`ubuntu-24.04`) and `linux/arm64`
+(`ubuntu-24.04-arm`) as a matrix; each leg sets `DOCKER_DEFAULT_PLATFORM`
+and the image check refuses a mismatched platform. A local run qualifies the
+Docker host's own platform only. A separate `macos-15` job builds both
+editions from source on Apple Silicon and runs
+`scripts/check-platform-smoke.py`, uploading `platform-smoke-results`.
+`CI required` needs the shared gates, both Docker legs and the macOS job.
+The chart probes use disposable Docker resources, not a cluster.
 Their backup target is an owned Docker volume, so Linux ownership is exercised
 on Docker Desktop too. A bounded provisioner initializes that temporary volume;
 the backup writer and inspectors run without root or capabilities. Inspection
@@ -81,8 +87,8 @@ and network access to Trivy's vulnerability database, without a Docker Hub login
 Scanner errors and missing inventory fail the gate. It scans the exact local IDs
 and ignores local suppression/configuration overrides. Reports under
 `target/ci/image-security/run-*/` include all findings, scanner/database metadata
-and image IDs; CI uploads them as `image-security-results` for seven days, even
-if the scan fails. Unfixed findings remain visible and require review; a passing
+and image IDs; CI uploads them as `image-security-results-<arch>` for seven
+days, even if the scan fails. Unfixed findings remain visible and require review; a passing
 gate is not a zero-CVE claim. [CG-81](../issues/CG-81.md) owns the remaining
 2026-09-14 review. Cargo/Bun scans cover dependencies that an image scan may miss.
 
@@ -107,9 +113,9 @@ passing remote CI.
 
 The public code repository uses rulesets for `main` and `develop` requiring PRs, the GitHub Actions
 `CI required` check on an up-to-date candidate, resolved review conversations,
-and no branch deletion or force-push. The aggregate check requires both the
-source/Native job and Docker/Helm job to succeed; failure, cancellation or skips
-cannot qualify it. A second person's approval is not mandatory for this
+and no branch deletion or force-push. The aggregate check requires the
+source/Native job, both Docker/Helm legs and the Apple Silicon job to succeed;
+failure, cancellation or skips cannot qualify it. A second person's approval is not mandatory for this
 owner-operated repository. No bypass actor is configured.
 
 Action permissions stay read-only by default and cannot approve PRs. Action
@@ -129,7 +135,10 @@ available. See the website's own CI guide for its current verification state.
 Verification runs never log in to Docker Hub or publish images. Publication
 requires `workflow_dispatch` with `publish_images: true` on the official `main`,
 then independently passes the [publication preflight](docker-publishing.md).
-PR code has no publication token. A manual run keeps its upload from being
+On such a run each Docker leg exports the image IDs its checks covered as a
+one-day `tested-images-<arch>` artifact, and a single `publish` job loads
+both, reruns the host-platform checks and composes the multi-architecture
+tags. PR code has no publication token. A manual run keeps its upload from being
 cancelled by newer automated verification. Tests do not deploy an application.
 
 `develop` is the default integration branch. `main` retains production history

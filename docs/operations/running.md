@@ -54,7 +54,10 @@ COGNIGRAPH_JWT_SECRET=$(openssl rand -hex 32) docker compose up -d
 ```
 
 The image runs as a non-root user with the persistent native backend at
-`/data/cognigraph.redb` and a `/health` HEALTHCHECK.
+`/data/cognigraph.redb` and a `/health` HEALTHCHECK. A local `docker build`
+produces an image for the Docker host's own platform; published releases
+after 2.7.27 are `linux/amd64` and `linux/arm64` indexes (see
+[Docker image publication](docker-publishing.md#destinations-and-scope)).
 
 ### Bare binary
 
@@ -65,7 +68,12 @@ COGNIGRAPH_NATIVE_PATH=/var/lib/cognigraph/cognigraph.redb \
 ```
 
 A `.env` file in the working directory is loaded at startup. The server
-drains connections on SIGTERM/SIGINT (systemd `Type=exec` works as-is):
+drains connections on SIGTERM/SIGINT (systemd `Type=exec` works as-is).
+Supported build platforms are Linux `amd64`/`arm64` and macOS Apple
+Silicon: CI builds both editions on arm64 macOS and runs
+`scripts/check-platform-smoke.py` (startup, `/health/database`, an
+authenticated write, restart persistence and a CLI read), and the same
+script qualifies any developer machine.
 
 ```ini
 [Unit]

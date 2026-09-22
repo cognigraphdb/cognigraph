@@ -163,6 +163,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 - 2026-09-22: [v2.7.26 — Unique constraints on document collections](2026-09-22-unique-indexes.md)
 - 2026-09-22: [v2.7.17 — Patch rustls for RUSTSEC-2026-0285 before develop integration](2026-09-22-rustls-advisory.md)
 - 2026-09-22: [v2.7.20 — Pin CI jobs to the ubuntu-24.04 runner image](2026-09-22-pin-ci-runner-image.md)
+- 2026-09-22: [v2.7.27 — Native arm64 builds and multi-architecture publication](2026-09-22-multi-architecture-builds.md)
 - 2026-09-22: [v2.7.25 — Bind variables in LIMIT](2026-09-22-limit-bind-variables.md)
 - 2026-09-22: [v2.7.21 — Graph-augmented search warns when accepted rank hints are inert](2026-09-22-inert-rank-hint-warning.md)
 - 2026-09-22: [v2.7.18 — Dependency refresh for the develop freshness gate](2026-09-22-dependency-refresh.md)

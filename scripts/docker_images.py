@@ -18,7 +18,13 @@ REPOSITORY = 'cognigraphdb/cognigraph'
 SOURCE = f'https://github.com/{REPOSITORY}'
 IMAGES = {'community': ('cognigraph:ci', 'cognigraph/cognigraph'),
           'enterprise': ('cognigraph:ci-enterprise', 'cognigraph/cognigraph-enterprise')}
-VERSION_TAG_RULE = r'^[0-9]+\.[0-9]+\.[0-9]+$'
+# Published platforms and their per-architecture tag suffix (`<version>-<arch>`).
+PLATFORMS = {'linux/amd64': 'amd64', 'linux/arm64': 'arm64'}
+REGISTRY = 'docker.io'
+# Tested image tarballs and per-platform receipts exchanged between CI jobs.
+EXPORTS = ROOT / 'target/ci/images'
+VERSION_TAG_RULE = r'^[0-9]+\.[0-9]+\.[0-9]+(-(amd64|arm64))?$'
+DIGEST_RULE = r'sha256:[0-9a-f]{64}'
 
 
 def require(condition, message):
@@ -122,25 +128,88 @@ def smoke(image, edition, version):
                        stdout=subprocess.DEVNULL)
 
 
-def checked_images(version, revision, platform=None):
-    images = {}
-    for edition, (tag, _) in IMAGES.items():
-        info = json.loads(output('docker', 'image', 'inspect', tag))[0]
-        labels = info['Config'].get('Labels') or {}
-        require(labels.get('org.opencontainers.image.version') == version
-                and labels.get('org.opencontainers.image.revision') == revision
-                and labels.get('org.opencontainers.image.source') == SOURCE
-                and labels.get('io.cognigraph.edition') == edition, f'{tag}: rebuild stale image metadata')
-        require(info['Config']['User'] == 'cognigraph', f'{tag}: expected non-root runtime')
-        require(not info['Config'].get('Volumes'),
-                f'{tag}: Railway rejects image VOLUME declarations; attach storage at deployment')
-        actual = f"{info['Os']}/{info['Architecture']}"
-        require(platform is None or actual == platform, f'{tag}: expected {platform}, got {actual}')
-        images[edition] = info['Id']
+def host_platform():
+    return output('docker', 'version', '--format', '{{.Server.Os}}/{{.Server.Arch}}')
+
+
+def inspect_image(reference, version, revision, edition, platform):
+    """Metadata checks that never start a container; returns the image ID."""
+    info = json.loads(output('docker', 'image', 'inspect', reference))[0]
+    labels = info['Config'].get('Labels') or {}
+    require(labels.get('org.opencontainers.image.version') == version
+            and labels.get('org.opencontainers.image.revision') == revision
+            and labels.get('org.opencontainers.image.source') == SOURCE
+            and labels.get('io.cognigraph.edition') == edition, f'{reference}: rebuild stale image metadata')
+    require(info['Config']['User'] == 'cognigraph', f'{reference}: expected non-root runtime')
+    require(not info['Config'].get('Volumes'),
+            f'{reference}: Railway rejects image VOLUME declarations; attach storage at deployment')
+    actual = f"{info['Os']}/{info['Architecture']}"
+    require(actual == platform, f'{reference}: expected {platform}, got {actual}')
+    return info['Id']
+
+
+def receipt_path(platform):
+    return EXPORTS / f'{PLATFORMS[platform]}.json'
+
+
+def tarball_path(platform, edition):
+    return EXPORTS / f'{PLATFORMS[platform]}-{edition}.tar'
+
+
+def checked_images(version, revision, platform):
+    require(platform in PLATFORMS, f'Unsupported platform {platform!r}; publish covers {", ".join(PLATFORMS)}')
+    images = {edition: inspect_image(tag, version, revision, edition, platform)
+              for edition, (tag, _) in IMAGES.items()}
     # Resolve both identities before testing; publication uses these IDs, never mutable local tags.
     for edition, image in images.items():
         smoke(image, edition, version)
+    EXPORTS.mkdir(parents=True, exist_ok=True)
+    receipt_path(platform).write_text(json.dumps({
+        'platform': platform, 'version': version, 'revision': revision, 'images': images}, indent=2) + '\n')
     return images
+
+
+def read_receipt(version, revision, platform):
+    require(platform in PLATFORMS, f'Unsupported platform {platform!r}')
+    path = receipt_path(platform)
+    require(path.exists(), f'{platform}: no runtime-check receipt at {path}; run the Docker suite first')
+    receipt = json.loads(path.read_text())
+    require(receipt.get('platform') == platform and receipt.get('version') == version
+            and receipt.get('revision') == revision
+            and set(receipt.get('images', {})) == set(IMAGES)
+            and all(re.fullmatch(DIGEST_RULE, image) or image.startswith('sha256:')
+                    for image in receipt['images'].values()),
+            f'{platform}: receipt at {path} does not describe {version} at {revision}')
+    return receipt
+
+
+def export_images(version, revision, platform):
+    """Save the exact images the runtime checks covered for the publish job."""
+    receipt = read_receipt(version, revision, platform)
+    for edition, (tag, _) in IMAGES.items():
+        image = inspect_image(tag, version, revision, edition, platform)
+        require(image == receipt['images'][edition],
+                f'{tag}: rebuilt since its runtime checks; rerun the Docker suite before exporting')
+        output('docker', 'save', '-o', str(tarball_path(platform, edition)), image)
+        print(f'EXPORT {platform} {edition} {image}', flush=True)
+
+
+def load_images(version, revision):
+    """Load every platform's tested images and prove they are the receipted identities."""
+    tested = {}
+    receipts = {platform: read_receipt(version, revision, platform) for platform in PLATFORMS}
+    for platform, receipt in receipts.items():
+        tested[platform] = {}
+        for edition in IMAGES:
+            expected = receipt['images'][edition]
+            loaded = output('docker', 'load', '-i', str(tarball_path(platform, edition)))
+            match = re.search(r'Loaded image ID: (\S+)', loaded)
+            require(match and match.group(1) == expected,
+                    f'{platform} {edition}: loaded identity differs from the tested receipt')
+            require(inspect_image(expected, version, revision, edition, platform) == expected,
+                    f'{platform} {edition}: loaded identity mismatch')
+            tested[platform][edition] = expected
+    return tested
 
 
 def hub_json(path, missing_ok=False):
@@ -191,7 +260,7 @@ def tag_digest(repository, tag, missing_ok=False):
     if info is None:
         return None
     digest = info.get('digest')
-    require(isinstance(digest, str) and re.fullmatch(r'sha256:[0-9a-f]{64}', digest),
+    require(isinstance(digest, str) and re.fullmatch(DIGEST_RULE, digest),
             f'{repository}:{tag}: missing or invalid registry digest')
     return digest
 
@@ -225,47 +294,82 @@ def push_image(image, target):
     return digests[0]
 
 
+def create_manifest(repository, tag, sources):
+    """Compose one multi-architecture index from already-verified per-architecture digests."""
+    target = f'{REGISTRY}/{repository}:{tag}'
+    output('docker', 'buildx', 'imagetools', 'create', '-t', target, *sources)
+    index = json.loads(output('docker', 'buildx', 'imagetools', 'inspect', target, '--format', '{{json .Manifest}}'))
+    digest = index.get('digest')
+    require(isinstance(digest, str) and re.fullmatch(DIGEST_RULE, digest), f'{target}: missing or invalid index digest')
+    covered = {f"{m.get('platform', {}).get('os')}/{m.get('platform', {}).get('architecture')}"
+               for m in index.get('manifests', [])}
+    require(covered == set(PLATFORMS), f'{target}: index covers {sorted(covered)}, expected {sorted(PLATFORMS)}')
+    return digest
+
+
 def publish(version, revision):
     preflight(version, revision)
-    images = checked_images(version, revision, 'linux/amd64')
-    # Both editions have passed before any upload. Recheck the remote head and both tags.
+    tested = load_images(version, revision)
+    host = host_platform()
+    require(host in tested, f'Publish host {host} is not one of the tested platforms')
+    # The native images of this host run their checks again; the other platform's
+    # receipts come from the CI job that ran the same checks natively.
+    for edition, image in tested[host].items():
+        smoke(image, edition, version)
+    # Every platform has passed before any upload. Recheck the remote head and the tags.
     preflight(version, revision)
     previous = {edition: tag_digest(repository, 'latest', missing_ok=True)
                 for edition, (_, repository) in IMAGES.items()}
-    digests = {}
-    for edition, image in images.items():
-        repository = IMAGES[edition][1]
-        target = f'docker.io/{repository}:{version}'
-        digest = push_image(image, target)
-        # Preserve successful push receipts even if readback or the next upload fails.
-        publication_record(target, digest, edition, revision)
+    sources = {}
+    for edition, (_, repository) in IMAGES.items():
+        sources[edition] = []
+        for platform, arch in PLATFORMS.items():
+            target = f'{REGISTRY}/{repository}:{version}-{arch}'
+            digest = push_image(tested[platform][edition], target)
+            # Preserve successful push receipts even if readback or the next upload fails.
+            publication_record(target, digest, f'{edition} {platform}', revision)
+            verify_tag(repository, f'{version}-{arch}', digest)
+            sources[edition].append(f'{REGISTRY}/{repository}@{digest}')
+    # Version indexes only after every per-architecture tag has a verified registry receipt.
+    current_candidate(revision)
+    indexes = {}
+    for edition, (_, repository) in IMAGES.items():
+        digest = create_manifest(repository, version, sources[edition])
+        publication_record(f'{REGISTRY}/{repository}:{version}', digest, f'{edition} {"+".join(PLATFORMS)}', revision)
         verify_tag(repository, version, digest)
-        digests[edition] = digest
-    # Advance aliases only after BOTH version tags have verified registry receipts.
+        indexes[edition] = digest
+    # Advance aliases only after BOTH version indexes have verified registry receipts.
     current_candidate(revision)
     for edition, (_, repository) in IMAGES.items():
         require(tag_digest(repository, 'latest', missing_ok=True) == previous[edition],
                 f'{repository}: latest changed during publication; inspect remote state')
-    for edition, image in images.items():
+    for edition, (_, repository) in IMAGES.items():
         current_candidate(revision)
-        repository = IMAGES[edition][1]
-        target = f'docker.io/{repository}:latest'
-        digest = push_image(image, target)
-        publication_record(target, digest, edition, revision)
-        require(digest == digests[edition], f'{target}: alias differs from the verified version digest')
+        target = f'{REGISTRY}/{repository}:latest'
+        digest = create_manifest(repository, 'latest', sources[edition])
+        publication_record(target, digest, f'{edition} {"+".join(PLATFORMS)}', revision)
+        require(digest == indexes[edition], f'{target}: alias differs from the verified version digest')
         verify_tag(repository, 'latest', digest)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=('check', 'preflight', 'publish'))
+    parser.add_argument('command', choices=('check', 'export', 'load', 'preflight', 'publish'))
     parser.add_argument('--platform', default=os.environ.get('DOCKER_DEFAULT_PLATFORM'),
-                        help='Require this platform during a local check (defaults to DOCKER_DEFAULT_PLATFORM)')
+                        help='Platform of the local images for check/export '
+                             '(defaults to DOCKER_DEFAULT_PLATFORM, then the Docker host platform)')
     args = parser.parse_args()
     try:
         version, revision = metadata()
-        if args.command == 'check':
-            checked_images(version, revision, args.platform)
+        if args.command in ('check', 'export'):
+            platform = args.platform or host_platform()
+            if args.command == 'check':
+                checked_images(version, revision, platform)
+            else:
+                export_images(version, revision, platform)
+        elif args.command == 'load':
+            for platform, images in load_images(version, revision).items():
+                print(f'LOADED {platform} {images}', flush=True)
         elif args.command == 'preflight':
             preflight(version, revision)
         else:

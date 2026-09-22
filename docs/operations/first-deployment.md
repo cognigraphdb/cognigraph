@@ -75,7 +75,8 @@ bootstrap/provider settings with a local embedding fixture.
    file only after stopping its writer. Preserve external CAS bytes, trust and
    configuration/secrets separately when Enterprise governance uses them.
 5. For containers, select the intended edition and exact qualified image digest.
-   The local acceptance covers Linux/amd64. The [Helm guide](../../deploy/helm/cognigraph/README.md)
+   Local acceptance covers the Docker host's platform; CI covers `linux/amd64`
+   and `linux/arm64` natively. The [Helm guide](../../deploy/helm/cognigraph/README.md)
    requires an explicitly available image; local tags are not published images.
    Keep one replica. Helm rendering and Docker backup checks do not qualify a
    particular cluster, storage class, ingress or operator recovery procedure.
