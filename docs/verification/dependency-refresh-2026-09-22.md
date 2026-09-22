@@ -65,6 +65,14 @@ this is not zero-CVE certification or an exploitability assessment.
   The suite ran with the candidate labelled 2.7.17; the committed 2.7.18 tree
   differs only in the version fields of `Cargo.toml` and `Cargo.lock`.
 
+Registry drift: the GitHub run for the v2.7.18 head failed the freshness gate
+on `@codemirror/state` 6.7.6 and `@codemirror/view` 6.43.13, published after
+the local gate passed. The v2.7.19 commit takes both; the UI check, unit
+tests, build, freshness gate and browser suite were rerun on that head, and
+the pre-push hook repeated the full ci and docker suites. The Rust
+lockfile differs from the qualified v2.7.18 tree only in workspace version
+fields.
+
 Owned CI images and the temporary previous-binary worktree were removed; no
 test containers remained. Not run: external providers, model benchmarks,
 research holdouts, Railway or any publication.
