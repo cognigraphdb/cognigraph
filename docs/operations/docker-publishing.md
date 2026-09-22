@@ -10,19 +10,25 @@ registry digests and independently executed checks of the published images.
 
 ## Destinations and scope
 
-| Edition | Docker Hub image | Platform |
+| Edition | Docker Hub image | Platforms |
 |---|---|---|
-| Community | `cognigraph/cognigraph:<version>` | `linux/amd64` |
-| Enterprise | `cognigraph/cognigraph-enterprise:<version>` | `linux/amd64` |
+| Community | `cognigraph/cognigraph:<version>` | `linux/amd64`, `linux/arm64` |
+| Enterprise | `cognigraph/cognigraph-enterprise:<version>` | `linux/amd64`, `linux/arm64` |
 
 Tags use the stable workspace version, such as `2.7.1`, without a `v` prefix.
-The mutable `latest` tag selects the current stable release in each repository.
-Starting with v2.7.14, publication advances both aliases only after both numbered
-images have verified registry digests. Pin an explicit version or digest when a
-deployment must retain its selected release. No minor-version alias or native
-ARM build is published. Local Docker
-checks use the host platform unless `DOCKER_DEFAULT_PLATFORM` is set; ARM host
-success alone is not amd64 acceptance. CI explicitly builds and checks amd64.
+From the first release published after 2.7.27, `<version>` is a
+multi-architecture index and each member is also tagged `<version>-amd64`
+and `<version>-arm64`; releases through v2.7.14 are `linux/amd64` only.
+The mutable `latest` tag selects the current stable release in each repository
+and is an index composed from the same per-architecture digests as its
+version. Starting with v2.7.14, publication advances both aliases only after
+both numbered images have verified registry digests. Pin an explicit version
+or digest when a deployment must retain its selected release. No
+minor-version alias is published. The
+[multi-architecture decision](../decisions/decision_multi_architecture_images.md)
+records the tag layout. Local Docker checks use the Docker host platform
+unless `DOCKER_DEFAULT_PLATFORM` is set and qualify only that platform; CI
+builds and checks both platforms natively.
 
 Both images include the server, CLI and license files under
 `/usr/share/licenses/cognigraph/`. OCI labels identify the source repository,
@@ -47,12 +53,15 @@ is separately named **`cognigraphdb`**; it is not the image namespace.
    run after that date. Do not put tokens in repository files or command arguments.
 3. Limit other writers to these release tags. The workflow rejects any existing
    version tag and serializes its own runs, but the remote existence check and
-   upload are not an atomic registry operation. Both repositories now enforce
-   **Specific tags are immutable**, with the exact rule
-   `^[0-9]+\.[0-9]+\.[0-9]+$`. This protects every stable version while allowing
-   `latest` to advance. The publisher rejects other settings before upload.
-   The initial v2.7.11 setup used all-tag immutability; its sealed receipt
-   retains that historical policy.
+   upload are not an atomic registry operation. Both repositories enforce
+   **Specific tags are immutable**. The required rule is
+   `^[0-9]+\.[0-9]+\.[0-9]+(-(amd64|arm64))?$`, which protects every stable
+   version and its per-architecture members while allowing `latest` to
+   advance. The publisher rejects other settings before upload, so the owner
+   must replace the earlier `^[0-9]+\.[0-9]+\.[0-9]+$` rule on both
+   repositories before the first multi-architecture publication (pending as
+   of 2026-09-22). The initial v2.7.11 setup used all-tag immutability; its
+   sealed receipt retains that historical policy.
 
 ### Verified account setup — 2026-09-13
 
@@ -122,25 +131,36 @@ gh workflow run ci.yml --repo cognigraphdb/cognigraph --ref main -f publish_imag
 ```
 
 The Docker suite builds both editions using the committed dependency lockfile
-and current base-image tags. It checks image metadata, non-root configuration,
-binary version and edition, packaged licenses, unauthenticated rejection,
-authenticated insertion, edition-specific OpenAPI paths, and HTTP/CLI CGQL reads
-after container restart. Each check uses an isolated Docker volume,
-synthetic data and no model provider; it removes its own containers and volumes.
+and current base-image tags. It checks image metadata, platform, non-root
+configuration, binary version and edition, packaged licenses, unauthenticated
+rejection, authenticated insertion, edition-specific OpenAPI paths, and
+HTTP/CLI CGQL reads after container restart. Each check uses an isolated
+Docker volume, synthetic data and no model provider; it removes its own
+containers and volumes. The check records the image IDs it ran in
+`target/ci/images/<arch>.json`. CI runs the suite natively on an amd64 and an
+arm64 runner; on a publishing run each leg then exports exactly the recorded
+IDs with `docker save` (`python3 scripts/docker_images.py export`, refusing a
+tag whose ID has changed) and uploads them as a one-day artifact.
 
 The [v2.7.14 change record](../changelog/2026-09-13-v2-7-14.md) records the
 maintained alias contract. Hosted QA remains separately opt-in.
 
-Before an upload, the publishing helper requires a clean Actions checkout,
-the official repository and manual-main trigger, an unchanged remote main head,
-public target repositories and unused version tags. It checks both images again,
-then repeats the remote checks before any upload. It tags the tested image IDs
-and pushes them without rebuilding. Each numbered digest is read back from
-Docker Hub. Once both match, the helper rechecks main and the previous aliases,
-then publishes `latest` from the same tested image IDs and verifies exact digest
-equality with the numbered tags. Main is checked again before each alias push.
-The Actions summary records each successful upload, registry digest, edition
-and source commit, including uploads preceding a later verification failure.
+Before an upload, the publishing helper (one `publish` job after both Docker
+legs) requires a clean Actions checkout, the official repository and
+manual-main trigger, an unchanged remote main head, public target repositories
+and unused version tags. It loads both legs' tarballs, proves every loaded ID
+equals its receipt and label metadata, reruns the runtime checks for the
+images of its own host platform, then repeats the remote checks before any
+upload. It tags the tested image IDs `<version>-amd64` and `<version>-arm64`
+and pushes them without rebuilding; each digest is read back from Docker Hub.
+Once all four match, it rechecks main and creates the `<version>` index of
+each repository with `docker buildx imagetools create` from those digests,
+reading back the index digest and its platform coverage. After both indexes
+verify, the helper rechecks main and the previous aliases, then creates
+`latest` from the same per-architecture digests and requires exact digest
+equality with the version index. Main is checked again before each alias.
+The Actions summary records each successful upload, registry digest, edition,
+platform and source commit, including uploads preceding a later failure.
 
 Inspect the completed run and its logs. Build success alone is not publication
 success, and local checks do not establish a remote CI result. For deployment,
@@ -158,8 +178,8 @@ editions pass the runtime checks.
 The repository uploads and alias updates are sequential, not atomic. No alias
 advances if either numbered publication or its readback fails. If one succeeds and the
 other fails, retain the successful digest and inspect Docker Hub before retrying.
-An existing tag blocks automatic retries even when it appears to be the same
-candidate. Do not delete or overwrite it to force a green run. Review the partial
+An existing tag, including a per-architecture tag left by a partial run,
+blocks automatic retries even when it appears to be the same candidate. Do not delete or overwrite it to force a green run. Review the partial
 publication and either perform an explicitly authorized recovery of the missing
 edition or prepare a newly versioned, fully verified candidate. The workflow
 does not delete images, create Git tags/releases or roll back registry state.
@@ -175,7 +195,7 @@ versions. Registry checks do not replace PR review, license review, full edition
 conformance, image vulnerability scanning or deployment acceptance. Automated
 image scanning is now part of the shared Docker suite under the
 [container vulnerability policy](../decisions/decision_container_vulnerability_gate.md).
-Signing and native ARM publication remain separate future work. Available image
+Image signing remains separate future work. Available image
 fixes block the build at every severity; unfixed findings remain in its reports
 and require review. A passing scan does not certify a zero-CVE image.
 

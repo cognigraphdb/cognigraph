@@ -8,13 +8,13 @@ Enterprise Components use the [CogniGraph Enterprise License](https://github.com
 
 ## Image availability
 
-Pull the current stable release for `linux/amd64`:
+Pull the current stable release:
 
 ```sh
 docker pull cognigraph/cognigraph-enterprise:latest
 ```
 
-The `latest` alias advances after both editions pass release checks and their numbered images are published. Explicit `x.y.z` tags remain immutable. Select a version from the Tags page and pin its digest for reproducible deployment. Native ARM images are not currently published; on an ARM host, add `--platform linux/amd64` to use emulation.
+The `latest` alias advances after both editions pass release checks and their numbered images are published. Explicit `x.y.z` tags remain immutable. Select a version from the Tags page and pin its digest for reproducible deployment. Releases published after 2.7.27 are multi-architecture images for `linux/amd64` and `linux/arm64` (members also tagged `x.y.z-amd64` and `x.y.z-arm64`); earlier tags are `linux/amd64` only and need `--platform linux/amd64` on ARM hosts.
 
 ## Runtime and operations
 

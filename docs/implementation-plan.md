@@ -131,9 +131,11 @@ not block this batch or first deployment and are not automatically started next.
 [CG-84](issues/CG-84.md) through [CG-87](issues/CG-87.md) record four
 application-integration preconditions identified on 2026-09-20 (TypeScript client,
 bind variables in `LIMIT`, unique constraints and declarable indexes, and arm64
-builds). By owner decision they are deferred optional backlog, to reconsider when
-the first external application integration is ready to start; they are not part
-of any active batch.
+builds). By owner decision they were deferred optional backlog, to reconsider when
+the first external application integration is ready to start. CG-85 (v2.7.25),
+CG-86 (v2.7.26) and CG-87 (v2.7.27, [multi-architecture
+images](decisions/decision_multi_architecture_images.md)) are resolved locally;
+CG-84 remains open.
 
 The registry now has **79 Resolved, 1 Closed without change, and 7 Open issues**
 (CG-64, CG-66 and CG-84 through CG-87 deferred; CG-81 active).
@@ -298,7 +300,9 @@ See the [publication record](changelog/2026-09-11-v2-7-0.md) and
 ## Docker distribution preparation — 2026-09-11
 
 The [manual publishing workflow](operations/docker-publishing.md) adds opt-in
-versioned Docker Hub distribution for Community and Enterprise on Linux amd64.
+versioned Docker Hub distribution for Community and Enterprise on Linux amd64,
+extended in v2.7.27 to `linux/amd64` + `linux/arm64` indexes built and checked on
+native runners, with an Apple Silicon source-build smoke in CI.
 Shared CI and packaged-container runtime checks precede publication; source
 identity and existing-tag guards protect the candidate. The dedicated Docker
 account credential is configured. Public target repositories and the first
