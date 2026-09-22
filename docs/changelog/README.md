@@ -161,6 +161,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 ## Releases
 
 - 2026-09-22: [v2.7.17 — Patch rustls for RUSTSEC-2026-0285 before develop integration](2026-09-22-rustls-advisory.md)
+- 2026-09-22: [v2.7.18 — Dependency refresh for the develop freshness gate](2026-09-22-dependency-refresh.md)
 - 2026-09-22: [v2.7.16 — Construct lifecycle documentation and Semantic Neurons tickets](2026-09-22-construct-lifecycle-and-tickets.md)
 - 2026-09-14: [v2.7.15 — Dependency and container-security candidate](2026-09-14-v2-7-15.md)
 - 2026-09-13: [v2.7.14 — Stable Docker image aliases](2026-09-13-v2-7-14.md)

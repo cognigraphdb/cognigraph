@@ -22,7 +22,7 @@ exclude = ["vendor/tantivy-0.26.2"]
 tantivy = { path = "vendor/tantivy-0.26.2" }
 
 [workspace.package]
-version = "2.7.17"
+version = "2.7.18"
 edition = "2024"
 license = "FSL-1.1-Apache-2.0"
 repository = "https://github.com/cognigraphdb/cognigraph"
@@ -61,4 +61,4 @@ argon2 = "0.6"
 sha2 = "0.11"
 ed25519-dalek = "3.0.0"
 getrandom = "0.4.3"
-rustix = { version = "1.1.4", features = ["fs"] }
+rustix = { version = "1.1.5", features = ["fs"] }

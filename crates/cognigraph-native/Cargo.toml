@@ -18,7 +18,7 @@ uuid = { workspace = true }
 chrono = { workspace = true }
 tracing = { workspace = true }
 rayon = { workspace = true }
-redb = "4.2.0"
+redb = "4.3.0"
 memmap2 = "0.9.11"
 tantivy = "0.26.2"
 

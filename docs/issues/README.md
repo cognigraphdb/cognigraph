@@ -267,8 +267,9 @@ merged into main. Historical failed runs remain linked from the issue.
 | [CG-89](CG-89.md) | P2 | Open | Graph-augmented search defaults to document_relations and omits neuron-built facts |
 | [CG-90](CG-90.md) | P2 | Open | Construction gate refusals are not durably recorded |
 | [CG-91](CG-91.md) | P3 | Resolved | Construct crate module docs describe a graduated status that does not exist |
+| [CG-92](CG-92.md) | P1 | Resolved | Refresh dependencies to pass the develop freshness gate after the v2.7.15 qualification |
 
-Next available identifier: **CG-92**.
+Next available identifier: **CG-93**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected
