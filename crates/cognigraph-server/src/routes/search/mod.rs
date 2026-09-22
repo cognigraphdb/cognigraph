@@ -9,6 +9,8 @@ use crate::state::AppState;
 
 mod basic;
 mod graph_augmented;
+#[cfg(feature = "enterprise")]
+mod graph_warnings;
 mod hybrid;
 mod semantic;
 

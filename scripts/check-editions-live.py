@@ -146,6 +146,7 @@ def check(community, enterprise):
                 assert http(base, '/api/graph/traverse', {'start_vertex': 'notes/one'}, token)['count'] >= 1
                 facts = http(base, '/api/search/graph-augmented', {'query': 'synthetic', 'collection': 'notes', 'threshold': 0}, token)
                 assert facts['graph_facts'][0]['relation'] == 'SUPPLIES', facts
+                assert 'warnings' not in facts, facts  # CG-89: Community has no neuron semantics
                 assert http(base, '/api/lua/execute', {'script': 'return graph.query("FOR n IN [1,2] RETURN n")'}, token)['result'] == [1, 2]
                 http(base, '/api/query', {'query': 'INSERT { _key: "three", title: "CG45" } INTO notes'}, token)
                 assert http(base, '/api/documents/notes/three', token=token)['title'] == 'CG45'
@@ -195,7 +196,19 @@ def check(community, enterprise):
             assert not (Path(directory) / 'forbidden').exists()
             # Import generated state using Enterprise, then refuse Community startup.
             with server(enterprise / 'cognigraph-server', directory, config) as base:
-                http(base, '/api/admin/import', bad, login(base))
+                token = login(base)
+                http(base, '/api/admin/import', bad, token)
+                # CG-89: an accepted rank hint cannot reweight the default
+                # document_relations trace; Enterprise says so, and traversing
+                # facts (absent here) silences it.
+                hint = {'_key': 'boost', 'id': 'boost', 'type': 'relation_rank_hint', 'status': 'accepted',
+                        'confidence': 0.9, 'evidence': ['trace review'], 'relation': 'SUPPLIES', 'boost': 25.0}
+                http(base, '/api/admin/import', {'collections': {'neurons': {'type': 'document', 'documents': {'boost': hint}}}}, token)
+                search = {'query': 'synthetic', 'collection': 'notes', 'threshold': 0}
+                warned = http(base, '/api/search/graph-augmented', search, token)
+                assert warned['warnings'][0]['code'] == 'inert_rank_hints', warned
+                assert warned['warnings'][0]['accepted_rank_hints'] == 1, warned
+                assert 'warnings' not in http(base, '/api/search/graph-augmented', {**search, 'edge_collection': 'facts'}, token)
             rejected_start(community / 'cognigraph-server', directory, {'COGNIGRAPH_NATIVE_PATH': store})
             with server(enterprise / 'cognigraph-server', directory, config) as base:
                 assert http(base, '/api/admin/export', token=login(base))['collections']['side_views']['documents']['x']['_key'] == 'x'
