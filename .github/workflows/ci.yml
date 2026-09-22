@@ -27,7 +27,7 @@ env:
 jobs:
   gates:
     name: Rust, UI and Native acceptance
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 90
     permissions:
       contents: read
@@ -104,7 +104,7 @@ jobs:
   docker:
     name: Packaged editions and Helm backups
     needs: gates
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 75
     permissions:
       contents: read
@@ -161,7 +161,7 @@ jobs:
     name: CI required
     if: always()
     needs: [gates, docker]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
       - name: Require every verification job to succeed
