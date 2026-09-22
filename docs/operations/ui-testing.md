@@ -23,7 +23,7 @@ python3 scripts/verify.py --suite ui-browser
 
 On Linux, install browser system libraries with
 `bun --bun x --no-install playwright install --with-deps chromium` from `ui/`;
-CI does this on `ubuntu-latest`. Missing Bun, browser binaries or system libraries
+CI does this on the pinned `ubuntu-24.04` runner image. Missing Bun, browser binaries or system libraries
 fail verification. They are not treated as skipped browser coverage.
 
 Run `python3 scripts/verify.py --suite ci` for the complete shared gate. Running
