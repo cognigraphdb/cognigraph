@@ -646,6 +646,13 @@ no opaque query passthrough.
 
 ## Mutations
 
+Unique constraints declared on a document collection
+(`POST /api/collections/{name}/indexes`, CG-86) apply to `INSERT`, `UPDATE`,
+`REPLACE` and `UPSERT`: a violating statement fails with a conflict that the
+HTTP routes return as 409 with `code: "unique_violation"`, and a duplicate
+`_key` is likewise 409. Atomicity of a multi-row mutation is still per
+document; rows before the failing one remain applied.
+
 CGQL supports data modification, executed only in read-write mode
 (`QueryMode::ReadWrite`; the `POST /api/query` endpoint, gated by
 `COGNIGRAPH_CGQL_MUTATIONS_ENABLED`). `/api/search/query` always parses CGQL in

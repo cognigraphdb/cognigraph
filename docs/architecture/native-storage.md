@@ -45,16 +45,18 @@ Why this shape first:
 Accepted limitation (resident mode, the default): **the dataset must fit in RAM.** Paged mode lifts this to a keys-resident ceiling. That is consistent with
 the product's current scale target and is revisited in "Migration path" below.
 
-## redb schema (version 2)
+## redb schema (version 3)
 
-Two data tables plus metadata and identity:
+Four data tables plus metadata and identity:
 
 | Table | Key | Value |
 |-------|-----|-------|
-| `meta` | `&str` (`"schema_version"`, `"data_generation"`) | `u32` — schema `2`, numeric mutation generation |
+| `meta` | `&str` (`"schema_version"`, `"data_generation"`) | `u32` — schema `3`, numeric mutation generation |
 | `identity` | `&str` (`"database_id"`, `"data_revision"`) | UUID strings — immutable database identity and unique token for the latest commit |
 | `collections` | `&str` collection name | `u8` — `0` = Document, `1` = Edge |
 | `documents` | `&str` composite `"{collection}\u{0}{key}"` | `&str` — the document as compact JSON |
+| `indexes` | `&str` composite `"{collection}\u{0}{index}"` | `&str` — the `IndexDef` as JSON, name resolved (CG-86) |
+| `index_entries` | `&str` composite `"{collection}\u{0}{index}\u{0}{value key}"` | `&str` — the document key holding that value under a unique index |
 
 Notes:
 
@@ -66,6 +68,15 @@ Notes:
   `\u{0}`**. Writes reject offending names with a validation error.
 - Edges are stored identically to documents (they are JSON documents with
   `_from`/`_to`); the collection's type lives in `collections`.
+- Unique constraints (CG-86) are persisted, not derived: the definition and
+  every entry are written in the same transaction as the document they
+  describe, so the constraint is exact after reopen in every mode without
+  scanning bodies, and paged mode enforces it from the resident entry mirror.
+  The value key is the canonical JSON array of the indexed values. Dropping a
+  collection removes its definitions and entries in the same transaction.
+  Version 2 files upgrade additively; the metadata-only upgrade path
+  re-stamps the identity UUIDs once. See the
+  [decision record](../decisions/decision_unique_indexes.md).
 - Durability: redb's default commit durability (fsync per commit). One
   backend write operation = one transaction.
 - Every successful mutation updates `data_revision` in that same transaction.

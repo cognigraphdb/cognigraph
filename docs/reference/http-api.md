@@ -11,6 +11,9 @@ All application endpoints are served under the `/api` prefix (the UI owns
 | GET | `/api/collections` | Collection catalog: names, types ("document"/"edge"), counts; system (`_`-prefixed) collections hidden |
 | POST | `/api/collections` | Idempotently create an empty document or edge collection |
 | DELETE | `/api/collections/{name}` | Drop a non-system collection and all of its contents |
+| GET | `/api/collections/{name}/indexes` | Declared indexes of a document collection (unknown collections list nothing) |
+| POST | `/api/collections/{name}/indexes` | Declare a unique constraint: `{fields[], unique=true, sparse=false, name?, index_type=persistent}`. Enforced on every write path; 409 `code: "unique_violation"` when existing documents violate it; idempotent; unique constraints on edge collections and unsupported types are 400; non-unique declarations are recorded only. See the [decision record](../decisions/decision_unique_indexes.md) |
+| DELETE | `/api/collections/{name}/indexes/{index}` | Drop a declared index by name; `dropped: false` when absent |
 | POST | `/api/documents` | Create document |
 | GET | `/api/documents` | List documents |
 | POST | `/api/documents/embed` | Provider-batched embedding plus one atomic store transaction |

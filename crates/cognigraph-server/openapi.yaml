@@ -4246,6 +4246,52 @@ paths:
       responses:
         '200': { description: '{dropped}' }
         '403': { description: "Name is a protected M25 semantic-control, construction-derived, or system collection" }
+  /api/collections/{name}/indexes:
+    parameters:
+      - { name: name, in: path, required: true, schema: { type: string } }
+    get:
+      summary: Declared indexes of a document collection (DocumentsRead scope; unknown collections list nothing)
+      responses:
+        '200': { description: '{collection, count, indexes[{index_type, fields, unique, sparse, name}]}' }
+    post:
+      summary: Declare a unique constraint (idempotent ensure; DocumentsWrite scope; CG-86)
+      description: >-
+        Unique persistent/hash definitions on document collections are enforced
+        constraints on every write path (documents, batch, CGQL INSERT/UPSERT,
+        import), inside the same store transaction as the document. `unique`
+        defaults to true on this route; non-unique definitions are recorded but
+        not used for acceleration. `sparse: true` exempts documents where any
+        indexed field is absent or null; otherwise absent fields index as null.
+        Field paths may be dotted. Declaring over existing duplicates is refused
+        with 409 and stores nothing; the same definition again succeeds; a
+        different definition under an existing name is a 400.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [fields]
+              properties:
+                fields: { type: array, items: { type: string }, example: ['email'] }
+                unique: { type: boolean, default: true }
+                sparse: { type: boolean, default: false }
+                name: { type: string, nullable: true, description: 'Defaults to `<fields joined by _>_unique`' }
+                index_type: { type: string, enum: [persistent, hash], default: persistent }
+      responses:
+        '200': { description: '{collection, index}' }
+        '400': { description: 'Unique constraint on an edge collection, unsupported type, malformed fields or name, or a different definition under an existing name' }
+        '403': { description: "Name is a protected M25 semantic-control, construction-derived, generated, or system collection" }
+        '409': { description: 'Existing documents violate the constraint: {error, code: unique_violation}; nothing stored' }
+  /api/collections/{name}/indexes/{index}:
+    parameters:
+      - { name: name, in: path, required: true, schema: { type: string } }
+      - { name: index, in: path, required: true, schema: { type: string } }
+    delete:
+      summary: Drop a declared index by name (DocumentsWrite scope)
+      responses:
+        '200': { description: '{collection, index, dropped}' }
+        '403': { description: "Name is a protected M25 semantic-control, construction-derived, generated, or system collection" }
   /api/cache/stats:
     get:
       summary: Query-cache statistics (admin)

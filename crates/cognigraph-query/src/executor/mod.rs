@@ -128,6 +128,21 @@ pub enum ExecutionError {
     #[error("bind variable `{0}` not found")]
     BindVariableNotFound(String),
 
+    /// A mutation hit a duplicate `_key`; API layers map it to 409.
+    #[error("Document conflict: {0}")]
+    Conflict(String),
+
+    /// A mutation violated a unique constraint (CG-86); API layers map it
+    /// to 409 with the `unique_violation` code.
+    #[error(
+        "Unique constraint `{index}` on `{collection}` violated: {collection}/{existing} already holds the value"
+    )]
+    UniqueViolation {
+        collection: String,
+        index: String,
+        existing: String,
+    },
+
     #[error("missing bind variables: {0}")]
     MissingBindVariables(String),
 
@@ -228,6 +243,16 @@ pub(super) fn backend_execution_error(error: CogniGraphError) -> ExecutionError 
     match error {
         CogniGraphError::Forbidden(message) => ExecutionError::Forbidden(message),
         CogniGraphError::ConnectionError(message) => ExecutionError::Connection(message),
+        CogniGraphError::DocumentConflict(message) => ExecutionError::Conflict(message),
+        CogniGraphError::UniqueViolation {
+            collection,
+            index,
+            existing,
+        } => ExecutionError::UniqueViolation {
+            collection,
+            index,
+            existing,
+        },
         other => ExecutionError::Backend(other.to_string()),
     }
 }

@@ -261,7 +261,7 @@ merged into main. Historical failed runs remain linked from the issue.
 | [CG-83](CG-83.md) | P1 | Resolved | Refresh the application dependency baseline for develop qualification |
 | [CG-84](CG-84.md) | P2 | Open | TypeScript client for Bun and Node applications |
 | [CG-85](CG-85.md) | P2 | Resolved | Bind variables in LIMIT for client-controlled pagination |
-| [CG-86](CG-86.md) | P2 | Open | Unique constraints and user-declarable indexes on ordinary collections |
+| [CG-86](CG-86.md) | P2 | Resolved | Unique constraints and user-declarable indexes on ordinary collections |
 | [CG-87](CG-87.md) | P2 | Open | Native linux/arm64 and macOS Apple Silicon builds for local development |
 | [CG-88](CG-88.md) | P2 | Open | Side views as a proposal-queue gap detector |
 | [CG-89](CG-89.md) | P2 | Resolved | Graph-augmented search defaults to document_relations and omits neuron-built facts |

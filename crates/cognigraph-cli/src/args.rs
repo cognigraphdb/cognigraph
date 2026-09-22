@@ -50,6 +50,20 @@ pub enum Command {
         collection: String,
         key: String,
     },
+    IndexList {
+        collection: String,
+    },
+    IndexEnsure {
+        collection: String,
+        fields: Vec<String>,
+        name: Option<String>,
+        unique: bool,
+        sparse: bool,
+    },
+    IndexDrop {
+        collection: String,
+        name: String,
+    },
     UserCreate {
         username: String,
         role: String,
@@ -384,6 +398,10 @@ COMMANDS
   doc list COLLECTION [--limit N] [--offset N]
   doc put COLLECTION JSON|@FILE   create a document
   doc delete COLLECTION KEY
+  index list COLLECTION
+  index ensure COLLECTION FIELD[,FIELD...] [--name N] [--sparse] [--non-unique]
+                                  declare a unique constraint (CG-86)
+  index drop COLLECTION NAME
   user create USERNAME ROLE [--tenant T]   password from COGNIGRAPH_PASSWORD or stdin
   user list
   user delete KEY
@@ -642,6 +660,50 @@ fn parse_command(rest: &[&str]) -> Result<Command, String> {
         ["doc", "delete", collection, key] => Ok(Command::DocDelete {
             collection: collection.to_string(),
             key: key.to_string(),
+        }),
+        ["index", "list", collection] => Ok(Command::IndexList {
+            collection: collection.to_string(),
+        }),
+        ["index", "ensure", collection, fields, tail @ ..] => {
+            let fields: Vec<String> = fields.split(',').map(str::to_string).collect();
+            if fields.iter().any(|f| f.trim().is_empty()) {
+                return Err(
+                    "index ensure expects a comma-separated list of non-empty fields".into(),
+                );
+            }
+            let mut name = None;
+            let mut unique = true;
+            let mut sparse = false;
+            let mut rest = tail;
+            while let Some((flag, more)) = rest.split_first() {
+                match (*flag, more) {
+                    ("--name", [value, after @ ..]) => {
+                        name = Some(value.to_string());
+                        rest = after;
+                    }
+                    ("--sparse", after) => {
+                        sparse = true;
+                        rest = after;
+                    }
+                    ("--non-unique", after) => {
+                        unique = false;
+                        rest = after;
+                    }
+                    ("--name", []) => return Err("--name expects a value".into()),
+                    (other, _) => return Err(format!("unknown flag `{other}`")),
+                }
+            }
+            Ok(Command::IndexEnsure {
+                collection: collection.to_string(),
+                fields,
+                name,
+                unique,
+                sparse,
+            })
+        }
+        ["index", "drop", collection, name] => Ok(Command::IndexDrop {
+            collection: collection.to_string(),
+            name: name.to_string(),
         }),
         ["user", "create", username, role, tail @ ..] => {
             let tenant = match tail {
@@ -2637,3 +2699,7 @@ mod tests {
         );
     }
 }
+
+#[cfg(test)]
+#[path = "args_index_tests.rs"]
+mod index_tests;

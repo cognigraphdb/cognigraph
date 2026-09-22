@@ -12,7 +12,9 @@ use serde_json::json;
 
 use crate::error::CogniGraphError;
 use crate::traits::GraphBackend;
-use crate::types::{CollectionType, Direction, TraversalOpts, VectorSearchOpts};
+use crate::types::{
+    BatchOp, CollectionType, Direction, IndexDef, IndexType, TraversalOpts, VectorSearchOpts,
+};
 
 mod traversal;
 pub use traversal::traversal_confidence_contract;
@@ -551,6 +553,277 @@ pub async fn after_key_scan_contract(backend: &dyn GraphBackend, prefix: &str) {
     backend.drop_collection(&col).await.unwrap();
 }
 
+/// Unique constraints (CG-86): declared per document collection, persisted,
+/// enforced on every write path before anything is stored, and lifted by
+/// dropping the index.
+pub async fn unique_index_contract(backend: &dyn GraphBackend, prefix: &str) {
+    let col = format!("{prefix}_unique");
+    backend.drop_collection(&col).await.ok();
+    backend
+        .ensure_collection(&col, CollectionType::Document)
+        .await
+        .unwrap();
+    let email = IndexDef {
+        index_type: IndexType::Persistent,
+        fields: vec!["email".into()],
+        unique: true,
+        sparse: false,
+        name: None,
+    };
+    backend.ensure_index(&col, &email).await.unwrap();
+    // Idempotent: the same definition again is a success, not a duplicate.
+    backend.ensure_index(&col, &email).await.unwrap();
+    let listed = backend.list_indexes(&col).await.unwrap();
+    assert_eq!(listed.len(), 1, "{listed:?}");
+    assert_eq!(listed[0].name.as_deref(), Some("email_unique"));
+    assert!(listed[0].unique);
+
+    backend
+        .create_document(&col, json!({ "_key": "a", "email": "x@y" }))
+        .await
+        .unwrap();
+    let err = backend
+        .create_document(&col, json!({ "_key": "b", "email": "x@y" }))
+        .await
+        .unwrap_err();
+    match err {
+        CogniGraphError::UniqueViolation {
+            collection,
+            index,
+            existing,
+        } => {
+            assert_eq!(collection, col);
+            assert_eq!(index, "email_unique");
+            assert_eq!(existing, "a");
+        }
+        other => panic!("expected UniqueViolation, got {other:?}"),
+    }
+    assert!(backend.get_document(&col, "b").await.unwrap().is_none());
+
+    // Update and replace are checked too; a document may keep its own value.
+    backend
+        .create_document(&col, json!({ "_key": "b", "email": "other" }))
+        .await
+        .unwrap();
+    for attempt in [
+        backend
+            .update_document(&col, "b", json!({ "email": "x@y" }))
+            .await,
+        backend
+            .replace_document(&col, "b", json!({ "email": "x@y" }))
+            .await,
+    ] {
+        assert!(
+            matches!(attempt, Err(CogniGraphError::UniqueViolation { .. })),
+            "{attempt:?}"
+        );
+    }
+    assert_eq!(
+        backend.get_document(&col, "b").await.unwrap().unwrap()["email"],
+        json!("other")
+    );
+    backend
+        .update_document(&col, "a", json!({ "email": "x@y", "note": 1 }))
+        .await
+        .unwrap();
+    // Changing the value frees it for another document.
+    backend
+        .update_document(&col, "a", json!({ "email": "moved" }))
+        .await
+        .unwrap();
+    backend
+        .create_document(&col, json!({ "_key": "c", "email": "x@y" }))
+        .await
+        .unwrap();
+
+    // Non-sparse: a missing field indexes as null, so only one such document.
+    backend
+        .create_document(&col, json!({ "_key": "d" }))
+        .await
+        .unwrap();
+    assert!(matches!(
+        backend.create_document(&col, json!({ "_key": "e" })).await,
+        Err(CogniGraphError::UniqueViolation { .. })
+    ));
+    // Sparse: documents without the field are exempt.
+    let code = IndexDef {
+        index_type: IndexType::Persistent,
+        fields: vec!["code".into()],
+        unique: true,
+        sparse: true,
+        name: Some("code".into()),
+    };
+    backend.ensure_index(&col, &code).await.unwrap();
+    backend
+        .create_document(&col, json!({ "_key": "e" }))
+        .await
+        .unwrap_err();
+    backend
+        .create_document(&col, json!({ "_key": "f", "email": "f", "code": 7 }))
+        .await
+        .unwrap();
+    assert!(matches!(
+        backend
+            .create_document(&col, json!({ "_key": "g", "email": "g", "code": 7 }))
+            .await,
+        Err(CogniGraphError::UniqueViolation { index, .. }) if index == "code"
+    ));
+
+    // Atomic batches: a violating op leaves nothing behind; order matters.
+    if backend.supports_atomic_batches() {
+        let err = backend
+            .execute_batch(vec![
+                BatchOp::Insert {
+                    collection: col.clone(),
+                    doc: json!({ "_key": "h", "email": "z" }),
+                },
+                BatchOp::Insert {
+                    collection: col.clone(),
+                    doc: json!({ "_key": "i", "email": "z" }),
+                },
+            ])
+            .await
+            .unwrap_err();
+        assert!(
+            matches!(err, CogniGraphError::UniqueViolation { .. }),
+            "{err:?}"
+        );
+        assert!(backend.get_document(&col, "h").await.unwrap().is_none());
+        backend
+            .execute_batch(vec![
+                BatchOp::Update {
+                    collection: col.clone(),
+                    key: "c".into(),
+                    merge: json!({ "email": "q" }),
+                },
+                BatchOp::Insert {
+                    collection: col.clone(),
+                    doc: json!({ "_key": "h", "email": "x@y" }),
+                },
+            ])
+            .await
+            .unwrap();
+    }
+
+    // Dropping the constraint lifts it; dropping twice reports absence.
+    assert!(backend.drop_index(&col, "email_unique").await.unwrap());
+    assert!(!backend.drop_index(&col, "email_unique").await.unwrap());
+    backend
+        .create_document(&col, json!({ "_key": "j", "email": "moved" }))
+        .await
+        .unwrap();
+    // Declaring over existing duplicates is refused and stores nothing.
+    let err = backend.ensure_index(&col, &email).await.unwrap_err();
+    assert!(
+        matches!(err, CogniGraphError::UniqueViolation { .. }),
+        "{err:?}"
+    );
+    assert!(
+        backend
+            .list_indexes(&col)
+            .await
+            .unwrap()
+            .iter()
+            .all(|i| i.name.as_deref() != Some("email_unique"))
+    );
+
+    // Compound and nested fields.
+    let pair = IndexDef {
+        index_type: IndexType::Persistent,
+        fields: vec!["oauth.provider".into(), "oauth.id".into()],
+        unique: true,
+        sparse: true,
+        name: Some("oauth".into()),
+    };
+    backend.ensure_index(&col, &pair).await.unwrap();
+    backend
+        .create_document(
+            &col,
+            json!({ "_key": "k", "oauth": { "provider": "gh", "id": 1 } }),
+        )
+        .await
+        .unwrap();
+    assert!(matches!(
+        backend
+            .create_document(
+                &col,
+                json!({ "_key": "l", "oauth": { "provider": "gh", "id": 1 } })
+            )
+            .await,
+        Err(CogniGraphError::UniqueViolation { index, .. }) if index == "oauth"
+    ));
+    backend
+        .create_document(
+            &col,
+            json!({ "_key": "l", "oauth": { "provider": "gh", "id": "1" } }),
+        )
+        .await
+        .unwrap();
+
+    // Refusals before any storage change.
+    let edges = format!("{prefix}_unique_edges");
+    backend.drop_collection(&edges).await.ok();
+    backend
+        .ensure_collection(&edges, CollectionType::Edge)
+        .await
+        .unwrap();
+    assert!(matches!(
+        backend.ensure_index(&edges, &email).await,
+        Err(CogniGraphError::ValidationError(_))
+    ));
+    // A non-unique declaration is recorded on any collection type and is
+    // never enforced.
+    let declared = IndexDef {
+        index_type: IndexType::Persistent,
+        fields: vec!["_from".into(), "relation_type".into()],
+        unique: false,
+        sparse: false,
+        name: Some("by_from".into()),
+    };
+    backend.ensure_index(&edges, &declared).await.unwrap();
+    assert_eq!(
+        backend.list_indexes(&edges).await.unwrap()[0]
+            .name
+            .as_deref(),
+        Some("by_from")
+    );
+    for bad in [
+        IndexDef {
+            index_type: IndexType::Fulltext,
+            fields: vec!["email".into()],
+            unique: true,
+            sparse: false,
+            name: None,
+        },
+        IndexDef {
+            index_type: IndexType::Persistent,
+            fields: vec![],
+            unique: true,
+            sparse: false,
+            name: None,
+        },
+        IndexDef {
+            index_type: IndexType::Persistent,
+            fields: vec!["email".into()],
+            unique: false,
+            sparse: false,
+            name: Some("code".into()),
+        },
+    ] {
+        assert!(
+            matches!(
+                backend.ensure_index(&col, &bad).await,
+                Err(CogniGraphError::ValidationError(_))
+            ),
+            "{bad:?}"
+        );
+    }
+
+    backend.drop_collection(&edges).await.unwrap();
+    backend.drop_collection(&col).await.unwrap();
+    assert!(backend.list_indexes(&col).await.unwrap().is_empty());
+}
+
 /// Run the full conformance suite with a shared prefix.
 pub async fn run_all(backend: &dyn GraphBackend, prefix: &str) {
     document_crud_contract(backend, prefix).await;
@@ -563,4 +836,5 @@ pub async fn run_all(backend: &dyn GraphBackend, prefix: &str) {
     vector_search_contract(backend, prefix).await;
     filtered_scan_contract(backend, prefix).await;
     after_key_scan_contract(backend, prefix).await;
+    unique_index_contract(backend, prefix).await;
 }

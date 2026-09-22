@@ -160,6 +160,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Releases
 
+- 2026-09-22: [v2.7.26 — Unique constraints on document collections](2026-09-22-unique-indexes.md)
 - 2026-09-22: [v2.7.17 — Patch rustls for RUSTSEC-2026-0285 before develop integration](2026-09-22-rustls-advisory.md)
 - 2026-09-22: [v2.7.20 — Pin CI jobs to the ubuntu-24.04 runner image](2026-09-22-pin-ci-runner-image.md)
 - 2026-09-22: [v2.7.25 — Bind variables in LIMIT](2026-09-22-limit-bind-variables.md)

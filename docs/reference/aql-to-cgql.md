@@ -48,6 +48,7 @@ unqualified backlog work.
 | `POST /_api/cursor` `{query, bindVars}` | `POST /api/query` `{query, bind_vars}` (read-write) or `POST /api/search/query` (read-only) | `bind_vars`, not `bindVars`. No `batchSize`, `count`, `ttl` or cursor follow-up calls. |
 | `PUT /_api/cursor/{id}` | none | Whole result returned; see item 8 above. |
 | `POST /_api/explain` | prefix the query with `EXPLAIN` / `EXPLAIN ANALYZE` | Static plan without bind values; `ANALYZE` executes reads. |
+| `POST /_api/index` (`ensureIndex`, `type: persistent, unique: true`) | `POST /api/collections/{name}/indexes` `{fields, unique, sparse, name}` | Unique `persistent`/`hash` constraints on document collections, enforced on documents, batch, CGQL `INSERT`/`UPSERT` and import (since v2.7.26). `sparse` supported; dotted field paths supported. No TTL, geo, fulltext, inverted or vector index types; non-unique declarations are recorded but not used for acceleration. Violations are 409 with `code: "unique_violation"`. |
 | `/_api/document/{coll}` CRUD | `/api/documents`, `/api/documents/{coll}/{key}` | `PATCH` merges, `PUT` replaces, same as Arango. |
 | `/_api/collection` | `GET/POST /api/collections`, `DELETE /api/collections/{name}` | Types are `document` / `edge`. |
 | `/_api/gharial` (named graphs) | `/api/graph/relationships`, `/api/graph/traverse` | Edge collections, not named graphs. |
