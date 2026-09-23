@@ -10,6 +10,7 @@ mod auth_middleware;
 #[cfg(all(test, not(feature = "enterprise")))]
 mod community_tests;
 mod config;
+mod container_init;
 mod edition;
 mod error;
 #[cfg(feature = "enterprise")]
@@ -55,8 +56,18 @@ use cognigraph_native::NativeBackend;
 use crate::config::Config;
 use crate::state::AppState;
 
-#[tokio::main]
-async fn main() {
+fn main() {
+    // Root start-up in the container must finish while the process is still
+    // single-threaded, so it runs before the Tokio runtime exists (CG-81).
+    container_init::apply_or_exit();
+    tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()
+        .expect("Tokio runtime")
+        .block_on(serve());
+}
+
+async fn serve() {
     // Load .env file if present (before reading config)
     dotenvy::dotenv().ok();
 

@@ -16,9 +16,12 @@ Clippy and tests use the lockfile without modification. The bounded Tantivy
 snapshot also passes `scripts/check-vendored.py`, which checks published source
 bytes and permits only the reviewed dependency-manifest patch.
 
-The Docker suite builds both Linux images, refreshes installed runtime packages,
+The Docker suite builds both Linux images on the pulled distroless runtime,
 scans both image IDs for vulnerabilities, tests their packaged server/CLI and
-persistence, and exercises the rendered Helm backup in both editions. CI runs
+persistence, and exercises the rendered Helm backup in both editions. The
+runtime has no shell, so process, file and volume checks run in a
+digest-pinned busybox helper that shares the container's PID namespace or
+volume; `docker cp` verifies packaged licenses. CI runs
 it natively on `linux/amd64` (`ubuntu-24.04`) and `linux/arm64`
 (`ubuntu-24.04-arm`) as a matrix; each leg sets `DOCKER_DEFAULT_PLATFORM`
 and the image check refuses a mismatched platform. A local run qualifies the

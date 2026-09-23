@@ -163,6 +163,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 - 2026-09-23: [v2.7.33 — TypeScript client for Bun and Node](2026-09-23-typescript-client.md)
 - 2026-09-23: [v2.7.29 — Lifecycle tests on an explicit stack](2026-09-23-lifecycle-test-stack.md)
 - 2026-09-23: [v2.7.32 — Commit the dump fixtures' dotfile case](2026-09-23-fixture-dotfile.md)
+- 2026-09-23: [v2.7.34 — Distroless runtime and in-server root start-up](2026-09-23-distroless-runtime.md)
 - 2026-09-23: [v2.7.28 — Compatible dependency drift before integration](2026-09-23-dependency-drift.md)
 - 2026-09-23: [v2.7.31 — Offline ArangoDB dump importer](2026-09-23-arangodump-importer.md)
 - 2026-09-23: [v2.7.30 — ArangoDB dump import contract and fixtures](2026-09-23-arangodump-import-contract.md)

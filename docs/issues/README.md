@@ -256,7 +256,7 @@ merged into main. Historical failed runs remain linked from the issue.
 | [CG-78](CG-78.md) | P2 | Resolved | Validate archived documentation links and preserve amended-source provenance |
 | [CG-79](CG-79.md) | P2 | Resolved | Remove leaked SPA test fixture directories |
 | [CG-80](CG-80.md) | P1 | Resolved | Published container base packages carry fixable vulnerabilities |
-| [CG-81](CG-81.md) | P2 | Open | Triage remaining container CVEs without Debian fixes |
+| [CG-81](CG-81.md) | P2 | Resolved | Triage remaining container CVEs without Debian fixes |
 | [CG-82](CG-82.md) | P1 | Resolved | Enforce PR review and dependency freshness before develop integration |
 | [CG-83](CG-83.md) | P1 | Resolved | Refresh the application dependency baseline for develop qualification |
 | [CG-84](CG-84.md) | P2 | Resolved | TypeScript client for Bun and Node applications |

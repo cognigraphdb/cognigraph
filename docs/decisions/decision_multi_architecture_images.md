@@ -10,7 +10,7 @@ Published images were `linux/amd64` only, so Apple Silicon and other ARM
 hosts ran the database under emulation, which is too slow for a
 database-backed development loop. No macOS artifact existed and no CI job
 exercised an arm64 build of either edition. The Dockerfile itself is
-architecture-neutral (`rust:1-slim` and `debian:stable-slim` are
+architecture-neutral (`rust:1-slim` and, at the time, `debian:stable-slim` are
 multi-architecture) and the Docker suite already passed on an arm64 Docker
 host locally. The publisher pushes only image IDs that passed runtime
 checks, and Docker Hub enforces immutable `x.y.z` tags.
