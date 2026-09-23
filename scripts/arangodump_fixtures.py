@@ -152,8 +152,9 @@ DERIVED = [
      'dump.json deleted', reject('missing_dump_metadata')),
     ('unknown-file', '3.12/shop-plain', lambda d: (d / 'notes.txt').write_text('synthetic\n'),
      'unrecognized notes.txt added', reject('unknown_layout')),
-    ('dotfile', '3.12/shop-plain', lambda d: (d / '.DS_Store').write_bytes(b'\0synthetic'),
-     '.DS_Store added (ignored and reported)', {'outcome': 'accepted', 'ignored': ['.DS_Store']}),
+    # Not `.DS_Store`: the repository's .gitignore would silently drop it.
+    ('dotfile', '3.12/shop-plain', lambda d: (d / '.hidden').write_bytes(b'\0synthetic'),
+     '.hidden dotfile added (ignored and reported)', {'outcome': 'accepted', 'ignored': ['.hidden']}),
     ('envelope-remove-marker', '3.11/shop-envelope', remove_marker,
      'a type 2302 removal marker appended to customers', reject('unsupported_marker')),
 ]

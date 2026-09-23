@@ -10,6 +10,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -86,9 +87,24 @@ def check_outcome(key, entry, report):
     return problems
 
 
+def ignored_by_git(root, manifest):
+    """Fixture files git would not commit pass locally and vanish in CI."""
+    paths = [(root / key / item['path']).as_posix()
+             for key, entry in manifest['fixtures'].items() for item in entry['files']]
+    try:
+        result = subprocess.run(['git', 'check-ignore', '--stdin'], input='\n'.join(paths),
+                                capture_output=True, text=True, cwd=root)
+    except OSError:
+        return []
+    if result.returncode not in (0, 1):  # 128: not a git checkout (a copied fixture tree)
+        return []
+    return [f'{Path(p).relative_to(root)}: ignored by .gitignore, so it would never be committed'
+            for p in result.stdout.split()]
+
+
 def check(root=FIXTURES):
     manifest = json.loads((root / 'manifest.json').read_text())
-    problems = check_files(root, manifest) + check_expected(root)
+    problems = check_files(root, manifest) + check_expected(root) + ignored_by_git(root, manifest)
     outcomes = {'accepted': 0, 'rejected': 0}
     for key, entry in manifest['fixtures'].items():
         report = reader.read(root / key)

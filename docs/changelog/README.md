@@ -161,6 +161,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 ## Releases
 
 - 2026-09-23: [v2.7.29 — Lifecycle tests on an explicit stack](2026-09-23-lifecycle-test-stack.md)
+- 2026-09-23: [v2.7.32 — Commit the dump fixtures' dotfile case](2026-09-23-fixture-dotfile.md)
 - 2026-09-23: [v2.7.28 — Compatible dependency drift before integration](2026-09-23-dependency-drift.md)
 - 2026-09-23: [v2.7.31 — Offline ArangoDB dump importer](2026-09-23-arangodump-importer.md)
 - 2026-09-23: [v2.7.30 — ArangoDB dump import contract and fixtures](2026-09-23-arangodump-import-contract.md)

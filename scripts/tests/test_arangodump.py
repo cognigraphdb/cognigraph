@@ -220,6 +220,16 @@ class Validator(unittest.TestCase):
         path.write_text(json.dumps(data))
         self.assertIn('expected/shop.json', '\n'.join(check.check(self.root)['errors']))
 
+    def test_a_fixture_file_that_git_would_ignore_is_reported(self):
+        import subprocess
+        repository = self.root.parent
+        subprocess.run(['git', 'init', '-q', str(repository)], check=True)
+        (repository / '.gitignore').write_text('.hidden\n')
+        errors = '\n'.join(check.check(self.root)['errors'])
+        self.assertIn('derived/dotfile/.hidden: ignored by .gitignore', errors)
+        (repository / '.gitignore').write_text('')
+        self.assertEqual(check.check(self.root)['errors'], [])
+
     def test_a_changed_expectation_is_reported_as_an_outcome_mismatch(self):
         manifest = json.loads((self.root / 'manifest.json').read_text())
         manifest['fixtures']['3.12/vpack']['expected'] = {'outcome': 'accepted'}

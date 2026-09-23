@@ -2526,7 +2526,7 @@
       "source": "3.12",
       "dataset": "shop",
       "derived_from": "3.12/shop-plain",
-      "mutation": ".DS_Store added (ignored and reported)",
+      "mutation": ".hidden dotfile added (ignored and reported)",
       "observed": {
         "database": "shop",
         "useEnvelope": false,
@@ -2535,12 +2535,12 @@
       "expected": {
         "outcome": "accepted",
         "ignored": [
-          ".DS_Store"
+          ".hidden"
         ]
       },
       "files": [
         {
-          "path": ".DS_Store",
+          "path": ".hidden",
           "bytes": 10,
           "sha256": "1a229a1091b81c5063e89e4363645ab015412d18016f3035f7cd891ca1cf1e56"
         },
