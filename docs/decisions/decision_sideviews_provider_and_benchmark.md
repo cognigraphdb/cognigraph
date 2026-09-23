@@ -1,6 +1,7 @@
 # Decision: Side-view generation — separate provider config + pre-build model benchmark
 
-**Status:** Implemented end to end (2026-07-20). All five slices are in the tree
+**Status:** Implemented end to end (2026-07-20). Recall evidence amended
+2026-09-23 by the [re-benchmark](#recall-re-benchmark-2026-09-23). All five slices are in the tree
 and gate-green: foundation (generation contract + provider benchmark), storage
 (write-protected `side_views` collection), the durable generation job + batch
 endpoint, retrieval fusion, and the delete cascade. Owner: skitsanos. See the
@@ -373,6 +374,47 @@ optional polish rather than a fix.
 missing collection, so the first-ever run for a tenant failed. Fixed with an
 idempotent `ensure_collection` in the run_job arm. The slice-C plumbing tests did
 not exercise the run_job write path (follow-up: a mock-provider integration test).
+
+## Recall re-benchmark (2026-09-23)
+
+The July evaluation above cannot be re-run: its script, queries and side views
+are not preserved. [CG-98](../issues/CG-98.md) rebuilt it larger and through
+the product's own hybrid search, with 200 DailyMed labels and 2,000 frozen
+`gpt-5.6-luna` side views. It used 100 lay queries without drug names, each
+also translated into Portuguese, Spanish, German and French. The
+[research note](../research/benchmarks/embedding-recall-2026-09-23.md) has
+the method, tables and limitations. MRR@10 in hybrid search with side views:
+
+| Embedder | English | Other four languages |
+|---|---|---|
+| `gemini-embedding-2` | 0.881 | 0.846 to 0.873 |
+| `text-embedding-3-large` | 0.793 | 0.752 to 0.783 |
+| `qwen3-embedding:8b` (Ollama) | 0.730 | 0.691 to 0.733 |
+| `text-embedding-3-small` | 0.668 | 0.566 to 0.659 |
+| `bge-m3` (Ollama) | 0.543 | 0.416 to 0.524 |
+
+Every other model is behind Gemini in every language, with paired 95%
+intervals excluding zero.
+
+**Amendments to the July recommendations:**
+
+1. **The default embedder stays `gemini-embedding-2`,** now also on
+   multilingual evidence. Deployments limited to OpenAI should use
+   `text-embedding-3-large`, not `small`.
+2. **The side-view lift is modest, not large.** For Gemini and OpenAI large
+   it was +0.01 to +0.05 MRR, often within noise. The July figure of +0.165
+   is superseded. Side views helped most where query embeddings were weak
+   (Qwen3, +0.12 in English).
+3. **`side_view_weight` 0.35 is no better than the 0.5 default.** The
+   difference stayed within 0.018 MRR everywhere.
+4. **Open follow-ups:**
+   - hybrid fusion lets chunk-level vector hits outvote BM25
+     ([CG-101](../issues/CG-101.md));
+   - providers cannot mark queries versus documents
+     ([CG-102](../issues/CG-102.md));
+   - the benchmark exposed a concurrent text-index rebuild race
+     ([CG-99](../issues/CG-99.md)) and a fixed Ollama timeout
+     ([CG-100](../issues/CG-100.md)).
 
 ### Candidate retirement and independent labels (2026-09-09)
 
