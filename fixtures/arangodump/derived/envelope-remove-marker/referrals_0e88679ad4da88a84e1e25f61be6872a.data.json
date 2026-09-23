@@ -1,0 +1,2 @@
+{"type":2300,"data":{"_key":"r1","_id":"referrals/r1","_from":"customers/c-1","_to":"customers/c@3","_rev":"_mKzsMY----"}}
+{"type":2300,"data":{"_key":"r2","_id":"referrals/r2","_from":"customers/c@3","_to":"customers/c.4","_rev":"_mKzsMY---_","note":null}}

@@ -1,6 +1,6 @@
 # ArangoDB dump import into Native — deferred design
 
-- Status: Deferred optional backlog; no dump-import mode exists in CogniGraph 2.7.1
+- Status: Superseded 2026-09-23 by the fixture-qualified [dump import contract](../reference/arangodump-import.md) ([decision](../decisions/decision_arangodump_import_contract.md)); kept as the original proposal. No dump-import mode exists yet.
 - Direction: [Native-only decision](../decisions/decision_native_only.md)
 - Qualification: [CG-64](../issues/CG-64.md)
 - Implementation: [CG-66](../issues/CG-66.md)

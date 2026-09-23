@@ -1,0 +1,3 @@
+{"_from":"customers/c-1","_id":"orders/o1","_key":"o1","_rev":"_mKzsRdS---","_to":"products/p1","at":"2026-01-02","qty":2}
+{"_from":"customers/c:2","_id":"orders/o2","_key":"o2","_rev":"_mKzsRdS--_","_to":"products/p3","at":"2026-01-03","qty":1}
+{"_from":"customers/c_5(x)+,=;$!*'%","_id":"orders/o3","_key":"o3","_rev":"_mKzsRdS--A","_to":"products/p2","at":"2026-02-11","qty":7}

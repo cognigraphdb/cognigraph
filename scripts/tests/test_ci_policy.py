@@ -126,6 +126,7 @@ class WorkflowPolicy(unittest.TestCase):
         self.assertIn((ROOT, [sys.executable, 'scripts/check-vendored.py']), commands)
         self.assertIn((ROOT, [sys.executable, 'scripts/check-docs.py']), commands)
         self.assertIn((ROOT, [sys.executable, 'scripts/check-public-distribution.py']), commands)
+        self.assertIn((ROOT, [sys.executable, 'scripts/check-arangodump-fixtures.py']), commands)
         self.assertIn((ROOT, ['cargo', 'audit', '--deny', 'unsound']), commands)
         for _, command in commands:
             if command[:2] in (['cargo', 'clippy'], ['cargo', 'test']):

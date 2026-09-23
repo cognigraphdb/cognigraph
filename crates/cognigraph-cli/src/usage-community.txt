@@ -10,6 +10,8 @@ COMMANDS
   health                          liveness + backend readiness
   export [--out FILE]             hot JSON snapshot (stdout by default)
   import [FILE]                   restore a snapshot (stdin if no FILE)
+  import --from-arangodump DIR --output STORE [--dry-run] [--report FILE]
+                                  offline ArangoDB dump to a NEW Native store
   references audit SNAPSHOT       bounded offline identity/reference report
   references repair SNAPSHOT PLAN --out FILE
                                   offline explicit repair to a NEW snapshot

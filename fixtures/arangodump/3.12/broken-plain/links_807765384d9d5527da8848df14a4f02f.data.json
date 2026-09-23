@@ -1,0 +1,2 @@
+{"_from":"parts/x1","_id":"links/l1","_key":"l1","_rev":"_mKzsRee---","_to":"parts/missing"}
+{"_from":"ghost/g1","_id":"links/l2","_key":"l2","_rev":"_mKzsRee--_","_to":"parts/x1"}

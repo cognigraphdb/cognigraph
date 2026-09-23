@@ -1,0 +1,5 @@
+{"type":2300,"data":{"_key":"c-1","_id":"customers/c-1","_rev":"_mKzsMX----","email":"ana@example.test","name":"Ana Müller","tags":["vip","eu"],"address":{"city":"Lisboa","geo":[38.7223,-9.1393]},"loyalty":{"id":"L-100"},"score":4.5,"active":true}}
+{"type":2300,"data":{"_key":"c:2","_id":"customers/c:2","_rev":"_mKzsMX---_","email":"bo@example.test","name":"博","loyalty":null,"nested":{"a":{"b":{"c":{"d":[1,[2,[3]]]}}}},"active":false}}
+{"type":2300,"data":{"_key":"c@3","_id":"customers/c@3","_rev":"_mKzsMX---A","email":"cy@example.test","name":"Cy 🚀","numbers":{"big":9007199254740993,"negative":-42,"tenth":0.1,"huge":1e+300,"zero":0}}}
+{"type":2300,"data":{"_key":"c.4","_id":"customers/c.4","_rev":"_mKzsMX---B","email":"di@example.test","empty":{"object":{},"array":[],"string":""}}}
+{"type":2300,"data":{"_key":"c_5(x)+,=;$!*'%","_id":"customers/c_5(x)+,=;$!*'%","_rev":"_mKzsMX---C","email":"ed@example.test","loyalty":{"id":"L-200"},"text":"quote \" backslash \\ newline \n tab \t nul-free"}}

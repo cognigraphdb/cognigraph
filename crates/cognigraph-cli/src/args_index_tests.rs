@@ -71,3 +71,30 @@ fn index_commands_reject_malformed_input() {
         );
     }
 }
+
+#[test]
+fn import_with_the_dump_flag_is_the_offline_importer_and_plain_import_is_unchanged() {
+    let words: Vec<String> = ["import", "--from-arangodump", "d", "--output", "s"]
+        .iter()
+        .map(|w| w.to_string())
+        .collect();
+    match parse(&words).unwrap().command {
+        Command::ImportArangodump(options) => {
+            assert_eq!(options.dump, std::path::PathBuf::from("d"));
+            assert_eq!(options.output, std::path::PathBuf::from("s"));
+        }
+        other => panic!("{other:?}"),
+    }
+    let words = vec!["import".to_string(), "snapshot.json".to_string()];
+    assert_eq!(
+        parse(&words).unwrap().command,
+        Command::Import {
+            file: Some("snapshot.json".into())
+        }
+    );
+    let words: Vec<String> = ["import", "--from-arangodump", "d"]
+        .iter()
+        .map(|w| w.to_string())
+        .collect();
+    assert!(parse(&words).unwrap_err().contains("--output"));
+}

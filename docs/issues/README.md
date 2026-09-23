@@ -239,9 +239,9 @@ merged into main. Historical failed runs remain linked from the issue.
 | [CG-61](CG-61.md) | P2 | Resolved | React Router lockfile retains an advisory-affected release |
 | [CG-62](CG-62.md) | P1 | Resolved | Plain-text construction imports reuse chunk IDs and replace earlier evidence |
 | [CG-63](CG-63.md) | P2 | Resolved | Collapsed sidebar removes the accessible names of navigation links |
-| [CG-64](CG-64.md) | P2 | Open | Define the ArangoDB dump migration contract and qualification fixtures |
+| [CG-64](CG-64.md) | P2 | Resolved | Define the ArangoDB dump migration contract and qualification fixtures |
 | [CG-65](CG-65.md) | P2 | Resolved | Preserve Native conformance coverage before retiring ArangoDB |
-| [CG-66](CG-66.md) | P2 | Open | Implement the Community offline ArangoDB dump importer |
+| [CG-66](CG-66.md) | P2 | Resolved | Implement the Community offline ArangoDB dump importer |
 | [CG-67](CG-67.md) | P2 | Resolved | Remove the ArangoDB runtime backend and reject retired configuration |
 | [CG-68](CG-68.md) | P2 | Resolved | Qualify and document the Native-only release |
 | [CG-69](CG-69.md) | P1 | Resolved | Automate Native CI and enforce verified repository changes |
