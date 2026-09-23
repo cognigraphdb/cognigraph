@@ -1,7 +1,8 @@
 # Decision: side views as an explicit, conservative gap source
 
-Status: accepted and implemented 2026-09-23 for [CG-88](../issues/CG-88.md).
-The live measurement is [CG-97](../issues/CG-97.md). Builds on the
+Status: accepted and implemented 2026-09-23 for [CG-88](../issues/CG-88.md);
+measured 2026-09-23 for [CG-97](../issues/CG-97.md), see
+[Measurement](#measurement-2026-09-23). Builds on the
 [side-view provider decision](decision_sideviews_provider_and_benchmark.md)
 and the [construction refusal ledger](decision_construction_refusal_ledger.md).
 
@@ -73,5 +74,29 @@ Alpha"`), not entity types, and construct ingestion stores fact edges under
 - Surface matching is substring matching, as in grounding, so a short alias
   can over-match; that affects which pairs are nominated, not what is stored,
   because every proposal still passes the verbatim self-check and review.
-- Revisit the defaults and the either-direction connection rule after CG-97
-  reports how many candidates were expected or forbidden facts.
+- Revisit the defaults and the either-direction connection rule when a
+  measurement on a real corpus exists.
+
+## Measurement (2026-09-23)
+
+The [trigger-ablation measurement](../research/semantic-neurons/sideview-gap-measurement-2026-09-23.md)
+on the public forensics alpha and bravo kits used `gpt-5.6-luna` over three
+repetitions. It found:
+
+- **Recall:** every missing expected fact was a candidate in every run
+  (6 of 6 and 9 of 9 at support 1).
+- **A negated fact nominated:** bravo's forbidden
+  `iPhone 14 --RUNS_APPLICATION--> Signal` was the strongest candidate in
+  every run. The proposer declined it every time, and no stored proposal
+  built a forbidden fact.
+- **Repair:** recall after repair reached 5/6 on alpha and 7 to 8/9 on
+  bravo. The remaining losses were proposer declines, not detector misses.
+
+Consequences:
+
+- **`min_support` stays 1.** Support 2 dropped an expected fact in two bravo
+  runs and did not remove the forbidden candidate.
+- **The detector stays negation-blind by design.** It is a candidate
+  generator, and restraint remains the job of the proposer's checks and
+  review. This measurement is the evidence that this layering holds on
+  these kits.

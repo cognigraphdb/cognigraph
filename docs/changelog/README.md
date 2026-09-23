@@ -161,6 +161,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 ## Releases
 
 - 2026-09-23: [v2.7.33 — TypeScript client for Bun and Node](2026-09-23-typescript-client.md)
+- 2026-09-23: [v2.7.38 — Side-view gap source measured under trigger ablation](2026-09-23-sideview-gap-measurement.md)
 - 2026-09-23: [v2.7.37 — Side views as a proposal source](2026-09-23-sideview-gap-detector.md)
 - 2026-09-23: [v2.7.29 — Lifecycle tests on an explicit stack](2026-09-23-lifecycle-test-stack.md)
 - 2026-09-23: [v2.7.32 — Commit the dump fixtures' dotfile case](2026-09-23-fixture-dotfile.md)
