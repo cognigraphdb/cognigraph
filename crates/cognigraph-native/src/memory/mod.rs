@@ -1,5 +1,6 @@
 mod backend;
 mod batch;
+mod bulk;
 #[cfg(test)]
 mod collection_tests;
 mod documents;

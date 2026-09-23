@@ -28,6 +28,8 @@ pub enum Command {
     Import {
         file: Option<String>,
     },
+    /// Offline `import --from-arangodump DIR --output STORE`; see arangodump.
+    ImportArangodump(crate::arangodump::Options),
     Query {
         query: String,
         write: bool,
@@ -389,6 +391,8 @@ COMMANDS
   health                          liveness + backend readiness
   export [--out FILE]             hot JSON snapshot (stdout by default)
   import [FILE]                   restore a snapshot (stdin if no FILE)
+  import --from-arangodump DIR --output STORE [--dry-run] [--report FILE]
+                                  offline ArangoDB dump to a NEW Native store
   references audit SNAPSHOT       bounded offline identity/reference report
   references repair SNAPSHOT PLAN --out FILE
                                   offline explicit repair to a NEW snapshot
@@ -621,6 +625,9 @@ fn parse_command(rest: &[&str]) -> Result<Command, String> {
             }),
             other => Err(unexpected(other)),
         },
+        ["import", tail @ ..] if tail.contains(&"--from-arangodump") => Ok(
+            Command::ImportArangodump(crate::arangodump::options::parse(tail)?),
+        ),
         ["import"] => Ok(Command::Import { file: None }),
         ["import", file] => Ok(Command::Import {
             file: Some(file.to_string()),

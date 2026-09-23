@@ -147,6 +147,18 @@ class Records(Copy):
         self.assertTrue(all('_rev' not in d and '_id' not in d
                             for c in report['collections'].values() for d in c['documents'].values()))
 
+    def test_within_a_collection_the_first_problem_in_file_order_wins(self):
+        lines = self.lines('customers')
+        clash = json.loads(lines[1])
+        clash['_key'], clash['_id'] = 'c-late', 'customers/c-late'
+        clash['email'] = json.loads(lines[0])['email']
+        # A unique violation before a corrupt line is reported, not the corruption...
+        self.write('customers', [*lines, json.dumps(clash), '{not json'])
+        self.assertEqual(self.codes()[1], ['unique_violation'])
+        # ...and a corrupt line before the violation is reported instead.
+        self.write('customers', [*lines, '{not json', json.dumps(clash)])
+        self.assertEqual(self.codes()[1], ['corrupt_data_file'])
+
     def test_an_edge_to_an_absent_collection_is_unresolved(self):
         edges = self.lines('referrals')
         first = json.loads(edges[0])

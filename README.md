@@ -22,7 +22,9 @@ and signed governance workflows.
 
 Coming from ArangoDB? CGQL uses familiar AQL-style syntax for document queries,
 joins and traversals. The [migration guide](docs/reference/aql-to-cgql.md) maps
-supported behavior and compatibility limits.
+supported behavior and compatibility limits, and `cognigraph import
+--from-arangodump` turns a 3.11 or 3.12 `arangodump` directory into a new
+Native store offline ([dump import](docs/reference/arangodump-import.md)).
 
 ## Five-minute start
 

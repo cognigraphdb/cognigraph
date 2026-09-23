@@ -205,6 +205,12 @@ def read(directory, limits=None):
             failed.add(name)
             continue
         documents = {}
+        # Dispositions are decided up front so unique constraints are checked
+        # inline: within a collection the first problem in file order wins,
+        # which a streaming importer can reproduce exactly.
+        pending = {'not_carried': []}
+        constraints = indexes_of(name, kind, structure.get('indexes', []), pending)
+        held = [dict() for _ in constraints]
         try:
             for _, data_name in parts:
                 for number, raw in lines_of(directory / data_name, limits, budget):
@@ -226,6 +232,12 @@ def read(directory, limits=None):
                     if kind == 'edge' and not all(
                             isinstance(record.get(end), str) and '/' in record[end] for end in ('_from', '_to')):
                         raise Rejected(error('invalid_edge', collection=name, key=key))
+                    for constraint, seen in zip(constraints, held):
+                        value = value_key(record, constraint['fields'], constraint['sparse'])
+                        if value is not None and value in seen:
+                            raise Rejected(error('unique_violation', collection=name, key=key))
+                        if value is not None:
+                            seen[value] = key
                     report['dropped']['_rev'] += '_rev' in record
                     documents[key] = {k: v for k, v in record.items() if k not in ('_id', '_rev')}
         except Rejected as rejected:
@@ -234,16 +246,8 @@ def read(directory, limits=None):
             continue
         report['collections'][name] = {'type': kind, 'documents': documents}
         keys[name] = set(documents)
-        for constraint in indexes_of(name, kind, structure.get('indexes', []), report):
-            seen = {}
-            for key, document in documents.items():
-                value = value_key(document, constraint['fields'], constraint['sparse'])
-                if value is not None and value in seen:
-                    errors.append(error('unique_violation', collection=name, key=key))
-                    break
-                if value is not None:
-                    seen[value] = key
-            report['constraints'].append(constraint)
+        report['not_carried'] += pending['not_carried']
+        report['constraints'] += constraints
     for name, collection in report['collections'].items():
         if collection['type'] != 'edge':
             continue

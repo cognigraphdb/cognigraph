@@ -3,6 +3,8 @@
 `cognigraph import` accepts CogniGraph JSON snapshots. See the
 [recovery guide](recovery.md) for restore behavior and the
 [external migration guide](../reference/aql-to-cgql.md) for format differences.
+`cognigraph import --from-arangodump` turns an ArangoDB dump into a new store
+offline; see [ArangoDB dump import](#arangodb-dump-import).
 
 The default CLI is Community. Ordinary database, auth and snapshot commands work
 in both builds; neuron, construction, jobs, tenant and governance commands need
@@ -38,3 +40,24 @@ Connection via `--url`/`--token` flags or `COGNIGRAPH_URL`/`COGNIGRAPH_TOKEN`
 env; user/token commands accept usernames or raw user keys; exit code 0 on
 success, 1 on server errors, 2 on usage errors. `cognigraph --help` lists
 everything. For the offline CG-33 commands, see the [reference-repair procedure](reference-repair.md).
+
+## ArangoDB dump import
+
+Offline, in both editions, with no server, URL or token:
+
+```sh
+arangodump --server.database shop --output-directory ./shop-dump   # on the ArangoDB side
+cognigraph import --from-arangodump ./shop-dump --output ./shop.redb --dry-run --report check.json
+cognigraph import --from-arangodump ./shop-dump --output ./shop.redb --report import.json
+COGNIGRAPH_NATIVE_PATH=./shop.redb COGNIGRAPH_ADMIN_PASSWORD=... cognigraph-server
+```
+
+Run the dry run first: it validates everything and writes only the report.
+The import then builds a new store and publishes it only if every collection
+is accepted; it never writes into an existing store. The dump carries no
+CogniGraph users, so the server creates its administrator from
+`COGNIGRAPH_ADMIN_PASSWORD` on first start. Exit codes: 0 accepted or
+published, 2 usage (including an existing `--output`), 3 rejected by the
+contract, 4 I/O failure or a dump that changed during the run, 5 published
+but the report could not be written. The [contract](../reference/arangodump-import.md)
+lists supported dumps, error codes, limits and what is carried over.
