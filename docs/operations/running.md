@@ -53,8 +53,12 @@ COGNIGRAPH_HOST_ADMIN_PASSWORD=use-another-secret \
 COGNIGRAPH_JWT_SECRET=$(openssl rand -hex 32) docker compose up -d
 ```
 
-The image runs as a non-root user with the persistent native backend at
-`/data/cognigraph.redb` and a `/health` HEALTHCHECK. A local `docker build`
+The image runs as UID/GID 10001 on a distroless glibc runtime (no shell,
+package manager or `curl`) with the persistent native backend at
+`/data/cognigraph.redb`. Its HEALTHCHECK runs the bundled `cognigraph health`
+command, which checks `/health` and `/health/database`. Debug with the
+bundled CLI or a helper container sharing the process or volume, for example
+`docker run --rm --pid=container:cognigraph busybox cat /proc/1/status`. A local `docker build`
 produces an image for the Docker host's own platform; published releases
 after 2.7.27 are `linux/amd64` and `linux/arm64` indexes (see
 [Docker image publication](docker-publishing.md#destinations-and-scope)).

@@ -59,6 +59,10 @@ def cargo_direct(metadata):
     return result
 
 
+# Every Bun project whose lockfile ships with the candidate.
+BUN_PROJECTS = ('ui', 'clients/typescript')
+
+
 def cargo_resolution(lock):
     return {(p['name'], p['version'], p.get('source', 'workspace-or-patch'))
             for p in tomllib.loads(lock.read_text())['package']}
@@ -82,8 +86,8 @@ def npm_direct(manifest, lock):
     return result
 
 
-def npm_resolution(lock):
-    return {(name, entry[0]) for name, entry in lock['packages'].items()}
+def npm_resolution(lock, project='ui'):
+    return {(project, name, entry[0]) for name, entry in lock['packages'].items()}
 
 
 def resolutions(reports):
@@ -91,8 +95,12 @@ def resolutions(reports):
                                '--all-features'], ROOT, reports / 'cargo-metadata.log'))
     direct = cargo_direct(metadata)
     current_cargo = cargo_resolution(ROOT / 'Cargo.lock')
-    current_bun = bun_lock(ROOT / 'ui/bun.lock', reports, 'current-bun')
-    direct |= npm_direct(json.loads((ROOT / 'ui/package.json').read_text()), current_bun)
+    current_npm, new_npm = set(), set()
+    for project in BUN_PROJECTS:
+        label = project.replace('/', '-')
+        current = bun_lock(ROOT / project / 'bun.lock', reports, f'current-bun-{label}')
+        direct |= npm_direct(json.loads((ROOT / project / 'package.json').read_text()), current)
+        current_npm |= npm_resolution(current, project)
     # Resolve updates in a disposable copy; never update the candidate or run scripts.
     with tempfile.TemporaryDirectory(prefix='cognigraph-dependencies-') as folder:
         scratch = Path(folder)
@@ -103,18 +111,20 @@ def resolutions(reports):
                             ignore=shutil.ignore_patterns('target', '.git', '__pycache__'))
         run(['cargo', 'update'], scratch, reports / 'cargo-resolution.log')
         new_cargo = cargo_resolution(scratch / 'Cargo.lock')
-        ui = scratch / 'ui'
-        ui.mkdir()
-        for name in ('package.json', 'bun.lock'):
-            shutil.copy2(ROOT / 'ui' / name, ui / name)
-        run(['bun', 'update', '--lockfile-only', '--ignore-scripts', '--no-cache'], ui,
-            reports / 'bun-resolution.log')
-        new_bun = bun_lock(ui / 'bun.lock', reports, 'resolved-bun')
+        for project in BUN_PROJECTS:
+            label = project.replace('/', '-')
+            copy = scratch / project
+            copy.mkdir(parents=True)
+            for name in ('package.json', 'bun.lock'):
+                shutil.copy2(ROOT / project / name, copy / name)
+            run(['bun', 'update', '--lockfile-only', '--ignore-scripts', '--no-cache'], copy,
+                reports / f'bun-resolution-{label}.log')
+            new_npm |= npm_resolution(bun_lock(copy / 'bun.lock', reports, f'resolved-bun-{label}'), project)
     return direct, {
         'cargo': {'removed': sorted(current_cargo - new_cargo),
                   'added': sorted(new_cargo - current_cargo)},
-        'npm': {'removed': sorted(npm_resolution(current_bun) - npm_resolution(new_bun)),
-                'added': sorted(npm_resolution(new_bun) - npm_resolution(current_bun))}}
+        'npm': {'removed': sorted(current_npm - new_npm),
+                'added': sorted(new_npm - current_npm)}}
 
 
 def exceptions(path, today):
@@ -161,7 +171,8 @@ def main():
     parent = ROOT / 'target/ci/dependencies'
     parent.mkdir(parents=True, exist_ok=True)
     reports = Path(tempfile.mkdtemp(prefix='run-', dir=parent))
-    inputs = [ROOT / 'Cargo.toml', ROOT / 'Cargo.lock', ROOT / 'ui/package.json', ROOT / 'ui/bun.lock',
+    inputs = [ROOT / 'Cargo.toml', ROOT / 'Cargo.lock',
+              *(ROOT / project / name for project in BUN_PROJECTS for name in ('package.json', 'bun.lock')),
               ROOT / 'docs/operations/dependency-exceptions.json',
               *sorted((ROOT / 'crates').glob('*/Cargo.toml')),
               *sorted((ROOT / 'vendor').glob('*/Cargo.toml'))]

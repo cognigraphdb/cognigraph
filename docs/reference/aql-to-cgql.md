@@ -57,7 +57,7 @@ directory into a new Native store.
 | ArangoSearch views, `SEARCH` clause | `/api/search/text` (BM25), `/api/search/hybrid` (BM25 + vector, RRF) | Full-text is an HTTP endpoint, not a CGQL clause. |
 | `/_api/database` | tenants (Enterprise) or one server per database | The Community build runs one tenant. |
 | `arangodump` / `arangorestore` | `cognigraph import --from-arangodump DIR --output STORE` imports a 3.11/3.12 JSON dump offline into a new store ([contract](arangodump-import.md)); unique indexes become constraints, other metadata is reported | Current `cognigraph export/import` and `/api/admin/export/import` use CogniGraph JSON snapshots, not Arango dumps. See [recovery](../operations/recovery.md). |
-| `arangojs` | HTTP + `fetch`; a TypeScript SDK is planned | Bind variables and result arrays map directly. |
+| `arangojs` | The [TypeScript client](../../clients/typescript/README.md) (`@cognigraph/client`, Bun and Node): `query`, `mutate`, documents, `batch`, unique constraints, typed errors | Bind variables and result arrays map directly; `LIMIT @offset, @count` binds too. |
 
 ## Query structure
 

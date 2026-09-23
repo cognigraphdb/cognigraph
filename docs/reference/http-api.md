@@ -4,6 +4,9 @@
 
 All application endpoints are served under the `/api` prefix (the UI owns
 `/`); only `/health`, `/metrics`, and `/openapi.yaml` stay at the root.
+Bun and Node applications can use the typed
+[TypeScript client](../../clients/typescript/README.md) for the query,
+document, batch, index, auth and health routes.
 
 ### Documents
 | Method | Path | Description |

@@ -48,7 +48,9 @@ deployments. The image bundles the frozen console at
 [railway-settings.json](../../deploy/railway-settings.json) is the reviewed
 `ServiceInstanceUpdateInput` payload for the Railway API, not an automatically
 loaded config file. Apply it only to the database service and read settings back.
-Use the explicit `/usr/local/bin/cognigraph-entrypoint` start command. In the
+Use the explicit `/usr/local/bin/cognigraph-entrypoint` start command. Since
+v2.7.34 that path is an alias of `/usr/local/bin/cognigraph-server`, which is
+also the image entrypoint, so existing service settings keep working. In the
 executed API setup, `null` did not clear a previous start-command or healthcheck
 override; confirm the effective values before deploying. A redeploy uses the
 previous deployment's code/configuration; create a fresh source deployment when
@@ -81,11 +83,13 @@ Docker runs must also attach `/data` explicitly, as in the root README. Set:
 | `COGNIGRAPH_ADMIN_PASSWORD` | Unique generated secret, retained in Railway |
 | `COGNIGRAPH_JWT_SECRET` | Independent generated secret, retained in Railway |
 
-Railway supplies `RAILWAY_VOLUME_MOUNT_PATH=/data`. The entrypoint creates only
-`/data/native`, owned by UID/GID 10001, mode 0700. It rejects a symlink, a wrong
-Native path or unexpected existing ownership/mode. It never recursively repairs
-data. The server then becomes PID 1 as UID 10001, with no effective capabilities
-and privilege escalation disabled. Normal Docker/Helm use stays non-root and
+Railway supplies `RAILWAY_VOLUME_MOUNT_PATH=/data`. Started as root, the server
+itself (the image has no shell since v2.7.34) creates only `/data/native`, owned
+by UID/GID 10001, mode 0700, before it starts any thread. It rejects a symlink,
+a wrong Native path or unexpected existing ownership/mode, and never
+recursively repairs data. It then drops to UID/GID 10001 with no supplementary
+groups, no capabilities in any set and privilege escalation disabled, and
+verifies the result before serving. Normal Docker/Helm use stays non-root and
 does not require this root-startup path.
 
 Set secrets through Railway's protected variables interface or stdin to the

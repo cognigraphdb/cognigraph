@@ -11,6 +11,7 @@ default = []
 enterprise = ["dep:cognigraph-artifacts", "dep:cognigraph-construct", "dep:cognigraph-governance"]
 
 [dependencies]
+rustix = { workspace = true, features = ["process", "thread"] }
 cognigraph-artifacts = { path = "../cognigraph-artifacts", optional = true }
 cognigraph-core = { path = "../cognigraph-core" }
 cognigraph-embeddings = { path = "../cognigraph-embeddings" }
