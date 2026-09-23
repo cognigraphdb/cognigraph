@@ -272,7 +272,7 @@ merged into main. Historical failed runs remain linked from the issue.
 | [CG-94](CG-94.md) | P3 | Resolved | Split propose.rs and directed.rs in cognigraph-construct to the module line budget |
 | [CG-95](CG-95.md) | P3 | Resolved | Split draft.rs and grounding.rs in cognigraph-construct to the module line budget |
 | [CG-96](CG-96.md) | P2 | Resolved | Promotion lifecycle tests overflow the default test-thread stack in x86_64 debug builds |
-| [CG-97](CG-97.md) | P2 | Open | Measure side-view gap proposals on a public Semantic Neurons kit |
+| [CG-97](CG-97.md) | P2 | Resolved | Measure side-view gap proposals on a public Semantic Neurons kit |
 
 Next available identifier: **CG-98**.
 ## After the current ticket list
