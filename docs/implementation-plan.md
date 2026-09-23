@@ -135,7 +135,7 @@ builds). By owner decision they were deferred optional backlog, to reconsider wh
 the first external application integration is ready to start. CG-85 (v2.7.25),
 CG-86 (v2.7.26) and CG-87 (v2.7.27, [multi-architecture
 images](decisions/decision_multi_architecture_images.md)) are resolved locally;
-CG-84 remains open.
+CG-84 (v2.7.33, [TypeScript client](decisions/decision_typescript_client.md)) is resolved as well.
 
 The registry now has **79 Resolved, 1 Closed without change, and 7 Open issues**
 (CG-64, CG-66 and CG-84 through CG-87 deferred; CG-81 active).
