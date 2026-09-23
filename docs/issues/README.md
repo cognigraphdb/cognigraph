@@ -273,8 +273,13 @@ merged into main. Historical failed runs remain linked from the issue.
 | [CG-95](CG-95.md) | P3 | Resolved | Split draft.rs and grounding.rs in cognigraph-construct to the module line budget |
 | [CG-96](CG-96.md) | P2 | Resolved | Promotion lifecycle tests overflow the default test-thread stack in x86_64 debug builds |
 | [CG-97](CG-97.md) | P2 | Resolved | Measure side-view gap proposals on a public Semantic Neurons kit |
+| [CG-98](CG-98.md) | P2 | Resolved | Re-benchmark embedding models for side-view retrieval, including multilingual queries |
+| [CG-99](CG-99.md) | P1 | Open | Concurrent text searches after a write fail while the Native text index rebuilds |
+| [CG-100](CG-100.md) | P3 | Open | Ollama embedding requests time out after a fixed 120 seconds |
+| [CG-101](CG-101.md) | P3 | Open | Hybrid search sums chunk ranks per parent, so the vector leg can outvote BM25 |
+| [CG-102](CG-102.md) | P3 | Open | Embedding providers cannot tell queries from documents |
 
-Next available identifier: **CG-98**.
+Next available identifier: **CG-103**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

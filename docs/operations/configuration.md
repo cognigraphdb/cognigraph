@@ -39,7 +39,7 @@ Cargo feature or select the corresponding Docker image as described in
 | `COGNIGRAPH_LUA_INSTRUCTION_LIMIT` | 0 (use engine default) | Sandbox instruction cap; 0 keeps the 1,000,000-instruction engine default |
 | `COGNIGRAPH_QUERY_CACHE_ENABLED` | `false` | Semantic query cache (`COGNIGRAPH_QUERY_CACHE_*` tunables) |
 | `COGNIGRAPH_QUERY_CACHE_BACKEND` / `COGNIGRAPH_QUERY_CACHE_PATH` | `memory` / unset | `persistent` + a redb path makes cached embeddings survive restarts (results stay in-memory) |
-| `COGNIGRAPH_EMBEDDING_PROVIDER` | `none` | `openai` / `ollama` / `gemini` + provider keys |
+| `COGNIGRAPH_EMBEDDING_PROVIDER` | `none` | `openai` / `ollama` / `gemini` + provider keys. Measured 2026-09-23 on five languages, `gemini` with `gemini-embedding-2` retrieved best; with `openai` use `COGNIGRAPH_EMBEDDING_MODEL=text-embedding-3-large` ([benchmark](../research/benchmarks/embedding-recall-2026-09-23.md)) |
 | `COGNIGRAPH_COMPLETION_PROVIDER` | inferred | `openai` or `gemini`; unset selects a nonblank OpenAI key first, then Gemini. No key and no explicit provider disables the optional lane. Invalid explicit settings fail startup. |
 | `COGNIGRAPH_COMPLETION_MODEL` | `gpt-5.6-luna` / `gemini-3.8-flash` | Main provider's model for directed construction, drafting, proposal, answer evaluation, and fallback review. Luna uses the selected `reasoning_effort: low` baseline wherever it is resolved; other OpenAI model overrides keep their provider defaults. |
 | `COGNIGRAPH_SIDEVIEWS_PROVIDER` | inherits main provider | Optional separate `openai` / `gemini` lane; an explicit provider uses its own default model unless `COGNIGRAPH_SIDEVIEWS_MODEL` is set. |
