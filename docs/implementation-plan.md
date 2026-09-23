@@ -173,8 +173,8 @@ normal per-push increment and checks remain. The last hosted QA version is
 2.7.11. Migration command/format support was an
 [unqualified deferred design](plans/arangodump-import-design.md); since v2.7.30
 the [dump import contract](reference/arangodump-import.md) is frozen and
-fixture-qualified ([CG-64](issues/CG-64.md)), and the importer is
-[CG-66](issues/CG-66.md).
+fixture-qualified ([CG-64](issues/CG-64.md)), and v2.7.31 ships the offline
+importer `cognigraph import --from-arangodump` ([CG-66](issues/CG-66.md)).
 
 ## Review checkpoint — 2026-09-09
 

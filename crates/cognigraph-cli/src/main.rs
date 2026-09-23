@@ -1,6 +1,7 @@
 //! `cognigraph` — administration CLI for a running CogniGraph server.
 //! Connection via --url/--token or COGNIGRAPH_URL/COGNIGRAPH_TOKEN.
 
+mod arangodump;
 mod args;
 mod client;
 mod references;
@@ -29,6 +30,10 @@ fn main() {
         print!("{USAGE}");
         return;
     }
+    // Offline: no server, URL or token.
+    if let Command::ImportArangodump(options) = &invocation.command {
+        std::process::exit(arangodump::run_cli(options));
+    }
     let url = invocation
         .url
         .or_else(|| {
@@ -56,7 +61,7 @@ fn main() {
 
 fn run(api: &Api, command: Command) -> Result<Option<Value>, String> {
     match command {
-        Command::Help => unreachable!("handled in main"),
+        Command::Help | Command::ImportArangodump(_) => unreachable!("handled in main"),
         Command::ReferencesAudit { snapshot } => references::audit_file(&snapshot).map(Some),
         Command::ReferencesRepair {
             snapshot,
