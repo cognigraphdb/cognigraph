@@ -4130,6 +4130,13 @@ paths:
         cached trace metadata. At or below the cache floor, retrieval is fresh.
         All cache paths require identical result parameters, including the
         complete edge and neuron collection names and optional confidence.
+        Neuron-built facts live in the managed `facts` edge collection; the
+        default `edge_collection` is the application-written
+        `document_relations`. Enterprise responses computed in the request
+        (fresh or cache-assisted) carry `warnings` with code
+        `inert_rank_hints` when accepted relation_rank_hint neurons exist but
+        `edge_collection` is not exactly `facts`; strong cache hits omit
+        `warnings` because they perform no neurons read.
       requestBody:
         required: true
         content:
@@ -4140,7 +4147,7 @@ paths:
               properties:
                 query: { type: string }
                 collection: { type: string, default: embeddings }
-                edge_collection: { type: string, default: document_relations }
+                edge_collection: { type: string, default: document_relations, description: 'Pass "facts" to rank construct-built facts and let accepted rank hints apply' }
                 threshold: { type: number, default: 0.7 }
                 seed_limit: { type: integer, default: 5 }
                 max_depth: { type: integer, default: 2 }
@@ -4151,7 +4158,7 @@ paths:
                 neurons_collection: { type: string, default: neurons }
                 graph_facts_limit: { type: integer, default: 12 }
       responses:
-        '200': { description: 'results + graph_facts [{source, relation, target, evidence_chunk_id, fact}]' }
+        '200': { description: 'results + graph_facts [{source, relation, target, evidence_chunk_id, fact}]; Enterprise adds warnings [{code: inert_rank_hints, message, accepted_rank_hints, edge_collection}] when present' }
   /api/query:
     post:
       summary: Parsed read-write CGQL for ordinary collections (mutations; mounted only when COGNIGRAPH_CGQL_MUTATIONS_ENABLED=true)
@@ -4239,6 +4246,52 @@ paths:
       responses:
         '200': { description: '{dropped}' }
         '403': { description: "Name is a protected M25 semantic-control, construction-derived, or system collection" }
+  /api/collections/{name}/indexes:
+    parameters:
+      - { name: name, in: path, required: true, schema: { type: string } }
+    get:
+      summary: Declared indexes of a document collection (DocumentsRead scope; unknown collections list nothing)
+      responses:
+        '200': { description: '{collection, count, indexes[{index_type, fields, unique, sparse, name}]}' }
+    post:
+      summary: Declare a unique constraint (idempotent ensure; DocumentsWrite scope; CG-86)
+      description: >-
+        Unique persistent/hash definitions on document collections are enforced
+        constraints on every write path (documents, batch, CGQL INSERT/UPSERT,
+        import), inside the same store transaction as the document. `unique`
+        defaults to true on this route; non-unique definitions are recorded but
+        not used for acceleration. `sparse: true` exempts documents where any
+        indexed field is absent or null; otherwise absent fields index as null.
+        Field paths may be dotted. Declaring over existing duplicates is refused
+        with 409 and stores nothing; the same definition again succeeds; a
+        different definition under an existing name is a 400.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [fields]
+              properties:
+                fields: { type: array, items: { type: string }, example: ['email'] }
+                unique: { type: boolean, default: true }
+                sparse: { type: boolean, default: false }
+                name: { type: string, nullable: true, description: 'Defaults to `<fields joined by _>_unique`' }
+                index_type: { type: string, enum: [persistent, hash], default: persistent }
+      responses:
+        '200': { description: '{collection, index}' }
+        '400': { description: 'Unique constraint on an edge collection, unsupported type, malformed fields or name, or a different definition under an existing name' }
+        '403': { description: "Name is a protected M25 semantic-control, construction-derived, generated, or system collection" }
+        '409': { description: 'Existing documents violate the constraint: {error, code: unique_violation}; nothing stored' }
+  /api/collections/{name}/indexes/{index}:
+    parameters:
+      - { name: name, in: path, required: true, schema: { type: string } }
+      - { name: index, in: path, required: true, schema: { type: string } }
+    delete:
+      summary: Drop a declared index by name (DocumentsWrite scope)
+      responses:
+        '200': { description: '{collection, index, dropped}' }
+        '403': { description: "Name is a protected M25 semantic-control, construction-derived, generated, or system collection" }
   /api/cache/stats:
     get:
       summary: Query-cache statistics (admin)
@@ -4420,7 +4473,7 @@ paths:
             schema: { $ref: '#/components/schemas/DirectedConstructRequest' }
       responses:
         '401': { description: Authentication is required when enabled }
-        '200': { description: '{space_type, chunks, proposed, facts_grounded, skips, extracted_by}' }
+        '200': { description: '{space_type, chunks, proposed, facts_grounded, skips, extracted_by, refusals[], refusals_stored, refusals_dropped, refusals_error?}. skips keep their string form; refusals are the same rejections as structured rows {_key, gate, source, relation, target, chunk_id, evidence, reason, stored} written to the generated construction_refusals ledger in the same request (10,000 rows per tenant, newest dropped at the cap; a ledger write failure sets refusals_error and never fails the construction).' }
         '400': { description: "Empty/oversized chunks, invalid taxonomy, or occurrence identity validation failure" }
         '403': { description: "Caller lacks graph-write scope, or a governed deployment fences this legacy writer" }
         '408': { description: Configured HTTP request deadline exceeded; synchronous backend effects may already have completed }
@@ -4520,7 +4573,7 @@ paths:
                   type: object
                   description: Inline EvalSpec for gap measurement; omission reads an already-existing protected eval_specs/{space_type} record. Generic writes to eval_specs are refused after M25.
       responses:
-        '200': { description: '{gaps, stored, proposed[], skipped[], proposed_by}' }
+        '200': { description: '{gaps, stored, proposed[], skipped[], proposed_by, refusals[], refusals_stored, refusals_dropped, refusals_error?}. skipped keeps its {fact, reason} form; refusals are the same skips as structured rows with gate codes (proposal_rejected, forbidden_fact_not_grounded, blocker_rejected, blocker_round_failed, blocker_round_dry, validation_failed, duplicate_id) written to the construction_refusals ledger.' }
         '400': { description: "Bad gap line, or no gaps source available" }
   /api/construct/review:
     post:

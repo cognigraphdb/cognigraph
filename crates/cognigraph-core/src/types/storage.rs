@@ -25,8 +25,10 @@ pub enum BatchOp {
     },
 }
 
-/// Index definition for a collection
-#[derive(Debug, Clone, Serialize, Deserialize)]
+/// Index definition for a collection. Unique `persistent`/`hash`
+/// definitions on document collections are enforced constraints (CG-86);
+/// non-unique definitions are recorded declarations only.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct IndexDef {
     /// Index type
     pub index_type: IndexType,
@@ -44,7 +46,7 @@ pub struct IndexDef {
 }
 
 /// Supported index types
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]
 pub enum IndexType {
     Persistent,

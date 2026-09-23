@@ -1,0 +1,2 @@
+// binds: {"n": 2}
+FOR d IN documents FILTER d._key == "a" LET keys = (FOR x IN documents SORT x._key ASC LIMIT @n RETURN x._key) RETURN keys

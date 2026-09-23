@@ -27,6 +27,8 @@ mod neuron_lifecycle;
 mod openapi_drift;
 #[cfg(feature = "enterprise")]
 mod promotions;
+#[cfg(feature = "enterprise")]
+mod refusals;
 mod routes;
 #[cfg(feature = "enterprise")]
 mod semantic_repairs;

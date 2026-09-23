@@ -336,6 +336,13 @@ fn collect_bind_vars_into(query: &Query, vars: &mut BTreeSet<String>) {
             collect_bind_vars_expr(projection, vars);
         }
     }
+    if let Some(limit) = &query.limit {
+        for value in std::iter::once(&limit.count).chain(limit.offset.as_ref()) {
+            if let crate::ast::LimitValue::Bind { bind } = value {
+                vars.insert(bind.clone());
+            }
+        }
+    }
     if let Some(sort) = &query.sort {
         for key in &sort.keys {
             collect_bind_vars_expr(&key.expr, vars);

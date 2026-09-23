@@ -11,6 +11,9 @@ All application endpoints are served under the `/api` prefix (the UI owns
 | GET | `/api/collections` | Collection catalog: names, types ("document"/"edge"), counts; system (`_`-prefixed) collections hidden |
 | POST | `/api/collections` | Idempotently create an empty document or edge collection |
 | DELETE | `/api/collections/{name}` | Drop a non-system collection and all of its contents |
+| GET | `/api/collections/{name}/indexes` | Declared indexes of a document collection (unknown collections list nothing) |
+| POST | `/api/collections/{name}/indexes` | Declare a unique constraint: `{fields[], unique=true, sparse=false, name?, index_type=persistent}`. Enforced on every write path; 409 `code: "unique_violation"` when existing documents violate it; idempotent; unique constraints on edge collections and unsupported types are 400; non-unique declarations are recorded only. See the [decision record](../decisions/decision_unique_indexes.md) |
+| DELETE | `/api/collections/{name}/indexes/{index}` | Drop a declared index by name; `dropped: false` when absent |
 | POST | `/api/documents` | Create document |
 | GET | `/api/documents` | List documents |
 | POST | `/api/documents/embed` | Provider-batched embedding plus one atomic store transaction |
@@ -35,7 +38,7 @@ both reads and writes.
 | `/api/search/query` | Parsed, read-only CGQL; `language` may be omitted or set to `cgql`. Opaque backend-native text is disabled. |
 | `/api/search/semantic` | Text → embed → vector search → fetch docs |
 | `/api/search/hybrid` | Native BM25 + vector with RRF fusion; unavailable BM25 data is reported explicitly |
-| `/api/search/graph-augmented` | Semantic seeds + multi-hop graph traversal |
+| `/api/search/graph-augmented` | Semantic seeds + multi-hop graph traversal. `edge_collection` defaults to the application-written `document_relations`; pass `"facts"` to rank construct-built facts, which is the only collection where accepted `relation_rank_hint` neurons can apply. Enterprise responses computed in the request (fresh or cache-assisted) add `warnings` with code `inert_rank_hints` when accepted rank hints exist but `edge_collection` is not exactly `facts`; strong cache hits omit `warnings`. See the [decision record](../decisions/decision_graph_augmented_edge_collection.md). |
 
 ### Graph
 | Method | Path | Description |
@@ -54,12 +57,12 @@ backend.
 | Method | Path | Description |
 |---|---|---|
 | POST | `/api/construct/governed-ingest` | Resolve the current M25 approved revision through the existing promotion head, then explicitly ground at most 1,000 supplied chunks from its embedded typed candidate; native atomic-batch capability required. The transition lock covers one batch, not a multi-request corpus generation or head-triggered switch. |
-| POST | `/api/construct/directed` | Synchronous taxonomy-directed extraction over 1–32 chunks; one main-provider completion, deterministic evidence gates, and atomic replacement of all occurrences for supplied chunks. Empty valid output replaces with zero; malformed output preserves occurrences. Missing space is auto-created rule-less; active deployments fence this legacy writer. No directed job kind. [Limits and examples](../examples/construction/README.md). |
+| POST | `/api/construct/directed` | Synchronous taxonomy-directed extraction over 1–32 chunks; one main-provider completion, deterministic evidence gates, and atomic replacement of all occurrences for supplied chunks. Empty valid output replaces with zero; malformed output preserves occurrences. Missing space is auto-created rule-less; active deployments fence this legacy writer. No directed job kind. [Limits and examples](../examples/construction/README.md).. Gate rejections are returned as `skips` strings and, since v2.7.22, as structured `refusals` rows recorded in the generated `construction_refusals` ledger (see the [refusal ledger decision](../decisions/decision_construction_refusal_ledger.md)) |
 | POST | `/api/construct/ingest` | Ground chunks and atomically reconcile text, mentions, and independently keyed fact occurrences (accepted neurons applied; native atomic-batch capability required; write scope). Sanitized-key collisions fail closed; legacy chunks without raw `chunk_id` require a derived-collection rebuild. |
 | POST | `/api/construct/evaluate` | Recall + restraint vs an eval spec (read scope despite POST) |
 | POST | `/api/construct/answer-eval` | Answer-level recall/restraint through the graph-augmented trace (read scope; needs the completion provider; optional `two_pass`, `evidence_sentences`) |
 | POST | `/api/construct/advise` | Gate advisor: per rule, where `require_in_sentence` is safe (suggestion) vs the author's call (REVIEW flag) — deterministic, read scope |
-| POST | `/api/construct/propose` | Gap-directed neuron proposals, stored `proposed` (write scope) |
+| POST | `/api/construct/propose` | Gap-directed neuron proposals, stored `proposed` (write scope). Skipped gaps are also recorded as `refusals` rows with gate codes in the `construction_refusals` ledger |
 | POST | `/api/construct/review` | Judge pending proposals + apply the per-space review policy (write scope; `limit` slices for cron-able drains, Lane A+ via the attested judge pair) |
 | POST | `/api/construct/draft` | Ontology drafter: NEW space type from chunks into `space_type_drafts` — structurally inert (write scope). `per_document` drafts each title-grouped document separately; `async: true` (with `Idempotency-Key`) enqueues a durable `construct.draft` job instead and returns the submission envelope — required for real corpora, since drafting spends two completions per document and runs past the request timeout |
 | POST | `/api/construct/draft/{id}/accept` | Attributed human acceptance: draft becomes vocabulary in `space_types` (write scope) |

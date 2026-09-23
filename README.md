@@ -29,8 +29,8 @@ supported behavior and compatibility limits.
 With Docker running, pull the published Community image and start a local demo:
 
 ```sh
-docker pull --platform linux/amd64 cognigraph/cognigraph:latest
-docker run -d --name cognigraph --platform linux/amd64 \
+docker pull cognigraph/cognigraph:latest
+docker run -d --name cognigraph \
   -p 127.0.0.1:3000:3000 -v cognigraph-data:/data \
   -e COGNIGRAPH_AUTH_ENABLED=false -e COGNIGRAPH_EMBEDDING_PROVIDER=none \
   -e COGNIGRAPH_CGQL_MUTATIONS_ENABLED=true cognigraph/cognigraph:latest
@@ -41,8 +41,12 @@ Open the included [console](http://127.0.0.1:3000), or try the HTTP example belo
 The `cognigraph-data` volume keeps your database across container restarts.
 Use `docker stop cognigraph` and `docker start cognigraph` to stop and resume it.
 
-Published images target `linux/amd64`; ARM hosts such as Apple Silicon need
-Docker's emulation support. `latest` follows the current stable release; use a
+Releases published after 2.7.27 are multi-architecture images for
+`linux/amd64` and `linux/arm64`, so Docker on Apple Silicon and other ARM
+hosts runs a native image. Earlier tags are `linux/amd64` only and need
+`--platform linux/amd64` on ARM hosts. Both editions are also built from
+source and smoke-tested on arm64 macOS in CI. `latest` follows the current
+stable release; use a
 [numbered tag or digest](docs/operations/docker-publishing.md#destinations-and-scope)
 when you need a fixed version.
 

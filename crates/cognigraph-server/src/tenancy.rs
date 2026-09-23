@@ -364,6 +364,14 @@ impl GraphBackend for RoutedBackend {
         self.store()?.ensure_index(collection, index).await
     }
 
+    async fn list_indexes(&self, collection: &str) -> Result<Vec<IndexDef>> {
+        self.store()?.list_indexes(collection).await
+    }
+
+    async fn drop_index(&self, collection: &str, name: &str) -> Result<bool> {
+        self.store()?.drop_index(collection, name).await
+    }
+
     async fn drop_collection(&self, name: &str) -> Result<()> {
         self.store()?.drop_collection(name).await
     }
@@ -579,6 +587,14 @@ impl GraphBackend for TenantScoped {
 
     async fn ensure_index(&self, collection: &str, index: &IndexDef) -> Result<()> {
         scoped!(self, self.inner.ensure_index(collection, index))
+    }
+
+    async fn list_indexes(&self, collection: &str) -> Result<Vec<IndexDef>> {
+        scoped!(self, self.inner.list_indexes(collection))
+    }
+
+    async fn drop_index(&self, collection: &str, name: &str) -> Result<bool> {
+        scoped!(self, self.inner.drop_index(collection, name))
     }
 
     async fn drop_collection(&self, name: &str) -> Result<()> {

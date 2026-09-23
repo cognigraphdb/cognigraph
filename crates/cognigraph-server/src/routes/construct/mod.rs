@@ -43,6 +43,7 @@ use cognigraph_core::CogniGraphError;
 use crate::error::AppError;
 use crate::jobs::JobManager;
 use crate::promotions::PromotionTarget;
+use crate::refusals::{RefusalContext, RefusalRow, attach, record_refusals};
 use crate::state::AppState;
 use crate::tenancy::current_tenant;
 

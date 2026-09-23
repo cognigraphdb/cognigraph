@@ -26,12 +26,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "allocator-api2"
-version = "0.2.21"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923"
-
-[[package]]
 name = "android_system_properties"
 version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -387,7 +381,7 @@ checksum = "0c9ea0ac24bc397ab3c98583a3c9ba74fa56b09a4449bbe172b9b1ddb016027a"
 
 [[package]]
 name = "cognigraph-artifacts"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "cognigraph-core",
  "cognigraph-governance",
@@ -403,7 +397,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-auth"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "argon2",
  "base64 0.23.1",
@@ -421,7 +415,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-cache"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "async-trait",
  "cognigraph-core",
@@ -436,7 +430,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-cli"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "cognigraph-artifacts",
  "reqwest",
@@ -449,7 +443,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-construct"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -471,7 +465,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-core"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "async-trait",
  "chrono",
@@ -483,7 +477,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-embeddings"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -499,7 +493,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-governance"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "base64 0.23.1",
  "ed25519-dalek",
@@ -513,7 +507,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-lua"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "cognigraph-core",
  "cognigraph-native",
@@ -526,7 +520,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-native"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "async-trait",
  "chrono",
@@ -545,7 +539,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-query"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "async-trait",
  "chrono",
@@ -563,7 +557,7 @@ dependencies = [
 
 [[package]]
 name = "cognigraph-server"
-version = "2.7.20"
+version = "2.7.29"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1278,8 +1272,6 @@ version = "0.17.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a"
 dependencies = [
- "allocator-api2",
- "equivalent",
  "foldhash",
 ]
 
@@ -1868,9 +1860,9 @@ dependencies = [
 
 [[package]]
 name = "icu_time_data"
-version = "2.3.0"
+version = "2.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "005ff86fa5851a77fc0a977b72d717f777bd9230415a247219d7898aefb1517a"
+checksum = "d9e21be527807cda7562cbfbdb04179f9cca46c12691d6a8073ffae6cfd7aeec"
 
 [[package]]
 name = "ident_case"
@@ -2081,9 +2073,9 @@ checksum = "f9f8bd3e56ce4dfc153cf470fffbfa98c7620958b312ca5c3a4b8d5181fd13c6"
 
 [[package]]
 name = "lru"
-version = "0.18.4"
+version = "0.18.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ff9840bcc50b71349309900da0ce7279aa336ae71d73250b07998932c7d97c25"
+checksum = "ef9ac18847474e638e3702b76c65d4eb93428471a74778ef0f1be711717f89b5"
 dependencies = [
  "hashbrown",
 ]

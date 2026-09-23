@@ -15,7 +15,7 @@ use cognigraph_core::project_fields;
 use super::helpers::{
     check_collection_type, collection, collection_mut, document_key, merge_json, stamp_document,
 };
-use super::{NativeBackend, VectorMode};
+use super::{NativeBackend, VectorMode, indexes};
 
 impl NativeBackend {
     pub(super) fn create_document_impl(&self, collection: &str, doc: Value) -> Result<DocumentId> {
@@ -33,7 +33,8 @@ impl NativeBackend {
                     "{collection}/{key}"
                 )));
             }
-            self.persist(&[
+            let added = indexes::check(&state, &Default::default(), collection, &key, &doc)?;
+            let mut ops = vec![
                 StoreOp::PutCollection {
                     name: collection,
                     collection_type: *state
@@ -46,7 +47,10 @@ impl NativeBackend {
                     key: &key,
                     doc: &doc,
                 },
-            ])?;
+            ];
+            ops.extend(indexes::ops(collection, &key, &indexes::NONE, &added));
+            self.persist(&ops)?;
+            indexes::apply(&mut state, collection, &key, &indexes::NONE, &added);
             state
                 .collection_types
                 .entry(collection.to_string())
@@ -77,7 +81,8 @@ impl NativeBackend {
             .collection_types
             .get(collection)
             .unwrap_or(&CollectionType::Document);
-        self.persist(&[
+        let added = indexes::check(&state, &Default::default(), collection, &key, &doc)?;
+        let mut ops = vec![
             StoreOp::PutCollection {
                 name: collection,
                 collection_type: recorded_type,
@@ -87,7 +92,10 @@ impl NativeBackend {
                 key: &key,
                 doc: &doc,
             },
-        ])?;
+        ];
+        ops.extend(indexes::ops(collection, &key, &indexes::NONE, &added));
+        self.persist(&ops)?;
+        indexes::apply(&mut state, collection, &key, &indexes::NONE, &added);
         collection_mut(&mut state, collection, CollectionType::Document)
             .insert(key.clone(), self.strip_embedding_if_sidecar(doc.clone()));
         self.sidecar_apply_write(collection, &key, Some(&doc));
@@ -122,7 +130,7 @@ impl NativeBackend {
             key: key.to_string(),
         };
         if self.paged() {
-            let state = self.write_state()?;
+            let mut state = self.write_state()?;
             let Some(keys) = state.keys.get(collection_name) else {
                 return Err(CogniGraphError::CollectionNotFound(
                     collection_name.to_string(),
@@ -135,13 +143,19 @@ impl NativeBackend {
                 .require_store()?
                 .get_document_raw(collection_name, key)?
                 .ok_or_else(not_found)?;
+            let removed = indexes::entries_of(&state, collection_name, &updated);
             merge_json(&mut updated, update);
             let updated = stamp_document(collection_name, key, updated);
-            self.persist(&[StoreOp::PutDocument {
+            let added =
+                indexes::check(&state, &Default::default(), collection_name, key, &updated)?;
+            let mut ops = vec![StoreOp::PutDocument {
                 collection: collection_name,
                 key,
                 doc: &updated,
-            }])?;
+            }];
+            ops.extend(indexes::ops(collection_name, key, &removed, &added));
+            self.persist(&ops)?;
+            indexes::apply(&mut state, collection_name, key, &removed, &added);
             let stored = self.strip_embedding_if_sidecar(updated.clone());
             self.cache_put(collection_name, key, &stored);
             self.sidecar_apply_write(collection_name, key, Some(&updated));
@@ -170,15 +184,24 @@ impl NativeBackend {
         } else {
             collection.get(key).cloned().ok_or_else(not_found)?
         };
+        let removed = indexes::entries_of(&state, collection_name, &updated);
         merge_json(&mut updated, update);
         let updated = stamp_document(collection_name, key, updated);
-        self.persist(&[StoreOp::PutDocument {
+        let added = indexes::check(&state, &Default::default(), collection_name, key, &updated)?;
+        let mut ops = vec![StoreOp::PutDocument {
             collection: collection_name,
             key,
             doc: &updated,
-        }])?;
+        }];
+        ops.extend(indexes::ops(collection_name, key, &removed, &added));
+        self.persist(&ops)?;
+        indexes::apply(&mut state, collection_name, key, &removed, &added);
         let stored = self.strip_embedding_if_sidecar(updated.clone());
-        collection.insert(key.to_string(), stored.clone());
+        state
+            .collections
+            .get_mut(collection_name)
+            .ok_or_else(|| CogniGraphError::CollectionNotFound(collection_name.to_string()))?
+            .insert(key.to_string(), stored.clone());
         self.sidecar_apply_write(collection_name, key, Some(&updated));
         self.triples_invalidate(collection_name);
         Ok(stored)
@@ -203,12 +226,22 @@ impl NativeBackend {
                     key: key.to_string(),
                 });
             }
+            let previous = self.stored_document(&state, collection_name, key)?;
+            let removed = previous
+                .as_ref()
+                .map(|old| indexes::entries_of(&state, collection_name, old))
+                .unwrap_or_default();
             let doc = stamp_document(collection_name, key, doc);
-            self.persist(&[StoreOp::PutDocument {
+            let added = indexes::check(&state, &Default::default(), collection_name, key, &doc)?;
+            let mut ops = vec![StoreOp::PutDocument {
                 collection: collection_name,
                 key,
                 doc: &doc,
-            }])?;
+            }];
+            ops.extend(indexes::ops(collection_name, key, &removed, &added));
+            self.persist(&ops)?;
+            let mut state = state;
+            indexes::apply(&mut state, collection_name, key, &removed, &added);
             let stored = self.strip_embedding_if_sidecar(doc.clone());
             self.cache_put(collection_name, key, &stored);
             self.sidecar_apply_write(collection_name, key, Some(&doc));
@@ -217,24 +250,38 @@ impl NativeBackend {
             return Ok(stored);
         }
         let mut state = self.write_state()?;
-        let collection = state
+        if !state
             .collections
-            .get_mut(collection_name)
-            .ok_or_else(|| CogniGraphError::CollectionNotFound(collection_name.to_string()))?;
-        if !collection.contains_key(key) {
+            .get(collection_name)
+            .ok_or_else(|| CogniGraphError::CollectionNotFound(collection_name.to_string()))?
+            .contains_key(key)
+        {
             return Err(CogniGraphError::DocumentNotFound {
                 collection: collection_name.to_string(),
                 key: key.to_string(),
             });
         }
+        let previous = self.stored_document(&state, collection_name, key)?;
+        let removed = previous
+            .as_ref()
+            .map(|old| indexes::entries_of(&state, collection_name, old))
+            .unwrap_or_default();
         let doc = stamp_document(collection_name, key, doc);
-        self.persist(&[StoreOp::PutDocument {
+        let added = indexes::check(&state, &Default::default(), collection_name, key, &doc)?;
+        let mut ops = vec![StoreOp::PutDocument {
             collection: collection_name,
             key,
             doc: &doc,
-        }])?;
+        }];
+        ops.extend(indexes::ops(collection_name, key, &removed, &added));
+        self.persist(&ops)?;
+        indexes::apply(&mut state, collection_name, key, &removed, &added);
         let stored = self.strip_embedding_if_sidecar(doc.clone());
-        collection.insert(key.to_string(), stored.clone());
+        state
+            .collections
+            .get_mut(collection_name)
+            .ok_or_else(|| CogniGraphError::CollectionNotFound(collection_name.to_string()))?
+            .insert(key.to_string(), stored.clone());
         self.sidecar_apply_write(collection_name, key, Some(&doc));
         self.triples_invalidate(collection_name);
         Ok(stored)
@@ -249,11 +296,23 @@ impl NativeBackend {
             if !keys.contains(key) {
                 return Ok(false);
             }
-            self.persist(&[StoreOp::DeleteDocument {
+            let previous = self.stored_document(&state, collection_name, key)?;
+            let removed = previous
+                .as_ref()
+                .map(|old| indexes::entries_of(&state, collection_name, old))
+                .unwrap_or_default();
+            let mut ops = vec![StoreOp::DeleteDocument {
                 collection: collection_name,
                 key,
-            }])?;
-            keys.remove(key);
+            }];
+            ops.extend(indexes::ops(collection_name, key, &removed, &indexes::NONE));
+            self.persist(&ops)?;
+            indexes::apply(&mut state, collection_name, key, &removed, &indexes::NONE);
+            state
+                .keys
+                .get_mut(collection_name)
+                .ok_or_else(|| CogniGraphError::CollectionNotFound(collection_name.to_string()))?
+                .remove(key);
             self.cache_remove(collection_name, key);
             self.sidecar_apply_write(collection_name, key, None);
             self.triples_invalidate(collection_name);
@@ -267,11 +326,22 @@ impl NativeBackend {
         if !collection.contains_key(key) {
             return Ok(false);
         }
-        self.persist(&[StoreOp::DeleteDocument {
+        let previous = self.stored_document(&state, collection_name, key)?;
+        let freed = previous
+            .as_ref()
+            .map(|old| indexes::entries_of(&state, collection_name, old))
+            .unwrap_or_default();
+        let mut ops = vec![StoreOp::DeleteDocument {
             collection: collection_name,
             key,
-        }])?;
-        let removed = collection.remove(key).is_some();
+        }];
+        ops.extend(indexes::ops(collection_name, key, &freed, &indexes::NONE));
+        self.persist(&ops)?;
+        indexes::apply(&mut state, collection_name, key, &freed, &indexes::NONE);
+        let removed = state
+            .collections
+            .get_mut(collection_name)
+            .is_some_and(|docs| docs.remove(key).is_some());
         self.sidecar_apply_write(collection_name, key, None);
         self.triples_invalidate(collection_name);
         Ok(removed)

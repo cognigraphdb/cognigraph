@@ -107,10 +107,7 @@ fn describe_plan(
         pipeline.push(desc);
     }
     if let Some(limit) = &plan.limit {
-        match limit.offset {
-            Some(offset) => pipeline.push(format!("LIMIT {offset}, {}", limit.count)),
-            None => pipeline.push(format!("LIMIT {}", limit.count)),
-        }
+        pipeline.push(format!("LIMIT {}", super::limit::render(limit)));
     }
     // Subquery RETURNs are inner; the outermost RETURN is appended by the
     // caller after the mutation entry.
@@ -154,7 +151,7 @@ fn describe_source(
             "collection": collection,
             "var": var,
             "depth": depth,
-            "limit_pushdown": plan.limit.as_ref().map(|l| l.offset.unwrap_or(0) + l.count),
+            "limit_pushdown": plan.limit.as_ref().map(super::limit::render_pushdown),
             "threshold_pushdown": vector_threshold(plan, var).map(|v| push_value_string(&v)),
         }),
         PlanSource::Traversal {
@@ -219,7 +216,7 @@ fn pushdown_json(pushdown: &ScanPushdown) -> Value {
             })
             .collect::<Vec<_>>(),
         "all_filters_pushed": pushdown.all_filters_pushed,
-        "fetch_limit": pushdown.fetch_limit,
+        "fetch_limit": pushdown.fetch_limit.as_ref().map(super::limit::render_pushdown),
     })
 }
 
@@ -259,10 +256,7 @@ fn stage_labels(plan: &LogicalPlan, depth: usize, out: &mut Vec<(usize, String)>
         out.push((depth, "SORT".into()));
     }
     if let Some(limit) = &plan.limit {
-        match limit.offset {
-            Some(offset) => out.push((depth, format!("LIMIT {offset}, {}", limit.count))),
-            None => out.push((depth, format!("LIMIT {}", limit.count))),
-        }
+        out.push((depth, format!("LIMIT {}", super::limit::render(limit))));
     }
     if plan.projection.is_some() {
         out.push((

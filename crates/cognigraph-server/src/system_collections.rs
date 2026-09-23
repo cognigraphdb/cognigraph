@@ -44,6 +44,11 @@ const MANAGED_COLLECTIONS: [&str; 8] = [
 /// search/cascade routes all name it from one place.
 pub const SIDE_VIEWS_COLLECTION: &str = "side_views";
 
+/// Ledger of what the construction gates refused (CG-90). Generated, not
+/// governed: readable and exportable, publicly write-protected, never part of
+/// promotion or attestation.
+pub const REFUSALS_COLLECTION: &str = "construction_refusals";
+
 /// Machine-generated, non-authoritative collections. Like the managed
 /// collections these keep an ordinary (non-underscore) name so generic reads and
 /// vector search keep working, and public mutation is denied on every surface —
@@ -57,7 +62,8 @@ pub const SIDE_VIEWS_COLLECTION: &str = "side_views";
 /// `fact_semantics` in particular exists as a sidecar precisely so that
 /// improving the detector never invalidates a signed M26 projection
 /// (decision_pilot_clinical_graph.md, D2).
-const GENERATED_COLLECTIONS: [&str; 2] = [SIDE_VIEWS_COLLECTION, "fact_semantics"];
+const GENERATED_COLLECTIONS: [&str; 3] =
+    [SIDE_VIEWS_COLLECTION, "fact_semantics", REFUSALS_COLLECTION];
 
 pub fn is_system_collection(name: &str) -> bool {
     name.starts_with('_')
@@ -551,6 +557,15 @@ impl GraphBackend for GuardedBackend {
     async fn ensure_index(&self, collection: &str, index: &IndexDef) -> Result<()> {
         deny_public_collection_mutation(collection)?;
         self.inner.ensure_index(collection, index).await
+    }
+
+    async fn list_indexes(&self, collection: &str) -> Result<Vec<IndexDef>> {
+        self.inner.list_indexes(collection).await
+    }
+
+    async fn drop_index(&self, collection: &str, name: &str) -> Result<bool> {
+        deny_public_collection_mutation(collection)?;
+        self.inner.drop_index(collection, name).await
     }
 
     async fn drop_collection(&self, name: &str) -> Result<()> {

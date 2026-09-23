@@ -1,5 +1,6 @@
 mod eval;
 mod explain;
+mod limit;
 mod materialize;
 mod mutation;
 mod pipeline;
@@ -127,6 +128,21 @@ pub enum ExecutionError {
     #[error("bind variable `{0}` not found")]
     BindVariableNotFound(String),
 
+    /// A mutation hit a duplicate `_key`; API layers map it to 409.
+    #[error("Document conflict: {0}")]
+    Conflict(String),
+
+    /// A mutation violated a unique constraint (CG-86); API layers map it
+    /// to 409 with the `unique_violation` code.
+    #[error(
+        "Unique constraint `{index}` on `{collection}` violated: {collection}/{existing} already holds the value"
+    )]
+    UniqueViolation {
+        collection: String,
+        index: String,
+        existing: String,
+    },
+
     #[error("missing bind variables: {0}")]
     MissingBindVariables(String),
 
@@ -227,6 +243,16 @@ pub(super) fn backend_execution_error(error: CogniGraphError) -> ExecutionError 
     match error {
         CogniGraphError::Forbidden(message) => ExecutionError::Forbidden(message),
         CogniGraphError::ConnectionError(message) => ExecutionError::Connection(message),
+        CogniGraphError::DocumentConflict(message) => ExecutionError::Conflict(message),
+        CogniGraphError::UniqueViolation {
+            collection,
+            index,
+            existing,
+        } => ExecutionError::UniqueViolation {
+            collection,
+            index,
+            existing,
+        },
         other => ExecutionError::Backend(other.to_string()),
     }
 }
@@ -288,6 +314,7 @@ pub async fn parse_and_execute_backend_with_options(
     }
     if plan.analyze {
         check_bind_vars(&plan.bind_vars, bind_vars)?;
+        limit::precheck(&plan, bind_vars)?;
         return analyze_backend(&plan, backend, bind_vars, budget, deadline).await;
     }
     if plan.mutation.is_some() {
@@ -295,9 +322,11 @@ pub async fn parse_and_execute_backend_with_options(
             return Err(ExecutionError::MutationNotAllowed);
         }
         check_bind_vars(&plan.bind_vars, bind_vars)?;
+        limit::precheck(&plan, bind_vars)?;
         return execute_mutation(&plan, backend, bind_vars, &budget, deadline).await;
     }
     check_bind_vars(&plan.bind_vars, bind_vars)?;
+    limit::precheck(&plan, bind_vars)?;
     let cx = RunCx::new(bind_vars, deadline, &budget);
     resolve::execute_read(&plan, backend, &cx).await
 }
@@ -315,6 +344,7 @@ pub async fn execute_backend_plan(
         return Err(ExecutionError::MutationNotAllowed);
     }
     check_bind_vars(&plan.bind_vars, bind_vars)?;
+    limit::precheck(plan, bind_vars)?;
     if plan.analyze {
         return analyze_backend(
             plan,
@@ -343,6 +373,7 @@ pub fn execute_plan(
         return Err(ExecutionError::MutationUnsupported);
     }
     check_bind_vars(&plan.bind_vars, bind_vars)?;
+    limit::precheck(plan, bind_vars)?;
     if plan.analyze {
         return analyze_memory(plan, dataset, bind_vars);
     }

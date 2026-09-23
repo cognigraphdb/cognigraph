@@ -5,7 +5,7 @@
 use axum::extract::{Path, State};
 use axum::routing::get;
 use axum::{Json, Router};
-use cognigraph_core::{CogniGraphError, CollectionType};
+use cognigraph_core::{CogniGraphError, CollectionType, IndexDef, IndexType};
 use serde::Deserialize;
 use serde_json::{Value, json};
 
@@ -16,6 +16,117 @@ pub fn router() -> Router<AppState> {
     Router::new()
         .route("/", get(list).post(create))
         .route("/{name}", axum::routing::delete(remove))
+        .route("/{name}/indexes", get(list_indexes).post(ensure_index))
+        .route("/{name}/indexes/{index}", axum::routing::delete(drop_index))
+}
+
+/// A unique constraint declaration (CG-86). `unique` defaults to true on
+/// this route: it exists to declare constraints; non-unique declarations
+/// are recorded but not used for acceleration.
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+pub(super) struct IndexRequest {
+    pub(super) fields: Vec<String>,
+    #[serde(default = "default_true")]
+    pub(super) unique: bool,
+    #[serde(default)]
+    pub(super) sparse: bool,
+    #[serde(default)]
+    pub(super) name: Option<String>,
+    #[serde(default = "default_index_type")]
+    pub(super) index_type: IndexType,
+}
+
+fn default_true() -> bool {
+    true
+}
+
+fn default_index_type() -> IndexType {
+    IndexType::Persistent
+}
+
+fn validated_name(name: &str) -> Result<(), AppError> {
+    if name.is_empty() || name.contains('/') {
+        return Err(AppError(CogniGraphError::ValidationError(
+            "collection names must be non-empty and must not contain `/`".into(),
+        )));
+    }
+    if name.starts_with('_') {
+        return Err(AppError(CogniGraphError::ValidationError(
+            "names starting with `_` are reserved for system collections".into(),
+        )));
+    }
+    Ok(())
+}
+
+/// GET /{name}/indexes — declared indexes; unknown collections list nothing.
+pub(super) async fn list_indexes(
+    State(state): State<AppState>,
+    Path(name): Path<String>,
+) -> Result<Json<Value>, AppError> {
+    validated_name(&name)?;
+    let indexes = state.backend.list_indexes(&name).await?;
+    Ok(Json(json!({
+        "collection": name,
+        "count": indexes.len(),
+        "indexes": indexes,
+    })))
+}
+
+/// POST /{name}/indexes — idempotent ensure. The backend refuses edge
+/// collections, unsupported types, malformed definitions, a different
+/// definition under an existing name, and existing duplicates (409).
+pub(super) async fn ensure_index(
+    State(state): State<AppState>,
+    Path(name): Path<String>,
+    Json(req): Json<IndexRequest>,
+) -> Result<Json<Value>, AppError> {
+    validated_name(&name)?;
+    if req.fields.is_empty() || req.fields.iter().any(|f| f.trim().is_empty()) {
+        return Err(AppError(CogniGraphError::ValidationError(
+            "an index needs at least one non-empty field".into(),
+        )));
+    }
+    if !matches!(req.index_type, IndexType::Persistent | IndexType::Hash) {
+        return Err(AppError(CogniGraphError::ValidationError(
+            "only persistent and hash indexes are supported".into(),
+        )));
+    }
+    if let Some(index_name) = req.name.as_deref()
+        && (index_name.is_empty() || index_name.contains('/') || index_name.contains('\u{0}'))
+    {
+        return Err(AppError(CogniGraphError::ValidationError(
+            "index names must be non-empty and must not contain `/` or NUL".into(),
+        )));
+    }
+    let def = IndexDef {
+        index_type: req.index_type,
+        fields: req.fields,
+        unique: req.unique,
+        sparse: req.sparse,
+        name: req.name,
+    };
+    state.backend.ensure_index(&name, &def).await?;
+    let stored = state
+        .backend
+        .list_indexes(&name)
+        .await?
+        .into_iter()
+        .find(|d| d.fields == def.fields && d.unique == def.unique && d.sparse == def.sparse)
+        .unwrap_or(def);
+    Ok(Json(json!({ "collection": name, "index": stored })))
+}
+
+/// DELETE /{name}/indexes/{index} — `dropped: false` when absent.
+pub(super) async fn drop_index(
+    State(state): State<AppState>,
+    Path((name, index)): Path<(String, String)>,
+) -> Result<Json<Value>, AppError> {
+    validated_name(&name)?;
+    let dropped = state.backend.drop_index(&name, &index).await?;
+    Ok(Json(
+        json!({ "collection": name, "index": index, "dropped": dropped }),
+    ))
 }
 
 #[derive(Deserialize)]
@@ -241,3 +352,7 @@ mod tests {
         assert_eq!(entries[1]["count"], 1);
     }
 }
+
+#[cfg(test)]
+#[path = "collections_index_tests.rs"]
+mod index_tests;

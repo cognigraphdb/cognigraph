@@ -2,8 +2,12 @@
 
 use super::*;
 
-#[tokio::test]
-async fn m22_reproducible_derivation_drives_promotion_and_rejects_forged_graphs() {
+#[test]
+fn m22_reproducible_derivation_drives_promotion_and_rejects_forged_graphs() {
+    lifecycle(flow);
+}
+
+async fn flow() {
     let cas_root = TestArtifactCasRoot::new();
     let raw: Arc<dyn GraphBackend> = Arc::new(NativeBackend::new());
     raw.ensure_collection("facts", CollectionType::Edge)

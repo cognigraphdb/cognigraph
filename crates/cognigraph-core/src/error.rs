@@ -11,6 +11,17 @@ pub enum CogniGraphError {
     #[error("Document conflict: {0}")]
     DocumentConflict(String),
 
+    /// A write would give two documents the same value under a unique
+    /// index (CG-86). `existing` is the key that already holds the value.
+    #[error(
+        "Unique constraint `{index}` on `{collection}` violated: {collection}/{existing} already holds the value"
+    )]
+    UniqueViolation {
+        collection: String,
+        index: String,
+        existing: String,
+    },
+
     #[error("Capacity exceeded: {0}")]
     CapacityExceeded(String),
 

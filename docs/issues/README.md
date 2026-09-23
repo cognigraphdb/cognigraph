@@ -260,17 +260,20 @@ merged into main. Historical failed runs remain linked from the issue.
 | [CG-82](CG-82.md) | P1 | Resolved | Enforce PR review and dependency freshness before develop integration |
 | [CG-83](CG-83.md) | P1 | Resolved | Refresh the application dependency baseline for develop qualification |
 | [CG-84](CG-84.md) | P2 | Open | TypeScript client for Bun and Node applications |
-| [CG-85](CG-85.md) | P2 | Open | Bind variables in LIMIT for client-controlled pagination |
-| [CG-86](CG-86.md) | P2 | Open | Unique constraints and user-declarable indexes on ordinary collections |
-| [CG-87](CG-87.md) | P2 | Open | Native linux/arm64 and macOS Apple Silicon builds for local development |
+| [CG-85](CG-85.md) | P2 | Resolved | Bind variables in LIMIT for client-controlled pagination |
+| [CG-86](CG-86.md) | P2 | Resolved | Unique constraints and user-declarable indexes on ordinary collections |
+| [CG-87](CG-87.md) | P2 | Resolved | Native linux/arm64 and macOS Apple Silicon builds for local development |
 | [CG-88](CG-88.md) | P2 | Open | Side views as a proposal-queue gap detector |
-| [CG-89](CG-89.md) | P2 | Open | Graph-augmented search defaults to document_relations and omits neuron-built facts |
-| [CG-90](CG-90.md) | P2 | Open | Construction gate refusals are not durably recorded |
+| [CG-89](CG-89.md) | P2 | Resolved | Graph-augmented search defaults to document_relations and omits neuron-built facts |
+| [CG-90](CG-90.md) | P2 | Resolved | Construction gate refusals are not durably recorded |
 | [CG-91](CG-91.md) | P3 | Resolved | Construct crate module docs describe a graduated status that does not exist |
 | [CG-92](CG-92.md) | P1 | Resolved | Refresh dependencies to pass the develop freshness gate after the v2.7.15 qualification |
 | [CG-93](CG-93.md) | P3 | Open | Move CI runners from pinned Ubuntu 24.04 to Ubuntu 26.04 deliberately |
+| [CG-94](CG-94.md) | P3 | Open | Split propose.rs and directed.rs in cognigraph-construct to the module line budget |
+| [CG-95](CG-95.md) | P3 | Open | Split draft.rs and grounding.rs in cognigraph-construct to the module line budget |
+| [CG-96](CG-96.md) | P2 | Resolved | Promotion lifecycle tests overflow the default test-thread stack in x86_64 debug builds |
 
-Next available identifier: **CG-94**.
+Next available identifier: **CG-97**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

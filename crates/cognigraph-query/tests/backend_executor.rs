@@ -12,6 +12,8 @@ use serde_json::{Value, json};
 mod document_errors;
 #[path = "backend_executor/dynamic_analysis.rs"]
 mod dynamic_analysis;
+#[path = "backend_executor/limit_binds.rs"]
+mod limit_binds;
 
 #[tokio::test]
 async fn executes_collection_query_against_graph_backend() {

@@ -60,14 +60,62 @@ class WorkflowPolicy(unittest.TestCase):
         job = self.flow['jobs']['required']
         self.assertEqual(job['name'], 'CI required')
         self.assertEqual(job['if'], 'always()')
-        self.assertEqual(set(job['needs']), {'gates', 'docker'})
+        self.assertEqual(set(job['needs']), {'gates', 'docker', 'platforms'})
         script = job['steps'][0]['run']
-        for first, second, expected in [('success', 'success', 0), ('failure', 'success', 1),
-                                        ('success', 'failure', 1), ('cancelled', 'success', 1),
-                                        ('success', 'skipped', 1)]:
-            result = subprocess.run(['bash', '-e', '-c', script],
-                                    env={**os.environ, 'GATES_RESULT': first, 'DOCKER_RESULT': second})
-            self.assertEqual(result.returncode, expected, (first, second))
+        for gates, docker, platforms, expected in [
+                ('success', 'success', 'success', 0), ('failure', 'success', 'success', 1),
+                ('success', 'failure', 'success', 1), ('cancelled', 'success', 'success', 1),
+                ('success', 'skipped', 'success', 1), ('success', 'success', 'failure', 1),
+                ('success', 'success', 'skipped', 1), ('success', 'success', 'cancelled', 1)]:
+            result = subprocess.run(['bash', '-e', '-c', script], env={
+                **os.environ, 'GATES_RESULT': gates, 'DOCKER_RESULT': docker, 'PLATFORMS_RESULT': platforms})
+            self.assertEqual(result.returncode, expected, (gates, docker, platforms))
+
+    def test_docker_job_runs_natively_on_both_published_platforms(self):
+        job = self.flow['jobs']['docker']
+        self.assertFalse(job['strategy']['fail-fast'])
+        legs = {leg['platform']: leg for leg in job['strategy']['matrix']['include']}
+        self.assertEqual(set(legs), {'linux/amd64', 'linux/arm64'})
+        self.assertEqual(legs['linux/amd64']['runner'], 'ubuntu-24.04')
+        self.assertEqual(legs['linux/arm64']['runner'], 'ubuntu-24.04-arm')
+        self.assertEqual({leg['arch'] for leg in legs.values()}, {'amd64', 'arm64'})
+        self.assertEqual(job['runs-on'], '${{ matrix.runner }}')
+        self.assertEqual(job['env']['DOCKER_DEFAULT_PLATFORM'], '${{ matrix.platform }}')
+        # Tested images leave the runner only for an authorized publication.
+        export = next(step for step in job['steps'] if step.get('run') == 'python3 scripts/docker_images.py export')
+        upload = next(step for step in job['steps'] if step.get('with', {}).get('name', '').startswith('tested-images-'))
+        for step in (export, upload):
+            self.assertEqual(step['if'], "github.event_name == 'workflow_dispatch' && inputs.publish_images")
+        self.assertEqual(upload['with']['name'], 'tested-images-${{ matrix.arch }}')
+        self.assertEqual(upload['with']['if-no-files-found'], 'error')
+
+    def test_publication_composes_manifests_from_both_tested_legs_in_one_job(self):
+        job = self.flow['jobs']['publish']
+        self.assertEqual(job['if'], "github.event_name == 'workflow_dispatch' && inputs.publish_images")
+        self.assertIn('docker', job['needs'])
+        self.assertIn('gates', job['needs'])
+        self.assertEqual(job['runs-on'], 'ubuntu-24.04')
+        self.assertTrue(all(value == 'read' for value in job['permissions'].values()))
+        commands = [s.get('run') for s in job['steps']]
+        download = next(s for s in job['steps'] if s.get('uses', '').startswith('actions/download-artifact@'))
+        self.assertEqual(download['with']['pattern'], 'tested-images-*')
+        self.assertTrue(download['with']['merge-multiple'])
+        self.assertEqual(download['with']['path'], 'target/ci/images')
+        self.assertLess(job['steps'].index(download), commands.index('python3 scripts/docker_images.py preflight'))
+        self.assertLess(commands.index('python3 scripts/docker_images.py preflight'),
+                        commands.index('python3 scripts/docker_images.py publish'))
+        login = next(i for i, s in enumerate(job['steps']) if s.get('uses', '').startswith('docker/login-action@'))
+        self.assertLess(commands.index('python3 scripts/docker_images.py preflight'), login)
+        self.assertLess(login, commands.index('python3 scripts/docker_images.py publish'))
+        self.assertNotIn('python3 scripts/docker_images.py publish',
+                         [s.get('run') for s in self.flow['jobs']['docker']['steps']])
+
+    def test_apple_silicon_job_builds_and_smokes_both_editions(self):
+        job = self.flow['jobs']['platforms']
+        self.assertEqual(job['runs-on'], 'macos-15')
+        self.assertTrue(all(value == 'read' for value in job['permissions'].values()))
+        self.assertIn('python3 scripts/check-platform-smoke.py', [s.get('run') for s in job['steps']])
+        self.assertNotIn('needs', job)  # Runs beside the shared gates, not after them.
 
     def test_shared_runner_includes_live_native_helm_and_advisory_checks(self):
         commands = verify.commands('ci')
@@ -107,9 +155,9 @@ class WorkflowPolicy(unittest.TestCase):
         steps = self.flow['jobs']['docker']['steps']
         build = next(i for i, s in enumerate(steps) if s.get('run') == 'python3 scripts/verify.py --suite docker')
         incoming = next(i for i, s in enumerate(steps) if s.get('run') == 'python3 scripts/check-incoming.py')
-        publish = next(i for i, s in enumerate(steps) if s.get('run') == 'python3 scripts/docker_images.py publish')
+        export = next(i for i, s in enumerate(steps) if s.get('run') == 'python3 scripts/docker_images.py export')
         self.assertLess(build, incoming)
-        self.assertLess(incoming, publish)
+        self.assertLess(incoming, export)
 
 
 if __name__ == '__main__':

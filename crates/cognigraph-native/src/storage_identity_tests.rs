@@ -60,7 +60,7 @@ fn schema_one_upgrade_preserves_rows_and_commits_identity_atomically() {
             .unwrap()
             .unwrap()
             .value(),
-        2
+        3
     );
     drop(store);
     let reopened = RedbStore::open(&path).unwrap();

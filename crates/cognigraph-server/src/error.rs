@@ -13,6 +13,7 @@ impl IntoResponse for AppError {
             CogniGraphError::DocumentNotFound { .. } => (StatusCode::NOT_FOUND, self.0.to_string()),
             CogniGraphError::CollectionNotFound(_) => (StatusCode::NOT_FOUND, self.0.to_string()),
             CogniGraphError::DocumentConflict(_) => (StatusCode::CONFLICT, self.0.to_string()),
+            CogniGraphError::UniqueViolation { .. } => (StatusCode::CONFLICT, self.0.to_string()),
             CogniGraphError::CapacityExceeded(_) => {
                 (StatusCode::TOO_MANY_REQUESTS, self.0.to_string())
             }
@@ -31,6 +32,9 @@ impl IntoResponse for AppError {
         let mut body = serde_json::json!({ "error": message });
         if matches!(&self.0, CogniGraphError::EnterpriseFeatureRequired(_)) {
             body["code"] = serde_json::json!("enterprise_feature_required");
+        }
+        if matches!(&self.0, CogniGraphError::UniqueViolation { .. }) {
+            body["code"] = serde_json::json!("unique_violation");
         }
         let mut response = (status, axum::Json(body)).into_response();
         if retry_after {
@@ -180,3 +184,7 @@ mod tests {
         );
     }
 }
+
+#[cfg(test)]
+#[path = "error_unique_tests.rs"]
+mod unique_tests;

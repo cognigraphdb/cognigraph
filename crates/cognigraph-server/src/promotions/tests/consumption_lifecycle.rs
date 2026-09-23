@@ -2,8 +2,12 @@
 
 use super::*;
 
-#[tokio::test]
-async fn m21_verified_artifacts_drive_evaluation_evidence_and_promotion() {
+#[test]
+fn m21_verified_artifacts_drive_evaluation_evidence_and_promotion() {
+    lifecycle(flow);
+}
+
+async fn flow() {
     let cas_root = TestArtifactCasRoot::new();
     let raw: Arc<dyn GraphBackend> = Arc::new(NativeBackend::new());
     raw.ensure_collection("facts", CollectionType::Edge)

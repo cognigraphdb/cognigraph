@@ -251,8 +251,16 @@ impl GraphBackend for NativeBackend {
         Ok(())
     }
 
-    async fn ensure_index(&self, _collection: &str, _index: &IndexDef) -> Result<()> {
-        Ok(())
+    async fn ensure_index(&self, collection: &str, index: &IndexDef) -> Result<()> {
+        self.ensure_index_impl(collection, index)
+    }
+
+    async fn list_indexes(&self, collection: &str) -> Result<Vec<IndexDef>> {
+        self.list_indexes_impl(collection)
+    }
+
+    async fn drop_index(&self, collection: &str, name: &str) -> Result<bool> {
+        self.drop_index_impl(collection, name)
     }
 
     async fn drop_collection(&self, name: &str) -> Result<()> {
@@ -262,6 +270,7 @@ impl GraphBackend for NativeBackend {
         state.collections.remove(name);
         state.keys.remove(name);
         state.collection_types.remove(name);
+        self.indexes_forget_collection(&mut state, name);
         self.cache_remove_collection(name);
         if let Ok(mut sidecars) = self.sidecars.write() {
             sidecars.remove(name);

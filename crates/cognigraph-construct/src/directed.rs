@@ -39,6 +39,7 @@ use cognigraph_embeddings::completion::CompletionProvider;
 use crate::evidence::{canonical_chunks, canonical_text};
 use crate::grounding::{GroundedFact, affirms_phrase, sentence_bounds};
 use crate::ingest::{entity_key, ingest_chunks_grounded_by};
+use crate::refusals::{DirectedGate, Refusal};
 use crate::types::{Chunk, EntityDef, Fact, SpaceType};
 
 /// The extraction policy revision, stamped into `reviewed_by` attribution.
@@ -63,7 +64,10 @@ pub struct DirectedRelation {
 pub struct DirectedOutcome {
     pub proposed: usize,
     pub facts_grounded: usize,
+    /// Human-readable rejections, one per refusal (compatibility surface).
     pub skips: Vec<String>,
+    /// The same rejections as structured records (CG-90).
+    pub refusals: Vec<Refusal>,
     pub extracted_by: String,
 }
 
@@ -179,7 +183,7 @@ pub fn gate_directed_proposals(
     taxonomy: &[DirectedRelation],
     proposals: &[DirectedProposal],
     extracted_by: &str,
-) -> (Vec<(String, GroundedFact)>, Vec<EntityDef>, Vec<String>) {
+) -> (Vec<(String, GroundedFact)>, Vec<EntityDef>, Vec<Refusal>) {
     let chunks = canonical_chunks(chunks);
     let by_id: BTreeMap<&str, &Chunk> = chunks.iter().map(|c| (c.id.as_str(), c)).collect();
     let by_relation: BTreeMap<&str, &DirectedRelation> =
@@ -187,7 +191,7 @@ pub fn gate_directed_proposals(
 
     let mut grounded: Vec<(String, GroundedFact)> = Vec::new();
     let mut entities: BTreeMap<String, EntityDef> = BTreeMap::new();
-    let mut skips = Vec::new();
+    let mut skips: Vec<Refusal> = Vec::new();
     let mut seen = std::collections::HashSet::new();
 
     for proposal in proposals {
@@ -198,34 +202,56 @@ pub fn gate_directed_proposals(
             ..proposal.clone()
         };
         let label = format!("{} --{}--> {}", p.source, p.relation, p.target);
+        let refusal = |gate: DirectedGate, reason: String| Refusal {
+            gate,
+            source: p.source.clone(),
+            relation: p.relation.clone(),
+            target: p.target.clone(),
+            chunk_id: p.chunk_id.clone(),
+            evidence: p.evidence.clone(),
+            reason,
+        };
         let Some(rule) = by_relation.get(p.relation.as_str()) else {
-            skips.push(format!("`{label}`: relation not in the taxonomy — dropped"));
+            skips.push(refusal(
+                DirectedGate::RelationNotInTaxonomy,
+                format!("`{label}`: relation not in the taxonomy — dropped"),
+            ));
             continue;
         };
         let Some(chunk) = by_id.get(p.chunk_id.as_str()) else {
-            skips.push(format!(
-                "`{label}`: cites chunk `{}` which is not in this request — dropped",
-                p.chunk_id
+            skips.push(refusal(
+                DirectedGate::ChunkNotInRequest,
+                format!(
+                    "`{label}`: cites chunk `{}` which is not in this request — dropped",
+                    p.chunk_id
+                ),
             ));
             continue;
         };
         if p.source.trim().is_empty() || p.target.trim().is_empty() {
-            skips.push(format!("`{label}`: empty endpoint — dropped"));
+            skips.push(refusal(
+                DirectedGate::EmptyEndpoint,
+                format!("`{label}`: empty endpoint — dropped"),
+            ));
             continue;
         }
         // An endpoint must sanitize to a usable identity: "[***]" (a
         // redaction) passes every textual gate but has no key to live
         // under, and letting it through would fail the whole atomic write.
         if entity_key(&p.source).is_empty() || entity_key(&p.target).is_empty() {
-            skips.push(format!(
-                "`{label}`: an endpoint has no usable identity (symbols only) — dropped"
+            skips.push(refusal(
+                DirectedGate::UnusableEndpointIdentity,
+                format!("`{label}`: an endpoint has no usable identity (symbols only) — dropped"),
             ));
             continue;
         }
         let Some((ev_start, ev_end)) = find_loose(&chunk.text, &p.evidence) else {
-            skips.push(format!(
-                "`{label}`: evidence is not a verbatim quote of chunk `{}` — dropped",
-                p.chunk_id
+            skips.push(refusal(
+                DirectedGate::EvidenceNotVerbatim,
+                format!(
+                    "`{label}`: evidence is not a verbatim quote of chunk `{}` — dropped",
+                    p.chunk_id
+                ),
             ));
             continue;
         };
@@ -234,14 +260,16 @@ pub fn gate_directed_proposals(
         let (s_start, s_end) = sentence_bounds(&chunk.text, ev_start);
         let window = &chunk.text[s_start..s_end.max(ev_end)];
         if find_endpoint(window, &p.source).is_none() {
-            skips.push(format!(
-                "`{label}`: source does not occur in the evidence sentence — dropped"
+            skips.push(refusal(
+                DirectedGate::SourceNotInSentence,
+                format!("`{label}`: source does not occur in the evidence sentence — dropped"),
             ));
             continue;
         }
         if find_endpoint(window, &p.target).is_none() {
-            skips.push(format!(
-                "`{label}`: target does not occur in the evidence sentence — dropped"
+            skips.push(refusal(
+                DirectedGate::TargetNotInSentence,
+                format!("`{label}`: target does not occur in the evidence sentence — dropped"),
             ));
             continue;
         }
@@ -249,9 +277,12 @@ pub fn gate_directed_proposals(
             !phrase.trim().is_empty() && affirms_phrase(window, &canonical_text(phrase))
         });
         if !affirmed {
-            skips.push(format!(
-                "`{label}`: no affirmed occurrence of the relation's vocabulary in the \
-                 evidence sentence — dropped"
+            skips.push(refusal(
+                DirectedGate::VocabularyNotAffirmed,
+                format!(
+                    "`{label}`: no affirmed occurrence of the relation's vocabulary in the \
+                     evidence sentence — dropped"
+                ),
             ));
             continue;
         }
@@ -424,7 +455,7 @@ pub async fn directed_ingest(
         .facts;
 
     let extracted_by = format!("directed:{}@{}", provider.model_name(), DIRECTED_POLICY);
-    let (grounded, mut entities, skips) =
+    let (grounded, mut entities, refusals) =
         gate_directed_proposals(chunks, taxonomy, &proposals, &extracted_by);
 
     // Entity identity is first-writer-wins across the store: when a key
@@ -467,30 +498,12 @@ pub async fn directed_ingest(
     Ok(DirectedOutcome {
         proposed: proposals.len(),
         facts_grounded,
-        skips,
+        skips: refusals.iter().map(|r| r.reason.clone()).collect(),
+        refusals,
         extracted_by,
     })
 }
 
 #[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn find_loose_recovers_original_offsets_across_whitespace() {
-        let hay = "Grant of  rights.\nThe Producer grants   ConvergTV\nexclusive rights.";
-        let (a, b) = find_loose(hay, "producer grants convergtv exclusive").unwrap();
-        assert_eq!(&hay[a..b], "Producer grants   ConvergTV\nexclusive");
-        assert!(find_loose(hay, "grants everything").is_none());
-        assert!(find_loose(hay, "").is_none());
-    }
-
-    #[test]
-    fn endpoint_boundaries_work_independently_of_storage_key_restrictions() {
-        assert_eq!(find_endpoint("(東京)", "東京"), Some((1, 7)));
-        assert!(find_endpoint("東京市", "東京").is_none());
-        assert_eq!(find_endpoint("東京市 東京", "東京"), Some((10, 16)));
-        assert!(find_endpoint("", "東京").is_none());
-        assert!(find_endpoint("東京", "  ").is_none());
-    }
-}
+#[path = "directed_tests.rs"]
+mod tests;

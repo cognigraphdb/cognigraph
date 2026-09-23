@@ -5,6 +5,7 @@ mod collection_tests;
 mod documents;
 mod edges;
 mod helpers;
+mod indexes;
 mod paged;
 #[cfg(test)]
 mod paged_tests;
@@ -128,6 +129,10 @@ struct NativeState {
     /// Paged mode: resident key sets instead of resident documents.
     keys: HashMap<String, std::collections::BTreeSet<String>>,
     collection_types: HashMap<String, CollectionType>,
+    /// Index definitions per collection (CG-86), names resolved.
+    indexes: crate::storage_indexes::IndexDefs,
+    /// Unique index entries mirrored from redb: collection -> index -> value key -> doc key.
+    unique: crate::storage_indexes::UniqueEntries,
 }
 
 impl NativeBackend {
@@ -165,6 +170,7 @@ impl NativeBackend {
             ));
         }
         let store = RedbStore::open(path.as_ref())?;
+        let (indexes, unique) = store.load_indexes()?;
         let (collections, keys, collection_types) = if storage_mode == StorageMode::Paged {
             let (keys, collection_types) = store.load_keys()?;
             (HashMap::new(), keys, collection_types)
@@ -186,6 +192,8 @@ impl NativeBackend {
                 collections,
                 keys,
                 collection_types,
+                indexes,
+                unique,
             }),
             storage_mode,
             doc_cache: (storage_mode == StorageMode::Paged)
@@ -321,7 +329,7 @@ impl NativeBackend {
                     store.scan_collection(name)?.into_iter().collect();
                 collections.insert(
                     name.clone(),
-                    json!({ "type": collection_type, "documents": documents }),
+                    Self::snapshot_entry(&state, name, collection_type, documents),
                 );
             }
             return Ok(json!({ "collections": collections }));
@@ -337,10 +345,26 @@ impl NativeBackend {
                 docs.iter().map(|(k, v)| (k.clone(), v.clone())).collect();
             collections.insert(
                 name.clone(),
-                json!({ "type": collection_type, "documents": documents }),
+                Self::snapshot_entry(&state, name, collection_type, documents),
             );
         }
         Ok(json!({ "collections": collections }))
+    }
+
+    /// One snapshot collection; `indexes` is present only when declared.
+    fn snapshot_entry(
+        state: &NativeState,
+        name: &str,
+        collection_type: &str,
+        documents: Map<String, Value>,
+    ) -> Value {
+        let mut entry = json!({ "type": collection_type, "documents": documents });
+        if let Some(defs) = state.indexes.get(name)
+            && !defs.is_empty()
+        {
+            entry["indexes"] = json!(defs);
+        }
+        entry
     }
 
     /// Import a snapshot produced by `export_json`, creating collections and
@@ -358,16 +382,36 @@ impl NativeBackend {
                 _ => CollectionType::Document,
             };
             self.ensure_collection(name, collection_type).await?;
+            if let Some(defs) = entry.get("indexes").and_then(Value::as_array) {
+                for def in defs {
+                    let def: cognigraph_core::IndexDef = serde_json::from_value(def.clone())
+                        .map_err(|e| {
+                            CogniGraphError::ValidationError(format!(
+                                "snapshot index on `{name}` is invalid: {e}"
+                            ))
+                        })?;
+                    self.ensure_index_impl(name, &def)?;
+                }
+            }
             let Some(docs) = entry.get("documents").and_then(Value::as_object) else {
                 continue;
             };
             let mut state = self.write_state()?;
             for (key, doc) in docs {
-                self.persist(&[StoreOp::PutDocument {
+                let previous = self.stored_document(&state, name, key)?;
+                let removed = previous
+                    .as_ref()
+                    .map(|old| indexes::entries_of(&state, name, old))
+                    .unwrap_or_default();
+                let added = indexes::check(&state, &Default::default(), name, key, doc)?;
+                let mut ops = vec![StoreOp::PutDocument {
                     collection: name,
                     key,
                     doc,
-                }])?;
+                }];
+                ops.extend(indexes::ops(name, key, &removed, &added));
+                self.persist(&ops)?;
+                indexes::apply(&mut state, name, key, &removed, &added);
                 if self.paged() {
                     state
                         .keys
@@ -469,6 +513,34 @@ impl NativeBackend {
                 .entry((from.to_string(), to.to_string(), relation_type.to_string()))
                 .or_insert_with(|| key.to_string());
         }
+    }
+
+    /// The document as currently stored, for index bookkeeping on overwrite.
+    fn stored_document(
+        &self,
+        state: &NativeState,
+        collection: &str,
+        key: &str,
+    ) -> Result<Option<Value>> {
+        if self.paged() || self.vector_mode == VectorMode::Sidecar {
+            let known = state
+                .keys
+                .get(collection)
+                .is_some_and(|keys| keys.contains(key))
+                || state
+                    .collections
+                    .get(collection)
+                    .is_some_and(|docs| docs.contains_key(key));
+            return match (&self.store, known) {
+                (Some(store), true) => store.get_document_raw(collection, key),
+                _ => Ok(None),
+            };
+        }
+        Ok(state
+            .collections
+            .get(collection)
+            .and_then(|docs| docs.get(key))
+            .cloned())
     }
 
     /// Write-through: commit to durable storage (when present) before the

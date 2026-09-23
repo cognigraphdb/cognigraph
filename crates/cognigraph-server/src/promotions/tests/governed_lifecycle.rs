@@ -2,8 +2,12 @@
 
 use super::*;
 
-#[tokio::test]
-async fn signed_governed_lifecycle_blocks_failed_promote_and_recovers() {
+#[test]
+fn signed_governed_lifecycle_blocks_failed_promote_and_recovers() {
+    lifecycle(flow);
+}
+
+async fn flow() {
     let raw: Arc<dyn GraphBackend> = Arc::new(NativeBackend::new());
     raw.ensure_collection("facts", CollectionType::Edge)
         .await

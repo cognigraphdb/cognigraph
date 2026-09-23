@@ -160,10 +160,19 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Releases
 
+- 2026-09-23: [v2.7.29 — Lifecycle tests on an explicit stack](2026-09-23-lifecycle-test-stack.md)
+- 2026-09-23: [v2.7.28 — Compatible dependency drift before integration](2026-09-23-dependency-drift.md)
+- 2026-09-22: [v2.7.26 — Unique constraints on document collections](2026-09-22-unique-indexes.md)
 - 2026-09-22: [v2.7.17 — Patch rustls for RUSTSEC-2026-0285 before develop integration](2026-09-22-rustls-advisory.md)
 - 2026-09-22: [v2.7.20 — Pin CI jobs to the ubuntu-24.04 runner image](2026-09-22-pin-ci-runner-image.md)
+- 2026-09-22: [v2.7.27 — Native arm64 builds and multi-architecture publication](2026-09-22-multi-architecture-builds.md)
+- 2026-09-22: [v2.7.25 — Bind variables in LIMIT](2026-09-22-limit-bind-variables.md)
+- 2026-09-22: [v2.7.21 — Graph-augmented search warns when accepted rank hints are inert](2026-09-22-inert-rank-hint-warning.md)
 - 2026-09-22: [v2.7.18 — Dependency refresh for the develop freshness gate](2026-09-22-dependency-refresh.md)
+- 2026-09-22: [v2.7.22 — Construction gate refusals are recorded in a ledger](2026-09-22-construction-refusal-ledger.md)
+- 2026-09-22: [v2.7.23 — Move the draft and grounding tests out of their modules](2026-09-22-construct-tests-separate-files.md)
 - 2026-09-22: [v2.7.16 — Construct lifecycle documentation and Semantic Neurons tickets](2026-09-22-construct-lifecycle-and-tickets.md)
+- 2026-09-22: [v2.7.24 — Every cognigraph-construct module keeps its tests in a sibling file](2026-09-22-construct-crate-tests-separate-files.md)
 - 2026-09-22: [v2.7.19 — Take CodeMirror patch releases published during CI](2026-09-22-codemirror-registry-drift.md)
 - 2026-09-14: [v2.7.15 — Dependency and container-security candidate](2026-09-14-v2-7-15.md)
 - 2026-09-13: [v2.7.14 — Stable Docker image aliases](2026-09-13-v2-7-14.md)
