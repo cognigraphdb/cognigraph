@@ -2,8 +2,12 @@
 
 use super::*;
 
-#[tokio::test]
-async fn signed_m20_artifact_authority_drives_full_promotion_lifecycle() {
+#[test]
+fn signed_m20_artifact_authority_drives_full_promotion_lifecycle() {
+    lifecycle(flow);
+}
+
+async fn flow() {
     let raw: Arc<dyn GraphBackend> = Arc::new(NativeBackend::new());
     raw.ensure_collection("facts", CollectionType::Edge)
         .await

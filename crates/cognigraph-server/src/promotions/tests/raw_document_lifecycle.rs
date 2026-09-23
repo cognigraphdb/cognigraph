@@ -2,8 +2,12 @@
 
 use super::*;
 
-#[tokio::test]
-async fn m23_raw_documents_drive_preparation_promotion_and_fail_closed_on_tamper() {
+#[test]
+fn m23_raw_documents_drive_preparation_promotion_and_fail_closed_on_tamper() {
+    lifecycle(flow);
+}
+
+async fn flow() {
     let cas_root = TestArtifactCasRoot::new();
     let raw: Arc<dyn GraphBackend> = Arc::new(NativeBackend::new());
     raw.ensure_collection("facts", CollectionType::Edge)

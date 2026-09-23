@@ -8,12 +8,12 @@
     "reason": "The existing durable lifecycle wrapper and single shared-state scenario cover history, conflicts, snapshot restoration, and head repair together; splitting would alter its test scaffolding and sequencing."
   },
   "crates/cognigraph-server/src/promotions/tests/raw_document_lifecycle.rs": {
-    "max_lines": 643,
-    "reason": "One existing M23 raw-document preparation-to-promotion scenario with corruption and recovery branches; preserve its single shared-state lifetime and test name."
+    "max_lines": 647,
+    "reason": "One existing M23 raw-document preparation-to-promotion scenario with corruption and recovery branches; preserve its single shared-state lifetime and test name. Four lines added by the CG-96 wide-stack entry point."
   },
   "crates/cognigraph-server/src/promotions/tests/consumption_lifecycle.rs": {
-    "max_lines": 490,
-    "reason": "One existing M21 verified-consumption lifecycle scenario with replay, signed authority, revocation and tamper checks; kept whole rather than replacing assertions with abstraction."
+    "max_lines": 494,
+    "reason": "One existing M21 verified-consumption lifecycle scenario with replay, signed authority, revocation and tamper checks; kept whole rather than replacing assertions with abstraction. Four lines added by the CG-96 wide-stack entry point."
   },
   "crates/cognigraph-server/src/promotions/tests/derivation_variant.rs": {
     "max_lines": 452,

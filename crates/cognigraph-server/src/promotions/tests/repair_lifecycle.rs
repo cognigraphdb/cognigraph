@@ -2,8 +2,12 @@
 
 use super::*;
 
-#[tokio::test]
-async fn signed_semantic_repair_authority_tracks_promote_and_rollback_heads() {
+#[test]
+fn signed_semantic_repair_authority_tracks_promote_and_rollback_heads() {
+    lifecycle(flow);
+}
+
+async fn flow() {
     let raw: Arc<dyn GraphBackend> = Arc::new(NativeBackend::new());
     raw.ensure_collection("facts", CollectionType::Edge)
         .await

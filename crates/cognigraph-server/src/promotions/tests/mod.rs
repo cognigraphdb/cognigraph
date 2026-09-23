@@ -68,6 +68,32 @@ const TENANT: &str = "default";
 const INCARNATION: &str = "default";
 const SPACE: &str = "pharma";
 
+/// Runs a whole-server lifecycle flow on a thread with an explicit stack.
+///
+/// These flows drive every promotion stage inside one future. `#[tokio::test]`
+/// would pin that future on the default 2 MiB test thread, and in debug
+/// builds the nested state machine plus poll frames exceed it on x86_64
+/// (CG-96); release builds need under 512 KiB. The runtime matches
+/// `#[tokio::test]`: current-thread, all drivers enabled.
+pub(super) fn lifecycle<F>(flow: impl FnOnce() -> F + Send + 'static)
+where
+    F: std::future::Future<Output = ()>,
+{
+    std::thread::Builder::new()
+        .name("promotion-lifecycle".into())
+        .stack_size(16 << 20)
+        .spawn(move || {
+            tokio::runtime::Builder::new_current_thread()
+                .enable_all()
+                .build()
+                .expect("current-thread runtime")
+                .block_on(flow())
+        })
+        .expect("lifecycle thread")
+        .join()
+        .expect("lifecycle flow panicked");
+}
+
 mod backend;
 use backend::*;
 
