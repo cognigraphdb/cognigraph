@@ -1,6 +1,7 @@
 # Decision: split the construct proposal and directed modules by concern behind stable paths
 
-Status: accepted and implemented 2026-09-23 for [CG-94](../issues/CG-94.md).
+Status: accepted and implemented 2026-09-23 for [CG-94](../issues/CG-94.md) and
+[CG-95](../issues/CG-95.md).
 
 ## Context
 
@@ -32,6 +33,31 @@ recommends 300–400 lines per module as a guide, not a cap (owner guidance,
 
 - Resulting sizes: 216, 176 and 348 lines for the proposal modules; 204,
   239 and 80 for the directed modules.
-- [CG-95](../issues/CG-95.md) (`draft.rs`, `grounding.rs`) follows the same
-  approach; `grounding.rs` additionally needs its evaluation results
-  compared, being the soundness core.
+- CG-95 applied the same approach to `draft.rs` and `grounding.rs`; see
+  below.
+
+## CG-95: drafting and grounding
+
+4. **Same cut, same proof.** `draft.rs` keeps `DRAFT_REV`, `DraftReport` and
+   the drafter entry points; `draft/prompts.rs` holds the two system prompts
+   and schemas; `draft/finalize.rs` holds the finalization pass.
+   `grounding.rs` keeps the public grounding contract (`effective_config`,
+   `VetoRule`, `effective_vetoes`, `mentions`, `GroundedFact`,
+   `ground_chunk`, `affirms_phrase`, `sentence_bounds`); `grounding/negation.rs`,
+   `grounding/sentences.rs`, `grounding/semantics.rs` (`SEMANTICS_REV`) and
+   `grounding/triggers.rs` hold the four supporting concerns. `merge_drafted`,
+   `finalize_draft`, `SEMANTICS_REV` and `relation_semantics_signals` stay at
+   their original paths through re-exports; moved struct fields became
+   `pub(super)`.
+5. **Grounding output is pinned, not only asserted.** Because `grounding.rs`
+   is the soundness core, a new test records everything the four public
+   Semantic Neurons kits construct (chunks, entities, mentions, facts, fact
+   semantics, evaluation outcome) in `tests/snapshots/grounding-kits.json`,
+   recorded on the unsplit code and unchanged after the split. Removing a
+   single negation cue makes it fail on the negative-probe kit. Intentional
+   grounding changes regenerate it with `CG_UPDATE_SNAPSHOT=1`, which makes
+   such a change visible in review.
+
+Sizes after CG-95: `draft.rs` 321, `draft/finalize.rs` 318, `draft/prompts.rs`
+69; `grounding.rs` 343, `grounding/negation.rs` 129, `grounding/semantics.rs`
+127, `grounding/sentences.rs` 91, `grounding/triggers.rs` 139 lines.
