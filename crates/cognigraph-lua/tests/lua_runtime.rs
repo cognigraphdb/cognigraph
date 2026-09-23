@@ -370,3 +370,30 @@ async fn new_bindings_and_strict_directions() {
         .unwrap_err();
     assert!(err.contains("invalid direction `in`"), "{err}");
 }
+
+/// CG-81: the container CVE dispositions for glibc `popen`, `system`, `fopen`
+/// mode strings and `dlopen` rely on no script reaching LuaJIT's io, os or
+/// package libraries by any route, not only by their global names.
+#[test]
+fn sandbox_closes_every_route_to_process_file_and_library_loading() {
+    let engine = LuaEngine::new().expect("failed to create LuaEngine");
+    for script in [
+        "return io.popen('id')",
+        "return package.loadlib('libc.so.6', 'system')",
+        "return _G.io.open('/etc/hostname')",
+        "return _G.os.execute('id')",
+        "return getfenv(0).os.execute('id')",
+        "return rawget(_G, 'io').open('/etc/hostname')",
+        "return debug.getregistry()._LOADED.io",
+    ] {
+        let result = engine.execute(script);
+        assert!(result.is_err(), "{script} must be refused, got {result:?}");
+    }
+    let visible = engine
+        .execute("return {type(io), type(os), type(package), type(debug), type(require)}")
+        .unwrap();
+    assert_eq!(
+        visible,
+        serde_json::json!(["nil", "nil", "nil", "nil", "nil"])
+    );
+}

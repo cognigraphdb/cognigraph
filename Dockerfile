@@ -22,9 +22,17 @@ RUN case "$COGNIGRAPH_EDITION" in \
       enterprise) cargo build --locked --release --no-default-features --features enterprise -p cognigraph-server -p cognigraph-cli ;; \
       *) echo "COGNIGRAPH_EDITION must be community or enterprise" >&2; exit 1 ;; \
     esac
+# The runtime has no shell, so its filesystem is assembled here: both binaries,
+# the Railway start path kept as an alias of the server, and a /data mount
+# point owned by the runtime user.
+RUN mkdir -p /out/bin /out/data \
+    && cp target/release/cognigraph-server target/release/cognigraph /out/bin/ \
+    && ln -s cognigraph-server /out/bin/cognigraph-entrypoint \
+    && chown 10001:10001 /out/data
 
-# Runtime stage
-FROM debian:stable-slim AS runtime
+# Runtime stage: distroless glibc (CG-81). No shell, package manager, curl or
+# util-linux; root start-up and privilege dropping happen inside the server.
+FROM gcr.io/distroless/cc-debian13:nonroot AS runtime
 ARG COGNIGRAPH_VERSION=dev
 ARG COGNIGRAPH_REVISION=unknown
 ARG COGNIGRAPH_EDITION=community
@@ -32,29 +40,22 @@ LABEL org.opencontainers.image.source="https://github.com/cognigraphdb/cognigrap
     org.opencontainers.image.version="$COGNIGRAPH_VERSION" \
     org.opencontainers.image.revision="$COGNIGRAPH_REVISION" \
     io.cognigraph.edition="$COGNIGRAPH_EDITION"
-# Refresh packages already present in the base as well as new dependencies.
-# Installing curl alone leaves vulnerable libc/perl/etc. base packages untouched.
-RUN apt-get update && apt-get upgrade -y --no-install-recommends \
-    && apt-get install -y --no-install-recommends \
-    ca-certificates curl util-linux && rm -rf /var/lib/apt/lists/* \
-    && groupadd --system --gid 10001 cognigraph \
-    && useradd --system --uid 10001 --gid 10001 cognigraph \
-    && mkdir -p /data && chown cognigraph /data
-COPY --from=builder /app/target/release/cognigraph-server /usr/local/bin/cognigraph-server
-COPY --from=builder /app/target/release/cognigraph /usr/local/bin/cognigraph
+COPY --from=builder /out/bin/ /usr/local/bin/
+COPY --from=builder --chown=10001:10001 /out/data /data
 COPY --from=console /ui/dist/ /ui/
-COPY --chmod=755 deploy/container-entrypoint.sh /usr/local/bin/cognigraph-entrypoint
 COPY LICENSE LICENSE-COMMERCIAL /usr/share/licenses/cognigraph/
 COPY vendor/tantivy-0.26.2/LICENSE /usr/share/licenses/cognigraph/tantivy-MIT
-USER cognigraph
+USER 10001:10001
 ENV COGNIGRAPH_HOST=0.0.0.0 \
     COGNIGRAPH_PORT=3000 \
     COGNIGRAPH_NATIVE_PATH=/data/cognigraph.redb \
     COGNIGRAPH_UI_DIST=/ui \
-    COGNIGRAPH_LOG_FORMAT=json
+    COGNIGRAPH_LOG_FORMAT=json \
+    COGNIGRAPH_CONTAINER_INIT=1
 # Attach persistent /data storage through the deployment platform or docker run.
 # Railway rejects Docker's VOLUME instruction; the image must remain portable.
 EXPOSE 3000
+# The bundled CLI checks liveness and database readiness; no curl is shipped.
 HEALTHCHECK --interval=15s --timeout=3s --start-period=10s \
-    CMD curl -fsS http://127.0.0.1:3000/health || exit 1
-ENTRYPOINT ["cognigraph-entrypoint"]
+    CMD ["/usr/local/bin/cognigraph", "--url", "http://127.0.0.1:3000", "health"]
+ENTRYPOINT ["/usr/local/bin/cognigraph-server"]

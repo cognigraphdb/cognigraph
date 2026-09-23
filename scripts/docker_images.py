@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build metadata, packaged-image checks and opt-in Docker Hub publication."""
 import argparse
+import io
 import json
 import os
 from pathlib import Path
@@ -8,6 +9,7 @@ import re
 import secrets
 import subprocess
 import sys
+import tarfile
 import time
 import tomllib
 from urllib.error import HTTPError, URLError
@@ -24,6 +26,10 @@ REGISTRY = 'docker.io'
 # Tested image tarballs and per-platform receipts exchanged between CI jobs.
 EXPORTS = ROOT / 'target/ci/images'
 VERSION_TAG_RULE = r'^[0-9]+\.[0-9]+\.[0-9]+(-(amd64|arm64))?$'
+RUNTIME_USER = '10001:10001'
+# The runtime has no shell or coreutils (CG-81); checks that need `cat`, `stat`
+# or `sh` run in this pinned helper beside the container instead.
+HELPER = 'busybox:1.37@sha256:bdf57e528e45e4433820e045b29b4597825a1c9e38353532d90a01445013f82e'
 DIGEST_RULE = r'sha256:[0-9a-f]{64}'
 
 
@@ -85,6 +91,26 @@ def ready(base):
     raise RuntimeError('Packaged server did not become ready')
 
 
+def pid1_status(container):
+    """`/proc/1/status` of a running container, read from a helper sharing its PID namespace."""
+    return output('docker', 'run', '--rm', f'--pid=container:{container}', HELPER, 'cat', '/proc/1/status')
+
+
+def status_field(status, name):
+    # [ \t]*, not \s*: an empty field must not swallow the newline and read the next line.
+    match = re.search(rf'^{name}:[ \t]*(.*)$', status, re.M)
+    require(match, f'/proc/1/status has no {name} line')
+    return match.group(1).split()
+
+
+def packaged_file_nonempty(container, path):
+    """`docker cp` streams a tar archive; a present regular file yields member data."""
+    archive = subprocess.run(['docker', 'cp', f'{container}:{path}', '-'], capture_output=True, check=True).stdout
+    with tarfile.open(fileobj=io.BytesIO(archive)) as tar:
+        members = tar.getmembers()
+        return len(members) == 1 and members[0].isfile() and members[0].size > 0
+
+
 def smoke(image, edition, version):
     # Docker owns this anonymous /data volume; rm -v removes only this probe's data.
     password = secrets.token_urlsafe(24)
@@ -102,15 +128,16 @@ def smoke(image, edition, version):
         ready(base)
         health = http(base + '/health')
         require((health['version'], health['edition']) == (version, edition), 'Binary identity mismatch')
-        require(output('docker', 'exec', container, 'id', '-u') == '10001', 'Runtime UID mismatch')
+        require(status_field(pid1_status(container), 'Uid') == ['10001'] * 4, 'Runtime UID mismatch')
         http(base + '/api/documents?collection=release_probe', status=401)
         token = http(base + '/api/auth/login', {'username': 'admin', 'password': password})['token']
         http(base + '/api/documents', {'collection': 'release_probe', '_key': 'one',
                                       'text': 'synthetic image publication probe'}, token)
         spec = http(base + '/openapi.yaml')
         require(('/api/neurons' in spec['paths']) == (edition == 'enterprise'), 'Edition API mismatch')
-        output('docker', 'exec', container, 'test', '-s', '/usr/share/licenses/cognigraph/LICENSE')
-        output('docker', 'exec', container, 'test', '-s', '/usr/share/licenses/cognigraph/LICENSE-COMMERCIAL')
+        for name in ('LICENSE', 'LICENSE-COMMERCIAL', 'tantivy-MIT'):
+            require(packaged_file_nonempty(container, f'/usr/share/licenses/cognigraph/{name}'),
+                    f'Missing packaged license {name}')
         output('docker', 'restart', '--timeout', '15', container)
         # Docker may allocate a different ephemeral host port after restart.
         port = output('docker', 'port', container, '3000/tcp').split(':')[-1]
@@ -140,7 +167,9 @@ def inspect_image(reference, version, revision, edition, platform):
             and labels.get('org.opencontainers.image.revision') == revision
             and labels.get('org.opencontainers.image.source') == SOURCE
             and labels.get('io.cognigraph.edition') == edition, f'{reference}: rebuild stale image metadata')
-    require(info['Config']['User'] == 'cognigraph', f'{reference}: expected non-root runtime')
+    require(info['Config']['User'] == RUNTIME_USER, f'{reference}: expected non-root runtime {RUNTIME_USER}')
+    require(info['Config'].get('Entrypoint') == ['/usr/local/bin/cognigraph-server'],
+            f'{reference}: expected the server as the entrypoint')
     require(not info['Config'].get('Volumes'),
             f'{reference}: Railway rejects image VOLUME declarations; attach storage at deployment')
     actual = f"{info['Os']}/{info['Architecture']}"

@@ -11,9 +11,10 @@ from pathlib import Path
 import re
 import secrets
 import subprocess
+import time
 from urllib.request import urlopen
 
-from docker_images import http, output, ready, require
+from docker_images import HELPER, http, output, pid1_status, ready, require, status_field
 from ui_browser import isolated_env
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -79,14 +80,25 @@ def run(image, edition, browser):
             return base
 
         base = origin()
-        status = output('docker', 'exec', container, 'cat', '/proc/1/status')
-        require(re.search(r'^Uid:\s+10001\s+10001\s+10001\s+10001$', status, re.M),
-                'PID 1 did not drop root')
-        require(re.search(r'^CapEff:\s+0+$', status, re.M), 'Server retained capabilities')
-        require(re.search(r'^NoNewPrivs:\s+1$', status, re.M), 'Privilege escalation not disabled')
-        require(output('docker', 'exec', container, 'stat', '-c', '%u:%g:%a', '/data/native')
+        status = pid1_status(container)
+        require(status_field(status, 'Uid') == ['10001'] * 4, 'PID 1 did not drop root')
+        require(status_field(status, 'Gid') == ['10001'] * 4, 'PID 1 kept a root group id')
+        require(status_field(status, 'Groups') == [], 'PID 1 kept supplementary groups')
+        for capabilities in ('CapInh', 'CapPrm', 'CapEff', 'CapAmb'):
+            require(int(status_field(status, capabilities)[0], 16) == 0,
+                    f'Server retained capabilities ({capabilities})')
+        require(status_field(status, 'NoNewPrivs') == ['1'], 'Privilege escalation not disabled')
+        require(output('docker', 'run', '--rm', '--mount', f'type=volume,source={volume},target=/data',
+                       HELPER, 'stat', '-c', '%u:%g:%a', '/data/native')
                 == '10001:10001:700', 'Unexpected data directory permissions')
         console(base)
+        # The image HEALTHCHECK runs the bundled CLI (no curl ships); it must pass.
+        for _ in range(90):
+            health = output('docker', 'inspect', '-f', '{{.State.Health.Status}}', container)
+            if health != 'starting':
+                break
+            time.sleep(1)
+        require(health == 'healthy', f'Image HEALTHCHECK reported {health}')
         http(base + '/api/documents?collection=deployment_probe', status=401)
         token = http(base + '/api/auth/login', {
             'username': 'admin', 'password': env['COGNIGRAPH_ADMIN_PASSWORD']})['token']
@@ -108,9 +120,9 @@ def run(image, edition, browser):
         require(output('docker', 'inspect', '--format', '{{.State.ExitCode}}', container) == '0',
                 'Server did not shut down cleanly')
         # A pre-existing symlink must fail before ownership changes or server startup.
-        output('docker', 'run', '--rm', '--user=0', '--entrypoint=sh',
-               '--mount', f'type=volume,source={volume},target=/data', image,
-               '-c', 'mv /data/native /data/saved; ln -s /data/saved /data/native')
+        output('docker', 'run', '--rm', '--user=0',
+               '--mount', f'type=volume,source={volume},target=/data', HELPER,
+               'sh', '-c', 'mv /data/native /data/saved; ln -s /data/saved /data/native')
         rejected(common + settings, image)
         print(f'PASS container [{edition}]: console/assets, root rejection, UID/capabilities, '
               f'private volume, restart, shutdown, symlink rejection; browser={browser}', flush=True)

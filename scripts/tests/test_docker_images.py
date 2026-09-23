@@ -159,13 +159,14 @@ class ImageIdentity(unittest.TestCase):
     @staticmethod
     def info(edition, architecture='amd64'):
         return {'Id': f'sha256:{edition}', 'Os': 'linux', 'Architecture': architecture,
-                'Config': {'User': 'cognigraph', 'Labels': {
+                'Config': {'User': '10001:10001', 'Entrypoint': ['/usr/local/bin/cognigraph-server'],
+                           'Labels': {
                     'org.opencontainers.image.version': VERSION,
                     'org.opencontainers.image.revision': REVISION,
                     'org.opencontainers.image.source': images.SOURCE, 'io.cognigraph.edition': edition}}}
 
     def test_both_labels_and_platform_checked_before_any_container_starts(self):
-        for change in ('version', 'revision', 'edition', 'root', 'platform', 'volume'):
+        for change in ('version', 'revision', 'edition', 'root', 'platform', 'volume', 'entrypoint'):
             info = self.info('enterprise')
             if change == 'root':
                 info['Config']['User'] = 'root'
@@ -173,6 +174,8 @@ class ImageIdentity(unittest.TestCase):
                 info['Architecture'] = 'arm64'
             elif change == 'volume':
                 info['Config']['Volumes'] = {'/data': {}}
+            elif change == 'entrypoint':
+                info['Config']['Entrypoint'] = ['/usr/local/bin/cognigraph-entrypoint']
             else:
                 key = 'io.cognigraph.edition' if change == 'edition' else f'org.opencontainers.image.{change}'
                 info['Config']['Labels'][key] = 'wrong'
@@ -281,6 +284,17 @@ class Manifests(unittest.TestCase):
         with patch.object(images, 'output', side_effect=['', json.dumps({'digest': 'bad', 'manifests': []})]):
             with self.assertRaisesRegex(RuntimeError, 'digest'):
                 images.create_manifest('cognigraph/cognigraph', VERSION, ['x'])
+
+
+class ProcessStatus(unittest.TestCase):
+    STATUS = 'Name:\tcognigraph-serv\nUid:\t10001\t10001\t10001\t10001\nGroups:\t\nNStgid:\t1\nCapEff:\t0000000000000000\n'
+
+    def test_fields_split_and_an_empty_field_stays_empty(self):
+        self.assertEqual(images.status_field(self.STATUS, 'Uid'), ['10001'] * 4)
+        self.assertEqual(images.status_field(self.STATUS, 'Groups'), [])
+        self.assertEqual(images.status_field(self.STATUS, 'CapEff'), ['0000000000000000'])
+        with self.assertRaisesRegex(RuntimeError, 'NoNewPrivs'):
+            images.status_field(self.STATUS, 'NoNewPrivs')
 
 
 class Publication(unittest.TestCase):
