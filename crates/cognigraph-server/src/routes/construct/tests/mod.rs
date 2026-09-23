@@ -10,6 +10,8 @@ use ingest::*;
 
 mod proposal;
 
+mod sideview_proposal;
+
 mod refusals;
 
 mod review_fixtures;

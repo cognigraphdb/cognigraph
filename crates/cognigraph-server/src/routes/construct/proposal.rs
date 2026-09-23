@@ -11,12 +11,34 @@ pub(super) struct ProposeRequest {
     pub(super) gaps: Option<Vec<String>>,
     /// Inline eval spec for the gap measurement (as on /evaluate).
     pub(super) eval: Option<EvalSpec>,
+    /// Side views as the gap source (CG-88); excludes `gaps` and `eval`.
+    pub(super) side_views: Option<SideViewSelection>,
 }
 pub(super) async fn propose(
     State(state): State<AppState>,
     user: Option<Extension<User>>,
     Json(req): Json<ProposeRequest>,
 ) -> Result<Json<Value>, AppError> {
+    if let Some(selection) = &req.side_views {
+        if req.gaps.is_some() || req.eval.is_some() {
+            return Err(AppError(CogniGraphError::ValidationError(
+                "side_views cannot be combined with gaps or eval".into(),
+            )));
+        }
+        selection.validate()?;
+        if selection.dry_run {
+            let space = load_space(&*state.managed_backend, &req.space_type).await?;
+            let detected =
+                side_view_gaps(&*state.managed_backend, &space, &req.space_type, selection).await?;
+            return Ok(Json(json!({
+                "space_type": req.space_type,
+                "source": "side_views",
+                "dry_run": true,
+                "gaps": detected.gaps.len(),
+                "side_views": detected.report,
+            })));
+        }
+    }
     let Some(provider) = state.completion.clone() else {
         return Err(AppError(CogniGraphError::BackendError(
             "No completion provider configured. Set OPENAI_API_KEY or GEMINI_API_KEY \
@@ -26,7 +48,23 @@ pub(super) async fn propose(
     };
     let space = load_space(&*state.managed_backend, &req.space_type).await?;
 
+    let mut from_side_views = None;
+    let source = if req.side_views.is_some() {
+        "side_views"
+    } else if req.gaps.is_some() {
+        "gaps"
+    } else {
+        "evaluation"
+    };
     let gaps: Vec<Fact> = match req.gaps {
+        None if req.side_views.is_some() => {
+            let selection = req.side_views.as_ref().expect("checked above");
+            let detected =
+                side_view_gaps(&*state.managed_backend, &space, &req.space_type, selection).await?;
+            let gaps = detected.gaps.clone();
+            from_side_views = Some((selection.collection.clone(), detected));
+            gaps
+        }
         Some(lines) => lines
             .iter()
             .map(|line| {
@@ -44,15 +82,23 @@ pub(super) async fn propose(
                 .missing
         }
     };
+    let side_view_report = from_side_views
+        .as_ref()
+        .map(|(_, detected)| detected.report.clone());
     if gaps.is_empty() {
-        return Ok(Json(json!({
+        let mut response = json!({
             "space_type": req.space_type,
+            "source": source,
             "gaps": 0,
             "proposed": [],
             "skipped": [],
             "stored": 0,
             "note": "no gaps to repair",
-        })));
+        });
+        if let Some(report) = side_view_report {
+            response["side_views"] = report;
+        }
+        return Ok(Json(response));
     }
 
     let report = propose_neurons_via_backend(
@@ -118,6 +164,13 @@ pub(super) async fn propose(
             fields.insert("space_type".into(), json!(req.space_type));
             fields.insert("proposed_by".into(), json!(proposed_by));
             fields.insert("proposed_at".into(), json!(now_secs()));
+            if let Some((collection, detected)) = &from_side_views
+                && let Some(provenance) =
+                    side_view_provenance(collection, &detected.support, &neuron)
+            {
+                fields.insert("proposed_from".into(), json!("side_views"));
+                fields.insert("side_view_source".into(), provenance);
+            }
         }
         match state.managed_backend.create_document(NEURONS, doc).await {
             Ok(_) => {
@@ -156,6 +209,7 @@ pub(super) async fn propose(
     .await;
     let mut response = json!({
         "space_type": req.space_type,
+        "source": source,
         "gaps": gaps.len(),
         "stored": stored.len(),
         "proposed": stored,
@@ -163,6 +217,9 @@ pub(super) async fn propose(
         "proposed_by": proposed_by,
         "note": "proposals are inert until accepted via POST /api/neurons/{key}/accept",
     });
+    if let Some(report) = side_view_report {
+        response["side_views"] = report;
+    }
     attach(&mut response, ledger);
     Ok(Json(response))
 }

@@ -100,6 +100,9 @@ use gate_advice::*;
 mod proposal;
 use proposal::*;
 
+mod sideview_gaps;
+use sideview_gaps::*;
+
 mod review_policy;
 use review_policy::*;
 

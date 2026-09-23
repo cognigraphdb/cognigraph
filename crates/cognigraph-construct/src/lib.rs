@@ -73,6 +73,7 @@ pub use report::{
     GraduationCandidate, GraduationReason, PathwayKind, ablation_report, blocker_report,
     degradation_report, graduation_report,
 };
+pub use sideviews::gaps::{GapCandidate, GapReport, GapSkip, SideViewText, detect_sideview_gaps};
 pub use sideviews::{
     QaPair, SIDEVIEWS_SYSTEM, generate_sideviews, sideviews_schema, sideviews_user,
 };
