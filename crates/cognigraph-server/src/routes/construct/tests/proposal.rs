@@ -34,6 +34,7 @@ async fn propose_stores_inert_reviewable_neurons() {
             space_type: "acme".into(),
             gaps: Some(vec!["Nimbus --HOSTS--> DataCloud".into()]),
             eval: None,
+            side_views: None,
         }),
     )
     .await
@@ -60,6 +61,7 @@ async fn propose_stores_inert_reviewable_neurons() {
             space_type: "acme".into(),
             gaps: Some(vec!["Nimbus --HOSTS--> DataCloud".into()]),
             eval: None,
+            side_views: None,
         }),
     )
     .await
@@ -77,6 +79,7 @@ async fn propose_without_provider_or_with_bad_gap_fails() {
             space_type: "acme".into(),
             gaps: Some(vec!["Nimbus --HOSTS--> DataCloud".into()]),
             eval: None,
+            side_views: None,
         }),
     )
     .await;
@@ -90,6 +93,7 @@ async fn propose_without_provider_or_with_bad_gap_fails() {
             space_type: "acme".into(),
             gaps: Some(vec!["not a fact line".into()]),
             eval: None,
+            side_views: None,
         }),
     )
     .await;

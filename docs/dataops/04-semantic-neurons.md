@@ -333,6 +333,42 @@ re-evaluation remain load-bearing. Everything stored lands as
 section 5; the graph does not change until review accepts — human by
 default, or the policy-gated judge lane at volume.
 
+### Side views as a gap source
+
+Stored side views can nominate gaps too
+([decision](../decisions/decision_sideview_gap_detector.md), CG-88). Select
+the side views of one source collection, optionally narrowed to some of its
+documents, and preview the candidates first; a dry run needs no provider and
+writes nothing:
+
+```sh
+curl -s -X POST $COGNIGRAPH_URL/api/construct/propose -H "content-type: application/json" \
+  -d '{"space_type": "acme_supply",
+       "side_views": {"collection": "notes", "min_support": 2, "dry_run": true}}'
+# → {"source": "side_views", "dry_run": true, "gaps": 1,
+#    "side_views": {"collection": "notes", "scanned": 40, "min_support": 2,
+#      "candidates": [{"fact": "Acme --OPERATES--> DataCloud", "support": 3,
+#                      "side_views": ["sv-12", "sv-19", "sv-31"]}],
+#      "skipped": [{"reason": "endpoints_connected", ...}, ...]}}
+```
+
+A pair of ontology entities that one side view names together (by name or
+alias, in its question or answer) becomes a candidate only when exactly one
+relation rule of the space type joins them, in one direction, and no fact
+edge of the space connects them either way. Everything else is reported with
+a reason: `no_matching_rule`, `ambiguous_relation` (the fitting facts are in
+`detail`), `endpoints_connected`, `below_min_support` or
+`over_max_candidates` (default cap 20, at most 100). Without `dry_run` the
+candidates go through the same proposal path as measured gaps, including the
+verbatim self-check, and each stored proposal records
+`"proposed_from": "side_views"` and `side_view_source` (collection, side view
+keys, support). `proposed_by` still names the caller. Side views stay a
+retrieval aid: the path reads `side_views` and `facts` and writes only
+proposals and refusal rows.
+
+The detector has not been measured on a real corpus yet; that run is
+tracked separately (see the decision).
+
 The packaged `blind_eval` runner does the same offline (plus the
 answer-level scorecard):
 

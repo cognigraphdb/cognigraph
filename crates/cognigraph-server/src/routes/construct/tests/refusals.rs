@@ -193,6 +193,7 @@ fn gap_request() -> Json<ProposeRequest> {
         space_type: "acme".into(),
         gaps: Some(vec!["Nimbus --HOSTS--> DataCloud".into()]),
         eval: None,
+        side_views: None,
     })
 }
 
