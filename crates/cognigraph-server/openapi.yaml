@@ -4554,9 +4554,14 @@ paths:
         accepts via POST /api/neurons/{key}/accept; even then this legacy
         lifecycle state affects only legacy ingestion and does not satisfy
         M25 signed-revision, independent-review, or promotion-head authority. Gaps may be passed
-        explicitly or measured live from the (inline or stored) eval
-        spec. Requires a completion provider (OPENAI_API_KEY or
-        GEMINI_API_KEY; model via COGNIGRAPH_COMPLETION_MODEL).
+        explicitly, measured live from the (inline or stored) eval
+        spec, or detected from stored side views (side_views): pairs of
+        ontology entities that a selected side view names together, that
+        exactly one relation rule joins, and that no fact edge of the space
+        connects. Proposals from side views also record proposed_from and
+        side_view_source. Requires a completion provider (OPENAI_API_KEY or
+        GEMINI_API_KEY; model via COGNIGRAPH_COMPLETION_MODEL) except for a
+        side_views dry run, which only reports the candidates.
       requestBody:
         required: true
         content:
@@ -4572,9 +4577,25 @@ paths:
                 eval:
                   type: object
                   description: Inline EvalSpec for gap measurement; omission reads an already-existing protected eval_specs/{space_type} record. Generic writes to eval_specs are refused after M25.
+                side_views:
+                  type: object
+                  description: Detect the gaps from stored side views instead (CG-88). Cannot be combined with gaps or eval. Unknown fields are refused.
+                  required: [collection]
+                  additionalProperties: false
+                  properties:
+                    collection: { type: string, description: Source collection the side views were generated from }
+                    documents:
+                      type: array
+                      minItems: 1
+                      maxItems: 1000
+                      items: { type: string }
+                      description: Document keys in collection; all of its side views when omitted (at most 10000 side views per request)
+                    min_support: { type: integer, minimum: 1, default: 1, description: Distinct side views a candidate needs }
+                    max_candidates: { type: integer, minimum: 1, maximum: 100, default: 20, description: Candidates proposed, strongest support first; the rest are reported as over_max_candidates }
+                    dry_run: { type: boolean, default: false, description: Report the candidates only; no provider needed and nothing is written }
       responses:
-        '200': { description: '{gaps, stored, proposed[], skipped[], proposed_by, refusals[], refusals_stored, refusals_dropped, refusals_error?}. skipped keeps its {fact, reason} form; refusals are the same skips as structured rows with gate codes (proposal_rejected, forbidden_fact_not_grounded, blocker_rejected, blocker_round_failed, blocker_round_dry, validation_failed, duplicate_id) written to the construction_refusals ledger.' }
-        '400': { description: "Bad gap line, or no gaps source available" }
+        '200': { description: '{source (gaps, evaluation or side_views), gaps, stored, proposed[], skipped[], proposed_by, side_views?, refusals[], refusals_stored, refusals_dropped, refusals_error?}. skipped keeps its {fact, reason} form; refusals are the same skips as structured rows with gate codes (proposal_rejected, forbidden_fact_not_grounded, blocker_rejected, blocker_round_failed, blocker_round_dry, validation_failed, duplicate_id) written to the construction_refusals ledger. side_views is the detection report {collection, scanned, min_support, candidates[{fact, support, side_views[]}], skipped[{reason, source, target, detail?, side_views[]}]} with reasons no_matching_rule, ambiguous_relation, endpoints_connected, below_min_support and over_max_candidates. A side_views dry run returns {space_type, source, dry_run, gaps, side_views}.' }
+        '400': { description: "Bad gap line, no gaps source available, or an invalid side_views selection" }
   /api/construct/review:
     post:
       summary: >-

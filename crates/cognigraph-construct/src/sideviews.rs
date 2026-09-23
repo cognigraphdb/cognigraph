@@ -14,6 +14,8 @@
 //! Every call goes through [`CompletionProvider::complete_json`] with a strict,
 //! closed schema: we never ask the model to emit JSON as prose.
 
+pub mod gaps;
+
 use anyhow::{Context, Result};
 use cognigraph_embeddings::completion::CompletionProvider;
 use serde::{Deserialize, Serialize};
