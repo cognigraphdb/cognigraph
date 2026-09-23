@@ -8,6 +8,8 @@ import sys
 import docker_images
 
 ROOT = Path(__file__).resolve().parents[1]
+CLIENT = ROOT / 'clients/typescript'
+SERVER = ROOT / 'target/release/cognigraph-server'
 
 
 def commands(suite):
@@ -32,6 +34,7 @@ def commands(suite):
             (ROOT, ['cargo', 'test', '--locked', '--all', '--features', 'enterprise']),
             *commands('helm'),
             *commands('native'),
+            *commands('client'),
             *commands('ui-browser'),
         ]
     if suite == 'docker':
@@ -42,7 +45,8 @@ def commands(suite):
             (ROOT, [sys.executable, 'scripts/check-helm.py', '--live']),
             (ROOT, [sys.executable, 'scripts/check-helm.py', '--live', '--enterprise'])]
     if suite == 'advisories':
-        return [(ROOT, ['cargo', 'audit', '--deny', 'unsound']), (ROOT / 'ui', ['bun', 'audit'])]
+        return [(ROOT, ['cargo', 'audit', '--deny', 'unsound']), (ROOT / 'ui', ['bun', 'audit']),
+                (CLIENT, ['bun', 'audit'])]
     if suite == 'dependencies':
         return [(ROOT, [sys.executable, 'scripts/dependency_freshness.py'])]
     if suite == 'helm':
@@ -55,6 +59,15 @@ def commands(suite):
                 (ROOT / 'ui', ['bun', 'run', 'check']),
                 (ROOT / 'ui', ['bun', 'test']),
                 (ROOT / 'ui', ['bun', 'run', 'build'])]
+    if suite == 'client':
+        # The live tests start this Community server with a disposable store.
+        return [(CLIENT, ['bun', 'install', '--frozen-lockfile']),
+                (CLIENT, ['bun', 'run', 'check']),
+                (CLIENT, ['bun', 'test', 'test/unit']),
+                (CLIENT, ['bun', 'run', 'build']),
+                (ROOT, ['cargo', 'build', '--locked', '--release', '--no-default-features',
+                        '-p', 'cognigraph-server']),
+                (CLIENT, ['bun', 'test', 'test/live'])]
     if suite == 'ui-browser':
         return [(ROOT, [sys.executable, 'scripts/ui_browser.py'])]
     raise ValueError(f'Unknown suite: {suite}')
@@ -65,6 +78,8 @@ def run(suite):
         raise RuntimeError('Verification requires Python assertions; do not use -O')
     environment = os.environ.copy()
     environment.pop('PYTHONOPTIMIZE', None)
+    if suite in ('ci', 'client'):
+        environment['CG_CLIENT_SERVER_BIN'] = str(SERVER)
     if suite == 'ci':
         environment['COGNIGRAPH_LIVE_LLM'] = '0'
         print('CI excludes live LLM loops and opt-in embedding-provider qualification.', flush=True)
@@ -78,7 +93,7 @@ def run(suite):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--suite', choices=('ci', 'docker', 'ui', 'ui-browser', 'native', 'helm', 'advisories', 'dependencies'), default='ci')
+    parser.add_argument('--suite', choices=('ci', 'docker', 'ui', 'ui-browser', 'native', 'client', 'helm', 'advisories', 'dependencies'), default='ci')
     args = parser.parse_args()
     try:
         run(args.suite)

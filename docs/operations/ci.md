@@ -54,6 +54,13 @@ Run `rustup update stable` before qualifying an outgoing candidate, then confirm
 named stable can lag behind the fresh stable installed by GitHub; CG-69's first
 PR run exposed a new Clippy lint after local validation on an older release.
 
+The `client` suite (`python3 scripts/verify.py --suite client`, part of the CI
+suite) installs `clients/typescript` from its frozen Bun lockfile, runs Biome,
+TypeScript and the unit tests, builds the package, builds the Community
+server and runs the live tests: every client call against a disposable
+server, the compiled package under Node and the documentation example. Its
+lockfile is part of the dependency-freshness gate and `bun audit`.
+
 Native acceptance runs through `scripts/native_ci.py` and the existing readiness
 harness using a loopback embedding fixture and owned temporary stores. It
 qualifies memory, resident/embedded, resident/sidecar and paged/sidecar modes

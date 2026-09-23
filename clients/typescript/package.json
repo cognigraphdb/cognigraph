@@ -1,0 +1,41 @@
+{
+  "name": "@cognigraph/client",
+  "version": "0.1.0",
+  "description": "Typed HTTP client for CogniGraph: CGQL queries and mutations, documents, batches, unique constraints and health, for Bun and Node.",
+  "license": "FSL-1.1-Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20.3"
+  },
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cognigraphdb/cognigraph.git",
+    "directory": "clients/typescript"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "check": "biome check . && tsc --noEmit",
+    "check:fix": "biome check --write .",
+    "test": "bun test test/unit",
+    "test:live": "bun test test/live"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
+    "@types/bun": "^1.4.2",
+    "@types/node": "^26.6.2",
+    "typescript": "^7.0.2"
+  }
+}

@@ -64,13 +64,15 @@ class Freshness(unittest.TestCase):
     def test_resolving_updates_does_not_change_candidate_lockfiles(self):
         with tempfile.TemporaryDirectory() as folder, patch.object(gate, 'ROOT', Path(folder)):
             root = Path(folder)
-            for name in ('crates', 'vendor', 'ui', 'reports'):
-                (root / name).mkdir()
+            for name in ('crates', 'vendor', 'reports', *gate.BUN_PROJECTS):
+                (root / name).mkdir(parents=True)
             (root / 'Cargo.toml').write_text('[workspace]')
             old = '[[package]]\nname="synthetic"\nversion="1.0.0"\n'
             (root / 'Cargo.lock').write_text(old)
-            (root / 'ui/package.json').write_text('{"dependencies":{"synthetic":"^1"}}')
-            (root / 'ui/bun.lock').write_text('candidate bytes')
+            for project in gate.BUN_PROJECTS:
+                (root / project / 'package.json').write_text('{"dependencies":{"synthetic":"^1"}}')
+                (root / project / 'bun.lock').write_text('candidate bytes')
+            resolved = []
             metadata = {'workspace_members': [], 'packages': [], 'resolve': {'nodes': []}}
             lock = {'packages': {'synthetic': ['synthetic@1.0.0']}}
             def execute(command, cwd, log):
@@ -80,6 +82,7 @@ class Freshness(unittest.TestCase):
                 if command[:2] == ['cargo', 'update']:
                     (cwd / 'Cargo.lock').write_text(old.replace('1.0.0', '1.0.1'))
                 if command[:2] == ['bun', 'update']:
+                    resolved.append(cwd)
                     self.assertIn('--ignore-scripts', command)
                     self.assertIn('--no-cache', command)
                     (cwd / 'bun.lock').write_text('temporary update')
@@ -88,7 +91,12 @@ class Freshness(unittest.TestCase):
                 _, changes = gate.resolutions(root / 'reports')
             self.assertTrue(changes['cargo']['added'])
             self.assertEqual((root / 'Cargo.lock').read_text(), old)
-            self.assertEqual((root / 'ui/bun.lock').read_text(), 'candidate bytes')
+            for project in gate.BUN_PROJECTS:
+                self.assertEqual((root / project / 'bun.lock').read_text(), 'candidate bytes')
+            self.assertEqual(sorted(p.as_posix().split('/')[-1] for p in resolved),
+                             sorted(Path(p).name for p in gate.BUN_PROJECTS))
+            self.assertIn('clients/typescript', gate.BUN_PROJECTS)
+            self.assertIn('ui', gate.BUN_PROJECTS)
 
     def test_registry_errors_are_not_interpreted_as_no_updates(self):
         with patch.object(gate, 'urlopen', side_effect=OSError('network unavailable')):

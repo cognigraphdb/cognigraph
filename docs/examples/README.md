@@ -4,3 +4,4 @@ Commands and request templates for the current public API. Run shell examples fr
 
 - [HTTP examples](api-usage.md)
 - [Lua scripting](lua-scripting.md)
+- [TypeScript client](typescript-client.ts), runnable with Bun against a local server

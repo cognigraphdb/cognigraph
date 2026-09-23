@@ -119,7 +119,7 @@ class WorkflowPolicy(unittest.TestCase):
 
     def test_shared_runner_includes_live_native_helm_and_advisory_checks(self):
         commands = verify.commands('ci')
-        for suite in ('native', 'helm', 'advisories', 'dependencies'):
+        for suite in ('native', 'client', 'helm', 'advisories', 'dependencies'):
             for command in verify.commands(suite):
                 self.assertIn(command, commands)
         self.assertIn((ROOT, ['actionlint']), commands)
@@ -139,6 +139,15 @@ class WorkflowPolicy(unittest.TestCase):
                 self.assertEqual(command[command.index('--no-cache-filter') + 1], 'runtime')
         for flags in (['--live'], ['--live', '--enterprise']):
             self.assertIn((ROOT, [sys.executable, 'scripts/check-helm.py', *flags]), docker)
+
+    def test_client_suite_runs_frozen_checks_then_live_tests_against_a_fresh_server(self):
+        client = [command for _, command in verify.commands('client')]
+        self.assertEqual(client[0], ['bun', 'install', '--frozen-lockfile'])
+        self.assertLess(client.index(['bun', 'run', 'build']), client.index(['bun', 'test', 'test/live']))
+        build = next(i for i, c in enumerate(client) if c[:2] == ['cargo', 'build'])
+        self.assertLess(build, client.index(['bun', 'test', 'test/live']))
+        self.assertIn('--no-default-features', client[build])
+        self.assertIn((verify.CLIENT, ['bun', 'audit']), verify.commands('advisories'))
 
     def test_incoming_work_is_checked_with_read_only_access_before_required_passes(self):
         source = self.flow['jobs']['gates']['steps']
