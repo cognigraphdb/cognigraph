@@ -1,0 +1,50 @@
+{
+  "database": "broken",
+  "collections": {
+    "parts": {
+      "type": "document",
+      "documents": {
+        "x1": {
+          "_key": "x1"
+        }
+      }
+    },
+    "links": {
+      "type": "edge",
+      "documents": {
+        "l1": {
+          "_key": "l1",
+          "_from": "parts/x1",
+          "_to": "parts/missing"
+        },
+        "l2": {
+          "_key": "l2",
+          "_from": "ghost/g1",
+          "_to": "parts/x1"
+        }
+      }
+    },
+    "order-lines": {
+      "type": "document",
+      "documents": {
+        "ol1": {
+          "_key": "ol1"
+        }
+      }
+    },
+    "facts": {
+      "type": "edge",
+      "documents": {}
+    },
+    "count": {
+      "type": "document",
+      "documents": {
+        "n1": {
+          "_key": "n1"
+        }
+      }
+    }
+  },
+  "constraints": [],
+  "not_carried": []
+}

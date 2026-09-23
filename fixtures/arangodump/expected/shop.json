@@ -1,0 +1,251 @@
+{
+  "database": "shop",
+  "collections": {
+    "customers": {
+      "type": "document",
+      "documents": {
+        "c-1": {
+          "_key": "c-1",
+          "email": "ana@example.test",
+          "name": "Ana Müller",
+          "tags": [
+            "vip",
+            "eu"
+          ],
+          "address": {
+            "city": "Lisboa",
+            "geo": [
+              38.7223,
+              -9.1393
+            ]
+          },
+          "loyalty": {
+            "id": "L-100"
+          },
+          "score": 4.5,
+          "active": true
+        },
+        "c:2": {
+          "_key": "c:2",
+          "email": "bo@example.test",
+          "name": "博",
+          "loyalty": null,
+          "nested": {
+            "a": {
+              "b": {
+                "c": {
+                  "d": [
+                    1,
+                    [
+                      2,
+                      [
+                        3
+                      ]
+                    ]
+                  ]
+                }
+              }
+            }
+          },
+          "active": false
+        },
+        "c@3": {
+          "_key": "c@3",
+          "email": "cy@example.test",
+          "name": "Cy 🚀",
+          "numbers": {
+            "big": 9007199254740993,
+            "negative": -42,
+            "tenth": 0.1,
+            "huge": 1e+300,
+            "zero": 0
+          }
+        },
+        "c.4": {
+          "_key": "c.4",
+          "email": "di@example.test",
+          "empty": {
+            "object": {},
+            "array": [],
+            "string": ""
+          }
+        },
+        "c_5(x)+,=;$!*'%": {
+          "_key": "c_5(x)+,=;$!*'%",
+          "email": "ed@example.test",
+          "loyalty": {
+            "id": "L-200"
+          },
+          "text": "quote \" backslash \\ newline \n tab \t nul-free"
+        }
+      }
+    },
+    "products": {
+      "type": "document",
+      "documents": {
+        "p1": {
+          "_key": "p1",
+          "sku": "A-1",
+          "region": "eu",
+          "barcode": "0001",
+          "category": "tools",
+          "location": [
+            38.7,
+            -9.1
+          ],
+          "expiresAt": 4102444800
+        },
+        "p2": {
+          "_key": "p2",
+          "sku": "A-1",
+          "region": "us",
+          "barcode": "0002",
+          "category": "tools"
+        },
+        "p3": {
+          "_key": "p3",
+          "sku": "B-7",
+          "region": "eu",
+          "barcode": "0003",
+          "category": "garden",
+          "description": "rake with ash handle"
+        },
+        "p4": {
+          "_key": "p4",
+          "sku": "B-7",
+          "region": "apac",
+          "category": "garden"
+        }
+      }
+    },
+    "orders": {
+      "type": "edge",
+      "documents": {
+        "o1": {
+          "_key": "o1",
+          "_from": "customers/c-1",
+          "_to": "products/p1",
+          "qty": 2,
+          "at": "2026-01-02"
+        },
+        "o2": {
+          "_key": "o2",
+          "_from": "customers/c:2",
+          "_to": "products/p3",
+          "qty": 1,
+          "at": "2026-01-03"
+        },
+        "o3": {
+          "_key": "o3",
+          "_from": "customers/c_5(x)+,=;$!*'%",
+          "_to": "products/p2",
+          "qty": 7,
+          "at": "2026-02-11"
+        }
+      }
+    },
+    "referrals": {
+      "type": "edge",
+      "documents": {
+        "r1": {
+          "_key": "r1",
+          "_from": "customers/c-1",
+          "_to": "customers/c@3"
+        },
+        "r2": {
+          "_key": "r2",
+          "_from": "customers/c@3",
+          "_to": "customers/c.4",
+          "note": null
+        }
+      }
+    },
+    "empty_docs": {
+      "type": "document",
+      "documents": {}
+    },
+    "empty_edges": {
+      "type": "edge",
+      "documents": {}
+    }
+  },
+  "constraints": [
+    {
+      "collection": "customers",
+      "unique": true,
+      "fields": [
+        "email"
+      ],
+      "sparse": false
+    },
+    {
+      "collection": "customers",
+      "unique": true,
+      "fields": [
+        "loyalty.id"
+      ],
+      "sparse": true
+    },
+    {
+      "collection": "products",
+      "unique": true,
+      "fields": [
+        "sku",
+        "region"
+      ],
+      "sparse": false
+    },
+    {
+      "collection": "products",
+      "unique": true,
+      "fields": [
+        "barcode"
+      ],
+      "sparse": true
+    }
+  ],
+  "not_carried": [
+    {
+      "collection": "products",
+      "kind": "index",
+      "detail": "by_category",
+      "reason": "non_unique_index"
+    },
+    {
+      "collection": "products",
+      "kind": "index",
+      "detail": "expiry",
+      "reason": "unsupported_index_type"
+    },
+    {
+      "collection": "products",
+      "kind": "index",
+      "detail": "where",
+      "reason": "unsupported_index_type"
+    },
+    {
+      "collection": "products",
+      "kind": "index",
+      "detail": "search_description",
+      "reason": "unsupported_index_type"
+    },
+    {
+      "collection": "products",
+      "kind": "schema",
+      "detail": "validation rule",
+      "reason": "unsupported_metadata"
+    },
+    {
+      "collection": "orders",
+      "kind": "index",
+      "detail": "one_order_per_day",
+      "reason": "edge_unique_unsupported"
+    },
+    {
+      "collection": null,
+      "kind": "view",
+      "detail": "customer_search",
+      "reason": "unsupported_metadata"
+    }
+  ]
+}

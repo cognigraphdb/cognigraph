@@ -1,0 +1,2721 @@
+{
+  "schema": "cognigraph-arangodump-fixtures-v1",
+  "issue": "CG-64",
+  "sources": {
+    "3.11": {
+      "image": "arangodb:3.11.14",
+      "digest": "arangodb@sha256:e83f37055170f647ebca1a09dd65ec850a578d8d4c9b90904de3359b909c1f16",
+      "arangodump": "3.11.14",
+      "server": "3.11.14"
+    },
+    "3.12": {
+      "image": "arangodb/enterprise:3.12.11",
+      "digest": "arangodb/enterprise@sha256:6d152b137ab7bfd6ced25254c022458c75d9882ffc157fae8e81939d6d4603b7",
+      "arangodump": "3.12.11",
+      "server": "3.12.11"
+    }
+  },
+  "observations": [
+    "3.11 and 3.12 default to gzip JSON without envelope; every dump writes an ENCRYPTION file containing `none` unless encrypted, then `aes-256-ctr` and even dump.json is ciphertext.",
+    "3.12 removed --envelope; 3.11 --envelope wraps each line as {\"type\":2300,\"data\":{...}}.",
+    "3.12 --split-files names data files <name>_<md5>.<n>.data.json[.gz] and writes no data file for an empty collection; non-split dumps always write one, empty or not.",
+    "3.12 --dump-vpack writes <name>_<md5>.data.vpack.gz and sets useVPack true in dump.json.",
+    "3.12.11 --dump-data false still writes full data files; 3.11 writes empty ones, so a structure-only dump cannot be told apart from a dump of empty collections.",
+    "Views are written as <name>.view.json; named graphs live only in the _graphs system collection, dumped only with --include-system-collections.",
+    "`hash` indexes keep type `hash` in structure files; inverted index fields are objects.",
+    "--all-databases writes one subdirectory per database, each with its own dump.json."
+  ],
+  "fixtures": {
+    "3.11/shop-gzip": {
+      "source": "3.11",
+      "dataset": "shop",
+      "arangodump_options": [],
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": null
+      },
+      "expected": {
+        "outcome": "accepted"
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 794,
+          "sha256": "12f573afd86fa61df8c2d34745af8ddded63b851c57a26f56d06f157b2bb56f2"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json.gz",
+          "bytes": 475,
+          "sha256": "a30eb3f802cdc282b17b0b9585e7e7c8f5aae91207a7644614e834703c1b56f1"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "76ed6fdef8728b57c2c42f7b7a17e7e441fc5334c4052a51ee1aafd120970ece"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 124,
+          "sha256": "3265d22d79901fc7f9b3c7740e4236c459827ab4f36a46f7e340160f2a00a13b"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "b5b5aef4432855aa67f2169438599ae830e5b89607d527547da8dc220e277184"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "34639886b05071fd93164ddf4d80cc1482fc9c9ded4d32a33bafff4caafd5b8b"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json.gz",
+          "bytes": 184,
+          "sha256": "d2afde69b7b54cc0a2951089556ae3fc044c74d6d646e1eca3141bddb79a46cc"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "c1b2dbb52a1c857925f7b09ebb6e070a33afe29b26e54e1f68b96e7a02d13d22"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json.gz",
+          "bytes": 242,
+          "sha256": "c47affffe7bd64df2d7f9cb487b6c8ae7dd9fd9f3c3dc27ffd5a4c25529a9a19"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2250,
+          "sha256": "887594f0bac7915c1d8bcef4c3731817601d4d6ce3dc80b7687ea37281c2aefe"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json.gz",
+          "bytes": 128,
+          "sha256": "59acd9f3072859dcd2ee3ea1c04259405d4a38a2a3d8ba5905a87d9a106aeb06"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "e58258a7533f7b4f96f570943bc3b17ad14e8653554f852479b9202c088101b0"
+        }
+      ]
+    },
+    "3.11/shop-plain": {
+      "source": "3.11",
+      "dataset": "shop",
+      "arangodump_options": [
+        "--compress-output",
+        "false"
+      ],
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": null
+      },
+      "expected": {
+        "outcome": "accepted"
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 794,
+          "sha256": "12f573afd86fa61df8c2d34745af8ddded63b851c57a26f56d06f157b2bb56f2"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 907,
+          "sha256": "243267f8374f5f8d0a874acf6a823a57e62a7153e4b172ec42530a276f7fa9d6"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "76ed6fdef8728b57c2c42f7b7a17e7e441fc5334c4052a51ee1aafd120970ece"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 124,
+          "sha256": "6a8d02e27551ea341ad68123223f7395e55f3903b6af48ffe3e08ef0469d9adc"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "b5b5aef4432855aa67f2169438599ae830e5b89607d527547da8dc220e277184"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "34639886b05071fd93164ddf4d80cc1482fc9c9ded4d32a33bafff4caafd5b8b"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 381,
+          "sha256": "5a78223bf77bbecea7eec9d60871ec7a832a8134ace70f063e0a21cbcafdfa6f"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "c1b2dbb52a1c857925f7b09ebb6e070a33afe29b26e54e1f68b96e7a02d13d22"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 538,
+          "sha256": "4b1b717bb7821d18f65dbee42b0256d523594036b835453f7e04620031b2af68"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2250,
+          "sha256": "887594f0bac7915c1d8bcef4c3731817601d4d6ce3dc80b7687ea37281c2aefe"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 216,
+          "sha256": "c59417aa3d5717238111e98544e06aa3e5fde566124586a7ed44c2090de33a4d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "e58258a7533f7b4f96f570943bc3b17ad14e8653554f852479b9202c088101b0"
+        }
+      ]
+    },
+    "3.11/shop-envelope": {
+      "source": "3.11",
+      "dataset": "shop",
+      "arangodump_options": [
+        "--envelope",
+        "true",
+        "--compress-output",
+        "false"
+      ],
+      "observed": {
+        "database": "shop",
+        "useEnvelope": true,
+        "useVPack": null
+      },
+      "expected": {
+        "outcome": "accepted"
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 794,
+          "sha256": "12f573afd86fa61df8c2d34745af8ddded63b851c57a26f56d06f157b2bb56f2"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 1012,
+          "sha256": "fb394fe44c5d00384468bbe1adb1b1a4d67064e537253ced3400e56fcb78a7d4"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "76ed6fdef8728b57c2c42f7b7a17e7e441fc5334c4052a51ee1aafd120970ece"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 123,
+          "sha256": "13732ac3cd7e5bda1e7d71b8a514016eac2cc6c1838574a380cc0fca84c3b4e3"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "b5b5aef4432855aa67f2169438599ae830e5b89607d527547da8dc220e277184"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "34639886b05071fd93164ddf4d80cc1482fc9c9ded4d32a33bafff4caafd5b8b"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 444,
+          "sha256": "137274ecd312453363d9455948a4e8bcca8cb2480d03db01725198c7826f73d3"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "c1b2dbb52a1c857925f7b09ebb6e070a33afe29b26e54e1f68b96e7a02d13d22"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 622,
+          "sha256": "9effca59333a480c75db1cc749115532a20f21e71f97db66182430ae652f23a1"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2250,
+          "sha256": "887594f0bac7915c1d8bcef4c3731817601d4d6ce3dc80b7687ea37281c2aefe"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 258,
+          "sha256": "5157a9aa71cc5396a66082ef3d47ecff81cccd7adf993ef1c5667589fcefd96c"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "e58258a7533f7b4f96f570943bc3b17ad14e8653554f852479b9202c088101b0"
+        }
+      ]
+    },
+    "3.11/shop-system": {
+      "source": "3.11",
+      "dataset": "shop",
+      "arangodump_options": [
+        "--include-system-collections",
+        "true"
+      ],
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": null
+      },
+      "expected": {
+        "outcome": "accepted"
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "_analyzers_839c888a45b895a4783b6dbd338f0155.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_analyzers_839c888a45b895a4783b6dbd338f0155.structure.json",
+          "bytes": 606,
+          "sha256": "ee0c3e1068a2de7ed68fe490d408bbfc751048fc4c9f16225079471f575d77a7"
+        },
+        {
+          "path": "_appbundles_105ca6a6a72935fd370f79f3a3e62b0e.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_appbundles_105ca6a6a72935fd370f79f3a3e62b0e.structure.json",
+          "bytes": 608,
+          "sha256": "c04dccfd8de2a2dae44aac05211ef0664c3a35fdfbedf4ef48315fcc6ae4bf33"
+        },
+        {
+          "path": "_apps_c3f2c8489196d21e33f194f4bafb3f05.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_apps_c3f2c8489196d21e33f194f4bafb3f05.structure.json",
+          "bytes": 759,
+          "sha256": "3140d3885edbf84ee0ba9b8f02d51e6af63457e4649c5a94395a1a4aa69e4f10"
+        },
+        {
+          "path": "_aqlfunctions_8293af7a2caabc3098bc21db7ce2759d.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_aqlfunctions_8293af7a2caabc3098bc21db7ce2759d.structure.json",
+          "bytes": 612,
+          "sha256": "1f2e974025fe60a242c04712d3d15d677fe4efb094f1d56639f5d8fafe23e9ea"
+        },
+        {
+          "path": "_frontend_33a4de9a99a6607c1ea19444d2424dee.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_frontend_33a4de9a99a6607c1ea19444d2424dee.structure.json",
+          "bytes": 604,
+          "sha256": "4595e29c6cb9a440d9df98727638eb9ea7ec5c7065338ba0e556794eabd83cac"
+        },
+        {
+          "path": "_graphs_c827636f2b54efb49f1f02feeeacfb01.data.json.gz",
+          "bytes": 146,
+          "sha256": "7adc8780920231796e042bd51c875bea14d37b1e8b3b7b06dd0cf76fd25fcaf6"
+        },
+        {
+          "path": "_graphs_c827636f2b54efb49f1f02feeeacfb01.structure.json",
+          "bytes": 600,
+          "sha256": "8cb332aa6e4e6fa229b040c268c26598ba62661d0ba781b450ef7416e5193b5f"
+        },
+        {
+          "path": "_jobs_cf2912aeadc6797e32beffa88f49e6e8.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_jobs_cf2912aeadc6797e32beffa88f49e6e8.structure.json",
+          "bytes": 981,
+          "sha256": "64413fd1eb862b5de616302bb460769985b0cc860acb33447a6687238e74ec37"
+        },
+        {
+          "path": "_pregel_queries_8a93a23f4fc3df02f2fc544486cc8a9b.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_pregel_queries_8a93a23f4fc3df02f2fc544486cc8a9b.structure.json",
+          "bytes": 616,
+          "sha256": "db9f118b47520fef8fa6a07a5722f272db49940cf28d1fa1a51c307987cf2e0a"
+        },
+        {
+          "path": "_queues_3a31f94fb7e8e2cc4da51136cf39a20b.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_queues_3a31f94fb7e8e2cc4da51136cf39a20b.structure.json",
+          "bytes": 600,
+          "sha256": "e9740f50ff62d3ed29ed6c7f418ccc456c5dd14bb4ad350077d19ed68eedd8b0"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 794,
+          "sha256": "12f573afd86fa61df8c2d34745af8ddded63b851c57a26f56d06f157b2bb56f2"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json.gz",
+          "bytes": 475,
+          "sha256": "a30eb3f802cdc282b17b0b9585e7e7c8f5aae91207a7644614e834703c1b56f1"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "76ed6fdef8728b57c2c42f7b7a17e7e441fc5334c4052a51ee1aafd120970ece"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 124,
+          "sha256": "f80a5aaad5bfe6e1b48aa5156102e17e4ecf679dd8e003a4b7b9de550107ba04"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "b5b5aef4432855aa67f2169438599ae830e5b89607d527547da8dc220e277184"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "34639886b05071fd93164ddf4d80cc1482fc9c9ded4d32a33bafff4caafd5b8b"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json.gz",
+          "bytes": 184,
+          "sha256": "d2afde69b7b54cc0a2951089556ae3fc044c74d6d646e1eca3141bddb79a46cc"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "c1b2dbb52a1c857925f7b09ebb6e070a33afe29b26e54e1f68b96e7a02d13d22"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json.gz",
+          "bytes": 242,
+          "sha256": "c47affffe7bd64df2d7f9cb487b6c8ae7dd9fd9f3c3dc27ffd5a4c25529a9a19"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2250,
+          "sha256": "887594f0bac7915c1d8bcef4c3731817601d4d6ce3dc80b7687ea37281c2aefe"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json.gz",
+          "bytes": 128,
+          "sha256": "59acd9f3072859dcd2ee3ea1c04259405d4a38a2a3d8ba5905a87d9a106aeb06"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "e58258a7533f7b4f96f570943bc3b17ad14e8653554f852479b9202c088101b0"
+        }
+      ]
+    },
+    "3.11/broken-plain": {
+      "source": "3.11",
+      "dataset": "broken",
+      "arangodump_options": [
+        "--compress-output",
+        "false"
+      ],
+      "observed": {
+        "database": "broken",
+        "useEnvelope": false,
+        "useVPack": null
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "unresolved_edge",
+            "collection": "links",
+            "key": "l1"
+          },
+          {
+            "code": "unresolved_edge",
+            "collection": "links",
+            "key": "l2"
+          },
+          {
+            "code": "incompatible_collection_name",
+            "collection": "order-lines"
+          },
+          {
+            "code": "reserved_collection_name",
+            "collection": "facts"
+          },
+          {
+            "code": "reserved_collection_name",
+            "collection": "count"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "count_e2942a04780e223b215eb8b663cf5353.data.json",
+          "bytes": 52,
+          "sha256": "c1bd03eeff8f084eeeef7df01984ef11582d1dd25521c8f71eaf927d236a5f59"
+        },
+        {
+          "path": "count_e2942a04780e223b215eb8b663cf5353.structure.json",
+          "bytes": 609,
+          "sha256": "43851a1cc1f88e31540492e61842dcf579bf9013332c45e95904b83131739677"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 128,
+          "sha256": "97607ae3bb66d690f8d17b224ccdd532f9cea3ef5c1522118a8b905a172e9acd"
+        },
+        {
+          "path": "facts_f133323155121390aee89d77c925091c.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "facts_f133323155121390aee89d77c925091c.structure.json",
+          "bytes": 609,
+          "sha256": "67f15a642f336498e95a71591b88fa729d84774114bb5bf396c9958e27ae7041"
+        },
+        {
+          "path": "links_807765384d9d5527da8848df14a4f02f.data.json",
+          "bytes": 181,
+          "sha256": "98df1c6c4e57209eeadb84cdb562dbc8f0c3fe8d0aa0221deeeb58de961908a8"
+        },
+        {
+          "path": "links_807765384d9d5527da8848df14a4f02f.structure.json",
+          "bytes": 609,
+          "sha256": "d95e53b72191dd8bd31f83c38f924fe02583abaad734199c771c4f1db42c8b5b"
+        },
+        {
+          "path": "order-lines_a74d374d4332174b5b5ea0aee1f2b817.data.json",
+          "bytes": 60,
+          "sha256": "d357c1a0e3246c7fe88ae0ab16a6764a0966d9f15a0dc60a37c52f4fc0b1cf04"
+        },
+        {
+          "path": "order-lines_a74d374d4332174b5b5ea0aee1f2b817.structure.json",
+          "bytes": 615,
+          "sha256": "12fdf4a7071d2fee53186a21c2e4065b1d5b2c9656ce48f830ed788588263fe8"
+        },
+        {
+          "path": "parts_78f0805fa8ffadabda721fdaf85b3ca9.data.json",
+          "bytes": 52,
+          "sha256": "4fac28d84c583239d0efe0aa106a73034d72a332aa9faf2d07b7707a27adbb53"
+        },
+        {
+          "path": "parts_78f0805fa8ffadabda721fdaf85b3ca9.structure.json",
+          "bytes": 609,
+          "sha256": "ad45895ac3a4d3a1d5f66296e5b8a5146476ec6f8ad01a58a4a48b59d91d2756"
+        }
+      ]
+    },
+    "3.11/structure-only": {
+      "source": "3.11",
+      "dataset": "shop",
+      "arangodump_options": [
+        "--dump-data",
+        "false"
+      ],
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": null
+      },
+      "expected": {
+        "outcome": "accepted",
+        "empty": true,
+        "warnings": [
+          "no_documents"
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 794,
+          "sha256": "12f573afd86fa61df8c2d34745af8ddded63b851c57a26f56d06f157b2bb56f2"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "76ed6fdef8728b57c2c42f7b7a17e7e441fc5334c4052a51ee1aafd120970ece"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 124,
+          "sha256": "e5b86d5cc817be168c1fa30d78cd6235445ec1b45e7ff8f8f65430b877abfe2d"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "b5b5aef4432855aa67f2169438599ae830e5b89607d527547da8dc220e277184"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "34639886b05071fd93164ddf4d80cc1482fc9c9ded4d32a33bafff4caafd5b8b"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "c1b2dbb52a1c857925f7b09ebb6e070a33afe29b26e54e1f68b96e7a02d13d22"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2250,
+          "sha256": "887594f0bac7915c1d8bcef4c3731817601d4d6ce3dc80b7687ea37281c2aefe"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "e58258a7533f7b4f96f570943bc3b17ad14e8653554f852479b9202c088101b0"
+        }
+      ]
+    },
+    "3.11/all-databases": {
+      "source": "3.11",
+      "dataset": null,
+      "arangodump_options": [
+        "--all-databases",
+        "true"
+      ],
+      "observed": {},
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "multiple_databases"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "_system/ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "_system/dump.json",
+          "bytes": 127,
+          "sha256": "a29dfa1372197f8600cea937169ed0d0df1b7cafd2e18c9af7ca4a7bee7e9e42"
+        },
+        {
+          "path": "broken/ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "broken/count_e2942a04780e223b215eb8b663cf5353.data.json.gz",
+          "bytes": 65,
+          "sha256": "47b74987fc72d045240b4083bfb0796ebf63b4bea6984e6a9ece2107f5bbe559"
+        },
+        {
+          "path": "broken/count_e2942a04780e223b215eb8b663cf5353.structure.json",
+          "bytes": 609,
+          "sha256": "43851a1cc1f88e31540492e61842dcf579bf9013332c45e95904b83131739677"
+        },
+        {
+          "path": "broken/dump.json",
+          "bytes": 128,
+          "sha256": "7806ac3419366b672eabc7d042dcf432122ef759f8cd34bb6c3eb883fd227b68"
+        },
+        {
+          "path": "broken/facts_f133323155121390aee89d77c925091c.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "broken/facts_f133323155121390aee89d77c925091c.structure.json",
+          "bytes": 609,
+          "sha256": "67f15a642f336498e95a71591b88fa729d84774114bb5bf396c9958e27ae7041"
+        },
+        {
+          "path": "broken/links_807765384d9d5527da8848df14a4f02f.data.json.gz",
+          "bytes": 118,
+          "sha256": "300608204b5951d99f9cf283ec7d6513f097715d0bf2c519298ffe005b80bb82"
+        },
+        {
+          "path": "broken/links_807765384d9d5527da8848df14a4f02f.structure.json",
+          "bytes": 609,
+          "sha256": "d95e53b72191dd8bd31f83c38f924fe02583abaad734199c771c4f1db42c8b5b"
+        },
+        {
+          "path": "broken/order-lines_a74d374d4332174b5b5ea0aee1f2b817.data.json.gz",
+          "bytes": 70,
+          "sha256": "e21c9a7bb373074cc8da2d1208283fa3cefc3ec11937b319dda2620248226b27"
+        },
+        {
+          "path": "broken/order-lines_a74d374d4332174b5b5ea0aee1f2b817.structure.json",
+          "bytes": 615,
+          "sha256": "12fdf4a7071d2fee53186a21c2e4065b1d5b2c9656ce48f830ed788588263fe8"
+        },
+        {
+          "path": "broken/parts_78f0805fa8ffadabda721fdaf85b3ca9.data.json.gz",
+          "bytes": 65,
+          "sha256": "8926e198f7c8c19ad1190fdc6b44db306f5b3329bd21a79eabc246687fd6958f"
+        },
+        {
+          "path": "broken/parts_78f0805fa8ffadabda721fdaf85b3ca9.structure.json",
+          "bytes": 609,
+          "sha256": "ad45895ac3a4d3a1d5f66296e5b8a5146476ec6f8ad01a58a4a48b59d91d2756"
+        },
+        {
+          "path": "shop/ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "shop/customer_search.view.json",
+          "bytes": 794,
+          "sha256": "12f573afd86fa61df8c2d34745af8ddded63b851c57a26f56d06f157b2bb56f2"
+        },
+        {
+          "path": "shop/customers_4b6f7d34a58ba399f077685951d06738.data.json.gz",
+          "bytes": 475,
+          "sha256": "a30eb3f802cdc282b17b0b9585e7e7c8f5aae91207a7644614e834703c1b56f1"
+        },
+        {
+          "path": "shop/customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "76ed6fdef8728b57c2c42f7b7a17e7e441fc5334c4052a51ee1aafd120970ece"
+        },
+        {
+          "path": "shop/dump.json",
+          "bytes": 124,
+          "sha256": "0f9c9db02064c7020f73a1e73b33f0f324a9082b95791a54ec7095006fd5de7e"
+        },
+        {
+          "path": "shop/empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "shop/empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "b5b5aef4432855aa67f2169438599ae830e5b89607d527547da8dc220e277184"
+        },
+        {
+          "path": "shop/empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "shop/empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "34639886b05071fd93164ddf4d80cc1482fc9c9ded4d32a33bafff4caafd5b8b"
+        },
+        {
+          "path": "shop/orders_12c500ed0b7879105fb46af0f246be87.data.json.gz",
+          "bytes": 184,
+          "sha256": "d2afde69b7b54cc0a2951089556ae3fc044c74d6d646e1eca3141bddb79a46cc"
+        },
+        {
+          "path": "shop/orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "c1b2dbb52a1c857925f7b09ebb6e070a33afe29b26e54e1f68b96e7a02d13d22"
+        },
+        {
+          "path": "shop/products_86024cad1e83101d97359d7351051156.data.json.gz",
+          "bytes": 242,
+          "sha256": "c47affffe7bd64df2d7f9cb487b6c8ae7dd9fd9f3c3dc27ffd5a4c25529a9a19"
+        },
+        {
+          "path": "shop/products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2250,
+          "sha256": "887594f0bac7915c1d8bcef4c3731817601d4d6ce3dc80b7687ea37281c2aefe"
+        },
+        {
+          "path": "shop/referrals_0e88679ad4da88a84e1e25f61be6872a.data.json.gz",
+          "bytes": 128,
+          "sha256": "59acd9f3072859dcd2ee3ea1c04259405d4a38a2a3d8ba5905a87d9a106aeb06"
+        },
+        {
+          "path": "shop/referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "e58258a7533f7b4f96f570943bc3b17ad14e8653554f852479b9202c088101b0"
+        }
+      ]
+    },
+    "3.12/shop-gzip": {
+      "source": "3.12",
+      "dataset": "shop",
+      "arangodump_options": [],
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "accepted"
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json.gz",
+          "bytes": 482,
+          "sha256": "c1927a39c37812d794af313bed0475821464058795c163333939c184ccb62699"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "047ce7f705bbd155f249f2ad9a74209b6d676e6699007dfcb599a6d8edfd5f87"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json.gz",
+          "bytes": 184,
+          "sha256": "385317dd4c3e1c427cbe54f08135d5570dd59575fc3602c4dfdb53a1763411bd"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json.gz",
+          "bytes": 243,
+          "sha256": "2e5e15054320ca60b0527ab2c13d26c54f143135cd848266eac421da375e05a4"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json.gz",
+          "bytes": 130,
+          "sha256": "0dfd6c14df628874d280bd5d0a6f154826d62e3eb658317613af484b236f4d64"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "3.12/shop-plain": {
+      "source": "3.12",
+      "dataset": "shop",
+      "arangodump_options": [
+        "--compress-output",
+        "false"
+      ],
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "accepted"
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 907,
+          "sha256": "f29f389dfff951b9c721803b3f172fe0776cfde758ad933c5338818ae2d829bd"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "7e58c70a05719a45c5d6ae049be47278d7ccabbc1ab196eb8d13f419bf12b78e"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 381,
+          "sha256": "a7a8ebad1940fd42f1c4513cb83767323399832aaab9cb838abd9862c0943c6d"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 538,
+          "sha256": "76b5d14dee45e84e8fcd70279529c1ecabefeb0ad9023389bbea393234a1e3a0"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 216,
+          "sha256": "6e85538b498e5fa91cf5e8a9ad586de50b7fca8c0db11d849f25407ae3afe6a0"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "3.12/shop-split": {
+      "source": "3.12",
+      "dataset": "shop",
+      "arangodump_options": [
+        "--parallel-dump",
+        "true",
+        "--split-files",
+        "true"
+      ],
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "accepted"
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.0.data.json.gz",
+          "bytes": 482,
+          "sha256": "c1927a39c37812d794af313bed0475821464058795c163333939c184ccb62699"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "a1a62355d4362e077fadfd980f41c533ee56580832fbcef6ce41c37fe5ce5352"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.0.data.json.gz",
+          "bytes": 184,
+          "sha256": "385317dd4c3e1c427cbe54f08135d5570dd59575fc3602c4dfdb53a1763411bd"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.0.data.json.gz",
+          "bytes": 243,
+          "sha256": "2e5e15054320ca60b0527ab2c13d26c54f143135cd848266eac421da375e05a4"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.0.data.json.gz",
+          "bytes": 130,
+          "sha256": "0dfd6c14df628874d280bd5d0a6f154826d62e3eb658317613af484b236f4d64"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "3.12/shop-system": {
+      "source": "3.12",
+      "dataset": "shop",
+      "arangodump_options": [
+        "--include-system-collections",
+        "true"
+      ],
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "accepted"
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "_analyzers_839c888a45b895a4783b6dbd338f0155.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_analyzers_839c888a45b895a4783b6dbd338f0155.structure.json",
+          "bytes": 636,
+          "sha256": "4562db0e8c99df9a7238f03e676247ede6a6eab3d630a46b8b2322216906af8f"
+        },
+        {
+          "path": "_appbundles_105ca6a6a72935fd370f79f3a3e62b0e.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_appbundles_105ca6a6a72935fd370f79f3a3e62b0e.structure.json",
+          "bytes": 638,
+          "sha256": "727c93bf3b4c6db5cd6f4f9f2c4e5d4d9cb2bebaff5b823c5c34a04a5b9bed7a"
+        },
+        {
+          "path": "_apps_c3f2c8489196d21e33f194f4bafb3f05.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_apps_c3f2c8489196d21e33f194f4bafb3f05.structure.json",
+          "bytes": 789,
+          "sha256": "2378379c55d4833028b5ad5ea96c1a5ab69b4ebec9c265a6a127b91bafbd2b96"
+        },
+        {
+          "path": "_aqlfunctions_8293af7a2caabc3098bc21db7ce2759d.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_aqlfunctions_8293af7a2caabc3098bc21db7ce2759d.structure.json",
+          "bytes": 642,
+          "sha256": "f530a60b441accf3b6271ffc49b5287b8625be9daa82ff4df02416e185b082bc"
+        },
+        {
+          "path": "_frontend_33a4de9a99a6607c1ea19444d2424dee.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_frontend_33a4de9a99a6607c1ea19444d2424dee.structure.json",
+          "bytes": 634,
+          "sha256": "439d1ed9642b6a0bc9ed277f15f04ec9d819c0ffe0daf0e794137b23c8beb3a4"
+        },
+        {
+          "path": "_graphs_c827636f2b54efb49f1f02feeeacfb01.data.json.gz",
+          "bytes": 147,
+          "sha256": "2f61013f042579b44544fb19e8d40a397388b2a3f9013027f4db7526dd689c1a"
+        },
+        {
+          "path": "_graphs_c827636f2b54efb49f1f02feeeacfb01.structure.json",
+          "bytes": 597,
+          "sha256": "5bdd758ec1bcd86bbdf62d8c58b722e01f1a3ce0e9ba35208c19b028bc373d07"
+        },
+        {
+          "path": "_jobs_cf2912aeadc6797e32beffa88f49e6e8.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_jobs_cf2912aeadc6797e32beffa88f49e6e8.structure.json",
+          "bytes": 1011,
+          "sha256": "a32a917c6029fe0d2abc31f370f68bc5031bec47014e3d4156a6ff4b0f62157f"
+        },
+        {
+          "path": "_queues_3a31f94fb7e8e2cc4da51136cf39a20b.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "_queues_3a31f94fb7e8e2cc4da51136cf39a20b.structure.json",
+          "bytes": 630,
+          "sha256": "33c09de6bb63233aaef4c7edcb659bb94393c12c8df859e4ad1fbe6543d0edcc"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json.gz",
+          "bytes": 482,
+          "sha256": "c1927a39c37812d794af313bed0475821464058795c163333939c184ccb62699"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "82590b94cd8c9c1407083cf9292019b33e9257351b5e359cea94352549e3fa6c"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json.gz",
+          "bytes": 184,
+          "sha256": "385317dd4c3e1c427cbe54f08135d5570dd59575fc3602c4dfdb53a1763411bd"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json.gz",
+          "bytes": 243,
+          "sha256": "2e5e15054320ca60b0527ab2c13d26c54f143135cd848266eac421da375e05a4"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json.gz",
+          "bytes": 130,
+          "sha256": "0dfd6c14df628874d280bd5d0a6f154826d62e3eb658317613af484b236f4d64"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "3.12/broken-plain": {
+      "source": "3.12",
+      "dataset": "broken",
+      "arangodump_options": [
+        "--compress-output",
+        "false"
+      ],
+      "observed": {
+        "database": "broken",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "unresolved_edge",
+            "collection": "links",
+            "key": "l1"
+          },
+          {
+            "code": "unresolved_edge",
+            "collection": "links",
+            "key": "l2"
+          },
+          {
+            "code": "incompatible_collection_name",
+            "collection": "order-lines"
+          },
+          {
+            "code": "reserved_collection_name",
+            "collection": "facts"
+          },
+          {
+            "code": "reserved_collection_name",
+            "collection": "count"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "count_e2942a04780e223b215eb8b663cf5353.data.json",
+          "bytes": 52,
+          "sha256": "65f9630f44ac8b2843de7108bf2f324820588640899ebf004dbafe5c31eeb1b4"
+        },
+        {
+          "path": "count_e2942a04780e223b215eb8b663cf5353.structure.json",
+          "bytes": 609,
+          "sha256": "5a5f401bd16c36fdbeba8d19fad0d4d298879bc313e624dab7761e2ccee677d9"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 180,
+          "sha256": "ea49b2ab31981a2a28009b41d5d6058441cdbedabdae44cbf706dc228dd7bfeb"
+        },
+        {
+          "path": "facts_f133323155121390aee89d77c925091c.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "facts_f133323155121390aee89d77c925091c.structure.json",
+          "bytes": 609,
+          "sha256": "2588f5c3432f2d882d26bb76eff5d34ecd64c27d50305028e6e610493f653f35"
+        },
+        {
+          "path": "links_807765384d9d5527da8848df14a4f02f.data.json",
+          "bytes": 181,
+          "sha256": "96f7a0c64c168248427082a17b4eeb0dc19bb6b4f80317f7c6b2cdd43f810171"
+        },
+        {
+          "path": "links_807765384d9d5527da8848df14a4f02f.structure.json",
+          "bytes": 609,
+          "sha256": "827ad61dae573bc7a3a282e35464d85f109a2a2ae6b7641aef921dd17fd5edd3"
+        },
+        {
+          "path": "order-lines_a74d374d4332174b5b5ea0aee1f2b817.data.json",
+          "bytes": 60,
+          "sha256": "e6c348c77e7c60bf6c08cf9a122dca356c5a9ac4fa1ace32f2035a9fda752cc7"
+        },
+        {
+          "path": "order-lines_a74d374d4332174b5b5ea0aee1f2b817.structure.json",
+          "bytes": 615,
+          "sha256": "c43e4903d97d85c3b09dfc41be8d48804f4a6220bed4e17c3b16bf827086a4fd"
+        },
+        {
+          "path": "parts_78f0805fa8ffadabda721fdaf85b3ca9.data.json",
+          "bytes": 52,
+          "sha256": "fbfc9d988642ea50f32c6ea9ca8264fa9aa1edb365da2dbcace909c415c3ffd0"
+        },
+        {
+          "path": "parts_78f0805fa8ffadabda721fdaf85b3ca9.structure.json",
+          "bytes": 609,
+          "sha256": "f42155a19bc05f9e478053ed5f0a6158f756d9a23337ab75559bde070e478616"
+        }
+      ]
+    },
+    "3.12/all-databases": {
+      "source": "3.12",
+      "dataset": null,
+      "arangodump_options": [
+        "--all-databases",
+        "true"
+      ],
+      "observed": {},
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "multiple_databases"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "_system/ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "_system/dump.json",
+          "bytes": 179,
+          "sha256": "da246c77cb85f1e20a63eba2f79c871ab44346d7db77b52fe52362f97857df21"
+        },
+        {
+          "path": "broken/ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "broken/count_e2942a04780e223b215eb8b663cf5353.data.json.gz",
+          "bytes": 65,
+          "sha256": "8150e02003566a75331cbc6d68816bab0d5de33181fc5aaf93813410b26488d6"
+        },
+        {
+          "path": "broken/count_e2942a04780e223b215eb8b663cf5353.structure.json",
+          "bytes": 609,
+          "sha256": "5a5f401bd16c36fdbeba8d19fad0d4d298879bc313e624dab7761e2ccee677d9"
+        },
+        {
+          "path": "broken/dump.json",
+          "bytes": 180,
+          "sha256": "e177d74a836ebbb4de6360baf04e9ba655dbbf10c68a27c197965ab47863f96f"
+        },
+        {
+          "path": "broken/facts_f133323155121390aee89d77c925091c.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "broken/facts_f133323155121390aee89d77c925091c.structure.json",
+          "bytes": 609,
+          "sha256": "2588f5c3432f2d882d26bb76eff5d34ecd64c27d50305028e6e610493f653f35"
+        },
+        {
+          "path": "broken/links_807765384d9d5527da8848df14a4f02f.data.json.gz",
+          "bytes": 119,
+          "sha256": "854f1a80b72b9a23167bd65a281e5801317924b42227015f7cc031e6538c1680"
+        },
+        {
+          "path": "broken/links_807765384d9d5527da8848df14a4f02f.structure.json",
+          "bytes": 609,
+          "sha256": "827ad61dae573bc7a3a282e35464d85f109a2a2ae6b7641aef921dd17fd5edd3"
+        },
+        {
+          "path": "broken/order-lines_a74d374d4332174b5b5ea0aee1f2b817.data.json.gz",
+          "bytes": 72,
+          "sha256": "df550250917b504a8d8eb59eb6941fc45af93eca5a9df4dce39beeac628b1f40"
+        },
+        {
+          "path": "broken/order-lines_a74d374d4332174b5b5ea0aee1f2b817.structure.json",
+          "bytes": 615,
+          "sha256": "c43e4903d97d85c3b09dfc41be8d48804f4a6220bed4e17c3b16bf827086a4fd"
+        },
+        {
+          "path": "broken/parts_78f0805fa8ffadabda721fdaf85b3ca9.data.json.gz",
+          "bytes": 65,
+          "sha256": "23e121788ac9e8870198e23e15e25b2ef5160803f071ac9dec6a65daddcba691"
+        },
+        {
+          "path": "broken/parts_78f0805fa8ffadabda721fdaf85b3ca9.structure.json",
+          "bytes": 609,
+          "sha256": "f42155a19bc05f9e478053ed5f0a6158f756d9a23337ab75559bde070e478616"
+        },
+        {
+          "path": "shop/ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "shop/customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "shop/customers_4b6f7d34a58ba399f077685951d06738.data.json.gz",
+          "bytes": 482,
+          "sha256": "c1927a39c37812d794af313bed0475821464058795c163333939c184ccb62699"
+        },
+        {
+          "path": "shop/customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "shop/dump.json",
+          "bytes": 175,
+          "sha256": "160b16c5cc2007b4ef693edabd45fa7c8aba14e5661cb8673ac5be8c62b76176"
+        },
+        {
+          "path": "shop/empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "shop/empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "shop/empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "shop/empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "shop/orders_12c500ed0b7879105fb46af0f246be87.data.json.gz",
+          "bytes": 184,
+          "sha256": "385317dd4c3e1c427cbe54f08135d5570dd59575fc3602c4dfdb53a1763411bd"
+        },
+        {
+          "path": "shop/orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "shop/products_86024cad1e83101d97359d7351051156.data.json.gz",
+          "bytes": 243,
+          "sha256": "2e5e15054320ca60b0527ab2c13d26c54f143135cd848266eac421da375e05a4"
+        },
+        {
+          "path": "shop/products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "shop/referrals_0e88679ad4da88a84e1e25f61be6872a.data.json.gz",
+          "bytes": 130,
+          "sha256": "0dfd6c14df628874d280bd5d0a6f154826d62e3eb658317613af484b236f4d64"
+        },
+        {
+          "path": "shop/referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "3.12/vpack": {
+      "source": "3.12",
+      "dataset": "shop",
+      "arangodump_options": [
+        "--parallel-dump",
+        "true",
+        "--dump-vpack",
+        "true"
+      ],
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": true
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "vpack_unsupported"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.vpack.gz",
+          "bytes": 549,
+          "sha256": "f876f19c412151e1531f60a0182aa9ffb4d415b7b3da9d8466fa8a75f8a6d7b9"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 174,
+          "sha256": "0624e9e898556bde2971d7f35e060577c834dc569158a656fc81f15bb35307eb"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.vpack.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.vpack.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.vpack.gz",
+          "bytes": 199,
+          "sha256": "71f51042b448595f738aec08157afc4293d71f895f64096dff3604eb80f9cff1"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.vpack.gz",
+          "bytes": 277,
+          "sha256": "59fc9347ed57ae1685e04889082685e072ffa8a696326a68e06516ee4448be84"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.vpack.gz",
+          "bytes": 131,
+          "sha256": "e44590e1811662a9e9f72bb7afe343c5f68d2c4b4c13502408175fd14bd2849b"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "3.12/encrypted": {
+      "source": "3.12",
+      "dataset": "shop",
+      "arangodump_options": [
+        "--encryption.keyfile",
+        "/tmp/fixture.key"
+      ],
+      "observed": {
+        "dump_json": "unreadable"
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "encrypted_unsupported"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 11,
+          "sha256": "3e85778ae84bdcb7922e1265136948ed0c8a23095023532e854e0e0d2676513d"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 4897,
+          "sha256": "275779d41d91c70ec2023f4957f3c6326e38061cb70ba7e497f8df28897776e5"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 5003,
+          "sha256": "be9a1a99365e2d8f7f87da81bd74c38f5c481f270cf5a67ce7c79e7fb3ba7e2f"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 5034,
+          "sha256": "27dd1f9019d24a6ed3bf478da0327de17672c76472502b17f3917518d3132110"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 4271,
+          "sha256": "d15b7c9ee49dc602f6457e54a59e7ca31f1a7d9769ca1c4fb14c303f2d2798b9"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 4096,
+          "sha256": "e585a55acb8afed527ea116346b66329adf29f0481941151064f7fa6b880317b"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 4710,
+          "sha256": "379e72a2cb19f23c7e7ee490ecb7e063a455b81a5955534e41cfd9ad6e817068"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 4096,
+          "sha256": "9e342efac1d76a5cebfb6ee8928198fdb097bc1e273a30a3faeb13aa7dd765ba"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 4711,
+          "sha256": "f94346735036daa95f13a8e672e25b3683fc586ba3f81a1cd4cf2dcfd7c35a89"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 4477,
+          "sha256": "4fda46c9dbc72f87bde3354c5541fb3245bb023199e87735e8de15fadcaa7507"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 4881,
+          "sha256": "6813727ae91d6f166179b8e2da87b3d27fe2517e0e8caac6367b5daf18f31351"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 4634,
+          "sha256": "5d3efc695a87a6ba8933408e79ac40d8a5f12f47d6a43cdcea92be55c4671ddd"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 6335,
+          "sha256": "414e90819652c1f747e08e07aec4d46c9ab4dedc95686b0fdbb710e41c8b92e5"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 4312,
+          "sha256": "590b1cbf2a4b017c8e815f1900510743c99e20c92d67a43c6fe83f68e3a818cf"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 4709,
+          "sha256": "e14f44df762942218b97210740c8dc34ef83a8b5b0a0298569320dcaa6d208b1"
+        }
+      ]
+    },
+    "derived/truncated-gzip": {
+      "source": "3.12",
+      "dataset": "shop",
+      "derived_from": "3.12/shop-gzip",
+      "mutation": "customers data file cut to half its compressed length",
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "corrupt_data_file"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json.gz",
+          "bytes": 241,
+          "sha256": "90adca129a0e1aed185f8eb2015edd4cfd1e7413ad8caa11fed046428a5bc2ed"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "047ce7f705bbd155f249f2ad9a74209b6d676e6699007dfcb599a6d8edfd5f87"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json.gz",
+          "bytes": 20,
+          "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json.gz",
+          "bytes": 184,
+          "sha256": "385317dd4c3e1c427cbe54f08135d5570dd59575fc3602c4dfdb53a1763411bd"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json.gz",
+          "bytes": 243,
+          "sha256": "2e5e15054320ca60b0527ab2c13d26c54f143135cd848266eac421da375e05a4"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json.gz",
+          "bytes": 130,
+          "sha256": "0dfd6c14df628874d280bd5d0a6f154826d62e3eb658317613af484b236f4d64"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "derived/invalid-json-line": {
+      "source": "3.12",
+      "dataset": "shop",
+      "derived_from": "3.12/shop-plain",
+      "mutation": "customers data file gains an unterminated JSON object line",
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "corrupt_data_file"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 924,
+          "sha256": "d4dfaed96c9fa3a761e091a146bdbe438800458d82223bae17687fd8aad21046"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "7e58c70a05719a45c5d6ae049be47278d7ccabbc1ab196eb8d13f419bf12b78e"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 381,
+          "sha256": "a7a8ebad1940fd42f1c4513cb83767323399832aaab9cb838abd9862c0943c6d"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 538,
+          "sha256": "76b5d14dee45e84e8fcd70279529c1ecabefeb0ad9023389bbea393234a1e3a0"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 216,
+          "sha256": "6e85538b498e5fa91cf5e8a9ad586de50b7fca8c0db11d849f25407ae3afe6a0"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "derived/duplicate-key": {
+      "source": "3.12",
+      "dataset": "shop",
+      "derived_from": "3.12/shop-plain",
+      "mutation": "first customers line appended again",
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "duplicate_key"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 1136,
+          "sha256": "b5b0dfe18e1e13ebcbdfc580ac443e7a03cf3e50d8f8ed44396f85c9d4571219"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "7e58c70a05719a45c5d6ae049be47278d7ccabbc1ab196eb8d13f419bf12b78e"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 381,
+          "sha256": "a7a8ebad1940fd42f1c4513cb83767323399832aaab9cb838abd9862c0943c6d"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 538,
+          "sha256": "76b5d14dee45e84e8fcd70279529c1ecabefeb0ad9023389bbea393234a1e3a0"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 216,
+          "sha256": "6e85538b498e5fa91cf5e8a9ad586de50b7fca8c0db11d849f25407ae3afe6a0"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "derived/id-mismatch": {
+      "source": "3.12",
+      "dataset": "shop",
+      "derived_from": "3.12/shop-plain",
+      "mutation": "first customers `_id` names another collection",
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "identity_mismatch"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 931,
+          "sha256": "8412e28b9c80cd7a5744902213fa5a1eca6b9da4523b73b363bff3fe52decbac"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "7e58c70a05719a45c5d6ae049be47278d7ccabbc1ab196eb8d13f419bf12b78e"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 381,
+          "sha256": "a7a8ebad1940fd42f1c4513cb83767323399832aaab9cb838abd9862c0943c6d"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 538,
+          "sha256": "76b5d14dee45e84e8fcd70279529c1ecabefeb0ad9023389bbea393234a1e3a0"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 216,
+          "sha256": "6e85538b498e5fa91cf5e8a9ad586de50b7fca8c0db11d849f25407ae3afe6a0"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "derived/unique-violation": {
+      "source": "3.12",
+      "dataset": "shop",
+      "derived_from": "3.12/shop-plain",
+      "mutation": "p2 region set to eu so (sku, region) repeats",
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "unique_violation"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 907,
+          "sha256": "f29f389dfff951b9c721803b3f172fe0776cfde758ad933c5338818ae2d829bd"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "7e58c70a05719a45c5d6ae049be47278d7ccabbc1ab196eb8d13f419bf12b78e"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 381,
+          "sha256": "a7a8ebad1940fd42f1c4513cb83767323399832aaab9cb838abd9862c0943c6d"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 595,
+          "sha256": "4797a118bb8bf3dca3d11892ae8a874f6618cba9a75a3e197cde3b7388d37bcb"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 216,
+          "sha256": "6e85538b498e5fa91cf5e8a9ad586de50b7fca8c0db11d849f25407ae3afe6a0"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "derived/missing-data-file": {
+      "source": "3.12",
+      "dataset": "shop",
+      "derived_from": "3.12/shop-plain",
+      "mutation": "products data file deleted",
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "missing_data_file"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 907,
+          "sha256": "f29f389dfff951b9c721803b3f172fe0776cfde758ad933c5338818ae2d829bd"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "7e58c70a05719a45c5d6ae049be47278d7ccabbc1ab196eb8d13f419bf12b78e"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 381,
+          "sha256": "a7a8ebad1940fd42f1c4513cb83767323399832aaab9cb838abd9862c0943c6d"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 216,
+          "sha256": "6e85538b498e5fa91cf5e8a9ad586de50b7fca8c0db11d849f25407ae3afe6a0"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "derived/missing-dump-json": {
+      "source": "3.12",
+      "dataset": "shop",
+      "derived_from": "3.12/shop-plain",
+      "mutation": "dump.json deleted",
+      "observed": {},
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "missing_dump_metadata"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 907,
+          "sha256": "f29f389dfff951b9c721803b3f172fe0776cfde758ad933c5338818ae2d829bd"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 381,
+          "sha256": "a7a8ebad1940fd42f1c4513cb83767323399832aaab9cb838abd9862c0943c6d"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 538,
+          "sha256": "76b5d14dee45e84e8fcd70279529c1ecabefeb0ad9023389bbea393234a1e3a0"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 216,
+          "sha256": "6e85538b498e5fa91cf5e8a9ad586de50b7fca8c0db11d849f25407ae3afe6a0"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "derived/unknown-file": {
+      "source": "3.12",
+      "dataset": "shop",
+      "derived_from": "3.12/shop-plain",
+      "mutation": "unrecognized notes.txt added",
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "unknown_layout"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 907,
+          "sha256": "f29f389dfff951b9c721803b3f172fe0776cfde758ad933c5338818ae2d829bd"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "7e58c70a05719a45c5d6ae049be47278d7ccabbc1ab196eb8d13f419bf12b78e"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "notes.txt",
+          "bytes": 10,
+          "sha256": "18c4f85a180cf29ddc1f8e3a3143ff54d643d1c306dbe610f4f70482632071d4"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 381,
+          "sha256": "a7a8ebad1940fd42f1c4513cb83767323399832aaab9cb838abd9862c0943c6d"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 538,
+          "sha256": "76b5d14dee45e84e8fcd70279529c1ecabefeb0ad9023389bbea393234a1e3a0"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 216,
+          "sha256": "6e85538b498e5fa91cf5e8a9ad586de50b7fca8c0db11d849f25407ae3afe6a0"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "derived/dotfile": {
+      "source": "3.12",
+      "dataset": "shop",
+      "derived_from": "3.12/shop-plain",
+      "mutation": ".DS_Store added (ignored and reported)",
+      "observed": {
+        "database": "shop",
+        "useEnvelope": false,
+        "useVPack": false
+      },
+      "expected": {
+        "outcome": "accepted",
+        "ignored": [
+          ".DS_Store"
+        ]
+      },
+      "files": [
+        {
+          "path": ".DS_Store",
+          "bytes": 10,
+          "sha256": "1a229a1091b81c5063e89e4363645ab015412d18016f3035f7cd891ca1cf1e56"
+        },
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 801,
+          "sha256": "c68497ef9af05aebc34fb44761c576663bae573c92e66e1f98c182ee538a4db8"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 907,
+          "sha256": "f29f389dfff951b9c721803b3f172fe0776cfde758ad933c5338818ae2d829bd"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "f0e67a4ef6dc16fc41d6faec5440af68541256208af4deb8a83a13fa26fb0f63"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 175,
+          "sha256": "7e58c70a05719a45c5d6ae049be47278d7ccabbc1ab196eb8d13f419bf12b78e"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "aef70a70f0169006b70f1f6cd9105f0839ece4ddb7ec361885c4f10791b6c946"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "0de13037cd06222d4de4d2ba4669a86c3d9ae0d20b9d9cce3c3a7ce8ba01cf54"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 381,
+          "sha256": "a7a8ebad1940fd42f1c4513cb83767323399832aaab9cb838abd9862c0943c6d"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "fb7f0b88e1fe2dbe02b73eaced3e725660aa4f737c8753d2f2c10de5640aa566"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 538,
+          "sha256": "76b5d14dee45e84e8fcd70279529c1ecabefeb0ad9023389bbea393234a1e3a0"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2239,
+          "sha256": "81540cfdefcf5e6f0ea771031d15058fca777b97bfc82141fd27b4206cb3c45d"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 216,
+          "sha256": "6e85538b498e5fa91cf5e8a9ad586de50b7fca8c0db11d849f25407ae3afe6a0"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "532c982a9cc73fdbbd6bd442aee2e4f30be1ec6910ced272d7eda193af8a4248"
+        }
+      ]
+    },
+    "derived/envelope-remove-marker": {
+      "source": "3.11",
+      "dataset": "shop",
+      "derived_from": "3.11/shop-envelope",
+      "mutation": "a type 2302 removal marker appended to customers",
+      "observed": {
+        "database": "shop",
+        "useEnvelope": true,
+        "useVPack": null
+      },
+      "expected": {
+        "outcome": "rejected",
+        "errors": [
+          {
+            "code": "unsupported_marker"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "ENCRYPTION",
+          "bytes": 4,
+          "sha256": "140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe"
+        },
+        {
+          "path": "customer_search.view.json",
+          "bytes": 794,
+          "sha256": "12f573afd86fa61df8c2d34745af8ddded63b851c57a26f56d06f157b2bb56f2"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.data.json",
+          "bytes": 1066,
+          "sha256": "01fb88514ee11f157afb1cd79cd2f7948877b87819e6ec6e1d6c07de1b1b5eb9"
+        },
+        {
+          "path": "customers_4b6f7d34a58ba399f077685951d06738.structure.json",
+          "bytes": 938,
+          "sha256": "76ed6fdef8728b57c2c42f7b7a17e7e441fc5334c4052a51ee1aafd120970ece"
+        },
+        {
+          "path": "dump.json",
+          "bytes": 123,
+          "sha256": "13732ac3cd7e5bda1e7d71b8a514016eac2cc6c1838574a380cc0fca84c3b4e3"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_docs_f4e5b37e2e1fe8e452107c58da4424b0.structure.json",
+          "bytes": 614,
+          "sha256": "b5b5aef4432855aa67f2169438599ae830e5b89607d527547da8dc220e277184"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.data.json",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "empty_edges_e861fba91610dcd224d35a13f7c5c5ec.structure.json",
+          "bytes": 615,
+          "sha256": "34639886b05071fd93164ddf4d80cc1482fc9c9ded4d32a33bafff4caafd5b8b"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.data.json",
+          "bytes": 444,
+          "sha256": "137274ecd312453363d9455948a4e8bcca8cb2480d03db01725198c7826f73d3"
+        },
+        {
+          "path": "orders_12c500ed0b7879105fb46af0f246be87.structure.json",
+          "bytes": 785,
+          "sha256": "c1b2dbb52a1c857925f7b09ebb6e070a33afe29b26e54e1f68b96e7a02d13d22"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.data.json",
+          "bytes": 622,
+          "sha256": "9effca59333a480c75db1cc749115532a20f21e71f97db66182430ae652f23a1"
+        },
+        {
+          "path": "products_86024cad1e83101d97359d7351051156.structure.json",
+          "bytes": 2250,
+          "sha256": "887594f0bac7915c1d8bcef4c3731817601d4d6ce3dc80b7687ea37281c2aefe"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.data.json",
+          "bytes": 258,
+          "sha256": "5157a9aa71cc5396a66082ef3d47ecff81cccd7adf993ef1c5667589fcefd96c"
+        },
+        {
+          "path": "referrals_0e88679ad4da88a84e1e25f61be6872a.structure.json",
+          "bytes": 613,
+          "sha256": "e58258a7533f7b4f96f570943bc3b17ad14e8653554f852479b9202c088101b0"
+        }
+      ]
+    }
+  }
+}
