@@ -4,6 +4,7 @@ Version-neutral implementation references; decisions explain how contracts evolv
 
 - [CGQL, including delivered v2 semantics](cgql.md)
 - [Migrating from ArangoDB: AQL to CGQL](aql-to-cgql.md)
+- [ArangoDB dump import contract](arangodump-import.md) (importer not yet built)
 - [HTTP routes and governance contracts](http-api.md)
 - [OpenAPI schema](../../crates/cognigraph-server/openapi.yaml)
 - [Lua scripting](../examples/lua-scripting.md)

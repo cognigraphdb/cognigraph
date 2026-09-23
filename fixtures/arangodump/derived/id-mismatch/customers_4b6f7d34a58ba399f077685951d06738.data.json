@@ -1,0 +1,5 @@
+{"_id": "products/c-1", "_key": "c-1", "_rev": "_mKzsRcW---", "active": true, "address": {"city": "Lisboa", "geo": [38.7223, -9.1393]}, "email": "ana@example.test", "loyalty": {"id": "L-100"}, "name": "Ana Müller", "score": 4.5, "tags": ["vip", "eu"]}
+{"_id":"customers/c:2","_key":"c:2","_rev":"_mKzsRcW--_","active":false,"email":"bo@example.test","loyalty":null,"name":"博","nested":{"a":{"b":{"c":{"d":[1,[2,[3]]]}}}}}
+{"_id":"customers/c@3","_key":"c@3","_rev":"_mKzsRcW--A","email":"cy@example.test","name":"Cy 🚀","numbers":{"big":9007199254740993,"huge":1e+300,"negative":-42,"tenth":0.1,"zero":0}}
+{"_id":"customers/c.4","_key":"c.4","_rev":"_mKzsRcW--B","email":"di@example.test","empty":{"array":[],"object":{},"string":""}}
+{"_id":"customers/c_5(x)+,=;$!*'%","_key":"c_5(x)+,=;$!*'%","_rev":"_mKzsRcW--C","email":"ed@example.test","loyalty":{"id":"L-200"},"text":"quote \" backslash \\ newline \n tab \t nul-free"}

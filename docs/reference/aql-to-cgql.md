@@ -11,9 +11,10 @@ names the workaround.
 
 Scope: external ArangoDB 3.11/3.12 AQL compared with CogniGraph CGQL.
 CogniGraph uses Native storage in both editions. This guide covers query/API
-migration; it does not route queries to an external database. A
-[direct dump importer](../plans/arangodump-import-design.md) remains optional,
-unqualified backlog work.
+migration; it does not route queries to an external database. The
+[dump import contract](arangodump-import.md) is frozen and qualified against
+real 3.11 and 3.12 dumps; the offline importer itself is not yet built
+([CG-66](../issues/CG-66.md)).
 
 ## Ten things to know before you start
 
@@ -55,7 +56,7 @@ unqualified backlog work.
 | `/_api/transaction` | `POST /api/batch` | Atomic multi-op write batch on Native; not a general transaction with reads. |
 | ArangoSearch views, `SEARCH` clause | `/api/search/text` (BM25), `/api/search/hybrid` (BM25 + vector, RRF) | Full-text is an HTTP endpoint, not a CGQL clause. |
 | `/_api/database` | tenants (Enterprise) or one server per database | The Community build runs one tenant. |
-| `arangodump` / `arangorestore` | No direct dump import; [optional design deferred](../plans/arangodump-import-design.md) | Current `cognigraph export/import` and `/api/admin/export/import` use CogniGraph JSON snapshots, not Arango dumps. See [recovery](../operations/recovery.md). |
+| `arangodump` / `arangorestore` | No direct dump import yet; the [import contract](arangodump-import.md) is frozen and the importer is [CG-66](../issues/CG-66.md) | Current `cognigraph export/import` and `/api/admin/export/import` use CogniGraph JSON snapshots, not Arango dumps. See [recovery](../operations/recovery.md). |
 | `arangojs` | HTTP + `fetch`; a TypeScript SDK is planned | Bind variables and result arrays map directly. |
 
 ## Query structure

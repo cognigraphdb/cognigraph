@@ -170,8 +170,11 @@ are scheduled by it.
 Retain `GraphBackend`, the existing CGQL corpus and historical Arango evidence.
 No major-version jump is required solely for this pre-deployment removal; the
 normal per-push increment and checks remain. The last hosted QA version is
-2.7.11. Migration command/format support remains an
-[unqualified deferred design](plans/arangodump-import-design.md).
+2.7.11. Migration command/format support was an
+[unqualified deferred design](plans/arangodump-import-design.md); since v2.7.30
+the [dump import contract](reference/arangodump-import.md) is frozen and
+fixture-qualified ([CG-64](issues/CG-64.md)), and the importer is
+[CG-66](issues/CG-66.md).
 
 ## Review checkpoint — 2026-09-09
 

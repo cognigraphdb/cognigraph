@@ -1,0 +1,4 @@
+{"_id":"products/p1","_key":"p1","_rev":"_mKzsRdC---","barcode":"0001","category":"tools","expiresAt":4102444800,"location":[38.7,-9.1],"region":"eu","sku":"A-1"}
+{"_id":"products/p2","_key":"p2","_rev":"_mKzsRdC--_","barcode":"0002","category":"tools","region":"us","sku":"A-1"}
+{"_id":"products/p3","_key":"p3","_rev":"_mKzsRdC--A","barcode":"0003","category":"garden","description":"rake with ash handle","region":"eu","sku":"B-7"}
+{"_id":"products/p4","_key":"p4","_rev":"_mKzsRdC--B","category":"garden","region":"apac","sku":"B-7"}

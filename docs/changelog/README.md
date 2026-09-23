@@ -162,6 +162,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 - 2026-09-23: [v2.7.29 — Lifecycle tests on an explicit stack](2026-09-23-lifecycle-test-stack.md)
 - 2026-09-23: [v2.7.28 — Compatible dependency drift before integration](2026-09-23-dependency-drift.md)
+- 2026-09-23: [v2.7.30 — ArangoDB dump import contract and fixtures](2026-09-23-arangodump-import-contract.md)
 - 2026-09-22: [v2.7.26 — Unique constraints on document collections](2026-09-22-unique-indexes.md)
 - 2026-09-22: [v2.7.17 — Patch rustls for RUSTSEC-2026-0285 before develop integration](2026-09-22-rustls-advisory.md)
 - 2026-09-22: [v2.7.20 — Pin CI jobs to the ubuntu-24.04 runner image](2026-09-22-pin-ci-runner-image.md)
