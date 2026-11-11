@@ -184,6 +184,16 @@ def cmd_check(_: argparse.Namespace) -> int:
         if n not in files:
             errors.append(f"registry row CG-{n} has no docs/issues/CG-{n}.md")
 
+    # CG-193: the public directory holds the ledger only. Dated remediation and
+    # review records stay in the ignored docs/private/issues/ folder.
+    for line in git("ls-files", "--cached", "--others", "--exclude-standard", "docs/issues/").splitlines():
+        name = line.removeprefix("docs/issues/")
+        if name not in ("README.md", ".registry.lock") and not FILE_RE.match(name):
+            errors.append(
+                f"{line}: only CG-N.md tickets and the registry belong in docs/issues/; "
+                "keep dated records in the ignored docs/private/issues/ folder"
+            )
+
     if files:
         expected = set(range(1, max(files) + 1))
         for gap in sorted(expected - set(files)):

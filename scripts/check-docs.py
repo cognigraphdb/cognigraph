@@ -162,6 +162,7 @@ def check(include_product=False, write_index=False):
     cache = {}
     links = 0
     optional_links = 0
+    private_links = 0
     paths = documents(include_product)
     for source in paths:
         if source in exempt:
@@ -180,6 +181,12 @@ def check(include_product=False, write_index=False):
                 if dest.is_relative_to(PRODUCT) and not include_product:
                     optional_links += 1
                     continue
+                private = decision_index.private_issue_record(dest, ROOT)
+                if private is not None:
+                    if not private.parent.is_dir():
+                        private_links += 1
+                        continue
+                    dest = private
                 links += 1
                 label = f"{source.relative_to(ROOT.parent)}:{number}"
                 if not dest.exists():
@@ -192,6 +199,7 @@ def check(include_product=False, write_index=False):
     return {"documents": len(paths), "local_links_checked": links,
             "frozen_documents_skipped": len(exempt),
             "optional_product_links_skipped": optional_links,
+            "private_issue_record_links_skipped": private_links,
             "changelog_records": len(records), "errors": errors}
 
 

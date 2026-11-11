@@ -182,8 +182,13 @@ floating stable with a weekly canary workflow.
 [CG-192](CG-192.md) records the dependency and advisory drift measured after
 that fix. The develop gate does not pass until it is resolved.
 
+[CG-193](CG-193.md) is Resolved: the 38 dated records that shared this
+directory with the tickets moved to a private, ignored folder under the
+[private issue records decision](../decisions/decision_issue_records_private.md).
+
 ## Conventions
 
+- This directory holds only the `CG-N.md` tickets and this registry ([CG-193](CG-193.md)). The dated review, remediation and verification records that tickets and the paragraphs above link to are kept privately; those links do not resolve in the public repository.
 - Status: Open, In progress, Blocked, Resolved, or Closed without change. Record the reason and evidence for the last two.
 - Priority: P1 = urgent isolation, execution-control, or data-integrity defect; P2 = correctness, contract, reproducibility, or material maintainability work; P3 = lower-impact improvement. No P0 was assigned in this review.
 - Each issue records the affected behavior, source evidence, reproduction or failure sequence, and acceptance criteria. Source-confirmed findings are distinct from live reproductions.
@@ -386,8 +391,9 @@ that fix. The develop gate does not pass until it is resolved.
 | [CG-190](CG-190.md) | P3 | Open | LICENSING.md lists Community capabilities the shipped server does not have |
 | [CG-191](CG-191.md) | P3 | Open | Prototype-era citations and possibly non-synthetic names remain in the public tree |
 | [CG-192](CG-192.md) | P1 | Open | Refresh dependencies and close advisories before the next develop integration |
+| [CG-193](CG-193.md) | P2 | Resolved | Keep only tickets and the registry in the public issue directory |
 
-Next available identifier: **CG-193**.
+Next available identifier: **CG-194**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected
