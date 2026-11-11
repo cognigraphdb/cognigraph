@@ -553,6 +553,27 @@ and planning consume the remaining allowance. Cancellation and timing are
 cooperative: a synchronous backend operation must return or yield before its
 future can be stopped, and completed writes are not rolled back.
 
+## Query Text Limits
+
+Query text is checked before it is parsed, on every surface (both HTTP query
+routes, `EXPLAIN` and Lua `graph.query()`). Text beyond a limit is refused
+with a parse error and HTTP 400.
+
+| Limit | Value | What counts |
+|---|---|---|
+| Length | 262,144 bytes | The query text. Bind-variable values are separate. |
+| Nesting | 32 | Open `(`, `[` and `{`, plus the `?` of each unfinished conditional and each prefix `NOT` or `-` in a row. |
+| Depth | 256 | Nesting, plus the binary operators chained at each open bracket (`+ - * /`, comparisons, `AND`, `OR`, `IN`). |
+
+A comma or a clause keyword ends a chain, so wide queries are fine: a
+5,000-element array literal, hundreds of `LET` clauses or a 500-field object
+do not count as deep. A long `a == 1 OR a == 2 OR …` chain does; pass the
+values as a bind variable and test them with `IN`.
+
+The limits exist because the parser and every later pass recurse over the
+expression tree. They are sized from measured stack use, with the reasoning
+in the [decision record](../decisions/decision_cgql_text_limits.md).
+
 ## Parse Errors
 
 Parse errors report a 1-based line and column position when the failure comes

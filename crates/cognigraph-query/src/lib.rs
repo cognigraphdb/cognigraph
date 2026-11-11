@@ -17,7 +17,9 @@ pub use executor::{
 };
 pub use executor::{ExecutionError, InMemoryDataset, execute_plan, parse_and_execute};
 pub use executor::{execute_backend_plan, parse_and_execute_backend};
-pub use parser::{ParseError, parse_query};
+pub use parser::{
+    MAX_EXPRESSION_DEPTH, MAX_EXPRESSION_NESTING, MAX_QUERY_BYTES, ParseError, parse_query,
+};
 pub use planner::{LogicalPlan, PlanError, PlanSource, parse_and_plan, plan_query};
 pub use validation::{
     ValidationError, ValidationOptions, validate_query, validate_query_with_options,

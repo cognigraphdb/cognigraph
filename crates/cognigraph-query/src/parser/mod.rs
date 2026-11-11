@@ -1,5 +1,6 @@
 mod clauses;
 mod expr;
+mod limits;
 
 use std::collections::BTreeSet;
 
@@ -15,6 +16,7 @@ use clauses::{
     build_mutation_clause, build_sort_clause,
 };
 use expr::{build_expr, is_keyword_rule, single_inner};
+pub use limits::{MAX_EXPRESSION_DEPTH, MAX_EXPRESSION_NESTING, MAX_QUERY_BYTES};
 
 #[derive(Parser)]
 #[grammar = "grammar.pest"]
@@ -67,6 +69,9 @@ impl std::error::Error for ParseError {}
 
 /// Parse a CGQL query into an AST.
 pub fn parse_query(input: &str) -> Result<Query, ParseError> {
+    // The grammar and every later pass recurse over the expression tree, so
+    // the text is bounded before any of them runs (CG-105).
+    limits::check_query_text(input)?;
     let mut pairs = CgqlParser::parse(Rule::query, input).map_err(ParseError::from_pest)?;
     let query_pair = pairs
         .next()
