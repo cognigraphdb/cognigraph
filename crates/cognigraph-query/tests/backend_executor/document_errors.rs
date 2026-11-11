@@ -31,6 +31,13 @@ async fn document_failures_abort_normal_analyzed_and_compiled_queries() {
         let expected = match failure() {
             CogniGraphError::Forbidden(message) => ExecutionError::Forbidden(message),
             CogniGraphError::ConnectionError(message) => ExecutionError::Connection(message),
+            // Typed since CG-198, so API layers can answer 404.
+            CogniGraphError::CollectionNotFound(collection) => {
+                ExecutionError::CollectionNotFound(collection)
+            }
+            CogniGraphError::DocumentNotFound { collection, key } => {
+                ExecutionError::DocumentNotFound { collection, key }
+            }
             other => ExecutionError::Backend(other.to_string()),
         };
         for query in QUERIES {

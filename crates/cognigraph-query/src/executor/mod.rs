@@ -126,6 +126,11 @@ pub enum ExecutionError {
     #[error("collection `{0}` not found")]
     CollectionNotFound(String),
 
+    /// A mutation named a document that does not exist; API layers map it
+    /// to 404 (CG-198).
+    #[error("document `{collection}/{key}` not found")]
+    DocumentNotFound { collection: String, key: String },
+
     #[error("bind variable `{0}` not found")]
     BindVariableNotFound(String),
 
@@ -323,6 +328,14 @@ pub(super) fn backend_execution_error(error: CogniGraphError) -> ExecutionError 
         },
         // The backend refused the caller's input; API layers return 400.
         CogniGraphError::ValidationError(message) => ExecutionError::InvalidInput(message),
+        // The query named something that is not there; API layers return 404
+        // instead of a server error (CG-198).
+        CogniGraphError::CollectionNotFound(collection) => {
+            ExecutionError::CollectionNotFound(collection)
+        }
+        CogniGraphError::DocumentNotFound { collection, key } => {
+            ExecutionError::DocumentNotFound { collection, key }
+        }
         other => ExecutionError::Backend(other.to_string()),
     }
 }

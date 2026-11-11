@@ -244,7 +244,7 @@ fn sort_rows(rows: &mut Vec<Env>, sort: &SortClause, cx: &RunCx<'_>) -> Result<(
         Some(locale) => {
             let locale: icu::locale::Locale = locale
                 .parse()
-                .map_err(|_| ExecutionError::Backend(format!("invalid locale `{locale}`")))?;
+                .map_err(|_| ExecutionError::InvalidInput(format!("invalid locale `{locale}`")))?;
             Some(
                 icu::collator::Collator::try_new(
                     icu::collator::CollatorPreferences::from(&locale),
