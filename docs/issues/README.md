@@ -193,7 +193,8 @@ Renovate schedule.
 
 P1 remediation, 2026-11-11: [CG-104](CG-104.md) is Resolved (Lua scripts get
 an allow-list of libraries). [CG-105](CG-105.md) is Resolved (CGQL text is
-bounded before parsing).
+bounded before parsing). [CG-106](CG-106.md) is Resolved (a mutation key must
+name a document of the mutation's own collection).
 
 ## Conventions
 
@@ -313,7 +314,7 @@ bounded before parsing).
 | [CG-103](CG-103.md) | P2 | Open | Air-gapped embeddings through a sidecar: separate endpoint settings, Granite R2 measurement, side views and Semantic Neurons validation |
 | [CG-104](CG-104.md) | P1 | Resolved | Lua scripts reach os, io and jit through the leftover module() global |
 | [CG-105](CG-105.md) | P1 | Resolved | Deeply nested CGQL text overflows the stack and aborts the server |
-| [CG-106](CG-106.md) | P1 | Open | CGQL mutations ignore the collection part of a full document id |
+| [CG-106](CG-106.md) | P1 | Resolved | CGQL mutations ignore the collection part of a full document id |
 | [CG-107](CG-107.md) | P1 | Open | A document nested deeper than 128 levels cannot be read back and blocks startup |
 | [CG-108](CG-108.md) | P1 | Open | Requests rejected by the auth middleware are logged without a tenant and shown to every tenant's admin |
 | [CG-109](CG-109.md) | P1 | Open | Text search passes an unvalidated limit and field names into Tantivy, which panics |
