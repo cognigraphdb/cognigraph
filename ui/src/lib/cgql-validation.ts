@@ -128,7 +128,7 @@ function offsetAt(query: string, line: number, column: number) {
 
 function diagnosticAtTerm(query: string, term: string, message: string) {
   const from = query.indexOf(term);
-  return diagnostic(query, from >= 0 ? from : 0, message, from >= 0 ? term.length : undefined);
+  return diagnostic(query, Math.max(from, 0), message, from >= 0 ? term.length : undefined);
 }
 
 function diagnostic(query: string, from: number, message: string, length?: number): Diagnostic {

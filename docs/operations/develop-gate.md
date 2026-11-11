@@ -40,8 +40,8 @@ python3 scripts/verify.py --suite docker
 ## Meaning of current dependencies
 
 For all workspace members, the freshness checker inspects resolved direct Cargo
-dependencies with all features, including optional/dev dependencies and the
-vendored Tantivy patch. It compares against crates.io's current stable release.
+dependencies with all features, including optional/dev dependencies and any
+vendored path patch (none since CG-192). It compares against crates.io's current stable release.
 Libraries with no stable release, such as the already-adopted optional `ort`,
 use their latest published release channel; this does not authorize adopting a
 prerelease in a previously stable dependency. UI production, development and

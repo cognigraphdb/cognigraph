@@ -12,9 +12,9 @@ The first suite includes frozen UI installation/checks/build, workflow lint,
 Cargo and Bun advisory scans, read-only dependency freshness checks, script regressions, formatting, docs, issue and
 edition boundaries, strict Clippy/tests in both editions, Helm rendering,
 Native release acceptance and both-edition Chromium regressions. Rust builds,
-Clippy and tests use the lockfile without modification. The bounded Tantivy
-snapshot also passes `scripts/check-vendored.py`, which checks published source
-bytes and permits only the reviewed dependency-manifest patch.
+Clippy and tests use the lockfile without modification. No dependency is
+vendored: the bounded Tantivy snapshot and its integrity check were retired
+with Tantivy 0.27.0 ([CG-192](../issues/CG-192.md)).
 
 The Docker suite builds both Linux images on the pulled distroless runtime,
 scans both image IDs for vulnerabilities, tests their packaged server/CLI and

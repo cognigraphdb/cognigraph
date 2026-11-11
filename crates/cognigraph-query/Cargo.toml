@@ -18,7 +18,7 @@ pest_derive = { workspace = true }
 async-trait = { workspace = true }
 tokio = { workspace = true }
 icu = "2.2.0"
-unicode-normalization = "0.1.25"
+unicode-normalization = "=0.1.25"
 # Already in the workspace tree via the native backend; a direct dep here adds
 # no new supply-chain surface and a hand-rolled engine is not practical.
 regex = "1"
