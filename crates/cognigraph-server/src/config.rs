@@ -95,6 +95,8 @@ pub struct Config {
     /// Per-query cap on the memory a query builds and keeps, in bytes
     /// (0 = unlimited).
     pub cgql_max_memory_bytes: u64,
+    /// CGQL queries that may execute at once; unset, the number of CPUs.
+    pub cgql_max_concurrent_queries: usize,
     /// Lua instruction limit per script (0 = keep the engine default, 1M).
     pub lua_instruction_limit: u32,
     /// Per-IP requests per minute; 0 disables rate limiting.
@@ -210,6 +212,9 @@ impl Config {
             cgql_max_memory_bytes: cgql_limit(
                 env_opt("COGNIGRAPH_CGQL_MAX_MEMORY_BYTES").as_deref(),
                 cognigraph_query::DEFAULT_MAX_MEMORY_BYTES,
+            ),
+            cgql_max_concurrent_queries: crate::cgql_runner::concurrency(
+                env_opt("COGNIGRAPH_CGQL_MAX_CONCURRENT_QUERIES").as_deref(),
             ),
             lua_instruction_limit: env("COGNIGRAPH_LUA_INSTRUCTION_LIMIT", "0")
                 .parse()
@@ -358,13 +363,13 @@ impl Config {
 }
 
 /// The CGQL time budget: an explicit value wins (0 = unlimited); unset or
-/// unparsable, it is the whole-request timeout. Execution is synchronous, so
-/// the request timeout cannot interrupt a query; this budget is what ends it
-/// (CG-111).
+/// unparsable, it is nine tenths of the whole-request timeout. The request
+/// timeout cancels a query that is still running (CG-197), but answers 408
+/// with no body; the margin lets the query's own typed refusal arrive first.
 fn cgql_time_budget_ms(configured: Option<&str>, request_timeout_secs: u64) -> u64 {
     configured
         .and_then(|value| value.trim().parse().ok())
-        .unwrap_or_else(|| request_timeout_secs.saturating_mul(1_000))
+        .unwrap_or_else(|| request_timeout_secs.saturating_mul(900))
 }
 
 /// A CGQL limit with a finite default: an explicit value wins (0 =

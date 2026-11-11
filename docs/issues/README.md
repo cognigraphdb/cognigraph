@@ -211,6 +211,8 @@ errors. [CG-113](CG-113.md) is Resolved (snapshot import refuses unsigned
 promotion records it would introduce). All eleven P1 tickets of the
 2026-11-11 review are resolved. [CG-198](CG-198.md) is Resolved (budget
 refusals answer 422 and caller errors 4xx on both query routes).
+[CG-197](CG-197.md) is Resolved (HTTP CGQL runs off the async workers, a
+bounded number at once, and stops when its request is dropped).
 
 ## Conventions
 
@@ -421,7 +423,7 @@ refusals answer 422 and caller errors 4xx on both query routes).
 | [CG-194](CG-194.md) | P3 | Open | Migrate the preparation contract to Unicode 18 when the Rust standard library moves |
 | [CG-195](CG-195.md) | P3 | Open | Decide whether Renovate's schedule and limits can keep up with dependency updates |
 | [CG-196](CG-196.md) | P3 | Open | Offline repair for a store that already holds an unreadable document |
-| [CG-197](CG-197.md) | P2 | Open | CGQL execution holds an async runtime worker for its whole time budget |
+| [CG-197](CG-197.md) | P2 | Resolved | CGQL execution holds an async runtime worker for its whole time budget |
 | [CG-198](CG-198.md) | P2 | Resolved | CGQL budget and runtime errors answer HTTP 500 |
 
 Next available identifier: **CG-199**.

@@ -6,7 +6,10 @@ use std::time::{Duration, Instant};
 use super::*;
 
 fn far_deadline() -> Deadline {
-    Deadline(Some(Instant::now() + Duration::from_secs(600)))
+    Deadline {
+        at: Some(Instant::now() + Duration::from_secs(600)),
+        cancellation: None,
+    }
 }
 
 /// A small deterministic generator, so the cases do not need a random crate.
@@ -45,19 +48,19 @@ fn merged_runs_match_the_standard_stable_sort() {
             let input = sequence(len, modulus, len as u64 ^ modulus);
             let mut expected = input.clone();
             expected.sort_by(by_key);
-            let sorted = sort_within_deadline(input, far_deadline(), by_key).unwrap();
+            let sorted = sort_within_deadline(input, &far_deadline(), by_key).unwrap();
             // Positions are unique, so equality also proves stability.
             assert_eq!(sorted, expected, "len {len} modulus {modulus}");
         }
     }
     let ordered: Vec<(u64, usize)> = (0..3 * SORT_RUN).map(|i| (i as u64, i)).collect();
     assert_eq!(
-        sort_within_deadline(ordered.clone(), far_deadline(), by_key).unwrap(),
+        sort_within_deadline(ordered.clone(), &far_deadline(), by_key).unwrap(),
         ordered
     );
     let reversed: Vec<(u64, usize)> = ordered.iter().rev().copied().collect();
     assert_eq!(
-        sort_within_deadline(reversed, far_deadline(), by_key).unwrap(),
+        sort_within_deadline(reversed, &far_deadline(), by_key).unwrap(),
         ordered
     );
 }
@@ -68,14 +71,17 @@ fn without_a_deadline_the_standard_sort_runs() {
     let mut expected = input.clone();
     expected.sort_by(by_key);
     assert_eq!(
-        sort_within_deadline(input, Deadline(None), by_key).unwrap(),
+        sort_within_deadline(input, &Deadline::none(), by_key).unwrap(),
         expected
     );
 }
 
 #[test]
 fn an_expired_deadline_stops_a_long_sort_but_not_a_short_one() {
-    let expired = Deadline(Some(Instant::now() - Duration::from_millis(1)));
+    let expired = &Deadline {
+        at: Some(Instant::now() - Duration::from_millis(1)),
+        cancellation: None,
+    };
     let long = sequence(2 * SORT_RUN, 1_000, 3);
     assert_eq!(
         sort_within_deadline(long, expired, by_key).unwrap_err(),

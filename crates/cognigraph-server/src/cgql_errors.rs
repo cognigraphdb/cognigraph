@@ -43,6 +43,9 @@ pub(crate) fn cgql_error(error: ExecutionError, budget: &ExecutionBudget) -> App
         | E::InvalidDocumentKey
         | E::MutationKeyOutsideCollection { .. } => CogniGraphError::ValidationError(message),
 
+        // The request that asked was dropped, so nobody reads this answer.
+        E::Cancelled => CogniGraphError::QueryError(message),
+
         // The query names a collection or a document that does not exist: 404.
         E::CollectionNotFound(collection) => CogniGraphError::CollectionNotFound(collection),
         E::DocumentNotFound { collection, key } => {

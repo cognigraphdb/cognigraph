@@ -364,6 +364,7 @@ Auth lives in a separate control store.
 | 400 | The query does not parse or validate, a bind variable is missing or unexpected, a value the query computed has the wrong type (`FOR x IN 1`, `1 + "a"`, a non-boolean `FILTER`, an `UPSERT` search that is not an object), a `COLLATE` locale is unknown, or a mutation key is not a key of its collection |
 | 403 | The query reads protected data, or a mutation was sent to the read-only route |
 | 404 | A collection the query names does not exist, or `UPDATE`/`REPLACE` names a document that does not exist |
+| 408 | The request timed out, while the query waited for an [execution slot](cgql.md#concurrency-and-cancellation) or while it ran. The query is stopped. No JSON body |
 | 409 | A mutation hit an existing key or a unique constraint (`code: "unique_violation"`) |
 | 422 | The query was stopped at an [execution budget](cgql.md#execution-budgets). The body has `code: "query_budget_exceeded"`, `budget`, `limit` and `unit`. The request fails the same way if repeated, so there is no `Retry-After` |
 | 500 | The backend failed while executing a valid query |

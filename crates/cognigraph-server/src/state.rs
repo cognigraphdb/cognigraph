@@ -59,6 +59,8 @@ pub struct AppState {
     /// (secret, ttl_secs) — JWT sessions enabled when set.
     pub jwt: Option<Arc<(String, u64)>>,
     pub cgql_budget: cognigraph_query::ExecutionBudget,
+    /// Bounds how many CGQL queries execute at once (CG-197).
+    pub cgql_slots: crate::cgql_runner::CgqlSlots,
     pub lua_instruction_limit: u32,
     /// Default TTL for newly issued API tokens (0 = non-expiring).
     pub token_ttl_secs: u64,
@@ -163,6 +165,7 @@ impl AppState {
             tenant_lifecycle_lock: Arc::new(tokio::sync::Mutex::new(())),
             jwt: None,
             cgql_budget: cognigraph_query::ExecutionBudget::default(),
+            cgql_slots: crate::cgql_runner::CgqlSlots::default(),
             lua_instruction_limit: 0,
             token_ttl_secs: 0,
             #[cfg(feature = "enterprise")]
