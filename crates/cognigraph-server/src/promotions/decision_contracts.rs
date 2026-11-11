@@ -141,6 +141,11 @@ pub struct PromotionHead {
     pub applied_decision_id: String,
     pub selection: PromotionSelection,
     pub updated_at_ms: u64,
+    /// True when the applied decision is an unsigned M18 decision: no signed
+    /// promoter intent selected this head (CG-113). Absent on a signed head,
+    /// whose stored form and digest are unchanged.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub unsigned_legacy: bool,
     pub projection_digest: String,
 }
 impl PromotionHead {

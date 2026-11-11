@@ -3688,6 +3688,7 @@ components:
         applied_decision_id: { type: string }
         selection: { $ref: '#/components/schemas/PromotionSelection' }
         updated_at_ms: { type: integer, format: int64 }
+        unsigned_legacy: { type: boolean, description: Present and true when the applied decision is an unsigned M18 decision, so no signed promoter intent selected this head. Absent on a signed head. }
         projection_digest: { $ref: '#/components/schemas/Sha256Digest' }
       additionalProperties: false
     PromotionCurrent:

@@ -54,6 +54,11 @@ pub struct Config {
     /// this out-of-store trust anchor. The corresponding private key must never
     /// be supplied to the server.
     pub governance_root_public_key: Option<String>,
+    /// Let snapshot import introduce unsigned M18 promotion evidence and
+    /// decisions that the store does not hold. For a disaster restore of
+    /// pre-M19 history only; off by default (CG-113).
+    #[cfg(feature = "enterprise")]
+    pub allow_legacy_promotion_import: bool,
     /// External artifact consumption source: "disabled" (default) or
     /// "local-cas". Artifact bytes are never fetched from signed locations.
     pub artifact_source: String,
@@ -150,6 +155,9 @@ impl Config {
                 .unwrap_or(3600),
             token_ttl_secs: env("COGNIGRAPH_TOKEN_TTL_SECS", "0").parse().unwrap_or(0),
             governance_root_public_key: env_opt("COGNIGRAPH_GOVERNANCE_ROOT_PUBLIC_KEY"),
+            #[cfg(feature = "enterprise")]
+            allow_legacy_promotion_import: env("COGNIGRAPH_ALLOW_LEGACY_PROMOTION_IMPORT", "false")
+                == "true",
             artifact_source: env("COGNIGRAPH_ARTIFACT_SOURCE", "disabled"),
             artifact_cas_root: env_opt("COGNIGRAPH_ARTIFACT_CAS_ROOT"),
             artifact_max_evaluation_bytes: env(

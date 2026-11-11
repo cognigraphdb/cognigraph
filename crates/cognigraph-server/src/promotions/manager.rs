@@ -39,6 +39,9 @@ pub struct PromotionManager {
     pub(crate) paused_tenants: Mutex<HashSet<String>>,
     pub(crate) errors: Mutex<HashMap<String, String>>,
     pub(crate) governance_root: std::sync::RwLock<Option<cognigraph_governance::VerificationKey>>,
+    /// Whether snapshot import may introduce unsigned M18 promotion records
+    /// (CG-113). Off unless the operator switches legacy restore on.
+    pub(crate) legacy_promotion_import: std::sync::atomic::AtomicBool,
     pub(super) metrics: PromotionMetrics,
 }
 
@@ -51,8 +54,18 @@ impl PromotionManager {
             paused_tenants: Mutex::new(HashSet::new()),
             errors: Mutex::new(HashMap::new()),
             governance_root: std::sync::RwLock::new(None),
+            legacy_promotion_import: std::sync::atomic::AtomicBool::new(false),
             metrics: PromotionMetrics::default(),
         }
+    }
+
+    /// Allow or forbid snapshot import of unsigned M18 promotion evidence and
+    /// decisions that the store does not already hold. Forbidden by default:
+    /// the records carry no signature, so accepting them from a snapshot
+    /// would let a tenant Admin create promotion authority (CG-113).
+    pub fn configure_legacy_promotion_import(&self, allowed: bool) {
+        self.legacy_promotion_import
+            .store(allowed, Ordering::Relaxed);
     }
 
     pub fn health(&self) -> Result<(), String> {

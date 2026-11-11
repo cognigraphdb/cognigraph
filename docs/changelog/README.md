@@ -165,6 +165,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 - 2026-11-11: [v2.7.48 — Search limits and field-name validation](2026-11-11-search-limits.md)
 - 2026-11-11: [v2.7.46 — Mutation keys name the target collection](2026-11-11-mutation-key-ids.md)
 - 2026-11-11: [v2.7.44 — Lua sandbox allow-list](2026-11-11-lua-sandbox-allow-list.md)
+- 2026-11-11: [v2.7.54 — Snapshot import refuses unsigned promotion records](2026-11-11-legacy-promotion-import.md)
 - 2026-11-11: [v2.7.42 — Ledger-only issue directory](2026-11-11-ledger-only-issue-directory.md)
 - 2026-11-11: [v2.7.51 — Error log attribution](2026-11-11-error-log-attribution.md)
 - 2026-11-11: [v2.7.47 — Document depth limit](2026-11-11-document-depth-limit.md)

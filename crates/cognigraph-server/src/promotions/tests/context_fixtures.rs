@@ -155,6 +155,13 @@ pub(super) fn source(
         finished_at_ms: 1,
     }
 }
+/// A store an operator has opened for a restore of unsigned M18 promotion
+/// history (CG-113); without the switch, import refuses those records.
+pub(super) fn legacy_restore_target(raw: Arc<dyn GraphBackend>) -> AppState {
+    let state = AppState::new_shared(raw);
+    state.promotions.configure_legacy_promotion_import(true);
+    state
+}
 pub(super) fn admin() -> PromotionActor {
     PromotionActor {
         user_key: "admin-1".into(),

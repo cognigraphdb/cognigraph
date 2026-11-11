@@ -23,6 +23,15 @@ Two complementary mechanisms:
    trusted-root operator input and has no built-in signature verification;
    authenticate/sign the backup in the surrounding storage workflow.
 
+   Enterprise: signed promotion and governance records in a snapshot are
+   verified before anything is written. Unsigned M18 promotion evidence and
+   decisions carry nothing to verify, so import refuses them with 403 unless
+   the target store already holds the identical records. To restore a store
+   with M18 promotion history into a fresh instance, start the server with
+   `COGNIGRAPH_ALLOW_LEGACY_PROMOTION_IMPORT=true`, import, and restart
+   without it. A head selected by an unsigned decision is reported with
+   `unsigned_legacy: true`.
+
 2. **Cold file copy:** stop the server, copy `cognigraph.redb`, start. The
    redb file is the single source of truth. Do NOT copy it while the server
    runs (writes are transactional but the file may be mid-commit).
