@@ -85,7 +85,7 @@ impl PromotionManager {
                 "governance key identity already has different authority",
             ));
         }
-        self.ensure_governance_idempotency_available_locked(tenant, incarnation, &key_hash)
+        self.ensure_authority_idempotency_available_locked(tenant, incarnation, &key_hash)
             .await?;
         let existing_keys = self
             .scoped_records::<GovernanceKeyRecord>(

@@ -124,38 +124,4 @@ impl PromotionManager {
         }
         deserialize_stored(value).inspect_err(|error| self.record_error(tenant, error.to_string()))
     }
-
-    pub(crate) async fn ensure_governance_idempotency_available_locked(
-        &self,
-        tenant: &str,
-        incarnation: &str,
-        idempotency_key_hash: &str,
-    ) -> Result<(), CogniGraphError> {
-        for collection in [
-            GOVERNANCE_KEYS_COLLECTION,
-            GOVERNANCE_KEY_REVOCATIONS_COLLECTION,
-            POLICY_REVISIONS_COLLECTION,
-            POLICY_APPROVALS_COLLECTION,
-            ARTIFACT_ATTESTATIONS_COLLECTION,
-        ] {
-            if self
-                .backend
-                .list_documents(collection, None, None)
-                .await?
-                .iter()
-                .any(|record| {
-                    record.get("tenant").and_then(Value::as_str) == Some(tenant)
-                        && record.get("tenant_incarnation").and_then(Value::as_str)
-                            == Some(incarnation)
-                        && record.get("idempotency_key_hash").and_then(Value::as_str)
-                            == Some(idempotency_key_hash)
-                })
-            {
-                return Err(conflict(
-                    "Idempotency-Key was already used for different governance authority",
-                ));
-            }
-        }
-        Ok(())
-    }
 }

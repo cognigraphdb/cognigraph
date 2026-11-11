@@ -165,3 +165,8 @@ mod repair_lifecycle;
 mod governed_lifecycle;
 
 mod durable_lifecycle;
+
+mod idempotency_fixtures;
+use idempotency_fixtures::*;
+
+mod idempotency_namespace;

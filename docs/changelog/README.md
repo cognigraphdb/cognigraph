@@ -172,6 +172,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 - 2026-11-11: [v2.7.40 — Code and documentation review tickets](2026-11-11-code-and-documentation-review.md)
 - 2026-11-11: [v2.7.50 — CLI export safety](2026-11-11-cli-export-safety.md)
 - 2026-11-11: [v2.7.45 — CGQL text limits](2026-11-11-cgql-text-limits.md)
+- 2026-11-11: [v2.7.52 — One Idempotency-Key namespace for signed authority](2026-11-11-authority-idempotency-namespace.md)
 - 2026-09-23: [v2.7.33 — TypeScript client for Bun and Node](2026-09-23-typescript-client.md)
 - 2026-09-23: [v2.7.38 — Side-view gap source measured under trigger ablation](2026-09-23-sideview-gap-measurement.md)
 - 2026-09-23: [v2.7.37 — Side views as a proposal source](2026-09-23-sideview-gap-detector.md)

@@ -82,7 +82,7 @@ impl PromotionManager {
                 "governance key already has a different revocation",
             ));
         }
-        self.ensure_governance_idempotency_available_locked(tenant, incarnation, &key_hash)
+        self.ensure_authority_idempotency_available_locked(tenant, incarnation, &key_hash)
             .await?;
         let mut record = GovernanceKeyRevocation {
             key,
