@@ -160,6 +160,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Releases
 
+- 2026-11-11: [v2.7.41 — Enterprise Clippy gate and toolchain canary](2026-11-11-toolchain-canary.md)
 - 2026-11-11: [v2.7.40 — Code and documentation review tickets](2026-11-11-code-and-documentation-review.md)
 - 2026-09-23: [v2.7.33 — TypeScript client for Bun and Node](2026-09-23-typescript-client.md)
 - 2026-09-23: [v2.7.38 — Side-view gap source measured under trigger ablation](2026-09-23-sideview-gap-measurement.md)

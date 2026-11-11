@@ -175,6 +175,13 @@ registry has **96 Resolved, 1 Closed without change, and 94 Open issues**;
 the table below is authoritative where earlier checkpoint sentences differ
 ([CG-188](CG-188.md)).
 
+[CG-151](CG-151.md) is Resolved: the deprecated atomic call is replaced, and
+the [toolchain policy](../decisions/decision_toolchain_policy.md) keeps
+floating stable with a weekly canary workflow.
+
+[CG-192](CG-192.md) records the dependency and advisory drift measured after
+that fix. The develop gate does not pass until it is resolved.
+
 ## Conventions
 
 - Status: Open, In progress, Blocked, Resolved, or Closed without change. Record the reason and evidence for the last two.
@@ -337,7 +344,7 @@ the table below is authoritative where earlier checkpoint sentences differ
 | [CG-148](CG-148.md) | P2 | Open | CLI builds request paths by string interpolation, so keys with reserved characters address another resource |
 | [CG-149](CG-149.md) | P2 | Open | Embedding providers match vectors to inputs by arrival order and accept any vector shape |
 | [CG-150](CG-150.md) | P2 | Open | Dump importer dry run stages a full copy of the data in the shared temp directory |
-| [CG-151](CG-151.md) | P2 | Open | Enterprise Clippy gate fails on the current stable toolchain, and no toolchain is pinned |
+| [CG-151](CG-151.md) | P2 | Resolved | Enterprise Clippy gate fails on the current stable toolchain, and no toolchain is pinned |
 | [CG-152](CG-152.md) | P2 | Open | issue.py allocates identifiers from the current branch only, so two branches get the same CG-N |
 | [CG-153](CG-153.md) | P2 | Open | Helm backup job captures only the default tenant in multi-tenant mode and leaves partial files behind |
 | [CG-154](CG-154.md) | P2 | Open | Helm chart defaults point at images that do not exist, and serveConsole=false has no effect |
@@ -378,8 +385,9 @@ the table below is authoritative where earlier checkpoint sentences differ
 | [CG-189](CG-189.md) | P3 | Open | CGQL specification keeps superseded sections, and the migration guide asks for an edit that is no longer needed |
 | [CG-190](CG-190.md) | P3 | Open | LICENSING.md lists Community capabilities the shipped server does not have |
 | [CG-191](CG-191.md) | P3 | Open | Prototype-era citations and possibly non-synthetic names remain in the public tree |
+| [CG-192](CG-192.md) | P1 | Open | Refresh dependencies and close advisories before the next develop integration |
 
-Next available identifier: **CG-192**.
+Next available identifier: **CG-193**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

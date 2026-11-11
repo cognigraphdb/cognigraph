@@ -108,11 +108,11 @@ impl JobManager {
 
     pub(super) fn release_cancel_requested(&self, from: JobStatus) {
         if from == JobStatus::CancelRequested {
-            let _ = self.metrics.cancel_requested.fetch_update(
-                Ordering::Relaxed,
-                Ordering::Relaxed,
-                |value| Some(value.saturating_sub(1)),
-            );
+            self.metrics
+                .cancel_requested
+                .update(Ordering::Relaxed, Ordering::Relaxed, |value| {
+                    value.saturating_sub(1)
+                });
         }
     }
 }
