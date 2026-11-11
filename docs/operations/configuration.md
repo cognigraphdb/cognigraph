@@ -35,7 +35,10 @@ Cargo feature or select the corresponding Docker image as described in
 | `COGNIGRAPH_JOB_RETENTION_SECS` | 2592000 (30 days) | Default terminal-job age used when `POST /api/admin/jobs/archive` omits `before_ms`; it does not start an automatic purge |
 | `COGNIGRAPH_JOB_ARCHIVE_BATCH_SIZE` | 100 | Default terminal records processed by one archive request; operator requests are capped at 1000 |
 | `COGNIGRAPH_CGQL_MUTATIONS_ENABLED` | `false` | Mounts read-write `POST /api/query` |
-| `COGNIGRAPH_CGQL_MAX_SOURCE_ROWS` / `COGNIGRAPH_CGQL_TIME_BUDGET_MS` | 0 (off) | HTTP CGQL budgets; Lua applies the row cap per `graph.query()` and shares the time allowance across the whole script |
+| `COGNIGRAPH_CGQL_MAX_SOURCE_ROWS` | 0 (off) | Per-query cap on rows read from sources, for HTTP CGQL and Lua `graph.query()` |
+| `COGNIGRAPH_CGQL_TIME_BUDGET_MS` | the request timeout | Per-query wall-clock budget; Lua shares it across the whole script. Execution is synchronous, so this budget, not the request timeout, is what ends a long query. 0 = unlimited |
+| `COGNIGRAPH_CGQL_MAX_INTERMEDIATE_ROWS` | 100000000 | Per-query cap on rows produced by `FOR` and read by `COLLECT` and `SORT`. 0 = unlimited |
+| `COGNIGRAPH_CGQL_MAX_MEMORY_BYTES` | 1073741824 (1 GiB) | Per-query cap on the estimated memory of what a query builds and keeps. 0 = unlimited |
 | `COGNIGRAPH_LUA_INSTRUCTION_LIMIT` | 0 (use engine default) | Sandbox instruction cap; 0 keeps the 1,000,000-instruction engine default |
 | `COGNIGRAPH_QUERY_CACHE_ENABLED` | `false` | Semantic query cache (`COGNIGRAPH_QUERY_CACHE_*` tunables) |
 | `COGNIGRAPH_QUERY_CACHE_BACKEND` / `COGNIGRAPH_QUERY_CACHE_PATH` | `memory` / unset | `persistent` + a redb path makes cached embeddings survive restarts (results stay in-memory) |
@@ -57,7 +60,7 @@ Cargo feature or select the corresponding Docker image as described in
 Production baseline: `COGNIGRAPH_AUTH_ENABLED=true`, separate
 `COGNIGRAPH_ADMIN_PASSWORD` and `COGNIGRAPH_HOST_ADMIN_PASSWORD` secrets set,
 `COGNIGRAPH_JWT_SECRET` set, budgets on
-(`COGNIGRAPH_CGQL_MAX_SOURCE_ROWS`, `COGNIGRAPH_CGQL_TIME_BUDGET_MS`, `COGNIGRAPH_LUA_INSTRUCTION_LIMIT`),
+(`COGNIGRAPH_CGQL_MAX_SOURCE_ROWS`, `COGNIGRAPH_LUA_INSTRUCTION_LIMIT`; the CGQL time, intermediate-row and memory budgets are on by default),
 `COGNIGRAPH_RATE_LIMIT_PER_MINUTE` on, `COGNIGRAPH_LOG_FORMAT=json`. TLS terminates at your
 reverse proxy. An M19-M26 governed deployment also requires one externally
 managed `COGNIGRAPH_GOVERNANCE_ROOT_PUBLIC_KEY`; graph-only and historical

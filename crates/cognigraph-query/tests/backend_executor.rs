@@ -352,6 +352,7 @@ async fn execution_budgets_are_enforced() {
         ExecutionBudget {
             max_source_rows: Some(2),
             time_budget_ms: None,
+            ..ExecutionBudget::default()
         },
     )
     .await
@@ -372,6 +373,7 @@ async fn execution_budgets_are_enforced() {
         ExecutionBudget {
             max_source_rows: Some(2),
             time_budget_ms: None,
+            ..ExecutionBudget::default()
         },
     )
     .await
@@ -386,6 +388,7 @@ async fn execution_budgets_are_enforced() {
         ExecutionBudget {
             max_source_rows: Some(10),
             time_budget_ms: None,
+            ..ExecutionBudget::default()
         },
     )
     .await
@@ -401,6 +404,7 @@ async fn execution_budgets_are_enforced() {
         ExecutionBudget {
             max_source_rows: None,
             time_budget_ms: Some(0),
+            ..ExecutionBudget::default()
         },
     )
     .await

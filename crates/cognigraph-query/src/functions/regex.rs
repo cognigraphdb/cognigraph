@@ -58,13 +58,39 @@ pub(super) fn fn_regex_test(args: &[Value]) -> Value {
 /// `REGEX_REPLACE(text, pattern, replacement [, case_insensitive])` → string.
 /// Replaces every match; `$1`/`${name}` in the replacement refer to groups.
 pub(super) fn fn_regex_replace(args: &[Value]) -> Value {
+    regex_replace_bounded(args, u64::MAX).unwrap_or(Value::Null)
+}
+
+/// `REGEX_REPLACE` with an output ceiling: `None` when the result would pass
+/// `limit` bytes. A replacement can multiply a text (every match becomes the
+/// replacement), so the executor passes what is left of the query's memory
+/// budget and stops before the oversized string exists (CG-111).
+pub(crate) fn regex_replace_bounded(args: &[Value], limit: u64) -> Option<Value> {
     let (Some(text), Some(pattern), Some(replacement)) =
         (args[0].as_str(), args[1].as_str(), args[2].as_str())
     else {
-        return Value::Null;
+        return Some(Value::Null);
     };
-    match compiled(pattern, case_insensitive(args, 3)) {
-        Some(re) => json!(re.replace_all(text, replacement).into_owned()),
-        None => Value::Null,
+    let Some(re) = compiled(pattern, case_insensitive(args, 3)) else {
+        return Some(Value::Null);
+    };
+    // The same walk `Regex::replace_all` performs, with a size check per match.
+    let mut out = String::new();
+    let mut last = 0;
+    for captures in re.captures_iter(text) {
+        let Some(whole) = captures.get(0) else {
+            continue;
+        };
+        out.push_str(&text[last..whole.start()]);
+        captures.expand(replacement, &mut out);
+        last = whole.end();
+        if out.len() as u64 > limit {
+            return None;
+        }
     }
+    out.push_str(&text[last..]);
+    if out.len() as u64 > limit {
+        return None;
+    }
+    Some(json!(out))
 }

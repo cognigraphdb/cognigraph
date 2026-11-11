@@ -159,8 +159,10 @@ are rejected under ANALYZE.
 
 ## Budgets
 
-Long scans on production data should run with budgets on
-(`COGNIGRAPH_CGQL_MAX_SOURCE_ROWS`, `COGNIGRAPH_CGQL_TIME_BUDGET_MS` —
+Long scans on production data should run with the source-row budget on
+(`COGNIGRAPH_CGQL_MAX_SOURCE_ROWS`). The time, intermediate-row and memory
+budgets are on by default (`COGNIGRAPH_CGQL_TIME_BUDGET_MS`,
+`COGNIGRAPH_CGQL_MAX_INTERMEDIATE_ROWS`, `COGNIGRAPH_CGQL_MAX_MEMORY_BYTES` —
 see the env table in [../operations.md](../operations/README.md)). Budget errors
 are a signal to add a `FILTER` the engine can push down, not to raise the
 cap first.

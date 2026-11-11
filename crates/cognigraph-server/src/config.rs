@@ -81,8 +81,15 @@ pub struct Config {
     pub job_archive_batch_size: usize,
     /// Per-query CGQL source-row cap (0 = unlimited).
     pub cgql_max_source_rows: u64,
-    /// Per-query CGQL wall-clock budget in ms (0 = unlimited).
+    /// Per-query CGQL wall-clock budget in ms (0 = unlimited). Unset, it
+    /// follows the whole-request timeout.
     pub cgql_time_budget_ms: u64,
+    /// Per-query cap on rows produced by FOR and read by COLLECT and SORT
+    /// (0 = unlimited).
+    pub cgql_max_intermediate_rows: u64,
+    /// Per-query cap on the memory a query builds and keeps, in bytes
+    /// (0 = unlimited).
+    pub cgql_max_memory_bytes: u64,
     /// Lua instruction limit per script (0 = keep the engine default, 1M).
     pub lua_instruction_limit: u32,
     /// Per-IP requests per minute; 0 disables rate limiting.
@@ -111,6 +118,9 @@ impl Config {
         let host = env("COGNIGRAPH_HOST", "0.0.0.0");
         let port = env("COGNIGRAPH_PORT", "3000");
         let addr = format!("{host}:{port}");
+        let request_timeout_secs: u64 = env("COGNIGRAPH_REQUEST_TIMEOUT_SECS", "30")
+            .parse()
+            .unwrap_or(30);
 
         Self {
             listen_addr: addr.parse().unwrap_or_else(|_| {
@@ -181,18 +191,25 @@ impl Config {
             cgql_max_source_rows: env("COGNIGRAPH_CGQL_MAX_SOURCE_ROWS", "0")
                 .parse()
                 .unwrap_or(0),
-            cgql_time_budget_ms: env("COGNIGRAPH_CGQL_TIME_BUDGET_MS", "0")
-                .parse()
-                .unwrap_or(0),
+            cgql_time_budget_ms: cgql_time_budget_ms(
+                env_opt("COGNIGRAPH_CGQL_TIME_BUDGET_MS").as_deref(),
+                request_timeout_secs,
+            ),
+            cgql_max_intermediate_rows: cgql_limit(
+                env_opt("COGNIGRAPH_CGQL_MAX_INTERMEDIATE_ROWS").as_deref(),
+                cognigraph_query::DEFAULT_MAX_INTERMEDIATE_ROWS,
+            ),
+            cgql_max_memory_bytes: cgql_limit(
+                env_opt("COGNIGRAPH_CGQL_MAX_MEMORY_BYTES").as_deref(),
+                cognigraph_query::DEFAULT_MAX_MEMORY_BYTES,
+            ),
             lua_instruction_limit: env("COGNIGRAPH_LUA_INSTRUCTION_LIMIT", "0")
                 .parse()
                 .unwrap_or(0),
             rate_limit_per_minute: env("COGNIGRAPH_RATE_LIMIT_PER_MINUTE", "0")
                 .parse()
                 .unwrap_or(0),
-            request_timeout_secs: env("COGNIGRAPH_REQUEST_TIMEOUT_SECS", "30")
-                .parse()
-                .unwrap_or(30),
+            request_timeout_secs,
             log_format: env("COGNIGRAPH_LOG_FORMAT", "text"),
             ui_dist: env_opt("COGNIGRAPH_UI_DIST"),
         }
@@ -319,6 +336,37 @@ fn warn_legacy_env() {
     }
 }
 
+impl Config {
+    /// The execution budget every HTTP and Lua CGQL query runs under.
+    pub fn cgql_budget(&self) -> cognigraph_query::ExecutionBudget {
+        let limit = |value: u64| (value > 0).then_some(value);
+        cognigraph_query::ExecutionBudget {
+            max_source_rows: limit(self.cgql_max_source_rows),
+            time_budget_ms: limit(self.cgql_time_budget_ms),
+            max_intermediate_rows: limit(self.cgql_max_intermediate_rows),
+            max_memory_bytes: limit(self.cgql_max_memory_bytes),
+        }
+    }
+}
+
+/// The CGQL time budget: an explicit value wins (0 = unlimited); unset or
+/// unparsable, it is the whole-request timeout. Execution is synchronous, so
+/// the request timeout cannot interrupt a query; this budget is what ends it
+/// (CG-111).
+fn cgql_time_budget_ms(configured: Option<&str>, request_timeout_secs: u64) -> u64 {
+    configured
+        .and_then(|value| value.trim().parse().ok())
+        .unwrap_or_else(|| request_timeout_secs.saturating_mul(1_000))
+}
+
+/// A CGQL limit with a finite default: an explicit value wins (0 =
+/// unlimited); unset or unparsable, it is `default`.
+fn cgql_limit(configured: Option<&str>, default: u64) -> u64 {
+    configured
+        .and_then(|value| value.trim().parse().ok())
+        .unwrap_or(default)
+}
+
 fn env(key: &str, default: &str) -> String {
     std::env::var(key).unwrap_or_else(|_| default.to_string())
 }
@@ -326,6 +374,10 @@ fn env(key: &str, default: &str) -> String {
 fn env_opt(key: &str) -> Option<String> {
     std::env::var(key).ok().filter(|v| !v.is_empty())
 }
+
+#[cfg(test)]
+#[path = "config_cgql_budget_tests.rs"]
+mod cgql_budget_tests;
 
 #[cfg(test)]
 mod tests {

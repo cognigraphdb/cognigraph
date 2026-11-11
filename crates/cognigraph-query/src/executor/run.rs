@@ -12,6 +12,7 @@ use serde_json::Value;
 use crate::planner::{LogicalPlan, PlanOp, PlanSource};
 
 use super::eval::eval_expr;
+use super::memory::{MemoryMeter, env_weight, weight};
 use super::pipeline::{apply_collect_sort_limit, apply_projection};
 use super::{BindVars, Deadline, Env, ExecutionBudget, ExecutionError};
 
@@ -141,6 +142,11 @@ pub(super) struct RunCx<'a> {
     pub deadline: Deadline,
     pub max_source_rows: Option<u64>,
     pub used_rows: std::sync::Arc<AtomicU64>,
+    /// Rows produced by `FOR` and read by `COLLECT`/`SORT` (CG-111).
+    pub max_intermediate_rows: Option<u64>,
+    pub used_intermediate_rows: std::sync::Arc<AtomicU64>,
+    /// What the query has built and kept, against its memory budget.
+    pub memory: MemoryMeter,
     /// Present under EXPLAIN ANALYZE; None costs one branch per stage.
     pub analyze: Option<std::sync::Arc<std::sync::Mutex<AnalyzeState>>>,
 }
@@ -154,6 +160,9 @@ impl<'a> RunCx<'a> {
             deadline,
             max_source_rows: budget.max_source_rows,
             used_rows: std::sync::Arc::new(AtomicU64::new(0)),
+            max_intermediate_rows: budget.max_intermediate_rows,
+            used_intermediate_rows: std::sync::Arc::new(AtomicU64::new(0)),
+            memory: MemoryMeter::new(budget.max_memory_bytes),
             analyze: None,
         }
     }
@@ -173,6 +182,7 @@ impl<'a> RunCx<'a> {
         super::eval::EvalCtx {
             bind_vars: self.bind_vars,
             documents: self.documents,
+            memory: self.memory.enabled().then_some(&self.memory),
         }
     }
 
@@ -249,6 +259,72 @@ impl<'a> RunCx<'a> {
         }
         Ok(())
     }
+
+    /// Charge rows a `FOR` is about to produce, or rows `COLLECT`/`SORT` are
+    /// about to read, against the intermediate row budget. Called before the
+    /// rows exist, so an over-budget join allocates nothing.
+    pub fn charge_rows(&self, rows: u64) -> Result<(), ExecutionError> {
+        let used = self
+            .used_intermediate_rows
+            .fetch_add(rows, Ordering::Relaxed)
+            .saturating_add(rows);
+        if let Some(max) = self.max_intermediate_rows
+            && used > max
+        {
+            return Err(ExecutionError::IntermediateRowBudgetExceeded(max));
+        }
+        Ok(())
+    }
+
+    /// Charge the rows one outer row expands into: `produced` rows, each a
+    /// copy of `outer`, plus `binding_bytes` for the values bound in them
+    /// when those are copies and not moved out of their source.
+    pub fn charge_joined(
+        &self,
+        outer: &Env,
+        produced: usize,
+        binding_bytes: u64,
+    ) -> Result<(), ExecutionError> {
+        self.charge_rows(produced as u64)?;
+        if self.memory.enabled() && produced > 0 {
+            self.memory.retain(
+                env_weight(outer)
+                    .saturating_mul(produced as u64)
+                    .saturating_add(binding_bytes),
+            )?;
+        }
+        Ok(())
+    }
+
+    /// Charge a full cross product of `rows` with `inner` bindings of
+    /// `inner_bytes` in total, before any of it is allocated.
+    pub fn charge_product(
+        &self,
+        rows: &[Env],
+        inner: usize,
+        inner_bytes: impl FnOnce() -> u64,
+    ) -> Result<(), ExecutionError> {
+        self.charge_rows((rows.len() as u64).saturating_mul(inner as u64))?;
+        if self.memory.enabled() && inner > 0 {
+            let outer = rows
+                .iter()
+                .fold(0u64, |total, env| total.saturating_add(env_weight(env)));
+            self.memory.retain(
+                outer
+                    .saturating_mul(inner as u64)
+                    .saturating_add(inner_bytes().saturating_mul(rows.len() as u64)),
+            )?;
+        }
+        Ok(())
+    }
+}
+
+/// Rows reserved up front for a join result; the rest grows as it fills.
+const JOIN_RESERVE_ROWS: usize = 1 << 16;
+
+fn docs_weight(docs: &[Value]) -> u64 {
+    docs.iter()
+        .fold(0u64, |total, doc| total.saturating_add(weight(doc)))
 }
 
 /// Number of pipeline stages a plan contributes: one per body op (a LET
@@ -524,6 +600,7 @@ fn run_ops(
                 for env in rows.iter_mut() {
                     cx.deadline.check()?;
                     let value = eval_expr(&let_clause.expr, env, &cx.eval())?;
+                    cx.memory.retain_value(&value)?;
                     env.insert(let_clause.name.clone(), value);
                 }
                 cx.record_stage(*stage, rows.len());
@@ -542,9 +619,13 @@ fn run_ops(
                     // and stage ids (stats aggregate across runs), so sites
                     // must survive: never single-pass.
                     for env in rows.iter_mut() {
+                        cx.deadline.check()?;
                         let mut sub_site = sub_start;
                         let mut sub_stage = sub_stage_start;
-                        let value = run_plan_staged(
+                        // The rows a run builds are gone when it returns;
+                        // only its result stays charged.
+                        let mark = cx.memory.mark();
+                        let value = Value::Array(run_plan_staged(
                             subplan,
                             env.clone(),
                             materialized,
@@ -552,14 +633,17 @@ fn run_ops(
                             &mut sub_stage,
                             cx,
                             false,
-                        )?;
-                        env.insert(name.clone(), Value::Array(value));
+                        )?);
+                        cx.memory.release_to(mark);
+                        cx.memory.retain_value(&value)?;
+                        env.insert(name.clone(), value);
                     }
                 } else {
                     // Runs once per enclosing execution — single-pass iff
                     // the enclosing body is.
                     let mut sub_site = sub_start;
                     let mut sub_stage = sub_stage_start;
+                    let mark = cx.memory.mark();
                     let value = Value::Array(run_plan_staged(
                         subplan,
                         Env::new(),
@@ -569,6 +653,12 @@ fn run_ops(
                         cx,
                         single_pass,
                     )?);
+                    cx.memory.release_to(mark);
+                    // Every row gets its own copy of the result.
+                    if cx.memory.enabled() {
+                        cx.memory
+                            .retain(weight(&value).saturating_mul(rows.len() as u64))?;
+                    }
                     for env in rows.iter_mut() {
                         env.insert(name.clone(), value.clone());
                     }
@@ -753,6 +843,8 @@ fn expand_for(
                     return Err(ExecutionError::CollectionNotFound(collection.clone()));
                 };
                 let base = &rows[0];
+                // Moved out of the site, so only the outer bindings are copies.
+                cx.charge_joined(base, docs.len(), 0)?;
                 return Ok(docs
                     .into_iter()
                     .map(|doc| {
@@ -773,20 +865,40 @@ fn expand_for(
                     return Err(ExecutionError::CollectionNotFound(collection.clone()));
                 };
                 let mut out = Vec::new();
+                let mut site_bytes: Option<u64> = None;
+                let mut ticks = 0u32;
                 for env in &rows {
                     cx.deadline.check()?;
                     match eval_expr(expr, env, &cx.eval())? {
                         Value::String(key) => {
-                            for &i in buckets.get(&key).map(Vec::as_slice).unwrap_or(&[]) {
+                            let matches = buckets.get(&key).map(Vec::as_slice).unwrap_or(&[]);
+                            let bytes = if cx.memory.enabled() {
+                                matches
+                                    .iter()
+                                    .fold(0u64, |total, &i| total.saturating_add(weight(&docs[i])))
+                            } else {
+                                0
+                            };
+                            cx.charge_joined(env, matches.len(), bytes)?;
+                            for &i in matches {
+                                cx.deadline.check_every(&mut ticks)?;
                                 let mut next = env.clone();
                                 next.insert(var.to_string(), docs[i].clone());
                                 out.push(next);
                             }
                         }
                         // Non-string key: the index cannot answer it, so fall
-                        // back to the full expansion for this row only.
+                        // back to the full expansion for this row only. It is
+                        // charged like any other join before it is built.
                         _ => {
+                            let bytes = if cx.memory.enabled() {
+                                *site_bytes.get_or_insert_with(|| docs_weight(docs))
+                            } else {
+                                0
+                            };
+                            cx.charge_joined(env, docs.len(), bytes)?;
                             for doc in docs {
+                                cx.deadline.check_every(&mut ticks)?;
                                 let mut next = env.clone();
                                 next.insert(var.to_string(), doc.clone());
                                 out.push(next);
@@ -799,9 +911,15 @@ fn expand_for(
             let Some(docs) = materialized.get(&this_site).and_then(SiteRows::docs) else {
                 return Err(ExecutionError::CollectionNotFound(collection.clone()));
             };
-            let mut out = Vec::with_capacity(rows.len().saturating_mul(docs.len()));
+            // The whole product is charged before a row of it exists.
+            cx.charge_product(&rows, docs.len(), || docs_weight(docs))?;
+            let mut out =
+                Vec::with_capacity(rows.len().saturating_mul(docs.len()).min(JOIN_RESERVE_ROWS));
+            let mut ticks = 0u32;
             for env in &rows {
+                cx.deadline.check()?;
                 for doc in docs {
+                    cx.deadline.check_every(&mut ticks)?;
                     let mut next = env.clone();
                     next.insert(var.to_string(), doc.clone());
                     out.push(next);
@@ -850,6 +968,17 @@ fn expand_for(
                     continue;
                 };
                 cx.charge(hits.len())?;
+                let bytes = if cx.memory.enabled() {
+                    hits.iter().fold(0u64, |total, hit| {
+                        total
+                            .saturating_add(weight(&hit.vertex))
+                            .saturating_add(if *bind_edge { weight(&hit.edge) } else { 0 })
+                            .saturating_add(if *bind_path { weight(&hit.path) } else { 0 })
+                    })
+                } else {
+                    0
+                };
+                cx.charge_joined(env, hits.len(), bytes)?;
                 for hit in hits {
                     let mut next = env.clone();
                     next.insert(var.to_string(), hit.vertex);
@@ -875,6 +1004,7 @@ fn expand_for(
                         "special source was not materialized".into(),
                     ));
                 };
+                cx.charge_rows(envs.len() as u64)?;
                 return Ok(envs);
             }
             let Some(SiteRows::Envs(envs)) = materialized.get(&this_site) else {
@@ -882,16 +1012,24 @@ fn expand_for(
                     "special source was not materialized".into(),
                 ));
             };
+            let envs_weight = || {
+                envs.iter()
+                    .fold(0u64, |total, env| total.saturating_add(env_weight(env)))
+            };
+            cx.charge_product(&rows, envs.len(), envs_weight)?;
             if outermost {
                 return Ok(envs.clone());
             }
             // Since D2 an uncorrelated traversal may also sit in a non-first
             // FOR, where it joins against the rows above it. Merging rather
             // than replacing is what keeps those outer bindings visible.
-            let mut out = Vec::with_capacity(rows.len().saturating_mul(envs.len()));
+            let mut out =
+                Vec::with_capacity(rows.len().saturating_mul(envs.len()).min(JOIN_RESERVE_ROWS));
+            let mut ticks = 0u32;
             for env in &rows {
                 cx.deadline.check()?;
                 for site_env in envs {
+                    cx.deadline.check_every(&mut ticks)?;
                     let mut next = env.clone();
                     next.extend(site_env.iter().map(|(k, v)| (k.clone(), v.clone())));
                     out.push(next);
@@ -902,6 +1040,7 @@ fn expand_for(
         PlanSource::VarRef(name) => {
             let mut out = Vec::new();
             for env in &rows {
+                cx.deadline.check()?;
                 let value = env.get(name).cloned().unwrap_or(Value::Null);
                 expand_array(var, value, env, &mut out, cx)?;
             }
@@ -910,6 +1049,7 @@ fn expand_for(
         PlanSource::Expression(expr) => {
             let mut out = Vec::new();
             for env in &rows {
+                cx.deadline.check()?;
                 let value = eval_expr(expr, env, &cx.eval())?;
                 expand_array(var, value, env, &mut out, cx)?;
             }
@@ -931,6 +1071,14 @@ fn expand_array(
     match value {
         Value::Array(items) => {
             cx.charge(items.len())?;
+            // The elements move into the rows; this array is their only
+            // charge as row bindings.
+            let bytes = if cx.memory.enabled() {
+                docs_weight(&items)
+            } else {
+                0
+            };
+            cx.charge_joined(base, items.len(), bytes)?;
             for item in items {
                 let mut next = base.clone();
                 next.insert(var.to_string(), item);
