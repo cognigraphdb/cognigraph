@@ -338,6 +338,15 @@ async fn serve() {
             .promotions
             .configure_governance_root(config.governance_root_public_key.as_deref())
             .expect("invalid COGNIGRAPH_GOVERNANCE_ROOT_PUBLIC_KEY");
+        state
+            .promotions
+            .configure_legacy_promotion_import(config.allow_legacy_promotion_import);
+        if config.allow_legacy_promotion_import {
+            tracing::warn!(
+                "COGNIGRAPH_ALLOW_LEGACY_PROMOTION_IMPORT is on: snapshot import accepts \
+                 unsigned M18 promotion records; switch it off after the restore"
+            );
+        }
         state.jobs.set_batch_size(config.job_ingest_batch_size);
         state.jobs.configure_governance(
             config.job_max_active_total,

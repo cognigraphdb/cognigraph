@@ -389,6 +389,12 @@ selecting a candidate during upgrade is out of scope. Existing M18 heads remain
 visible until an operator deliberately moves consumers to a separately
 governed target; CogniGraph itself performs no such move.
 
+Amended 2026-11-11 ([CG-113](../issues/CG-113.md)): "recoverable" does not
+mean importable by default. A snapshot may not introduce v1 evidence or
+decisions into a store that does not hold them, and a head selected by an
+unsigned decision is marked. See the
+[legacy promotion import decision](decision_legacy_promotion_import.md).
+
 ### D12. Preserve the singleton selection-only boundary
 
 M19 retains one process-local transition lock and one supported writer per

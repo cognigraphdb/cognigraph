@@ -34,12 +34,16 @@ impl PromotionManager {
                         "snapshot evidence map key and embedded key differ",
                     ));
                 }
-                if let Some(existing) = self.backend.get_document(EVIDENCE_COLLECTION, key).await?
-                    && !same_stored_record(&existing, value)?
+                let stored = self.backend.get_document(EVIDENCE_COLLECTION, key).await?;
+                if let Some(existing) = &stored
+                    && !same_stored_record(existing, value)?
                 {
                     return Err(conflict(format!(
                         "snapshot would overwrite immutable evidence record `{key}`"
                     )));
+                }
+                if stored.is_none() && record.governance.is_none() {
+                    self.refuse_unsigned_import("evidence", key)?;
                 }
                 if let Some(existing) = evidence.insert(record.id.clone(), record.clone())
                     && existing != record
@@ -63,12 +67,16 @@ impl PromotionManager {
                         "snapshot decision map key and embedded key differ",
                     ));
                 }
-                if let Some(existing) = self.backend.get_document(DECISIONS_COLLECTION, key).await?
-                    && !same_stored_record(&existing, value)?
+                let stored = self.backend.get_document(DECISIONS_COLLECTION, key).await?;
+                if let Some(existing) = &stored
+                    && !same_stored_record(existing, value)?
                 {
                     return Err(conflict(format!(
                         "snapshot would overwrite immutable decision record `{key}`"
                     )));
+                }
+                if stored.is_none() && record.governance.is_none() {
+                    self.refuse_unsigned_import("decision", key)?;
                 }
                 if let Some(existing) = decisions.insert(record.id.clone(), record.clone())
                     && existing != record
@@ -91,6 +99,20 @@ impl PromotionManager {
         .await?;
         self.validate_snapshot_provenance(tenant, incarnation, snapshot, &evidence)
             .await
+    }
+
+    /// Unsigned M18 records are history, not authority that can be created.
+    /// A snapshot may carry them back into the store they came from; it may
+    /// not introduce them, because nothing in them proves who decided. The
+    /// operator can allow it for a disaster restore (CG-113).
+    fn refuse_unsigned_import(&self, kind: &str, key: &str) -> Result<(), CogniGraphError> {
+        if self.legacy_promotion_import.load(Ordering::Relaxed) {
+            return Ok(());
+        }
+        Err(CogniGraphError::Forbidden(format!(
+            "snapshot holds unsigned legacy promotion {kind} `{key}` that this store does not have; \
+             restoring M18 history needs COGNIGRAPH_ALLOW_LEGACY_PROMOTION_IMPORT=true on the server"
+        )))
     }
 
     pub(super) async fn validate_snapshot_provenance(

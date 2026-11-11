@@ -407,6 +407,6 @@ trust boundary.
 | POST | `/api/lua/execute` | Execute Lua script |
 | GET | `/api/admin/export` | Export a hot JSON snapshot |
 | GET | `/api/admin/logs` | Recent non-2xx responses (ring buffer): method, path, status, latency, message, tenant. Scoped to the caller's tenant: a rejected request belongs to the tenant of the caller who made it. Requests with no identifiable caller are listed too; on a multi-tenant server their path is reduced to the route (`/api/documents/…`) |
-| POST | `/api/admin/import` | Import an additive JSON snapshot |
+| POST | `/api/admin/import` | Import an additive JSON snapshot. Enterprise verifies signed promotion and governance records first and refuses unsigned M18 promotion evidence or decisions that the store does not already hold (403) unless `COGNIGRAPH_ALLOW_LEGACY_PROMOTION_IMPORT=true` |
 
 ---

@@ -207,7 +207,9 @@ Idempotency-Key namespace at admission and validation).
 [CG-111](CG-111.md) is Resolved (CGQL runs under intermediate-row, memory
 and time budgets by default); [CG-197](CG-197.md) tracks moving execution
 off the async workers and [CG-198](CG-198.md) the HTTP status of budget
-errors.
+errors. [CG-113](CG-113.md) is Resolved (snapshot import refuses unsigned
+promotion records it would introduce). All eleven P1 tickets of the
+2026-11-11 review are resolved.
 
 ## Conventions
 
@@ -334,7 +336,7 @@ errors.
 | [CG-110](CG-110.md) | P1 | Resolved | Typed traversal and graph-augmented search accept unbounded depth outside every budget |
 | [CG-111](CG-111.md) | P1 | Resolved | CGQL execution does not bound intermediate rows or value size, so budgets and the request timeout do not hold |
 | [CG-112](CG-112.md) | P1 | Resolved | Reusing an Idempotency-Key across governance record kinds permanently breaks a tenant's promotion authority |
-| [CG-113](CG-113.md) | P1 | Open | Snapshot import lets a tenant Admin create unsigned legacy promotion authority |
+| [CG-113](CG-113.md) | P1 | Resolved | Snapshot import lets a tenant Admin create unsigned legacy promotion authority |
 | [CG-114](CG-114.md) | P1 | Resolved | CLI export can replace a good backup with garbage and writes snapshots world-readable |
 | [CG-115](CG-115.md) | P2 | Open | Configuration parsing fails open: unrecognised values silently become the unsafe default |
 | [CG-116](CG-116.md) | P2 | Open | Tenant lifecycle validation failures return 401 and sign the host admin out of the console |

@@ -170,3 +170,5 @@ mod idempotency_fixtures;
 use idempotency_fixtures::*;
 
 mod idempotency_namespace;
+
+mod legacy_import;
