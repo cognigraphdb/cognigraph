@@ -79,18 +79,47 @@ impl Api {
         };
         let response = request.send().map_err(|e| format!("request failed: {e}"))?;
         let status = response.status();
-        let body: Value = response
-            .json()
-            .unwrap_or_else(|_| Value::String("<non-JSON response>".into()));
+        // A success status proves nothing about the body: the connection can
+        // drop half-way, and a proxy or the console fallback can answer 200
+        // with HTML. Either must fail the command (CG-114).
+        let text = response.text().map_err(|error| {
+            format!("HTTP {status}: the response body could not be read: {error}")
+        })?;
         if !status.is_success() {
-            let detail = body
-                .get("error")
-                .and_then(Value::as_str)
-                .map(str::to_string)
-                .unwrap_or_else(|| body.to_string());
+            let detail = serde_json::from_str::<Value>(&text)
+                .ok()
+                .and_then(|body| {
+                    body.get("error")
+                        .and_then(Value::as_str)
+                        .map(str::to_string)
+                })
+                .unwrap_or_else(|| excerpt(&text));
             return Err(format!("HTTP {status}: {detail}"));
         }
-        Ok(body)
+        if text.trim().is_empty() {
+            return Ok(Value::Null);
+        }
+        serde_json::from_str(&text).map_err(|error| {
+            format!(
+                "HTTP {status}: the response body is not valid JSON ({error}): {}",
+                excerpt(&text)
+            )
+        })
+    }
+}
+
+/// The start of a response body, for an error message.
+fn excerpt(text: &str) -> String {
+    const LIMIT: usize = 120;
+    let trimmed = text.trim();
+    if trimmed.is_empty() {
+        return "<empty body>".into();
+    }
+    let short: String = trimmed.chars().take(LIMIT).collect();
+    if short.len() < trimmed.len() {
+        format!("{short}…")
+    } else {
+        short
     }
 }
 
