@@ -96,6 +96,7 @@ pub(super) async fn graph_augmented_search(
         req.graph_facts_limit,
         super::MAX_GRAPH_FACTS_LIMIT,
     )?;
+    cognigraph_core::check_traversal_depth(req.max_depth)?;
     let embedder = require_embedder(&state)?;
     let cache = state.cache.as_deref();
     let result_generation = cache.map(cognigraph_cache::QueryCache::result_generation);

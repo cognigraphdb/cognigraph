@@ -37,7 +37,7 @@
 | `graph.update_document(collection, key, merge)` | Partially update document |
 | `graph.replace_document(collection, key, doc)` | Replace document |
 | `graph.delete_document(collection, key)` | Delete document |
-| `graph.traverse(start_vertex, opts)` | Multi-hop traversal with scoring |
+| `graph.traverse(start_vertex, opts)` | Multi-hop traversal with scoring; `max_depth` at most 10, and at most 10,000 expanded paths |
 | `graph.neighbors(vertex_id, direction?, collection?)` | Get edges |
 | `graph.upsert_edge(from, to, type, data?, collection?)` | Create/update edge |
 | `graph.similarity(collection, vector, opts)` | Vector search |

@@ -52,6 +52,7 @@ impl NativeBackend {
         };
 
         let mut paths = Vec::new();
+        let mut expanded = 0usize;
         let mut queue = VecDeque::from([(
             start_vertex.to_string(),
             vec![full_vertex_doc(&state, start_vertex)],
@@ -82,6 +83,12 @@ impl NativeBackend {
                     .any(|vertex| vertex.get("_id").and_then(Value::as_str) == Some(next.as_str()))
                 {
                     continue;
+                }
+                // Every expansion copies the documents along the path, so the
+                // budget is charged here, before the copy (CG-110).
+                expanded += 1;
+                if expanded > cognigraph_core::MAX_TRAVERSAL_PATHS {
+                    return Err(cognigraph_core::traversal_budget_exceeded(start_vertex));
                 }
                 let mut next_vertices = vertices.clone();
                 next_vertices.push(full_vertex_doc(&state, &next));
