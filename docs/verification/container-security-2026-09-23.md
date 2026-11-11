@@ -37,6 +37,14 @@ test proves that no route (`_G`, `getfenv`, `rawget`, `package.loadlib`,
 `io.popen`, `debug.getregistry`) reaches them. Both binaries import
 `getaddrinfo`.
 
+**Amendment, 2026-11-11.** The sandbox described above did not hold: the
+package library's `module()` function reached the hidden `io`, `os` and
+`package` libraries ([CG-104](../issues/CG-104.md)). Since v2.7.44 those
+libraries are never loaded into the Lua state, so the imported `fopen64`,
+`popen`, `system` and `dlopen` have no caller that a script can reach. The
+dispositions below that rest on this are valid for images from v2.7.44, not
+for earlier ones.
+
 ## Dispositions of the remaining 22 pairs
 
 | IDs | Package | Disposition |
