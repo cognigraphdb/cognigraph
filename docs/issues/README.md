@@ -191,6 +191,9 @@ advisories and retires the vendored Tantivy snapshot. [CG-194](CG-194.md) tracks
 18 migration that ends the one remaining pin, and [CG-195](CG-195.md) the
 Renovate schedule.
 
+P1 remediation, 2026-11-11: [CG-104](CG-104.md) is Resolved (Lua scripts get
+an allow-list of libraries).
+
 ## Conventions
 
 - This directory holds only the `CG-N.md` tickets and this registry ([CG-193](CG-193.md)). The dated review, remediation and verification records that tickets and the paragraphs above link to are kept privately; those links do not resolve in the public repository.
@@ -307,7 +310,7 @@ Renovate schedule.
 | [CG-101](CG-101.md) | P3 | Open | Hybrid search sums chunk ranks per parent, so the vector leg can outvote BM25 |
 | [CG-102](CG-102.md) | P3 | Open | Embedding providers cannot tell queries from documents |
 | [CG-103](CG-103.md) | P2 | Open | Air-gapped embeddings through a sidecar: separate endpoint settings, Granite R2 measurement, side views and Semantic Neurons validation |
-| [CG-104](CG-104.md) | P1 | Open | Lua scripts reach os, io and jit through the leftover module() global |
+| [CG-104](CG-104.md) | P1 | Resolved | Lua scripts reach os, io and jit through the leftover module() global |
 | [CG-105](CG-105.md) | P1 | Open | Deeply nested CGQL text overflows the stack and aborts the server |
 | [CG-106](CG-106.md) | P1 | Open | CGQL mutations ignore the collection part of a full document id |
 | [CG-107](CG-107.md) | P1 | Open | A document nested deeper than 128 levels cannot be read back and blocks startup |
