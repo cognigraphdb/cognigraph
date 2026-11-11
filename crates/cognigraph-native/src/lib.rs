@@ -8,4 +8,5 @@ mod storage_indexes;
 mod text_index;
 
 pub use memory::{NativeBackend, StorageMode, VectorMode};
+pub use storage::MAX_DOCUMENT_DEPTH;
 pub use text_index::validate_text_search_fields;

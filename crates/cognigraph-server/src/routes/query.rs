@@ -80,6 +80,9 @@ async fn read_write_query(
         | cognigraph_query::ExecutionError::MutationKeyOutsideCollection { .. }) => {
             AppError(CogniGraphError::ValidationError(error.to_string()))
         }
+        cognigraph_query::ExecutionError::InvalidInput(message) => {
+            AppError(CogniGraphError::ValidationError(message))
+        }
         other => AppError(CogniGraphError::QueryError(other.to_string())),
     })?;
 

@@ -548,6 +548,19 @@ impl NativeBackend {
     /// caller mutates memory. Called on every write path, so it also
     /// invalidates the quantized vector indexes.
     fn persist(&self, ops: &[StoreOp<'_>]) -> Result<()> {
+        // Every write path ends here, with or without a store behind it, so
+        // this is where a document that could not be read back is refused
+        // (CG-107). Nothing has been committed or counted yet.
+        for op in ops {
+            if let StoreOp::PutDocument {
+                collection,
+                key,
+                doc,
+            } = op
+            {
+                crate::storage::check_document_depth(collection, key, doc)?;
+            }
+        }
         self.write_version.fetch_add(1, AtomicOrdering::Relaxed);
         match &self.store {
             Some(store) => store.apply(ops),

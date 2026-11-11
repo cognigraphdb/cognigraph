@@ -103,6 +103,21 @@ the existing mmap file; this fix avoids its unnecessary rewrite, not that scan.
 See [CG-35 verification](../issues/collection-ensure-2026-09-09.md) for type/version
 tests, concurrent creation, and authenticated release-server restart evidence.
 
+## Document limits
+
+A stored document may nest arrays and objects at most **100** levels deep,
+the document object itself counting as level 1 (`MAX_DOCUMENT_DEPTH`). Every
+write path refuses a deeper document with a validation error before anything
+is committed: create, update (the merged result counts), replace, atomic
+batch, bulk insert, snapshot import, edges, CGQL mutations and Lua. The HTTP
+routes return 400.
+
+The limit exists because stored rows are read back with a JSON parser that
+stops at 128 nested containers. It leaves room for the envelopes around a
+document in a snapshot or an API response. A row that cannot be parsed makes
+the store fail closed, and the error names the row. The reasoning is in the
+[decision record](../decisions/decision_document_depth_limit.md).
+
 ## Configuration
 
 - `COGNIGRAPH_NATIVE_PATH=/path/to/data.redb` — the server opens the native
