@@ -199,6 +199,8 @@ name a document of the mutation's own collection). [CG-107](CG-107.md) is Resolv
 repair for older unreadable rows. [CG-109](CG-109.md) is Resolved (search
 routes cap their counts and validate field names). [CG-110](CG-110.md) is
 Resolved (typed traversal has a depth cap and Native a path budget).
+[CG-114](CG-114.md) is Resolved (CLI export fails on a bad response and never
+replaces a file).
 
 ## Conventions
 
@@ -326,7 +328,7 @@ Resolved (typed traversal has a depth cap and Native a path budget).
 | [CG-111](CG-111.md) | P1 | Open | CGQL execution does not bound intermediate rows or value size, so budgets and the request timeout do not hold |
 | [CG-112](CG-112.md) | P1 | Open | Reusing an Idempotency-Key across governance record kinds permanently breaks a tenant's promotion authority |
 | [CG-113](CG-113.md) | P1 | Open | Snapshot import lets a tenant Admin create unsigned legacy promotion authority |
-| [CG-114](CG-114.md) | P1 | Open | CLI export can replace a good backup with garbage and writes snapshots world-readable |
+| [CG-114](CG-114.md) | P1 | Resolved | CLI export can replace a good backup with garbage and writes snapshots world-readable |
 | [CG-115](CG-115.md) | P2 | Open | Configuration parsing fails open: unrecognised values silently become the unsafe default |
 | [CG-116](CG-116.md) | P2 | Open | Tenant lifecycle validation failures return 401 and sign the host admin out of the console |
 | [CG-117](CG-117.md) | P2 | Open | Login hashes on async workers, has no attempt throttling and reveals usernames by timing |

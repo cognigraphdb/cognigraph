@@ -79,10 +79,20 @@ fn run(api: &Api, command: Command) -> Result<Option<Value>, String> {
         }
         Command::Export { out } => {
             let snapshot = api.get("/admin/export")?;
+            // Anything that parses as JSON is not yet a snapshot (CG-114).
+            if !snapshot.get("collections").is_some_and(Value::is_object) {
+                return Err(
+                    "the server response is not a snapshot: it has no `collections` object".into(),
+                );
+            }
             match out {
                 Some(path) => {
-                    let body = serde_json::to_string_pretty(&snapshot).unwrap();
-                    std::fs::write(&path, body).map_err(|e| format!("write {path}: {e}"))?;
+                    let body = serde_json::to_vec_pretty(&snapshot)
+                        .map_err(|error| format!("serialize snapshot: {error}"))?;
+                    // A snapshot holds password hashes and every document. It is
+                    // staged privately, synced and published without replacing
+                    // an existing file, so an earlier backup is never lost.
+                    write_new_private_file(&path, &body)?;
                     eprintln!("snapshot written to {path}");
                     Ok(None)
                 }
