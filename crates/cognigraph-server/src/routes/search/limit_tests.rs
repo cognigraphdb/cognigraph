@@ -121,3 +121,19 @@ async fn every_other_search_route_caps_its_counts_first() {
         );
     }
 }
+
+/// CG-110: the graph-augmented route caps traversal depth before it embeds.
+#[tokio::test]
+async fn graph_augmented_search_caps_traversal_depth() {
+    let state = state().await;
+    for depth in [cognigraph_core::MAX_TRAVERSAL_DEPTH + 1, u32::MAX] {
+        refused(
+            graph_augmented::graph_augmented_search(
+                State(state.clone()),
+                body(json!({"query": "alpha", "max_depth": depth})),
+            )
+            .await,
+            "max_depth",
+        );
+    }
+}

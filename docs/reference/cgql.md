@@ -114,6 +114,12 @@ A range starting at `0` includes the start vertex itself: the vertex variable
 binds the start vertex, the edge variable binds `null`, and the path has zero
 edges with a score of `1.0`.
 
+A traversal that expands more than 10,000 paths stops with an error (HTTP
+400), whatever its depth range. The engine enumerates every simple path, so
+the cost follows the number of paths: a dense graph reaches the budget at a
+small depth, a chain never does. Narrow the traversal with a lower depth, one
+direction or a confidence filter in the query's own traversal options.
+
 ### Where a traversal may appear, and what it may start from
 
 A traversal is an ordinary `FOR`: it may be the first one or a later one, and it

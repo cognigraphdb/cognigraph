@@ -67,6 +67,39 @@ impl QueryLanguage {
     }
 }
 
+/// Deepest traversal the typed entry points accept: the HTTP traversal and
+/// graph-augmented routes and the Lua binding. CGQL validates its own depth
+/// with the same default (CG-110).
+pub const MAX_TRAVERSAL_DEPTH: u32 = 10;
+
+/// Largest number of paths one traversal may expand before the backend stops
+/// with a validation error (CG-110).
+///
+/// A traversal enumerates every simple path and copies the vertex and edge
+/// documents along each one, so the cost grows with the number of paths, not
+/// with the depth alone. On a complete graph of ten documents, depth 6 is
+/// about 80,000 paths and 2 GiB of memory. The budget is what keeps a dense
+/// graph from exhausting the process whatever depth is asked for.
+pub const MAX_TRAVERSAL_PATHS: usize = 10_000;
+
+/// The error a backend returns when a traversal runs past its path budget.
+pub fn traversal_budget_exceeded(start_vertex: &str) -> crate::CogniGraphError {
+    crate::CogniGraphError::ValidationError(format!(
+        "traversal from `{start_vertex}` expands more than {MAX_TRAVERSAL_PATHS} paths; \
+         lower the depth, narrow the direction or raise the minimum confidence"
+    ))
+}
+
+/// Refuse a traversal depth above [`MAX_TRAVERSAL_DEPTH`] at a typed entry point.
+pub fn check_traversal_depth(max_depth: u32) -> crate::Result<()> {
+    if max_depth > MAX_TRAVERSAL_DEPTH {
+        return Err(crate::CogniGraphError::ValidationError(format!(
+            "`max_depth` is {max_depth}; the maximum is {MAX_TRAVERSAL_DEPTH}"
+        )));
+    }
+    Ok(())
+}
+
 /// Options for graph traversal
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct TraversalOpts {

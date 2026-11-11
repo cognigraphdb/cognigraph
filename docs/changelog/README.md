@@ -160,6 +160,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 
 ## Releases
 
+- 2026-11-11: [v2.7.49 — Traversal depth cap and path budget](2026-11-11-traversal-bounds.md)
 - 2026-11-11: [v2.7.41 — Enterprise Clippy gate and toolchain canary](2026-11-11-toolchain-canary.md)
 - 2026-11-11: [v2.7.48 — Search limits and field-name validation](2026-11-11-search-limits.md)
 - 2026-11-11: [v2.7.46 — Mutation keys name the target collection](2026-11-11-mutation-key-ids.md)

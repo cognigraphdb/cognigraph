@@ -171,6 +171,11 @@ fn cgql_error(error: cognigraph_query::ExecutionError) -> AppError {
             index,
             existing,
         }),
+        // The backend refused the query's input, for example a traversal
+        // past its path budget (CG-110); that is a request error.
+        cognigraph_query::ExecutionError::InvalidInput(message) => {
+            AppError(CogniGraphError::ValidationError(message))
+        }
         other => AppError(CogniGraphError::QueryError(other.to_string())),
     }
 }

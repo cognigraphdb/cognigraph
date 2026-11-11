@@ -199,6 +199,8 @@ pub(crate) fn register_graph_bindings_with_control(
                         .and_then(|t| t.get::<f64>("path_decay").ok())
                         .unwrap_or(0.8),
                 };
+                cognigraph_core::check_traversal_depth(traversal_opts.max_depth)
+                    .map_err(|error| backend_error("graph.traverse", error))?;
                 let paths = control
                     .block_on(&handle, backend.traverse(&start_vertex, &traversal_opts))?
                     .map_err(|error| backend_error("graph.traverse", error))?;

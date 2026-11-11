@@ -123,6 +123,7 @@ async fn traverse(
     State(state): State<AppState>,
     Json(req): Json<TraverseRequest>,
 ) -> Result<Json<serde_json::Value>, AppError> {
+    cognigraph_core::check_traversal_depth(req.max_depth)?;
     let opts = TraversalOpts {
         max_depth: req.max_depth,
         min_depth: req.min_depth,
@@ -231,3 +232,7 @@ mod tests {
         );
     }
 }
+
+#[cfg(test)]
+#[path = "graph_limit_tests.rs"]
+mod limit_tests;

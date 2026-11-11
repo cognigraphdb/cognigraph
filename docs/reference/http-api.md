@@ -50,6 +50,11 @@ applies even when no embedding provider is configured. Text-search field
 names must not be empty or start with `-`
 ([decision](../decisions/decision_search_and_traversal_limits.md)).
 
+Traversal is bounded the same way. `max_depth` on `/api/graph/traverse` and
+on the graph-augmented route may not exceed 10, and a traversal that expands
+more than 10,000 paths stops with HTTP 400 whatever depth was asked for. The
+path budget also applies to traversals in CGQL and to Lua `graph.traverse`.
+
 ### Graph
 | Method | Path | Description |
 |---|---|---|

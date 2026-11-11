@@ -197,7 +197,8 @@ bounded before parsing). [CG-106](CG-106.md) is Resolved (a mutation key must
 name a document of the mutation's own collection). [CG-107](CG-107.md) is Resolved
 (documents nest at most 100 levels); [CG-196](CG-196.md) tracks an offline
 repair for older unreadable rows. [CG-109](CG-109.md) is Resolved (search
-routes cap their counts and validate field names).
+routes cap their counts and validate field names). [CG-110](CG-110.md) is
+Resolved (typed traversal has a depth cap and Native a path budget).
 
 ## Conventions
 
@@ -321,7 +322,7 @@ routes cap their counts and validate field names).
 | [CG-107](CG-107.md) | P1 | Resolved | A document nested deeper than 128 levels cannot be read back and blocks startup |
 | [CG-108](CG-108.md) | P1 | Open | Requests rejected by the auth middleware are logged without a tenant and shown to every tenant's admin |
 | [CG-109](CG-109.md) | P1 | Resolved | Text search passes an unvalidated limit and field names into Tantivy, which panics |
-| [CG-110](CG-110.md) | P1 | Open | Typed traversal and graph-augmented search accept unbounded depth outside every budget |
+| [CG-110](CG-110.md) | P1 | Resolved | Typed traversal and graph-augmented search accept unbounded depth outside every budget |
 | [CG-111](CG-111.md) | P1 | Open | CGQL execution does not bound intermediate rows or value size, so budgets and the request timeout do not hold |
 | [CG-112](CG-112.md) | P1 | Open | Reusing an Idempotency-Key across governance record kinds permanently breaks a tenant's promotion authority |
 | [CG-113](CG-113.md) | P1 | Open | Snapshot import lets a tenant Admin create unsigned legacy promotion authority |

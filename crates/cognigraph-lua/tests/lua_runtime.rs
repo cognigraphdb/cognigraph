@@ -363,6 +363,21 @@ async fn new_bindings_and_strict_directions() {
         .unwrap();
     assert_eq!(gone, serde_json::json!(true));
 
+    // CG-110: the binding applies the same depth cap as the HTTP route.
+    let err = run(r#"return graph.traverse("articles/a2", { max_depth = 4000000000 })"#)
+        .await
+        .unwrap()
+        .unwrap_err();
+    assert!(
+        err.contains("`max_depth`") && err.contains("the maximum is 10"),
+        "{err}"
+    );
+    let err = run(r#"return graph.traverse("articles/a2", { max_depth = 11 })"#)
+        .await
+        .unwrap()
+        .unwrap_err();
+    assert!(err.contains("the maximum is 10"), "{err}");
+
     // Direction typos now error instead of silently meaning outbound.
     let err = run(r#"return graph.neighbors("articles/a2", "in")"#)
         .await
