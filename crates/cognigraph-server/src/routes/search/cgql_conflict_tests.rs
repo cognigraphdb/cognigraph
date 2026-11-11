@@ -7,7 +7,12 @@ use cognigraph_query::{ExecutionError, QueryMode, parse_and_execute_backend_with
 use serde_json::json;
 use std::collections::HashMap;
 
-use super::cgql_error;
+use cognigraph_query::ExecutionBudget;
+
+/// The mapping both query routes share; these cases need no time limit.
+fn cgql_error(error: ExecutionError) -> crate::error::AppError {
+    crate::cgql_errors::cgql_error(error, &ExecutionBudget::unlimited())
+}
 
 async fn backend_with_constraint() -> NativeBackend {
     let backend = NativeBackend::new();

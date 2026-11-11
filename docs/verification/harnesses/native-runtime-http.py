@@ -90,7 +90,7 @@ def verify(binary, edition, mode, directory, provider_url):
         expect("Parsed query rows", call("/api/search/query", {"query": query}, actor="viewer")["results"] == ["a", "b"])
         for language in ("aql", "unknown"):
             call("/api/search/query", {"query": "RETURN 1", "language": language}, status=403)
-        denied = call("/api/search/query", {"query": 'INSERT { _key: "forbidden" } INTO notes'}, status=500)
+        denied = call("/api/search/query", {"query": 'INSERT { _key: "forbidden" } INTO notes'}, status=403)
         expect("Read endpoint rejects mutation before persistence", "mutations are not allowed" in denied["error"])
         call("/api/documents/notes/forbidden", status=404)
         call("/api/query", {"query": 'INSERT { _key: "q" } INTO work'})
@@ -106,8 +106,9 @@ def verify(binary, edition, mode, directory, provider_url):
         call("/api/lua/execute", {"script": "return graph.create_document('work', {_key='lua'})"})
         expect("Lua write persisted", call("/api/documents/work/lua")["_key"] == "lua")
         for path in ("/api/search/query", "/api/query"):
-            exhausted = call(path, {"query": "FOR n IN [1,2,3,4,5] RETURN n"}, status=500)
+            exhausted = call(path, {"query": "FOR n IN [1,2,3,4,5] RETURN n"}, status=422)
             expect("HTTP source-row budget enforced", "source row budget (4 rows)" in exhausted["error"])
+            expect("HTTP budget refusal is typed", (exhausted.get("code"), exhausted.get("budget"), exhausted.get("limit"), exhausted.get("unit")) == ("query_budget_exceeded", "source_rows", 4, "rows"))
         exhausted = call("/api/lua/execute", {"script": "return graph.query('FOR n IN [1,2,3,4,5] RETURN n')"}, status=500)
         expect("Lua source-row budget enforced", "source row budget (4 rows)" in exhausted["error"])
         call("/api/batch", {"ops": [

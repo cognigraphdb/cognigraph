@@ -526,7 +526,10 @@ type error. Comparisons other than `==`/`!=` between values of different types
 ## Execution Budgets
 
 Four budgets bound a query's cost. Exceeding one fails the query with a
-deterministic error and no partial result.
+deterministic error and no partial result. Over HTTP the answer is 422 with
+`code: "query_budget_exceeded"` and the fields `budget` (`source_rows`,
+`intermediate_rows`, `memory` or `time`), `limit` and `unit`; see
+[HTTP statuses of a query](http-api.md#statuses-of-a-cgql-query).
 
 | Budget | Server setting | Default | Counts |
 |---|---|---|---|

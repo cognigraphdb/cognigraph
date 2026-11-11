@@ -7,6 +7,7 @@ mod artifact_consumption;
 #[cfg(feature = "enterprise")]
 mod artifact_custody;
 mod auth_middleware;
+mod cgql_errors;
 #[cfg(all(test, not(feature = "enterprise")))]
 mod community_tests;
 mod config;

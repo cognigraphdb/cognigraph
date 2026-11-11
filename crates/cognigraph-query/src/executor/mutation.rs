@@ -101,7 +101,7 @@ pub(super) async fn execute_mutation(
             } => {
                 let search_value = eval_expr(search, &env, &cx.eval())?;
                 let Value::Object(search_fields) = &search_value else {
-                    return Err(ExecutionError::Backend(
+                    return Err(ExecutionError::InvalidInput(
                         "UPSERT search expression must be an object".into(),
                     ));
                 };

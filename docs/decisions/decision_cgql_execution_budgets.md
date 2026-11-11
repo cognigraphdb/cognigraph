@@ -70,6 +70,7 @@ interrupt any of it, although the reference said it was the outer guard.
 - A stopped query still needs the time to free what it built, and a single
   function call or copy is not interrupted. With the memory budget on, both
   are bounded by that budget.
-- Budget errors answer HTTP 500 like other execution errors;
-  [CG-198](../issues/CG-198.md) tracks the status.
+- Budget errors answered HTTP 500 until v2.7.56. Since
+  [CG-198](../issues/CG-198.md) they answer 422 with a typed body; see the
+  [error statuses decision](decision_cgql_error_statuses.md).
 - `EXPLAIN ANALYZE` does not report the two new counters.

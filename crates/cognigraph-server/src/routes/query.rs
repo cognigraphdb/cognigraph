@@ -10,7 +10,6 @@ use axum::{Json, Router};
 use serde::Deserialize;
 use std::collections::HashMap;
 
-use cognigraph_core::CogniGraphError;
 use cognigraph_query::{QueryMode, parse_and_execute_backend_with_options};
 
 use crate::error::AppError;
@@ -52,39 +51,8 @@ async fn read_write_query(
     // propagating its result.
     let _ = req.invalidate;
     state.invalidate_search_results().await;
-    let results = execution.map_err(|error| match error {
-        cognigraph_query::ExecutionError::Plan(error) => {
-            AppError(CogniGraphError::ValidationError(error.to_string()))
-        }
-        cognigraph_query::ExecutionError::Forbidden(message) => {
-            AppError(CogniGraphError::Forbidden(message))
-        }
-        cognigraph_query::ExecutionError::Connection(message) => {
-            AppError(CogniGraphError::ConnectionError(message))
-        }
-        cognigraph_query::ExecutionError::Conflict(message) => {
-            AppError(CogniGraphError::DocumentConflict(message))
-        }
-        cognigraph_query::ExecutionError::UniqueViolation {
-            collection,
-            index,
-            existing,
-        } => AppError(CogniGraphError::UniqueViolation {
-            collection,
-            index,
-            existing,
-        }),
-        // The caller named the wrong document; that is a request error, not a
-        // server failure (CG-106).
-        error @ (cognigraph_query::ExecutionError::InvalidDocumentKey
-        | cognigraph_query::ExecutionError::MutationKeyOutsideCollection { .. }) => {
-            AppError(CogniGraphError::ValidationError(error.to_string()))
-        }
-        cognigraph_query::ExecutionError::InvalidInput(message) => {
-            AppError(CogniGraphError::ValidationError(message))
-        }
-        other => AppError(CogniGraphError::QueryError(other.to_string())),
-    })?;
+    let results =
+        execution.map_err(|error| crate::cgql_errors::cgql_error(error, &state.cgql_budget))?;
 
     Ok(Json(serde_json::json!({
         "results": results,
@@ -95,6 +63,7 @@ async fn read_write_query(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use cognigraph_core::CogniGraphError;
     use cognigraph_native::NativeBackend;
 
     #[tokio::test]

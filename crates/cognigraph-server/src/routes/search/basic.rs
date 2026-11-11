@@ -140,44 +140,12 @@ pub(super) async fn raw_query(
         state.cgql_budget,
     )
     .await
-    .map_err(cgql_error)?;
+    .map_err(|error| crate::cgql_errors::cgql_error(error, &state.cgql_budget))?;
 
     Ok(Json(serde_json::json!({
         "results": results,
         "count": results.len(),
     })))
-}
-
-fn cgql_error(error: cognigraph_query::ExecutionError) -> AppError {
-    match error {
-        cognigraph_query::ExecutionError::Plan(error) => {
-            AppError(CogniGraphError::ValidationError(error.to_string()))
-        }
-        cognigraph_query::ExecutionError::Forbidden(message) => {
-            AppError(CogniGraphError::Forbidden(message))
-        }
-        cognigraph_query::ExecutionError::Connection(message) => {
-            AppError(CogniGraphError::ConnectionError(message))
-        }
-        cognigraph_query::ExecutionError::Conflict(message) => {
-            AppError(CogniGraphError::DocumentConflict(message))
-        }
-        cognigraph_query::ExecutionError::UniqueViolation {
-            collection,
-            index,
-            existing,
-        } => AppError(CogniGraphError::UniqueViolation {
-            collection,
-            index,
-            existing,
-        }),
-        // The backend refused the query's input, for example a traversal
-        // past its path budget (CG-110); that is a request error.
-        cognigraph_query::ExecutionError::InvalidInput(message) => {
-            AppError(CogniGraphError::ValidationError(message))
-        }
-        other => AppError(CogniGraphError::QueryError(other.to_string())),
-    }
 }
 
 #[cfg(test)]
