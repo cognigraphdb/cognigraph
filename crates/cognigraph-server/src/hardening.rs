@@ -32,9 +32,12 @@ pub struct ErrorEvent {
     /// The response's `error` field when it was our JSON error body, else
     /// a short snippet; empty when the body had none.
     pub message: String,
-    /// The request's tenant, when it passed the auth/tenant gate. `None`
-    /// for pre-auth failures (401) and untenanted routes — those carry no
-    /// tenant-specific data and are safe to show any admin.
+    /// The tenant the request belongs to: set once the caller is identified,
+    /// whether the request was then served or rejected. `None` when no caller
+    /// could be identified (a missing or invalid token) and for routes outside
+    /// the auth gate. Such an event still records the path that was asked
+    /// for, so on a multi-tenant server it is shown to a tenant admin only
+    /// with that path redacted (CG-108).
     pub tenant: Option<String>,
 }
 
@@ -69,22 +72,42 @@ impl RecentErrors {
         events.push_back(event);
     }
 
-    /// Newest first, optionally limited to `tenant` (plus untenanted
-    /// events, which are never tenant-specific). `None` tenant = no
-    /// filter (single-tenant / auth-disabled deployments).
-    pub fn snapshot(&self, tenant: Option<&str>) -> Vec<ErrorEvent> {
+    /// Newest first. With a `tenant`, only that tenant's events and the
+    /// unattributed ones are returned; `None` means no filter (authentication
+    /// disabled).
+    ///
+    /// `redact_unattributed` is set on a multi-tenant server: an unattributed
+    /// event may be another tenant's request, so its path is cut down to the
+    /// route it hit before a tenant admin sees it.
+    pub fn snapshot(&self, tenant: Option<&str>, redact_unattributed: bool) -> Vec<ErrorEvent> {
         let events = self.events.lock().expect("recent-errors lock poisoned");
         events
             .iter()
             .rev()
-            .filter(|event| match (tenant, &event.tenant) {
-                (Some(caller), Some(event_tenant)) => caller == event_tenant,
-                (Some(_), None) => true,
-                (None, _) => true,
+            .filter_map(|event| match (tenant, &event.tenant) {
+                (Some(caller), Some(event_tenant)) => {
+                    (caller == event_tenant).then(|| event.clone())
+                }
+                (Some(_), None) if redact_unattributed => Some(ErrorEvent {
+                    path: redacted_path(&event.path),
+                    ..event.clone()
+                }),
+                (Some(_), None) | (None, _) => Some(event.clone()),
             })
-            .cloned()
             .collect()
     }
+}
+
+/// Keep the route, drop what was asked of it: `/api/documents/patients/p-1`
+/// becomes `/api/documents/…`. Paths of one or two segments are routes
+/// already and stay as they are.
+fn redacted_path(path: &str) -> String {
+    let mut segments = path.split('/').filter(|segment| !segment.is_empty());
+    let kept: Vec<&str> = segments.by_ref().take(2).collect();
+    if segments.next().is_none() {
+        return path.to_string();
+    }
+    format!("/{}/…", kept.join("/"))
 }
 
 /// Combined state for the metrics middleware: the Prometheus counters and
@@ -318,3 +341,7 @@ mod tests {
         assert!(text.contains("cognigraph_uptime_seconds"));
     }
 }
+
+#[cfg(test)]
+#[path = "hardening_log_tests.rs"]
+mod log_tests;

@@ -36,6 +36,15 @@ cognigraph token rotate alice TOKENKEY       # same key, fresh secret
 cognigraph neuron pending                    # review queue; `neuron show KEY` = evidence inline
 ```
 
+`export --out FILE` writes the snapshot only after the whole response has been
+received and parsed and is known to hold a `collections` object. The file is
+created with mode 0600, because a snapshot contains password hashes and every
+document, and it is published without replacing anything: if `FILE` already
+exists the command fails and the existing backup is left as it was. Use a new
+name per backup, for example a dated one. Any command fails with exit code 1
+when a success response cannot be read or is not JSON, such as an HTML page
+from a proxy ([decision](../decisions/decision_cli_export_safety.md)).
+
 Connection via `--url`/`--token` flags or `COGNIGRAPH_URL`/`COGNIGRAPH_TOKEN`
 env; user/token commands accept usernames or raw user keys; exit code 0 on
 success, 1 on server errors, 2 on usage errors. `cognigraph --help` lists

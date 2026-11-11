@@ -117,7 +117,7 @@ impl PromotionManager {
                 KeyPurpose::PolicyApprover,
             )
             .map_err(signature_error)?;
-        self.ensure_governance_idempotency_available_locked(tenant, incarnation, &key_hash)
+        self.ensure_authority_idempotency_available_locked(tenant, incarnation, &key_hash)
             .await?;
         let mut record = PolicyApprovalRecord {
             key,

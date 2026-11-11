@@ -89,6 +89,7 @@ pub(super) async fn hybrid_search(
     State(state): State<AppState>,
     Json(req): Json<HybridSearchRequest>,
 ) -> Result<Json<serde_json::Value>, AppError> {
+    super::check_limit("limit", req.limit, super::MAX_SEARCH_LIMIT)?;
     cognigraph_native::validate_text_search_fields(&req.search_fields)?;
     if req.search_fields.is_empty() {
         return Err(AppError(cognigraph_core::CogniGraphError::ValidationError(
@@ -134,7 +135,7 @@ pub(super) async fn hybrid_search(
         assisted_cache = Some((cache_hit, weight));
     }
 
-    let fetch_limit = req.limit * 3;
+    let fetch_limit = req.limit.saturating_mul(3);
 
     // Full-text failures are explicit in the response; vector retrieval can
     // still contribute results when the text collection is unavailable.

@@ -76,12 +76,19 @@ impl LuaEngine {
 
     pub fn with_control(control: LuaExecutionControl) -> Result<Self, mlua::Error> {
         // Resource termination must propagate past Lua pcall/xpcall.
+        //
+        // CG-104: `io`, `os`, `package`, `debug` and `ffi` are never loaded.
+        // Hiding their globals is not a boundary: the package library also
+        // registers `module()`, which reaches every loaded library through
+        // the registry. `jit` is loaded only so that it can be switched off,
+        // and is then removed from the globals and from the registry.
         let lua = Lua::new_with(
-            mlua::StdLib::ALL_SAFE,
+            script_libraries() | mlua::StdLib::JIT,
             mlua::LuaOptions::default().catch_rust_panics(false),
         )?;
         disable_jit(&lua)?;
         sandbox(&lua)?;
+        verify_sandbox(&lua)?;
         let hook_control = control.clone();
         lua.set_global_hook(
             mlua::HookTriggers::new().every_nth_instruction(1_000),
@@ -131,19 +138,90 @@ impl LuaEngine {
     }
 }
 
-/// Remove dangerous modules/functions from the Lua environment.
+/// The standard libraries a script may use. LuaJIT's base library, which mlua
+/// always opens, already provides `coroutine`.
+fn script_libraries() -> mlua::StdLib {
+    mlua::StdLib::TABLE | mlua::StdLib::STRING | mlua::StdLib::BIT | mlua::StdLib::MATH
+}
+
+/// Library tables that may stay registered in the Lua registry.
+const LOADED_LIBRARIES: [&str; 6] = ["_G", "coroutine", "table", "string", "bit", "math"];
+
+/// Globals that must not exist: process, file and library access, the debug
+/// and JIT controls, and every way to compile or load code at run time.
+const FORBIDDEN_GLOBALS: [&str; 12] = [
+    "os",
+    "io",
+    "package",
+    "require",
+    "module",
+    "debug",
+    "jit",
+    "ffi",
+    "load",
+    "loadstring",
+    "loadfile",
+    "dofile",
+];
+
+/// Remove dangerous functions from the Lua environment and forget every
+/// library that is not on the allow-list.
 fn sandbox(lua: &Lua) -> Result<(), mlua::Error> {
     let globals = lua.globals();
-    globals.set("os", mlua::Value::Nil)?;
-    globals.set("io", mlua::Value::Nil)?;
-    globals.set("debug", mlua::Value::Nil)?;
-    globals.set("loadfile", mlua::Value::Nil)?;
-    globals.set("dofile", mlua::Value::Nil)?;
-    globals.set("load", mlua::Value::Nil)?;
-    globals.set("loadstring", mlua::Value::Nil)?;
-    globals.set("jit", mlua::Value::Nil)?;
-    globals.set("package", mlua::Value::Nil)?;
-    globals.set("require", mlua::Value::Nil)?;
+    for name in FORBIDDEN_GLOBALS {
+        globals.raw_set(name, mlua::Value::Nil)?;
+    }
+    // `_LOADED` and `_PRELOAD` are what `require` and `module` consult. No
+    // script can reach them without the package or debug library, but nothing
+    // outside the allow-list may be left there either.
+    for registry_table in ["_LOADED", "_PRELOAD"] {
+        let mlua::Value::Table(table) = lua.named_registry_value::<mlua::Value>(registry_table)?
+        else {
+            continue;
+        };
+        let mut names = Vec::new();
+        for pair in table.pairs::<mlua::Value, mlua::Value>() {
+            names.push(pair?.0);
+        }
+        for name in names {
+            let allowed = registry_table == "_LOADED"
+                && matches!(&name, mlua::Value::String(text)
+                    if text.to_str().is_ok_and(|text| LOADED_LIBRARIES.contains(&&*text)));
+            if !allowed {
+                table.raw_set(name, mlua::Value::Nil)?;
+            }
+        }
+    }
+    Ok(())
+}
+
+/// Fail engine construction if anything forbidden is still reachable.
+fn verify_sandbox(lua: &Lua) -> Result<(), mlua::Error> {
+    let globals = lua.globals();
+    for name in FORBIDDEN_GLOBALS {
+        if !matches!(globals.raw_get::<mlua::Value>(name)?, mlua::Value::Nil) {
+            return Err(mlua::Error::external(format!(
+                "Lua sandbox left `{name}` reachable"
+            )));
+        }
+    }
+    for registry_table in ["_LOADED", "_PRELOAD"] {
+        let mlua::Value::Table(table) = lua.named_registry_value::<mlua::Value>(registry_table)?
+        else {
+            continue;
+        };
+        for pair in table.pairs::<mlua::Value, mlua::Value>() {
+            let name = pair?.0;
+            let allowed = registry_table == "_LOADED"
+                && matches!(&name, mlua::Value::String(text)
+                    if text.to_str().is_ok_and(|text| LOADED_LIBRARIES.contains(&&*text)));
+            if !allowed {
+                return Err(mlua::Error::external(format!(
+                    "Lua sandbox left a library registered in {registry_table}"
+                )));
+            }
+        }
+    }
     Ok(())
 }
 
@@ -163,24 +241,5 @@ fn disable_jit(lua: &Lua) -> mlua::Result<()> {
 struct ExecutionStopped(String);
 
 #[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn failed_jit_setup_is_not_ignored() {
-        let lua = Lua::new();
-        lua.load("jit.off = function() error('cannot disable') end")
-            .exec()
-            .unwrap();
-        assert!(disable_jit(&lua).is_err());
-        lua.load("jit.off = function() end; jit.status = function() return true end")
-            .exec()
-            .unwrap();
-        assert!(
-            disable_jit(&lua)
-                .unwrap_err()
-                .to_string()
-                .contains("Cannot disable LuaJIT")
-        );
-    }
-}
+#[path = "runtime_tests.rs"]
+mod tests;

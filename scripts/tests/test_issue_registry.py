@@ -135,6 +135,27 @@ class IssueRegistry(unittest.TestCase):
         self.assertEqual(code, 0, out + err)
         self.assertEqual(json.loads(out)['issues'], 9)
 
+    def test_only_tickets_and_the_registry_may_live_in_the_public_directory(self):
+        issues = self.root / 'docs/issues'
+        for name in ('fixes-2026-09-08.md', 'review-2026-11-11.md', 'notes.txt', 'evidence/capture.json'):
+            (issues / name).parent.mkdir(exist_ok=True)
+            (issues / name).write_text('dated record\n')
+        code, out, _ = run(self.root, 'check')
+        self.assertEqual(code, 1)
+        flagged = [e for e in errors(out) if 'only CG-N.md tickets and the registry' in e]
+        self.assertEqual(len(flagged), 4, flagged)
+        # An ignored file is not part of the public tree, so it does not count.
+        (self.root / '.gitignore').write_text('/docs/issues/.registry.lock\n')
+        for name in ('fixes-2026-09-08.md', 'review-2026-11-11.md', 'notes.txt', 'evidence/capture.json'):
+            (issues / name).unlink()
+        (issues / '.registry.lock').write_text('')
+        private = self.root / 'docs/private/issues'
+        private.mkdir(parents=True)
+        (private / 'fixes-2026-09-08.md').write_text('dated record\n')
+        (self.root / '.gitignore').write_text('/docs/issues/.registry.lock\n/docs/private/\n')
+        code, out, err = run(self.root, 'check')
+        self.assertEqual(code, 0, out + err)
+
     def test_shallow_history_fails_closed(self):
         with tempfile.TemporaryDirectory() as folder:
             clone = Path(folder) / 'clone'

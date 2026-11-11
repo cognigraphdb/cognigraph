@@ -72,6 +72,8 @@ async fn serve() {
     dotenvy::dotenv().ok();
 
     let config = Config::from_env();
+    // Read before `config` is taken apart below.
+    let cgql_budget = config.cgql_budget();
     config
         .validate()
         .unwrap_or_else(|error| panic!("Invalid CogniGraph configuration: {error}"));
@@ -317,18 +319,15 @@ async fn serve() {
         state.judge_partner = Some(std::sync::Arc::from(provider));
     }
 
-    // Per-query CGQL budgets (0 = unlimited)
-    state.cgql_budget = cognigraph_query::ExecutionBudget {
-        max_source_rows: (config.cgql_max_source_rows > 0).then_some(config.cgql_max_source_rows),
-        time_budget_ms: (config.cgql_time_budget_ms > 0).then_some(config.cgql_time_budget_ms),
-    };
-    if state.cgql_budget.max_source_rows.is_some() || state.cgql_budget.time_budget_ms.is_some() {
-        tracing::info!(
-            max_source_rows = ?state.cgql_budget.max_source_rows,
-            time_budget_ms = ?state.cgql_budget.time_budget_ms,
-            "CGQL execution budgets enabled"
-        );
-    }
+    // Per-query CGQL budgets (0 = unlimited).
+    state.cgql_budget = cgql_budget;
+    tracing::info!(
+        max_source_rows = ?state.cgql_budget.max_source_rows,
+        time_budget_ms = ?state.cgql_budget.time_budget_ms,
+        max_intermediate_rows = ?state.cgql_budget.max_intermediate_rows,
+        max_memory_bytes = ?state.cgql_budget.max_memory_bytes,
+        "CGQL execution budgets"
+    );
 
     state.lua_instruction_limit = config.lua_instruction_limit;
     state.token_ttl_secs = config.token_ttl_secs;
@@ -339,6 +338,15 @@ async fn serve() {
             .promotions
             .configure_governance_root(config.governance_root_public_key.as_deref())
             .expect("invalid COGNIGRAPH_GOVERNANCE_ROOT_PUBLIC_KEY");
+        state
+            .promotions
+            .configure_legacy_promotion_import(config.allow_legacy_promotion_import);
+        if config.allow_legacy_promotion_import {
+            tracing::warn!(
+                "COGNIGRAPH_ALLOW_LEGACY_PROMOTION_IMPORT is on: snapshot import accepts \
+                 unsigned M18 promotion records; switch it off after the restore"
+            );
+        }
         state.jobs.set_batch_size(config.job_ingest_batch_size);
         state.jobs.configure_governance(
             config.job_max_active_total,

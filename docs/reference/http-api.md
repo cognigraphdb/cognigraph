@@ -43,6 +43,18 @@ both reads and writes.
 | `/api/search/hybrid` | Native BM25 + vector with RRF fusion; unavailable BM25 data is reported explicitly |
 | `/api/search/graph-augmented` | Semantic seeds + multi-hop graph traversal. `edge_collection` defaults to the application-written `document_relations`; pass `"facts"` to rank construct-built facts, which is the only collection where accepted `relation_rank_hint` neurons can apply. Enterprise responses computed in the request (fresh or cache-assisted) add `warnings` with code `inert_rank_hints` when accepted rank hints exist but `edge_collection` is not exactly `facts`; strong cache hits omit `warnings`. See the [decision record](../decisions/decision_graph_augmented_edge_collection.md). |
 
+Search routes cap the counts a caller may ask for and answer 400 above the
+cap: `limit` (and `seed_limit` on the graph-augmented route) at 1,000, and
+`graph_facts_limit` at 10,000. The cap is checked before anything else, so it
+applies even when no embedding provider is configured. Text-search field
+names must not be empty or start with `-`
+([decision](../decisions/decision_search_and_traversal_limits.md)).
+
+Traversal is bounded the same way. `max_depth` on `/api/graph/traverse` and
+on the graph-augmented route may not exceed 10, and a traversal that expands
+more than 10,000 paths stops with HTTP 400 whatever depth was asked for. The
+path budget also applies to traversals in CGQL and to Lua `graph.traverse`.
+
 ### Graph
 | Method | Path | Description |
 |---|---|---|
@@ -394,7 +406,7 @@ trust boundary.
 | GET | `/openapi.yaml` | Current OpenAPI specification |
 | POST | `/api/lua/execute` | Execute Lua script |
 | GET | `/api/admin/export` | Export a hot JSON snapshot |
-| GET | `/api/admin/logs` | Recent non-2xx responses (ring buffer): method, path, status, latency, message, tenant; scoped to the caller's tenant |
-| POST | `/api/admin/import` | Import an additive JSON snapshot |
+| GET | `/api/admin/logs` | Recent non-2xx responses (ring buffer): method, path, status, latency, message, tenant. Scoped to the caller's tenant: a rejected request belongs to the tenant of the caller who made it. Requests with no identifiable caller are listed too; on a multi-tenant server their path is reduced to the route (`/api/documents/…`) |
+| POST | `/api/admin/import` | Import an additive JSON snapshot. Enterprise verifies signed promotion and governance records first and refuses unsigned M18 promotion evidence or decisions that the store does not already hold (403) unless `COGNIGRAPH_ALLOW_LEGACY_PROMOTION_IMPORT=true` |
 
 ---

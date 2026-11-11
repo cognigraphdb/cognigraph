@@ -89,6 +89,14 @@ pub(super) async fn graph_augmented_search(
     State(state): State<AppState>,
     Json(req): Json<GraphAugmentedRequest>,
 ) -> Result<Json<serde_json::Value>, AppError> {
+    super::check_limit("limit", req.limit, super::MAX_SEARCH_LIMIT)?;
+    super::check_limit("seed_limit", req.seed_limit, super::MAX_SEARCH_LIMIT)?;
+    super::check_limit(
+        "graph_facts_limit",
+        req.graph_facts_limit,
+        super::MAX_GRAPH_FACTS_LIMIT,
+    )?;
+    cognigraph_core::check_traversal_depth(req.max_depth)?;
     let embedder = require_embedder(&state)?;
     let cache = state.cache.as_deref();
     let result_generation = cache.map(cognigraph_cache::QueryCache::result_generation);

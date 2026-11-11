@@ -411,7 +411,7 @@ async fn durable_promotion_lifecycle_inner() {
     head_documents.insert(head_key.clone(), json!({"_key": head_key, "forged": true}));
 
     let restored_raw: Arc<dyn GraphBackend> = Arc::new(NativeBackend::new());
-    let restored_state = AppState::new_shared(restored_raw.clone());
+    let restored_state = legacy_restore_target(restored_raw.clone());
     restored_state
         .promotions
         .import_snapshot(TENANT, INCARNATION, &untrusted_head_snapshot)
@@ -441,7 +441,7 @@ async fn durable_promotion_lifecycle_inner() {
         "documents": {"marker": {"_key": "marker", "value": 1}}
     });
     let missing_job_raw: Arc<dyn GraphBackend> = Arc::new(NativeBackend::new());
-    let missing_job_state = AppState::new_shared(missing_job_raw.clone());
+    let missing_job_state = legacy_restore_target(missing_job_raw.clone());
     assert!(
         missing_job_state
             .promotions
@@ -484,7 +484,7 @@ async fn durable_promotion_lifecycle_inner() {
         .create_document(collision_collection, collision_job.clone())
         .await
         .unwrap();
-    let collision_state = AppState::new_shared(collision_raw.clone());
+    let collision_state = legacy_restore_target(collision_raw.clone());
     let mut collision_snapshot = snapshot.clone();
     collision_snapshot["collections"]["collision_snapshot_should_not_apply"] = json!({
         "type": "document",
@@ -546,7 +546,7 @@ async fn durable_promotion_lifecycle_inner() {
     );
 
     let divergent_job_raw: Arc<dyn GraphBackend> = Arc::new(NativeBackend::new());
-    let divergent_job_state = AppState::new_shared(divergent_job_raw.clone());
+    let divergent_job_state = legacy_restore_target(divergent_job_raw.clone());
     divergent_job_state
         .promotions
         .import_snapshot(TENANT, INCARNATION, &snapshot)
@@ -610,7 +610,7 @@ async fn durable_promotion_lifecycle_inner() {
         "documents": {"marker": {"_key": "marker", "value": 1}}
     });
     let fork_raw: Arc<dyn GraphBackend> = Arc::new(NativeBackend::new());
-    let fork_state = AppState::new_shared(fork_raw.clone());
+    let fork_state = legacy_restore_target(fork_raw.clone());
     assert!(matches!(
         fork_state
             .promotions

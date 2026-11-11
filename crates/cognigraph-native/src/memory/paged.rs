@@ -192,6 +192,7 @@ impl NativeBackend {
         };
         let empty: Vec<String> = Vec::new();
         let mut paths = Vec::new();
+        let mut expanded = 0usize;
         let mut queue = VecDeque::from([(
             start_vertex.to_string(),
             vec![fetch_vertex(start_vertex)],
@@ -236,6 +237,10 @@ impl NativeBackend {
                     .any(|vertex| vertex.get("_id").and_then(Value::as_str) == Some(next.as_str()))
                 {
                     continue;
+                }
+                expanded += 1;
+                if expanded > cognigraph_core::MAX_TRAVERSAL_PATHS {
+                    return Err(cognigraph_core::traversal_budget_exceeded(start_vertex));
                 }
                 let mut next_vertices = vertices.clone();
                 next_vertices.push(fetch_vertex(&next));

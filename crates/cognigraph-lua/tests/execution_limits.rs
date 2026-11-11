@@ -76,6 +76,7 @@ async fn both_query_permissions_receive_row_limits_and_share_elapsed_time() {
             let control = LuaExecutionControl::new(ExecutionBudget {
                 max_source_rows: Some(3),
                 time_budget_ms: Some(100),
+                ..ExecutionBudget::default()
             });
             let engine =
                 LuaEngine::with_backend_control(backend, handle, allow_writes, control).unwrap();
@@ -107,6 +108,56 @@ async fn both_query_permissions_receive_row_limits_and_share_elapsed_time() {
         .await
         .unwrap();
     }
+}
+
+/// CG-111: a query run from Lua draws on the same intermediate-row and
+/// memory budgets as one sent over HTTP.
+#[tokio::test(flavor = "multi_thread")]
+async fn queries_from_lua_inherit_the_row_and_memory_budgets() {
+    let backend = Arc::new(NativeBackend::new());
+    let handle = tokio::runtime::Handle::current();
+    tokio::task::spawn_blocking(move || {
+        let control = LuaExecutionControl::new(ExecutionBudget {
+            max_intermediate_rows: Some(4),
+            max_memory_bytes: Some(4_096),
+            ..ExecutionBudget::unlimited()
+        });
+        let engine = LuaEngine::with_backend_control(backend, handle, false, control).unwrap();
+        engine.set_instruction_limit(u32::MAX);
+        // 3 rows from the first FOR and 9 from the second.
+        let err = engine
+            .execute(r#"return graph.query("FOR a IN [1,2,3] FOR b IN [1,2,3] RETURN 1")"#)
+            .unwrap_err();
+        assert!(
+            err.to_string().contains("intermediate row budget (4 rows)"),
+            "{err}"
+        );
+        // Three tenfold concatenations make 10,000 bytes.
+        let err = engine
+            .execute(
+                r#"return graph.query([[
+                    LET a = "0123456789"
+                    LET b = CONCAT(a, a, a, a, a, a, a, a, a, a)
+                    LET c = CONCAT(b, b, b, b, b, b, b, b, b, b)
+                    LET d = CONCAT(c, c, c, c, c, c, c, c, c, c)
+                    RETURN LENGTH(d)
+                ]])"#,
+            )
+            .unwrap_err();
+        assert!(
+            err.to_string().contains("memory budget (4096 bytes)"),
+            "{err}"
+        );
+        // Each query has its own allowance; the engine stays usable.
+        assert_eq!(
+            engine
+                .execute(r#"return graph.query("FOR a IN [1,2,3] RETURN a")"#)
+                .unwrap(),
+            json!([1, 2, 3])
+        );
+    })
+    .await
+    .unwrap();
 }
 
 #[tokio::test(flavor = "multi_thread")]

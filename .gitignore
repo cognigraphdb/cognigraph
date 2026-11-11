@@ -53,3 +53,7 @@ __pycache__/
 
 # Per-developer Claude Code settings
 .claude/settings.local.json
+
+# Private issue records (CG-193): dated remediation and review records are kept
+# out of the public tree; docs/issues/ holds only CG-N.md tickets and the registry.
+/docs/private/

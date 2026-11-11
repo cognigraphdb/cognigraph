@@ -366,8 +366,10 @@ keys, support). `proposed_by` still names the caller. Side views stay a
 retrieval aid: the path reads `side_views` and `facts` and writes only
 proposals and refusal rows.
 
-The detector has not been measured on a real corpus yet; that run is
-tracked separately (see the decision).
+A [trigger-ablation measurement](../research/semantic-neurons/sideview-gap-measurement-2026-09-23.md)
+on two small public kits nominated every missing expected fact. It also
+nominated a negated, forbidden fact, which the proposer declined. The
+detector finds candidates; the proposer's checks and review keep restraint.
 
 The packaged `blind_eval` runner does the same offline (plus the
 answer-level scorecard):

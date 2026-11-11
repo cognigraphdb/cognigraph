@@ -198,3 +198,38 @@ async fn quota_lowering_linearizes_before_final_admission() {
     );
     state.jobs.shutdown().await;
 }
+
+#[tokio::test]
+async fn cancel_requested_gauge_only_drops_on_leaving_cancel_requested_and_never_wraps() {
+    let state = seeded().await;
+    let gauge = &state.jobs.metrics.cancel_requested;
+    gauge.store(2, Ordering::Relaxed);
+
+    // Leaving any other state must not touch the gauge.
+    state.jobs.release_cancel_requested(JobStatus::Running);
+    state.jobs.release_cancel_requested(JobStatus::Queued);
+    assert_eq!(gauge.load(Ordering::Relaxed), 2);
+
+    state
+        .jobs
+        .release_cancel_requested(JobStatus::CancelRequested);
+    state
+        .jobs
+        .release_cancel_requested(JobStatus::CancelRequested);
+    assert_eq!(gauge.load(Ordering::Relaxed), 0);
+
+    // A release without a matching request stays at zero instead of wrapping
+    // to u64::MAX, which would report every running job as cancel-requested.
+    state
+        .jobs
+        .release_cancel_requested(JobStatus::CancelRequested);
+    assert_eq!(gauge.load(Ordering::Relaxed), 0);
+    assert!(
+        state
+            .jobs
+            .metrics
+            .render(0, 0, 0)
+            .contains("cognigraph_jobs_active{status=\"cancel_requested\"} 0\n")
+    );
+    state.jobs.shutdown().await;
+}

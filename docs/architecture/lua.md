@@ -6,8 +6,14 @@
 
 - **Engine:** mlua with LuaJIT. Construction verifies JIT is disabled and
   propagates sandbox/hook setup failures.
-- **Sandboxing:** `os`, `io`, `debug`, `jit`, `load`, `loadstring`, `loadfile`,
-  `dofile`, `require`, and `package` are removed; host scripts are text-only.
+- **Sandboxing:** the Lua state loads only `table`, `string`, `math`, `bit`
+  and LuaJIT's base library, which includes `coroutine`. `io`, `os`,
+  `package`, `debug` and `ffi` are never loaded, so `require` and `module`
+  do not exist. `jit` is loaded only to switch compilation off and is then
+  removed from the globals and from the registry. `load`, `loadstring`,
+  `loadfile` and `dofile` are removed; host scripts are text-only. Engine
+  construction fails if any of these is still reachable
+  ([decision](../decisions/decision_lua_sandbox_libraries.md)).
 - **Resource limits:** A shared hook checks every 1,000 Lua instructions
   (default cap 1M), including coroutines. Limits reset per execution. Resource
   termination escapes `pcall`/`xpcall` through a typed host unwind. Both query
@@ -31,7 +37,7 @@
 | `graph.update_document(collection, key, merge)` | Partially update document |
 | `graph.replace_document(collection, key, doc)` | Replace document |
 | `graph.delete_document(collection, key)` | Delete document |
-| `graph.traverse(start_vertex, opts)` | Multi-hop traversal with scoring |
+| `graph.traverse(start_vertex, opts)` | Multi-hop traversal with scoring; `max_depth` at most 10, and at most 10,000 expanded paths |
 | `graph.neighbors(vertex_id, direction?, collection?)` | Get edges |
 | `graph.upsert_edge(from, to, type, data?, collection?)` | Create/update edge |
 | `graph.similarity(collection, vector, opts)` | Vector search |

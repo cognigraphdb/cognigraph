@@ -1,0 +1,50 @@
+name: Toolchain canary
+
+# CG-151: CI installs floating stable Rust, so a compiler release can turn the
+# required Clippy gates red without a code change. This weekly run checks the
+# default branch against the current stable toolchain, so new lints and
+# deprecations surface within days instead of at the next push.
+# Policy: docs/decisions/decision_toolchain_policy.md.
+on:
+  schedule:
+    - cron: "23 4 * * 2" # Tuesday 04:23 UTC, after Renovate's Monday window.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cognigraph-toolchain-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  lints:
+    name: Current stable formatting and Clippy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@6bed0761d98439e5a578e2877258200ad565ba87 # stable
+        with:
+          toolchain: stable
+          components: clippy, rustfmt
+      - name: Cache Cargo
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+      - name: Report the toolchain under test
+        run: |
+          rustc --version
+          cargo clippy --version
+      - name: Formatting
+        run: cargo fmt --all -- --check
+      - name: Community Clippy
+        run: cargo clippy --locked --all-targets -- -D warnings
+      - name: Enterprise Clippy
+        run: cargo clippy --locked --all-targets --features enterprise -- -D warnings

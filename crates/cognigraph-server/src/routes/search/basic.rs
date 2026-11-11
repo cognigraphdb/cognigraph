@@ -9,7 +9,9 @@ use cognigraph_core::{CogniGraphError, VectorSearchOpts};
 use crate::error::AppError;
 use crate::state::AppState;
 
-use super::{default_embeddings_collection, default_limit, default_threshold};
+use super::{
+    MAX_SEARCH_LIMIT, check_limit, default_embeddings_collection, default_limit, default_threshold,
+};
 
 // ---------------------------------------------------------------------------
 // Vector search (pre-computed embeddings)
@@ -32,6 +34,7 @@ pub(super) async fn vector_search(
     State(state): State<AppState>,
     Json(req): Json<VectorSearchRequest>,
 ) -> Result<Json<serde_json::Value>, AppError> {
+    check_limit("limit", req.limit, MAX_SEARCH_LIMIT)?;
     let opts = VectorSearchOpts {
         threshold: Some(req.threshold),
         limit: req.limit,
@@ -73,6 +76,7 @@ pub(super) async fn text_search(
     State(state): State<AppState>,
     Json(req): Json<TextSearchRequest>,
 ) -> Result<Json<serde_json::Value>, AppError> {
+    check_limit("limit", req.limit, MAX_SEARCH_LIMIT)?;
     let hits = state
         .backend
         .text_search(&req.collection, &req.query, &req.fields, req.limit)
@@ -167,6 +171,11 @@ fn cgql_error(error: cognigraph_query::ExecutionError) -> AppError {
             index,
             existing,
         }),
+        // The backend refused the query's input, for example a traversal
+        // past its path budget (CG-110); that is a request error.
+        cognigraph_query::ExecutionError::InvalidInput(message) => {
+            AppError(CogniGraphError::ValidationError(message))
+        }
         other => AppError(CogniGraphError::QueryError(other.to_string())),
     }
 }

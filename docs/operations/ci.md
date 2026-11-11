@@ -12,9 +12,9 @@ The first suite includes frozen UI installation/checks/build, workflow lint,
 Cargo and Bun advisory scans, read-only dependency freshness checks, script regressions, formatting, docs, issue and
 edition boundaries, strict Clippy/tests in both editions, Helm rendering,
 Native release acceptance and both-edition Chromium regressions. Rust builds,
-Clippy and tests use the lockfile without modification. The bounded Tantivy
-snapshot also passes `scripts/check-vendored.py`, which checks published source
-bytes and permits only the reviewed dependency-manifest patch.
+Clippy and tests use the lockfile without modification. No dependency is
+vendored: the bounded Tantivy snapshot and its integrity check were retired
+with Tantivy 0.27.0 ([CG-192](../issues/CG-192.md)).
 
 The Docker suite builds both Linux images on the pulled distroless runtime,
 scans both image IDs for vulnerabilities, tests their packaged server/CLI and
@@ -56,6 +56,15 @@ Run `rustup update stable` before qualifying an outgoing candidate, then confirm
 `rustc --version` and `cargo clippy --version`. A locally installed toolchain
 named stable can lag behind the fresh stable installed by GitHub; CG-69's first
 PR run exposed a new Clippy lint after local validation on an older release.
+
+Rust stays on floating stable under the [toolchain policy](../decisions/decision_toolchain_policy.md).
+The `Toolchain canary` workflow (`.github/workflows/toolchain.yml`) runs every
+Tuesday on the default branch and on manual dispatch: formatting and both
+Clippy gates against the stable release of that day. It is not a required
+check. Look at its latest run before qualifying a candidate; a red run is
+recorded as a ticket and fixed before the next push. GitHub disables scheduled
+workflows after 60 days without repository activity, so re-enable it in the
+Actions settings after a long pause.
 
 The `client` suite (`python3 scripts/verify.py --suite client`, part of the CI
 suite) installs `clients/typescript` from its frozen Bun lockfile, runs Biome,

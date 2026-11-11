@@ -24,6 +24,7 @@ Cargo feature or select the corresponding Docker image as described in
 | `COGNIGRAPH_HOST_ADMIN_PASSWORD` | unset | Separately bootstraps the control-plane-only `host-admin` user at startup; requires auth and `COGNIGRAPH_JWT_SECRET` |
 | `COGNIGRAPH_JWT_SECRET` / `COGNIGRAPH_JWT_TTL_SECS` | unset / 3600 | Enables `POST /api/auth/login` sessions |
 | `COGNIGRAPH_GOVERNANCE_ROOT_PUBLIC_KEY` | unset | M19-M26 trust anchor: canonical unpadded base64url encoding of exactly 32 Ed25519 root public-key bytes. Signed-governance mutations fail closed when absent or invalid; never configure a private key. |
+| `COGNIGRAPH_ALLOW_LEGACY_PROMOTION_IMPORT` | `false` | Enterprise. Lets `POST /api/admin/import` introduce unsigned M18 promotion evidence and decisions that the store does not hold. For a disaster restore of pre-M19 history only: with it on, a tenant Admin can import a promotion chain nobody signed. Switch it off after the restore |
 | `COGNIGRAPH_ARTIFACT_SOURCE` | `disabled` | M21-M23 evaluation and M26 generation source: `disabled` or `local-cas`. Context-v4/v5/v6 evaluation and M26 build are rejected while disabled. No mode dereferences a signed location or fetches over the network. |
 | `COGNIGRAPH_ARTIFACT_CAS_ROOT` | unset | Required with `COGNIGRAPH_ARTIFACT_SOURCE=local-cas`: existing absolute, normal non-symlink operator-staged root containing a normal `tenants` directory. Mount read-only; CogniGraph never creates, uploads, replaces, or deletes blobs. |
 | `COGNIGRAPH_ARTIFACT_MAX_EVALUATION_BYTES` | 1073741824 (1 GiB) | Positive maximum cumulative declared lengths charged for actual M21-M23 verification and M26 generation-build reads after safe digest+length reuse. This variable is not a peak-memory, CPU, or elapsed-time limit. M21-M23 durable verification separately enforces 10,000 entries, 4,096 unique digest+length pairs, and a fixed 300-second operation deadline. M26 narrows its synchronous build to one at-most-64-MiB canonical prepared corpus plus its generation bounds and is canceled by the configured HTTP request timeout; there is no separate M26 300-second deadline. M22 pins corpus/candidate/graph derivation caps, and M23 additionally pins raw-document and preparation caps. |
@@ -35,11 +36,14 @@ Cargo feature or select the corresponding Docker image as described in
 | `COGNIGRAPH_JOB_RETENTION_SECS` | 2592000 (30 days) | Default terminal-job age used when `POST /api/admin/jobs/archive` omits `before_ms`; it does not start an automatic purge |
 | `COGNIGRAPH_JOB_ARCHIVE_BATCH_SIZE` | 100 | Default terminal records processed by one archive request; operator requests are capped at 1000 |
 | `COGNIGRAPH_CGQL_MUTATIONS_ENABLED` | `false` | Mounts read-write `POST /api/query` |
-| `COGNIGRAPH_CGQL_MAX_SOURCE_ROWS` / `COGNIGRAPH_CGQL_TIME_BUDGET_MS` | 0 (off) | HTTP CGQL budgets; Lua applies the row cap per `graph.query()` and shares the time allowance across the whole script |
+| `COGNIGRAPH_CGQL_MAX_SOURCE_ROWS` | 0 (off) | Per-query cap on rows read from sources, for HTTP CGQL and Lua `graph.query()` |
+| `COGNIGRAPH_CGQL_TIME_BUDGET_MS` | the request timeout | Per-query wall-clock budget; Lua shares it across the whole script. Execution is synchronous, so this budget, not the request timeout, is what ends a long query. 0 = unlimited |
+| `COGNIGRAPH_CGQL_MAX_INTERMEDIATE_ROWS` | 100000000 | Per-query cap on rows produced by `FOR` and read by `COLLECT` and `SORT`. 0 = unlimited |
+| `COGNIGRAPH_CGQL_MAX_MEMORY_BYTES` | 1073741824 (1 GiB) | Per-query cap on the estimated memory of what a query builds and keeps. 0 = unlimited |
 | `COGNIGRAPH_LUA_INSTRUCTION_LIMIT` | 0 (use engine default) | Sandbox instruction cap; 0 keeps the 1,000,000-instruction engine default |
 | `COGNIGRAPH_QUERY_CACHE_ENABLED` | `false` | Semantic query cache (`COGNIGRAPH_QUERY_CACHE_*` tunables) |
 | `COGNIGRAPH_QUERY_CACHE_BACKEND` / `COGNIGRAPH_QUERY_CACHE_PATH` | `memory` / unset | `persistent` + a redb path makes cached embeddings survive restarts (results stay in-memory) |
-| `COGNIGRAPH_EMBEDDING_PROVIDER` | `none` | `openai` / `ollama` / `gemini` + provider keys |
+| `COGNIGRAPH_EMBEDDING_PROVIDER` | `none` | `openai` / `ollama` / `gemini` + provider keys. Measured 2026-09-23 on five languages, `gemini` with `gemini-embedding-2` retrieved best; with `openai` use `COGNIGRAPH_EMBEDDING_MODEL=text-embedding-3-large` ([benchmark](../research/benchmarks/embedding-recall-2026-09-23.md)) |
 | `COGNIGRAPH_COMPLETION_PROVIDER` | inferred | `openai` or `gemini`; unset selects a nonblank OpenAI key first, then Gemini. No key and no explicit provider disables the optional lane. Invalid explicit settings fail startup. |
 | `COGNIGRAPH_COMPLETION_MODEL` | `gpt-5.6-luna` / `gemini-3.8-flash` | Main provider's model for directed construction, drafting, proposal, answer evaluation, and fallback review. Luna uses the selected `reasoning_effort: low` baseline wherever it is resolved; other OpenAI model overrides keep their provider defaults. |
 | `COGNIGRAPH_SIDEVIEWS_PROVIDER` | inherits main provider | Optional separate `openai` / `gemini` lane; an explicit provider uses its own default model unless `COGNIGRAPH_SIDEVIEWS_MODEL` is set. |
@@ -57,7 +61,7 @@ Cargo feature or select the corresponding Docker image as described in
 Production baseline: `COGNIGRAPH_AUTH_ENABLED=true`, separate
 `COGNIGRAPH_ADMIN_PASSWORD` and `COGNIGRAPH_HOST_ADMIN_PASSWORD` secrets set,
 `COGNIGRAPH_JWT_SECRET` set, budgets on
-(`COGNIGRAPH_CGQL_MAX_SOURCE_ROWS`, `COGNIGRAPH_CGQL_TIME_BUDGET_MS`, `COGNIGRAPH_LUA_INSTRUCTION_LIMIT`),
+(`COGNIGRAPH_CGQL_MAX_SOURCE_ROWS`, `COGNIGRAPH_LUA_INSTRUCTION_LIMIT`; the CGQL time, intermediate-row and memory budgets are on by default),
 `COGNIGRAPH_RATE_LIMIT_PER_MINUTE` on, `COGNIGRAPH_LOG_FORMAT=json`. TLS terminates at your
 reverse proxy. An M19-M26 governed deployment also requires one externally
 managed `COGNIGRAPH_GOVERNANCE_ROOT_PUBLIC_KEY`; graph-only and historical

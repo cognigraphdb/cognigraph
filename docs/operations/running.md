@@ -141,9 +141,13 @@ The operational routes stay at the **root** by convention: `GET /health`,
   `info` for 4xx. In production, capture stdout (docker/journald/etc.).
 - The same events also fill a bounded in-memory ring (last 200), exposed
   at **`GET /api/admin/logs`** (Admin scope) and shown in the console's
-  Operations screen. It is scoped to the caller's tenant plus untenanted
-  events (pre-auth 401s, unknown routes) — a tenant admin never sees
-  another tenant's request paths. It is a live operational aid, not a
+  Operations screen. It is scoped to the caller's tenant: a request
+  rejected after its caller was identified (a 403, a suspended tenant)
+  belongs to that caller's tenant. Requests with no identifiable caller
+  (401s, unknown routes) are listed for every admin; on a multi-tenant
+  server their path is reduced to the route group (`/api/documents/…`), so
+  a tenant admin never sees another tenant's collection names or keys.
+  Stdout keeps the full path. It is a live operational aid, not a
   durable audit log: it is process-local and lossy, and clears on restart.
 - To also see a span per request (all statuses), raise the log filter:
   `RUST_LOG=cognigraph=info,tower_http=info` turns on the mounted
@@ -157,7 +161,9 @@ The operational routes stay at the **root** by convention: `GET /health`,
   dataset size. `sidecar` cuts vector RAM ~7x; `paged` keeps only keys + an
   LRU cache resident for datasets larger than RAM.
 - Budgets (`COGNIGRAPH_CGQL_*`, `COGNIGRAPH_LUA_INSTRUCTION_LIMIT`) are the guardrails against
-  untrusted queries; the request timeout backstops everything else.
+  untrusted queries. A CGQL query runs synchronously and is ended by its own
+  time budget, which defaults to the request timeout; the request timeout
+  covers everything else.
 - Single-node by design. HA/replication is out of scope for this phase;
   disaster recovery composes tested backend recovery, an M24 artifact bundle,
   and separately retained configuration/trust/secrets. No one component is a

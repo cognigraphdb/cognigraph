@@ -74,6 +74,15 @@ async fn read_write_query(
             index,
             existing,
         }),
+        // The caller named the wrong document; that is a request error, not a
+        // server failure (CG-106).
+        error @ (cognigraph_query::ExecutionError::InvalidDocumentKey
+        | cognigraph_query::ExecutionError::MutationKeyOutsideCollection { .. }) => {
+            AppError(CogniGraphError::ValidationError(error.to_string()))
+        }
+        cognigraph_query::ExecutionError::InvalidInput(message) => {
+            AppError(CogniGraphError::ValidationError(message))
+        }
         other => AppError(CogniGraphError::QueryError(other.to_string())),
     })?;
 

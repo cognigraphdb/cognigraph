@@ -21,6 +21,13 @@ fn index_err(e: impl std::fmt::Display) -> CogniGraphError {
 pub fn validate_text_search_fields(fields: &[String]) -> Result<()> {
     let mut seen = HashSet::new();
     for field in fields {
+        // The index library asserts on these names instead of returning an
+        // error, so they must never reach its schema builder (CG-109).
+        if !tantivy::schema::is_valid_field_name(field) {
+            return Err(CogniGraphError::ValidationError(format!(
+                "text search field `{field}` must not be empty or start with `-`"
+            )));
+        }
         if field == "_key" || !seen.insert(field) {
             return Err(CogniGraphError::ValidationError(format!(
                 "text search field `{field}` is reserved or duplicated"
@@ -169,10 +176,15 @@ impl TextIndex {
             })
             .collect();
         let searcher = self.reader.searcher();
+        // The collector reserves room for twice the limit in every segment
+        // before it looks at a document. A limit above the number of indexed
+        // documents cannot return more hits, so it is clamped first (CG-109).
+        let indexed = usize::try_from(searcher.num_docs()).unwrap_or(usize::MAX);
+        let limit = limit.min(indexed).max(1);
         let top = searcher
             .search(
                 &BooleanQuery::new(clauses),
-                &TopDocs::with_limit(limit.max(1)).order_by_score(),
+                &TopDocs::with_limit(limit).order_by_score(),
             )
             .map_err(index_err)?;
         let mut hits: Vec<(f64, String)> = top

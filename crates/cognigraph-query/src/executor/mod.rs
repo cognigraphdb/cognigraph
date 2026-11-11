@@ -2,6 +2,7 @@ mod eval;
 mod explain;
 mod limit;
 mod materialize;
+mod memory;
 mod mutation;
 mod pipeline;
 mod resolve;
@@ -164,6 +165,11 @@ pub enum ExecutionError {
     #[error("unsupported function `{0}`")]
     UnsupportedFunction(String),
 
+    /// The backend rejected the query's input, for example a document that
+    /// nests too deeply to store; API layers map it to 400.
+    #[error("{0}")]
+    InvalidInput(String),
+
     #[error("backend execution error: {0}")]
     Backend(String),
 
@@ -186,6 +192,13 @@ pub enum ExecutionError {
     #[error("mutation key must be a string")]
     InvalidDocumentKey,
 
+    /// A mutation key was a `collection/key` id for another collection, or a
+    /// string containing `/` that is not an id of the target (CG-106).
+    #[error(
+        "mutation key `{id}` is not a document of `{collection}`; give a plain key or a full `{collection}/<key>` id"
+    )]
+    MutationKeyOutsideCollection { id: String, collection: String },
+
     #[error("FOR source must be an array")]
     ExpectedArraySource,
 
@@ -194,6 +207,12 @@ pub enum ExecutionError {
 
     #[error("query exceeded its time budget")]
     TimeBudgetExceeded,
+
+    #[error("query exceeded the intermediate row budget ({0} rows)")]
+    IntermediateRowBudgetExceeded(u64),
+
+    #[error("query exceeded its memory budget ({0} bytes)")]
+    MemoryBudgetExceeded(u64),
 }
 
 /// Whether a CGQL execution is allowed to modify data.
@@ -203,14 +222,53 @@ pub enum QueryMode {
     ReadWrite,
 }
 
-/// Per-query execution budget for untrusted callers. `None` = unlimited.
-#[derive(Debug, Clone, Copy, Default)]
+/// Default cap on rows a query may produce and reprocess after its sources.
+pub const DEFAULT_MAX_INTERMEDIATE_ROWS: u64 = 100_000_000;
+/// Default cap on the memory a query may build and keep: 1 GiB.
+pub const DEFAULT_MAX_MEMORY_BYTES: u64 = 1 << 30;
+
+/// Per-query execution budget. `None` = unlimited.
+///
+/// The default leaves source rows and time unlimited, as before, and bounds
+/// intermediate rows and memory: a few hundred bytes of query text must not
+/// be able to exhaust the process (CG-111). [`ExecutionBudget::unlimited`]
+/// is for trusted callers that own their input.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct ExecutionBudget {
     /// Query-wide cap on materialized rows, backend document lookup attempts,
     /// and runtime array/correlated-traversal expansions, including retries.
     pub max_source_rows: Option<u64>,
     /// Wall-clock budget for the whole execution.
     pub time_budget_ms: Option<u64>,
+    /// Query-wide cap on rows produced by every `FOR` and rows read by
+    /// `COLLECT` and `SORT`, subqueries and retried passes included.
+    pub max_intermediate_rows: Option<u64>,
+    /// Query-wide cap on the approximate memory of what a query builds and
+    /// keeps: joined rows, `LET` values, grouping and sort keys, results.
+    pub max_memory_bytes: Option<u64>,
+}
+
+impl Default for ExecutionBudget {
+    fn default() -> Self {
+        Self {
+            max_source_rows: None,
+            time_budget_ms: None,
+            max_intermediate_rows: Some(DEFAULT_MAX_INTERMEDIATE_ROWS),
+            max_memory_bytes: Some(DEFAULT_MAX_MEMORY_BYTES),
+        }
+    }
+}
+
+impl ExecutionBudget {
+    /// No limit of any kind.
+    pub const fn unlimited() -> Self {
+        Self {
+            max_source_rows: None,
+            time_budget_ms: None,
+            max_intermediate_rows: None,
+            max_memory_bytes: None,
+        }
+    }
 }
 
 #[derive(Clone, Copy)]
@@ -234,6 +292,16 @@ impl Deadline {
         }
         Ok(())
     }
+
+    /// The same check for inner loops, reading the clock once every 1,024
+    /// rows instead of once per row.
+    fn check_every(&self, counter: &mut u32) -> Result<(), ExecutionError> {
+        *counter = counter.wrapping_add(1);
+        if *counter & 0x3ff == 0 {
+            self.check()?;
+        }
+        Ok(())
+    }
 }
 
 type BindVars = HashMap<String, Value>;
@@ -253,6 +321,8 @@ pub(super) fn backend_execution_error(error: CogniGraphError) -> ExecutionError 
             index,
             existing,
         },
+        // The backend refused the caller's input; API layers return 400.
+        CogniGraphError::ValidationError(message) => ExecutionError::InvalidInput(message),
         other => ExecutionError::Backend(other.to_string()),
     }
 }

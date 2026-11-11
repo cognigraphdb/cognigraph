@@ -29,7 +29,6 @@ impl PromotionManager {
         }
         let mut principal_purposes = BTreeMap::<String, KeyPurpose>::new();
         let mut key_ids = HashSet::new();
-        let mut idempotency_hashes = HashSet::new();
         for key in authority.keys.values() {
             self.validate_key_record(key, tenant, incarnation)?;
             if !key_ids.insert(key.verification_key.key_id.clone()) {
@@ -41,15 +40,9 @@ impl PromotionManager {
             {
                 return Err(conflict("governance principal crosses duties"));
             }
-            if !idempotency_hashes.insert(key.idempotency_key_hash.clone()) {
-                return Err(conflict("governance records reuse an idempotency-key hash"));
-            }
         }
         for revocation in authority.revocations.values() {
             self.validate_revocation_record(revocation, tenant, incarnation)?;
-            if !idempotency_hashes.insert(revocation.idempotency_key_hash.clone()) {
-                return Err(conflict("governance records reuse an idempotency-key hash"));
-            }
             let key = authority
                 .keys
                 .get(&revocation.registration_id)
@@ -76,9 +69,6 @@ impl PromotionManager {
                 policy.created_at_ms,
                 authority.revocations.get(&author.registration_id),
             )?;
-            if !idempotency_hashes.insert(policy.idempotency_key_hash.clone()) {
-                return Err(conflict("governance records reuse an idempotency-key hash"));
-            }
         }
         for approval in authority.approvals.values() {
             let policy = authority
@@ -108,9 +98,6 @@ impl PromotionManager {
                 approval.approved_at_ms,
                 authority.revocations.get(&approver.registration_id),
             )?;
-            if !idempotency_hashes.insert(approval.idempotency_key_hash.clone()) {
-                return Err(conflict("governance records reuse an idempotency-key hash"));
-            }
         }
         ensure_semantic_repair_candidate_capacity(
             authority
@@ -138,9 +125,6 @@ impl PromotionManager {
                 revision.created_at_ms,
                 authority.revocations.get(&author.registration_id),
             )?;
-            if !idempotency_hashes.insert(revision.idempotency_key_hash.clone()) {
-                return Err(conflict("governance records reuse an idempotency-key hash"));
-            }
         }
         for review in authority.semantic_repair_reviews.values() {
             let revision = authority
@@ -180,9 +164,6 @@ impl PromotionManager {
                 review.reviewed_at_ms,
                 authority.revocations.get(&approver.registration_id),
             )?;
-            if !idempotency_hashes.insert(review.idempotency_key_hash.clone()) {
-                return Err(conflict("governance records reuse an idempotency-key hash"));
-            }
         }
         let mut artifact_manifest_bytes = 0_usize;
         for artifact in authority.artifacts.values() {
@@ -206,10 +187,7 @@ impl PromotionManager {
                 artifact.accepted_at_ms,
                 authority.revocations.get(&attestor.registration_id),
             )?;
-            if !idempotency_hashes.insert(artifact.idempotency_key_hash.clone()) {
-                return Err(conflict("governance records reuse an idempotency-key hash"));
-            }
         }
-        Ok(())
+        authority.ensure_idempotency_hashes_unique()
     }
 }

@@ -12,12 +12,14 @@ pub mod validation;
 
 pub use ast::*;
 pub use executor::{
-    ExecutionBudget, QueryMode, parse_and_execute_backend_with_mode,
-    parse_and_execute_backend_with_options,
+    DEFAULT_MAX_INTERMEDIATE_ROWS, DEFAULT_MAX_MEMORY_BYTES, ExecutionBudget, QueryMode,
+    parse_and_execute_backend_with_mode, parse_and_execute_backend_with_options,
 };
 pub use executor::{ExecutionError, InMemoryDataset, execute_plan, parse_and_execute};
 pub use executor::{execute_backend_plan, parse_and_execute_backend};
-pub use parser::{ParseError, parse_query};
+pub use parser::{
+    MAX_EXPRESSION_DEPTH, MAX_EXPRESSION_NESTING, MAX_QUERY_BYTES, ParseError, parse_query,
+};
 pub use planner::{LogicalPlan, PlanError, PlanSource, parse_and_plan, plan_query};
 pub use validation::{
     ValidationError, ValidationOptions, validate_query, validate_query_with_options,

@@ -20,6 +20,21 @@ SECTIONS = {
     "Superseded identity history",
 }
 LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+PRIVATE_ISSUE_RECORD = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*-\d{4}-\d{2}-\d{2}\.md")
+
+
+def private_issue_record(path, root):
+    """Return where a dated issue record lives privately, or None for any other link.
+
+    The public `docs/issues/` directory holds only `CG-N.md` tickets and the
+    registry (CG-193). Dated remediation and review records are kept in the
+    ignored `docs/private/issues/` folder, so a link to one is optional in a
+    public checkout, like a link into the product checkout.
+    """
+    root = Path(root).resolve()
+    if path.parent == root / "docs/issues" and PRIVATE_ISSUE_RECORD.fullmatch(path.name):
+        return root / "docs/private/issues" / path.name
+    return None
 
 
 def anchors(path):
@@ -99,6 +114,7 @@ def check_index(root):
     checked_anchors = 0
     external_links = 0
     optional_product_links = 0
+    private_record_links = 0
     anchor_cache = {}
     for _, destination in LINK.findall(content):
         target = urlsplit(destination.strip("<>"))
@@ -111,6 +127,12 @@ def check_index(root):
             # `check-docs.py --include-product` validates these when requested.
             optional_product_links += 1
             continue
+        private = private_issue_record(path, root)
+        if private is not None:
+            if not private.parent.is_dir():
+                private_record_links += 1
+                continue
+            path = private
         local_links += 1
         if not path.exists():
             errors.append(f"missing local link: {destination}")
@@ -130,6 +152,7 @@ def check_index(root):
         "markdown_anchors_checked": checked_anchors,
         "external_links_not_checked": external_links,
         "optional_product_links_not_checked": optional_product_links,
+        "private_issue_record_links_not_checked": private_record_links,
         "errors": errors,
     }
 

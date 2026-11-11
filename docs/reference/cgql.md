@@ -114,6 +114,12 @@ A range starting at `0` includes the start vertex itself: the vertex variable
 binds the start vertex, the edge variable binds `null`, and the path has zero
 edges with a score of `1.0`.
 
+A traversal that expands more than 10,000 paths stops with an error (HTTP
+400), whatever its depth range. The engine enumerates every simple path, so
+the cost follows the number of paths: a dense graph reaches the budget at a
+small depth, a chain never does. Narrow the traversal with a lower depth, one
+direction or a confidence filter in the query's own traversal options.
+
 ### Where a traversal may appear, and what it may start from
 
 A traversal is an ordinary `FOR`: it may be the first one or a later one, and it
@@ -519,12 +525,72 @@ type error. Comparisons other than `==`/`!=` between values of different types
 
 ## Execution Budgets
 
-Callers can bound a query's cost: a cap on rows materialized from the
-source (scan, traversal, or vector search) and a wall-clock budget checked
-per row through filters, projections, and mutation loops. Exceeding either
-fails the query with a deterministic error. The HTTP CGQL endpoints apply
-`COGNIGRAPH_CGQL_MAX_SOURCE_ROWS` / `COGNIGRAPH_CGQL_TIME_BUDGET_MS` (0 = unlimited, the
-default); the whole-request timeout remains the outer guard.
+Four budgets bound a query's cost. Exceeding one fails the query with a
+deterministic error and no partial result.
+
+| Budget | Server setting | Default | Counts |
+|---|---|---|---|
+| Source rows | `COGNIGRAPH_CGQL_MAX_SOURCE_ROWS` | unlimited | Rows materialized from sources; units below |
+| Intermediate rows | `COGNIGRAPH_CGQL_MAX_INTERMEDIATE_ROWS` | 100,000,000 | Rows every `FOR` produces and rows `COLLECT` and `SORT` read |
+| Memory | `COGNIGRAPH_CGQL_MAX_MEMORY_BYTES` | 1,073,741,824 (1 GiB) | Approximate bytes of what the query builds and keeps |
+| Time | `COGNIGRAPH_CGQL_TIME_BUDGET_MS` | the request timeout | Wall-clock time of the whole execution |
+
+`0` switches a budget off. The settings apply to both HTTP query routes and
+to Lua `graph.query()`.
+
+Execution is synchronous: the whole-request timeout cannot interrupt a
+running query. The time budget is what ends it, which is why it defaults to
+`COGNIGRAPH_REQUEST_TIMEOUT_SECS`. It is checked per row in every stage:
+scans, joins, `LET`, `FILTER`, `COLLECT`, `SORT`, projection and mutation
+loops. A sort of more than 16,384 rows is done in runs and merges so that it
+can stop as well.
+
+### Intermediate rows
+
+One counter covers the whole query, subqueries and retried passes included.
+A `FOR` is charged the rows it produces, and a join is charged before it is
+built: the second `FOR` of `FOR a IN c FOR b IN c` is charged
+`rows(a) x rows(b)` and refused if that exceeds the budget, without
+allocating the product. `COLLECT` and `SORT` are charged the rows they read.
+A filter that the scan applies itself leaves only the rows that passed.
+
+A join `FILTER a.x == b.y` is served from a hash index when the key is a
+string. Any other key type expands every inner row for that outer row and is
+charged for all of them.
+
+### Memory
+
+The budget counts an estimate of the memory a query builds, modelled on how
+the engine holds JSON. It is not an allocator measurement.
+
+| Item | Estimated bytes |
+|---|---|
+| Any value | 32 |
+| String | 16 more, plus its length |
+| Array | 16 more, plus its elements |
+| Object | 640 per six fields (rounded up), plus 16 and the key's length per field, plus what each field's value holds beyond its 32 bytes |
+| Row variable | 160, plus 16 and the name's length, plus what the value holds beyond its 32 bytes |
+
+A small object costs about 700 bytes however few fields it has, because its
+field map is allocated a node at a time.
+
+- Kept until the query ends: each `LET` value, each row a join produces
+  (the outer row's variables are copied into it), what `COLLECT` keeps per
+  group, and each result.
+- Kept for the duration of the step: `SORT` keys, the rows a subquery
+  builds, which are returned when the subquery finishes, and the rows of a
+  pass that is repeated to resolve `DOCUMENT()` or a correlated traversal.
+- While one expression is evaluated, every variable, attribute, bind
+  parameter and string literal it reads and every function result counts
+  towards the same limit, before the value is copied. That is what stops
+  `CONCAT(a, a, a, …)` chains, nested array literals and `REGEX_REPLACE`
+  with a large replacement before the oversized value exists.
+
+Documents moved out of a scan by the first `FOR` are source rows and are not
+counted again as memory. Returning them is: `FOR d IN c RETURN d` counts
+every returned document.
+
+### Source rows
 
 The row cap uses one counter across initial materialization, backend resolution,
 query-head and deferred-tail passes, and nested plans. Its units are:
@@ -546,12 +612,33 @@ reject dynamic queries that previously passed because each phase received a
 fresh allowance. Source-row units describe fetched data and runtime source
 expansions, not every intermediate join row or a bound on backend scan effort.
 
-Lua `graph.query()` applies the same source-row cap in read-only and writable
-modes. For Lua, the configured time allowance is shared across one script's
+Lua `graph.query()` applies the same source-row, intermediate-row and memory
+caps in read-only and writable modes, each per query. For Lua, the configured time allowance is shared across one script's
 execution and all graph callbacks; another query does not renew it. Parsing
 and planning consume the remaining allowance. Cancellation and timing are
 cooperative: a synchronous backend operation must return or yield before its
 future can be stopped, and completed writes are not rolled back.
+
+## Query Text Limits
+
+Query text is checked before it is parsed, on every surface (both HTTP query
+routes, `EXPLAIN` and Lua `graph.query()`). Text beyond a limit is refused
+with a parse error and HTTP 400.
+
+| Limit | Value | What counts |
+|---|---|---|
+| Length | 262,144 bytes | The query text. Bind-variable values are separate. |
+| Nesting | 32 | Open `(`, `[` and `{`, plus the `?` of each unfinished conditional and each prefix `NOT` or `-` in a row. |
+| Depth | 256 | Nesting, plus the binary operators chained at each open bracket (`+ - * /`, comparisons, `AND`, `OR`, `IN`). |
+
+A comma or a clause keyword ends a chain, so wide queries are fine: a
+5,000-element array literal, hundreds of `LET` clauses or a 500-field object
+do not count as deep. A long `a == 1 OR a == 2 OR …` chain does; pass the
+values as a bind variable and test them with `IN`.
+
+The limits exist because the parser and every later pass recurse over the
+expression tree. They are sized from measured stack use, with the reasoning
+in the [decision record](../decisions/decision_cgql_text_limits.md).
 
 ## Parse Errors
 
@@ -677,7 +764,13 @@ FOR d IN documents FILTER d.stale == true REMOVE d._key IN documents
   does not match an explicit null.
   Found → partial UPDATE merge (`OLD` = prior document); absent → the
   INSERT document is created as-is (`OLD` = null).
-- Keys accept a plain `_key` or a full `collection/key` id.
+- Keys accept a plain `_key` or a full `collection/key` id of the mutation's
+  own collection. An id is split once from the left, as `PARSE_IDENTIFIER`
+  does. An id that names another collection is an error (HTTP 400), so
+  `REMOVE e._to IN persons` fails when `_to` is `organizations/42` instead of
+  deleting `persons/42`. A key that itself contains `/` must be given as a
+  full id: `REMOVE "docs/a/b" IN docs` targets key `a/b`. In a multi-row
+  mutation the rows before the failing one remain applied.
 - `NEW` and `OLD` are in scope only in a mutation's `RETURN`; `OLD` is null
   for INSERT, `NEW` is null for REMOVE.
 - Mutation operands are additive expressions (parenthesize to use

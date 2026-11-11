@@ -37,6 +37,11 @@ nested instructions before editing a component, including [ui/AGENTS.md](ui/AGEN
   `python3 scripts/issue.py check` (part of the CI suite) fails when a committed
   issue's original title changes or a file and its registry row disagree. Retain
   resolution evidence.
+- `docs/issues/` tracks only `CG-N.md` tickets and the registry. Put resolution
+  and verification evidence in the ticket. Longer dated records (reviews,
+  remediation batches, verification write-ups) go to the ignored
+  `docs/private/issues/` folder or the private evidence repository, never to
+  the public directory ([decision](docs/decisions/decision_issue_records_private.md)).
 - Use [decision records](docs/decisions/README.md) for rationale and contract
   amendments. Add a logical change record under [docs/changelog/](docs/changelog/README.md)
   and regenerate its index with `python3 scripts/check-docs.py --write-changelog-index`.
@@ -239,6 +244,27 @@ remain subject to the fast-forward and immutable-tag rules.
 This is standing authorization to prepare the required version bump as part of
 an authorized push. Commit, remote merge, push, tagging and package publication
 still follow the user's requested scope; this rule does not initiate them by itself.
+
+## Cleanup After A Merge Or Push
+
+After every merge or push, clean up what the work created before reporting it
+done. This is part of the task, not an optional follow-up.
+
+- Run `cargo clean`, and remove any extra Cargo target directory that was
+  used. `target/` grows by tens of gigabytes in a day of CI and Docker runs
+  and has filled the disk.
+- Remove the session's test images and containers by name or ID under the
+  [Docker cleanup guide](docs/operations/docker-cleanup.md): `cognigraph:ci`,
+  `cognigraph:ci-enterprise` and anything pulled only for the tests. No
+  machine-wide pruning; other projects' resources and the shared builder cache
+  are out of scope unless the owner asks.
+- Remove Git worktrees created for the work and prune stale records. Keep
+  branches that still hold unmerged commits.
+- Remove temporary files and folders: scratch binaries, logs, disposable
+  stores, harness output and local servers left running.
+- Report what was removed, the space freed and anything kept on purpose.
+
+Check free disk space before starting the `ci` or `docker` suites.
 
 ## Shared Agent Workflows
 

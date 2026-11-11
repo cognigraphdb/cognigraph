@@ -17,7 +17,6 @@ def commands(suite):
         return commands('ui') + [
             (ROOT, ['cargo', 'fmt', '--all', '--', '--check']),
             (ROOT, ['actionlint']),
-            (ROOT, [sys.executable, 'scripts/check-vendored.py']),
             (ROOT, [sys.executable, 'scripts/check-public-distribution.py']),
             (ROOT, [sys.executable, 'scripts/check-arangodump-fixtures.py']),
             *commands('advisories'),

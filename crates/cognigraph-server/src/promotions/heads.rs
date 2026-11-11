@@ -106,6 +106,7 @@ impl PromotionManager {
             applied_decision_id: decision.id.clone(),
             selection: selection.clone(),
             updated_at_ms: decision.created_at_ms,
+            unsigned_legacy: decision.governance.is_none(),
             projection_digest: String::new(),
         };
         head.projection_digest = record_digest(&head, "projection_digest")?;

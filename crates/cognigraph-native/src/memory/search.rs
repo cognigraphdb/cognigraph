@@ -52,6 +52,7 @@ impl NativeBackend {
         };
 
         let mut paths = Vec::new();
+        let mut expanded = 0usize;
         let mut queue = VecDeque::from([(
             start_vertex.to_string(),
             vec![full_vertex_doc(&state, start_vertex)],
@@ -82,6 +83,12 @@ impl NativeBackend {
                     .any(|vertex| vertex.get("_id").and_then(Value::as_str) == Some(next.as_str()))
                 {
                     continue;
+                }
+                // Every expansion copies the documents along the path, so the
+                // budget is charged here, before the copy (CG-110).
+                expanded += 1;
+                if expanded > cognigraph_core::MAX_TRAVERSAL_PATHS {
+                    return Err(cognigraph_core::traversal_budget_exceeded(start_vertex));
                 }
                 let mut next_vertices = vertices.clone();
                 next_vertices.push(full_vertex_doc(&state, &next));
@@ -137,7 +144,7 @@ impl NativeBackend {
             })
             .collect();
         candidates.sort_by(|a, b| b.0.partial_cmp(&a.0).unwrap_or(Ordering::Equal));
-        candidates.truncate((opts.limit * 4).max(32));
+        candidates.truncate(opts.limit.saturating_mul(4).max(32));
 
         // Stage 2: exact f64 re-rank of the candidates; thresholds and
         // returned scores use exact cosine only.

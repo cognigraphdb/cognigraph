@@ -46,7 +46,12 @@ impl OnnxProvider {
             );
         }
 
-        let session = Session::builder()
+        // ort 2.0.0-rc.15 creates sessions from an explicit environment. The
+        // session keeps its own handle to it, so it need not be stored here.
+        let environment = ort::init()
+            .build()
+            .context("Failed to create ONNX Runtime environment")?;
+        let session = Session::builder(&environment)
             .context("Failed to create ONNX Runtime session builder")?
             .commit_from_file(&onnx_path)
             .context("Failed to load ONNX model")?;

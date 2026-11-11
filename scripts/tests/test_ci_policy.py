@@ -12,10 +12,10 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import verify
 
 
-def workflow():
+def workflow(name='ci.yml'):
     return json.loads(subprocess.check_output(
         ['bun', '-e', 'console.log(JSON.stringify(Bun.YAML.parse(await Bun.file(process.argv[1]).text())))',
-         str(ROOT / '.github/workflows/ci.yml')], text=True, cwd=ROOT))
+         str(ROOT / '.github/workflows' / name)], text=True, cwd=ROOT))
 
 
 class WorkflowPolicy(unittest.TestCase):
@@ -123,7 +123,6 @@ class WorkflowPolicy(unittest.TestCase):
             for command in verify.commands(suite):
                 self.assertIn(command, commands)
         self.assertIn((ROOT, ['actionlint']), commands)
-        self.assertIn((ROOT, [sys.executable, 'scripts/check-vendored.py']), commands)
         self.assertIn((ROOT, [sys.executable, 'scripts/check-docs.py']), commands)
         self.assertIn((ROOT, [sys.executable, 'scripts/check-public-distribution.py']), commands)
         self.assertIn((ROOT, [sys.executable, 'scripts/check-arangodump-fixtures.py']), commands)
@@ -168,6 +167,48 @@ class WorkflowPolicy(unittest.TestCase):
         export = next(i for i, s in enumerate(steps) if s.get('run') == 'python3 scripts/docker_images.py export')
         self.assertLess(build, incoming)
         self.assertLess(incoming, export)
+
+
+
+class ToolchainCanaryPolicy(unittest.TestCase):
+    """CG-151: the weekly run that surfaces new stable-toolchain lints."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.flow = workflow('toolchain.yml')
+        cls.job = cls.flow['jobs']['lints']
+        cls.runs = [step['run'] for step in cls.job['steps'] if 'run' in step]
+
+    def test_it_runs_weekly_or_by_hand_and_never_on_untrusted_events(self):
+        self.assertEqual(set(self.flow['on']), {'schedule', 'workflow_dispatch'})
+        (entry,) = self.flow['on']['schedule']
+        minute, hour, day, month, weekday = entry['cron'].split()
+        self.assertTrue(minute.isdigit() and hour.isdigit() and weekday.isdigit())
+        self.assertEqual((day, month), ('*', '*'))
+
+    def test_it_is_read_only_and_uses_the_reviewed_action_revisions(self):
+        self.assertEqual(self.flow['permissions'], {'contents': 'read'})
+        self.assertTrue(all(value == 'read' for value in self.job['permissions'].values()))
+        self.assertEqual(self.job['runs-on'], 'ubuntu-24.04')
+        reviewed = {step['uses'] for job in workflow()['jobs'].values()
+                    for step in job.get('steps', []) if 'uses' in step}
+        used = [step['uses'] for step in self.job['steps'] if 'uses' in step]
+        self.assertTrue(used)
+        for action in used:
+            self.assertRegex(action, r'^[\w-]+/[\w-]+@[a-f0-9]{40}$')
+            self.assertIn(action, reviewed)
+        checkout = next(step for step in self.job['steps'] if step.get('uses', '').startswith('actions/checkout@'))
+        self.assertFalse(checkout['with']['persist-credentials'])
+
+    def test_it_checks_floating_stable_with_the_gates_that_block_a_push(self):
+        rust = next(step for step in self.job['steps'] if step.get('uses', '').startswith('dtolnay/rust-toolchain@'))
+        self.assertEqual(rust['with']['toolchain'], 'stable')
+        self.assertEqual({part.strip() for part in rust['with']['components'].split(',')}, {'clippy', 'rustfmt'})
+        self.assertIn('cargo fmt --all -- --check', self.runs)
+        self.assertIn('cargo clippy --locked --all-targets -- -D warnings', self.runs)
+        self.assertIn('cargo clippy --locked --all-targets --features enterprise -- -D warnings', self.runs)
+        self.assertTrue(any('rustc --version' in run for run in self.runs))
+        self.assertFalse(any('continue-on-error' in step for step in self.job['steps']))
 
 
 if __name__ == '__main__':
