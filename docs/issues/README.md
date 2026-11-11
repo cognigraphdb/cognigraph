@@ -164,6 +164,17 @@ change, and 2 Open issues** (CG-64/CG-66 remain deferred).
 v2.7.10 promotion. Its v2.7.11 correction and promotion passed required CI and
 merged into main. Historical failed runs remain linked from the issue.
 
+The [2026-11-11 code and documentation review](review-2026-11-11.md) examined
+revision `42d1739` (v2.7.39) and adds CG-104–CG-191: **88 Open issues
+(11 P1, 43 P2, 34 P3)**. Fourteen were reproduced against a release build;
+the rest are source-confirmed, as each ticket's verification line states. No
+finding was fixed by the review. [CG-103](CG-103.md), started on a ticket
+branch on 2026-09-24 and paused, was reserved here first so that its
+identifier is not reused ([CG-152](CG-152.md)). After this review the
+registry has **96 Resolved, 1 Closed without change, and 94 Open issues**;
+the table below is authoritative where earlier checkpoint sentences differ
+([CG-188](CG-188.md)).
+
 ## Conventions
 
 - Status: Open, In progress, Blocked, Resolved, or Closed without change. Record the reason and evidence for the last two.
@@ -278,8 +289,97 @@ merged into main. Historical failed runs remain linked from the issue.
 | [CG-100](CG-100.md) | P3 | Open | Ollama embedding requests time out after a fixed 120 seconds |
 | [CG-101](CG-101.md) | P3 | Open | Hybrid search sums chunk ranks per parent, so the vector leg can outvote BM25 |
 | [CG-102](CG-102.md) | P3 | Open | Embedding providers cannot tell queries from documents |
+| [CG-103](CG-103.md) | P2 | Open | Air-gapped embeddings through a sidecar: separate endpoint settings, Granite R2 measurement, side views and Semantic Neurons validation |
+| [CG-104](CG-104.md) | P1 | Open | Lua scripts reach os, io and jit through the leftover module() global |
+| [CG-105](CG-105.md) | P1 | Open | Deeply nested CGQL text overflows the stack and aborts the server |
+| [CG-106](CG-106.md) | P1 | Open | CGQL mutations ignore the collection part of a full document id |
+| [CG-107](CG-107.md) | P1 | Open | A document nested deeper than 128 levels cannot be read back and blocks startup |
+| [CG-108](CG-108.md) | P1 | Open | Requests rejected by the auth middleware are logged without a tenant and shown to every tenant's admin |
+| [CG-109](CG-109.md) | P1 | Open | Text search passes an unvalidated limit and field names into Tantivy, which panics |
+| [CG-110](CG-110.md) | P1 | Open | Typed traversal and graph-augmented search accept unbounded depth outside every budget |
+| [CG-111](CG-111.md) | P1 | Open | CGQL execution does not bound intermediate rows or value size, so budgets and the request timeout do not hold |
+| [CG-112](CG-112.md) | P1 | Open | Reusing an Idempotency-Key across governance record kinds permanently breaks a tenant's promotion authority |
+| [CG-113](CG-113.md) | P1 | Open | Snapshot import lets a tenant Admin create unsigned legacy promotion authority |
+| [CG-114](CG-114.md) | P1 | Open | CLI export can replace a good backup with garbage and writes snapshots world-readable |
+| [CG-115](CG-115.md) | P2 | Open | Configuration parsing fails open: unrecognised values silently become the unsafe default |
+| [CG-116](CG-116.md) | P2 | Open | Tenant lifecycle validation failures return 401 and sign the host admin out of the console |
+| [CG-117](CG-117.md) | P2 | Open | Login hashes on async workers, has no attempt throttling and reveals usernames by timing |
+| [CG-118](CG-118.md) | P2 | Open | Paged-mode atomic batch creates a collection without recording its type |
+| [CG-119](CG-119.md) | P2 | Open | One wrong-dimension or empty embedding fails vector search for the whole collection in sidecar mode |
+| [CG-120](CG-120.md) | P2 | Open | Native derivatives are created for collections that do not exist and are never removed on drop |
+| [CG-121](CG-121.md) | P2 | Open | Any write invalidates every vector sidecar, and edge writes with embeddings can be skipped permanently |
+| [CG-122](CG-122.md) | P2 | Open | Snapshot import commits one transaction per document under the write lock and leaves a partial restore on failure |
+| [CG-123](CG-123.md) | P2 | Open | Stored floating-point numbers change in the last digit on write |
+| [CG-124](CG-124.md) | P2 | Open | CGQL join index hint evaluates expressions over variables that are not bound yet |
+| [CG-125](CG-125.md) | P2 | Open | CGQL SORT does not use a total order, so rows with missing or mixed-type keys stay unsorted |
+| [CG-126](CG-126.md) | P2 | Open | CGQL compares and groups integers through f64 and writes integer literals as floats |
+| [CG-127](CG-127.md) | P2 | Open | VECTOR_SEARCH pushes LIMIT down as top-K before filters, sorts and grouping |
+| [CG-128](CG-128.md) | P2 | Open | SUBSTRING and DATE_ADD panic and SLICE returns a wrong result on very large arguments |
+| [CG-129](CG-129.md) | P2 | Open | Lua execution is limited only by VM instruction count |
+| [CG-130](CG-130.md) | P2 | Open | Swallowed read errors in graduation, review and search hydration produce wrong output with status 200 |
+| [CG-131](CG-131.md) | P2 | Open | One tenant's failed promotion recovery aborts startup for every tenant |
+| [CG-132](CG-132.md) | P2 | Open | Governed reads and admissions revalidate whole authority histories under one process-wide lock |
+| [CG-133](CG-133.md) | P2 | Open | M20–M23 promotion channels cannot advance after the server binary changes |
+| [CG-134](CG-134.md) | P2 | Open | Key expiry or revocation freezes a promotion channel and disables rollback |
+| [CG-135](CG-135.md) | P2 | Open | Governance admission trusts the wall clock in ways stored-authority validation later rejects |
+| [CG-136](CG-136.md) | P2 | Open | Negation detection misses typographic apostrophes, non- prefixes and neither |
+| [CG-137](CG-137.md) | P2 | Open | Blank aliases and whitespace-only or templated hint triggers pass neuron validation |
+| [CG-138](CG-138.md) | P2 | Open | Rule-path entity surfaces still match inside longer words |
+| [CG-139](CG-139.md) | P2 | Open | Directed construction silently merges distinct entities whose names share an ASCII key |
+| [CG-140](CG-140.md) | P2 | Open | Chunk reconciliation deletes facts built by another construction mode or taxonomy |
+| [CG-141](CG-141.md) | P2 | Open | A resumed construct.draft job can overwrite a newer draft with a truncated one marked complete |
+| [CG-142](CG-142.md) | P2 | Open | A failed snapshot import can leave the tenant's job queue fenced, depending on other tenants' health |
+| [CG-143](CG-143.md) | P2 | Open | Tenant suspend and delete hold the global admission lock while a model-bound job step finishes |
+| [CG-144](CG-144.md) | P2 | Open | Job records are rewritten whole at every checkpoint and loaded whole at startup |
+| [CG-145](CG-145.md) | P2 | Open | Job archive pagination cannot be followed without an explicit cutoff, and the CLI cannot page at all |
+| [CG-146](CG-146.md) | P2 | Open | Side-view lookups scan or load whole collections on deletes and job submission |
+| [CG-147](CG-147.md) | P2 | Open | CLI requests fail after 30 seconds while the server keeps working |
+| [CG-148](CG-148.md) | P2 | Open | CLI builds request paths by string interpolation, so keys with reserved characters address another resource |
+| [CG-149](CG-149.md) | P2 | Open | Embedding providers match vectors to inputs by arrival order and accept any vector shape |
+| [CG-150](CG-150.md) | P2 | Open | Dump importer dry run stages a full copy of the data in the shared temp directory |
+| [CG-151](CG-151.md) | P2 | Open | Enterprise Clippy gate fails on the current stable toolchain, and no toolchain is pinned |
+| [CG-152](CG-152.md) | P2 | Open | issue.py allocates identifiers from the current branch only, so two branches get the same CG-N |
+| [CG-153](CG-153.md) | P2 | Open | Helm backup job captures only the default tenant in multi-tenant mode and leaves partial files behind |
+| [CG-154](CG-154.md) | P2 | Open | Helm chart defaults point at images that do not exist, and serveConsole=false has no effect |
+| [CG-155](CG-155.md) | P2 | Open | Multi-architecture image publication is recorded as done but has not happened |
+| [CG-156](CG-156.md) | P2 | Open | HTTP reference omits implemented routes and does not mark Enterprise-only groups |
+| [CG-157](CG-157.md) | P2 | Open | Configuration reference misdescribes OPENAI_BASE_URL and omits variables the binaries read |
+| [CG-158](CG-158.md) | P3 | Open | GET /api/documents returns the whole collection when limit is omitted |
+| [CG-159](CG-159.md) | P3 | Open | Rate limiting is per TCP peer, and timeouts and rate-limit rejections never reach metrics or the error log |
+| [CG-160](CG-160.md) | P3 | Open | Unauthenticated health endpoints disclose tenant names and storage errors |
+| [CG-161](CG-161.md) | P3 | Open | Implicit collection creation bypasses the collection-name rules |
+| [CG-162](CG-162.md) | P3 | Open | User administration accepts empty credentials, deletion of the last admin and overflowing token lifetimes |
+| [CG-163](CG-163.md) | P3 | Open | Server accepts the placeholder secrets published in .env.example and any JWT secret length |
+| [CG-164](CG-164.md) | P3 | Open | Paged-mode paths swallow storage read errors |
+| [CG-165](CG-165.md) | P3 | Open | Single-document write paths skip the shape validation that batch and bulk paths enforce |
+| [CG-166](CG-166.md) | P3 | Open | A subquery in a mutation's RETURN runs before the write and cannot see NEW or OLD |
+| [CG-167](CG-167.md) | P3 | Open | Proposal and drafting paths trust the shape and governance fields of model output |
+| [CG-168](CG-168.md) | P3 | Open | Degradation report treats every templated rule as a dead pathway |
+| [CG-169](CG-169.md) | P3 | Open | A trigger match that ends inside a case-fold expansion aborts the whole ingest batch |
+| [CG-170](CG-170.md) | P3 | Open | Rule ingest writes fact edges to entities that were never declared |
+| [CG-171](CG-171.md) | P3 | Open | Proposal error paths record misleading refusals or drop them |
+| [CG-172](CG-172.md) | P3 | Open | Neuron transitions accept any source state and keep a single overwritten audit slot |
+| [CG-173](CG-173.md) | P3 | Open | The sideviews.generate worker has no execution test, and an empty regeneration erases existing rows |
+| [CG-174](CG-174.md) | P3 | Open | Compatibility branches for unreleased clients and the retired non-atomic backend remain in jobs, side views and M26 |
+| [CG-175](CG-175.md) | P3 | Open | Read-only M26 endpoints create collections and an index |
+| [CG-176](CG-176.md) | P3 | Open | Artifact custody leaves undetected partial stages after a crash and cannot restore more than one bundle per tenant |
+| [CG-177](CG-177.md) | P3 | Open | OpenAPI drift tests leave merged routers, HTTP methods and Community stubs unchecked |
+| [CG-178](CG-178.md) | P3 | Open | Promotion contract leaves reject, principal identity and channel generation undecided |
+| [CG-179](CG-179.md) | P3 | Open | Dump importer edge resolution is quadratic and its problem list is unbounded |
+| [CG-180](CG-180.md) | P3 | Open | Embedding cache keys fold case and whitespace although the vector comes from the raw text |
+| [CG-181](CG-181.md) | P3 | Open | references repair guard list has drifted from the server, and its guide contradicts the import semantics |
+| [CG-182](CG-182.md) | P3 | Open | Community --help and the CLI guide omit shipped commands and flags |
+| [CG-183](CG-183.md) | P3 | Open | Embeddings crate ships unreachable providers and an optional feature that no gate compiles |
+| [CG-184](CG-184.md) | P3 | Open | TypeScript client lets body-read failures escape as raw platform errors and never retries them |
+| [CG-185](CG-185.md) | P3 | Open | Tracked ui/.npmrc hard-codes a developer-machine path, and .gitattributes names a vendor directory that no longer exists |
+| [CG-186](CG-186.md) | P3 | Open | Documentation link gate skips six tracked Markdown files and every path cited in backticks or Rust comments |
+| [CG-187](CG-187.md) | P3 | Open | Operator documents name the wrong derivative files and describe a superseded schema upgrade |
+| [CG-188](CG-188.md) | P3 | Open | Registry narrative, implementation plan and entry points still describe resolved work as pending and Native as one of several backends |
+| [CG-189](CG-189.md) | P3 | Open | CGQL specification keeps superseded sections, and the migration guide asks for an edit that is no longer needed |
+| [CG-190](CG-190.md) | P3 | Open | LICENSING.md lists Community capabilities the shipped server does not have |
+| [CG-191](CG-191.md) | P3 | Open | Prototype-era citations and possibly non-synthetic names remain in the public tree |
 
-Next available identifier: **CG-103**.
+Next available identifier: **CG-192**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected
@@ -310,6 +410,7 @@ and [existing measured baseline](../research/experiments/sideviews-model-compari
 ## Review evidence
 
 - [Product status, crate map, scope, validation and remediation order](review-2026-09-08.md)
+- [2026-11-11 review: scope, baseline, ticket index and suggested order](review-2026-11-11.md)
 - [Sanitized local HTTP observations](../evidence/engineering-historical-checks.md#artifact-b88e1642e95b63187a57)
 
 The source citations inside issues refer to the reviewed revision. Recheck line
