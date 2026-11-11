@@ -57,6 +57,15 @@ Run `rustup update stable` before qualifying an outgoing candidate, then confirm
 named stable can lag behind the fresh stable installed by GitHub; CG-69's first
 PR run exposed a new Clippy lint after local validation on an older release.
 
+Rust stays on floating stable under the [toolchain policy](../decisions/decision_toolchain_policy.md).
+The `Toolchain canary` workflow (`.github/workflows/toolchain.yml`) runs every
+Tuesday on the default branch and on manual dispatch: formatting and both
+Clippy gates against the stable release of that day. It is not a required
+check. Look at its latest run before qualifying a candidate; a red run is
+recorded as a ticket and fixed before the next push. GitHub disables scheduled
+workflows after 60 days without repository activity, so re-enable it in the
+Actions settings after a long pause.
+
 The `client` suite (`python3 scripts/verify.py --suite client`, part of the CI
 suite) installs `clients/typescript` from its frozen Bun lockfile, runs Biome,
 TypeScript and the unit tests, builds the package, builds the Community
