@@ -107,6 +107,7 @@ async fn run_with_documents(
             // round works on its own copy.
             shared.deadline.check()?;
             let checkpoint = shared.stage_checkpoint();
+            let memory = shared.memory.mark();
             let mut round = materialized.clone();
             let cx = shared.clone().with_documents(&docs).with_traversals(&hops);
             let head = run::run_plan_head(plan, &mut round, &cx, true)?;
@@ -116,6 +117,10 @@ async fn run_with_documents(
                 break;
             }
             shared.discard_speculative_stages(checkpoint);
+            // The rows of a discarded round are dropped; so is their memory
+            // charge. Row budgets keep every pass, like source rows.
+            drop(head);
+            shared.memory.release_to(memory);
         }
         let Some(settled) = settled else {
             return Err(non_convergence());
@@ -135,6 +140,7 @@ async fn run_with_documents(
     for _ in 0..MAX_DOCUMENT_ROUNDS {
         shared.deadline.check()?;
         let checkpoint = shared.stage_checkpoint();
+        let memory = shared.memory.mark();
         let cx = shared.clone().with_documents(&docs).with_traversals(&hops);
         let out = run::run_plan_deferred_tail(plan, head.clone(), &mut sites, &cx, false)?;
         drop(cx);
@@ -142,6 +148,8 @@ async fn run_with_documents(
             return Ok(out);
         }
         shared.discard_speculative_stages(checkpoint);
+        drop(out);
+        shared.memory.release_to(memory);
     }
     Err(non_convergence())
 }

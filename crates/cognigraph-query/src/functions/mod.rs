@@ -17,6 +17,7 @@ use date::{date_part, fn_date_add, fn_date_diff, fn_now};
 use numeric::{
     fn_abs, fn_avg, fn_ceil, fn_cosine_similarity, fn_floor, fn_max, fn_min, fn_round, fn_sum,
 };
+pub(crate) use regex::regex_replace_bounded;
 use regex::{fn_regex_replace, fn_regex_test};
 use string::{
     fn_concat, fn_contains, fn_lower, fn_normalize_nfc, fn_split, fn_starts_with, fn_substring,

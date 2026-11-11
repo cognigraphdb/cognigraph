@@ -63,6 +63,7 @@ async fn nested_lifts_preserve_dynamic_reads_analysis_and_row_budgets() {
                 ExecutionBudget {
                     max_source_rows: Some(cap),
                     time_budget_ms: None,
+                    ..ExecutionBudget::default()
                 },
             )
             .await;
@@ -205,6 +206,7 @@ async fn dynamic_budget_spans_materialization_fetches_and_all_rounds() {
                     ExecutionBudget {
                         max_source_rows: Some(cap),
                         time_budget_ms: None,
+                        ..ExecutionBudget::default()
                     },
                 )
                 .await;
@@ -241,6 +243,7 @@ async fn lookup_deduplication_and_malformed_ids_have_explicit_costs() {
             ExecutionBudget {
                 max_source_rows: Some(cost),
                 time_budget_ms: None,
+                ..ExecutionBudget::default()
             },
         )
         .await
@@ -285,6 +288,7 @@ async fn document_resolution_preserves_deadline_and_convergence_errors_under_ana
             ExecutionBudget {
                 max_source_rows: None,
                 time_budget_ms: Some(20),
+                ..ExecutionBudget::default()
             },
         )
         .await
@@ -318,6 +322,7 @@ async fn document_budget_stops_fetching_at_the_limit_including_missing_ids() {
             ExecutionBudget {
                 max_source_rows: Some(1),
                 time_budget_ms: None,
+                ..ExecutionBudget::default()
             },
         )
         .await;

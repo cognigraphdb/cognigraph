@@ -4,7 +4,7 @@ use crate::ast::MutationClause;
 use crate::planner::LogicalPlan;
 use cognigraph_core::GraphBackend;
 
-use super::eval::{EvalCtx, eval_expr, values_equal};
+use super::eval::{eval_expr, values_equal};
 use super::materialize::materialize_backend;
 use super::run::{RunCx, run_body};
 use super::{BindVars, Deadline, Env, ExecutionBudget, ExecutionError};
@@ -34,7 +34,7 @@ pub(super) async fn execute_mutation(
         deadline.check()?;
         let (old, new) = match mutation {
             MutationClause::Insert { doc, collection } => {
-                let doc_value = eval_expr(doc, &env, &EvalCtx::new(bind_vars))?;
+                let doc_value = eval_expr(doc, &env, &cx.eval())?;
                 let id = backend
                     .create_document(collection, doc_value)
                     .await
@@ -51,19 +51,14 @@ pub(super) async fn execute_mutation(
                 with,
                 collection,
             } => {
-                let key =
-                    document_key_of(&eval_expr(key, &env, &EvalCtx::new(bind_vars))?, collection)?;
+                let key = document_key_of(&eval_expr(key, &env, &cx.eval())?, collection)?;
                 let old = backend
                     .get_document(collection, &key)
                     .await
                     .map_err(backend_err)?
                     .unwrap_or(Value::Null);
                 let new = backend
-                    .update_document(
-                        collection,
-                        &key,
-                        eval_expr(with, &env, &EvalCtx::new(bind_vars))?,
-                    )
+                    .update_document(collection, &key, eval_expr(with, &env, &cx.eval())?)
                     .await
                     .map_err(backend_err)?;
                 (old, new)
@@ -73,26 +68,20 @@ pub(super) async fn execute_mutation(
                 with,
                 collection,
             } => {
-                let key =
-                    document_key_of(&eval_expr(key, &env, &EvalCtx::new(bind_vars))?, collection)?;
+                let key = document_key_of(&eval_expr(key, &env, &cx.eval())?, collection)?;
                 let old = backend
                     .get_document(collection, &key)
                     .await
                     .map_err(backend_err)?
                     .unwrap_or(Value::Null);
                 let new = backend
-                    .replace_document(
-                        collection,
-                        &key,
-                        eval_expr(with, &env, &EvalCtx::new(bind_vars))?,
-                    )
+                    .replace_document(collection, &key, eval_expr(with, &env, &cx.eval())?)
                     .await
                     .map_err(backend_err)?;
                 (old, new)
             }
             MutationClause::Remove { key, collection } => {
-                let key =
-                    document_key_of(&eval_expr(key, &env, &EvalCtx::new(bind_vars))?, collection)?;
+                let key = document_key_of(&eval_expr(key, &env, &cx.eval())?, collection)?;
                 let old = backend
                     .get_document(collection, &key)
                     .await
@@ -110,7 +99,7 @@ pub(super) async fn execute_mutation(
                 update,
                 collection,
             } => {
-                let search_value = eval_expr(search, &env, &EvalCtx::new(bind_vars))?;
+                let search_value = eval_expr(search, &env, &cx.eval())?;
                 let Value::Object(search_fields) = &search_value else {
                     return Err(ExecutionError::Backend(
                         "UPSERT search expression must be an object".into(),
@@ -145,21 +134,14 @@ pub(super) async fn execute_mutation(
                             .ok_or(ExecutionError::InvalidDocumentKey)?
                             .to_string();
                         let new = backend
-                            .update_document(
-                                collection,
-                                &key,
-                                eval_expr(update, &env, &EvalCtx::new(bind_vars))?,
-                            )
+                            .update_document(collection, &key, eval_expr(update, &env, &cx.eval())?)
                             .await
                             .map_err(backend_err)?;
                         (old, new)
                     }
                     None => {
                         let id = backend
-                            .create_document(
-                                collection,
-                                eval_expr(insert, &env, &EvalCtx::new(bind_vars))?,
-                            )
+                            .create_document(collection, eval_expr(insert, &env, &cx.eval())?)
                             .await
                             .map_err(backend_err)?;
                         let new = backend
@@ -175,7 +157,7 @@ pub(super) async fn execute_mutation(
         if let Some(projection) = &plan.projection {
             env.insert("OLD".to_string(), old);
             env.insert("NEW".to_string(), new);
-            out.push(eval_expr(projection, &env, &EvalCtx::new(bind_vars))?);
+            out.push(eval_expr(projection, &env, &cx.eval())?);
         }
     }
     Ok(out)

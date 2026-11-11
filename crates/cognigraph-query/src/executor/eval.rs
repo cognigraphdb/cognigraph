@@ -5,6 +5,7 @@ use serde_json::{Map, Value, json};
 use crate::ast::{BinaryOp, Expr, UnaryOp};
 use crate::functions;
 
+use super::memory::MemoryMeter;
 use super::{BindVars, Env, ExecutionError};
 
 /// Documents `DOCUMENT()` may read.
@@ -28,6 +29,8 @@ pub(super) trait DocumentSource: Send + Sync {
 pub(super) struct EvalCtx<'a> {
     pub bind_vars: &'a BindVars,
     pub documents: Option<&'a dyn DocumentSource>,
+    /// The query's memory budget, when one applies.
+    pub memory: Option<&'a MemoryMeter>,
 }
 
 impl<'a> EvalCtx<'a> {
@@ -35,6 +38,7 @@ impl<'a> EvalCtx<'a> {
         Self {
             bind_vars,
             documents: None,
+            memory: None,
         }
     }
 }
@@ -63,11 +67,20 @@ fn eval_document(args: &[Value], ctx: &EvalCtx<'_>) -> Value {
     }
 }
 
+/// Evaluate one top-level expression. Under a memory budget this starts a
+/// fresh count of what the expression reads; see `memory.rs`.
 pub(super) fn eval_expr(
     expr: &Expr,
     env: &Env,
     ctx: &EvalCtx<'_>,
 ) -> Result<Value, ExecutionError> {
+    if let Some(memory) = ctx.memory {
+        memory.begin();
+    }
+    eval_node(expr, env, ctx)
+}
+
+fn eval_node(expr: &Expr, env: &Env, ctx: &EvalCtx<'_>) -> Result<Value, ExecutionError> {
     match expr {
         Expr::Conditional {
             condition,
@@ -76,35 +89,45 @@ pub(super) fn eval_expr(
         } => {
             // Strictly `true`, exactly as FILTER decides — a non-boolean
             // condition takes the else branch rather than being coerced.
-            let taken = match eval_expr(condition, env, ctx)? {
+            let taken = match eval_node(condition, env, ctx)? {
                 Value::Bool(true) => then_branch,
                 _ => else_branch,
             };
-            eval_expr(taken, env, ctx)
+            eval_node(taken, env, ctx)
         }
         Expr::Field { base, name } => {
-            let value = eval_expr(base, env, ctx)?;
+            let value = eval_node(base, env, ctx)?;
             Ok(value.get(name).cloned().unwrap_or(Value::Null))
         }
-        Expr::Identifier(parts) => eval_identifier(parts, env),
-        Expr::BindVar(name) => ctx
-            .bind_vars
-            .get(name)
-            .cloned()
-            .ok_or_else(|| ExecutionError::BindVariableNotFound(name.clone())),
-        Expr::String(value) => Ok(Value::String(value.clone())),
+        Expr::Identifier(parts) => eval_identifier(parts, env, ctx),
+        Expr::BindVar(name) => {
+            let value = ctx
+                .bind_vars
+                .get(name)
+                .ok_or_else(|| ExecutionError::BindVariableNotFound(name.clone()))?;
+            if let Some(memory) = ctx.memory {
+                memory.read_value(value)?;
+            }
+            Ok(value.clone())
+        }
+        Expr::String(value) => {
+            if let Some(memory) = ctx.memory {
+                memory.read(48 + value.len() as u64)?;
+            }
+            Ok(Value::String(value.clone()))
+        }
         Expr::Number(value) => Ok(json!(value)),
         Expr::Bool(value) => Ok(Value::Bool(*value)),
         Expr::Null => Ok(Value::Null),
         Expr::Array(items) => items
             .iter()
-            .map(|item| eval_expr(item, env, ctx))
+            .map(|item| eval_node(item, env, ctx))
             .collect::<Result<Vec<_>, _>>()
             .map(Value::Array),
         Expr::Object(fields) => {
             let mut obj = Map::new();
             for field in fields {
-                obj.insert(field.name.clone(), eval_expr(&field.value, env, ctx)?);
+                obj.insert(field.name.clone(), eval_node(&field.value, env, ctx)?);
             }
             Ok(Value::Object(obj))
         }
@@ -119,7 +142,11 @@ pub(super) fn eval_expr(
     }
 }
 
-fn eval_identifier(parts: &[String], env: &Env) -> Result<Value, ExecutionError> {
+fn eval_identifier(
+    parts: &[String],
+    env: &Env,
+    ctx: &EvalCtx<'_>,
+) -> Result<Value, ExecutionError> {
     let Some(root) = parts.first() else {
         return Ok(Value::Null);
     };
@@ -137,6 +164,10 @@ fn eval_identifier(parts: &[String], env: &Env) -> Result<Value, ExecutionError>
             None => return Ok(Value::Null),
         }
     }
+    // Counted before the copy, so an over-budget value is never duplicated.
+    if let Some(memory) = ctx.memory {
+        memory.read_value(value)?;
+    }
     Ok(value.clone())
 }
 
@@ -146,7 +177,7 @@ fn eval_unary(
     env: &Env,
     ctx: &EvalCtx<'_>,
 ) -> Result<Value, ExecutionError> {
-    let value = eval_expr(expr, env, ctx)?;
+    let value = eval_node(expr, env, ctx)?;
     match op {
         UnaryOp::Not => Ok(Value::Bool(!bool_from(&value)?)),
         UnaryOp::Neg => Ok(json!(-number_from_value(&value)?)),
@@ -161,20 +192,20 @@ fn eval_binary(
     ctx: &EvalCtx<'_>,
 ) -> Result<Value, ExecutionError> {
     if op == BinaryOp::And {
-        if !bool_from(&eval_expr(left, env, ctx)?)? {
+        if !bool_from(&eval_node(left, env, ctx)?)? {
             return Ok(Value::Bool(false));
         }
-        return Ok(Value::Bool(bool_from(&eval_expr(right, env, ctx)?)?));
+        return Ok(Value::Bool(bool_from(&eval_node(right, env, ctx)?)?));
     }
     if op == BinaryOp::Or {
-        if bool_from(&eval_expr(left, env, ctx)?)? {
+        if bool_from(&eval_node(left, env, ctx)?)? {
             return Ok(Value::Bool(true));
         }
-        return Ok(Value::Bool(bool_from(&eval_expr(right, env, ctx)?)?));
+        return Ok(Value::Bool(bool_from(&eval_node(right, env, ctx)?)?));
     }
 
-    let left_value = eval_expr(left, env, ctx)?;
-    let right_value = eval_expr(right, env, ctx)?;
+    let left_value = eval_node(left, env, ctx)?;
+    let right_value = eval_node(right, env, ctx)?;
     match op {
         BinaryOp::Eq => Ok(Value::Bool(values_equal(&left_value, &right_value))),
         BinaryOp::Ne => Ok(Value::Bool(!values_equal(&left_value, &right_value))),
@@ -270,15 +301,32 @@ fn eval_function(
         // other, but resolved here because it reads documents, not just values.
         let values = args
             .iter()
-            .map(|arg| eval_expr(arg, env, ctx))
+            .map(|arg| eval_node(arg, env, ctx))
             .collect::<Result<Vec<_>, _>>()?;
-        return Ok(eval_document(&values, ctx));
+        let documents = eval_document(&values, ctx);
+        if let Some(memory) = ctx.memory {
+            memory.read_value(&documents)?;
+        }
+        return Ok(documents);
     }
     let values = args
         .iter()
-        .map(|arg| eval_expr(arg, env, ctx))
+        .map(|arg| eval_node(arg, env, ctx))
         .collect::<Result<Vec<_>, _>>()?;
-    Ok(def.call(&values))
+    let Some(memory) = ctx.memory else {
+        return Ok(def.call(&values));
+    };
+    // The one built-in whose result can be far larger than its arguments.
+    if name.eq_ignore_ascii_case("REGEX_REPLACE") {
+        let limit = memory.remaining();
+        let replaced =
+            functions::regex_replace_bounded(&values, limit).ok_or_else(|| memory.exceeded())?;
+        memory.read_value(&replaced)?;
+        return Ok(replaced);
+    }
+    let result = def.call(&values);
+    memory.read_value(&result)?;
+    Ok(result)
 }
 
 pub(super) fn number_from_value(value: &Value) -> Result<f64, ExecutionError> {

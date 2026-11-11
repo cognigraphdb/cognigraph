@@ -204,6 +204,10 @@ replaces a file). [CG-108](CG-108.md) is Resolved (a rejected request is
 logged under its caller's tenant; unattributed ones are redacted).
 [CG-112](CG-112.md) is Resolved (all signed authority shares one
 Idempotency-Key namespace at admission and validation).
+[CG-111](CG-111.md) is Resolved (CGQL runs under intermediate-row, memory
+and time budgets by default); [CG-197](CG-197.md) tracks moving execution
+off the async workers and [CG-198](CG-198.md) the HTTP status of budget
+errors.
 
 ## Conventions
 
@@ -328,7 +332,7 @@ Idempotency-Key namespace at admission and validation).
 | [CG-108](CG-108.md) | P1 | Resolved | Requests rejected by the auth middleware are logged without a tenant and shown to every tenant's admin |
 | [CG-109](CG-109.md) | P1 | Resolved | Text search passes an unvalidated limit and field names into Tantivy, which panics |
 | [CG-110](CG-110.md) | P1 | Resolved | Typed traversal and graph-augmented search accept unbounded depth outside every budget |
-| [CG-111](CG-111.md) | P1 | Open | CGQL execution does not bound intermediate rows or value size, so budgets and the request timeout do not hold |
+| [CG-111](CG-111.md) | P1 | Resolved | CGQL execution does not bound intermediate rows or value size, so budgets and the request timeout do not hold |
 | [CG-112](CG-112.md) | P1 | Resolved | Reusing an Idempotency-Key across governance record kinds permanently breaks a tenant's promotion authority |
 | [CG-113](CG-113.md) | P1 | Open | Snapshot import lets a tenant Admin create unsigned legacy promotion authority |
 | [CG-114](CG-114.md) | P1 | Resolved | CLI export can replace a good backup with garbage and writes snapshots world-readable |
@@ -414,8 +418,10 @@ Idempotency-Key namespace at admission and validation).
 | [CG-194](CG-194.md) | P3 | Open | Migrate the preparation contract to Unicode 18 when the Rust standard library moves |
 | [CG-195](CG-195.md) | P3 | Open | Decide whether Renovate's schedule and limits can keep up with dependency updates |
 | [CG-196](CG-196.md) | P3 | Open | Offline repair for a store that already holds an unreadable document |
+| [CG-197](CG-197.md) | P2 | Open | CGQL execution holds an async runtime worker for its whole time budget |
+| [CG-198](CG-198.md) | P2 | Open | CGQL budget and runtime errors answer HTTP 500 |
 
-Next available identifier: **CG-197**.
+Next available identifier: **CG-199**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected
