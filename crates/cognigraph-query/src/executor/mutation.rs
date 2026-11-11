@@ -51,7 +51,8 @@ pub(super) async fn execute_mutation(
                 with,
                 collection,
             } => {
-                let key = document_key_of(&eval_expr(key, &env, &EvalCtx::new(bind_vars))?)?;
+                let key =
+                    document_key_of(&eval_expr(key, &env, &EvalCtx::new(bind_vars))?, collection)?;
                 let old = backend
                     .get_document(collection, &key)
                     .await
@@ -72,7 +73,8 @@ pub(super) async fn execute_mutation(
                 with,
                 collection,
             } => {
-                let key = document_key_of(&eval_expr(key, &env, &EvalCtx::new(bind_vars))?)?;
+                let key =
+                    document_key_of(&eval_expr(key, &env, &EvalCtx::new(bind_vars))?, collection)?;
                 let old = backend
                     .get_document(collection, &key)
                     .await
@@ -89,7 +91,8 @@ pub(super) async fn execute_mutation(
                 (old, new)
             }
             MutationClause::Remove { key, collection } => {
-                let key = document_key_of(&eval_expr(key, &env, &EvalCtx::new(bind_vars))?)?;
+                let key =
+                    document_key_of(&eval_expr(key, &env, &EvalCtx::new(bind_vars))?, collection)?;
                 let old = backend
                     .get_document(collection, &key)
                     .await
@@ -178,8 +181,22 @@ pub(super) async fn execute_mutation(
     Ok(out)
 }
 
-/// Accepts a plain key or a full `collection/key` id.
-fn document_key_of(value: &Value) -> Result<String, ExecutionError> {
+/// Accepts a plain key or a full `collection/key` id of the mutation's own
+/// collection.
+///
+/// The id is split once from the left, like `PARSE_IDENTIFIER`, because a key
+/// may itself contain `/`. An id that names another collection is refused: the
+/// statement would otherwise write to whichever document of the target
+/// collection happens to share that key (CG-106). A key that contains `/`
+/// must therefore be given as a full id.
+fn document_key_of(value: &Value, collection: &str) -> Result<String, ExecutionError> {
     let raw = value.as_str().ok_or(ExecutionError::InvalidDocumentKey)?;
-    Ok(raw.rsplit_once('/').map_or(raw, |(_, key)| key).to_string())
+    match raw.split_once('/') {
+        None => Ok(raw.to_string()),
+        Some((prefix, key)) if prefix == collection && !key.is_empty() => Ok(key.to_string()),
+        Some(_) => Err(ExecutionError::MutationKeyOutsideCollection {
+            id: raw.to_string(),
+            collection: collection.to_string(),
+        }),
+    }
 }

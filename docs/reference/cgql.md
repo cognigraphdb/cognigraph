@@ -698,7 +698,13 @@ FOR d IN documents FILTER d.stale == true REMOVE d._key IN documents
   does not match an explicit null.
   Found → partial UPDATE merge (`OLD` = prior document); absent → the
   INSERT document is created as-is (`OLD` = null).
-- Keys accept a plain `_key` or a full `collection/key` id.
+- Keys accept a plain `_key` or a full `collection/key` id of the mutation's
+  own collection. An id is split once from the left, as `PARSE_IDENTIFIER`
+  does. An id that names another collection is an error (HTTP 400), so
+  `REMOVE e._to IN persons` fails when `_to` is `organizations/42` instead of
+  deleting `persons/42`. A key that itself contains `/` must be given as a
+  full id: `REMOVE "docs/a/b" IN docs` targets key `a/b`. In a multi-row
+  mutation the rows before the failing one remain applied.
 - `NEW` and `OLD` are in scope only in a mutation's `RETURN`; `OLD` is null
   for INSERT, `NEW` is null for REMOVE.
 - Mutation operands are additive expressions (parenthesize to use

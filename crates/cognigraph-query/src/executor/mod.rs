@@ -186,6 +186,13 @@ pub enum ExecutionError {
     #[error("mutation key must be a string")]
     InvalidDocumentKey,
 
+    /// A mutation key was a `collection/key` id for another collection, or a
+    /// string containing `/` that is not an id of the target (CG-106).
+    #[error(
+        "mutation key `{id}` is not a document of `{collection}`; give a plain key or a full `{collection}/<key>` id"
+    )]
+    MutationKeyOutsideCollection { id: String, collection: String },
+
     #[error("FOR source must be an array")]
     ExpectedArraySource,
 
