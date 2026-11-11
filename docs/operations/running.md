@@ -141,9 +141,13 @@ The operational routes stay at the **root** by convention: `GET /health`,
   `info` for 4xx. In production, capture stdout (docker/journald/etc.).
 - The same events also fill a bounded in-memory ring (last 200), exposed
   at **`GET /api/admin/logs`** (Admin scope) and shown in the console's
-  Operations screen. It is scoped to the caller's tenant plus untenanted
-  events (pre-auth 401s, unknown routes) — a tenant admin never sees
-  another tenant's request paths. It is a live operational aid, not a
+  Operations screen. It is scoped to the caller's tenant: a request
+  rejected after its caller was identified (a 403, a suspended tenant)
+  belongs to that caller's tenant. Requests with no identifiable caller
+  (401s, unknown routes) are listed for every admin; on a multi-tenant
+  server their path is reduced to the route group (`/api/documents/…`), so
+  a tenant admin never sees another tenant's collection names or keys.
+  Stdout keeps the full path. It is a live operational aid, not a
   durable audit log: it is process-local and lossy, and clears on restart.
 - To also see a span per request (all statuses), raise the log filter:
   `RUST_LOG=cognigraph=info,tower_http=info` turns on the mounted

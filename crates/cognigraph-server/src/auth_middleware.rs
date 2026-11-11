@@ -42,11 +42,39 @@ pub async fn identify(
     admit(state, None, req, next).await
 }
 
+/// Admit the request, and attribute a rejection to the caller's tenant.
+///
+/// A rejection issued after the caller is known (wrong scope, suspended
+/// tenant, stale identity) belongs to that caller's tenant. Without the tag
+/// the metrics layer recorded it as untenanted, and the error log showed its
+/// method, path and message to every tenant's admin (CG-108).
 async fn admit(
+    state: AppState,
+    policy: Option<ScopePolicy>,
+    req: Request,
+    next: Next,
+) -> Result<Response, AppError> {
+    let mut caller_tenant = None;
+    match admit_caller(state, policy, req, next, &mut caller_tenant).await {
+        Ok(response) => Ok(response),
+        Err(error) => {
+            let mut response = axum::response::IntoResponse::into_response(error);
+            if let Some(tenant) = caller_tenant {
+                response
+                    .extensions_mut()
+                    .insert(crate::hardening::TenantTag(tenant));
+            }
+            Ok(response)
+        }
+    }
+}
+
+async fn admit_caller(
     state: AppState,
     policy: Option<ScopePolicy>,
     mut req: Request,
     next: Next,
+    caller_tenant: &mut Option<String>,
 ) -> Result<Response, AppError> {
     let Some(auth) = &state.auth else {
         return Ok(next.run(req).await);
@@ -69,6 +97,9 @@ async fn admit(
         auth.validate_token(token).await.map_err(AppError)?
     } else if let Some(jwt) = &state.jwt {
         let claimed = cognigraph_auth::jwt::verify(token, &jwt.0).map_err(AppError)?;
+        // The signature is verified, so the claimed tenant is who is asking
+        // even if the identity turns out to be stale below.
+        *caller_tenant = Some(claimed.tenant.clone());
         let current = auth.get_user(&claimed.key).await?.ok_or_else(|| {
             AppError(CogniGraphError::AuthError(
                 "JWT identity is no longer active".into(),
@@ -88,6 +119,7 @@ async fn admit(
             "invalid bearer token".into(),
         )));
     };
+    *caller_tenant = Some(user.tenant.clone());
     crate::edition::require_tenant(&user.tenant)?;
     if let Some(policy) = policy {
         let required = if matches!(*req.method(), Method::GET | Method::HEAD) {
@@ -148,6 +180,10 @@ async fn admit(
 #[cfg(all(test, feature = "enterprise"))]
 #[path = "tenant_request_tests.rs"]
 mod tenant_request_tests;
+
+#[cfg(all(test, feature = "enterprise"))]
+#[path = "auth_log_attribution_tests.rs"]
+mod log_attribution_tests;
 
 #[cfg(all(test, feature = "enterprise"))]
 mod tests {

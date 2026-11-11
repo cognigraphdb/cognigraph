@@ -154,15 +154,22 @@ async fn archive_jobs(
 }
 
 /// Recent non-2xx responses (the console's server-logs panel). Scoped to
-/// the caller's tenant plus untenanted events (pre-auth 401s, unknown
-/// routes) — a tenant admin never sees another tenant's request paths.
+/// the caller's tenant plus unattributed events (requests with no valid
+/// caller, unknown routes). On a multi-tenant server an unattributed event
+/// may be another tenant's request, so its path is redacted to the route: a
+/// tenant admin never sees another tenant's request paths (CG-108).
 /// With auth disabled there is no caller tenant, so everything shows.
 async fn recent_logs(
     State(state): State<AppState>,
     user: Option<Extension<User>>,
 ) -> Json<serde_json::Value> {
     let tenant = user.as_ref().map(|Extension(user)| user.tenant.as_str());
-    let events = state.recent_errors.snapshot(tenant);
+    // Only an Enterprise server with isolated tenant stores is multi-tenant.
+    #[cfg(feature = "enterprise")]
+    let multi_tenant = state.tenant_registry.is_some();
+    #[cfg(not(feature = "enterprise"))]
+    let multi_tenant = false;
+    let events = state.recent_errors.snapshot(tenant, multi_tenant);
     Json(serde_json::json!({
         "events": events,
         "count": events.len(),
