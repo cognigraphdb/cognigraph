@@ -294,6 +294,12 @@ an ABA transition after rollback. Rollback names the exact prior evidence in
 the current chain. Replays return the original immutable record; reuse of a
 key with another request returns HTTP 409.
 
+The signed records of one tenant share a single key namespace: governance
+keys, key revocations, policy revisions, policy approvals, artifact
+attestations and Semantic Repair revisions and reviews. A key spent on any of
+them is refused with HTTP 409 for every other one, whichever kind used it
+first. Use a fresh key for each record.
+
 The CLI mirrors the API:
 
 ```sh

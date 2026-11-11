@@ -116,13 +116,12 @@ pub(super) fn test_artifact_manifest(kind: ArtifactKind, label: &str) -> Artifac
         total_bytes: byte_length,
     }
 }
-pub(super) async fn store_signed_artifact_attestation(
-    state: &AppState,
+pub(super) fn signed_artifact_attestation_request(
     attestor: &TestGovernancePrincipal,
     kind: ArtifactKind,
     label: &str,
     subject: ArtifactSubject,
-) -> ArtifactAttestationRecord {
+) -> CreateArtifactAttestationRequest {
     assert_eq!(subject.kind(), kind);
     let manifest = test_artifact_manifest(kind, label);
     let manifest_digest = canonical_digest(&manifest).unwrap();
@@ -161,6 +160,18 @@ pub(super) async fn store_signed_artifact_attestation(
             signed_at_ms: now,
         },
     );
+    CreateArtifactAttestationRequest {
+        attestor_signature: attestor.signing_key.sign(&statement).unwrap(),
+        statement,
+    }
+}
+pub(super) async fn store_signed_artifact_attestation(
+    state: &AppState,
+    attestor: &TestGovernancePrincipal,
+    kind: ArtifactKind,
+    label: &str,
+    subject: ArtifactSubject,
+) -> ArtifactAttestationRecord {
     state
         .promotions
         .create_artifact_attestation(
@@ -168,10 +179,7 @@ pub(super) async fn store_signed_artifact_attestation(
             INCARNATION,
             attestor.actor.clone(),
             &format!("attest-{label}"),
-            CreateArtifactAttestationRequest {
-                attestor_signature: attestor.signing_key.sign(&statement).unwrap(),
-                statement,
-            },
+            signed_artifact_attestation_request(attestor, kind, label, subject),
         )
         .await
         .unwrap()

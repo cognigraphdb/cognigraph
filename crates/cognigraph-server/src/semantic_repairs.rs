@@ -286,7 +286,7 @@ impl PromotionManager {
                 KeyPurpose::PolicyAuthor,
             )
             .map_err(signature_error)?;
-        self.ensure_semantic_repair_idempotency_available_locked(tenant, incarnation, &key_hash)
+        self.ensure_authority_idempotency_available_locked(tenant, incarnation, &key_hash)
             .await?;
 
         self.reconcile_locked(tenant, incarnation, &payload.target, false)
@@ -470,7 +470,7 @@ impl PromotionManager {
                 KeyPurpose::PolicyApprover,
             )
             .map_err(signature_error)?;
-        self.ensure_semantic_repair_idempotency_available_locked(tenant, incarnation, &key_hash)
+        self.ensure_authority_idempotency_available_locked(tenant, incarnation, &key_hash)
             .await?;
 
         let review_count = self
@@ -1166,41 +1166,7 @@ impl PromotionManager {
         Ok(())
     }
 
-    async fn ensure_semantic_repair_idempotency_available_locked(
-        &self,
-        tenant: &str,
-        incarnation: &str,
-        idempotency_key_hash: &str,
-    ) -> Result<(), CogniGraphError> {
-        self.ensure_governance_idempotency_available_locked(
-            tenant,
-            incarnation,
-            idempotency_key_hash,
-        )
-        .await?;
-        for (collection, kind) in [
-            (SEMANTIC_REPAIR_REVISIONS_COLLECTION, "srr"),
-            (SEMANTIC_REPAIR_REVIEWS_COLLECTION, "srrv"),
-        ] {
-            if self
-                .semantic_repair_idempotency_hash_exists_locked(
-                    collection,
-                    kind,
-                    tenant,
-                    incarnation,
-                    idempotency_key_hash,
-                )
-                .await?
-            {
-                return Err(conflict(
-                    "Idempotency-Key was already used for different signed authority",
-                ));
-            }
-        }
-        Ok(())
-    }
-
-    async fn semantic_repair_idempotency_hash_exists_locked(
+    pub(crate) async fn semantic_repair_idempotency_hash_exists_locked(
         &self,
         collection: &str,
         kind: &str,

@@ -94,6 +94,8 @@ mod policy_validation;
 
 mod scoped_records;
 
+mod idempotency_namespace;
+
 mod listing;
 
 mod authority_loading;
