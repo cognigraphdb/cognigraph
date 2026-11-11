@@ -10,8 +10,7 @@ use axum::{Json, Router};
 use serde::Deserialize;
 use std::collections::HashMap;
 
-use cognigraph_core::CogniGraphError;
-use cognigraph_query::{QueryMode, parse_and_execute_backend_with_options};
+use cognigraph_query::QueryMode;
 
 use crate::error::AppError;
 use crate::state::AppState;
@@ -38,53 +37,12 @@ async fn read_write_query(
     // System collections answer 403 up front; the executor-level guard
     // would only surface as an opaque QueryError.
     crate::system_collections::deny_system_collections_in_cgql(&req.query).map_err(AppError)?;
-    let execution = parse_and_execute_backend_with_options(
-        &req.query,
-        state.backend.as_ref(),
-        &req.bind_vars,
-        QueryMode::ReadWrite,
-        state.cgql_budget,
-    )
-    .await;
-
     // The read-write executor may already have applied earlier statements
-    // when a later statement fails, so the coherence barrier must run before
-    // propagating its result.
+    // when a later statement fails, so the runner sweeps cached results
+    // before it answers, whatever the outcome.
     let _ = req.invalidate;
-    state.invalidate_search_results().await;
-    let results = execution.map_err(|error| match error {
-        cognigraph_query::ExecutionError::Plan(error) => {
-            AppError(CogniGraphError::ValidationError(error.to_string()))
-        }
-        cognigraph_query::ExecutionError::Forbidden(message) => {
-            AppError(CogniGraphError::Forbidden(message))
-        }
-        cognigraph_query::ExecutionError::Connection(message) => {
-            AppError(CogniGraphError::ConnectionError(message))
-        }
-        cognigraph_query::ExecutionError::Conflict(message) => {
-            AppError(CogniGraphError::DocumentConflict(message))
-        }
-        cognigraph_query::ExecutionError::UniqueViolation {
-            collection,
-            index,
-            existing,
-        } => AppError(CogniGraphError::UniqueViolation {
-            collection,
-            index,
-            existing,
-        }),
-        // The caller named the wrong document; that is a request error, not a
-        // server failure (CG-106).
-        error @ (cognigraph_query::ExecutionError::InvalidDocumentKey
-        | cognigraph_query::ExecutionError::MutationKeyOutsideCollection { .. }) => {
-            AppError(CogniGraphError::ValidationError(error.to_string()))
-        }
-        cognigraph_query::ExecutionError::InvalidInput(message) => {
-            AppError(CogniGraphError::ValidationError(message))
-        }
-        other => AppError(CogniGraphError::QueryError(other.to_string())),
-    })?;
+    let results =
+        crate::cgql_runner::run(&state, req.query, req.bind_vars, QueryMode::ReadWrite).await?;
 
     Ok(Json(serde_json::json!({
         "results": results,
@@ -95,6 +53,7 @@ async fn read_write_query(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use cognigraph_core::CogniGraphError;
     use cognigraph_native::NativeBackend;
 
     #[tokio::test]

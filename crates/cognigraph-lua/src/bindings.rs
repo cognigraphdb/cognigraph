@@ -71,12 +71,13 @@ pub(crate) fn register_graph_bindings_with_control(
                     control
                         .block_on(
                             &handle,
-                            cognigraph_query::parse_and_execute_backend_with_options(
+                            cognigraph_query::parse_and_execute_backend_cancellable(
                                 &query,
                                 backend.as_ref(),
                                 &vars,
                                 mode,
                                 control.query_budget()?,
+                                control.query_cancellation(),
                             ),
                         )?
                         .map_err(|error| query_error("graph.query", error))?

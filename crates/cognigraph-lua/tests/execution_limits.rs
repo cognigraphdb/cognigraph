@@ -1,6 +1,7 @@
 use std::sync::Arc;
 use std::time::{Duration, Instant};
 
+use cognigraph_core::{CollectionType, GraphBackend};
 use cognigraph_lua::{LuaEngine, LuaExecutionControl};
 use cognigraph_native::NativeBackend;
 use cognigraph_query::ExecutionBudget;
@@ -180,4 +181,59 @@ async fn cancellation_stops_the_worker_even_inside_protected_calls() {
         .unwrap()
         .unwrap_err();
     assert!(err.contains("cancelled"), "{err}");
+}
+
+/// CG-197: cancelling a script reaches a `graph.query()` that is computing
+/// and has no time budget, not only the Lua code around it.
+#[tokio::test(flavor = "multi_thread")]
+async fn cancellation_stops_a_query_that_is_computing() {
+    let backend = Arc::new(NativeBackend::new());
+    backend
+        .ensure_collection("c", CollectionType::Document)
+        .await
+        .unwrap();
+    backend
+        .bulk_insert(
+            "c",
+            (0..3_000)
+                .map(|n| json!({"_key": format!("k{n}"), "n": n}))
+                .collect(),
+        )
+        .unwrap();
+    let control = LuaExecutionControl::new(ExecutionBudget::unlimited());
+    let worker_control = control.clone();
+    let handle = tokio::runtime::Handle::current();
+    let (started, ready) = tokio::sync::oneshot::channel();
+    let task = tokio::task::spawn_blocking(move || {
+        let engine =
+            LuaEngine::with_backend_control(backend, handle, false, worker_control).unwrap();
+        started.send(()).unwrap();
+        engine
+            .execute(
+                r#"return graph.query([[
+                    FOR a IN c
+                        LET x = (FOR b IN c
+                            LET y = (FOR d IN c FILTER d.n == b.n + a.n RETURN 1)
+                            RETURN LENGTH(y))
+                        RETURN LENGTH(x)
+                ]])"#,
+            )
+            .map_err(|e| e.to_string())
+    });
+    ready.await.unwrap();
+    tokio::time::sleep(Duration::from_millis(150)).await;
+    assert!(!task.is_finished());
+    let raised = Instant::now();
+    control.cancel();
+    let err = tokio::time::timeout(Duration::from_secs(10), task)
+        .await
+        .expect("the script stopped")
+        .unwrap()
+        .unwrap_err();
+    assert!(err.contains("cancelled"), "{err}");
+    assert!(
+        raised.elapsed() < Duration::from_secs(5),
+        "{:?}",
+        raised.elapsed()
+    );
 }

@@ -208,7 +208,7 @@ def verify(binary, root, mode, expect_collisions, expect_plan_errors_500):
 
             for name, query, expected_status, detail in [
                 ("forbidden", 'RETURN DOCUMENT("_users/cg38-missing")', 403, "system-reserved"),
-                ("runtime", "FOR x IN 1 RETURN x", 500, "FOR source must be an array"),
+                ("runtime", "FOR x IN 1 RETURN x", 400, "FOR source must be an array"),
             ]:
                 for prefix in ("", "EXPLAIN ANALYZE "):
                     for surface in ("/api/query", "/api/search/query"):

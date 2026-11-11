@@ -31,6 +31,19 @@ pub enum CogniGraphError {
     #[error("Query execution error: {0}")]
     QueryError(String),
 
+    /// A query stopped at one of its execution budgets. The request was
+    /// understood and would fail the same way again, so API layers answer
+    /// 422 and name the budget (CG-198).
+    #[error("Query budget exceeded: {message}")]
+    QueryBudgetExceeded {
+        /// `source_rows`, `intermediate_rows`, `memory` or `time`.
+        budget: String,
+        limit: u64,
+        /// `rows`, `bytes` or `ms`.
+        unit: String,
+        message: String,
+    },
+
     #[error("Authentication error: {0}")]
     AuthError(String),
 

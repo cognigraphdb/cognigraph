@@ -132,52 +132,18 @@ pub(super) async fn raw_query(
     }
     // Parse public CGQL and enforce collection and read-only boundaries.
     crate::system_collections::deny_system_collections_in_cgql(&req.query).map_err(AppError)?;
-    let results = cognigraph_query::parse_and_execute_backend_with_options(
-        &req.query,
-        state.backend.as_ref(),
-        &req.bind_vars,
+    let results = crate::cgql_runner::run(
+        &state,
+        req.query,
+        req.bind_vars,
         cognigraph_query::QueryMode::ReadOnly,
-        state.cgql_budget,
     )
-    .await
-    .map_err(cgql_error)?;
+    .await?;
 
     Ok(Json(serde_json::json!({
         "results": results,
         "count": results.len(),
     })))
-}
-
-fn cgql_error(error: cognigraph_query::ExecutionError) -> AppError {
-    match error {
-        cognigraph_query::ExecutionError::Plan(error) => {
-            AppError(CogniGraphError::ValidationError(error.to_string()))
-        }
-        cognigraph_query::ExecutionError::Forbidden(message) => {
-            AppError(CogniGraphError::Forbidden(message))
-        }
-        cognigraph_query::ExecutionError::Connection(message) => {
-            AppError(CogniGraphError::ConnectionError(message))
-        }
-        cognigraph_query::ExecutionError::Conflict(message) => {
-            AppError(CogniGraphError::DocumentConflict(message))
-        }
-        cognigraph_query::ExecutionError::UniqueViolation {
-            collection,
-            index,
-            existing,
-        } => AppError(CogniGraphError::UniqueViolation {
-            collection,
-            index,
-            existing,
-        }),
-        // The backend refused the query's input, for example a traversal
-        // past its path budget (CG-110); that is a request error.
-        cognigraph_query::ExecutionError::InvalidInput(message) => {
-            AppError(CogniGraphError::ValidationError(message))
-        }
-        other => AppError(CogniGraphError::QueryError(other.to_string())),
-    }
 }
 
 #[cfg(test)]

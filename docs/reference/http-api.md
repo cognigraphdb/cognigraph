@@ -355,6 +355,34 @@ Auth lives in a separate control store.
 |---|---|---|
 | POST | `/api/query` | CGQL including mutations (INSERT/UPDATE/REPLACE/REMOVE/UPSERT); requires `COGNIGRAPH_CGQL_MUTATIONS_ENABLED=true` and, with auth, the `documents:write` scope |
 
+#### Statuses of a CGQL query
+
+`POST /api/query` and `POST /api/search/query` answer the same way:
+
+| Status | When |
+|---|---|
+| 400 | The query does not parse or validate, a bind variable is missing or unexpected, a value the query computed has the wrong type (`FOR x IN 1`, `1 + "a"`, a non-boolean `FILTER`, an `UPSERT` search that is not an object), a `COLLATE` locale is unknown, or a mutation key is not a key of its collection |
+| 403 | The query reads protected data, or a mutation was sent to the read-only route |
+| 404 | A collection the query names does not exist, or `UPDATE`/`REPLACE` names a document that does not exist |
+| 408 | The request timed out, while the query waited for an [execution slot](cgql.md#concurrency-and-cancellation) or while it ran. The query is stopped. No JSON body |
+| 409 | A mutation hit an existing key or a unique constraint (`code: "unique_violation"`) |
+| 422 | The query was stopped at an [execution budget](cgql.md#execution-budgets). The body has `code: "query_budget_exceeded"`, `budget`, `limit` and `unit`. The request fails the same way if repeated, so there is no `Retry-After` |
+| 500 | The backend failed while executing a valid query |
+| 503 | The backend is unavailable |
+
+```json
+{
+  "error": "Query budget exceeded: query exceeded its memory budget (1073741824 bytes)",
+  "code": "query_budget_exceeded",
+  "budget": "memory",
+  "limit": 1073741824,
+  "unit": "bytes"
+}
+```
+
+Lua `graph.query()` raises the same messages as script errors;
+`POST /api/lua/execute` answers those as it does any script error.
+
 Parsed CGQL reads may inspect the eight M25-managed ordinary collections, but
 all five mutation forms targeting one are rejected. Opaque backend-native query
 text cannot safely prove read-only behavior, so the guarded raw-query boundary

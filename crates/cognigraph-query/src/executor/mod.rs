@@ -55,7 +55,7 @@ fn analyze_memory(
     bind_vars: &BindVars,
 ) -> Result<Vec<Value>, ExecutionError> {
     let budget = ExecutionBudget::default();
-    let cx = RunCx::new(bind_vars, Deadline(None), &budget)
+    let cx = RunCx::new(bind_vars, Deadline::none(), &budget)
         .with_analyze(plan)
         .with_documents(dataset)
         .with_traversals(dataset);
@@ -125,6 +125,11 @@ pub enum ExecutionError {
 
     #[error("collection `{0}` not found")]
     CollectionNotFound(String),
+
+    /// A mutation named a document that does not exist; API layers map it
+    /// to 404 (CG-198).
+    #[error("document `{collection}/{key}` not found")]
+    DocumentNotFound { collection: String, key: String },
 
     #[error("bind variable `{0}` not found")]
     BindVariableNotFound(String),
@@ -213,6 +218,31 @@ pub enum ExecutionError {
 
     #[error("query exceeded its memory budget ({0} bytes)")]
     MemoryBudgetExceeded(u64),
+
+    /// The caller raised the query's [`Cancellation`]: nobody is waiting for
+    /// the result any more (CG-197).
+    #[error("query was cancelled")]
+    Cancelled,
+}
+
+/// A flag the caller raises to stop a query. The executor reads it wherever
+/// it reads the time budget, so a cancelled query ends at its next deadline
+/// check, with or without a time budget.
+#[derive(Debug, Clone, Default)]
+pub struct Cancellation(std::sync::Arc<std::sync::atomic::AtomicBool>);
+
+impl Cancellation {
+    pub fn new() -> Self {
+        Self::default()
+    }
+
+    pub fn cancel(&self) {
+        self.0.store(true, std::sync::atomic::Ordering::Relaxed);
+    }
+
+    pub fn is_cancelled(&self) -> bool {
+        self.0.load(std::sync::atomic::Ordering::Relaxed)
+    }
 }
 
 /// Whether a CGQL execution is allowed to modify data.
@@ -271,21 +301,44 @@ impl ExecutionBudget {
     }
 }
 
-#[derive(Clone, Copy)]
-struct Deadline(Option<std::time::Instant>);
+/// When a query has to stop: at an instant, when its caller cancels it, or
+/// never.
+#[derive(Clone, Default)]
+struct Deadline {
+    at: Option<std::time::Instant>,
+    cancellation: Option<Cancellation>,
+}
 
 impl Deadline {
-    fn start(budget: &ExecutionBudget) -> Self {
-        Self(
-            budget
+    fn none() -> Self {
+        Self::default()
+    }
+
+    fn start(budget: &ExecutionBudget, cancellation: Option<&Cancellation>) -> Self {
+        Self {
+            at: budget
                 .time_budget_ms
                 .map(|ms| std::time::Instant::now() + std::time::Duration::from_millis(ms)),
-        )
+            cancellation: cancellation.cloned(),
+        }
+    }
+
+    /// Whether anything can stop the query. A stage with a cheaper form that
+    /// cannot stop uses it only when this is false.
+    fn can_stop(&self) -> bool {
+        self.at.is_some() || self.cancellation.is_some()
     }
 
     fn check(&self) -> Result<(), ExecutionError> {
         if self
-            .0
+            .cancellation
+            .as_ref()
+            .is_some_and(Cancellation::is_cancelled)
+        {
+            return Err(ExecutionError::Cancelled);
+        }
+        if self
+            .at
             .is_some_and(|deadline| std::time::Instant::now() >= deadline)
         {
             return Err(ExecutionError::TimeBudgetExceeded);
@@ -293,8 +346,8 @@ impl Deadline {
         Ok(())
     }
 
-    /// The same check for inner loops, reading the clock once every 1,024
-    /// rows instead of once per row.
+    /// The same check for inner loops, reading the clock and the cancellation
+    /// flag once every 1,024 rows instead of once per row.
     fn check_every(&self, counter: &mut u32) -> Result<(), ExecutionError> {
         *counter = counter.wrapping_add(1);
         if *counter & 0x3ff == 0 {
@@ -323,6 +376,14 @@ pub(super) fn backend_execution_error(error: CogniGraphError) -> ExecutionError 
         },
         // The backend refused the caller's input; API layers return 400.
         CogniGraphError::ValidationError(message) => ExecutionError::InvalidInput(message),
+        // The query named something that is not there; API layers return 404
+        // instead of a server error (CG-198).
+        CogniGraphError::CollectionNotFound(collection) => {
+            ExecutionError::CollectionNotFound(collection)
+        }
+        CogniGraphError::DocumentNotFound { collection, key } => {
+            ExecutionError::DocumentNotFound { collection, key }
+        }
         other => ExecutionError::Backend(other.to_string()),
     }
 }
@@ -363,7 +424,7 @@ pub async fn parse_and_execute_backend_with_mode(
     .await
 }
 
-/// Full-control entry point: mode plus a per-query execution budget.
+/// Mode plus a per-query execution budget.
 pub async fn parse_and_execute_backend_with_options(
     input: &str,
     backend: &dyn GraphBackend,
@@ -371,9 +432,38 @@ pub async fn parse_and_execute_backend_with_options(
     mode: QueryMode,
     budget: ExecutionBudget,
 ) -> Result<Vec<Value>, ExecutionError> {
+    execute_backend(input, backend, bind_vars, mode, budget, None).await
+}
+
+/// Full-control entry point: mode, budget, and a flag the caller raises to
+/// stop the query. A cancelled query fails with [`ExecutionError::Cancelled`]
+/// at its next deadline check; a mutation keeps the documents it had already
+/// written.
+pub async fn parse_and_execute_backend_cancellable(
+    input: &str,
+    backend: &dyn GraphBackend,
+    bind_vars: &BindVars,
+    mode: QueryMode,
+    budget: ExecutionBudget,
+    cancellation: &Cancellation,
+) -> Result<Vec<Value>, ExecutionError> {
+    execute_backend(input, backend, bind_vars, mode, budget, Some(cancellation)).await
+}
+
+async fn execute_backend(
+    input: &str,
+    backend: &dyn GraphBackend,
+    bind_vars: &BindVars,
+    mode: QueryMode,
+    budget: ExecutionBudget,
+    cancellation: Option<&Cancellation>,
+) -> Result<Vec<Value>, ExecutionError> {
     // Parsing/planning consumes the caller's remaining wall-clock allowance;
     // starting after it would extend a Lua script's shared deadline.
-    let deadline = Deadline::start(&budget);
+    let deadline = Deadline::start(&budget, cancellation);
+    if cancellation.is_some_and(Cancellation::is_cancelled) {
+        return Err(ExecutionError::Cancelled);
+    }
     let plan = parse_and_plan(input)?;
     // Plain EXPLAIN never touches data or bind variables — a mutation
     // under EXPLAIN is described, not executed, so read-only mode is fine.
@@ -421,12 +511,12 @@ pub async fn execute_backend_plan(
             backend,
             bind_vars,
             ExecutionBudget::default(),
-            Deadline(None),
+            Deadline::none(),
         )
         .await;
     }
     let budget = ExecutionBudget::default();
-    let cx = RunCx::new(bind_vars, Deadline(None), &budget);
+    let cx = RunCx::new(bind_vars, Deadline::none(), &budget);
     resolve::execute_read(plan, backend, &cx).await
 }
 
@@ -450,7 +540,7 @@ pub fn execute_plan(
     let budget = ExecutionBudget::default();
     // The in-memory dataset holds everything, so DOCUMENT() resolves directly —
     // no fetch-and-retry needed on this path.
-    let cx = RunCx::new(bind_vars, Deadline(None), &budget)
+    let cx = RunCx::new(bind_vars, Deadline::none(), &budget)
         .with_documents(dataset)
         .with_traversals(dataset);
     let mut materialized = materialize_memory(plan, dataset, &cx)?;
@@ -530,3 +620,7 @@ fn check_bind_vars(expected: &[String], provided: &BindVars) -> Result<(), Execu
     }
     Ok(())
 }
+
+#[cfg(test)]
+#[path = "deadline_tests.rs"]
+mod deadline_tests;

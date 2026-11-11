@@ -526,24 +526,44 @@ type error. Comparisons other than `==`/`!=` between values of different types
 ## Execution Budgets
 
 Four budgets bound a query's cost. Exceeding one fails the query with a
-deterministic error and no partial result.
+deterministic error and no partial result. Over HTTP the answer is 422 with
+`code: "query_budget_exceeded"` and the fields `budget` (`source_rows`,
+`intermediate_rows`, `memory` or `time`), `limit` and `unit`; see
+[HTTP statuses of a query](http-api.md#statuses-of-a-cgql-query).
 
 | Budget | Server setting | Default | Counts |
 |---|---|---|---|
 | Source rows | `COGNIGRAPH_CGQL_MAX_SOURCE_ROWS` | unlimited | Rows materialized from sources; units below |
 | Intermediate rows | `COGNIGRAPH_CGQL_MAX_INTERMEDIATE_ROWS` | 100,000,000 | Rows every `FOR` produces and rows `COLLECT` and `SORT` read |
 | Memory | `COGNIGRAPH_CGQL_MAX_MEMORY_BYTES` | 1,073,741,824 (1 GiB) | Approximate bytes of what the query builds and keeps |
-| Time | `COGNIGRAPH_CGQL_TIME_BUDGET_MS` | the request timeout | Wall-clock time of the whole execution |
+| Time | `COGNIGRAPH_CGQL_TIME_BUDGET_MS` | nine tenths of the request timeout | Wall-clock time of the execution, from when the query starts to run |
 
 `0` switches a budget off. The settings apply to both HTTP query routes and
 to Lua `graph.query()`.
 
-Execution is synchronous: the whole-request timeout cannot interrupt a
-running query. The time budget is what ends it, which is why it defaults to
-`COGNIGRAPH_REQUEST_TIMEOUT_SECS`. It is checked per row in every stage:
-scans, joins, `LET`, `FILTER`, `COLLECT`, `SORT`, projection and mutation
-loops. A sort of more than 16,384 rows is done in runs and merges so that it
-can stop as well.
+The time budget is checked per row in every stage: scans, joins, `LET`,
+`FILTER`, `COLLECT`, `SORT`, projection and mutation loops. A sort of more
+than 16,384 rows is done in runs and merges so that it can stop as well.
+Unset, the budget is nine tenths of `COGNIGRAPH_REQUEST_TIMEOUT_SECS`
+(27 seconds by default), so that the query's own 422 arrives before the
+request timeout's 408.
+
+### Concurrency and cancellation
+
+Over HTTP a query does not run on the server's async workers. Each one is
+handed to a separate thread, and at most
+`COGNIGRAPH_CGQL_MAX_CONCURRENT_QUERIES` run at once (default: the number of
+CPUs). A query beyond that waits for a slot. Waiting does not use its time
+budget; the request timeout bounds it and answers 408.
+
+A query stops when the request that asked for it goes away, because the
+client disconnected or the request timed out. It reads that signal where it
+reads the time budget, so it ends at its next check, also when the time
+budget is off. A mutation that is stopped keeps the documents it had already
+written, as with any budget.
+
+The limit also bounds what CGQL can hold at once: concurrent queries times
+the memory budget.
 
 ### Intermediate rows
 
@@ -615,9 +635,11 @@ expansions, not every intermediate join row or a bound on backend scan effort.
 Lua `graph.query()` applies the same source-row, intermediate-row and memory
 caps in read-only and writable modes, each per query. For Lua, the configured time allowance is shared across one script's
 execution and all graph callbacks; another query does not renew it. Parsing
-and planning consume the remaining allowance. Cancellation and timing are
-cooperative: a synchronous backend operation must return or yield before its
-future can be stopped, and completed writes are not rolled back.
+and planning consume the remaining allowance. A script that is cancelled
+stops a running `graph.query()` at its next deadline check. Other backend
+calls are cooperative: a synchronous operation must return before the script
+stops, and completed writes are not rolled back. Lua scripts do not draw on
+the HTTP concurrency limit above.
 
 ## Query Text Limits
 

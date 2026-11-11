@@ -23,6 +23,11 @@ impl IntoResponse for AppError {
                 (StatusCode::FORBIDDEN, self.0.to_string())
             }
             CogniGraphError::ValidationError(_) => (StatusCode::BAD_REQUEST, self.0.to_string()),
+            // Not 408 or 429: clients and proxies retry those, and a budget
+            // refusal is deterministic.
+            CogniGraphError::QueryBudgetExceeded { .. } => {
+                (StatusCode::UNPROCESSABLE_ENTITY, self.0.to_string())
+            }
             CogniGraphError::ConnectionError(_) => {
                 (StatusCode::SERVICE_UNAVAILABLE, self.0.to_string())
             }
@@ -35,6 +40,18 @@ impl IntoResponse for AppError {
         }
         if matches!(&self.0, CogniGraphError::UniqueViolation { .. }) {
             body["code"] = serde_json::json!("unique_violation");
+        }
+        if let CogniGraphError::QueryBudgetExceeded {
+            budget,
+            limit,
+            unit,
+            ..
+        } = &self.0
+        {
+            body["code"] = serde_json::json!("query_budget_exceeded");
+            body["budget"] = serde_json::json!(budget);
+            body["limit"] = serde_json::json!(limit);
+            body["unit"] = serde_json::json!(unit);
         }
         let mut response = (status, axum::Json(body)).into_response();
         if retry_after {

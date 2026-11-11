@@ -23,7 +23,7 @@ pub(super) async fn execute_mutation(
         .mutation
         .as_ref()
         .ok_or_else(|| ExecutionError::Backend("missing mutation clause".into()))?;
-    let cx = RunCx::new(bind_vars, deadline, budget);
+    let cx = RunCx::new(bind_vars, deadline.clone(), budget);
     let mut materialized = materialize_backend(plan, backend, &cx).await?;
     let mut site = 0usize;
     let kept = run_body(plan, Env::new(), &mut materialized, &mut site, &cx, true)?;
@@ -101,7 +101,7 @@ pub(super) async fn execute_mutation(
             } => {
                 let search_value = eval_expr(search, &env, &cx.eval())?;
                 let Value::Object(search_fields) = &search_value else {
-                    return Err(ExecutionError::Backend(
+                    return Err(ExecutionError::InvalidInput(
                         "UPSERT search expression must be an object".into(),
                     ));
                 };

@@ -24,7 +24,9 @@ interrupt any of it, although the reference said it was the outer guard.
    state, results; `SORT` keys and subquery rows are returned when done) and
    a part for the expression being evaluated. Reads are counted before the
    copy, so the limit holds before an oversized value exists. Default 1 GiB.
-3. **Time budget on by default.** Unset, it equals the request timeout.
+3. **Time budget on by default.** Unset, it equals the request timeout
+   (nine tenths of it since [CG-197](../issues/CG-197.md); see the
+   [execution decision](decision_cgql_execution_off_runtime.md)).
    The deadline is read per row in every stage, and a large `SORT` runs as
    sorted runs plus stable merges so it can stop.
 4. **The library default is bounded too.** `ExecutionBudget::default()`
@@ -64,12 +66,14 @@ interrupt any of it, although the reference said it was the outer guard.
   measured when read and when returned); an object projection, a filter with
   a function, `SORT`, `COLLECT` and a `LET` with a function were within 3%
   either way. One machine, one data shape; not a benchmark claim.
-- A query still occupies a runtime worker until it ends;
-  [CG-197](../issues/CG-197.md) tracks moving execution off the async
-  workers.
+- A query occupied a runtime worker until it ended. Since
+  [CG-197](../issues/CG-197.md) HTTP queries run on their own threads, a
+  bounded number at a time, and stop when their request goes away; see the
+  [execution decision](decision_cgql_execution_off_runtime.md).
 - A stopped query still needs the time to free what it built, and a single
   function call or copy is not interrupted. With the memory budget on, both
   are bounded by that budget.
-- Budget errors answer HTTP 500 like other execution errors;
-  [CG-198](../issues/CG-198.md) tracks the status.
+- Budget errors answered HTTP 500 until v2.7.56. Since
+  [CG-198](../issues/CG-198.md) they answer 422 with a typed body; see the
+  [error statuses decision](decision_cgql_error_statuses.md).
 - `EXPLAIN ANALYZE` does not report the two new counters.

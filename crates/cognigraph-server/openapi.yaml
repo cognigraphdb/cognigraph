@@ -3777,6 +3777,15 @@ components:
         status: { type: string, enum: [ok, error] }
         promotions: { type: string, enum: [ready, unavailable] }
         error: { type: string, nullable: true }
+    QueryBudgetError:
+      type: object
+      required: [error, code, budget, limit, unit]
+      properties:
+        error: { type: string, example: 'Query budget exceeded: query exceeded its memory budget (1073741824 bytes)' }
+        code: { type: string, enum: [query_budget_exceeded] }
+        budget: { type: string, enum: [source_rows, intermediate_rows, memory, time] }
+        limit: { type: integer, format: int64, minimum: 0 }
+        unit: { type: string, enum: [rows, bytes, ms] }
     Error:
       type: object
       properties:
@@ -4073,9 +4082,12 @@ paths:
                 language: { type: string, nullable: true, enum: [cgql], description: 'Optional; omitted and cgql both select the parsed read-only path. Public opaque backend-native query text is disabled.' }
       responses:
         '200': { description: Rows, content: { application/json: { schema: { $ref: '#/components/schemas/Results' } } } }
-        '400': { description: Invalid request }
-        '403': { description: "Forbidden data access including DOCUMENT lookups, or an opaque backend-native query language was requested" }
-        '500': { description: CGQL processing or backend execution failure including storage and budget errors; failed DOCUMENT lookups never become null results }
+        '400': { description: "Invalid request, CGQL syntax or validation failure, a missing or unexpected bind variable, or a value of the wrong type computed by the query" }
+        '403': { description: "Forbidden data access including DOCUMENT lookups, a mutation sent to this read-only route, or an opaque backend-native query language was requested" }
+        '404': { description: A collection named by the query does not exist }
+        '408': { description: "Configured request deadline exceeded while the query waited for an execution slot or while it ran; the query is stopped" }
+        '422': { description: "The query was stopped at an execution budget. The body carries code query_budget_exceeded, budget (source_rows, intermediate_rows, memory or time), limit and unit. Repeating the request fails the same way", content: { application/json: { schema: { $ref: '#/components/schemas/QueryBudgetError' } } } }
+        '500': { description: Backend execution or storage failure; failed DOCUMENT lookups never become null results }
         '503': { description: Backend connection failure }
   /api/search/semantic:
     post:
@@ -4177,9 +4189,13 @@ paths:
                 invalidate: { type: array, items: { type: string }, deprecated: true, description: Legacy hint accepted for compatibility; M15 invalidates all result entries dependency-safely }
       responses:
         '200': { description: Rows (NEW/OLD for mutations) }
-        '400': { description: "CGQL syntax or semantic validation failure, including unsupported dynamic backend reads in mutation queries" }
+        '400': { description: "CGQL syntax or semantic validation failure, including unsupported dynamic backend reads in mutation queries, a missing or unexpected bind variable, a value of the wrong type computed by the query, or a mutation key outside the target collection" }
         '403': { description: "Forbidden data access including DOCUMENT lookups, protected M25 mutations, or missing required scope" }
-        '500': { description: CGQL execution or backend failure including storage and budget errors; failed DOCUMENT lookups never become null results }
+        '404': { description: "A collection named by the query does not exist, or UPDATE or REPLACE names a document that does not exist" }
+        '408': { description: "Configured request deadline exceeded while the query waited for an execution slot or while it ran; the query is stopped and documents it had already written remain" }
+        '409': { description: A mutation hit an existing key or a unique constraint }
+        '422': { description: "The query was stopped at an execution budget. The body carries code query_budget_exceeded, budget (source_rows, intermediate_rows, memory or time), limit and unit. Earlier statements of a mutation query may already be applied", content: { application/json: { schema: { $ref: '#/components/schemas/QueryBudgetError' } } } }
+        '500': { description: Backend execution or storage failure; failed DOCUMENT lookups never become null results }
         '503': { description: Backend connection failure }
   /api/batch:
     post:

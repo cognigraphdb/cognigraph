@@ -91,17 +91,19 @@ async fn client_plan_errors_return_matching_bad_requests_before_backend_access()
 }
 
 #[tokio::test]
-async fn runtime_errors_keep_server_error_status_on_both_query_routes() {
+async fn a_type_error_in_the_query_answers_400_on_both_query_routes() {
+    // CG-198: the caller wrote `FOR x IN 1`; that is not a server failure.
+    // A storage failure still answers 500, see the next test.
     let app = router();
     for prefix in ["", "EXPLAIN ANALYZE "] {
         let query = format!("{prefix}FOR x IN 1 RETURN x");
         let mut bodies = Vec::new();
         for surface in &SURFACES[..2] {
             let (status, body) = post(&app, surface, json!({"query": query})).await;
-            assert_eq!(status, StatusCode::INTERNAL_SERVER_ERROR, "{body}");
+            assert_eq!(status, StatusCode::BAD_REQUEST, "{body}");
             assert_eq!(
                 body["error"],
-                "Query execution error: FOR source must be an array"
+                "Validation error: FOR source must be an array"
             );
             bodies.push(body);
         }

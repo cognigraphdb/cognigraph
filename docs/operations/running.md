@@ -161,9 +161,12 @@ The operational routes stay at the **root** by convention: `GET /health`,
   dataset size. `sidecar` cuts vector RAM ~7x; `paged` keeps only keys + an
   LRU cache resident for datasets larger than RAM.
 - Budgets (`COGNIGRAPH_CGQL_*`, `COGNIGRAPH_LUA_INSTRUCTION_LIMIT`) are the guardrails against
-  untrusted queries. A CGQL query runs synchronously and is ended by its own
-  time budget, which defaults to the request timeout; the request timeout
-  covers everything else.
+  untrusted queries. An HTTP CGQL query runs on its own thread, at most
+  `COGNIGRAPH_CGQL_MAX_CONCURRENT_QUERIES` at once, so long queries do not
+  keep health checks and other requests waiting. It is ended by its time
+  budget (nine tenths of the request timeout by default) or by its request
+  going away. Worst-case CGQL memory is that limit times
+  `COGNIGRAPH_CGQL_MAX_MEMORY_BYTES`.
 - Single-node by design. HA/replication is out of scope for this phase;
   disaster recovery composes tested backend recovery, an M24 artifact bundle,
   and separately retained configuration/trust/secrets. No one component is a

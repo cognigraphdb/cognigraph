@@ -3,7 +3,7 @@ use std::sync::atomic::{AtomicU8, AtomicU32, AtomicU64, Ordering};
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
 
-use cognigraph_query::ExecutionBudget;
+use cognigraph_query::{Cancellation, ExecutionBudget};
 use tokio::runtime::Handle;
 use tokio::sync::watch;
 
@@ -22,6 +22,9 @@ struct State {
     stopped: AtomicU8,
     deadline: Mutex<Option<Instant>>,
     cancelled: watch::Sender<bool>,
+    /// The same signal for a CGQL query that is computing, where the watch
+    /// channel cannot reach (CG-197).
+    query_cancellation: Cancellation,
 }
 
 impl LuaExecutionControl {
@@ -33,12 +36,20 @@ impl LuaExecutionControl {
             stopped: AtomicU8::new(0),
             deadline: Mutex::new(None),
             cancelled: watch::channel(false).0,
+            query_cancellation: Cancellation::new(),
         }))
     }
 
     /// Signal a dropped/timed-out request to its worker and pending callbacks.
     pub fn cancel(&self) {
+        self.0.query_cancellation.cancel();
         self.0.cancelled.send_replace(true);
+    }
+
+    /// Raised by [`Self::cancel`]; a running `graph.query()` reads it at its
+    /// deadline checks.
+    pub(crate) fn query_cancellation(&self) -> &Cancellation {
+        &self.0.query_cancellation
     }
 
     pub(crate) fn start(&self) -> mlua::Result<()> {
@@ -109,7 +120,8 @@ impl LuaExecutionControl {
 
     /// Enforce the same deadline/cancellation around every graph callback.
     /// Synchronous backend work is cooperative: it must yield or return before
-    /// a timer can stop its future; no later Lua callback is admitted.
+    /// a timer can stop its future; no later Lua callback is admitted. A CGQL
+    /// query reads the deadline and the cancellation itself.
     pub(crate) fn block_on<F: Future>(
         &self,
         handle: &Handle,
