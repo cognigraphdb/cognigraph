@@ -179,6 +179,9 @@ the table below is authoritative where earlier checkpoint sentences differ
 the [toolchain policy](../decisions/decision_toolchain_policy.md) keeps
 floating stable with a weekly canary workflow.
 
+[CG-192](CG-192.md) records the dependency and advisory drift measured after
+that fix. The develop gate does not pass until it is resolved.
+
 ## Conventions
 
 - Status: Open, In progress, Blocked, Resolved, or Closed without change. Record the reason and evidence for the last two.
@@ -382,8 +385,9 @@ floating stable with a weekly canary workflow.
 | [CG-189](CG-189.md) | P3 | Open | CGQL specification keeps superseded sections, and the migration guide asks for an edit that is no longer needed |
 | [CG-190](CG-190.md) | P3 | Open | LICENSING.md lists Community capabilities the shipped server does not have |
 | [CG-191](CG-191.md) | P3 | Open | Prototype-era citations and possibly non-synthetic names remain in the public tree |
+| [CG-192](CG-192.md) | P1 | Open | Refresh dependencies and close advisories before the next develop integration |
 
-Next available identifier: **CG-192**.
+Next available identifier: **CG-193**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

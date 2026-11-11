@@ -23,6 +23,10 @@
   Action revisions reviewed for the main workflow, and running the gates that
   block a push.
 
+The incoming-work check that follows this change found no open pull requests
+but 30 outdated direct dependencies and 11 advisories. They are recorded as
+[CG-192](../issues/CG-192.md) and are not fixed here.
+
 No API, storage or runtime contract changes.
 
 ## Validation
@@ -36,7 +40,8 @@ pass. `python3 -m unittest discover -s scripts/tests`,
 `python3 scripts/check-decision-index.py` and
 `python3 scripts/check-public-distribution.py` report no errors.
 
-Not run: the UI, Native, Helm, Docker, advisory and dependency suites. The
+The dependency and advisory suites were run and fail, as CG-192 records. Not
+run: the UI, Native, Helm and Docker suites. The
 gauge was not exercised over HTTP against a running Enterprise server, and
 the scheduled workflow has not run on GitHub. Nothing was pushed, released or
 deployed.
