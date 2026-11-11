@@ -137,6 +137,7 @@ pub(super) async fn semantic_search(
     State(state): State<AppState>,
     Json(req): Json<SemanticSearchRequest>,
 ) -> Result<Json<serde_json::Value>, AppError> {
+    super::check_limit("limit", req.limit, super::MAX_SEARCH_LIMIT)?;
     let embedder = require_embedder(&state)?;
     let cache = state.cache.as_deref();
     let result_generation = cache.map(QueryCache::result_generation);

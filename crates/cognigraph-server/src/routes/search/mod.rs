@@ -57,6 +57,23 @@ fn default_limit() -> usize {
     10
 }
 
+/// Largest result count any search route returns, and the largest number of
+/// vector seeds the graph-augmented route expands (CG-109).
+pub(crate) const MAX_SEARCH_LIMIT: usize = 1_000;
+
+/// Largest number of graph facts the graph-augmented route returns.
+pub(crate) const MAX_GRAPH_FACTS_LIMIT: usize = 10_000;
+
+/// Refuse a caller-supplied count above its cap with a validation error.
+fn check_limit(name: &str, value: usize, max: usize) -> Result<(), AppError> {
+    if value > max {
+        return Err(AppError(cognigraph_core::CogniGraphError::ValidationError(
+            format!("`{name}` is {value}; the maximum is {max}"),
+        )));
+    }
+    Ok(())
+}
+
 // ---------------------------------------------------------------------------
 // Helper: require embedder or return error
 // ---------------------------------------------------------------------------
@@ -110,3 +127,7 @@ async fn embed_query_cached(
 
     Ok(embedding)
 }
+
+#[cfg(test)]
+#[path = "limit_tests.rs"]
+mod limit_tests;

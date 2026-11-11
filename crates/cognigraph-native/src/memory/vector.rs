@@ -104,7 +104,7 @@ impl NativeBackend {
         drop(state);
         let candidates = sidecar.scan_top(
             query_vector,
-            (opts.limit * 4).max(32),
+            opts.limit.saturating_mul(4).max(32),
             opts.model_name.as_deref(),
         );
 

@@ -137,7 +137,7 @@ impl NativeBackend {
             })
             .collect();
         candidates.sort_by(|a, b| b.0.partial_cmp(&a.0).unwrap_or(Ordering::Equal));
-        candidates.truncate((opts.limit * 4).max(32));
+        candidates.truncate(opts.limit.saturating_mul(4).max(32));
 
         // Stage 2: exact f64 re-rank of the candidates; thresholds and
         // returned scores use exact cosine only.

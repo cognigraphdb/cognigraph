@@ -43,6 +43,13 @@ both reads and writes.
 | `/api/search/hybrid` | Native BM25 + vector with RRF fusion; unavailable BM25 data is reported explicitly |
 | `/api/search/graph-augmented` | Semantic seeds + multi-hop graph traversal. `edge_collection` defaults to the application-written `document_relations`; pass `"facts"` to rank construct-built facts, which is the only collection where accepted `relation_rank_hint` neurons can apply. Enterprise responses computed in the request (fresh or cache-assisted) add `warnings` with code `inert_rank_hints` when accepted rank hints exist but `edge_collection` is not exactly `facts`; strong cache hits omit `warnings`. See the [decision record](../decisions/decision_graph_augmented_edge_collection.md). |
 
+Search routes cap the counts a caller may ask for and answer 400 above the
+cap: `limit` (and `seed_limit` on the graph-augmented route) at 1,000, and
+`graph_facts_limit` at 10,000. The cap is checked before anything else, so it
+applies even when no embedding provider is configured. Text-search field
+names must not be empty or start with `-`
+([decision](../decisions/decision_search_and_traversal_limits.md)).
+
 ### Graph
 | Method | Path | Description |
 |---|---|---|
