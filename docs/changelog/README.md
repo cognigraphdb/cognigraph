@@ -170,6 +170,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 - 2026-11-11: [v2.7.51 — Error log attribution](2026-11-11-error-log-attribution.md)
 - 2026-11-11: [v2.7.47 — Document depth limit](2026-11-11-document-depth-limit.md)
 - 2026-11-11: [v2.7.43 — Dependency refresh, Tantivy 0.27 and advisory closure](2026-11-11-dependency-refresh.md)
+- 2026-11-11: [v2.7.55 — Compatible dependency drift before the P1 batch is qualified](2026-11-11-dependency-drift.md)
 - 2026-11-11: [v2.7.40 — Code and documentation review tickets](2026-11-11-code-and-documentation-review.md)
 - 2026-11-11: [v2.7.50 — CLI export safety](2026-11-11-cli-export-safety.md)
 - 2026-11-11: [v2.7.45 — CGQL text limits](2026-11-11-cgql-text-limits.md)
