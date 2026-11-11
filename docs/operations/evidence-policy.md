@@ -32,6 +32,18 @@ inputs using the documented research workflow or provide explicitly authorized
 private inputs. Do not silently skip missing test fixtures, rewrite frozen results,
 run model comparisons, or execute a holdout as part of routine code verification.
 
+## Issue records
+
+`docs/issues/` tracks only the `CG-N.md` tickets and their registry
+([decision](../decisions/decision_issue_records_private.md)). Write the
+resolution and verification evidence a ticket needs in the ticket itself.
+Longer dated records (review reports, remediation batches, verification
+write-ups) go to the ignored `docs/private/issues/` folder, or to the private
+evidence repository when they must be preserved. An ignored folder is not an
+archive. Links to those records from public documents are optional: the
+documentation checks verify them when the private folder is present and skip
+them otherwise.
+
 ## Enforcement
 
 `python3 scripts/check-public-distribution.py` checks the current publication

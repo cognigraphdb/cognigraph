@@ -121,6 +121,37 @@ class DocumentationLinks(unittest.TestCase):
         (product / 'README.md').write_text('# Product\n')
         self.assertEqual(docs.check(include_product=True)['errors'], [])
 
+    def test_dated_issue_records_are_private_and_optional_in_a_public_checkout(self):
+        # CG-193: docs/issues/ holds only tickets and the registry; dated records are private.
+        self.write('docs/issues/CG-1.md', '# CG-1: Ticket\n\n'
+                   '[Batch](fixes-2026-09-08.md) [Proof](fixes-2026-09-08.md#evidence)\n')
+        self.write('docs/operations/note.md', '[Review](../issues/review-2026-11-11.md)\n')
+        report = docs.check()
+        self.assertEqual(report['errors'], [], report)
+        self.assertEqual(report['private_issue_record_links_skipped'], 3)
+
+        # The rule is narrow: undated names, other tickets and other folders still fail.
+        self.write('docs/issues/CG-2.md', '# CG-2: Ticket\n\n[Typo](CG-9.md) [Notes](notes.md)\n'
+                   '[Elsewhere](../reference/fixes-2026-09-08.md)\n')
+        self.assertEqual(len(docs.check()['errors']), 3)
+        (self.root / 'docs/issues/CG-2.md').unlink()
+
+    def test_private_issue_records_are_verified_when_the_private_folder_is_present(self):
+        self.write('.gitignore', '/docs/private/\n')
+        self.write('docs/private/issues/fixes-2026-09-08.md', '# Fixes\n\n## Evidence\n\n[Broken](missing.md)\n')
+        self.write('docs/issues/CG-1.md', '# CG-1: Ticket\n\n[Proof](fixes-2026-09-08.md#evidence)\n')
+        report = docs.check()
+        # The private record itself is ignored by Git and is not scanned for navigation.
+        self.assertEqual(report['errors'], [], report)
+        self.assertEqual(report['private_issue_record_links_skipped'], 0)
+
+        self.write('docs/issues/CG-1.md', '# CG-1: Ticket\n\n[Absent](fixes-2026-09-08.md#absent)\n'
+                   '[Unknown](review-2026-11-11.md)\n')
+        errors = docs.check()['errors']
+        self.assertEqual(len(errors), 2, errors)
+        self.assertTrue(any('missing anchor' in error for error in errors))
+        self.assertTrue(any('missing review-2026-11-11.md' in error for error in errors))
+
 
 if __name__ == '__main__':
     unittest.main()

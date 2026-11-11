@@ -37,6 +37,11 @@ nested instructions before editing a component, including [ui/AGENTS.md](ui/AGEN
   `python3 scripts/issue.py check` (part of the CI suite) fails when a committed
   issue's original title changes or a file and its registry row disagree. Retain
   resolution evidence.
+- `docs/issues/` tracks only `CG-N.md` tickets and the registry. Put resolution
+  and verification evidence in the ticket. Longer dated records (reviews,
+  remediation batches, verification write-ups) go to the ignored
+  `docs/private/issues/` folder or the private evidence repository, never to
+  the public directory ([decision](docs/decisions/decision_issue_records_private.md)).
 - Use [decision records](docs/decisions/README.md) for rationale and contract
   amendments. Add a logical change record under [docs/changelog/](docs/changelog/README.md)
   and regenerate its index with `python3 scripts/check-docs.py --write-changelog-index`.
