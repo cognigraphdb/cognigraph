@@ -37,7 +37,8 @@ Cargo feature or select the corresponding Docker image as described in
 | `COGNIGRAPH_JOB_ARCHIVE_BATCH_SIZE` | 100 | Default terminal records processed by one archive request; operator requests are capped at 1000 |
 | `COGNIGRAPH_CGQL_MUTATIONS_ENABLED` | `false` | Mounts read-write `POST /api/query` |
 | `COGNIGRAPH_CGQL_MAX_SOURCE_ROWS` | 0 (off) | Per-query cap on rows read from sources, for HTTP CGQL and Lua `graph.query()` |
-| `COGNIGRAPH_CGQL_TIME_BUDGET_MS` | the request timeout | Per-query wall-clock budget; Lua shares it across the whole script. Execution is synchronous, so this budget, not the request timeout, is what ends a long query. 0 = unlimited |
+| `COGNIGRAPH_CGQL_TIME_BUDGET_MS` | nine tenths of the request timeout (27000) | Per-query wall-clock budget, counted from when the query starts to run; Lua shares it across the whole script. The margin lets the query's typed 422 arrive before the request timeout's 408. 0 = unlimited; the request timeout still cancels the query |
+| `COGNIGRAPH_CGQL_MAX_CONCURRENT_QUERIES` | the number of CPUs | HTTP CGQL queries that execute at once, each on its own thread off the async workers. Further queries wait for a slot until their request times out. Zero or an unparsable value falls back to the default; there is no unlimited |
 | `COGNIGRAPH_CGQL_MAX_INTERMEDIATE_ROWS` | 100000000 | Per-query cap on rows produced by `FOR` and read by `COLLECT` and `SORT`. 0 = unlimited |
 | `COGNIGRAPH_CGQL_MAX_MEMORY_BYTES` | 1073741824 (1 GiB) | Per-query cap on the estimated memory of what a query builds and keeps. 0 = unlimited |
 | `COGNIGRAPH_LUA_INSTRUCTION_LIMIT` | 0 (use engine default) | Sandbox instruction cap; 0 keeps the 1,000,000-instruction engine default |

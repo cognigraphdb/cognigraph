@@ -151,7 +151,7 @@ pub(super) fn apply_projection(
     stage: &mut usize,
 ) -> Result<Vec<Value>, ExecutionError> {
     let eval_ctx = cx.eval();
-    let deadline = cx.deadline;
+    let deadline = &cx.deadline;
     let projection = plan
         .projection
         .as_ref()
@@ -274,7 +274,7 @@ fn sort_rows(rows: &mut Vec<Env>, sort: &SortClause, cx: &RunCx<'_>) -> Result<(
             Ok((values, env))
         })
         .collect::<Result<Vec<_>, ExecutionError>>()?;
-    let keyed = sort_within_deadline(keyed, cx.deadline, |(left, _), (right, _)| {
+    let keyed = sort_within_deadline(keyed, &cx.deadline, |(left, _), (right, _)| {
         for (position, key) in sort.keys.iter().enumerate() {
             let ord = compare_sort_key(
                 &left[position],
@@ -304,10 +304,10 @@ const SORT_RUN: usize = 1 << 14;
 /// outliving it (CG-111).
 pub(super) fn sort_within_deadline<T>(
     mut items: Vec<T>,
-    deadline: Deadline,
+    deadline: &Deadline,
     compare: impl Fn(&T, &T) -> Ordering,
 ) -> Result<Vec<T>, ExecutionError> {
-    if deadline.0.is_none() || items.len() <= SORT_RUN {
+    if !deadline.can_stop() || items.len() <= SORT_RUN {
         items.sort_by(&compare);
         return Ok(items);
     }
@@ -340,7 +340,7 @@ pub(super) fn sort_within_deadline<T>(
 fn merge_runs<T>(
     left: Vec<T>,
     right: Vec<T>,
-    deadline: Deadline,
+    deadline: &Deadline,
     compare: &impl Fn(&T, &T) -> Ordering,
 ) -> Result<Vec<T>, ExecutionError> {
     let mut out = Vec::with_capacity(left.len() + right.len());

@@ -10,7 +10,7 @@ use axum::{Json, Router};
 use serde::Deserialize;
 use std::collections::HashMap;
 
-use cognigraph_query::{QueryMode, parse_and_execute_backend_with_options};
+use cognigraph_query::QueryMode;
 
 use crate::error::AppError;
 use crate::state::AppState;
@@ -37,22 +37,12 @@ async fn read_write_query(
     // System collections answer 403 up front; the executor-level guard
     // would only surface as an opaque QueryError.
     crate::system_collections::deny_system_collections_in_cgql(&req.query).map_err(AppError)?;
-    let execution = parse_and_execute_backend_with_options(
-        &req.query,
-        state.backend.as_ref(),
-        &req.bind_vars,
-        QueryMode::ReadWrite,
-        state.cgql_budget,
-    )
-    .await;
-
     // The read-write executor may already have applied earlier statements
-    // when a later statement fails, so the coherence barrier must run before
-    // propagating its result.
+    // when a later statement fails, so the runner sweeps cached results
+    // before it answers, whatever the outcome.
     let _ = req.invalidate;
-    state.invalidate_search_results().await;
     let results =
-        execution.map_err(|error| crate::cgql_errors::cgql_error(error, &state.cgql_budget))?;
+        crate::cgql_runner::run(&state, req.query, req.bind_vars, QueryMode::ReadWrite).await?;
 
     Ok(Json(serde_json::json!({
         "results": results,

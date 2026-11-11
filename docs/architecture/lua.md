@@ -20,7 +20,8 @@
   permission modes apply the server's CGQL row budget, and all callbacks share
   one script deadline. Dropping the HTTP request signals cancellation; a
   supervisor joins the worker and invalidates the caller's result cache.
-  Cancellation is cooperative at hooks/future yields: synchronous backend
+  Cancellation is cooperative at hooks/future yields, and a running
+  `graph.query()` reads it at its deadline checks; other synchronous backend
   operations must return, and already committed writes are not rolled back.
 - **Authorization:** read primitives require `lua:execute`; typed CRUD, edge,
   and batch mutations additionally require `documents:write`. `graph.query()`

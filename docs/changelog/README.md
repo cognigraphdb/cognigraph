@@ -174,6 +174,7 @@ maps the original 105 records to their checkpoint source lines and hashes.
 - 2026-11-11: [v2.7.40 — Code and documentation review tickets](2026-11-11-code-and-documentation-review.md)
 - 2026-11-11: [v2.7.50 — CLI export safety](2026-11-11-cli-export-safety.md)
 - 2026-11-11: [v2.7.45 — CGQL text limits](2026-11-11-cgql-text-limits.md)
+- 2026-11-11: [v2.7.57 — HTTP CGQL runs off the async workers and can be cancelled](2026-11-11-cgql-off-runtime.md)
 - 2026-11-11: [v2.7.53 — CGQL intermediate-row, memory and time budgets](2026-11-11-cgql-execution-budgets.md)
 - 2026-11-11: [v2.7.56 — CGQL errors answer the status of whoever caused them](2026-11-11-cgql-error-statuses.md)
 - 2026-11-11: [v2.7.52 — One Idempotency-Key namespace for signed authority](2026-11-11-authority-idempotency-namespace.md)

@@ -8,6 +8,7 @@ mod artifact_consumption;
 mod artifact_custody;
 mod auth_middleware;
 mod cgql_errors;
+mod cgql_runner;
 #[cfg(all(test, not(feature = "enterprise")))]
 mod community_tests;
 mod config;
@@ -75,6 +76,7 @@ async fn serve() {
     let config = Config::from_env();
     // Read before `config` is taken apart below.
     let cgql_budget = config.cgql_budget();
+    let cgql_slots = cgql_runner::CgqlSlots::new(config.cgql_max_concurrent_queries);
     config
         .validate()
         .unwrap_or_else(|error| panic!("Invalid CogniGraph configuration: {error}"));
@@ -322,7 +324,9 @@ async fn serve() {
 
     // Per-query CGQL budgets (0 = unlimited).
     state.cgql_budget = cgql_budget;
+    state.cgql_slots = cgql_slots;
     tracing::info!(
+        max_concurrent_queries = state.cgql_slots.limit(),
         max_source_rows = ?state.cgql_budget.max_source_rows,
         time_budget_ms = ?state.cgql_budget.time_budget_ms,
         max_intermediate_rows = ?state.cgql_budget.max_intermediate_rows,

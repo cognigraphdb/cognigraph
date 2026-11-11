@@ -4,15 +4,17 @@ use super::{cgql_limit, cgql_time_budget_ms};
 
 #[test]
 fn the_time_budget_follows_the_request_timeout_unless_set() {
-    assert_eq!(cgql_time_budget_ms(None, 30), 30_000);
+    // Nine tenths, so the query's refusal is answered before the timeout.
+    assert_eq!(cgql_time_budget_ms(None, 30), 27_000);
+    assert_eq!(cgql_time_budget_ms(None, 1), 900);
     assert_eq!(cgql_time_budget_ms(None, 0), 0);
     assert_eq!(cgql_time_budget_ms(Some("250"), 30), 250);
     assert_eq!(cgql_time_budget_ms(Some(" 250 "), 30), 250);
     // An explicit zero is the only way to switch the budget off.
     assert_eq!(cgql_time_budget_ms(Some("0"), 30), 0);
     // Garbage and negative numbers fall back to the safe value.
-    assert_eq!(cgql_time_budget_ms(Some("soon"), 30), 30_000);
-    assert_eq!(cgql_time_budget_ms(Some("-1"), 30), 30_000);
+    assert_eq!(cgql_time_budget_ms(Some("soon"), 30), 27_000);
+    assert_eq!(cgql_time_budget_ms(Some("-1"), 30), 27_000);
     assert_eq!(cgql_time_budget_ms(None, u64::MAX), u64::MAX);
 }
 

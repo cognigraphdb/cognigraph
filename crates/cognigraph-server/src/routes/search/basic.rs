@@ -132,15 +132,13 @@ pub(super) async fn raw_query(
     }
     // Parse public CGQL and enforce collection and read-only boundaries.
     crate::system_collections::deny_system_collections_in_cgql(&req.query).map_err(AppError)?;
-    let results = cognigraph_query::parse_and_execute_backend_with_options(
-        &req.query,
-        state.backend.as_ref(),
-        &req.bind_vars,
+    let results = crate::cgql_runner::run(
+        &state,
+        req.query,
+        req.bind_vars,
         cognigraph_query::QueryMode::ReadOnly,
-        state.cgql_budget,
     )
-    .await
-    .map_err(|error| crate::cgql_errors::cgql_error(error, &state.cgql_budget))?;
+    .await?;
 
     Ok(Json(serde_json::json!({
         "results": results,
