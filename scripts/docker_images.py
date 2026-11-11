@@ -135,7 +135,7 @@ def smoke(image, edition, version):
                                       'text': 'synthetic image publication probe'}, token)
         spec = http(base + '/openapi.yaml')
         require(('/api/neurons' in spec['paths']) == (edition == 'enterprise'), 'Edition API mismatch')
-        for name in ('LICENSE', 'LICENSE-COMMERCIAL', 'tantivy-MIT'):
+        for name in ('LICENSE', 'LICENSE-COMMERCIAL'):
             require(packaged_file_nonempty(container, f'/usr/share/licenses/cognigraph/{name}'),
                     f'Missing packaged license {name}')
         output('docker', 'restart', '--timeout', '15', container)

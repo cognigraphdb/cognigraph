@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "ecosystem": "cargo",
+    "package": "unicode-normalization",
+    "current": "0.1.25",
+    "latest": "0.1.26",
+    "reason": "0.1.26 moves to Unicode 18.0.0; the M23 preparation contract and the Rust standard library are on Unicode 17.0.0",
+    "decision": "docs/decisions/decision_dependency_refresh_2026_11_11.md",
+    "expires": "2027-02-11"
+  }
+]

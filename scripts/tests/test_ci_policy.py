@@ -123,7 +123,6 @@ class WorkflowPolicy(unittest.TestCase):
             for command in verify.commands(suite):
                 self.assertIn(command, commands)
         self.assertIn((ROOT, ['actionlint']), commands)
-        self.assertIn((ROOT, [sys.executable, 'scripts/check-vendored.py']), commands)
         self.assertIn((ROOT, [sys.executable, 'scripts/check-docs.py']), commands)
         self.assertIn((ROOT, [sys.executable, 'scripts/check-public-distribution.py']), commands)
         self.assertIn((ROOT, [sys.executable, 'scripts/check-arangodump-fixtures.py']), commands)

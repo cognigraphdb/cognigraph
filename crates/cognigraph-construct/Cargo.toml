@@ -19,7 +19,7 @@ quick-xml = { workspace = true }
 sha2 = { workspace = true }
 chrono = { workspace = true }
 tokio = { workspace = true }
-unicode-normalization = "0.1.25"
+unicode-normalization = "=0.1.25"
 regex-syntax = { version = "0.8.11", default-features = false, features = ["std", "unicode-perl"] }
 dotenvy = "0.15"
 
