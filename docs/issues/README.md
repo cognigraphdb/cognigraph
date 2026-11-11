@@ -200,7 +200,8 @@ repair for older unreadable rows. [CG-109](CG-109.md) is Resolved (search
 routes cap their counts and validate field names). [CG-110](CG-110.md) is
 Resolved (typed traversal has a depth cap and Native a path budget).
 [CG-114](CG-114.md) is Resolved (CLI export fails on a bad response and never
-replaces a file).
+replaces a file). [CG-108](CG-108.md) is Resolved (a rejected request is
+logged under its caller's tenant; unattributed ones are redacted).
 
 ## Conventions
 
@@ -322,7 +323,7 @@ replaces a file).
 | [CG-105](CG-105.md) | P1 | Resolved | Deeply nested CGQL text overflows the stack and aborts the server |
 | [CG-106](CG-106.md) | P1 | Resolved | CGQL mutations ignore the collection part of a full document id |
 | [CG-107](CG-107.md) | P1 | Resolved | A document nested deeper than 128 levels cannot be read back and blocks startup |
-| [CG-108](CG-108.md) | P1 | Open | Requests rejected by the auth middleware are logged without a tenant and shown to every tenant's admin |
+| [CG-108](CG-108.md) | P1 | Resolved | Requests rejected by the auth middleware are logged without a tenant and shown to every tenant's admin |
 | [CG-109](CG-109.md) | P1 | Resolved | Text search passes an unvalidated limit and field names into Tantivy, which panics |
 | [CG-110](CG-110.md) | P1 | Resolved | Typed traversal and graph-augmented search accept unbounded depth outside every budget |
 | [CG-111](CG-111.md) | P1 | Open | CGQL execution does not bound intermediate rows or value size, so budgets and the request timeout do not hold |

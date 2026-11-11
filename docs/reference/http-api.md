@@ -406,7 +406,7 @@ trust boundary.
 | GET | `/openapi.yaml` | Current OpenAPI specification |
 | POST | `/api/lua/execute` | Execute Lua script |
 | GET | `/api/admin/export` | Export a hot JSON snapshot |
-| GET | `/api/admin/logs` | Recent non-2xx responses (ring buffer): method, path, status, latency, message, tenant; scoped to the caller's tenant |
+| GET | `/api/admin/logs` | Recent non-2xx responses (ring buffer): method, path, status, latency, message, tenant. Scoped to the caller's tenant: a rejected request belongs to the tenant of the caller who made it. Requests with no identifiable caller are listed too; on a multi-tenant server their path is reduced to the route (`/api/documents/…`) |
 | POST | `/api/admin/import` | Import an additive JSON snapshot |
 
 ---
