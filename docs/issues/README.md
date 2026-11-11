@@ -194,7 +194,9 @@ Renovate schedule.
 P1 remediation, 2026-11-11: [CG-104](CG-104.md) is Resolved (Lua scripts get
 an allow-list of libraries). [CG-105](CG-105.md) is Resolved (CGQL text is
 bounded before parsing). [CG-106](CG-106.md) is Resolved (a mutation key must
-name a document of the mutation's own collection).
+name a document of the mutation's own collection). [CG-107](CG-107.md) is Resolved
+(documents nest at most 100 levels); [CG-196](CG-196.md) tracks an offline
+repair for older unreadable rows.
 
 ## Conventions
 
@@ -315,7 +317,7 @@ name a document of the mutation's own collection).
 | [CG-104](CG-104.md) | P1 | Resolved | Lua scripts reach os, io and jit through the leftover module() global |
 | [CG-105](CG-105.md) | P1 | Resolved | Deeply nested CGQL text overflows the stack and aborts the server |
 | [CG-106](CG-106.md) | P1 | Resolved | CGQL mutations ignore the collection part of a full document id |
-| [CG-107](CG-107.md) | P1 | Open | A document nested deeper than 128 levels cannot be read back and blocks startup |
+| [CG-107](CG-107.md) | P1 | Resolved | A document nested deeper than 128 levels cannot be read back and blocks startup |
 | [CG-108](CG-108.md) | P1 | Open | Requests rejected by the auth middleware are logged without a tenant and shown to every tenant's admin |
 | [CG-109](CG-109.md) | P1 | Open | Text search passes an unvalidated limit and field names into Tantivy, which panics |
 | [CG-110](CG-110.md) | P1 | Open | Typed traversal and graph-augmented search accept unbounded depth outside every budget |
@@ -404,8 +406,9 @@ name a document of the mutation's own collection).
 | [CG-193](CG-193.md) | P2 | Resolved | Keep only tickets and the registry in the public issue directory |
 | [CG-194](CG-194.md) | P3 | Open | Migrate the preparation contract to Unicode 18 when the Rust standard library moves |
 | [CG-195](CG-195.md) | P3 | Open | Decide whether Renovate's schedule and limits can keep up with dependency updates |
+| [CG-196](CG-196.md) | P3 | Open | Offline repair for a store that already holds an unreadable document |
 
-Next available identifier: **CG-196**.
+Next available identifier: **CG-197**.
 ## After the current ticket list
 
 CG-1 through CG-38 are now resolved or explicitly closed. The user selected

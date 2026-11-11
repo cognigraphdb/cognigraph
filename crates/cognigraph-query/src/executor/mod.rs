@@ -164,6 +164,11 @@ pub enum ExecutionError {
     #[error("unsupported function `{0}`")]
     UnsupportedFunction(String),
 
+    /// The backend rejected the query's input, for example a document that
+    /// nests too deeply to store; API layers map it to 400.
+    #[error("{0}")]
+    InvalidInput(String),
+
     #[error("backend execution error: {0}")]
     Backend(String),
 
@@ -260,6 +265,8 @@ pub(super) fn backend_execution_error(error: CogniGraphError) -> ExecutionError 
             index,
             existing,
         },
+        // The backend refused the caller's input; API layers return 400.
+        CogniGraphError::ValidationError(message) => ExecutionError::InvalidInput(message),
         other => ExecutionError::Backend(other.to_string()),
     }
 }

@@ -81,6 +81,46 @@ pub(crate) fn store_err(e: impl std::fmt::Display) -> CogniGraphError {
     CogniGraphError::BackendError(format!("native storage: {e}"))
 }
 
+/// Deepest accepted nesting of arrays and objects in a stored document, the
+/// document object itself counting as level 1 (CG-107).
+///
+/// Stored rows are read back with a JSON parser that stops at 128 nested
+/// containers. A deeper document could be written but never read again, and
+/// in resident mode it stopped the store from opening. The limit leaves room
+/// for the envelopes that wrap a document in a snapshot or an API response.
+pub const MAX_DOCUMENT_DEPTH: usize = 100;
+
+/// Refuse a document that the store could not read back.
+pub(crate) fn check_document_depth(collection: &str, key: &str, doc: &Value) -> Result<()> {
+    // Iterative on purpose: the value comes from a caller and may be deeper
+    // than the stack allows a recursive walk to go.
+    let mut pending = vec![(doc, 1usize)];
+    while let Some((value, depth)) = pending.pop() {
+        let children: Box<dyn Iterator<Item = &Value>> = match value {
+            Value::Array(items) => Box::new(items.iter()),
+            Value::Object(fields) => Box::new(fields.values()),
+            _ => continue,
+        };
+        if depth > MAX_DOCUMENT_DEPTH {
+            return Err(CogniGraphError::ValidationError(format!(
+                "document `{collection}/{key}` nests arrays and objects deeper than the limit of {MAX_DOCUMENT_DEPTH}"
+            )));
+        }
+        pending.extend(children.map(|child| (child, depth + 1)));
+    }
+    Ok(())
+}
+
+/// Parse one stored row, naming the row when it cannot be read.
+fn parse_stored(composite: &str, json: &str) -> Result<Value> {
+    serde_json::from_str(json).map_err(|error| {
+        let (collection, key) = composite.split_once(SEP).unwrap_or((composite, ""));
+        store_err(format!(
+            "stored document `{collection}/{key}` cannot be read: {error}"
+        ))
+    })
+}
+
 fn check_name(name: &str) -> Result<()> {
     if name.contains(SEP) {
         return Err(CogniGraphError::ValidationError(
@@ -243,7 +283,7 @@ impl RedbStore {
             let Some((collection, doc_key)) = composite.split_once(SEP) else {
                 return Err(store_err(format!("malformed document key `{composite}`")));
             };
-            let doc: Value = serde_json::from_str(value.value()).map_err(store_err)?;
+            let doc = parse_stored(composite, value.value())?;
             collections
                 .entry(collection.to_string())
                 .or_default()
@@ -301,8 +341,8 @@ impl RedbStore {
             .skip(offset.unwrap_or(0))
             .take(limit.unwrap_or(usize::MAX))
             .map(|entry| {
-                let (_, value) = entry.map_err(store_err)?;
-                serde_json::from_str(value.value()).map_err(store_err)
+                let (key, value) = entry.map_err(store_err)?;
+                parse_stored(key.value(), value.value())
             })
             .collect()
     }
@@ -333,8 +373,8 @@ impl RedbStore {
             .map_err(store_err)?
             .take(limit)
             .map(|entry| {
-                let (_, value) = entry.map_err(store_err)?;
-                serde_json::from_str(value.value()).map_err(store_err)
+                let (key, value) = entry.map_err(store_err)?;
+                parse_stored(key.value(), value.value())
             })
             .collect()
     }
@@ -366,8 +406,8 @@ impl RedbStore {
             .range(start.as_str()..end.as_str())
             .map_err(store_err)?
         {
-            let (_, value) = entry.map_err(store_err)?;
-            let document: Value = serde_json::from_str(value.value()).map_err(store_err)?;
+            let (key, value) = entry.map_err(store_err)?;
+            let document = parse_stored(key.value(), value.value())?;
             if !predicates
                 .iter()
                 .all(|predicate| predicate.matches(&document))
@@ -430,10 +470,7 @@ impl RedbStore {
                     .split_once(SEP)
                     .map(|(_, k)| k.to_string())
                     .unwrap_or_default();
-                Ok((
-                    doc_key,
-                    serde_json::from_str(value.value()).map_err(store_err)?,
-                ))
+                Ok((doc_key, parse_stored(key.value(), value.value())?))
             })
             .collect()
     }
@@ -556,3 +593,7 @@ impl RedbStore {
 #[cfg(test)]
 #[path = "storage_identity_tests.rs"]
 mod identity_tests;
+
+#[cfg(test)]
+#[path = "storage_depth_tests.rs"]
+mod depth_tests;
