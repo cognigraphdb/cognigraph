@@ -186,8 +186,8 @@ that fix. The develop gate does not pass until it is resolved.
 directory with the tickets moved to a private, ignored folder under the
 [private issue records decision](../decisions/decision_issue_records_private.md).
 
-[CG-192](CG-192.md) refreshes the dependencies, closes the advisories and
-retires the vendored Tantivy snapshot. [CG-194](CG-194.md) tracks the Unicode
+[CG-192](CG-192.md) is Resolved: it refreshes the dependencies, closes the
+advisories and retires the vendored Tantivy snapshot. [CG-194](CG-194.md) tracks the Unicode
 18 migration that ends the one remaining pin, and [CG-195](CG-195.md) the
 Renovate schedule.
 
@@ -395,7 +395,7 @@ Renovate schedule.
 | [CG-189](CG-189.md) | P3 | Open | CGQL specification keeps superseded sections, and the migration guide asks for an edit that is no longer needed |
 | [CG-190](CG-190.md) | P3 | Open | LICENSING.md lists Community capabilities the shipped server does not have |
 | [CG-191](CG-191.md) | P3 | Open | Prototype-era citations and possibly non-synthetic names remain in the public tree |
-| [CG-192](CG-192.md) | P1 | In progress | Refresh dependencies and close advisories before the next develop integration |
+| [CG-192](CG-192.md) | P1 | Resolved | Refresh dependencies and close advisories before the next develop integration |
 | [CG-193](CG-193.md) | P2 | Resolved | Keep only tickets and the registry in the public issue directory |
 | [CG-194](CG-194.md) | P3 | Open | Migrate the preparation contract to Unicode 18 when the Rust standard library moves |
 | [CG-195](CG-195.md) | P3 | Open | Decide whether Renovate's schedule and limits can keep up with dependency updates |

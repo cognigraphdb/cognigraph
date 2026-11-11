@@ -49,6 +49,12 @@ storage modes for both editions, with text search over the old data, through
 and its offline tests; its inference test needs a local model and was not
 run.
 
-The Docker suite result is recorded in [CG-192](../issues/CG-192.md). Not
-run: model providers, research holdouts, Railway or any publication. Nothing
-was pushed, released or deployed.
+`python3 scripts/verify.py --suite docker` passes on the committed candidate:
+both edition images build, the vulnerability gate finds nothing fixable (51
+unfixed findings per image remain reported), and the image, container
+start-up and live Helm checks pass. A first attempt failed when the disk
+filled up; the repository instructions now require a cleanup after every
+merge or push and a free-space check before the long suites.
+
+Not run: model providers, research holdouts, Railway or any publication.
+Nothing was pushed, released or deployed.
